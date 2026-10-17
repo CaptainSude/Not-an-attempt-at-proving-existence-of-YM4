@@ -1,0 +1,6 @@
+Repository: https://github.com/ethanwsussman/Yang--Mills-LLM-experiment
+Examined commit: e392ef45013a581664bab76b90867170b30fe10e
+Evidence date: 17 October 2026
+Pinned checkout clean at packaging. Remote updates are not included.
+The original repository and third-party papers are not republished in this bundle.
+See source map for hashes and exact locators, and fetch script for retrieval.

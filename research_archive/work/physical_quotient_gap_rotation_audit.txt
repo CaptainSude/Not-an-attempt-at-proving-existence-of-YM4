@@ -1,0 +1,82 @@
+INDEPENDENT AUDIT: FLAT PHYSICAL QUOTIENT AND CONTOUR GAP
+17 October 2026.
+
+Read contour_heat_comparison_research.txt Sections5--7 in full.
+Result: pass. The earlier finite determinant identities were read
+for notation and scope; this audit focuses on the new uniform flat
+estimates and counterexample.
+
+1. Full versus projected ordinary averaging
+
+The angle straight average has row sum K and column sum K^(1-d),
+with multiplicities, so its counting-L2 norm is at most
+K^(1-d/2). The actual flat ordinary/corrected endpoint gauge
+identity C_K=A_K+D_c Z_K implies P_c C_K=P_c A_K. Thus the
+projected bound K^-1 in d4 is valid, while it does not assert
+that bound for the full ordinary C_K.
+
+The cumulative scalar gauge sum and nested restrictions also
+give the independent full O(1) bound. Each scalar restriction
+is a contraction; the straight-angle segment norm is ell^-j.
+The stated row/incidence proof is valid too, with conservative
+finite overlap. These conclusions agree with the separately
+audited vector_short_time_research.txt flat computation.
+
+2. Uniform physical gap
+
+Although the finite gauge generator is globally based, at the
+flat background its range equals the range of the ordinary
+periodic gradient: subtracting the scalar's value at the base
+does not change its gradient. Its orthogonal bond complement
+is therefore the standard Bloch transverse space, including
+the harmonic bond modes at zero momentum.
+
+The physical rescaling v=Kx, eta=1/K is correct:
+||v||_(2,eta)^2=K^-2||x||_count^2 in d4, and the Maxwell
+energy is unchanged. The actual curvature contraction supplies
+E_M(v)>=||d_eta v||^2. The coarse Hessian bound is uniform in MK.
+
+In each fiber the high aliases have P_r>=4. The row Parseval
+identity bounds their total averaged contribution by ||v_high||.
+For the central mode, Omega_0 u_0=a_0 d_c and
+Omega_0 v_0=y_0+d_c theta imply exactly
+v_0=P_(u_0)^perp Omega_0^-1 y_0.
+The diagonal lower bound c_omega therefore gives
+||v_0||<=c_omega^-1||y_0||. The zero mode has
+Omega_0=I and is included without a division by its momentum.
+
+Adding the high part gives precisely
+ A_0=2 c_omega^-2,
+ B_0=(1+2 c_omega^-2)/4
+in the displayed norm inequality. Substituting
+E_M=E_res+<y,q_(MK)y> and ||q_(MK)||<=R_q gives
+||v||^2<=B_0 E_res+(A_0+B_0R_q)||y||^2.
+Consequently Q_perp>=c_a K^-2 in counting coordinates,
+with exactly the stated c_a. No uniform estimate on the
+globally based scalar inverse or varying projections is used.
+
+3. Actual contour-gauge counterexample
+
+For the actual coordinate-permutation root contours, a path
+to (1,x_2,...,x_d), all other coordinates positive, uses the
+internal bond [0,e_1] exactly when direction 1 is first.
+The probability is 1/d. At (0,x_2,...,x_d) the bond is never
+used. Thus the displayed phi values are exact.
+
+With x=e+D_b phi, the convention T D_b=-I gives Tx=0.
+Flat gauge invariance gives L_flat D_b=0, while C_K D_b=0.
+The h^(d-1) indicated bonds are distinct from e and carry
+absolute value 1/d (the sign depends on the generator
+convention and is irrelevant to the norm).
+
+The numerator is bounded by R_q+a c_C^2, while the denominator
+is at least h^(d-1)/d^2. Thus the actual contour ambient
+operator has an O(K^-3) upper Rayleigh bound in d4. This
+rigorously excludes the proposed uniform c K^-2 ambient
+gap for that gauge; it does not contradict the physical
+quotient estimate and makes no matching asymptotic claim.
+
+No correction was requested. The physical determinant bridge
+still needs a joint infrared/local-limit justification before
+its separate massless factors can be used as infinite affine
+heat traces.

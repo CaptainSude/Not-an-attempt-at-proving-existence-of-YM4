@@ -1,0 +1,96 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 37: the actual logarithm and finite local ultraviolet tuning}
+\author{Research proof draft}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We complete the leading-determinant comparison left open in Notebook 36,
+under the explicitly stated classical structural and local quantum
+inputs of this working series. The actual coefficient satisfies
+\(\beta(\mathcal D_{M,K})=22\alpha_g\log K+O(1)\), uniformly in
+preceding depth and in all applicable joint infinite structural systems.
+Here \(\alpha_g=C_H/(48\pi^2)\) uses the original color normalization.
+
+The proof has three new steps. First, source-localized sectorial
+resolvents remove the soft infrared penalties through physical time
+one with an integrable \(O(u)\) error. Second, nonlinear Ward identities
+through field degree four compare the actual effective-action heat
+coefficient with the Wilson coefficient with error \(O(s^{-1})\).
+The left-relative chart-current terms are retained. Third, a direct
+Wilson-to-continuum comparison gives an integrable \(O(s^{-1/2})\)
+error and fixes the coefficient without importing a universality
+assertion for an unmatched regulator.
+
+The positive margin now supplies the previously missing hypothesis
+of the finite local shooting theorem. It yields arbitrarily long
+finite weak local histories with a fixed weak endpoint and bare
+coupling of order the inverse square root of their length.
+This is a theorem about the homogeneous local recursion.
+Full Wilson measure matching across all field regions, sourced
+continuum limits, and a nontrivial reconstructed Yang--Mills theory
+remain unproved.
+\end{abstract}
+
+\section*{Scope and the proof dependency}
+
+This is a research proof draft for mathematical review. Its new
+arguments are given below; the previously constructed classical actions,
+exact determinant identities, localized vertices and finite local
+recursion are inputs from the earlier notebooks. Internal mathematical
+audits and successful typesetting do not certify those upstream proofs.
+The main result is not a completed four-dimensional existence theorem.
+The deposited construction principally concerns \(SU(2)\).
+General color-factor formulas below do not by themselves establish
+all upstream construction inputs for every compact simple group.
+
+Current coordinates use counting pairings. The primitive ratio
+\(\ell>1\) is fixed, \(K=\ell^k\), and final physical spacing is
+\(K^{-1}\). The preceding classical depth is \(M\).
+The notation \([t^2]\) is a Taylor coefficient, whereas the Maxwell
+functional is \(\beta=2[t^2]\) on the normalized affine probe.
+For a Cartan element with \(\tau(H^2)=1\), put
+\[
+ C_H=\sum_{q\in\operatorname{spec}(\operatorname{ad}_H)}q^2,
+ \qquad \alpha_g=C_H/(48\pi^2).
+\]
+Both signs of a charge are included in this adjoint trace; its
+complexification introduces no extra multiplicity.
+
+The infinite spatial estimates refer to joint structural systems
+containing all required old-depth shifts and endpoint ratios. Their
+constants are independent of the chosen system. Exact finite-period
+determinant algebra and finite flat spectral bounds are distinguished
+from continuous-momentum identities of these infinite kernels.
+The finite local conclusion is recovered by the separate compactness
+and moment-transfer theorem; no finite winding identity is inferred
+from an infinite Fourier expansion.
+
+The proof chain is
+\[
+ \begin{gathered}
+ \text{Notebook 36: exact soft reduction and bounded heat ends}\\
+ \Downarrow\\
+ \text{soft penalty removal}
+ \ \longrightarrow\ \text{actual base versus Wilson}\\
+ \longrightarrow\ \text{Wilson versus continuum}
+ \ \longrightarrow\ \text{positive actual logarithm}\\
+ \longrightarrow\ \text{finite local transfer and shooting}.
+ \end{gathered}
+\]
+The final section records the interfaces from this local theorem
+to the original existence objective.
+

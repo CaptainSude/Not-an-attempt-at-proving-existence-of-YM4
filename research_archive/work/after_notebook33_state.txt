@@ -1,0 +1,148 @@
+17 October 2026. Authoritative checkpoint after Notebook 33.
+
+GOAL AND TURN STATUS
+Goal tool was read this turn: ACTIVE, unbudgeted, full 4D nontrivial
+Yang--Mills existence objective unchanged. No status mutation made.
+Existence is unfinished. Mass gap remains subsequent.
+The preceding research interval made progress (initial33 written).
+The intervening acknowledgement of the user's pause/resume preference
+was conversational and made no research progress. This continuation
+resumed from actual files, made new progress, and is not blocked.
+Do not invoke the no-progress blocker rule on unresolved difficult math.
+No subagents used. Latest developer disables proactive delegation.
+
+OUTPUTS
+outputs/ym4-cartan-trace-notebook.tex
+Notebook 33: gauge-invariant determinant densities and Cartan probes.
+48895 bytes, 59 unique labels, 30 references, no missing/duplicate
+labels or control/bare-spacing issues. Desktop compile SUCCESS.
+Build: work/build_cartan_trace.ps1
+Assembly:
+ cartan_trace_notebook_head.tex
+ gauge_invariant_determinant_density_fragment.tex (gdd-)
+ cartan_determinant_moment_fragment.tex (cdmom-)
+ massive_cartan_reference_fragment.tex (mcr-)
+ actual_heat_comparison_fragment.tex (ahc-)
+ cartan_trace_notebook_tail.tex
+Master outputs/ym4-construction-notebook.tex updated through33,
+89492 bytes, desktop compile SUCCESS. It uses no label/ref macros.
+Opening33 returned QUEUED, not confirmed visible.
+Root self-audit: work/cartan_trace_root_audit.txt.
+No independent agent or external review of33 has occurred.
+Compiler success is document validation, not proof certification.
+
+NEW33 RESULTS AND REQUIRED SCOPE
+1. GDD: actual fixed-a matrices G_b,Q_b,P_c transform by blockwise
+background-gauge conjugation. Relative coordinates and multiplier
+curvature retained. Diagonal color log traces grouped by output block
+give individually gauge-invariant densities rho_x summing to actualD.
+Fixed-K gaps and weighted matrix-log series imply exponential
+source-rooted quadratic kernels uniform in volume (and old M as inputs
+allow), NOT uniform as K grows.
+Each rho_x linear jet vanishes, and its Hessian kills gradients.
+Polynomial extension gives zero rows/columns for fixed component.
+For A_mu(z)=t z_nu H, mu!=nu, normalized one color,
+[t²]rho_0=-1/4 sum_r r_nu² totalK_mumu(0,r).
+Thus beta(D)=2[t²]rho_0, matching Notebook32 -1/2 total moment.
+Individual gauge invariance is essential: arbitrary density modulo a
+divergence need not have the right affine coefficient.
+
+2. CDMOM: commuting affine links are exactly Wilson stationary and
+preserved by actual centered ordinary average F_K, coarse flux=K² fine.
+No log-arithmetic assumption on selected mean. Explicit rooted affine
+candidate matches actual minimum jets via polynomial extension of
+exponentially localized stationary equation and inverse.
+For effective S_M use one-shot bare-depth M and actual envelope:
+whole target multiplier vanishes, hence D_left S_M(affine)=0 through
+order2 in every current component. Repeat at next K and pass varying-M
+structural limits using uniform current mixed kernel bounds.
+Actual lambda_(M,K)=O(t³); removes lambda.f'' through order2.
+This does NOT replace S_M Hessian by bare Wilson for M>1.
+Outputprobe w_mu(n)=t n_nu H; currentprobe U_mu(x)=exp(i t x_nu H/K²).
+Actual beta equals [t²] of 2 block logG - block logV + output logP,
+where V=s_M''+D_bD_b^T+aC_K^TC_K, P=q_eff+aI.
+This is formal polynomial jet evaluation in infinite structural
+systems, not bounded map evaluation on an unbounded nonzero field
+or a continuously varying periodic magnetic flux.
+
+3. MCR: fully specified CONTINUUM massive proper-time reference.
+Final units, F12=fH, tau(H²)=1, charge q eigenvalues ad_H on complexified
+adjoint counted once. Scalar L_q=-D². Vector V_q=L_q I-2iq F^(1).
+Add m² to both, lower proper-time cutoff epsilon².
+Scalar heat=(4pi s)^-2 (qfs/sinh(qfs)); vector spintrace2+2cosh(2qfs).
+Correction density:
+R_(eps,m)(f)=1/(16pi²) int_eps²^infty e^-m²s s^-3
+   sum_q{(qfs/sinh(qfs))cosh(2qfs)-1} ds.
+Real derivatives at0 justified for |qf|<m², no complex analytic
+nonzero constant-field assertion.
+beta_ref=2[f²]R=11 C_H/(48pi²) E1(m²eps²).
+eps=1/K,m=1 gives 11 C_H/(24pi²) logK with error <=
+11 C_H/(48pi²)(1+e^-1).
+Normalized fundamental trace SU(N): C_H=2N² by direct charge sum.
+SU2 logK coefficient=11/(3pi²).
+Exact continuum rescaling fine mass1/K, cutoff1, curvature f/K²,
+blockvolumeK4 gives final-unit expression; not lattice identification.
+Fixed-ratio positive continuum regulator changes bounded by
+11 C_H/(24pi²)|log(cm)|.
+Primary source checked: Vassilevich hep-th/0306138 Sections3.4,4.2.1,8.3,
+operators(3.45)-(3.49), determinant(3.51), heatcoefficient(4.34),
+scalar magnetic kernel(8.18). https://arxiv.org/pdf/hep-th/0306138
+None of this paper proves our constrained lattice comparison.
+
+4. AHC: exact actual fixed-K heat representation.
+h_(M,K)(s)=[t²]{Tr_block,E exp(-sV(t))-2Tr_block,S exp(-sG(t))}.
+beta(D)=b_c+int_0^infty h(s) ds/s, b_c=[t²]block logP uniformly bounded.
+P(t)=P0+tP1+t²P2: heat coefficient = negative one P2 insertion +
+positive ordered double P1 insertion, no extra factor2.
+Flat weighted semigroups and polynomial vertex bounds give
+C_K(s+s²)exp(-c_K s) after block anchoring. Justifies actual log/heat
+identity and local limits. These constants may depend on K.
+J_(M,K)(u)=h(K²u); alpha=11 C_H/(48pi²).
+Exact actual-reference difference=b_c+
+int_0^infty {J(u)-alpha exp(-u)1_(u>=K^-2)} du/u.
+
+5. NEW ACTUAL UNIFORM ESTIMATE (not just a conditional reduction):
+ghost h_g(s)=-2[t²]Tr_block,S exp(-sG).
+Charge-sector actual G=8I-adjacency on noncenter sites, with diagonal8
+even next to pinned centers. Closed walk gamma has phase
+exp(iqt area_mu,nu(gamma)/K²).
+Therefore h_g=(C_H/K4)e^-8s sum_starts sum_n s^n/n!
+                    sum_closedwalks_avoiding_centers area² >=0.
+Numberstarts<=K4, walkcount<=8^n, |area|<=n².
+So h_g(s)<=C_H[(8s)^4+6(8s)^3+7(8s)^2+8s].
+Integrating ds/s from0to1 gives <=2280 C_H, UNIFORM M,K.
+Equivalent ghost part of physical interval0<u<K^-2.
+This uses actual stationary ghost jets for every old M.
+It does NOT bound the vector UV part or large-time ghost tail.
+
+6. Conditional quantitative comparison target:
+Uniform C,delta>0 across all required M,K,structural systems:
+ integral0toK^-2 |J| du/u <=C;
+ |J(u)-alpha|<=C[(K²u)^-delta+u^delta], K^-2<=u<=1;
+ integral1toinfty |J| du/u <=C.
+Then |beta(D)-2alpha logK|<=C_c+2C+2C/delta.
+Only ghost part of first estimate proved above; rest open.
+Actual ghost may have gap orderK^-4 in fine units, so K² time
+rescaling alone cannot give uniform long-time damping.
+
+NEXT SUBSTANTIVE WORK
+Attack the actual vector short-time bound and the combined intermediate/
+long-time heat comparison. Preserve scalar domain, actual C_K, effective
+S_M vertices, and varying-M structural uniformity.
+The based ghost inverse<=C K² is false (Notebook32 trial function).
+Do not assume C_K has an averaging row norm O(K^-1): ordinary blocking
+retains sampled center gauge transformations, so near-center gauge
+directions can have order-one coarse response. Any such norm claim
+must be derived in the correct quotient/physical coordinates.
+An alternative exact gauge choice may help cancellations: Notebook32
+already proves contour/divergence Gaussian equivalence. If used,
+derive its ambient completion and source-density matching rather
+than silently discarding the pinning orbit determinant.
+
+If uniform composite log comparison is proved, leading cocycle makes
+the fixed-R q-step leading sum equal beta(D_(M,R^q)); choose q large
+enough for a positive uniform margin, then finite drift transfer and
+conditional finite shooting apply. This has not yet been established.
+Full existence still requires mixed and large-field histories, global
+measure matching, sourced continuum limits and nontriviality, Euclidean
+symmetry, positivity and reconstruction. Keep full goal active.

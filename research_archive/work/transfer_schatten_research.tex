@@ -1,0 +1,255 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,hyperref}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newcommand{\tr}{\operatorname{Tr}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\begin{document}
+\title{Coordinate Wilson slabs with both types of reflection boundary}
+\date{16 October 2026}\maketitle
+\noindent Research derivation for independent audit. This note proves a
+finite-volume transfer estimate. It does not prove the two-frame fold
+identities, their placement, or same-limit diagonal reflection positivity.
+All constants and limits in this note are at fixed positive lattice
+coupling $\beta$; no uniform continuum estimate is claimed.
+
+\section{Normalization and the physical Hilbert space}
+
+Let $\Gamma$ be a finite three-dimensional periodic spatial lattice, with
+positive links $E$ and sites $V_\Gamma$. Let $G=SU(2)$ with normalized
+Haar measure. On $\mathcal H=L^2(G^E)$, the spatial gauge group
+$G^{V_\Gamma}$ acts by
+$(g\cdot U)_e=g_{x(e)}U_eg_{y(e)}^{-1}$.
+Let $P$ be its Haar-averaged orthogonal projection, and put
+$\mathcal H_{\rm phys}=P\mathcal H$.
+
+Write
+\[
+ k_\beta(g)=e^{(\beta/2)\tr g},\qquad
+ C=\bigotimes_{e\in E}C_\beta,
+ \quad(C_\beta f)(v)=\int k_\beta(vu^{-1})f(u)\,du,
+\]
+and let $V$ denote multiplication by the product of $k_\beta(U_p)$ over
+all spatial plaquettes. Both $C$ and $V$ commute with $P$. This follows
+for $C$ from
+\[
+ k_\beta((g_xvg_y^{-1})(g_xug_y^{-1})^{-1})
+ =k_\beta(g_xvu^{-1}g_x^{-1})=k_\beta(vu^{-1});
+\]
+for $V$ it is ordinary gauge invariance.
+The convolution eigenvalues are positive and decrease faster than any
+power of representation degree. Hence $C$ is positive, injective and
+trace class, and $C^{1/2}$ is Hilbert--Schmidt. The positive function
+$V$ and its square root are bounded on this finite compact space.
+
+All following operators are restricted to $\mathcal H_{\rm phys}$.
+Define
+\[
+ B=V^{1/2}C^{1/2},\qquad
+ A_l=B^*B=C^{1/2}VC^{1/2},\qquad
+ A_s=BB^*=V^{1/2}CV^{1/2}.
+\]
+Both $A_l,A_s$ are positive trace-class operators and have the same
+nonzero eigenvalues with multiplicity. Therefore
+\[
+ Z_\Gamma(N)=\tr A_l^N=\tr A_s^N,\qquad N\in\mathbb N,
+ \tag{1}
+\]
+is the ordinary periodic Wilson partition function of temporal length
+$N$, for lengths avoiding degenerate one-cell plaquette identifications.
+In the applications all lengths tend to infinity.
+
+To check the normalization in (1), integrate each slice of temporal
+links with normalized Haar measure. If $a_x$ is such a temporal link,
+the electric plaquette trace is
+$\tr(U_e a_{y(e)}U_e'{}^{-1}a_{x(e)}^{-1})$.
+Thus the electric kernel, after the temporal integration, is the
+kernel of $CP$. Spatial weights give $V$ once per slice. The torus
+integral is consequently $\tr_{\mathcal H}(CPV)^N$, which equals
+the trace on $\mathcal H_{\rm phys}$. Cycling the square roots yields
+(1). There are no gauge-volume factors because all Haar measures have
+mass one.
+
+\section{Slabs and alternating boundary types}
+
+A link-plane cut is halfway between adjacent integer time slices.
+Its two boundary pieces carry $C^{1/2}$. A site-plane cut is at an
+integer slice and divides that slice's spatial weight into $V^{1/2}$
+on each side. The two boundary spaces can both be represented by
+$\mathcal H_{\rm phys}$, with the displayed factors keeping track of
+the boundary type.
+From a link boundary to the next site boundary the half-step is $B$;
+the reverse type of half-step is $B^*$. Consequently a slab of length
+$\ell\in\tfrac12\mathbb N$ is a word of $2\ell$ alternating half-steps.
+For like boundary types this gives $A_l^\ell$ or $A_s^\ell$, with
+$\ell$ integral. For different types it gives a word with odd length.
+The gauge projectors at temporal transitions may be retained explicitly;
+on the physical space they are identities.
+
+Let $R$ be a real bounded gauge-invariant function of links wholly
+inside the slab, including the appropriate boundary-side data, but not
+an interaction crossing either cut. Insert $e^{tR}$ in its Wilson path
+integral and denote the resulting boundary operator by $S_{R,t}$.
+If a site boundary is used, any source term reading boundary variables
+is assigned to one side before the cut; terms requiring both sides
+are excluded by the no-crossing assumption. In the intended application
+the source boxes avoid the cut, so this assignment issue does not arise.
+Assume $\norm R_\infty\leq M$.
+
+\begin{lemma}[Even Schatten bound for a bounded slab source]
+For every even integer $p\geq2$,
+\[
+ \norm{S_{R,t}}_p
+ \leq e^{|t|M} Z_\Gamma(p\ell)^{1/p}.
+ \tag{2}
+\]
+The integer $p\ell$ is the temporal length of the reflected closed slab
+array. The two possible boundary types obey the same formula.
+\end{lemma}
+\begin{proof}
+Reflection of the slab reverses its time ordering and takes the
+operator adjoint, because all Wilson and source weights are real.
+Glue $p$ alternating copies of the slab and its reflection. Adjacent
+link-boundary factors multiply to $C^{1/2}C^{1/2}=C$; adjacent
+site-boundary factors multiply to $V^{1/2}V^{1/2}=V$.
+Temporal Haar integration implements the intervening gauge projectors.
+Thus
+\[
+ \tr[(S_{R,t}^*S_{R,t})^{p/2}]
+\]
+is the ordinary positive Wilson integral on temporal length $p\ell$
+with $p$ reflected source copies, each of supremum norm at most $M$.
+Its value is at most $e^{p|t|M}Z_\Gamma(p\ell)$.
+This proves (2), including Hilbert--Schmidt membership by taking $p=2$.
+For full operator rigor one may first expand smooth boundary kernels
+in finite representation sums and pass to the Hilbert--Schmidt limit;
+the glued expression has the stated bounded positive integral.
+No pointwise positivity of the kernel of $C^{1/2}$ is used or needed.
+\end{proof}
+
+\section{Bounded insertions between clean slabs}
+
+Take an even number $J$ of cuts on a coordinate torus, with successive
+positive slab lengths $\ell_1,\ldots,\ell_J$ and total integer length
+$N=\sum_j\ell_j$. Allow either boundary type. Suppose no source term
+crosses any cut, and let $R_j$ be the sum assigned to slab $j$,
+$\norm{R_j}_\infty\leq M_j$.
+Let $X_j$ be bounded operators on the respective physical boundary
+spaces. Their supports and gauge-covariance requirements matter for
+the observable interpretation, but not for the following trace bound.
+
+\begin{proposition}[Coordinate insertion bound]
+The normalized cyclic insertion trace obeys
+\[
+ \frac{\left|\tr(X_J S_{R_J,t}\cdots X_1S_{R_1,t})\right|}
+ {Z_{\Gamma,t}(N)}
+ \leq e^{2|t|\sum_jM_j}\prod_j\norm{X_j}
+ \frac{\prod_j Z_\Gamma(J\ell_j)^{1/J}}{Z_\Gamma(N)}.
+ \tag{3}
+\]
+Here the denominator is the same Wilson torus with all source terms
+and no operator insertions.
+\end{proposition}
+\begin{proof}
+Schatten H\"older with all exponents equal to $J$ bounds the numerator
+by $\prod_j\norm{X_j}\norm{S_{R_j,t}}_J$.
+Apply (2). Pointwise positivity of the original Wilson integral gives
+$Z_{\Gamma,t}(N)\geq e^{-|t|\sum_jM_j}Z_\Gamma(N)$.
+Combining the two inequalities proves (3).
+\end{proof}
+
+For a local operator $X$ on selected spatial links $S$ at a link cut,
+the physical insertion used here has kernel
+$C_S^{1/2}XC_S^{1/2}$ in place of $C_S$. Dividing by the strictly
+positive product electric kernel gives the bounded local observable
+when this numerator kernel is continuous. Finite representation
+operators and the identity have this property.
+If $X$ commutes with endpoint gauge actions on $S$, then $X\otimes I$
+commutes with the full gauge projection. Disjoint insertions at the
+same cut can be combined with norm at most the product of their norms.
+
+\section{What the pressure limit does and does not supply}
+
+Suppose the spatial sides, $N$ and every $J\ell_j$ tend to infinity
+with bounded aspect ratios. If all these rectangular Wilson tori have
+the common thermodynamic pressure $p_\beta$, then
+\[
+ \frac1J\sum_j\log Z_\Gamma(J\ell_j)-\log Z_\Gamma(N)
+ =o(|\Gamma|N),
+ \tag{4}
+\]
+provided the pressure errors are uniform for this family. A finite set
+of fixed slab lengths, with $J$ proportional to $N$, gives precisely
+such a bounded-aspect family; uniform pressure convergence follows
+from the usual bounded-interaction boundary estimate.
+The leading terms cancel because
+$J^{-1}\sum_j p_\beta|\Gamma|J\ell_j=p_\beta|\Gamma|N$.
+
+If a separately proved chessboard amplification creates $c|\Gamma|N$
+copies of one local operator, its root converts the exponential of
+(4) to $e^{o(1)}$ and the bounded-source term in (3) to $e^{O(t)}$.
+This is the desired analytic end of the amplification calculation.
+The required two-frame fold identity, number of copies, no-crossing
+placement and transport of local insertions must still be established
+for the actual adapted-torus geometry. Formula (3) by itself does not
+transfer reflection positivity between two limiting laws.
+
+\section{The exact consequence of a completed amplification estimate}
+
+Suppose for one coordinate link plane and every local finite
+representation-kernel operator $X$, together with the identity, a
+comparison limit $\lambda$ obeys
+\[
+ |\lambda(G_X)|\leq\norm X,\qquad G_I=1.
+ \tag{5}
+\]
+Here $G_X$ is the gauge-invariant crossing insertion defined above,
+and the inequality is also valid for $I+itA$ with self-adjoint $A$.
+Set $L(X)=\lambda(G_X)$. For self-adjoint $A$, (5) gives
+\[
+ |1+itL(A)|^2\leq\norm{I+itA}^2
+                  \leq1+t^2\norm A^2.
+\]
+Divide the resulting inequality by $t$ and let $t\to0$ through both
+signs. It follows that $\operatorname{Im}L(A)=0$, and hence
+$L(X^*)=\overline{L(X)}$ for all such $X$.
+Reflection swaps the crossing kernel arguments, so
+$G_X\circ\theta=\overline{G_{X^*}}$ after the temporal parallel
+transports are included. Therefore
+\[
+ \lambda(G_X\circ\theta)=\lambda(G_X).
+ \tag{6}
+\]
+
+Every smooth gauge-invariant two-layer observable $Y$ is uniformly
+approximated by these insertions. In transported temporal coordinates,
+let $K_Y(v,u)=K_S(v,u)Y(u,v)$, and let $P_m$ be the product
+Peter--Weyl cutoff on the selected finite edge set. The smooth kernels
+$P_mK_YP_m$ converge uniformly to $K_Y$. Define
+\[
+ X_m=C_S^{-1/2}P_mK_YP_mC_S^{-1/2}.
+\]
+This is a bounded finite-rank operator, since every retained
+convolution eigenvalue is strictly positive. It commutes with the
+endpoint gauge action, since all the factors do. Its insertion is
+$G_{X_m}=P_mK_YP_m/K_S$, so it converges uniformly to $Y$ because
+$K_S$ has a positive lower bound on the finite compact link space.
+Consequently (6) holds for all continuous gauge-invariant two-layer
+observables by a further uniform approximation.
+No bound uniform in $m$ on $\norm{X_m}$ is required: first remove
+the tilt and obtain (5) for each fixed operator, then approximate $Y$.
+
+Finally, suppose the paired two-layer reduction has been proved for
+each local $P$ and its reflection:
+\[
+ |\lambda(P)-\lambda(Y_\epsilon)|\leq\epsilon,\qquad
+ |\lambda(P\circ\theta)-\lambda(Y_\epsilon\circ\theta)|\leq\epsilon.
+\]
+Equation (6) and $\epsilon\downarrow0$ give reflection invariance for
+all local observables. This proves invariance, not reflection
+positivity at that new coordinate plane. In the intended convex
+separation argument it is used to obtain even translations by composing
+two such invariances; diagonal positivity comes from the original
+adapted-torus construction.
+\end{document}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-17",
+  "baseline_manifest_sha256": "81003412aee30f5c3d0bc4a9717f504669b1b1b83d13d4498a9e7bba75cd2aaf",
+  "policy": "All mathematical PDFs and notebook sources are byte-identical to the handed-over snapshot.",
+  "changes_to_original_files": [
+    {
+      "path": "research_archive/work/after_notebook32_state.txt",
+      "reason": "Replace the local user-specific workspace path with a neutral placeholder.",
+      "original_sha256": "2bf4bd3d66415878724aba22b783c537d4ab5da86c4723a6bb1442ef4a80d304",
+      "public_sha256": "d2431c358c13c9b3af12434832727701d2455841fbacdb90bdd39a7f1deeb9f7"
+    },
+    {
+      "path": "research_archive/work/build_handoff_documents.py",
+      "reason": "Resolve pdflatex from PATH instead of a personal machine-specific installation path.",
+      "original_sha256": "9e50f204b3edcdc67a23a8da35cdc1f08fa29b50016b3837f3eb0e933b15814a",
+      "public_sha256": "c3bb5ba94af5742edf67b4fda96ec271a917a90c6928e07d051583781dafc8a1"
+    },
+    {
+      "path": "research_archive/work/prepare_handoff_bundle.py",
+      "reason": "Resolve pdflatex from PATH instead of a personal machine-specific installation path.",
+      "original_sha256": "5f81b9bc87a0bdb56df63f6550bfd2495e5e96f3154c218019d9b7a486856bc6",
+      "public_sha256": "edac85b52772fe21b42d83d8c28e700baf3b833cb3dcaf14eff7403fa9a9a1d6"
+    },
+    {
+      "path": "README.txt",
+      "reason": "Date-qualify the original pre-publication statement and identify the public edition.",
+      "original_sha256": "299e72c0eb1c3329fee3f94852b3d0539fa0494f29134e5e2d7f2b83324b3fcc",
+      "public_sha256": "aa1d36969d8c11687473dfc7f7efe724a63871e40cecb5a650624ecfced95a7e"
+    }
+  ]
+}

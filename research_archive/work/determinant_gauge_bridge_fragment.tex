@@ -1,0 +1,619 @@
+% No preamble. Prefix dgb-. Exact finite identities, not a uniform comparison.
+\section{An exact gauge and coarea bridge for the actual determinant}
+\label{dgb-section}
+
+This section rewrites the actual leading correction as coupled
+vector, ghost and coarse-constraint determinants. It keeps the
+constraint-current curvature and every finite orbit-density factor.
+It also exhibits a soft mode that prevents a separate uniformly
+massive estimate for the based ghost. The bounded finite-part
+comparison with a standard background-Feynman determinant remains
+a separate estimate.
+
+\subsection{The actual multiplier Hessian}
+\label{dgb-setup-section}
+
+Fix a finite compatible regulator and endpoint $K=\ell^k$.
+Let $U=V_*^{M,K}(W)$ be the physical stationary representative,
+so $F_K(U)=W$ and $P_K(U)=I$. All matrices use the actual
+current-link angle and scalar-site counting coordinates in a real
+trace-orthonormal color basis.
+
+In left-relative coordinates define
+\begin{equation}
+ s(x)=S_M(e^{ix}U),\qquad
+ f(x)=\frac1i\log\!\left[F_K(e^{ix}U)W^{-1}\right],
+ \qquad C=f'(0).
+ \label{dgb-relative-coordinates}
+\end{equation}
+The target coordinate is a relative increment at $W$, not its
+ordinary logarithm. Constrained stationarity gives a unique
+multiplier $\lambda$ with $s'(0)=C^T\lambda$. Put
+\begin{equation}
+ \mathcal L=s''(0)-\sum_c\lambda_c f_c''(0).
+ \label{dgb-Lagrangian}
+\end{equation}
+This is the Hessian of the critical Lagrangian
+$s-\lambda\cdot f$. Its second term is the full
+constraint-current curvature.
+
+Let $C_p$ be the invertible actual pivot block, $I_p$ the pivot
+insertion, and $E$ the retained insertion. Write
+\begin{equation}
+ h=I_pC_p^{-1},\qquad K_0=E-hCE,\qquad
+ Ch=I,\qquad CK_0=0.
+ \label{dgb-chart-linear}
+\end{equation}
+The subscript distinguishes $K_0$ from the endpoint ratio $K$.
+The nonlinear source chart satisfies
+\begin{equation}
+ \Phi'(0)=K_0,\qquad
+ \Phi''(0)[u,v]=-h f''(0)[K_0u,K_0v].
+ \label{dgb-chart-curvature}
+\end{equation}
+Consequently
+\[
+ D_z^2s(\Phi(z))\big|_{z=0}=K_0^T\mathcal L K_0 .
+\]
+The actual absolute contour penalty vanishes at the saddle;
+its Hessian is $T^TT$, where $T$ differentiates the contour
+logarithms in the established normalization. Thus
+\begin{equation}
+ A_T=K_0^T(\mathcal L+T^TT)K_0>0.
+ \label{dgb-actual-precision}
+\end{equation}
+Apart from field-independent constants, the actual leading
+amplitude is
+\begin{equation}
+                  |\det C_p|^{-1}\det(A_T)^{-1/2}.
+ \label{dgb-actual-amplitude}
+\end{equation}
+The real determinant signs are fixed from the flat convention.
+All logarithms below are normalized at $W=1$ and then continued
+on their chosen holomorphic branches.
+
+\subsection{The based gauge nullspace}
+\label{dgb-nullspace-section}
+
+Let $D_b$ send scalar site parameters vanishing at every
+$K$-center to their left-relative infinitesimal gauge variations
+at $U$. Exact based invariance of the ordinary constraint gives
+\begin{equation}
+                              CD_b=0.
+ \label{dgb-based-constraint}
+\end{equation}
+The scalar $s-\lambda\cdot f$ is based-gauge invariant and is
+critical at zero. Differentiating its gauge identity there gives
+\begin{equation}
+                              \mathcal L D_b=0.
+ \label{dgb-based-null}
+\end{equation}
+This need not hold for $s''$ without its multiplier-curvature
+term. The actual contour endpoint covariance gives
+\begin{equation}
+                              TD_b=-I
+ \label{dgb-contour-gauge}
+\end{equation}
+with the standard orientation. Changing the generator sign
+changes only this sign. A fixed color normalization in the
+gauge penalty contributes only a background-independent
+factor, canceled by normalization.
+
+The based action is free, hence $D_b$ is injective and
+\begin{equation}
+                              G_b=D_b^TD_b>0.
+ \label{dgb-based-ghost}
+\end{equation}
+On $\ker C$, the form $\mathcal L$ is nonnegative, has
+nullspace precisely $\operatorname{ran}D_b$, and is positive
+on its quotient. Indeed, for any $x\in\ker C$, use
+\eqref{dgb-contour-gauge} to add a unique based gauge vector
+making $Tx=0$. Equation \eqref{dgb-based-null} leaves its
+$\mathcal L$ value unchanged. On this contour-zero complement,
+the positive form \eqref{dgb-actual-precision} equals
+$\mathcal L$. Equality occurs only for a vertical vector.
+
+\subsection{A finite Gaussian gauge-change identity}
+\label{dgb-gauge-change-section}
+
+\begin{lemma}[Gauge replacement with its orbit density]
+\label{dgb-gauge-lemma}
+Let $B_0$ be a symmetric nonnegative form on a finite space
+$Z$, with nullspace $\operatorname{ran}V$, positive on the
+quotient. Suppose $F_1,F_2:Z\to\mathbb R^s$ have invertible
+$F_jV$. Then
+\begin{equation}
+ |\det(F_1V)|\det(B_0+F_1^TF_1)^{-1/2}
+   =|\det(F_2V)|\det(B_0+F_2^TF_2)^{-1/2}.
+ \label{dgb-gauge-identity}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Choose one complement $E_0$ to $\operatorname{ran}V$ and set
+$z=E_0u+V\alpha$. The change-of-variable Jacobian is the same
+in the two integrals. The $B_0$ term depends only on $u$.
+Integration over $\alpha$ yields
+$(2\pi)^{s/2}/|\det(F_jV)|$, independently of $u$, by
+translation and an invertible linear change of variables.
+The remaining integral in $u$ is common. This proves
+\eqref{dgb-gauge-identity}; no orbit-coordinate density
+has been discarded.
+\end{proof}
+
+Apply the lemma on retained coordinates, with vertical insertion
+$V$ characterized by $K_0V=D_b$. Take
+$F_1=TK_0$ and $F_2=D_b^TK_0$. Equations
+\eqref{dgb-contour-gauge} and \eqref{dgb-based-ghost} give
+$F_1V=-I$ and $F_2V=G_b$. Therefore
+\begin{equation}
+ \det(A_T)^{-1/2}
+     =\det(G_b)\det(A_b)^{-1/2},\qquad
+ A_b=K_0^T(\mathcal L+D_bD_b^T)K_0.
+ \label{dgb-divergence-replacement}
+\end{equation}
+This replaces the actual contour gauge by based covariant
+divergence. It does not yet replace it by a full-site massive
+background-Feynman gauge.
+
+\subsection{Coarea removes the pivot}
+\label{dgb-coarea-section}
+
+Choose any symmetric coarse matrix $B$ such that
+\begin{equation}
+ Q_b=\mathcal L+D_bD_b^T+C^TBC>0,\qquad
+ M_b=CQ_b^{-1}C^T>0.
+ \label{dgb-completion}
+\end{equation}
+A completion exists at each fixed finite saddle: the first
+two terms are positive on $\ker C$, so a sufficiently large
+scalar $B$ makes the complementary Schur block positive.
+The condition is positivity of $Q_b$. Merely requiring
+$B>0$ need not suffice; conversely $B$ itself may be indefinite.
+
+Let $n$ and $m$ be the ambient and constraint dimensions.
+The same constrained Gaussian has the exact evaluations
+\begin{align}
+ \int_{\mathbb R^n}\delta(Cx)e^{-x^TQ_bx/2}\,dx
+  &=(2\pi)^{(n-m)/2}|\det C_p|^{-1}\det(A_b)^{-1/2}
+       \notag\\
+  &=(2\pi)^{(n-m)/2}
+           [\det Q_b\,\det M_b]^{-1/2}.
+ \label{dgb-coarea-integral}
+\end{align}
+For the first, write $x=K_0z+hy$. In retained/pivot order,
+this transformation has determinant $(\det C_p)^{-1}$,
+and $Cx=y$. For the second, the normalized full Gaussian
+of covariance $Q_b^{-1}$ sends $Cx$ to a Gaussian of covariance
+$M_b$; its density at zero gives the factor.
+Equivalently,
+\begin{equation}
+ \det Q_b\,\det(CQ_b^{-1}C^T)
+                         =(\det C_p)^2\det A_b .
+ \label{dgb-coarea-determinant}
+\end{equation}
+
+The delta in \eqref{dgb-coarea-integral} uses the target's
+relative Lie coordinate. The actual target measure is group
+Haar, whose density at that coordinate origin is the fixed
+$h_0$. It supplies no factor $j(\log W)$.
+If one instead uses induced Euclidean measure on $\ker C$,
+its coarea factor is precisely included in
+\eqref{dgb-coarea-integral}.
+
+For a scalar expression $F$, write
+$\mathcal N_0F=F(W)-F(1)$. Combining
+\eqref{dgb-actual-amplitude},
+\eqref{dgb-divergence-replacement} and
+\eqref{dgb-coarea-integral} proves the exact identity
+\begin{equation}
+ \boxed{\displaystyle
+ D_{M,K}
+   =\mathcal N_0\left[
+       \log\det G_b-\frac12\log\det Q_b
+                    -\frac12\log\det M_b\right].}
+ \label{dgb-main-identity}
+\end{equation}
+The pivot has disappeared, but the coarse-constraint
+determinant remains. Every completion allowed in
+\eqref{dgb-completion} gives the same combined expression.
+The individual terms need not be completion-independent
+or locally gauge invariant.
+
+At fixed regulator these are identities on a positive real
+germ and then on their chosen analytic branches. The algebraic
+identity \eqref{dgb-coarea-determinant} also continues wherever
+its inverses exist. No uniform complex domain for the three
+individual logarithms, as $K$ or volume grows, follows from
+the combined identity.
+
+\subsection{A positive completion from the actual minimum action}
+\label{dgb-residual-section}
+
+In the same relative target coordinate set
+\[
+ s_{\rm eff}(y)=S_{MK}(e^{iy}W),\qquad
+ q_{\rm eff}=s_{\rm eff}''(0).
+\]
+The envelope identity gives $s_{\rm eff}'(0)=\lambda$.
+The residual scalar
+\[
+                 \mathcal R(x)=s(x)-s_{\rm eff}(f(x))
+\]
+is critical and nonnegative near zero by the actual local
+minimum comparison. It is invariant under the full local
+fine gauge group, because both scalar actions are locally
+gauge invariant and the composite map is equivariant.
+Its Hessian is therefore
+\begin{equation}
+ H_{\rm res}=\mathcal L-C^Tq_{\rm eff}C\geq0,\qquad
+ H_{\rm res}D_f=0
+ \label{dgb-residual-Hessian}
+\end{equation}
+for every fine infinitesimal gauge direction, with any
+convenient fixed global base convention.
+The nonnegativity uses the proved minimum comparison,
+not stationarity alone.
+
+Let $H$ be the actual derivative of the minimum section in
+these relative coordinates. Since $CH=I$ and the residual
+vanishes identically along that section, its positive
+semidefinite Hessian obeys
+\begin{equation}
+                     H_{\rm res}H=0,\qquad
+                     \mathcal LH=C^Tq_{\rm eff}.
+ \label{dgb-residual-lift}
+\end{equation}
+No independently chosen flat lift is substituted for $H$.
+
+A canonical completion is
+\begin{equation}
+                Q_b=H_{\rm res}+D_bD_b^T+C^TC>0.
+ \label{dgb-canonical-completion}
+\end{equation}
+Indeed a null vector would satisfy $Cx=0$, $D_b^Tx=0$
+and $x^T\mathcal Lx=0$. The constrained quotient positivity
+then gives $x=D_b\alpha$, and $G_b\alpha=0$ implies $x=0$.
+This is \eqref{dgb-completion} with $B=I-q_{\rm eff}$,
+which need not be positive itself. No uniform lower
+spectral bound for \eqref{dgb-canonical-completion} is
+asserted as $K$ grows.
+
+The general coarse compression can also be identified
+exactly. Set
+\begin{equation}
+                   H_b=H-D_bG_b^{-1}D_b^TH .
+ \label{dgb-adjusted-lift}
+\end{equation}
+Then $CH_b=I$, $D_b^TH_b=0$, $H_{\rm res}H_b=0$, and
+$\mathcal LH_b=C^Tq_{\rm eff}$. For every completion
+\eqref{dgb-completion}, it follows that
+\begin{equation}
+ Q_bH_b=C^T(q_{\rm eff}+B),\qquad
+ q_{\rm eff}+B=H_b^TQ_bH_b>0.
+ \label{dgb-effective-Schur}
+\end{equation}
+Multiplication by the inverses gives
+\begin{equation}
+ Q_b^{-1}C^T=H_b(q_{\rm eff}+B)^{-1},\qquad
+ \boxed{\,M_b=(q_{\rm eff}+B)^{-1}\,}.
+ \label{dgb-coarse-identification}
+\end{equation}
+Thus \eqref{dgb-main-identity} is equivalently
+\begin{equation}
+ D_{M,K}=\mathcal N_0\left[
+      \log\det G_b-\frac12\log\det Q_b
+                   +\frac12\log\det(q_{\rm eff}+B)\right].
+ \label{dgb-effective-determinant}
+\end{equation}
+The coarse covariance is the inverse of the actual
+relative-coordinate effective Hessian with its completion.
+For the canonical choice $B=I-q_{\rm eff}$, it is exactly
+$M_b=I$ and that coarse logarithm vanishes. The coarse
+physics remains inside
+$H_{\rm res}=\mathcal L-C^Tq_{\rm eff}C$ and hence in $Q_b$;
+no uniform reference comparison is thereby obtained.
+
+\subsection{A soft based-ghost mode}
+\label{dgb-soft-ghost-section}
+
+At the flat background $D_b$ is the nearest-neighbor gauge
+gradient on scalar functions vanishing at the $K$-centers.
+Take $K\geq3$ on a compatible unit-current torus and choose
+one real color. Let $\varphi$ be zero at all centers and
+one elsewhere. If there are $n_c$ centers, there are
+$n_f=K^dn_c$ current sites, and exactly $2d$ incident
+unit-difference bonds per center. Hence
+\begin{equation}
+ \|\varphi\|_2^2=(K^d-1)n_c,\qquad
+ \|D_b\varphi\|_2^2=2dn_c,\qquad
+ \lambda_{\min}(G_b)\leq\frac{2d}{K^d-1}.
+ \label{dgb-Rayleigh}
+\end{equation}
+This is an upper Rayleigh bound, not a matching spectral
+asymptotic. In four dimensions it implies
+\[
+                         \|G_b^{-1}\|\geq\frac{K^4-1}{8}.
+\]
+A final-physical-scale mass is $K^{-2}$ in the current
+coordinates. Thus the estimate $\|G_b^{-1}\|\leq CK^2$
+is false uniformly in $K$. After resetting final spacing
+to one, $K^2G_b$ still has a Rayleigh eigenvalue tending
+to zero.
+
+This counterexample does not refute a bounded Maxwell
+finite-part difference for the complete expression
+\eqref{dgb-main-identity}. It rules out estimating the
+based ghost separately as a uniformly massive operator.
+The vector and coarse determinant must be kept coupled.
+
+\subsection{An explicit full-site and coarse Schur decomposition}
+\label{dgb-full-Schur-section}
+
+Fix one final center as a global base. Let $D_f$ now denote
+the fine gauge generator for all scalar sites except that
+base, and split its domain into the non-$K$-centers and the
+other $K$-centers:
+\[
+                            D_f=[\,D_b,D_e\,].
+\]
+These are disjoint site-coordinate columns, not orthogonal
+images. The globally based action is free. Therefore
+\begin{align}
+ G_f&=D_f^TD_f>0,\notag\\
+ S_g&=D_e^T(I-D_bG_b^{-1}D_b^T)D_e>0,\notag\\
+ \det G_f&=\det G_b\,\det S_g .
+ \label{dgb-ghost-Schur}
+\end{align}
+For any positive $Q_b$ as above, set
+\begin{equation}
+ Q_f=Q_b+D_eD_e^T,\qquad
+ S_v=I+D_e^TQ_b^{-1}D_e.
+ \label{dgb-vector-Schur-data}
+\end{equation}
+The determinant lemma gives
+\begin{equation}
+                         \det Q_f=\det Q_b\,\det S_v .
+ \label{dgb-vector-Schur}
+\end{equation}
+Consequently the actual correction is exactly
+\begin{equation}
+ D_{M,K}=\mathcal N_0\left[
+   \log\det G_f-\frac12\log\det Q_f
+   -\log\det S_g+\frac12\log\det S_v
+   -\frac12\log\det M_b\right].
+ \label{dgb-full-decomposition}
+\end{equation}
+$S_g,S_v$ are coarse-site matrices; $M_b$ is a coarse-bond
+matrix. The first two terms resemble a vector/ghost
+combination, but all coarse corrections remain.
+$G_f$ is globally based; it is not yet the translation-invariant
+all-site massive ghost of a reference calculation.
+If no nonbase coarse site remains, the corresponding
+zero-dimensional determinants are one. For the canonical
+completion $M_b=I$ by \eqref{dgb-coarse-identification};
+the general formula retains all three coarse terms.
+
+For \eqref{dgb-canonical-completion}, the vector operator is
+\begin{equation}
+ Q_f=s''+D_fD_f^T-\lambda\cdot f''
+                         +C^T(I-q_{\rm eff})C.
+ \label{dgb-vector-operator}
+\end{equation}
+If a proposed matched massive reference is
+$P_\eta=s''+D_fD_f^T+\eta^2I$, with $\eta=K^{-1}$,
+the exact difference is
+\begin{equation}
+ Q_f-P_\eta=-\lambda\cdot f''
+                     +C^T(I-q_{\rm eff})C-\eta^2I.
+ \label{dgb-reference-difference}
+\end{equation}
+The multiplier term vanishes at the flat background,
+but its first and second background derivatives can
+contribute to the determinant Hessian. Neither that
+vanishing nor the coarse rank bounds its Maxwell
+coefficient by itself. Equation
+\eqref{dgb-reference-difference} is a comparison interface,
+not an identification with an operator named in a
+different background-field convention.
+Any logarithmic comparison using $P_\eta$ additionally
+requires its invertibility on the chosen finite germ.
+No uniform such neighborhood is inferred here.
+
+\subsection{A uniformly bounded coarse effective-Hessian factor}
+\label{dgb-coarse-bound-section}
+
+The general identification in
+\eqref{dgb-coarse-identification} permits a uniform estimate
+for one actual comparison term. Use the established strict
+scalar family of the entire action $S_{MK}$, including its
+pair-supported quadratic baseline. On a fixed small complex
+ball it has uniform spatial bounds and an arbitrary
+prescribed fixed cardinality reserve, independent of
+$MK$ and compatible volume.
+
+For $W=e^{iw}$, set
+\[
+                    \Xi_w(y)=\frac1i\log(e^{iy}e^{iw}).
+\]
+This is a per-bond analytic map with uniformly bounded
+derivatives on a fixed small joint ball. With
+$E_w=D_y\Xi_w(0)$ and $U_w=D_y^2\Xi_w(0)$,
+\begin{equation}
+ q_{\rm eff}(w)[u,v]
+   =D^2S_{MK}(w)[E_wu,E_wv]
+                 +DS_{MK}(w)[U_w(u,v)].
+ \label{dgb-coarse-BCH}
+\end{equation}
+The background-current term is retained.
+Compose each scalar support coefficient with $\Xi_w(y)$,
+differentiate twice in $y$, and up to twice in $w$ using
+fixed spare Cauchy radii. No support enlargement occurs.
+Rows, columns and background source slots stay in the
+same carrier. A fixed cardinality reserve absorbs their
+finite counting factors.
+
+Consequently, for some fixed $\mu,\rho>0$,
+\begin{equation}
+       \sup_{\|w\|_\infty<\rho}
+                    \|q_{\rm eff}(w)\|_\mu\leq R_\mu,
+ \label{dgb-coarse-Schur}
+\end{equation}
+where $\|\cdot\|_\mu$ is the maximum of the exponentially
+weighted absolute block row and column sums.
+The bound is uniform in $MK$ and volume. After reducing
+the exponent to $m>0$, its source derivatives satisfy
+\begin{align}
+ \sum_{ij}e^{m[d(i,x)+d(j,x)]}
+       |(\partial_xq_{\rm eff})_{ij}|&\leq C_1,\notag\\
+ \sum_{ij}|(\partial_x\partial_yq_{\rm eff})_{ij}|
+                              &\leq C_2e^{-md(x,y)}.
+ \label{dgb-coarse-source-bounds}
+\end{align}
+To obtain these bounds, split the carrier-tree exponential
+between its source separation and its row-to-source
+distance, then sum that distance. The coarse cell fiber
+has fixed dimension, with no factor from $K^4$ fine
+coordinates.
+
+\begin{proposition}[Bounded actual coarse determinant contribution]
+\label{dgb-coarse-proposition}
+Choose a fixed $a>2R_\mu$ and the completion $B=aI$.
+The second-background-derivative kernel of
+\[
+                \tfrac12\mathcal N_0
+                        \log\det(q_{\rm eff}+aI)
+\]
+has a uniform exponential row bound, independent of the
+preceding depth, endpoint and compatible volume.
+Its true infinite Maxwell coefficient, and its actual
+finite reference-normalized coefficients above the
+reference threshold, have a uniform absolute bound.
+\end{proposition}
+
+\begin{proof}
+In the weighted Schur algebra, the Neumann series gives
+\begin{equation}
+ P_c=q_{\rm eff}+aI,\qquad
+                         \|P_c^{-1}\|_\mu\leq 2/a.
+ \label{dgb-coarse-inverse}
+\end{equation}
+The corresponding fine completion is positive on the
+real germ: write $x=\xi+H_by$, $C\xi=0$.
+Equation \eqref{dgb-effective-Schur} makes the cross term
+zero, leaving the positive constrained-divergence form
+in $\xi$ and $y^T(q_{\rm eff}+aI)y$.
+No uniform fine spectral gap is inferred.
+
+At finite volume the series
+\begin{equation}
+ \log\det P_c
+   =(\dim P_c)\log a+
+      \sum_{n\geq1}\frac{(-1)^{n+1}}n
+                \operatorname{Tr}(a^{-1}q_{\rm eff})^n
+ \label{dgb-coarse-log-series}
+\end{equation}
+converges absolutely. Let $K_c$ be the Hessian kernel of
+$\mathcal N_0\log\det P_c$; the desired half-logarithm
+has Hessian $K_c/2$. Explicitly,
+\begin{equation}
+ K_c(x,y)=\operatorname{Tr}\left[
+       P_c^{-1}q_{{\rm eff},xy}
+       -P_c^{-1}q_{{\rm eff},x}
+                   P_c^{-1}q_{{\rm eff},y}\right].
+ \label{dgb-coarse-trace}
+\end{equation}
+The first trace is bounded by the second line of
+\eqref{dgb-coarse-source-bounds} and the inverse bound.
+For the second trace, use the two source-rooted first
+derivative bounds and spend a spare inverse-edge
+exponent to connect their roots. Absolute summation gives
+\begin{equation}
+                            |K_c(x,y)|
+                                \leq C_a e^{-m'd(x,y)}
+ \label{dgb-coarse-Hessian-decay}
+\end{equation}
+for a fixed $m'>0$, uniformly in depth and volume.
+Periodic sums are bounded by their infinite-lattice
+counterparts. Its second displacement moment is therefore
+uniformly bounded. The finite reference denominators
+are uniformly bounded below above their established
+threshold, which proves the finite statement as well.
+\end{proof}
+
+The actual action's local gauge identity makes its
+relative Hessian transform by orthogonal bond-frame
+conjugation under real local gauges. Thus the coarse
+massive determinant has the appropriate total local
+gauge identity on its common germ; no coefficientwise
+Ward identity was used in the proof.
+With $B=aI$, \eqref{dgb-effective-determinant} now reduces
+the unbounded-endpoint comparison to the fine combination
+\[
+ \log\det G_b-\tfrac12\log\det\!
+       \left[s''-\lambda\cdot f''
+                     +D_bD_b^T+aC^TC\right],
+\]
+up to the proved uniformly bounded coarse contribution.
+For a general completion the full-site vector difference
+is $-\lambda\cdot f''+C^TBC-\eta^2I$. For this fixed-$a$
+choice it is
+\begin{equation}
+              Q_f-P_\eta
+                    =-\lambda\cdot f''+aC^TC-\eta^2I.
+ \label{dgb-fixed-a-difference}
+\end{equation}
+Equation \eqref{dgb-reference-difference} instead records
+the canonical completion $B=I-q_{\rm eff}$.
+Each comparison uses all factors from its one chosen
+completion.
+
+\subsection{The remaining uniform comparison}
+\label{dgb-scope-section}
+
+The deposited outline asserts a bounded error in the
+Maxwell coefficient when its composite determinant is
+compared with a massive vector/ghost reference, at
+$\eta=\ell^{-k}$. The exact identities above do not
+establish that error bound. In particular, the formal
+background effective-action convention and massless
+nonzero-external-momentum amplitudes of a reference
+calculation do not identify this constrained normalizer
+automatically.
+
+For a precisely matched reference, after removing the
+bounded coarse effective-Hessian contribution, the
+full-site formulation must still control the Maxwell
+moment of the coarse-site package
+\[
+                         -\log\det S_g+\tfrac12\log\det S_v,
+\]
+together with the global-base and ghost-mass correction,
+and the Maxwell moment of
+$\log\det Q_f-\log\det P_\eta$ with all multiplier,
+coarse-completion and mass terms for the selected
+completion. They must also identify
+the reference background with the actual smooth pre-gauge
+minimum and preserve the actual finite extraction and
+zero-mode conventions. Based-gauge covariance allows
+evaluating \eqref{dgb-main-identity} at that pre-gauge
+representative, but does not replace it by an arbitrary
+external interpolation.
+
+Each determinant Hessian has the concrete formula
+\begin{equation}
+ D^2\log\det P[u,v]
+   =\operatorname{Tr}\left(
+       P^{-1}P_{uv}-P^{-1}P_uP^{-1}P_v\right).
+ \label{dgb-trace-interface}
+\end{equation}
+The established fixed-$K$ bounds make the relevant
+second-displacement-moment trace sums meaningful. Their
+constants may depend on $K$; they do not prove an $O(1)$
+bound as $K\to\infty$.
+The soft mode \eqref{dgb-Rayleigh} shows why a separate
+uniform inverse estimate cannot supply this step.
+A coupled cancellation or a scale-resolved comparison
+is still required. No universal coefficient, sign,
+averaged drift or ultraviolet coupling trajectory is
+deduced here.

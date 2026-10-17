@@ -1,0 +1,295 @@
+JOINT SCALAR INFRARED LIMIT: A REGULATED RESULT AND AN EXACT OBSTRUCTION
+17 October 2026. Research proof, provenance.
+
+Status. This note proves an ordered positive-mass scalar limit and an
+exact failure of the reverse order. The latter occurs on a genuinely
+periodic constant connection and uses no affine magnetic flux on a
+torus. The exact physical-quotient identity then forces compensation
+in the physical determinant. None of this proves the desired full
+vector/ghost magnetic comparison.
+
+1. Spaces and mass convention
+
+Fix K=ell^k, final torus side N, and dimension four. Current fine sites
+have physical spacing epsilon=1/K and side KN; coarse sites have
+spacing one and side N. Color coordinates are trace orthonormal.
+For unitary links U let G_all(U) be the covariant scalar lattice
+Laplacian on ALL sites. The globally based scalar G_b(U) is the
+principal minor obtained by deleting all color coordinates at one
+common physical base o. Its diagonal is unchanged by the deletion.
+
+The common PHYSICAL mass delta>0 is inserted as
+
+ H_f,delta=K^2 G_all,f+delta^2 I,
+ H_c,delta=G_all,c+delta^2 I.
+
+Their principal minors are denoted H_f,delta^b,H_c,delta^b. Define
+the normalized scalar half-ratio
+
+ S_delta,N^b = (1/2) N_0[
+               logdet H_f,delta^b-logdet H_c,delta^b].
+
+Multiplying the fine massless operator by K^2 changes only a
+background-independent determinant normalization. At positive delta
+the physical fine mass in counting units is delta/K; using the same
+counting mass on both lattices would be a different comparison.
+
+This mass insertion is a specified scalar comparison family.
+It is NOT automatically an exact mass deformation of the whole
+finite physical-quotient identity of Notebook34.
+
+2. Exact base correction and its positive-mass bounds
+
+For either lattice put H=epsilon^-2 G_all+delta^2 I and R=H^-1.
+Block Jacobi/coarea gives exactly
+
+ det H^b = det H det R_oo,                               (2.1)
+
+where R_oo is a dim(g)-by-dim(g) color block. This identity holds
+on the real positive domain and extends to its analytic germ.
+Consequently
+
+ S_delta,N^b=S_delta,N^all
+       +(1/2) N_0[logdet(R_f)_oo-logdet(R_c)_oo].          (2.2)
+
+At real backgrounds H is between delta^2 I and
+(16 epsilon^-2+delta^2) I. In particular R_oo has eigenvalues
+between (16 epsilon^-2+delta^2)^-1 and delta^-2.
+On a sufficiently small complex product neighborhood of flatness,
+depending on delta and epsilon but not N, accretivity and
+invertibility of R_oo persist. The normalized logarithm of this
+fixed color block is uniformly bounded on a smaller such domain.
+This follows directly from the resolvent identity and the stated
+lower bound for R_oo; its first two derivatives are uniformly bounded
+for bounded link directions. For example
+
+ D R[v]=-R (D H[v]) R,
+ D^2 R[v,w]=R H'[v]R H'[w]R+R H'[w]R H'[v]R-R H''[v,w]R,
+
+and differentiation of logdet R_oo uses the usual finite color
+trace. Every norm on the right is uniform in volume at fixed
+delta,epsilon. There is no assertion of uniformity as delta->0.
+
+There is also a rooted exponential version. Conjugate by a site
+weight whose nearest-neighbor ratio differs from one by O(kappa).
+For kappa small depending on delta,epsilon, the change in H has
+operator norm at most delta^2/4. The weighted inverse is bounded
+by 2/delta^2. Spending a smaller exponent gives ordinary absolute
+row and column Schur bounds. The source derivatives H',H'' are
+local. Their resolvent chains begin and end at o, so the first
+two coefficient kernels of logdet R_oo are exponentially summable
+in all source distances from o, with any fixed polynomial moments.
+In particular their total second-moment norm is at most
+C_delta,K, independently of N.
+
+This proves two distinct useful consequences:
+
+ (a) A base receding from a fixed localized source changes the
+     first-two local coefficients by an exponentially small amount.
+ (b) Averaging the based scalar functional over simultaneous coarse
+     translations of its base gives a translation-covariant functional.
+     Its difference from the unbased functional has an anchored
+     second-moment norm at most C_delta,K/N^4.
+
+For (b), translate the rooted base kernel, sum over the N^4 possible
+coarse bases, and divide by N^4. Reanchoring a Hessian row at one
+fixed output cell converts this to the full rooted source sum;
+polynomial displacement weights are absorbed by the same exponential
+bound. The fine and coarse bases are translated together. No
+claim is made that this finite averaging leaves the unaveraged
+finite functional exactly unchanged.
+
+The same statements hold after composition with the actual fixed-K
+stationary branch whenever its already proved localized source
+kernels are used. Constants are then uniform in old M under the
+Notebook33 inputs, still depending on K and delta. This is a
+positive-mass result, not a bound on the separately massless factors.
+
+3. A well-defined ordered Maxwell limit
+
+For delta>0 the unbased diagonal logarithm has exponentially localized
+Taylor kernels. This follows from the same resolvent proof, applied
+to the logarithm integral; the spectral lower bound controls its
+large resolvent parameter and small parameter ends. Its color trace
+is gauge invariant. Thus its Hessian has the usual zero gradient
+moments, and its affine curvature coefficient is defined by
+absolutely convergent polynomial moments of its localized kernel.
+
+There is no need for an affine flux family on a finite torus.
+One can first use compactly supported link directions, pass to the
+infinite kernel, and then evaluate polynomial directions by these
+exponential moments. Equivalently use symmetric short lifts of
+finite periodic kernels, then let N grow. At fixed delta,K, winding
+terms in the unbased scalar kernel disappear exponentially in N;
+the averaged base correction vanishes by Section2. The two operations
+give the same localized second moment. Inserting the actual
+stationary branch uses the fixed-K structural compactness and
+polynomial-jet identification from Notebook33; every such limit
+has the same scalar coefficient below.
+
+Normalize the Maxwell functional by beta(F)=2[t^2] of the localized
+constant-curvature density. The Cartan probes are current links
+exp(i t x_nu H/K^2), coarse links exp(i t y_nu H), mu!=nu,
+tau(H^2)=1. The unpinned scalar heat coefficient already proved is
+
+ h(s)=(C_H/3) s^2 exp(-8s) I_0(2s)^2 I_1(2s)^2,
+ h(s)=O(s^4) at zero, h(s)=alpha_g+O(s^-1) at infinity,
+ alpha_g=C_H/(48 pi^2).
+
+The K^4 fine sites per final block cancel the curvature factor K^-4.
+In common physical heat time u the two coefficients are h(K^2u)
+and h(u). Therefore the thermodynamic positive-mass scalar coefficient
+is exactly
+
+ beta_delta(K)=(1/2) integral_0^infinity
+          exp(-delta^2 u)[h(K^2u)-h(u)] du/u.             (3.1)
+
+The first limit N->infinity is at fixed delta>0 and fixed K.
+The paired integrand without its mass factor is absolutely
+integrable: at zero use h(s)=O(s^4), and at infinity use cancellation
+of alpha_g. Hence
+
+ lim_(delta->0) beta_delta(K)=alpha_g log K.              (3.2)
+
+Indeed integrating on epsilon<u<T and changing variables gives
+the unhalved difference
+integral_T^(K^2T)h(v)dv/v-integral_epsilon^(K^2epsilon)h(v)dv/v.
+The limits are 2 alpha_g log K and zero.
+
+There is a useful reference-only uniform mass error. For K>=1 and
+0<delta<=1/2,
+
+ |beta_delta(K)-alpha_g log K|
+               <= C delta^2[1+log(1/delta)],             (3.3)
+
+with C independent of K. On 0<u<1 use the boundedness of h and
+1-exp(-delta^2u)<=delta^2u. On u>=1,
+|h(K^2u)-h(u)|<=2C/u. Splitting at u=delta^-2 gives (3.3).
+This uniform bound concerns the explicit scalar reference after
+the thermodynamic limit. It does not interchange that limit with
+mass removal for the original finite based determinants.
+
+4. Exact failure when the mass is removed first
+
+Consider one charged scalar q on a periodic n^4 lattice, with a
+constant link phase exp(i t q A) in direction mu. This is a valid
+periodic flat connection for every t. Its unbased eigenvalues are
+
+ lambda_p(t)=2 sum_nu[1-cos(p_nu+t q A delta_mu,nu)],
+                         p in (2pi/n)Z_n^4.
+
+Let V=n^4 and delete one scalar site to obtain G_n^b(t). Translation
+invariance and Jacobi give, initially away from zero eigenvalues,
+
+ det G_n^b(t)=V^-1 product_(p!=0)lambda_p(t)
+        [1+lambda_0(t) sum_(p!=0)lambda_p(t)^-1].         (4.1)
+
+Both sides continue analytically through t=0. Since
+lambda_0(t)=q^2 A^2 t^2+O(t^4),
+
+ [t^2]logdet G_n^b(t)=q^2 A^2 sum_(p!=0)
+  [cos(p_mu)/lambda_p
+        -2 sin^2(p_mu)/lambda_p^2+1/lambda_p],           (4.2)
+
+with lambda_p=lambda_p(0).
+The first two summands equal partial_pmu(sin(p_mu)/lambda_p).
+They are O(|p|^-2); their Brillouin-zone integral is zero, since
+the boundary flux after removing a small radius-epsilon ball is
+O(epsilon^2). Their grid sums converge to that integral:
+
+ n^-4 sum_(0<|p|<=epsilon) |p|^-2 <= C epsilon^2+O(n^-2).
+
+The same integrability estimate applies to lambda_p^-1. Thus
+
+ lim_(n->infinity) V^-1[t^2]logdet G_n^b(t)
+        =q^2 A^2 g_4 >0 for qA!=0,                     (4.3)
+ g_4=integral_[-pi,pi]^4 dp/(2pi)^4
+                       [2 sum_nu(1-cos p_nu)]^-1.
+
+At any fixed positive counting mass m, the unbased normalized
+log-determinant coefficient instead tends to the integral of
+partial_pmu[sin(p_mu)/(lambda_p+m^2)], which is zero by periodicity.
+Its base correction has O(1) derivatives by Section2, so disappears
+after division by V. Taking m->0 afterward still gives zero.
+
+The two limit orders therefore differ already at the quadratic
+constant-link jet. Rank of the deleted block alone does not make
+its massless derivative contribution negligible. Equation (4.1)
+shows precisely the contribution of the soft global mode.
+
+As a numerical check, the expression (4.2)/V for qA=1 is about
+0.1517945, 0.1534983, 0.1544102, 0.1547282, 0.1548420 at
+n=8,12,20,32,48. These checks are not used in the proof.
+
+5. The actual fine/coarse scalar anomaly and its compensation
+
+For the actual final constant Cartan links
+W_mu(t)=exp(i t A_mu H), use current links
+U_mu(t)=exp(i t A_mu H/K). Every ordinary blocking stage preserves
+this commuting constant connection. Its plaquettes are identity,
+and the same flat lift exists through all old refinements M.
+The real bare Wilson action is nonnegative and zero on the lift,
+so all the corresponding classical minimum values are zero.
+The actual local root-gauge branch is its gauge representative,
+by the previously established uniqueness. Globally based scalar
+determinants are invariant under that site gauge, since a scalar
+zero at the base remains zero under every adjoint frame.
+
+Fine current volume is (KN)^4, fine angle is tA/K, and coarse
+volume is N^4 with angle tA. Summing adjoint charges gives
+
+ lim_(N->infinity) N^-4[t^2](logdet G_f-logdet G_c)
+                  =C_H |A|^2 (K^2-1) g_4.              (5.1)
+
+This is a zero-momentum response, not a Maxwell coefficient.
+It applies for every old M, since the actual constant-connection
+scalar generators are the same.
+
+The root's independently audited flat_holonomy_cancellation_research
+proves the complementary exact conclusion. At fixed K the actual
+total correction D_N has uniform exponential Hessian/source kernels
+and invariant local densities. Its Ward identity extends to a linear
+scalar gauge parameter by absolute polynomial moments; hence every
+structural limit kills constant link directions. The finite normalized
+constant coefficient is a Hessian row sum. Uniform exponential tails
+and local compactness therefore imply
+
+ lim_(N->infinity) N^-4[t^2]D_N(W(t))=0.                 (5.2)
+
+For clarity, this does not assert D_N(W(t))=0 at finite N. Constant
+periodic links may have nontrivial holonomy. Every subsequence has
+the same zero limiting scalar row sum, which gives (5.2); the
+uniform old-M fixed-K bounds allow old M to vary in this argument.
+
+The exact finite physical-quotient identity is
+2D_N=N_0(logdet G_f-logdet G_c-logdet Q_perp). Combining it with
+(5.1)--(5.2) gives the forced compensation
+
+ lim_(N->infinity) N^-4[t^2]logdet Q_perp(W(t))
+                  =C_H |A|^2 (K^2-1) g_4.              (5.3)
+
+Thus a K-uniform O(1) constant-potential response for this separate
+physical determinant is false, despite its flat cK^-2 gap.
+Its -one-half logarithm cancels the scalar half-ratio at zero
+momentum.
+
+6. Precise conclusion and next interface
+
+PROVED: common positive mass removes the globally based defect from
+the thermodynamic localized scalar coefficient, and removing that
+mass AFTER the thermodynamic/local-kernel limit gives
+alpha_g log K, with the reference error (3.3).
+
+ALSO PROVED: the original separately massless based scalar family
+does not have this order-independent analytic local limit. The
+explicit periodic constant-connection test gives the anomaly (5.1),
+and actual finite determinant algebra forces (5.3).
+
+The anomaly does not by itself compute or disprove equality of
+Maxwell coefficients after a suitable coupled renormalization.
+It proves that an independent scalar-factor replacement needs
+additional cancellation information. A valid joint vector/scalar
+regulator must preserve the rank-fixed but derivative-large base
+terms before taking its infrared limit. The exact finite quotient
+identity alone does not supply that regulated identity. No
+continuum measure, nontriviality or mass gap follows here.

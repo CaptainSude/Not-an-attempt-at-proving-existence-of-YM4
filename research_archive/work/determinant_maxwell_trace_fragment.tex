@@ -1,0 +1,634 @@
+% No preamble. Prefix dmt-. Exact actual pivot/Gaussian drift and trace kernels.
+\section{An explicit trace formula for the pivot and Gaussian drift}
+\label{dmt-section}
+
+Fix the primitive ratio, a composite ratio \(R\), the actual
+composite ordinary average, its selected pivots and the direct-\(R\)
+internal contour gauge. The preceding homogeneous classical
+depth \(M\) is arbitrary. All finite-regulator formulas in this
+section are exact. Their infinite-volume interpretation uses one
+chosen joint local-limit system with the previously proved uniform
+exponential bounds. No numerical value, sign, old-depth limit or
+universal beta coefficient is asserted.
+
+\subsection{The exact external factors}
+\label{dmt-definitions-section}
+
+Use real Lie coordinates orthonormal for the normalized trace,
+and their bilinear complexification. Write current link angles
+as \(a\) and final coarse link angles as \(w\). Retained-coordinate
+matrix traces use the actual Euclidean counting coordinates of
+the Gaussian integral. They carry no extra old fine-volume factor.
+
+Let \(F_R\) be the actual composite ordinary group average. Its
+relative constraint and differential are
+\begin{equation}
+ F_a(B)=\frac1i\log\!\left[
+     F_R(e^{iB}e^{ia})F_R(e^{ia})^{-1}\right],
+ \qquad C_a=D_BF_a(0).
+ \label{dmt-relative-constraint}
+\end{equation}
+For the unique selected pivot \(p(c)\) of a final bond \(c\),
+\begin{equation}
+ (C_a)_{c,p(c)}=R^{1-d}\pi_c(a),\qquad
+ \pi_c(0)=I.
+ \label{dmt-pivot-block}
+\end{equation}
+The actual pivot insertion, retained insertion and chart satisfy
+\begin{align}
+ C_ah_a&=I,\qquad
+ K_a=E_{\rm free}-h_aC_aE_{\rm free},\notag\\
+ D_z\Phi_a(0)&=K_a,\qquad
+ D_z^2\Phi_a(0)[u,v]
+       =-h_aD_B^2F_a(0)[K_au,K_av].
+ \label{dmt-chart-identities}
+\end{align}
+The chart solves \(F_a(\Phi_a(z))=0\) and has retained
+coordinates exactly \(z\).
+
+Let \(G_R\) be the actual absolute contour gauge function.
+It is not replaced by a background-relative penalty. Define
+\begin{equation}
+ \mathcal W_M(a)=S_M(e^{ia})+G_R(e^{ia}),\qquad
+ f(a,z)=\frac1i\log[e^{i\Phi_a(z)}e^{ia}],
+ \label{dmt-pulled-action}
+\end{equation}
+so \(f(a,0)=a\), and set
+\begin{equation}
+ \mathscr A_M(a)
+    =D_z^2[\mathcal W_M(f(a,z))]_{z=0}.
+ \label{dmt-independent-precision}
+\end{equation}
+This is the full analytic precision on the independent
+background ball. Its Gaussian need not be centered at an
+arbitrary independent background.
+
+The actual physical branch \(a_*(w)\) satisfies
+\[
+ a_*(0)=0,\qquad F_R(e^{ia_*(w)})=e^{iw},\qquad
+ P_R(e^{ia_*(w)};y,x)=I.
+\]
+It is the centered branch of the integral. Put
+\begin{equation}
+ A(w)=\mathscr A_M(a_*(w)),\qquad
+ A_0=\mathscr A_M(0),\qquad C_0=A_0^{-1}.
+ \label{dmt-physical-precision}
+\end{equation}
+The exact external logarithms are
+\begin{equation}
+ \Delta(w)=-\sum_c\log\det\pi_c(a_*(w)),\qquad
+ \mathcal Q_{\det}(w)
+       =-\frac12\log\det[A(w)A_0^{-1}],\qquad
+ D_M=\Delta+\mathcal Q_{\det}.
+ \label{dmt-leading-correction}
+\end{equation}
+All logarithmic branches in this display vanish at zero.
+The factor \(R^{1-d}\) cancels between each pivot determinant
+and its zero-background value.
+
+The signs follow from the inverse pivot Jacobian and the
+Gaussian factor \(\det A^{-1/2}\). There is no additional
+background Haar factor \(j(a_*)\): the exact link Haar coordinates
+are left-relative and give \(j(\Phi_a(g\xi))\), whose logarithm
+vanishes at \(g=0\). The fluctuation straightening ratio is also
+one at \(\xi=0\). Powers of \(g\), the gauge-insertion constant
+and flat Gaussian constants are field independent and remain
+outside \(D_M\). These definitions retain the actual mean,
+composite map, chart and gauge; a direct-\(R\) replacement of
+the constraint or an axial covariance would give a different
+formula.
+
+\subsection{The complete finite-regulator chain rule}
+\label{dmt-chain-section}
+
+For final coarse directions \(u,v\), write
+\begin{equation}
+ H_u=Da_*(0)u,\qquad B_{uv}=D^2a_*(0)[u,v].
+ \label{dmt-stationary-responses}
+\end{equation}
+Define independent-background vertices by
+\begin{align}
+ \mathscr A_1[p]&=D\mathscr A_M(0)[p],&
+ \mathscr A_2[p,q]&=D^2\mathscr A_M(0)[p,q],\notag\\
+ \pi_{c,1}[p]&=D\pi_c(0)[p],&
+ \pi_{c,2}[p,q]&=D^2\pi_c(0)[p,q].
+ \label{dmt-background-vertices}
+\end{align}
+The physical derivatives are
+\begin{align}
+ A_u&=\mathscr A_1[H_u],&
+ A_{uv}&=\mathscr A_2[H_u,H_v]+\mathscr A_1[B_{uv}],\notag\\
+ \pi_{c,u}&=\pi_{c,1}[H_u],&
+ \pi_{c,uv}&=\pi_{c,2}[H_u,H_v]+\pi_{c,1}[B_{uv}].
+ \label{dmt-full-composition}
+\end{align}
+
+\begin{proposition}[Exact finite trace Hessian]
+\label{dmt-finite-hessian}
+For the actual finite integral,
+\begin{align}
+ D^2D_M(0)[u,v]
+ ={}&-\sum_c\operatorname{tr}
+       \{\pi_{c,uv}-\pi_{c,u}\pi_{c,v}\}\notag\\
+ &-\frac12\operatorname{Tr}
+       \{C_0A_{uv}-C_0A_uC_0A_v\}.
+ \label{dmt-full-hessian}
+\end{align}
+Here lowercase trace acts on one pivot color block and
+uppercase trace acts on all retained coordinates.
+\end{proposition}
+\begin{proof}
+Differentiate the logarithmic determinants in
+\eqref{dmt-leading-correction}, using
+\[
+ D\log\det A[B]=\operatorname{Tr}(A^{-1}B),
+ \qquad D(A^{-1})[B]=-A^{-1}BA^{-1},
+\]
+and \(\pi_c(0)=I\). Products need not commute. Cyclicity of
+the trace makes the answer symmetric in \(u,v\).
+\end{proof}
+
+In particular, constrained stationarity does not say that
+the left current of \(S_M\) vanishes. It does not permit
+deleting the constraint-curvature terms inside
+\(\mathscr A_1\) or \(\mathscr A_2\).
+
+\subsection{The second stationary response cancels after taking the scalar trace}
+\label{dmt-color-section}
+
+Introduce the independent-background scalar
+\begin{equation}
+ d_M(a)=-\sum_c\log\det\pi_c(a)
+       -\frac12\log\det[\mathscr A_M(a)A_0^{-1}].
+ \label{dmt-independent-scalar}
+\end{equation}
+This function is not asserted to be invariant under arbitrary
+local background gauges. The constant-color symmetry suffices
+for the next lemma.
+
+\begin{lemma}[Semisimple cancellation of the first derivative]
+\label{dmt-linear-cancellation}
+For a semisimple Lie algebra,
+\begin{equation}
+                         Dd_M(0)=0.
+ \label{dmt-zero-linear}
+\end{equation}
+Consequently the full Hessian in
+\eqref{dmt-full-hessian} reduces to
+\begin{align}
+ D^2D_M(0)[u,v]
+ ={}&-\sum_c\operatorname{tr}
+ \{\pi_{c,2}[H_u,H_v]
+       -\pi_{c,1}[H_u]\pi_{c,1}[H_v]\}\notag\\
+ &-\frac12\operatorname{Tr}
+ \{C_0\mathscr A_2[H_u,H_v]
+       -C_0\mathscr A_1[H_u]C_0\mathscr A_1[H_v]\}.
+ \label{dmt-reduced-hessian}
+\end{align}
+\end{lemma}
+\begin{proof}
+Let \(O=\operatorname{Ad}_k\) in the fixed real orthonormal
+Lie basis. Endpoint covariance of the actual averages gives
+\begin{equation}
+                  \pi_c(Oa)=O\pi_c(a)O^{-1}.
+ \label{dmt-pivot-color}
+\end{equation}
+The unique small pivot chart is equivariant because both
+its constraint and retained-coordinate prescription are.
+The absolute contour gauge is a sum of class functions,
+and the actual scalar action is invariant under global
+conjugation. Thus, with \(O_{\rm ret}\) the direct sum
+on retained coordinates,
+\begin{equation}
+ \mathscr A_M(Oa)
+       =O_{\rm ret}\mathscr A_M(a)O_{\rm ret}^{\,T},
+ \qquad O_{\rm ret}^{\,T}O_{\rm ret}=I.
+ \label{dmt-precision-color}
+\end{equation}
+The flat precision commutes with this representation.
+Equations \eqref{dmt-pivot-color}--\eqref{dmt-precision-color}
+prove invariance of \eqref{dmt-independent-scalar}, first
+on the real domain and then by holomorphic continuation
+with its zero-at-origin branches.
+
+A semisimple Lie algebra has no invariant linear functional
+on one adjoint color slot. Apply the invariance to a variation
+on one current bond. Its linear functional is therefore zero.
+Doing this for every bond proves \eqref{dmt-zero-linear}.
+The argument applies separately to the pivot sum and the
+Gaussian trace logarithm.
+
+After substituting \eqref{dmt-full-composition} into
+\eqref{dmt-full-hessian}, the coefficient of \(B_{uv}\)
+is precisely \(Dd_M(0)[B_{uv}]\). This proves
+\eqref{dmt-reduced-hessian}.
+\end{proof}
+
+This cancellation does not say that
+\(\mathscr A_1=0\), \(\pi_{c,1}=0\), or that the current and
+chart-curvature operators vanish. For an abelian factor,
+retain \eqref{dmt-full-hessian} unless its linear functional
+has been separately shown to vanish.
+
+\subsection{The actual flat stationary lift}
+\label{dmt-lift-section}
+
+The first response appearing in
+\eqref{dmt-reduced-hessian} is explicit in the proved flat
+operators. Let
+\begin{equation}
+ C_R=D_a\{\log F_R(e^{ia})/i\}_{a=0},\qquad
+ h=h_0,\quad K=K_0,\quad P_M=q_M+T_R^TT_R.
+ \label{dmt-flat-data}
+\end{equation}
+Here \(q_M\) is the ordinary homogeneous classical Hessian,
+and \(T_R\) is the linearized direct-\(R\) internal contour
+map. The constraint in \(C_R\) is still the composite map.
+The angle/counting normalization gives
+\begin{equation}
+ A_0=K^TP_MK,\qquad
+ B_M=K^TP_Mh=K^Tq_Mh,\qquad
+ H=h-KC_0B_M.
+ \label{dmt-flat-lift}
+\end{equation}
+The simplification uses \(T_Rh=0\), since internal contours
+use no pivots.
+
+To verify the formula, use the identity-background affine
+chart
+\begin{align}
+ \log F_R(e^{ia})/i&=C_Ra+\mathcal C_R(a),
+ \qquad \mathcal C_R(0)=D\mathcal C_R(0)=0,\notag\\
+ \mathfrak a(w,z)&=Kz+hw-h\mathcal C_R(\mathfrak a(w,z)).
+ \label{dmt-affine-chart}
+\end{align}
+Put
+\(\mathcal T_M(w,z)=\mathcal W_M(\mathfrak a(w,z))\).
+Since the full action is stationary at zero,
+\begin{equation}
+ D_z\mathcal T_M(w,z)
+       =A_0z+B_Mw+O((|w|+|z|)^2).
+ \label{dmt-affine-stationarity}
+\end{equation}
+The positive flat retained Hessian and the established
+local uniqueness identify its analytic critical point
+with the physical branch. Thus
+\(z_u=-C_0B_Mu\) and \(H_u=hu+Kz_u\), proving
+\eqref{dmt-flat-lift}. No \(M^d\) or \(R^d\) transpose
+factor belongs in these angle-coordinate matrices.
+
+For completeness, the second response retained in the
+general formula is also explicit. Set \(t_u=(u,z_u)\)
+and define \(z_{uv}\) by the counting-pairing identity
+\begin{equation}
+ \langle\zeta,A_0z_{uv}\rangle
+       =-D^3\mathcal T_M(0)[(0,\zeta),t_u,t_v]
+       \quad\hbox{for every retained }\zeta.
+ \label{dmt-second-stationary}
+\end{equation}
+Then
+\begin{equation}
+ B_{uv}=-hD^2\mathcal C_R(0)[H_u,H_v]+Kz_{uv}.
+ \label{dmt-second-background}
+\end{equation}
+These equations follow by twice differentiating the retained
+stationarity equation and \eqref{dmt-affine-chart}; they are
+available even when the color cancellation is not.
+
+\subsection{The complete precision vertices}
+\label{dmt-precision-vertices-section}
+
+Set
+\begin{equation}
+ E_a=D_zf(a,0),\qquad T_a=D_z^2f(a,0).
+ \label{dmt-chart-tensors}
+\end{equation}
+With
+\[
+ J_aX=\int_0^1\operatorname{Ad}(e^{ita})X\,dt,\qquad
+ \Xi_a(B)=\frac1i\log[e^{iB}e^{ia}],
+\]
+the exact tensors are
+\begin{align}
+ E_a&=J_a^{-1}K_a,\notag\\
+ T_a[u,v]&=-J_a^{-1}h_aD_B^2F_a(0)[K_au,K_av]
+       +D_B^2\Xi_a(0)[K_au,K_av].
+ \label{dmt-both-chart-curvatures}
+\end{align}
+Consequently the arbitrary-background precision is
+\begin{equation}
+ \mathscr A_M(a)[u,v]
+       =D^2\mathcal W_M(a)[E_au,E_av]
+                  +D\mathcal W_M(a)[T_a(u,v)].
+ \label{dmt-complete-precision}
+\end{equation}
+The two terms of \(T_a\) are respectively nonlinear constraint
+curvature and conversion from the left-relative exponential
+coordinate to the ordinary link logarithm. The absolute gauge
+function remains inside \(\mathcal W_M\), so its nonphysical
+background curvature is included as well. Its gradient
+vanishes on the physical branch, but this does not permit
+replacing the independent analytic family by a relative
+quadratic gauge form.
+
+Write \(W_n=D^n\mathcal W_M(0)\), so that
+\(W_1=0\), \(W_2=P_M\), \(E_0=K\). Define
+\[
+ E_1[p]=D_aE_0[p],\qquad E_2[p,q]=D_a^2E_0[p,q],
+ \qquad T_0=T_{a=0},\qquad T_1[p]=D_aT_0[p].
+\]
+For retained directions \(r,s\), direct differentiation gives
+\begin{align}
+ \mathscr A_1[p][r,s]
+ ={}&W_3[p,Kr,Ks]
+       +W_2[E_1[p]r,Ks]+W_2[Kr,E_1[p]s]\notag\\
+ &+W_2[p,T_0(r,s)].
+ \label{dmt-first-precision-vertex}
+\end{align}
+The last term is a first-background-order current and
+constraint contribution; it remains despite \(W_1=0\).
+The second vertex is
+\begin{align}
+ \mathscr A_2[p,q][r,s]
+ ={}&W_4[p,q,Kr,Ks]\notag\\
+ &+W_3[p,E_1[q]r,Ks]+W_3[p,Kr,E_1[q]s]\notag\\
+ &+W_3[q,E_1[p]r,Ks]+W_3[q,Kr,E_1[p]s]\notag\\
+ &+W_2[E_2[p,q]r,Ks]+W_2[Kr,E_2[p,q]s]\notag\\
+ &+W_2[E_1[p]r,E_1[q]s]
+       +W_2[E_1[q]r,E_1[p]s]\notag\\
+ &+W_3[p,q,T_0(r,s)]\notag\\
+ &+W_2[p,T_1[q](r,s)]
+       +W_2[q,T_1[p](r,s)].
+ \label{dmt-second-precision-vertex}
+\end{align}
+Only the \(W_1D_a^2T\) term disappears at zero.
+The pivot vertices follow by twice differentiating
+\begin{equation}
+             \pi_c(a)=R^{d-1}(D_BF_a(0))_{c,p(c)}.
+ \label{dmt-pivot-vertex-definition}
+\end{equation}
+All chart operations here use the actual finite-dimensional
+logarithm and mean, and have finite range at the fixed \(R\).
+
+\subsection{The classical cubic and quartic vertices}
+\label{dmt-classical-vertices-section}
+
+The classical vertices in
+\eqref{dmt-first-precision-vertex}--\eqref{dmt-second-precision-vertex}
+can be evaluated from the previously proved simultaneous
+corrected-slice equations. This avoids an unproved bound for
+the ordinary rooted average's physical adjoint.
+
+Use the fine extension \(\mathcal H_M\), constrained Green
+operator \(\mathcal C_M\), flat coarse Hessian \(q_M\),
+corrected constraint remainder \(\mathcal R_M\), Wilson
+jet \(f_\eta\), and its finite jet map \(\mathcal S\).
+With the physical fine transposes and measures, the exact
+pair \(Y=(A,m)\) obeys
+\begin{align}
+ A={}&\mathcal H_Ma-\mathcal H_M\mathcal R_M(A)
+       -\mathcal C_M\mathcal S^Tf_\eta(\mathcal SA)
+       +\mathcal C_MD\mathcal R_M(A)^Tm,\notag\\
+ m={}&q_Ma-q_M\mathcal R_M(A)
+       +(\mathcal S\mathcal H_M)^Tf_\eta(\mathcal SA)
+       -\mathcal H_M^TD\mathcal R_M(A)^Tm.
+ \label{dmt-classical-pair}
+\end{align}
+Write \(Y=\mathcal L_Ma+\mathcal V_M(Y)\), where
+\(\mathcal L_M=(\mathcal H_M,q_M)\) and
+\(\mathcal V_M(0)=D\mathcal V_M(0)=0\).
+For \(\mathcal V_n=D^n\mathcal V_M(0)\), its responses are
+\begin{align}
+ Y_1[u]&=\mathcal L_Mu,\notag\\
+ Y_2[u,v]&=\mathcal V_2[\mathcal L_Mu,\mathcal L_Mv],\notag\\
+ Y_3[u,v,t]&=\mathcal V_3[
+                  \mathcal L_Mu,\mathcal L_Mv,\mathcal L_Mt]\notag\\
+ &\quad+\mathcal V_2[Y_2[u,v],\mathcal L_Mt]
+       +\mathcal V_2[Y_2[u,t],\mathcal L_Mv]
+       +\mathcal V_2[Y_2[v,t],\mathcal L_Mu].
+ \label{dmt-classical-response-recursion}
+\end{align}
+These are derivatives, not Taylor coefficients, so no factorial
+is omitted. The scalar envelope \(DS_M(a)=m(a)\) and equality
+of the corrected and ordinary action values yield
+\begin{align}
+ D^3S_M(0)[u,v,t]
+       &=\langle(Y_2[u,v])_m,t\rangle,\notag\\
+ D^4S_M(0)[u,v,t,r]
+       &=\langle(Y_3[u,v,t])_m,r\rangle.
+ \label{dmt-classical-scalar-vertices}
+\end{align}
+Add the explicit local derivatives of \(G_R\) to obtain
+\(W_3,W_4\).
+
+These are finite compositions of the proved propagators and
+finite-range analytic vertices. The uniform estimates use
+complete physical cell spaces and smooth supported
+reconstruction, not unweighted sums over \(M^4\) microscopic
+coordinates. The fine \(\eta^4\) measure is already in the
+physical transposes of \eqref{dmt-classical-pair}. It must
+not be inserted again into the retained-coordinate traces.
+
+\subsection{Absolute trace convergence and local kernels}
+\label{dmt-convergence-section}
+
+The strict precision theorem supplies symmetric pieces with
+matrix rows and columns in their carrier and an analytic bound
+of the following form, at fixed positive
+\(\sigma,a,\rho\):
+\begin{equation}
+ \sup_i\sum_{Y\ni i}\sum_{j\in Y}
+ e^{\sigma\tau(Y)+a|Y|}
+ \|(\mathscr A_M-A_0)_{Y,ij}\|_\rho\le N.
+ \label{dmt-strict-row-input}
+\end{equation}
+This is uniform in preceding depth and permitted volume.
+The precision-composition theorem supplies the same form
+after stationary substitution, keeping the actual matrix
+rows rooted in their original carrier. The flat covariance
+has an exponential Schur bound. The pivot scalar and
+stationary field have their established strict and rooted
+bounds.
+
+\begin{lemma}[Source-rooted trace bounds]
+\label{dmt-trace-convergence}
+On a fixed smaller analytic domain, the actual Hessian
+kernel
+\[
+ \mathcal K_{xy}=D^2D_M(0)[e_x,e_y]
+\]
+has an exponentially summable row bound
+\begin{equation}
+       \sup_x\sum_y e^{m d(x,y)}|\mathcal K_{xy}|
+                       \le C_D
+ \label{dmt-kernel-decay}
+\end{equation}
+for some \(m>0\). The traces in both
+\eqref{dmt-full-hessian} and
+\eqref{dmt-reduced-hessian} are absolutely convergent on
+compact or summable variation directions. Constants may
+depend on the fixed geometry, color and radii, but not
+on preceding depth or volume.
+\end{lemma}
+\begin{proof}
+A derivative in one background coordinate \(x\) acts only
+on carriers containing \(x\). Cauchy bounds it by a fixed
+constant times \(\rho^{-1}\) times the original majorant.
+Two derivatives require both source slots in the carrier
+and give \(\rho^{-2}\).
+
+Reduce the spatial exponent in
+\eqref{dmt-strict-row-input}. For each matrix row \(i\),
+the unused exponent pays \(e^{-\delta d(i,x)}\), since
+\(\tau(Y)\ge d(i,x)\) when \(i,x\in Y\). Its sum over
+\(i\) is the finite lattice bound \(S_\delta\), also
+uniformly on periodic graphs. With a second source \(y\),
+spend another exponent portion on
+\(\tau(Y)\ge d(x,y)\).
+
+For the composed precision, this yields, after fixed
+exponent reductions,
+\begin{align}
+ \sum_{ij}e^{m_1[d(i,x)+d(j,x)]}
+                   \|(A_x)_{ij}\|&\le C_1,\notag\\
+ \sum_{ij}\|(A_{xy})_{ij}\|
+                   &\le C_2e^{-m_1d(x,y)}.
+ \label{dmt-entry-source-bounds}
+\end{align}
+For the first line, use
+\(d(i,x)+d(j,x)\le2\tau(Y)\) and reserve an additional
+exponent for the row summation. Finite fiber and color
+factors are absorbed into the constants.
+
+The same argument before composition, followed by the
+exponentially decaying external lift \(H\), bounds the
+separate terms of \eqref{dmt-reduced-hessian}. Thus the
+proof does not use cancellation of non-absolutely
+convergent quantities.
+
+The trace with \(A_{xy}\) is bounded by its absolute-entry
+sum and the covariance entry envelope. For the other
+trace expand
+\begin{equation}
+ \operatorname{Tr}(C_0A_xC_0A_y)
+ =\sum_{i,j,k,l}\operatorname{tr}
+     \{C_{0,ij}(A_x)_{jk}C_{0,kl}(A_y)_{li}\}.
+ \label{dmt-trace-expansion}
+\end{equation}
+The source-root bounds and covariance envelope make this
+absolutely convergent. The \(x\)-root weight at \(j\),
+the covariance weight between \(j\) and \(i\), and the
+\(y\)-root weight at \(i\) jointly pay \(d(x,y)\).
+All remaining factors are absolutely summable. Hence
+\[
+ |\operatorname{Tr}(C_0A_xC_0A_y)|
+                         \le C_3e^{-m_2d(x,y)}
+\]
+for a smaller positive \(m_2\). The pivot traces have the
+same bound by local dependence before composition and the
+rooted stationary family, or directly by their composed
+strict scalar expansion. A final exponent reduction
+allows the row sum in \eqref{dmt-kernel-decay}.
+\end{proof}
+
+Grouping retained coordinates into auxiliary \(J\)-cells
+only regroups these traces; it inserts no extra factor
+\(J^d\) into the exact identities.
+
+On the infinite lattice a total log determinant at a
+noncompact background need not exist as an extensive
+number. The displayed formulas concern local kernels
+and derivatives on compact or summable directions.
+They are defined by the absolutely convergent sums above
+or by a chosen joint local limit of the actual finite
+matrices and vertices. The common majorants permit that
+limit. No arbitrary finite activity is identified with
+the periodization of an independently selected infinite
+one.
+
+\subsection{A convergent Maxwell moment of the traces}
+\label{dmt-Maxwell-section}
+
+Assume the chosen infinite total has the established
+translation, hypercubic and local gauge identities, and
+fix one simple color factor. The midpoint Hessian symbol
+then has
+\begin{equation}
+ \widehat{\mathcal K}_{\mu\nu}^{ab}(p)
+ =\delta^{ab}\beta(D_M)
+       (|p|^2\delta_{\mu\nu}-p_\mu p_\nu)+O(|p|^4).
+ \label{dmt-Maxwell-symbol}
+\end{equation}
+For \(\mu\ne\nu\), choose one trace-orthonormal color
+vector \(t^a\), and let \(e_{x,\mu,a}\) be its final
+unit-spacing link direction. The midpoint offsets
+cancel for the diagonal orientation \(\mu,\mu\).
+Therefore
+\begin{equation}
+ \boxed{\displaystyle
+ \beta(D_M)=-\frac12\sum_{r\in\mathbb Z^4}r_\nu^2
+       D^2D_M(0)[e_{0,\mu,a},e_{r,\mu,a}].}
+ \label{dmt-Maxwell-moment}
+\end{equation}
+There is no color sum here. Hypercubic and color symmetry
+make the choices equivalent. The minus sign comes from
+twice differentiating \(e^{ip\cdot r}\); the factor
+\(1/2\) extracts the coefficient of \(p_\nu^2\).
+The actual classical reference has coefficient one in
+this normalization.
+
+Writing \(H_r=H e_{r,\mu,a}\), substitution of
+\eqref{dmt-reduced-hessian} gives
+\begin{align}
+ \beta(D_M)
+ ={}&\frac12\sum_r r_\nu^2\sum_c\operatorname{tr}
+ \{\pi_{c,2}[H_0,H_r]
+       -\pi_{c,1}[H_0]\pi_{c,1}[H_r]\}\notag\\
+ &+\frac14\sum_r r_\nu^2\operatorname{Tr}
+ \{C_0\mathscr A_2[H_0,H_r]
+       -C_0\mathscr A_1[H_0]C_0\mathscr A_1[H_r]\}.
+ \label{dmt-explicit-Maxwell-trace}
+\end{align}
+Every sum is absolutely convergent by
+Lemma~\ref{dmt-trace-convergence}. Truncating the external
+displacement at distance \(L\) has error at most
+\(C_{m'}e^{-m'L}\) for any \(0<m'<m\).
+Internal trace tails likewise have exponential bounds
+after anchoring the sources and spending a spare exponent.
+
+At an actual finite regulator, the trace Hessian formulas
+remain exact. Apply the chosen symmetric short-lift
+moment and divide by the moment of the actual finite
+reference to obtain its finite Maxwell ratio. That
+reference denominator is \(1+O(e^{-cN})\), not
+automatically exactly one. No finite Ward identity at
+discrete momenta is interpolated to obtain
+\eqref{dmt-Maxwell-symbol}; its use requires the stated
+infinite kernel and symmetries, or the separately
+justified local-limit passage.
+
+\subsection{What has and has not been reduced}
+\label{dmt-scope-section}
+
+The leading zero-input drift is expressed by actual local
+pivot vertices, the flat stationary lift
+\eqref{dmt-flat-lift}, the retained covariance, and the
+full precision vertices
+\eqref{dmt-first-precision-vertex}--\eqref{dmt-second-precision-vertex}.
+The classical cubic and quartic vertices have the finite
+operator recursion
+\eqref{dmt-classical-pair}--\eqref{dmt-classical-scalar-vertices}.
+All signs and coordinate normalizations are fixed.
+
+The second physical stationary response was included
+before being removed by the proved semisimple color
+identity. The physical current was not replaced by an
+independent parameter, and neither chart-curvature
+contribution was omitted.
+
+Evaluating \eqref{dmt-explicit-Maxwell-trace}, comparing
+its values as \(M\) grows, determining a sign or a
+universal coefficient, and controlling a physical
+coupling trajectory remain further tasks. Absolute
+convergence of the trace expression alone proves none
+of those conclusions.

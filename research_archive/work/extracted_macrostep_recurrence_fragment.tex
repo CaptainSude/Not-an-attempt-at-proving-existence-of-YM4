@@ -1,0 +1,556 @@
+% No preamble. Prefix eqr-. Infinite local quotient; finite-history boundary explicit.
+\section{Reference extraction and a contractive finite-block recurrence}
+\label{eqr-section}
+
+Work on the selected joint homogeneous classical system of
+Sections~\ref{csgq-section} and \ref{qll-section}. Fix the primitive
+odd ratio $\ell$, the elementary composite ratio $R=\ell^s$, the
+auxiliary grouping $J$, and carrier exponent $a_0=1/16$.
+At stage $j$ the preceding depth is $M_j=M_0R^j$. Each stage uses
+the same cell grouping and analytic radius in its own current units.
+All constants below may depend on this fixed geometry, but are uniform
+in $M_j$. Use a simple gauge Lie algebra, in particular
+$\mathfrak{su}(2)$, so the Maxwell functional is scalar. The finite
+family of componentwise references gives the corresponding version
+for a semisimple product.
+
+The local quantum quotient map is an established input from
+Theorem~\ref{qll-descent-theorem}, with its strict domain, periodization,
+classical-system and logarithm-branch hypotheses. The discussion below
+does not replace that theorem by an inference from compact-field
+equality alone. The actual finite-regulator history remains a separate
+issue stated at the end.
+
+\subsection{The actual reference transports exactly}
+\label{eqr-reference-section}
+
+Let $U_M(D)$ be the selected ordinary homogeneous minimum and let
+\begin{equation}
+ S_M(D)=S_{\rm bare}(U_M(D)),\qquad S_M(1)=0,
+ \qquad
+ P_{M,R}(W)=\mathcal M_\ell^k U_{MR}(W),\quad M=\ell^k.
+ \label{eqr-reference-definition}
+\end{equation}
+The trace convention and plaquette counting are fixed, and the coupling
+is outside $S_M$. Classical background substitution is
+\[
+        (\mathcal T_{M,R}E)(W)=E(P_{M,R}(W)).
+\]
+It contains no fluctuation integration.
+
+\begin{lemma}[Exact reference identity]
+\label{eqr-reference-lemma}
+On the specified common local analytic domains in dimension four,
+\begin{equation}
+                  \mathcal T_{M,R}S_M=S_{MR}.
+ \label{eqr-reference-transport}
+\end{equation}
+This identity holds for the actual ordinary classical reference,
+not merely for a reference with the same quadratic normalization.
+It passes to the jointly chosen infinite normalized classes.
+\end{lemma}
+\begin{proof}
+On a finite compatible regulator put
+\[
+ U_2=U_{MR}(W),\qquad D=\mathcal M_\ell^kU_2,\qquad U_1=U_M(D).
+\]
+Both fine configurations are fields on the same oriented graph.
+Its fine spacing is $1/M$ in $D$ units and $1/(MR)$ in $W$ units.
+Exact ordinary composition gives
+\begin{equation}
+ \mathcal M_\ell^kU_1=D=\mathcal M_\ell^kU_2,\qquad
+ \mathcal M_\ell^{k+s}U_1=W=\mathcal M_\ell^{k+s}U_2.
+ \label{eqr-two-constraints}
+\end{equation}
+The actual minimum comparison balls can be made common for fixed $R$.
+Indeed a fine physical potential changes units by
+$A_1^W(x)=R A_1(Rx)$, so
+\begin{equation}
+ \|A_1^W\|_{C^{1,\alpha}}
+       \le CR^{2+\alpha}\|A_1\|_{C^{1,\alpha}}.
+ \label{eqr-reference-rescaling}
+\end{equation}
+The prefix bound is
+$\|\log D/i\|_\infty\le C_A\|\log W/i\|_\infty/R$.
+Thus, for fixed $R$, a sufficiently small real $W$ ball places
+both fields in both needed comparison classes, uniformly in
+preceding refinement and volume.
+
+The minimum at $D$ gives $S_{\rm bare}(U_1)\le S_{\rm bare}(U_2)$;
+the minimum at $W$ gives the reverse inequality. In dimension four
+the coupling-free bare action is the same plaquette sum under this
+coordinate relabeling: its physical prefactor is
+$\eta^{d-4}=1$. Hence the two actions agree. This is also the identity
+$S_M(V^\star)=S_M(V_p)=S_{MR}$ in the actual common-domain
+factorization.
+
+Both sides are holomorphic on the specified connected common domain.
+Uniqueness from the real germ continues the identity there.
+For $R>C_A$, the angle estimate maps the common $b$ ball into itself;
+the smaller real comparison ball does not cause a repeated analytic
+radius loss. No minimum assertion at complex fields is used.
+
+For the fixed joint infinite system, pass vacuum-normalized values on
+compact $W$ using the connected interaction bounds and summable-field
+continuity. These are the same hypotheses used for the classical
+substitution limit. No convergence of an extensive infinite action
+value is asserted. The finite references vanish at the trivial field,
+so the normalized identity has no vacuum ambiguity.
+\end{proof}
+
+The exact flat midpoint symbol and its identification with the
+classical Hessian give
+\begin{equation}
+ q_M(p)=|p|^2I-pp^T+O(|p|^4),\qquad \beta(S_M)=1.
+ \label{eqr-reference-beta}
+\end{equation}
+This normalization was proved by the flat symbol calculation;
+ellipticity alone would not imply it. The fixed-outer-radius
+classical support estimate and its zero total linear jet also give
+\begin{equation}
+                    \|[S_M]\|_{\mathcal Q,b}\le C_Sb^2,
+ \label{eqr-reference-size}
+\end{equation}
+uniformly in $M$ and in the subsequent inner radius $b$.
+An arbitrary Maxwell-normalized local Wilson reference need not obey
+\eqref{eqr-reference-transport} as a full nonlinear functional.
+
+\subsection{The projection telescope}
+\label{eqr-projection-section}
+
+Write $\mathcal Q_j$ for the invariant quotient at stage $j$ and set
+\begin{equation}
+ S_j=[S_{M_j}],\qquad
+ P_j=I-S_j\beta_j,\qquad
+ \mathcal T_j=\mathcal T_{M_j,R},\qquad
+ A_j=P_{j+1}\mathcal T_j.
+ \label{eqr-projections}
+\end{equation}
+The notation $S_j\beta_j$ denotes a rank-one operator.
+Because $\beta_j(S_j)=1$, $P_j$ projects onto $\ker\beta_j$.
+The established coefficient and reference estimates give
+\begin{equation}
+ \|\beta_j\|\le C_\beta b^{-2},\qquad
+ \|P_j\|\le p:=1+C_\beta C_S.
+ \label{eqr-projection-norm}
+\end{equation}
+The $b^{-2}$ factor has been cancelled by
+\eqref{eqr-reference-size}, not omitted.
+
+\begin{lemma}[Cancellation of every intermediate extraction]
+\label{eqr-telescope-lemma}
+The actual references satisfy
+\begin{equation}
+ P_{j+1}\mathcal T_jP_j=P_{j+1}\mathcal T_j.
+ \label{eqr-intertwining}
+\end{equation}
+Consequently, for every finite $q$,
+\begin{align}
+ A_{j+q-1}\cdots A_j
+   &=P_{j+q}\mathcal T_{j+q-1}\cdots\mathcal T_j,
+       \label{eqr-product}\\
+ A_{j+q-1}\cdots A_jP_j
+   &=P_{j+q}\mathcal T_{M_j,R^q}P_j.
+       \label{eqr-direct-product}
+\end{align}
+The second identity uses the classical semigroup on the same joint
+invariant system.
+\end{lemma}
+\begin{proof}
+For $x\in\mathcal Q_j$, the difference between the two sides of
+\eqref{eqr-intertwining} is
+$-\beta_j(x)P_{j+1}\mathcal T_jS_j$.
+By \eqref{eqr-reference-transport}, this is
+$-\beta_j(x)P_{j+1}S_{j+1}=0$.
+Repeated application removes the intermediate projections.
+The actual scalar semigroup modulo gauge, together with the
+universal summable-gauge identity of Section~\ref{csgq-section},
+gives \eqref{eqr-direct-product}.
+\end{proof}
+
+The proof does not require
+$\beta_{j+1}\mathcal T_j=\beta_j$.
+Nor does it require equality of sequential and direct carrier arrays.
+The common scalar class may be estimated using its separately
+justified direct connected representation. If instead
+$\mathcal T_jS_j=S_{j+1}+D_j$, the error in
+\eqref{eqr-intertwining} is
+$-P_{j+1}D_j\beta_j$, potentially costing
+$b^{-2}\|D_j\|$. The actual identity makes that error exactly zero.
+
+Use the supported low-kernel and high-jet transport estimates on the
+same infinite system. Their explicit common-domain and reserve
+hypotheses give
+\begin{equation}
+ \left\|A_{j+q-1}\cdots A_j\big|_{\ker\beta_j}\right\|
+ \le\theta_q:=
+ p^2\left[C_{\rm low}(J)R^{-q\alpha}
+                     +6C_{\rm high}R^{-q}\right].
+ \label{eqr-classical-block}
+\end{equation}
+The fixed grouping $J$ is chosen before $q$; its finite constant is
+not assumed uniform as $J$ grows. Choose a finite $q$ so that
+$\theta_q\le1/4$. Then choose $b$ to meet the direct $R^q$
+high-jet disk and all classical margins. The constants in
+\eqref{eqr-classical-block} do not deteriorate just because $b$
+is reduced. Bounded one-step transport gives constants
+\begin{equation}
+ \|\mathcal T_j\|\le B_T,\qquad
+                 \|A_j\|\le B,\qquad B\ge\max(1,pB_T),
+ \label{eqr-one-step-linear}
+\end{equation}
+uniform in $j$. These may be large; no one-step classical
+contraction is asserted.
+
+\subsection{The local quantum remainder at fixed coupling}
+\label{eqr-quantum-section}
+
+Let $\mathcal F_j$ be the actual limiting local quotient map with
+specified coupling $g_j$, retained threshold $T_{{\rm cut},j}$,
+and the fixed classical system. Write
+\begin{equation}
+ \mathcal F_j(x)=\mathcal T_jx+\mathcal G_j(x),\qquad
+ \Psi_j(x):=P_{j+1}\mathcal F_j(x)=A_jx+H_j(x),
+ \qquad H_j=P_{j+1}\mathcal G_j.
+ \label{eqr-quantum-split}
+\end{equation}
+The remainder includes the pivot and Gaussian determinant terms and
+the full base Gaussian logarithm. Those terms are not discarded.
+The output of $\Psi_j$ belongs to $\ker\beta_{j+1}$.
+
+Let $\bar\epsilon$ be the representative ceiling from the strict
+two-input comparison. The quotient maps are defined on the ball of
+radius $\bar\epsilon/4$. Equation
+\eqref{qll-quantum-Lipschitz} gives
+\begin{equation}
+ \|\mathcal G_j(x)-\mathcal G_j(y)\|_{\mathcal Q}
+ \le L_{{\rm quant},j}\|x-y\|_{\mathcal Q},\qquad
+ L_{{\rm quant},j}
+       =C_{\rm quant}\frac{g_jT_{{\rm cut},j}}b.
+ \label{eqr-quantum-lipschitz}
+\end{equation}
+It has no equal-low-jet hypothesis. One can see the domain margin
+directly from \eqref{qll-compatible-representatives}: choose
+covariant near-minimal representatives for $y$ and $x-y$ and add
+them. Both complete inputs then have norm less than
+$\bar\epsilon$. Independent near-minimal representatives for $x$
+and $y$ would not control their difference.
+
+Choose a uniform number $\nu$ with
+\begin{equation}
+ pL_{{\rm quant},j}\le\nu,\qquad
+ \|H_j(x)-H_j(y)\|\le\nu\|x-y\|.
+ \label{eqr-projected-lipschitz}
+\end{equation}
+All comparisons here hold the coupling, threshold, classical saddle
+and cutoff data fixed at each step. The limiting map is well defined
+by Theorem~\ref{qll-descent-theorem}; the finite comparison and its
+passage to the quotient are provided by
+Section~\ref{qll-Lipschitz-section}.
+
+There are two useful forcing estimates. The original common-domain
+bound gives
+\begin{align}
+ \|H_j(0)\|&\le f, \notag\\
+ f&\le p\sup_j\left[
+ (C_\Delta+C_{\rm det})b+
+ 2S_1\{e^3\tau(T_{{\rm cut},j})+e^{v_j}v_j\}\right],
+ \notag\\
+ v_j&\le C_{\rm base}
+       (g_jT_{{\rm cut},j}^3+g_jT_{{\rm cut},j}
+                              +g_j^2T_{{\rm cut},j}^2).
+ \label{eqr-crude-force}
+\end{align}
+More strongly, fix the outer zero-input construction of
+Section~\ref{zif-section} and then restrict to $b\le\rho/2$.
+Equations \eqref{zif-force-bound} and
+\eqref{zif-extracted-beta} yield
+\begin{equation}
+ \|\mathcal G_j(0)\|\le C_Fb^2,\qquad
+ \|H_j(0)\|\le C_0b^2,\qquad
+ C_F=\frac{2H_*}{\rho^2},\quad C_0=pC_F.
+ \label{eqr-quadratic-force}
+\end{equation}
+These are the same actual maps restricted from a common outer
+domain, not radius-dependent replacements. The force need not be
+$O(g_j^2)$.
+
+\subsection{A finite-block perturbation estimate}
+\label{eqr-block-section}
+
+\begin{lemma}[Duhamel bound with a contractive classical block]
+\label{eqr-Duhamel-lemma}
+Suppose the maps in \eqref{eqr-quantum-split} are evaluated on
+their common admissible neighborhood,
+\eqref{eqr-classical-block} and \eqref{eqr-one-step-linear} hold,
+and \eqref{eqr-projected-lipschitz} holds. For two trajectories
+using the same prescribed step couplings and other fixed data,
+with their initial difference in $\ker\beta_j$, one has
+\begin{align}
+ \|\delta_q\|
+ &\le\left[
+ \theta_q+\nu\sum_{k=0}^{q-1}
+                    B^{q-1-k}(B+\nu)^k\right]\|\delta_0\|
+       \notag\\
+ &=\left[\theta_q+(B+\nu)^q-B^q\right]\|\delta_0\|
+       \notag\\
+ &\le\left[\theta_q+q\nu(B+\nu)^{q-1}\right]\|\delta_0\|.
+ \label{eqr-Duhamel-bound}
+\end{align}
+The sum formula includes $\nu=0$ by continuity.
+If $\|H_i(0)\|\le f$, then any trajectory obeys
+\begin{equation}
+ \|x_{j+k}\|\le(B+\nu)^k\|x_j\|
+                     +f\sum_{l=0}^{k-1}(B+\nu)^l
+ \label{eqr-elementary-size}
+\end{equation}
+as long as the intermediate maps remain admissible.
+\end{lemma}
+\begin{proof}
+The exact variation-of-constants identity is
+\begin{align}
+ \delta_q={}&A_{j+q-1}\cdots A_j\delta_0 \notag\\
+ &+\sum_{k=0}^{q-1}A_{j+q-1}\cdots A_{j+k+1}
+   \bigl[H_{j+k}(x_{j+k})-H_{j+k}(y_{j+k})\bigr].
+ \label{eqr-Duhamel-identity}
+\end{align}
+An empty product is the identity. The elementary difference bound
+is $\|\delta_k\|\le(B+\nu)^k\|\delta_0\|$.
+Apply the improved classical product bound only to the first term
+in \eqref{eqr-Duhamel-identity}; bound each shorter product by the
+corresponding power of $B$. This proves the first line of
+\eqref{eqr-Duhamel-bound}. The difference-of-powers identity gives
+the second line, and bounding every sum term by
+$(B+\nu)^{q-1}$ gives the third.
+
+For a single step,
+$\|\Psi_i(x)\|\le(B+\nu)\|x\|+f$.
+Induction proves \eqref{eqr-elementary-size}.
+No contraction of a shorter classical product was presumed.
+\end{proof}
+
+The leading classical term in \eqref{eqr-Duhamel-bound} has no
+growing factor from intermediate projections. The remaining
+perturbative sum has finite length $q$, fixed before the coupling
+is made small.
+
+\subsection{An invariant quadratic amplitude envelope}
+\label{eqr-envelope-section}
+
+\begin{theorem}[Extracted finite-block contraction on the local quotient]
+\label{eqr-envelope-theorem}
+Use the selected joint infinite homogeneous system, the actual
+reference family, the transport estimates
+\eqref{eqr-classical-block}--\eqref{eqr-one-step-linear},
+the quantum maps of Theorem~\ref{qll-descent-theorem}, and the
+fixed-outer-radius force of Theorem~\ref{zif-theorem}.
+Choose a finite $q$ with $\theta_q\le1/4$. Put
+\begin{equation}
+ K=B+1,\qquad L_q=\sum_{l=0}^{q-1}K^l,\qquad
+ K_{\rm amp}=\max\{1,2C_0L_q\},\qquad
+ C_{\rm int}=K^qK_{\rm amp}+C_0L_q.
+ \label{eqr-envelope-constants}
+\end{equation}
+Choose the common positive $b\le\rho/2$ to satisfy all direct
+$R^q$ classical and high-jet domain restrictions and
+\begin{equation}
+                  C_{\rm int}b^2<\bar\epsilon/4.
+ \label{eqr-inner-radius}
+\end{equation}
+Finally choose the weak-coupling range and thresholds so that the
+strict two-input budgets, including
+\eqref{zif-inherited-budget}, hold and
+\begin{equation}
+             \nu\le\min\left\{1,\frac1{4qK^{q-1}}\right\}.
+ \label{eqr-nu-choice}
+\end{equation}
+
+For each initial stage $j$, every $q$-step extracted block maps
+\begin{equation}
+ \{x\in\ker\beta_j:\ \|x\|\le r_b\},
+                \qquad r_b=K_{\rm amp}b^2,
+ \label{eqr-invariant-ball}
+\end{equation}
+into the corresponding radius-$r_b$ ball at stage $j+q$, with
+Lipschitz constant at most $1/2$. Every intervening amplitude is
+at most $C_{\rm int}b^2<\bar\epsilon/4$.
+
+For a prescribed countable sequence of couplings in this weak
+range, with its fixed common classical local-limit system,
+the extracted quotient recursion is therefore defined for all
+stages starting in \eqref{eqr-invariant-ball}. At block endpoints
+two trajectories using that same sequence contract by $2^{-n}$
+after $n$ blocks. These conclusions also bound a density-preserving
+running trajectory for as long as it stays in the prescribed
+weak-coupling regime.
+\end{theorem}
+\begin{proof}
+Start in \eqref{eqr-invariant-ball}. For $0\le k\le q$,
+\eqref{eqr-elementary-size}, $\nu\le1$, and
+\eqref{eqr-quadratic-force} give
+\begin{equation}
+ \|x_{j+k}\|
+ \le K^kK_{\rm amp}b^2+C_0b^2\sum_{l=0}^{k-1}K^l
+ \le C_{\rm int}b^2<\bar\epsilon/4.
+ \label{eqr-intermediate-bound}
+\end{equation}
+This induction verifies, before the next step is invoked, that
+each input lies in the common admissible neighborhood. The
+same holds for the trajectory starting at zero and for any
+second input in the ball.
+
+Equation \eqref{eqr-Duhamel-bound} and
+\eqref{eqr-nu-choice} make the block Lipschitz constant at most
+$1/4+1/4=1/2$. Its zero-input output has norm at most
+$C_0L_qb^2\le r_b/2$. Therefore its output at any $x$ in
+\eqref{eqr-invariant-ball} has norm at most
+$\|x\|/2+r_b/2\le r_b$.
+The output is extracted at every step by definition.
+
+All estimates are uniform in the initial homogeneous depth.
+Repeat the argument block by block. This constructs the
+stated infinite sequence of quotient classes for fixed
+prescribed step data; it asserts no convergence of a single
+nonautonomous trajectory to a fixed point. Applying the same
+block Lipschitz bound to two trajectories with identical data
+gives the $2^{-n}$ difference estimate.
+\end{proof}
+
+The parameter order is noncircular. Choose the primitive data,
+the elementary $R$ and grouping $J$ with the strict
+Section~\ref{qll-margins-section} margins, then choose the finite
+$q$ using \eqref{eqr-classical-block}. The outer radius and
+$H_*$ in Section~\ref{zif-section} are fixed before the final
+inner radius. Then choose $b$ by
+\eqref{eqr-inner-radius} and the direct $R^q$ restrictions.
+Only afterward decrease the coupling ceiling. For example,
+thresholds equal to a sufficiently large fixed multiple of
+$\sqrt{\log(1/g)}$, with a fixed lower threshold, have
+$gT(g)/b\to0$, $gT(g)^3\to0$ and $\tau(T(g))\to0$.
+Thus the comparison and forcing budgets can be met uniformly
+on $0<g\le g_0$. In particular
+\[
+ \frac{16C_TC_RgT(g)}b\,\bar\epsilon
+                   \le\frac{\eta_*}{128e}
+\]
+is imposed with the stronger two-input budget.
+The constants $p,B,\theta_q$ do not grow just because $b$
+is reduced.
+
+For comparison, the weaker force \eqref{eqr-crude-force} also
+suffices for a fixed-radius envelope. With the same $K,L_q$,
+take
+\begin{equation}
+ r=\frac{\bar\epsilon}{8K^q},\qquad
+ f\le\frac{r}{2L_q}.
+ \label{eqr-crude-envelope}
+\end{equation}
+Then intermediate norms are at most
+$\bar\epsilon/8+r/2<\bar\epsilon/4$, and the same proof
+preserves the radius-$r$ extracted ball. The quadratic
+version is stronger because it controls the Maxwell
+increment independently of the inner radius.
+
+\subsection{Density bookkeeping and bounded coupling increments}
+\label{eqr-coupling-section}
+
+Along the quadratic envelope the unprojected one-step value obeys
+\begin{equation}
+ \|\mathcal F_j(x_j)\|
+ \le \left[B_TC_{\rm int}+C_F
+                       +L_{{\rm quant},j}C_{\rm int}\right]b^2.
+ \label{eqr-unprojected-size}
+\end{equation}
+This follows by separating $\mathcal T_jx_j$,
+$\mathcal G_j(0)$ and
+$\mathcal G_j(x_j)-\mathcal G_j(0)$.
+The norm of $\beta$ consequently gives
+\begin{equation}
+ |\beta_{j+1}(\mathcal F_j(x_j))|
+ \le C_\beta\left[B_TC_{\rm int}+C_F
+                       +L_{{\rm quant},j}C_{\rm int}\right].
+ \label{eqr-beta-increment-bound}
+\end{equation}
+The factor $b^{-2}$ has again been paid by a proved $b^2$
+amplitude. This is an absolute bound, with no sign.
+
+For the actual density, write $\gamma_j=g_j^{-2}$. The
+one-step classical factorization is
+\[
+        \exp[-\gamma_j S_{j+1}+\mathcal F_j(x_j)].
+\]
+Full-reference extraction gives the exact identity
+\begin{equation}
+ \mathcal F_j(x_j)
+  =\beta_{j+1}(\mathcal F_j(x_j))S_{j+1}+\Psi_j(x_j),
+ \qquad
+ \gamma_{j+1}
+  =\gamma_j-\beta_{j+1}(\mathcal F_j(x_j)).
+ \label{eqr-density-running}
+\end{equation}
+The negative sign is forced by the displayed classical exponent.
+A freely prescribed weak coupling sequence need not satisfy
+\eqref{eqr-density-running}. The theorem bounds the extracted
+amplitudes uniformly over such sequences as operator estimates;
+it identifies a continuation of the same density only along
+a sequence satisfying this extra update.
+
+Two trajectories that separately update their couplings need
+not use the same maps: their coupling and threshold parameters
+also differ. Equation \eqref{eqr-quantum-lipschitz} controls only
+the inherited-input dependence at fixed coupling. Thus the
+$1/2$ block estimate is not a contraction in the joint
+coupling--activity variables.
+
+For a fixed finite number of steps,
+\eqref{eqr-beta-increment-bound} permits choosing the initial
+inverse coupling sufficiently large to retain a positive
+weak-coupling range. It does not control an infinite sum of
+increments, establish their sign, or prove asymptotic freedom.
+It does not prove that a physical running trajectory remains
+in the regime needed by Theorem~\ref{eqr-envelope-theorem}.
+
+\subsection{What the quotient envelope does not supply}
+\label{eqr-scope-section}
+
+The conclusions concern the invariant infinite quotient of
+the actual homogeneous local germ and its specified analytic
+continuation. They hold for every admissible input class
+on one fixed joint classical system. No uniqueness across
+arbitrary classical regulator subsequences is asserted.
+
+Theorem~\ref{qll-varying-theorem} identifies fixed finite
+histories only when their actual finite intermediate input
+families satisfy the uniform budgets and insertion-domain
+hypotheses. A small quotient norm, or a newly localized
+infinite representative, does not automatically provide those
+bounds for the actual finite winding remainders. For a fixed
+finite $q$, crude canonical estimates and an additional radius
+reduction may furnish a finite history, but that construction
+must be supplied separately. The infinite quotient envelope
+is not a regulator-uniform finite RG induction.
+
+If extraction is performed before the local limit, it must
+use the actual finite reference $S_{M,N}$ and a specified
+finite coefficient functional $\beta_N$ with the required
+normalization and convergence. The finite-volume Ward
+construction supplies a candidate cutoff-jet functional.
+One must not assume that $S_{M,N}$ equals the canonical
+periodization of an independently selected infinite reference.
+The exact classical identity holds for the actual finite
+references; compatibility of projected finite histories
+requires the separate coefficient and family statements.
+
+The quotient removes field-independent totals. Physical
+vacuum factors remain separately tracked, and their
+extensive limits are not supplied by this theorem.
+Large-field and mixed histories, global measure consistency,
+observables and the continuum limit remain outside this
+local amplitude result.
+
+The intermediate projection obstruction is therefore resolved:
+the actual classical reference transports exactly, so its
+extractions telescope. Combined with the proved local quantum
+quotient map and quadratic force, this yields the finite-block
+contraction and invariant amplitude envelope above. It does
+not constitute a completed Yang--Mills construction.

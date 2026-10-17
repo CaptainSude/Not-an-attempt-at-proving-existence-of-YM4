@@ -1,0 +1,314 @@
+% No preamble. Prefix pvs-. Actual flat physical spectral estimates.
+\section{Flat physical heat densities and the remaining curvature interface}
+\label{pvs-section}
+
+Fix dimension four, a color algebra of dimension \(n_{\mathfrak g}\),
+a primitive odd ratio \(\ell\), a composite \(K=\ell^k\), and any
+preceding homogeneous depth \(M\).
+Coordinates are current-link angles with counting inner products.
+On a cubic current torus of side \(KN\), there are \(N^4\) final
+\(K\)-blocks.
+All statements about varying backgrounds below are explicitly
+separated from the flat spectral theorem.
+
+\subsection{Actual flat inputs}
+\label{pvs-input-section}
+
+Let \(P_f,P_c\) be the fine and coarse physical projections at
+the flat field, and write
+\begin{equation}
+ \begin{split}
+ L&=q_M,\qquad A=P_cC_K|_{\operatorname{ran}P_f},\\
+ R&=L|_{\operatorname{ran}P_f}-A^Tq_{MK}A,\qquad
+ Q=R+aA^TA .
+ \end{split}
+ \label{pvs-operators}
+\end{equation}
+These are the actual residual physical operators of the finite
+quotient identity. The following previously proved facts are the
+only model-specific inputs:
+\begin{equation}
+ \begin{gathered}
+ L\ge d^Td,\qquad 0\le q_{MK},\qquad \|q_{MK}\|\le R_q,\\
+ R\ge0,\qquad Q\ge c_aK^{-2}I,\qquad c_a>0 .
+ \end{gathered}
+ \label{pvs-inputs}
+\end{equation}
+The constants are uniform in \(M,K,N\).
+For example, the physical alias proof gives
+\[
+ c_a=\min\{B_0^{-1},a/(A_0+B_0R_q)\},\qquad
+ A_0=2c_\omega^{-2},\quad
+ B_0=(1+2c_\omega^{-2})/4,\quad c_\omega=(2/\pi)^5.
+\]
+Flat operators are invariant under final-block translations.
+
+The globally based scalar gradient has the same range as the
+ordinary periodic gradient: subtracting the value of a scalar at
+the base does not change its gradient.
+Thus \(\operatorname{ran}P_f\) is the usual transverse Bloch
+space, including all harmonic one-forms at momentum zero.
+No estimate on an inverse globally based scalar operator is used.
+
+Choose a fixed \(a\ge R_q\). Then
+\begin{equation}
+ Q=L|_{\rm phys}+A^T(aI-q_{MK})A\ge\Delta_{\rm phys},
+ \qquad
+ Q\ge\tfrac12\Delta_{\rm phys}+\frac{c_a}{2K^2}I .
+ \label{pvs-combined-order}
+\end{equation}
+Here \(\Delta_{\rm phys}\) is the Maxwell form on the transverse
+space, where it is the scalar lattice Laplacian.
+
+\begin{theorem}[Uniform flat physical heat and inverse moments]
+\label{pvs-main}
+Put \(\widehat Q=K^2Q\), and define the heat trace per final block by
+\[
+ \widehat H_{M,K,N}(u)
+   =N^{-4}\operatorname{Tr}_{\rm phys}e^{-u\widehat Q}.
+\]
+There are \(C,c>0\), independent of \(M,K,N\), such that
+\begin{equation}
+ \widehat H_{M,K,N}(u)
+ \le C\left\{\frac{K^4}{(1+K^2u)^2}+N^{-4}\right\}e^{-cu},
+ \qquad u>0.
+ \label{pvs-heat}
+\end{equation}
+In the infinite flat structural system the corresponding block
+trace satisfies the same bound with \(N^{-4}\) omitted.
+For every \(p>0\),
+\begin{equation}
+ \operatorname{Tr}_{\rm block}\widehat Q^{-p}
+ \le C_p
+ \begin{cases}
+ K^{4-2p}+N^{-4},&0<p<2,\\
+ 1+\log K+N^{-4},&p=2,\\
+ 1+N^{-4},&p>2,
+ \end{cases}
+ \label{pvs-moments}
+\end{equation}
+again omitting \(N^{-4}\) in infinite volume.
+For each fixed real \(r\) and \(U\ge1\),
+\begin{equation}
+ \int_U^\infty u^{r-1}\widehat H_{M,K,N}(u)\,du
+ \le C_r(1+N^{-4})e^{-cU/2}.
+ \label{pvs-tail}
+\end{equation}
+These are unperturbed spectral statements. They do not assert a
+bound on a background derivative of a heat trace.
+\end{theorem}
+
+\begin{proof}
+For self-adjoint finite matrices \(X\ge Y\), the min--max theorem
+gives ordered eigenvalues \(\lambda_j(X)\ge\lambda_j(Y)\);
+therefore \(\operatorname{Tr}e^{-sX}\le
+\operatorname{Tr}e^{-sY}\).
+No operator monotonicity of the exponential is asserted.
+
+At momentum \(p\in(2\pi/n)\mathbb Z_n^4\), \(n=KN\), put
+\(P(p)=4\sum_\mu\sin^2(p_\mu/2)\).
+The physical Maxwell multiplicity is \(3n_{\mathfrak g}\)
+away from zero and \(4n_{\mathfrak g}\) at zero. Hence
+\begin{equation}
+ \operatorname{Tr}_{\rm phys}e^{-sQ}
+ \le 4n_{\mathfrak g}e^{-c_as/(2K^2)}
+                       \sum_p e^{-sP(p)/2}.
+ \label{pvs-minmax}
+\end{equation}
+For the one-dimensional scalar heat average
+\[
+ p_n(t)=\frac1n\sum_{m\ {\rm mod}\ n}
+                      e^{-4t\sin^2(\pi m/n)},
+\]
+use representatives \(|m|\le n/2\) and
+\(\sin(\pi|m|/n)\ge2|m|/n\).
+Gaussian summation for \(t\ge1\), and \(p_n(t)\le1\) for
+\(t\le1\), give
+\begin{equation}
+ p_n(t)\le n^{-1}+C(1+t)^{-1/2},\qquad
+ p_n(t)^4\le C\{n^{-4}+(1+t)^{-2}\}.
+ \label{pvs-scalar-heat}
+\end{equation}
+Since \(\sum_p e^{-tP(p)}=n^4p_n(t)^4\),
+division of \eqref{pvs-minmax} by \(N^4\) yields
+\[
+ N^{-4}\operatorname{Tr}e^{-sQ}
+ \le C\{K^4(1+s)^{-2}+N^{-4}\}e^{-cs/K^2}.
+\]
+Set \(s=K^2u\) to obtain \eqref{pvs-heat}.
+
+The normalized total trace equals the diagonal trace in any one
+final block, by final-block translation invariance.
+This equality does not turn the min--max argument into a
+pointwise operator comparison.
+In infinite volume, apply the same min--max argument in each
+finite-dimensional coarse Bloch fiber and integrate.
+Folding the Maxwell aliases gives \(K^4\) times the fine scalar
+heat density, proving the infinite statement directly.
+
+Positive spectral calculus gives
+\[
+ \operatorname{Tr}_{\rm block}\widehat Q^{-p}
+  =\frac1{\Gamma(p)}\int_0^\infty
+      u^{p-1}\operatorname{Tr}_{\rm block}e^{-u\widehat Q}\,du .
+\]
+Split at \(K^{-2}\) and \(1\) to obtain
+\eqref{pvs-moments}.
+For \(p>2\), one can instead use
+\(K^4/(1+K^2u)^2\le u^{-2}\) directly.
+The same inequality and exponential decay prove
+\eqref{pvs-tail}.
+\end{proof}
+
+The finite \(N^{-4}\) term is necessary: it retains the finite
+number of physical harmonic modes.
+The local inverse moment means
+\(\operatorname{Tr}(P_{\rm block}\widehat Q^{-p}P_{\rm block})\).
+It is not a claim of global trace class in infinite volume, nor
+an identification with a power of the compressed inverse.
+The logarithm in the \(p=2\) bound is an upper bound; no matching
+actual asymptotic is claimed.
+
+\subsection{An optional finite on-shell replacement}
+\label{pvs-onshell-section}
+
+On a finite real on-shell family with
+\(LD_f=0\) and \(qD_c=0\), set
+\[
+ Q_{\rm on}=L|_{\rm phys}+aA^TA=Q+A^Tq_{\rm phys}A.
+\]
+The minimum right inverse gives \(AQ^{-1}A^T=a^{-1}I\).
+Consequently the determinant lemma proves
+\begin{equation}
+ \frac{\det Q_{\rm on}}{\det Q}
+   =\det(I+a^{-1}q_{\rm phys}).
+ \label{pvs-onshell-determinant}
+\end{equation}
+Because \(q\) kills the coarse gauge space, the normalized
+logarithm on the right is the normalized full coarse
+\(\log\det(q+aI)\); only a field-independent power of \(a\)
+has been removed.
+The already proved coarse-factor Maxwell estimate can therefore
+control this replacement wherever its Maxwell moment is
+legitimately defined.
+
+This does not apply to an arbitrary off-shell family by omission
+of the multiplier curvature.
+The actual general form is
+\(L=s''-\lambda\cdot f''\).
+An infinite affine use of separate globally based physical
+determinants requires its own infrared justification.
+
+\subsection{A precise sufficient derivative estimate}
+\label{pvs-vertex-section}
+
+The following fixed-space lemma isolates an additional estimate
+which would suffice for an infrared second-variation bound.
+Its hypotheses are not established here for the actual varying
+physical quotient.
+
+\begin{lemma}[Relative-form vertices]
+\label{pvs-vertex-lemma}
+Let
+\(X(t)=X+tV_1+t^2V_2+O(t^3)\)
+be a real self-adjoint family on a fixed finite-dimensional
+Hilbert space, with \(X>0\). Suppose
+\begin{equation}
+ \|X^{-1/2}V_jX^{-1/2}\|\le L_j,\qquad j=1,2.
+ \label{pvs-vertex-hyp}
+\end{equation}
+Then
+\begin{equation}
+ \left|[t^2]\operatorname{Tr}e^{-uX(t)}\right|
+ \le8(L_2+L_1^2)\operatorname{Tr}e^{-uX/4},
+ \qquad u>0.
+ \label{pvs-vertex-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The single insertion has absolute value at most
+\[
+ uL_2\operatorname{Tr}(Xe^{-uX})
+ \le(2/e)L_2\operatorname{Tr}e^{-uX/2}.
+\]
+In an eigenbasis of \(X\), cyclic Duhamel gives the double
+insertion exactly as
+\begin{equation}
+ \frac u2\sum_{i,j}|(V_1)_{ij}|^2
+       \frac{e^{-u\lambda_i}-e^{-u\lambda_j}}
+                         {\lambda_j-\lambda_i},
+ \label{pvs-divided-difference}
+\end{equation}
+with the continuous value \(ue^{-u\lambda_i}\) at coincident
+eigenvalues.
+For \(a,b>0\),
+\begin{equation}
+ ab\,\frac{e^{-ua}-e^{-ub}}{b-a}
+ \le2\{ae^{-ua/2}+be^{-ub/2}\}.
+ \label{pvs-elementary}
+\end{equation}
+Indeed, assume \(b\ge a\).
+For \(b\ge2a\), use \(ab/(b-a)\le2a\).
+For \(a\le b\le2a\), use the derivative bound
+\(ue^{-ua}\), \(ab\le2a^2\), and
+\((ua)e^{-ua/2}\le2/e\).
+
+Write \(V_1=X^{1/2}BX^{1/2}\), with \(\|B\|\le L_1\).
+The row and column square sums of \(B\) are at most \(L_1^2\).
+Applying \eqref{pvs-elementary} to
+\eqref{pvs-divided-difference} bounds it by
+\[
+ 2uL_1^2\operatorname{Tr}(Xe^{-uX/2})
+ \le(8/e)L_1^2\operatorname{Tr}e^{-uX/4}.
+\]
+Together with the single insertion this proves the stated
+conservative constant.
+\end{proof}
+
+If \(X(t)=K^2Q_\perp(t)\) could be identified with a fixed
+physical space and satisfy \eqref{pvs-vertex-hyp} uniformly,
+Theorem~\ref{pvs-main} would give
+\begin{equation}
+ \int_1^\infty
+ \left|N^{-4}[t^2]\operatorname{Tr}e^{-uX(t)}\right|
+ \frac{du}{u}
+ \le C(L_2+L_1^2)(1+N^{-4}).
+ \label{pvs-conditional-tail}
+\end{equation}
+An infinite-volume version additionally requires a justified
+trace-and-derivative limit.
+Neither the uniform identification of varying physical spaces
+nor the actual bounds \eqref{pvs-vertex-hyp} follows from the
+flat gap.
+Derivatives of \(P_f,P_c\), the current, and the nonlinear
+constraint cannot be absorbed into an unproved constant.
+
+\subsection{The required scalar--physical cancellation}
+\label{pvs-scope-section}
+
+The separate physical determinant has a growing response even
+along constant commuting final link angles.
+The actual globally based finite identity and the local Ward
+limit give, at fixed \(K\),
+\begin{equation}
+ \lim_{N\to\infty}N^{-4}[t^2]\log\det Q_\perp(tA)
+   =C_H|A|^2(K^2-1)g_4,\qquad
+ g_4=\int_{[-\pi,\pi]^4}
+       \frac{dp}{(2\pi)^4\,4\sum_\mu\sin^2(p_\mu/2)}>0 .
+ \label{pvs-holonomy}
+\end{equation}
+Here the fine angles are \(tA/K\).
+This is the separately established flat-holonomy calculation:
+the same term in the scalar orbit-density ratio cancels
+\eqref{pvs-holonomy} in the actual total correction.
+It is a zero-momentum test, not a magnetic Maxwell coefficient.
+
+Accordingly, the spectral theorem does not permit an independent
+replacement of a massless physical or scalar factor by its
+massive infinite reference.
+A valid curvature comparison must preserve the coupled
+cancellation, or supply a justified joint infrared regulator.
+No actual vector logarithmic coefficient, its sign, or
+Yang--Mills existence conclusion is proved by this section.
+

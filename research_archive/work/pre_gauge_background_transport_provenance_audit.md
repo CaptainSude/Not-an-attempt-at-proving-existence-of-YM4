@@ -1,0 +1,21 @@
+# Independent audit of the smooth pre-root-gauge representative
+
+17 October 2026. Reviewed `pre_gauge_background_transport_research.md`, Sections1--7, and its `pre_gauge_background_transport_fragment.tex` transcription. Result: pass after one source-scaling typo was corrected. This is an internal proof audit, not external certification or a quantum construction result.
+
+1. The two depths have the correct physical normalization: N=MR, eta=N^-1, k prefix steps with M=L^k, and h_k=L^k eta=R^-1. The ordinary-trajectory bound is simultaneous in all prefixes; its only accumulation is sum_(q<t)h_q=(h_t-eta)/(L-1). Thus the constant depends on fixed base L, not on the endpoint ratio R=L^s. Applying the existing uniform physical bound for A_ord,N(w) proves the claimed angle bound C||w||/R.
+
+2. The strict support argument uses the right Banach output norm. All prefix links in a final unit cell form one bounded-field fiber, with maximum norm taken before the support sum. Their dependence neighborhoods lie in one fixed physical collar. The ordinary transfer T_N is uniformly local and analytic N_alpha->N_alpha through its cumulative endpoint gauge, fixed smooth extension, and removable-eta local jet formula. The prefix physical output map is uniformly local analytic into the bounded-field fiber. Banach-valued Cauchy on this whole row therefore has no sum over its O(R^d) scalar outputs. The fixed input-cell slot count is independent of R. Substituting Notebook21's supported complete fine fields and multiplying by h_k gives the exact O(r/R) support norm and O(r^2/R) remainder.
+
+3. The graph-Steiner union inequality, fixed coefficient carrier, and arbitrary fixed cardinality reserve are used consistently. There is no inference of a tree bound from a one-weight response, and no use of the nonuniform ordinary-average physical adjoint. The proof does not silently upgrade the prefix output to a stronger Hölder norm than needed; its output fiber is bounded fields.
+
+4. Physical centered-branch identification is correctly restricted to s=1. The actual rooted gauge u(x)=P_Vp(y,x), u(y)=1, sends P to one and preserves the next ordinary constraint. The existing variational and uniqueness comparison identifies the branch. For s>1 the note retains only the iterated identity M_L^s Vp=W; it does not identify this with a separately defined direct-R average or chart.
+
+5. The analytic continuation statement is a statement about the total gauge-invariant functional's composition germ. Equality holds where both representatives and the small gauge path lie in the original common domain. Composing E with the small pre-gauge representative then gives a holomorphic continuation to the displayed larger w ball. It does not evaluate E at the rooted representative outside E's stated ball, does not assert arbitrary coefficientwise gauge invariance, and requires a compatible nonvanishing logarithm when E is a log integral.
+
+6. The later activity estimate correctly retains both the actual scalar-coordinate count D and projection fiber F_R. A Banach output maximum does not remove the D|H| coordinatewise Cauchy cost of composing a general activity. For D of order R^d, amplitude improvement alone still permits the stated small-radius loss of order R^(1-d). No stable quantum domain or contraction is claimed.
+
+7. The pointwise gauge-conjugation identity is exact for arbitrary relative field B. The initial draft then wrote B=g Phi_V(z), which would not equal the actual nonlinear source insertion. This was corrected in both note and fragment to B=Phi_V(gz), with an explicit warning that the coupling cannot be moved through the nonlinear chart. No other formula correction was found.
+
+The later elementary domain-inclusion corollary also passes: if R>C0 and b lies in the uniform classical w-domain, the amplitude estimate maps the radius-b w ball into the radius C0 b/R<b current-angle ball. For s>1 this remains a geometric pre-gauge statement, not an identification with an unconstructed macrostep source branch or integral.
+
+The open fluctuation-integral interface is accurately separated: a pointwise gauge identity alone gives neither a normalized Gaussian-integral identity on the larger domain nor preservation of the cutoff, determinant, gauge-penalty and interaction norms required for iteration.

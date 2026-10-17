@@ -1,0 +1,362 @@
+% Research proof, 16 October 2026. Two independent internal audits passed.
+% No preamble. Label prefix ng-. Uses \norm and standard theorem environments.
+\section{Constraint-preserving gauges and coverage of the flat slice}
+\label{ng-section}
+
+This module concerns finite compatible periodic regulators, fixed
+odd blocking ratio $L$, refinement $M=L^j$, fine spacing $\eta=M^{-1}$,
+and final spacing one. Fix $0<\alpha<1$. All constants below are
+independent of refinement and volume. We use the corrected nonlinear
+map with fixed identity reference, $\mathcal F(A)=\mathcal F^{(j)}(A)$,
+and its ordinary potential differential $Q_A=D\mathcal F(A)$.
+This is not renamed as the separately based source $Q(U)$.
+The flat scalar projection denoted $R$ earlier is denoted $R_0$
+here. The potential norms $N_\alpha$, $\mathcal N_\alpha$ and
+$\mathcal X_\alpha$ refer to the same complete physical norm,
+up to the fixed collar equivalences stated below.
+
+Let $\mathcal X_\alpha$ be the complete-field norm consisting of
+the bounded potential, its bounded physical first differences and
+the local $\alpha$-H\"older seminorms of those differences. Let
+$\mathcal Y_\alpha$ be the scalar $C^\alpha$ norm, including the
+supremum, and $\mathcal Z_\alpha$ the scalar $C^{2,\alpha}$ norm,
+including all physical differences through order two and the
+$\alpha$-H\"older members at order two. Fixed collar enlargements
+give equivalent norms. At fixed refinement these are Banach spaces.
+The estimates below are uniform in that refinement. For distances
+above a fixed collar size, supremum norms supply the corresponding
+global increments. No field is sharply cut off before differentiating.
+
+The purpose is to upgrade a local minimum on the fixed flat gauge
+slice to a local minimum of the same nonlinear constraint, modulo
+constraint-preserving gauge transformations. This requires a new
+gauge argument; strict minimality on the slice alone is insufficient.
+
+\subsection{The induced coarse gauge of the corrected average}
+
+For the ordinary group average $M$ and one-step endpoint mean
+$a_y(U)$, use the exact identities already checked in Notebook 14:
+\[
+ C(U)(c)=a_{c_-}(U)^{-1}M(U)(c)a_{c_+}(U),\qquad
+ M(U^g)=M(U)^{g|_{\rm coarse}},
+\]
+where $U^g(e)=g(e_-)U(e)g(e_+)^{-1}$. Direct multiplication gives
+\begin{equation}\label{ng-induced-group-gauge}
+ C(U^g)=C(U)^{k(U,g)},\qquad
+ k_y(U,g)=a_y(U^g)^{-1}g(y)a_y(U).
+\end{equation}
+All factors are on the common small-field branch. The equality is
+exact, not a linearization. In particular $k(U,1)=1$.
+
+To compute its differential, set
+\[
+ P_x=U(\Gamma_{yx})=e^{iY_x},\quad
+ \overline Y_y=\sum_xL^{-d}Y_x,\quad
+ a_y(U)=e^{i\overline Y_y},\qquad
+ \mathcal J_X Z=\int_0^1\operatorname{Ad}_{e^{itX}}Z\,dt.
+\]
+For $g(s)=e^{is\lambda}$ the contour left increment is
+$\lambda(y)-\operatorname{Ad}_{P_x}\lambda(x)$.
+The logarithm and exponential differentials therefore give the
+following explicit coarse gauge operator:
+\begin{equation}\label{ng-one-step-gauge}
+ \begin{split}
+ T_U\lambda(y)=\operatorname{Ad}_{a_y(U)^{-1}}
+ \bigg[\lambda(y)-\mathcal J_{\overline Y_y}
+   \sum_xL^{-d}\mathcal J_{Y_x}^{-1}
+       \bigl(\lambda(y)-\operatorname{Ad}_{P_x}\lambda(x)\bigr)
+ \bigg].
+ \end{split}
+\end{equation}
+Thus $(1/i)\partial_s k_y(U,e^{is\lambda})|_0=T_U\lambda(y)$.
+The gauge parameter has angle units; no factor $h$ is inserted
+into $g=e^{i\lambda}$. At $U=1$ this formula reduces exactly to
+the normalized scalar block average $Q_{0,h}$.
+
+For $U=e^{ihA}$, every coefficient in
+\eqref{ng-one-step-gauge} is a finite local analytic function of
+$hA$. Its difference from its value at zero is $O(h\norm{A}_\infty)$.
+Finite one-step row incidence and physical-adjoint column incidence
+then give
+\begin{equation}\label{ng-one-step-smallness}
+ \norm{T_U-Q_{0,h}}_{\rm av}\le C_Lh\norm{A}_\infty,
+ \qquad \norm{T_U}_{\rm av}\le1+C_Lh\norm{A}_\infty.
+\end{equation}
+Here the absolute Schur norm uses physical measures and includes
+the bounded-field norm of the transpose. Its column factor is the
+fixed volume ratio $L^d$. An evaluation at the block center in
+\eqref{ng-one-step-gauge} consequently costs a fixed $L$ constant,
+not a power of the full refinement. The flat scalar averages and
+their physical adjoints have row sums one.
+
+Let $C_t$ be the corrected iterates of $U=e^{i\eta A}$, and let
+$g_0=g$, $g_{t+1}=k(C_t,g_t)$. Induction in
+\eqref{ng-induced-group-gauge} gives the exact multilevel gauge
+law $C^{(j)}(U^g)=C^{(j)}(U)^{g_j}$. Differentiating at $g=1$
+gives the scalar operator
+\begin{equation}\label{ng-composite-gauge}
+ \mathcal G_A=T_{C_{j-1}}\cdots T_{C_0},\qquad
+ \mathcal G_0=Q_0.
+\end{equation}
+These backgrounds are the corrected iterates, unlike the ordinary
+reference trajectory used for the source $Q(U)$. The proven bound
+$C_t=e^{ih_tA_t}$, $\norm{A_t}_\infty\le2\norm{A}_\infty$,
+and $\sum_{t<j}h_t\le1/(L-1)$ imply
+\begin{equation}\label{ng-composite-smallness}
+ \norm{\mathcal G_A-Q_0}_{\rm av}
+       \le e^{C\norm{A}_\infty/(L-1)}-1.
+\end{equation}
+Its coefficients have fixed final physical range. The same estimate,
+up to a fixed constant, holds in weighted physical-cell norms.
+The operator is holomorphic in the common bounded-field ball;
+local analytic coefficients and finite range first give holomorphy
+at each refinement, and the displayed uniform bounds give uniform
+Cauchy bounds on smaller balls.
+
+Define the ordinary-coordinate fine gauge generator and its
+coarse analogue by
+\begin{equation}\label{ng-generators}
+ X_A=\mathcal J_{\eta A}^{-1}D_U,
+ \qquad U=e^{i\eta A},\quad
+ D_U\lambda(e)=\eta^{-1}
+       (\operatorname{Ad}_{U_e}\lambda(e_+)-\lambda(e_-)).
+\end{equation}
+A gauge $e^{is\lambda}$ has ordinary potential velocity
+$-X_A\lambda$. At the output, with $B=\mathcal F(A)$ and
+$V=e^{iB}$, differentiation of the multilevel group law yields
+\begin{equation}\label{ng-gauge-intertwining}
+ Q_AX_A=\mathcal J_B^{-1}D_V\mathcal G_A.
+\end{equation}
+The output spacing is one. In particular $X_A\lambda$ is tangent
+to the nonlinear constraint whenever $\mathcal G_A\lambda=0$.
+
+\subsection{Smooth scalar tools for the flat gauge}
+
+Retain $\mathcal L=D^TD$, the scalar flat projection $R_0$, and
+$Z$ of the previous flat notebooks. Put
+\begin{equation}\label{ng-T-definition}
+ T=G'R_0=Z\mathcal L.
+\end{equation}
+The exact identities give
+\begin{equation}\label{ng-T-identities}
+ Q_0T=0,\qquad R_0\mathcal L T=R_0.
+\end{equation}
+The following scalar estimates are needed:
+\begin{equation}\label{ng-scalar-bounds}
+ \norm{R_0f}_{\mathcal Y_\alpha}\le C\norm{f}_{\mathcal Y_\alpha},
+ \qquad
+ \norm{Tf}_{\mathcal Z_\alpha}\le C\norm{f}_{\mathcal Y_\alpha}.
+\end{equation}
+Here is a direct justification from the already proved canceled
+aliases. With $A_0=a_0a_0^-$ and
+$D_{s,2}=A_0+P_0^2\sum_{r\ne0}a_ra_r^-/P_r^2$, the high block of
+$T=Z\mathcal L$ is
+\[
+ T_{rs}=\frac{\delta_{rs}}{P_r}
+       -\frac{P_0^2a_r^-a_s}{P_r^2P_sD_{s,2}},\qquad r,s\ne0.
+\]
+Its mixed entries are
+$T_{0s}=-a_0^-a_s/(P_sD_{s,2})$ and
+$T_{r0}=-P_0a_r^-a_0/(P_r^2D_{s,2})$, while
+$T_{00}=P_0R_{s,2}/D_{s,2}$.
+Subtract $(\mathcal L+1)^{-1}$. The high diagonal remainder has
+heat factor $1-e^{-t}$, making its two-output-difference
+$\alpha$-H\"older estimate integrable. All high rank output
+vectors are $a_r^-/P_r^2$, which are absolutely summable after
+$2+\alpha$ differences; input rows are in alias $\ell^2$.
+The scalar massive part maps $C^\alpha$ to $C^{2,\alpha}$ by
+zero-row heat cancellation and the time split at the square of
+the output separation. This is the same second/third heat
+derivative calculation used for the right-divergence Schauder
+theorem, now with both derivatives on the output.
+
+Also $R_0=I-P_0^{\rm gauge}$, where the rank-one Bloch projection
+has output vector
+\[
+ \chi_0=a_0^-,\qquad \chi_r=P_0a_r^-/P_r\quad(r\ne0),
+ \qquad P_0^{\rm gauge}=\chi\chi^-/D_{s,2}.
+\]
+It maps bounded fine fields to $C^{1,\beta}$ for every fixed
+$\beta<1$, by absolute output alias sums and input $\ell^2$.
+This proves the first bound in \eqref{ng-scalar-bounds} for fixed
+$\alpha<1$. Periodic reconstruction and contour shifting can
+be applied to these complete operators; hence the same estimates
+have exponential cell locality and weighted versions. These
+arguments do not claim a second-difference estimate on arbitrary
+bounded forcing for the massive inverse.
+
+We also require a sufficiently smooth scalar right inverse of
+$Q_0$. Define $H_b$ by the canceled scalar biharmonic symbols
+\begin{equation}\label{ng-biharmonic-extension}
+ (H_b)_0=\frac{a_0^-}{D_{s,2}},\qquad
+ (H_b)_r=\frac{P_0^2a_r^-}{P_r^2D_{s,2}}\quad(r\ne0).
+\end{equation}
+Then
+\begin{equation}\label{ng-biharmonic-bounds}
+ Q_0H_b=I,\qquad
+ \norm{H_bc}_{\mathcal Z_\alpha}\le C\norm{c}_\infty.
+\end{equation}
+On nonzero real fibers this is exactly
+$\mathcal L^{-2}Q_0^T(Q_0\mathcal L^{-2}Q_0^T)^{-1}$.
+The canceled formula supplies the constant-mode continuation, so
+the complete operator has the periodic gluing needed above.
+The identity follows by multiplying the scalar row $a_r$ into
+\eqref{ng-biharmonic-extension}. The bound follows from the
+same $a_r/P_r^2$ absolute alias sums; these even allow $3+\beta$
+differences for $\beta<1$. Central entries are bounded and analytic
+through $P_0=0$. This is a separately constructed scalar extension,
+not the less smooth extension $G'^2Q_0^T(Q_0G'^2Q_0^T)^{-1}$.
+
+\subsection{An invertible gauge-fixing differential}
+
+Set $F_A=\mathcal G_A-Q_0$. On a sufficiently small field ball,
+\begin{equation}\label{ng-scalar-chart}
+ T_A^s=(I+H_bF_A)^{-1}
+\end{equation}
+is a uniformly bounded holomorphic operator on $\mathcal Z_\alpha$.
+Indeed $F_A:\mathcal Z_\alpha\to\ell^\infty$ has norm
+$O(\norm{A}_\infty)$ and $H_b$ satisfies
+\eqref{ng-biharmonic-bounds}. The inverse differs from identity
+by the same small order. If $Q_0\psi=0$ and
+$\lambda=T_A^s\psi$, applying $Q_0$ to
+$\lambda+H_bF_A\lambda=\psi$ gives
+\begin{equation}\label{ng-scalar-kernel}
+ \mathcal G_A\lambda=0.
+\end{equation}
+
+There is a uniform estimate
+\begin{equation}\label{ng-generator-bound}
+ \norm{(X_A-D)\lambda}_{\mathcal X_\alpha}
+       \le C\norm{A}_{\mathcal X_\alpha}
+                        \norm{\lambda}_{\mathcal Z_\alpha}.
+\end{equation}
+To see the physical scaling, write
+$D_U=D+E_s(A)$ with
+$E_s(A)\lambda=\eta^{-1}(\operatorname{Ad}_{e^{i\eta A}}-I)
+\lambda(\cdot+\eta e_\mu)$.
+The coefficient in this expression extends analytically to
+$\eta=0$ and has $C^{1,\alpha}$ norm at most
+$C\norm{A}_{\mathcal X_\alpha}$.
+Also $\mathcal J_{\eta A}^{-1}-I$ has that norm at most
+$C\eta\norm{A}_{\mathcal X_\alpha}$.
+Discrete product and shift estimates then prove
+\eqref{ng-generator-bound}, using two derivatives of $\lambda$.
+Every derivative of a coefficient is paid by a derivative of $A$;
+there is no inverse-mesh loss. These maps are holomorphic in their
+indicated Banach norms on a common smaller ball.
+
+The operator $R_0D^T:\mathcal X_\alpha\to\mathcal Y_\alpha$
+is uniformly bounded. Let
+$\mathcal R_\alpha=\{f\in\mathcal Y_\alpha:R_0f=f\}$,
+a closed subspace because of \eqref{ng-scalar-bounds}. Define on it
+\begin{equation}\label{ng-fixing-map}
+ \mathcal M_A=R_0D^TX_AT_A^sT.
+\end{equation}
+By \eqref{ng-T-identities}, $\mathcal M_0=I$ on
+$\mathcal R_\alpha$. The preceding estimates give
+\begin{equation}\label{ng-fixing-smallness}
+ \norm{\mathcal M_A-I}_{\mathcal R_\alpha\to\mathcal R_\alpha}
+       \le C\norm{A}_{\mathcal X_\alpha}.
+\end{equation}
+Its range is in $\mathcal R_\alpha$ because it begins with $R_0$.
+For a fixed small radius its Neumann inverse is uniformly bounded
+and holomorphic. Define the scalar correction operator
+\begin{equation}\label{ng-correction}
+ \mathcal L_A=T_A^sT\mathcal M_A^{-1}R_0D^T.
+\end{equation}
+It satisfies the exact identities
+\begin{equation}\label{ng-correction-identities}
+ \mathcal G_A\mathcal L_Av=0,\qquad
+ R_0D^TX_A\mathcal L_Av=R_0D^Tv,
+\end{equation}
+and the stronger norm estimate
+\begin{equation}\label{ng-correction-bound}
+ \norm{\mathcal L_Av}_{\mathcal Z_\alpha}
+       \le C\norm{R_0D^Tv}_{\mathcal Y_\alpha}.
+\end{equation}
+
+Consequently any constrained tangent $Q_Av=0$ decomposes as
+\begin{equation}\label{ng-tangent-decomposition}
+ v=\bigl(v-X_A\mathcal L_Av\bigr)+X_A\mathcal L_Av,
+\end{equation}
+where the first term is both constrained and in the fixed flat
+gauge, and the second is a constraint-preserving gauge tangent.
+The first claim uses \eqref{ng-gauge-intertwining} and
+\eqref{ng-correction-identities}. Its tangent space is exactly the
+image of $X=\ker Q\cap\ker R_0D^T$ under the constraint-chart
+derivative $T_A=(I+H D\mathcal R(A))^{-1}$: for a constrained
+fixed-gauge tangent $v$, the vector
+$z=(I+H D\mathcal R(A))v$ satisfies $Qz=0$ and $R_0D^Tz=0$.
+A stationary Wilson field on
+the fixed slice is therefore stationary on the full constraint:
+the action derivative vanishes on the first term by slice
+stationarity and on the second by exact gauge invariance.
+
+\subsection{A constraint-preserving flow into the slice}
+
+For real fields use the differential equation
+\begin{equation}\label{ng-flow}
+ \frac{dA(t)}{dt}=-X_{A(t)}\mathcal L_{A(t)}A(t),
+ \qquad A(0)=A^{\rm in}.
+\end{equation}
+The vector field is locally Lipschitz on the small
+$\mathcal X_\alpha$ ball, uniformly in refinement. Its negative
+sign matches the actual gauge velocity in
+\eqref{ng-generators}. Along any solution in that ball,
+\begin{equation}\label{ng-flow-identities}
+ R_0D^TA(t)=e^{-t}R_0D^TA^{\rm in},\qquad
+ \mathcal F(A(t))=\mathcal F(A^{\rm in}),\qquad
+ \mathcal S_\eta(e^{i\eta A(t)})
+             =\mathcal S_\eta(e^{i\eta A^{\rm in}}).
+\end{equation}
+The first identity follows directly from
+\eqref{ng-correction-identities}; the second from
+\eqref{ng-gauge-intertwining}; the third from gauge invariance.
+All parameter operators preserve real fields. Thus the flow
+integrates unitary gauge transformations on the finite regulator.
+
+By \eqref{ng-correction-bound} and the uniform bound for $X_A$,
+\begin{equation}\label{ng-flow-speed}
+ \norm{A'(t)}_{\mathcal X_\alpha}
+    \le Ce^{-t}\norm{R_0D^TA^{\rm in}}_{\mathcal Y_\alpha}.
+\end{equation}
+Choose the initial ball sufficiently small that its radius plus
+this total displacement lies within the established operator
+domain. Standard continuation then keeps the solution in that
+domain for every $t\ge0$. The integrable speed proves convergence
+in $\mathcal X_\alpha$ to $A^\flat$, with
+\begin{equation}\label{ng-flow-limit}
+ R_0D^TA^\flat=0,\quad
+ \mathcal F(A^\flat)=\mathcal F(A^{\rm in}),\quad
+ \mathcal S_\eta(e^{i\eta A^\flat})
+          =\mathcal S_\eta(e^{i\eta A^{\rm in}}),\quad
+ \norm{A^\flat-A^{\rm in}}_{\mathcal X_\alpha}
+       \le C\norm{R_0D^TA^{\rm in}}_{\mathcal Y_\alpha}.
+\end{equation}
+The gauge parameter is integrable even in $\mathcal Z_\alpha$,
+so the gauge transformations themselves converge uniformly to a
+unitary limit. Hence the limiting field remains in the original
+gauge orbit, not merely at the same action value.
+
+For a fixed slice field $A_*$ the same construction can be made
+in a neighborhood of $A_*$. Since $R_0D^TA_*=0$,
+the total displacement is bounded by
+$C\norm{A^{\rm in}-A_*}_{\mathcal X_\alpha}$.
+Choosing this neighborhood inside the strict slice-minimality
+neighborhood ensures that $A^\flat$ belongs to it. Therefore,
+if $A_*$ is a strict local minimum on
+\[
+ \mathcal F(A)=B,\qquad R_0D^TA=0,
+\]
+then it is a local minimum of $\mathcal F(A)=B$ without imposing
+the flat gauge condition. Equality in a sufficiently small
+neighborhood implies $A^\flat=A_*$ and hence that the initial
+field is gauge equivalent to $A_*$. This is local minimality
+modulo the constraint-preserving gauge orbit, not an absolute
+global minimum among all lattice configurations.
+
+The argument supplies uniform local gauge coverage for the stated
+global small-field class. It does not cover arbitrary plaquette-small
+gauge orbits, changing retained domains, topologically nontrivial
+bundles, or a continuum quantum measure. No finite total action is
+assigned to arbitrary bounded infinite-lattice fields here.

@@ -1,0 +1,309 @@
+% No preamble. Prefix lpd-. Conditional downstream theorem, 17 October 2026.
+% The actual uniform coefficient comparison is a named hypothesis here.
+\section{From a uniform positive coefficient to finite local trajectories}
+\label{lpd-section}
+
+This section isolates the exact downstream consequence of a uniform
+actual determinant comparison. The finite compactness, moment passage,
+activity induction and endpoint shooting inputs are those of
+Notebooks 31--32. The coefficient comparison below is an explicit
+hypothesis of this section; it must be supplied by the actual scalar
+and vector comparison, with the stated uniformity. No perturbative
+reference coefficient is substituted for an unidentified actual one.
+
+\subsection{Fixed data and the uniform coefficient hypothesis}
+\label{lpd-data}
+
+Fix the elementary quantum ratio \(R>1\), grouping \(J\), field
+radius \(b>0\), carrier exponent \(a_0\), and the real extracted
+finite activity system. Let \(q_a\) be its amplitude block length,
+\(r_b=K_{\mathrm{amp}}b^2\) its endpoint ball radius, and
+\(C_{\mathrm{int}}b^2\) its intermediate bound. These data are fixed
+before the longer block length used below. The activity induction
+holds for arbitrary prescribed couplings in one fixed weak range,
+provided the retained periods exceed its threshold.
+
+All finite extraction functionals \(\beta_j\) are the actual
+short-lift functionals normalized by the actual classical reference.
+For the actual finite local map \(F_{j,g}\), write
+\begin{equation}
+ d_j(g,x)=\beta_{j+1}(F_{j,g}(x)),\qquad
+ x_{j+1}=P_{j+1}F_{j,g_j}(x_j),\qquad
+ \gamma_{j+1}=\gamma_j-d_j(g_j,x_j).
+ \label{lpd-updates}
+\end{equation}
+Real initial classes and the real branches are understood throughout.
+The initial class may be zero, or any fixed real extracted class in
+the endpoint ball. The actual coupling relation is
+\(g_j=\gamma_j^{-1/2}\) whenever \(\gamma_j>0\).
+
+Let \(D_{M,K}^{*}\) denote the actual leading determinant correction
+at preceding homogeneous depth \(M\) and endpoint ratio \(K\) in a
+joint infinite structural system. A star labels that structural
+system, not a preferred limit of one fixed old depth. Its Maxwell
+functional is the true infinite one, with the same classical
+normalization used in the finite moment passage. The system includes
+the shifted depths and endpoint ratios needed by the determinant
+cocycle. In particular all comparisons below refer to the same
+joint system.
+
+\paragraph{Uniform actual coefficient comparison \(\mathrm{UC}\).}
+Assume that there are \(\alpha_g>0\), \(C_{\mathrm{cmp}}\ge0\)
+and \(K_0\ge1\), independent of preceding depth and of the applicable
+joint structural limit, such that
+\begin{equation}
+ \left|\beta^{*}(D_{M,K}^{*})
+                  -22\alpha_g\log K\right|
+       \le C_{\mathrm{cmp}}
+ \quad\hbox{for every }K=R^n\ge K_0.
+ \label{lpd-UC}
+\end{equation}
+For the one-color convention used in the scalar comparison,
+\(\alpha_g=C_H/(48\pi^2)\), with \(C_H>0\) for a nonzero probe
+in the simple color factor. Only the uniform lower half of
+\eqref{lpd-UC} is required for this section. Positivity in one
+chosen fixed-depth limit is insufficient.
+
+In the present assembly, Theorem~\ref{apb-main} supplies
+\(\mathrm{UC}\), with \(K_0=1\), under its stated classical structural
+and determinant inputs. The following argument retains the hypothesis
+as a named interface so that its downstream use can be checked
+independently.
+
+\subsection{A positive leading block in every structural limit}
+\label{lpd-leading-block}
+
+Choose a positive multiple \(q\) of \(q_a\) such that
+\begin{equation}
+ R^q\ge K_0,\qquad
+ C_{\mathrm{cmp}}\le 11\alpha_g q\log R,
+ \qquad
+ \delta=11\alpha_g q\log R>0.
+ \label{lpd-q-choice}
+\end{equation}
+The exact leading cocycle and true infinite classical marginal
+preservation give, in every relevant joint system,
+\begin{equation}
+ B_q^{*}:=\sum_{j=0}^{q-1}\beta_{j+1}^{*}(D_j^{*})
+       =\beta_q^{*}(D_{0,R^q}^{*})
+       \ge 22\alpha_g q\log R-C_{\mathrm{cmp}}
+       \ge\delta.
+ \label{lpd-infinite-block}
+\end{equation}
+The index zero on the right means the beginning of this block;
+its preceding homogeneous depth is arbitrary. The cocycle identity
+is used only in the joint infinite system. No exact additivity
+of finite short-lift ratios is assumed.
+
+Let \(\mathcal P\) be the compatible cofinal family of periods.
+Every fixed power of \(R\), and every required fixed grouping,
+divides all sufficiently late periods. For a \(q\)-step block
+with final period \(N\), write
+\begin{equation}
+ M_j=MR^j,\qquad Q_j=R^{q-j}N,\qquad
+ b_{0,j}^{M,N}
+  =\beta_{M_jR,Q_{j+1}}(D_{M_j,R;Q_{j+1}}),\qquad
+ B_q(M,N)=\sum_{j=0}^{q-1}b_{0,j}^{M,N}.
+ \label{lpd-finite-block}
+\end{equation}
+The available joint compactness and normalized moment passage imply
+that, along a subsequence of every sequence \(M_n\) and
+\(N_n\in\mathcal P\) with \(N_n\to\infty\),
+\begin{equation}
+ B_q(M_n,N_n)\longrightarrow B_q^{*}.
+ \label{lpd-finite-passage}
+\end{equation}
+This passage includes the long-ratio determinant in
+\eqref{lpd-infinite-block}; it does not select unrelated favorable
+limits. Exponential source-Hessian bounds control the second-moment
+tails, and the actual finite reference denominators tend uniformly
+to one.
+
+\begin{lemma}[Uniform positive finite leading block]
+\label{lpd-finite-drift}
+Under \(\mathrm{UC}\), there is \(N_{\mathrm{drift}}\), independent
+of the preceding depth \(M\), such that
+\begin{equation}
+ B_q(M,N)\ge\delta/2
+ \quad\hbox{whenever }N\in\mathcal P,\quad
+                         N\ge N_{\mathrm{drift}}.
+ \label{lpd-finite-leading-positive}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Otherwise choose violating pairs \((M_n,N_n)\) with
+\(N_n\to\infty\). Joint compactness and
+\eqref{lpd-finite-passage} produce a structural limit with
+\(B_q^{*}\le\delta/2\), contradicting
+\eqref{lpd-infinite-block}. The starting stage of a block is absorbed
+into \(M\). This is a qualitative compactness argument and supplies
+no numerical period threshold or convergence rate.
+\end{proof}
+
+\subsection{From leading drift to the actual finite decrement}
+\label{lpd-actual-drift}
+
+The finite leakage, zero-input parity and inherited-input comparison
+give, on the established activity envelope,
+\begin{align}
+ |d_j(g,x_j)-b_{0,j}|
+ \le{}&C_{\mathrm{int}}\omega(N_{\min})
+    +C_{\mathrm{par},\beta}
+          \{\tau(T(g))+g^2T(g)^6\}\notag\\
+ &+C_{\mathrm{in},\beta}\,gT(g)/b .
+ \label{lpd-error}
+\end{align}
+Here \(\omega(N)\to0\) along the compatible family, and the last
+two terms tend to zero as \(g\downarrow0\), at the fixed geometric
+data and field radius. The cutoff \(T(g)\) is the actual continuous
+real threshold. The input factor \(b^2\) has already canceled the
+\(b^{-2}\) Maxwell-extraction bound in the last term.
+
+Choose \(N_0\) above \(N_{\mathrm{drift}}\), the reference and
+finite-induction thresholds, and sufficiently large that
+\begin{equation}
+ C_{\mathrm{int}}\omega(N_0)\le\frac{\delta}{8q}.
+ \label{lpd-period-threshold}
+\end{equation}
+Lower the weak-coupling ceiling \(g_{\mathrm w}>0\), if necessary,
+so that for every \(0<g\le g_{\mathrm w}\),
+\begin{equation}
+ C_{\mathrm{par},\beta}
+       \{\tau(T(g))+g^2T(g)^6\}
+      +C_{\mathrm{in},\beta}gT(g)/b
+       \le\frac{\delta}{8q}.
+ \label{lpd-coupling-threshold}
+\end{equation}
+These choices are independent of the permitted history length.
+The existing magnitude bound gives a fixed \(D_{\mathrm{abs}}>0\)
+with \(|d_j(g,x_j)|\le D_{\mathrm{abs}}\) on this envelope.
+Consequently every \(q\)-step block at arbitrary prescribed weak
+couplings, started in the endpoint ball and with final period at
+least \(N_0\), obeys
+\begin{equation}
+ B_-\le\sum_{j=k}^{k+q-1}d_j(g_j,x_j)\le B_+,\qquad
+ B_-=\delta/4>0,\qquad B_+=qD_{\mathrm{abs}}.
+ \label{lpd-block-bounds}
+\end{equation}
+Each \(q_a\)-step subblock returns to the same endpoint ball.
+Thus taking \(q\) larger repeats the existing activity induction;
+it does not introduce a new large-endpoint field-dilation estimate.
+Neither individual leading coefficients nor individual actual
+decrements need be positive.
+
+\subsection{Finite local endpoint shooting}
+\label{lpd-shooting}
+
+\begin{theorem}[Conditional positive-drift local trajectories]
+\label{lpd-main}
+Assume \(\mathrm{UC}\) with the stated structural uniformity and
+the established finite local inputs above. Put
+\(\Gamma_{\mathrm w}=g_{\mathrm w}^{-2}\), and choose a terminal
+inverse coupling
+\begin{equation}
+                 \Gamma_*\ge
+                    \Gamma_{\mathrm w}+qD_{\mathrm{abs}}.
+ \label{lpd-terminal}
+\end{equation}
+For every integer \(m\ge1\) and every compatible finite homogeneous
+history of \(mq\) steps with final period \(N_{\mathrm{end}}\ge N_0\),
+there is an initial inverse coupling
+\begin{equation}
+ \Gamma_*+mB_-\le\gamma_{\mathrm{bare}}
+                      \le\Gamma_*+mB_+
+ \label{lpd-initial-interval}
+\end{equation}
+whose actual local extraction trajectory reaches \(\Gamma_*\)
+and stays in the weak range throughout. Its initial period is
+\(R^{mq}N_{\mathrm{end}}\); all intermediate periods obey the
+same compatibility requirements. Its activity classes obey the
+same endpoint and intermediate \(O(b^2)\) bounds.
+\end{theorem}
+
+\begin{proof}
+For the proof alone, evaluate the local map at
+\begin{equation}
+ g_{\mathrm{eval}}(\gamma)
+             =\max\{\gamma,\Gamma_{\mathrm w}\}^{-1/2},
+ \label{lpd-clipped-coupling}
+\end{equation}
+while retaining the unclipped scalar update
+\(\gamma_{\mathrm{next}}
+ =\gamma-d_j(g_{\mathrm{eval}}(\gamma),x)\).
+The evaluated couplings are always weak, so finite induction and
+\eqref{lpd-block-bounds} apply to every auxiliary history, regardless
+of the scalar value. The prescribed-coupling estimates apply to
+its realized sequence; no adaptation changes their constants.
+
+For this fixed finite regulator the joint coupling/class continuity
+of the normalized local map makes the terminal scalar continuous
+in its initial value. On the compact interval
+\eqref{lpd-initial-interval}, the absolute increment bound keeps
+all intermediate scalars bounded. Their evaluated couplings
+therefore lie in a compact positive interval. No continuity at
+\(g=0\), volume-uniform continuity modulus, or continuous choice
+of equivalent activity representatives is needed.
+
+At the left endpoint of \eqref{lpd-initial-interval}, the terminal
+scalar is at most \(\Gamma_*\), by the lower block bound. At its
+right endpoint it is at least \(\Gamma_*\), by the upper block
+bound. The intermediate value theorem selects a clipped history
+ending exactly at \(\Gamma_*\). Summing its future block decrements
+backwards gives
+\begin{equation}
+ \Gamma_*+(m-k)B_-\le\gamma_{kq}
+                   \le\Gamma_*+(m-k)B_+,
+ \qquad 0\le k\le m.
+ \label{lpd-block-endpoints}
+\end{equation}
+Inside each block,
+\begin{equation}
+ \gamma_{kq+r}\ge\gamma_{kq}-rD_{\mathrm{abs}}
+       \ge\Gamma_*-qD_{\mathrm{abs}}
+       \ge\Gamma_{\mathrm w},
+ \qquad 0\le r\le q.
+ \label{lpd-clipping-absent}
+\end{equation}
+Clipping is therefore absent from the selected history.
+Its actual updates are exactly \eqref{lpd-updates} with
+\(g_j=\gamma_j^{-1/2}\). The finite quotient relocalizations
+replace representatives only by equal normalized totals; their
+scalar differences are carried by the exact vacuum factors.
+Thus the conclusion concerns the genuine local density update,
+not an approximate scalar recurrence.
+\end{proof}
+
+The bare coupling in this theorem satisfies
+\begin{equation}
+ (\Gamma_*+mqD_{\mathrm{abs}})^{-1/2}
+       \le g_{\mathrm{bare}}
+       \le(\Gamma_*+m\delta/4)^{-1/2}.
+ \label{lpd-bare-asymptotic}
+\end{equation}
+It is of order \(m^{-1/2}\), equivalently of order
+\((mq)^{-1/2}\) with \(q\) fixed, and reaches the same positive
+weak endpoint \(g_*=\Gamma_*^{-1/2}\). The theorem asserts neither
+uniqueness of the tuned initial value nor consistency of the
+choices at different horizons.
+
+\subsection{Parameter order and scope}
+\label{lpd-scope}
+
+First fix \(R,J,b\) and the available \(q_a\)-block activity system.
+The uniform coefficient comparison determines a sufficiently large
+fixed multiple \(q\) by \eqref{lpd-q-choice}. Then choose the
+period threshold \(N_0\), the weak ceiling \(g_{\mathrm w}\), and
+the fixed terminal margin \(\Gamma_*\). The horizon \(m\) is
+arbitrary after these choices. No quantitative finite-volume rate
+and no exact finite classical marginal identity enter this order.
+
+The only new coefficient input of this section is
+\eqref{lpd-UC}. If an actual comparison theorem supplies it in
+every required joint structural system, this section discharges
+the positive-drift hypothesis of finite local shooting. The
+comparison is supplied here by Theorem~\ref{apb-main}. The
+conclusion remains about homogeneous local analytic histories
+and their justified continuation. It does not identify those
+histories with the full Wilson measure, control mixed or large-field
+sectors, construct continuum observable measures, prove a
+nontrivial continuum Yang--Mills theory, or establish a mass gap.

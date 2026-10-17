@@ -1,0 +1,94 @@
+\section{The actual logarithm and a positive structural margin}
+\label{apb-section}
+
+Return to the exactly normalized determinant correction
+\(\mathcal D_{M,K}\) of Notebooks 32--36. All stationary substitutions,
+coarse constraint factors, and gauge-density factors are those in
+that construction. The following conclusion combines estimates for
+that object; it is not a replacement of its determinant by a reference.
+
+\begin{theorem}[Uniform actual leading coefficient]
+\label{apb-main}
+Under the classical structural, determinant-identification and
+localized-vertex inputs stated in this notebook and Notebook 36,
+there is a constant \(C_{\rm cmp}\), independent of \(M,K\) and of
+the applicable joint infinite structural system, such that
+\begin{equation}
+ \left|\beta(\mathcal D_{M,K})
+                    -22\alpha_g\log K\right|\le C_{\rm cmp},
+ \qquad \alpha_g=\frac{C_H}{48\pi^2}.
+ \label{apb-coefficient}
+\end{equation}
+The same constant works for every jointly obtainable structural limit
+supplying these uniform inputs, including limits with varying old depth.
+This is not an exact continuous-momentum identity at finite period.
+\end{theorem}
+
+\begin{proof}
+Write, with the endpoint-\(K\) affine normalization,
+\[
+ h^{\rm soft}_{M,K}(s)
+  =[t^2]\{\operatorname{Tr}_{0,E}e^{-sV(t)}
+                   -2\operatorname{Tr}_{0,S}e^{-sT_s(t)}\}.
+\]
+The exact soft factorization, its two bounded coarse corrections,
+and the two heat-end estimates of Notebook 36 give
+\begin{equation}
+ \beta(\mathcal D_{M,K})
+       =\int_1^{K^2}h^{\rm soft}_{M,K}(s)\,\frac{ds}{s}+R_{M,K},
+ \qquad |R_{M,K}|\le C_0.
+ \label{apb-band}
+\end{equation}
+Theorem~\ref{spb-main} removes the soft penalties on this interval:
+\[
+ |h^{\rm soft}_{M,K}(s)-h^{\rm base}_M(s)|
+       \le C_1s/K^2,\qquad 1\le s\le K^2.
+\]
+The scalar base is independent of \(M\).
+Theorem~\ref{abw-main} compares the actual vector base with the
+Wilson base with error at most \(C_2/s\). Theorem~\ref{wcr-main}
+gives its normalized continuum limit with error at most
+\(C_3s^{-1/2}\). Consequently
+\begin{equation}
+ |h^{\rm soft}_{M,K}(s)-11\alpha_g|
+       \le C\{s^{-1/2}+s/K^2\},
+       \qquad 1\le s\le K^2.
+ \label{apb-plateau}
+\end{equation}
+Both errors are integrable uniformly against logarithmic time:
+\[
+ \int_1^{K^2}s^{-1/2}\frac{ds}{s}\le2,\qquad
+ \int_1^{K^2}\frac{s}{K^2}\frac{ds}{s}\le1.
+\]
+The constant part integrates to
+\(11\alpha_g\log(K^2)=22\alpha_g\log K\).
+Together with \eqref{apb-band}, this proves
+\eqref{apb-coefficient}. At \(K=1\) the intermediate integral is
+empty and the same bounded-end argument applies.
+
+Every bound used above depends only on the common classical and
+localized-vertex constants. No uniqueness or favorable selection of
+a structural limit is used. This proves the stated uniform scope.
+\end{proof}
+
+Combining Theorem~\ref{sgc-main} with the exact mean-zero identity
+\(\mathcal D=\mathcal N_0(\log\det\widehat G
+-\tfrac12\log\det Q_B)\) also gives
+\[
+ \beta(\mathcal N_0\log\det\widehat G)
+       =2\alpha_g\log K+O(1),\qquad
+ \beta(-\tfrac12\mathcal N_0\log\det Q_B)
+       =20\alpha_g\log K+O(1).
+\]
+These separated values concern this particular exact decomposition.
+The complete coefficient \eqref{apb-coefficient} retains the original
+normalization.
+
+For a compact simple group and a nonzero normalized Cartan element,
+\(C_H>0\). Fixing the elementary quantum ratio \(R>1\), sufficiently
+large fixed multiples \(q\) of the activity-return length therefore
+give a positive margin for the long ratio \(K=R^q\), uniformly in
+all the structural limits required by finite transfer. The next
+section states exactly what this supplies for the local quantum
+recursion. Neither the present coefficient nor that recursion
+identifies the full Wilson measure or constructs continuum fields.

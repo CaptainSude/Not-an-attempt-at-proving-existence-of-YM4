@@ -1,0 +1,105 @@
+\section{The remaining determinant estimate and the existence argument}
+\label{dfn-next}
+
+The leading correction is now an actual functional,
+\[
+ D_{M,R}=\Delta_{M,R}+\mathcal Q_{\mathrm{det},M,R},
+\]
+with an exact Hessian trace formula and an exact finite
+composition law. In a jointly compatible infinite system its
+Maxwell coefficient satisfies
+\[
+ \beta_{MRL}(D_{M,RL})
+   =\beta_{MR}(D_{M,R})+\beta_{MRL}(D_{MR,L}).
+\]
+These identities supply the algebra for accumulated drift;
+they do not determine its value or sign.
+
+The exact gauge and coarea bridge makes the comparison
+operators concrete. With its stated finite coordinates,
+\[
+ D_{M,K}=\mathcal N_0\!\left[
+    \log\det G_b-\frac12\log\det Q_b
+                 -\frac12\log\det(CQ_b^{-1}C^T)\right],
+\]
+where \(\mathcal N_0\) subtracts the value at the identity.
+The inverse pivot has been accounted for by coarea.
+In fact \(CQ_b^{-1}C^T=(q_{\mathrm{eff}}+B)^{-1}\).
+Choosing one fixed sufficiently large \(B=aI\), the
+coarse term \(\tfrac12\mathcal N_0\log\det(q_{\mathrm{eff}}+aI)\)
+has a uniformly bounded Maxwell coefficient by the
+proved coarse-action support bounds.
+The remaining comparison concerns the fine combination
+\[
+ \mathcal N_0\!\left[
+ \log\det G_b-\frac12\log\det
+ \bigl(s''-\lambda\cdot f''+D_bD_b^T+aC^TC\bigr)\right].
+\]
+In particular, the point-anchor Rayleigh test rules out a
+uniform physical mass estimate for the based ghost alone.
+
+A concrete route is to compare the composite determinant from
+the bare Wilson action to a background-field vector and ghost
+reference at the same cutoff and infrared scale. With every
+normalization specified, the desired estimate has the form
+\[
+ \bigl|\beta(D_{1,R^k})-B_k^{\mathrm{ref}}\bigr|\le C,
+ \qquad
+ \bigl|B_k^{\mathrm{ref}}-a\,k\bigr|\le C',
+ \qquad a>0,
+\]
+with constants independent of \(k\). Neither displayed bound is
+proved in this notebook. The stationary lift, constrained-current
+curvature and measure factors must be included in that comparison.
+A coefficient quoted for a different effective action does not
+establish these estimates for the present one.
+
+The drift hypothesis required for shooting concerns the actual
+finite regulators, including arbitrary permitted preceding depths.
+An infinite comparison must therefore retain the uniformity and
+joint-limit compatibility needed to transfer a positive block
+margin to those finite coefficients. The qualitative transfer
+proposition supplies that passage once a positive margin holds
+in every relevant structural limit; a quantitative
+finite-volume convergence rate is unnecessary for this purpose.
+No exact finite commutation of Maxwell extraction with classical
+transport has been assumed.
+
+Once that drift is supplied, the conditional shooting theorem
+closes the finite weak-coupling trajectory issue for this local
+map. The subsequent existence argument must still incorporate
+all required field histories with their exact measure identities,
+prove uniform source estimates, construct a nontrivial continuum
+observable hierarchy, and establish its Euclidean symmetry,
+positivity and reconstruction properties. These requirements are
+those of Notebook 01; the determinant and tuning arguments do not
+replace them.
+
+\begin{thebibliography}{9}
+\bibitem{priorflow}
+\emph{Toward a four-dimensional Yang--Mills construction},
+research Notebooks 15--31 in this workspace.
+The local minimum, exact constrained integral, common-domain
+quantum map, finite induction and classical Maxwell transport
+are the principal inputs.
+\bibitem{lwbackground}
+M.~L\"uscher and P.~Weisz,
+\emph{Background field technique and renormalization in lattice
+gauge theory}, Nucl. Phys. B \textbf{452} (1995), 213--233.
+\href{https://arxiv.org/abs/hep-lat/9504006}{Primary preprint}.
+\bibitem{lwmatching}
+M.~L\"uscher and P.~Weisz,
+\emph{Computation of the relation between the bare lattice
+coupling and the MS coupling in SU(N) gauge theories to two
+loops}, Nucl. Phys. B \textbf{452} (1995), 234--260.
+\href{https://arxiv.org/abs/hep-lat/9505011}{Primary preprint}.
+These papers supply background-field formalism and reference
+amplitudes to investigate. They are not used here as a proof of
+the required comparison with our constrained determinant.
+\bibitem{sourceflow}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}
+{Yang--Mills-LLM-experiment}, deposited raw accounts at commit
+\texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+\end{thebibliography}
+\end{document}

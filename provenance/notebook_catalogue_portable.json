@@ -1,0 +1,2465 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "scope": "Complete authoritative notebook inventory 01–39; original assignment through 38 extended to include the final normalized replacement theorem.",
+  "workspace_path_convention": "All paths are relative to the original workspace root.",
+  "overall_status": "No complete Yang–Mills existence proof is claimed. Local homogeneous drift/tuning is established within stated upstream working inputs; full mixed-history, observable, continuum, reconstruction and identification obligations remain.",
+  "authority_policy": "Use the current authoritative output and latest checkpoint for scope. Research notes and audits preserve derivation/corrections; older next-task language can be superseded. Internal audits and typesetting do not constitute external mathematical certification.",
+  "inventory_notes": [
+    "39 actual source documents: 36 flat outputs plus three dedicated main.tex projects for 37–39.",
+    "Recursive inventory must include ignored directories; a default rg file list omitted the dedicated project sources.",
+    "Dependencies listed below are selected substantive upstream inputs, not a machine-verified proof graph.",
+    "The original source repository is separately pinned at e392ef45013a581664bab76b90867170b30fe10e; its claims are not made authoritative by this catalogue."
+  ],
+  "corrections_register": "work/handoff_corrections_register.txt",
+  "latest_dependency_audit": "work/final_push_existence_dependency_audit.txt",
+  "notebooks": [
+    {
+      "ordinal": 1,
+      "title": "Notebook 01: proof obligations and verified reductions",
+      "path": "outputs/ym4-construction-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A master proof-obligation map for constructing a nonzero Euclidean observable sector, followed by the stronger Yang–Mills identification problem.",
+        "Conditional all-order factorial estimates on joint flat tests from translated fixed-side grids; a rotation criterion with angular exponential type strictly below four; and quantitative two-scale/free-kernel reductions for positive-energy nontriviality.",
+        "Records source-domain and running-coupling extraction interfaces and explicit counterexamples to shortcut arguments. The opening map has been updated through Notebook 39."
+      ],
+      "assumptions": [
+        "The principal original target is the homogeneous SU(2) Wilson family and separated gauge-invariant observables.",
+        "The all-order estimate still requires uniform translated-grid source bounds. Rotation requires the stated entire angular growth, positive imaginary-angle kernels and detection hypotheses; power counting alone does not establish them.",
+        "The nontriviality reduction requires actual interacting kernel accuracy and the common continuum hierarchy."
+      ],
+      "upstream_notebooks": [],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "This is a map and collection of scoped reductions, not a completed construction or a certification of every companion proof.",
+        "A scalar observable sector alone does not identify the full Yang–Mills field theory or establish a mass gap."
+      ],
+      "later_developments": "The chronological open-problem statements in early sections must be read with the updated opening map and the latest checkpoint. Notebooks 37–38 close local drift and add genuine bare-measure results, while the full mixed-history and continuum interfaces remain.",
+      "key_proof_modules": [
+        "work/rotation_research.md",
+        "work/compactness_research.md",
+        "work/all_order_research.md",
+        "work/source_stability_research.md",
+        "work/running_coupling_research.md",
+        "work/nontriviality_research.md"
+      ],
+      "key_audit_files": [
+        "work/final_push_existence_dependency_audit.txt"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ],
+      "section_inventory": [
+        "The target and the actual missing pieces",
+        "A smaller source-stability interface",
+        "A factorial bound without a shrinking global zero-free disc",
+        "Rotation restoration: a sharp conditional threshold",
+        "A positive-energy witness at one coupling scale",
+        "Why this still would not identify Yang--Mills",
+        "The next research sequence",
+        "Audit locations in the deposited account"
+      ],
+      "theorem_inventory": [
+        "lemma: Elementary denominator floor",
+        "theorem: Uniform fixed-order correlations",
+        "lemma: Four-stage sufficient domain criterion",
+        "lemma: Uniform quadratic extraction from pointed remainders",
+        "lemma: Correlated Gaussian cutoff cost",
+        "lemma: Coherent subset bound",
+        "theorem: All-order flat-test bound",
+        "lemma: Wilson convolution conjugation",
+        "theorem: Strict angular type below four",
+        "lemma: Semigroup ratio",
+        "proposition: Free off-diagonal approximation",
+        "theorem: Two-scale criterion"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/01-ym4-construction-notebook/main.tex",
+      "bundle_pdf": "notebooks/01-ym4-construction-notebook/main.pdf",
+      "bundle_original_source": "notebooks/01-ym4-construction-notebook/original.tex"
+    },
+    {
+      "ordinal": 2,
+      "title": "Notebook 02: preserving diagonal reflection positivity",
+      "path": "outputs/ym4-reflection-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A fixed-coupling construction preserving both coordinate and diagonal reflection positivity in the same infinite-volume state from the original coordinate tori.",
+        "Exact diagonal feature/Haar gluing, mixed site/link boundary spaces, even Schatten inequalities, local gauge-layer removal and a full reflected-source-array comparison."
+      ],
+      "assumptions": [
+        "Fixed positive coupling and compatible coordinate tori of side 2 L^M, with L odd; the finite graph, cuts and source supports must satisfy the proved placement hypotheses.",
+        "The transfer comparison uses full-array Jensen normalization and a volume limit, not uniqueness of Gibbs states."
+      ],
+      "upstream_notebooks": [],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "No uniform ultraviolet estimate, rotational invariance, continuum limit or uniqueness follows from this fixed-coupling result.",
+        "An admissible geometric placement is not by itself a fold theorem; the feature-space gluing supplies the additional identity."
+      ],
+      "later_developments": "The odd-width placement and exact diagonal slab normalization supersede tentative two-frame divisibility objections in the early scratch work.",
+      "key_proof_modules": [
+        "work/two_frame_geometry_research.md",
+        "work/diagonal_fold_research.md",
+        "work/gauge_layer_research.md"
+      ],
+      "key_audit_files": [
+        "work/reflection_assembly_audit.md",
+        "work/folding_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C05"
+      ],
+      "section_inventory": [
+        "Precise statement and order of limits",
+        "Exact Wilson slabs and reflected cell inequalities",
+        "Coordinate physical operators and the insertion bound",
+        "Local gauge-invariant reduction to two slices",
+        "The two frames on the original odd-$L$ family",
+        "Pressure, source comparison, and amplification",
+        "Removing the tilt in one common state",
+        "Convex separation proves the theorem",
+        "What this buys for the continuum problem"
+      ],
+      "theorem_inventory": [
+        "theorem: ",
+        "lemma: Gluing and adjoints",
+        "lemma: Bounded sources in coordinate slabs",
+        "lemma: Finite derivative loss",
+        "proposition: Paired two-layer reduction"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/02-ym4-reflection-notebook/main.tex",
+      "bundle_pdf": "notebooks/02-ym4-reflection-notebook/main.pdf",
+      "bundle_original_source": "notebooks/02-ym4-reflection-notebook/original.tex"
+    },
+    {
+      "ordinal": 3,
+      "title": "Notebook 03: current commutators and Gaussian cutoff clusters",
+      "path": "outputs/ym4-current-cutoff-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "An explicit covariant cutoff-current commutator estimate using first differences.",
+        "A convergent sharp-cutoff Gaussian cluster expansion with a zero-free logarithm and anchored activity bounds for complex covariances.",
+        "A direct two-source Hessian bound and thermodynamic-limit criterion for the cutoff logarithm, potentially avoiding a full strict-support expansion for a quadratic coefficient."
+      ],
+      "assumptions": [
+        "Uniform complex covariance accretivity, operator bounds, exponential decay and a fixed finite-dimensional cell description.",
+        "The Hessian theorem requires the actual covariance responses in fixed cutoff coordinates, including the stated localized first and second response bounds."
+      ],
+      "upstream_notebooks": [
+        1
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The abstract Gaussian theorem does not identify the actual Yang–Mills source coefficient without coordinate/domain matching.",
+        "Local precision in a changing gauge is not automatically the required covariance-response hypothesis."
+      ],
+      "later_developments": "Notebook 04 supplies strict background support under stronger hypotheses; Notebooks 18–21 provide interacting and physical-coordinate matches in the homogeneous small-field class.",
+      "key_proof_modules": [
+        "work/gaussian_cutoff_cluster_research.md",
+        "work/gaussian_cutoff_hessian_research.md",
+        "work/cutoff_source_match_research.md"
+      ],
+      "key_audit_files": [],
+      "checkpoints": [],
+      "correction_ids": [
+        "C04",
+        "C06"
+      ],
+      "section_inventory": [
+        "A cutoff commutator needing only first differences",
+        "What the combined-current cancellation accomplishes",
+        "Sharp defects for a complex Gaussian",
+        "From marked defects to connected polymer activities",
+        "A zero-free logarithm with an anchored bound",
+        "A direct quadratic bound without background-support activities",
+        "The remaining Yang--Mills interface"
+      ],
+      "theorem_inventory": [
+        "proposition: ",
+        "proposition: ",
+        "proposition: Flat bond averaging",
+        "lemma: ",
+        "lemma: A useful precision formulation",
+        "theorem: ",
+        "corollary: ",
+        "theorem: ",
+        "proposition: A sufficient uniform perturbation criterion"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/03-ym4-current-cutoff-notebook/main.tex",
+      "bundle_pdf": "notebooks/03-ym4-current-cutoff-notebook/main.pdf",
+      "bundle_original_source": "notebooks/03-ym4-current-cutoff-notebook/original.tex"
+    },
+    {
+      "ordinal": 4,
+      "title": "Notebook 04: strictly local Gaussian cutoff activities",
+      "path": "outputs/ym4-gaussian-locality-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A support-valued density expansion yields strictly local holomorphic Gaussian cutoff activities.",
+        "The proof preserves marked-set compatibility while separately tracking background supports, inverse marginal matrices and re-rooting costs."
+      ],
+      "assumptions": [
+        "A background-independent uniformly accretive reference covariance with weighted Schur bounds.",
+        "A small symmetric local precision perturbation on a product complex background domain, with the explicit weighted support norm."
+      ],
+      "upstream_notebooks": [
+        3
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The conclusion concerns locality, holomorphy and norms; it does not assert that each activity is gauge invariant or hypercubic invariant.",
+        "Uniform estimates about arbitrary reference backgrounds do not imply strict locality in those reference backgrounds."
+      ],
+      "later_developments": "The title and theorem wording retain some candidate-era language. Its internally audited abstract theorem is used later with actual homogeneous precision decompositions; Notebook 18 extends it to overlapping interactions.",
+      "key_proof_modules": [
+        "work/gaussian_cutoff_locality_research.md"
+      ],
+      "key_audit_files": [
+        "work/gaussian_cutoff_locality_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C06"
+      ],
+      "section_inventory": [
+        "Setting, constants, and conclusion",
+        "The support algebra and local covariance paths",
+        "Tree interpolation and uniform inverse bounds",
+        "Expansion of the entire marginal Gaussian density",
+        "Exact marked polymers and tree estimates",
+        "The logarithm and background-rooted bounds",
+        "Why no disconnected unmarked component remains",
+        "Limits of the theorem and the model interface"
+      ],
+      "theorem_inventory": [
+        "theorem: Proposed strict-locality theorem",
+        "lemma: Covariance paths with attached supports",
+        "lemma: Elementary weighted-conjugation inverse bound"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/04-ym4-gaussian-locality-notebook/main.tex",
+      "bundle_pdf": "notebooks/04-ym4-gaussian-locality-notebook/main.pdf",
+      "bundle_original_source": "notebooks/04-ym4-gaussian-locality-notebook/original.tex"
+    },
+    {
+      "ordinal": 5,
+      "title": "Notebook 05: the flat gauge bridge and cutoff interactions",
+      "path": "outputs/ym4-gauge-interaction-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A quantitative flat axial-to-exponential gauge bridge using the actual averaged-path gauge penalty, together with current-dependent Ward corrections.",
+        "A disjoint-cell interacting Gaussian cutoff theorem and a corrected physical-field radius estimate, including the linear Jacobian contribution."
+      ],
+      "assumptions": [
+        "The precise rooted/block-mean gauge transformations and averaging constraints are distinguished.",
+        "The initial bridge uses an axial coercivity input; cell interactions have bounded local analytic coefficients on fixed-dimensional disjoint cells."
+      ],
+      "upstream_notebooks": [
+        3,
+        4
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "Disjoint-cell integration alone does not handle arbitrary overlapping polymer supports.",
+        "The physical fluctuation radius and the normalized integration-variable radius are different; current-free flat identities do not automatically extend to arbitrary effective currents."
+      ],
+      "later_developments": "Notebook 06 supplies direct flat coercivity, and Notebook 18 closes the overlapping-support integration problem. Subsequent physical source matching is in Notebooks 17–21.",
+      "key_proof_modules": [
+        "work/exponential_gauge_bridge_research.md",
+        "work/interaction_cutoff_research.md"
+      ],
+      "key_audit_files": [
+        "work/exponential_gauge_bridge_audit.md",
+        "work/interaction_cutoff_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C07",
+        "C08"
+      ],
+      "section_inventory": [
+        "The actual flat gauge penalty and its constraint",
+        "A quantitative flat coercivity transfer",
+        "The current correction to gauge invariance",
+        "Interaction smallness at the larger real cutoff",
+        "A complete interaction theorem for disjoint cells",
+        "The actual enlarged domain and the remaining interaction theorem",
+        "What these results contribute to the construction"
+      ],
+      "theorem_inventory": [
+        "theorem: ",
+        "lemma: Physical-field Schwarz estimate",
+        "theorem: ",
+        "corollary: The interaction changes the logarithm by $O(v)$"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/05-ym4-gauge-interaction-notebook/main.tex",
+      "bundle_pdf": "notebooks/05-ym4-gauge-interaction-notebook/main.pdf",
+      "bundle_original_source": "notebooks/05-ym4-gauge-interaction-notebook/original.tex"
+    },
+    {
+      "ordinal": 6,
+      "title": "Notebook 06: direct flat Maxwell bounds and a compact lift",
+      "path": "outputs/ym4-flat-maxwell-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A curvature-averaging cochain identity and scaled L2 contraction give a lower Maxwell energy bound.",
+        "Explicit compact lifts give a uniform upper energy bound; finite-block tree/averaging Poincare inequalities give a retained axial gap.",
+        "A boundary-adapted lift preserves precisely the incident-bond Dirichlet convention and all zero-extended averaging rows."
+      ],
+      "assumptions": [
+        "Odd homogeneous averaging ratios and fixed elementary block geometry; periodic multiplicities are retained.",
+        "Matching a classical effective Hessian requires the actual C2 constrained-minimizer branch and feasible curves, not merely differentiability."
+      ],
+      "upstream_notebooks": [
+        5
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "These are flat variational bounds, not nonflat covariance estimates or a quantum mass gap.",
+        "Freezing boundary-crossing bonds would change the boundary theorem's hypotheses."
+      ],
+      "later_developments": "The nonlinear minimizer and exact homogeneous Hessian match are supplied in Notebooks 15 and 17.",
+      "key_proof_modules": [
+        "work/flat_maxwell_gap_research.md",
+        "work/flat_maxwell_lift_research.md",
+        "work/flat_maxwell_boundary_research.md"
+      ],
+      "key_audit_files": [
+        "work/flat_maxwell_gap_audit.md",
+        "work/flat_maxwell_lift_audit.md",
+        "work/flat_maxwell_boundary_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C09",
+        "C10"
+      ],
+      "section_inventory": [
+        "Normalized averaging commutes with curvature",
+        "A compact right inverse with bounded energy",
+        "The flat variational form and rooted constraints",
+        "A finite-block axial Poincar\\'e inequality",
+        "Both bounds for the flat exponential-gauge precision",
+        "Identification with the Yang--Mills flat Hessian"
+      ],
+      "theorem_inventory": [
+        "proposition: ",
+        "theorem: Compact bounded-energy lift",
+        "lemma: "
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/06-ym4-flat-maxwell-notebook/main.tex",
+      "bundle_pdf": "notebooks/06-ym4-flat-maxwell-notebook/main.pdf",
+      "bundle_original_source": "notebooks/06-ym4-flat-maxwell-notebook/original.tex"
+    },
+    {
+      "ordinal": 7,
+      "title": "Notebook 07: locality and refinement limit of the flat Gaussian",
+      "path": "outputs/ym4-flat-locality-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "Exact Fourier alias pole cancellation gives a common holomorphic strip and exponential locality of the flat effective precision and covariance.",
+        "The normalized midpoint quadratic symbol has the Maxwell coefficient one.",
+        "The explicit sinc-alias refinement limit has an O(M^-2) exponentially weighted kernel error, uniformly in compatible periodic volume."
+      ],
+      "assumptions": [
+        "The homogeneous flat straight-string averaging family, its precise normalization and the retained gauge coordinates.",
+        "Complex pole cancellation is performed before estimates; zero modes and finite-period multiplicities are treated explicitly."
+      ],
+      "upstream_notebooks": [
+        5,
+        6
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The limiting object is a free Gaussian reference, not an interacting continuum Yang–Mills theory.",
+        "Ellipticity alone would not establish the normalized Maxwell coefficient; the explicit symbol calculation does."
+      ],
+      "later_developments": "This is the flat reference used by the nonlinear, determinant and heat-comparison notebooks.",
+      "key_proof_modules": [
+        "work/flat_covariance_limit_fragment.tex",
+        "work/flat_covariance_decay_research.md",
+        "work/flat_covariance_limit_research.md",
+        "work/flat_covariance_source_research.md"
+      ],
+      "key_audit_files": [
+        "work/flat_covariance_decay_audit.md",
+        "work/flat_covariance_combined_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C10",
+        "C11"
+      ],
+      "section_inventory": [
+        "The result and its scope",
+        "The exact alias formula and the gauge quotient",
+        "Cancellation of the complex massless denominator",
+        "A complex momentum strip independent of refinement",
+        "Periodic gluing, kernels, and the reduced inverse",
+        "The free low-momentum normalization",
+        "The ultraviolet limit of the flat Gaussian baseline",
+        "The actual flat source covariance"
+      ],
+      "theorem_inventory": [
+        "theorem: ",
+        "theorem: "
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/07-ym4-flat-locality-notebook/main.tex",
+      "bundle_pdf": "notebooks/07-ym4-flat-locality-notebook/main.pdf",
+      "bundle_original_source": "notebooks/07-ym4-flat-locality-notebook/original.tex"
+    },
+    {
+      "ordinal": 8,
+      "title": "Notebook 08: a local flat minimizing extension",
+      "path": "outputs/ym4-flat-minimizer-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "An explicit minimizing extension in the deposited homogeneous source gauge, with exact constraint and gauge uniqueness.",
+        "Uniform exponential locality in physical cell norms for the potential, first derivatives, curvature and componentwise Laplacian; C1,alpha regularity for every alpha below one.",
+        "A fixed-constraint first curvature-metric variation is identified."
+      ],
+      "assumptions": [
+        "The source scalar projection uses the squared-Laplacian scalar correction, distinct from the least-L2 minimizing lift.",
+        "Flat homogeneous averaging and compatible periods, with physical versus counting normalizations explicit."
+      ],
+      "upstream_notebooks": [
+        6,
+        7
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "No endpoint Lipschitz bound on first derivatives or general bounded individual second differences is asserted.",
+        "A flat local extension is not yet a nonflat/current-domain construction."
+      ],
+      "later_developments": "Notebooks 9–16 build the inverse, current, regularity and nonlinear consequences. Notebook 10 completes the curvature-response resolvent.",
+      "key_proof_modules": [
+        "work/flat_minimizer_locality_research.md",
+        "work/flat_minimizer_source_gauge_research.md",
+        "work/flat_curvature_response_research.md"
+      ],
+      "key_audit_files": [
+        "work/flat_minimizer_locality_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C10",
+        "C12"
+      ],
+      "section_inventory": [
+        "The minimizing problem and the local norms",
+        "The alias quotient and its canceled symbol",
+        "The additional scalar denominator has a uniform domain",
+        "The field and its exact central cancellation",
+        "Constraint, minimal energy and scalar gauge",
+        "Uniform fine derivative estimates",
+        "Fine-cell reconstruction and exponential locality",
+        "The homogeneous source identification",
+        "What the localized extension can support"
+      ],
+      "theorem_inventory": [
+        "theorem: ",
+        "lemma: "
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/08-ym4-flat-minimizer-notebook/main.tex",
+      "bundle_pdf": "notebooks/08-ym4-flat-minimizer-notebook/main.pdf",
+      "bundle_original_source": "notebooks/08-ym4-flat-minimizer-notebook/original.tex"
+    },
+    {
+      "ordinal": 9,
+      "title": "Notebook 09: the flat fine inverse and a current neighborhood",
+      "path": "outputs/ym4-flat-current-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A complete Woodbury formula for the flat fine inverse with cancellation of the apparent central poles.",
+        "Uniform local physical-cell operator bounds with at most two total fine derivatives.",
+        "A small complex auxiliary-current neighborhood, localized factorial derivatives and a quadratic zero-current remainder of the coarse precision."
+      ],
+      "assumptions": [
+        "The homogeneous source operators and a positive auxiliary penalty in a fixed compact interval; the stated unit-scale convention is identified separately.",
+        "The current enters through the proved source-response factorization."
+      ],
+      "upstream_notebooks": [
+        7,
+        8
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The separate nonlinear constraint-current term is not covered by the auxiliary-current result alone.",
+        "An unprinted scale-dependent penalty recursion is not assumed."
+      ],
+      "later_developments": "Notebook 11 adds the missing constraint-current term. Notebook 12 gives pointwise bounds in the weak source norms.",
+      "key_proof_modules": [
+        "work/flat_auxiliary_current_fragment.tex",
+        "work/flat_full_inverse_fragment.tex",
+        "work/flat_full_inverse_research.md",
+        "work/flat_scalar_gauge_locality_research.md",
+        "work/flat_auxiliary_current_neighborhood_research.md"
+      ],
+      "key_audit_files": [
+        "work/flat_full_inverse_audit.md",
+        "work/flat_scalar_gauge_locality_audit.md",
+        "work/flat_auxiliary_current_neighborhood_audit.md",
+        "work/flat_current_integrated_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C12",
+        "C13"
+      ],
+      "section_inventory": [
+        "Scope and normalization",
+        "The full flat source inverse",
+        "The scalar gauge inverse and bounded current vertices",
+        "A uniform neighborhood for the flat auxiliary current",
+        "What has been discharged and what is next"
+      ],
+      "theorem_inventory": [
+        "theorem: ",
+        "proposition: ",
+        "lemma: A current bound without derivatives of the current",
+        "theorem: Uniform flat auxiliary-current neighborhood",
+        "proposition: Exact derivative chains",
+        "proposition: Paths through the current supports"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/09-ym4-flat-current-notebook/main.tex",
+      "bundle_pdf": "notebooks/09-ym4-flat-current-notebook/main.pdf",
+      "bundle_original_source": "notebooks/09-ym4-flat-current-notebook/original.tex"
+    },
+    {
+      "ordinal": 10,
+      "title": "Notebook 10: local curvature perturbations at a fixed constraint",
+      "path": "outputs/ym4-flat-curvature-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "The constrained curvature covariance is the orthogonal projection onto the closure of feasible curls.",
+        "A small fixed-constraint curvature-metric perturbation has an exact resolvent formula and a weighted local expansion at all orders."
+      ],
+      "assumptions": [
+        "The averaging constraint is fixed; the perturbing metric is a bounded local operator in physical curvature cell norms.",
+        "The projection is defined on the closure of feasible curls, without assuming every element has an attained potential minimizer."
+      ],
+      "upstream_notebooks": [
+        8,
+        9
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "This does not establish the actual nonlinear background/current dependence of an RG Hessian.",
+        "Higher response locality uses the local projection, not only a norm bound on it."
+      ],
+      "later_developments": "The projection supplies an independent fixed-constraint perturbative module; later nonflat results use a separate actual Wilson form calculation.",
+      "key_proof_modules": [
+        "work/flat_curvature_projection_fragment.tex",
+        "work/flat_curvature_response_research.md"
+      ],
+      "key_audit_files": [
+        "work/flat_curvature_projection_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [],
+      "section_inventory": [
+        "Local curvature perturbations at a fixed averaging constraint",
+        "Use in the construction program"
+      ],
+      "theorem_inventory": [
+        "theorem: ",
+        "corollary: All-order anchored curvature responses"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/10-ym4-flat-curvature-notebook/main.tex",
+      "bundle_pdf": "notebooks/10-ym4-flat-curvature-notebook/main.pdf",
+      "bundle_original_source": "notebooks/10-ym4-flat-curvature-notebook/original.tex"
+    },
+    {
+      "ordinal": 11,
+      "title": "Notebook 11: the full flat constraint-current family",
+      "path": "outputs/ym4-full-flat-current-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "Composition of fixed-elementary-scale quadratic average jets bounds the full nonlinear constraint-current operator in Hilbert and supremum norms.",
+        "A common weighted complex-current disk controls the complete flat inverse, extension and coarse precision, with factorial localized responses."
+      ],
+      "assumptions": [
+        "Homogeneous depths M=L^j with fixed L; scale factors are summed rather than treating each stage independently.",
+        "The current is bounded; the proof does not differentiate it."
+      ],
+      "upstream_notebooks": [
+        8,
+        9
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "Mixed histories and nonflat current domains remain separate.",
+        "The complete source current cannot be replaced by the auxiliary current of Notebook 09."
+      ],
+      "later_developments": "Notebook 12 transfers this complete family to the actual homogeneous weak regularity norms.",
+      "key_proof_modules": [
+        "work/flat_full_constraint_current_fragment.tex",
+        "work/flat_full_constraint_current_research.md"
+      ],
+      "key_audit_files": [
+        "work/flat_full_constraint_current_audit.md",
+        "work/flat_full_current_integrated_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C13"
+      ],
+      "section_inventory": [
+        "Reference operators and the norm",
+        "The separate constraint-current term at flat background"
+      ],
+      "theorem_inventory": [
+        "lemma: The one-step physical form",
+        "theorem: Uniform quadratic coefficient of the corrected iterate",
+        "lemma: A stronger bound for the constraint vertex itself",
+        "theorem: The full homogeneous flat current family",
+        "corollary: Factorial derivatives on smaller current balls"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/11-ym4-full-flat-current-notebook/main.tex",
+      "bundle_pdf": "notebooks/11-ym4-full-flat-current-notebook/main.pdf",
+      "bundle_original_source": "notebooks/11-ym4-full-flat-current-notebook/original.tex"
+    },
+    {
+      "ordinal": 12,
+      "title": "Notebook 12: fine regularity on the flat current domain",
+      "path": "outputs/ym4-flat-regularity-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "Arbitrary bounded fine forcing is mapped by the flat inverse to C1,alpha for alpha below one, with exponential cell locality.",
+        "Exact factorizations transfer bounded currents to N-to-N_beta estimates without derivatives of the current.",
+        "Right-divergence estimates, an equal-exponent Schauder improvement, scalar inverse analogues and the separate constrained-current member are proved."
+      ],
+      "assumptions": [
+        "Fixed exponents strictly between zero and one, bounded currents in the common Hilbert/weak disk, and complete-field weighted norms.",
+        "The scalar inverse retains its explicit positive penalty condition; source localization uses smooth collars or global weighted estimates."
+      ],
+      "upstream_notebooks": [
+        8,
+        9,
+        11
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The gauge projection is not asserted to be bounded on arbitrary L-infinity data.",
+        "The zero-current Laplacian bound is not extended to nonzero currents; endpoint and individual second-derivative bounds are excluded."
+      ],
+      "later_developments": "The constrained equal-exponent Green estimates are used in Notebook 15's nonlinear minimizer.",
+      "key_proof_modules": [
+        "work/flat_pointwise_current_fragment.tex",
+        "work/flat_pointwise_inverse_fragment.tex",
+        "work/flat_right_divergence_fragment.tex",
+        "work/flat_schauder_scalar_fragment.tex",
+        "work/source_flat_weak_norm_match.md"
+      ],
+      "key_audit_files": [
+        "work/flat_pointwise_inverse_audit.md",
+        "work/flat_pointwise_current_audit.md",
+        "work/flat_right_divergence_audit.md",
+        "work/flat_schauder_scalar_audit.md",
+        "work/flat_regularity_integrated_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C12",
+        "C13"
+      ],
+      "section_inventory": [
+        "Previously established algebraic inputs",
+        "Pointwise regularity for arbitrary fine forcing",
+        "The full flat current in the pointwise weak norms",
+        "Right-divergence data and the constrained current inverse",
+        "Equal-exponent Schauder bounds and the scalar inverse"
+      ],
+      "theorem_inventory": [
+        "theorem: ",
+        "theorem: ",
+        "theorem: ",
+        "theorem: "
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/12-ym4-flat-regularity-notebook/main.tex",
+      "bundle_pdf": "notebooks/12-ym4-flat-regularity-notebook/main.pdf",
+      "bundle_original_source": "notebooks/12-ym4-flat-regularity-notebook/original.tex"
+    },
+    {
+      "ordinal": 13,
+      "title": "Notebook 13: a uniform nonlinear constraint chart",
+      "path": "outputs/ym4-nonlinear-constraint-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A refinement-uniform analytic ball for the complete fixed-reference corrected nonlinear average.",
+        "An exact nonlinear constraint chart and a uniformly local right inverse of its ordinary differential."
+      ],
+      "assumptions": [
+        "Fixed primitive blocking, small global physical fields, and the specific fixed-reference corrected averaging convention.",
+        "The uniform estimate uses the flat contraction together with the summable geometric scale factors."
+      ],
+      "upstream_notebooks": [
+        8,
+        12
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The derivative in a moving reference is a different operator and requires an endpoint correction.",
+        "This is a constraint chart, not yet the nonlinear minimum."
+      ],
+      "later_developments": "Notebook 14 identifies the moving-reference relation; Notebook 15 constructs the minimum.",
+      "key_proof_modules": [
+        "work/flat_nonlinear_average_fragment.tex",
+        "work/flat_nonlinear_average_research.md"
+      ],
+      "key_audit_files": [
+        "work/flat_nonlinear_average_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C10"
+      ],
+      "section_inventory": [
+        "A uniform analytic neighborhood for the corrected nonlinear average"
+      ],
+      "theorem_inventory": [
+        "theorem: Uniform nonlinear ball",
+        "theorem: Uniform constraint chart"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/13-ym4-nonlinear-constraint-notebook/main.tex",
+      "bundle_pdf": "notebooks/13-ym4-nonlinear-constraint-notebook/main.pdf",
+      "bundle_original_source": "notebooks/13-ym4-nonlinear-constraint-notebook/original.tex"
+    },
+    {
+      "ordinal": 14,
+      "title": "Notebook 14: nonflat backgrounds and energy stability",
+      "path": "outputs/ym4-nonflat-background-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "The exact endpoint correction relates fixed- and moving-reference average derivatives; the ordinary reference trajectory and both actual averages are controlled.",
+        "An explicit Wilson plaquette Hessian calculation yields a uniformly small local form perturbation on small global physical C1 backgrounds.",
+        "The scalar compression and moving gauge projection give a stable energy inverse; the gauge projection is independent of the auxiliary scalar penalty when defined."
+      ],
+      "assumptions": [
+        "The actual homogeneous averages and a small globally defined C1 connection, with the normalized four-dimensional bare Wilson action and left-exponential chart.",
+        "Only energy blocks with at most one derivative on each side are used."
+      ],
+      "upstream_notebooks": [
+        9,
+        12,
+        13
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "No general nonflat pointwise/current theorem or arbitrary mixed-history domain follows.",
+        "The deposited normalization match is separated from broader original-paper graded-curl/effective-action conventions."
+      ],
+      "later_developments": "This provides actual small-background energy control for the subsequent nonlinear construction, not a substitute for that construction.",
+      "key_proof_modules": [
+        "work/nonflat_averaging_coordinate_fragment.tex",
+        "work/nonflat_reference_averages_fragment.tex",
+        "work/nonflat_wilson_inverse_fragment.tex",
+        "work/nonflat_wilson_inverse_research.md"
+      ],
+      "key_audit_files": [
+        "work/nonflat_averaging_coordinate_audit.md",
+        "work/nonflat_reference_averages_audit.md",
+        "work/nonflat_wilson_inverse_audit.md",
+        "work/nonflat_background_integrated_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C14"
+      ],
+      "section_inventory": [
+        "The exact change of reference in the averaging differential",
+        "Ordinary reference backgrounds and their averaging operators",
+        "A nonflat Wilson Hessian and its full energy inverse"
+      ],
+      "theorem_inventory": [
+        "proposition: Actual one-step source comparison",
+        "theorem: ",
+        "theorem: ",
+        "theorem: ",
+        "corollary: "
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/14-ym4-nonflat-background-notebook/main.tex",
+      "bundle_pdf": "notebooks/14-ym4-nonflat-background-notebook/main.pdf",
+      "bundle_original_source": "notebooks/14-ym4-nonflat-background-notebook/original.tex"
+    },
+    {
+      "ordinal": 15,
+      "title": "Notebook 15: a uniform nonlinear constrained Wilson minimum",
+      "path": "outputs/ym4-nonlinear-minimizer-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "An equal-exponent constrained Green operator, exact Wilson force and two-Hilbert constraint-curvature estimate produce a uniform analytic fixed-slice minimum.",
+        "A controlled constraint-preserving gauge flow covers nearby gauge orbits.",
+        "A separate ordinary-average transfer yields a local constrained minimum modulo gauge in the small global C1,alpha class."
+      ],
+      "assumptions": [
+        "Finite homogeneous periodic lattices, fixed primitive blocking and the uniform small global physical field domain.",
+        "The minimum comparison is on a common strict small ball; the gauge-transfer path remains inside the allowed domain."
+      ],
+      "upstream_notebooks": [
+        12,
+        13,
+        14
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "This is a local classical result, not a global minimum among arbitrary Wilson configurations.",
+        "It does not supply large-field integration, arbitrary topological sectors or mixed histories."
+      ],
+      "later_developments": "The C2/analytic minimum closes the flat Hessian identification used earlier. Later notebooks localize its responses and scalar action.",
+      "key_proof_modules": [
+        "work/flat_constrained_schauder_fragment.tex",
+        "work/nonlinear_fixed_gauge_minimizer_fragment.tex",
+        "work/ordinary_constraint_transfer_fragment.tex",
+        "work/wilson_nonlinear_force_fragment.tex",
+        "work/nonlinear_gauge_slice_research.tex"
+      ],
+      "key_audit_files": [
+        "work/flat_constrained_schauder_audit.md",
+        "work/nonlinear_fixed_gauge_minimizer_provenance_audit.md",
+        "work/nonlinear_gauge_slice_second_audit.md",
+        "work/ordinary_constraint_transfer_second_audit.md",
+        "work/nonlinear_minimizer_integrated_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C09",
+        "C15"
+      ],
+      "section_inventory": [
+        "The result and the remaining construction problem",
+        "The constrained flat inverse preserves the H\\\"older exponent",
+        "A uniform nonlinear Wilson force in physical coordinates",
+        "A uniform local constrained Wilson minimum on the flat gauge slice",
+        "Constraint-preserving gauges and coverage of the flat slice",
+        "Transfer to the ordinary homogeneous averaging constraint",
+        "What this supplies to the construction program"
+      ],
+      "theorem_inventory": [
+        "theorem: ",
+        "lemma: ",
+        "theorem: ",
+        "theorem: Uniform local minimum on the fixed flat gauge slice",
+        "theorem: Ordinary homogeneous constrained minimum"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/15-ym4-nonlinear-minimizer-notebook/main.tex",
+      "bundle_pdf": "notebooks/15-ym4-nonlinear-minimizer-notebook/main.pdf",
+      "bundle_original_source": "notebooks/15-ym4-nonlinear-minimizer-notebook/original.tex"
+    },
+    {
+      "ordinal": 16,
+      "title": "Notebook 16: local nonlinear responses and the classical coarse action",
+      "path": "outputs/ym4-nonlinear-response-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "One-weight analytic responses of both minimizer representatives and their multiplier are exponentially localized at every order.",
+        "The ordinary representative has a controlled local gauge transfer and a distinct linear lift differing from the source lift by a gradient.",
+        "The envelope identity identifies the classical coarse force and Hessian; a separate constrained-Gaussian calculation proves an obstruction to refinement-uniform smooth fluctuation balls."
+      ],
+      "assumptions": [
+        "The same small nonconstant homogeneous classical backgrounds and physical norms as the nonlinear minimum.",
+        "Weighted differentiability is at unweighted small base fields; no unsupported weighted-smallness assumption is introduced."
+      ],
+      "upstream_notebooks": [
+        15
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "One weighted response direction is not a strict multiple-support expansion.",
+        "The smooth Gaussian ball obstruction rules out treating the actual rough fluctuations as uniformly smooth physical perturbations."
+      ],
+      "later_developments": "Notebook 21 supplies strict multi-support localization by a separate support-algebra fixed point; Notebook 17 treats rough fluctuation tails.",
+      "key_proof_modules": [
+        "work/classical_coarse_action_fragment.tex",
+        "work/gaussian_smooth_ball_obstruction_fragment.tex",
+        "work/nonlinear_minimizer_weighted_response_fragment.tex",
+        "work/ordinary_representative_locality_fragment.tex",
+        "work/classical_coarse_action_research.md",
+        "work/nonlinear_minimizer_weighted_response_research.md",
+        "work/ordinary_representative_locality_research.md"
+      ],
+      "key_audit_files": [
+        "work/nonlinear_minimizer_weighted_response_audit.md",
+        "work/ordinary_representative_locality_audit.md",
+        "work/classical_coarse_action_audit.md",
+        "work/gaussian_smooth_ball_obstruction_provenance_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C15",
+        "C16"
+      ],
+      "section_inventory": [
+        "The precise target",
+        "Exponential locality of nonlinear minimizer responses",
+        "Locality of the chosen ordinary-constraint representative",
+        "The classical coarse action and its gauge identity",
+        "Size of the flat constrained Gaussian fluctuations",
+        "The next interface to quantum integration"
+      ],
+      "theorem_inventory": [
+        "proposition: Classical envelope identity",
+        "lemma: "
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/16-ym4-nonlinear-response-notebook/main.tex",
+      "bundle_pdf": "notebooks/16-ym4-nonlinear-response-notebook/main.pdf",
+      "bundle_original_source": "notebooks/16-ym4-nonlinear-response-notebook/original.tex"
+    },
+    {
+      "ordinal": 17,
+      "title": "Notebook 17: joint fluctuation tails and the one-step Gaussian domain",
+      "path": "outputs/ym4-gaussian-step-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "The actual fixed-ratio fluctuation rescaling is identified, including the constraint-curvature term in the first reduced Hessian.",
+        "Joint real Gaussian bad-block tails and complex local marginal bounds avoid a total-volume loss.",
+        "The homogeneous flat current-step covariance is matched uniformly over earlier classical depths."
+      ],
+      "assumptions": [
+        "Fixed cell size and dimension, the explicit independent retained coordinates, and uniform covariance/coercivity bounds.",
+        "Possible correlations and singular observable covariances are treated rather than replaced by independence."
+      ],
+      "upstream_notebooks": [
+        6,
+        15,
+        16
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "These are Gaussian fluctuation estimates, not bounds on the normalized full Wilson measure.",
+        "The retained-window convention and its physical versus normalized thresholds must be preserved."
+      ],
+      "later_developments": "The actual physical complex precision and interaction matches are supplied by Notebooks 19–21.",
+      "key_proof_modules": [
+        "work/current_scale_gaussian_fragment.tex",
+        "work/gaussian_joint_block_tail_fragment.tex",
+        "work/one_step_gaussian_scaling_fragment.tex",
+        "work/one_step_quantum_domains_source_research.md"
+      ],
+      "key_audit_files": [
+        "work/one_step_gaussian_scaling_audit.md",
+        "work/gaussian_joint_block_tail_provenance_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C08",
+        "C17"
+      ],
+      "section_inventory": [
+        "Which fluctuation estimate is needed",
+        "One fixed-ratio fluctuation step in physical coordinates",
+        "Joint Gaussian bounds for prescribed bad blocks",
+        "The Gaussian at an arbitrary current renormalization scale",
+        "The next integration and iteration"
+      ],
+      "theorem_inventory": [
+        "theorem: Joint real Gaussian bad-block bound",
+        "theorem: Complex Gaussian local-event bound"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/17-ym4-gaussian-step-notebook/main.tex",
+      "bundle_pdf": "notebooks/17-ym4-gaussian-step-notebook/main.pdf",
+      "bundle_original_source": "notebooks/17-ym4-gaussian-step-notebook/original.tex"
+    },
+    {
+      "ordinal": 18,
+      "title": "Notebook 18: integrating overlapping cutoff interactions",
+      "path": "outputs/ym4-overlapping-integration-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A convergent Gaussian cutoff expansion for overlapping hyperedge interactions, with explicit weighted analytic coefficient norms.",
+        "Molecule formation, cell-endpoint Cauchy estimates and planted-tree bounds control arbitrary overlaps without an uncontrolled degree-dependent support cost.",
+        "Strict background support, periodic geometry and a tunable real-baseline density comparison give zero-free logarithms and quantitative interaction differences."
+      ],
+      "assumptions": [
+        "Uniform Gaussian spectral/decay bounds; bounded analytic interactions on the cutoff; small weighted coefficient norms.",
+        "The strict-support extension requires small local symmetric precision pieces on a product background domain. The tunable refinement starts from a centered real positive Gaussian and a controlled relative complex perturbation."
+      ],
+      "upstream_notebooks": [
+        3,
+        4,
+        5,
+        17
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "Large local dimension is paid explicitly: choosing the relative perturbation of order inverse dimension controls the density cost but worsens fixed derivative constants.",
+        "Abstract overlap integration alone does not verify actual RG activity norms or domains."
+      ],
+      "later_developments": "Notebooks 19–21 match the theorem to the homogeneous physical step; 26 and 28 resolve support-weight and common-radius transport issues.",
+      "key_proof_modules": [
+        "work/overlapping_interaction_background_fragment.tex",
+        "work/overlapping_interaction_cutoff_fragment.tex",
+        "work/periodic_overlap_locality_fragment.tex",
+        "work/tunable_gaussian_overlap_fragment.tex",
+        "work/overlapping_interaction_cutoff_research.md"
+      ],
+      "key_audit_files": [
+        "work/overlapping_interaction_cutoff_audit.md",
+        "work/overlapping_interaction_tunable_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C06",
+        "C07"
+      ],
+      "section_inventory": [
+        "The integration problem addressed here",
+        "Overlapping interactions in a Gaussian cutoff integral",
+        "Strict background support for overlapping interactions",
+        "A tunable density cost near a real Gaussian baseline",
+        "Periodic volumes and short periods",
+        "Using the published localization and integration theorem",
+        "The model estimate to close next"
+      ],
+      "theorem_inventory": [
+        "theorem: Overlapping Gaussian cutoff interactions",
+        "lemma: Overlap-animal estimate",
+        "lemma: ",
+        "theorem: Strictly local overlapping-interaction activities",
+        "lemma: Relative Gaussian density",
+        "lemma: Correlated block tails",
+        "theorem: Tunable marked expansion",
+        "theorem: Tunable strictly local expansion",
+        "proposition: Periodic strict-support expansion"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/18-ym4-overlapping-integration-notebook/main.tex",
+      "bundle_pdf": "notebooks/18-ym4-overlapping-integration-notebook/main.pdf",
+      "bundle_original_source": "notebooks/18-ym4-overlapping-integration-notebook/original.tex"
+    },
+    {
+      "ordinal": 19,
+      "title": "Notebook 19: the physical background Gaussian in the source coordinates",
+      "path": "outputs/ym4-physical-step-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "The actual one-pivot-per-constraint chart is retained, together with the fixed independent retained-link cutoff.",
+        "The physical gauge-zero stationary background yields an exact reduced precision containing both constraint curvature and relative-chart current curvature.",
+        "Local pivot Jacobian, Haar and exponential-gauge remainder bounds are proved with finite supports and bounded incidence; a uniform complex covariance disk follows."
+      ],
+      "assumptions": [
+        "Fixed elementary ratio and a small product domain of current backgrounds; constants uniform in preceding homogeneous depth.",
+        "Equality with the physical integral is asserted on the actual stationary real family. Background-only delta determinants are kept outside the fluctuation interaction."
+      ],
+      "upstream_notebooks": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "An extra reconstructed-field or pivot indicator would be moving and is not silently replaced by the retained window.",
+        "The analytic centered extension off the physical family is not itself an equality to a stationary physical integral."
+      ],
+      "later_developments": "This is the coordinate and measure input used by the bare and arbitrary-depth one-step integrations.",
+      "key_proof_modules": [
+        "work/physical_current_pivot_precision_fragment.tex",
+        "work/physical_pivot_measure_fragment.tex",
+        "work/physical_current_pivot_precision_research.md",
+        "work/physical_pivot_measure_research.md",
+        "work/pivot_cutoff_source_research.md"
+      ],
+      "key_audit_files": [
+        "work/physical_current_pivot_precision_audit.md",
+        "work/physical_pivot_measure_provenance_audit.md",
+        "work/physical_stationary_background_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C08",
+        "C18"
+      ],
+      "section_inventory": [
+        "From a classical minimum to the source Gaussian",
+        "The physical current-step chart and Gaussian precision",
+        "Local Haar, straightening, and exponential-gauge interactions",
+        "Localization and the next quantum induction"
+      ],
+      "theorem_inventory": [
+        "lemma: One pivot per nonlinear equation",
+        "proposition: Stationary homogeneous branch in the source gauge",
+        "theorem: Physical-background retained precision",
+        "corollary: The tunable covariance neighborhood",
+        "lemma: Straightening determinant",
+        "theorem: Local measure interaction"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/19-ym4-physical-step-notebook/main.tex",
+      "bundle_pdf": "notebooks/19-ym4-physical-step-notebook/main.pdf",
+      "bundle_original_source": "notebooks/19-ym4-physical-step-notebook/original.tex"
+    },
+    {
+      "ordinal": 20,
+      "title": "Notebook 20: the first Wilson small-field integration",
+      "path": "outputs/ym4-bare-step-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "An actual bare Wilson small-field integration with explicit local precision and cubic action remainder.",
+        "The fixed retained cutoff integral has a volume-uniform connected logarithm with error controlled by g times the cutoff radius cubed plus an exponential Gaussian tail.",
+        "The exact group gauge insertion, Haar/pivot factors and separate delta/Gaussian determinants are retained."
+      ],
+      "assumptions": [
+        "The first classical depth M=1, the physical stationary family and its independent retained coordinates.",
+        "A specified gauge-invariant admissible orbit domain is required for the global insertion identity; the local chart integral is stated independently."
+      ],
+      "upstream_notebooks": [
+        18,
+        19
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "This is one admitted small-field sector, not an estimate of its complement in the full measure.",
+        "Strict supports are in current backgrounds before composition with the next stationary field."
+      ],
+      "later_developments": "Notebook 21 extends the reference action to all homogeneous classical depths. Notebook 38 supplies a positive full-measure embedding, without identifying its remainder with a controlled mixed-history norm.",
+      "key_proof_modules": [
+        "work/bare_step_integration_fragment.tex"
+      ],
+      "key_audit_files": [
+        "work/bare_step_integration_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C18",
+        "C19"
+      ],
+      "section_inventory": [
+        "An actual first-step Yang--Mills small-field integral"
+      ],
+      "theorem_inventory": [
+        "theorem: The bare retained small-field integral"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/20-ym4-bare-step-notebook/main.tex",
+      "bundle_pdf": "notebooks/20-ym4-bare-step-notebook/main.pdf",
+      "bundle_original_source": "notebooks/20-ym4-bare-step-notebook/original.tex"
+    },
+    {
+      "ordinal": 21,
+      "title": "Notebook 21: local classical actions through arbitrary refinement",
+      "path": "outputs/ym4-classical-localization-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A simultaneous support-valued fixed point gives the classical minimizer, multiplier and scalar action at arbitrary homogeneous depth.",
+        "Arbitrary fixed cardinality reserve is available after shrinking the background radius. Differentiating scalar action pieces gives individually symmetric local precision pieces.",
+        "Composition with the actual fixed-ratio physical chart closes one small-field integration of the classical reference action at every old depth."
+      ],
+      "assumptions": [
+        "Concrete smooth physical-cell partitions and full mixed-insertion coefficient norms, not just separate pointwise derivatives.",
+        "Composition uses rooted graph Steiner-tree length; the joint field-type maximum is taken inside each coefficient norm before summing supports.",
+        "The ordinary point-rooted adjoint is avoided because it is not uniformly bounded in the required physical normalization."
+      ],
+      "upstream_notebooks": [
+        15,
+        16,
+        18,
+        19,
+        20
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The result does not yet transport inherited quantum activities or close repeated quantum domains.",
+        "Arbitrary cardinality reserve is bought by a smaller radius; it is not a free uniform-in-all-weights assertion."
+      ],
+      "later_developments": "Notebook 22 transports these supported activities; 26–28 close the specific weight and radius issues.",
+      "key_proof_modules": [
+        "work/classical_local_vertex_bounds_fragment.tex",
+        "work/classical_step_integration_fragment.tex",
+        "work/classical_support_localization_fragment.tex",
+        "work/classical_local_vertex_bounds_research.md",
+        "work/classical_support_localization_research.md"
+      ],
+      "key_audit_files": [
+        "work/classical_support_localization_audit.md",
+        "work/classical_support_localization_provenance_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C16",
+        "C20"
+      ],
+      "section_inventory": [
+        "Concrete classical vertices uniform through refinement",
+        "Strict support localization of the homogeneous classical action",
+        "One integration of the classical action at every earlier depth",
+        "The next induction problem"
+      ],
+      "theorem_inventory": [
+        "lemma: Finite-range analytic vertices",
+        "lemma: Support substitution",
+        "theorem: Uniform strict-support fixed point",
+        "proposition: Strict scalar action localization",
+        "corollary: Strict support of the physical retained precision",
+        "theorem: Uniform classical-reference integration"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/21-ym4-classical-localization-notebook/main.tex",
+      "bundle_pdf": "notebooks/21-ym4-classical-localization-notebook/main.pdf",
+      "bundle_original_source": "notebooks/21-ym4-classical-localization-notebook/original.tex"
+    },
+    {
+      "ordinal": 22,
+      "title": "Notebook 22: transport into the next coarse background",
+      "path": "outputs/ym4-coarse-transport-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "The actual stationary current background is constructed as a strictly supported analytic function of next-coarse data.",
+        "Holomorphic activity substitution preserves the original carrier and pays explicit coordinate-count, support and radius costs.",
+        "A connected-carrier projection bound improves the coarsening weight estimate."
+      ],
+      "assumptions": [
+        "Fixed-dimensional current-block coordinates and the actual affine pivot chart; the gradient majorant is obtained coefficient by coefficient.",
+        "The substitution proof uses explicit colored scalar slots where a maximum over separate input families is legitimate.",
+        "Input supports, current Gaussian cells and subsequent coarsening labels are not identified or projected twice."
+      ],
+      "upstream_notebooks": [
+        19,
+        21
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The map is bounded with explicit losses, not an invariant analytic-ball or amplitude contraction theorem.",
+        "The pure-gauge counterexample forbids a blanket inverse-ratio supremum contraction in the gauge-zero representative."
+      ],
+      "later_developments": "The smaller pre-gauge representative and auxiliary grouping in 25–28 address these particular losses.",
+      "key_proof_modules": [
+        "work/coarse_stationary_support_fragment.tex",
+        "work/quantum_activity_transport_fragment.tex",
+        "work/coarse_stationary_support_research.md",
+        "work/quantum_activity_transport_research.md",
+        "work/connected_carrier_coarsening_research.md"
+      ],
+      "key_audit_files": [
+        "work/coarse_transport_audit.md",
+        "work/coarse_stationary_support_provenance_audit.md",
+        "work/quantum_activity_transport_theorem_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C20",
+        "C21"
+      ],
+      "section_inventory": [
+        "Strict support of the physical stationary background",
+        "Strict-support transport of analytic quantum activities",
+        "The remaining quantum recurrence"
+      ],
+      "theorem_inventory": [
+        "theorem: Finite-step activity transport",
+        "corollary: Vacuum-subtracted radius bound",
+        "lemma: Connected carriers under cube projection",
+        "corollary: Transport with a proved carrier gain"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/22-ym4-coarse-transport-notebook/main.tex",
+      "bundle_pdf": "notebooks/22-ym4-coarse-transport-notebook/main.pdf",
+      "bundle_original_source": "notebooks/22-ym4-coarse-transport-notebook/original.tex"
+    },
+    {
+      "ordinal": 23,
+      "title": "Notebook 23: gauge covariance of the small-field step",
+      "path": "outputs/ym4-gauge-covariance-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "Exact gauge covariance of the actual small-field chart integral, including stationary centering, independent cutoff, Haar, pivot and Gaussian factors.",
+        "The complete generated correction obeys the local nonlinear Ward identity; its total linear jet vanishes for a semisimple gauge algebra.",
+        "An exponential Hessian-row bound and a carefully limited infinite-kernel Fourier consequence are derived."
+      ],
+      "assumptions": [
+        "A common local gauge domain and the literal product of invariant color-ball windows; extra indicators must also transform covariantly.",
+        "Inherited integral identities require convergence; logarithm identities additionally require nonvanishing and compatible analytic branches."
+      ],
+      "upstream_notebooks": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "Finite-torus Ward identities hold at discrete momenta and do not by themselves prove a continuum zero-momentum classification.",
+        "No separate activity is claimed gauge invariant merely because the total is."
+      ],
+      "later_developments": "Notebook 29 supplies actual spatial symmetries, structural kernel limits and the full low-order nonlinear Ward extraction.",
+      "key_proof_modules": [
+        "work/small_field_gauge_covariance_fragment.tex",
+        "work/small_field_gauge_covariance_research.md"
+      ],
+      "key_audit_files": [
+        "work/small_field_gauge_covariance_theorem_audit.md",
+        "work/coarse_transport_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C22"
+      ],
+      "section_inventory": [
+        "The common domain and the exact chart integral",
+        "Gauge covariance of the stationary background and pivot chart",
+        "Covariance of every normalization factor",
+        "A finite-regulator Ward identity and its kernel consequence",
+        "Use in the existence argument"
+      ],
+      "theorem_inventory": [
+        "lemma: Block lift and stationary branch",
+        "lemma: Exact nonlinear chart equivariance",
+        "proposition: Exact invariance of the normalized integral",
+        "theorem: Local gauge invariance of the full correction",
+        "proposition: An inherited invariant functional",
+        "theorem: Quadratic Ward identity",
+        "lemma: Hessian from connected analytic activities",
+        "proposition: Zero-momentum consequence under a kernel limit"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/23-ym4-gauge-covariance-notebook/main.tex",
+      "bundle_pdf": "notebooks/23-ym4-gauge-covariance-notebook/main.pdf",
+      "bundle_original_source": "notebooks/23-ym4-gauge-covariance-notebook/original.tex"
+    },
+    {
+      "ordinal": 24,
+      "title": "Notebook 24: inherited interactions and the next-step norm test",
+      "path": "outputs/ym4-inherited-reentry-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A directional Cauchy estimate bounds the inherited fluctuation increment by the cutoff displacement divided by the available analytic margin, without a spurious support-size factor.",
+        "The actual source pivot dependencies enlarge carriers only to specified neighboring blocks.",
+        "A quantitative logarithm comparison follows under an explicit next-step support-weight inequality."
+      ],
+      "assumptions": [
+        "The actual relative fluctuation chart, a strict common input domain and the stated connected input activity norm.",
+        "The grouped interaction exponent and its multiplier cost are both included; the Gaussian tail threshold is the original linkwise threshold."
+      ],
+      "upstream_notebooks": [
+        18,
+        19,
+        22,
+        23
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The support-weight inequality is a sufficient condition, not verified merely by declaring the blocking ratio large.",
+        "The good linkwise block bound does not improve the bad Euclidean tail threshold by the square root of dimension."
+      ],
+      "later_developments": "Notebook 26 verifies a compatible weight scheme through independent auxiliary grouping; Notebook 28 handles a common analytic radius.",
+      "key_proof_modules": [
+        "work/inherited_quantum_reentry_fragment.tex",
+        "work/inherited_quantum_reentry_research.md"
+      ],
+      "key_audit_files": [
+        "work/inherited_quantum_reentry_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C17",
+        "C21"
+      ],
+      "section_inventory": [
+        "A conditional bridge for inherited quantum interactions"
+      ],
+      "theorem_inventory": [
+        "lemma: Uniform inherited increment",
+        "proposition: Conditional inherited interaction re-entry",
+        "corollary: Inherited contribution to the logarithm"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/24-ym4-inherited-reentry-notebook/main.tex",
+      "bundle_pdf": "notebooks/24-ym4-inherited-reentry-notebook/main.pdf",
+      "bundle_original_source": "notebooks/24-ym4-inherited-reentry-notebook/original.tex"
+    },
+    {
+      "ordinal": 25,
+      "title": "Notebook 25: a smaller representative of the classical gauge orbit",
+      "path": "outputs/ym4-pre-gauge-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A pre-root-gauge representative of the classical orbit has a uniformly small link angle proportional to the inverse endpoint ratio.",
+        "Complete-output-cell Banach Cauchy estimates give a strict supported background family without a false count of every output coordinate.",
+        "A gauge-invariant total functional analytically extends its original composition germ through this smaller representative."
+      ],
+      "assumptions": [
+        "Fixed primitive blocking and actual ordinary prefix averages of the selected classical minimum.",
+        "The representative is taken before the final root-gauge reset; its gauge relation to the physical branch is explicit."
+      ],
+      "upstream_notebooks": [
+        15,
+        16,
+        21,
+        22,
+        23
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The smallness does not hold for the gauge-zero representative on arbitrary pure-gauge data.",
+        "Analytic continuation of a background total alone does not identify the full inherited fluctuation integral."
+      ],
+      "later_developments": "Notebook 28 constructs the actual joint family needed for the integral. Notebook 29 strengthens the prefix to complete first-gradient Holder support families.",
+      "key_proof_modules": [
+        "work/pre_gauge_background_transport_fragment.tex",
+        "work/pre_gauge_background_transport_research.md"
+      ],
+      "key_audit_files": [
+        "work/pre_gauge_background_transport_provenance_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C21",
+        "C23"
+      ],
+      "section_inventory": [
+        "A small representative before the rooted current gauge"
+      ],
+      "theorem_inventory": [
+        "theorem: Supported pre-gauge representative"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/25-ym4-pre-gauge-notebook/main.tex",
+      "bundle_pdf": "notebooks/25-ym4-pre-gauge-notebook/main.pdf",
+      "bundle_original_source": "notebooks/25-ym4-pre-gauge-notebook/original.tex"
+    },
+    {
+      "ordinal": 26,
+      "title": "Notebook 26: closing the support-weight compatibility test",
+      "path": "outputs/ym4-auxiliary-grouping-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "Independent auxiliary integration cells separate the physical source blocking ratio from Gaussian support bookkeeping.",
+        "At fixed physical ratio, sufficiently large auxiliary cells amplify the existing positive decay rate and permit a fixed output carrier exponent.",
+        "Tunable Gaussian density costs, classical precision reserves and determinant chains close the inherited support-weight compatibility test."
+      ],
+      "assumptions": [
+        "The physical ratio is fixed first, auxiliary grouping second, and the common background radius last.",
+        "The covariance/precision exponents satisfy the strict ordering required by the support algebra; all old and new backgrounds are restricted to their common domain."
+      ],
+      "upstream_notebooks": [
+        18,
+        21,
+        22,
+        24,
+        25
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "Constants may be very large functions of the chosen geometry.",
+        "This closes a norm-compatibility test, not repeated-step field-domain or amplitude stability."
+      ],
+      "later_developments": "The composite step and common-domain construction in 27–28 make the resulting integration scheme concrete.",
+      "key_proof_modules": [
+        "work/auxiliary_gaussian_grouping_fragment.tex",
+        "work/auxiliary_gaussian_grouping_research.md"
+      ],
+      "key_audit_files": [
+        "work/auxiliary_gaussian_grouping_theorem_audit.md",
+        "work/auxiliary_polymer_grouping_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C24"
+      ],
+      "section_inventory": [
+        "Auxiliary grouping recovers a fixed quantum support weight"
+      ],
+      "theorem_inventory": [],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/26-ym4-auxiliary-grouping-notebook/main.tex",
+      "bundle_pdf": "notebooks/26-ym4-auxiliary-grouping-notebook/main.pdf",
+      "bundle_original_source": "notebooks/26-ym4-auxiliary-grouping-notebook/original.tex"
+    },
+    {
+      "ordinal": 27,
+      "title": "Notebook 27: an exact composite blocking step",
+      "path": "outputs/ym4-composite-macrostep-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "The actual composite ordinary map, rather than a substituted direct-ratio map, has an exact two-block incidence structure and one-consumer pivot.",
+        "A separate direct-ratio internal contour gauge and a finite-patch nullspace argument give a retained Gaussian uniformly coercive in old depth and volume.",
+        "An exactly normalized compact gauge insertion and local Haar/coarea formula preserve all constants and the independent cutoff."
+      ],
+      "assumptions": [
+        "A fixed primitive ratio and a fixed finite composite endpoint; constants can depend on that endpoint.",
+        "The selected group mean satisfies the actual source axioms; the source's implicit mean equation is only one admissible realization.",
+        "A specified measurable equivariant completion is distinguished from its local analytic definition."
+      ],
+      "upstream_notebooks": [
+        15,
+        18,
+        19,
+        21,
+        25,
+        26
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The composite ordinary average is not assumed equal to direct straight averaging away from the flat corrected comparison.",
+        "Local small-field integral identities do not yet bound the rejected configurations."
+      ],
+      "later_developments": "Notebook 28 integrates this exact composite family on one common analytic ball.",
+      "key_proof_modules": [
+        "work/composite_macrostep_gaussian_fragment.tex",
+        "work/composite_macrostep_geometry_fragment.tex",
+        "work/composite_macrostep_integral_fragment.tex",
+        "work/composite_macrostep_gaussian_research.md",
+        "work/composite_macrostep_geometry_research.md",
+        "work/composite_macrostep_integral_research.md"
+      ],
+      "key_audit_files": [
+        "work/composite_macrostep_gaussian_audit.md",
+        "work/composite_macrostep_integral_rotation_audit.md",
+        "work/composite_macrostep_integral_theorem_audit.md"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C25"
+      ],
+      "section_inventory": [
+        "Geometry of the actual composite ordinary constraint",
+        "The retained Gaussian for the composite macrostep",
+        "The exact composite integral and its pre-gauge continuation",
+        "Place in the construction"
+      ],
+      "theorem_inventory": [
+        "proposition: ",
+        "lemma: Local positivity"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/27-ym4-composite-macrostep-notebook/main.tex",
+      "bundle_pdf": "notebooks/27-ym4-composite-macrostep-notebook/main.pdf",
+      "bundle_original_source": "notebooks/27-ym4-composite-macrostep-notebook/original.tex"
+    },
+    {
+      "ordinal": 28,
+      "title": "Notebook 28: a fixed analytic ball and high-degree stability",
+      "path": "outputs/ym4-common-domain-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A local-core/small-tail expansion composes the actual pre-gauge joint background/fluctuation family on one fixed analytic ball.",
+        "Classical precision and measure factors are substituted before Gaussian integration, so the output is already in the required coarse variable.",
+        "Coefficientwise degree-five-and-higher background terms contract by an inverse endpoint ratio; the actual quantum response to differences with matching low jets adds only a small inherited fluctuation error."
+      ],
+      "assumptions": [
+        "The ordered choices of endpoint, auxiliary grouping and final radius; fixed strict tail and precision budgets.",
+        "A shared canonical core/tail grouping identifies the background part of the joint integral coefficientwise.",
+        "The high-degree result assumes each input coefficient has zero Taylor jets through degree four."
+      ],
+      "upstream_notebooks": [
+        18,
+        21,
+        25,
+        26,
+        27
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "Coefficientwise Taylor projection is not gauge invariant and its high-degree subspace is not asserted invariant under the quantum map.",
+        "A common domain and a difference contraction do not alone control all regenerated low jets or amplitudes."
+      ],
+      "later_developments": "Notebook 29 identifies the total low-order gauge structure; Notebooks 30–31 supply quotient extraction and finite amplitude induction.",
+      "key_proof_modules": [
+        "work/common_domain_classical_support_fragment.tex",
+        "work/common_domain_joint_transport_fragment.tex",
+        "work/common_domain_macrostep_fragment.tex",
+        "work/high_jet_background_transport_fragment.tex",
+        "work/high_jet_quantum_difference_fragment.tex",
+        "work/stationary_before_gaussian_research.md",
+        "work/composite_macrostep_joint_family_research.md",
+        "work/high_jet_background_transport_research.md",
+        "work/high_jet_quantum_difference_research.md"
+      ],
+      "key_audit_files": [
+        "work/common_domain_classical_support_theorem_audit.md",
+        "work/composite_common_domain_fragment_provenance_audit.md",
+        "work/high_jet_background_transport_theorem_audit.md",
+        "work/high_jet_quantum_difference_rotation_audit.md"
+      ],
+      "checkpoints": [
+        "work/after_notebook28_state.txt"
+      ],
+      "correction_ids": [
+        "C23",
+        "C26"
+      ],
+      "section_inventory": [
+        "Inherited interactions on a common background ball",
+        "Classical support substitution before Gaussian integration",
+        "One composite small-field step on the same analytic ball",
+        "A contraction for the coefficientwise high-field-degree background",
+        "High-jet differences of the actual quantum step",
+        "The next proof obligation"
+      ],
+      "theorem_inventory": [
+        "theorem: Joint core/tail transport",
+        "lemma: Composition in the matrix row norm",
+        "lemma: Joint macro carriers for the base factors",
+        "theorem: A common-domain composite step",
+        "theorem: High-field-degree background transport",
+        "theorem: Quantum differences with common low jets"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/28-ym4-common-domain-notebook/main.tex",
+      "bundle_pdf": "notebooks/28-ym4-common-domain-notebook/main.pdf",
+      "bundle_original_source": "notebooks/28-ym4-common-domain-notebook/original.tex"
+    },
+    {
+      "ordinal": 29,
+      "title": "Notebook 29: total Ward extraction and classical spatial gain",
+      "path": "outputs/ym4-gauge-extraction-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "Actual spatial and gauge symmetries, exponential kernels and joint structural limits identify the normalized Maxwell quadratic coefficient.",
+        "Nonlinear Ward identities determine the compatible cubic and quartic low-momentum subtraction by a full gauge-invariant classical reference.",
+        "Complete Holder prefix families and an exact two-difference Laurent factorization yield a connected-norm spatial gain; the classical semigroup permits the final endpoint to be chosen after auxiliary grouping.",
+        "Analytic interaction compactness and a Banach quotient by equality of normalized totals make representation changes and bounded reference extraction precise."
+      ],
+      "assumptions": [
+        "Coherent infinite structural systems or exact periodizations of their kernels; full hypercubic symmetry uses cofinal cubic tori.",
+        "First-gradient Holder estimates are for complete fibers with consistent support assignments.",
+        "The endpoint used for contraction is chosen after the fixed grouping constants."
+      ],
+      "upstream_notebooks": [
+        7,
+        15,
+        16,
+        21,
+        23,
+        25,
+        28
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "Arbitrary finite winding kernels are not identified with infinite periodizations.",
+        "The spatial constant can depend on auxiliary grouping; a nominal inverse-ratio power is not a contraction if parameters are chosen in the wrong order.",
+        "The naive symmetric quadratic difference identity is false for odd-skew matrix kernels and is not used."
+      ],
+      "later_developments": "Notebook 30 closes the universal gauge/quantum quotient interfaces; Notebook 31 gives the finite-regulator repair.",
+      "key_proof_modules": [
+        "work/activity_quotient_fragment.tex",
+        "work/analytic_interaction_compactness_fragment.tex",
+        "work/classical_background_semigroup_fragment.tex",
+        "work/low_kernel_spatial_transport_fragment.tex",
+        "work/macrostep_symmetry_fragment.tex",
+        "work/pregauge_holder_prefix_fragment.tex",
+        "work/total_kernel_ward_extraction_fragment.tex",
+        "work/composite_macrostep_symmetry_research.md",
+        "work/low_kernel_spatial_transport_research.md",
+        "work/classical_background_semigroup_research.md",
+        "work/analytic_interaction_compactness_research.md",
+        "work/activity_quotient_research.md"
+      ],
+      "key_audit_files": [
+        "work/composite_macrostep_symmetry_theorem_audit.md",
+        "work/total_kernel_ward_extraction_rotation_audit.md",
+        "work/low_kernel_spatial_transport_rotation_audit.md",
+        "work/classical_background_semigroup_rotation_audit.md",
+        "work/activity_quotient_theorem_audit.md"
+      ],
+      "checkpoints": [
+        "work/after_notebook29_state.txt"
+      ],
+      "correction_ids": [
+        "C22",
+        "C27",
+        "C28"
+      ],
+      "section_inventory": [
+        "Actual macrostep symmetries and the quadratic tensor",
+        "H\\\"older regularity through an ordinary prefix",
+        "Compactness of analytic interactions and coherent backgrounds",
+        "Total Ward extraction through field degree four",
+        "Classical background composition modulo gauge",
+        "Connected localization of spatially canceled low kernels",
+        "A Banach quotient for analytic interactions",
+        "The interface with a renormalized quantum induction"
+      ],
+      "theorem_inventory": [
+        "proposition: Exact spatial symmetry of the local sector",
+        "theorem: Quadratic Maxwell tensor",
+        "lemma: Uniform complete-field prefix bound",
+        "proposition: Complete-output strict supports",
+        "proposition: Interaction compactness without radius loss",
+        "theorem: Full marginal completion from the total Ward identity",
+        "theorem: Classical background semigroup modulo gauge",
+        "theorem: Low-kernel spatial transport",
+        "proposition: Complete representation quotient",
+        "theorem: Classical quotient estimate"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/29-ym4-gauge-extraction-notebook/main.tex",
+      "bundle_pdf": "notebooks/29-ym4-gauge-extraction-notebook/main.pdf",
+      "bundle_original_source": "notebooks/29-ym4-gauge-extraction-notebook/original.tex"
+    },
+    {
+      "ordinal": 30,
+      "title": "Notebook 30: quantum descent and renormalized block stability",
+      "path": "outputs/ym4-quantum-descent-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A summable connecting gauge, compact approximation and domain margin give a universal classical action on invariant quotient classes.",
+        "Exact finite periodization and strict Gaussian local continuity identify the actual quantum map and compatible finite histories on that quotient.",
+        "Transport of the actual reference makes repeated extraction telescope. A finite block of quantum steps has a stable O(b^2) amplitude envelope while couplings stay weak.",
+        "A fixed outer analytic radius provides the matching quadratic zero-input force."
+      ],
+      "assumptions": [
+        "A jointly compatible homogeneous structural system, the fixed local quantum budgets and allowed compact gauge paths.",
+        "Finite-history identification requires uniformly bounded actual intermediate representatives; continuity uses carrier-size, order and geometric tails.",
+        "The weak coupling sequence is prescribed or known to remain inside the admissible range."
+      ],
+      "upstream_notebooks": [
+        28,
+        29
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "This does not itself establish actual running couplings or regulator-uniform representatives at arbitrarily many finite steps.",
+        "The zero-input force is not O(g^2) as a whole: pivot and Gaussian determinants persist at zero coupling."
+      ],
+      "later_developments": "Notebook 31 closes the finite representative-budget interface; Notebook 37 supplies the positive drift needed for tuning. The generic adapted marginal coordinate remains a fallback rather than the actual final formulation.",
+      "key_proof_modules": [
+        "work/classical_summable_gauge_fragment.tex",
+        "work/extracted_macrostep_recurrence_fragment.tex",
+        "work/periodic_interaction_descent_fragment.tex",
+        "work/quantum_local_limit_fragment.tex",
+        "work/zero_input_quadratic_force_fragment.tex",
+        "work/classical_summable_gauge_research.md",
+        "work/quantum_local_limit_research.md",
+        "work/extracted_macrostep_recurrence_rotation_research.md",
+        "work/quantum_zero_input_force_research.md"
+      ],
+      "key_audit_files": [
+        "work/classical_summable_gauge_theorem_audit.md",
+        "work/periodic_interaction_descent_theorem_audit.md",
+        "work/quantum_local_limit_provenance_audit.md",
+        "work/extracted_macrostep_recurrence_provenance_audit.md",
+        "work/quantum_zero_input_force_rotation_audit.md"
+      ],
+      "checkpoints": [
+        "work/after_notebook30_state.txt"
+      ],
+      "correction_ids": [
+        "C29",
+        "C30"
+      ],
+      "section_inventory": [
+        "Summable connecting gauges and the invariant quotient",
+        "Bounded finite periodization of analytic interaction classes",
+        "A local limit and quotient descent of the quantum macrostep",
+        "Quadratic forcing from a fixed outer field domain",
+        "Reference extraction and a contractive finite-block recurrence",
+        "The next construction problem"
+      ],
+      "theorem_inventory": [
+        "theorem: Universal local gauge identity for a fixed joint map",
+        "lemma: One constant at infinity",
+        "theorem: Canonical normalized periodization",
+        "lemma: Local construction continuity",
+        "theorem: Quantum map on the selected local quotient",
+        "theorem: Varying-input compatibility",
+        "theorem: Uniform quadratic zero-input force",
+        "lemma: Exact reference identity",
+        "lemma: Cancellation of every intermediate extraction",
+        "lemma: Duhamel bound with a contractive classical block",
+        "theorem: Extracted finite-block contraction on the local quotient"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/30-ym4-quantum-descent-notebook/main.tex",
+      "bundle_pdf": "notebooks/30-ym4-quantum-descent-notebook/main.pdf",
+      "bundle_original_source": "notebooks/30-ym4-quantum-descent-notebook/original.tex"
+    },
+    {
+      "ordinal": 31,
+      "title": "Notebook 31: finite local induction and coupling extraction",
+      "path": "outputs/ym4-finite-induction-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "Finite Ward repair and direct periodic localization retain wrapping errors at the same field radius and carrier exponent.",
+        "Exact finite quotient descent and equivalent small representatives give local induction through every permitted finite history; vacuum compensation retains the original raw density.",
+        "Fixed-threshold parity isolates the leading zero-input pivot/Gaussian determinant.",
+        "A quadratic-only fixed-radius semigroup argument proves exact classical Maxwell preservation in the compatible infinite system."
+      ],
+      "assumptions": [
+        "Real extracted local trajectories whose couplings remain uniformly weak and whose periods remain above the stated threshold.",
+        "Exact representative replacement is equality of normalized totals, not accumulation of approximation errors.",
+        "The infinite Maxwell-preservation proof does not use a shrinking high-jet domain."
+      ],
+      "upstream_notebooks": [
+        28,
+        29,
+        30
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "Finite cutoff extraction is not exactly preserved; its leakage must still be controlled.",
+        "The theorem concerns the homogeneous admitted local sector, not the full Wilson history or arbitrary effective large-field measures."
+      ],
+      "later_developments": "Notebook 32 controls finite leakage qualitatively and formulates shooting; Notebook 37 verifies its positive leading margin.",
+      "key_proof_modules": [
+        "work/classical_marginal_transport_fragment.tex",
+        "work/finite_classical_contraction_fragment.tex",
+        "work/finite_quantum_induction_fragment.tex",
+        "work/quantum_zero_input_parity_fragment.tex",
+        "work/finite_classical_contraction_research.md",
+        "work/finite_quantum_induction_research.md",
+        "work/classical_marginal_transport_research.md"
+      ],
+      "key_audit_files": [
+        "work/finite_classical_contraction_rotation_audit.md",
+        "work/finite_quantum_induction_rotation_audit.md",
+        "work/quantum_zero_input_parity_rotation_audit.md",
+        "work/classical_marginal_transport_rotation_audit.md"
+      ],
+      "checkpoints": [
+        "work/after_notebook31_state.txt"
+      ],
+      "correction_ids": [
+        "C30",
+        "C31"
+      ],
+      "section_inventory": [
+        "Finite-regulator classical contraction",
+        "Exact finite local quantum induction",
+        "Coupling parity and the leading zero-input correction",
+        "Exact classical preservation of the Maxwell coefficient",
+        "The coupling calculation and the remaining existence argument"
+      ],
+      "theorem_inventory": [
+        "theorem: Finite classical contraction",
+        "lemma: Finite descent of the actual quantum update",
+        "theorem: Finite local induction with exact small representatives",
+        "theorem: Fixed-threshold parity estimate",
+        "theorem: Exact infinite Maxwell preservation"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/31-ym4-finite-induction-notebook/main.tex",
+      "bundle_pdf": "notebooks/31-ym4-finite-induction-notebook/main.pdf",
+      "bundle_original_source": "notebooks/31-ym4-finite-induction-notebook/original.tex"
+    },
+    {
+      "ordinal": 32,
+      "title": "Notebook 32: determinant composition and finite coupling tuning",
+      "path": "outputs/ym4-determinant-flow-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "Finite classical marginal leakage vanishes uniformly over varying old depths along cofinal nested periods; the finite quantum map is continuous in its class and positive coupling.",
+        "The actual leading determinant has a convergent Hessian trace with both chart-curvature contributions and a finite Haar/Laplace composition cocycle.",
+        "An exact gauge/coarea bridge retains vector, based ghost and coarse constraint factors; the shifted coarse effective determinant has a uniform Maxwell bound.",
+        "Uniform positivity over all structural limits transfers qualitatively to actual finite blocks, and a separate shooting theorem tunes long finite histories under that sign hypothesis."
+      ],
+      "assumptions": [
+        "Fixed finite block length, cofinal compatible periods, actual reference normalization and local minima on a common real neighborhood.",
+        "Joint extraction includes every shifted old depth; the positive margin must cover all obtainable structural limits, not one favorable subsequence.",
+        "Stationary phase is finite dimensional on the correctly normalized orbit/quotient tube."
+      ],
+      "upstream_notebooks": [
+        15,
+        16,
+        21,
+        29,
+        30,
+        31
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "There is no quantitative finite-volume convergence rate or summable-rate claim.",
+        "The leading cocycle does not assert composition of complete positive-coupling admitted sectors.",
+        "The based ghost has no uniform block-scale mass gap."
+      ],
+      "later_developments": "Notebooks 33–37 evaluate the actual leading sign. The canonical coarse-completion simplification is separate from the fixed positive shift used for uniform bounds.",
+      "key_proof_modules": [
+        "work/classical_one_loop_cocycle_fragment.tex",
+        "work/determinant_gauge_bridge_fragment.tex",
+        "work/determinant_maxwell_trace_fragment.tex",
+        "work/finite_block_drift_transfer_fragment.tex",
+        "work/finite_classical_marginal_leakage_fragment.tex",
+        "work/finite_quantum_coupling_continuity_fragment.tex",
+        "work/finite_trajectory_shooting_fragment.tex",
+        "work/determinant_maxwell_trace_research.md",
+        "work/classical_one_loop_cocycle_research.md",
+        "work/determinant_gauge_bridge_research.md",
+        "work/finite_leading_drift_transfer_research.md"
+      ],
+      "key_audit_files": [
+        "work/finite_classical_marginal_leakage_rotation_audit.md",
+        "work/finite_quantum_coupling_continuity_rotation_audit.md",
+        "work/determinant_maxwell_trace_theorem_audit.md",
+        "work/classical_one_loop_cocycle_rotation_audit.md",
+        "work/determinant_gauge_bridge_rotation_audit.md",
+        "work/finite_leading_drift_transfer_provenance_audit.md",
+        "work/finite_trajectory_shooting_rotation_audit.md"
+      ],
+      "checkpoints": [
+        "work/after_notebook32_state.txt"
+      ],
+      "correction_ids": [
+        "C31",
+        "C32",
+        "C33"
+      ],
+      "section_inventory": [
+        "Uniform disappearance of finite classical marginal leakage",
+        "Continuity in the real coupling at a finite regulator",
+        "An explicit trace formula for the pivot and Gaussian drift",
+        "An exact gauge and coarea bridge for the actual determinant",
+        "The actual leading determinant correction satisfies a cocycle",
+        "Qualitative transfer of a positive leading block drift",
+        "Finite ultraviolet tuning under an averaged drift hypothesis",
+        "The remaining determinant estimate and the existence argument"
+      ],
+      "theorem_inventory": [
+        "theorem: Qualitative uniform finite leakage",
+        "theorem: Finite real-coupling continuity",
+        "proposition: Exact finite trace Hessian",
+        "lemma: Semisimple cancellation of the first derivative",
+        "lemma: Source-rooted trace bounds",
+        "lemma: Gauge replacement with its orbit density",
+        "proposition: Bounded actual coarse determinant contribution",
+        "theorem: Finite leading-amplitude cocycle",
+        "lemma: Passage of the actual finite moments",
+        "proposition: Uniform finite block lower bound",
+        "theorem: Conditional finite ultraviolet tuning"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/32-ym4-determinant-flow-notebook/main.tex",
+      "bundle_pdf": "notebooks/32-ym4-determinant-flow-notebook/main.pdf",
+      "bundle_original_source": "notebooks/32-ym4-determinant-flow-notebook/original.tex"
+    },
+    {
+      "ordinal": 33,
+      "title": "Notebook 33: gauge-invariant determinant densities and Cartan probes",
+      "path": "outputs/ym4-cartan-trace-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "Individually gauge-invariant diagonal determinant densities are related to the total Maxwell moment.",
+        "Actual stationary affine Cartan jets remove the required multiplier-curvature terms, including for effective classical actions.",
+        "An exactly normalized massive continuum reference and an actual heat identity isolate the comparison problem; the based-ghost ultraviolet estimate is established."
+      ],
+      "assumptions": [
+        "The chosen joint infinite structural system, actual stationary jet identities and common determinant conventions.",
+        "The reference computation and actual lattice comparison are kept distinct, including signs and real color multiplicities."
+      ],
+      "upstream_notebooks": [
+        7,
+        16,
+        21,
+        29,
+        32
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The massive continuum logarithm alone did not establish the actual lattice coefficient.",
+        "Polynomial affine probes are source jets in a local structural system, not an assumed finite-torus globally periodic flux family."
+      ],
+      "later_developments": "Notebook 34 computes the whole based ghost; 35–37 supply the joint infrared and actual vector comparison.",
+      "key_proof_modules": [
+        "work/actual_heat_comparison_fragment.tex",
+        "work/cartan_determinant_moment_fragment.tex",
+        "work/gauge_invariant_determinant_density_fragment.tex",
+        "work/massive_cartan_reference_fragment.tex",
+        "work/mean_zero_one_loop_source_interface.txt"
+      ],
+      "key_audit_files": [
+        "work/cartan_trace_root_audit.txt",
+        "work/cartan_trace_provenance_audit.txt",
+        "work/cartan_heat_rotation_audit.txt"
+      ],
+      "checkpoints": [
+        "work/after_notebook33_state.txt"
+      ],
+      "correction_ids": [
+        "C33",
+        "C34"
+      ],
+      "section_inventory": [
+        "Gauge-invariant diagonal determinant densities",
+        "Constant Cartan curvature and the actual stationary jets",
+        "A completely specified massive continuum reference",
+        "The actual heat integral and a sufficient comparison estimate",
+        "The remaining scale-dependent comparison"
+      ],
+      "theorem_inventory": [
+        "lemma: Gauge-invariant rooted density and total moment",
+        "lemma: Polynomial extension of the stationary recursion",
+        "proposition: Normalized reference coefficient",
+        "proposition: Exact actual heat representation",
+        "proposition: Actual ghost ultraviolet bound",
+        "lemma: Sufficient bounds on three heat-time intervals"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/33-ym4-cartan-trace-notebook/main.tex",
+      "bundle_pdf": "notebooks/33-ym4-cartan-trace-notebook/main.pdf",
+      "bundle_original_source": "notebooks/33-ym4-cartan-trace-notebook/original.tex"
+    },
+    {
+      "ordinal": 34,
+      "title": "Notebook 34: ghost asymptotics and the physical determinant",
+      "path": "outputs/ym4-pinned-ghost-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A returning-walk area formula and Bessel identities give the exact unpinned ghost heat coefficient and controlled pinned prefix.",
+        "The point-pinned gap and fourth-area-moment estimate show that the complete based-ghost coefficient has an extra logarithm from times K^2 to K^4.",
+        "The actual full composite vector ultraviolet term is bounded without assuming the false K^-1 norm for the ordinary constraint.",
+        "An exact physical-quotient identity, projected constraint norm and flat physical gap separate genuine cancellation from contour-gauge artifacts."
+      ],
+      "assumptions": [
+        "The actual based scalar, ordinary composite constraint and correctly normalized finite or structural-system setting of each theorem.",
+        "The projected estimate applies to the transverse coarse projection, not the full ordinary constraint."
+      ],
+      "upstream_notebooks": [
+        7,
+        8,
+        27,
+        32,
+        33
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "A scalar ghost tail bounded after K^2 is false; the full vector must cancel its extra logarithm.",
+        "The unprojected contour-gauge matrix has a counterexample to the desired K^-2 gap.",
+        "Separately regularized physical/scalar factors are not yet the actual determinant."
+      ],
+      "later_developments": "Notebook 35 replaces point pinning by covariant zero block means and treats the joint infrared continuation.",
+      "key_proof_modules": [
+        "work/physical_quotient_determinant_fragment.tex",
+        "work/pinned_ghost_long_time_fragment.tex",
+        "work/pinned_ghost_prefix_fragment.tex",
+        "work/vector_short_time_fragment.tex",
+        "work/contour_heat_comparison_research.txt",
+        "work/vector_short_time_research.txt"
+      ],
+      "key_audit_files": [
+        "work/pinned_ghost_prefix_provenance_audit.txt",
+        "work/pinned_ghost_long_time_provenance_audit.txt",
+        "work/vector_short_time_provenance_audit.txt",
+        "work/physical_quotient_gap_rotation_audit.txt",
+        "work/contour_heat_comparison_provenance_audit.txt"
+      ],
+      "checkpoints": [
+        "work/after_notebook34_state.txt"
+      ],
+      "correction_ids": [
+        "C33",
+        "C35"
+      ],
+      "section_inventory": [
+        "Inputs, conventions and scope",
+        "The actual ghost coefficient up to block diffusion time",
+        "The pinning scale and the entire based-ghost logarithm",
+        "A uniform short-time estimate for the actual vector operator",
+        "An exact finite physical quotient for the determinant",
+        "The remaining coupled estimate"
+      ],
+      "theorem_inventory": [
+        "proposition: Exact lattice ghost heat coefficient",
+        "lemma: Bounds with an integrable large-time error",
+        "proposition: Uniform pinning comparison through time \\(K^2\\)",
+        "theorem: Actual ghost prefix with a fixed finite part",
+        "lemma: Four-dimensional point-pinned Poincare bound",
+        "lemma: Fourth area moment of the returning walk",
+        "proposition: Uniform ghost tail past the pinning scale",
+        "theorem: Entire actual based-ghost coefficient",
+        "theorem: Actual vector ultraviolet bound"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/34-ym4-pinned-ghost-notebook/main.tex",
+      "bundle_pdf": "notebooks/34-ym4-pinned-ghost-notebook/main.pdf",
+      "bundle_original_source": "notebooks/34-ym4-pinned-ghost-notebook/original.tex"
+    },
+    {
+      "ordinal": 35,
+      "title": "Notebook 35: infrared cancellation and physical heat bounds",
+      "path": "outputs/ym4-infrared-cancellation-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A constant-holonomy example demonstrates noncommuting massless and thermodynamic scalar limits and the required physical compensation.",
+        "Moving-reference covariant scalar averages have an exact constant row Gram matrix; a joint removable determinant identity replaces pinning by zero covariant block means.",
+        "Scalar and vector factors have flat K^-2 gaps. Block-mean and tent lifting give Laplacian domination, heat and inverse-power bounds.",
+        "Local diagonal densities identify the actual fixed-endpoint Maxwell coefficient without singular factorwise logarithms at flatness."
+      ],
+      "assumptions": [
+        "The actual endpoint tangent identities and joint continuation from the irreducible local germ.",
+        "Counting versus physical normalization, harmonic modes and the scalar complement are kept explicit."
+      ],
+      "upstream_notebooks": [
+        7,
+        8,
+        27,
+        32,
+        33,
+        34
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "A flat gap or Schatten bound does not imply uniformly small raw curvature vertices.",
+        "The hard projector admits a pure-gauge relative-vertex counterexample; independent scalar/vector regularizations remain invalid."
+      ],
+      "later_developments": "Notebook 36 uses cancellation-preserving soft factors and relative forms to obtain the required large-endpoint comparisons.",
+      "key_proof_modules": [
+        "work/covariant_corrected_scalar_fragment.tex",
+        "work/covariant_mean_zero_density_fragment.tex",
+        "work/joint_scalar_infrared_fragment.tex",
+        "work/mean_zero_gauge_spectral_fragment.tex",
+        "work/physical_quotient_localization_fragment.tex",
+        "work/physical_vector_spectral_fragment.tex",
+        "work/physical_quotient_localization_research.txt",
+        "work/covariant_corrected_scalar_research.txt",
+        "work/mean_zero_gauge_spectral_research.txt",
+        "work/physical_vector_curvature_research.txt"
+      ],
+      "key_audit_files": [
+        "work/joint_scalar_infrared_rotation_audit.txt",
+        "work/mean_zero_gauge_bridge_rotation_audit.txt",
+        "work/covariant_mean_zero_provenance_audit.txt",
+        "work/physical_vector_spectral_provenance_audit.txt",
+        "work/mean_zero_gauge_vertex_provenance_audit.txt"
+      ],
+      "checkpoints": [
+        "work/after_notebook35_state.txt"
+      ],
+      "correction_ids": [
+        "C35",
+        "C36"
+      ],
+      "section_inventory": [
+        "Scope and conventions",
+        "The scalar infrared limit and a forced holonomy cancellation",
+        "Flat physical heat densities and the remaining curvature interface",
+        "A covariant moving-reference scalar average",
+        "A local block-mean gauge for the actual determinant",
+        "Both flat mean-zero-gauge factors have a physical-scale gap",
+        "Actual local densities in the covariant mean-zero gauge",
+        "The remaining comparison"
+      ],
+      "theorem_inventory": [
+        "lemma: Positive-mass base defect",
+        "proposition: Ordered scalar reference limit",
+        "proposition: Noncommuting mass and thermodynamic derivatives",
+        "proposition: Forced compensation in the physical factor",
+        "theorem: Uniform flat physical heat and inverse moments",
+        "lemma: Relative-form vertices",
+        "lemma: Primitive scalar intertwining",
+        "proposition: Exact composite tangent identities",
+        "theorem: Covariant block projection",
+        "theorem: Uniform flat mean-zero-gauge coercivity",
+        "lemma: Block-constant scalar lifting",
+        "corollary: Flat local-gauge heat bounds",
+        "proposition: Local density and actual affine coefficient"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/35-ym4-infrared-cancellation-notebook/main.tex",
+      "bundle_pdf": "notebooks/35-ym4-infrared-cancellation-notebook/main.pdf",
+      "bundle_original_source": "notebooks/35-ym4-infrared-cancellation-notebook/original.tex"
+    },
+    {
+      "ordinal": 36,
+      "title": "Notebook 36: soft determinants and bounded coarse corrections",
+      "path": "outputs/ym4-soft-determinant-notebook.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "The actual determinant is factored into a soft fine scalar/vector pair and two coarse determinant corrections with uniformly bounded Maxwell contributions.",
+        "A corrected ordered-Laurent and local gauge argument controls relative vertices of the actual effective Hessian, with rooted source bounds.",
+        "The current ultraviolet interval and the physical infrared tail of the soft pair are uniformly bounded; the latter retains the local block projector in a cubic-resolvent Schatten estimate."
+      ],
+      "assumptions": [
+        "Actual infinite structural kernels with the proved continuous moments, or their explicit periodizations; the on-shell affine matching is used only where established.",
+        "Source localization carries a full tree through input/output and source roots, with physical fine-site Lipschitz weights."
+      ],
+      "upstream_notebooks": [
+        21,
+        29,
+        33,
+        34,
+        35
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The componentwise-even difference-square shortcut is false and has been replaced.",
+        "These results reduce the logarithm to the intermediate band; spectral bounds alone do not determine its coefficient.",
+        "Arbitrary finite winding kernels are not silently treated as exact infinite periodizations."
+      ],
+      "later_developments": "Notebook 37 closes the intermediate physical band and compares the actual base to the Wilson and continuum references.",
+      "key_proof_modules": [
+        "work/covariant_hessian_relative_vertices_fragment.tex",
+        "work/soft_pair_infrared_tail_fragment.tex",
+        "work/soft_pair_short_time_fragment.tex",
+        "work/soft_scalar_coarse_reduction_fragment.tex",
+        "work/soft_vector_coarse_reduction_fragment.tex",
+        "work/covariant_hessian_relative_vertices_research.txt",
+        "work/soft_vector_coarse_reduction_research.txt",
+        "work/soft_pair_infrared_tail_research.txt"
+      ],
+      "key_audit_files": [
+        "work/soft_determinant_root_audit.txt",
+        "work/covariant_hessian_relative_vertices_rotation_audit.txt",
+        "work/soft_vector_coarse_reduction_rotation_audit.txt",
+        "work/soft_pair_infrared_tail_rotation_audit.txt",
+        "work/soft_pair_short_time_rotation_audit.txt"
+      ],
+      "checkpoints": [
+        "work/after_notebook36_state.txt"
+      ],
+      "correction_ids": [
+        "C36",
+        "C37"
+      ],
+      "section_inventory": [
+        "Conventions and proof boundary",
+        "A soft scalar factorization with a bounded coarse correction",
+        "Covariance and physical relative Hessian vertices",
+        "A soft vector completion with a bounded coarse remainder",
+        "The fine short-time band of the soft pair",
+        "A uniform affine infrared tail from local cubic resolvents",
+        "The next comparison"
+      ],
+      "theorem_inventory": [
+        "theorem: Exact scalar factorization",
+        "theorem: ",
+        "theorem: ",
+        "theorem: Uniform actual infrared tail"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/36-ym4-soft-determinant-notebook/main.tex",
+      "bundle_pdf": "notebooks/36-ym4-soft-determinant-notebook/main.pdf",
+      "bundle_original_source": "notebooks/36-ym4-soft-determinant-notebook/original.tex"
+    },
+    {
+      "ordinal": 37,
+      "title": "Notebook 37: the actual logarithm and finite local ultraviolet tuning",
+      "path": "outputs/ym4-positive-drift/main.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "Source-localized sectorial resolvents remove the soft penalties on the entire remaining physical band with an integrable O(u) heat error.",
+        "The nonlinear Ward jet orders (4,3,2), including left-relative chart-current terms, compare the actual base to the Wilson base with O(s^-1) error.",
+        "A direct Wilson-to-continuum rescaling and transverse diagram calculation give O(s^-1/2) error and the exact normalization beta(D_M,K)=22 alpha_g log K+O(1), uniformly in old depth and every applicable structural system.",
+        "The resulting positive finite block margin permits arbitrarily long tuned weak local histories, with bare coupling of inverse-square-root order in length."
+      ],
+      "assumptions": [
+        "All explicit classical structural, local quantum, determinant and compactness inputs of the preceding series.",
+        "Uniformity is over every required joint structural limit, not a chosen favorable one; the fixed local step parameters are chosen in the stated order."
+      ],
+      "upstream_notebooks": [
+        29,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "This closes the local leading-drift/tuning problem, not the full Wilson large-field or mixed-history problem.",
+        "Internal proof audits and compilation are not external mathematical certification.",
+        "Continuum contact terms are handled by an explicit diagram calculation, not an unjustified absolute spatial-moment assertion."
+      ],
+      "later_developments": "Notebook 38 begins the genuinely normalized full-measure interface and records the remaining global obligations.",
+      "key_proof_modules": [
+        "work/actual_base_ward_heat_comparison_fragment.tex",
+        "work/actual_positive_beta_assembly_fragment.tex",
+        "work/local_positive_drift_fragment.tex",
+        "work/soft_penalty_physical_band_fragment.tex",
+        "work/soft_scalar_complete_coefficient_fragment.tex",
+        "work/wilson_continuum_heat_comparison_fragment.tex",
+        "work/actual_base_ward_heat_comparison_research.txt",
+        "work/wilson_continuum_heat_comparison_research.txt",
+        "work/soft_penalty_physical_band_complete_research.txt"
+      ],
+      "key_audit_files": [
+        "work/actual_base_ward_heat_comparison_root_audit.txt",
+        "work/actual_base_ward_heat_comparison_theorem_audit.txt",
+        "work/wilson_continuum_heat_comparison_theorem_audit.txt",
+        "work/soft_penalty_physical_band_root_audit.txt",
+        "work/local_positive_drift_theorem_audit.txt"
+      ],
+      "checkpoints": [
+        "work/after_notebook37_state.txt"
+      ],
+      "correction_ids": [
+        "C01",
+        "C34",
+        "C38"
+      ],
+      "section_inventory": [
+        "Scope and the proof dependency",
+        "Removing the soft penalties up to physical time one",
+        "The complete mean-zero scalar coefficient",
+        "Uniform actual-base heat comparison from nonlinear Ward jets",
+        "Direct Wilson-to-continuum heat comparison",
+        "The actual logarithm and a positive structural margin",
+        "From a uniform positive coefficient to finite local trajectories",
+        "What must still become a four-dimensional quantum theory"
+      ],
+      "theorem_inventory": [
+        "theorem: ",
+        "theorem: Mean-zero scalar logarithm",
+        "theorem: Uniform base comparison",
+        "theorem: Fixed-reference heat coefficient",
+        "theorem: Uniform actual leading coefficient",
+        "lemma: Uniform positive finite leading block",
+        "theorem: Conditional positive-drift local trajectories"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/37-ym4-positive-drift/main.tex",
+      "bundle_pdf": "notebooks/37-ym4-positive-drift/main.pdf",
+      "bundle_original_source": "notebooks/37-ym4-positive-drift/original.tex"
+    },
+    {
+      "ordinal": 38,
+      "title": "Notebook 38: positive full-measure embeddings and local defect bounds",
+      "path": "outputs/ym4-full-measure-bridge/main.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "A specified global Borel completion embeds the admitted local sector as a positive part of the actual finite Wilson pushforward, with a normalized output-orbit acceptance and exact positive remainder histories.",
+        "A full-normalization reflection-positive Peierls estimate controls prescribed bad plaquettes/cells and cluster counts.",
+        "An actual fixed-box conditional Wilson Laplace theorem and a boundary-only gauge construction give unconditional separated-box defect estimates.",
+        "A curvature-oscillation counterexample and primary-source comparison identify the limitations of replacing a complete large-field analysis by plaquette smallness."
+      ],
+      "assumptions": [
+        "Positive bare Wilson measure, normalized Haar and compatible reflection tilings; fixed embedded boxes with disjoint vertex sets for the box bridge.",
+        "The literal sector uses invariant color balls and actual gauge-covariant charts. Its local-germ identity needs a common finite-volume orbit domain and containment of every retained configuration.",
+        "The chosen global completion is part of the construction, not an identification with an unspecified original-source completion."
+      ],
+      "upstream_notebooks": [
+        19,
+        27,
+        28,
+        31,
+        37
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The positive remainder has no proved complete mixed-history polymer bound.",
+        "The fixed-box minimum is an unconstrained conditional bare minimum, not the nonlinear coarse-fiber RG minimum.",
+        "Small plaquettes do not yield uniform physical C1,alpha control; arbitrary growing components, holonomy sectors and later effective measures require additional work."
+      ],
+      "later_developments": "Notebook 39 adds the final normalized fixed-box replacement theorem. It preserves the exterior and partition mass and gives local comparison bounds, but does not remove the RG constrained-window interface.",
+      "key_proof_modules": [
+        "work/fixed_box_wilson_tail_fragment.tex",
+        "work/full_measure_box_bridge_fragment.tex",
+        "work/full_measure_geometric_interface_fragment.tex",
+        "work/full_wilson_peierls_fragment.tex",
+        "work/full_wilson_positive_split_fragment.tex",
+        "work/positive_finite_measure_embedding_research.txt",
+        "work/full_wilson_large_field_peierls_research.txt",
+        "work/full_measure_large_field_interface_research.txt"
+      ],
+      "key_audit_files": [
+        "work/full_measure_bridge_root_audit.txt",
+        "work/positive_finite_measure_embedding_rotation_audit.txt",
+        "work/full_wilson_peierls_theorem_audit.txt",
+        "work/fixed_box_wilson_tail_provenance_audit.txt",
+        "work/full_measure_box_bridge_provenance_audit.txt",
+        "work/full_measure_geometric_interface_theorem_audit.txt"
+      ],
+      "checkpoints": [
+        "work/after_notebook38_state.txt"
+      ],
+      "correction_ids": [
+        "C19",
+        "C39",
+        "C40"
+      ],
+      "section_inventory": [
+        "Relation to the construction and independence of inputs",
+        "An exact positive finite-measure embedding of the retained sector",
+        "A full-measure Wilson Peierls bound",
+        "A normalized conditional Wilson tail in a fixed box",
+        "From curvature rarity to full-measure box windows",
+        "Local gauge coordinates and the complete-density interface",
+        "The remaining construction theorem",
+        "Verification record and source access"
+      ],
+      "theorem_inventory": [
+        "lemma: Pointwise orbit acceptance",
+        "theorem: Exact invariant positive split",
+        "lemma: Finite orbit-overlap control",
+        "theorem: Prescribed bad cells",
+        "theorem: Full conditional tail at fixed geometry",
+        "corollary: Logarithmic windows",
+        "lemma: A boundary-only gauge at fixed geometry",
+        "theorem: Prescribed local box defects in the full Wilson measure",
+        "lemma: Finite cubical gauge bound",
+        "proposition: No uniform \\(C^{1,\\alpha}\\) gauge"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/38-ym4-full-measure-bridge/main.tex",
+      "bundle_pdf": "notebooks/38-ym4-full-measure-bridge/main.pdf",
+      "bundle_original_source": "notebooks/38-ym4-full-measure-bridge/original.tex"
+    },
+    {
+      "ordinal": 39,
+      "title": "Notebook 39: normalized local replacement in the bare Wilson measure",
+      "path": "outputs/ym4-normalized-box-replacement/main.tex",
+      "status": "Authoritative working research notebook; internally audited modules, not external certification",
+      "main_results": [
+        "An exactly normalized local replacement on arbitrary finite collections of vertex-disjoint fixed bare-Wilson boxes preserves the entire exterior marginal, gauge invariance and raw partition mass.",
+        "Good-boundary conditional interiors are replaced by their actual conditional window laws; bad-boundary interiors are unchanged. A positive failure expansion and explicit coupling give iid domination of discrepancy marks.",
+        "Local total variation, entropy, bounded-source ratios, connected cumulants and cluster bounds are uniform in the number of boxes."
+      ],
+      "assumptions": [
+        "The exact conditional factorization and actual normalized fixed-box tail/Peierls inputs of Notebook 38.",
+        "Fixed embedded box geometry, compatible periodic surroundings, T0<=T<=r/g and a=C exp(-c T^2)<=1/2.",
+        "Windows are lifted from the fixed-box forest coordinates with invariant edge/color norms; all denominators are exact conditional masses."
+      ],
+      "upstream_notebooks": [
+        38
+      ],
+      "dependency_scope": "Selected substantive upstream notebooks; not a complete theorem-level proof graph",
+      "remaining_limitations": [
+        "The independent domination applies to discrepancy marks, not to correlated bad-boundary events.",
+        "The TV equality includes the entire exterior; a marginal forgetting it has only an upper bound. Global TV may approach one.",
+        "This is not the RG coarse-fiber window, a growing-component replacement, a later effective-action theorem or a renormalized source hierarchy."
+      ],
+      "later_developments": "This is the final stopping theorem of the handoff. The full mixed-history, continuum reconstruction and Yang–Mills identification tasks remain separate.",
+      "key_proof_modules": [
+        "work/normalized_box_replacement_fragment.tex",
+        "work/normalized_box_replacement_research.txt"
+      ],
+      "key_audit_files": [
+        "work/normalized_box_replacement_rotation_audit.txt"
+      ],
+      "checkpoints": [],
+      "correction_ids": [
+        "C40",
+        "C41"
+      ],
+      "section_inventory": [
+        "Inputs and proof boundary",
+        "A normalized fixed-box replacement for the full Wilson measure",
+        "Exact conditional structure and the established box estimates",
+        "The normalized operation",
+        "An exact positive failure expansion and coupling",
+        "Local total variation, observables and entropy",
+        "Untreated boundaries, exponential moments and clusters",
+        "Exact source identities and local connected cumulants",
+        "Natural stopping point and scope"
+      ],
+      "theorem_inventory": [
+        "theorem: Normalized fixed-box replacement"
+      ],
+      "evidence_reviewed": "Full abstract where present, section/theorem structure, relevant checkpoints and saved proof/audit history; not every proof re-certified in this catalogue",
+      "bundle_source": "notebooks/39-ym4-normalized-box-replacement/main.tex",
+      "bundle_pdf": "notebooks/39-ym4-normalized-box-replacement/main.pdf",
+      "bundle_original_source": "notebooks/39-ym4-normalized-box-replacement/original.tex"
+    }
+  ]
+}

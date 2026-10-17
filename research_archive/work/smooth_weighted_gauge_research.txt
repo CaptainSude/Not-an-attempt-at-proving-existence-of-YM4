@@ -1,0 +1,348 @@
+SMOOTH WEIGHTED MEAN-ZERO GAUGES: EXACT HIERARCHICAL CANCELLATION
+18 October 2026. Rotation audit research.
+Status: Sections 1--5 are exact algebra and proved flat estimates.
+Section 6 states explicitly the extra trajectory input for a nonflat
+operator estimate. Section 7 removes the previously demonstrated
+pure-gauge obstruction. Section 8 isolates what this does NOT prove.
+
+The actual nonlinear ordinary constraint, retained cutoff and measure
+are unchanged. Only the auxiliary tangent pair in the exact determinant
+identity is changed. All transposes below use the invariant bilinear
+color pairing; on real fields they are ordinary Hilbert adjoints.
+
+1. Definitions and the actual hierarchy
+
+Fix an odd primitive ell>=3 and K=ell^k, k>=1, in dimension d=4
+unless another d is displayed. All norms are COUNTING L2 norms at
+the indicated lattice level, and all bond coordinates are angles.
+Blocks are disjoint centered cubes. Periodic interfaces retain their
+usual multiplicity.
+
+Use the actual ordinary references U_j=M_ell^j(U), the actual selected
+group-valued internal transports P_j(z,x), and the tangent operators
+C_j, Cbar_j, Z_j, B_j of covariant_corrected_scalar_research.txt.
+In particular, with D_j phi(e)=phi(e_-)-Ad_Uj(e) phi(e_+),
+
+ T_j(z,x) D_j phi = phi(z)-Ad_Pj(z,x) phi(x),
+ Z_j(z)=ell^-d sum_(x in B_ell(z)) T_j(z,x),
+ B_j(z,x)=ell^-d Ad_Pj(z,x),
+ C_j=Cbar_j+D_(j+1) Z_j,
+ Cbar_j D_j=D_(j+1) B_j,
+ Z_j D_j=r_ell-B_j.                                      (1.1)
+
+Here T_j(z,x) is the left relative derivative of P_j(z,x), and
+r_ell is restriction to the next centers. These are moving-reference
+identities, not derivatives of a fixed-identity corrected nonlinear
+map. The required contour facts are the actual source facts recorded
+in covariant_corrected_scalar_research.txt Sections 1--5: internal
+block dependence, endpoint covariance, analyticity and the arithmetic
+flat derivative. No single axial contour is substituted for the
+selected mean.
+
+Write C^j=C_(j-1)...C_0, A^j=Cbar_(j-1)...Cbar_0.
+Then C^j=A^j+D_j z_j, z_0=0. The usual recursion can be rewritten as
+
+ z_(j+1)=B_j z_j+Z_j C^j
+         =r_ell z_j+Z_j A^j.                             (1.2)
+
+The second equality is essential: the ordinary tangent has not been
+given a false small norm. At flatness A^j is exactly the straight
+ANGLE average A_r with r=ell^j.
+
+For a final block B_K(y), write x=x_0,x_1,...,x_k=y for the unique
+nested sequence of centers, and
+ P_hier(y,x)=P_(k-1)(x_k,x_(k-1))...P_0(x_1,x_0).
+All its background dependencies are internal to B_K(y).
+
+2. Arbitrary bounded weights and exact identities
+
+Choose a fixed real profile w_y(x), translated with each final block,
+such that
+
+ w_y(x)>=0,  sum_x w_y(x)=1,  w_y(x)<=W K^-d,
+ supp w_y subset B_K(y),                                (2.1)
+
+where W is independent of K. Define
+
+ B_w(y,x)=w_y(x) Ad_Phier(y,x),
+ Z_w(y)=sum_x w_y(x) (left relative derivative of P_hier(y,x)),
+ Cbar_w=C^k-D_k Z_w.                                    (2.2)
+
+Endpoint covariance gives, exactly,
+
+ Z_w D_0=r_K-B_w,      Cbar_w D_0=D_k B_w.               (2.3)
+
+The same simultaneous reference covariance as in (1.1) gives
+B_w(U^g)=O_c(g) B_w(U) O_S(g)^T and the analogous Z_w,Cbar_w
+identities. Thus this is an admissible auxiliary choice in the
+previously proved general tangent determinant bridge.
+
+Disjoint block supports and orthogonality of every Ad(P_hier) give
+
+ B_w B_w^T=(sum_x w_y(x)^2) I=:s_w I.                   (2.4)
+
+This remains exact on the complex bilinear germ. For a common
+translated profile, s_w is a background-independent scalar.
+Cauchy--Schwarz and (2.1) give K^-d<=s_w<=W K^-d.
+Consequently P_w=I-s_w^-1 B_w^T B_w is a local analytic projection,
+orthogonal on real fields, and the normalized logdet(B_w B_w^T)
+vanishes. No claim of a new nonlinear constraint or pushforward
+measure is involved.
+
+3. The exact weighted hierarchical cancellation
+
+Fix a final output y. Define descendant masses at level j by
+
+ w_j(x_j)=sum_(fine x descending from x_j) w_y(x).
+Then w_0=w_y, w_k(y)=1 and
+ w_(j+1)(z)=sum_(x_j in B_ell(z)) w_j(x_j).
+
+Let P_>(y,z) be the product of the hierarchical transports above the
+level-(j+1) site z. It is independent of the descendants below z.
+Differentiating an ordered product gives
+
+ Z_w(y)=sum_(j=0..k-1) sum_z Ad_P>(y,z)
+           [sum_(x in B_ell(z)) w_j(x) T_j(z,x)] C^j.     (3.1)
+
+Insert C^j=A^j+D_j z_j. The gauge part for fixed j equals
+
+ sum_z Ad_P>(y,z) [
+    w_(j+1)(z) z_j(z)
+       -sum_x w_j(x) Ad_Pj(z,x) z_j(x)].                  (3.2)
+
+Put
+ R_j=sum_(x_j) w_j(x_j) Ad_Phier(y,x_j) z_j(x_j),
+where the upper hierarchical product starts at level j. By (1.2),
+the first term of (3.2) is R_(j+1) minus
+ sum_z w_(j+1)(z) Ad_P>(y,z) Z_j(z) A^j;
+the second is R_j. Summation therefore telescopes, with R_0=0
+and R_k=z_k(y). Define
+
+ delta w_j(x)=w_j(x)-ell^-d w_(j+1)(parent(x)).
+Then
+
+ Z_w(y)-z_k(y)
+   =sum_j sum_z Ad_P>(y,z)
+           [sum_(x in B_ell(z)) delta w_j(x) T_j(z,x)] A^j.
+                                                               (3.3)
+
+For uniform fine weights w=K^-d every delta w_j is zero.
+Thus z_k=Z_mean, and (3.3) is the exact formula for Z_w-Z_mean.
+It holds at nonflat ordinary references too. In particular the
+difference is expressed through PARTIAL CORRECTED products A^j,
+not through the potentially larger ordinary products C^j.
+
+4. Uniform flat counting-L2 estimate
+
+At U=1 put r=ell^j. Then A^j=A_r and every upper Ad is identity.
+The straight angle average has row absolute sum r and column
+absolute sum r^(1-d), with the standard periodic multiplicities.
+The Schur estimate gives
+
+ ||A_r||_(2->2)<=r^(1-d/2).                              (4.1)
+
+The descendant bound and the number of descendants give
+
+ |delta w_j(x)|<=2W (r/K)^d,
+ ||delta w_j||_2<=2W (r/K)^(d/2).                        (4.2)
+
+The direct sum of all primitive contour maps
+ a -> {T_j(z,x)a : x in B_ell(z)}
+has norm at most C_T(ell), independent of the number of blocks.
+This follows from finite primitive dimension and disjoint internal
+block inputs; it is not a direct-K contour estimate. At flatness
+the color factor is identity.
+
+For a fixed y, (3.3)--(4.2) bound its j-th row contribution by
+
+ 2W C_T (r/K)^(d/2) r^(1-d/2)
+              =2W C_T r K^(-d/2).
+
+The fine input edges of the entire scalar row are internal to its
+own final block: each primitive internal stage bond has both
+descendant blocks in that final block. Different y rows therefore
+have disjoint input edge supports. The same row estimate is a
+global L2 operator estimate. Summing r=1,ell,...,K/ell gives
+
+ ||Z_w-Z_mean|| <= [2W C_T/(ell-1)] K^(1-d/2).           (4.3)
+
+At flatness Cbar_mean=A_K and ||D_k||<=2 sqrt(d). Hence
+
+ Cbar_w=A_K-D_k(Z_w-Z_mean),
+ ||Cbar_w|| <= C_w K^(1-d/2),
+ C_w=1+4 sqrt(d) W C_T/(ell-1).                          (4.4)
+
+In d=4 this is C_w/K. The bound is uniform in old classical depth,
+volume and the composite depth k, with primitive ell fixed.
+No O(K^-1) bound for the full ordinary C^k is asserted.
+
+5. A smooth choice, spectral gap, and full Laplacian comparison
+
+For K=2h+1 choose tensor tent weights
+ w_y(Ky+r)=product_mu [(h+1-|r_mu|)/(h+1)^2],
+                      -h<=r_mu<=h.                     (5.1)
+Their sum is one. They obey (2.1) with W=2^d.
+Writing f(r)=K(h+1-|r|)/(h+1)^2, one has
+ K^-1 sum f=1, K^-1 sum f^2<=2,
+ |f(endpoint)|<=4/K, |f(r+1)-f(r)|<=4/K.
+Thus s_w=sigma K^-d, 1<=sigma<=2^d.
+
+At flatness let Pi_w=I-P_w. Its normalized range columns are
+ u_y(x)=w_y(x)/sqrt(s_w). Product-tent differentiation, including
+interfaces between adjacent blocks, gives
+
+ ||D Pi_w||<=C_t/K.                                    (5.2)
+
+For completeness, the map from block-constant scalars c_y to
+c_y product f has norm<=2^(d/2), and gradient norm<=C_t/K
+relative to the fine norm K^(d/2)||c||_2. Internal faces and
+inter-block faces contribute respectively at most
+16*2^(d-1) K^(d-2) sum_y|c_y|^2 and
+64*2^(d-1) K^(d-3) sum_y|c_y|^2 per direction.
+Dividing by sqrt(sigma)>=1 gives (5.2), for example with
+C_t^2=80 d 2^(d-1). The finite periodic counts also cover final
+period one or two.
+
+Weighted block Poincare follows without a new spectral theorem.
+If B_w psi=0, subtract the ordinary mean c on each block. Then
+|c|=|sum w(psi-c)|<=sqrt(s_w)||psi-c||_2, so
+||psi||_2<= (1+sqrt(W)) ||psi-c||_2 on that block.
+Ordinary Neumann Poincare proves
+ ||psi||^2<=C_Pw K^2 ||D psi||^2,
+ C_Pw=(1+sqrt(W))^2 C_P.                                (5.3)
+
+A weighted harmonic lift H_w b minimizing ||D phi||^2 subject
+B_w phi=b has a uniform energy upper bound
+ ||D H_w b||^2<=C_lw K^(d-2)||D_c b||^2.                (5.4)
+Indeed in one dimension the centered tent multiplier at t=p/K is
+ [sin((h+1)t/2)/((h+1)sin(t/2))]^2.
+For |p|<=pi and K>=3 it is at least (2/pi)^2.
+Use only the central fine Fourier mode, divide by the d-fold
+multiplier, and apply
+ |exp(ip_mu/K)-1|<=pi/(2K)|exp(ip_mu)-1|.
+Counting Parseval supplies K^d, proving (5.4) with
+C_lw=(pi^2/4)(pi/2)^(4d).
+Zero momentum is lifted constantly. Real parts handle Nyquist
+modes. Its Euler equation is P_w Delta H_w b=0.
+
+In d=4 the argument of mean_zero_gauge_spectral_research.txt now
+gives
+ ||D phi||^2 <=2C_Pw K^2||P_w Delta phi||^2
+                  +2C_lw K^2||D_c B_w phi||^2.          (5.5)
+
+Let L=q_M be the actual flat classical Hessian and q=q_MK.
+Use the proved source bounds L>=d^T d, LD=0, 0<=q<=R_q I,
+and q D_c=0. Because Cbar_w-A_K is a coarse gradient,
+
+ Cbar_w^T q Cbar_w=A_K^T q A_K.
+For a>=R_q+1 define the new actual-flat auxiliary vector
+ Q_w=L-A_K^T q A_K+D P_w D^T+a Cbar_w^T Cbar_w.
+Then
+ <x,Q_w x>>=||dx||^2+||P_w D^T x||^2+||Cbar_w x||^2.     (5.6)
+
+In the Hodge split x=x_T+Dphi, the already proved transverse
+alias estimate controls x_T by
+ K^2[||P_c A_K x_T||^2+||d x_T||^2].
+Now P_c A_K x_T=P_c Cbar_w x, while
+ ||D_c B_w phi||^2
+ <=2||Cbar_w x||^2+2 C_w^2 K^-2||x_T||^2.
+Substitute into (5.5). This proves
+ Q_w>=c_w K^-2 I                                      (5.7)
+with c_w>0 depending on ell and the fixed weight profile, not M,K
+or volume.
+
+Equation (5.2) makes full Laplacian domination especially direct:
+ ||Pi_w D^T x||<=C_t K^-1||x||.
+Therefore Delta_1<=C Q_w after (5.6),(5.7). Similarly
+ Ghat_w=P_w Delta P_w+K^-2 Pi_w
+obeys
+ c(I+K^2 Delta)<=K^2 Ghat_w<=C(I+K^2 Delta).             (5.8)
+For the upper bound write DP_w=D-DPi_w. For the lower bound use
+D=DP_w+DPi_w and combine (5.3) on P_w with the complement term.
+All constants are uniform. Consequently the full flat heat and
+inverse-moment estimates already proved for the uniform mean-zero
+pair carry over by min--max, including the scalar complement.
+
+6. Precisely conditional nonflat counting estimate
+
+The exact formula (3.3) requires no extra quantitative hypothesis.
+For a uniform physical-background estimate it is enough to have,
+on a specified complex trajectory domain,
+
+ sup_j ||T_j||<=C_T,
+ sup_j,y,z ||Ad(P_>(y,z))||<=C_P,
+ ||A^j||<=C_A r^(1-d/2), r=ell^j.                       (6.1)
+
+Then the proof of (4.3) applies unchanged, with C_T replaced by
+C_P C_T C_A. Own-block support remains exact. Consequently
+||Cbar_w||<=C K^(1-d/2), provided the uniform mean-corrected
+composite obeys that same bound.
+
+One sufficient actual trajectory input is
+ ||log U_j||_infty<=C r epsilon/K
+together with the primitive absolute-Schur analytic perturbation
+bounds on the same domain. At fixed ell, products of relative
+perturbations cost exp(C sum_j r epsilon/K)<=exp(C'epsilon).
+This gives both the partial-product bound and the upper transport
+bound in (6.1). The existing ordinary-prefix trajectory theorem
+provides the relevant small physical-potential class; this note
+does not enlarge that class to arbitrary rough link fields or
+replace its common-domain requirement by a new assumption of
+uniformity. One should cite its precise norm/domain when applying
+this sufficient criterion.
+
+On any resulting common physical complex ball, operator Cauchy
+gives uniform physical-source derivatives of K Cbar_w, K^2 B_w
+and P_w. These are counting operator estimates. They do NOT
+bound D P_w derivatives or relative quadratic-form vertices.
+
+7. What the smooth projection repairs exactly
+
+The previous obstruction used Pi onto sharp block constants.
+For the new flat X=K^2 Ghat_w, (5.8) removes that obstruction for
+ALL bounded smooth physical pure gauges.
+
+Let S be a real self-adjoint multiplication operator with
+ ||S||_infty+K||D S||_infty<=L_S.
+The discrete product rule and (5.8) give
+ ||X^(1/2) S X^(-1/2)||<=C L_S
+and its adjoint bound. The same applies to S^2, with constant
+C L_S^2. For X(t)=exp(itS)X exp(-itS),
+
+ X'(0)=i[S,X],
+ X''(0)=-[S,[S,X]].
+
+Expanding the commutators, and putting the two graph-bounded
+multiplications around X in the middle term, proves
+ ||X^(-1/2) X'(0) X^(-1/2)||<=C L_S,
+ ||X^(-1/2) X''(0) X^(-1/2)||<=C L_S^2,                 (7.1)
+uniformly in K. These are genuine raw relative-vertex bounds in
+this special, actual gauge-covariant family. The total heat trace
+is exactly unchanged, so its first and second variations vanish.
+The argument is finite-dimensional on every compatible torus;
+compact gauges give the corresponding local infinite identities.
+
+In particular the linear physical phase used in
+mean_zero_gauge_vertex_obstruction.txt no longer yields a growing
+relative vertex with the smooth weighted projection.
+
+8. Exact remaining issue
+
+The weighted correction solves the full Cbar_w O(K^-1) problem
+and gives a better flat scalar energy geometry. It does not yet
+give a uniform large-K magnetic heat coefficient for the actual
+pair. Operator Cauchy for P_w is not a bound on D P_w.
+
+The hierarchical endpoint transporter may have internal-interface
+jumps under a curved background: smooth endpoint weights alone
+smooth the OUTER block boundary, not those internal interfaces.
+A proof of uniform physical covariant-gradient bounds for the
+moving normalized range columns would be an additional input,
+and is not inferred here. A follow-up calculation tests this on
+affine Cartan curvature. Likewise the old-depth action Hessian
+and the residual/current terms still require an actual
+cancellation-preserving curvature estimate.
+
+No sign, beta asymptotic, regulator-uniform running-coupling
+trajectory, or complete quantum induction is obtained here.
+

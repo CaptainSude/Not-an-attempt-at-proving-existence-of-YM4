@@ -1,0 +1,963 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 17: joint fluctuation tails and the one-step Gaussian domain}
+\author{Research working document}
+\date{17 October 2026}
+\setlength{\emergencystretch}{5em}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove joint bad-block bounds for correlated Gaussian fluctuations
+from a counting-coordinate covariance bound. The estimates allow
+singular observable covariances and overlapping tests. A relative
+complex quadratic perturbation has a corresponding local estimate
+without a factor growing with the total volume: untested variables
+are integrated out before taking absolute values. In four dimensions,
+an exact fixed-ratio rescaling supplies the required covariance bound
+for both potential values and first differences. The actual reduced
+Wilson Hessian at our nonlinear constrained minimizer satisfies the
+relative quadratic hypothesis, including its constraint-curvature
+term. A separate extraction of the earlier flat effective-action
+bounds supplies the current-lattice Gaussian at arbitrary homogeneous
+averaging depth. These are inputs to the quantum integration and
+iteration required for the existence argument.
+\end{abstract}
+
+\section{Which fluctuation estimate is needed}
+\label{gs17-target}
+
+Our objective is a nontrivial four-dimensional Yang--Mills quantum
+theory. Notebooks 15 and 16 provide the homogeneous finite-regulator
+classical minimizer, its ordinary-constraint transfer, local analytic
+responses, and the minimized action. The next step integrates the
+fluctuations and sums the regions that leave the analytic chart.
+
+The Gaussian roughness calculation of Notebook 16 distinguishes two
+different integrations. Integrating every unresolved mode below a
+fixed macroscopic scale does not give a uniform smooth-field domain.
+Integrating a fixed-ratio step has different coordinates and different
+uniform bounds. Both statements must retain the physical pairing:
+an inverse precision as a physical Hilbert operator is not its raw
+coordinate covariance matrix.
+
+This notebook proves the joint tail estimate needed for prescribed
+bad blocks, its complex version, and the fixed-step quadratic
+identifications supported by our construction. A good-cell estimate
+alone does not supply a regional nonlinear chart on its complement.
+The latter construction and the interacting weights are explicit
+interfaces for the next step.
+
+The proofs have been checked internally by separate derivations and
+audits. The results are finite-regulator theorems on their stated
+domains; a continuum existence theorem is the target of their
+subsequent integration.
+
+
+% No preamble. One-step quantum interface. Prefix os-.
+\section{One fixed-ratio fluctuation step in physical coordinates}
+\label{os-section}
+
+We work in dimension four with a fixed odd blocking ratio
+$L\ge3$. Fine spacing is $\eta>0$ and the next retained
+spacing is $h=L\eta$. The number of retained cells may be
+arbitrarily large; constants may depend on $L$ and the gauge
+group, but not on $h$, $\eta$, or compatible periodic volume.
+This is one blocking step, rather than a simultaneous
+integration of all fluctuations below a fixed macroscopic scale.
+
+Let $y=x/h$, and write the rescaled potential as
+$A_s(y)=hA_{\rm phys}(x)$. Then
+\begin{equation}\label{os-rescaling}
+ U(e)=e^{i\eta A_{\rm phys}(e)}=e^{iA_s(e)/L},\qquad
+ \nabla_\eta A_{\rm phys}=h^{-2}\nabla_{1/L}A_s.
+\end{equation}
+The four-dimensional coupling-free Wilson action is unchanged
+by this relabeling: it is the same sum of plaquette densities,
+each counted once. The physical Maxwell action likewise obeys
+\begin{equation}\label{os-quadratic-scaling}
+ \eta^4\sum|d_\eta A_{\rm phys}|^2
+       =L^{-4}\sum|d_{1/L}A_s|^2.
+\end{equation}
+The corresponding scalar gauge projection and flat averaging
+constraint are the fixed-$L$ unit-coarse-scale operators of
+the preceding notebooks after this rescaling.
+
+Write $X_L=\ker Q_L\cap\ker(R_LD_*^T)$, where
+$D_*=D_{1/L}$, and let $\mathcal C_L$ be the Maxwell
+variational inverse on $X_L$. For the physical constrained
+Gaussian $Z_{\rm phys}$ and its rescaling $Z_s=hZ_{\rm phys}$,
+the covariance \emph{operators} under the physical pairings
+and their raw coordinate matrices satisfy
+\begin{equation}\label{os-covariance-scaling}
+ \mathcal C_h=h^2\mathcal C_L,\qquad
+ \operatorname{Cov}_{\rm count}(Z_{\rm phys})
+       =\eta^{-4}h^2\mathcal C_L,\qquad
+ \operatorname{Cov}_{\rm count}(Z_s)=L^4\mathcal C_L.
+\end{equation}
+The last two are coordinate covariances, rather than operators
+under weighted physical sums. They follow also by pushing the
+normalized Gaussian through \eqref{os-quadratic-scaling};
+the constant Lebesgue Jacobian cancels from its normalization.
+
+Define the complete dimensionless value/first-difference vector
+\begin{equation}\label{os-microscopic-field}
+ Y=\bigl(\eta Z_{\rm phys},\eta^2\nabla_\eta Z_{\rm phys}\bigr)
+   =\bigl(Z_s/L,\nabla_*Z_s/L^2\bigr).
+\end{equation}
+Equation \eqref{os-covariance-scaling} gives the exact counting
+covariance
+\begin{equation}\label{os-Y-covariance}
+ \Sigma_Y=S_L\mathcal C_LS_L^T,
+       \qquad S_L=(LI,\nabla_*).
+\end{equation}
+The previously proved energy sandwiches imply
+\begin{equation}\label{os-uniform-covariance}
+ 0\le\Sigma_Y\le K_L I
+\end{equation}
+for a fixed finite $K_L$, uniformly in spacing and volume.
+Indeed $\mathcal C_L\le G_{0,L}$ and
+$(I,\nabla_*)G_{0,L}(I,\nabla_*)^T$ is uniformly bounded;
+the extra factor $L$ is fixed. All real trace-orthonormal
+color components can be included at once.
+
+Every retained cell and a fixed collar contain a fixed number
+$m_L$ of these scalar tests. A test belongs to at most a fixed
+number $\nu_L$ of such collars. Consequently a covariance-based
+joint-tail theorem applies with constants independent of the
+physical scale and the number of cells. Singularity of
+$\Sigma_Y$ from gradients or constraints causes no problem for
+such an upper bound.
+
+\subsection{Small nonconstant backgrounds: the actual reduced Hessian}
+\label{os-nonflat}
+
+We can also control the quadratic fluctuation form at the
+nonlinear corrected minimizer from Notebook 15, on its stated
+small global coarse-data ball. Everything in this subsection
+is first expressed at retained spacing one, with fine spacing
+$1/L$. Let
+\[
+ A=\xi+H[B-\mathcal R(A)],\qquad
+ A_*=A(\xi_*(B),B),\qquad
+ T_A=(I+HD\mathcal R(A))^{-1}.
+\]
+Use the physical trace pairing and let $K_X$ be the compression
+of $K=d^Td$ to $X_L$. Write $\mathcal B_B$ for the Hessian,
+in the linear $\xi$ coordinate, of the exact reduced Wilson
+action at $\xi_*(B)$. This is a fine fluctuation Hessian;
+it is different from the coarse Hessian $D_B^2V$ of Notebook 16.
+
+For $z,w\in X_L$, put $v=T_{A_*}z$ and $u=T_{A_*}w$.
+The exact second derivative of the constraint chart gives
+\begin{equation}\label{os-reduced-form}
+ \mathcal B_B[z,w]
+  =\langle v,K u\rangle
+   +\langle S_{\rm jet}v,W(A_*)S_{\rm jet}u\rangle
+   -\langle m(B),D^2\mathcal F(A_*)[v,u]\rangle.
+\end{equation}
+Here $W(A_*)=Df_{1/L}(S_{\rm jet}A_*)$ has norm
+$O(\norm{B}_\infty)$ and $m(B)=O(\norm{B}_\infty)$.
+The last term is retained; a Hessian of the ambient action
+alone would not be the reduced fluctuation form.
+
+The previously established tangent estimate is
+\begin{equation}\label{os-tangent-energy}
+ \norm v_2+\norm{\nabla_*v}_2
+       \le C\langle z,Kz\rangle_{\rm Herm}^{1/2},
+\end{equation}
+and the same holds for $u,w$, also on the common complex
+background ball. To see its complex extension directly, use
+$v=z-HD\mathcal R(A_*)v$, the physical Hilbert smallness
+$\norm{D\mathcal R(A_*)}_{2\to2}=O(\norm B_\infty)$,
+the bounded $H,\nabla_*H$, and the flat coercive bound on $X_L$.
+
+The flat mixed terms vanish, giving the exact bilinear identity
+\begin{equation}\label{os-K-difference}
+ \langle v,Ku\rangle-\langle z,Kw\rangle
+   =\langle D\mathcal R(A_*)v,
+                      q D\mathcal R(A_*)u\rangle.
+\end{equation}
+The right side is $O(\norm B_\infty^2)$ relative to the two
+Maxwell energy norms. The middle term of
+\eqref{os-reduced-form} is $O(\norm B_\infty)$ by
+\eqref{os-tangent-energy}. The genuine two-Hilbert-direction
+constraint estimate bounds the last term by the same order.
+Consequently, on a fixed smaller complex ball,
+\begin{equation}\label{os-relative-bound}
+ \mathcal B_B=K_X^{1/2}(I+E_B)K_X^{1/2},\qquad
+ E_B^T=E_B,\qquad \norm{E_B}_{2\to2}\le C\norm B_\infty.
+\end{equation}
+The normalized matrix $E_B$ is holomorphic in $B$. The square
+root is that of the fixed real positive $K_X$; the norm is
+the Hermitian operator norm, while the displayed transpose
+is the analytic bilinear transpose.
+
+For real $B$, choose the radius so that $\norm{E_B}\le\epsilon<1$.
+The centered Gaussian $\zeta_s\in X_L$ for this reduced
+quadratic form has covariance operator
+$\mathcal C_B=J_X\mathcal B_B^{-1}J_X^T$ and satisfies
+\begin{equation}\label{os-real-comparison}
+ (1+\epsilon)^{-1}\mathcal C_L
+     \le\mathcal C_B\le(1-\epsilon)^{-1}\mathcal C_L.
+\end{equation}
+Its dimensionless \emph{chart-coordinate} vector
+$(\zeta_s/L,\nabla_*\zeta_s/L^2)$ therefore has counting
+covariance bounded by $(1-\epsilon)^{-1}K_LI$.
+
+The linearized physical-potential fluctuation is
+$T_{A_*}\zeta_s$. It also has a uniformly bounded
+dimensionless value/gradient covariance. Indeed
+\eqref{os-tangent-energy} bounds
+$S_LT_{A_*}J_XK_X^{-1/2}$ uniformly, so
+\begin{equation}\label{os-tangent-covariance}
+ \norm{S_LT_{A_*}\mathcal C_BT_{A_*}^TS_L^T}_{2\to2}
+       \le C_L(1-\epsilon)^{-1}.
+\end{equation}
+Here the finite-dimensional maps on $X_L$ are read with the
+same inclusions as in \eqref{os-real-comparison}. This is a
+real Gaussian statement at a real background.
+
+For complex $B$, \eqref{os-relative-bound} instead defines a
+normalized complex Gaussian functional with strictly positive
+Hermitian real part of its precision. Estimates for fixed real
+coordinate tests can be obtained from its finite-dimensional
+marginals. A cutoff whose defining tests themselves depend on
+complex $B$ is a different problem; no holomorphy is inferred
+by placing an indicator around such moving complex tests.
+
+\subsection{The local domain for the nonlinear chart}
+\label{os-chart-domain}
+
+At the fixed mesh $1/L$, bounded values control all physical
+first differences and their H\"older seminorms with constants
+depending only on $L$ and $\alpha$. Thus on the event that
+\emph{all fine value coordinates in the regulator} of the
+dimensionless chart vector have modulus at most $R$,
+\begin{equation}\label{os-domain-radius}
+ \norm{g\zeta_s}_{N_\alpha}\le C_{L,\alpha}gR.
+\end{equation}
+Choose $gR$ small enough to stay inside the nonlinear chart
+and its analytic action domain. If $R(g)=(\log(1/g))^p$
+for fixed $p>0$, then both $gR(g)$ and $gR(g)^3$ tend to
+zero. This is compatible with a large Gaussian-tail threshold.
+The same norm comparison on a fixed cell and its stencil
+collar is a local comparison of fields. It does not extend
+the globally defined nonlinear minimizer chart through an
+arbitrary complement of bad cells; that requires a regional
+construction with its own boundary estimates.
+It is the relevant fixed-ratio local scaling, rather than
+a uniform smooth bound on all unresolved macroscopic modes.
+
+On arbitrarily large volumes the event that \emph{every} cell
+is good need not have large probability. The quantum step
+requires joint bounds on prescribed bad cells and a summation
+over their connected regions. The covariance bound supplies
+the first of these ingredients. Integrating the nonlinear
+remainder, the Haar and coordinate Jacobians, and bad regions
+remains a further task; the present Gaussian comparison does
+not replace those integrals.
+
+% No preamble. Notebook 17 joint-tail module. Unique labels: jt-.
+% Requires amsmath, amssymb, amsthm and a one-argument \norm macro.
+
+\section{Joint Gaussian bounds for prescribed bad blocks}
+\label{jt-section}
+
+The input to this section is a counting-coordinate covariance
+operator bound. A bound on each coordinate variance alone does
+not suffice. We first give a real Gaussian theorem, including
+degenerate covariances and overlapping tested sets. We then prove
+a normalized complex Gaussian extension under an explicit
+relative quadratic hypothesis. All statements are initially
+finite-dimensional; their constants do not depend on the ambient
+dimension or the number of tested blocks.
+
+\subsection{The covariance input and microscopic blocks}
+\label{jt-input}
+
+Let $Y=(Y_i)_{i\in I}$ be a centered real Gaussian vector with
+counting-coordinate covariance
+\begin{equation}\label{jt-covariance}
+ 0\le\Sigma\le K I,\qquad K>0.
+\end{equation}
+For each block $b$ let $I_b\subset I$ be a nonempty tested set.
+Assume fixed constants $m,\nu$ satisfy
+\begin{equation}\label{jt-incidence}
+ |I_b|\le m,\qquad
+ \sup_i\#\{b:i\in I_b\}\le\nu.
+\end{equation}
+Thus $m$ is the number of scalar tests per block and $\nu$ is
+their overlap multiplicity. Define
+\begin{equation}\label{jt-bad-event}
+ \mathsf B_b(R)=\{\max_{i\in I_b}|Y_i|>R\},\qquad R>0.
+\end{equation}
+Tests may be strongly correlated. The overlap counts repeated
+$Y$ coordinates, not overlap of the underlying field variables
+from which a derivative test was formed. Enlarging a block to
+include a fixed stencil changes $m$ and $\nu$ by fixed factors.
+
+\begin{theorem}[Joint real Gaussian bad-block bound]
+\label{jt-real-theorem}
+For every finite set $S$ of $k$ blocks,
+\begin{equation}\label{jt-real-bound}
+ \mathbb P\!\left(\bigcap_{b\in S}\mathsf B_b(R)\right)
+ \le\left[
+ m\sqrt2\exp\!\left(-\frac{R^2}{4\nu K}\right)
+ \right]^k.
+\end{equation}
+The prefactor $m\sqrt2$ may instead be $2^{m/2}$, and the
+right side may be replaced by its minimum with one.
+\end{theorem}
+
+\begin{proof}
+Choose one coordinate $i_b\in I_b$ for each block. The vector
+$W=(Y_{i_b})_{b\in S}$ has covariance at most $\nu K I$:
+the coordinate-selection map, with repetitions allowed, has
+squared operator norm at most $\nu$. Diagonalizing this
+nonnegative covariance, allowing zero eigenvalues, gives
+\begin{equation}\label{jt-square-mgf}
+ \mathbb E e^{t|W|^2}
+ =\det(I-2t\Sigma_W)^{-1/2}
+ \le(1-2t\nu K)^{-k/2},\qquad 0\le t<(2\nu K)^{-1}.
+\end{equation}
+If every chosen coordinate exceeds $R$ in absolute value,
+$|W|^2>kR^2$. Take $t=(4\nu K)^{-1}$ in Markov's inequality.
+The resulting bound is $2^{k/2}e^{-kR^2/(4\nu K)}$.
+There are at most $m^k$ coordinate choices, and their union
+contains the event in \eqref{jt-real-bound}.
+
+Alternatively collect every tested coordinate in the selected
+blocks, retaining repetitions. This vector has at most $mk$
+entries and covariance at most $\nu K I$. On the all-bad event
+its squared norm is at least $kR^2$. Applying
+\eqref{jt-square-mgf} with dimension $mk$ proves the alternative
+prefactor. Neither proof assumes independent blocks.
+\end{proof}
+
+If a local norm obeys
+$N_b(Y)\le c_b\max_{i\in I_b}|Y_i|$, its bad event is
+bounded by the theorem with threshold $R/c_b$. For a Euclidean
+block norm, the second proof applies directly to
+$\sum_{i\in I_b}Y_i^2>R^2$, with prefactor $2^{m/2}$.
+For $gY$ replace $R$ by $R/g$, equivalently $K$ by $g^2K$.
+
+\subsection{Exponential squares, entropy, and connected sets}
+\label{jt-entropy-section}
+
+Put $E_b(Y)=\sum_{i\in I_b}Y_i^2$. For nonnegative $t_b$ of
+finite support define
+\[
+ a_i=\sum_{b:i\in I_b}t_b,\qquad A=\operatorname{diag}(a_i).
+\]
+Then $\norm A\le\nu t_{\max}$ and
+$\operatorname{Tr}A\le m\sum_b t_b$. The exact Gaussian
+determinant, applied to $\Sigma^{1/2}A\Sigma^{1/2}$, gives
+\begin{equation}\label{jt-exponential-square}
+ \boxed{\quad
+ \log\mathbb E\exp\!\left(\sum_b t_bE_b(Y)\right)
+ \le\frac{Km\sum_b t_b}{1-2K\nu t_{\max}},
+ \qquad 2K\nu t_{\max}<1.
+ \quad}
+\end{equation}
+Indeed each eigenvalue is at most $K\nu t_{\max}$, their
+sum is at most $K\operatorname{Tr}A$, and
+$-\log(1-x)\le x/(1-x_{\max})$ for $0\le x\le x_{\max}<1$.
+This proof also permits singular covariance.
+
+For a probability law $\rho$ absolutely continuous with respect
+to the Gaussian law $\mu$, the entropy variational inequality
+therefore gives
+\begin{equation}\label{jt-relative-entropy}
+ \sum_b t_b\mathbb E_\rho E_b(Y)
+ \le D(\rho\Vert\mu)
+       +\frac{Km\sum_b t_b}{1-2K\nu t_{\max}}.
+\end{equation}
+Truncation gives the same assertion with extended expectations
+when necessary.
+
+Let $p(R)$ be the bracket in \eqref{jt-real-bound}, decreased
+to at most one if desired. Expanding a finite product with
+$z_b\ge0$ yields
+\begin{equation}\label{jt-bad-count-product}
+ \mathbb E\prod_b(1+z_b\mathbf1_{\mathsf B_b(R)})
+ \le\prod_b(1+p(R)z_b).
+\end{equation}
+In particular, for $N$ tested blocks and $s\ge0$, the
+exponential moment of their bad-block count is at most
+$(1+p(R)(e^s-1))^N$. This is a moment statement, not an
+assertion that the process is independent or stochastically
+dominated for every increasing event.
+
+Give the blocks an adjacency graph of maximum degree at most
+$\Delta\ge1$. The number of connected $k$-block sets containing
+a specified root is at most $(4\Delta)^{k-1}$. One way to see
+this is to choose a canonical rooted traversal tree: ordered
+rooted tree shapes cost at most $4^{k-1}$, and each edge has
+at most $\Delta$ neighbor choices. Overcounting only enlarges
+the bound. Consequently, whenever $4\Delta e^a p(R)<1$,
+\begin{equation}\label{jt-connected-sum}
+ \boxed{\quad
+ \mathbb E\sum_{\substack{S\ni b_0\\S\ \mathrm{connected}}}
+ e^{a|S|}\prod_{b\in S}\mathbf1_{\mathsf B_b(R)}
+ \le\frac{e^a p(R)}{1-4\Delta e^a p(R)}.
+ \quad}
+\end{equation}
+This is a summable Gaussian bad-set estimate. It does not
+estimate an interacting polymer activity or prove its strict
+background dependence.
+
+\subsection{The homogeneous flat applications}
+\label{jt-flat-applications}
+
+For the previously constructed d4 constrained flat Gaussian,
+the covariance under the physical pairing is $\mathcal C$,
+whereas its coordinate covariance is
+$\operatorname{Cov}_{\rm count}(Z)=\eta^{-4}\mathcal C$.
+The dimensionless derivative vector therefore has exactly
+\begin{equation}\label{jt-derivative-covariance}
+ \operatorname{Cov}_{\rm count}(\eta^2\nabla Z)
+ =\nabla\mathcal C\nabla^T\le K_D I.
+\end{equation}
+The inequality follows from the proved real order
+$\mathcal C\le\Gamma\le G_0$ and the uniform first-derivative
+sandwich of $G_0$. Input and output fine spaces have the same
+physical scalar measure, so the operator norm of this coordinate
+matrix is unchanged on passing to counting Hilbert norms.
+The color basis is real trace-orthonormal.
+
+Fixed microscopic blocks contain a fixed number of tests, so
+Theorem~\ref{jt-real-theorem} and
+\eqref{jt-exponential-square}--\eqref{jt-connected-sum} apply
+uniformly over the full homogeneous refinement. Rescaled curls
+are fixed local combinations of this derivative vector and
+have the same conclusion with fixed norm and incidence factors.
+The sampled microscopic H\"older term satisfies
+$\eta^{2+\alpha}[\nabla Z]_\alpha
+\le C\norm{\eta^2\nabla Z}_\infty$ and can be included at
+fixed cost. A unit physical cell contains $M^4$ fine sites,
+so treating it as one block here would make $m$ grow with $M$.
+
+For the full macroscopic Gaussian the potential vector instead
+has covariance
+\begin{equation}\label{jt-potential-covariance}
+ \operatorname{Cov}_{\rm count}(\eta Z)=\eta^{-2}\mathcal C.
+\end{equation}
+Its counting-operator norm is not uniformly bounded over
+refinement. For $M\ge3$, at zero coarse momentum a transverse fine alias
+$r=e_1$, polarized in direction $2$, lies in the constraints
+and has Maxwell eigenvalue $4M^2\sin^2(\pi/M)\le4\pi^2$.
+Thus \eqref{jt-potential-covariance} has norm at least
+$M^2/(4\pi^2)$. Pointwise potential variance bounds do not
+remove this operator obstruction.
+
+For the first bare homogeneous step of a fixed ratio $L$, the
+exact physical scaling established in the preceding section
+instead gives the joint value/derivative covariance
+\begin{equation}\label{jt-fixed-step-covariance}
+ \Sigma_{\rm step}=S_L\mathcal C_LS_L^T\le K_LI,
+ \qquad S_L=\begin{pmatrix}LI\\\nabla_{1/L}\end{pmatrix}.
+\end{equation}
+Here $L$ is fixed and the number of retained cells is arbitrary.
+The same theorem therefore applies to both components together,
+including their cross covariances. The real reduced-Hessian
+comparison of that bare step enlarges $K_L$ by at most
+$(1-\epsilon)^{-1}$ for chart-coordinate tests. At real
+backgrounds it also gives a uniform bound for the separately
+identified linearized-potential tests, so the real theorem
+applies to those as well.
+
+These applications do not replace the precision in a later
+effective step by the bare fixed-$L$ Maxwell form. A later
+coarse precision and its separate current terms require their
+own covariance identification and uniform bound.
+
+\subsection{A normalized complex quadratic extension}
+\label{jt-complex-section}
+
+Whiten the real baseline Gaussian on its nondegenerate slice:
+let $\zeta$ be standard real Gaussian in $\mathbb R^N$ and
+let $Y=A\zeta$, with $AA^T\le KI$. The observable covariance
+may be singular. Suppose $E$ is complex symmetric and
+\begin{equation}\label{jt-relative-perturbation}
+ E^T=E,\qquad \norm E_{2\to2}\le\epsilon\le\frac14.
+\end{equation}
+Define the normalized complex Gaussian functional
+\begin{equation}\label{jt-complex-measure}
+ d\mu_E(\zeta)=\det(I+E)^{1/2}
+      e^{-\zeta^TE\zeta/2}\,d\gamma_N(\zeta),
+\end{equation}
+with the analytic determinant branch equal to one at $E=0$.
+Its total mass is one. For a physical quadratic perturbation
+$V_X$ of the positive baseline precision $K_X$, condition
+\eqref{jt-relative-perturbation} means exactly
+$\norm{K_X^{-1/2}V_XK_X^{-1/2}}\le\epsilon$.
+An absolute smallness assertion about matrix entries is not a
+substitute for this relative bound. At complex $E$ the functional
+is not a positive probability law.
+
+\begin{theorem}[Complex Gaussian local-event bound]
+\label{jt-complex-theorem}
+Under \eqref{jt-incidence} and
+\eqref{jt-relative-perturbation}, every set $S$ of $k$ blocks
+satisfies
+\begin{equation}\label{jt-complex-bound}
+ \boxed{\quad
+ \left|\mu_E\!\left(\bigcap_{b\in S}\mathsf B_b(R)\right)\right|
+ \le\left[2^m\exp\!\left(-\frac{R^2}{6\nu K}\right)\right]^k.
+ \quad}
+\end{equation}
+There is no ambient-$N$ factor. The events use fixed real linear
+tests $Y=A\zeta$ and fixed real thresholds.
+\end{theorem}
+
+\begin{proof}
+All tested coordinates in $S$ span a real row space of dimension
+$r\le mk$. Make a real orthogonal change of the whitened
+coordinates so that these tests depend only on $x\in\mathbb R^r$;
+denote the untested orthogonal coordinates by $z$. Integrating
+$z$ exactly gives a normalized complex Gaussian marginal on
+$x$ with precision
+\begin{equation}\label{jt-marginal-precision}
+ B=I+E_{11}-E_{12}(I+E_{22})^{-1}E_{21}.
+\end{equation}
+Therefore
+\begin{equation}\label{jt-marginal-control}
+ \norm{B-I}\le\epsilon+\frac{\epsilon^2}{1-\epsilon}
+       =\frac{\epsilon}{1-\epsilon}=:s\le\frac13,
+ \qquad \operatorname{Re}B\ge(1-s)I=:\beta I,
+ \qquad \beta\ge\frac23.
+\end{equation}
+The real-part assertion is an inequality for the real quadratic
+form, equivalently the Hermitian numerical range of the complex
+symmetric matrix. Since
+$|\det B|\le\norm B^r\le(1+s)^r$, the modulus of the
+normalized marginal density is bounded by
+\begin{equation}\label{jt-marginal-domination}
+ \left(\frac{1+s}{\beta}\right)^{r/2}
+                d\gamma_{\beta^{-1}I_r}(x)
+ \le 2^{r/2}d\gamma_{\beta^{-1}I_r}(x).
+\end{equation}
+
+Under this dominating real Gaussian the tested covariance norm
+is at most $K/\beta$. Collect all tests in the selected blocks,
+including repetitions. Its dimension is at most $mk$, overlap
+at most $\nu$, and covariance norm at most $\nu K/\beta$.
+On the all-bad event its squared norm exceeds $kR^2$.
+Equation~\eqref{jt-square-mgf}, with
+$t=\beta/(4\nu K)$, bounds its probability by
+$2^{mk/2}\exp[-\beta kR^2/(4\nu K)]$.
+Multiply by $2^{r/2}\le2^{mk/2}$ and use $\beta\ge2/3$.
+This proves \eqref{jt-complex-bound}, including degenerate
+observable covariance and the case $r=0$.
+\end{proof}
+
+The proof also bounds a bounded measurable factor depending
+only on the same tested marginal, multiplied by the all-bad
+indicator, by its supremum times the right side of
+\eqref{jt-complex-bound}. It does not bound the integral of
+the modulus of the full $N$-dimensional density over that
+event without an $N$-dependent factor. Untested variables must
+be integrated out before taking the modulus. An observable
+using further coordinates requires enlarging the marginal
+and accounting for its dimension.
+
+For fixed real-coordinate events, the normalized integral is
+holomorphic in $E$ on the complex operator ball. At each finite
+$N$, the real-part lower bound gives Gaussian domination on
+compact subballs and the determinant branch is analytic. If
+$E$ depends holomorphically on sources in a known neighborhood
+remaining inside \eqref{jt-relative-perturbation}, Cauchy on
+that neighborhood gives factorial source derivatives of these
+local event integrals, retaining the displayed bad-block decay
+on a slightly larger parameter domain. This requires a proved
+relative perturbation domain; it does not produce one for an
+unmatched source Hessian.
+
+In particular an indicator around tests that themselves move
+with a complex background is not covered by this holomorphy
+argument. For the reduced first-step Hessian, the fixed real
+chart-coordinate tests are admissible. Background-dependent
+linearized-potential tests are covered by the real covariance
+theorem at real backgrounds, but require a separate analytic
+cutoff construction at complex backgrounds.
+
+Expansion of a finite product also gives
+\begin{equation}\label{jt-complex-product}
+ \left|\mu_E\prod_b(1+z_b\mathbf1_{\mathsf B_b(R)})\right|
+ \le\prod_b(1+p_{\rm c}(R)z_b),\qquad
+ p_{\rm c}(R)=2^m e^{-R^2/(6\nu K)},\qquad z_b\ge0.
+\end{equation}
+One must not cap $p_{\rm c}$ at one merely because the total
+mass is normalized: complex expectations of events are not
+probabilities. The same connected-set counting as
+\eqref{jt-connected-sum} bounds the sum of absolute local
+event expectations whenever its entropy inequality holds.
+
+\subsection{Source match and application boundary}
+\label{jt-scope}
+
+For the homogeneous flat derivative application, the action,
+coupling and physical pairing are the deposited conventions at
+Raw I:464--479, I:12756--12760 and I:15643--15648. The flat
+corrected average and its homogeneous composition are matched
+at I:24349--24373 and I:47046--47048; the scalar projection is
+matched at I:23937--23944. The analytic input actually used is
+the established variational $\mathcal C$ and full-$G_0$
+first-derivative sandwich. These are checks against the pinned
+deposited transcription, not a new original-paper verification.
+
+The real theorem therefore applies to that explicit homogeneous
+flat constrained Gaussian, and to the fixed-ratio first bare
+step with the covariance identification already proved. The
+complex theorem applies under its explicit relative quadratic
+hypothesis; for the reduced first bare step this hypothesis is
+supplied by the preceding Hessian calculation after shrinking
+the background ball. Later effective current-dependent steps
+require their own identification.
+
+These joint bounds are stronger than marginal variance or a
+single union bound. They still do not integrate nonlinear
+interactions, Haar or chart Jacobians, or regions outside the
+chart. They do not supply a complete retained-history covariance,
+an interacting polymer expansion, or a quantum continuum limit.
+
+% Notebook 17 module. No preamble. Unique label prefix cs-.
+% Requires the usual norm macro and jt-real-theorem from the joint-tail module.
+\section{The Gaussian at an arbitrary current renormalization scale}
+\label{cs-section}
+
+The fixed-ratio bare Gaussian and the Gaussian used after earlier
+classical minimizations are different objects. We now extract the
+uniform bounds for the latter. They are already contained in
+Notebooks 05--07; this section supplies the current-scale probability
+normalization and records how Notebook 15 removes the earlier
+homogeneous smooth-minimizer hypothesis.
+
+\subsection{The retained coordinates and their exact precision}
+
+Set the current lattice spacing to one. The original spacing is
+$M^{-1}$, with $M=L^k$, while the next blocking ratio $L\ge3$ is fixed
+and odd. All regulators are compatible periodic tori. Let
+\[
+ q_M(B)=\inf_{Q_M^{\rm st}A=B}\norm{d_{1/M}A}_{1/M}^2
+\]
+be the classical flat effective quadratic form. The fine norm has
+volume factor $M^{-d}$ and the current norm is counting measure.
+Next-step maps are denoted by $Q_L^\flat,T_L,K_L$: respectively the
+rooted constraint, averaged root-to-site contour map, and pivot
+insertion. These are the fixed-$L$ maps of Notebook 05. The map
+$K_L$ inserts a field in $\ker Q_L^\flat$ and is the identity on
+the retained nonpivot coordinates. It is not a gauge-selected
+fine minimizing extension.
+
+The actual flat exponential-gauge quadratic model on the retained
+variables $z$ is
+\begin{equation}\label{cs-precision}
+ A_{M,0}=K_L^T(q_M+T_L^TT_L)K_L,\qquad
+ d\mu_{M,0}(z)=
+ (2\pi)^{-n/2}\det(A_{M,0})^{1/2}
+ e^{-z^TA_{M,0}z/2}\,dz .
+\end{equation}
+Here $n$ counts independent real bond/color coordinates once, using
+a real color basis orthonormal for the normalized trace. Thus
+\begin{equation}\label{cs-counting}
+ \operatorname{Cov}_{\rm count}(z)=A_{M,0}^{-1}.
+\end{equation}
+There is no factor $M^d$ in \eqref{cs-counting}: these are
+\emph{current-unit} coordinates, not original fine potential values.
+The coupling has already been removed from the Gaussian by the
+change of field $B=g_kK_Lz$ at linear order. The nonlinear constraint
+correction, Haar density and coordinate Jacobian are kept outside
+the chosen Gaussian in \eqref{cs-precision}. In particular, a
+coupling-suppressed quadratic Haar term may be part of the
+interaction; no vanishing of that term is asserted.
+
+\subsection{Uniform spectral bounds, including all previous depths}
+
+The normalized cochain contraction in Notebook 06 gives
+\begin{equation}\label{cs-energy-sandwich}
+ \norm{d_1B}_1^2\le q_M(B)\le C_d\norm B_1^2,
+ \qquad C_d=2^{d+6}(d-1).
+\end{equation}
+The compact lift proves the upper bound for odd $M\ge3$; $M=1$
+uses the identity lift and satisfies the same displayed bound.
+These estimates hold for all current fields, not just a transverse
+Fourier sector.
+
+For clarity we record the fixed geometric constants of Notebook 06.
+On the cube of $3^d$ neighboring $L$-blocks form the finite matrix
+\[
+ \mathcal M_L=d_\Omega^Td_\Omega+
+ T_{0,\Omega}^TT_{0,\Omega}+
+ Q_{{\rm st},\Omega}^TQ_{{\rm st},\Omega},
+ \quad \sigma(d,L)=\lambda_{\min}(\mathcal M_L)>0.
+\]
+Its kernel is trivial: zero curl gives a gradient, the tree rows
+make its scalar potential constant on each block, and the averaging
+rows equate neighboring block constants. Summing the local
+inequality gives the axial gap
+$\gamma_{\rm loc}=\sigma(d,L)/3^d$ on
+$\ker Q_L^{\rm st}\cap\ker T_0$. Periodic repetitions are counted
+with multiplicity, so the same constant applies on short compatible
+tori.
+
+Put
+\begin{equation}\label{cs-constants}
+ \begin{split}
+ d_0&=2\sqrt d,\qquad
+ t_0=\sqrt{d(L-1)(L^d-1)},\qquad
+ r_L=1+2d(L-1)/L,\\
+ K_*^2&=1+L^{2d}(2d+2)r_L^2,\\
+ \gamma_*&=
+ \left((1+d_0t_0)^2/\gamma_{\rm loc}+d_0^2\right)^{-1},
+ \qquad B_*=(C_d+t_0^2)K_*^2.
+ \end{split}
+\end{equation}
+The flat gauge bridge of Notebook 05 gives
+\[
+ q_M(B)+\norm{T_LB}^2\ge\gamma_*\norm B^2
+ \quad (Q_L^\flat B=0).
+\]
+One can see the constraint compatibility directly. First subtract
+the rooted gradient $D(T_LB)$ to obtain $B_T$ with
+$T_LB_T=Q_L^{\rm st}B_T=0$. Convert it by a block-mean-zero
+gradient to the tree representative $B_0$. Their curls agree and
+$\norm{B_T}\le(1+d_0t_0)\norm{B_0}$. Apply the axial gap and
+weighted Cauchy--Schwarz to
+$B=B_T+D(T_LB)$. This argument uses the lower inequality in
+\eqref{cs-energy-sandwich}; it does not confuse the rooted and
+straight constraints.
+
+Since $z$ is a coordinate restriction of $K_Lz$ and
+$\norm{K_L}\le K_*$, the full precision sandwich is
+\begin{equation}\label{cs-spectral}
+ \gamma_*I\le A_{M,0}\le B_*I,
+ \qquad
+ B_*^{-1}I\le A_{M,0}^{-1}\le\gamma_*^{-1}I.
+\end{equation}
+All constants are independent of $k$, $M$ and the torus volume.
+There is no need to replace this proved bound by an assumed
+transverse ellipticity statement.
+
+\subsection{Weighted locality and its scope}
+
+Group the retained coordinates by their fixed next-step $L$-cells.
+For a block matrix $F$, use the weighted Schur norm
+\[
+ \norm F_\kappa=
+ \max\left\{
+ \sup_i\sum_j e^{\kappa|i-j|_1}\norm{F_{ij}},
+ \sup_j\sum_i e^{\kappa|i-j|_1}\norm{F_{ij}}
+ \right\},
+\]
+with periodic distance on finite regulators. Notebook 07,
+its flat-decay theorem and section on periodic gluing and the reduced inverse,
+prove constants $\kappa_*>0,C_*<\infty$, depending only on fixed
+geometry, such that
+\begin{equation}\label{cs-weighted}
+ \norm{A_{M,0}}_{\kappa_*}
+ +\norm{A_{M,0}^{-1}}_{\kappa_*}\le C_*.
+\end{equation}
+The proof there first establishes a uniform holomorphic Fourier
+strip for $q_M$, then uses fixed-range $K_L,T_L$, the real gap
+\eqref{cs-spectral}, and a smaller strip for the inverse.
+Exact periodization gives the same conclusion on compatible tori.
+This additional locality does not follow from a spectral sandwich
+alone. It concerns the flat retained-coordinate matrix; it is not
+strict locality in a varying background.
+
+\subsection{Joint value-and-difference tails on the current lattice}
+
+Let $\nabla_1$ contain all forward unit differences of every bond
+component, and define
+\begin{equation}\label{cs-tested-field}
+ Y=\begin{pmatrix}K_Lz\\\nabla_1K_Lz\end{pmatrix}.
+\end{equation}
+The elementary bound
+$\norm{\nabla_1}\le2\sqrt d$ and
+\eqref{cs-spectral} imply
+\begin{equation}\label{cs-tested-covariance}
+ 0\le\operatorname{Cov}_{\rm count}(Y)\le
+ K_{\rm cur}I,
+ \qquad K_{\rm cur}=(1+4d)K_*^2/\gamma_*.
+\end{equation}
+Because $K_L$ and the difference stencil have fixed range,
+\eqref{cs-weighted} also supplies exponential block decay for this
+tested covariance, with a fixed loss in its constant.
+
+If each tested cell uses at most $m$ scalar coordinates and every
+coordinate is tested in at most $\nu$ cells, the real joint-tail
+theorem~\ref{jt-real-theorem} gives
+\begin{equation}\label{cs-joint-tail}
+ \mathbb P\left(
+ \max_{i\in I_b}|Y_i|>R\text{ for every }b\in S\right)
+ \le
+ \left[m\sqrt2\exp\left\{-\frac{R^2}{4\nu K_{\rm cur}}\right\}
+ \right]^{|S|}.
+\end{equation}
+Fixed current-scale cells, including fixed collars for derivatives,
+have $m,\nu$ independent of $M$. The Gaussian is correlated;
+independence is neither asserted nor needed. For $g_kY$, replace
+$R$ by $R/g_k$. If $R(g)=c(\log g^{-2})^p$ with $p>1/2$, the
+bracket at radius $R(g)$ is smaller than any fixed power of $g$
+below a sufficiently small ceiling.
+
+To restore the physical current spacing $a$, write
+$Z_{\rm phys}(x)=a^{-1}(K_Lz)(x/a)$ in four dimensions. Then
+\[
+ (aZ_{\rm phys},a^2\nabla_aZ_{\rm phys})=Y.
+\]
+This is the current-step normalization. It differs from treating
+all original fine variables between $M^{-1}$ and one as a single
+fluctuation. It also differs from the bare fixed-ratio formula
+$(LI,\nabla_{1/L})C_L(LI,\nabla_{1/L})^T$, whose coordinates use
+next-coarse spacing one. Both statements are consistent after their
+scales and Gaussian models are specified.
+
+\subsection{What is now identified with the deposited source}
+
+Notebook 07's source section records the chain from the deposited
+small-field step to \eqref{cs-precision}: Raw II:73865--73950
+straightens the constraint, rescales by $g_k$, and eliminates the
+pivots; Raw I:46960--47000 fixes the pivot coefficient convention.
+At the trivial field the action Hessian is $q_M$, the exponential
+gauge Hessian is $T_L^TT_L$, and the action gradient vanishes.
+Consequently the quadratic start of the constraint-straightening
+correction does not change this Hessian. Haar and Jacobian factors
+remain in the interaction.
+
+The smooth-minimizer premise in that earlier identification is now
+supplied, in the homogeneous setting, by Notebook 15's theorem on
+transfer to the ordinary homogeneous averaging constraint. It
+constructs an analytic local branch for the ordinary iterated group
+average, with real action minimality in a fixed small global
+potential class. At each finite regulator the ordinary constraint
+is an analytic submersion at the identity. Its derivative is onto,
+as follows from the fixed-step pivot right inverses and their
+composition. Thus every tangent-feasible field is the tangent to
+a feasible curve. Comparing the local minimum with these curves
+shows that its second derivative is the quadratic variational
+infimum for the rooted derivative. Notebook 06's explicit
+gradient adjustment identifies that infimum with the displayed
+$Q_M^{\rm st}$ infimum. The gradient adjustment preserves energy;
+it does not identify the two averaging maps as maps on potentials.
+
+Accordingly \eqref{cs-precision} is the homogeneous flat source
+Gaussian under the deposited ordinary-average and normalization
+conventions already matched in those notebooks. The nonlinear
+branch need not equal an independently chosen axial representative:
+the locally minimizing action and its flat Hessian agree modulo
+gauge. This does not re-certify every original journal convention,
+extend the result to mixed histories or holes, or identify a
+nonflat independent-current analytic family.
+
+\subsection{A distinct fixed-slice perturbation consequence}
+
+There is also a useful quadratic model without pivot coordinates.
+Let $X_L=\ker Q_L^{\rm st}\cap\ker(R_LD_1^T)$ be the fixed flat
+source-gauge slice for the unit-to-$L$ step, and let $J_L$ be its
+isometric inclusion. The fixed-$L$ Maxwell covariance proved in
+Notebooks 09 and 12 implies
+\[
+ J_L^Td_1^Td_1J_L\ge c_LI
+\]
+for some $c_L>0$, uniformly in compatible volume. For example one
+may take $c_L=(L^2\norm{C_L})^{-1}$, where $C_L$ uses next-coarse
+spacing one. Hence
+\begin{equation}\label{cs-slice-gap}
+ c_LI\le J_L^Tq_MJ_L\le C_dI.
+\end{equation}
+This gives the same kind of current-scale value-and-difference
+tail bound on $X_L$, uniformly in $M$.
+
+Notebook 16 proves that the ordinary coarse classical Hessian
+satisfies $D^2V_M(B)=q_M+O(\norm B_\infty)$ in weighted row and
+column norms. Its compression to this fixed slice therefore has a
+relative perturbation bounded by $C\norm B_\infty/c_L$. This is
+a valid input to the abstract complex relative-quadratic tail
+theorem on a sufficiently small common background ball. It is an
+effective classical Gaussian family in a fixed linear slice.
+It is not automatically the source's nonlinear fiber Gaussian:
+the latter also contains chart-curvature/current terms, exponential
+gauge fixing, and an exact cutoff-coordinate prescription.
+Notebook 19 now performs that additional physical-branch
+identification, keeping both chart-curvature terms and the
+actual absolute gauge function.
+Nor is weighted locality of this compressed inverse inferred by
+conjugating with weights which do not preserve $X_L$; the weighted
+inverse assertion \eqref{cs-weighted} concerns the separately
+proved pivot-coordinate family.
+
+\section{The next integration and iteration}
+\label{gs17-next}
+
+For a logarithmic cutoff $R(g)=(\log(1/g))^p$ with $p>1/2$,
+the Gaussian bad-block factor is smaller than any fixed power of
+$g$, while $gR(g)^3$ tends to zero. These two estimates are
+compatible: the same cutoff can suppress bad blocks and make
+analytic cubic action remainders small. Jacobian terms that begin
+linearly require their own local bounds; they are not cubic merely
+because the action remainder is cubic.
+
+The quantum step requires independent fixed-dimensional integration
+coordinates, their normalized covariance, and localized estimates
+for the complete interaction. The flat pivot covariance above
+supplies such coordinates on the homogeneous regulator. The
+singular value/gradient vector is useful for tests, but is not an
+independent cell coordinate system for a Gaussian density expansion.
+For complex continuation the tests used here remain fixed on the
+real integration variables.
+
+Notebook 18 gives a convergent cutoff expansion with overlapping
+interaction supports under an explicit weighted coefficient bound.
+Notebook 19 identifies the nonflat physical Gaussian and bounds
+the local straightening, Haar and gauge factors. Notebook 20
+verifies the complete coefficient and precision hypotheses for
+the bare Wilson small-field step, with all normalization terms.
+Notebook 21 supplies strict localization of the minimized
+classical action uniformly in earlier depth and closes one
+integration of that reference action. Later quantum steps
+require transport to the next coarse background and control
+of the accumulated interactions. Bad regions require
+regional constructions and their normalization estimates. Iterating
+those bounds must also control the running couplings and preserve
+the observable hierarchy needed by the continuum construction.
+
+The output sought from the iteration remains a common nontrivial
+gauge-invariant continuum hierarchy with the Euclidean covariance,
+positivity, regularity and Yang--Mills identification specified in
+Notebook 01. The gap argument is a further target after that
+existence construction is closed.
+
+\begin{thebibliography}{9}
+\bibitem{prior17}
+\emph{Toward a four-dimensional Yang--Mills construction},
+research Notebooks 5--16 in this workspace, 16 October 2026.
+The flat reduced covariance, constrained Maxwell inverse,
+nonlinear minimum and classical response theorems are used here.
+\bibitem{source17}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}{Yang--Mills-LLM-experiment},
+deposited raw accounts at commit
+\texttt{e392ef4501\allowbreak 3a581664ba\allowbreak b76b908671\allowbreak 70b30fe10e}.
+The Yang--Mills files are unchanged at checked commit
+\texttt{785a68fdeef78a1da854c4807fe1f17b597d05e7}.
+\bibitem{balaban17}
+T.~Ba\l aban, \emph{Renormalization group approach to lattice gauge
+field theories I}, Commun. Math. Phys. \textbf{109} (1987), 249--301,
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-3ygai0vxt1.pdf}{original article copy}.
+The source-coordinate match is discussed explicitly above.
+\end{thebibliography}
+\end{document}

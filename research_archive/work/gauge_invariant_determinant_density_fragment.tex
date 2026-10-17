@@ -1,0 +1,341 @@
+% No preamble. Prefix gdd-. Fixed endpoint, actual determinant densities.
+\section{Gauge-invariant diagonal determinant densities}
+\label{gdd-section}
+
+Fix a composite endpoint \(K=\ell^k\), a preceding homogeneous
+depth \(M\), and the actual finite periodic construction. The
+endpoint is fixed throughout this section. Constants may depend
+on \(K\); they will be uniform in the permitted volume and in
+the preceding depth where the upstream classical bounds are.
+Choose the fixed sufficiently large scalar \(a>0\) from the
+coarse determinant estimate of Notebook 32.
+
+At the actual stationary field \(U_*(W)\), use its left-relative
+objects
+\[
+ C=f'(0),\quad s'=C^T\lambda,\quad
+ \mathcal L=s''-\lambda\cdot f'',\quad
+ G_b=D_b^TD_b,\quad
+ Q_b=\mathcal L+D_bD_b^T+aC^TC,\quad
+ P_c=q_{\mathrm{eff}}+aI.
+\]
+The exact finite identity already established is
+\begin{equation}
+ D_{M,K}(W)=\mathcal N_0\left[
+       \log\det G_b-\frac12\log\det Q_b
+                           +\frac12\log\det P_c\right].
+ \label{gdd-exact-total}
+\end{equation}
+Here \(\mathcal N_0\) subtracts the value at \(W=1\).
+The matrices act, respectively, on noncenter scalar sites,
+current bonds, and output bonds, including their color coordinates.
+
+\subsection{Background covariance of the actual matrices}
+\label{gdd-covariance-section}
+
+For a fixed current-site gauge \(u\), let \(O_E\) denote
+the block-diagonal adjoint action at each current bond's
+initial site, \(O_S\) the corresponding action at noncenter
+scalar sites, and \(O_C\) its action at output bond initial
+centers. These matrices are orthogonal for real gauges.
+They are complex orthogonal on the holomorphic continuation.
+The transformation of a left-relative variation is linear:
+\[
+ (e^{ix}U)^u=e^{iO_Ex}U^u.
+\]
+The actual ordinary average is equivariant, so its relative
+target logarithm transforms by \(O_C\). Local gauge invariance
+of the two actual classical actions consequently gives
+\begin{align}
+ C(U^u)&=O_C C(U)O_E^T,&
+ \lambda(W^{u|_{\rm centers}})&=O_C\lambda(W),\notag\\
+ \mathcal L(U^u)&=O_E\mathcal L(U)O_E^T,&
+ D_b(U^u)&=O_E D_b(U)O_S^T. \label{gdd-transformations}
+\end{align}
+For the Lagrangian identity, differentiate
+\[
+ s_{U^u}(O_Ex)=s_U(x),\qquad
+ f_{U^u}(O_Ex)=O_Cf_U(x).
+\]
+The second equality and the multiplier transformation retain
+the entire \(\lambda\cdot f''\) term. No unconstrained
+stationarity is assumed here.
+
+The based scalar domain is unchanged by these transformations:
+zero values at all \(K\)-centers remain zero. The effective
+relative Hessian transforms by \(O_C\), since its target
+relative variable also transforms linearly. Thus
+\begin{equation}
+ G_b(U^u)=O_SG_b(U)O_S^T,\quad
+ Q_b(U^u)=O_EQ_b(U)O_E^T,\quad
+ P_c(W^{u|_{\rm centers}})=O_CP_c(W)O_C^T.
+ \label{gdd-matrix-covariance}
+\end{equation}
+These identities concern the fixed scalar completion \(aI\).
+They do not assert such covariance for an arbitrary
+background-dependent completion.
+
+\subsection{Fixed-endpoint locality of the matrix logarithms}
+\label{gdd-log-locality-section}
+
+We need locality of a diagonal logarithm, not merely locality
+of the trace of its derivatives. The required fixed-endpoint
+spectral and kernel inputs follow from the preceding modules,
+as follows.
+
+At zero background, \(G_b\) has a positive gap independent
+of volume when \(K\) is fixed. Indeed, join every site to
+its block center by a path of length at most \(c_dK\).
+For a scalar field vanishing at centers, Cauchy--Schwarz
+along these paths and summation in a block give
+\begin{equation}
+ \|\phi\|_2^2\le c_d K^{d+1}\|D_b\phi\|_2^2.
+ \label{gdd-pinned-Poincare}
+\end{equation}
+The crude exponent is sufficient here. This is compatible
+with the soft-mode upper bound in Notebook 32 and supplies
+no gap uniform as \(K\) grows.
+
+The flat constrained contour precision has its previously
+proved positive gap at fixed \(K\), uniformly in preceding
+depth and volume. On \(\ker C\), decompose a vector into
+its component in \(\operatorname{ran}D_b\) and its orthogonal
+complement. The form \(\mathcal L\) annihilates the first.
+For a horizontal vector \(v\in\ker C\), replace it by
+\(v+D_bTv\) to make its contour derivative zero.
+Its \(\mathcal L\) value is unchanged, and the orthogonal
+projection of this replacement back to the horizontal
+space is \(v\). The contour precision bound therefore
+controls \(\|v\|_2^2\). Its passage from retained
+coordinates to current bonds uses the fixed-\(K\)
+bounded insertion \(K_0\); this only changes the constant.
+On vertical vectors \(D_b\phi\), the divergence penalty
+has the lower bound
+\[
+ \|D_b^TD_b\phi\|_2^2
+       \ge \lambda_{\min}(G_b)\|D_b\phi\|_2^2.
+\]
+Thus \(\mathcal L+D_bD_b^T\) has a uniform fixed-\(K\)
+gap on \(\ker C\).
+
+The actual adjusted minimum-section derivative
+\[
+ H_b=H-D_bG_b^{-1}D_b^TH
+\]
+has \(CH_b=I\), \(D_b^TH_b=0\), and a bounded operator norm
+at fixed \(K\). The latter follows from the established
+minimum-response bound and the orthogonal projection
+in this formula. Write \(x=\xi+H_by\), \(C\xi=0\).
+The exact effective Schur identity gives
+\[
+ x^TQ_bx
+  =\xi^T(\mathcal L+D_bD_b^T)\xi
+                         +y^T(q_{\mathrm{eff}}+aI)y.
+\]
+Since \(q_{\mathrm{eff}}+aI\) has a fixed positive gap,
+this proves a flat gap for \(Q_b\), uniform in volume
+and preceding depth at fixed \(K\). Their upper spectral
+bounds and exponentially weighted matrix bounds follow
+from the actual strict classical families, the finite-range
+constraint at fixed \(K\), and the local gauge generator.
+\(P_c\) already has the stronger uniform bounds of Notebook 32.
+
+Compose these matrices with the actual stationary section.
+Its strict support kernels, together with those of the
+classical actions and local charts, give source-rooted
+matrix derivative bounds through order two. A sufficiently
+small common complex output ball preserves the flat
+gaps in operator norm. This ball may depend on \(K\),
+but not on volume or preceding depth.
+
+Here is an elementary logarithm argument making the
+locality consequence precise. For any one of these
+matrix families \(P(w)\), choose a fixed scalar \(s\)
+larger than its flat upper spectral bound and put
+\[
+ Z(w)=I-P(w)/s.
+\]
+At zero \(\|Z(0)\|_{2\to2}<1\), uniformly over the
+volumes under consideration. The exponentially weighted
+kernel bound implies that conjugating \(Z\) by a small
+exponential distance weight changes its operator norm
+by an arbitrarily small amount. First use bounded
+truncations of the distance weight; their uniform
+Lipschitz bound gives the same estimate, and then pass
+to kernel bounds. No unbounded similarity is assumed
+to act on all of \(\ell^2\). Shrink the background
+ball as well. The conjugated operators then have norm
+at most one fixed \(r_K<1\). Therefore
+\begin{equation}
+ \log P(w)=(\log s)I-\sum_{n\ge1}\frac{Z(w)^n}{n}
+ \label{gdd-log-series}
+\end{equation}
+converges with these exponential weights.
+Termwise differentiation through order two is permitted:
+there are at most \(n\) or \(n^2\) insertions, absorbed
+by the geometric factor \(r_K^{n-2}\).
+The actual source-rooted bounds attach every background
+source to the matrix-product chain. Exponential weights
+then connect the diagonal matrix coordinate and all
+sources. Conversion from weighted \(\ell^2\) to row
+sums spends a smaller exponent and a finite geometric
+sum. The internal fiber per output block is finite
+at fixed \(K\).
+
+In particular, if a diagonal color trace is assigned
+to a fixed output block \(x\), its quadratic kernel
+\(k_x(b,c)\) obeys, for some \(\kappa_K>0\),
+\begin{equation}
+ \sum_{b,c}e^{\kappa_K\tau(x,b,c)}|k_x(b,c)|\le C_K.
+ \label{gdd-rooted-kernel}
+\end{equation}
+Here the sum includes directions and colors, \(\tau\)
+is a connecting-tree distance in output units, and all
+finite multiplicities of current coordinates are included.
+Periodic bounds use shortest lifted distances. No extensive
+logarithm is taken to an infinite-volume limit.
+
+\subsection{A density with its own gauge identity}
+\label{gdd-density-section}
+
+Assign every noncenter current site to its unique centered
+\(K\)-block. Assign each positive current bond to the block
+containing its initial site, and each output bond to its
+initial output site. Define
+\begin{align}
+ \rho_x(w)=\mathcal N_0\bigg[
+ &\sum_{\substack{z\ {\rm noncenter}\\z\ {\rm in\ block}\ x}}
+                   \operatorname{tr}_{\mathfrak g}(\log G_b)_{zz}
+ -\frac12\sum_{\substack{e\ {\rm current}\\e_-\ {\rm in\ block}\ x}}
+                   \operatorname{tr}_{\mathfrak g}(\log Q_b)_{ee}
+ \notag\\
+ &+\frac12\sum_{\substack{c\ {\rm output}\\c_-=x}}
+                   \operatorname{tr}_{\mathfrak g}(\log P_c)_{cc}
+ \bigg].
+ \label{gdd-density}
+\end{align}
+All matrices in this formula are evaluated at \(U_*(e^{iw})\)
+or its output \(e^{iw}\), as appropriate. On the finite
+regulator,
+\begin{equation}
+                         D_{M,K}(e^{iw})=\sum_x\rho_x(w)
+ \label{gdd-density-total}
+\end{equation}
+exactly.
+
+Functional calculus respects the similarities in
+\eqref{gdd-matrix-covariance}. A diagonal color trace is
+unchanged by its site's orthogonal conjugation. Moreover,
+the actual minimum at gauge-transformed output is gauge
+equivalent to the transformed old minimum, on the established
+local germ. To see this, transform the constraint and action,
+then use the proved uniqueness of the local constrained
+critical orbit and its selected contour representative.
+The comparison need only hold on a finite real germ;
+analyticity supplies the local identities used below.
+It follows that \emph{each} \(\rho_x\), and each of its
+three displayed groups of terms, has its own local
+output gauge identity. This conclusion uses more than
+gauge invariance of their sum.
+
+The block assignment is translation covariant. Local
+convergence of the matrices and their derivatives, together
+with \eqref{gdd-log-series} and its uniform geometric tail,
+passes these densities and their quadratic kernels to
+any jointly compatible infinite system at fixed endpoint.
+There they are translation covariant, satisfy
+\eqref{gdd-rooted-kernel}, and retain the local gauge identity.
+No uniqueness of different structural limits is needed.
+
+\subsection{An affine-density formula for the total Maxwell moment}
+\label{gdd-moment-section}
+
+\begin{lemma}[Gauge-invariant rooted density and total moment]
+\label{gdd-moment-lemma}
+Let \(\rho_x\) be translation-covariant analytic scalar
+densities on an infinite lattice, with exponentially
+rooted quadratic kernels as in \eqref{gdd-rooted-kernel}.
+Assume every \(\rho_x\) is invariant under local gauge
+changes on its germ, and under global semisimple color
+conjugation. Fix one color and distinct directions
+\(\mu,\nu\). For the formal affine component
+\[
+                  A_\mu(z)=t z_\nu,\qquad A_\sigma=0
+                    \quad(\sigma\ne\mu),
+\]
+the quadratic density coefficient is
+\begin{equation}
+ [t^2]\rho_0(A)
+       =-\frac14\sum_r r_\nu^2 K_{\mu\mu}(0,r),
+ \label{gdd-affine-moment}
+\end{equation}
+where \(K=\sum_x D^2\rho_x(0)\) is the total Hessian
+kernel in that color. Both sides are absolutely convergent
+kernel expressions. The left side does not mean evaluation
+of an analytic map at an unbounded nonzero field.
+\end{lemma}
+
+\begin{proof}
+Global semisimple color invariance kills each density's
+linear derivative. Differentiating its local gauge identity
+at the origin therefore shows that its Hessian annihilates
+each compactly supported infinitesimal gradient in either
+slot. The exponential kernel bound extends this identity
+to polynomial gauge parameters by absolute summation.
+In particular it annihilates a constant one-form in any
+one color and direction: use the linear scalar gauge
+parameter with that gradient.
+
+Write \(k_0(b,c)\) for the selected same-component Hessian.
+Its row and column sums are zero. Consequently
+\[
+ \frac12\sum_{b,c} k_0(b,c)b_\nu c_\nu
+   =-\frac14\sum_{b,c}k_0(b,c)(c_\nu-b_\nu)^2.
+\]
+Every interchange is allowed by exponential rooted
+summability. Translation covariance gives
+\[
+ K(0,r)=\sum_x k_x(0,r)=\sum_x k_0(-x,r-x).
+\]
+The change of indices \(b=-x,\ c=r-x\) turns the last
+second moment into the right side of
+\eqref{gdd-affine-moment}. The same calculation with
+the translated affine field shows that the coefficient
+is independent of the selected density root.
+\end{proof}
+
+For the actual correction, the established Maxwell
+normalization is
+\(\beta(D)=-\tfrac12\sum_r r_\nu^2K_{\mu\mu}(0,r)\),
+in one normalized color. Thus the constructed density gives
+\begin{equation}
+                  \boxed{\ \beta(D_{M,K})
+                            =2[t^2]\rho_0(tz_\nu e_\mu)\ }.
+ \label{gdd-beta-density}
+\end{equation}
+The density construction applies separately to the
+three groups of terms in \eqref{gdd-density}, with the
+corresponding second-moment extraction on each.
+When the total has the established spatial symmetries,
+this is its Maxwell coefficient.
+
+The individual gauge identity is essential. For example,
+the Maxwell action may be written either as its curvature
+square density or, after summation by parts, as a density
+of the form \(\tfrac12 A\cdot d^*dA\). On an affine
+constant-curvature field the latter vanishes pointwise,
+while the former does not. Their totals agree on compact
+fields. The diagonal densities above avoid this ambiguity
+because their own gauge identities imply the row and
+column cancellations used in the proof.
+
+\subsection{Scope}
+\label{gdd-scope}
+
+The result identifies a specific, locally gauge-invariant
+trace density with the total Maxwell moment. It does not
+estimate that moment uniformly as \(K\) grows. The gap,
+analytic radius and decay exponent used for \(G_b,Q_b\)
+are permitted to deteriorate with \(K\). No positive
+coefficient or comparison with a massive reference
+follows from the density identity alone.

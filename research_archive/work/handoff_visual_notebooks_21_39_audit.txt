@@ -1,0 +1,92 @@
+HANDOFF VISUAL AUDIT: NOTEBOOKS 21–39
+Date: 17 October 2026
+Reviewer: rotation_audit
+
+Status: PASS within the visual scope below. No source or bundled artifact was changed.
+
+Scope and method
+----------------
+This is an actual image inspection of the frozen rendered notebook PDFs, not an inference from successful compilation or extracted text. I viewed every contact sheet listed below using the image viewer, and then viewed the selected individual page PNGs at original resolution. The contact sheets collectively represent all 312 pages of the 19 assigned notebooks. There are 24 contact sheets. Individual enlargement covered 19 pages, including representative text-extraction flags and dense mathematical displays.
+
+The review checked page continuity, readable layout, margins, obvious clipping, collisions/overlap, missing-page images, and visible mathematical-glyph failures. It is not a renewed mathematical proof audit or a glyph-by-glyph reading of all 312 full-size pages.
+
+All contact sheets actually viewed
+---------------------------------
+21-ym4-classical-localization-notebook: 15 pages
+  work/handoff_build/visual/21-ym4-classical-localization-notebook/contact-01.png
+22-ym4-coarse-transport-notebook: 11 pages
+  work/handoff_build/visual/22-ym4-coarse-transport-notebook/contact-01.png
+23-ym4-gauge-covariance-notebook: 7 pages
+  work/handoff_build/visual/23-ym4-gauge-covariance-notebook/contact-01.png
+24-ym4-inherited-reentry-notebook: 6 pages
+  work/handoff_build/visual/24-ym4-inherited-reentry-notebook/contact-01.png
+25-ym4-pre-gauge-notebook: 5 pages
+  work/handoff_build/visual/25-ym4-pre-gauge-notebook/contact-01.png
+26-ym4-auxiliary-grouping-notebook: 7 pages
+  work/handoff_build/visual/26-ym4-auxiliary-grouping-notebook/contact-01.png
+27-ym4-composite-macrostep-notebook: 15 pages
+  work/handoff_build/visual/27-ym4-composite-macrostep-notebook/contact-01.png
+28-ym4-common-domain-notebook: 23 pages
+  work/handoff_build/visual/28-ym4-common-domain-notebook/contact-01.png
+  work/handoff_build/visual/28-ym4-common-domain-notebook/contact-02.png
+29-ym4-gauge-extraction-notebook: 27 pages
+  work/handoff_build/visual/29-ym4-gauge-extraction-notebook/contact-01.png
+  work/handoff_build/visual/29-ym4-gauge-extraction-notebook/contact-02.png
+30-ym4-quantum-descent-notebook: 24 pages
+  work/handoff_build/visual/30-ym4-quantum-descent-notebook/contact-01.png
+  work/handoff_build/visual/30-ym4-quantum-descent-notebook/contact-02.png
+31-ym4-finite-induction-notebook: 20 pages
+  work/handoff_build/visual/31-ym4-finite-induction-notebook/contact-01.png
+32-ym4-determinant-flow-notebook: 34 pages
+  work/handoff_build/visual/32-ym4-determinant-flow-notebook/contact-01.png
+  work/handoff_build/visual/32-ym4-determinant-flow-notebook/contact-02.png
+33-ym4-cartan-trace-notebook: 14 pages
+  work/handoff_build/visual/33-ym4-cartan-trace-notebook/contact-01.png
+34-ym4-pinned-ghost-notebook: 17 pages
+  work/handoff_build/visual/34-ym4-pinned-ghost-notebook/contact-01.png
+35-ym4-infrared-cancellation-notebook: 24 pages
+  work/handoff_build/visual/35-ym4-infrared-cancellation-notebook/contact-01.png
+  work/handoff_build/visual/35-ym4-infrared-cancellation-notebook/contact-02.png
+36-ym4-soft-determinant-notebook: 19 pages
+  work/handoff_build/visual/36-ym4-soft-determinant-notebook/contact-01.png
+37-ym4-positive-drift: 18 pages
+  work/handoff_build/visual/37-ym4-positive-drift/contact-01.png
+38-ym4-full-measure-bridge: 19 pages
+  work/handoff_build/visual/38-ym4-full-measure-bridge/contact-01.png
+39-ym4-normalized-box-replacement: 7 pages
+  work/handoff_build/visual/39-ym4-normalized-box-replacement/contact-01.png
+
+Individual pages actually viewed at original resolution
+-------------------------------------------------------
+Notebook 21: page 13
+Notebook 23: page 6
+Notebook 27: page 4
+Notebook 28: page 10
+Notebook 29: page 4, page 12, page 13
+Notebook 30: page 3
+Notebook 31: page 15
+Notebook 32: page 24, page 33
+Notebook 33: page 13
+Notebook 34: page 7
+Notebook 35: page 22
+Notebook 36: page 3
+Notebook 37: page 10
+Notebook 38: page 7, page 10
+Notebook 39: page 6
+
+Findings
+--------
+1. No visible clipping, overlap, lost page image, or obvious missing mathematical glyph was found in the assigned contact sheets or the enlarged pages.
+2. The enlarged extraction-flag pages show intact large parentheses, brackets, braces, integrals and other displayed mathematics. In particular Notebook 38 page 7 visibly renders its large delimiters. The automated NUL/extraction flags are not established missing-glyph findings; they may arise from LMMathExtension font encoding. This audit does not claim that every flagged glyph on every flagged page was individually enlarged.
+3. Notebook 35 page 24 contains only the final bibliography entry. Notebook 39 page 7 contains the closing scope continuation. These are sparse terminal pages with legitimate content, not blank-page or missing-content defects.
+4. Notebook 31 page 15 begins with the continuation of a display/prose passage from the preceding page. The viewed sequence shows ordinary pagination, not a lost formula.
+5. Typography, page numbering, section structure and link coloring are visually consistent across the assigned notebooks.
+
+Relation to automated checks
+----------------------------
+The existing work/handoff_build/visual/pdf_inspection.json reports no out-of-bounds text for these notebooks, and the parent reports zero overfull warnings for the frozen notebook builds. Those are complementary automated checks; the PASS here is grounded in the image inspection described above. Automated extraction flags were treated as prompts for representative visual inspection, not as proof of visual failure.
+
+Limitations and handoff
+----------------------
+Only Notebooks 21–39 were assigned here. The three lead handoff documents and Notebooks 01–20 belong to other reviewers' visual scope. The current report does not certify the mathematical truth of the notebooks or remove their stated hypotheses and unresolved existence obligations. No bundled source, PDF, contact sheet, master document, or authoritative notebook was edited during this review.
+

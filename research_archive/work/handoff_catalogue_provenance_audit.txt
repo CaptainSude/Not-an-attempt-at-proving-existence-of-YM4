@@ -1,0 +1,192 @@
+FINAL HANDOFF CATALOGUE: INDEPENDENT PROVENANCE AND SCOPE AUDIT
+17 October 2026
+Reviewer: provenance research agent
+
+RESULT
+
+PASS for the requested inventory, provenance and high-level scope review.
+No substantive correction is requested. This is an audit of the handoff
+catalogue and corrections register, not a renewed certification of every
+underlying mathematical proof. Internal review and successful typesetting
+do not establish external mathematical acceptance or a complete Yang--Mills
+existence theorem.
+
+FILES AND REVIEW BASIS
+
+Read:
+  work/handoff_notebook_catalogue.json
+  work/handoff_corrections_register.txt
+
+Compared against:
+  work/handoff_repository_baseline.tex
+  work/handoff_repository_baseline.txt
+  work/handoff_repository_source_map.json
+  the source paths and notebook-title ordinals listed in those inventories
+  the previously reviewed work/handoff_dossier_core.tex and
+  work/handoff_start_here_body.tex
+
+The actual register filename contains "handoff_". There is no need to
+rename it: the catalogue already references the correct existing file.
+The present audit did not modify the catalogue, register, assembled outputs,
+baseline report, or pinned repository.
+
+1. COMPLETE NOTEBOOK INVENTORY
+
+The JSON has exactly 39 entries with ordinals 1 through 39, each once.
+There are 39 distinct authoritative source paths, all of which exist.
+Every source contains the corresponding "Notebook n:" title ordinal.
+Every ordinal/path pair agrees with the independently prepared 39-entry
+our_notebooks array in handoff_repository_source_map.json.
+
+The split between 36 ordinary output TeX files and three dedicated main.tex
+projects for Notebooks 37--39 is correctly recorded. The warning that a
+default rg inventory can omit ignored project directories is useful and
+prevents an erroneous 36-notebook handoff.
+
+All listed proof-module, audit and checkpoint paths exist. All upstream
+notebook ordinals resolve to catalogue entries. The register contains the
+41 unique correction IDs C01--C41, and every correction ID referenced by
+the catalogue resolves to that register.
+
+No missing or duplicate notebook was found. These are existence and
+cross-index checks, not checks that every selected dependency is sufficient
+for a theorem. Both the global metadata and individual dependency_scope
+fields explicitly say the selected dependencies are not a complete,
+machine-verified theorem graph. That qualification is retained correctly.
+
+2. WHAT THE CATALOGUE DOES AND DOES NOT CLAIM
+
+The overall status explicitly denies a complete Yang--Mills existence
+claim. Notebook 37 is reported as an actual local homogeneous
+leading-coefficient and finite weak-history tuning result under the
+series' upstream working inputs. Its scope is not enlarged to the full
+Wilson measure. Notebooks 38--39 are identified as positive finite
+bare-measure advances with specified domains, rather than as completion
+of the multiscale large-field induction.
+
+The limiting Gaussian in Notebook 07 is expressly a free reference.
+Notebook 08 retains its flat/source-gauge and regularity qualifications.
+Notebook 09 separates the auxiliary current from the nonlinear
+constraint-current term added later. The catalogue consistently preserves
+the distinctions between:
+
+  * fixed-coupling lattice reflection positivity and continuum covariance;
+  * flat/auxiliary Gaussian gaps and a physical Yang--Mills mass gap;
+  * global small physical fields and typical fine Gaussian fluctuations;
+  * one weighted response estimate and strict simultaneous support norms;
+  * a local analytic interaction germ and a complete positive measure;
+  * compatible infinite structural systems or explicit periodizations
+    and arbitrary actual finite winding kernels;
+  * prescribed weak couplings and the exact updated density trajectory.
+
+Notebook 01 retains the conditional angular/all-order and witness
+interfaces. Notebook 02 does not claim that its same-limit reflection
+positivity proves rotations of a continuum hierarchy. The total Ward and
+Maxwell classification in later notebooks is not identified with full
+continuum Euclidean covariance. A positive-energy scalar witness is not
+reported as a proof of interacting non-Gaussian Yang--Mills identification.
+
+The ending register explicitly leaves H2--H7 open. In particular:
+H2 requires the full measure and all mixed/large-field histories, with the
+actual coarse-fiber windows and transition/holonomy data; H3 requires
+external observables and their renormalization; H4 requires one common
+continuum hierarchy; H5 requires the relevant positivity/covariance and
+reconstruction for that hierarchy; H6 requires nontriviality and
+identification with interacting Yang--Mills; H7 is the separate mass-gap
+problem. Nothing in the catalogue accidentally closes these interfaces.
+
+3. NOTEBOOKS 38--39: THE FINAL EXTENSION IS SCOPED CORRECTLY
+
+The full positive pushforward/good-remainder and fixed-box statements
+are distinguished from an effective RG conditional fiber. The geometric
+interface does not turn plaquette smallness into a uniform physical
+C1,alpha chart without its additional hypotheses.
+
+Notebook 39 correctly records arbitrary finite families of vertex-disjoint
+fixed-size boxes. On good boundaries it conditions the actual conditional
+Wilson law on the actual conditional-minimizer window and retains the
+normalizing denominator; on bad boundaries it leaves the conditional law
+unchanged. It preserves the original exterior marginal and raw partition
+factor under the stated normalized replacement convention.
+
+Its exact total-variation expression concerns a chosen set of box
+variables jointly with the whole exterior. The marginal-only statement
+is an upper bound. The local estimate is uniform in the total number of
+other boxes, whereas total variation for the entire growing family need
+not be small. The iid domination belongs to coupling-discrepancy marks;
+it does not assert iid bad-boundary marks. Bounded fixed local
+source/cumulant consequences are not extended to unbounded renormalized
+observables. Fixed-box replacement is not presented as growing-component,
+post-RG, or averaged-constraint replacement.
+
+4. REPOSITORY BASELINE AND CREDIT
+
+The pinned baseline is
+  ethanwsussman/Yang--Mills-LLM-experiment
+  e392ef45013a581664bab76b90867170b30fe10e.
+
+The catalogue/register authority policy agrees with the detailed
+baseline report: the repository publicly claims an apparent argument
+for existence on R^4, and the zeroth manuscript states a narrower
+SU(2), action-density observable theorem with qualifications and a
+conditional rotation clause. The handoff must neither erase the
+repository's R^4 claim nor treat its claim as independently verified.
+The companion raw files, draft theorem and dated README are distinct
+evidence layers. The catalogue's instruction to read their exact
+generality and historical chronology is appropriate.
+
+Our baseline report supplies the detailed theorem/line locators, original
+filename map, published-source interfaces and reproduction issues.
+The catalogue is not required to repeat every source locator. In
+particular, the raw master's missing part1/part2/part3 include names are
+reported there as a reproduction naming issue, not a mathematical
+counterexample. The earlier claim of a mandatory localized-carrier
+obstruction was withdrawn after the raw global-carrier route was found.
+The report and register correctly avoid treating an unverified input
+as proof that no such source argument exists.
+
+The reflection-based rotation idea is already present in the repository
+README and QED3 companion material. Our pure-Wilson reflection and
+same-limit interface work is an addition, not a claim to have originated
+that idea. The source map identifies the 39 notebooks as our research
+drafts, separately from the repository and published Bałaban literature.
+
+5. CORRECTIONS THAT MUST REMAIN VISIBLE
+
+The register adequately preserves the important abandoned or repaired
+routes. Especially relevant are:
+
+  C03/C05: the conditional rotation/contact-term/all-order issues and the
+          actual mixed-boundary reflection gluing requirements;
+  C06/C07/C20/C24: strict background locality, overlap/dimension costs,
+          coherent support norms and parameter order;
+  C08/C17/C18: the actual retained cutoff, the direction of the bad-event
+          inclusion, and both chart/current-curvature terms;
+  C09--C15: smooth-branch identification, gauge/average distinctions,
+          physical normalizations and the limited nonflat domains;
+  C21/C25/C26: actual graph labels and composite map, absence of a
+          universal gauge-zero 1/R contraction, and high jets not forming
+          an invariant gauge-interaction class by themselves;
+  C27/C28/C31: the invalid common difference-square identity, its ordered
+          Laurent replacement, parameter/finite-volume distinctions and
+          finite marginal leakage;
+  C29/C30: the stronger continuity input, tracked vacuum constants,
+          fixed-outer-radius O(b^2) force rather than an O(g^2) claim, and
+          the stricter two-input comparison budget;
+  C32--C37: leading-only cocycle scope, pinned versus mean-zero ghosts,
+          noncommuting scalar infrared limits, nonuniform raw vertices,
+          and ordered local-trace/physical-weight repairs;
+  C38--C41: actual heat/Ward normalization, orbit-domain density,
+          full-bare fixed-box scope and the normalized replacement
+          denominators/coupling restrictions.
+
+The catalogue consistently points to these repaired working statements
+rather than silently reviving the superseded arguments.
+
+CONCLUSION
+
+The frozen catalogue and corrections register are fit for inclusion in
+the handoff alongside the detailed baseline report and source map.
+There is no requested source edit. This pass establishes inventory and
+scope fidelity only; it does not certify the full 39-notebook proof chain,
+published-source imports, or the unresolved continuum existence goal.

@@ -1,0 +1,203 @@
+% No preamble. One-step quantum interface. Prefix os-.
+\section{One fixed-ratio fluctuation step in physical coordinates}
+\label{os-section}
+
+We work in dimension four with a fixed odd blocking ratio
+$L\ge3$. Fine spacing is $\eta>0$ and the next retained
+spacing is $h=L\eta$. The number of retained cells may be
+arbitrarily large; constants may depend on $L$ and the gauge
+group, but not on $h$, $\eta$, or compatible periodic volume.
+This is one blocking step, rather than a simultaneous
+integration of all fluctuations below a fixed macroscopic scale.
+
+Let $y=x/h$, and write the rescaled potential as
+$A_s(y)=hA_{\rm phys}(x)$. Then
+\begin{equation}\label{os-rescaling}
+ U(e)=e^{i\eta A_{\rm phys}(e)}=e^{iA_s(e)/L},\qquad
+ \nabla_\eta A_{\rm phys}=h^{-2}\nabla_{1/L}A_s.
+\end{equation}
+The four-dimensional coupling-free Wilson action is unchanged
+by this relabeling: it is the same sum of plaquette densities,
+each counted once. The physical Maxwell action likewise obeys
+\begin{equation}\label{os-quadratic-scaling}
+ \eta^4\sum|d_\eta A_{\rm phys}|^2
+       =L^{-4}\sum|d_{1/L}A_s|^2.
+\end{equation}
+The corresponding scalar gauge projection and flat averaging
+constraint are the fixed-$L$ unit-coarse-scale operators of
+the preceding notebooks after this rescaling.
+
+Write $X_L=\ker Q_L\cap\ker(R_LD_*^T)$, where
+$D_*=D_{1/L}$, and let $\mathcal C_L$ be the Maxwell
+variational inverse on $X_L$. For the physical constrained
+Gaussian $Z_{\rm phys}$ and its rescaling $Z_s=hZ_{\rm phys}$,
+the covariance \emph{operators} under the physical pairings
+and their raw coordinate matrices satisfy
+\begin{equation}\label{os-covariance-scaling}
+ \mathcal C_h=h^2\mathcal C_L,\qquad
+ \operatorname{Cov}_{\rm count}(Z_{\rm phys})
+       =\eta^{-4}h^2\mathcal C_L,\qquad
+ \operatorname{Cov}_{\rm count}(Z_s)=L^4\mathcal C_L.
+\end{equation}
+The last two are coordinate covariances, rather than operators
+under weighted physical sums. They follow also by pushing the
+normalized Gaussian through \eqref{os-quadratic-scaling};
+the constant Lebesgue Jacobian cancels from its normalization.
+
+Define the complete dimensionless value/first-difference vector
+\begin{equation}\label{os-microscopic-field}
+ Y=\bigl(\eta Z_{\rm phys},\eta^2\nabla_\eta Z_{\rm phys}\bigr)
+   =\bigl(Z_s/L,\nabla_*Z_s/L^2\bigr).
+\end{equation}
+Equation \eqref{os-covariance-scaling} gives the exact counting
+covariance
+\begin{equation}\label{os-Y-covariance}
+ \Sigma_Y=S_L\mathcal C_LS_L^T,
+       \qquad S_L=(LI,\nabla_*).
+\end{equation}
+The previously proved energy sandwiches imply
+\begin{equation}\label{os-uniform-covariance}
+ 0\le\Sigma_Y\le K_L I
+\end{equation}
+for a fixed finite $K_L$, uniformly in spacing and volume.
+Indeed $\mathcal C_L\le G_{0,L}$ and
+$(I,\nabla_*)G_{0,L}(I,\nabla_*)^T$ is uniformly bounded;
+the extra factor $L$ is fixed. All real trace-orthonormal
+color components can be included at once.
+
+Every retained cell and a fixed collar contain a fixed number
+$m_L$ of these scalar tests. A test belongs to at most a fixed
+number $\nu_L$ of such collars. Consequently a covariance-based
+joint-tail theorem applies with constants independent of the
+physical scale and the number of cells. Singularity of
+$\Sigma_Y$ from gradients or constraints causes no problem for
+such an upper bound.
+
+\subsection{Small nonconstant backgrounds: the actual reduced Hessian}
+\label{os-nonflat}
+
+We can also control the quadratic fluctuation form at the
+nonlinear corrected minimizer from Notebook 15, on its stated
+small global coarse-data ball. Everything in this subsection
+is first expressed at retained spacing one, with fine spacing
+$1/L$. Let
+\[
+ A=\xi+H[B-\mathcal R(A)],\qquad
+ A_*=A(\xi_*(B),B),\qquad
+ T_A=(I+HD\mathcal R(A))^{-1}.
+\]
+Use the physical trace pairing and let $K_X$ be the compression
+of $K=d^Td$ to $X_L$. Write $\mathcal B_B$ for the Hessian,
+in the linear $\xi$ coordinate, of the exact reduced Wilson
+action at $\xi_*(B)$. This is a fine fluctuation Hessian;
+it is different from the coarse Hessian $D_B^2V$ of Notebook 16.
+
+For $z,w\in X_L$, put $v=T_{A_*}z$ and $u=T_{A_*}w$.
+The exact second derivative of the constraint chart gives
+\begin{equation}\label{os-reduced-form}
+ \mathcal B_B[z,w]
+  =\langle v,K u\rangle
+   +\langle S_{\rm jet}v,W(A_*)S_{\rm jet}u\rangle
+   -\langle m(B),D^2\mathcal F(A_*)[v,u]\rangle.
+\end{equation}
+Here $W(A_*)=Df_{1/L}(S_{\rm jet}A_*)$ has norm
+$O(\norm{B}_\infty)$ and $m(B)=O(\norm{B}_\infty)$.
+The last term is retained; a Hessian of the ambient action
+alone would not be the reduced fluctuation form.
+
+The previously established tangent estimate is
+\begin{equation}\label{os-tangent-energy}
+ \norm v_2+\norm{\nabla_*v}_2
+       \le C\langle z,Kz\rangle_{\rm Herm}^{1/2},
+\end{equation}
+and the same holds for $u,w$, also on the common complex
+background ball. To see its complex extension directly, use
+$v=z-HD\mathcal R(A_*)v$, the physical Hilbert smallness
+$\norm{D\mathcal R(A_*)}_{2\to2}=O(\norm B_\infty)$,
+the bounded $H,\nabla_*H$, and the flat coercive bound on $X_L$.
+
+The flat mixed terms vanish, giving the exact bilinear identity
+\begin{equation}\label{os-K-difference}
+ \langle v,Ku\rangle-\langle z,Kw\rangle
+   =\langle D\mathcal R(A_*)v,
+                      q D\mathcal R(A_*)u\rangle.
+\end{equation}
+The right side is $O(\norm B_\infty^2)$ relative to the two
+Maxwell energy norms. The middle term of
+\eqref{os-reduced-form} is $O(\norm B_\infty)$ by
+\eqref{os-tangent-energy}. The genuine two-Hilbert-direction
+constraint estimate bounds the last term by the same order.
+Consequently, on a fixed smaller complex ball,
+\begin{equation}\label{os-relative-bound}
+ \mathcal B_B=K_X^{1/2}(I+E_B)K_X^{1/2},\qquad
+ E_B^T=E_B,\qquad \norm{E_B}_{2\to2}\le C\norm B_\infty.
+\end{equation}
+The normalized matrix $E_B$ is holomorphic in $B$. The square
+root is that of the fixed real positive $K_X$; the norm is
+the Hermitian operator norm, while the displayed transpose
+is the analytic bilinear transpose.
+
+For real $B$, choose the radius so that $\norm{E_B}\le\epsilon<1$.
+The centered Gaussian $\zeta_s\in X_L$ for this reduced
+quadratic form has covariance operator
+$\mathcal C_B=J_X\mathcal B_B^{-1}J_X^T$ and satisfies
+\begin{equation}\label{os-real-comparison}
+ (1+\epsilon)^{-1}\mathcal C_L
+     \le\mathcal C_B\le(1-\epsilon)^{-1}\mathcal C_L.
+\end{equation}
+Its dimensionless \emph{chart-coordinate} vector
+$(\zeta_s/L,\nabla_*\zeta_s/L^2)$ therefore has counting
+covariance bounded by $(1-\epsilon)^{-1}K_LI$.
+
+The linearized physical-potential fluctuation is
+$T_{A_*}\zeta_s$. It also has a uniformly bounded
+dimensionless value/gradient covariance. Indeed
+\eqref{os-tangent-energy} bounds
+$S_LT_{A_*}J_XK_X^{-1/2}$ uniformly, so
+\begin{equation}\label{os-tangent-covariance}
+ \norm{S_LT_{A_*}\mathcal C_BT_{A_*}^TS_L^T}_{2\to2}
+       \le C_L(1-\epsilon)^{-1}.
+\end{equation}
+Here the finite-dimensional maps on $X_L$ are read with the
+same inclusions as in \eqref{os-real-comparison}. This is a
+real Gaussian statement at a real background.
+
+For complex $B$, \eqref{os-relative-bound} instead defines a
+normalized complex Gaussian functional with strictly positive
+Hermitian real part of its precision. Estimates for fixed real
+coordinate tests can be obtained from its finite-dimensional
+marginals. A cutoff whose defining tests themselves depend on
+complex $B$ is a different problem; no holomorphy is inferred
+by placing an indicator around such moving complex tests.
+
+\subsection{The local domain for the nonlinear chart}
+\label{os-chart-domain}
+
+At the fixed mesh $1/L$, bounded values control all physical
+first differences and their H\"older seminorms with constants
+depending only on $L$ and $\alpha$. Thus on the event that
+\emph{all fine value coordinates in the regulator} of the
+dimensionless chart vector have modulus at most $R$,
+\begin{equation}\label{os-domain-radius}
+ \norm{g\zeta_s}_{N_\alpha}\le C_{L,\alpha}gR.
+\end{equation}
+Choose $gR$ small enough to stay inside the nonlinear chart
+and its analytic action domain. If $R(g)=(\log(1/g))^p$
+for fixed $p>0$, then both $gR(g)$ and $gR(g)^3$ tend to
+zero. This is compatible with a large Gaussian-tail threshold.
+The same norm comparison on a fixed cell and its stencil
+collar is a local comparison of fields. It does not extend
+the globally defined nonlinear minimizer chart through an
+arbitrary complement of bad cells; that requires a regional
+construction with its own boundary estimates.
+It is the relevant fixed-ratio local scaling, rather than
+a uniform smooth bound on all unresolved macroscopic modes.
+
+On arbitrarily large volumes the event that \emph{every} cell
+is good need not have large probability. The quantum step
+requires joint bounds on prescribed bad cells and a summation
+over their connected regions. The covariance bound supplies
+the first of these ingredients. Integrating the nonlinear
+remainder, the Haar and coordinate Jacobians, and bad regions
+remains a further task; the present Gaussian comparison does
+not replace those integrals.

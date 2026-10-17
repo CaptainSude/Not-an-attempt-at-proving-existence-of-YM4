@@ -1,0 +1,169 @@
+\section{The fine short-time band of the soft pair}
+\label{suv-section}
+
+This argument is on the chosen infinite structural system, in current
+counting coordinates, with $\mu=K^{-1}$. All unbounded backgrounds are
+formal polynomial jets of the commuting affine probe
+\[
+ U_\alpha(t;x)=\exp(i t x_\nu H/K^2),\qquad \alpha\ne\nu.
+\]
+It asserts no continuously varying magnetic flux on a finite torus.
+The actual action $S_M$ is retained.
+
+Put
+\begin{align}
+ B_s(t)&=D(t)^TD(t),&
+ B_v(t)&=S_M''(U(t))+D(t)D(t)^T,\notag\\
+ T_s(t)&=B_s(t)+\mu^2J(t)J(t)^T,&
+ \widetilde V(t)&=B_v(t)+\bar C(t)^TF(t)\bar C(t),\notag\\
+ F(t)&=aI-S_{MK}''(M_K(U(t))).
+ \label{suv-operators}
+\end{align}
+The scalar and vector final-block-zero projectors are denoted
+$P_{0,s}$ and $P_{0,v}$.
+
+\begin{theorem}
+\label{suv-main}
+There is a constant independent of old depth $M$ and endpoint $K$ such
+that
+\begin{align}
+ \int_0^1\left|[t^2]\operatorname{Tr}
+       (P_{0,s}e^{-sT_s(t)})\right|\frac{ds}{s}&\le C,\notag\\
+ \int_0^1\left|[t^2]\operatorname{Tr}
+       (P_{0,v}e^{-s\widetilde V(t)})\right|\frac{ds}{s}&\le C.
+ \label{suv-bounds}
+\end{align}
+The vector expression equals the actual soft vector through its two
+affine jets. The effect of each soft coarse penalty alone is bounded
+by $C\mu^2s$ before integration.
+\end{theorem}
+
+\subsection{Rooted estimates for the base operators}
+\label{suv-base-section}
+
+At flatness $B_s$ and $B_v$ have uniform exponential fine-current
+Schur bounds. The vector statement uses the actual $q_M$; its first
+two background derivatives use the uniform action kernels through
+degree four and exact left-relative covariance. The gauge terms
+are nearest-neighbor. The semigroup power series therefore has
+Schur bound $Ce^{Cs}$ for $0\le s\le1$.
+
+At a diagonal fine root $x$, a Cartan gauge subtracts the constant
+potential at that root. The resulting source is
+$t(z_\nu-x_\nu)H/K^2$. Diagonal color trace is unchanged.
+Each first magnetic insertion now supplies $K^{-2}$ times a polynomial
+in distances to the root, and each second insertion supplies $K^{-4}$.
+The rooted exponential kernels pay the polynomial factors. The ordered
+one-insertion and two-insertion heat formulas give, for $E=B_s,B_v$,
+\begin{equation}
+ \left|[t^2]\operatorname{tr}_{\mathfrak g}
+      (e^{-sE(t)})_{xx}\right|
+       \le CK^{-4}(s+s^2)e^{Cs},\qquad 0<s\le1.
+ \label{suv-fine-root}
+\end{equation}
+There are $K^4$ scalar roots or $dK^4$ initial bond roots in one block.
+Thus
+\begin{equation}
+ \left|[t^2]\operatorname{Tr}(P_{0,E}e^{-sE(t)})\right|
+       \le C(s+s^2)e^{Cs}.
+ \label{suv-base-bound}
+\end{equation}
+This proof uses no spectral gap. Polynomial gauges are justified by
+compact truncation and exponential absolute moments, not by evaluating
+an unbounded field inside a global analytic ball.
+
+\subsection{Fixed coarse fibers for the penalty insertion}
+\label{suv-penalty-section}
+
+Write either perturbation as $C(t)^TF(t)C(t)$, with
+\begin{equation}
+ (C,F)=
+ \begin{cases}
+   (\mu J^T,I),&\text{scalar},\\
+   (\bar C,aI-S_{MK}''(M_K(U))),&\text{vector}.
+ \end{cases}
+ \label{suv-factor-table}
+\end{equation}
+The output fiber of $C$ has fixed color/site or color/bond dimension
+per final block. The actual moving-reference physical estimates,
+centered on each dependency collar, give for $j=0,1,2$
+\begin{equation}
+ \|C_j(Y,X)\|\le C\mu(1+|X|+|Y|)^p
+                         \mathbf1_{d(X,Y)\le r_0}.
+ \label{suv-C-jets}
+\end{equation}
+Here $C_j=[t^j]C(t)$, and $r_0,p$ are fixed. For $J$ the support
+is its own block. Centering the affine field uses bounded physical
+$C^1$ directions; restoring the gauge frames costs only a fixed
+polynomial in the block labels.
+
+The ordinary map sends the affine probe to the coarse affine
+connection. The actual coarse Hessian source bounds consequently give
+\begin{equation}
+ \|F_j(Y,Z)\|\le C(1+|Y|+|Z|)^p e^{-\kappa d(Y,Z)}.
+ \label{suv-F-jets}
+\end{equation}
+These are whole-block Hilbert operator bounds, with no sum over
+$K^4$ independent fine coordinates.
+
+The base jets also have polynomially weighted exponential final-block
+operator kernels. Neighboring blocks are controlled by the fine Schur
+bound; separated blocks gain the fine exponential at distance of order
+$K$ times the block distance. The flat semigroup series and its first
+two insertion formulas therefore give the same kind of bound,
+uniformly for $0\le s\le1$, for both $B$ and
+$W=B+C^TFC$. This step takes no fine trace.
+
+The exact Duhamel formula is
+\begin{equation}
+ e^{-sW(t)}-e^{-sB(t)}
+   =-\int_0^s e^{-(s-u)W(t)}C(t)^TF(t)C(t)e^{-uB(t)}\,du.
+ \label{suv-duhamel}
+\end{equation}
+Keep the fine root projector in the trace:
+\begin{equation}
+ \operatorname{Tr}_f[P_0 E_W C^TFC E_B]
+       =\operatorname{Tr}_c[FC E_B P_0 E_W C^T].
+ \label{suv-cyclic}
+\end{equation}
+The right side sums all coarse diagonal blocks; it is not a single
+coarse block-zero density.
+
+Expand its degree-two coefficient in the finitely many ordered ways.
+There are always two $C$ factors, supplying $\mu^2$.
+Equations \eqref{suv-C-jets}--\eqref{suv-F-jets} and the semigroup
+bounds connect both coarse endpoints to block zero. Their absolute
+sum is bounded by
+\[
+ C\mu^2\sum_{Y,Z}(1+|Y|+|Z|)^p
+       e^{-\kappa'(|Y|+|Z|+d(Y,Z))}\le C'\mu^2.
+\]
+The trace is taken in a fixed-dimensional coarse fiber. A product
+through the large fine block Hilbert space costs this coarse output
+rank, not the fine dimension. Integrating \eqref{suv-duhamel} gives
+\begin{equation}
+ \left|[t^2]\operatorname{Tr}
+       P_0(e^{-sW(t)}-e^{-sB(t)})\right|
+          \le C\mu^2s,\qquad 0<s\le1.
+ \label{suv-correction-bound}
+\end{equation}
+For compact source truncations, \eqref{suv-cyclic} is ordinary
+finite-rank trace cyclicity. The displayed rooted sum supplies its
+infinite limit and permits coefficient extraction. This also justifies
+the complex-bilinear continuation at the real flat expansion point.
+
+Combining \eqref{suv-base-bound} and \eqref{suv-correction-bound},
+dividing by $s$, and integrating proves \eqref{suv-bounds}.
+The exact affine matching of the soft vector transfers this estimate
+to the actual vector coefficient.
+
+\subsection{Scope}
+\label{suv-scope}
+
+The band $0<s<1$ is $0<u<K^{-2}$ in final physical heat time.
+Its contribution to the actual signed soft-pair coefficient is bounded
+uniformly. This proof does not compute the logarithmic coefficient on
+$1<s<K^2$, compare the actual effective action to a standard massive
+vector/ghost reference, or establish a large-time cancellation.
+Finite winding and regulator identification retain their separate
+hypotheses.

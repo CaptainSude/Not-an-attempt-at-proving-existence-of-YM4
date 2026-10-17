@@ -1,0 +1,579 @@
+\section{One composite small-field step on the same analytic ball}
+\label{cdm-section}
+
+We combine Sections~\ref{cdj-section} and \ref{cdc-section} with the
+actual composite constraint, Gaussian and integral of Notebook~27.
+All statements are first finite-regulator statements on compatible
+periodic tori. Constants are uniform in the preceding homogeneous
+depth $M=\ell^k$ and volume, after the primitive odd ratio $\ell$,
+macro ratio $R=\ell^s$ and auxiliary grouping $J=\ell^j$ are fixed.
+The theorem concerns a local holomorphic small-field map. The measure
+identification required beyond its original germ is stated explicitly.
+
+Set $d=4$ and use the fixed trace-orthonormal real color coordinates.
+The input activity graph consists of $J$-blocks of the current
+unit lattice. The output graph consists of $J$-blocks of the next
+lattice, equivalently $JR$-blocks of the current lattice, and is
+also the Gaussian integration graph. Thus input and output use
+the same grouping $J$ in their respective current units. Projection
+$\pi_R$ has fiber $R^d$, preserves connected images, and satisfies
+\begin{equation}
+ |\pi_RH|\le 2^d+\frac{2^d}{k_R}|H|,
+ \qquad k_R=1+\left\lfloor\frac{R-3}{4}\right\rfloor.
+ \label{cdm-compression}
+\end{equation}
+The distinct lifted block interfaces are retained on the chosen
+cofinal regulator family.
+
+\subsection{Statement and exact field-dependent factors}
+\label{cdm-statement-section}
+
+Write the inherited total functional as
+\begin{equation}
+ E(a)=\sum_H E_H(a|_H),\qquad
+ \norm{E}_{a_0;b}:=
+ \sup_i\sum_{H\ni i}e^{a_0|H|}\norm{E_H}_b
+ \le\epsilon\le\bar\epsilon,\qquad a_0=\frac1{16},
+ \label{cdm-input}
+\end{equation}
+where the carriers are connected and each coefficient is holomorphic
+on the scalar-coordinate product ball of radius $b$. The fixed
+$\bar\epsilon<\infty$ bounds the input class. Assume local gauge
+invariance of the \emph{total} $E$ on its original common domain.
+If $E$ is a logarithm, its compatible holomorphic branch is part
+of the input; coefficientwise gauge invariance is not assumed.
+
+\begin{theorem}[A common-domain composite step]
+\label{cdm-theorem}
+There are finite choices $R,J$, positive $b,g_0$, and retained
+link/color-ball thresholds $T=T(g)\ge1$ such that, for
+$0<g<g_0$, the chosen small-field macrostep has a holomorphic
+continuation to the entire next-angle ball $\norm{w}_\infty<b$.
+With $W=e^{iw}$ it has the factorization
+\begin{equation}
+ \rho_{\mathrm{next}}(W)=
+ N_{M,R,g}\exp\left[-g^{-2}S_{MR}(W)+E_{\mathrm{next}}(w)\right].
+ \label{cdm-factorization}
+\end{equation}
+Here $N_{M,R,g}$ is field independent, and $S_{MR}$ is the
+homogeneous ordinary classical minimum at total depth $MR$,
+after the $d=4$ physical rescaling. No coupling renormalization
+has yet been performed.
+
+The output has connected strict $w$-activities with the same
+angle radius $b$ and cardinality exponent $a_0$. In the notation
+constructed below,
+\begin{align}
+ \norm{E_{\mathrm{next}}}_{a_0;b}
+ &\le C_T\epsilon+(C_\Delta+C_{\det})b
+       +2S_1\left[e^3\tau(T)+e^{v+q}(v+q)\right],
+ \label{cdm-output-bound}\\
+ v&\le C_{\mathrm{base}}(gT^3+gT+g^2T^2),\qquad
+ q\le16C_TC_R\frac{gT}{b}\epsilon .
+ \label{cdm-small-factors}
+\end{align}
+All constants are uniform in $M$ and compatible volume. The
+Gaussian cutoff integral is nonzero on this whole ball and has
+the analytic logarithm used in \eqref{cdm-factorization}.
+The total correction satisfies the local gauge Ward identity
+throughout the ball, and is invariant along gauge paths that
+remain in it.
+
+These are statements about the continuation of the actual local
+small-field germ. They identify the exact chosen macro integral
+throughout the ball when a gauge-orbit current density with the
+stated pre-gauge representation is available. They do not identify
+all quantum histories or the full Wilson pushforward merely from
+holomorphic uniqueness.
+\end{theorem}
+
+The following construction proves the theorem and specifies its
+constants and domains. The estimate is not an amplitude
+contraction: $C_T$ can be much larger than one.
+
+Use the actual composite ordinary map
+$F_R=\mathcal M_\ell^s$ and the independent direct-$R$ contour
+gauge. The physical backgrounds of Notebook~27 satisfy
+\begin{equation}
+ V_p(W)=\mathcal M_\ell^k U_{MR}(W),\qquad
+ V^\star(W)=V_p(W)^{u(W)},\qquad P_R(V^\star)=1,
+ \qquad S_M(V^\star)=S_M(V_p)=S_{MR}(W).
+ \label{cdm-background}
+\end{equation}
+The last identity follows from the two actual minimum comparisons.
+Current spacing is one and the next spacing is $R$; the
+coupling-free action has no extra rescaling factor in dimension
+four.
+
+The retained chart preserves its nonpivot coordinates exactly.
+The integration field is $e^{i\Phi_{V^\star}(g\xi)}V^\star$ and
+the window is
+$\prod_{b\ {\rm retained}}\mathbf1_{\{|\xi(b)|\le T\}}$.
+The coupling stays inside $\Phi$. Set
+\begin{align}
+ A(w)&=
+ D_z^2\left[
+ S_M(e^{i\Phi_{V^\star}(z)}V^\star)
+ +\mathcal G_R(e^{i\Phi_{V^\star}(z)}V^\star)\right]_{z=0},
+ \notag\\
+ E_{\mathrm{pre}}(w)&=E(a_p(w)),\qquad a_p=\frac1i\log V_p,
+ \notag\\
+ Z(w)&=\mathbb E_{A(w)^{-1}}\left[
+ \chi_{\mathrm{window}}(\xi)
+ e^{V_{\mathrm{base}}(w,\xi)+Q_{\mathrm{inh}}(w,\xi)}
+ \right].
+ \label{cdm-integral-parts}
+\end{align}
+The base exponent is the centered classical/gauge remainder,
+the ambient pivot-straightening logarithms, and the Haar
+logarithms. The inherited difference is exactly
+\begin{align}
+ Q_{\mathrm{inh}}(w,\xi)&=E(f_1(w,\xi))-E(f_0(w)),\notag\\
+ f_\lambda(w,\xi)(b)&=
+ \frac1i\log\left[
+ e^{\,i\operatorname{Ad}_{u(w;b_-)^{-1}}
+                \Phi_{V^\star(w)}(\lambda g\xi)(b)}
+ V_p(w)(b)\right],\qquad f_0=a_p.
+ \label{cdm-pre-gauge-insertion}
+\end{align}
+This group identity changes no integration variable $\xi$.
+
+For clarity, let $n_e$ count positive current bonds, $n_c$ final
+macro bonds, $n_s$ noncenter current sites, and
+$n_z=\dim\mathfrak g\,(n_e-n_c)$. In trace-orthonormal exponential
+coordinates write $d(e^{iX})=h_0j(X)dX$, $j(0)=1$, and put
+\[
+ c(g)=\int_G
+ \exp[-(1-\operatorname{Re}\tau(h))/g^2]\,dh.
+\]
+With $\mathcal D_R(V)$ the actual pivot-delta determinant and
+$A_0=A_{M,R,0}$ the flat retained precision, the field-independent
+normalization before any additional vacuum subtraction is
+\begin{equation}
+ N_{M,R,g}=
+ c(g)^{-n_s}h_0^{\,n_e-n_c}g^{n_z}(2\pi)^{n_z/2}
+       \mathcal D_R(1)\det(A_0)^{-1/2},
+ \label{cdm-normalization}
+\end{equation}
+times any separately tracked old field-independent normalization.
+The background-dependent parts of the pivot and Gaussian
+determinants remain in $E_{\mathrm{next}}$.
+
+On the common overlap this is precisely the local Haar/delta
+integral. If an actual gauge-invariant current density on gauge
+orbits has representation $e^{-S_M/g^2+E}$ at the pre-gauge
+fields in \eqref{cdm-pre-gauge-insertion}, the same expression
+is the exact selected sector pointwise throughout the ball.
+Otherwise it specifies only the verified analytic continuation
+of that sector's local germ. The measurable completion and
+one-shot sector are those of Notebook~27, not an asserted
+intersection of $s$ sequential primitive sectors. Additional
+original indicators would have to be retained and estimated.
+
+\subsection{An explicit order of parameter choices}
+\label{cdm-parameters-section}
+
+First fix the exponents
+\begin{equation}
+ a_0=\frac1{16},\quad \kappa_G=2,\quad m_G=3,\quad
+ \gamma=8,\quad B=\frac{53}{8},\quad \delta=1,\quad
+ \kappa_{\mathrm{tail}}=8.
+ \label{cdm-exponents}
+\end{equation}
+The tuned Gaussian density factor below has logarithm at most
+$5/8$, so \eqref{cdj-Gaussian-weight} holds, and
+$\kappa_{\mathrm{tail}}\ge B+\delta$.
+
+Choose a fixed pre-gauge cardinal reserve
+$A_{\mathrm{in}}\ge d\kappa_{\mathrm{tail}}$ before $R$.
+By \eqref{cdj-ap-family}, there are $C_A,\kappa_0,r_A>0$ fixed
+at the primitive ratio, independently of $R,M$ and volume, with
+\begin{equation}
+ \sup_i\sum_Xe^{\kappa_0\tau(\{i\}\cup X)+A_{\mathrm{in}}|X|}
+                  \norm{a_{p,i;X}}_r
+       \le C_A r/R,\qquad 0<r\le r_A.
+ \label{cdm-pregauge-family}
+\end{equation}
+The norm takes the maximum over the whole current-link fiber
+of one $R$-block \emph{inside} the support sum.
+Choose a sufficiently large power $R=\ell^s$ so that
+\begin{equation}
+ R\ge8C_A,\qquad
+ \frac{5^d2^d}{k_R}B\le a_0/2.
+ \label{cdm-R-choice}
+\end{equation}
+The composite chart and its local radii are now fixed. The actual
+flat retained Gaussian has uniform bounds
+\begin{equation}
+ \gamma_RI\le A_0\le B_RI,\qquad
+ \lambda_0=B_R^{-1},\quad \Lambda_0=\gamma_R^{-1},
+ \label{cdm-spectral-bounds}
+\end{equation}
+and an exponentially local inverse. These constants may depend
+on $R$ but not on the old depth $M$.
+
+Next choose any further \emph{classical-only} reserves needed
+for the fixed-$R$ chart and the two lemmas in
+Section~\ref{cdc-section}. They may depend on $R$ and use
+independent classical outer radii. They do not change
+$A_{\mathrm{in}}$ or $C_A$ in
+\eqref{cdm-pregauge-family}--\eqref{cdm-R-choice}.
+The rooted stationary field is a fixed-$R$ local analytic
+function of $a_p$; its support norm is $O_R(r)$ with any such
+fixed reserve. Lemma~\ref{cdc-precision-lemma} therefore
+provides strict symmetric precision pieces with row norm
+$O_R(r)$.
+
+Choose $J=\ell^j$ sufficiently large for the grouped covariance
+and precision exponents, in particular
+\begin{equation}
+ \frac{32}{J}\le\kappa',\qquad A'\ge64,\qquad
+ \frac{16}{J}\le\kappa_0/2,
+ \label{cdm-J-choice}
+\end{equation}
+with the available $\kappa',A'$ in
+\eqref{cdc-precision-reserve}. Set
+$\ell_{\mathrm{tail}}=c\log J$ plus a fixed offset, with
+$c>4d/\kappa_0$, so that eventually
+$\ell_{\mathrm{tail}}+2\le J$. The actual joint family of
+Section~\ref{cdj-grouping-section} then has
+\begin{align}
+ s_{\mathrm{tail}}
+ &\le J^d(b/4)e^{-\kappa_0\ell_{\mathrm{tail}}/2},
+ &m_{\mathrm{core}}&=b/2,\notag\\
+ c_0&=5^d2^d,&c_1&=5^d2^d/k_R,\notag\\
+ h_0^{\mathrm{halo}}&=2d,&F&=R^d,\qquad
+ D(J)=d\,\dim\mathfrak g\,J^d .
+ \label{cdm-tail-data}
+\end{align}
+Here $h_0^{\mathrm{halo}}$ is a graph radius, distinct from the
+Haar constant in \eqref{cdm-normalization}. Increase $J$ and
+the tail offset until, with $t=s_{\mathrm{tail}}/m_{\mathrm{core}}$,
+\begin{equation}
+ t\le\tfrac12,\qquad D(J)\log\frac1{1-t}\le a_0/2.
+ \label{cdm-tail-budget}
+\end{equation}
+This is possible because its sufficient bound is a constant
+times $J^{2d}e^{-\kappa_0\ell_{\mathrm{tail}}/2}\to0$.
+The ratio $t$ in this sufficient estimate is independent of $b$.
+The entire local $\xi$ collar and the core lie in the fixed
+two-neighbor halo used in \eqref{cdj-actual-core}.
+
+Only now choose the final field radius. The macro retained
+dimension and tunable density parameters are
+\begin{align}
+ D_G&=J^d d(R^d-1)\dim\mathfrak g,\qquad
+ \theta=\frac1{4D_G},\notag\\
+ \mathcal K_\theta
+ &=\left[\frac{1+\theta}{(1-\theta)^3}\right]^{D_G/2},
+ &\log\mathcal K_\theta&\le\frac58,\qquad
+ \rho_\theta=\frac{1+\theta}{1-\theta}.
+ \label{cdm-density-parameters}
+\end{align}
+The uniform Gaussian bounds fix a positive common strictly
+local threshold $\eta_*$. Shrink it if necessary so that
+$\eta_*\le1$.
+
+Choose $b>0$ below all classical, physical-branch and chart
+radii. In particular require
+\begin{equation}
+ \frac{eN_0e^{2\kappa_0}C_A b}{R\rho_R}\le\frac12,
+ \label{cdm-joint-domain}
+\end{equation}
+as in \eqref{cdj-degree-majorant}. The substituted macro
+precision norm $\nu(b)=O_{R,J}(b)$ must meet every strictly
+local support-algebra threshold. Include
+\begin{equation}
+ \nu(b)\le\gamma_R/2,\qquad
+ \nu(b)\le\frac{\theta\gamma_R^2}{4B_R},
+ \label{cdm-precision-small}
+\end{equation}
+as justified in
+\eqref{cdc-covariance-comparison}--\eqref{cdc-relative-neighborhood}.
+Also impose the tunable density-algebra conditions
+$u_G\le\theta$ and
+$w_G\le\theta/[(1+\theta)\Lambda_0]$, where $u_G,w_G$
+are its continuous $O(\nu)$ support-algebra quantities, and
+the smallness for the determinant chain expansion below.
+All hold after one shrink of $b$ with $R,J$ fixed.
+This selects a single input and output radius, rather than
+dividing the inherited radius during substitution.
+
+A bad macrocell for the actual link/color-ball window implies
+that its full Euclidean retained norm exceeds $T$. Its valid
+joint-tail constant is therefore
+\begin{equation}
+ \tau(T)=\mathcal K_\theta\,2^{D_G/2}
+       \exp\left[-\frac{T^2}{4\rho_\theta\Lambda_0}\right].
+ \label{cdm-tail-constant}
+\end{equation}
+Choose $T\ge1$ with $e^3\tau(T)\le\eta_*/4$.
+This estimates the bad event without replacing the actual
+good window by a Euclidean macro ball.
+
+Finally require the coupling to be small enough that
+\begin{equation}
+ L_*=\frac{b}{8C_RgT}\ge2,\qquad L_*gT<\rho_R,
+ \label{cdm-lambda-radius}
+\end{equation}
+and the interaction bounds below hold uniformly for
+$\epsilon\le\bar\epsilon$. The second condition is an
+additional fixed restriction on $b$. For instance $T(g)$
+may exceed the fixed threshold and grow as a fixed multiple
+of $\sqrt{\log(1/g)}$. Then $\tau(T)\to0$, $gT^3\to0$ and
+$gT/b\to0$ for this fixed $b$.
+
+\subsection{Strict coefficients are already in the next background}
+\label{cdm-support-section}
+
+Lemma~\ref{cdc-precision-lemma} composes the actual precision
+pieces with the supported stationary field while keeping their
+matrix rows and columns in the original carrier. Its
+scalar-coordinate factor is paid by the independent classical
+cardinality reserve. Lemma~\ref{cdc-scalar-lemma} keeps the
+whole spectator $\xi$ carrier even at zero background Taylor
+degree, joins each substituted background support to it, and
+reroots the resulting connected carrier. The classical action
+includes its pair-supported quadratic part; its actual chart
+Hessian retains both constraint and ordinary-log curvature
+terms and the full absolute gauge Hessian.
+
+Thus \eqref{cdc-base-smallness} supplies, directly in $(w,\xi)$,
+\begin{equation}
+ \norm{V_{\mathrm{base}}}_B\le v,\qquad
+ v=C_{\mathrm{base}}(gT^3+gT+g^2T^2).
+ \label{cdm-base-bound}
+\end{equation}
+The independent-background definition subtracts constant,
+linear and quadratic Taylor terms before composition. At the
+physical branch the total linear term is zero; it is not
+silently dropped away from that branch.
+
+For the inherited term, the actual complete-fiber construction
+\eqref{cdj-joint-family}--\eqref{cdj-full-family} yields
+\begin{equation}
+ \norm{f_\lambda-a_p}_{\kappa_0,A_{\mathrm{in}};b,T}
+                 \le C_R|\lambda|gT.
+ \label{cdm-actual-family}
+\end{equation}
+Every coefficient reads $\xi$ only in the fixed output-root
+collar, independent of its remote $w$ support. On
+\eqref{cdm-lambda-radius}, the whole absolute family has
+amplitude at most $b/4$. Hence every truncated core has that
+same bound without using cancellation.
+Theorem~\ref{cdj-transport} and
+\eqref{cdj-actual-increment} give canonical connected carriers
+\begin{align}
+ \sum_K U_{K,\lambda}&=E(f_\lambda),&
+ \norm{U_\lambda}_B&\le C_T\epsilon,\notag\\
+ C_T&=e^{B5^d2^d+2d}R^dS_1,&
+ S_1&=\sum_{z\in\mathbb Z^d}e^{-|z|_1},\notag\\
+ \norm{Q_{\mathrm{inh}}}_B
+ &\le q:=\frac{C_T\epsilon}{L_*-1}
+ \le16C_TC_R\frac{gT}{b}\epsilon .
+ \label{cdm-inherited-bound}
+\end{align}
+The $\lambda=0$ family is termwise $\xi$ independent and
+represents $E_{\mathrm{pre}}$. Empty background support terms
+of the fluctuation difference remain interactions if they
+depend on $\xi$. Banach Cauchy is applied with its contour
+integral before the positive anchored sum, as in
+\eqref{cdj-Cauchy-increment}.
+
+All these coefficients are already functions of the next
+background $w$ on the Gaussian graph. The Gaussian output
+will need no second stationary substitution and no second
+generic inherited-radius estimate.
+
+\subsection{Nonvanishing and a bound for the inherited logarithm difference}
+\label{cdm-nonvanishing-section}
+
+Combine equal-carrier exponents. Their exact multiplier norm is
+\begin{equation}
+ \sup_z\sum_{K\ni z}e^{B|K|}
+       \norm{e^{V_{\mathrm{base},K}+Q_K}-1}
+       \le e^{v+q}(v+q).
+ \label{cdm-multiplier-bound}
+\end{equation}
+Products on distinct overlapping carriers are handled by the
+overlap theorem. Each multiplier is defined on its actual
+carrier window and extended by zero outside it. This is exact
+on the global retained window. Since
+$B\ge4+\log\mathcal K_\theta+\kappa_G$ and connected $K$
+has metric spanning-tree length $|K|-1$, this norm pays the
+strict Gaussian multiplier weight.
+
+Impose
+\begin{equation}
+ v\le\frac{\eta_*}{16e},\qquad
+ q\le\frac{\eta_*}{32e},\qquad e^3\tau(T)\le\eta_*/4.
+ \label{cdm-quarter-budgets}
+\end{equation}
+With $\eta_*\le1$, \eqref{cdm-multiplier-bound} is below the
+interaction quarter budget. The precision conditions have
+already been imposed. The tunable strictly local Gaussian
+theorem therefore proves nonvanishing of $Z$ on the full
+$b$-ball and an analytic connected logarithm with
+\begin{align}
+ a_G&=\min\{1/2,\kappa_G/4\}=\frac12,\notag\\
+ \norm{\log Z}_{a_G;b}
+ &\le2S_1\left[e^3\tau(T)+e^{v+q}(v+q)\right].
+ \label{cdm-log-bound}
+\end{align}
+This is a nonvanishing theorem on a volume-independent
+complex domain, not an inference from real positivity.
+
+There is also a precise inherited-log difference estimate.
+For $q>0$, replace $Q_{\mathrm{inh}}$ by
+$\zeta Q_{\mathrm{inh}}$ and set
+\begin{equation}
+ L_Q=\frac{\eta_*}{16e q}\ge2.
+ \label{cdm-log-interpolation-radius}
+\end{equation}
+On $|\zeta|<L_Q$, the total exponent norm is at most
+$\eta_*/(8e)$; since $\eta_*\le1$, its multiplier norm is
+at most $\eta_*/8$. Together with the bad-block budget,
+the Gaussian bound is at most $S_1\eta_*$ on that disk.
+The canonical connected-log coefficients are holomorphic
+as an anchored Banach family. Cauchy therefore gives
+\begin{align}
+ \norm{\log Z-\log Z_{\mathrm{base}}}_{a_G;b}
+ &\le\frac{S_1\eta_*}{L_Q-1}
+ \le32eS_1q\notag\\
+ &\le512eS_1C_TC_R\frac{gT}{b}\epsilon .
+ \label{cdm-log-difference}
+\end{align}
+For $q=0$ the difference is zero. This interpolation keeps
+the base exponent throughout; it does not omit a factor
+$e^{V_{\mathrm{base},K}}$ when comparing equal-carrier
+multipliers.
+
+\subsection{External normalizations and the exact update}
+\label{cdm-update-section}
+
+The pivot and Gaussian determinant corrections are
+\begin{equation}
+ \Delta(w)=\log\frac{\mathcal D_R(V^\star(w))}
+                         {\mathcal D_R(1)},\qquad
+ Q_{\det}(w)=-\frac12\log\det[A(w)A_0^{-1}].
+ \label{cdm-external-logs}
+\end{equation}
+The first is the sum of actual local pivot log determinants
+composed with the supported stationary field. The scalar
+composition lemma gives connected coefficients with any
+required fixed reserve and norm at most $C_\Delta b$.
+
+For the second, put $C_0=A_0^{-1}$ and
+$\mathcal B(w)=A(w)-A_0$ and expand afresh on the macro graph:
+\begin{equation}
+ Q_{\det}(w)=\frac12\sum_{n\ge1}\frac{(-1)^n}{n}
+                         \operatorname{Tr}[(C_0\mathcal B(w))^n].
+ \label{cdm-det-series}
+\end{equation}
+Join every entire precision label and each covariance path
+by deterministic trees and shortest paths. Their cyclic
+union is connected and has cardinality at most the total
+edge-length budget plus one. The weighted row norm at
+$\gamma=8$ and a rerooting spare give
+\begin{equation}
+ \norm{Q_{\det}}_{1/2;b}
+ \le\frac{D_Ge^{1/2}S_1}{2}
+       \frac{K_8\nu_8}{1-K_8\nu_8}
+ \le C_{\det}b,\qquad K_8\nu_8<1.
+ \label{cdm-det-bound}
+\end{equation}
+Here $K_8$ bounds the macro baseline covariance and $\nu_8$
+the strict precision perturbation at that weight, uniformly
+in $M$ and volume. Their smallness was included in the
+choice of $b$.
+
+With the field-independent factor
+\eqref{cdm-normalization}, the exact correction is
+\begin{equation}
+ E_{\mathrm{next}}=
+ E_{\mathrm{pre}}+\Delta+Q_{\det}+\log Z.
+ \label{cdm-update}
+\end{equation}
+Its first term has weight $B$, and the other terms have
+weight at least $1/2$, all on the same product ball $b$.
+They therefore have the required weight $a_0=1/16$.
+Equations \eqref{cdm-inherited-bound},
+\eqref{cdm-log-bound} and \eqref{cdm-det-bound} prove
+\eqref{cdm-output-bound}. Subtracting each output
+coefficient's value at $w=0$ costs at most a factor two
+in the norm and changes only the field-independent
+normalization.
+
+\subsection{Gauge covariance of the sector and Ward continuation}
+\label{cdm-gauge-section}
+
+Take a small real coarse gauge $k$ and lift it to current
+sites as a constant on each final $R$-block. A background
+with $P_R=1$ keeps that property under this lift. The
+composite constraint transforms from $W$ to $W^k$, and
+the classical action is invariant on the common
+comparison domain. Uniqueness of the nearby physical
+constrained minimum thus gives
+\begin{equation}
+ V^\star(W^k)=
+ V^\star(W)^{\,\text{block-constant lift of }k}.
+ \label{cdm-background-covariance}
+\end{equation}
+The relative retained chart transforms by source-endpoint
+adjoints: this follows from constraint covariance,
+unchanged pivots and uniqueness for the prescribed
+retained values.
+
+For real compact gauges these adjoints are orthogonal
+in the chosen color norm. They preserve each actual
+link/color-ball cutoff and have unit absolute retained
+Jacobian. The original Haar/delta formula, equivalently
+its exact pulled-back factors, therefore gives equality
+of the chosen small-field integrals at $W$ and $W^k$
+on a neighborhood of the identity. The inherited
+identity is an identity of the total functional with
+its compatible branch. No coefficientwise gauge
+invariance is used.
+
+The extracted classical action in
+\eqref{cdm-background} is also gauge invariant there.
+Nonvanishing gives the analytic logarithm on the whole
+product ball. Differentiating the real near-origin
+identity gives the infinitesimal coarse Ward identity
+for $E_{\mathrm{next}}$. Its coefficients are holomorphic
+functions of $w$. Uniqueness on the real slice, followed
+by the holomorphic identity theorem on the connected
+finite-volume ball, extends this identity throughout
+$\norm{w}_\infty<b$. Integrating it gives invariance
+along gauge paths staying in this ball.
+
+This does not compare arbitrary endpoints whose
+connecting gauge path leaves the domain. It also does
+not turn the continued germ into a globally identified
+current density without the orbit representation
+specified above. A field-independent vacuum
+normalization leaves the Ward identity unchanged.
+
+\subsection{Finite-step scope}
+\label{cdm-scope}
+
+The common radius is obtained by placing the inherited
+argument at the actual pre-gauge representative and
+expanding only its distant supported tail. All new
+classical and measure coefficients are already in
+$w$ before integration. The Gaussian output therefore
+incurs no second stationary transport. This proves
+the stated domain, strict-support and nonvanishing
+interfaces of one chosen composite step, uniformly
+in preceding homogeneous refinement and volume.
+
+The estimate still contains $C_T\epsilon$, not a
+contractive amplitude update. Apart from optional
+vacuum normalization, no relevant or marginal
+extraction has been performed. A repeated quantum
+construction requires a stable extraction and coupling
+scheme, amplitude control, large-field and
+mixed-history estimates, compatible global measure
+identities, and the observable and continuum limits.
+None follows here from analyticity or the local
+Ward identity alone.

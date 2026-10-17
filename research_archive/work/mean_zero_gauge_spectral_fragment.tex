@@ -1,0 +1,339 @@
+% No preamble. Prefix mgs-. Flat mean-zero-gauge spectral estimates.
+\section{Both flat mean-zero-gauge factors have a physical-scale gap}
+\label{mgs-section}
+
+This section proves spectral estimates for the explicit flat matrices
+of the corrected all-site gauge construction.
+The exact nonlinear determinant identity and its continuation through
+the reducible flat background are separate inputs.
+No derivative estimate for a varying-background heat trace is inferred
+from these flat bounds.
+
+\subsection{Spaces and flat operators}
+\label{mgs-spaces-section}
+
+Work in dimension \(d=4\), on a cubic current torus of side \(KN\),
+with \(K=\ell^k\) odd, final centers \(Ky\), and the disjoint centered
+cubes \(B_y\) of side \(K\).
+All scalar and bond norms are counting norms.
+Let \(D\) be the full-site scalar gradient, \(d\) the curl, and
+\(\Delta_s=D^TD\).
+Let \(Q_0\) be the normalized scalar block average, and put
+\begin{equation}
+ P=I-Q_0^T(Q_0Q_0^T)^{-1}Q_0,\qquad \Pi=I-P .
+ \label{mgs-projections}
+\end{equation}
+Thus \(P\) projects onto block-mean-zero scalars, and \(\Pi\)
+onto block-constant scalars.
+Choose a block-diagonal orthonormal frame \(V\) for \(\ker Q_0\)
+and define
+\begin{equation}
+                       G_B=V^T\Delta_sV.
+ \label{mgs-ghost}
+\end{equation}
+At \(K=1\) this scalar space is empty; its trace is zero and
+its determinant is one.
+
+The actual flat corrected composite differential is the straight
+angle average \(A=A_K\). It obeys
+\begin{equation}
+ AD=D_cQ_0,\qquad \|A\|_{2\to2}\le K^{-1}.
+ \label{mgs-average}
+\end{equation}
+Here \(D_c\) is the coarse scalar gradient.
+The estimate is for this corrected differential; it is not
+asserted for the full ordinary unprojected constraint.
+
+Let \(L=q_M\) and \(q=q_{MK}\) be the actual flat classical
+Hessians. The established homogeneous inputs are
+\begin{equation}
+ L\ge d^Td,\qquad LD=0,\qquad 0\le q\le R_qI,
+ \label{mgs-classical-inputs}
+\end{equation}
+uniformly in old depth \(M\), endpoint \(K\), and volume.
+Choose a fixed \(a\ge R_q+1\), and set
+\begin{equation}
+ Q_B=L-A^TqA+DPD^T+aA^TA.
+ \label{mgs-vector}
+\end{equation}
+Its energy satisfies
+\begin{equation}
+ \langle x,Q_Bx\rangle
+ \ge \|dx\|^2+\|PD^Tx\|^2+\|Ax\|^2.
+ \label{mgs-energy-lower}
+\end{equation}
+Matching these matrices to the nonlinear bridge uses only its
+flat identifications \(B(1)=Q_0\) and \(\widehat C(1)=A_K\).
+
+\subsection{Scalar Poincare and a block-mean harmonic lift}
+\label{mgs-scalar-section}
+
+If \(Q_0\psi=0\), the Neumann cube Poincare inequality, summed
+over the blocks, gives
+\begin{equation}
+ \|\psi\|^2\le C_PK^2\|D\psi\|^2,\qquad C_P=1.
+ \label{mgs-poincare}
+\end{equation}
+Indeed the first nonzero cube eigenvalue is
+\(4\sin^2(\pi/(2K))\ge4/K^2\), and cube-internal edges
+are a subset of all edges.
+The case \(K=1\) is vacuous.
+In particular,
+\begin{equation}
+                         G_B\ge C_P^{-1}K^{-2}I.
+ \label{mgs-ghost-gap}
+\end{equation}
+
+For a coarse scalar \(b\), let \(H_b\) minimize
+\(\|D\phi\|^2\) subject to \(Q_0\phi=b\).
+The constraint is onto and fixes the constant nullspace, so the
+finite minimizer exists uniquely. Its Euler equation is
+\(P\Delta_sH_b=0\).
+Moreover,
+\begin{equation}
+ \|DH_b\|^2\le C_{\rm lift}K^2\|D_cb\|^2,\qquad
+ C_{\rm lift}=\frac{\pi^2}{4}\left(\frac\pi2\right)^8.
+ \label{mgs-harmonic-upper}
+\end{equation}
+To verify the normalization, lift a coarse frequency
+\(p\in[-\pi,\pi]^4\) to the central fine frequency \(p/K\).
+The scalar average has multiplier, up to a unit phase,
+\[
+ a_0(p)=\prod_{\mu=1}^4
+      \frac{\sin(p_\mu/2)}{K\sin(p_\mu/(2K))},
+ \qquad |a_0(p)|\ge(2/\pi)^4.
+\]
+Divide the lifted amplitude by \(a_0\).
+The fine difference obeys
+\[
+ |e^{ip_\mu/K}-1|
+       \le\frac{\pi}{2K}|e^{ip_\mu}-1|.
+\]
+Counting Parseval multiplies the fine squared amplitude by
+\(K^4\), relative to its coarse counterpart, proving
+\eqref{mgs-harmonic-upper}.
+The zero mode is constant and has zero energy.
+All selected frequencies are legitimate on the \(KN\)-periodic
+torus. For real data one may take the real part of a complex
+feasible lift; this preserves the constraint and does not
+increase energy, including at coarse Nyquist frequencies.
+
+For arbitrary \(\phi\), put \(b=Q_0\phi\) and
+\(\psi=\phi-H_b\). Then
+\[
+ Q_0\psi=0,\qquad
+ P\Delta_s\psi=P\Delta_s\phi=:g,\qquad
+ \|D\psi\|^2=\langle\psi,g\rangle.
+\]
+Equation \eqref{mgs-poincare} therefore gives
+\(\|D\psi\|\le\sqrt{C_P}K\|g\|\), and hence
+\begin{equation}
+ \|D\phi\|^2
+ \le 2C_PK^2\|P\Delta_s\phi\|^2
+           +2C_{\rm lift}K^2\|D_cQ_0\phi\|^2.
+ \label{mgs-scalar-control}
+\end{equation}
+
+\subsection{The full vector gap}
+\label{mgs-gap-section}
+
+\begin{theorem}[Uniform flat mean-zero-gauge coercivity]
+\label{mgs-gap-theorem}
+There is a constant \(C_{\rm gap}\), independent of \(M,K,N\),
+such that
+\begin{equation}
+ \|x\|^2\le C_{\rm gap}K^2
+       \{\|dx\|^2+\|PD^Tx\|^2+\|Ax\|^2\},
+ \qquad
+ Q_B\ge C_{\rm gap}^{-1}K^{-2}I .
+ \label{mgs-vector-gap}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Use the orthogonal periodic Hodge decomposition
+\(x=x_T+D\phi\), where \(D^Tx_T=0\).
+Harmonic one-forms are included in \(x_T\).
+The previously proved transverse alias estimate is
+\begin{equation}
+ \|x_T\|^2\le K^2
+       \{A_0\|P_cAx_T\|^2+B_0\|dx_T\|^2\},
+ \quad
+ A_0=2c_\omega^{-2},\quad
+ B_0=(1+2c_\omega^{-2})/4,\quad c_\omega=(2/\pi)^5.
+ \label{mgs-transverse}
+\end{equation}
+It is a Maxwell/averaging inequality, includes zero momentum,
+and has no old-depth dependence.
+
+By \eqref{mgs-average},
+\[
+ P_cAx_T=P_cAx,\qquad
+ \|D_cQ_0\phi\|^2
+ \le2\|Ax\|^2+2K^{-2}\|x_T\|^2.
+\]
+Also \(P\Delta_s\phi=PD^Tx\) and \(dx_T=dx\).
+Insert these identities in \eqref{mgs-scalar-control},
+then add \(\|x_T\|^2\) and apply \eqref{mgs-transverse}.
+A valid constant is
+\begin{equation}
+ C_{\rm gap}=
+ \max\{(1+4C_{\rm lift})B_0,\ 2C_P,\
+               (1+4C_{\rm lift})A_0+4C_{\rm lift}\}.
+ \label{mgs-gap-constant}
+\end{equation}
+This proves the first inequality in \eqref{mgs-vector-gap};
+\eqref{mgs-energy-lower} proves the second.
+\end{proof}
+
+No point-pinned scalar gap or inverse of a globally based scalar
+matrix occurs in this argument.
+
+\subsection{A local tent lift controls the full bond Laplacian}
+\label{mgs-tent-section}
+
+\begin{lemma}[Block-constant scalar lifting]
+\label{mgs-tent-lemma}
+There is a block-local map \(E:\operatorname{ran}\Pi\to
+\{\text{all scalar sites}\}\) such that
+\begin{equation}
+ \Pi E=I,\qquad \|E\|\le C_0,\qquad
+ \|DE\|\le C_1/K,\qquad
+ C_0=2^{d/2},\quad C_1^2=80d\,2^{d-1}.
+ \label{mgs-tent-bounds}
+\end{equation}
+These bounds include all periodic multiplicities.
+\end{lemma}
+
+\begin{proof}
+For \(K=2h+1\ge3\), put
+\[
+ f(r)=\frac K{h+1}\left(1-\frac{|r|}{h+1}\right),
+ \qquad -h\le r\le h.
+\]
+Its average is one, its mean square is at most two, and its
+endpoint value and adjacent differences are at most \(4/K\).
+If \(e\) equals \(c_y\) on \(B_y\), define
+\[
+ (Ee)(Ky+r)=c_y\prod_{\mu=1}^d f(r_\mu).
+\]
+The block mean is \(c_y\), and tensorization gives the stated
+norm bound. For a fixed direction, internal edges contribute
+at most
+\(16\,2^{d-1}K^{d-2}\sum_y|c_y|^2\)
+to the squared gradient norm.
+Interfaces contribute at most
+\(64\,2^{d-1}K^{d-3}\sum_y|c_y|^2\), because
+\(\sum_y|c_{y+e_\mu}-c_y|^2\le4\sum_y|c_y|^2\).
+Divide by
+\(\|e\|^2=K^d\sum_y|c_y|^2\) and sum directions.
+The same estimates count the repeated periodic interfaces when
+\(N=1\) or \(2\).
+For \(K=1\), take \(E=I\); the conservative constants still apply.
+\end{proof}
+
+For a bond field \(x\) and \(e\in\operatorname{ran}\Pi\),
+the equality \(Ee-e\in\operatorname{ran}P\) gives
+\[
+ \langle\Pi D^Tx,e\rangle
+  =\langle x,DEe\rangle-\langle PD^Tx,Ee-e\rangle.
+\]
+Thus
+\begin{equation}
+ \|\Pi D^Tx\|
+ \le\frac{C_1}{K}\|x\|+(C_0+1)\|PD^Tx\|.
+ \label{mgs-duality}
+\end{equation}
+This step uses only a local lifting and duality.
+
+The full bond Laplacian satisfies
+\(\langle x,\Delta_1x\rangle=\|dx\|^2+\|D^Tx\|^2\).
+Combining \eqref{mgs-duality},
+\eqref{mgs-energy-lower}, and \eqref{mgs-vector-gap}
+proves
+\begin{equation}
+ \begin{split}
+ \Delta_1&\le C_\Delta Q_B,\qquad
+ C_\Delta=1+2(C_0+1)^2+2C_1^2C_{\rm gap},\\
+ Q_B&\ge \frac1{2C_\Delta}\Delta_1
+                         +\frac1{2C_{\rm gap}K^2}I.
+ \end{split}
+ \label{mgs-laplacian-domination}
+\end{equation}
+
+\subsection{Uniform heat density and inverse moments for both factors}
+\label{mgs-heat-section}
+
+\begin{corollary}[Flat local-gauge heat bounds]
+\label{mgs-heat-corollary}
+For either \(O=Q_B\) or \(O=G_B\),
+\begin{equation}
+ N^{-4}\operatorname{Tr}e^{-uK^2O}
+ \le C\left\{\frac{K^4}{(1+K^2u)^2}+N^{-4}\right\}e^{-cu},
+ \qquad u>0,
+ \label{mgs-heat}
+\end{equation}
+uniformly in \(M,K,N\).
+The trace for \(G_B\) is in its block-local
+\(\ker Q_0\) frame.
+In the infinite flat structural system the \(N^{-4}\) term is
+omitted. Both factors obey the inverse-moment bounds and the
+weighted final-time exponential tail of
+Theorem~\ref{pvs-main}, with \(O\) in place of its physical \(Q\).
+\end{corollary}
+
+\begin{proof}
+For \(Q_B\), apply eigenvalue min--max to
+\eqref{mgs-laplacian-domination}.
+The comparison is the full scalar lattice heat trace, with a
+fixed rescaling of time and multiplicity \(4n_{\mathfrak g}\),
+times \(e^{-cs/K^2}\).
+
+For \(G_B\), \eqref{mgs-ghost-gap} gives
+\[
+ G_B\ge\tfrac12G_B+(2C_PK^2)^{-1}I.
+\]
+The eigenvalues of the compression \(V^T\Delta_sV\)
+dominate the correspondingly indexed full scalar eigenvalues,
+by the variational principle.
+Its heat trace is therefore at most the full scalar heat trace.
+The gap supplies the same exponential factor.
+
+The scalar heat estimate and the substitution \(s=K^2u\) are
+exactly those used in Theorem~\ref{pvs-main}.
+Final-block translation invariance identifies the normalized
+total with one block trace.
+Coarse Bloch integration proves the infinite version directly.
+Mellin integration gives the stated inverse powers and tails.
+\end{proof}
+
+The basis-free scalar completion used by the analytic determinant
+bridge is
+\begin{equation}
+ \widehat G_B=P\Delta_sP+K^{-2}(I-P).
+ \label{mgs-basis-free-scalar}
+\end{equation}
+At flatness its two subspaces reduce it. Its heat density in final
+time is exactly
+\[
+ N^{-4}\operatorname{Tr}e^{-uK^2\widehat G_B}
+ =N^{-4}\operatorname{Tr}e^{-uK^2G_B}
+                        +n_{\mathfrak g}e^{-u}.
+\]
+This extra term satisfies \eqref{mgs-heat}, after decreasing \(c\):
+for \(u\le1\),
+\(K^4/(1+K^2u)^2\ge1/4\), while for \(u\ge1\) it is at least
+\(1/(4u^2)\), and \(u^2e^{-(1-c)u}\) is bounded when \(c<1\).
+The normalized inverse moment adds exactly \(n_{\mathfrak g}\),
+which is absorbed in every case of \eqref{pvs-moments}.
+Thus the actual basis-free pair \(\widehat G_B,Q_B\) has the
+same heat, inverse-moment, and final-time tail bounds.
+
+These estimates concern the explicit flat local-gauge factors.
+They do not establish uniform relative-form derivatives under an
+affine curvature source, or identify separate massless factors
+with independent continuum references.
+The exact nonlinear determinant bridge and the remaining
+large-\(K\) curvature comparison must retain their own
+hypotheses and proofs.
+

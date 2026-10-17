@@ -1,0 +1,701 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\E}{\mathbb E}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\Herm}{\operatorname{Herm}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Ad}{\operatorname{Ad}}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 05: the flat gauge bridge and cutoff interactions}
+\author{Research working document}
+\date{16 October 2026}
+\setlength{\emergencystretch}{5em}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note proves two bridges needed to apply the earlier Gaussian
+estimates to the lattice construction. First, it identifies the actual
+averaged-path gauge penalty, distinguishes the rooted and block-mean
+constraints, and transfers a flat axial gap quantitatively to the
+exponential gauge. Second, physical-field analyticity gives the correct
+enlarged-cutoff bounds for the interaction, including the linear
+Jacobian term. A complete Gaussian cluster argument is given for
+interactions within disjoint fixed-dimensional cells, with an explicit
+bound on the change of the logarithm. The actual Yang--Mills interaction
+joins overlapping cells; its integration theorem is still a separate,
+unverified interface. No continuum theory or mass gap is asserted.
+\end{abstract}
+
+\noindent\textbf{Status and sources.}
+These are internally checked finite-dimensional and conditional
+estimates, without external mathematical review or a novelty claim.
+Raw I and Raw II refer to
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}
+{the pinned deposited account}.
+The model formulas are compared with the original articles
+\cite{balaban99,balaban109,balaban116}.
+Notebook 03 supplies the Gaussian forest and logarithm estimates;
+Notebook 04 supplies the stronger local-precision support algebra.
+Their hypotheses are retained whenever invoked below.
+
+\section{The actual flat gauge penalty and its constraint}
+
+Work on a unit lattice partitioned into blocks of side $L$, with
+$n=L^d$ sites and a distinguished center $y$ in each block $B(y)$.
+Count one positive orientation per bond. Lie-algebra coordinates are
+Hermitian, with invariant norm $|X|^2=\tr(X^2)$ in a fixed normalization.
+The following statements use the ordinary block tiling with distinct
+interfaces. A compatible Dirichlet convention takes a region made of
+complete blocks, retains bonds with at least one endpoint in it, sets
+fields to zero on bonds with both endpoints outside, and sets gauge
+parameters to zero outside. Blockwise mean subtraction then preserves
+the allowed site space and the boundary pivots remain available.
+This is the incident-bond convention in Raw II, line 9033 and the
+positivity hypothesis beginning at line 9743. Freezing all crossing
+bonds would require a different argument. Periodic seams must remain
+distinct geometric edges, even with only two blocks in a direction.
+
+For each $x\in B(y)$, let $\mathcal P(y,x)$ be the prescribed family
+of monotone shortest paths. Define the averaged path integral
+\[
+ (TB)(y,x)=\mathop{\rm average}_{\Gamma\in\mathcal P(y,x)}
+                 \sum_{b\in\Gamma}\epsilon_b B_b,
+ \qquad (TB)(y,y)=0.
+\]
+Let $T_0$ denote a single rooted-tree path integral, choosing a tree
+whose root-to-site paths have length at most $h=d(L-1)$. Write
+$D\lambda(v,w)=\lambda(w)-\lambda(v)$ and
+$d\lambda(y,x)=\lambda(x)-\lambda(y)$. Telescoping gives
+\begin{equation}\label{eq:telescoping}
+ TD\lambda=T_0D\lambda=d\lambda.
+\end{equation}
+On rooted site fields $\lambda(y)=0$, this is $TD\lambda=\lambda$.
+The useful elementary bounds are
+\begin{equation}\label{eq:TD-bounds}
+ \norm D_{2\to2}\le d_0:=2\sqrt d,\qquad
+ \norm T_{2\to2},\norm{T_0}_{2\to2}
+       \le t_0:=\sqrt{h(n-1)}.
+\end{equation}
+For $D$, sum $|\lambda(v)-\lambda(w)|^2\le
+2|\lambda(v)|^2+2|\lambda(w)|^2$. For $T$, each absolute
+coefficient row sums to at most $h$, and each column to at most
+$n-1$; the Schur test proves the assertion.
+
+The gauge fixing in CMP109, equations (0.11), (0.14)--(0.16), uses
+these averaged contours. If its group variable is
+$\Omega(t)=\exp(i[tTB+O(t^2)])$, then
+\[
+ 1-\Re\tr\Omega(t)=\tfrac12t^2|TB|^2+O(t^3).
+\]
+Thus its actual quadratic penalty, with the stated normalization,
+is $\tfrac12\norm{TB}^2$. The second-order term in the logarithm
+does not contribute to this coefficient. This matches CMP109 (2.5).
+For a tree-axial field $B_0$, generally $TB_0\ne0$. Hence on
+$B_0+D\lambda$ the penalty is
+$\tfrac12\norm{TB_0+\lambda}^2$, requiring a shear of the
+gauge coordinate before it becomes diagonal.
+
+\subsection{Rooted and block-mean constraints are different}
+
+For a coarse bond $c=(y,y+Le_\mu)$, set
+\[
+ (Q_{\rm st}B)(c)=L^{-d-1}\sum_{x\in B(y)}
+                         \int_{[x,x+Le_\mu]} B,
+\]
+\[
+ (aTB)(y)=L^{-d}\sum_{x\in B(y)}(TB)(y,x),\qquad
+ (D_1f)(c)=L^{-1}[f(y+Le_\mu)-f(y)].
+\]
+Linearizing the rooted contour average of CMP109 (0.12) gives
+\begin{equation}\label{eq:Q-dictionary}
+ Q^\flat=Q_{\rm st}-D_1aT,\qquad
+ Q_1:=Q^\flat+D_1aT=Q_{\rm st}.
+\end{equation}
+Indeed the contour integral is the initial rooted path, plus the
+translated straight string, minus the final rooted path and the
+reference coarse string. Multiplication by the reference transporter
+cancels the last term. Averaging and dividing by $L$ gives
+\eqref{eq:Q-dictionary}. In particular,
+\begin{equation}\label{eq:Q-gauge}
+ Q^\flat D\lambda=D_1(\lambda\hbox{ at centers}),\qquad
+ Q_1D\lambda=D_1(\hbox{block mean of }\lambda).
+\end{equation}
+Rooted gauge directions preserve $\ker Q^\flat$; block-mean-zero
+directions preserve $\ker Q_1$. The two constraints agree on $\ker T$.
+
+For $B\in\ker Q^\flat$, take the rooted field $\xi=TB$ and put
+\begin{equation}\label{eq:B-T}
+ B_T=B-D\xi.
+\end{equation}
+Then $TB_T=0$, $Q^\flat B_T=Q_1B_T=0$. Conversely any
+$B_T\in\ker Q_1\cap\ker T$ and any rooted $\xi$ give a unique
+$B=B_T+D\xi\in\ker Q^\flat$ with $TB=\xi$.
+
+To compare with a tree slice inside the correct constraint, use the
+block-mean-zero site space $N$. The inverse of $d:N\to\{f(y,y)=0\}$ is
+\[
+ (d^{-1}f)(x)=f(y,x)-L^{-d}\sum_{z\in B(y)}f(y,z),
+ \qquad \norm{d^{-1}f}_2\le\norm f_2.
+\]
+The norm inequality is orthogonal subtraction of the block mean.
+The mutually inverse maps between the two axial slices are
+\begin{equation}\label{eq:slice-maps}
+ B_0=B_T-Dd^{-1}T_0B_T,\qquad
+ B_T=B_0-Dd^{-1}TB_0.
+\end{equation}
+They preserve $Q_1$ by \eqref{eq:Q-gauge}; telescoping verifies
+the slice conditions and both inverse identities. In particular
+\begin{equation}\label{eq:slice-norm}
+ \norm{B_T}\le(1+d_0t_0)\norm{B_0}.
+\end{equation}
+
+\section{A quantitative flat coercivity transfer}
+
+\begin{theorem}\label{thm:gauge-gap}
+Let $q$ be a real symmetric quadratic form on bond fields with
+$q(B+D\lambda)=q(B)$ for the relevant gauge directions. Suppose
+\[
+ q(B_0)\ge\gamma_{\rm ax}\norm{B_0}^2
+ \quad\hbox{on }\ker Q_1\cap\ker T_0.
+\]
+Then, on $\ker Q^\flat$,
+\begin{equation}\label{eq:exponential-gap}
+ q(B)+\norm{TB}^2\ge\gamma_{\rm exp}\norm B^2,
+ \qquad
+ \gamma_{\rm exp}=
+ \left(\frac{(1+d_0t_0)^2}{\gamma_{\rm ax}}+d_0^2\right)^{-1}.
+\end{equation}
+If the penalty is $a\norm{TB}^2$ with $a>0$, replace $d_0^2$
+by $d_0^2/a$ in the denominator.
+\end{theorem}
+
+\begin{proof}
+Gauge invariance, \eqref{eq:slice-maps}, and
+\eqref{eq:slice-norm} give
+$q(B_T)\ge\gamma_T\norm{B_T}^2$, where
+$\gamma_T=\gamma_{\rm ax}/(1+d_0t_0)^2$.
+The exact decomposition \eqref{eq:B-T} yields
+\[
+ q(B)+\norm{TB}^2=q(B_T)+\norm\xi^2
+ \ge\gamma_T\norm{B_T}^2+\norm\xi^2.
+\]
+Weighted Cauchy--Schwarz applied to
+$\norm B\le\norm{B_T}+d_0\norm\xi$ gives
+\eqref{eq:exponential-gap}. The version with $a$ is identical.
+\end{proof}
+
+The axial input here concerns the full constrained bond norm. A
+statement in independent coordinates $B_0=K_{\rm ax}z$ with
+$q(K_{\rm ax}z)\ge\gamma_{\rm free}\norm z^2$ only gives
+$\gamma_{\rm ax}=\gamma_{\rm free}/\norm{K_{\rm ax}}^2$.
+This conversion is essential.
+
+\subsection{Explicit flat pivot-coordinate bounds}
+
+Choose one pivot $b_0(c)$ for each coarse bond: the unit bond crossing
+its block interface on the line through the two centers. No rooted
+contour in $T$ uses this interblock bond. Exactly $L$ starting sites
+in the straight-string sum use it, so its coefficient in $Q^\flat$
+is $L^{-d}$. No other coarse equation uses the pivot. Therefore,
+after splitting the remaining coordinates $z$,
+\[
+ B_{\rm pivot}=-L^dQ_fz,\qquad
+ \norm{K_\flat}^2\le1+L^{2d}\norm{Q^\flat}^2.
+\]
+Put $r=1+2h/L$. The absolute row sum of $Q^\flat$ is at most $r$.
+An internal bond can enter contour terms only through its own block,
+which has $2d$ incident coarse bonds; straight strings add at most
+two equations. Thus the absolute column sum is at most $(2d+2)r$,
+and
+\begin{equation}\label{eq:pivot-bounds}
+ \norm{K_\flat}^2\le1+L^{2d}(2d+2)r^2,
+ \qquad \norm{K_{\rm ax}}^2\le1+2L^{2d}.
+\end{equation}
+For the second bound, tree bonds vanish and $Q_1=Q_{\rm st}$ has
+row sum one and column sum at most two; the same pivots remain free
+of the block trees. These conservative constants are independent of
+scale and volume for this tiling. A different pivot scheme or a
+boundary that identifies interfaces needs its own coefficient matrix.
+
+If also $q(B_0)\le M_q\norm{B_0}^2$ on the axial slice, the
+projections above imply
+\[
+ q(B)+\norm{TB}^2
+ \le[M_q(1+d_0t_0)^4+t_0^2]\norm B^2.
+\]
+After $B=K_\flat z$, the lower bound remains
+$\gamma_{\rm exp}\norm z^2$ since $z$ is a coordinate restriction
+of $B$, and the upper bound gains $\norm{K_\flat}^2$.
+Both bounds matter for a uniformly accretive complex covariance.
+
+\subsection{Why this applies at the flat reference, and its limit}
+
+For the actual gauge-invariant effective action
+$f(V)=\mathcal A(U_k(V))$, the trivial datum is stationary: the
+Wilson action is nonnegative and vanishes at the trivial field.
+The Hessian therefore annihilates infinitesimal gauge directions.
+The gradient-times-second-chart-derivative correction also vanishes
+there. Consequently the flat action Hessian has exactly the invariance
+needed in Theorem~\ref{thm:gauge-gap}, and the actual gauge penalty is
+the one derived above. This identifies a bridge from a uniform axial
+estimate, not an independent proof of that axial estimate for every
+effective scale.
+
+The algebraic distinctions already occur in Raw II, lines 9045--9285;
+the deposited account's later quantitative covariance statement has
+additional hypotheses. The remaining model inputs include the primary
+axial gap and upper bound in the matched coordinates, and uniform
+weighted perturbation estimates for the actual complex independent-current
+family. A change of coordinates in a coercivity proof does not authorize
+a change of the real sharp-cutoff integration domain.
+
+\section{The current correction to gauge invariance}
+
+Use $U'(b)=\exp(i\eta B_b)U_b$ and the convention
+$U^g(v,w)=g(v)^{-1}U(v,w)g(w)$. Expand the actual action as
+\[
+ f_U(B)=f(U)+\langle J_U,B\rangle+\tfrac12H_U(B,B)+O(\norm B^3).
+\]
+For $g_t=\exp(it\lambda)$, write $a=\lambda(v)$,
+$b'=\Ad_{U(v,w)}\lambda(w)$ and
+$D_U\lambda=(b'-a)/\eta$. The Baker--Campbell--Hausdorff expansion
+of the transformed two-parameter field gives the mixed coordinate
+\[
+ sB+tD_U\lambda+\tfrac{i}{2}st[B,a+b']
+       +O(s^2t+st^2)+\hbox{terms independent of }s.
+\]
+Gauge invariance therefore proves the exact Ward identity
+\begin{equation}\label{eq:ward}
+ H_U(B,D_U\lambda)=-\tfrac{i}{2}
+                 \langle J_U,[B,a+b']\rangle.
+\end{equation}
+It also gives $\langle J_U,D_U\lambda\rangle=0$.
+The pure-gauge second coordinate derivative is
+$-(i/\eta)[a,b']$, agreeing with
+$H_U(D_U\lambda,D_U\lambda)=(i/\eta)
+\langle J_U,[a,b']\rangle$ and checking the sign and scale.
+
+For unitary $U$, choose $c_{\rm br}$ with
+$|[X,Y]|\le c_{\rm br}|X||Y|$, and put
+$j_* =\sup_b|J_U(b)|$. Since the square sum of
+$|\lambda(v)|+|\lambda(w)|$ is at most $4d\norm\lambda^2$,
+\[
+ |H_U(B,D_U\lambda)|
+ \le c_{\rm br}\sqrt d\,j_*\norm B\norm\lambda.
+\]
+At unit spacing, the change of the quadratic form obeys
+\begin{align*}
+ |H_U(B+D_U\lambda,B+D_U\lambda)-H_U(B,B)|
+ \le{}&2c_{\rm br}\sqrt d\,j_*\norm B\norm\lambda\\
+ &+2c_{\rm br}d\,j_*\norm\lambda^2.
+\end{align*}
+Thus no derivative of the current is required for this correction.
+Complex backgrounds require explicit bounds on their adjoint transports.
+An arbitrary independent current is not automatically the derivative
+of an invariant action; its analytic extension must be checked through
+the actual operator formula. Raw II, lines 9380--9560, already gives
+the corresponding physical Ward calculation with the opposite gauge
+convention.
+
+There is an even sharper physical-fiber statement. If the averaging
+level set is preserved by rooted gauges and the field is a critical
+point of the action restricted to that level set, the complete Hessian
+in a level-set chart annihilates rooted gauge directions. The mixed
+derivative of gauge invariance equals the Hessian pairing plus a first
+derivative applied to the mixed chart term; the latter is zero by
+constrained criticality. This includes the constraint-curvature/current
+correction. It supplies no analogous identity for a freely prescribed
+current and no axial gap by itself.
+
+\section{Interaction smallness at the larger real cutoff}
+
+\begin{lemma}[Physical-field Schwarz estimate]\label{lem:schwarz}
+Let $F_Y(A,z)$ be holomorphic on the balanced physical-field ball
+$\norm z_{\infty,Y}<r_0$, uniformly over its stated background domain.
+Assume $|F_Y|\le a_Y$ and $D_z^jF_Y(A,0)=0$ for $j=0,1,2$.
+Then
+\[
+ |F_Y(A,z)|\le a_Yr_0^{-3}\norm z_{\infty,Y}^3.
+\]
+For real $B$, $\norm B_{\infty,Y}\le R$, and $gR<r_0$, the
+action remainder $W_Y=g^{-2}F_Y(A,gB)$ satisfies
+\begin{equation}\label{eq:cubic-stability}
+ |W_Y|\le\frac{a_Y}{r_0^3}gR\norm B_{2,Y}^2,
+ \qquad \sup_{\rm cutoff}|W_Y|\le\frac{a_Y}{r_0^3}gR^3.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For $z\ne0$, apply Schwarz's lemma three times to
+$w\mapsto F_Y(A,r_0wz/\norm z_\infty)/a_Y$ on the unit disk.
+The zero cases and non-strict limits are immediate. Substitute $z=gB$
+and use $\norm B_\infty^3\le R\norm B_2^2$.
+\end{proof}
+
+If $\sup_b\sum_{Y\ni b}a_Y\le a_*$, summing gives
+\[
+ \sum_Y|W_Y|\le a_*gRr_0^{-3}\sum_b|B_b|^2.
+\]
+This can be absorbed into a fixed real Gaussian quadratic exponent
+when $gR$ is sufficiently small. More generally, a term
+$g^{-r}F_Y(gB)$ vanishing to order $m$ has cutoff norm at most
+$a_Yg^{m-r}R^m/r_0^m$. A local norm
+$\sup_b\sum_{Y\ni b}e^{a|Y|+\kappa\ell(Y)}a_Y$ transfers with
+the same factor. An extensive bound on the sum of the functions does
+not imply such a local norm. A physical argument such as $gCB$ or a
+nonlinear minimizer response needs its own uniform bound and local
+support expansion before this lemma can be applied.
+
+\subsection{The full exponent is not cubic}
+
+The full fluctuation potential in CMP109, pages 266--270, and Raw II,
+lines 73910--73940, also includes change-of-variables and Haar factors.
+Its schematic orders in the physical argument $z=gCB$ are:
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Term & First order & Cutoff scale\\
+\midrule
+Logarithm of the Jacobian & 1 & $gR$\\
+Haar log density & 2 & $g^2R^2$\\
+Action, gauge, and current cubic remainders & 3 with $g^{-2}$ & $gR^3$\\
+Quadratic term in the quadratic constraint correction & 4 with $g^{-2}$ & $g^2R^4$\\
+\bottomrule
+\end{tabular}
+\end{center}
+These orders use the stated cancellations and do not establish their
+localized coefficient bounds. Previous effective-action increments
+are separate induction inputs. For $R\ge1$ and $gR\le1$, all displayed
+scales are bounded by a constant times $gR^3$. Thus such coefficient
+bounds imply $u_Y:=\sup_{\rm cutoff}|V_Y|\le C_YgR^3$.
+For $u_Y\le1$,
+\begin{equation}\label{eq:interaction-v}
+ v_Y:=\sup_{\rm cutoff}|e^{V_Y}-1|\le e^{u_Y}-1\le2u_Y.
+\end{equation}
+
+A nonzero linear term cannot obey $|V_Y(B)|\le CgR\norm B^2$
+near zero. An additive constant is necessary, for example
+$Cg\norm B\le(Cg/2)(1+\norm B^2)$. The above orders allow a
+safe envelope $\widetilde C_Yg(1+R)(1+\norm B_{2,Y}^2)$,
+with summable localized constants. Odd Gaussian cancellations do not
+repair a false pointwise quadratic bound.
+
+\section{A complete interaction theorem for disjoint cells}
+
+Let $\Lambda$ be a finite set of cells of fixed real dimension $D$,
+with metric $d$. Suppose their holomorphic complex symmetric covariance
+obeys
+\[
+ \Herm C(A)\ge\lambda I,\qquad \norm{C(A)}\le\Lambda_0,
+ \qquad \norm{C_{ij}(A)}\le J_{ij}=J_{ji},
+\]
+\[
+ A_\kappa:=\sup_i\sum_{j\ne i}e^{\kappa d(i,j)}J_{ij}<\infty.
+\]
+Each interaction $V_i(A,x_i)$ reads only its own cell's fluctuation.
+It is measurable in real $x_i$, holomorphic in the background on the
+fixed domain, and obeys
+\[
+ \sup_{A,|x_i|\le R}|e^{V_i(A,x_i)}-1|\le v.
+\]
+Put $\chi_i=\mathbf1_{\{|x_i|\le R\}}$ and define globally
+\[
+ q_i=-\mathbf1_{\{|x_i|>R\}}+\chi_i(e^{V_i}-1).
+\]
+The values of $V_i$ outside the cutoff are unnecessary. Then
+\[
+ Z_V(A)=\E_{C(A)}\prod_i(1+q_i)
+       =\E_{C(A)}\left(\prod_i\chi_i\right)e^{\sum_iV_i}.
+\]
+The complex Gaussian uses the normalized analytic determinant branch
+on the accretive cone. Let
+\begin{gather*}
+ \delta=\lambda/2,\quad V_*=8\Lambda_0^2/\lambda,
+ \quad K_G=(2V_*/\lambda)^{D/2},
+ \quad p_R=2^{D/2}e^{-R^2/(4V_*)},\\
+ \beta=K_G(p_R+v),\quad B_0=8e^2A_\kappa/\delta,
+ \quad \beta_*=[2e^2\max(1,B_0)]^{-1}.
+\end{gather*}
+Here $\ell(X)$ denotes minimal spanning-tree length in the cell metric.
+
+\begin{theorem}\label{thm:cell-interaction}
+If $\beta\le\beta_*$, there is a convergent analytic logarithm
+\[
+ \log Z_V(A)=\sum_{\varnothing\ne X\subset\Lambda}U_V(X;A),
+\]
+whose canonical forest/Mayer activities satisfy
+\begin{equation}\label{eq:cell-log}
+ \sup_i\sum_{X\ni i}e^{\kappa\ell(X)+|X|}
+                         \norm{U_V(X;\cdot)}_\infty\le2e^2\beta.
+\end{equation}
+The constants are independent of volume. The set $X$ is a set of
+marked fluctuation cells; it is not yet a claim of background support.
+\end{theorem}
+
+\begin{proof}
+BKAR partition-mask covariances are convex combinations of block
+principal submatrices, and preserve the stated accretivity and norm
+bounds. Allow a further operator perturbation of norm at most $\delta$.
+The resulting $M$ has $\Herm M\ge\lambda I/2$, $\norm M\le2\Lambda_0$,
+$\Herm M^{-1}\ge V_*^{-1}I$, and
+$|\det M|\ge(\lambda/2)^{D|S|}$. Its density modulus is bounded
+by $K_G^{|S|}$ times a product of real cell Gaussian densities of
+covariance $V_*I$. Hence
+\[
+ \left|\int p_M(x_S)\prod_{i\in S}q_i(A,x_i)\,dx_S\right|
+ \le K_G^{|S|}\prod_{i\in S}
+          \E_{V_*I}(\mathbf1_{\{|G_i|>R\}}+v)
+ \le\beta^{|S|}.
+\]
+The tail estimate is exponential Markov with parameter $1/(4V_*)$.
+The same domination establishes background holomorphy.
+
+For a tree $T$ with degrees $d_i$, independent covariance-edge
+parameter changes of radii
+$r_{ij}=\delta/[\max(d_i,d_j)J_{ij}]$ have every block row and
+column perturbation bounded by $\delta$. Cauchy's formula and
+$d^d\le e^d d!$ give
+\[
+ |\partial_Tf_S|\le\beta^{|S|}(e^2/\delta)^{|S|-1}
+                          \prod_i d_i!\prod_{ij\in T}J_{ij}.
+\]
+The multipliers are independent of the covariance interpolation
+parameters. At a disconnected forest mask their product expectation
+factorizes over the components. BKAR thus yields a hard-core gas of
+disjoint marked sets with the exact tree activities.
+
+For $n\ge2$ the degree sum is
+\[
+ \sum_{T\text{ on }[n]}\prod_i d_i!
+ =(n-2)!\binom{3n-3}{n-2},\qquad
+ \frac{1}{(n-1)!}\sum_T\prod_i d_i!\le8^{n-1}.
+\]
+Summing leaves with the weighted $J$ norm proves
+\[
+ \sup_i\sum_{S\ni i}\norm{\zeta(S)}_\infty
+             e^{\kappa\ell(S)+\alpha|S|}
+ \le\frac{\beta e^\alpha}{1-B_0\beta e^\alpha}.
+\]
+At $\alpha=2$, the stated ceiling implies the Koteck\'y--Preiss
+criterion for activities weighted by $e^{\kappa\ell(S)+|S|}$
+and size function $|S|$. The rooted Mayer bound, grouped by the
+union of its overlapping marked polymers, proves \eqref{eq:cell-log}.
+This is precisely the proof of Notebook 03 with the marked-tail
+parameter replaced by $K_G(p_R+v)$.
+\end{proof}
+
+\begin{corollary}[The interaction changes the logarithm by $O(v)$]
+If $\tau:=K_Gp_R\le\beta_*/4$ and $K_Gv\le\beta_*/4$, the same
+canonical activities for $V$ and for $V=0$ obey
+\begin{equation}\label{eq:interaction-difference}
+ \sup_i\sum_{X\ni i}e^{\kappa\ell(X)+|X|}
+       \norm{U_V(X)-U_0(X)}_\infty\le8e^2K_Gv.
+\end{equation}
+\end{corollary}
+
+\begin{proof}
+Interpolate the bounded multipliers by
+$q_i(t)=-\mathbf1_{{\rm bad},i}+t\chi_i(e^{V_i}-1)$.
+For $v>0$, the disk $|t|\le\rho=\beta_*/(2K_Gv)\ge2$ has
+parameter at most $3\beta_*/4$. The activity vector is analytic
+there in the weighted norm and bounded by $M=2e^2\beta_*$.
+Banach-valued Cauchy bounds for its Taylor coefficients give
+\[
+ \norm{U(1)-U(0)}\le\frac{M}{\rho-1}
+                  \le8e^2K_Gv.
+\]
+The $v=0$ case is immediate. Both logarithms use the expansion's
+branches; no lower bound for a cutoff probability is used.
+\end{proof}
+
+\subsection{The strict-background-local version}
+
+Retain \emph{all} hypotheses and smallness conditions of Notebook 04,
+including its fixed background-independent baseline, local precision
+decomposition, product domain, and constants. Require additionally
+that $V_i$ reads only background coordinates in cell $i$.
+In the rooted support algebra for a marked set $S$, its extra multiplier
+has support $\{i\}\subset S$, zero added support length, and norm at
+most $v$. Consequently the multiplier product norm is bounded pointwise
+by $\prod_{i\in S}(\mathbf1_{{\rm bad},i}+v)$.
+
+The marginal-density estimate of that notebook is
+\[
+ \norm{p_M(x_S)}_{\mathcal B_S}
+ \le\widehat K_G^{|S|}p_{2V_*I}(x_S),\qquad
+ \widehat K_G=(8V_*/\lambda)^{D/2}.
+\]
+Its proof therefore goes through with the replacement
+\[
+ \widehat\beta=\widehat K_G
+        [2^{D/2}e^{-R^2/(8V_*)}+v].
+\]
+Use that notebook's $\delta=\lambda/4$, edge envelope, $B_0$, and
+ceiling $\widehat\beta\le[2e^2\max(1,B_0)]^{-1}$.
+Forest factorization is still valid coefficientwise in the local
+source variables, and compatibility is disjointness of the marks,
+not of their added background supports. Its connected-hull construction
+then gives activities $E_{\Lambda,H}(A|_H)$ with
+\[
+ \sup_b\sum_{H\ni b}e^{a_*|H|}\norm{E_{\Lambda,H}}_\infty
+ \le2e^2S_{\kappa/2}\widehat\beta,
+ \qquad a_*=\min(1/2,\kappa/4),
+\]
+where $S_{\kappa/2}=\sum_{z\in\mathbb Z^d}e^{-(\kappa/2)|z|}$.
+Under the analogous quarter budgets, the difference from the
+Gaussian-cutoff activities is at most
+$8e^2S_{\kappa/2}\widehat K_Gv$ in this norm.
+
+This statement would be false without controlling the interaction's
+background support. An interaction in cell $i$ that reads an arbitrarily
+remote background variable cannot be assigned support $\{i\}$.
+Nor does strict dependence on the varying background imply consistency
+between volumes: the finite-volume coefficients may still depend on
+the fixed whole-volume baseline. The symmetry and domain caveats of
+Notebook 04 remain in force.
+
+\section{The actual enlarged domain and the remaining interaction theorem}
+
+Write $L_g=\log g^{-2}$, $R=A_1L_g^{p_0}$ and
+$P=C_1L_g^{p_1}$ with $p_1<p_0$. For every fixed $q$,
+\[
+ gR^q=A_1^qe^{-L_g/2}L_g^{qp_0}\longrightarrow0.
+\]
+Thus a fixed physical-field analytic radius permits the larger real
+cutoff, after separately enforcing $gR<r_0$. It does not require
+$R\le P$, which in fact fails for small $g$. A hypothesis $gP<r_0$
+alone is insufficient; a domain only of unscaled radius $P$ cannot
+be enlarged by Schwarz's lemma. After the primitive constants are
+fixed, choose the coupling ceiling last to meet the cluster budget
+and any prescribed absolute error. The constant in $O(gR^3)$ is
+independent of that later target; the ceiling need not be.
+
+When $p_0>1/2$, the Gaussian tail $Ke^{-cR^2}$ is smaller than every
+fixed $gL_g^q$ scale for sufficiently small $g$, since
+$-cA_1^2L_g^{2p_0}+L_g/2-q\log L_g\to-\infty$.
+
+The deposit already contains the appropriate larger-radius calculation.
+Raw II, \texttt{5.2:lem-complex-localisation}, proof Step 3,
+lines 11178--11195, bounds cubic pieces by
+$C(M,\kappa_1)g_k(T^{\C})^3e^{-\kappa_Vd_k(Y)}$, treats merely
+vanishing pieces by a $g_kT^{\C}$ factor, and chooses the coupling
+ceiling after the activity target. Its domain calculation uses
+\[
+ \theta_k^{\C}=K_Rg_kT^{\C}/\alpha_{*,k},\qquad
+ \mathsf w^{\C}=1/\theta_k^{\C}-1,
+ \qquad(1+\mathsf w^{\C})K_Rg_kT^{\C}=\alpha_{*,k}.
+\]
+It invokes physical response containment; it does not claim that
+the larger logarithmic radius fits inside the smaller one. The
+remaining verification is its imported response theorem, complex
+background chart, admitted histories, and summable localized
+coefficient bounds. Raw II's later box-exponent lemma also assumes
+a coupling-flow hypothesis, so it cannot independently prove that
+same hypothesis.
+
+\subsection{Why overlapping interactions need more than the cell theorem}
+
+For a potential $\sum_YV_Y(A,B_Y)$ with overlapping cell sets, define
+$\chi_Y=\prod_{i\in Y}\chi_i$ and
+$w_Y=\chi_Y(e^{V_Y}-1)$, setting $w_Y=0$ outside its cutoff.
+There is an exact identity
+\[
+ \left(\prod_i\chi_i\right)e^{\sum_YV_Y}
+ =\left(\prod_i\chi_i\right)\prod_Y(1+w_Y),
+ \qquad \norm{w_Y}_\infty\le e^{u_Y}-1.
+\]
+If any cutoff fails, both sides vanish; otherwise the identity is
+the product of exponentials. A bad mark in $Y$ also annihilates a
+product containing $w_Y$.
+
+These facts do not imply Theorem~\ref{thm:cell-interaction} for
+overlapping interactions. A covariance mask fails to factorize across
+a partition cut by an interaction hyperedge. Grouping overlapping
+interactions into a molecule $S$ makes a Gaussian block of dimension
+$D|S|$. A crude edge bound can then pay $|S|$ at every incident edge,
+hence $|S|^{d_S}$ at degree $d_S$. The degree factorials from Cauchy's
+formula can consume the factorial savings in tree enumeration.
+One exponential factor in $|S|$ does not control unrestricted powers
+of $|S|$ in that argument. Merely calling these molecules ``cells''
+therefore does not prove convergence.
+
+A natural prospective hypothesis is a small weighted norm
+\[
+ \sup_i\sum_{Y\ni i}e^{a|Y|+\kappa\ell(Y)}(e^{u_Y}-1),
+\]
+with enough reserve for dimensional factors. No theorem that this
+hypothesis alone completes the proposed molecule argument is claimed
+here. One needs a valid allocation of forest edges to fixed cells,
+or an interaction-specific analytic expansion. CMP116, pages 10--11
+and 16--17, uses a field-dependent quadratic-form decomposition and
+a separate Gaussian/determinant resummation. The next precise model
+target is to verify that theorem on the enlarged physical domain,
+with its actual complex operators and history norm.
+
+\section{What these results contribute to the construction}
+
+The flat gauge bridge uses the genuine gauge penalty and both genuine
+constraints. It can transfer a matched axial estimate to the Gaussian
+needed for the cutoff calculation, with explicit coordinate constants.
+Companion Notebook 06 now supplies a direct flat axial gap and the
+complementary energy upper bound, using curvature contraction and a
+compact right inverse to averaging. This replaces the imported flat
+spectral input for the whole-lattice or periodic quadratic model;
+the actual smooth minimizer/constraint identification and complex
+operator estimates remain explicit.
+The physical-field estimates explain how the larger cutoff can be
+handled and identify the linear term that a cubic-only argument misses.
+The fixed-cell theorem closes a complete, limited interaction module.
+
+For the scalar quadratic cutoff coefficient, Raw I, lines 3780--3837,
+extracts the carrier Hessian at $(U,J)=(1,0)$ followed by normalized
+responses and a moment sum. A genuinely flat baseline can therefore
+be sufficient for the direct-Hessian route of Notebook 03. Choosing
+a different baseline $C_0(U_{\rm ref})$ at every real reference only
+localizes perturbation dependence; it leaves arbitrary dependence on
+$U_{\rm ref}$ and proves no full-background locality.
+
+Still required are uniform covariance/response bounds for the actual
+independent-current family, the overlapping interaction estimate, and
+their match to the effective-action induction. Beyond this local RG
+step, continuum compactness, a sufficiently rich observable hierarchy,
+rotation restoration, Yang--Mills identification, nontriviality, and
+a mass gap remain separate obligations listed in Notebook 01.
+
+\begin{thebibliography}{9}
+\bibitem{balaban99} T. Ba\l aban,
+\emph{Propagators for lattice gauge theories in a background field},
+Commun. Math. Phys. 99 (1985), 389--434.
+\href{https://doi.org/10.1007/BF01240355}{Publisher record}.
+\bibitem{balaban109} T. Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field theories I},
+Commun. Math. Phys. 109 (1987), 249--301.
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-3ygai0vxt1.pdf}
+{Copy of the original article}.
+\bibitem{balaban116} T. Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field theories II.
+Cluster expansions}, Commun. Math. Phys. 116 (1988), 1--22.
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-4penm4k7hc.pdf}
+{Copy of the original article}.
+\bibitem{bkar} A. Abdesselam,
+\href{https://mabdesselam.github.io/BKAR.pdf}{Author-hosted notes on the BKAR formula}.
+\bibitem{kp} R. Koteck\'y and D. Preiss,
+\emph{Cluster expansion for abstract polymer models},
+Commun. Math. Phys. 103 (1986), 491--498.
+\href{https://doi.org/10.1007/BF01211762}{Publisher record}.
+\end{thebibliography}
+\end{document}

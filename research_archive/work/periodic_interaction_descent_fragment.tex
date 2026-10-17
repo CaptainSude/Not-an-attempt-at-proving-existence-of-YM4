@@ -1,0 +1,332 @@
+% No preamble. Prefix pid-. Canonical normalized periodization only.
+\section{Bounded finite periodization of analytic interaction classes}
+\label{pid-section}
+
+Use the infinite activity space and normalized-total quotient of
+Notebook29. Fix the cell size $J$, at most $D$ scalar coordinates
+per cell, exponent $a>0$, and radius $b>0$. Carriers are nonempty
+finite connected subsets of the cell graph $\mathbb Z^d$, and
+\begin{equation}
+ \|E\|_{a,b}=\sup_i\sum_{H\ni i}e^{a|H|}\|E_H\|_b,
+ \qquad
+ \Phi_E(A)=\sum_H[E_H(A|_H)-E_H(0)]
+ \label{pid-space}
+\end{equation}
+on compact fields. Let $\Lambda_N=(\mathbb Z/N\mathbb Z)^d$;
+the underlying current lattice has period $NJ$. Write $\pi_N$
+for cell and coordinate projection and $A^{\rm per}$ for the
+infinite periodic lift of a finite field. It is bounded, generally
+not summable. Internal link directions and color types are
+identified by their actual periodic conventions.
+
+\begin{theorem}[Canonical normalized periodization]
+\label{pid-theorem}
+Every class with a $J$-cell-translation-invariant normalized total
+has a translation-covariant representative without increasing the
+norm of any chosen input representative. There is a canonical
+linear periodization map
+\begin{equation}
+ \operatorname{Per}_N:\mathcal Q^{\rm tr}_{a,b}
+                   \longrightarrow\mathcal Q^N_{a,b},
+ \qquad \|\operatorname{Per}_N\|\le1,
+ \label{pid-operator}
+\end{equation}
+where the finite quotient uses connected torus carriers and
+equality of vacuum-normalized totals. Its scalar functional is
+holomorphic on the original open radius-$b$ polydisc. Every
+fixed derivative tensor is the exact relative periodization of
+the infinite total tensor. Total spatial and color symmetries
+pass whenever they preserve the torus. Local gauge invariance
+passes on the specified common logarithmic chart.
+\end{theorem}
+
+The proof retains raw constants in carrier norms and normalizes
+only the total. It does not identify the result with an unrelated
+actual finite-regulator quantum output.
+
+\subsection{Translation averaging without norm loss}
+\label{pid-averaging-section}
+
+Let $\tau_t$ translate carriers, their coordinate slots and their
+functions by a cell-lattice vector $t$. It is an isometry of the
+activity space. If $[E]$ is translation invariant, then
+$[\tau_tE]=[E]$. For centered F\o lner cubes $F_m$, put
+\begin{equation}
+ E^{(m)}=\frac1{|F_m|}\sum_{t\in F_m}\tau_tE.
+ \label{pid-Cesaro}
+\end{equation}
+Its norm is at most $\|E\|_{a,b}$, and for every fixed $s$,
+\begin{equation}
+ \|\tau_sE^{(m)}-E^{(m)}\|_{a,b}
+ \le\frac{|(F_m+s)\mathbin\triangle F_m|}{|F_m|}
+                                      \|E\|_{a,b}\longrightarrow0.
+ \label{pid-Folner-bound}
+\end{equation}
+Each fixed carrier has finitely many input coordinates. Countable
+Montel extraction gives locally uniform limits $E_H^{\rm cov}$
+for all carriers. Fatou, first on finite carrier collections and
+smaller polydiscs and then at the original open radius, yields
+\begin{equation}
+ \|E^{\rm cov}\|_{a,b}\le\|E\|_{a,b}.
+ \label{pid-covariant-bound}
+\end{equation}
+Equation~\eqref{pid-Folner-bound} passes componentwise and gives
+exact covariance. On a compact input supported in $K$, the
+omitted carriers with $|H|>Q$ contribute at most
+$2|K|\|E\|_{a,b}e^{-aQ}$. The finite remaining sum converges,
+so $\Phi_{E^{\rm cov}}=\Phi_E$. No uniqueness of this covariant
+representative is needed.
+
+Only cell translations are averaged. Finer unit translations,
+point symmetries and color invariance need not hold for the
+individual representative and will pass through its total.
+
+\subsection{The exact orbit count and wrapped carrier norm}
+\label{pid-orbit-section}
+
+For a covariant representative define
+\begin{equation}
+ U_N^E(A)=\sum_{i\in\Lambda_N}\sum_{H\ni i}
+                 \frac{E_H(A^{\rm per}|_H)}{|H|},
+ \qquad
+ \Phi_N^{[E]}(A)=U_N^E(A)-U_N^E(0).
+ \label{pid-density}
+\end{equation}
+Choose one fundamental representative for each cell $i$. The
+formula is independent of that choice by covariance. Its series
+is absolutely convergent in the supremum norm on the full open
+$b$ polydisc, bounded by $N^d\|E\|_{a,b}$ before normalization.
+
+Let $\mathcal O$ be an orbit of finite carriers under
+$N\mathbb Z^d$. A nonempty finite carrier has no nonzero
+translation stabilizer. Every point in a representative $H$
+corresponds to exactly one incidence pair $(i,H')$ with
+$i\in\Lambda_N$, $H'\in\mathcal O$ and $i\in H'$. Hence
+\begin{equation}
+ \sum_{i\in\Lambda_N}\sum_{\substack{H'\in\mathcal O\\ i\in H'}}
+                      \frac1{|H'|}=1.
+ \label{pid-incidence}
+\end{equation}
+Covariance and periodicity make the summand value constant on
+the orbit. Therefore
+\begin{equation}
+ U_N^E(A)=\sum_{\mathcal O}E_H(A^{\rm per}|_H),
+                   \qquad H\text{ any representative of }\mathcal O.
+ \label{pid-orbit-sum}
+\end{equation}
+This counts each carrier orbit once, including those whose
+projection is not injective.
+
+For a connected nonempty torus carrier $K$, set
+\begin{equation}
+ E_{N,K}(A|_K)=
+       \sum_{\mathcal O:\,\pi_NH=K}E_H(A^{\rm per}|_H).
+ \label{pid-grouped-family}
+\end{equation}
+Coordinate repetition is a linear map of maximum norm one.
+Every summand is holomorphic on the original $b$ polydisc and
+strictly supported on $K$. Projection preserves connectedness.
+
+Fix a torus cell $j$ and one infinite lift. For every orbit
+meeting $j$, choose one representative containing that lift.
+Distinct orbits give distinct carriers. Since
+$|\pi_NH|\le|H|$, this gives
+\begin{align}
+ \sum_{K\ni j}e^{a|K|}\|E_{N,K}\|_b
+ &\le\sum_{\mathcal O:\,j\in\pi_NH}
+                         e^{a|\pi_NH|}\|E_H\|_b\notag\\
+ &\le\sum_{H\ni j}e^{a|H|}\|E_H\|_b
+ \le\|E\|_{a,b}.
+ \label{pid-wrapped-bound}
+\end{align}
+This proves normal convergence of the grouped family and the
+no-loss carrier estimate. Choosing one incidence here is an
+upper bound for the norm; the exact energy multiplicities were
+already counted in \eqref{pid-incidence}. No factor
+$|\pi_NH|/|H|$ belongs in the energy.
+
+The raw grouped coefficients retain their constants. Normalizing
+each coefficient separately could cost a factor two, and is
+unnecessary. For example the constant singleton family
+$E_{\{i\}}=c$ is the zero normalized class, but its raw periodic
+total is $N^dc$. A canonical unnormalized exponential therefore
+needs an additional vacuum convention.
+
+\subsection{Derivatives, representative independence and local stability}
+\label{pid-kernel-section}
+
+Let $K_n^E(i_1,\alpha_1;\ldots;i_n,\alpha_n)$ be the infinite
+total derivative kernel, with cell indices and internal types
+separated. At every fixed $n$, connected-carrier Cauchy estimates
+give absolute anchored summability with a positive spatial
+exponent. Constants can depend on $n,D,J,a,b$; no uniform
+all-order absolute Taylor norm is being asserted.
+
+Differentiate \eqref{pid-orbit-sum}. A derivative in a periodic
+coordinate differentiates each old occurrence of that coordinate.
+Translate its first occurrence $i_1+Nz_1$ to a fixed lift $i_1$.
+Every carrier through $i_1$ occurs exactly once. The remaining
+slots then range over all their periodic lifts. Thus
+\begin{align}
+ &D^nU_N^E(0)[e_{i_1,\alpha_1},\ldots,e_{i_n,\alpha_n}]
+ \notag\\
+ &\qquad=\sum_{z_2,\ldots,z_n\in\mathbb Z^d}
+ K_n^E(i_1,\alpha_1;
+       i_2+Nz_2,\alpha_2;\ldots;i_n+Nz_n,\alpha_n).
+ \label{pid-kernel-periodization}
+\end{align}
+Repeated finite slots include both coincident and distinct
+infinite lifts with their ordinary multilinear multiplicities.
+Absolute anchored summability justifies the rearrangement.
+
+A null class has all $K_n=0$ for $n\ge1$. Its normalized
+periodic total has every Taylor coefficient zero and hence is
+zero on the connected finite-dimensional $b$ polydisc. Two
+covariant representatives of the same class therefore give the
+same normalized energy. This proves independence of the
+translation-averaging subsequence. The scalar map is linear
+even if representative selection is not. Taking representatives
+approaching the quotient infimum in
+\eqref{pid-covariant-bound},\eqref{pid-wrapped-bound} proves
+\eqref{pid-operator}, and
+\begin{equation}
+ |\Phi_N^{[E]}(A)|\le2N^d\|[E]\|_{\mathcal Q}.
+ \label{pid-energy-bound}
+\end{equation}
+
+There is exact scalar tiling consistency. For an integer $q>0$,
+repeat $A$ on $\Lambda_{qN}$. The density in
+\eqref{pid-density} is then $N$-periodic, so
+\begin{equation}
+ \Phi_{qN}^{[E]}(A\text{ repeated})=q^d\Phi_N^{[E]}(A).
+ \label{pid-tiling}
+\end{equation}
+A rectangular multiple has its corresponding volume factor.
+
+There is also eventual exact stabilization of each fixed lifted
+coefficient. Let $K$ be a fixed finite connected infinite carrier
+and choose, conservatively, $N>4\operatorname{diam}(K)+4$.
+The copies $K+Nz$ are disjoint and nonadjacent. A connected $H$
+with $\pi_NH=\pi_NK$ lies in their union, hence in one copy;
+surjectivity of its projection makes it equal to that copy.
+Equation~\eqref{pid-grouped-family} consequently has one orbit,
+and under lifted coordinates
+\begin{equation}
+ E_{N,\pi_NK}=E_K
+ \label{pid-fixed-carrier}
+\end{equation}
+on the full original polydisc. This gives local normal convergence
+of canonical periodizations without a winding-tail estimate for
+fixed $K$. It asserts neither global norm convergence nor
+stabilization on carriers growing with $N$.
+
+\subsection{Local gradients and exact finite gauge invariance}
+\label{pid-gauge-section}
+
+For a fixed infinite scalar coordinate $i$ and any bounded field
+$\|A\|_\infty\le\rho<b$, define
+\begin{equation}
+ G_i^E(A)=\sum_{H\ni\operatorname{cell}(i)}
+                                 \partial_iE_H(A|_H).
+ \label{pid-gradient}
+\end{equation}
+Directional Cauchy gives
+\begin{equation}
+ |G_i^E(A)|\le\frac{\|E\|_{a,b}}{b-\rho}.
+ \label{pid-gradient-bound}
+\end{equation}
+If $A,B$ agree in a $Q$-cell neighborhood of $i$, each differing
+summand has a connected carrier of size at least $cQ$. Thus
+\begin{equation}
+ |G_i^E(A)-G_i^E(B)|
+       \le\frac{2\|E\|_{a,b}}{b-\rho}e^{-caQ}.
+ \label{pid-gradient-tail}
+\end{equation}
+This proves continuity under compact truncation of bounded
+fields. On compact fields $G_i^E$ is the derivative of
+$\Phi_E$. A null family therefore has $G_i^E=0$ on all
+bounded interior fields, even without covariance of that
+representative.
+
+For a covariant representative, the same first-slot reanchoring
+used above works at any periodic interior field and gives
+\begin{equation}
+ \partial_iU_N^E(A)=G_i^E(A^{\rm per}).
+ \label{pid-periodic-gradient}
+\end{equation}
+This is another proof that null classes periodize to constant
+raw totals and to zero normalized totals.
+
+Suppose the infinite normalized total is locally gauge invariant.
+For a fixed unit-current site $v$, its infinitesimal logarithmic
+gauge field $\mathcal L_v(A)$ reads only the incident bond
+potentials and is supported on those finitely many bonds.
+On compact fields the Ward identity is
+\begin{equation}
+ \sum_{i\text{ incident to }v}
+                    G_i^E(A)\mathcal L_{v,i}(A)=0.
+ \label{pid-local-Ward}
+\end{equation}
+Compactly truncate an arbitrary bounded interior $A$. The local
+generator values stabilize, and \eqref{pid-gradient-tail}
+passes the gradient terms. Thus \eqref{pid-local-Ward} holds
+for bounded periodic fields too. Using
+\eqref{pid-periodic-gradient}, identify all incident orientations
+and periodic multiplicities. The finite total obeys
+\begin{equation}
+ D\Phi_N^{[E]}(A)[\mathcal L_{\lambda,N}(A)]=0
+ \label{pid-finite-Ward}
+\end{equation}
+for every finite torus gauge parameter. No noncompact infinite
+gauge path has been applied to $\Phi_E$; only a local gradient
+identity was extended by absolute convergence.
+
+The logarithmic generator must be holomorphic on the domain.
+If $b$ lies inside its fixed chart radius, the assertion holds
+on the whole open $b$ polydisc. Otherwise keep full-$b$
+holomorphy of the interaction and restrict the gauge assertion
+explicitly to $b_g=\min(b/2,r_{\log}/2)$, where $r_{\log}$ is
+a fixed radius of holomorphy for that generator. The actual
+small-field setup already chooses $b$ inside this chart. Finite
+gauge invariance follows along any gauge path whose fields stay
+in the common domain. Large paths leaving it are not covered.
+
+All finite nonlinear Ward equations also pass coefficientwise
+in field degree. At any fixed order, differentiating the compact
+infinite identity uses finitely many local generator coefficients,
+nearest-neighbor shifts and coincident-slot embeddings of total
+kernels. Equation~\eqref{pid-kernel-periodization} commutes with
+these operations: summing images turns an infinite coincidence
+condition into the exact periodic one. Fixed-order summability
+justifies it. Equivalently, differentiate the exact analytic
+identity \eqref{pid-finite-Ward}.
+
+\subsection{Other symmetries and the finite-history boundary}
+\label{pid-scope-section}
+
+Any finer translation, hypercubic or global color symmetry of
+the infinite total is inherited by its kernels. Relative
+periodization commutes with each symmetry preserving the torus.
+Taylor uniqueness gives the same symmetry of the normalized
+finite total. Negative bonds use the signed reversal of their
+positive-bond logarithmic coordinate. No symmetry of individual
+$E_{N,K}$ is needed. Reality follows similarly; a real covariant
+representative can also be obtained by averaging with its
+complex-conjugate reflection without norm increase.
+
+This completes Theorem~\ref{pid-theorem}. The canonical finite
+functionals have exact Ward identities and a no-loss connected
+representation. They need not equal an unrelated actual
+finite-regulator family. Two uniformly bounded finite sequences
+can have the same infinite local interaction while differing
+by winding-supported terms at every finite size. Compactness
+does not assert those terms are exactly absent.
+
+Consequently, inserting $\operatorname{Per}_N[E]$ into a quantum
+integral requires either an actual history/normalization comparison
+or a construction using these periodized inputs from the outset.
+Stationary backgrounds, retained windows, Gaussian normalizations
+and gauge factors are not identified by periodizing the interaction
+alone. Raw exponentials also require a separately specified vacuum
+convention. No quantum integration identity, continuity of the
+actual quantum update, or infinite induction is proved here.

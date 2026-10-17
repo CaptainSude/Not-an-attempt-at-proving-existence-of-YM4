@@ -1,0 +1,185 @@
+AUDIT AND REPAIR: COVARIANT HESSIAN RELATIVE VERTICES
+18 October 2026. Rotation audit.
+Audited source: covariant_hessian_relative_vertices_research.txt.
+
+STATUS. Sections 2--3 of the source have a sound formal local-gauge
+mechanism. Its original Section4 identity (4.1) was false and cannot
+be used. The repair below proves the desired estimate with an
+explicit gradient-gradient term and one additional hypothesis:
+the flat symbol has vanishing jets of orders zero AND one.
+That hypothesis holds for the actual q_M by the already proved
+uniform midpoint Maxwell normalization. This is not inferred from
+row sums alone.
+
+1. Demonstrated error in the original identity
+
+A transpose-symmetric convolution obeys q_ab(r)=q_ba(-r).
+It need not obey q_ab(r)=q_ba(r). The expression
+ sum_(a,b) q_ab(r) [F_r v_a]^T F_r v_b
+depends only on the a,b-symmetric part of q(r).
+Thus the claimed exact difference-square expression discards its
+odd-r, skew-component part. Reversing r and exchanging a,b does
+not fix this. The standard forward-difference Maxwell symbol
+|d(p)|^2 I-d(p)d(p)^* already has the relevant shifted off-diagonal
+entries. This is the same issue repaired earlier by ordered Laurent
+factorization in low_kernel_spatial_transport_research.md.
+
+2. Correct flat factorization
+
+Let q have an exponentially summable matrix kernel with a uniform
+row AND column norm at exponent sigma>0. Suppose
+ q(1)=0 and every first Laurent derivative of q at 1 is zero.
+The site-tail Fourier symbol of actual q_M has these properties:
+q_mid(p)=|p|^2 I-pp^T+O(p^4), uniformly in M, and the analytic
+midpoint phase change preserves vanishing through degree one.
+
+For a matrix Laurent series F define
+ B_j F(z)=
+ [F(1,...,1,z_j,...,z_d)-F(1,...,1,1,z_(j+1),...,z_d)]/(z_j-1).
+The singularity is removable. Telescoping twice gives
+ q(z)=sum_(rho,tau) (z_rho^-1-1) H_rho,tau(z)(z_tau-1),
+ H_rho,tau=-z_rho B_tau B_rho q.                       (2.1)
+No symmetry at fixed displacement is needed.
+
+A Laurent monomial quotient costs at most |r_j| terms of exponent
+length at most |r|. Spend sigma/4 twice. The combined block kernel
+norm at exponent sigma/2 is bounded, for example, by
+ 16 exp(sigma/2)/(e^2 sigma^2) times the original norm.
+Replace H by (H+H^*)/2, where * interchanges its full gradient/bond
+component indices AND reverses displacement. Since q=q^*, (2.1)
+is unchanged. H is now a symmetric exponentially local operator.
+Color diagonality of q is preserved by this construction.
+
+In operator notation, with D0 the ordinary componentwise gradient
+of a bond field,
+                  q=D0^T H D0.                        (2.2)
+
+3. A covariant comparison operator
+
+Choose reverse-consistent lattice paths between every pair of sites
+as in source Section2. Let W_xy(a) be adjoint transport. Define
+ H^P(a)_(x,rho,alpha;y,tau,beta)
+       =H_(rho,alpha;tau,beta)(y-x) W_xy(a).
+Because H is color scalar and symmetric, H^P is symmetric and
+sitewise gauge covariant. Its zero, first and second background
+Taylor kernels have uniform exponentially rooted bounds: each
+differentiation marks one or two edges of a path of length |x-y|,
+and polynomial multiplicities are paid by an exponential reserve.
+
+Let D_a be the nearest-neighbor covariant gradient acting on each
+bond component at its source site, with the same gauge convention.
+Then
+                  K(a)=D_a^T H^P(a)D_a                 (3.1)
+is symmetric, exactly covariant, analytic through the required
+orders, and K(0)=q. It has the same type of uniform rooted current
+Taylor bounds as the source family L(a). Positivity of H or K is
+not required.
+
+The source's local formal path-gauge comparison applies separately
+to L and K. More explicitly, at each row x use the same formal
+g_x with g_x(x)=I. For a(t)=t mu A, with
+ ||A||_infty+mu^-1||nearest differences A||_infty<=a_*,
+the transformed link coefficients obey
+ |b_1(z)|<=C mu^2 a_* (1+|z-x|)^2,
+ |b_2(z)|<=C mu^2 a_*^2 (1+|z-x|)^2.                    (3.2)
+The first is discrete Stokes; the second follows by counting
+quadratic products in the loop product/logarithm. The same estimates
+hold for complex color components.
+
+Since L and K have the same flat kernel, their endpoint-dressed
+flat comparison is the same q^P. Therefore the source Section3
+argument, applied twice, yields
+ E_j^rem=[t^j](L(tmu A)-K(tmu A)),
+ ||E_1^rem||_Schur<=C mu^2 a_*,
+ ||E_2^rem||_Schur<=C mu^2 a_*^2.                       (3.3)
+This route avoids a potentially delicate termwise identification
+of the different transport paths. Equivalently their difference
+is made of closed loops, whose first two jets have (3.2).
+
+The formal g_x need not lie in a single globally bounded analytic
+gauge domain. Truncate its polynomial jets far from x, apply the
+actual finite covariance identity, and pass in each of the first
+two Taylor coefficients using the exponential source moments.
+No unbounded gauge transformation is performed on a finite analytic
+functional. Boundary truncation terms have polynomial size and an
+exponentially vanishing rooted tail.
+
+4. Corrected coefficient decomposition and relative bound
+
+Write
+ D_a=D0+t U1+t^2 U2+O(t^3),
+ H^P(a)=H+t H1+t^2 H2+O(t^3).
+Nearest-neighbor products and path moments give
+ ||U1||<=C mu a_*,       ||U2||<=C mu^2 a_*^2,
+ ||H1||<=C mu a_*,       ||H2||<=C mu^2 a_*^2.           (4.1)
+The H_j are symmetric. Exact expansion of (3.1) gives
+ L1=D0^T H1 D0+D0^T Z1+Z1^T D0+E1,
+ L2=D0^T H2 D0+D0^T Z2+Z2^T D0+E2,                    (4.2)
+where
+ Z1=H U1,
+ Z2=H U2+H1 U1,
+ E1=E1^rem,
+ E2=U1^T H U1+E2^rem.                                 (4.3)
+These formulas retain the gradient-gradient term and every
+multiplicity. Consequently
+ ||Z1||<=C mu a_*,    ||E1||<=C mu^2 a_*,
+ ||Z2||<=C mu^2 a_*^2,||E2||<=C mu^2 a_*^2.             (4.4)
+
+For R0=Delta_bond+mu^2 I, ||D0 R0^-1/2||<=1 and
+||R0^-1/2||<=mu^-1. Equations (4.1)--(4.4) prove
+ ||R0^-1/2 Lj R0^-1/2||<=C_j a_*^j, j=1,2.             (4.5)
+Mixed second coefficients follow by polarization in the complex
+directions. Constants are uniform in M and K, given the stated
+uniform action-kernel inputs. One could absorb half of H_j D0
+into Z_j using the fixed bound on D0, but (4.2) records the
+derivative structure more transparently.
+
+5. Localization audit
+
+The first two coefficients of D_a and H^P(a) use only their
+nearest-neighbor edges and the chosen endpoint paths. Path
+multiplicities are polynomial. The H and original L exponential
+kernels pay all resulting endpoint/source trees after decreasing
+the exponent. In (3.2) a far source on a gauge path requires its
+endpoint z, or the matrix endpoint y, to be at comparable distance
+from the fixed row x. Thus the original rooted exponential bounds
+pay the additional paths in the remainder as well.
+
+For fields supported in fixed smooth physical collars, complete
+field C1 norms provide the mu^2 curvature factor in (3.2).
+No sharp indicator is differentiated. Source labels can be rooted
+on those collars, and the matrix block bounds follow by summing
+fine-coordinate Schur estimates, with no K^4 fiber count.
+Conjugating with exp(theta f(x/K)) costs exp(C theta mu times
+path length), paid by the same reserve. A gradient commuted past
+this weight produces O(theta mu); cross terms retain the
+required powers in (4.1)--(4.4), including the H_j term.
+
+6. Application scope and verdict
+
+The repaired proof controls the actual action Hessian family
+through second physical-background order, using the actual
+uniform support/Cauchy bounds, covariance and q_M normalization.
+It does not control an arbitrary hard block projection, prove a
+uniform bound for rough physical potentials, or by itself identify
+the full soft-vector determinant correction. That last comparison
+still needs its exact operator identity and the separately proved
+Cbar/source estimates.
+
+VERDICT: original Section4 rejected; repaired Sections2--5 above
+prove the requested relative-vertex lemma under the actual
+zero-and-first flat moment hypothesis. No obstacle was found in
+the original formal local-gauge or source-localization mechanism
+once this factorization is used.
+
+FINAL FIDELITY CHECK. Re-read the repaired parent research file.
+It now includes the missing first-moment hypothesis, ordered Laurent
+factorization, covariant comparison, and the correct absorbed formulas
+Z1=H1 D0/2+H0 F1 and Z2=H2 D0/2+H1 F1+H0 F2.
+Those agree with this repair. The added infinite-structural-system/
+explicit-periodization scope prevents an unproved finite winding-kernel
+identification. No further mathematical correction was found.
+The resulting chr fragment has 22 unique labels, no missing internal
+references, balanced braces and no control characters. No compilation
+or output modification was performed.
+

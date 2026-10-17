@@ -1,0 +1,763 @@
+{
+  "evidence_date": "2026-10-17",
+  "repository_url": "https://github.com/ethanwsussman/Yang--Mills-LLM-experiment",
+  "commit": "e392ef45013a581664bab76b90867170b30fe10e",
+  "working_tree_clean_when_checked": true,
+  "remote_head_revalidated": false,
+  "files": [
+    {
+      "path": "QED3_slop/qed3.pdf",
+      "bytes": 2366350,
+      "sha256": "405a60914b7c368a8a4da9a30d0fa985c6df13dc3bd6ce7a0ddb16b5bde1c52a",
+      "lines": null
+    },
+    {
+      "path": "QED3_slop/qed3_manuscript.pdf",
+      "bytes": 1480349,
+      "sha256": "876162619f1ada5258120402ebe313a5b4a058b3aee8e186ef29131115e2947b",
+      "lines": null
+    },
+    {
+      "path": "QED3_slop/YM_Rotation_Invariance_simplified.pdf",
+      "bytes": 459329,
+      "sha256": "b6d613d17102867e5147934263f7449216714c52f7a9881f2dcce1fa9bf5dd60",
+      "lines": null
+    },
+    {
+      "path": "README.md",
+      "bytes": 1473,
+      "sha256": "ce65039274741a4a0de4e21e4a8a5b030642881c86b49e5eb378b3bcefa03850",
+      "lines": 6
+    },
+    {
+      "path": "README.pdf",
+      "bytes": 170482,
+      "sha256": "f03af501617d29444e93b6f2832ed8f78cb122b8114d02bf7508083dd894b253",
+      "lines": null
+    },
+    {
+      "path": "theorem_0_complete_account_raw_I.tex",
+      "bytes": 10721431,
+      "sha256": "a90c4fb214cf500abcaae45947e2492cbab20b5486d9436602412aedb3f984ad",
+      "lines": 166711
+    },
+    {
+      "path": "theorem_0_complete_account_raw_II.tex",
+      "bytes": 9238564,
+      "sha256": "ae6663f135da01d6c209d00927274ef4f68c83e0181f70b6e061563549ee8b3a",
+      "lines": 145624
+    },
+    {
+      "path": "theorem_0_complete_account_raw_III.tex",
+      "bytes": 7074741,
+      "sha256": "137400ff37a6faf0329032f6267e3c38322aabab63e5c6dd4948a001bfa56159",
+      "lines": 111583
+    },
+    {
+      "path": "theorem_0_complete_account_raw_master.tex",
+      "bytes": 1347,
+      "sha256": "2ac55289748845872591d9b4bda1b3a4996ed36991eeabe722df057f601fccce",
+      "lines": 41
+    },
+    {
+      "path": "ym4_manuscript_zeroth_draft.pdf",
+      "bytes": 2064505,
+      "sha256": "869ed86a1384dbc57277647e2bcd4096f545e533c74e45917c1caccb4868b24b",
+      "lines": null
+    }
+  ],
+  "raw_locators": [
+    {
+      "id": "readme_r4",
+      "file": "README.md",
+      "line_start": 5,
+      "line_end": 6,
+      "label": null,
+      "meaning": "Apparent R4 existence claim and presentation status",
+      "line_start_text": "[LA: At the moment we do (appear to) have a YM4 (i.e. \\R^4, not just in finite volume) existence argument / slop, but it is extremely long and basically not understandable as is. Thus in the meanwhile it is being written much more methodically (thus quite slowly!) and our intention with e.g. QED3 and then YM3 (both also \\R^3) is to show some of the coolest YM4 arguments (e.g. winning O(4)-invariance via an RP trick) in a much simpler, and shorter to write, setting."
+    },
+    {
+      "id": "master_inputs",
+      "file": "theorem_0_complete_account_raw_master.tex",
+      "line_start": 38,
+      "line_end": 40,
+      "label": null,
+      "meaning": "Inputs name absent part1/2/3 files instead of deposited raw I/II/III",
+      "line_start_text": "\\input{theorem_0_complete_account_not_done_for_ethan_v2_part1}"
+    },
+    {
+      "id": "nontriviality",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 2475,
+      "line_end": 2510,
+      "label": "3.1:def-non-trivial",
+      "meaning": "Two-point meaning; generalized-free and composite-Gaussian limitations explicit",
+      "line_start_text": "\\begin{definition}[Non-trivial]\\label{3.1:def-non-trivial}",
+      "label_found": true
+    },
+    {
+      "id": "theorem0",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 2512,
+      "line_end": 2530,
+      "label": "3.1:thm-main",
+      "meaning": "SU2 main theorem, general N only specified clauses",
+      "line_start_text": "\\begin{theoremzero}[SU(2) lattice Yang--Mills theory in four dimensions along Ba{\\l}aban's",
+      "label_found": true
+    },
+    {
+      "id": "flow_scope",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 2533,
+      "line_end": 2554,
+      "label": null,
+      "meaning": "Cumulative flow; no individual sign asserted",
+      "line_start_text": "\\item[(0)] \\emph{Coupling flow.} $K$ is a well-defined non-negative integer, and"
+    },
+    {
+      "id": "one_loop",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 3882,
+      "line_end": 4014,
+      "label": "4.2:lem-one-loop",
+      "meaning": "Normalization, cited finite-part bound, comparison outline",
+      "line_start_text": "Realise the Lie algebra $\\mathfrak{g}$ of $\\mathrm{SU}(N)$ as the traceless Hermitian $N\\times N$",
+      "label_found": true
+    },
+    {
+      "id": "unmarked_incomplete",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 4031,
+      "line_end": 4105,
+      "label": "4.2:lem-unmarked",
+      "meaning": "Explicit incomplete CMP116 to CMP119 cutoff transfer",
+      "line_start_text": "\\begin{lemma}[Bounds on the unmarked part of the increment. Stated; proof incomplete at the",
+      "label_found": true
+    },
+    {
+      "id": "small_field_import",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 4136,
+      "line_end": 4207,
+      "label": "4.3:thm-small-field-step",
+      "meaning": "Family form and altered-domain/cutoff reading",
+      "line_start_text": "\\begin{theorem}[Ba{\\l}aban's one-step small-field renormalization theorem, cited by statement, in the family form in which this book uses it; {\\cite[Theorem~3]{B-CMP109}}]",
+      "label_found": true
+    },
+    {
+      "id": "uv_import",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 4209,
+      "line_end": 4235,
+      "label": "4.3:thm-uv-stability",
+      "meaning": "Conditional complete-density theorem",
+      "line_start_text": "\\begin{theorem}[Ba{\\l}aban's ultraviolet stability theorem {\\cite[Theorem~1]{B-CMP122b}}]",
+      "label_found": true
+    },
+    {
+      "id": "free_current",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 13681,
+      "line_end": null,
+      "label": "4.5:lem-free-current-operators",
+      "meaning": "Independent-current operator interface",
+      "line_start_text": "\\label{4.5:lem-free-current-operators}",
+      "label_found": true
+    },
+    {
+      "id": "classical_chart",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 14496,
+      "line_end": null,
+      "label": "4.5:thm-chart-existence",
+      "meaning": "Classical chart existence input",
+      "line_start_text": "\\begin{theorem}[Existence, uniqueness and analyticity of the response chart]",
+      "label_found": true
+    },
+    {
+      "id": "operators",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 19578,
+      "line_end": null,
+      "label": "4.5:thm-operator-bounds",
+      "meaning": "Free-current operator theorem",
+      "line_start_text": "\\begin{theorem}[Operator bounds at free current]\\label{4.5:thm-operator-bounds}",
+      "label_found": true
+    },
+    {
+      "id": "average_locality",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 24240,
+      "line_end": null,
+      "label": "4.6:lem-averaging-locality",
+      "meaning": "Averaging locality",
+      "line_start_text": "\\label{4.6:lem-averaging-locality}",
+      "label_found": true
+    },
+    {
+      "id": "average_composition",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 24320,
+      "line_end": 24369,
+      "label": null,
+      "meaning": "Corrected composition and flat differential",
+      "line_start_text": "\\begin{gather*}"
+    },
+    {
+      "id": "pivot",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 46960,
+      "line_end": null,
+      "label": null,
+      "meaning": "Pivot normalization and nonlinear constraint expansion",
+      "line_start_text": "contour from $y$ to $x$. For a bond $c$ of the lattice of spacing $L$ let $c_-$, $c_+$ be its"
+    },
+    {
+      "id": "clause_zero_ledger",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 56419,
+      "line_end": 56440,
+      "label": "4.19:prop-clause-zero",
+      "meaning": "Explicit assumptions; stale one-loop incomplete wording",
+      "line_start_text": "\\begin{proposition}[Clause (0) concluded]\\label{4.19:prop-clause-zero}",
+      "label_found": true
+    },
+    {
+      "id": "representation",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 61097,
+      "line_end": null,
+      "label": "4.20:thm-representation",
+      "meaning": "Complete effective representation",
+      "line_start_text": "\\label{4.20:thm-representation}",
+      "label_found": true
+    },
+    {
+      "id": "global_carriers",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 73545,
+      "line_end": null,
+      "label": "4.21:rem-global-chain",
+      "meaning": "Active global-carrier route",
+      "line_start_text": "\\begin{remark}[The four layers are read on the global chain]\\label{4.21:rem-global-chain}",
+      "label_found": true
+    },
+    {
+      "id": "complex_current",
+      "file": "theorem_0_complete_account_raw_I.tex",
+      "line_start": 92401,
+      "line_end": 92620,
+      "label": "4.22:lem-current-localisation",
+      "meaning": "Complex decoupling current correction",
+      "line_start_text": "\\begin{lemma}[Localisation of the current beyond the cut]\\label{4.22:lem-current-localisation}",
+      "label_found": true
+    },
+    {
+      "id": "correlations",
+      "file": "theorem_0_complete_account_raw_II.tex",
+      "line_start": 2791,
+      "line_end": null,
+      "label": "5.1:thm-correlation-theorem",
+      "meaning": "Sourced correlation theorem",
+      "line_start_text": "\\begin{theorem}[The correlation theorem]\\label{5.1:thm-correlation-theorem}",
+      "label_found": true
+    },
+    {
+      "id": "conditional_polydisc",
+      "file": "theorem_0_complete_account_raw_II.tex",
+      "line_start": 46132,
+      "line_end": null,
+      "label": "5.6:prop-polydisc-holomorphy",
+      "meaning": "Localized polydisc branch; not automatically active global route",
+      "line_start_text": "\\label{5.6:prop-polydisc-holomorphy}",
+      "label_found": true
+    },
+    {
+      "id": "volume_free_chapter",
+      "file": "theorem_0_complete_account_raw_II.tex",
+      "line_start": 60348,
+      "line_end": null,
+      "label": "ch:6",
+      "meaning": "Volume-free per-ball bound",
+      "line_start_text": "\\section*{Chapter~\\thesection\\quad A volume-free bound for each ball: clause (iii-b)\\addcontentsline{toc}{section}{\\protect\\numberline{\\thesection}A volume-free bound for each ball: clause (iii-b)}\\label{ch:6}}",
+      "label_found": true
+    },
+    {
+      "id": "chessboard",
+      "file": "theorem_0_complete_account_raw_II.tex",
+      "line_start": 61205,
+      "line_end": null,
+      "label": "6.2:lem-chessboard-estimate",
+      "meaning": "Complex cell chessboard estimate",
+      "line_start_text": "\\begin{lemma}[The chessboard estimate for complex cell observables]\\label{6.2:lem-chessboard-estimate}",
+      "label_found": true
+    },
+    {
+      "id": "limits",
+      "file": "theorem_0_complete_account_raw_II.tex",
+      "line_start": 64630,
+      "line_end": null,
+      "label": "ch:7",
+      "meaning": "Limits, invariance, reconstruction",
+      "line_start_text": "\\section*{Chapter~\\thesection\\quad Limits, invariance, reflection positivity and reconstruction: clause (ii)\\addcontentsline{toc}{section}{\\protect\\numberline{\\thesection}Limits, invariance, reflection positivity and reconstruction: clause (ii)}\\label{ch:7}}",
+      "label_found": true
+    },
+    {
+      "id": "infinite_volume",
+      "file": "theorem_0_complete_account_raw_II.tex",
+      "line_start": 66412,
+      "line_end": null,
+      "label": "7.4:thm-infinite-volume",
+      "meaning": "Explicit R4 theorem with sourced inputs",
+      "line_start_text": "\\begin{theorem}[The infinite-volume theorem]\\label{7.4:thm-infinite-volume}",
+      "label_found": true
+    },
+    {
+      "id": "witness",
+      "file": "theorem_0_complete_account_raw_II.tex",
+      "line_start": 68374,
+      "line_end": null,
+      "label": "ch:8",
+      "meaning": "Two-point witness chapter",
+      "line_start_text": "\\section*{Chapter~\\thesection\\quad A two-point witness of non-triviality: clause (iv)\\addcontentsline{toc}{section}{\\protect\\numberline{\\thesection}A two-point witness of non-triviality: clause (iv)}\\label{ch:8}}",
+      "label_found": true
+    },
+    {
+      "id": "uniqueness",
+      "file": "theorem_0_complete_account_raw_III.tex",
+      "line_start": 5,
+      "line_end": null,
+      "label": "ch:9",
+      "meaning": "Torus uniqueness chapter",
+      "line_start_text": "\\section*{Chapter~\\thesection\\quad Uniqueness up to the renormalised coupling: clause (v)\\addcontentsline{toc}{section}{\\protect\\numberline{\\thesection}Uniqueness up to the renormalised coupling: clause (v)}\\label{ch:9}}",
+      "label_found": true
+    },
+    {
+      "id": "carry_incomplete",
+      "file": "theorem_0_complete_account_raw_III.tex",
+      "line_start": 25267,
+      "line_end": 25268,
+      "label": "9.2:thm-carry",
+      "meaning": "Explicit incomplete supporting statement",
+      "line_start_text": "\\begin{theorem}[The carry lemma. Stated; proof incomplete at the step marked $(\\ast)$]",
+      "label_found": true
+    },
+    {
+      "id": "rotations",
+      "file": "theorem_0_complete_account_raw_III.tex",
+      "line_start": 75922,
+      "line_end": null,
+      "label": "ch:10",
+      "meaning": "O4 under infrared assumption",
+      "line_start_text": "\\section*{Chapter~\\thesection\\quad $\\mathrm{O}(4)$ invariance under an infrared decay hypothesis: clause (vi)\\addcontentsline{toc}{section}{\\protect\\numberline{\\thesection}$\\mathrm{O}(4)$ invariance under an infrared decay hypothesis: clause (vi)}\\label{ch:10}}",
+      "label_found": true
+    },
+    {
+      "id": "rotation_identity",
+      "file": "theorem_0_complete_account_raw_III.tex",
+      "line_start": 76512,
+      "line_end": null,
+      "label": "10.1:thm-rotational-identity",
+      "meaning": "Rotational Ward identity",
+      "line_start_text": "\\begin{theorem}[The rotational Ward identity]\\label{10.1:thm-rotational-identity}",
+      "label_found": true
+    },
+    {
+      "id": "assembly",
+      "file": "theorem_0_complete_account_raw_III.tex",
+      "line_start": 110784,
+      "line_end": 110860,
+      "label": "ch:11",
+      "meaning": "Clause dependency map",
+      "line_start_text": "\\section*{Chapter~\\thesection\\quad Assembly of the proof of Theorem~0 from its clauses\\addcontentsline{toc}{section}{\\protect\\numberline{\\thesection}Assembly of the proof of Theorem~0 from its clauses}\\label{ch:11}}",
+      "label_found": true
+    },
+    {
+      "id": "raw_proof_status",
+      "file": "theorem_0_complete_account_raw_III.tex",
+      "line_start": 110862,
+      "line_end": 110870,
+      "label": null,
+      "meaning": "No clause proved outright; implications",
+      "line_start_text": "\\paragraph{The standing of the clauses.}"
+    },
+    {
+      "id": "outstanding_ledger",
+      "file": "theorem_0_complete_account_raw_III.tex",
+      "line_start": 111167,
+      "line_end": 111360,
+      "label": "ch:13",
+      "meaning": "Outstanding/imported proofs and categories",
+      "line_start_text": "\\section*{Chapter~\\thesection\\quad Statements used without proof in this account\\addcontentsline{toc}{section}{\\protect\\numberline{\\thesection}Statements used without proof in this account}\\label{ch:13}}",
+      "label_found": true
+    }
+  ],
+  "draft_pdf": {
+    "file": "ym4_manuscript_zeroth_draft.pdf",
+    "date": "2026-10-06",
+    "page_convention": "printed pages; extraction page markers agree",
+    "locators": {
+      "abstract": [
+        1
+      ],
+      "setting_and_claims": [
+        3,
+        6
+      ],
+      "definitions": [
+        7,
+        9
+      ],
+      "theorem0": [
+        12,
+        23
+      ],
+      "running_and_stability": [
+        25,
+        40
+      ],
+      "sources": [
+        41,
+        59
+      ],
+      "limits": [
+        60,
+        75
+      ],
+      "witness_and_transfer": [
+        76,
+        112
+      ],
+      "uniqueness": [
+        113,
+        124
+      ],
+      "rotations": [
+        125,
+        141
+      ],
+      "dependency_ledger": [
+        141,
+        151
+      ],
+      "printed_inputs_Pr1_Pr15": [
+        142,
+        143
+      ],
+      "companion_claims_C1_C15": [
+        144,
+        147
+      ],
+      "unfinished_uniqueness_U1_U3_U4_U5_U6": [
+        148,
+        149
+      ],
+      "not_claimed": [
+        150,
+        151
+      ]
+    }
+  },
+  "published_sources": [
+    {
+      "id": "CMP109",
+      "doi": "10.1007/BF01215223",
+      "key_locators": [
+        "Theorem2 p259",
+        "Theorem3 p264",
+        "(1.1)-(1.22)",
+        "Sections4-5"
+      ]
+    },
+    {
+      "id": "CMP116",
+      "doi": "10.1007/BF01239022",
+      "key_locators": [
+        "Sections1-2",
+        "(2.41) pp21-22"
+      ]
+    },
+    {
+      "id": "CMP119",
+      "doi": "10.1007/BF01217741",
+      "key_locators": [
+        "introductory unnumbered theorem p245",
+        "Theorem1 p262",
+        "Section2",
+        "(2.38) p261"
+      ]
+    },
+    {
+      "id": "CMP122I",
+      "doi": "10.1007/BF01257412",
+      "access_scope": "primary PDF inaccessible in latest pass; no new full formula audit"
+    },
+    {
+      "id": "CMP122II",
+      "doi": "10.1007/BF01238433",
+      "key_locators": [
+        "Theorem1 p355",
+        "(0.1) pp355-356",
+        "(1.98)-(1.102) pp390-391"
+      ]
+    },
+    {
+      "id": "AdamsLee",
+      "url": "https://arxiv.org/abs/0709.0781",
+      "scope": "primary one-loop comparison; no automatic import to actual constrained determinant"
+    },
+    {
+      "id": "MagnenRivasseauSeneor",
+      "doi": "10.1007/BF02097397",
+      "scope": "distinct construction with infrared cutoff"
+    }
+  ],
+  "our_notebooks": [
+    {
+      "number": 1,
+      "path": "outputs/ym4-construction-notebook.tex",
+      "title": "proof obligations and verified reductions",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 2,
+      "path": "outputs/ym4-reflection-notebook.tex",
+      "title": "preserving diagonal reflection positivity",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 3,
+      "path": "outputs/ym4-current-cutoff-notebook.tex",
+      "title": "current commutators and Gaussian cutoff clusters",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 4,
+      "path": "outputs/ym4-gaussian-locality-notebook.tex",
+      "title": "strictly local Gaussian cutoff activities",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 5,
+      "path": "outputs/ym4-gauge-interaction-notebook.tex",
+      "title": "the flat gauge bridge and cutoff interactions",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 6,
+      "path": "outputs/ym4-flat-maxwell-notebook.tex",
+      "title": "direct flat Maxwell bounds and a compact lift",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 7,
+      "path": "outputs/ym4-flat-locality-notebook.tex",
+      "title": "locality and refinement limit of the flat Gaussian",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 8,
+      "path": "outputs/ym4-flat-minimizer-notebook.tex",
+      "title": "a local flat minimizing extension",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 9,
+      "path": "outputs/ym4-flat-current-notebook.tex",
+      "title": "the flat fine inverse and a current neighborhood",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 10,
+      "path": "outputs/ym4-flat-curvature-notebook.tex",
+      "title": "local curvature perturbations at a fixed constraint",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 11,
+      "path": "outputs/ym4-full-flat-current-notebook.tex",
+      "title": "the full flat constraint-current family",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 12,
+      "path": "outputs/ym4-flat-regularity-notebook.tex",
+      "title": "fine regularity on the flat current domain",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 13,
+      "path": "outputs/ym4-nonlinear-constraint-notebook.tex",
+      "title": "a uniform nonlinear constraint chart",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 14,
+      "path": "outputs/ym4-nonflat-background-notebook.tex",
+      "title": "nonflat backgrounds and energy stability",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 15,
+      "path": "outputs/ym4-nonlinear-minimizer-notebook.tex",
+      "title": "a uniform nonlinear constrained Wilson minimum",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 16,
+      "path": "outputs/ym4-nonlinear-response-notebook.tex",
+      "title": "local nonlinear responses and the classical coarse action",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 17,
+      "path": "outputs/ym4-gaussian-step-notebook.tex",
+      "title": "joint fluctuation tails and the one-step Gaussian domain",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 18,
+      "path": "outputs/ym4-overlapping-integration-notebook.tex",
+      "title": "integrating overlapping cutoff interactions",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 19,
+      "path": "outputs/ym4-physical-step-notebook.tex",
+      "title": "the physical background Gaussian in the source coordinates",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 20,
+      "path": "outputs/ym4-bare-step-notebook.tex",
+      "title": "the first Wilson small-field integration",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 21,
+      "path": "outputs/ym4-classical-localization-notebook.tex",
+      "title": "local classical actions through arbitrary refinement",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 22,
+      "path": "outputs/ym4-coarse-transport-notebook.tex",
+      "title": "transport into the next coarse background",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 23,
+      "path": "outputs/ym4-gauge-covariance-notebook.tex",
+      "title": "gauge covariance of the small-field step",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 24,
+      "path": "outputs/ym4-inherited-reentry-notebook.tex",
+      "title": "inherited interactions and the next-step norm test",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 25,
+      "path": "outputs/ym4-pre-gauge-notebook.tex",
+      "title": "a smaller representative of the classical gauge orbit",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 26,
+      "path": "outputs/ym4-auxiliary-grouping-notebook.tex",
+      "title": "closing the support-weight compatibility test",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 27,
+      "path": "outputs/ym4-composite-macrostep-notebook.tex",
+      "title": "an exact composite blocking step",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 28,
+      "path": "outputs/ym4-common-domain-notebook.tex",
+      "title": "a fixed analytic ball and high-degree stability",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 29,
+      "path": "outputs/ym4-gauge-extraction-notebook.tex",
+      "title": "total Ward extraction and classical spatial gain",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 30,
+      "path": "outputs/ym4-quantum-descent-notebook.tex",
+      "title": "quantum descent and renormalized block stability",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 31,
+      "path": "outputs/ym4-finite-induction-notebook.tex",
+      "title": "finite local induction and coupling extraction",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 32,
+      "path": "outputs/ym4-determinant-flow-notebook.tex",
+      "title": "determinant composition and finite coupling tuning",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 33,
+      "path": "outputs/ym4-cartan-trace-notebook.tex",
+      "title": "gauge-invariant determinant densities and Cartan probes",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 34,
+      "path": "outputs/ym4-pinned-ghost-notebook.tex",
+      "title": "ghost asymptotics and the physical determinant",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 35,
+      "path": "outputs/ym4-infrared-cancellation-notebook.tex",
+      "title": "infrared cancellation and physical heat bounds",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 36,
+      "path": "outputs/ym4-soft-determinant-notebook.tex",
+      "title": "soft determinants and bounded coarse corrections",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 37,
+      "path": "outputs/ym4-positive-drift/main.tex",
+      "title": "the actual logarithm and finite local ultraviolet tuning",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 38,
+      "path": "outputs/ym4-full-measure-bridge/main.tex",
+      "title": "positive full-measure embeddings and local defect bounds",
+      "classification": "our research proof draft; not repository or published literature"
+    },
+    {
+      "number": 39,
+      "path": "outputs/ym4-normalized-box-replacement/main.tex",
+      "title": "normalized local replacement in the bare Wilson measure",
+      "classification": "our research proof draft; not repository or published literature"
+    }
+  ],
+  "classification_rules": {
+    "source_claim": "reported as asserted; not certified by this map",
+    "published_result": "retains original hypotheses and scheme",
+    "our_work": "research derivation with internal review; no external certification",
+    "historical_note": "must be read with later repair and current dependency ledger"
+  },
+  "version_reconciliation_required": [
+    "Draft pp6/143 companion-completion claim versus raw I4031-4088 and III110862-110870",
+    "Raw I56428-56430 versus current one-loop citation/outline at I3901-3945",
+    "Raw master input filenames versus actual raw parts"
+  ],
+  "main_unclosed_interface": "Full multiscale normalized density/history and external observable construction; fixed bare boxes are not actual RG constraint fibers."
+}

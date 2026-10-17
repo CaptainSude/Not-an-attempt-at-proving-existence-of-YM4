@@ -1,0 +1,248 @@
+% No preamble. Prefix fts-. Conditional finite endpoint tuning only.
+\section{Finite ultraviolet tuning under an averaged drift hypothesis}
+\label{fts-section}
+
+The finite activity induction, leakage estimate, zero-input
+parity remainder and real-coupling continuity are available.
+This section gives a conditional endpoint argument for their
+actual finite local maps. Its additional hypothesis is a
+uniformly positive averaged drift of the \emph{actual finite}
+leading determinant coefficients. That hypothesis is not
+proved here.
+
+\subsection{The actual decrement on the induction envelope}
+\label{fts-decrement-section}
+
+Fix the finite-induction data: elementary ratio $R$, grouping
+$J$, radius $b$, carrier exponent $a_0$, amplitude block length
+$q_a$, endpoint radius $r_b=K_{\mathrm{amp}}b^2$, and intermediate
+bound $C_{\mathrm{int}}b^2$. All references and $\beta_j$ are the
+actual finite reference-normalized ones. For a real extracted
+input define
+\begin{align}
+ d_j(g,x)&=\beta_{j+1}(F_{j,g}(x)),\notag\\
+ \gamma_{j+1}&=\gamma_j-d_j(g_j,x_j),\qquad
+ g_j=\gamma_j^{-1/2},\notag\\
+ x_{j+1}&=P_{j+1}F_{j,g_j}(x_j).
+ \label{fts-actual-update}
+\end{align}
+Real branches and real initial data give real decrements.
+The activity induction applies to every realized weak
+coupling sequence while the permitted periods stay above
+its threshold. In particular $x_0=0$ is allowed.
+
+Write
+\begin{equation}
+ b_{0,j}=\beta_{j+1}
+       \bigl(D_{M_j,R;N_{j+1}}\bigr)
+ \label{fts-leading-coefficient}
+\end{equation}
+for the finite pivot/Gaussian leading correction. It is
+independent of $g$ and of the inherited interaction, but
+depends on the actual classical data and regulator. It is
+not replaced by an independently selected infinite coefficient.
+
+Since every $x_j$ is extracted, the finite leakage bound,
+parity estimate and quantum input comparison give
+\begin{align}
+ |d_j(g,x_j)-b_{0,j}|
+ \leq{}& C_{\mathrm{int}}\omega(N_{\min})
+   +C_{\mathrm{par},\beta}
+       \{\tau(T(g))+g^2T(g)^6\}\notag\\
+ &+C_{\mathrm{in},\beta}\frac{gT(g)}b .
+ \label{fts-decrement-error}
+\end{align}
+The first term is the finite classical leakage, the second
+includes the fixed outer-radius factor, and the third includes
+$C_{\mathrm{int}}$ and the beta bound. This follows from
+$F=T+G$ and $G(x)=G(0)+(G(x)-G(0))$. The $b^2$ in the
+inner-radius remainder cancels beta's $b^{-2}$ bound.
+No exact finite identity $\beta_{\mathrm{out}}T
+=\beta_{\mathrm{in}}$ is used.
+
+At fixed $b,R,J$, any prescribed tolerance $\epsilon>0$
+in \eqref{fts-decrement-error} can be obtained by raising
+one period threshold and then lowering a coupling ceiling.
+The choices are independent of the number of permitted
+steps. The finite-induction magnitude bound also supplies
+\begin{equation}
+                 |d_j(g,x_j)|\leq D_{\mathrm{abs}}
+ \label{fts-absolute-increment}
+\end{equation}
+uniformly on the envelope and in the allowed history lengths
+and regulators.
+
+\subsection{The additional hypothesis and positive block increments}
+\label{fts-hypothesis-section}
+
+\paragraph{Unproved averaged-drift hypothesis.}
+Assume that there are constants $c>0$ and
+$C_{\mathrm{fin}}\geq0$, independent of old depth and the
+permitted finite periods, such that
+\begin{equation}
+       \sum_{j=k}^{k+n-1}b_{0,j}\geq cn-C_{\mathrm{fin}}
+ \label{fts-drift-hypothesis}
+\end{equation}
+on the contemplated stage intervals. It suffices to assume
+this for the block length and starting stages used below.
+No pointwise positivity of an individual coefficient is required.
+
+Choose $q$ to be a positive multiple of $q_a$ with
+$C_{\mathrm{fin}}\leq cq/4$. Strengthen the period and
+coupling thresholds until the error in
+\eqref{fts-decrement-error} is at most $c/4$. Every $q$-step
+sequence of projected maps started in the endpoint ball,
+at arbitrary prescribed couplings in that weak range, then
+satisfies
+\begin{equation}
+ B_-\leq\sum_{j=k}^{k+q-1}d_j(g_j,x_j)\leq B_+,
+ \qquad
+ B_-=\frac{cq}{2}>0,\qquad B_+=qD_{\mathrm{abs}}.
+ \label{fts-block-decrements}
+\end{equation}
+Indeed the lower bound is
+$cq-C_{\mathrm{fin}}-q\epsilon\geq cq/2$, and the upper
+bound follows from \eqref{fts-absolute-increment}.
+
+Each consecutive $q_a$ subblock returns to the same endpoint
+ball. Thus the same $C_{\mathrm{int}}b^2$ envelope controls
+the entire larger block. This step repeats already proved
+quantum blocks; it does not invoke a new direct large-endpoint
+high-degree estimate or require a new field radius depending
+on $q$.
+
+\subsection{A continuous auxiliary clipped recursion}
+\label{fts-clipping-section}
+
+Let $\Gamma_{\mathrm w}=g_{\mathrm w}^{-2}>0$ be the
+strengthened weak threshold. For the shooting proof only,
+evaluate the map for every real scalar $\gamma$ at
+\begin{equation}
+ g_{\mathrm{eval}}(\gamma)
+       =\max\{\gamma,\Gamma_{\mathrm w}\}^{-1/2},
+ \label{fts-clipped-evaluation}
+\end{equation}
+while leaving the scalar update unclipped:
+\begin{align}
+ \gamma_{\mathrm{next}}
+       &=\gamma-d_j(g_{\mathrm{eval}}(\gamma),x),\notag\\
+ x_{\mathrm{next}}
+       &=P_{j+1}F_{j,g_{\mathrm{eval}}(\gamma)}(x).
+ \label{fts-clipped-update}
+\end{align}
+This is auxiliary when $\gamma<\Gamma_{\mathrm w}$; no
+physical density interpretation is assigned there.
+Its evaluated couplings always belong to the proved weak
+range. Starting in the endpoint ball, finite induction
+keeps all activity arguments admissible independently
+of the scalar value.
+
+Joint real-coupling and quotient continuity, together with
+continuity of the maximum in
+\eqref{fts-clipped-evaluation}, makes every finite clipped
+history continuous in its initial $\gamma$. On a compact
+initial interval, \eqref{fts-absolute-increment} bounds all
+intermediate scalars. Hence their evaluated couplings
+belong to a compact positive interval. Neither continuity
+at zero coupling nor a continuous representative selection
+nor a volume-uniform modulus is needed.
+
+Since \eqref{fts-decrement-error} and
+\eqref{fts-drift-hypothesis} apply to every admissible
+realized weak sequence, the clipped history also obeys
+\eqref{fts-block-decrements}.
+
+\subsection{Endpoint tuning and removal of clipping}
+\label{fts-tuning-section}
+
+\begin{theorem}[Conditional finite ultraviolet tuning]
+\label{fts-theorem}
+Assume \eqref{fts-drift-hypothesis} with the uniformity just
+specified. Fix $m\geq1$ and a permitted finite history of
+$mq$ steps whose final period is above the strengthened
+threshold, with the nested-family compatibility conditions.
+Fix a terminal inverse coupling satisfying
+\begin{equation}
+       \Gamma_*\geq\Gamma_{\mathrm w}+qD_{\mathrm{abs}}.
+ \label{fts-terminal-margin}
+\end{equation}
+For $x_0=0$, or any fixed real extracted input in the
+endpoint ball, some initial inverse coupling in
+\begin{equation}
+       [\,\Gamma_*+mB_-,\ \Gamma_*+mB_+\,]
+ \label{fts-shooting-interval}
+\end{equation}
+generates $mq$ genuine weak local extraction steps and
+ends exactly at $\Gamma_*$. The actual scalar relation
+is $\gamma_{j+1}=\gamma_j-\beta_{j+1}(F_{j,g_j}(x_j))$,
+with $g_j=\gamma_j^{-1/2}$ throughout.
+\end{theorem}
+
+\begin{proof}
+Run the clipped recursion with the fixed initial activity.
+Summing \eqref{fts-block-decrements}, the final scalar
+at the left endpoint of \eqref{fts-shooting-interval}
+is at most $\Gamma_*$, while at the right endpoint it
+is at least $\Gamma_*$. Continuity and the intermediate
+value theorem give a clipped history ending at $\Gamma_*$.
+
+For this selected history, sum the positive \emph{future}
+block decrements to obtain
+\begin{equation}
+ \Gamma_*+(m-k)B_-\leq\gamma_{kq}
+                   \leq\Gamma_*+(m-k)B_+,
+ \qquad 0\leq k\leq m.
+ \label{fts-endpoint-bounds}
+\end{equation}
+Within any block, \eqref{fts-absolute-increment} implies
+\begin{equation}
+ \gamma_{kq+r}\geq\gamma_{kq}-rD_{\mathrm{abs}}
+       \geq\Gamma_*-qD_{\mathrm{abs}}
+       \geq\Gamma_{\mathrm w},
+ \qquad 0\leq r\leq q.
+ \label{fts-no-clipping}
+\end{equation}
+Thus clipping never occurred on the selected history.
+Its scalar and activity updates are the actual local
+extraction updates, and its coupling stays weak.
+The exact finite representative and vacuum compensation
+identities implement the same normalized local density
+at every step.
+\end{proof}
+
+The initial bare coupling therefore obeys
+\begin{equation}
+ (\Gamma_*+mB_+)^{-1/2}
+       \leq g_{\mathrm{initial}}
+       \leq(\Gamma_*+mB_-)^{-1/2}.
+ \label{fts-bare-coupling-bounds}
+\end{equation}
+Conditional on the drift hypothesis, this tunes arbitrarily
+long finite histories to one fixed positive weak endpoint,
+with bare coupling of order $m^{-1/2}$. It proves no
+uniqueness of the tuned initial value or consistency between
+the choices at different $m$.
+
+\subsection{What remains unproved}
+\label{fts-scope-section}
+
+The additional input is precisely
+\eqref{fts-drift-hypothesis} for the actual finite
+determinant coefficients with their actual extraction.
+The established activity bounds, parity, continuity and
+qualitative finite leakage do not prove it. A determinant
+cocycle can telescope the infinite counterpart, but a
+quantitative one-loop comparison and finite-regulator
+control must still yield the required positive averaged
+finite drift.
+
+The horizons considered here are multiples of $q$, enough
+for an unbounded ultraviolet subsequence if that drift
+input is supplied. No assertion about every integer
+horizon is needed. The initial period grows to keep the
+final period above the common threshold. The theorem
+does not establish convergence of the tuned measures,
+mixed or large-field histories, a nontrivial continuum
+limit, or reconstruction. Its density statement remains
+the one for the specified homogeneous local extraction
+map and its justified continuation.

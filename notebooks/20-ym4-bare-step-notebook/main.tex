@@ -1,0 +1,418 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 20: the first Wilson small-field integration}
+\author{Research working document}
+\date{17 October 2026}
+\setlength{\emergencystretch}{5em}
+\begin{document}
+\maketitle
+\begin{abstract}
+The physical source-coordinate construction of Notebook 19 and
+the overlap expansion of Notebook 18 yield an actual first-step
+small-field integration of the non-Abelian Wilson action.
+For the bare step, every action term is local before and after
+the exact pivot substitution. This verifies the support-valued
+precision and interaction hypotheses directly. The retained
+sharp cutoff is fixed; its nonlinear Jacobian, Haar density,
+gauge remainder and normalization terms are kept explicitly.
+The normalized fluctuation logarithm has connected activities
+whose anchored norm is bounded by
+$C[gR^3+\exp(-cR^2)]$, for a logarithmic cutoff $R$.
+Constants are uniform in periodic volume at fixed blocking
+ratio. Strict support here is in the independent current
+background. Its transport to the next coarse field, the
+subsequent quantum iterations, and the complementary
+large-field regions remain the next construction steps.
+\end{abstract}
+
+This notebook applies the internally checked finite-regulator
+results in Notebooks 15--19. It is a proof of a specified
+small-field contribution. Completing the full existence
+argument requires that contribution to be incorporated into
+an iteration that controls the whole regulator measure and
+the continuum observable hierarchy.
+
+
+% No preamble. Actual bare first-step application. Unique prefix bs-.
+\section{An actual first-step Yang--Mills small-field integral}
+\label{bs-section}
+
+We now set the preceding depth to $M=1$. The current classical
+action $S_1$ is the original, coupling-free Wilson action. This
+specialization supplies the interaction and precision-locality
+hypotheses directly: no localization theorem for a previously
+minimized action is needed. The block side $L$ is fixed throughout.
+The conclusion is a convergent representation of the specified
+first-step small-field integral, with constants uniform in periodic
+volume. It does not include the complement of that integral or
+an iteration of quantum effective interactions.
+
+Use the exact ordinary constraint, pivot chart $\Phi_V$, and
+absolute contour gauge function $\mathcal G$ of Notebook 19.
+Set $a=\log V/i$ and write
+\begin{equation}\label{bs-action}
+ \mathcal F_V(x)=S_1\bigl(\log(e^{i\Phi_V(x)}V)/i\bigr)
+                   +\mathcal G(e^{i\Phi_V(x)}V).
+\end{equation}
+This symbol is the scalar action plus gauge function; it is not
+the group-valued coarse constraint. On the physical family
+$V=V_*(W)$ constructed in Notebook 19,
+\begin{equation}\label{bs-centered}
+ \mathcal F_V(0)=S_1(a),\qquad D\mathcal F_V(0)=0,\qquad
+ D^2\mathcal F_V(0)=A(V).
+\end{equation}
+On a full product domain of independent small complex current
+link potentials, define $A(V)=D^2\mathcal F_V(0)$ using the
+actual absolute gauge function. This extension need not be
+stationary. Its flat value is
+$A_0=K_L^T(q_1+T_L^TT_L)K_L$ and has the spectral and
+exponential inverse bounds of Notebooks 17 and 19.
+
+\subsection{Finite local action and precision labels}
+
+Assign retained positive bonds to their $L$-blocks. There are
+$d(L^d-1)$ retained bonds per block in the stated periodic pivot
+geometry, so the number of real fluctuation coordinates per
+cell is the fixed integer $D=d(L^d-1)\dim\mathfrak g$.
+The background coordinates assigned to a cell include its pivot
+bonds as well. These background and fluctuation coordinate
+counts need not be equal. All supports below refer to these cells.
+
+Each Wilson plaquette reads four current links. Substitution of
+$e^{i\Phi_V(x)}V$ enlarges this to a fixed neighborhood because
+each pivot correction reads one fixed local stencil. Each gauge
+contour likewise reads a fixed neighborhood. Hence there is an
+exact sum
+\begin{equation}\label{bs-local-action}
+ \mathcal F_V(x)=\sum_r f_r(V|_{Y_r},x|_{Y_r}),
+\end{equation}
+with at most $s_L$ cells in each $Y_r$, tree length at most
+$\ell_L$, and at most $n_L$ labels containing any given cell.
+Periodic occurrences are counted with their multiplicities.
+All $f_r$ are holomorphic and uniformly bounded on a fixed
+larger background/fluctuation polydisc. The constants depend
+on $L$ and the fixed gauge group, not on volume.
+
+Local Cauchy estimates therefore prove, on a smaller polydisc,
+\begin{align}
+ A(V)&=A_0+\sum_r B_r(V|_{Y_r}),\label{bs-precision}\\
+ B_r(V)&=D_x^2f_r(V,0)-D_x^2f_r(1,0),\notag\\
+ \nu_t(b)&:=\sup_i\sum_{r:i\in Y_r}\sum_{j\in Y_r}
+ e^{t\ell(Y_r)}\|(B_r)_{ij}\|_{\|a\|_\infty<b}
+ \le C_{L,t}b.\label{bs-precision-norm}
+\end{align}
+The matrices $B_r$ are symmetric and supported in rows and
+columns in $Y_r$; they read only the background there.
+This is a support-valued precision decomposition, not merely
+a bound on the summed kernel. It retains every constraint and
+ordinary-coordinate curvature term automatically because it
+differentiates the full local functions in \eqref{bs-local-action}.
+
+Define the third-and-higher action interaction on the product
+domain by
+\begin{equation}\label{bs-action-remainder}
+ v_r^{\rm act}(V;g,z)=-g^{-2}\left[
+ f_r(V,gz)-f_r(V,0)-gD_xf_r(V,0)z
+       -\tfrac12g^2D_x^2f_r(V,0)[z,z]\right].
+\end{equation}
+Its singularity at $g=0$ is removable. For $R\ge1$ and
+$|g|R$ below a fixed radius, local Taylor estimates give
+\begin{equation}\label{bs-remainder-norm}
+ \sup_i\sum_{r:i\in Y_r} e^{a_0|Y_r|+\kappa\ell(Y_r)}
+       \|v_r^{\rm act}\|_{b,R}
+       \le C_{L,a_0,\kappa}|g|R^3.
+\end{equation}
+Here the norm includes the independent background product ball
+and the complex fluctuation polydisc of radius $R$ in each
+retained bond coordinate. One obtains the bound by applying
+one-variable Taylor's formula to $t\mapsto f_r(V,tz)$;
+the number of variables per label is bounded at fixed $L$.
+There is no sum over arbitrarily many fine variables: this
+section is specifically the bare $M=1$ step.
+
+Add the normalized ambient straightening-Jacobian and Haar
+logarithms from Notebook 19, grouping all primitive terms with
+equal support. Denote the resulting interaction by $v_Y$.
+The gauge remainder is already part of
+\eqref{bs-action-remainder} and is not added twice. For any
+fixed $a_0,\kappa$,
+\begin{equation}\label{bs-full-interaction}
+ \sup_i\sum_{Y\ni i} e^{a_0|Y|+\kappa\ell(Y)}
+           \|v_Y\|_{b,R}
+ \le C_{L,a_0,\kappa}
+       (|g|R^3+|g|R+|g|^2R^2)
+ \le C'_{L,a_0,\kappa}|g|R^3,
+\end{equation}
+where $|g|R\le1$. The same bound, up to a fixed factor,
+holds for $\|e^{v_Y}-1\|$ when the displayed quantity is
+small. Every term is strictly local in the independent current
+background, even though substituting $V_*(W)$ need not preserve
+finite support in $W$.
+
+\subsection{The retained source cutoff fits the cell theorem}
+
+Let
+\begin{equation}\label{bs-cutoff}
+ \chi_R(z)=\prod_{b\ {\rm retained}}\mathbf1_{\{|z(b)|<R\}},
+\end{equation}
+where $|\cdot|$ is the real color norm. In each cell let $\chi_i$
+be its product of these bond indicators. Then
+$1-\chi_i\le\mathbf1_{\{\|z_i\|_2\ge R\}}$.
+Consequently the cell tail estimates of Notebook 18 also apply
+to these rectangles: their proofs only use a fixed real
+indicator, bounded by one, and the stated bound on its bad
+event. The interaction supremum is taken on the actual
+retained-bond rectangle. Fixed factors converting bond and
+cell norms are included in the constants in
+\eqref{bs-full-interaction}. No complex indicator is introduced.
+The cutoff is an exact pullback because
+$\Phi_V(gz)(b)=gz(b)$ on every retained bond.
+
+\subsection{Closing all smallness conditions in the first step}
+
+Put $C_0=A_0^{-1}$. Choose $0<\kappa<m$ with
+$\kappa+2m$ below its established inverse-decay exponent and
+set $K=\|C_0\|_{\kappa+2m}$. Its real spectral bounds are
+$\lambda=B_*^{-1}$ and $\Lambda_0=\gamma_*^{-1}$.
+Fix $0<\theta\le1/4$, for example $\theta=1/(4D)$.
+The constants in Notebook 18's tunable strictly local theorem
+are now fixed independently of volume and of the coupling.
+Equation \eqref{bs-precision-norm} permits a positive choice
+of $b$ satisfying all its precision smallness conditions.
+Indeed its $\nu$ tends to zero with $b$, and all other
+constants at this stage are finite and fixed.
+
+Let $R(g)=c(\log g^{-2})^p$, where $c>0$, $p>1/2$,
+and $g>0$ is small. Take $a_0=4+\log\mathcal K_\theta$
+in \eqref{bs-full-interaction}, with the density constant of
+that theorem. Its interaction and bad-cell parameters obey
+\begin{equation}\label{bs-parameters}
+ \epsilon(g)\le C_LgR(g)^3,\qquad
+ \tau(g)\le C_L e^{-c_LR(g)^2}.
+\end{equation}
+Both tend to zero. The recovered whole field stays inside
+the chart since $\|\Phi_V(gz)\|_\infty\le C_LgR(g)$.
+Thus a further, volume-independent coupling ceiling enforces
+the chart condition and both quarter budgets of Notebook 18.
+The choice of $b$ precedes that ceiling; small coupling has
+not been used to repair a failed precision estimate.
+
+\begin{theorem}[The bare retained small-field integral]
+\label{bs-theorem}
+There are positive $b,g_0,a_*,C,c_*$, independent of compatible
+periodic volume, such that for $0<g<g_0$ the function
+\begin{equation}\label{bs-normalized-integral}
+ Z_g(V)=\int d\mu_{A(V)^{-1}}(z)\,
+                  \chi_{R(g)}(z)\exp\!\left(\sum_Y v_Y(V,z)\right)
+\end{equation}
+has a holomorphic logarithm on the independent product ball
+$\|\log V/i\|_\infty<b$, and a convergent expansion
+\begin{equation}\label{bs-local-log}
+ \log Z_g(V)=\sum_H E_{g,H}(V|_H),\qquad
+ \sup_i\sum_{H\ni i}e^{a_*|H|}\|E_{g,H}\|_b
+ \le C\{gR(g)^3+e^{-c_*R(g)^2}\}.
+\end{equation}
+The supports $H$ are connected periodic cell sets. The same
+canonical expansion differs from that for the pure Gaussian
+cutoff by at most $CgR(g)^3$ in this norm.
+\end{theorem}
+\begin{proof}
+The covariance baseline, support-valued precision, product
+domain, bounded local interaction multipliers and retained
+cutoff have all been checked above. Apply the tunable strictly
+local theorem and its periodic extension from Notebook 18.
+The right side follows from \eqref{bs-parameters}. The
+analytic continuation is that of the fixed real Gaussian
+integral, with its determinant branch chosen at the real
+positive baseline. It is not a distributional complex
+constraint integral.
+\end{proof}
+
+The product-domain extension subtracts the local linear
+terms in \eqref{bs-action-remainder}. On the physical
+stationary family their sum is zero by \eqref{bs-centered},
+so \eqref{bs-normalized-integral} is exactly the normalized
+fluctuation factor of the original action plus gauge.
+At nonstationary backgrounds it is the explicitly defined
+centered extension, not the unmodified Wilson integral.
+
+\subsection{The normalization terms also have local expansions}
+
+The delta-elimination factor is
+\begin{equation}\label{bs-delta-factor}
+ \mathcal D(V)=\prod_c\det(A_{V,p(c)})^{-1},\qquad
+ \log\frac{\mathcal D(V)}{\mathcal D(1)}
+         =-\sum_c\operatorname{Tr}\log\pi_c(V).
+\end{equation}
+It is a sum of fixed-range local $O(b)$ terms. It has no
+coupling suppression and is not absorbed into
+\eqref{bs-local-log}. The Gaussian normalization similarly
+contributes
+\begin{equation}\label{bs-gaussian-det}
+ \mathcal Q(V)=-\tfrac12\log\det(A(V)A_0^{-1})
+ =\tfrac12\sum_{n\ge1}\frac{(-1)^n}{n}
+                 \operatorname{Tr}[(C_0 B(V))^n],
+ \qquad B(V)=\sum_r B_r(V).
+\end{equation}
+The branch is zero at $V=1$.
+
+For completeness, this determinant has a strict local
+expansion with volume-independent anchored $O(b)$ norm.
+Fix a small $t>0$ below the covariance exponent. A term
+in the expanded trace is a closed chain of covariance
+links and precision labels. Realize each covariance link
+by a chosen shortest periodic path and each label by a
+chosen minimal tree on $Y_r$. Their union $H$ is connected
+and contains every background coordinate read by the term.
+If $i$ is the initial trace cell and $\ell$ is the sum of
+these path/tree lengths, then
+\begin{equation}\label{bs-hull-estimate}
+ |H|\le1+\ell,\qquad d(i,j)\le\ell\quad(j\in H).
+\end{equation}
+Writing $K_t=\|C_0\|_t$ and using
+\eqref{bs-precision-norm}, the sum of absolute matrix
+products at order $n$, rooted at $i$ and weighted by
+$e^{t\ell}$, is at most $D(K_t\nu_t(b))^n$.
+This follows successively from each weighted covariance
+row sum and then each weighted precision-label row sum;
+closing the chain only decreases the unrestricted endpoint
+sum. Choose $a_d,\beta>0$ with $a_d+\beta\le t$.
+For every $j\in H$, \eqref{bs-hull-estimate} gives
+$e^{a_d|H|+\beta d(i,j)}\le e^{a_d}e^{t\ell}$.
+Summing first over rooted chains and then their root yields
+\begin{equation}\label{bs-det-bound}
+ \sup_j\sum_{H\ni j}e^{a_d|H|}\|\mathcal Q_H\|_b
+ \le\frac{De^{a_d}}2
+       \left(\sum_i e^{-\beta d(i,j)}\right)
+       [-\log(1-K_t\nu_t(b))]\le C_L b.
+\end{equation}
+The periodic lattice sum is bounded by its infinite-lattice
+counterpart. A further decrease of $b$ ensures
+$K_t\nu_t(b)<1$. Absolute convergence justifies grouping by
+$H$ and holomorphy of each local activity. The local delta
+terms in \eqref{bs-delta-factor} meet the same type of bound.
+
+\subsection{Exact relation to the constrained group integral}
+
+This subsection makes the field-independent constants and the
+small-field restriction explicit. Let $q=\dim\mathfrak g$,
+let $N_b$ be the number of current positive bonds, $N_c$ the
+number of next-coarse positive bonds, and set
+$n=q(N_b-N_c)$. Choose Lebesgue coordinates orthonormal for
+the normalized trace and write normalized Haar measure near
+the identity as
+$d_H(e^{iX})=c_H j(X)\,dX$, where $j(0)=1$.
+A normalized group delta at the identity consequently pulls
+back to $c_H^{-1}\delta(X)$.
+
+For real physical $V=V_*(W)$ define $I_g^{\rm sf}(V)$ as
+the group integral of
+$\exp[-g^{-2}(S_1(U)+\mathcal G(U))]$
+with constraint $\mathcal M_L(U)=W$, restricted to the local
+chart $U=e^{i\Phi_V(gz)}V$ and the retained rectangle
+\eqref{bs-cutoff}. There are no other indicators in this
+definition. The exact ambient change of variables and pivot
+elimination from Notebook 19 give
+\begin{equation}\label{bs-exact-group-integral}
+ \begin{split}
+ I_g^{\rm sf}(V)={}&
+ c_H^{N_b-N_c}g^n\mathcal D(1)
+       (2\pi)^{n/2}(\det A_0)^{-1/2}\,
+       e^{-S_1(a)/g^2}\\
+ &\times\exp\left\{
+ \log\frac{\mathcal D(V)}{\mathcal D(1)}
+               +\mathcal Q(V)+\sum_HE_{g,H}(V|_H)\right\}.
+ \end{split}
+\end{equation}
+All terms on the second line have convergent strictly local
+current-background expansions. The classical term on the
+first line is kept explicit. At the physical stationary
+background it equals the next constrained minimum action by
+the minimum comparison in Notebook 19.
+
+The exponential gauge can be inserted into a gauge-invariant
+constrained integral on a rooted-gauge-invariant admissible
+domain where the contour mean and ordinary average are defined
+and have their stated equivariance. This domain condition is
+needed for the source's logarithmic averaging maps; no global
+definition on every group configuration is assumed. The
+insertion has a known scalar normalization. Let
+\begin{equation}\label{bs-gauge-normalization}
+ z_G(g)=\int_G d_Hu\,
+       \exp[-g^{-2}(1-\operatorname{Re}\tau u)],
+ \qquad N_s=\#\{\hbox{noncenter current sites}\}.
+\end{equation}
+For rooted site gauges, contour equivariance gives
+$P_{U^u}(y,x)=P_U(y,x)u(x)^{-1}$.
+Haar invariance thus makes the gauge average of
+$e^{-g^{-2}\mathcal G(U^u)}$ exactly $z_G(g)^{N_s}$,
+independently of $U$ in that domain. Averaging a
+gauge-invariant constrained integral over that domain proves
+the gauge-insertion identity with factor
+$z_G(g)^{-N_s}$. This identity holds before the chart
+restriction; the chart piece in
+\eqref{bs-exact-group-integral} then has that same external
+factor. It does not equate a nongauge-invariant sharp chart
+piece before and after gauge insertion.
+
+\subsection{What this first step establishes}
+
+This is an actual non-Abelian Wilson small-field integration,
+including the source constraint geometry, fluctuation
+precision, retained cutoff, classical remainder, Haar density,
+straightening Jacobian, delta determinant and Gaussian
+determinant. Its bounds are uniform in periodic volume.
+It closes the first bare small-field step with no unknown
+coefficient hypotheses.
+
+Three further passages are distinct. First, composing the
+strictly local current-background activities with $V_*(W)$
+requires a locality theorem in the new coarse background.
+Second, subsequent steps must control the previously generated
+quantum interactions with uniform bounds. Notebook 21 supplies
+the intervening localization of the minimized classical action
+and one integration of it uniformly through earlier classical
+depth. Third, the regulator construction must
+control the complement of the chart, including compatible
+large-field histories, and produce the observable bounds
+needed for continuum reconstruction. These are not inferred
+from the first-step theorem.
+
+\begin{thebibliography}{9}
+\bibitem{prior20}
+\emph{Toward a four-dimensional Yang--Mills construction},
+research Notebooks 15--19 in this workspace.
+Notebook 18 proves the overlapping-interaction integration
+theorem and its strict support and periodic extensions.
+Notebook 19 gives the exact physical pivot chart, background
+Gaussian and local measure factors used here.
+\bibitem{balaban10920}
+T.~Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field
+theories I}, Commun. Math. Phys. \textbf{109} (1987), 249--301,
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-3ygai0vxt1.pdf}{original article copy}.
+\bibitem{balaban11620}
+T.~Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field
+theories. II. Cluster expansions},
+Commun. Math. Phys. \textbf{116} (1988), 1--22,
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-4penm4k7hc.pdf}{original article copy}.
+\bibitem{source20}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}{Yang--Mills-LLM-experiment},
+deposited raw accounts at commit
+\texttt{e392ef4501\allowbreak 3a581664ba\allowbreak b76b908671\allowbreak 70b30fe10e}.
+\end{thebibliography}
+\end{document}

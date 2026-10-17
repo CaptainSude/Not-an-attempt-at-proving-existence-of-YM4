@@ -1,0 +1,105 @@
+17 October 2026. Root self-audit of Notebook 33.
+This is an internal check of working proofs, not external certification.
+No subagents or independent mathematical reviewers were used this turn.
+
+Authoritative inputs inspected:
+- gauge_invariant_determinant_density_fragment.tex (full)
+- cartan_determinant_moment_fragment.tex (full)
+- determinant_gauge_bridge_fragment.tex, finite gauge/coarea and Schur proofs
+- determinant_maxwell_trace_fragment.tex, Maxwell normalization
+- one_loop_reference_interface_research.md, reference distinction
+- after_notebook32_state.txt, dependency and scope ledger
+
+GDD / density and moment:
+Left-relative variations transform linearly for a fixed background gauge.
+The multiplier must transform too; retaining it gives covariance of L.
+Fixed scalar aI gives covariance of both Q_b and q_eff+aI.
+Noncenter scalar domain is invariant under sitewise conjugation.
+The based-ghost Poincare bound is deliberately only fixed K.
+The contour-to-horizontal gap argument retains the K0 coordinate norm.
+The H_b decomposition uses the actual effective Schur identity.
+Matrix-log locality uses bounded truncated exponential weights, not an
+unbounded operator similarity. Its constants may deteriorate with K.
+Each diagonal color trace is individually gauge invariant after actual
+stationary substitution, by uniqueness of the constrained critical orbit.
+Each density has zero linear jet by global semisimple color invariance.
+Its Hessian kills compact gradients; exponential summability permits
+polynomial gauges, in particular the constant one-form test.
+Row/column cancellations give -1/4 times the second displacement moment.
+The established total Maxwell extraction is -1/2 times that moment:
+beta=2 times the affine quadratic density coefficient. No extra color sum.
+This step would fail for a merely total-invariant arbitrary density.
+
+CDMOM / affine stationary jets:
+The selected contour mean need only be endpoint and conjugation equivariant;
+it is not assumed log-arithmetic. On commuting affine links its residual
+factor is independent of block center and cancels in translated contours.
+The centered ordinary average preserves the affine family.
+Fine curvature for output curvature t is t/K^2.
+The full Wilson Euler derivative vanishes, including non-Cartan variations.
+Polynomial-kernel inverse uniqueness is used at a fixed endpoint; no
+unbounded nonzero input is inserted into a bounded analytic map.
+For S_M, the envelope identifies the whole multiplier, not just the
+derivative along the affine one-parameter curve. This supplies full
+current stationarity through order two and lambda=O(t^3).
+The effective Hessian s'' remains that of S_M, not a Wilson replacement.
+Uniform current mixed kernels pass these identities to varying-M limits.
+No continuously varying periodic magnetic flux is assumed.
+
+MCR / explicit continuum reference:
+Primary source checked: Vassilevich, arXiv hep-th/0306138, Sections 3.4,
+4.2.1 and 8.3. Operators (3.45)-(3.49), determinant weights (3.51),
+combined heat coefficient (4.34), scalar magnetic heat kernel (8.18).
+https://arxiv.org/pdf/hep-th/0306138
+The source is not evidence for the constrained lattice comparison.
+
+Independent algebra within the note:
+Scalar magnetic heat = (4 pi s)^-2 x/sinh(x).
+Vector spin trace = 2+2 cosh(2x).
+For -1/2 vector log + ghost log the heat bracket is
+(x/sinh x) cosh(2x)-1, whose quadratic coefficient is 11/6.
+Thus beta_ref = 11 C_H/(48 pi^2) E1(m^2 epsilon^2).
+For epsilon=1/K,m=1 its log K coefficient is 11 C_H/(24 pi^2).
+Normalized fundamental trace gives C_H=sum_ij(h_i-h_j)^2=2N^2.
+Complexifying the real adjoint space does not double the trace.
+The vector's real massive bottom is m^2-|qf|; differentiation at zero
+is justified on a smaller real interval. No complex analyticity in
+nonzero constant curvature is asserted (proper-time large tails matter).
+Rescaling current fine time s=K^2 u cancels the K^4 block volume.
+Regulator variations proved bounded are only positive fixed-ratio
+continuum variations, not the actual lattice regulator replacements.
+
+AHC / actual heat identity:
+The weights in beta are 2 log G - log V + log P.
+Consequently the fine heat coefficient is heat(V)-2 heat(G), not its
+negative. P_j in the Duhamel formula are Taylor coefficients, so the
+second insertion coefficient has no extra factor two.
+Flat fixed-K gaps plus weighted semigroups control the affine polynomial
+insertions by C_K(s+s^2)exp(-c_K s). This justifies each diagonal log
+coefficient's proper-time formula and the local-limit interchange.
+All these constants may depend on K.
+The three-interval sufficient lemma is explicitly conditional.
+The middle error integrates to at most 2C/delta. The leading middle
+constant integrates to 2 alpha_H log K.
+
+NEW ACTUAL UNIFORM ESTIMATE / based-ghost short time:
+G_b on a charge sector equals 8I minus nearest-neighbor adjacency on
+noncenter sites, with diagonal 8 even next to a pinned center.
+The affine loop phase is q t area/K^2. The -2 quadratic heat coefficient
+is C_H/K^4 times a positive sum of squared oriented loop areas.
+At most K^4 starting sites cancel the field factor K^-4 exactly.
+At most 8^n walks and |area|<=n^2 give the Poisson fourth moment
+(8s)^4+6(8s)^3+7(8s)^2+8s.
+Its ds/s integral from 0 to 1 is 2280 C_H. This bound is independent
+of M and K and uses the actual pinned domain.
+It bounds the ghost part of the ultraviolet interval only; it does
+not prove the vector ultraviolet bound or a long-time bound.
+
+Remaining mathematical obligations:
+Uniform vector ultraviolet bound, intermediate continuum comparison,
+and integrable combined long-time remainder, or another sufficient
+signed comparison. All must have the required varying-depth scope.
+The original fixed-K pinning soft mode is not removed by notation.
+Full measure matching, mixed/large fields, sourced continuum limits,
+nontriviality, Euclidean covariance, positivity, reconstruction remain.
+No full existence or mass-gap theorem has been established.

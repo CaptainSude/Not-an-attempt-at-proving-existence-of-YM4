@@ -1,0 +1,143 @@
+% No preamble. Source bridge for Notebook18. Unique prefix ib-.
+\section{Using the published localization and integration theorem}
+\label{ib-section}
+
+There is an existing specialized integration route in the literature.
+Ba\l aban's \emph{Renormalization group approach to lattice gauge
+field theories II}, Commun. Math. Phys. \textbf{116} (1988),
+Lemma 2, pp.~10--11, equations (1.41)--(1.43), localizes the
+complete fluctuation exponent, including the difference of inherited
+effective interactions. Lemma 3, p.~20, equation (2.38), and the
+logarithmic estimate (2.41), p.~21, integrate these overlapping
+terms. These results can be used in their published setting;
+another abstract integration theorem is not a prerequisite for
+using them.
+
+\subsection{The actual coefficient and field domains}
+
+The original domain is equation (1.34), p.~9:
+\[
+ \mathcal U^c_{k+1}
+   (Y,(1+\beta)\alpha_0,(1+\beta)\alpha_1,\alpha_0)
+       \;\times\;
+ \{B:|B|<\epsilon_1/g\text{ on }Y\}.
+\]
+The first factor is an orbit domain from CMP109, pp.~262--263,
+equations (1.10)--(1.16). Its restrictions include reconstructed
+backgrounds on subregions. It cannot be replaced solely by an
+unverified global supremum condition. The operator and minimizer
+walk deformations in CMP116, pp.~3--6, are also inputs.
+
+To distinguish two scales, let $M_{\rm loc}$ denote the fixed
+localization cube size in that paper; it is different from the
+refinement $M=L^k$ in our flat covariance theorems. The local
+exponent is organized as
+\[
+ P^{(k)}+\text{inherited-action difference}=\sum_Y V_Y,
+ \qquad
+ V_Y=\tfrac12\langle B,Q_Y(U,J,B)B\rangle+V_Y''(U,J,B).
+\]
+The displayed source bounds are (1.43) for the quadratic kernel
+and (1.36) for the remainder. Their localization weight is a
+normalized minimum tree length meeting the $M_{\rm loc}$ cubes
+of $Y$. It is stronger than a diameter bound and comes with
+the source's specific geometric summations. The source exponent
+contains the Haar, constraint Jacobian and gauge contributions;
+it is not only the bare Wilson cubic remainder.
+
+The original article was inspected through its extracted text.
+Some displayed numerical coefficients are lost in that extraction;
+the numbered source bounds are therefore located here rather than
+reconstructed by guesswork. The matching deposited formulas are
+Raw I:30590--30597 and Raw II:3190--3208. The latter attributes
+(1.43) to CMP109, but that formula in this argument is CMP116
+(1.43), as also recorded at Raw II:11178--11188.
+
+\subsection{The logarithmic-radius transfer}
+
+Fix all geometric and analytic parameters before choosing the
+coupling ceiling. For $R(g)=c(\log g^{-2})^p$, $p>1/2$,
+\[
+ gR(g)<\epsilon_1/2,
+ \qquad gR(g)^3\longrightarrow0,
+ \qquad e^{-c_1R(g)^2}=o(g^q)
+\]
+for every fixed $q>0$. Thus cutoff points in the actual source
+variable lie inside its fixed physical-field analytic radius.
+For localized coefficients holomorphic on that radius and
+vanishing at the indicated orders, radial Schwarz estimates give
+\[
+ \|Q_Y(gB)\|\le a_Y gR,
+ \qquad |V_Y''(gB)|\le a_Y' gR.
+\]
+Fixed inverse powers of the analytic radius are included in
+$a_Y,a_Y'$. On the cutoff this bounds $V_Y$ by $gR^3$ times
+a local coefficient and a polynomial support factor. A reserved
+part of the tree-decay exponent pays for that polynomial.
+Raw II:11178--11195 uses this distinction between cubic and
+merely vanishing contributions.
+
+Changing the real cutoff nevertheless changes the integral.
+In the original integration proof the Gaussian bad-bond gain
+must be rechecked at the new threshold in (2.22), (2.26) and
+(2.31). Its numerical scale is $e^{-cR(g)^2}$, which pays all
+fixed geometric entropy below a sufficiently small coupling
+ceiling. This numerical fact alone does not verify preservation
+of the source's localized operator representations. The
+boundary-specific domain CMP119 (3.43) is not a replacement
+for the whole-lattice interior domain (1.34).
+
+\subsection{Why the tunable density estimate matters}
+
+The first overlap theorem above has a sufficient interaction norm
+containing $K_G^{|Y|}$. If a source localization cube is one cell,
+its real coordinate dimension is $D=O(M_{\rm loc}^4)$, and the
+original $\log K_G$ has that dimension cost. Taking current-unit
+cells instead produces the same loss through their number in
+$Y$. The published coefficient decay does not automatically pay
+this fixed cost: its parameter hierarchy may choose $M_{\rm loc}$
+large after the decay exponent has been fixed. Decreasing the
+coupling cannot cure an unfavorable exponential support exponent.
+
+The tunable real-baseline comparison proved in this notebook
+reduces that cost to $O(\theta D)$ per source cell. Choose
+$\theta$ of order $D^{-1}$, with the source cubes as cells.
+Its Cauchy derivative constant then grows with $\theta^{-1}$,
+but is fixed before the coupling is decreased. This removes
+the automatic $M_{\rm loc}^4$ loss in the support exponent.
+The strict version also requires the displayed precision
+perturbation smallness at that chosen $\theta$.
+
+For example, if a source coefficient bound has sufficient spare
+tree decay to pay the resulting fixed support weight and its
+geometric summation, the Schwarz estimate above implies
+$\epsilon_\theta(g)\le C_\theta gR(g)^3$.
+The interaction and Gaussian-tail smallness conditions then hold
+together below a fixed coupling ceiling. This is a precise
+conversion criterion; the required source decay and precision
+domain must still be matched. Alternatively one can retain
+CMP116's own integration theorem, whose controllably small
+quadratic and determinant errors serve the same purpose.
+
+\subsection{The immediate model-specific proof}
+
+The flat current-scale covariance is supplied by Notebook 17.
+Notebook 19 constructs its nonflat physical-background version,
+the exact relative-field pivot chart, and the local measure
+factors on the homogeneous small-global-potential branch.
+Notebook 20 verifies the full local coefficient and precision
+match for the bare first-step Wilson small-field integral.
+To invoke the original CMP116 theorem on its larger domains,
+one must still show that the background, independent current
+and every restricted reconstruction lie in its orbit domain,
+and match the source's deformed operators.
+If a cutoff or inherited carrier is changed, its exact transfer
+through that proof must be established.
+
+The retained cutoff coordinates in Notebook 19 are preserved
+exactly. Additional indicators retain their own pullbacks.
+The direct first-step proof does not establish the independent
+current and mixed-history domains, transport of support to the
+next coarse background, or the later quantum interactions.
+Those are further model statements needed to close the induction.
+

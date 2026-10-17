@@ -1,0 +1,271 @@
+\section{High-jet differences of the actual quantum step}
+\label{cdq-section}
+
+The background contraction can be combined with the actual
+common-domain fluctuation integral. The result compares two
+admissible complete inherited inputs. It does not assert that
+the quantum step preserves their common low jets.
+
+Use the graphs, radius $b$, exponent $a_0=1/16$ and parameters
+of Theorem~\ref{cdm-theorem}, with the additional choices below.
+Pad absent coefficients by zero so that both inputs have one
+common connected-carrier index set. Write
+\begin{equation}
+ E_j=\sum_HE_{j,H},\qquad
+ \norm{E_j}_{a_0;b}\le\bar\epsilon,\qquad
+ D=E_1-E_2,\qquad D_H=E_{1,H}-E_{2,H}.
+ \label{cdq-inputs}
+\end{equation}
+Both total inputs satisfy the local gauge and logarithm-branch
+hypotheses of \eqref{cdm-input}. Assume the full coefficientwise
+condition
+\begin{equation}
+ D^nD_H(0)=0\qquad(H\text{ arbitrary},\ 0\le n\le4),
+ \label{cdq-common-jets}
+\end{equation}
+including every mixed field derivative. Equality of low jets
+only after summing carriers is not sufficient.
+
+\subsection{Compatible coefficient families}
+\label{cdq-compatibility-section}
+
+Choose one pre-gauge reserve large enough for the stronger
+joint exponent $B=53/8$, and use its same supported
+$a_p=\sum_Xa_{p,i;X}$ in Sections~\ref{cdj-section} and
+\ref{cdh-section}. Fix one sufficiently large $J$, one
+$\ell_{\mathrm{tail}}$, the same support truncation
+$X\subset B_{\ell_{\mathrm{tail}}}(i)$, the same halo
+$K_0(H)=N_{\infty,2}(\pi_RH)$, and the same deterministic
+joining trees and carrier grouping. The stronger joint
+budgets imply the weaker background budgets.
+Also impose the final-radius condition
+\begin{equation}
+ L_H=\frac{R}{8C_A}\ge2,\qquad bL_H\le r_A.
+ \label{cdq-high-disk}
+\end{equation}
+
+In the actual fluctuation family each coefficient has the
+form $a_{p,i;X}+d_{\lambda;i;X}$ with
+$d_{0;i;X}=0$ termwise. Consequently the core/tail expansion
+at fluctuation parameter zero is exactly the background
+expansion at field-scaling parameter one:
+\begin{equation}
+ U^{\mathrm{fluct}}_{K,0}[E]
+   =U^{\mathrm{field}}_{K,1}[E]
+   =(\mathcal T_{R,J}E)_K.
+ \label{cdq-background-identity}
+\end{equation}
+The local coefficient functions, multiindices, support
+occurrences and trees coincide before summing $K$.
+The two proofs may estimate this same assignment in different
+weights. Extra sites of the halo can be retained as declared
+support even when the background coefficient does not read them.
+
+Core/tail differentiation of $E_H$ and support grouping are
+linear in the input family. Thus $\mathcal T_{R,J}$ and the
+inherited joint difference $Q_E$ are linear, and
+\begin{equation}
+ Q_{E_1}-Q_{E_2}=Q_D,\qquad
+ \norm{Q_E}_B\le a_Q\norm{E}_{a_0;b},\qquad
+ a_Q=16C_TC_R\frac{gT}{b}.
+ \label{cdq-Q-linear}
+\end{equation}
+This is the actual estimate \eqref{cdm-inherited-bound}.
+
+For the Gaussian logarithm retain all possible carrier
+labels, including coefficients that happen to vanish.
+Use common forest and hull assignments, precision pieces
+and the normally convergent cluster-log branch. Let
+$\mathcal L(Q)$ denote this one analytic coefficient-valued
+logarithm map with the fixed base exponent and precision.
+The compatible actual output family is
+\begin{equation}
+ \mathscr F(E)=
+ \mathcal T_{R,J}E+\Delta+Q_{\det}+\mathcal L(Q_E).
+ \label{cdq-output-map}
+\end{equation}
+Its scalar sum is precisely \eqref{cdm-update}, with the
+same germ or gauge-orbit density interpretation. The
+classical background, covariance, cutoff, base factors
+and external determinant families are identical for
+the two inputs. No $E$-dependent quantum saddle is used.
+
+\subsection{A two-input Lipschitz estimate}
+\label{cdq-theorem-section}
+
+Set
+\begin{equation}
+ C_H=C_0(8C_A)^5,\qquad
+ C_{\mathrm{quant}}=1024eS_1C_TC_R,
+ \label{cdq-constants}
+\end{equation}
+where $C_0$ is \eqref{cdh-uniform-transport}. It is fixed
+before $R$; $C_{\mathrm{quant}}$ is fixed after the finite
+geometry is selected. Strengthen the allowed budgets to
+\begin{equation}
+ v\le\frac{\eta_*}{64e},\qquad
+ a_Q\bar\epsilon\le\frac{\eta_*}{128e},\qquad
+ e^3\tau(T)\le\eta_*/4,\qquad \eta_*\le1.
+ \label{cdq-budgets}
+\end{equation}
+All precision and domain conditions of
+Theorem~\ref{cdm-theorem} remain in force.
+
+\begin{theorem}[Quantum differences with common low jets]
+\label{cdq-theorem}
+For the compatible families above, condition
+\eqref{cdq-common-jets} implies
+\begin{equation}
+ \norm{\mathscr F(E_1)-\mathscr F(E_2)}_{a_0;b}
+ \le
+ \left(\frac{C_H}{R}
+             +C_{\mathrm{quant}}\frac{gT}{b}\right)
+                       \norm{E_1-E_2}_{a_0;b}.
+ \label{cdq-full-bound}
+\end{equation}
+Writing $\mathcal R_{\ge5}$ for the coefficientwise
+total-degree remainder in \eqref{cdh-projection-bound},
+\begin{equation}
+ \norm{\mathcal R_{\ge5}
+       [\mathscr F(E_1)-\mathscr F(E_2)]}_{a_0;b}
+ \le6\left(\frac{C_H}{R}
+             +C_{\mathrm{quant}}\frac{gT}{b}\right)
+                       \norm{E_1-E_2}_{a_0;b}.
+ \label{cdq-projected-bound}
+\end{equation}
+These estimates are uniform in old depth $M$ and compatible
+volume. They assert a bound for the specified compatible
+canonical families, not for arbitrary localizations of
+the same summed functional.
+\end{theorem}
+
+\begin{proof}
+By \eqref{cdq-background-identity}, the actual background
+difference is the family to which
+Theorem~\ref{cdh-contraction} applies. The coefficientwise
+jet condition gives
+\begin{equation}
+ \norm{\mathcal T_{R,J}D}_{a_0;b}
+                  \le\frac{C_H}{R}\norm{D}_{a_0;b}.
+ \label{cdq-background-bound}
+\end{equation}
+The external $\Delta,Q_{\det}$ cancel coefficientwise.
+Linearity in \eqref{cdq-Q-linear} leaves
+\[
+ \mathscr F(E_1)-\mathscr F(E_2)
+   =\mathcal T_{R,J}D
+       +\mathcal L(Q_{E_2}+Q_D)-\mathcal L(Q_{E_2}).
+\]
+
+If $D=0$ the claim is immediate. Otherwise put
+\begin{equation}
+ q_D=a_Q\norm{D}_{a_0;b},\qquad
+ L_D=\frac{\eta_*}{32e q_D}.
+ \label{cdq-interpolation-radius}
+\end{equation}
+Since $\norm{D}\le2\bar\epsilon$,
+\eqref{cdq-budgets} gives $q_D\le\eta_*/(64e)$ and
+$L_D\ge2$. Interpolate the inherited exponent as
+$Q_{E_2}+\zeta Q_D$ on $|\zeta|<L_D$. Its total exponent
+with the fixed base satisfies
+\begin{equation}
+ \norm{V_{\mathrm{base}}+Q_{E_2}+\zeta Q_D}_B
+ \le
+ \left(\frac1{64}+\frac1{128}+\frac1{32}\right)
+              \frac{\eta_*}{e}
+ =\frac{7\eta_*}{128e}<\frac{\eta_*}{8e}.
+ \label{cdq-exponent-budget}
+\end{equation}
+Equal-carrier exponentiation costs at most $e^xx$, where
+$x$ is this bound. With $\eta_*\le1$ its multiplier norm
+is at most $\eta_*/8$. The tail quarter budget then puts
+the connected-log norm at most $S_1\eta_*$ throughout the
+disk, by \eqref{cdm-log-bound}. Precision and base remain
+fixed, and the cluster theorem supplies one common
+nonvanishing logarithm branch.
+
+The interpolated full input $E_2+\zeta D$ need not stay
+inside the original $\bar\epsilon$ class on this larger
+disk. We have instead verified the actual Gaussian
+interaction budgets directly. Normal convergence gives
+a holomorphic anchored log family. Banach Cauchy, with
+the contour integral before the positive anchored sum,
+therefore yields
+\begin{align}
+ \norm{\mathcal L(Q_{E_1})-\mathcal L(Q_{E_2})}_{a_G;b}
+ &\le\frac{S_1\eta_*}{L_D-1}
+ \le64eS_1q_D\notag\\
+ &\le C_{\mathrm{quant}}\frac{gT}{b}\norm{D}_{a_0;b},
+ \qquad a_G=\frac12.
+ \label{cdq-log-bound}
+\end{align}
+Both endpoints are evaluations of the same canonical
+analytic cluster family, so no independent logarithm
+branch or carrier choice is introduced. Since
+$a_G\ge a_0$, this proves \eqref{cdq-full-bound}.
+Finally \eqref{cdh-projection-bound} has norm at most
+six on the unchanged circular product ball and preserves
+the declared carriers. Applying it proves
+\eqref{cdq-projected-bound}.
+\end{proof}
+
+\subsection{A concrete one-half factor and its limitation}
+\label{cdq-scope-section}
+
+The parameter order can give a concrete projected factor.
+Fix the stronger common reserve and its $C_A,\kappa_0,r_A$,
+then choose a finite power $R=\ell^s$ satisfying all
+previous compression and amplitude conditions and
+\begin{equation}
+ R\ge24C_H.
+ \label{cdq-R-choice}
+\end{equation}
+Choose the common $J$ and tail cutoff afterward, then
+one final $b$ satisfying \eqref{cdq-high-disk} and all
+classical and Gaussian neighborhoods. Finally choose
+$g,T(g)$ to meet \eqref{cdq-budgets} and
+\begin{equation}
+ C_{\mathrm{quant}}gT/b\le1/24.
+ \label{cdq-g-choice}
+\end{equation}
+With a logarithmically growing cutoff the latter holds
+for all sufficiently small $g$ at these fixed parameters.
+Equations \eqref{cdq-full-bound}--\eqref{cdq-projected-bound}
+then give
+\begin{equation}
+ \norm{\mathscr F(E_1)-\mathscr F(E_2)}_{a_0;b}
+       \le\frac1{12}\norm{D}_{a_0;b},\qquad
+ \norm{\mathcal R_{\ge5}
+       [\mathscr F(E_1)-\mathscr F(E_2)]}_{a_0;b}
+       \le\frac12\norm{D}_{a_0;b}.
+ \label{cdq-half-contraction}
+\end{equation}
+The same $b$ is used at input and output. The canonical
+map above uses a common field-independent normalization.
+Separate output vacuum subtraction may double the
+unprojected estimate, but leaves the projected bound
+unchanged because $\mathcal R_{\ge5}$ already kills
+constants.
+
+The scalar sums compared here are differences of the
+actual common-domain quantum map. The proof first
+compares two admissible complete inputs; it does not
+apply a rooted/pre-gauge identity separately to a
+nongauge-invariant extraction. The representation-sensitive
+condition \eqref{cdq-common-jets} and the compatible
+family construction are essential to the norm statement.
+
+The full output difference can regenerate field jets
+of degrees zero through four through the fluctuation
+integral. Thus the quantum map does not preserve the
+affine input class with the prescribed low jets.
+Projecting the output is bounded but need not preserve
+gauge invariance, because gauge transformations are
+nonlinear in these potential coordinates. No
+gauge-invariant low-jet extraction or closed
+relevant/marginal flow has been constructed.
+This contractive response is therefore not yet a
+Banach fixed-point iteration on admissible physical
+activities. Large fields, mixed histories, global
+measure consistency, extraction and coupling flow,
+and continuum observables remain separate.

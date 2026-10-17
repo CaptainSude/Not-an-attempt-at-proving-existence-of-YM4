@@ -1,0 +1,80 @@
+INDEPENDENT AUDIT: FULL-MEASURE FIXED-BOX BRIDGE
+17 October 2026. Audited work/full_measure_box_bridge_fragment.tex
+and its exact dependencies in fixed_box_wilson_tail_fragment.tex
+and the prescribed-plaquette consequence of full_wilson_peierls_fragment.tex.
+PASS. No mathematical correction requested.
+
+1. Boundary gauge.
+The boundary cubical complex is S3. Its two-skeleton has trivial
+fundamental group because adding cells of dimensions >=3 does not
+change pi1. Therefore the finite graph's fundamental loops are in
+the normal closure of boundary plaquette relations. Choosing one
+finite word for each non-tree edge gives a finite L_R. The unitary
+telescoping estimate is valid for the normalized Hilbert--Schmidt
+norm: multiplication and conjugation by unitaries preserve it.
+No bound on the conjugating words is necessary. This is correctly
+restricted to fixed geometry, and uses boundary plaquettes only.
+
+2. Boundary-to-interior representative.
+The union of the chosen boundary spanning tree and the boundary-rooted
+forest is a spanning tree of the full graph. An arbitrary extension
+of the boundary gauge differs from another by a gauge transformation
+identity on the boundary. Unique forest normalization removes that
+difference. Under an original unrestricted gauge transformation, the
+full-tree representative changes only by conjugation at its root.
+
+The revised fbw definition explicitly uses the Ad-invariant edge-max
+Lie-algebra norm. Its boundary neighborhood can be reduced to an
+Ad-invariant product ball. Uniqueness of the conditional minimizer
+then proves its equivariance, and the principal logarithm respects
+conjugation. Hence the resulting full-box event is gauge invariant.
+The norm convention is essential; a maximum of unrelated scalar
+color coordinates would not give exact gauge invariance.
+
+3. Threshold normalization.
+h(P)<epsilon_R^2 implies ||P-I||_tau<sqrt(2)epsilon_R.
+The boundary gauge estimate therefore puts every boundary edge within
+sqrt(2)L_R epsilon_R, exactly the margin used in the fragment.
+The boundary threshold is fixed once R is fixed. No mesh-uniform
+physical regularity is inferred from it.
+
+4. Conditional independence.
+Conditioning on the complement of all integrated interior edge sets
+fixes every boundary edge and its gauge. Every plaquette incident to
+one integrated set lies entirely in that box. Pairwise vertex-disjoint
+boxes have no shared such plaquette, so the conditional action is
+the sum of the separate box actions plus a fixed constant. Product
+Haar factorizes. The forest-window failures are therefore independent
+under this conditioning, and each good-boundary conditional
+probability is bounded by a_g=Ce^-cT^2.
+
+5. Correlated bad boundaries.
+For a subset J of boxes, selecting one offending boundary plaquette
+per box has at most N_boundary^|J| choices. Selected plaquettes are
+distinct by vertex disjointness. The earlier deterministic coloring
+bound gives z_b^(|J|/Q_b) for any such selection, with
+Q_b=b^4 binom(4,2). This bound does not assume independent boundary
+fields. The shifted-grid construction in fwp is valid for b>=3 and
+the stipulated torus periods.
+
+Expanding the choices of boundary-bad versus good-boundary interior
+failure, conditioning the latter, and dropping unused good-boundary
+indicators gives exactly
+ [a_g + N_boundary z_b^(1/Q_b)]^m.
+No factors of m or unexplained decorrelation terms are missing.
+
+6. Weak-coupling asymptotics and scope.
+The fixed epsilon_R^2/g^2 cost dominates the finite b^4 log(1/g)
+normalization cost. The logarithmic conditional window with power
+a>1/2 is also superpolynomially rare. The joint bracket has the
+claimed asymptotic at fixed R,b. Constants depend on the box and
+cannot be read as uniform for boxes growing with refinement.
+
+The event belongs to the complete bare Wilson measure and uses a
+conditional unconstrained minimizer. It is not the nonlinear
+coarse-average fiber event. The fragment correctly retains the
+unproved average-fiber normalization, mixed-history, physical
+regularity and external-source interfaces. No continuum measure
+claim follows from this local full-measure estimate.
+
+No outputs, master files or proof fragments were edited in this audit.

@@ -1,0 +1,290 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\HH}{\mathcal H}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 10: local curvature perturbations at a fixed constraint}
+\author{Research working document}
+\date{16 October 2026}
+\setlength{\emergencystretch}{5em}
+\begin{document}
+\maketitle
+\begin{abstract}
+We identify the orthogonal projection onto feasible curvature
+variations as two curl derivatives of the constrained flat inverse.
+The full inverse estimates of Notebook 09 prove that this projection
+is exponentially local in physical cell Hilbert norm, uniformly in
+refinement and compatible periodic volume. This gives a convergent
+weighted expansion for small local perturbations of the curvature
+metric, with explicit factorial and source-path bounds at every order.
+The averaging constraint is held fixed throughout. Identifying all
+coefficients of an actual nonflat Yang--Mills background remains a
+separate problem.
+\end{abstract}
+
+\noindent\textbf{Status.}
+Research proof checked by a separate internal derivation and audit.
+No external certification or novelty claim is made. The homogeneous
+flat input operators are those matched to the pinned source account
+in Notebooks 08 and 09. Fine spacing is $M^{-1}$ for odd $M$,
+physical coarse spacing is one, and dimension is fixed with $d=4$
+the intended application. All estimates below use the same physical
+normalizations as those notebooks.
+% Fixed-Q curvature perturbations; no standalone preamble.
+% Requires amsmath/amssymb/amsthm, the existing theorem environments,
+% and the existing \norm macro. Labels use the unique prefix curv-.
+\section{Local curvature perturbations at a fixed averaging constraint}
+\label{curv-section}
+
+This section concerns a flat linear problem with its averaging map held
+fixed. It supplies a full weighted analytic neighborhood for perturbing
+the curvature quadratic form. It does not identify a non-Abelian
+background variation, which can also change the averaging constraint,
+covariant derivatives, gauge projection, lower-order terms, and current.
+
+Let $D$ be the fine scalar gradient, $d$ the fine curl, and
+$\mathcal L=D^*D$. Fix $Q=Q_M^{\rm st}$ and its scalar counterpart
+$Q_0$, so that $QD=d_cQ_0$. All fine Hilbert norms use physical fine
+volume, and the coarse cell norm uses counting measure. Retain the
+matched scalar source projection $R$ and scalar inverse $G'$, with
+\begin{equation}\label{curv-scalar-identities}
+ Q_0G'R=0,\qquad \mathcal L G'R=R.
+\end{equation}
+For a fixed positive penalty $a$, let
+\begin{equation}\label{curv-fine-data}
+ \mathcal A_a=d^*d+DRD^*+Q^*aQ,\qquad G_0=\mathcal A_a^{-1},
+ \qquad q_{\rm aux}=(QG_0Q^*)^{-1}=q_M+aI.
+\end{equation}
+Here $q_M$ is the physical Maxwell minimum and $q_{\rm aux}$ is the
+distinct penalized coarse precision. The matched unit-scale source
+has $a=1$. Let
+\begin{equation}\label{curv-extension}
+ H=G_0Q^*q_{\rm aux}=H_{\rm src},\qquad F=dH.
+\end{equation}
+Thus $QH=I$, $RD^*H=0$, and $q_M=F^*F$.
+The full inverse theorem supplies uniform exponential cell $L^2$
+locality for $G_0$ and all its fine derivative sandwiches of total
+order at most two. The minimizing extension theorem supplies the same
+cell locality for $F$. These inputs hold uniformly in odd $M$ and on
+every compatible periodic torus, as well as in homogeneous infinite
+volume. No assertion for general Dirichlet boundaries is used here.
+
+For cell-operator kernels, use the weighted algebra norm
+\begin{equation}\label{curv-schur-norm}
+ \norm{T}_\kappa=
+ \max\left\{\sup_x\sum_y e^{\kappa\operatorname{dist}(x,y)}
+                  \norm{T(x,y)},\quad
+             \sup_y\sum_x e^{\kappa\operatorname{dist}(x,y)}
+                  \norm{T(x,y)}\right\}.
+\end{equation}
+The distance is $\ell^1$ cell distance, or its periodic version.
+The internal norms in \eqref{curv-schur-norm} are operator norms
+between the physical-volume cell Hilbert spaces; this convention
+also applies to maps between coarse bond cells and fine curvature
+cells. The norm is submultiplicative and unchanged by adjoints.
+
+\begin{theorem}\label{curv-theorem}
+Let $\mathcal K=\overline{d\ker Q}$ in the curvature Hilbert space,
+and let $P_{\mathcal K}$ be its orthogonal projection. Then
+\begin{equation}\label{curv-projection}
+ \Gamma=G_0-Hq_{\rm aux}^{-1}H^*,\qquad
+ P_{\mathcal K}=d\Gamma d^*
+   =dG_0d^*-Fq_{\rm aux}^{-1}F^*.
+\end{equation}
+For a sufficiently small fixed $\kappa>0$, the constants
+\begin{equation}\label{curv-local-constants}
+ f=\norm{F}_\kappa,\qquad
+ p=\max\left\{1,\norm{dG_0d^*}_\kappa
+                  +f^2\norm{QG_0Q^*}_\kappa\right\}
+\end{equation}
+are bounded independently of refinement and compatible periodic
+volume, and $\norm{P_{\mathcal K}}_\kappa\le p$.
+
+For any complex curvature operator $V$ satisfying
+$p\norm{V}_\kappa<1$, the expression
+\begin{equation}\label{curv-holomorphic-action}
+ q(V)=q_M+F^*V(I+P_{\mathcal K}V)^{-1}F
+\end{equation}
+is a holomorphic weighted-cell-operator map. On the real selfadjoint
+slice, it equals the constrained positive-form minimum
+\begin{equation}\label{curv-real-minimum}
+ \langle B,q(V)B\rangle
+   =\inf_{QA=B}\langle dA,(I+V)dA\rangle.
+\end{equation}
+It obeys
+\begin{align}
+ \norm{q(V)-q_M}_\kappa
+   &\le\frac{f^2\norm{V}_\kappa}{1-p\norm{V}_\kappa},
+       \label{curv-first-bound}\\
+ \norm{q(V)-q_M-F^*VF}_\kappa
+   &\le\frac{f^2p\norm{V}_\kappa^2}{1-p\norm{V}_\kappa}.
+       \label{curv-remainder-bound}
+\end{align}
+In particular, for disjoint cell-supported operators
+$V=\bigoplus_x V_x$, the condition is the volume-independent bound
+$p\sup_x\norm{V_x}<1$.
+\end{theorem}
+
+\begin{proof}
+The identities $QH=I$ and $G_0\mathcal A_a=I$ give
+\begin{equation}\label{curv-constrained-inverse}
+ Q\Gamma=\Gamma Q^*=0,\qquad
+ \Gamma\mathcal A_a=I-HQ.
+\end{equation}
+Consequently $\Gamma$ is the inverse of the restricted positive
+form on $\ker Q$, extended by zero on its orthogonal complement
+$\operatorname{ran}Q^*$. The latter range is closed because $Q$
+has the bounded right inverse $H$.
+
+For any curvature vector $u$, put $\zeta=\Gamma d^*u$ and
+$r=RD^*\zeta$. The constrained Euler equation is
+\begin{equation}\label{curv-euler}
+ \langle d\zeta-u,d\xi\rangle
+    +\langle RD^*\zeta,RD^*\xi\rangle=0,
+       \qquad \xi\in\ker Q.
+\end{equation}
+Set $\lambda=G'r=G'Rr$. Equation
+\eqref{curv-scalar-identities} gives $Q_0\lambda=0$ and
+$\mathcal L\lambda=r$. Thus $\xi=D\lambda$ is an admissible
+test: $Q\xi=d_cQ_0\lambda=0$, $d\xi=0$, and
+$RD^*\xi=Rr=r$. Equation \eqref{curv-euler} yields
+$\norm{r}^2=0$. It then says that $d\zeta\in\mathcal K$ and
+$u-d\zeta\perp\mathcal K$, proving
+$d\Gamma d^*u=P_{\mathcal K}u$. At each fixed refinement all
+difference operators are bounded, so the same test is valid in
+infinite volume. No refinement-uniform norm for an individual
+fine derivative is needed.
+
+Equation \eqref{curv-projection} now follows by expanding $\Gamma$.
+Its locality estimate follows from the two-derivative inverse bound,
+the locality of $F$, and
+$q_{\rm aux}^{-1}=QG_0Q^*$. In particular, no inverse of the
+massless precision $q_M$ is taken. Submultiplicativity gives
+\eqref{curv-local-constants}.
+
+Flat minimality implies $P_{\mathcal K}F=0$. For a real
+selfadjoint $V$ with $\norm{V}<1$, every feasible curvature lies
+in the affine space $FB+d\ker Q$, whose closure is
+$FB+\mathcal K$. Passing to this closure does not change the
+infimum of the bounded strictly positive form $I+V$.
+The minimizing correction $k\in\mathcal K$ satisfies
+\[
+ (I_{\mathcal K}+P_{\mathcal K}VP_{\mathcal K})k
+       =-P_{\mathcal K}VFB.
+\]
+Substitution gives
+\begin{equation}\label{curv-schur-action}
+ q(V)=q_M+F^*VF-
+ F^*VP_{\mathcal K}(I_{\mathcal K}
+       +P_{\mathcal K}VP_{\mathcal K})^{-1}
+       P_{\mathcal K}VF.
+\end{equation}
+Expanding the inverse and using $P_{\mathcal K}^2=P_{\mathcal K}$
+identifies this with \eqref{curv-holomorphic-action}. Both $V$
+factors in \eqref{curv-schur-action} remain $V$ in the complex
+continuation; replacing one by $V^*$ would destroy holomorphy.
+The Neumann series converges in the weighted algebra for
+$p\norm{V}_\kappa<1$ and proves
+\eqref{curv-first-bound}--\eqref{curv-remainder-bound}.
+This condition implies $\norm{V}<1$, since $p\ge1$, on the real
+selfadjoint slice. Finally a cell-diagonal direct sum has
+$\norm{V}_\kappa=\sup_x\norm{V_x}$.
+\end{proof}
+
+\begin{corollary}[All-order anchored curvature responses]
+\label{curv-all-orders}
+For $n\ge1$,
+\begin{equation}\label{curv-derivative-formula}
+ D^nq(0)[V_1,\ldots,V_n]
+   =(-1)^{n-1}\sum_{\sigma\in S_n}
+       F^*V_{\sigma(1)}P_{\mathcal K}V_{\sigma(2)}
+       \cdots P_{\mathcal K}V_{\sigma(n)}F,
+\end{equation}
+with $n-1$ projection factors. Hence
+\begin{equation}\label{curv-derivative-norm}
+ \norm{D^nq(0)[V_1,\ldots,V_n]}_\kappa
+       \le n!f^2p^{n-1}\prod_{j=1}^n\norm{V_j}_\kappa.
+\end{equation}
+If $V_j$ is supported wholly in curvature cell $x_j$, then the
+block from coarse cell $b$ to coarse cell $c$ obeys
+\begin{align}
+ &\norm{D^nq(0)[V_1,\ldots,V_n](b,c)}\notag\\
+ &\quad\le f^2p^{n-1}\prod_{j=1}^n\norm{V_j}
+       \sum_{\sigma\in S_n}
+       \exp\!\left[-\kappa\left(
+          \operatorname{dist}(b,x_{\sigma(1)})
+          +\sum_{i=1}^{n-1}\operatorname{dist}
+                   (x_{\sigma(i)},x_{\sigma(i+1)})
+          +\operatorname{dist}(x_{\sigma(n)},c)
+                       \right)\right].
+                       \label{curv-anchored-bound}
+\end{align}
+Repeated source cells are allowed, and the same constants apply
+on compatible tori with periodic distance.
+\end{corollary}
+
+\begin{proof}
+Differentiate the Neumann series in
+\eqref{curv-holomorphic-action}. Its homogeneous degree-$n$ term
+has $n-1$ projections and the sign displayed in
+\eqref{curv-derivative-formula}; polarization sums the $n!$
+orders. Equation \eqref{curv-derivative-norm} follows by the algebra
+norm. Each block of an operator of weighted norm $c$ is bounded
+by $ce^{-\kappa\operatorname{dist}}$. Applying this to the two
+$F$ end legs and the $n-1$ projection links gives
+\eqref{curv-anchored-bound}. The cell-supported insertions fix
+every intermediate cell, so there is no spatial convolution
+or unnormalized sum over internal fine coordinates.
+\end{proof}
+
+The cell-diagonal norm identity above uses disjoint cell subspaces.
+Overlapping supports require their actual weighted operator norm
+or an explicit overlap estimate. The theorem controls only the
+curvature metric at fixed $Q$; it does not supply the other terms
+generated by a nonflat Yang--Mills background variation.
+
+\section{Use in the construction program}
+
+A nonflat background changes more than the coefficient of the
+curvature quadratic form. The present theorem isolates a component
+whose complete response is now controlled. To apply it to an actual
+source family, one must identify a curvature coefficient $V$ in the
+stated weighted ball and handle the accompanying changes to the
+covariant derivatives, scalar gauge, corrected average and lower-order
+terms. A finite-regulator derivative formula alone does not verify
+that common domain. The auxiliary-current domain of Notebook 09 is a
+separate proved perturbation direction.
+
+The conclusion concerns the local quadratic reference theory. It
+does not produce the interacting ultraviolet measure, restore all
+continuum symmetries, or establish nontriviality or a physical mass gap.
+Those obligations remain as recorded in Notebook 01.
+
+\begin{thebibliography}{9}
+\bibitem{repo}
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}
+{Pinned Yang--Mills-LLM-experiment account}, commit
+\texttt{e392ef4501\allowbreak 3a581664ba\allowbreak b76b908671\allowbreak 70b30fe10e}.
+\bibitem{previous}
+Companion research notebooks: Notebook 07,
+\emph{Flat covariance locality and its free refinement limit};
+Notebook 08, \emph{A local flat minimizing extension}; and Notebook 09,
+\emph{The flat fine inverse and a current neighborhood}.
+Their internal proofs supply the homogeneous operator estimates
+used here; they do not certify the complete deposited manuscript.
+\end{thebibliography}
+\end{document}

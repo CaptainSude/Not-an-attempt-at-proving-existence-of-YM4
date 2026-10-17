@@ -1,0 +1,376 @@
+% No preamble. Prefix acc-. Fixed future classical system, no drift sign.
+\section{A coupling coordinate with exact classical transport}
+\label{acc-section}
+
+Fix the countable joint infinite homogeneous classical system and
+the invariant quotient recurrence constructed in Notebook30.
+This section changes the marginal coordinate on that system.
+It does not change the physical fields, the Gaussian windows or
+the coupling used to define each actual local integral.
+The construction uses the entire fixed future classical system;
+no independence of different regulator subsequences is asserted.
+
+\subsection{Uniform classical blocks and their marginal leakage}
+\label{acc-input-section}
+
+At stage $j$, let $\mathcal Q_j$ be the invariant analytic
+interaction quotient with the same radius $b$ and carrier
+weight in its current units. Let $S_j$ be the actual full
+ordinary reference and $\beta_j$ the original Maxwell
+functional. Set
+\begin{equation}
+ \beta_j(S_j)=1,\qquad
+ P_j=I-S_j\beta_j,\qquad
+ X_j=\ker\beta_j,\qquad
+ A_j=P_{j+1}\mathcal T_j\big|_{X_j}.
+ \label{acc-definitions}
+\end{equation}
+Here $\mathcal T_j$ is actual classical background
+substitution, and the ordinary minimum identity gives
+\begin{equation}
+                         \mathcal T_jS_j=S_{j+1}.
+ \label{acc-reference-identity}
+\end{equation}
+Recall the uniform bounds
+\begin{equation}
+ \|\beta_j\|\le C_\beta b^{-2},\qquad
+ \|S_j\|\le C_Sb^2,\qquad
+ \|P_j\|\le p,\qquad
+ \|\mathcal T_j\|\le B_T.
+ \label{acc-norm-inputs}
+\end{equation}
+The constants are independent of the later inner-radius
+restriction and the homogeneous stage. They may depend
+on the fixed geometry and support weights.
+
+Assume, as supplied by the finite-block classical estimate,
+that for one fixed integer $q\ge1$ and $0\le\theta<1$,
+\begin{equation}
+ \|A_j\|\le B,\quad B\ge1,\qquad
+ \|A_{j+q-1}\cdots A_j\|_{X_j\to X_{j+q}}\le\theta
+                         \quad\hbox{for every }j.
+ \label{acc-block-input}
+\end{equation}
+Define
+\begin{equation}
+ U_{j,0}=I_{X_j},\qquad
+ U_{j,n}=A_{j+n-1}\cdots A_j,\qquad
+ \ell_j(e)=\beta_{j+1}(\mathcal T_je),\quad e\in X_j.
+ \label{acc-evolution-leakage}
+\end{equation}
+No identity $\ell_j=0$ is assumed. Its norm satisfies
+\begin{equation}
+                         \|\ell_j\|\le C_\beta B_Tb^{-2}.
+ \label{acc-leakage-bound}
+\end{equation}
+Writing $n=mq+r$ with $0\le r<q$ and grouping consecutive
+blocks from the initial stage gives
+\begin{equation}
+            \|U_{j,n}\|\le B^r\theta^m
+                         \le B^{q-1}\theta^{\lfloor n/q\rfloor}.
+ \label{acc-evolution-decay}
+\end{equation}
+No commutation of different stages is used.
+
+\subsection{A convergent dual correction}
+\label{acc-dual-section}
+
+\begin{theorem}[Adapted marginal functional]
+\label{acc-adapted-theorem}
+There is a unique uniformly bounded family of linear
+functionals $k_j:X_j\to\mathbb C$ satisfying
+\begin{equation}
+                         k_j=\ell_j+k_{j+1}A_j.
+ \label{acc-cohomological}
+\end{equation}
+It is given by the absolutely convergent dual-norm series
+\begin{equation}
+                k_j(e)=\sum_{n\ge0}\ell_{j+n}(U_{j,n}e),
+ \qquad
+ \|k_j\|\le C_kb^{-2},\qquad
+ C_k=\frac{C_\beta B_T B^{q-1}q}{1-\theta}.
+ \label{acc-series}
+\end{equation}
+The new functional
+\begin{equation}
+                  \widehat\beta_j=\beta_j+k_jP_j
+ \label{acc-adapted-beta}
+\end{equation}
+satisfies
+\begin{equation}
+ \widehat\beta_j(S_j)=1,\qquad
+ \|\widehat\beta_j\|\le C_{\widehat\beta}b^{-2},
+ \quad C_{\widehat\beta}=C_\beta+C_kp,\qquad
+ \widehat\beta_{j+1}\mathcal T_j=\widehat\beta_j.
+ \label{acc-exact-transport}
+\end{equation}
+Uniqueness concerns the specified fixed future classical
+system, not a comparison of different classical limits.
+\end{theorem}
+\begin{proof}
+Equations \eqref{acc-leakage-bound} and
+\eqref{acc-evolution-decay} give
+\[
+ \sum_{n\ge0}\|\ell_{j+n}U_{j,n}\|
+ \le C_\beta B_Tb^{-2}B^{q-1}
+                 \sum_{m\ge0}\sum_{r=0}^{q-1}\theta^m
+ =C_kb^{-2}.
+\]
+Thus \eqref{acc-series} converges absolutely in the dual
+Banach space. Separating its first term and shifting the
+remaining index proves \eqref{acc-cohomological}.
+
+If two uniformly bounded families solve that equation,
+their difference $d_j$ obeys
+$d_j=d_{j+n}U_{j,n}$ for every $n$.
+The common bound and \eqref{acc-evolution-decay} force
+$d_j=0$. This argument is for the fixed $b$ and the
+fixed future system.
+
+The normalization and norm in \eqref{acc-exact-transport}
+follow immediately from $P_jS_j=0$ and
+\eqref{acc-norm-inputs}. To prove the last identity,
+decompose $x=sS_j+e$ with $s=\beta_j(x)$ and $e=P_jx$.
+Then
+\begin{equation}
+ \mathcal T_jx=(s+\ell_j(e))S_{j+1}+A_je.
+ \label{acc-classical-decomposition}
+\end{equation}
+Applying $\widehat\beta_{j+1}$ and using
+\eqref{acc-cohomological} gives
+$s+\ell_j(e)+k_{j+1}(A_je)=s+k_j(e)
+=\widehat\beta_j(x)$.
+\end{proof}
+
+If the original data preserve the real form, every term
+of \eqref{acc-series} is real on real inputs; the adapted
+functionals therefore preserve that real form.
+The new full-reference projection
+\begin{equation}
+ \widehat P_j=I-S_j\widehat\beta_j,\qquad
+                 \|\widehat P_j\|\le1+C_SC_{\widehat\beta}
+ \label{acc-adapted-projection}
+\end{equation}
+has a bound independent of $b$. The original $\beta_j$
+remains the local Maxwell coefficient. The adapted
+$\widehat\beta_j$ is a bounded coordinate choice, not a
+newly asserted Ward classification.
+
+For completeness, the two irrelevant spaces are explicitly
+conjugate. Define
+\begin{equation}
+ J_j:X_j\longrightarrow\ker\widehat\beta_j,\qquad
+                       J_j(e)=e-k_j(e)S_j.
+ \label{acc-conjugating-map}
+\end{equation}
+Then
+\begin{equation}
+ \|J_j\|\le1+C_SC_k,\qquad
+ J_j^{-1}=P_j\big|_{\ker\widehat\beta_j},\qquad
+                    \mathcal T_jJ_j=J_{j+1}A_j.
+ \label{acc-conjugacy}
+\end{equation}
+Indeed $P_jJ_j(e)=e$ and
+$\widehat\beta_j(J_j(e))=0$. Conversely,
+$\widehat\beta_j(x)=0$ implies
+$x=P_jx-k_j(P_jx)S_j$. Finally
+\eqref{acc-classical-decomposition} and
+\eqref{acc-cohomological} give the intertwining identity
+in \eqref{acc-conjugacy}. This does not claim a new
+one-step contraction in an unchanged norm.
+
+\subsection{The exact density coordinate}
+\label{acc-density-section}
+
+Write the normalized density at stage $j$ as
+\[
+                  \exp[-\gamma_jS_j+e_j],
+            \qquad \gamma_j=g_j^{-2},\quad e_j\in X_j.
+\]
+Set
+\begin{equation}
+ \widehat\gamma_j=\gamma_j-k_j(e_j),\qquad
+                  \widehat e_j=e_j-k_j(e_j)S_j.
+ \label{acc-density-coordinate}
+\end{equation}
+Then $\widehat e_j\in\ker\widehat\beta_j$ and
+\begin{equation}
+                 -\widehat\gamma_jS_j+\widehat e_j
+                              =-\gamma_jS_j+e_j
+ \label{acc-density-equality}
+\end{equation}
+exactly. On the established quadratic envelope
+$\|e_j\|\le C_{\rm int}b^2$,
+\begin{equation}
+ |\widehat\gamma_j-\gamma_j|\le C_kC_{\rm int},\qquad
+ \|\widehat e_j\|\le(1+C_SC_k)C_{\rm int}b^2.
+ \label{acc-coordinate-size}
+\end{equation}
+For real data a sufficiently large positive inverse coupling
+therefore remains positive under this coordinate change.
+The actual Gaussian map still uses the original
+$g_j=\gamma_j^{-1/2}$ and its prescribed threshold.
+Reevaluating it at $\widehat\gamma_j$ would change the
+integration data and is not part of this identity.
+
+Let the actual local quantum correction at that fixed
+coupling be
+\begin{equation}
+             \mathcal F_{j,g}(e)
+                   =\mathcal T_je+\mathcal G_{j,g}(e).
+ \label{acc-quantum-decomposition}
+\end{equation}
+The original density-preserving extraction is
+\begin{equation}
+ \gamma_{j+1}
+   =\gamma_j-\beta_{j+1}(\mathcal F_{j,g_j}(e_j)),\qquad
+ e_{j+1}=P_{j+1}\mathcal F_{j,g_j}(e_j).
+ \label{acc-original-update}
+\end{equation}
+Combining \eqref{acc-adapted-beta},
+\eqref{acc-exact-transport} and
+\eqref{acc-density-coordinate} yields the exact adapted drift:
+\begin{align}
+ \widehat\gamma_{j+1}
+ &=\gamma_j-\widehat\beta_{j+1}
+                           (\mathcal F_{j,g_j}(e_j))\notag\\
+ &=\widehat\gamma_j-
+                         \widehat\beta_{j+1}
+                           (\mathcal G_{j,g_j}(e_j)).
+ \label{acc-adapted-update}
+\end{align}
+The classical leakage has disappeared from the scalar
+equation by a bounded change of coordinate. No sign
+information has been introduced.
+
+\subsection{The inherited contribution is small}
+\label{acc-inherited-section}
+
+Restate the fixed-coupling quantum quotient estimate from
+Notebook30:
+\begin{equation}
+ \|\mathcal G_{j,g}(x)-\mathcal G_{j,g}(y)\|_{\mathcal Q,b}
+ \le C_{\rm quant}\frac{gT(g)}b\,
+                         \|x-y\|_{\mathcal Q,b}
+ \label{acc-quantum-input-bound}
+\end{equation}
+on its common admissible neighborhood. It does not compare
+two different coupling parameters. On the quadratic
+amplitude envelope, \eqref{acc-exact-transport} gives
+\begin{equation}
+ \left|\widehat\beta_{j+1}
+       (\mathcal G_{j,g}(e_j)-\mathcal G_{j,g}(0))\right|
+ \le C_{\widehat\beta}C_{\rm quant}C_{\rm int}
+                                      \frac{gT(g)}b.
+ \label{acc-inherited-drift}
+\end{equation}
+For fixed positive $b$ and the prescribed thresholds,
+the right side tends to zero as $g\downarrow0$.
+Thus the leading adapted drift is insensitive to the
+inherited irrelevant amplitude up to a controlled
+vanishing error. The original quantity
+$\beta_{j+1}(\mathcal T_je_j)$ need not itself be small.
+
+\subsection{The remaining determinant and pivot coefficient}
+\label{acc-leading-section}
+
+For the step from $j$ to $j+1$ let
+\begin{equation}
+                 D_j=\Delta_j+\mathcal Q_{{\rm det},j}
+                    \quad\hbox{as a class in }\mathcal Q_{j+1}.
+ \label{acc-leading-definition}
+\end{equation}
+The fixed-threshold parity theorem of
+Section~\ref{cgp-section}, evaluated afterward at $T(g)$,
+gives on one fixed outer field radius $\rho$
+\begin{equation}
+ \|[\mathcal G_{j,g}(0)-D_j]\|_{\mathcal Q,\rho}
+               \le C_{\rm par}\,[\tau(T(g))+g^2T(g)^6].
+ \label{acc-outer-error}
+\end{equation}
+The constants are uniform in $j$ on the fixed homogeneous
+system. Since the complete zero-input totals are invariant,
+the norm limit $D_j$ is invariant as a total. For the
+semisimple color group, the total first derivative of
+the difference vanishes.
+
+It is important to restrict this error correctly before
+applying the inner-radius functional $\widehat\beta$.
+For $b\le\rho/2$, remove the degree-zero and degree-one
+background sectors coefficientwise and use homogeneous
+phase projection. The normalized class is unchanged, and
+the resulting bound is
+\begin{equation}
+ \|[\mathcal G_{j,g}(0)-D_j]\|_{\mathcal Q,b}
+ \le \frac{2C_{\rm par}}{\rho^2}b^2
+                     [\tau(T(g))+g^2T(g)^6].
+ \label{acc-inner-error}
+\end{equation}
+This is precisely the inner-radius consequence proved in
+\eqref{cgp-inner-bound}. Coefficientwise gauge invariance
+is not required. The $b^2$ cancels the $b^{-2}$ in
+$\|\widehat\beta\|$.
+
+Define the remaining leading scalar coefficient by
+\begin{equation}
+                         b_{0,j}
+                     =\widehat\beta_{j+1}(D_j).
+ \label{acc-leading-coefficient}
+\end{equation}
+Equations \eqref{acc-adapted-update},
+\eqref{acc-inherited-drift} and \eqref{acc-inner-error}
+give the quantitative formula
+\begin{align}
+ &\left|
+ \widehat\gamma_j-\widehat\gamma_{j+1}-b_{0,j}
+ \right| \notag\\
+ &\quad\le
+ \frac{2C_{\widehat\beta}C_{\rm par}}{\rho^2}
+                    [\tau(T(g_j))+g_j^2T(g_j)^6]
+ +C_{\widehat\beta}C_{\rm quant}C_{\rm int}
+                                      \frac{g_jT(g_j)}b.
+ \label{acc-leading-drift}
+\end{align}
+All quantities use the actual physical $g_j$.
+The inner radius is fixed before the weak-coupling limit.
+The coefficient $b_{0,j}$ may depend on the chosen
+classical system and on the stage. No stage limit,
+numerical value or sign is asserted.
+
+\subsection{What remains after this coordinate change}
+\label{acc-scope-section}
+
+There is a simpler special case. If an additional theorem for
+the actual classical system proves
+$\beta_{j+1}\mathcal T_j=\beta_j$, then $\ell_j=0$,
+the series \eqref{acc-series} gives $k_j=0$, and
+$\widehat\beta_j=\beta_j$ and
+$\widehat\gamma_j=\gamma_j$. The present general argument
+does not assume that identity and does not rule it out.
+In that case \eqref{acc-leading-coefficient} reduces to
+the ordinary Maxwell coefficient $\beta_{j+1}(D_j)$.
+
+The future series \eqref{acc-series} defines the unique
+bounded correction for one specified infinite classical
+system. It is not a new locality assertion in RG time
+and does not identify coordinates from unrelated
+background subsequences. The construction is a bounded
+change of the decomposition of an exact density, not a
+physical field transformation.
+
+The result reduces the leading scalar drift to the
+concrete determinant/pivot coefficient in
+\eqref{acc-leading-coefficient}, with the controlled
+error \eqref{acc-leading-drift}. A suitable positive
+lower bound on that coefficient, or a proved positive
+block drift with the actual normalizations, would be
+additional information. None is supplied by a norm
+estimate or by the coordinate change.
+
+In particular there is no contraction in the joint
+coupling--activity variables, no proof that a physical
+running trajectory stays weak indefinitely, and no
+identification of the local sector with the full Wilson
+measure. Uniform actual finite-regulator histories,
+vacuum factors, large and mixed field sectors, and
+continuum observables retain their separate obligations.

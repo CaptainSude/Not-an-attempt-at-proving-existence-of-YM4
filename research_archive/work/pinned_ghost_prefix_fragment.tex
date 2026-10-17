@@ -1,0 +1,280 @@
+% No preamble. Prefix pgp-. Exact actual pinned ghost through fine heat time K^2.
+\section{The actual ghost coefficient up to block diffusion time}
+\label{pgp-section}
+
+Work in a joint infinite-lattice structural system at fixed
+\(K\), with the based centers \(K\mathbb Z^4\). Closed walks
+below return in \(\mathbb Z^4\); no finite-torus winding
+or continuously varying periodic flux is used.
+The short-time closed-walk argument can be sharpened to
+compute the whole based-ghost contribution through heat
+time \(K^2\) in current fine units. This is the complete
+short and intermediate interval for this term. It does
+not address the remaining vector or longer-time integral.
+Write
+\[
+ h_K^g(s)=-2[t^2]\operatorname{Tr}_{0,S}e^{-sG(t)},\qquad
+ \alpha_g=\frac{C_H}{48\pi^2}.
+\]
+The stationary-jet identification of Notebook 33 makes
+this the same first two background jets of the actual
+based scalar operator for every
+preceding classical depth \(M\). The field on a current
+link has curvature \(tH/K^2\).
+
+\subsection{The unpinned diagonal coefficient}
+\label{pgp-unpinned-section}
+
+Let \(X_1,\ldots,X_4\) be independent continuous-time
+nearest-neighbor walks, each with jumps \(+1\) and
+\(-1\) at rate one. Their joint generator is the
+negative of the flat scalar lattice Laplacian.
+For the selected coordinate plane, set
+\[
+ {\cal A}(s)=\int_0^s X_\nu(u-)\,dX_\mu(u).
+\]
+On a returning walk this is its oriented algebraic
+area, up to the immaterial orientation sign. Define
+\begin{equation}
+ h_\infty^g(s)
+   =C_H\,\mathbb E\left[{\cal A}(s)^2
+                       {\bf1}_{\{X(s)=0\}}\right].
+ \label{pgp-unpinned-definition}
+\end{equation}
+The \(K^4\) sites in one block cancel the curvature
+factor \(K^{-4}\), so this is exactly the unpinned
+ghost contribution in the final-coordinate normalization.
+
+For \(s>0\) define
+\[
+ I_0(2s)=\sum_{m\ge0}\frac{s^{2m}}{(m!)^2},\qquad
+ I_1(2s)=\sum_{m\ge0}\frac{s^{2m+1}}{m!(m+1)!}.
+\]
+
+\begin{proposition}[Exact lattice ghost heat coefficient]
+\label{pgp-exact-heat}
+For every \(s>0\),
+\begin{equation}
+ h_\infty^g(s)=\frac{C_H}{3}s^2e^{-8s}
+                                  I_0(2s)^2I_1(2s)^2.
+ \label{pgp-bessel}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+A single coordinate returns precisely when its two
+Poisson counts of rate-one jumps agree. Its return
+probability is \(p_s=e^{-2s}I_0(2s)\). Conditional
+on returning, let \(m\) be the count in either
+direction. The series above gives
+\[
+ \mathbb E[m\mid X_1(s)=0]
+          =s\,\frac{I_1(2s)}{I_0(2s)}.
+\]
+Conditional on \(m\), the \(m\) positive jump times
+and the \(m\) negative jump times are independent
+uniform points in \([0,s]\). It follows by integrating
+their signed point measures that, conditional on
+returning,
+\begin{align*}
+ \mathbb E[X_1(u)X_1(v)]
+   &=v_s\{\min(u,v)-uv/s\},\\
+ \mathbb E[dX_1(u)dX_1(v)]
+   &=v_s\{\delta(u-v)\,du-d u\,d v/s\},\qquad
+ v_s=2\,\frac{I_1(2s)}{I_0(2s)}.
+\end{align*}
+The second equality is an identity of second-moment
+measures, not a pointwise white-noise representation.
+For example, at fixed \(m\) its diagonal mass is
+\(2m\,du/s\); the off-diagonal density is
+\(-2m\,du\,dv/s^2\).
+
+Conditioning the four coordinates to return preserves
+their mutual independence. There are almost surely
+no simultaneous jumps in different coordinates.
+Using the second-moment measure of \(X_\mu\) and
+the bridge covariance of \(X_\nu\), therefore,
+\begin{align*}
+ \mathbb E[{\cal A}(s)^2\mid X(s)=0]
+ &=v_s^2\left\{
+      \int_0^s(u-u^2/s)\,du
+       -\frac1s\int_0^s\int_0^s
+                         \{\min(u,v)-uv/s\}\,du\,dv\right\}\\
+ &=\frac{v_s^2s^2}{12}
+   =\frac{s^2}{3}\left(\frac{I_1(2s)}{I_0(2s)}\right)^2.
+\end{align*}
+Multiplication by \(p_s^4\) and \(C_H\) proves
+\eqref{pgp-bessel}. All counts have finite moments,
+so these expectation interchanges are justified.
+\end{proof}
+
+\begin{lemma}[Bounds with an integrable large-time error]
+\label{pgp-asymptotics}
+There is a constant \(B\), depending only on the color
+normalization, such that
+\begin{align}
+ &0\le h_\infty^g(s)\le B\min(s^4,1),\qquad s>0,
+                                      \label{pgp-uniform-bound}\\
+ &|h_\infty^g(s)-\alpha_g|\le B/s,\quad
+   |s(h_\infty^g)'(s)|\le B,\qquad s\ge1.
+                                      \label{pgp-asymptotic-bound}
+\end{align}
+\end{lemma}
+
+\begin{proof}
+The series give the small-\(s\) estimate. For \(s\ge1\)
+put \(a_s=e^{-2s}I_0(2s)\), \(b_s=e^{-2s}I_1(2s)\).
+Fourier coefficient extraction from
+\(e^{s(e^{i\theta}+e^{-i\theta})}\) gives
+\[
+ a_s=\frac1{2\pi}\int_{-\pi}^{\pi}
+                   e^{-2s(1-\cos\theta)}\,d\theta,\qquad
+ b_s=\frac1{2\pi}\int_{-\pi}^{\pi}
+                   e^{-2s(1-\cos\theta)}\cos\theta\,d\theta.
+\]
+On this interval, with \(\phi(\theta)=2(1-\cos\theta)\),
+\[
+ \frac{4}{\pi^2}\theta^2\le\phi(\theta)\le\theta^2,\qquad
+ |\phi(\theta)-\theta^2|\le\theta^4/12.
+\]
+Comparison with the full Gaussian integral gives
+\[
+ a_s=(4\pi s)^{-1/2}+O(s^{-3/2}).
+\]
+Indeed the integrand error is bounded by
+\(Cs\theta^4e^{-c s\theta^2}\), whose integral is
+\(O(s^{-3/2})\), and the Gaussian tail is smaller.
+The factor \(\cos\theta-1=O(\theta^2)\) gives the
+same asymptotic formula for \(b_s\).
+The integral formulas also give
+\[
+ |a_s|+|b_s|\le Cs^{-1/2},\qquad
+ |a_s'|+|b_s'|\le Cs^{-3/2}.
+\]
+Substitute these estimates into
+\(h_\infty^g=(C_H/3)s^2a_s^2b_s^2\).
+Its limiting value is \(C_H/(48\pi^2)\); the
+relative product error is \(O(s^{-1})\).
+Differentiating the product with the last bounds
+proves the stated derivative bound.
+\end{proof}
+
+\subsection{Pinning changes this prefix by a vanishing amount}
+\label{pgp-pinning-section}
+
+The centers form \(K\mathbb Z^4\). A centered block
+contains exactly one representative of each residue
+class modulo \(K\) in each coordinate. For a closed
+walk shape \(\gamma\) of length \(n\ge1\) rooted at zero,
+let \(r_K(\gamma)\) be the number of these root residues
+whose translated walk meets a center. Each vertex
+of the cyclic walk excludes one root residue at most,
+so
+\begin{equation}
+               0\le r_K(\gamma)\le\min(n,K^4).
+ \label{pgp-root-count}
+\end{equation}
+This includes roots which themselves are centers.
+Algebraic area is invariant under translating a closed
+walk.
+
+\begin{proposition}[Uniform pinning comparison through time \(K^2\)]
+\label{pgp-pinning}
+For every \(s>0\),
+\begin{equation}
+ 0\le h_\infty^g(s)-h_K^g(s)
+ \le K^{-4}\{s(h_\infty^g)'(s)+8s h_\infty^g(s)\}.
+ \label{pgp-pointwise-pinning}
+\end{equation}
+In particular, for \(K\ge1\),
+\begin{equation}
+ \int_0^{K^2}|h_K^g(s)-h_\infty^g(s)|\,\frac{ds}{s}
+                                      \le B'K^{-2}
+ \label{pgp-prefix-error}
+\end{equation}
+with \(B'\) independent of \(K,M\).
+\end{proposition}
+
+\begin{proof}
+The full closed-walk expansion and the actual
+center-avoiding expansion have nonnegative squared-area
+coefficients. Their difference is exactly
+\[
+ \frac{C_H}{K^4}e^{-8s}
+   \sum_{n\ge1}\frac{s^n}{n!}
+       \sum_{\gamma:0\to0,\ |\gamma|=n}
+                         r_K(\gamma){\cal A}(\gamma)^2 .
+\]
+Inserting \(r_K(\gamma)\le n\) gives
+\[
+ \frac1{K^4}e^{-8s}
+           s\frac{d}{ds}\{e^{8s}h_\infty^g(s)\},
+\]
+which is \eqref{pgp-pointwise-pinning}. The quantity
+in braces on its right is nonnegative by this
+generating-series representation; no monotonicity
+of \(h_\infty^g\) alone is assumed.
+Integrating from zero to \(T\) yields
+\[
+ \int_0^T(h_\infty^g-h_K^g)\,\frac{ds}{s}
+ \le K^{-4}\left\{h_\infty^g(T)
+                       +8\int_0^T h_\infty^g(s)\,ds\right\},
+\]
+since \(h_\infty^g(0)=0\).
+The uniform bound \eqref{pgp-uniform-bound}, with
+\(T=K^2\), proves \eqref{pgp-prefix-error}.
+\end{proof}
+
+\begin{theorem}[Actual ghost prefix with a fixed finite part]
+\label{pgp-prefix-theorem}
+Define the finite constant
+\[
+ \gamma_g=\int_0^1 h_\infty^g(s)\,\frac{ds}{s}
+       +\int_1^\infty\{h_\infty^g(s)-\alpha_g\}\,\frac{ds}{s}.
+\]
+Then the actual based-ghost contribution satisfies
+\begin{equation}
+ \boxed{\quad
+ \int_0^{K^2}h_K^g(s)\,\frac{ds}{s}
+     =\frac{C_H}{24\pi^2}\log K+\gamma_g+O(K^{-2}).
+ \quad}
+ \label{pgp-prefix-law}
+\end{equation}
+The error constant is independent of the preceding
+classical depth \(M\), \(K\), and the permitted joint
+structural system.
+\end{theorem}
+
+\begin{proof}
+Both integrals defining \(\gamma_g\) converge by
+Lemma~\ref{pgp-asymptotics}. The tail of the second
+integral from \(K^2\) to infinity is \(O(K^{-2})\).
+Thus the same formula first holds with \(h_\infty^g\).
+Proposition~\ref{pgp-pinning} then proves it for the
+actual based ghost. Its independence of the effective
+action follows from the previously established
+affine stationary-jet identification.
+\end{proof}
+
+There is also the pointwise intermediate-scale bound
+\begin{equation}
+ \left|h_K^g(K^2u)-\alpha_g\right|
+ \le B''\{(K^2u)^{-1}+u/K^2\},
+                         \qquad K^{-2}\le u\le1.
+ \label{pgp-band-bound}
+\end{equation}
+Indeed \eqref{pgp-pointwise-pinning} and the derivative
+bound give an error at most \(Cs/K^4\) for \(s\ge1\),
+and the unpinned error is \(O(s^{-1})\).
+This verifies the actual ghost part of the middle
+heat-time comparison with exponent one.
+
+The remaining vector coefficient on that interval
+must supply \(10\alpha_g\) in the continuum convention
+of Notebook 33. The estimate above does not bound
+\(\int_{K^2}^\infty h_K^g(s)\,ds/s\) uniformly.
+At those longer times the pinning gap and coupled
+vector contribution must be retained. In particular,
+\eqref{pgp-prefix-law} is a theorem about a specified
+heat-time prefix, not a formula for the entire actual
+determinant or its sign.

@@ -1,0 +1,232 @@
+% No preamble. Prefix pgh-. Finite compatible regulators throughout.
+\section{H\"older regularity through an ordinary prefix}
+\label{pgh-section}
+
+Fix the primitive odd ratio $\ell$ and $0<\alpha<1$. Write
+$N=MR=\ell^{k+s}$, $\eta=N^{-1}$ and $h=\ell^k\eta=R^{-1}$.
+Physical next-coarse spacing is one. Define the physical prefix map
+\begin{equation}
+ P_h(A)=\frac1{ih}\log M_\ell^k(e^{i\eta A}).
+ \label{pgh-prefix}
+\end{equation}
+The established ordinary-trajectory theorem gives a common complex
+supremum ball on which $P_h$ is holomorphic, vanishes at zero and
+$\|P_h(A)\|_\infty\le K\|A\|_\infty$, uniformly in $M,R$ and
+compatible periodic volume. Its dependency radius is at most
+$c_\ell h$ in physical coordinates. Nested centered partitions give
+\begin{equation}
+ P_h(T_zA)=T_zP_h(A),\qquad z\in h\mathbb Z^d.
+ \label{pgh-covariance}
+\end{equation}
+Only these aligned translations are asserted. Use the complete norm
+\[
+ \|A\|_{\mathcal N_{\alpha,\eta}}
+ =\|A\|_\infty+\|\nabla_\eta A\|_\infty
+                         +[\nabla_\eta A]_\alpha,
+\]
+with physical distances and equivalent fixed-collar versions on
+periodic lifts. Constants below depend on the primitive ratio,
+$\alpha$ and the group, not on $M,R$ or auxiliary grouping $J$.
+
+\begin{lemma}[Uniform complete-field prefix bound]
+\label{pgh-prefix-lemma}
+On a smaller fixed ball,
+\begin{equation}
+ \|P_h(A)\|_{\mathcal N_{\alpha,h}}
+ \le C\bigl(\|A\|_{\mathcal N_{\alpha,\eta}}
+                   +\|A\|_{\mathcal N_{\alpha,\eta}}^2\bigr).
+ \label{pgh-prefix-bound}
+\end{equation}
+The map is holomorphic into the complete output space with uniform
+Banach Cauchy derivative bounds.
+\end{lemma}
+\begin{proof}
+Uniform supremum holomorphy bounds $DP_h,D^2P_h$ on a smaller
+supremum ball by constants $K_1,K_2$. For $T_h=T_{he_\mu}$,
+$\nabla_hA=(T_hA-A)/h$ is an average of fine gradients; its
+supremum and H\"older seminorm are bounded by those of
+$\nabla_\eta A$. Equation~\eqref{pgh-covariance} gives
+\begin{equation}
+ \nabla_hP_h(A)=\int_0^1
+ DP_h\bigl(A+t(T_hA-A)\bigr)\nabla_hA\,dt.
+ \label{pgh-gradient-identity}
+\end{equation}
+If $\|A\|_{\mathcal N_{\alpha,\eta}}\le b$, this bounds the output
+gradient by $K_1b$. Translate by $z\in h\mathbb Z^d$ and subtract.
+The change in direction costs $CK_1b|z|^\alpha$. The derivative
+operator changes by at most
+$K_2\|T_z((1-t)A+tT_hA)-((1-t)A+tT_hA)\|_\infty$.
+After multiplication by $\|\nabla_hA\|_\infty$, this costs
+$CK_2b^2|z|$, hence $CK_2b^2|z|^\alpha$ when $|z|\le1$.
+For larger shifts the gradient supremum suffices. This proves
+\eqref{pgh-prefix-bound}, including periodic lifts and short tori
+with incidences counted with multiplicity. All interpolation
+segments lie in the common complex ball. At each finite regulator
+the map is holomorphic between finite-dimensional normed spaces;
+the displayed uniform bound on the complete-field ball and
+Banach Cauchy give uniform complete-output derivative bounds.
+No ordinary-average physical adjoint is used.
+\end{proof}
+
+\subsection{Supported pre-gauge fields and their differences}
+\label{pgh-support-section}
+
+Let the established ordinary representative be
+$A_{\mathrm o,N}(w)=T_N(A_{\mathrm c,N}(w))$, with
+$\|A_{\mathrm o,N}(w)\|_{\mathcal N_{\alpha,\eta}}
+\le C_{\mathrm o}\|w\|_\infty$. Define
+\begin{equation}
+ a_p(w)=hP_h(A_{\mathrm o,N}(w)),\qquad
+ e^{ia_p}=M_\ell^k(e^{i\eta A_{\mathrm o,N}(w)}).
+ \label{pgh-pregauge}
+\end{equation}
+This is the selected representative before the rooted current
+gauge. It is not a regularity assertion for every gauge-equivalent
+representative. Lemma~\ref{pgh-prefix-lemma} implies
+\begin{equation}
+ \|a_p(w)\|_{\mathcal N_{\alpha,h}}
+                  \le Ch\|w\|_\infty.
+ \label{pgh-angle-norm}
+\end{equation}
+In current-unit coordinates, let $\Delta_\mu$ be the unscaled
+difference between adjacent $h$-lattice sites. Thus, on $\|w\|<b$,
+\begin{equation}
+ \|a_p\|_\infty\le Cbh,\qquad
+ \|\Delta_\mu a_p\|_\infty\le Cbh^2,\qquad
+ \|\Delta_\nu\Delta_\mu a_p\|_\infty
+                         \le Cbh^{2+\alpha}.
+ \label{pgh-scale-bounds}
+\end{equation}
+More generally, for an integer current-lattice shift $z$,
+\begin{equation}
+ |\Delta_\mu a_p(x+z)-\Delta_\mu a_p(x)|
+                  \le Cbh^{2+\alpha}|z|^\alpha.
+ \label{pgh-shift-bound}
+\end{equation}
+For physical shifts longer than one, the gradient supremum
+proves the same bound. Periodic distances use compatible lifts.
+The second-difference estimate uses first-gradient H\"older
+regularity; it does not assert a uniform classical $C^2$ bound.
+
+Let support labels refer to final physical unit cells and let
+$\tau$ be graph Steiner length. Fix an admissible spatial exponent
+$\kappa>0$ from the classical support theorem and any prescribed
+finite cardinality reserve $a\ge0$. For an output root $i$, use
+one complete $h$-field fiber $E_{h,i}$ with the local
+$\mathcal N_{\alpha,h}$ norm on a fixed enlarged collar of $i$,
+including all required difference endpoints and H\"older quotients.
+
+\begin{proposition}[Complete-output strict supports]
+\label{pgh-support-proposition}
+There are $r_a,C_a>0$, independent of $M,R$ and volume, and strict
+holomorphic families
+\begin{equation}
+ a_p|_i=\sum_{X\ne\varnothing}a_{p;i,X}(w_X),\qquad
+ a_{p;i,X}(0)=0,
+ \label{pgh-family}
+\end{equation}
+such that, for $0<r\le r_a$,
+\begin{equation}
+ \sup_i\sum_X e^{\kappa\tau(\{i\}\cup X)+a|X|}
+       \|a_{p;i,X}\|_{E_{h,i};r}\le C_a h r.
+ \label{pgh-family-bound}
+\end{equation}
+The linear supported part has bound $C_ahr$ and the nonlinear
+remainder has bound $C_ahr^2$, after a fixed radius reduction.
+\end{proposition}
+\begin{proof}
+Use the classical support theorem's smooth partition and input
+Banach spaces of complete supported fine fields. Reconstruction
+has a uniform norm $C_{\mathrm{rec}}$; no sharply restricted
+H\"older field is extended. The map $P_h\circ T_N$ is uniformly
+holomorphic into $E_{h,i}$ by Lemma~\ref{pgh-prefix-lemma} and
+the ordinary-transfer theorem. Its row reads at most a fixed
+number $N_0$ of input physical cells in a fixed radius $r_0$.
+This follows from the $O(h)$ prefix range and the fixed physical
+range of $T_N$.
+
+On a common complete-field radius $\rho_1$, Cauchy and
+polarization, followed by summing only the input cell slots,
+give the mixed degree-$n$ majorant
+\begin{equation}
+ v_n\le K
+ \left(\frac{eC_{\mathrm{rec}}N_0e^{\kappa r_0}}{\rho_1}\right)^n
+       =Kc^n,\qquad n\ge1.
+ \label{pgh-vertex-bound}
+\end{equation}
+The output collar can contain $O(R^d)$ bonds, but its complete
+norm is one Banach output norm, taken before the support sum.
+No output coordinate count occurs in \eqref{pgh-vertex-bound}.
+
+Substitute the corrected minimizer's complete-field support
+family, whose norm with the prescribed reserve is at most
+$C'_ar$. Rooted Steiner trees glue at the input slot roots,
+and $e^{a|\cup_qX_q|}\le\prod_qe^{a|X_q|}$. Hence the resulting
+series is bounded by $\sum_{n\ge1}K(cC'_ar)^n$, at most
+$2KcC'_ar$ when $cC'_ar\le1/2$. Multiplication by $h$ proves
+\eqref{pgh-family-bound}. Use one global Taylor/partition assignment
+and group by the union of input variable supports before restricting
+complete output coefficients to collars. Their restrictions on
+overlapping collars agree; arbitrary separate decompositions at
+different output roots are not used. Absolute convergence in the complete
+local output norm identifies the evaluated series with
+\eqref{pgh-pregauge}. Separating its linear terms gives the
+quadratic remainder estimate. Applying the bounded difference
+maps on the enlarged collars yields the weighted family versions
+of \eqref{pgh-scale-bounds}--\eqref{pgh-shift-bound}.
+\end{proof}
+These are finite-regulator coefficients and can retain dependence
+on the fixed regulator and baseline. Volume consistency is not
+asserted. A larger prescribed reserve may shrink $r_a$.
+
+\subsection{An oriented discrete Taylor identity}
+\label{pgh-taylor-section}
+
+For a current-unit scalar component set
+$D_\nu f(v)=f(v+e_\nu)-f(v)$. Choose a fixed shortest coordinate
+path $\Gamma$ from $x$ to $y$. A traversed edge has positive
+direction $\nu(e)$, lower positive-coordinate endpoint $v(e)$,
+and traversal sign $s(e)$. Telescoping gives
+\begin{align}
+ f(y)-f(x)&=\sum_\nu(y_\nu-x_\nu)D_\nu f(x)
+                         +\operatorname{Rem}_{xy}(f),\notag\\
+ \operatorname{Rem}_{xy}(f)
+ &=\sum_{e\in\Gamma}s(e)
+       [D_{\nu(e)}f(v(e))-D_{\nu(e)}f(x)].
+ \label{pgh-taylor}
+\end{align}
+A negative traversal uses the positive difference at its lower
+endpoint, not at its traversal initial point. If $n=|x-y|_1$,
+\eqref{pgh-scale-bounds} and \eqref{pgh-shift-bound} imply
+\begin{equation}
+ |a_p(y)-a_p(x)|\le Cbh^2n,\qquad
+ |\operatorname{Rem}_{xy}(a_p)|
+                      \le Cbh^{2+\alpha}n^{1+\alpha}.
+ \label{pgh-taylor-bound}
+\end{equation}
+One also has the elementary bound
+$|\operatorname{Rem}_{xy}(f)|\le n^2\sup|D^2f|$.
+For a winding periodic path use its lifted displacement;
+no global affine function on a torus is assumed. Coherent complete
+coefficients justify telescoping across collars. If a subsequent
+estimate keeps a fixed starting-root spatial weight along a long
+path, the exponential comparison of root weights along that path
+must also be budgeted; it is not omitted by the local norm bound.
+
+These independently derived conventions supply the scale
+pattern used in CMP109, pp.~285--288,
+(4.17)--(4.18) and (4.30). They do not assert the subsequent
+nonlinear Ward cancellation or its local carrier assignment.
+
+\paragraph{Constant order and scope.}
+The constants above are fixed at the primitive ratio before
+$R$ and $J$. Quantum coordinate-kernel estimates obtained from
+activities on $J$-cells can instead contain factors depending
+on their dimension and on conversion of cell distance to
+current distance. Finiteness of those constants does not make
+them independent of $J$. When $J$ is chosen after $R$, an
+expression $C(J)R^{-\alpha}$ is therefore not yet a
+noncircular contraction estimate. This regularity theorem
+does not classify the low-degree kernels, supply a bounded
+gauge-compatible extraction, determine a beta-function sign,
+or close the quantum induction.

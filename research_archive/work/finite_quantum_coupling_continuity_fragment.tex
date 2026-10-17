@@ -1,0 +1,315 @@
+% No preamble. Prefix fqc-. All equation references are internal.
+\section{Continuity in the real coupling at a finite regulator}
+\label{fqc-section}
+
+This section concerns the actual homogeneous local macrostep and its
+specified common-domain continuation. It supplies continuity needed
+for a finite endpoint argument. It proves no coupling sign, endpoint
+crossing, or identification with the full Wilson pushforward.
+
+\subsection{Fixed data and statement}
+\label{fqc-setup}
+
+Fix one allowed finite macrostep, including its preceding classical
+depth $M$, current and output tori, ratios $R,J$, common angle radius
+$b$, carrier exponent $a_0$, actual retained chart, and all strict
+common-domain budgets. Use the finite activity quotients by equality
+of vacuum-normalized totals on the full product ball. Their norms
+are infima of anchored family norms.
+
+Let $I$ be a compact interval contained in $(0,g_0]$, where $g_0$
+meets the common-domain and two-input comparison bounds. For example,
+take the continuous threshold
+\begin{equation}
+ T(g)=\max\{T_0,A\sqrt{\log(1/g)}\}.
+ \label{fqc-threshold}
+\end{equation}
+More generally, any positive continuous threshold satisfying those
+bounds suffices. Only continuity and boundedness on $I$ will be used.
+Denote the actual finite quotient map by
+\begin{equation}
+ F_g(x)=T_{\mathrm{cl}}x+\Delta+\mathcal Q_{\det}
+                         +\mathcal L_g(Q_x).
+ \label{fqc-map}
+\end{equation}
+Here $T_{\mathrm{cl}}$ is classical background transport, the next two
+terms are the fixed pivot and Gaussian determinant corrections, and
+$Q_x$ is the inherited fluctuation difference. The stationary
+backgrounds, precision and chart are independent of $g$. The
+coupling is inserted \emph{inside} the nonlinear chart as
+$\Phi_V(g\xi)$.
+
+\begin{theorem}[Finite real-coupling continuity]
+\label{fqc-theorem}
+On the common admissible quotient ball, for instance
+$\lVert x\rVert\leq\overline\epsilon/4$, the map
+$(g,x)\mapsto F_g(x)$ is jointly continuous for $0<g\leq g_0$.
+Both activity topologies use the same radius $b$ and exponent $a_0$.
+Consequently the actual extracted update
+\begin{equation}
+ (\gamma,x)\longmapsto
+ \left(\gamma-\beta_{\mathrm{out}}
+                 (F_{\gamma^{-1/2}}(x)),
+       P_{\mathrm{out}}F_{\gamma^{-1/2}}(x)\right)
+ \label{fqc-extracted-map}
+\end{equation}
+is continuous on its admissible positive weak-coupling domain.
+The finite maps $\beta_{\mathrm{out}},P_{\mathrm{out}}$ are normalized
+by the actual finite reference and do not depend on $g$.
+\end{theorem}
+
+The proof permits constants depending exponentially on the finite
+volume. It asserts neither a volume-uniform modulus nor continuity
+at $g=0$. In particular it does not require a continuous choice of
+near-minimal activity representatives.
+
+\subsection{Strict inherited-field margin}
+\label{fqc-margin-section}
+
+Fix one input class $x$ and choose one admissible representative
+$E$, held fixed as $g$ varies; one may take
+$\lVert E\rVert<\overline\epsilon/2$.
+The proved actual joint-family construction gives
+\begin{equation}
+ f_g(w,\xi)=\Omega_R(a_p(w),g\xi).
+ \label{fqc-actual-field}
+\end{equation}
+Its absolute rooted family bound supplies, under the strict budgets,
+\begin{equation}
+ \lVert a_p(w)\rVert_\infty\leq b/4,\qquad
+ \lVert f_g(w,\xi)\rVert_\infty\leq b/4
+ \label{fqc-margin}
+\end{equation}
+for all $\lVert w\rVert_\infty<b$, $g\in I$, and every actual
+retained link/color window of threshold $T(g)$. Fixed norm
+conversions have already been included in the common-domain
+constants. The argument below only requires a fixed inner radius
+$sb$ with $s<1$.
+
+Write $E_{\mathrm{raw}}(A)=\sum_H E_H(A|_H)$, and let
+$V_{\mathrm{in}}$ be the number of input $J$-cells. The anchored norm
+implies
+\begin{equation}
+ \sum_H\lVert E_H\rVert_b
+       \leq V_{\mathrm{in}}\lVert E\rVert_{a_0;b}.
+ \label{fqc-extensive-bound}
+\end{equation}
+Directional one-variable Cauchy on the product ball gives
+\begin{equation}
+ |E_{\mathrm{raw}}(A)-E_{\mathrm{raw}}(B)|
+ \leq
+ \frac{V_{\mathrm{in}}\lVert E\rVert_{a_0;b}}
+      {(1-s)b}\,\lVert A-B\rVert_\infty,
+ \qquad \lVert A\rVert_\infty,\lVert B\rVert_\infty\leq sb.
+ \label{fqc-input-cauchy}
+\end{equation}
+Indeed the segment between $A,B$ stays in the inner product ball;
+each unit max-norm direction has a complex disk of radius at least
+$(1-s)b$. Apply Cauchy on any smaller disk, integrate the derivative
+along the segment, sum using \eqref{fqc-extensive-bound}, and pass
+to the limiting disk radius. Thus an arbitrary input need only be
+bounded and holomorphic on its original $b$ ball. No extension
+past that ball is assumed.
+
+\subsection{Fixing the real integration window}
+\label{fqc-integral-section}
+
+Let $D$ be the total finite number of real retained scalar
+coordinates. Let $\Xi_1\subset\mathbb R^D$ be the product of the
+actual centered unit retained link/color balls. Its dilation
+$T(g)\Xi_1$ is exactly the actual window; its boundary is
+Lebesgue-null. Let $A(w)$ be the retained precision, with the
+fixed analytic square-root determinant branch. Changing real
+variables $\xi=T(g)\zeta$ gives the exact Gaussian expectation
+\begin{align}
+ Z_g(w)
+ ={}&\frac{\det A(w)^{1/2}}{(2\pi)^{D/2}}\,T(g)^D
+       \int_{\Xi_1}
+       \exp\bigl\{
+          -\tfrac12 T(g)^2\zeta^T A(w)\zeta
+          +V_{\mathrm{base}}(w,T(g)\zeta;g)
+ \notag\\[-2pt]
+ &\hspace{39mm}
+          +E_{\mathrm{raw}}(f_g(w,T(g)\zeta))
+          -E_{\mathrm{raw}}(a_p(w))
+       \bigr\}\,d\zeta .
+ \label{fqc-integral}
+\end{align}
+The background-only pivot and determinant terms may remain outside
+this expression as in \eqref{fqc-map}. Coupling powers, compact
+gauge-insertion constants and flat Haar constants are separately
+tracked vacuum factors. No contour deformation or replacement
+by a whole-fiber Euclidean cutoff occurs. The chart argument is
+$\Phi_V(gT(g)\zeta)$.
+
+The independent classical domains used in constructing the actual
+chart and base interaction give the following bounds on this
+fixed regulator. The precision and its determinant branch are
+bounded for all $\lVert w\rVert_\infty<b$. The local analytic
+coefficient maps are bounded and uniformly Lipschitz in their
+fluctuation arguments on a slightly larger fixed chart domain
+containing every $gT(g)\zeta$. Moreover
+$V_{\mathrm{base}}(w,T(g)\zeta;g)$ is uniformly bounded and
+uniformly continuous in $g\in I$, uniformly over the full open
+$b$ ball and $\zeta\in\Xi_1$.
+
+The last assertion follows directly from the exact factors as
+well. The classical and gauge Taylor remainders are analytic
+functions of $g\xi$, divided by $g^2$ after removing the constant,
+linear and quadratic terms. The remaining Haar and Jacobian
+factors are analytic in the same argument. On a compact positive
+$g$ interval all these expressions have bounded parameter
+derivatives on the fixed strict chart margin. Their removable
+singularities at zero coupling are not needed. An anchored bound
+on a classical support series bounds its extensive sum at this
+fixed volume.
+
+Since $a_p$ is independent of $g$, continuity of $gT(g)$ and these
+analytic bounds imply
+\begin{equation}
+ \sup_{\substack{\lVert w\rVert_\infty<b\\\zeta\in\Xi_1}}
+ \bigl\lVert f_g(w,T(g)\zeta)
+       -f_{g_*}(w,T(g_*)\zeta)\bigr\rVert_\infty
+       \longrightarrow0.
+ \label{fqc-field-continuity}
+\end{equation}
+Use \eqref{fqc-input-cauchy} for the inherited exponent. The
+Gaussian term has the same uniform continuity because $A(w)$
+is bounded and $T$ is continuous. Every exponent in
+\eqref{fqc-integral} has a common finite absolute bound; the
+prefactor is uniformly bounded and $\Xi_1$ has finite measure.
+Uniform domination therefore proves
+\begin{equation}
+ \lVert Z_g-Z_{g_*}\rVert_{H^\infty(b)}
+       \longrightarrow0 .
+ \label{fqc-z-continuity}
+\end{equation}
+This is a supremum over the entire open $b$ ball, not merely
+convergence on compact subballs.
+
+\subsection{A lower bound on the full ball and logarithms}
+\label{fqc-log-section}
+
+The strict Gaussian theorem supplies nonvanishing throughout
+the $b$ ball and a connected logarithm family with a common
+anchored bound $H_I$ for $g\in I$. If $V_{\mathrm{out}}$ is the
+number of output $J$-cells, its normalized total satisfies
+\begin{equation}
+ \sup_{\lVert w\rVert_\infty<b}
+  |\log Z_g(w)-\log Z_g(0)|
+       \leq 2V_{\mathrm{out}}H_I.
+ \label{fqc-log-bound}
+\end{equation}
+The bound is unaffected by raw logarithm constants.
+By \eqref{fqc-z-continuity} at $w=0$ and nonvanishing, on a
+compact positive interval around $g_*$,
+$m_0=\inf_{g\in I}|Z_g(0)|>0$. Hence
+\begin{equation}
+ \inf_{\substack{g\in I\\\lVert w\rVert_\infty<b}}
+       |Z_g(w)|
+ \geq m_0\exp(-2V_{\mathrm{out}}H_I)=:m_I>0.
+ \label{fqc-lower-bound}
+\end{equation}
+Nonvanishing alone would not yield such an infimum on the open
+ball; the uniform logarithm estimate is essential.
+
+When $\lVert Z_g-Z_{g_*}\rVert_b<m_I/2$, use the convergent
+power-series logarithm
+\begin{equation}
+ \ell_g(w)=
+ \log\left(1+\frac{Z_g(w)-Z_{g_*}(w)}{Z_{g_*}(w)}\right),
+ \qquad
+ \lVert\ell_g\rVert_b\leq
+          2m_I^{-1}\lVert Z_g-Z_{g_*}\rVert_b.
+ \label{fqc-log-ratio}
+\end{equation}
+If $l_g$ is any selected holomorphic logarithm of $Z_g$, then
+$l_g-l_{g_*}-\ell_g$ is constant on the connected product ball,
+because its exponential is one. Thus
+\begin{equation}
+ \bigl\lVert[l_g-l_g(0)]-[l_{g_*}-l_{g_*}(0)]\bigr\rVert_b
+ \leq 4m_I^{-1}\lVert Z_g-Z_{g_*}\rVert_b
+ \longrightarrow0.
+ \label{fqc-normalized-log-continuity}
+\end{equation}
+No continuity of a raw branch convention has been assumed.
+
+\subsection{From totals to the finite quotient norm}
+\label{fqc-quotient-section}
+
+Let $H_{\mathrm{all}}$ be the full connected output $J$-cell
+torus. Assign any bounded holomorphic normalized total $h$ to
+this one carrier and zero to all others. This is an admissible
+finite activity representation and gives
+\begin{equation}
+ \lVert[h]\rVert_{\mathrm{quot}}
+       \leq e^{a_0V_{\mathrm{out}}}\lVert h\rVert_b.
+ \label{fqc-single-carrier}
+\end{equation}
+If $h$ has invariant total, this representative retains that
+property; coefficientwise gauge invariance is unnecessary.
+The exterior terms in \eqref{fqc-map} are independent of $g$.
+Applying \eqref{fqc-single-carrier} to
+\eqref{fqc-normalized-log-continuity} proves, for fixed $x$,
+\begin{equation}
+ \lVert F_g(x)-F_{g_*}(x)\rVert_{\mathrm{quot}}
+       \longrightarrow0.
+ \label{fqc-fixed-input-continuity}
+\end{equation}
+The volume cost in \eqref{fqc-single-carrier} is intentional.
+It avoids an unsupported inference about the norm continuity
+of every canonical cluster coefficient or relocalized array.
+
+\subsection{Joint continuity and finite histories}
+\label{fqc-joint-section}
+
+The finite two-input estimate is uniform on $I$:
+\begin{equation}
+ \lVert F_g(x)-F_g(y)\rVert_{\mathrm{quot}}
+ \leq
+ \left[B_T+C_{\mathrm{quant}}
+                  \sup_{h\in I}\frac{hT(h)}b\right]
+       \lVert x-y\rVert_{\mathrm{quot}}.
+ \label{fqc-input-lipschitz}
+\end{equation}
+It follows from admissible near-minimal representatives
+$Y,D,X=Y+D$ and the stronger comparison budget
+$a_Q\overline\epsilon\leq\eta_*/(128e)$. It does not require
+a continuous representative selection. For $(g,x)\to(g_*,x_*)$,
+split the difference as
+\[
+ F_g(x)-F_{g_*}(x_*)
+   =F_g(x)-F_g(x_*)+F_g(x_*)-F_{g_*}(x_*).
+\]
+Equations \eqref{fqc-input-lipschitz} and
+\eqref{fqc-fixed-input-continuity} make both terms tend to
+zero. Boundedness of the actual finite $\beta_{\mathrm{out}}$
+and $P_{\mathrm{out}}$, together with continuity of
+$\gamma\mapsto\gamma^{-1/2}$, proves
+Theorem~\ref{fqc-theorem}.
+
+Every fixed finite composition of the extracted updates is
+continuous while all intermediate inputs and couplings remain
+in their common admissible domains. This follows by induction
+over the finite stages. One can work near a trajectory lying
+strictly within these domains, or use the finite-induction
+envelope to ensure admissibility on a prescribed parameter
+interval.
+
+Near-minimal representatives implementing the history may
+jump with the initial coupling. Exact finite-total descent
+makes the quotient update and its beta increment independent
+of those choices. Raw vacuum factors remain separately
+tracked by their exact compensation identities; an endpoint
+statement about $\gamma$ does not require a continuous raw
+representative convention.
+
+Continuity alone supplies no endpoint crossing. An
+intermediate-value argument also needs values on opposite
+sides of the desired endpoint and control keeping the
+intervening histories weak and admissible. A bound on the
+magnitude of each increment may keep a sufficiently high
+finite initial $\gamma$ weak, but it does not tune a fixed
+terminal coupling or establish an ultraviolet trajectory.
+The present conclusion remains finite-volume, positive-coupling,
+and confined to the specified local analytic map.

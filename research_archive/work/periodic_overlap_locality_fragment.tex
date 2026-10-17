@@ -1,0 +1,95 @@
+% No preamble. Unique prefix op-. Follows the oi-, ob-, and otg- modules.
+
+\section{Periodic volumes and short periods}
+\label{op-section}
+
+The preceding strict-support expansions also hold on finite rectangular
+periodic lattices. This is a geometric extension of the abstract theorems;
+their covariance, precision, interaction and background-domain assumptions
+must still hold for the actual periodic data.
+
+\begin{proposition}[Periodic strict-support expansion]
+\label{op-periodic-theorem}
+Let
+\[
+ \mathbb T_N=\prod_{\mu=1}^{d}\mathbb Z/N_\mu\mathbb Z,
+ \qquad N_\mu\ge1,
+\]
+with its nearest-neighbor graph distance $d_N$. One may replace the finite
+subset of $\mathbb Z^d$ in the strictly local overlap theorem and its
+tunable real-baseline version by $\mathbb T_N$, or by any subset of it.
+Use $d_N$ in all weighted matrix norms and in the metric tree and rooted
+forest lengths. If the displayed hypotheses hold with constants independent
+of $N$, both conclusions hold with exactly the same constants. The resulting
+supports are connected subsets of $\mathbb T_N$, including when some
+periods equal one or two.
+\end{proposition}
+
+\begin{proof}
+For every base point $b\in\mathbb T_N$, choose one shortest integer
+representative $r_b(c)\in\mathbb Z^d$ of each difference $c-b$.
+The choices form an injection and satisfy
+$|r_b(c)|_1=d_N(b,c)$. Consequently, for every nonnegative function
+$f$ on the nonnegative integers,
+\begin{equation}\label{op-counting}
+ \sum_{c\in\mathbb T_N}f(d_N(b,c))
+ \le\sum_{z\in\mathbb Z^d}f(|z|_1).
+\end{equation}
+For sums excluding $c=b$, the zero representative is excluded on the
+right. In particular, all exponential lattice-sum bounds used for
+$A_\kappa$, the inverse Schur constant, and $S_{\kappa/2}$ retain their
+previous upper bounds.
+
+The weighted matrix product estimates require only the triangle inequality.
+The inverse Schur proof uses the weight
+$D_{bb}=\exp(s d_N(b,c))$ and the inequality
+\begin{equation}\label{op-weight-ratio}
+ |d_N(b,c)-d_N(b',c)|\le d_N(b,b').
+\end{equation}
+Thus its conjugation estimate, operator inverse bound and entry decay are
+unchanged; summing entries uses \eqref{op-counting}. Partition masks,
+cell endpoint degrees, Gaussian density comparisons, the rooted support
+algebra, and the overlap and Mayer combinatorics are independent of any
+choice of integer representatives. They therefore apply directly on the
+finite quotient.
+
+It remains to check the conversion to connected background support. For
+each nonempty marked set $M$ and background support $X$, let
+$\ell_N(M)$ be its minimum metric tree length, and let
+$\ell_{N,M}(X)$ be the minimum forest length on $M\cup X$ with every
+component meeting $M$. Realize fixed minimizing trees and forests by
+fixed shortest torus paths, and let $H(M,X)$ be their union. It is a
+connected subset of $\mathbb T_N$, contains $M\cup X$, and, writing
+$L_* =\ell_N(M)+\ell_{N,M}(X)$, satisfies
+\begin{equation}\label{op-hull}
+ |H(M,X)|\le |M|+L_*,\qquad
+ d_N(a,b)\le L_*
+ \quad(a\in M,\ b\in H(M,X)).
+\end{equation}
+The vertex bound follows by adding the selected paths one edge at a time;
+identifications caused by wrapping can only reduce the number of vertices.
+If the original cell set is a proper subset of the torus, the hull may
+leave that set, while the coefficient continues to read only the original
+background coordinates in $X$.
+
+For $a_* =\min(1/2,\kappa/4)$, \eqref{op-hull} gives
+\begin{equation}\label{op-reroot}
+ e^{a_*|H(M,X)|}
+ \le e^{|M|+\kappa L_*}
+             e^{-(\kappa/2)d_N(a,b)}.
+\end{equation}
+Overcounting by the marked anchors $a\in M$ and applying
+\eqref{op-counting} costs at most the same $S_{\kappa/2}$ as before.
+This proves both the connected-support norm and the interaction-difference
+bound with the original constants.
+\end{proof}
+
+The proof does not use a positive injectivity radius or distinct positive
+and negative neighbors. Repeated interaction labels whose supports become
+equal after a periodic identification are still counted as distinct labels,
+as in the original multiplier norm. The theorem assumes the corresponding
+actual periodic coefficient norms; it does not infer them merely by
+relabeling an infinite-volume model. Deterministic shortest-path tie choices
+need not preserve translations or rotations, and no such activity symmetry
+is asserted here. Nor does this extension assert consistency between
+different periodic volumes.

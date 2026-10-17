@@ -1,0 +1,414 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 13: a uniform nonlinear constraint chart}
+\author{Research working document}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The complete corrected averaging map, iterated through fixed-size
+blocks, admits a complex neighborhood whose physical radius does
+not shrink with refinement. We prove this from its exact local
+coordinate, the contraction of its flat linear part and a geometric
+sum of physical scale factors. Its differential is uniformly close
+to the flat average in bounded-field and physical Hilbert norms.
+The flat minimizing extension then gives an exact analytic chart
+of the nonlinear constraint, including an exponentially local
+right inverse for its ordinary-coordinate differential. These are
+fixed-reference statements; the moving-background operator and
+the nonlinear action minimizer require separate identification.
+\end{abstract}
+\noindent\textbf{Status.}
+Research proofs checked by separate internal derivations and audits.
+No external certification or novelty claim is made. Source matching
+is to the pinned deposited transcription identified below.
+% Notebook 13 body fragment, no preamble. Unique label prefix: na-.
+% Requires amsmath, amssymb, amsthm and a one-argument \norm macro.
+
+\section{A uniform analytic neighborhood for the corrected nonlinear average}
+\label{na-section}
+
+Fix an odd one-step ratio $L\ge3$, a refinement $M=L^j$, fine
+spacing $\eta=M^{-1}$ and final physical scale one. The reference
+background is the identity at every stage. Constants may depend on
+$L$, dimension, color norm and the specified averaging prescription,
+but not on $j$, $M$ or compatible periodic volume. Pairings and
+Hilbert norms use physical lattice volume. All complex analytic maps
+below use the fixed flat-reference logarithmic coordinate. Their
+differentials at a nonzero field are not identified here with a
+separately left-trivialized nonflat source operator.
+
+\subsection{The exact source coordinate and the fixed local constants}
+\label{na-source}
+
+Deposited Raw I:24320--24325 composes the corrected nonlinear
+operation, with its averaged reference background. Since that
+reference is initially the identity, it remains the identity.
+I:24344--24353 gives the logarithmic coordinate, its linear part and
+the quadratic remainder; I:24357--24369 identifies the flat
+linearization. The coordinate bridge I:47076--47087, using the maps
+defined at I:46965--46973, gives
+\begin{equation}
+ F_L(X;c)=\frac1i\log\left[
+  e^{-i\alpha_{c_-}(X)}e^{i\phi(X;c)}e^{i\alpha_{c_+}(X)}\right],
+ \qquad DF_L(0)=LQ_L^{\mathrm{st}},
+ \label{na-coordinate}
+\end{equation}
+where
+\[
+ \phi(X;c)=\Phi^{\flat}(1,X;c),\qquad
+ \alpha_y(X)=L^{-d}\sum_{x\in B(y)}\Phi^{\mathfrak g}(1,X;y,x).
+\]
+This identity includes the endpoint corrections; it is not the
+uncorrected rooted logarithm alone. These source matches are checked
+at the deposited-transcription level. The original CMP98 full paper
+has not been independently reverified in this calculation.
+
+For fixed $L$, the products, means and logarithms in
+\eqref{na-coordinate} give a finite-dimensional local holomorphic
+map near zero. Let $D_L(c)$ be its finite set of input bonds and set
+\[
+ m_L=\sup_c|D_L(c)|,\qquad
+ N_L=\sup_b\#\{c:b\in D_L(c)\}.
+\]
+All translated local maps share the same constants. Write
+$S_L(X)=F_L(X)-LQ_L^{\mathrm{st}}X$. Since
+$S_L(0)=DS_L(0)=0$, bounding the second derivative on a smaller
+closed complex polydisc gives constants $r_0,C_0,K_0>0$ such that
+\begin{equation}
+ |S_L(X;c)|\le C_0\norm{X}_\infty^2,
+ \qquad
+ \norm{\partial_bS_L(X;c)}\le K_0\norm{X}_\infty
+ \quad (b\in D_L(c)),
+ \label{na-local-jet-bounds}
+\end{equation}
+whenever $\norm{X}_\infty<r_0$. The derivative is zero outside
+$D_L(c)$. On short tori, use the lifted local pattern with
+multiplicities. No constant uniform as $L\to\infty$ is required.
+
+\subsection{Physical scaling and the one-step differential}
+\label{na-one-step}
+
+At input spacing $h$ and output spacing $Lh$, define
+\begin{equation}
+ \mathcal F_h(A)=(Lh)^{-1}F_L(hA)=Q_hA+R_h(A),
+ \qquad R_h(A)=(Lh)^{-1}S_L(hA).
+ \label{na-physical-map}
+\end{equation}
+Put
+\[
+ C=C_0/L,\qquad D_\infty=m_LK_0/L,\qquad
+ D_2=K_0\sqrt{m_LN_L}\,L^{d/2-1}.
+\]
+For $h\norm{A}_\infty<r_0$, one has
+\begin{align}
+ \norm{R_h(A)}_\infty&\le Ch\norm{A}_\infty^2,
+ \label{na-one-step-rem}\\
+ \norm{DR_h(A)}_{\infty\to\infty}
+    &\le D_\infty h\norm{A}_\infty,
+ \qquad
+ \norm{DR_h(A)}_{2,h\to2,Lh}
+    \le D_2h\norm{A}_\infty.
+ \label{na-one-step-der}
+\end{align}
+Indeed each derivative matrix entry is at most
+$K_0h\norm{A}_\infty/L$. Its row sum is at most
+$m_LK_0h\norm{A}_\infty/L$, and its column sum in the physical
+adjoint normalization is at most
+$L^dN_LK_0h\norm{A}_\infty/L$. Their geometric mean proves the
+Hilbert bound. This is a measure-normalized Schur estimate, with no
+factor from the number of fine sites in a final unit cell.
+
+The flat average is
+\[
+ (Q_hA)_\mu(y)=L^{-d-1}\sum_{x\in B(y)}\sum_{r=0}^{L-1}
+                         A_\mu(x+rh e_\mu).
+\]
+Its coefficients are nonnegative, its row sum is one and its
+unweighted column sum is $L^{-d}$: a given fine bond has exactly
+$L$ choices of the string offset. The physical adjoint supplies the
+factor $L^d$. Thus $Q_h$ and its physical adjoint have row sums one;
+in particular $Q_h$ contracts both the bounded-field and physical
+Hilbert norms. Multiplicity counting gives the same assertion on
+short compatible tori.
+
+\subsection{The complete nonlinear iterate on a fixed complex ball}
+\label{na-uniform-ball}
+
+Set $h_t=L^{t-j}$ for $0\le t\le j$ and $S=(L-1)^{-1}$. Let
+\[
+ A_0=A,\qquad A_{t+1}=\mathcal F_{h_t}(A_t),\qquad
+ \mathcal F^{(j)}(A)=A_j,
+ \qquad Q_{r:s}=Q_{s-1}\cdots Q_r.
+\]
+An empty product is the identity. Then $Q=Q_{0:j}=Q_M^{\mathrm{st}}$.
+
+\begin{theorem}[Uniform nonlinear ball]
+\label{na-ball-theorem}
+Choose
+\begin{equation}
+ 0<\rho<\min\{r_0/4,\,(4CS)^{-1}\},
+ \label{na-radius}
+\end{equation}
+omitting the second restriction when $C=0$. The complete corrected
+iterate is holomorphic on $\norm{A}_\infty<\rho$, uniformly in
+refinement and volume. If $a=\norm{A}_\infty$, then
+\begin{equation}
+ \norm{A_t}_\infty\le
+ \frac{a}{1-Ca\sum_{s<t}h_s}\le2a.
+ \label{na-riccati}
+\end{equation}
+Writing $R^{(j)}=\mathcal F^{(j)}-Q$ and $C_R=4CS$, one also has
+\begin{equation}
+ \norm{\mathcal F^{(j)}(A)}_\infty\le2a,
+ \qquad \norm{R^{(j)}(A)}_\infty\le C_Ra^2.
+ \label{na-composite-remainder}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Let $u_t=a/(1-Ca\sum_{s<t}h_s)$. The denominators are positive.
+If $\norm{A_t}_\infty\le u_t$, the local analytic domain holds
+because $h_tu_t\le2\rho<r_0$. Moreover
+\[
+ u_t+Ch_tu_t^2\le\frac{u_t}{1-Ch_tu_t}=u_{t+1}.
+\]
+Induction proves both the estimates and the validity of every local
+evaluation, without presupposing the domain bootstrap. Each
+composition is therefore holomorphic with a common strict margin.
+The exact telescoping identity
+\[
+ R^{(j)}(A)=\sum_{t=0}^{j-1}Q_{t+1:j}R_{h_t}(A_t)
+\]
+and the contractions of $Q_{t+1:j}$ give
+$\norm{R^{(j)}(A)}_\infty\le4Ca^2\sum_t h_t\le4CSa^2$.
+For $j=0$ the map is the identity and the remainder vanishes.
+The same local proof applies to the bounded-field Banach space on
+the infinite lattice.
+\end{proof}
+
+\subsection{Differential estimates and factorial bounds}
+\label{na-differentials}
+
+For $p=2,\infty$, the physical intermediate norms when $p=2$ and
+the ordered chain rule give
+\begin{align}
+ \norm{D\mathcal F^{(j)}(A)}_{p\to p}
+    &\le\prod_t(1+2D_pa h_t)\le e^{2D_pSa},
+ \label{na-derivative-bound}\\
+ \norm{D\mathcal F^{(j)}(A)-Q}_{p\to p}
+    &\le e^{2D_pSa}-1=:\delta_p(a).
+ \label{na-differential-deviation}
+\end{align}
+For the second line, expand the difference between the product of
+$Q_t+DR_{h_t}(A_t)$ and the product of $Q_t$, keeping their
+noncommutative order. The nonempty selections of remainder factors
+sum in norm to at most $\prod_t(1+2D_pa h_t)-1$. In particular
+no nonflat contraction is assumed.
+
+The differential is holomorphic as an operator from fine physical
+$L^2$ to coarse physical $L^2$, with the field variable in bounded
+norm. For fixed $j$, the local translated Taylor expansions have
+finite incidence and converge in this operator norm; the preceding
+uniform bounds make the resulting estimates independent of volume.
+For $0<r<\rho-\norm{A}_\infty$ and $n\ge1$, Cauchy gives
+\begin{equation}
+ \norm{D^n\mathcal F^{(j)}(A)[K_1,\ldots,K_n]}_\infty
+ \le2\rho\,n!(e/r)^n\prod_i\norm{K_i}_\infty.
+ \label{na-cauchy-infty}
+\end{equation}
+For $n\ge0$, with $n=0$ read directly from
+\eqref{na-derivative-bound},
+\begin{equation}
+ \norm{D^{n+1}\mathcal F^{(j)}(A)[K_1,\ldots,K_n,B]}_{2,1}
+ \le n!(e/r)^n e^{2D_2S\rho}
+       \norm{B}_{2,\eta}\prod_i\norm{K_i}_\infty.
+ \label{na-cauchy-mixed}
+\end{equation}
+For $n\ge1$ use product-polydisc radii $r/n$ for normalized
+directions, followed by $n^n\le e^n n!$. The mixed estimate has one
+Hilbert input; all other directions are bounded fields.
+
+\subsection{Finite range and weighted physical-cell operators}
+\label{na-weighted}
+
+A one-step reading radius at most $r_Lh$ gives a total physical
+reading radius at most $r_L\sum_t h_t\le r_LS$. Thus an integer
+unit-cell range $R_*$, including fixed cell-diameter margins,
+contains the support of both $D\mathcal F^{(j)}(A)$ and $Q$,
+independently of $j$. The sharper deposited two-block dependence
+I:24332--24336 is more than needed here.
+
+For fine or coarse physical-cell Hilbert fibers use
+\begin{equation}
+ \norm{T}_\kappa=\max\left\{
+  \sup_x\sum_y e^{\kappa|x-y|_1}\norm{T_{xy}},\,
+  \sup_y\sum_x e^{\kappa|x-y|_1}\norm{T_{xy}}\right\}.
+ \label{na-schur-norm}
+\end{equation}
+Let $v(R_*)$ count cells in that range and set
+$\chi_\kappa=v(R_*)e^{\kappa R_*}$. Every cell block is bounded
+by the global Hilbert operator norm, so
+\begin{equation}
+ \norm{DR^{(j)}(A)}_\kappa\le\chi_\kappa\delta_2(a).
+ \label{na-weighted-deviation}
+\end{equation}
+All coefficient derivatives retain the same finite range. Hence the
+operator-valued Taylor series converge in the weighted norm too,
+and $A\mapsto DR^{(j)}(A)$ is holomorphic into this algebra.
+The analogous finite-range conversion for bounded-cell fibers uses
+$\delta_\infty(a)$. Periodic restrictions have the same bounds by
+lifted multiplicities or periodic cell distance. There is no fine
+dimension factor and no assertion of a special ordered insertion
+path.
+
+\subsection{An exact analytic chart for the nonlinear constraint}
+\label{na-chart}
+
+Let $H$ be the already proved source-compatible flat minimizing
+extension, with
+\begin{equation}
+ QH=I,\qquad \norm{H}_{\infty\to\infty}\le k,
+ \qquad \norm{H}_\kappa\le k_\kappa.
+ \label{na-H-input}
+\end{equation}
+These constants are uniform in refinement and volume. Choose
+$0<r_A<\rho$ such that
+\begin{equation}
+ kC_Rr_A\le\tfrac14,\qquad
+ k\delta_\infty(r_A)\le\tfrac12,\qquad
+ k_\kappa\chi_\kappa\delta_2(r_A)\le\tfrac12.
+ \label{na-chart-radius}
+\end{equation}
+
+\begin{theorem}[Uniform constraint chart]
+\label{na-chart-theorem}
+For $\xi\in\ker Q$, coarse field $B$, and
+$u=\xi+HB$ with $\norm{u}_\infty<r_A/2$, the equation
+\begin{equation}
+ A=u-HR^{(j)}(A)
+ \label{na-fixed-point}
+\end{equation}
+has a unique solution in $\norm{A}_\infty\le r_A$. This defines
+a holomorphic map $A=\mathcal A_j(\xi,B)$ satisfying
+\begin{align}
+ \mathcal F^{(j)}(\mathcal A_j(\xi,B))&=B,
+ & (I-HQ)\mathcal A_j(\xi,B)&=\xi,
+ \label{na-chart-identities}\\
+ \norm{\mathcal A_j(\xi,B)-\xi-HB}_\infty
+   &\le4kC_R\norm{\xi+HB}_\infty^2.
+ \label{na-chart-remainder}
+\end{align}
+Every field with $\norm{A}_\infty<r_A/3$ belongs to this chart.
+Its ordinary-coordinate constraint differential has a holomorphic
+right inverse with uniform exponential physical-cell locality.
+\end{theorem}
+
+\begin{proof}
+The right side of \eqref{na-fixed-point} maps the closed radius
+$r_A$ ball into itself: its nonlinear term has norm at most
+$kC_Rr_A^2\le r_A/4$. Its Lipschitz constant is at most one half
+by \eqref{na-differential-deviation} and \eqref{na-chart-radius}.
+The contraction theorem gives uniqueness and existence. Uniform
+iteration on smaller parameter balls gives holomorphic dependence.
+
+One precise parameter norm is
+$\norm{(\xi,B)}_{\mathrm{par}}=\norm{\xi+HB}_\infty$.
+It is a norm because $Qu=B$, and it is uniformly equivalent to
+the usual direct-sum norm:
+\[
+ \norm{B}_\infty\le\norm{u}_\infty,\qquad
+ \norm{\xi}_\infty\le(1+k)\norm{u}_\infty,\qquad
+ \norm{u}_\infty\le\norm{\xi}_\infty+k\norm{B}_\infty.
+\]
+Apply $Q$ and $I-HQ$ to \eqref{na-fixed-point} to obtain
+\eqref{na-chart-identities}. Also
+$\norm{A}_\infty\le2\norm{u}_\infty$, since
+$\norm{HR^{(j)}(A)}_\infty\le\frac12\norm{A}_\infty$ on this
+ball. This proves \eqref{na-chart-remainder}. Conversely set
+$\xi=(I-HQ)A$, $B=\mathcal F^{(j)}(A)$. Then
+$u=A+HR^{(j)}(A)$ has norm below $r_A/2$ whenever
+$\norm{A}_\infty<r_A/3$, so uniqueness identifies its fixed point
+with $A$.
+
+At a chart point set
+$Q_A=D\mathcal F^{(j)}(A)=Q+DR^{(j)}(A)$. The ordered Neumann
+series give
+\begin{equation}
+ H_A=(I+H DR^{(j)}(A))^{-1}H
+      =H(I+DR^{(j)}(A)H)^{-1},\qquad Q_AH_A=I.
+ \label{na-chart-right-inverse}
+\end{equation}
+In the weighted algebra the same series yield
+\begin{equation}
+ \norm{H_A}_\kappa\le2k_\kappa,
+ \qquad \norm{(I+H DR^{(j)}(A))^{-1}}_\kappa\le2.
+ \label{na-chart-weighted}
+\end{equation}
+These are respectively the $B$ derivative of the chart and its
+$\xi$ derivative restricted to $\ker Q$. The global bounded-field
+norms have the corresponding bounds with $k$. Holomorphy of the
+weighted inverse and Cauchy on smaller parameter balls give
+factorial higher derivatives as well.
+\end{proof}
+
+If $\xi$ additionally satisfies the fixed flat gauge equation
+$RD^*\xi=0$, the identity $RD^*H=0$ and
+\eqref{na-fixed-point} give $RD^*A=0$. On finite regulators this
+is immediate by continuity. On the infinite lattice it holds on the
+domain of the fixed gauge operator, or its bounded-cell extension;
+no new uniform bounded-field estimate for the order-zero gauge
+projection is asserted.
+
+\subsection{Scope of the result}
+\label{na-scope}
+
+This proves a refinement-uniform complex ball for the complete
+corrected nonlinear iterate, its physical Hilbert differential
+bounds and an exact analytic straightening of its constraint along
+the flat minimizing-extension range. The result is internally
+audited, not externally certified.
+
+The coordinate is the fixed flat-reference one in
+\eqref{na-coordinate}. At nonzero fields its ordinary derivative
+has not here been equated with a source operator defined through
+left multiplication, new background-dependent endpoint corrections
+or a moving gauge. That identification requires the actual
+coordinate Jacobians and reference-background transformation.
+The selected chart field is not by itself an action minimizer.
+Notebook 14 supplies the reference-coordinate correction and a
+nonflat energy inverse. Notebook 15 subsequently solves the
+nonlinear stationarity equation in this chart, proves a strict
+fixed-slice minimum, and transfers it by actual gauges to the
+ordinary homogeneous constraint. Those later results remain
+restricted to a small global physical $C^{1,\alpha}$ ball.
+Retained or mixed-scale geometry and an interacting continuum
+limit remain separate tasks.
+
+\begin{thebibliography}{9}
+\bibitem{repo}
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}
+{Pinned Yang--Mills-LLM-experiment account}, commit
+\texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+The corrected nonlinear composition is Raw I:24320--24325;
+its coordinate and flat differential are I:24344--24369;
+the endpoint-correction bridge is I:47076--47087.
+\bibitem{previous}
+Companion research proofs: Notebook 08, the source-compatible flat
+minimizing extension; Notebook 11, the full flat constraint-current
+family; Notebook 12, pointwise regularity on the flat current domain.
+The original CMP98 full paper has not been independently reverified.
+\end{thebibliography}
+\end{document}

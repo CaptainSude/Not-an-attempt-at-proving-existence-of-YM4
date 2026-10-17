@@ -1,0 +1,33 @@
+Independent geometric-interface audit
+17 October 2026. PASS of the mathematical lemmas; source theorem import
+remains subject to the author's stated primary-source qualifications.
+
+Read work/full_measure_large_field_interface_research.txt, especially
+Sections3--5, and the corresponding mathematical portions of
+work/full_measure_geometric_interface_fragment.tex.
+
+Coordinate paths increasing directions1,...,d form a genuine rooted
+spanning tree (parent decreases the last nonzero coordinate). A mu-edge
+fundamental loop is reduced by moving its last mu-step across exactly
+sum_(nu>mu)x_nu later steps. Each exchange introduces a conjugated
+plaquette or inverse, so unitary telescoping proves the stated
+(d-1)n epsilon bound without commutativity. The physical logarithm factor
+is n epsilon/eta=ell epsilon/eta^2, with the safe scalar factor2.
+
+For U1(x)=exp(i eta^2 f x2 chi(x1) H), the positive12 plaquette is exactly
+exp(-i eta^2 f chi(x1)H), and every other plaquette is identity. Adjacent
+scaled plaquette norms differ by at least f/2. A uniform physical C1alpha
+potential would make every jet a,b,c,e uniformly bounded, with adjacent
+zeroth jets O(eta) and first jets O(eta^alpha). The removable exact
+plaquette map then forces scaled curvature norms to differ by
+C(B)eta^alpha, independently of gauge because those norms are conjugacy
+invariant. This contradicts the alternating field. It excludes C1alpha,
+not a bounded C1 norm alone; the fragment states that distinction.
+
+The torus example's loop product and the bound
+||exp(i theta H)-I||<=ell b are exact. Transition-function formula and
+its ordering h_ij=v_i v_j^-1 are correct. No arbitrary-component atlas or
+normalized mixed-history theorem follows from these local geometric
+statements; the note preserves that scope.
+
+No mathematical correction requested; no output edits or compilation.

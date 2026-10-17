@@ -1,0 +1,89 @@
+\section{The interface with a renormalized quantum induction}
+\label{gex-next-section}
+
+The low-degree classification is now tied to the actual local
+symmetries and a normalized classical reference. The exact
+coupling rebase is
+\[
+ g_{\mathrm{next}}^{-2}=g^{-2}-\beta,\qquad
+ E_{\mathrm{ren}}=E-E(0)-\beta S_{MR}.
+\]
+This is an identity of the density after extraction. A sign
+or trajectory estimate for the generated \(\beta\) is still
+needed; the identity does not supply one.
+
+There is a concrete route to the spatial part of a contraction.
+Fix the elementary macrostep \(R\) and its sufficient auxiliary
+grouping \(J\). The spatial remainder estimate has constants
+depending on these fixed data. Select a finite \(q\) afterward,
+so that its endpoint ratio \(L=R^q\) makes
+\(C(J)L^{-\alpha}\) small. The classical semigroup identifies
+the scalar inherited background with the direct endpoint
+background. Its new connected localization can then be
+estimated directly. The high-degree piece has the separate
+inverse-\(L\) estimate of Notebook 28, with its analytic radius
+chosen after this finite \(L\).
+
+The analytic compactness and quotient constructions make
+this classical change of representation precise. They supply
+joint limiting interactions and maps, a complete quotient,
+and a bounded full-reference projection. The final classical
+estimate is a contraction once the finite endpoint ratio
+is sufficiently large and its common radius is chosen.
+
+To turn this into a quantum induction, four interfaces must
+be established. First, the limiting interaction space must
+be matched to the regulators used by the actual quantum update,
+including winding terms and its vacuum normalization.
+Second, prove that the quantum update descends continuously
+to the quotient; classical descent alone does not identify
+the sharp finite-regulator integrals for equivalent inputs.
+Third, the \(q\) successive
+quantum steps must retain all intermediate generated terms,
+cutoffs and normalizations; the classical semigroup does not
+replace them by a single fluctuation integral. Fourth, the
+resulting recurrence must control both the renormalized
+activity and the actual coupling trajectory uniformly in
+the number of blocks of steps.
+
+The present results supply the nonlinear marginal identity,
+the classical spatial gain and its representation space
+under stated hypotheses. The larger existence proof
+still needs the mixed and large-field histories, sourced
+observable estimates, continuum nontriviality, Euclidean
+symmetry and reconstruction already recorded in Notebook 01.
+The mass gap remains a subsequent spectral assertion.
+
+\begin{thebibliography}{9}
+\bibitem{priorgex}
+\emph{Toward a four-dimensional Yang--Mills construction},
+research Notebooks 07, 15--16 and 25--28 in this workspace.
+The flat classical normalization, ordinary minimum theorem,
+strict classical support families and common-domain quantum
+macrostep are the principal prior inputs.
+\bibitem{balaban109gex}
+T.~Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field
+theories. I. Generation of effective actions in a small field
+approximation and a coupling constant renormalization in four
+dimensions},
+Commun. Math. Phys. \textbf{109} (1987), 249--301.
+\href{https://doi.org/10.1007/BF01215223}{Publisher record};
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-3ygai0vxt1.pdf}{Original article copy}.
+The averaging symmetries and total Ward/subtraction calculations
+are checked against this primary source. Its stronger
+coefficientwise orbit hypotheses are not assumed here.
+\bibitem{balaban116gex}
+T.~Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field
+theories. II. Cluster expansions},
+Commun. Math. Phys. \textbf{116} (1988), 1--22.
+\href{https://doi.org/10.1007/BF01239022}{Publisher record}.
+\bibitem{sourcegex}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}
+{Yang--Mills-LLM-experiment},
+deposited raw accounts at commit
+\texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+\end{thebibliography}
+\end{document}

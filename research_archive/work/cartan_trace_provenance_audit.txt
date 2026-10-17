@@ -1,0 +1,201 @@
+Independent audit of Notebook 33 actual determinant interfaces
+17 October 2026
+
+Files read:
+  work/gauge_invariant_determinant_density_fragment.tex (gdd-)
+  work/cartan_determinant_moment_fragment.tex (cdmom-)
+  work/cartan_trace_notebook_head.tex and tail.tex
+Relevant earlier inputs checked:
+  work/determinant_gauge_bridge_research.md, including new Section 7
+  work/coarse_stationary_support_research.md
+  work/classical_support_localization_research.md
+  the previously audited finite gauge/coarea bridge and Cartan note.
+
+RESULT: PASS, with the precise scope below. No concrete formula,
+normalization or logical correction found in these two fragments.
+This is not an independent audit of the separate continuum reference,
+heat-comparison or short-time closed-walk modules of Notebook 33.
+No files other than this audit were changed.
+
+1. Individual matrix and density gauge identities
+
+The left-relative fluctuation transforms linearly by the adjoint at
+the initial bond site. The relative target logarithm transforms by
+the corresponding adjoint at the initial coarse site. Thus C,
+lambda, the full Lagrangian Hessian and the based generator have
+the transformation rules stated in gdd-transformations. In particular,
+the argument does not discard lambda.f''. The domain of based scalar
+fields is unchanged: zero values at centers remain zero under every
+pointwise adjoint action.
+
+The fixed scalar completion aI is essential to the displayed simple
+covariance. Q_b, G_b and P_c then transform by block-diagonal
+orthogonal similarity (complex orthogonal on the analytic germ).
+Functional calculus gives the same similarity for their logarithms.
+Consequently each diagonal color trace is individually invariant;
+this is stronger than invariance of the sum.
+
+The use of the stationary section is legitimate on the local germ:
+transforming a minimum at W gives a constrained critical orbit at
+W^g, and the previously proved local uniqueness identifies its
+selected rooted representative. The intervening fine gauge may
+depend on W. This does not affect a pointwise scalar identity under
+diagonal conjugation. No globally defined large-gauge section is
+asserted.
+
+2. Fixed-endpoint spectral bounds
+
+The path-to-center argument gives a volume-independent positive
+based-scalar gap at each fixed K; its crude K^(d+1) Poincare constant
+is sufficient and consistent with the K^(-d) upper Rayleigh example.
+No mass gap uniform in K is inferred.
+
+For a horizontal vector in ker C, adding D_b T v makes its contour
+derivative zero, leaves its Lagrangian value unchanged, and can only
+increase its norm. Conversion from retained to current coordinates
+uses the fixed-K bound on K_0. This gives the claimed horizontal
+coercivity. The divergence term controls the orthogonal vertical
+part by the smallest eigenvalue of G_b; cross terms vanish.
+
+The adjusted lift H_b has CH_b=I, D_b^T H_b=0 and
+L H_b=C^T q_eff. Thus the decomposition x=xi+H_b y has exactly the
+claimed block-diagonal quadratic form for Q_b with fixed completion
+aI. Bounded H_b and the gap of q_eff+aI give a positive ambient gap.
+All constants may deteriorate with K. Their old-depth and volume
+uniformity uses the previously proved current-coordinate response
+and retained-precision bounds, not a one-shot fine gap uniform in
+the original refinement.
+
+3. Locality of logarithms and their source kernels
+
+Choosing s above the flat upper spectral bound makes I-P(0)/s a
+strict contraction. Exponentially weighted Schur bounds make a
+small bounded distance-weight conjugation a small operator-norm
+perturbation. The complex background ball can then be shrunk so
+the conjugated series has a fixed contraction factor r_K<1.
+
+The source-rooted derivative bounds are an actual extra input here,
+not a consequence of an operator norm alone. They are supplied by
+the strict classical families, the finite-range chart and the
+stationary support construction. With these inputs, each
+differentiated logarithm series has at most n or n^2 insertions.
+Each undecorated power segment has a weighted kernel bounded by
+a constant times r_K to its length. Rooted weights for the inserted
+vertices join the matrix chain and its sources. Summing the
+intermediate coordinates and source labels spends a smaller
+exponent; the remaining geometric series with n^2 converges.
+This verifies the claimed rooted absolute quadratic-kernel sum.
+It is not an unsupported inference from a bound on the extensive
+trace or a scalar holomorphic supremum.
+
+4. Affine density equals the total Maxwell moment
+
+For each density, global semisimple color invariance kills its
+linear jet in every spatial component. Differentiating its local
+gauge identity therefore makes its Hessian annihilate compact
+gradients in either slot. Exponential rooted summability extends
+this to polynomial gauge parameters. A linear scalar parameter
+supplies a constant one-form, giving the individual selected
+component's zero row and column sums.
+
+Hence one half of sum k_0(b,c)b_nu c_nu equals minus one quarter
+of sum k_0(b,c)(c_nu-b_nu)^2. Translation covariance gives
+K(0,r)=sum_x k_0(-x,r-x), and the change of variables
+b=-x, c=r-x gives gdd-affine-moment with its exact minus sign and
+factor 1/4. All rearrangements have exponential polynomial moments.
+Together with the previously fixed beta normalization this yields
+beta=2[t^2]rho_0. For mu distinct from nu, midpoint versus tail
+coordinates in direction nu introduce no offset.
+
+This is a proof for the specifically constructed invariant
+densities, not for an arbitrary representative modulo divergences.
+The integration-by-parts counterexample and the conditional use
+of the total spatial symmetries are both correctly retained.
+
+5. Exact Cartan and ordinary-average identities
+
+The Wilson force cancels as a Lie-algebra identity, not merely
+against Cartan variations: opposite incident constant plaquettes
+give identical transported sine terms with opposite signs.
+
+For the actual selected mean, conjugation covariance forces the
+mean of a maximal-torus tuple to lie in that torus. Endpoint
+covariance factors out exp(i r.A(y)); the remaining within-block
+factor is independent of y and cancels in the ordinary path
+product. Thus the proof does not assume an unproved
+log-arithmetic identity for the selected mean.
+
+Centered averaging kills the remaining linear displacement, and
+iteration gives exactly K A_mu(y), hence K^2 times the curvature.
+The probe exp(i t x_nu H/K^2) therefore maps to t n_nu H, with the
+displayed oriented plaquette sign. Based rooting preserves both
+the constraint and Wilson stationarity.
+
+6. Polynomial stationary jets and effective S_M
+
+Exponential kernels act on polynomial-growth sequences by absolute
+summation. Their inverse identities continue by absolutely
+convergent double sums, so the flat retained operator has no
+polynomial-growth nullvector. Rooted mixed Taylor bounds absorb
+the polynomial inputs at each fixed degree. The orderwise
+stationary recursion therefore has a unique polynomial solution,
+equal to the extension of the bounded-field analytic jet.
+
+For each fixed finite M, apply this first to the bare minimization
+with endpoint M. The explicit affine fine candidate is
+unconstrained Wilson stationary, so its whole target multiplier
+vanishes. The envelope identity identifies this whole multiplier
+with D_left S_M, not just its contraction with the affine path.
+That is sufficient to obtain effective-action stationarity in
+every current component through order two. The same identity
+survives the direct-K rooting by the local gauge identities,
+extended coefficientwise with their exponential kernels.
+
+Applying the retained recursion at the next fixed K then gives
+the actual stationary jets and lambda_(M,K)=O(t^3).
+There is no hidden claim that a one-shot fine inverse is uniform
+in M. Uniformity over varying old depths enters only afterward
+through the already uniform current-coordinate Taylor kernels
+at fixed K. Their polynomial moments pass by exponential
+domination, so the structural-limit statement is justified.
+
+7. The actual determinant formula on the probe
+
+Since lambda vanishes through degree two, lambda.f'' contributes
+no first or second probe jet. The remaining s'' is still the
+Hessian of S_M; it becomes the bare Wilson Hessian only at M=1.
+Removing the root gauge from diagonal traces is legitimate by
+their individual similarity identity, extended to the same
+polynomial jets. The coefficient weights 2,-1,+1 are exactly
+twice the original determinant weights 1,-1/2,+1/2.
+
+The fixed-K matrix-log derivatives make these coefficients
+well-defined. No positivity at a nonzero infinite magnetic
+background, no continuous periodic-flux family, and no value of
+the bounded-field analytic map at an unbounded input is used.
+
+8. New coarse determinant input from Notebook 32
+
+The relative BCH formula for q_eff retains both the ordinary
+action Hessian term and DS times the second relative-coordinate
+derivative. Strict support is unchanged by this per-bond map.
+The fixed cardinality reserve pays all finite differentiation
+and source-slot counts on a smaller radius. This yields the
+claimed depth-independent coarse Schur and source bounds.
+
+For a>2 R_mu the weighted Neumann inverse is uniform. In the
+second derivative of logdet, two first-source vertices are
+connected by inverse edges; their rooted bounds and a spare
+exponent yield source separation decay. The second-source
+vertex is bounded directly. Thus the coarse second moment is
+O(1) independently of M and K, in output units. This does not
+extend that uniform estimate to either fine determinant.
+
+SCOPE
+
+The audited new interfaces identify the actual infinite
+structural-system Maxwell moment with the specified Cartan
+trace coefficient at a fixed endpoint. They do not establish
+the endpoint-uniform fine vector/ghost comparison, its sign,
+the positive drift hypothesis, a global measure construction,
+or four-dimensional Yang--Mills existence.

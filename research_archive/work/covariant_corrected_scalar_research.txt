@@ -1,0 +1,314 @@
+ACTUAL MOVING-REFERENCE ENDPOINT CORRECTION AND A COVARIANT BLOCK AVERAGE
+17 October 2026. Research proof, provenance.
+
+Status. Sections 1--6 prove exact tangent identities for the actual
+ordinary composite map, with gauge covariance, one-block scalar
+locality, constant BB^T and a uniform-volume fixed-K analytic germ.
+They do not replace the actual nonlinear constraint or cutoff.
+The determinant reformulation in Section7 is a consequence conditional
+only on the separately audited general tangent determinant identity
+and spectral gaps; those are being developed independently.
+
+1. Actual source data and conventions
+
+Fix a primitive odd ell>=3 and K=ell^k. Use current link angles,
+positive oriented bonds, counting scalar/bond inner products, and
+the gauge convention
+
+ U^g(e)=g(e_-)U(e)g(e_+)^-1.
+
+Its left-relative infinitesimal generator on ALL scalar sites is
+
+ (D_U phi)(e)=phi(e_-)-Ad_(U(e)) phi(e_+).                 (1.1)
+
+At stage j the ordinary background is U_j=M_ell^j(U).
+All stage scalar parameters remain angle-valued; there is no factor
+ell, ell^j or K in (1.1) after unit-lattice identification.
+
+Use EXACTLY the group-valued internal transport P_ell(U;y,x)
+entering the selected actual ordinary average. It may be the
+source's symmetrized group mean of coordinate-order contours;
+it need not be a single axial transporter. The needed facts are:
+
+ - it reads only edges internal to the centered ell-block B_ell(y);
+ - it is analytic on the common small branch;
+ - P(U^g;y,x)=g(y)P(U;y,x)g(x)^-1;
+ - P(1;y,x)=1, and its flat derivative is the same contour mean
+   that occurs in the flat ordinary derivative.
+
+These are the actual definitions/axioms in CMP109 (1987),
+pp.252--254, (0.3),(0.5)--(0.12), already verified in
+composite_macrostep_geometry_research.md Sections1--2.
+The pinned deposit Raw I:831--845 explicitly selects that
+symmetrized ordinary map. Raw I:46965--46978 defines the relative
+contour and ordinary increments, and 47076--47086 records the
+moving-reference endpoint correction.
+
+We will derive our correction directly rather than identify it
+with every operator denoted Q or Q' elsewhere. In particular
+Raw I:23913--23920 describes an older axial/nested-contour scalar
+average. No unverified equality of that convention with the
+selected symmetrized P is required in this proof.
+
+2. Exact primitive correction and its gauge differential
+
+Fix U and W=M_ell(U). For a small bond-angle increment x define
+
+ r_U(x;y,z)=(1/i)log[P(e^{ix}U;y,z)P(U;y,z)^-1],
+ alpha_U(x;y)=ell^-d sum_(z in B_ell(y)) r_U(x;y,z),
+ a_U(x;y)=exp(i alpha_U(x;y)).
+
+At x=0 every r and alpha is zero and a_U=1. Put
+
+ Z_U x= D_x alpha_U(0)[x],
+ C_U x= (1/i)D_s[M_ell(e^{isx}U)W^-1]_(s=0).             (2.1)
+
+Define the actual relative corrected output near this reference by
+
+ Fbar_U(x;c)=a_U(x;c_-)^-1
+                    M_ell(e^{ix}U)(c) a_U(x;c_+).
+
+Its value at zero is W. Direct differentiation in the left-relative
+target coordinate gives the exact ANGLE identity
+
+ Cbar_U=C_U-D_W Z_U.                                    (2.2)
+
+This is an identity between tangents at U. The reference U is held
+fixed while x varies. It is not the derivative of the fixed-identity
+corrected map at U, and it does not change the original nonlinear
+constraint imposed on the actual integral.
+
+For a fine site gauge e^{is phi}, endpoint covariance gives
+
+ (1/i)D_s[P(U^{e^{is phi}};y,z)P(U;y,z)^-1]_(s=0)
+                     =phi(y)-Ad_(P(U;y,z))phi(z).
+
+The fine left tangent of that variation is D_U phi. Therefore
+
+ Z_U D_U=r_ell-B_U,
+ (B_U phi)(y)=ell^-d sum_(z in B_ell(y))
+                            Ad_(P(U;y,z)) phi(z),          (2.3)
+
+where r_ell is restriction to new centers. Ordinary covariance
+C_U D_U=D_W r_ell and (2.2) imply
+
+ Cbar_U D_U=D_W B_U.                                    (2.4)
+
+No logarithm-Jacobian factor appears in (2.3): the relative contour
+increment equals identity at x=0, so its logarithm differential is
+identity. This is the reason the moving-reference correction is
+simpler here than the fixed-identity induced gauge map.
+
+3. Exact local gauge covariance
+
+Let O_E(g),O_S(g),O_c(g) be adjoint frames on the fine bond source
+sites, fine scalar sites and new centers, respectively. For a fixed
+gauge g in the common domain,
+
+ e^{i O_E(g)x} U^g=(e^{ix}U)^g.
+
+The relative contour product at U^g is conjugated by g(y).
+Similarity equivariance of the local logarithm gives
+
+ Z_(U^g) O_E(g)=O_c(g) Z_U,
+ Cbar_(U^g) O_E(g)=O_Ec(g) Cbar_U,
+ B_(U^g) O_S(g)=O_c(g) B_U.                             (3.1)
+
+The ordinary C and D have their usual corresponding covariance.
+These identities use simultaneous transformation of the reference
+and varied configuration. The endpoint gauges a_U are not assumed
+to satisfy a multiplicative cocycle in the reference.
+
+All adjoint frames are orthogonal for the invariant real trace
+pairing and complex orthogonal for its holomorphic bilinear
+continuation. The identities hold on the common complex germ.
+
+4. Composite tangent identity at ordinary backgrounds
+
+Use C_j,Cbar_j,Z_j,B_j at U_j=M_ell^j(U), and write D_j for
+the scalar generator there. Define ordered products
+
+ C^(t)=C_(t-1)...C_0,
+ Cbar^(t)=Cbar_(t-1)...Cbar_0,
+ B^(t)=B_(t-1)...B_0,
+
+with identity products at t=0. Then C^(k) is exactly the derivative
+of the actual ordinary composite constraint. The intertwining
+(2.4) gives
+
+ Cbar^(t) D_0=D_t B^(t).                                (4.1)
+
+Set Z^(0)=0 and recursively
+
+ Z^(t+1)=B_t Z^(t)+Z_t C^(t).                            (4.2)
+
+Multiplying C_t=Cbar_t+D_(t+1) Z_t, and using
+Cbar_t D_t=D_(t+1)B_t, proves by induction
+
+ C^(t)=Cbar^(t)+D_t Z^(t).                              (4.3)
+
+At t=k these are precisely the general tangent identities needed
+by the new all-site determinant bridge:
+
+ C-Cbar=D_c Z,       Cbar D_all=D_c B,
+ Z D_all=r_K-B.                                        (4.4)
+
+The last identity follows either from the same recursion or from
+Z_tD_t=r_ell-B_t and the ordinary intertwining. Its sign is fixed
+by (1.1), not absorbed into an unnamed convention.
+
+All factors are at ORDINARY intermediate references U_j. They are
+not evaluated at the fixed-identity corrected trajectory.
+Covariance (3.1) telescopes with the ordinary reference frames, so
+the composite Cbar, B and Z have the same exact joint covariance.
+
+5. Own-block support and the constant row Gram matrix
+
+Each primitive B row reads scalar sites only in its own block.
+For a fine site x in a final K-block B_K(y), let
+x=x_0,x_1,...,x_k=y be its unique nested sequence of block centers.
+The composite product has exactly one scalar ancestry for x.
+Consequently
+
+ B(U;y,x)=K^-d Ad_(P_hier(U;y,x)),                        (5.1)
+ P_hier=P_(U_(k-1);x_k,x_(k-1)) ... P_(U_0;x_1,x_0),
+
+and B(U;y,x)=0 outside B_K(y). The factors are ordered from the
+final center down to x. Each is an actual group element, even
+when it is itself a selected group mean of path transports.
+
+The background dependencies are also contained in the SAME final
+block. A stage-j internal contour uses only stage-j bonds whose
+endpoints lie in the relevant parent block. Every such ordinary
+bond reads the two descendant fine blocks at its endpoints; their
+union is contained in that final block, by nested centered tiling.
+Induction down the hierarchy proves the assertion. No derivative
+of B reads a fine background bond crossing its final block boundary.
+
+The ordinary C and corrected Cbar rows read only the two final
+endpoint blocks. For Cbar this follows either from the product
+of primitive two-block maps or (4.2)--(4.3). The scalar Z row
+also stays in its own final block: Z_t reads internal stage bonds,
+and C^(t) on those bonds reads only descendant blocks inside
+that parent block. These are full nonlinear coefficient-support
+claims, not merely support at U=1.
+
+The final scalar blocks partition the fine sites, so distinct B
+rows have disjoint scalar supports. In the invariant bilinear
+pairing each Ad(P_hier) obeys Ad(P_hier)Ad(P_hier)^T=I.
+Thus, for real AND complex backgrounds in the germ,
+
+                    B B^T=K^-d I.                       (5.2)
+
+This is exact, not an O(background) estimate. In dimension four,
+the scalar-kernel projector therefore has the explicit local form
+
+             P_B=I-K^4 B^T B.                           (5.3)
+
+It is symmetric and idempotent, orthogonal on real fields, and
+holomorphic on the complex germ. It has one-final-block background
+and matrix support, and exact scalar gauge covariance
+P_B(U^g)=O_S(g)P_B(U)O_S(g)^T.
+The normalized term (1/2)logdet BB^T is identically zero.
+
+6. Flat values, analytic domains and uniformity
+
+At U=1 the primitive contour derivative in Z is exactly the root
+term of the actual ordinary arithmetic differential. Subtracting
+the two endpoint terms in (2.2) leaves
+
+ (Cbar_1 x)(c)=ell^-d sum_(z in B_ell(c_-))
+                                 x([z,z+ell e_mu]),
+ B_1=Q_(0,ell).                                         (6.1)
+
+Thus at the full endpoint
+
+ Cbar(1)=A_K^st,        B(1)=Q_(0,K).                    (6.2)
+
+Here Cbar is an angle map: its primitive factor is ell times the
+normalized physical-potential average. The scalar average has no
+extra ell factor. Products in (6.2) are straight-string and
+site-block averages by exact centered-block tiling.
+
+At fixed K, each composite coefficient reads finitely many links
+in one or two final blocks and is a composition of analytic local
+maps. A sufficiently small link-angle product ball therefore works
+uniformly in volume and in unrelated old depth M. Its radius and
+derivative constants may depend on K. Cauchy bounds preserve the
+same finite support. Source tori with the prescribed local lifts
+and nested blocks preserve all incidence counts.
+
+There is a stronger available physical-background bound if desired.
+For U=exp(iA/K) in the previously proved small globally bounded
+physical-potential ball, the ordinary intermediate angles are
+O(ell^j ||A||/K). Each fixed-ell primitive moving operator differs
+from its flat value by that amount in the physical absolute Schur
+norm. Summing ell^j/K gives a bounded geometric series. Therefore
+B has uniform physical bounds and
+
+ ||B-Q_(0,K)||_(count,2->2)<=C ||A||_infty K^-2
+                                                       (d=4). (6.3)
+
+The corresponding angle-bond Cbar bound has counting scale K^-1.
+These stronger estimates use the actual ordinary-reference
+trajectory theorem; they are not necessary for fixed-K volume
+uniformity or the exact algebra (5.2).
+
+The older FIXED-identity corrected induced scalar map is a different
+object. Its one-step logarithm Jacobians in ng-one-step-gauge give
+an own-block analytic row with flat value Q0, and its composite
+has the same support/onto properties on a small germ. Its row
+Gram matrix is generally background dependent, and its simple
+joint covariance cannot be assumed. The present moving-reference
+construction avoids those two issues by (2.3),(3.1),(5.2).
+
+7. Basis-free consequence for the general tangent determinant bridge
+
+Assume the separately proved finite tangent identity, with a
+bilinear orthonormal frame V of ker B,
+
+ D_actual=N_0[logdet G_B-(1/2)logdet Q_B
+                              +(1/2)logdet BB^T],
+ G_B=V^T D_all^T D_all V,
+ Q_B=H_res+D_all P_B D_all^T+a Cbar^T Cbar.                (7.1)
+
+No global integrability of Z is required for that tangent identity.
+The actual residual H_res and the actual ordinary C remain those
+of the original constrained stationary problem. Our construction
+has not replaced that problem by a different corrected nonlinear
+constraint.
+
+Let G_all=D_all^T D_all and define on ALL scalar sites
+
+ Ghat_B=P_B G_all P_B+K^-2(I-P_B).                        (7.2)
+
+Its two projector subspaces reduce it. Hence
+
+ det Ghat_B=det G_B (K^-2)^(rank B).                      (7.3)
+
+Rank B is fixed by (5.2), and its scalar power disappears under
+N_0. Equations (5.2),(7.1)--(7.3) give
+
+ D_actual=N_0[logdet Ghat_B-(1/2)logdet Q_B].             (7.4)
+
+Both ambient matrices in (7.4) are exactly gauge covariant.
+For Ghat_B use the covariance of P_B and D_all; for Q_B use
+the residual covariance together with Cbar and P_B.
+This removes the need to choose gauge-covariant frames V.
+In particular, once their real flat gaps and a fixed-K uniform
+complex perturbation neighborhood have been established, their
+local diagonal logarithm traces are individually gauge invariant
+by the same conjugation argument as Notebook33.
+
+At flatness G_B is the scalar Laplacian on functions with zero
+average in each K-block. Elementary block Neumann Poincare gives
+gap cK^-2, and the complement in Ghat_B has gap K^-2.
+The Q_B flat gap, uniform old-M action inputs, and resulting
+analytic/logarithm bounds are independent spectral tasks; they
+must not be inferred merely from locality or covariance here.
+
+Unlike the earlier globally based factors, this formulation has
+no isolated global base site. If (7.1) and those gaps are supplied,
+fixed-K local-density and affine-moment passage applies directly.
+It still does not compute the large-K vector Maxwell coefficient
+or prove a continuum Yang--Mills theory.

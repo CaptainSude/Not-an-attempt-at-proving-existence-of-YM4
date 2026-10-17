@@ -1,0 +1,306 @@
+% No preamble. Prefix cdmom-. Polynomial jets, not a periodic flux family.
+\section{Constant Cartan curvature and the actual stationary jets}
+\label{cdmom-section}
+
+We now use the diagonal-density construction to make a
+constant-curvature calculation an exact test of the actual
+Maxwell coefficient. All substitutions at an unbounded
+affine field mean substitutions into exponentially localized
+Taylor kernels at zero, through the required finite order.
+
+\subsection{Exact local Wilson and averaging identities}
+\label{cdmom-affine-section}
+
+Choose commuting traceless Hermitian matrices \(c_\mu,B_{\mu\nu}\)
+in a Cartan subalgebra of \(\mathfrak{su}(N)\), with
+\(B_{\mu\mu}=0\), and put
+\begin{equation}
+ A_\mu(x)=c_\mu+\sum_\nu B_{\mu\nu}x_\nu,\qquad
+ U_\mu(x)=e^{iA_\mu(x)}.
+ \label{cdmom-affine}
+\end{equation}
+The plaquette in the \(\mu,\nu\) plane is the constant matrix
+\[
+ e^{iF_{\mu\nu}},\qquad F_{\mu\nu}=B_{\nu\mu}-B_{\mu\nu}.
+\]
+The full Wilson Euler derivative is zero. For each varied
+bond and transverse direction, the two incident plaquettes
+give opposite transported sine terms. They agree after
+transport because all background links and plaquettes
+commute. The cancellation occurs as a Lie-algebra-valued
+identity, including against variations outside the Cartan
+subalgebra. This is a local infinite-lattice identity;
+an artificial finite-box boundary is not included.
+
+For a centered primitive block, write \(x=y+r\).
+Every coordinate-order root contour has transporter
+\[
+ \exp\{i[r\cdot A(y)+q_\Gamma(B,r)]\},
+\]
+where \(q_\Gamma\) is independent of \(y\).
+The selected mean is endpoint equivariant and conjugation
+equivariant. Its value on a tuple of diagonal matrices
+is diagonal: conjugation by every diagonal group element
+fixes the tuple, hence its output. Therefore the actual
+root transporter has the form
+\begin{equation}
+ P_\ell(U;y,y+r)=e^{ir\cdot A(y)}p_\ell(B,r).
+ \label{cdmom-contour}
+\end{equation}
+No log-arithmetic formula for the selected mean is assumed.
+
+The \(p_\ell\) factors cancel in the ordinary path product
+between neighboring blocks. Since \(B_{\mu\mu}=0\), this
+product is
+\[
+ U_x=e^{i\ell A_\mu(y)}
+       \exp\!\left\{i\ell\sum_\nu
+                 (B_{\mu\nu}-B_{\nu\mu})r_\nu\right\}.
+\]
+Its reference center string is \(e^{i\ell A_\mu(y)}\).
+The defining ordinary average takes the centered average
+of the relative logarithms, and \(\sum_r r_\nu=0\).
+It follows that the actual primitive and iterated maps obey
+\begin{equation}
+ M_\ell(U)(y,y+\ell e_\mu)=e^{i\ell A_\mu(y)},\qquad
+ F_K(U)(y,y+Ke_\mu)=e^{iK A_\mu(y)},\quad K=\ell^k.
+ \label{cdmom-average}
+\end{equation}
+Thus the output affine curvature is \(K^2F\).
+These are identities of local analytic germs, hence
+identities of formal curvature jets at each lattice site.
+They do not require a common bounded logarithm of the
+affine field on the whole infinite lattice.
+
+Apply the actual direct-\(K\) root gauge
+\(u(x)=P_K(U;y,x)\) in the block centered at \(y\).
+It is the identity at centers. Endpoint covariance makes
+the transformed contour equal to the identity and leaves
+the composite output unchanged. Wilson stationarity
+is preserved by gauge invariance. At every fixed order
+in a curvature parameter, the rooted candidate has
+polynomial growth in the block center. The within-block
+coordinate set is finite at fixed \(K\).
+
+\subsection{Why the formal candidate is the actual minimum jet}
+\label{cdmom-jet-section}
+
+\begin{lemma}[Polynomial extension of the stationary recursion]
+\label{cdmom-polynomial-lemma}
+Suppose an actual stationary equation in retained coordinates is
+\[
+ \mathcal A z+\mathcal B w+\mathcal N(w,z)=0,\qquad
+                     \mathcal N=O((w,z)^2).
+\]
+Assume \(\mathcal A,\mathcal A^{-1},\mathcal B\) have
+exponentially summable kernels, the inverse identities
+hold on finitely supported fields, and the mixed Taylor
+kernels of \(\mathcal N\) through a specified finite
+order have exponential rooted-tree bounds. Then its
+analytic solution jets extend uniquely to polynomial-growth
+input jets. Any polynomial-growth formal solution has
+those same coefficients through that order.
+\end{lemma}
+
+\begin{proof}
+For a polynomial-growth sequence \(v\),
+\[
+ (1+|j|)^m\le(1+|i|)^m(1+d(i,j))^m
+\]
+shows that convolution by an exponentially summable
+kernel is absolutely defined and preserves polynomial
+growth. Exponential summability also permits the two
+convolutions in the inverse identities to be interchanged.
+Those identities therefore hold on polynomial-growth
+sequences. In particular \(\mathcal A\) has no nonzero
+polynomial-growth nullvector.
+
+For a mixed kernel of any fixed finite degree, bound
+each input polynomial by a polynomial in the output
+coordinate times a polynomial in the joining-tree lengths.
+The exponential tree bound absorbs the latter factors.
+Thus the nonlinear Taylor coefficients are well defined.
+At order \(n\) the stationary equation is
+\[
+ \mathcal A z_n=h_n(w_1,\ldots,w_n,z_1,\ldots,z_{n-1}),
+\]
+and has the unique polynomial-growth solution
+\(\mathcal A^{-1}h_n\). These are also the equations
+obtained by differentiating the analytic bounded-field
+solution. Induction proves the assertion.
+\end{proof}
+
+For the actual constrained stationary branch at a fixed
+endpoint, these are established inputs: the flat retained
+precision has its exponential inverse, the affine
+constraint chart is local, and the classical scalar
+and stationary support families have exponentially
+localized mixed derivatives. The finite fiber dimension
+is per block; the whole lattice is not finite-dimensional
+in this application. Only finite-order jets are being
+extended.
+
+For the bare Wilson action, the rooted affine candidate
+above solves the constraint, contour and stationary
+equations coefficientwise, with unconstrained current
+and multiplier equal to zero. Lemma~\ref{cdmom-polynomial-lemma}
+therefore identifies it with the actual stationary
+section's polynomial jets. In particular this applies
+through the two background orders needed below.
+
+\subsection{The effective classical action is also stationary on this family}
+\label{cdmom-effective-section}
+
+The effective-action interface can be checked using the
+actual envelope identity, without replacing its Hessian
+by a bare Wilson Hessian.
+
+Fix any permitted finite homogeneous depth \(M\).
+The action \(S_M\) is the actual local minimum value of
+the bare Wilson action under \(F_M\). Its differential
+in left-relative output coordinates equals the target
+multiplier of that minimum. This identity is an equality
+of the established analytic kernels. It extends to
+polynomial input jets by their exponential bounds.
+
+Apply the preceding bare-action argument at the fixed
+endpoint \(M\), with fine curvature equal to the prescribed
+current curvature divided by \(M^2\). The explicit fine
+candidate is Wilson stationary, so its multiplier jets
+are zero. Consequently
+\begin{equation}
+          D_{\rm left}S_M(U^{\rm affine}(t))=0
+                 \quad\hbox{as formal jets through order two}.
+ \label{cdmom-effective-stationarity}
+\end{equation}
+The identity holds in every current-link component;
+it is not just a derivative along the one-parameter family.
+Indeed the envelope identifies the whole target multiplier,
+and the unconstrained fine Euler derivative is zero.
+
+At the next fixed endpoint \(K\), take the current affine
+field with curvature divided by \(K^2\), and root it by
+the actual direct-\(K\) based gauge. The classical local
+gauge identity, also extended coefficientwise by exponential
+bounds, preserves \eqref{cdmom-effective-stationarity}.
+This candidate satisfies the actual \(S_M\) constrained
+stationary equation with zero multiplier through the same
+orders. Apply Lemma~\ref{cdmom-polynomial-lemma} to the
+retained precision for \(S_M\). The candidate has exactly
+the actual current stationary jets, and
+\begin{equation}
+             \lambda_{M,K}(t)=O(t^3)
+ \label{cdmom-multiplier-jets}
+\end{equation}
+in this formal sense.
+
+All assertions so far fix each endpoint when invoking
+its inverse. They do not infer a gap uniform in \(M\)
+or \(K\) for a one-shot fine operator. However, the
+current-coordinate classical and stationary Taylor
+kernels at fixed \(K\) have the already established
+uniform bounds in preceding depth. Their polynomial
+moments consequently pass to any varying-depth
+structural limit by exponential domination.
+Thus \eqref{cdmom-effective-stationarity} and
+\eqref{cdmom-multiplier-jets} also hold in those joint
+systems. The effective Hessian \(s''\) still depends
+on \(S_M\); this result does not make it the bare
+Wilson Hessian.
+
+\subsection{An exact constant-curvature expression for the Maxwell coefficient}
+\label{cdmom-determinant-section}
+
+Fix a trace-orthonormal Cartan color \(H\), and distinct
+directions \(\mu,\nu\). The output probe is
+\[
+ w_\mu(n;t)=t n_\nu H,\qquad w_\sigma=0\quad(\sigma\ne\mu).
+\]
+Its unrooted current affine representative is
+\begin{equation}
+ U_\mu^{\rm aff}(x;t)=\exp(i t x_\nu H/K^2),\qquad
+ U_\sigma^{\rm aff}=I\quad(\sigma\ne\mu).
+ \label{cdmom-probe}
+\end{equation}
+By \eqref{cdmom-average}, its output is exactly the
+chosen formal probe. Its oriented \(\mu,\nu\) plaquette
+has angle \(-tH/K^2\).
+
+On this family write
+\begin{align}
+ G(t)&=D_b(U^{\rm aff}(t))^TD_b(U^{\rm aff}(t)),\notag\\
+ V_a(t)&=s''(U^{\rm aff}(t))
+           +D_b(U^{\rm aff}(t))D_b(U^{\rm aff}(t))^T
+           +aC(U^{\rm aff}(t))^TC(U^{\rm aff}(t)),\notag\\
+ P(t)&=q_{\rm eff}(w(t))+aI.
+ \label{cdmom-probe-matrices}
+\end{align}
+All are formal matrix jets around their flat positive
+operators. In particular no invertibility or positivity
+on a nonzero global magnetic background is assumed.
+Equation \eqref{cdmom-multiplier-jets} removes the
+\(-\lambda\cdot f''\) term through second order.
+The remaining Hessian \(s''\) retains the actual action.
+
+Use the same block-zero site and bond assignments as
+in the diagonal-density construction. Its pointwise
+gauge invariance allows removal of the root gauge,
+coefficientwise: the local gauge identities extend to
+these polynomial gauge jets by the same exponential
+summation. The density--moment lemma therefore gives
+\begin{equation}
+ \boxed{\begin{split}
+ \beta(D_{M,K})=[t^2]\bigg\{
+ &2\sum_{\substack{z\ {\rm noncenter}\\z\ {\rm in\ block}\ 0}}
+                   \operatorname{tr}_{\mathfrak g}(\log G(t))_{zz}\\
+ &-\sum_{\substack{e\ {\rm current}\\e_-\ {\rm in\ block}\ 0}}
+                   \operatorname{tr}_{\mathfrak g}(\log V_a(t))_{ee}\\
+ &+\sum_{\substack{c\ {\rm output}\\c_-=0}}
+                   \operatorname{tr}_{\mathfrak g}(\log P(t))_{cc}
+                      \bigg\}.
+ \end{split}}
+ \label{cdmom-exact-coefficient}
+\end{equation}
+Field-independent subtractions can be omitted inside
+\([t^2]\). The factors \(2,-1,+1\) follow from
+\(\beta=2[t^2]\rho_0\), and the determinant weights
+\(1,-\tfrac12,+\tfrac12\).
+
+Every coefficient on the right is defined by the
+localized matrix-logarithm derivatives at zero.
+Their source kernels absorb the polynomial weights,
+so the sums are convergent at fixed endpoint.
+For \(M=1\), \(s''\) in \(V_a(t)\) is the actual bare
+Wilson Hessian on an explicit commuting constant-curvature
+background. The coarse contribution is uniformly bounded
+in \(M,K\) by Notebook 32. Hence the remaining ultraviolet
+comparison can be made directly on the first two terms
+of \eqref{cdmom-exact-coefficient}.
+
+\subsection{What this settles and what it does not}
+\label{cdmom-scope}
+
+The formula matches an explicit constant-curvature trace
+calculation to the actual Maxwell extraction, with the
+actual composite average, stationary jets and measure
+factors. It removes the multiplier-curvature jets on
+this probe. It does not replace an arbitrary local
+density by its value on an affine field: the individual
+gauge identity of the chosen diagonal densities was
+essential.
+
+On a fixed periodic torus, constant nonzero Cartan flux
+has quantization conditions. No analytic family of
+periodic fluxes through zero is used here. Nor is an
+unbounded affine field substituted into the original
+bounded-field map. The identities are polynomial
+extensions of localized derivatives in an infinite
+joint system.
+
+The fine vector--ghost expression still needs a bound
+on its difference from a precisely normalized reference
+logarithm, uniform as \(K\) grows. The fixed-endpoint
+logarithm construction supplies no such bound and
+computes no sign. Mixed and large-field histories,
+the continuum observable construction and reconstruction
+remain separate requirements for full existence.

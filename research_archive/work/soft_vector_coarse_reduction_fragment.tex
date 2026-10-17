@@ -1,0 +1,313 @@
+\section{A soft vector completion with a bounded coarse remainder}
+\label{svc-section}
+
+The exact identities below use the actual mean-zero determinant.
+The large-$K$ estimate concerns its first two affine background jets.
+Its auxiliary off-shell family retains the effective action $S_M$;
+it is not replaced by a bare Wilson Hessian.
+
+\subsection{Exact finite factorization}
+\label{svc-factor-section}
+
+Use current counting coordinates, $K=\ell^k$, $\mu=K^{-1}$, and
+\begin{equation}
+ J=K^2B^T,\qquad J^TJ=I,\qquad \Pi=JJ^T,\qquad P=I-\Pi.
+ \label{svc-projectors}
+\end{equation}
+The actual covariant pair and residual Hessian are
+\begin{equation}
+ \widehat G=PD^TDP+\mu^2\Pi,\qquad
+ Q_B=\mathcal H+DPD^T+a\bar C^T\bar C,
+ \qquad \mathcal H=L-C^TqC.
+ \label{svc-actual}
+\end{equation}
+Here $L=S_M''-\lambda\cdot f''$, $q=S_{MK}''$, all Hessians are
+left-relative, and $a\ge R_q+1$ is fixed. The actual correction is
+$\mathcal D=\mathcal N_0(\log\det\widehat G-\tfrac12\log\det Q_B)$.
+Define its soft vector completion and coarse Schur factor by
+\begin{equation}
+ V=\mathcal H+DD^T+a\bar C^T\bar C
+        =Q_B+(DJ)(DJ)^T,
+ \qquad S=I-J^TD^TV^{-1}DJ.
+ \label{svc-soft-vector}
+\end{equation}
+The determinant lemma and Woodbury identity give
+\begin{equation}
+ \det Q_B=\det V\det S,\qquad
+ S=(I+J^TD^TQ_B^{-1}DJ)^{-1}.
+ \label{svc-schur}
+\end{equation}
+These are identities between positive matrices on the real small germ,
+with normalized holomorphic continuations through flatness.
+
+For the soft scalar matrices
+\begin{equation}
+ T_s=D^TD+\mu^2\Pi,\qquad M_s=\mu^2J^TT_s^{-1}J,
+ \label{svc-soft-scalar}
+\end{equation}
+the scalar Schur identity is $\det\widehat G=\det T_s\det M_s$.
+Thus the exact actual decomposition is
+\begin{equation}
+ \boxed{\displaystyle
+ \mathcal D=\mathcal N_0\left[
+ \log\det T_s-\tfrac12\log\det V
+                 +\log\det M_s-\tfrac12\log\det S\right].}
+ \label{svc-four-factor}
+\end{equation}
+No massless based scalar factor or omitted Haar normalization occurs.
+The matrix $S$ has one fixed color fiber per final scalar site and is
+covariant in that coarse frame.
+
+\subsection{Uniform flat spectra and energy resolvents}
+\label{svc-flat-section}
+
+A subscript $0$ denotes flat background. The proved mean-zero estimates
+are $\Delta_1\le C_\Delta Q_{B,0}$ and
+$Q_{B,0}\ge c\mu^2I$. Since
+$D_0\Pi_0D_0^T\le D_0D_0^T\le\Delta_1$,
+\begin{equation}
+ Q_{B,0}\le V_0\le(1+C_\Delta)Q_{B,0},\qquad
+ (1+C_\Delta)^{-1}I\le S_0\le I.
+ \label{svc-flat-comparison}
+\end{equation}
+Indeed $\|Q_{B,0}^{-1/2}D_0J_0\|^2\le C_\Delta$ and
+\eqref{svc-schur} give the second assertion. The number of coarse
+rows has not been used as an estimate for this condition number.
+
+At zero, $qD_c=0$, so the ordinary and corrected constraint terms
+agree inside $C^TqC$. With $A_K=\bar C(0)$,
+\begin{equation}
+ V_0=q_M+D_0D_0^T+A_K^T(aI-q_{MK})A_K
+       \ge\Delta_1+A_K^TA_K.
+ \label{svc-flat-vector}
+\end{equation}
+The uniform analytic symbol of $q_M$ vanishes to order two at zero.
+Its uniform second moments therefore give $q_M\le C\Delta_1$.
+Also $\|A_K\|\le\mu$ and $\|q_{MK}\|\le R_q$.
+Combining these facts with the gap gives
+\begin{equation}
+ c(\Delta_1+\mu^2I)\le V_0\le C(\Delta_1+\mu^2I),
+ \label{svc-energy-comparison}
+\end{equation}
+on the chosen infinite structural system and its explicit periodizations. The finite actual lower bound, gap and heat estimate below remain valid without identifying arbitrary finite winding kernels with those periodizations.
+
+For the spatial argument, $q_M$ is the kernel of the chosen infinite structural system. The same conclusions hold for its explicitly periodized kernels; they are not asserted for unrelated finite winding kernels merely by sampling. For later source estimates the spatial exponent must also be uniform
+in final units. If $\delta(p)$ is the scalar lattice symbol, the common
+analytic strip and double zero of $q_M$ imply
+\begin{equation}
+ \|q_M(p+i\mu\theta)-q_M(p)\|
+ \le C\{\mu|\theta|\sqrt{\delta(p)}+\mu^2|\theta|^2\}.
+ \label{svc-fine-twist}
+\end{equation}
+Near zero this is Taylor's formula; away from zero it follows from
+bounded derivatives. The ordinary longitudinal term has the same bound.
+Conjugating fine fields by $e^{\theta\cdot x/K}$ and coarse fields by
+$e^{\theta\cdot y}$, straight-average row and column counting gives
+\begin{equation}
+ \|A_{K,\theta}\|\le C\mu,\qquad
+ \|A_{K,\theta}-A_K\|\le C|\theta|\mu.
+ \label{svc-average-twist}
+\end{equation}
+The coarse symbol $q_{MK}$ has a uniform strip. Its coarse correction
+therefore changes by $O(|\theta|\mu^2)$.
+Measured between two $(\Delta_1+\mu^2I)^{-1/2}$ factors, the total
+change is $O(|\theta|)$. Equations \eqref{svc-energy-comparison}--
+\eqref{svc-average-twist} give a common physical strip on which all
+energy sandwiches of $V_0^{-1}$ are bounded uniformly. The energy legs
+are the ordinary componentwise first differences and $\mu I$.
+
+Bloch decomposition by $K$-blocks turns these into bounded
+operator-valued analytic functions. Fourier integration gives uniform
+exponentially summable final-block kernels. The internal fiber may
+have dimension $K^4$, but the bounds are Hilbert operator norms; no
+entrywise sum over that fiber is taken. Explicit periodizations obey the same bounds. The established fixed-$K$ local-limit interface identifies the resulting infinite source coefficient with the actual local Maxwell coefficient; it does not identify arbitrary finite kernels with these periodizations. In particular $D_0^TV_0^{-1}D_0$, $S_0$ and, after shrinking
+the exponent using \eqref{svc-flat-comparison}, $S_0^{-1}$ have uniform
+weighted block bounds.
+
+Min--max also gives the flat heat estimate
+\begin{equation}
+ N^{-4}\operatorname{Tr}e^{-uK^2V_0}
+ \le C\left\{\frac{K^4}{(1+K^2u)^2}+N^{-4}\right\}e^{-cu}.
+ \label{svc-flat-heat}
+\end{equation}
+It follows from $V_0\ge Q_{B,0}$ and the mean-zero heat theorem.
+The same Mellin integration gives bounded inverse moments for powers
+$p>2$, the logarithmic bound at $p=2$, and exponential final-time tails.
+These flat estimates alone say nothing about a magnetic derivative.
+
+\subsection{The auxiliary family and the exact affine matching}
+\label{svc-auxiliary-section}
+
+For bounded physical $C^1$ potentials $A$ put $U_A=e^{i\mu A}$ and
+\begin{align}
+ \widetilde V(A)
+  &=S_M''(U_A)+D_AD_A^T
+       +\bar C_A^T\{aI-S_{MK}''(M_K(U_A))\}\bar C_A,
+       \label{svc-auxiliary-vector}\\
+ \widetilde S(A)
+  &=I-J_A^TD_A^T\widetilde V(A)^{-1}D_AJ_A.
+       \label{svc-auxiliary-coarse}
+\end{align}
+Every Hessian in these formulas is the actual relative-coordinate
+classical Hessian. The family is covariant, but it is not declared equal
+to \eqref{svc-soft-vector} off shell.
+
+On the established commuting affine probe, the actual fine and coarse
+currents and the multiplier vanish through the two jets used in the
+Maxwell extraction. Thus $qD_c=0$ and
+\begin{equation}
+ C^TqC=\bar C^Tq\bar C,\qquad L=S_M''
+ \quad\hbox{through the first two affine jets}.
+ \label{svc-on-shell-match}
+\end{equation}
+The actual smooth stationary polynomial jets are the corresponding
+fine affine connection. Hence $V,S$ and
+$\widetilde V,\widetilde S$ have identical first two affine jets.
+This is the precise interface used below.
+
+\subsection{Relative vertices with localized sources}
+\label{svc-vertices-section}
+
+Use complete physical source fields with
+\[
+ a_* =\|A\|_\infty+
+       \mu^{-1}\max_{\text{nearest, same component}}|A(e')-A(e)|.
+\]
+The corrected relative-Hessian theorem supplies, for $j=1,2$,
+\begin{align}
+ [t^j]S_M''(e^{it\mu A})
+     &=d_0^TZ_j+Z_j^Td_0+E_j,\notag\\
+ \|Z_1\|&\le C\mu a_*,&\quad \|E_1\|&\le C\mu^2a_*,\notag\\
+ \|Z_2\|&\le C\mu^2a_*^2,&\quad \|E_2\|&\le C\mu^2a_*^2.
+ \label{svc-relative-vertices}
+\end{align}
+Here $d_0$ is the componentwise gradient of a bond field. These are
+source-rooted block estimates, including physical weights.
+Their proof uses the ordered Laurent factorization
+$q_M=d_0^TH_0d_0$ and a symmetric covariant completion. A common
+componentwise-difference formula would be false for the shifted
+component-skew kernel and is not used.
+
+The first two $D_A$ jets are multiplication operators of sizes
+$O(\mu a_*)$ and $O(\mu^2a_*^2)$. Their contribution to
+$D_AD_A^T$ has the same form as \eqref{svc-relative-vertices}.
+The actual moving-reference products obey
+$\|\bar C_A\|=O(\mu)$ with first two physical-background derivatives
+of the same scale. Their rows and sources lie in two final blocks.
+The ordinary output $M_K(e^{i\mu A})$ is uniformly analytic and
+$O(\|A\|)$ in final units, with the same fixed physical range.
+The previously proved relative coarse Hessian kernels are uniform
+in $MK$. Therefore the last term of
+\eqref{svc-auxiliary-vector}, including its first two derivatives,
+is a zero-order $O(\mu^2)$ vertex with exponentially rooted sources.
+These conclusions use corrected moving tangents, not an estimate
+for the full uncorrected ordinary adjoint.
+
+The normalized block map $J_A$ and its first two physical derivatives
+have uniform own-block operator bounds. Keep the factorization
+\begin{equation}
+ R(A)=D_A^T\widetilde V(A)^{-1}D_A,
+ \qquad \widetilde S(A)=I-J_A^TR(A)J_A.
+ \label{svc-avoid-interface}
+\end{equation}
+The derivatives of $J$ stay outside $R$. In particular, no raw derivative
+of $DJ$ at a sharp block interface is estimated before using a resolvent.
+Since $V_0\ge D_0D_0^T$ and $V_0\ge c\mu^2I$,
+\begin{equation}
+ \|V_0^{-1/2}D_0\|\le1,\qquad
+ \|V_0^{-1/2}D'_0\|\le Ca_*.
+ \label{svc-gauge-legs}
+\end{equation}
+For example,
+\begin{equation}
+ R'=D'^TV_0^{-1}D_0+D_0^TV_0^{-1}D'
+           -D_0^TV_0^{-1}V'V_0^{-1}D_0.
+ \label{svc-first-response}
+\end{equation}
+Differentiating once more yields the ordered two-$V'$ terms, one
+$V''$ term, and the $D''$ and mixed $D',V'$ terms. Insert
+\eqref{svc-relative-vertices} between the uniform weighted energy
+resolvents. Each term is bounded with its physical source norms,
+by \eqref{svc-gauge-legs}; this proves both first and second response
+bounds without a fine-coordinate dimension factor.
+
+For unit directions supported in smooth physical collars $x,y$, a
+spare exponent attaches the sources to their resolvent legs and gives
+\begin{align}
+ \|\widetilde S'_x(i,j)\|&\le Ce^{-m\tau(i,j,x)},\notag\\
+ \|\widetilde S''_{x,y}(i,j)\|
+      &\le Ce^{-m\tau(i,j,x,y)}.
+ \label{svc-rooted-sources}
+\end{align}
+Here $\tau$ is connecting-tree length including every displayed operator
+endpoint and source. With a smaller exponent, these imply
+$\sum_{i,j}e^{m'[d(i,x)+d(j,x)]}\|\widetilde S'_x(i,j)\|\le C$
+and $\sum_{i,j}\|\widetilde S''_{x,y}(i,j)\|\le Ce^{-m'd(x,y)}$.
+The full rooted estimate, rather than only these summed consequences,
+is retained in the diagonal-density argument below.
+The indices are final-block labels, with fixed color fibers.
+The same source bounds hold after multiplying by $J,J',J''$, because
+these are normalized own-block operators. Completeness of the fine
+field collars is essential; sharp background cutoffs are not differentiated.
+
+\subsection{The coarse logarithm and its actual Maxwell bound}
+\label{svc-maxwell-section}
+
+Equations \eqref{svc-flat-comparison} and
+\eqref{svc-rooted-sources} give for the total Hessian
+\begin{equation}
+ K_S(x,y)=\operatorname{Tr}\left[
+ S_0^{-1}\widetilde S''_{x,y}
+ -S_0^{-1}\widetilde S'_xS_0^{-1}\widetilde S'_y\right],
+ \qquad |K_S(x,y)|\le Ce^{-m' d(x,y)}.
+ \label{svc-log-hessian}
+\end{equation}
+Both traces are coarse traces with fixed color dimension.
+
+For the local diagonal density one must not cyclically rearrange a
+partial trace. Put $R_t=(S_0+tI)^{-1}$. Its second source derivative
+at root zero is the partial trace of the integral over $t\ge0$ of
+\begin{equation}
+ R_t\widetilde S''_{x,y}R_t
+ -R_t\widetilde S'_xR_t\widetilde S'_yR_t
+ -R_t\widetilde S'_yR_t\widetilde S'_xR_t.
+ \label{svc-density-resolvent}
+\end{equation}
+The weighted bound is $\|R_t\|_m\le C/(1+t)$.
+Thus its rooted density kernel is bounded by
+$Ce^{-m''\tau(0,x,y)}$. This gives uniform polynomial source moments,
+not merely decay in the source separation.
+
+Covariance makes each diagonal color trace invariant. Apply the
+rooted bounds to a smooth physical partition of an affine potential;
+the collar norms grow only linearly with their distance from zero and
+are summable against the rooted exponential. The density Ward and
+reanchoring identity then yields
+\begin{equation}
+ \left|\beta\left(\tfrac12\mathcal N_0\log\det S\right)\right|
+       \le C_S,
+ \label{svc-bounded-remainder}
+\end{equation}
+uniformly in $M,K$, in the actual joint infinite structural systems
+and polynomial-jet convention. The transfer from $\widetilde S$ to the
+actual $S$ uses exactly \eqref{svc-on-shell-match}. The linear color jet
+vanishes by semisimple conjugation invariance.
+
+Combining \eqref{svc-four-factor} with the scalar coarse theorem gives
+\begin{equation}
+ \beta(\mathcal D)
+  =\beta\!\left(\mathcal N_0
+       [\log\det T_s-\tfrac12\log\det V]\right)+O(1),
+ \label{svc-final-reduction}
+\end{equation}
+with a remainder uniform in old depth and endpoint. For the vector
+coefficient, the auxiliary expression
+\eqref{svc-auxiliary-vector} is valid through its two affine jets.
+The fine soft pair has not yet been compared to a standard massive
+vector/ghost reference. A fixed-integrand universality theorem alone
+does not supply bounds uniform in this family. This module proves
+neither that remaining logarithmic comparison nor its sign, and it
+does not assert a full $K$-independent nonlinear background domain.
+Finite-volume winding and normalized-extraction issues retain their
+separate regulator hypotheses.
+

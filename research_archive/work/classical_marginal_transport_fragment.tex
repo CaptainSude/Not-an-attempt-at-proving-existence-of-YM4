@@ -1,0 +1,251 @@
+% No preamble. Prefix cmt-. True infinite Maxwell coefficient; not finite cutoff beta.
+\section{Exact classical preservation of the Maxwell coefficient}
+\label{cmt-section}
+
+This section concerns the invariant infinite interaction quotient
+on one selected joint classical background system. The coefficient
+\(\beta_M\) is the true infinite total-kernel Maxwell moment.
+It is not the finite symmetric-cutoff ratio \(\beta_{M,N}\).
+Fix the primitive ratio, grouping \(J\), activity exponent \(a_0\),
+and one positive field radius \(b\). The actual homogeneous
+reference and projection satisfy
+\begin{equation}
+ \beta_M(S_M)=1,\qquad \|S_M\|_b\le C_Sb^2,\qquad
+ P_M=I-S_M\beta_M,\qquad \|P_M\|\le C_{\rm ext}(J).
+ \label{cmt-reference}
+\end{equation}
+The actual pre-gauge substitution has the scalar identities
+\begin{equation}
+ \mathcal T_{M,L}S_M=S_{ML},\qquad
+ \mathcal T_{MR,L}\mathcal T_{M,R}
+                       =\mathcal T_{M,RL}.
+ \label{cmt-semigroup}
+\end{equation}
+They are identities of normalized interactions, not of chosen
+support coefficient arrays.
+
+The complete-field pre-gauge family obeys, for every fixed
+prescribed finite classical reserve \(A\),
+\begin{equation}
+ \sup_i\sum_X e^{\kappa\tau(\{i\}\cup X)+A|X|}
+       \|a_{M,L;i,X}\|_{C^{1,\alpha};b}
+           \le C_* b/L,\qquad 0<b\le r_A,
+ \label{cmt-uniform-family}
+\end{equation}
+on one outer radius \(r_A>0\) independent of \(M,L\).
+The entire output fiber and its physical first-gradient
+H\"older quotients are inside the support sum, and the
+coefficients agree on overlapping collars. Fix \(J\) and
+the reserves so that \(2(a_0+1)/J\le\kappa\) and
+\(A\ge4(a_0+1)\).
+
+The argument uses countably many arbitrarily large endpoint
+powers. They can be included in the chosen joint system by
+a further diagonal extraction with the same \(r_A\);
+previously fixed limits remain unchanged. The exact finite
+comparison and controlled gauge identities then give
+\eqref{cmt-semigroup} on this enlarged joint system.
+No independence from unrelated subsequences is asserted.
+
+\subsection{The quadratic estimate needs no large field-scaling disk}
+\label{cmt-quadratic-section}
+
+Let \(y=P_Mx\) for an invariant class \(x\). Global semisimple
+color invariance gives \(D\Phi_y(0)=0\). The exact infinite Ward
+classification and hypercubic symmetry give
+\begin{equation}
+ \Gamma_2^y(p)=O(|p|^4),\qquad
+ \|K_2(y)\|_{\sigma(J),{\rm row}}
+                         \le C(J)b^{-2}\|y\|_b.
+ \label{cmt-kernel}
+\end{equation}
+The fixed midpoint phases preserve the order of vanishing in
+tail coordinates. Define \(Q_y(A)=K_2(y)[A,A]/2\).
+For compact coarse \(w\), the pre-gauge image is exponentially
+decaying and summable, so \(Q_y(a_{M,L}(w))\) is well defined.
+
+The quadratic part of the spatial localization proof yields
+a connected family \(Q_{y,L}\) representing that entire
+substituted quadratic polynomial, with
+\begin{equation}
+ \|Q_{y,L}\|_{a_0,b}
+       \le C_2(J)L^{-\alpha}\|y\|_b,
+       \qquad L\ge L_0(J),\quad 0<b\le r_A.
+ \label{cmt-quadratic-bound}
+\end{equation}
+Indeed the divided-difference factorization is
+\(K_2=d^-\widetilde H d^+\), with
+\(\sum_r\widetilde H(r)=0\), and gives the exact expression
+\[
+ \frac12\sum_{x,r,\rho,\tau}
+ [D_\rho a(x)]^T\widetilde H_{\rho\tau}(r)
+                    [D_\tau a(x+r)-D_\tau a(x)].
+\]
+The complete family bounds supply \(CbL^{-2}\) for the first
+difference and \(CbL^{-2-\alpha}|r|^\alpha\) for the nearby
+gradient difference. The exponential kernel tail controls
+the far terms. The \((JL)^4\) anchor count leaves
+\(L^{-\alpha}\). All constants are fixed after \(J\) and
+before \(L\).
+
+Only \(a_{M,L}(w)\) on the original \(b\)-ball is used.
+There is no substitution \(a_{M,L}(\lambda w)\) with
+\(|\lambda|\) proportional to \(L\). Thus the high-jet
+condition \(bL\le\text{constant}\) is absent from
+\eqref{cmt-quadratic-bound}.
+
+Although \(Q_{y,L}\) need not be invariant as a whole nonlinear
+functional, the chosen Hessian moment extends to every analytic
+interaction quotient as a bounded linear functional:
+\begin{equation}
+ |b_{\rm mom}(Z)|\le C_\beta(J)b^{-2}\|Z\|_b.
+ \label{cmt-moment-bound}
+\end{equation}
+On invariant classes it is \(\beta\). This norm bound is just
+a fixed second derivative and a fixed second spatial moment;
+it does not require a Ward identity for \(Z\).
+
+\subsection{The transported Hessian and the semigroup limit}
+\label{cmt-preservation-section}
+
+Since \(a_{M,L}(0)=0\) and \(D\Phi_y(0)=0\), the chain rule gives
+\begin{equation}
+ D^2(\Phi_y\circ a_{M,L})(0)[u,v]
+   =D^2\Phi_y(0)[Da_{M,L}(0)u,Da_{M,L}(0)v].
+ \label{cmt-chain-rule}
+\end{equation}
+The right side is also the Hessian of
+\(Q_y\circ a_{M,L}\). Higher input field degrees cannot
+contribute to degree two, and the possible
+\(D\Phi_y(0)D^2a_{M,L}(0)\) term is zero.
+Differentiation is justified first on finitely supported
+directions by local normal convergence, then for the moment
+by the anchored exponential kernel bounds. Hence
+\begin{equation}
+ \beta_{ML}(\mathcal T_{M,L}y)=b_{\rm mom}(Q_{y,L}).
+ \label{cmt-hessian-identification}
+\end{equation}
+Combining \eqref{cmt-quadratic-bound} and
+\eqref{cmt-moment-bound}, followed by the exact reference
+transport, proves
+\begin{equation}
+ |\beta_{ML}(\mathcal T_{M,L}x)-\beta_M(x)|
+       \le C_m(J)b^{-2}L^{-\alpha}\|x\|_b.
+ \label{cmt-asymptotic}
+\end{equation}
+This estimate is uniform in preceding depth, at fixed \(b>0\).
+
+\begin{theorem}[Exact infinite Maxwell preservation]
+\label{cmt-theorem}
+For every fixed admissible ratio \(R\) and every invariant
+class \(x\) on this common domain,
+\begin{equation}
+       \beta_{MR}(\mathcal T_{M,R}x)=\beta_M(x).
+ \label{cmt-exact}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Put \(z=\mathcal T_{M,R}x\). The fixed-\(R\) classical
+transport is bounded, say
+\(\|z\|_b\le B_R(J)\|x\|_b\). Apply
+\eqref{cmt-asymptotic} to \(z\) at depth \(MR\) and
+endpoint \(L\), and to \(x\) at depth \(M\) and endpoint
+\(RL\). By \eqref{cmt-semigroup}, their leading transported
+moments agree. Therefore
+\begin{equation}
+ |\beta_{MR}(\mathcal T_{M,R}x)-\beta_M(x)|
+ \le C_m(J)b^{-2}
+       \bigl[B_R(J)L^{-\alpha}+(RL)^{-\alpha}\bigr]\|x\|_b.
+ \label{cmt-comparison}
+\end{equation}
+The left side is independent of \(L\). Let \(L\) tend through
+the admissible endpoint powers to infinity in the joint
+system.
+\end{proof}
+
+The proof needs no convergence of the full interactions
+\(\mathcal T_{M,L}x\) as \(L\to\infty\), and no bound on
+their whole norms uniform in \(L\). Only the fixed-\(R\)
+map, the scalar semigroup, and the quadratic-only bound
+are used.
+
+There is no hidden domain shrink. The actual pre-gauge
+holomorphy and \eqref{cmt-uniform-family} have a fixed
+primitive-scale radius. A real minimum comparison at
+one large endpoint can initially require a smaller real
+germ because physical norms rescale. Both scalar sides
+of \eqref{cmt-semigroup}, however, are holomorphic on
+their specified common \(b\)-domain; equality on that
+nonempty germ extends throughout the connected domain.
+On compact field subspaces the anchored and summable-field
+bounds justify that continuation. The high-jet dilation
+radius plays no role. Countably many endpoints can
+therefore be included without replacing \(b\) by a
+sequence tending to zero.
+
+\subsection{The original Maxwell coordinate isolates the leading drift}
+\label{cmt-drift-section}
+
+Equations \eqref{cmt-exact} and \eqref{cmt-semigroup} imply
+\begin{equation}
+ \beta_{MR}\mathcal T_{M,R}=\beta_M,\qquad
+ \mathcal T_{M,R}P_M=P_{MR}\mathcal T_{M,R}.
+ \label{cmt-commutation}
+\end{equation}
+Thus the classical leakage on \(\ker\beta_M\) is exactly
+zero for this infinite system. An adapted-coordinate
+correction introduced solely to remove that leakage
+can be chosen zero; the general coordinate theorem
+remains valid for other operator families.
+
+For the fixed-coupling quantum map
+\(\mathcal F_{M,g,T}=\mathcal T_{M,R}+\mathcal G_{M,g,T}\),
+let \(x=P_Mx\), \(\|x\|_b\le C_{\rm int}b^2\). The parity
+theorem defines
+\(D_M=\Delta_M+\mathcal Q_{{\rm det},M}\), as in
+\eqref{cgp-leading-definition}, and gives the inner bound
+\eqref{cgp-inner-bound}. The input Lipschitz estimate gives
+\[
+ \|\mathcal G_{M,g,T}(x)-\mathcal G_{M,g,T}(0)\|_b
+      \le C_{\rm quant}(gT/b)C_{\rm int}b^2.
+\]
+Applying the original Maxwell moment, with
+\(\|\beta_{MR}\|\le C_\beta(J)b^{-2}\), yields
+\begin{align}
+ &|\beta_{MR}(\mathcal F_{M,g,T}(x))
+                         -\beta_{MR}(D_M)|\notag\\
+ &\quad\le
+   \frac{2C_\beta C_{\rm par}}{\rho^2}
+                         [\tau(T)+g^2T^6]
+       +C_\beta C_{\rm quant}C_{\rm int}\,gT/b.
+ \label{cmt-drift-bound}
+\end{align}
+All constants are uniform in preceding depth on the fixed
+classical system. The field radius \(b\) is fixed before
+the real threshold \(T=T(g)\) and \(g\to0\) are considered.
+For an actual density update
+\(\gamma_{\rm next}=\gamma-\beta_{MR}(\mathcal F(x))\),
+the leading decrement in the original coupling coordinate
+is therefore \(\beta_{MR}(D_M)\), with the displayed
+vanishing error. No adapted marginal coordinate is needed
+for this conclusion.
+
+\subsection{Finite and physical limitations}
+\label{cmt-scope}
+
+The finite coefficient \(\beta_{M,N}\) is a short-lift
+ratio and is not the coefficient in
+\eqref{cmt-exact}. Its Ward defects and folded tails
+are nonzero at finite period. This argument does not
+prove exact finite marginal preservation or set the
+finite classical leakage to zero. The finite reference
+telescope and finite contraction remain valid without
+that identity.
+
+Equation \eqref{cmt-drift-bound} does not compute the
+determinant/pivot coefficient, prove its sign or convergence
+with \(M\), or control an infinite physical coupling
+trajectory. The result concerns the selected joint
+infinite classical system and does not establish
+subsequence independence, global sector matching,
+observable convergence or continuum existence.

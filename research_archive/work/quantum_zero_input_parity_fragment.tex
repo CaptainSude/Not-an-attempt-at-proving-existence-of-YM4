@@ -1,0 +1,255 @@
+% No preamble. Prefix cgp-. Fixed T while complexifying g.
+\section{Coupling parity and the leading zero-input correction}
+\label{cgp-section}
+
+Fix the composite geometry, auxiliary grouping, trace convention and
+input-independent classical system of the homogeneous local macrostep.
+Use one common outer field polydisc of radius $\rho>0$ and connected
+carrier exponent $a_0$. All constants below may depend on that fixed
+geometry and $\rho$, but are uniform in preceding homogeneous depth
+and compatible volume. Infinite statements concern the same selected
+local-limit system. No inherited interaction is present.
+
+The zero-input correction has the exact decomposition
+\begin{equation}
+ \mathcal G_{M,g,T}(0;w)
+   =\Delta_M(w)+\mathcal Q_{{\rm det},M}(w)
+                         +\mathcal L_{M,g,T}(w),
+ \qquad
+ \mathcal L_{M,g,T}
+  =\log\mathbb E_{C_M(w)}
+          [\chi_T(\xi)e^{V_{\rm base}(w,\xi;g)}].
+ \label{cgp-decomposition}
+\end{equation}
+The pivot term $\Delta_M$, Gaussian determinant term
+$\mathcal Q_{{\rm det},M}$, covariance $C_M(w)$, stationary branch
+and retained chart are independent of $g$. The actual cutoff
+$\chi_T$ is a product of centered retained link/color balls.
+Field-independent powers of $g$, flat determinants, Haar constants
+and the compact gauge-insertion normalization belong to the
+separately tracked vacuum factor. In particular no analyticity of
+that exact compact normalization at $g=0$ is assumed.
+
+We use the anchored norm
+\[
+ \|E\|_{a_0,\rho}
+   =\sup_i\sum_{H\ni i}e^{a_0|H|}\|E_H\|_\rho
+\]
+and its quotient by equality of vacuum-normalized totals. A
+coefficient family is not required to be individually gauge invariant.
+The estimates below refer to this family norm or its indicated quotient,
+not to an extensive scalar supremum.
+
+\subsection{Exact parity of the centered factors}
+\label{cgp-parity-section}
+
+Keep $T$ fixed while allowing complex $g$. Every nonlinear
+unwindowed factor is evaluated in the actual retained chart at the
+same product $g\xi$. For a scalar action or gauge function $F$,
+the centered contribution is
+\begin{equation}
+ -\frac1{g^2}\left[
+ F(g\xi)-F(0)-g\,DF(0)\xi
+                 -\frac{g^2}{2}D^2F(0)[\xi,\xi]\right].
+ \label{cgp-centered-factor}
+\end{equation}
+The apparent singularity at zero is removable: the numerator
+starts at total fluctuation degree three. Replacing $g$ by $-g$
+is exactly the same as replacing $\xi$ by $-\xi$ in this
+expression. This remains true on the independent centered
+background extension; it does not rely on dropping a linear
+term only at a physical stationary background.
+
+The straightening determinant and Haar factors are analytic
+functions of $g\xi$ with their near-origin logarithms, and obey
+the same identity. They need not be separately even in $\xi$.
+Consequently the exact total base exponent satisfies
+\begin{equation}
+             V_{\rm base}(w,\xi;-g)
+                    =V_{\rm base}(w,-\xi;g).
+ \label{cgp-base-parity}
+\end{equation}
+The centered Gaussian density is even in $\xi$, also for the
+allowed complex background covariance. The fixed real window
+is invariant under $\xi\mapsto-\xi$. This real change of
+integration variable gives
+\begin{equation}
+                 Z_{M,-g,T}(w)=Z_{M,g,T}(w).
+ \label{cgp-integral-parity}
+\end{equation}
+No contour deformation or change of the cutoff with the
+background is involved.
+
+\subsection{A complex disk uniform in the fixed threshold}
+\label{cgp-disk-section}
+
+The actual local chart has a common analytic neighborhood in
+$g\xi$. The retained window bounds that variable by a fixed
+constant times $|g|T$. The centered action, gauge and measure
+estimates on the outer field domain give
+\begin{equation}
+ \|V_{\rm base}\|_{\rm strong}
+   \le C_{\rm base}\bigl(|g|T^3+|g|T+|g|^2T^2\bigr).
+ \label{cgp-base-budget}
+\end{equation}
+The strong norm is the one used by the strict Gaussian
+support and overlap theorem; its constants are fixed before
+$g,T$. Choose $T_0\ge1$ so the bad-block tail meets that
+theorem's strict budget, and then choose a sufficiently
+small fixed $c>0$. For all $T\ge T_0$, the disk
+\begin{equation}
+                         |g|<r_T:=cT^{-3}
+ \label{cgp-disk}
+\end{equation}
+lies inside the local chart and the strict base budgets.
+Indeed $|g|T\le cT^{-2}\le c$ and the right side of
+\eqref{cgp-base-budget} is at most
+$C_{\rm base}(2c+c^2)$. The precision and covariance
+budgets do not move with $g$.
+
+The strict Gaussian theorem therefore supplies a nonzero
+integral and its holomorphic logarithm throughout
+\eqref{cgp-disk}, with a connected coefficient family satisfying
+\begin{equation}
+             \sup_{|g|<r_T}
+               \|\mathcal L_{M,g,T}\|_{a_0,\rho}
+                         \le H_{\mathcal L}.
+ \label{cgp-uniform-log}
+\end{equation}
+Here $H_{\mathcal L}$ is independent of $M$, volume and
+$T\ge T_0$. Analyticity in $g$ uses the removable remainders
+in \eqref{cgp-centered-factor}, analytic local measure factors,
+finite Gaussian moments and the normally convergent positive
+support/cluster majorants. The sharp indicator is fixed and
+never differentiated.
+
+The logarithm branch is fixed at $g=0$ by the same connected
+Gaussian expansion. On the connected disk, the logarithms
+in \eqref{cgp-integral-parity} differ by a constant multiple
+of $2\pi i$, and that multiple is zero at $g=0$. Thus the
+total logarithm is even.
+
+\subsection{An even representative and the quantitative remainder}
+\label{cgp-estimate-section}
+
+\begin{theorem}[Fixed-threshold parity estimate]
+\label{cgp-theorem}
+Under the preceding actual-chart and strict-budget hypotheses,
+for $T\ge T_0$ and $|g|T^3\le c/2$,
+\begin{equation}
+ \|[\mathcal L_{M,g,T}-\mathcal L_{M,0,T}]
+                     \|_{\mathcal Q,a_0,\rho}
+       \le 2H_{\mathcal L}
+                       \left(\frac{|g|T^3}{c}\right)^2.
+ \label{cgp-even-bound}
+\end{equation}
+Moreover, with
+\begin{equation}
+                D_M:=\Delta_M+\mathcal Q_{{\rm det},M},
+ \label{cgp-leading-definition}
+\end{equation}
+there is a uniform constant $C_{\rm par}$ such that
+\begin{equation}
+ \|[\mathcal G_{M,g,T}(0)-D_M]\|_{\mathcal Q,a_0,\rho}
+                 \le C_{\rm par}\bigl[\tau(T)+|g|^2T^6\bigr].
+ \label{cgp-leading-bound}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Evenness of a total does not require the original localized
+coefficients to be even. Replace each coefficient by
+\begin{equation}
+ \mathcal L_H^{\rm ev}(g)
+        :=\frac{\mathcal L_H(g)+\mathcal L_H(-g)}2.
+ \label{cgp-even-representative}
+\end{equation}
+This retains its carrier and does not increase
+\eqref{cgp-uniform-log}. Its total is the same logarithm.
+Subtracting the coefficient family at $g=0$ represents the
+actual difference in \eqref{cgp-even-bound}; that generally
+background-dependent cutoff logarithm is not being declared
+a vacuum constant.
+
+Banach-valued Cauchy on radii increasing to $r_T$ gives
+\begin{equation}
+ \|\mathcal L^{\rm ev}(g)-\mathcal L^{\rm ev}(0)\|_{a_0,\rho}
+ \le H_{\mathcal L}\sum_{n\ge1}(|g|/r_T)^{2n}
+ \le2H_{\mathcal L}(|g|/r_T)^2.
+ \label{cgp-Cauchy-proof}
+\end{equation}
+The same estimate follows by taking the Cauchy integral before
+the positive anchored sums. It uses no interchange of an
+order sum with a root supremum and no count of background
+coordinates. Taking the quotient proves
+\eqref{cgp-even-bound}.
+
+At $g=0$ all centered action and gauge remainders and the
+$g\xi$ measure remainders vanish. The remaining logarithm is
+precisely the Gaussian cutoff logarithm, whose strict
+connected norm is at most $C\tau(T)$. Combine this with
+\eqref{cgp-even-bound} and \eqref{cgp-decomposition}.
+\end{proof}
+
+\subsection{The physical threshold and the Maxwell functional}
+\label{cgp-Maxwell-section}
+
+Only after the fixed-$T$ estimate has been proved do we evaluate
+it at the prescribed real threshold $T=T(g)$. This is an
+inequality in two parameters, not a claim that the sharp
+$g$-dependent window is holomorphic. For a fixed sufficiently
+large multiple of $\sqrt{\log(1/g)}$ and a fixed lower
+threshold,
+\[
+ \tau(T(g))\longrightarrow0,\qquad
+          g^2T(g)^6=O\!\left(g^2\log(1/g)^3\right).
+\]
+The tail can be made a prescribed positive power of $g$
+by its fixed coefficient, subject to the stated Gaussian
+tail bound.
+
+The fixed-order kernel estimate on the outer field domain gives
+$\|\beta\|\le C_\beta\rho^{-2}$. Therefore
+\begin{equation}
+ \left|\beta(\mathcal G_{M,g,T(g)}(0))-\beta(D_M)\right|
+ \le C_\beta\rho^{-2}C_{\rm par}
+                \bigl[\tau(T(g))+g^2T(g)^6\bigr].
+ \label{cgp-beta-bound}
+\end{equation}
+This convergence is uniform in $M$ under the established
+common bounds. It neither computes $\beta(D_M)$ nor proves
+that those coefficients converge as $M$ grows.
+
+There is also a useful inner-radius form for other bounded
+linear marginal coordinates. The actual zero-input totals
+are locally gauge and globally adjoint invariant.
+Equation \eqref{cgp-leading-bound} along $T(g)$ shows that
+$D_M$ is an invariant total as well, since the invariant
+subspace of the outer quotient is closed. For a semisimple
+Lie algebra the total first derivative of their difference
+vanishes. Remove the degree-zero and degree-one background
+sectors of a representative of that difference and restrict
+to $b\le\rho/2$. Homogeneous phase projection gives
+\begin{equation}
+ \|[\mathcal G_{M,g,T(g)}(0)-D_M]\|_{\mathcal Q,a_0,b}
+ \le \frac{2C_{\rm par}}{\rho^2}\,
+       b^2\bigl[\tau(T(g))+g^2T(g)^6\bigr].
+ \label{cgp-inner-bound}
+\end{equation}
+Taking representatives arbitrarily close to the outer
+quotient infimum justifies the same assertion when the
+outer estimate was stated only as a quotient bound.
+No coefficientwise gauge identity is needed.
+
+\subsection{Scope}
+\label{cgp-scope-section}
+
+The terms $\Delta_M$ and $\mathcal Q_{{\rm det},M}$ have no
+small factor $g$. Their removal of total constant and linear
+sectors gives a quadratic inner-field-radius bound, not an
+$O(g^2)$ bound for the full correction.
+The theorem identifies a concrete leading determinant/pivot
+functional and a vanishing error. It proves no sign for its
+Maxwell coefficient, no running-coupling trajectory and no
+identification of the local sector with the full Wilson measure.
+All vacuum factors remain separately tracked. The fixed
+classical-system and common-domain qualifications are unchanged.

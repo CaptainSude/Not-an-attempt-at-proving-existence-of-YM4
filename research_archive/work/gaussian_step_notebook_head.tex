@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 17: joint fluctuation tails and the one-step Gaussian domain}
+\author{Research working document}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We prove joint bad-block bounds for correlated Gaussian fluctuations
+from a counting-coordinate covariance bound. The estimates allow
+singular observable covariances and overlapping tests. A relative
+complex quadratic perturbation has a corresponding local estimate
+without a factor growing with the total volume: untested variables
+are integrated out before taking absolute values. In four dimensions,
+an exact fixed-ratio rescaling supplies the required covariance bound
+for both potential values and first differences. The actual reduced
+Wilson Hessian at our nonlinear constrained minimizer satisfies the
+relative quadratic hypothesis, including its constraint-curvature
+term. A separate extraction of the earlier flat effective-action
+bounds supplies the current-lattice Gaussian at arbitrary homogeneous
+averaging depth. These are inputs to the quantum integration and
+iteration required for the existence argument.
+\end{abstract}
+
+\section{Which fluctuation estimate is needed}
+\label{gs17-target}
+
+Our objective is a nontrivial four-dimensional Yang--Mills quantum
+theory. Notebooks 15 and 16 provide the homogeneous finite-regulator
+classical minimizer, its ordinary-constraint transfer, local analytic
+responses, and the minimized action. The next step integrates the
+fluctuations and sums the regions that leave the analytic chart.
+
+The Gaussian roughness calculation of Notebook 16 distinguishes two
+different integrations. Integrating every unresolved mode below a
+fixed macroscopic scale does not give a uniform smooth-field domain.
+Integrating a fixed-ratio step has different coordinates and different
+uniform bounds. Both statements must retain the physical pairing:
+an inverse precision as a physical Hilbert operator is not its raw
+coordinate covariance matrix.
+
+This notebook proves the joint tail estimate needed for prescribed
+bad blocks, its complex version, and the fixed-step quadratic
+identifications supported by our construction. A good-cell estimate
+alone does not supply a regional nonlinear chart on its complement.
+The latter construction and the interacting weights are explicit
+interfaces for the next step.
+
+The proofs have been checked internally by separate derivations and
+audits. The results are finite-regulator theorems on their stated
+domains; a continuum existence theorem is the target of their
+subsequent integration.
+

@@ -1,0 +1,341 @@
+% No preamble. Unique prefix ob-. Follows the oi- overlap theorem.
+% Strict background support under the explicit local-precision hypotheses.
+
+\section{Strict background support for overlapping interactions}
+\label{ob-section}
+
+The preceding expansion can also be made strictly local in its
+background variables. This requires a background-independent baseline
+and a small local precision decomposition, in addition to local
+background dependence of the interactions. The next statement checks
+these additional inputs explicitly.
+
+\subsection{Baseline, local precision and constants}
+
+Let $\Lambda$ be a finite subset of $\mathbb Z^d$ with the ambient
+lattice graph metric and fixed cell dimension $D$. The background
+domain is a product of complex coordinate domains. Write
+\begin{equation}\label{ob-precision}
+ P(A)=P_0+\sum_Y B_Y(A|_Y),\qquad C_0=P_0^{-1},
+\end{equation}
+where $C_0$ is complex symmetric and independent of every background variable, each
+$B_Y$ is complex symmetric, has rows and columns supported in $Y$,
+and reads only $A|_Y$. Assume
+\begin{equation}\label{ob-spectrum}
+ \operatorname{Herm}C_0\ge\lambda I,\qquad
+ \|C_0\|\le\Lambda_0,\qquad 0<\lambda\le\Lambda_0,
+\end{equation}
+and, for fixed $0<\kappa<m$,
+\begin{align}
+ K&=\sup_b\sum_c e^{(\kappa+2m)d(b,c)}
+                         \|(C_0)_{bc}\|<\infty,\notag\\
+ \nu&=\sup_b\sum_{Y\ni b}\sum_{c\in Y}
+       e^{(\kappa+2m)\ell(Y)}
+                         \|(B_Y)_{bc}\|_\infty<\infty. \label{ob-norms}
+\end{align}
+Symmetry gives the same column bounds. All constants are uniform
+in volume and background. Define
+\begin{align}
+ \delta&=\lambda/4,&
+ V_*&=8\Lambda_0^2/\lambda,&
+ J_{bc}&=K e^{-m d(b,c)}\quad(b\ne c),\notag\\
+ A_\kappa&=K\sum_{z\ne0}e^{-(m-\kappa)|z|},&
+ \bar K&=K+\delta,& a&=\lambda/2,\notag\\
+ s&=\min\{m/2,\;aem/(4\bar K)\},&
+ L&=\frac4\lambda\sum_{z\in\mathbb Z^d}e^{-s|z|}. \label{ob-baseline-constants}
+\end{align}
+Set $J_{bb}=0$. Require $K\nu<1$ and put
+\begin{equation}\label{ob-perturbation-constants}
+ v=\frac{K^2\nu}{1-K\nu},\qquad
+ v_1=v(1+\delta/K),\qquad
+ u=Lv_1,\qquad w=\frac{L^2v_1}{1-u}.
+\end{equation}
+The sufficient precision smallness conditions are
+\begin{equation}\label{ob-precision-smallness}
+ v_1\le\lambda/4,\qquad u\le1/2,\qquad w\le1/(2V_*).
+\end{equation}
+They are chosen before increasing the cutoff radius.
+The covariance is $C(A)=P(A)^{-1}$, given by its convergent
+Neumann series.
+
+Retain the fixed cutoff and interaction multiplier hypotheses
+of \eqref{oi-multiplier}, now requiring each $V_Y$ to read
+background only in $Y$. Define
+\begin{align}
+ \widehat K_G&=(8V_*/\lambda)^{D/2},&
+ \widehat p_R&=2^{D/2}e^{-R^2/(8V_*)},&
+ \widehat\tau&=\widehat K_G\widehat p_R,\notag\\
+ \widehat\epsilon&=
+  \sup_i\sum_{Y\ni i}
+   v_Y\widehat K_G^{|Y|}e^{4|Y|+\kappa\ell(Y)},&
+ \widehat\eta&=e^3\widehat\tau+\widehat\epsilon,&
+ \widehat\eta_*&=\frac1{4\max(1,e^2A_\kappa/\delta)}.
+                                                        \label{ob-smallness}
+\end{align}
+
+\begin{theorem}[Strictly local overlapping-interaction activities]
+\label{ob-theorem}
+Under \eqref{ob-precision}--\eqref{ob-precision-smallness} and
+$\widehat\eta\le\widehat\eta_*$, the logarithm has a convergent
+representation by connected lattice supports:
+\begin{equation}\label{ob-local-log}
+ \log Z_V(A)=\sum_H E_{\Lambda,H}(A|_H),\qquad
+ \sup_b\sum_{H\ni b}e^{a_*|H|}
+        \|E_{\Lambda,H}\|_\infty
+ \le2S_{\kappa/2}\widehat\eta,
+\end{equation}
+where
+\[
+ a_*=\min(1/2,\kappa/4),\qquad
+ S_{\kappa/2}=\sum_{z\in\mathbb Z^d}e^{-(\kappa/2)|z|}.
+\]
+Each activity is holomorphic and reads only the indicated
+background coordinates. Supports may lie in the lattice hull of
+$\Lambda$. If
+\begin{equation}\label{ob-quarter}
+ e^3\widehat\tau\le\widehat\eta_*/4,\qquad
+ \widehat\epsilon\le\widehat\eta_*/4,
+\end{equation}
+the same canonical choice obeys
+\begin{equation}\label{ob-difference}
+ \sup_b\sum_{H\ni b}e^{a_*|H|}
+  \|E_{\Lambda,H,V}-E_{\Lambda,H,0}\|_\infty
+ \le8S_{\kappa/2}\widehat\epsilon.
+\end{equation}
+\end{theorem}
+
+\subsection{The support algebra and the actual marginal}
+
+For a nonempty moment support $M$, let $\ell_M(X)$ be the
+minimum total length of a forest on $M\cup X$ whose every
+component meets $M$. The roots may remain in different components.
+For formal local families $F=(F_X)_X$, define
+\begin{equation}\label{ob-algebra}
+ \|F\|_{\mathcal B_M}
+   =\sum_Xe^{\kappa\ell_M(X)}\|F_X\|_\infty,\qquad
+ (FG)_Z=\sum_{X\cup X'=Z}F_XG_{X'}.
+\end{equation}
+Every $F_X$ is holomorphic in $A|_X$. The product-domain
+assumption gives its uniform local-function norm.
+The inequality
+$\ell_M(X\cup X')\le\ell_M(X)+\ell_M(X')$
+makes this a Banach algebra. Enlarging the root set is
+contractive. Evaluation, obtained by summing the local
+coefficients, is a bounded algebra homomorphism.
+
+Expand $C=C_0-C_0BC_0+C_0BC_0BC_0-\cdots$ in the individual
+precision labels $B_Y$. Retain these labels before grouping by
+the union of their supports. For endpoints $b,c\in M$, every
+term connects all its background labels to its endpoints by
+covariance links and trees inside the supports $Y$. If their
+total length is $L_{\rm path}$, both
+$\ell_M(\cup Y)\le L_{\rm path}$ and
+$d(b,c)\le L_{\rm path}$. Successive weighted matrix sums give
+$K^{j+1}\nu^j$ at order $j$. Therefore, for
+$\Delta C=C-C_0$,
+\begin{equation}\label{ob-covariance-algebra}
+ \max\left\{
+  \sup_{b\in M}\sum_{c\in M}e^{2md(b,c)}
+                         \|(\Delta C)_{bc}\|_{\mathcal B_M},
+  \sup_{c\in M}\sum_{b\in M}e^{2md(b,c)}
+                         \|(\Delta C)_{bc}\|_{\mathcal B_M}
+ \right\}\le v.
+\end{equation}
+This bounds the whole covariance marginal, including its
+background dependence, rather than only visible forest edges.
+
+\subsection{Molecule masks and cell endpoint polydiscs}
+
+At a molecule BKAR point, its induced cell mask $\sigma$
+is one inside every primitive molecule and has the BKAR values
+between molecules. Each molecule partition mask is exactly
+a cell partition mask whose blocks are unions of molecules.
+Thus $\sigma$ is in the convex hull of cell partition masks
+and $0\le\sigma_{bc}\le1$.
+
+Choose one cell endpoint pair for each molecule-tree edge,
+with cell degrees $d_b$, and use
+$|z_{bc}|<\delta/[\max(d_b,d_c)J_{bc}]$.
+The endpoint graph need not span or connect every cell.
+Let $M_0$ be the resulting masked and perturbed baseline.
+The row-sum argument gives
+\begin{equation}\label{ob-m0}
+ \operatorname{Herm}M_0\ge\lambda I/2,\qquad
+ \|M_0\|\le2\Lambda_0,\qquad
+ \|M_0\|_{\mathrm{Schur},m}\le K+\delta.
+\end{equation}
+For the last bound, each selected edge satisfies
+\[
+ e^{md(b,c)}|z_{bc}|\|(C_0)_{bc}\|
+ \le\frac{\delta}{\max(d_b,d_c)}
+                     e^{-\kappa d(b,c)}.
+\]
+Its row sum is at most $\delta$, using only the number of
+incident selected edges. No spanning-tree property on the
+cell set has been used.
+
+Conjugation by $D_{bb}=e^{s d(b,c)}$ changes $M_0$ in
+operator norm by at most
+$2s(K+\delta)/(em)\le a/2$. Since its Hermitian part is at
+least $a$, the inverse entries are bounded by
+$(2/a)e^{-sd(b,c)}$, and hence
+\begin{equation}\label{ob-inverse-schur}
+ \|M_0^{-1}\|_{\mathrm{Schur}}\le L.
+\end{equation}
+
+Apply the same mask and increments to $\Delta C$, obtaining
+an algebra-valued matrix $E$. The mask part has norm at most
+$v$. By \eqref{ob-covariance-algebra}, the selected-edge part
+has row and column sums at most $\delta v/K$:
+\[
+ |z_{bc}|v e^{-2md(b,c)}
+   \le\frac{\delta v}{K\max(d_b,d_c)}e^{-md(b,c)}.
+\]
+Consequently
+\begin{equation}\label{ob-e}
+ \|E\|_{\mathrm{Schur}(\mathcal B_M)}\le v_1.
+\end{equation}
+These are precisely the estimates needed for the density
+expansion, and they remain valid for the molecule masks and
+the original cell endpoint polydiscs.
+
+\subsection{The entire density, including determinant normalization}
+
+Put $F=M_0^{-1}E$. In the matrix support algebra,
+\[
+ (M_0+E)^{-1}-M_0^{-1}
+       =\sum_{j\ge1}(-F)^jM_0^{-1},
+\]
+whose Schur norm is at most $w$, while
+\[
+ \|\operatorname{Tr}\log(I+F)\|_{\mathcal B_M}
+       \le D|M|[-\log(1-u)].
+\]
+The exact normalized density identity is
+\begin{equation}\label{ob-density-identity}
+ p_{M_0+E}(x)=p_{M_0}(x)
+ \exp\left[
+ -\tfrac12\operatorname{Tr}\log(I+F)
+ -\tfrac12x^T\big((M_0+E)^{-1}-M_0^{-1}\big)x
+ \right].
+\end{equation}
+Taking its algebra norm, the determinant factor costs at most
+$2^{D|M|/2}$. The quadratic factor costs at most
+$e^{w\|x\|^2/2}$, which by
+\eqref{ob-precision-smallness} uses at most half of the
+baseline Gaussian decay. It follows that
+\begin{equation}\label{ob-density-bound}
+ \|p_{M_0+E}(x)\|_{\mathcal B_M}
+       \le\widehat K_G^{|M|}p_{2V_*I}(x_M).
+\end{equation}
+Here $p_{2V_*I}$ is the independent product Gaussian density
+with that covariance in every original cell. All inverse,
+logarithm, exponential and support series are absolutely
+convergent under the displayed majorants.
+
+For an interaction supported on $Y\subset M$,
+$\ell_M(Y)=0$. Thus $w_Y$ is an algebra element with
+norm at most $v_Y$. A primitive interaction molecule on $S$
+has norm at most $M_S$ from \eqref{oi-molecules}; a bad
+singleton has empty background support.
+Integrating \eqref{ob-density-bound} against their product
+gives on the entire endpoint polydisc
+\begin{equation}\label{ob-moment-bound}
+ \left\|\mathbb E_{M_0+E}\prod_a f_{S_a}\right\|_{\mathcal B_M}
+ \le\prod_a\left(
+   \widehat K_G^{|S_a|}M_{S_a}
+       +\widehat\tau\mathbf1_{\{|S_a|=1\}}\right).
+\end{equation}
+
+\subsection{Factorization with overlapping background labels}
+
+Retain independent formal scalar tags on the precision labels,
+and on the interaction labels if desired, until absolute
+convergence is proved. At a forest mask the complete marginal
+Gaussian matrix is block diagonal over the forest components.
+Both its determinant and inverse therefore factorize in
+\eqref{ob-density-identity}, giving an identity of formal
+power series. This remains true when different components
+read overlapping background coordinates. Grouping coefficients
+by the union of their background labels respects multiplication.
+The density for a component is its actual marginal density,
+with its own root set; injection into the algebra with all
+moment roots is contractive.
+
+Thus forest factorization holds in the support representation
+itself, not merely after evaluating $A$.
+Banach-valued Cauchy applied to \eqref{ob-moment-bound} yields
+the same cell-factorial bound \eqref{oi-tree-bound}.
+The overlap-animal and planted-tree estimates give
+\begin{equation}\label{ob-zeta}
+ \sup_i\sum_{M\ni i,X}
+ e^{\kappa\ell(M)+\kappa\ell_M(X)+2|M|}
+            \|\zeta(M;X)\|_\infty\le\widehat\eta.
+\end{equation}
+Hard-core compatibility is still disjointness of the marked
+supports $M$, and does not require disjoint background supports.
+
+For a connected Mayer cluster, the root and union inequalities
+give
+\[
+ \ell(\cup M_a)\le\sum_a\ell(M_a),\qquad
+ \ell_{\cup M_a}(\cup X_a)
+                  \le\sum_a\ell_{M_a}(X_a).
+\]
+The same pinned cluster estimate therefore yields
+\begin{equation}\label{ob-marked-log}
+ \log Z_V=\sum_{M\ne\varnothing,X}U(M;X)(A|_X),\qquad
+ \sup_i\sum_{M\ni i,X}
+ e^{\kappa[\ell(M)+\ell_M(X)]+|M|}
+                 \|U(M;X)\|_\infty\le2\widehat\eta.
+\end{equation}
+
+\subsection{Re-rooting at the final connected background support}
+
+Choose deterministic minimizing trees for $M$, minimizing
+forests attaching $X$ to $M$, and shortest lattice paths for
+their edges. Their union $H(M,X)$ is connected and contains
+$M\cup X$. With $L_*=\ell(M)+\ell_M(X)$,
+\[
+ |H(M,X)|\le |M|+L_*,\qquad
+ d(a,b)\le L_*\quad(a\in M,\ b\in H(M,X)).
+\]
+Consequently
+\begin{equation}\label{ob-hull}
+ e^{a_*|H|}
+ \le e^{|M|+\kappa L_*}e^{-(\kappa/2)d(a,b)}.
+\end{equation}
+Group $U(M;X)$ by this fixed hull to define $E_{\Lambda,H}$.
+To root a sum at $b\in H$, overcount by all $a\in M$ and
+use \eqref{ob-marked-log}; the lattice convolution costs
+only $S_{\kappa/2}$. This proves \eqref{ob-local-log}.
+
+Under \eqref{ob-quarter}, the multiplier interpolation
+$w_Y\mapsto tw_Y$ is holomorphic in the same support algebra.
+The Banach-valued Cauchy estimate of the preceding section
+gives $8\widehat\epsilon$ in the marked rooted norm.
+The fixed hull map has norm at most $S_{\kappa/2}$ by
+\eqref{ob-hull}, proving \eqref{ob-difference}.
+
+\subsection{What the locality theorem does and does not identify}
+
+The activities may depend on the whole background-independent
+finite-volume baseline $C_{0,\Lambda}$. Their variable background
+dependence reads only $A|_H$, but volume consistency is not
+claimed. A baseline chosen separately at each arbitrary
+background would localize only perturbations from that reference.
+The product background domain and the small local precision
+norm are substantive hypotheses, not consequences of a weak
+global gauge-field norm or of covariance decay alone.
+
+A deterministic path choice may preserve translations while
+breaking discrete rotations; arbitrary decompositions do not
+make each activity gauge invariant. An application needing
+these symmetries must supply an equivariant construction or
+an admissible averaging argument.
+The periodic extension later in this notebook verifies uniform
+volume counting and the required path/hull construction with the
+same length and cardinality bounds, including short tori.
+No actual regulator coordinates, source coefficients, moving
+gauge chart or admitted history family has been identified by
+the abstract hypotheses alone.

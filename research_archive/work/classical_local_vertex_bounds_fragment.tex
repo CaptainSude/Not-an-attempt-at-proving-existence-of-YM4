@@ -1,0 +1,494 @@
+% Notebook 21 concrete module. No preamble. Prefix cv-.
+\section{Concrete classical vertices uniform through refinement}
+\label{cv-section}
+
+The fine spacing is $\eta=M^{-1}$, with $M=L^j$, fixed odd
+$L$, dimension four and current spacing one. Fine pairings
+use $\eta^4$ times counting measure; current pairings use
+counting measure. All constants below are uniform in $M$ and
+compatible periodic volume. The conclusion is a set of concrete
+inputs for a rooted support expansion, not an assumption that
+one weighted response estimate already gives a sum over all
+input insertions.
+
+\subsection{Complete physical field spaces and known bounds}
+\label{cv-spaces-section}
+
+Fix $0<\alpha<1$ and use complete fine-field spaces
+\begin{equation}\label{cv-spaces}
+ \begin{split}
+ X_\eta=\mathcal N_\alpha:\quad
+ \norm A_X&=\norm A_\infty+\norm{\nabla_\eta A}_\infty
+                         +[\nabla_\eta A]_\alpha,\\
+ Y_\eta&=C^\alpha\text{ of fine jet coefficients},\\
+ Z_\eta&=\ell^\infty\text{ of fine coefficients},\qquad
+ E=\ell^\infty\text{ of current bond fields}.
+ \end{split}
+\end{equation}
+Local H\"older norms use physical distances and fixed cell
+collars. Color and orientation spaces have fixed finite
+dimension. The plaquette jet $S=(I,\nabla_\eta)$, with the
+needed finite component selections, maps $X_\eta$ to $Y_\eta$
+uniformly. No sharp cell indicator is differentiated.
+
+The proved Wilson-force module gives
+\[
+ \mathcal S_\eta(A)=\eta^4\sum_p\mathcal L_\eta((SA)_p),
+ \qquad N(A)=S^Tf_\eta(SA),
+\]
+where $\mathcal L_\eta$ is uniformly analytic in the jet,
+its quadratic part is the Maxwell density, and $f_\eta$ starts
+at degree two. The full corrected constraint of Notebook13 is
+\[
+ \mathcal F(A)=QA+\mathcal R(A),\qquad Q=Q_M^{\rm st}.
+\]
+It is analytic on a refinement-uniform supremum ball and has
+a fixed physical dependency radius. Notebook15 also proves
+uniform holomorphy of $D\mathcal R(A)^T$ in the physical
+bounded-row operator norm, with norm $O(\norm A_\infty)$.
+The transpose includes the physical fine measure.
+
+The weighted complete-field bounds for $H,\mathcal C$ and
+their differentiated compositions are recorded explicitly in
+Section~\ref{cv-linear-section}. They include the
+equal-exponent constrained Schauder theorem of Notebook15.
+The scalar action of the ordinary homogeneous minimizer is
+exactly the action at the corrected fixed-slice minimizer by
+Notebook15's gauge transfer. This does not identify the two
+constraint derivatives.
+
+The underlying corrected one-step coordinate map is specified
+at Raw I, lines 24320--24325 and 24344--24369, with the
+ordinary/corrected bridge at 47076--47087. Its physical
+scaling is $(Lh)^{-1}F_L(hA)$. The Wilson density and pairing
+use the conventions already matched in Notebooks14--15.
+No additional claim about the full original orbit domains is
+made here.
+
+\subsection{Smooth cell spaces without an extension assumption}
+\label{cv-cells-section}
+
+Choose a smooth partition of unity $\{\chi_i\}$ indexed by
+unit current cells, with support in fixed enlarged cells
+$S_i$, uniformly bounded derivatives through order three, and
+uniformly finite overlap. For example, divide a nonnegative
+compactly supported smooth bump by the sum of its integer
+translates. Periodize on compatible tori, counting repeated
+supports with multiplicity.
+
+For each fine field type let $E_i$ be the Banach subspace of
+\emph{complete} fields supported in $S_i$, with its global
+$X_\eta$, $Y_\eta$ or $Z_\eta$ norm. Write $I_i$ for inclusion
+and $P_iu=\chi_i u$. For current fields use coordinate
+restriction and insertion in one current cell. Then
+\begin{equation}\label{cv-partition}
+ u=\sum_iI_iP_iu,\qquad
+ \norm{P_iu}_{E_i}\le C\norm u_{\text{fixed collar of }i}.
+\end{equation}
+The reconstruction
+\[
+ \mathscr R((u_i))=\sum_iI_iu_i
+\]
+is bounded from the block supremum space to the complete
+global space, uniformly in $\eta$ and volume. In particular,
+$\mathscr RP=I$ and $P\mathscr R$ is a bounded projection.
+Arbitrary restrictions on a cell are not extended by an
+unproved extension theorem; the spaces $E_i$ already consist
+of supported complete fields.
+
+For the only delicate norm $X_\eta$, the exact product rule is
+\begin{equation}\label{cv-product-rule}
+ \nabla_\eta(\chi A)(x)
+ =\chi(x+\eta e)\nabla_\eta A(x)
+          +(\nabla_\eta\chi)(x)A(x).
+\end{equation}
+The sampled smooth functions and their first differences have
+uniform physical $C^\alpha$ norms. Telescoping controls the
+local $C^\alpha$ norm of $A$ by $\norm A_X$ without an inverse
+mesh factor. The H\"older product inequality proves
+\eqref{cv-partition}. Finite overlap, also for pairs of points
+in fixed collars, proves the reconstruction bound. The
+arguments for $Y_\eta$ and $Z_\eta$ are simpler.
+
+\subsection{A summed mixed-insertion vertex bound}
+\label{cv-vertex-section}
+
+For a finite set of current cell labels $S$, let $\tau(S)$ be
+the minimum length of a connected current-lattice graph
+containing $S$, allowing unmarked auxiliary vertices. This is
+graph Steiner length. It is not the minimum-spanning-tree
+length on the terminals alone.
+
+For a local analytic map $F$, expand after reconstruction:
+\begin{equation}\label{cv-vertex-expansion}
+ P_iF(\mathscr Ru)=
+ \sum_{n\ge0}\sum_{j_1,\ldots,j_n}
+ V_{n;i;j_1,\ldots,j_n}[u_{j_1},\ldots,u_{j_n}].
+\end{equation}
+The coefficients contain $1/n!$. A fixed finite direct sum
+handles several field types. Define
+\begin{equation}\label{cv-vertex-norm}
+ v_n(\kappa)=\sup_i\sum_{j_1,\ldots,j_n}
+ e^{\kappa\tau(\{i,j_1,\ldots,j_n\})}
+             \norm{V_{n;i;j_1,\ldots,j_n}}.
+\end{equation}
+The coefficient norm is the multilinear operator norm of
+the cell Banach spaces. All input cell labels are summed.
+
+\begin{lemma}[Finite-range analytic vertices]\label{cv-local-lemma}
+Suppose each output reads only labels within distance $R$,
+at most $D_R$ labels, and $F$ is analytic and uniformly
+bounded by $M_F$ on a global ball of radius $r_F$. If
+$\norm{\mathscr R}\le C_P$, then
+\begin{equation}\label{cv-local-majorant}
+ v_n(\kappa)\le M'_F
+       \left(\frac{eC_PD_Re^{\kappa R}}{r_F}\right)^n,
+\end{equation}
+with a fixed output-localization factor in $M'_F$.
+If $F$ starts at degree two, the generating majorant is
+analytic and quadratic at zero.
+\end{lemma}
+
+\begin{proof}
+For normalized directions, multivariable Cauchy with radii
+$r_F/(nC_P)$ bounds the derivative by
+$M'_F(nC_P/r_F)^n$. Division by $n!$ and
+$n^n/n!\le e^n$ gives the coefficient bound. There are at
+most $D_R^n$ nonzero ordered tuples. Joining the root to
+each input by a shortest path costs at most $nR$, proving
+\eqref{cv-local-majorant}. This argument never counts
+individual fine coordinates. On a smaller analytic margin
+it also works at a nonzero fixed background, though the
+constant and linear terms then need not vanish.
+\end{proof}
+
+Rooting at an input and summing the output and other inputs
+has the same bound up to fixed factors, since the possible
+outputs lie in a fixed neighborhood of that input.
+For support-family substitution the exact geometric bound is
+\begin{equation}\label{cv-tree-union}
+ \tau\left(\{i\}\cup\bigcup_rX_r\right)
+ \le\tau(\{i,j_1,\ldots,j_n\})
+                    +\sum_r\tau(\{j_r\}\cup X_r).
+\end{equation}
+Join the graphs at their roots. The $j_r$ remain allowed as
+unmarked auxiliary vertices when they are no longer terminals.
+This constant-one inequality can fail for metric
+minimum-spanning-tree length. If that convention is denoted
+by $\ell_{\rm MST}$, a doubled traversal and shortcut give
+\begin{equation}\label{cv-mst-conversion}
+ \ell_{\rm MST}(S)\le2\tau(S).
+\end{equation}
+Thus a final weight $e^{\mu\ell_{\rm MST}}$ is covered by
+a Steiner exponent at least $2\mu$. That spatial reserve
+must be retained at the polymer interface.
+
+\paragraph{Arbitrary fixed cardinality reserve.}
+The concrete coefficients here are expanded at the fixed
+flat background. They introduce no extra variable support.
+For any prescribed $a\ge0$,
+\begin{equation}\label{cv-cardinality}
+ e^{a|\cup_rX_r|}\le\prod_re^{a|X_r|}.
+\end{equation}
+Consequently adding $e^{a|X|}$ to the rooted support norm
+does not change the nonlinear vertex majorants. Linear
+operators change the root, not the variable support. Only
+the initial source $B_j$, with support $\{j\}$, costs
+$e^a$. The source radius may shrink with $a$ while remaining
+uniform in refinement and volume. This can pay a fixed
+support-cardinality factor in a later polymer norm; small
+spatial decay alone would not pay that factor. Hiding a
+background-dependent minimizer in the Taylor coefficients
+would require a new support argument and is not done here.
+
+\subsection{The actual nonlinear vertices}
+\label{cv-concrete-section}
+
+\paragraph{The Wilson jet coefficient.}
+For a positive plaquette use
+$z=(a,b,c,e)=(A_\mu,A_\nu,\nabla_\mu A_\nu,
+\nabla_\nu A_\mu)$ at its base point. The exact expressions are
+\begin{equation}\label{cv-wilson-jet}
+ \begin{split}
+ P_\eta(z)&=e^{i\eta a}e^{i\eta b+i\eta^2c}
+                 e^{-i\eta a-i\eta^2e}e^{-i\eta b},\\
+ \mathcal L_\eta(z)&=-\frac12\tau\left[
+       \left(\frac{P_\eta(z)-I}{\eta^2}\right)^2
+                                      P_\eta(z)^{-1}\right].
+ \end{split}
+\end{equation}
+The singularity at $\eta=0$ is removed before differentiating
+vertices: $P_0=I$ and $\partial_\eta P_\eta|_0=0$.
+Joint analyticity on a fixed jet ball gives uniform
+coefficients. The bounded jet map and the $C^\alpha$
+product estimate make
+\[
+ F_\eta^{\rm nl}(A)=f_\eta(SA):X_\eta\longrightarrow Y_\eta
+\]
+analytic on a uniform ball and quadratic at zero. Each
+plaquette output reads a bounded physical neighborhood.
+Lemma~\ref{cv-local-lemma} therefore proves its full
+mixed-insertion bound uniformly in $\eta$.
+The transpose $S^T$ stays outside this vertex. A uniform
+bounded-field estimate for the unpropagated fine force
+$S^TF_\eta^{\rm nl}$ is neither used nor claimed.
+
+\paragraph{The Wilson energy density.}
+Set
+\begin{equation}\label{cv-cell-energy}
+ \mathcal E_{i,\eta}(A)=\eta^4\sum_{p>0}
+       \chi_i(x_p)\mathcal L_\eta((SA)_p).
+\end{equation}
+Then $\mathcal S_\eta(A)=\sum_i\mathcal E_{i,\eta}(A)$
+exactly. Although a current cell contains $O(\eta^{-4})$
+fine plaquettes,
+\begin{equation}\label{cv-cell-mass}
+ \eta^4\sum_{p>0}|\chi_i(x_p)|\le C_d.
+\end{equation}
+The fine differences are already bounded in the jet norm.
+Thus every cell energy is a uniformly bounded analytic
+scalar map on a fixed $\mathcal N_\alpha$ ball, with fixed
+current dependency range. Its coefficients satisfy
+\eqref{cv-local-majorant}. Replacing $\mathcal L_\eta$ by
+its remainder after the quadratic Maxwell density gives
+the same conclusion starting at degree three. Dropping
+$\eta^4$, or treating all fine differences as unrelated
+bounded coordinates, would lose this estimate.
+The ordinary constrained scalar action is the same sum at
+the corrected minimizer by the established gauge transfer.
+
+\paragraph{The full corrected constraint.}
+At input spacing $h$ and output spacing $Lh$,
+\begin{equation}\label{cv-one-step}
+ \begin{split}
+ \mathcal F_h(A)&=(Lh)^{-1}F_L(hA)=Q_hA+\mathcal R_h(A),\\
+ \norm{\mathcal R_h(A)}_\infty&\le Ch\norm A_\infty^2,
+ \qquad
+ \norm{D\mathcal R_h(A)}_{\infty\to\infty}
+       \le Dh\norm A_\infty.
+ \end{split}
+\end{equation}
+For $h_t=L^{t-j}$, $\sum_{t<j}h_t\le(L-1)^{-1}$.
+The proved Riccati bound keeps every intermediate physical
+field in a common ball. Hence the composed remainder
+$\mathcal R$ is uniformly analytic, quadratic, and has
+physical dependency radius at most
+$r_L\sum_th_t\le R_*$.
+It follows that $\mathcal R:X_\eta\to E$ satisfies
+Lemma~\ref{cv-local-lemma}. The scale sum is already included
+in this uniform bound; higher coefficients are obtained by
+Cauchy in that ball, not by an uncontrolled count of
+multilevel diagrams.
+
+\paragraph{The physical-adjoint constraint vertex.}
+Define
+\begin{equation}\label{cv-adjoint-vertex}
+ \mathcal V_\eta(A,m)=D\mathcal R(A)^Tm:
+                X_\eta\times E\longrightarrow Z_\eta.
+\end{equation}
+Ordinary holomorphy of $\mathcal R$ alone would not control
+this physical transpose. The proved row estimate does:
+at one step,
+\[
+ \norm{D\mathcal R_h(A)^T}_{\infty\to\infty}
+       \le D_*h\norm A_\infty,\qquad
+ D_*=N_LK_0L^{d-1}.
+\]
+The factor $L^d$ in the physical transpose is included here.
+Both $Q_h$ and $Q_h^T$ contract the bounded norm.
+Transposing the composition and using the intermediate
+field bound proves
+\begin{equation}\label{cv-adjoint-bound}
+ \norm{D\mathcal R(A)^T}_{\infty\to\infty}
+    \le \exp\left(\frac{2D_*\norm A_\infty}{L-1}\right)-1.
+\end{equation}
+The map is holomorphic into this physical absolute-row
+operator space. Thus \eqref{cv-adjoint-vertex} is jointly
+analytic and $O(\norm A_\infty\norm m_\infty)$.
+Its output at a fine bond reads coarse $m$ within $R_*$,
+and background $A$ within $2R_*$, because each relevant
+coarse equation contains that bond and reads its own
+neighborhood. Lemma~\ref{cv-local-lemma} applies with
+total degree starting at two. Cauchy is taken in the
+physical-row operator norm; it is not applied entrywise
+and followed by a count of fine coefficients.
+The output is only required to be bounded: it enters
+$\mathcal C$ or $H^T$, and no derivative of $m$ is taken.
+
+\subsection{Summable linear blocks, including the derivative kernels}
+\label{cv-linear-section}
+
+The established complete-field estimates, for every positive
+weight with $w(i)/w(j)\le e^{\kappa_0d(i,j)}$, are
+\begin{equation}\label{cv-linear-inputs}
+ \begin{gathered}
+ H:E_w\to X_{\eta,w},\qquad
+ \mathcal C:Z_{\eta,w}\to X_{\eta,w},\qquad
+ \mathcal CS^T:Y_{\eta,w}\to X_{\eta,w},\\
+ H^T:Z_{\eta,w}\to E_w,\qquad
+ (SH)^T:Z_{\eta,w}\to E_w,\qquad q:E_w\to E_w.
+ \end{gathered}
+\end{equation}
+Restricting the fifth input to $Y_\eta$ is sufficient.
+The third estimate has the same $\alpha$ at input and
+output; a positive H\"older loss would not suffice.
+These are the constrained Schauder and extension bounds
+already used in the weighted response proof. They do not
+require the gauge projection $\Pi$ to act on arbitrary
+bounded fields.
+
+For any such $T$, form $T_{ij}=P_iTI_j$. Given a supported
+input $u_j$, use $w_j(n)=e^{\kappa_0d(n,j)}$. Its weighted
+norm is bounded by its unweighted norm times a fixed collar
+factor. The complete weighted estimate gives
+\begin{equation}\label{cv-block-envelope}
+ \norm{T_{ij}}\le C_Te^{-\kappa_0d(i,j)}.
+\end{equation}
+This is an operator norm between cell Banach spaces, not an
+absolute integral estimate for a singular differentiated
+fine-coordinate kernel. In particular its diagonal block is
+controlled by the equal-exponent Schauder bound.
+For every $0<\kappa<\kappa_0$, lattice growth then gives
+\begin{equation}\label{cv-block-schur}
+ \max\left\{
+  \sup_i\sum_je^{\kappa d(i,j)}\norm{T_{ij}},\,
+  \sup_j\sum_ie^{\kappa d(i,j)}\norm{T_{ij}}\right\}
+                \le C_{T,\kappa}.
+\end{equation}
+Both sums follow from the common envelope, without any
+self-adjointness assumption in these Banach norms.
+Periodic-distance sums have the same uniform upper bound.
+
+The decomposition is exact; for example,
+\begin{equation}\label{cv-exact-linear-splitting}
+ \mathcal CS^Tf=\sum_j\mathcal CS^T(\chi_jf).
+\end{equation}
+Every $\chi_jf$ is a complete $C^\alpha$ field. Smooth
+cutoff derivatives are included in $S^T(\chi_jf)$ and
+controlled by the same estimate; they cancel in the sum.
+No sharp splitting is used. The maps $H^T$ and $(SH)^T$
+likewise retain their physical transpose normalization.
+Output first differences and their H\"older seminorms are
+already in $X_\eta$, while source derivatives occur only
+through $\mathcal CS^T$ and $(SH)^T$. Separate absolute
+fine-coordinate derivative bounds are unnecessary for
+\eqref{cv-vertex-norm}.
+
+\subsection{An exact simultaneous fixed point using these vertices}
+\label{cv-fixed-point-section}
+
+The corrected constraint is $\mathcal F(A)=QA+\mathcal R(A)$.
+Let $m$ be the multiplier of Notebook15 and write
+$\mathcal V_\eta(A,m)=D\mathcal R(A)^Tm$.
+The exact stationarity equations are equivalent near zero to
+\begin{equation}\label{cv-fixed-point}
+ \begin{split}
+ A={}&HB-H\mathcal R(A)
+          -\mathcal CS^Tf_\eta(SA)+\mathcal C\mathcal V_\eta(A,m),\\
+ m={}&qB-q\mathcal R(A)
+          +(SH)^Tf_\eta(SA)-H^T\mathcal V_\eta(A,m).
+ \end{split}
+\end{equation}
+Indeed the second equation rearranges to
+\[
+ (I+H^TD\mathcal R(A)^T)m
+        =q[B-\mathcal R(A)]+H^TN(A),
+\]
+and the first is $A=H[B-\mathcal R(A)]+\xi$ with
+$\xi=-\mathcal CN(A)+\mathcal CD\mathcal R(A)^Tm$.
+These are the proved constraint chart and reduced
+stationarity identities. Conversely the exact constraints
+of $\mathcal C$ put $\xi$ in the fixed flat slice, and the
+small multiplier inverse recovers the earlier formulation.
+No extra small critical points are introduced.
+
+All nonlinear primitives in \eqref{cv-fixed-point} start at
+degree two: $\mathcal R(A)$, $f_\eta(SA)$, and
+$D\mathcal R(A)^Tm$. Their mixed-insertion majorants are
+analytic and uniform by the preceding proof, while their
+linear propagators satisfy \eqref{cv-block-schur}.
+Apply $P$ to the equations and reconstruct with $\mathscr R$.
+A fixed point in compatible cell components reconstructs
+exactly to \eqref{cv-fixed-point}; the overlap constants are
+absorbed by reducing the small radius. This supplies the
+concrete inputs for the separate rooted support-family
+fixed-point theorem, including any fixed cardinality reserve.
+Tree summation, canonical grouping of supports and the final
+scalar-action expansion remain conclusions of that theorem,
+not substitutes for its proof.
+
+\subsection{An obstruction to using the full ordinary adjoint}
+\label{cv-ordinary-section}
+
+The full ordinary rooted average is analytic from small
+complete physical connections to bounded current data, with
+fixed physical dependency range, by the ordinary trajectory
+theorem. It therefore has $X_\eta\to E$ vertex bounds.
+Its physical adjoint on arbitrary bounded current fields is
+different and is not uniformly bounded through refinement.
+
+Let $Q_{\rm ord}$ be its flat derivative in physical
+potentials. Exact ordinary gauge covariance gives
+\begin{equation}\label{cv-ordinary-gradient}
+ Q_{\rm ord}D_\eta\lambda
+          =D_1(\lambda|_{\text{final centers}}),
+\end{equation}
+with the same sign on both sides for either consistent
+gauge convention. On a sufficiently large torus, take a
+unit color vector $\lambda$ at one final-center fine site
+and zero at every other fine site. Its fine gradient is
+nonzero on $2d$ bonds, each of magnitude $\eta^{-1}$, so
+\begin{equation}\label{cv-point-gradient-norms}
+ \norm{D_\eta\lambda}_{2,\eta}
+       =\sqrt{2d}\,\eta^{d/2-1},\qquad
+ \norm{D_\eta\lambda}_{1,\eta}=2d\eta^{d-1}.
+\end{equation}
+The current gradient in \eqref{cv-ordinary-gradient} has
+magnitude one on $2d$ bonds. Therefore
+\begin{equation}\label{cv-ordinary-hilbert-obstruction}
+ \norm{Q_{\rm ord}}_{L^2_\eta\to L^2_1}
+                     \ge\eta^{1-d/2}.
+\end{equation}
+Choose $m$ to equal that current gradient, so
+$\norm m_\infty=1$ and
+$\langle Q_{\rm ord}D_\eta\lambda,m\rangle_1=2d$.
+Physical transposition and
+\eqref{cv-point-gradient-norms} imply
+\begin{equation}\label{cv-ordinary-adjoint-obstruction}
+ \norm{Q_{\rm ord}^T}_{\infty\to\infty}\ge\eta^{1-d}.
+\end{equation}
+In dimension four these are $\eta^{-1}$ and $\eta^{-3}$.
+The complete $\mathcal N_\alpha$ norm of the test gradient
+is large, so there is no contradiction with
+$Q_{\rm ord}:X_\eta\to E$ boundedness.
+
+The corrected flat derivative instead satisfies
+$Q_M^{\rm st}D_\eta=D_1Q_0$ with the scalar block mean,
+and its physical transpose contracts the bounded norm.
+This is why \eqref{cv-fixed-point} uses the corrected map.
+Possible cancellations in a specially projected ordinary
+adjoint are not assumed. The ordinary current-step pivot
+chart of Notebook19 is unaffected: that ratio is the fixed
+$L$, so its constants may depend on $L$. The obstruction
+concerns unbounded total ratio $M$.
+
+\subsection{Scope of the concrete input}
+\label{cv-scope}
+
+The proved inputs are uniformly analytic finite-current-range
+Wilson jet and energy vertices, corrected-constraint and
+physical-adjoint constraint vertices, summed mixed-insertion
+norms, and exponentially summable linear cell blocks including
+the derivatives used in the simultaneous equations. The
+one-weight theorem is used only to form linear block
+envelopes; the nonlinear coefficient proof really sums all
+input labels.
+
+No raw fine-coordinate absolute Taylor norm without physical
+normalization or regularity is asserted. No ordinary rooted
+adjoint bound, independent-current source extension,
+mixed-history theorem or quantum integration result is
+inferred. Backgrounds remain in the homogeneous small global
+potential branch. The scalar gauge transfer, rather than a
+false identification of ordinary and corrected derivatives,
+matches its classical action to the ordinary branch.

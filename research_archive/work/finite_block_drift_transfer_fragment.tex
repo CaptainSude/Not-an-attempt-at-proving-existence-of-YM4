@@ -1,0 +1,262 @@
+% No preamble. Prefix fbt-. Conditional qualitative positive block transfer.
+\section{Qualitative transfer of a positive leading block drift}
+\label{fbt-section}
+
+The compactness and moment-passage inputs in this section are
+available for the actual homogeneous local macrostep. Its
+positivity hypothesis is explicitly additional and unproved.
+The conclusion requires no quantitative finite-volume rate.
+
+\subsection{The actual fixed-length coefficients}
+\label{fbt-setup}
+
+Fix the primitive ratio, elementary composite ratio \(R\),
+grouping \(J\), common analytic domains and extraction
+convention. Fix a finite \(q\ge1\), chosen to be a multiple
+of the activity-envelope block length \(q_a\) when applying
+the tuning consequence below. Let \(\mathcal P\) be the
+compatible nested cubic period family: every fixed power
+of \(R\) divides all sufficiently late periods in
+\(\mathcal P\).
+
+For a \(q\)-step block with final period \(N\in\mathcal P\),
+put
+\begin{equation}
+ M_j=MR^j,\qquad Q_j=R^{q-j}N,\qquad 0\le j\le q.
+ \label{fbt-block-scales}
+\end{equation}
+Here \(M\) is any permitted preceding homogeneous depth.
+Let \(D_{M_j,R;Q_{j+1}}\) be the actual finite leading
+correction \(\Delta+\mathcal Q_{\det}\) of step \(j\).
+Define
+\begin{equation}
+ b_{0,j}^{M,N}
+    =\beta_{M_jR,Q_{j+1}}(D_{M_j,R;Q_{j+1}}),
+ \qquad
+ B_q(M,N)=\sum_{j=0}^{q-1}b_{0,j}^{M,N}.
+ \label{fbt-finite-coefficients}
+\end{equation}
+Each functional is the actual finite short-lift ratio
+normalized by its actual finite classical reference.
+These coefficients are real on the real branches.
+No finite ratio is replaced by an infinite moment.
+
+The uniform outer-domain leading-family bound and the
+finite moment estimate give, above the fixed reference
+threshold,
+\begin{equation}
+                          |b_{0,j}^{M,N}|\le B_0
+ \label{fbt-leading-bound}
+\end{equation}
+uniformly in depth and permitted volume. The reference
+denominators are bounded below by \(1/2\).
+
+\subsection{Varying-depth structural limits and their moments}
+\label{fbt-compactness}
+
+Take any \(M_n\) and any \(N_n\in\mathcal P\) tending to
+infinity. The old depths need not be bounded or converge.
+Extract jointly the classical references and background
+maps at the shifted depths \(M_nR^j\), their required
+fixed-order vertices, the actual retained flat precisions
+and covariances, and all \(q\) leading corrections in
+\eqref{fbt-finite-coefficients}.
+The uniform strict support, common-domain and exponential
+source-Hessian bounds provide such a subsequence. If a
+structural reference comparison requires additional fixed
+depth shifts or endpoint powers, include their countable
+collection in the same diagonal extraction. Cofinal
+divisibility guarantees their eventual finite availability.
+
+Write the limiting corrections as \(D_j^*\), with true
+infinite Maxwell functional \(\beta_{j+1}^*\) at output
+scale \(j+1\), and set
+\begin{equation}
+                       B_q^*=\sum_{j=0}^{q-1}
+                                         \beta_{j+1}^*(D_j^*).
+ \label{fbt-limit-sum}
+\end{equation}
+The scale indices describe the structural limit. They
+do not identify it with one fixed finite-depth system.
+
+These are actual determinant structural limits. At fixed
+\(R\) the retained fiber per current block has fixed finite dimension;
+the whole retained operator still has dimension growing with volume.
+Local matrix convergence and exponential envelopes pass
+products and the inverse identity \(A_0C_0=I\) by truncating
+the intermediate sums. The chart and pivot maps are fixed;
+common-domain Cauchy estimates give convergence of classical
+vertices through order four. The absolutely convergent
+trace formula therefore identifies the limiting Hessian
+with the same actual determinant expression. One may
+equivalently extract the strict scalar families jointly
+and identify their Hessians in this way. No old fine
+coordinate count occurs.
+
+\begin{lemma}[Passage of the actual finite moments]
+\label{fbt-moment-lemma}
+Along every such joint subsequence,
+\begin{equation}
+ b_{0,j}^{M_n,N_n}\longrightarrow
+                      \beta_{j+1}^*(D_j^*)\quad(0\le j<q),
+ \qquad
+ B_q(M_n,N_n)\longrightarrow B_q^*.
+ \label{fbt-moment-limits}
+\end{equation}
+\end{lemma}
+\begin{proof}
+For a fixed \(j\), the leading source-Hessian kernels
+converge locally and have a common exponential row
+bound. Restrict their short-lift second moment first
+to a fixed displacement radius. The finite sum converges.
+The rest has a uniformly summable exponential
+second-moment tail. The finite short-lift cutoff tends
+to infinity since \(Q_{j+1}=R^{q-j-1}N_n\to\infty\).
+
+The actual finite reference denominator tends uniformly
+to one by the flat normalized classical periodization
+estimate, even for these varying depths. Division proves
+the first assertion. The sum has fixed finite length
+\(q\), proving the second. Neither an extensive total
+limit nor a regulator convergence rate was used.
+\end{proof}
+
+\subsection{The conditional positive transfer}
+\label{fbt-positive-section}
+
+\paragraph{Unproved structural positivity hypothesis.}
+Assume there is one \(\delta>0\) such that \emph{every}
+joint structural infinite limit obtainable above satisfies
+\begin{equation}
+                                  B_q^*\ge\delta.
+ \label{fbt-positive-hypothesis}
+\end{equation}
+The same margin must work for all varying-depth and
+permitted-period sequences. Positivity in one selected
+fixed-depth limit is insufficient.
+
+\begin{proposition}[Uniform finite block lower bound]
+\label{fbt-transfer-proposition}
+Under \eqref{fbt-positive-hypothesis}, for every
+\(0<\varepsilon<\delta\) there is a threshold
+\(N_*(\varepsilon)\), independent of preceding depth,
+such that
+\begin{equation}
+ B_q(M,N)\ge\delta-\varepsilon
+ \quad\hbox{for all permitted }M,\quad
+ N\in\mathcal P,\quad N\ge N_*(\varepsilon).
+ \label{fbt-finite-lower}
+\end{equation}
+In particular the finite block is at least \(\delta/2\)
+above one uniform period threshold.
+\end{proposition}
+\begin{proof}
+Otherwise choose \(N_n\to\infty\) in \(\mathcal P\)
+and old depths \(M_n\) such that
+\(B_q(M_n,N_n)<\delta-\varepsilon\).
+Take a joint structural subsequence. By
+Lemma~\ref{fbt-moment-lemma}, its limiting sum is at most
+\(\delta-\varepsilon\), contradicting
+\eqref{fbt-positive-hypothesis}.
+\end{proof}
+
+The threshold is also uniform in a block's starting
+stage: absorb that stage into its preceding depth \(M\).
+Its final period is the \(N\) in
+\eqref{fbt-block-scales}. The proof gives no numerical
+threshold or convergence rate.
+
+\subsection{The finite tuning input needs only this qualitative bound}
+\label{fbt-tuning-section}
+
+Take \(q\) to be a multiple of \(q_a\). Write
+\(\mathcal F_{j,g}\) for the actual finite quantum extraction map,
+\(x_j\) for the actual real extracted input class, and
+\(d_j(g,x)=\beta_{j+1}(\mathcal F_{j,g}(x))\) for its
+inverse-coupling decrement. On the established
+finite activity envelope the actual decrement obeys
+\begin{align}
+ |d_j(g,x_j)-b_{0,j}|
+ \le{}&C_{\rm int}\omega(N_{\min})
+       +C_{{\rm par},\beta}
+                    \{\tau(T(g))+g^2T(g)^6\}\notag\\
+ &+C_{{\rm in},\beta}\,gT(g)/b.
+ \label{fbt-actual-error}
+\end{align}
+The first term tends qualitatively to zero as the
+period threshold increases. The other terms tend to
+zero in the weak-coupling limit at the fixed field
+radius and chosen real threshold \(T(g)\).
+
+Use \eqref{fbt-finite-lower} with
+\(\varepsilon=\delta/2\). Raise the period threshold
+and lower the weak-coupling ceiling until
+\eqref{fbt-actual-error} is at most \(\delta/(4q)\).
+Then every permitted \(q\)-step block satisfies
+\begin{equation}
+ \frac{\delta}{4}\le
+       \sum_{j=k}^{k+q-1}d_j(g_j,x_j)
+       \le qD_{\rm abs}.
+ \label{fbt-actual-block}
+\end{equation}
+The upper bound is the proved absolute-increment bound.
+Repeating the \(q_a\)-step activity blocks gives the same
+intermediate envelope throughout this longer block.
+No new large-endpoint field-dilation estimate is used.
+
+These are the positive block bounds used in the
+continuous clipped-recursion shooting argument.
+Put \(\Gamma_{\rm w}=g_{\rm w}^{-2}\), where
+\(g_{\rm w}\) is the chosen weak-coupling ceiling.
+For a terminal inverse coupling
+\(\Gamma_*\ge\Gamma_{\rm w}+qD_{\rm abs}\), that argument
+then gives an initial value in
+\begin{equation}
+ [\,\Gamma_*+m\delta/4,\ \Gamma_*+mqD_{\rm abs}\,]
+ \label{fbt-shooting-interval}
+\end{equation}
+which makes \(mq\) genuine weak local extraction steps
+and reaches \(\Gamma_*\). This remains conditional on
+\eqref{fbt-positive-hypothesis}.
+
+If an averaged formulation for arbitrary finite
+interval lengths is desired, write \(n=mq+r\),
+\(0\le r<q\), and use \eqref{fbt-leading-bound} on
+the final fringe. For intervals entirely above the
+common period threshold,
+\begin{equation}
+ \sum_{j=k}^{k+n-1}b_{0,j}
+ \ge cn-C_{\rm fin},\qquad
+ c=\frac{\delta}{2q},\qquad
+ C_{\rm fin}=(q-1)(B_0+c).
+ \label{fbt-optional-fringe}
+\end{equation}
+Indeed the complete blocks contribute at least
+\(m\delta/2\), and the fringe contributes at least
+\(-rB_0\). The shooting proof needs only the fixed-block
+bound, so this additional formulation is optional.
+
+\subsection{The remaining sign problem}
+\label{fbt-scope}
+
+Include the one long-ratio \(R^q\) determinant in the
+joint extraction. The proved leading cocycle and true
+infinite classical marginal preservation give
+\begin{equation}
+                         B_q^*
+                          =\beta_q^*(D_{0,R^q}^*).
+ \label{fbt-long-ratio}
+\end{equation}
+A uniformly positive reference comparison for this
+coefficient in every structural limit would therefore
+supply \eqref{fbt-positive-hypothesis}. The equality
+itself proves no sign.
+
+Once that positive structural margin is established,
+qualitative compactness is enough for the needed finite
+block lower bound; a separate exponential regulator
+rate is unnecessary. This section does not establish
+the margin, exact finite marginal additivity, summability
+of errors over an infinite history, uniqueness of the
+old-depth limit, or convergence of tuned local densities
+to a continuum measure.

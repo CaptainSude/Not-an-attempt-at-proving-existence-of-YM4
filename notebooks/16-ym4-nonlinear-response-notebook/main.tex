@@ -1,0 +1,1109 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage{mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 16: local nonlinear responses and the classical coarse action}
+\author{Research working document}
+\date{16 October 2026}
+\setlength{\emergencystretch}{5em}
+\begin{document}
+\maketitle
+\begin{abstract}
+Starting from the finite-regulator small-field minimizer of
+Notebook 15, we prove exponential locality of its response to
+coarse data at small nonconstant backgrounds. The bounds are
+uniform in refinement and periodic volume, retain the same
+physical H\"older exponent, and allow one weighted direction
+at every analytic derivative order. The extra input is a local
+physical-transpose derivative estimate for the nonlinear
+constraint. An exact envelope identity then identifies the
+derivative of the minimized classical action with the coarse
+multiplier. This supplies a local nonlinear coarse Hessian,
+its small perturbation from the flat Maxwell precision, and a
+classical gauge identity. A separate exact Gaussian trace
+calculation shows that a fixed physical smooth ball has vanishing
+probability when the coupling decreases more slowly than the
+square of the mesh spacing. This identifies a concrete need for
+rescaled fluctuation domains. Notebook 17 supplies the resulting
+fixed-step Gaussian domain and joint tails; Notebook 18 supplies
+an overlapping-interaction integration theorem under explicit local
+coefficient hypotheses. The complete model-specific integration
+and iteration remain open.
+\end{abstract}
+
+\noindent\textbf{Status.}
+Internally audited research proofs, with no external certification
+or novelty claim. The prerequisite finite-regulator construction
+and its ordinary-constraint transfer are given in Notebook 15.
+The source provenance remains the deposited transcriptions at
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}{commit
+\texttt{e392ef4501\allowbreak 3a581664ba\allowbreak b76b908671\allowbreak 70b30fe10e}}.
+No new original-paper verification is asserted here.
+
+\section{The precise target}
+\label{nr16-target}
+
+Work with $SU(N_c)$ on compatible finite periodic lattices,
+fine spacing $\eta=L^{-j}$ for fixed odd $L\ge3$, coarse
+spacing one, and fixed $0<\alpha<1$. The background coarse
+potential $B$ is arbitrary in a sufficiently small global
+supremum ball; it need not be constant or decay at infinity.
+The selected fine potential $A_*(B)$ uses the corrected
+constraint and fixed flat gauge of Notebook 15. All derivatives
+of this chosen representative below refer to that selection.
+
+The ordinary-feasible representative from Notebook 15 is gauge
+equivalent and has a separately controlled response through its
+explicit gauge formula. Its leading extension generally differs
+from $H$, while its minimized action value is exactly the same.
+Keeping these coordinates distinct gives local response theorems
+for both specified representatives and the ordinary-gauge
+interpretation of the classical action.
+
+The main analytic estimate puts an exponential weight on one
+coarse direction while keeping the other directions and the
+background unweighted. It yields decay away from a localized
+insertion and uniform higher derivatives. A fixed-exponent
+connected-tree bound involving all insertion sites at once is
+a stronger statement and is not inferred from this estimate.
+
+
+% No preamble. Notebook 16 candidate module. Unique labels: wr-.
+% Requires amsmath, amssymb, amsthm and a one-argument \norm macro.
+
+\section{Exponential locality of nonlinear minimizer responses}
+\label{wr-section}
+
+Fix $0<\alpha<1$, an odd blocking ratio $L\ge3$, refinement
+$M=L^j$, fine spacing $\eta=M^{-1}$, and final spacing one.
+The primary statements are on finite compatible periodic
+regulators, with constants independent of refinement and volume.
+The coarse background may be nonconstant, but it lies in a fixed
+small complex bounded-field ball. We study the corrected-constraint
+minimizer $A(B)$ in its fixed flat gauge. A gauge-equivalent
+representative chosen by a different construction does not acquire
+these locality estimates merely from gauge equivalence.
+
+\subsection{Weighted spaces and the fixed flat inputs}
+\label{wr-spaces}
+
+Write
+\[
+ \mathcal F(A)=QA+\mathcal R(A),\qquad
+ D_A=D\mathcal R(A),\qquad
+ \mathcal X=\ker Q\cap\ker(RD^T).
+\]
+Here $R$ is the fixed scalar gauge projection and
+$\mathcal R$ is the nonlinear averaging remainder. All transposes
+use physical measure. Let $\mathcal N_\alpha$ be the complete
+potential norm consisting of the supremum, the suprema of all
+physical first differences, and their local $\alpha$-H\"older
+seminorms. Fix unit-cell collars of bounded physical size.
+
+Choose a sufficiently small fixed $\kappa>0$ allowed by the flat
+kernel and constrained Schauder estimates. An admissible positive
+cell weight satisfies
+\begin{equation}\label{wr-weight}
+ \frac{w(n)}{w(m)}\le e^{\kappa d(n,m)}.
+\end{equation}
+Weighted norms take the supremum of $w(n)$ times the appropriate
+local norm on the collar of cell $n$. Fine derivatives are taken
+on complete fields before these norms are evaluated. No sharp cell
+cutoff or derivative of the weight is inserted. Periodic distance
+is used on a torus, and fixed collar enlargements only change
+constants.
+
+On the infinite lattice a decaying admissible weight can allow
+unbounded weighted directions. Literal Fr\'echet responses of the
+original bounded-field map are first taken on globally bounded
+directions with finite weighted norm. The linearized formulas
+below then define bounded extensions to the full weighted spaces.
+Higher-response symmetry is initially understood on bounded
+directions. The localized corollaries use growing weights
+$w_S\ge1$ and require no such extension.
+
+The proved flat operator estimates, uniform for all these weights,
+are
+\begin{align}
+ H &: \ell^\infty_{c,w}\longrightarrow\mathcal N_{\alpha,w},&
+ \mathcal C &: \ell^\infty_{f,w}\longrightarrow\mathcal N_{\alpha,w},
+                                                       \label{wr-flat-a}\\
+ \mathcal C S_{\rm jet}^T &: C^\alpha_{f,w}\longrightarrow\mathcal N_{\alpha,w},
+ &q &: \ell^\infty_{c,w}\longrightarrow\ell^\infty_{c,w},
+                                                       \label{wr-flat-b}\\
+ H^T &: \ell^\infty_{f,w}\longrightarrow\ell^\infty_{c,w},&
+ (S_{\rm jet}H)^T &: \ell^\infty_{f,w}\longrightarrow\ell^\infty_{c,w}.
+                                                       \label{wr-flat-c}
+\end{align}
+The symbol $c$ denotes coarse fields and $f$ fine fields.
+The exponent in \eqref{wr-flat-b} is unchanged; the separately
+proved constrained biharmonic cancellation is needed for this.
+The transpose bounds in \eqref{wr-flat-c} use the physical volume
+one of a fine cell and summable derivative-extension kernels.
+
+Write the nonlinear Wilson force as
+$N(A)=S_{\rm jet}^Tf_\eta(S_{\rm jet}A)$. The local analytic
+coefficient and the complete-field H\"older product estimate give
+\begin{equation}\label{wr-force}
+ \norm{D[f_\eta(S_{\rm jet}A)]V}_{C^\alpha_w}
+ \le C\norm{A}_{\mathcal N_\alpha}
+                   \norm{V}_{\mathcal N_{\alpha,w}}.
+\end{equation}
+Thus $\mathcal C N'(A)$ and $H^TN'(A)$ have the corresponding
+weighted norms bounded by $C_\kappa\norm{A}_{\mathcal N_\alpha}$.
+The second operator is evaluated using $(S_{\rm jet}H)^T$;
+no rough nonlinear coefficient is differentiated.
+
+\subsection{A local estimate for the differentiated transpose}
+\label{wr-local-transpose}
+
+The full corrected average has a physical dependency radius
+$R_*$ independent of $j$. One may use the deposited two-block
+property, or sum the one-step radii using
+$\sum_{t<j}h_t\le(L-1)^{-1}$. Increase $R_*$ by a fixed cell
+collar margin. The established absolute physical row estimates are
+\begin{equation}\label{wr-row-estimates}
+ \norm{D_A}_{\infty\to\infty}\le c\norm{A}_\infty,
+ \qquad
+ \norm{D_A^T}_{\infty\to\infty}\le c_*\norm{A}_\infty.
+\end{equation}
+These inequalities hold in the absolute row norm as well.
+For the second inequality the one-step physical column factor
+is $L^d$, giving
+$N_LK_0L^{d-1}h\norm{A}_\infty$ before summing the spacings.
+It is not a comparison with the number of fine variables.
+
+Finite dependency immediately yields
+\begin{equation}\label{wr-weighted-rows}
+ \begin{split}
+ \norm{D_AV}_{\infty,w}
+ &\le ce^{\kappa R_*}\norm{A}_\infty\norm{V}_{\infty,w},\\
+ \norm{D_A^Tm}_{\infty,w}
+ &\le c_*e^{\kappa R_*}\norm{A}_\infty\norm{m}_{\infty,w}.
+ \end{split}
+\end{equation}
+The key additional estimate places the weight on a background
+variation while leaving the coarse multiplier unweighted:
+\begin{equation}\label{wr-mixed-transpose}
+ \boxed{\quad
+ \norm{(D_A^T)'[V]m}_{\infty,w}
+ \le C_*e^{2\kappa R_*}\norm{V}_{\infty,w}\norm{m}_\infty.
+ \quad}
+\end{equation}
+The constant is uniform on a fixed smaller complex background
+ball.
+
+\begin{proof}[Proof of \eqref{wr-mixed-transpose}]
+Fix an output fine bond $b$. Its row in $D_A^T$ reads only coarse
+bonds within $R_*$ of $b$. Each associated coefficient depends on
+$A$ only in the dependency set of that coarse bond, hence within
+$2R_*$ of $b$. The map from the bounded background ball into this
+physical absolute row space is analytic and uniformly bounded
+by \eqref{wr-row-estimates}. Cauchy on a fixed larger ball bounds
+its derivative by $C_*\norm{V}_\infty$.
+
+For this one row restrict $V$ to the union of those dependency
+sets. The restriction does not change the row derivative, and its
+supremum is at most
+$e^{2\kappa R_*}w(b)^{-1}\norm{V}_{\infty,w}$, with the fixed
+collar convention absorbed in $R_*$. This restriction is used
+only in a bounded-value coefficient map, where no field derivative
+is taken. Sum the resulting physical row against bounded $m$,
+multiply by $w(b)$, and take the supremum over $b$.
+The same argument works with lifted multiplicities on small tori.
+\end{proof}
+
+The doubled dependency radius in this proof is essential.
+Cauchy is applied to the uniformly bounded physical row, not
+separately to every fine coefficient followed by an uncontrolled
+count. Higher coefficient derivatives admit the analogous estimate
+with one weighted direction and the remaining directions bounded,
+with factorial constants from the analytic margin. The earlier
+two-Hilbert-direction Hessian incidence estimate is consistent
+with this bound but does not replace its proof.
+
+\subsection{Weighted variation of the chart and multiplier}
+\label{wr-variation}
+
+The exact chart and multiplier are
+\begin{equation}\label{wr-chart-multiplier}
+ \begin{split}
+ A&=\xi+H[B-\mathcal R(A)],\\
+ m&=(I+H^TD_A^T)^{-1}
+             \{q[B-\mathcal R(A)]+H^TN(A)\}.
+ \end{split}
+\end{equation}
+Let $r$ bound $\norm{A}_{\mathcal N_\alpha}$ and $b$ bound
+$\norm{B}_\infty$. The established unweighted estimate is
+\begin{equation}\label{wr-background-multiplier}
+ \norm{m}_\infty\le C(b+r^2).
+\end{equation}
+Neither $A$ nor $m$ is required to have a finite growing-weight
+norm. Only their variations will carry a weight.
+
+Shrink the common background radius once more, depending on
+$\kappa$, so that uniformly in admissible $w$,
+\begin{equation}\label{wr-inverse-smallness}
+ \norm{HD_A}_{\mathcal N_{\alpha,w}\to\mathcal N_{\alpha,w}}<\frac12,
+ \qquad
+ \norm{H^TD_A^T}_{\infty,w\to\infty,w}<\frac12.
+\end{equation}
+These inequalities follow from \eqref{wr-flat-a},
+\eqref{wr-flat-c}, and \eqref{wr-weighted-rows}. Their radii
+are independent of source location, refinement, and volume.
+
+For $z=\delta\xi$, $b_1=\delta B$, and $v=\delta A$, exact
+differentiation gives
+\begin{equation}\label{wr-chart-variation}
+ v=P_A(z+Hb_1),\qquad P_A=(I+HD_A)^{-1},\qquad
+ \norm{v}_{\mathcal N_{\alpha,w}}
+ \le2\bigl(\norm{z}_{\mathcal N_{\alpha,w}}
+                       +h_\kappa\norm{b_1}_{\infty,w}\bigr).
+\end{equation}
+Differentiate the defining equation for $m$ in
+\eqref{wr-chart-multiplier}. This preserves the noncommuting
+order and gives
+\begin{equation}\label{wr-multiplier-variation}
+ \boxed{\quad
+ \delta m=(I+H^TD_A^T)^{-1}
+ \{q(b_1-D_Av)+H^TN'(A)v-H^T(D_A^T)'[v]m\}.
+ \quad}
+\end{equation}
+Using \eqref{wr-force}, \eqref{wr-weighted-rows},
+\eqref{wr-mixed-transpose}, and
+\eqref{wr-background-multiplier},
+\begin{equation}\label{wr-multiplier-variation-bound}
+ \norm{\delta m}_{\infty,w}
+ \le C_\kappa\bigl(\norm{b_1}_{\infty,w}
+        +(r+b+r^2)\norm{v}_{\mathcal N_{\alpha,w}}\bigr).
+\end{equation}
+In particular the last term of
+\eqref{wr-multiplier-variation} needs the mixed transpose
+estimate; no weighted norm of the global background multiplier
+has been assumed.
+
+\subsection{The weighted response inverse}
+\label{wr-response-inverse}
+
+The selected minimizer solves
+\begin{equation}\label{wr-fixed-point}
+ \xi=\Phi_B(\xi)=-\mathcal C N(A)+\mathcal C D_A^Tm.
+\end{equation}
+Its variation is exactly
+\begin{equation}\label{wr-phi-variation}
+ \delta\Phi=-\mathcal C N'(A)v
+       +\mathcal C\{(D_A^T)'[v]m+D_A^T\delta m\}.
+\end{equation}
+The preceding estimates imply, for $r<1$,
+\begin{equation}\label{wr-phi-bound}
+ \norm{\delta\Phi}_{\mathcal N_{\alpha,w}}
+ \le C_\kappa\bigl((r+b)\norm{v}_{\mathcal N_{\alpha,w}}
+                            +r\norm{b_1}_{\infty,w}\bigr).
+\end{equation}
+For $b_1=0$, combine this with
+\eqref{wr-chart-variation}. Choose the chart and coarse
+background radii so that $2C_\kappa(r+b)<1/2$. Then
+\begin{equation}\label{wr-weighted-contraction}
+ \norm{D_\xi\Phi_B}_{\mathcal N_{\alpha,w}\cap\mathcal X
+                         \to\mathcal N_{\alpha,w}\cap\mathcal X}
+ <\frac12.
+\end{equation}
+Every term lies in $\mathcal X$ because it contains $\mathcal C$.
+The constrained space is closed on each finite regulator. The
+estimate does not use a bounded-field norm for the separate gauge
+projection.
+
+The derivative of the minimizer is therefore obtained by the
+weighted Neumann inverse
+\begin{equation}\label{wr-derivative-formula}
+ z=(I-D_\xi\Phi_B)^{-1}D_B\Phi_B[b_1],\qquad
+ D_BA(B)[b_1]=P_A(z+Hb_1).
+\end{equation}
+At the solution $\norm{A(B)}_{\mathcal N_\alpha}
+\le C\norm{B}_\infty$. Equations \eqref{wr-phi-bound} and
+\eqref{wr-derivative-formula} show that $z$ is
+$O(\norm{B}_\infty\norm{b_1}_{\infty,w})$.
+Also $P_A-I=-P_AHD_A$ is $O(\norm{B}_\infty)$ in the
+weighted norm. Consequently
+\begin{equation}\label{wr-main-response}
+ \boxed{\begin{aligned}
+ \norm{D_BA(B)[b_1]}_{\mathcal N_{\alpha,w}}
+ &\le C_\kappa\norm{b_1}_{\infty,w},\\
+ \norm{(D_BA(B)-H)[b_1]}_{\mathcal N_{\alpha,w}}
+ &\le C_\kappa\norm{B}_\infty\norm{b_1}_{\infty,w}.
+ \end{aligned}}
+\end{equation}
+This is a response estimate at arbitrary small nonconstant
+backgrounds derived using fixed flat operators and nonlinear
+coefficients. No nonflat source Schauder theorem is assumed.
+
+\subsection{Coarse multiplier responses}
+\label{wr-multiplier-responses}
+
+Now set $m(B)=m(A(B),B)$ and
+$v=D_BA(B)[b_1]$ in \eqref{wr-multiplier-variation}. It immediately
+gives
+\begin{equation}\label{wr-dm-bound}
+ \norm{D_Bm(B)[b_1]}_{\infty,w}
+ \le C_\kappa\norm{b_1}_{\infty,w}.
+\end{equation}
+More explicitly, putting $M_A=I+H^TD_A^T$ and subtracting
+$qb_1$ gives the exact expression
+\begin{equation}\label{wr-dm-remainder}
+ \begin{split}
+ (D_Bm(B)-q)b_1={}&(M_A^{-1}-I)qb_1\\
+ &+M_A^{-1}\{-qD_Av+H^TN'(A)v-H^T(D_A^T)'[v]m\}.
+ \end{split}
+\end{equation}
+At the solution the inverse difference, $D_A$, and $N'(A)$
+are $O(\norm{B}_\infty)$ in their respective weighted spaces.
+Although $(D_A^T)'$ need not vanish at zero, its multiplier
+has norm $\norm{m}_\infty=O(\norm{B}_\infty)$, so
+\eqref{wr-mixed-transpose} controls that term too. Thus
+\begin{equation}\label{wr-dm-near-q}
+ \boxed{\quad
+ \norm{(D_Bm(B)-q)b_1}_{\infty,w}
+ \le C_\kappa\norm{B}_\infty\norm{b_1}_{\infty,w}.
+ \quad}
+\end{equation}
+The multiplier is holomorphic as a global bounded-field map,
+and its derivative is holomorphic in these weighted operator
+spaces by the displayed formulas and the uniformly convergent
+weighted Neumann series.
+
+\subsection{Localized changes and all-order bounds with one weight}
+\label{wr-localization}
+
+If $b_1$ is supported in coarse cells $S$, choose
+$w_S(n)=e^{\kappa d(n,S)}$. This is admissible. Equation
+\eqref{wr-main-response} gives
+\begin{equation}\label{wr-local-response}
+ \norm{D_BA(B)[b_1]}_{\mathcal N_\alpha(C_n^+)}
+ \le C_\kappa e^{-\kappa d(n,S)}\norm{b_1}_\infty.
+\end{equation}
+Equations \eqref{wr-dm-bound} and \eqref{wr-dm-near-q}
+give the analogous coarse multiplier estimates. For two small
+backgrounds whose connecting coarse line segment stays inside
+the common ball, integrate these derivative bounds to obtain
+\begin{equation}\label{wr-finite-difference}
+ \norm{A(B')-A(B)}_{\mathcal N_{\alpha,w}}
+ +\norm{m(B')-m(B)}_{\infty,w}
+ \le C_\kappa\norm{B'-B}_{\infty,w}.
+\end{equation}
+The individual backgrounds may be globally nondecaying. On the
+full lattice truncated admissible weights and passage to their
+limit justify the same statement without assuming the difference
+in advance belongs to the growing-weight space.
+
+On a smaller common complex background ball,
+$B\mapsto D_BA(B)$ and $B\mapsto D_Bm(B)$ are holomorphic
+into the weighted operator spaces. On finite regulators this is
+finite-dimensional holomorphy with the uniform bounds just
+proved. Equivalently it follows from the local coefficient
+analyticity, the H\"older product estimates, and the weighted
+inverse formulas, which also apply to complete infinite fields.
+Background directions in this assertion are unweighted bounded
+coarse fields. If the singled-out weighted direction is unbounded
+on the infinite lattice, the operator-valued formulas specify the
+linearized extension just described, rather than a Fr\'echet
+derivative in an inadmissible background direction.
+
+Let $\delta>0$ be the margin to a larger complex background ball
+where the uniform weighted derivative bounds hold. Operator-valued
+multivariable Cauchy gives, for every $n\ge1$,
+\begin{equation}\label{wr-all-orders}
+ \boxed{\begin{split}
+ &\norm{D_B^n A(B)[b_1,\ldots,b_n]}_{\mathcal N_{\alpha,w}}
+       +\norm{D_B^n m(B)[b_1,\ldots,b_n]}_{\infty,w}\\
+ &\hspace{5mm}\le C_\kappa(n-1)!
+       \left(\frac e\delta\right)^{n-1}
+        \norm{b_1}_{\infty,w}\prod_{i=2}^n\norm{b_i}_\infty.
+ \end{split}}
+\end{equation}
+For $n=1$ this is the proved first-response estimate. For $n>1$
+use polyradii approaching $\delta/(n-1)$ and
+$(n-1)^{n-1}\le e^{n-1}(n-1)!$. Symmetry permits any single
+direction to carry the weight.
+
+If all directions are supported in sets $S_i$, applying
+\eqref{wr-all-orders} separately with each direction weighted
+gives decay $\exp[-\kappa\max_i d(n,S_i)]$ at an output cell
+$n$. This is a precise one-weight conclusion. It is not a
+fixed-exponent tree-length or ordered-path estimate among all
+insertion sites. Such stronger multivertex bounds require an
+additional branched expansion or multiweight argument.
+
+\subsection{Scope of the response theorem}
+\label{wr-scope}
+
+The exponent $\kappa$ is fixed once, and the allowed background
+ball is reduced by a fixed amount to satisfy the weighted
+inverse inequalities. Its radius does not depend on refinement,
+volume, the insertion location, or the particular admissible
+weight. The theorem does not assert that the largest unweighted
+existence radius already has this property.
+
+These results concern the selected corrected-constraint minimizer
+in the fixed flat gauge and its coarse multiplier. They do not
+identify its derivatives with a moving-gauge source minimizer,
+establish mixed-history estimates, or prove an interacting
+continuum limit. All action-minimum statements remain finite
+regulator statements; bounded infinite fields need not have finite
+total action.
+
+% No preamble. Unique prefix or-. Uses \norm and standard theorem environments.
+% Locality of the explicit ordinary representative, independently audited.
+
+\section{Locality of the chosen ordinary-constraint representative}
+\label{or-section}
+
+Gauge equivalence by itself does not preserve locality of a chosen
+potential representative. For the explicit gauge used in the ordinary
+constraint transfer, however, the required locality can be proved.
+Write $A_*(B)$ for the corrected fixed-slice minimizer and retain the
+cumulative endpoint gauge $b_j$ and the fixed bump extension
+$E_{\rm pt}$ from that transfer. Set
+\begin{equation}\label{or-transfer}
+ \omega(A)=\frac1i\log b_j(e^{i\eta A})^{-1},\qquad
+ \lambda(A)=E_{\rm pt}\omega(A),\qquad
+ T(A)=\mathscr A_\eta(A,\lambda(A)),\qquad
+ A_{\rm ord}(B)=T(A_*(B)).
+\end{equation}
+All bases are small in the unweighted global norms. Weights are
+placed on variations only. Fix $0<\alpha<1$ and one sufficiently
+small positive spatial exponent $\kappa$.
+
+\subsection{The derivative of the gauge transfer is weighted bounded}
+
+The cumulative gauge is uniformly holomorphic in the global
+potential supremum norm, has $b_j-I=O(\norm{A}_\infty)$,
+and has a fixed final physical dependency radius $R_b$.
+The latter follows from the endpoint product and the summable
+physical reading radii of the corrected trajectory.
+The same properties hold for $\omega$, with $\omega(0)=0$.
+For an admissible weight $w(n)/w(m)\le e^{\kappa d(n,m)}$,
+local-row Cauchy gives
+\begin{equation}\label{or-omega-derivative}
+ \norm{D\omega(A)V}_{\infty,w}
+      \le C e^{\kappa R_b}\norm{V}_{\infty,w}.
+\end{equation}
+Indeed, for one coarse output row, restrict the direction to that
+row's dependency neighborhood. Its unweighted supremum is bounded
+by the right side divided by the output weight. No derivative is
+taken of this restricted direction: $\omega$ consumes bounded
+potential values. Cauchy is applied to the whole bounded row,
+not coefficientwise followed by a fine-dimensional count.
+The same argument proves operator-valued holomorphy in the
+weighted norm on a smaller unweighted background ball.
+
+The fixed bump interpolation satisfies
+\begin{equation}\label{or-point-weighted}
+ \norm{E_{\rm pt}c}_{C^{2,\alpha}_w}
+          \le C_\kappa\norm{c}_{\infty,w}.
+\end{equation}
+Each collar reads a fixed number of nearby coarse coefficients.
+Bounded smooth bump derivatives through order three, weight
+comparison on that neighborhood, and sampling give this estimate,
+uniformly in refinement and compatible periodic volume.
+Consequently
+\begin{equation}\label{or-lambda}
+ \norm{D\lambda(A)V}_{C^{2,\alpha}_w}
+       \le C_\kappa\norm{V}_{\infty,w},\qquad
+ \norm{\lambda(A)}_{C^{2,\alpha}}
+       \le C\norm{A}_\infty.
+\end{equation}
+The base estimate in the second inequality is unweighted.
+
+For completeness, the fine gauge action is
+\[
+ \mathscr A_\eta(A,\lambda)(e)=\frac1{i\eta}\log
+ (e^{i\lambda(e_-)}e^{i\eta A(e)}e^{-i\lambda(e_+)}).
+\]
+Writing $\ell=\lambda(e_-)$ and
+$v=(\lambda(e_+)-\lambda(e_-))/\eta$, its group argument is
+$e^{i\eta\operatorname{Ad}_{e^{i\ell}}A(e)}
+e^{i\ell}e^{-i(\ell+\eta v)}$.
+It equals identity at $\eta=0$, so its logarithm divided by
+$\eta$ has a uniform analytic jet extension there.
+The derivative is therefore a finite sum of products of analytic
+coefficients of the base jet $(A,\lambda,D\lambda)$ and the
+variation jet $(V,\mu,D\mu)$. The base coefficients have bounded
+unweighted $C^{1,\alpha}$ norms. The discrete product estimate
+with one weighted factor gives
+\begin{equation}\label{or-gauge-derivative}
+ \norm{D\mathscr A_\eta(A,\lambda)[V,\mu]}_{N_{\alpha,w}}
+ \le C_\kappa\bigl(\norm{V}_{N_{\alpha,w}}
+                         +\norm{\mu}_{C^{2,\alpha}_w}\bigr).
+\end{equation}
+A first output difference uses at most two scalar differences.
+The same jet estimate controls its H\"older member; there is no
+inverse-mesh loss or weighted-smallness assumption on the base.
+Combining \eqref{or-lambda} and \eqref{or-gauge-derivative} proves
+\begin{equation}\label{or-DT}
+ \norm{DT(A)V}_{N_{\alpha,w}}
+                  \le C_\kappa\norm{V}_{N_{\alpha,w}},
+\end{equation}
+with holomorphic dependence in this weighted operator norm.
+
+\subsection{Responses and the new leading extension}
+
+The corrected minimizer's weighted response theorem and the chain
+rule now give
+\begin{equation}\label{or-first}
+ D_BA_{\rm ord}(B)=DT(A_*(B))D_BA_*(B),\qquad
+ \norm{D_BA_{\rm ord}(B)b}_{N_{\alpha,w}}
+                 \le C_\kappa\norm{b}_{\infty,w}.
+\end{equation}
+Its leading extension is
+\begin{equation}\label{or-leading}
+ H_{\rm ord}=DT(0)H,
+\end{equation}
+and can differ from $H$. To check the sign explicitly, let
+$\beta(A)=\log b_j(e^{i\eta A})/i$ and
+$B_{\rm cum}=D\beta(0)$. On the common branch $\omega=-\beta$,
+and the gauge action has derivative $V-D\mu$ at zero. Hence
+\begin{equation}\label{or-leading-explicit}
+ DT(0)=I+DE_{\rm pt}B_{\rm cum},\qquad
+ H_{\rm ord}=H+DE_{\rm pt}B_{\rm cum}H.
+\end{equation}
+Thus $dH_{\rm ord}=dH$.
+The exact transfer identity
+$\mathcal F_{\rm ord}(T(A))=\mathcal F_{\rm corr}(A)$
+also gives $Q_{\rm ord}DT(0)=Q$ and
+$Q_{\rm ord}H_{\rm ord}=I$, where $Q_{\rm ord}$ is the
+derivative of the ordinary homogeneous constraint at zero.
+Here $\mathcal F_{\rm ord}(A)=\log M^{(j)}(e^{i\eta A})/i$
+and $\mathcal F_{\rm corr}=\mathcal F$; the complete norm
+$N_\alpha$ is the same as $\mathcal N_\alpha$ used above.
+
+The response family in \eqref{or-first} is holomorphic on a
+common unweighted complex coarse ball with a uniform weighted
+operator norm. Operator Cauchy on a smaller ball yields
+\begin{equation}\label{or-linear-correction}
+ \norm{(D_BA_{\rm ord}(B)-H_{\rm ord})b}_{N_{\alpha,w}}
+       \le C_\kappa\norm{B}_\infty\norm{b}_{\infty,w}.
+\end{equation}
+If $\delta$ is a fixed analytic margin, then for every $n\ge1$,
+\begin{equation}\label{or-higher}
+ \norm{D_B^nA_{\rm ord}(B)[b_1,\ldots,b_n]}_{N_{\alpha,w}}
+ \le C_\kappa(n-1)!\left(\frac e\delta\right)^{n-1}
+       \norm{b_1}_{\infty,w}\prod_{i=2}^n\norm{b_i}_\infty.
+\end{equation}
+For $n>1$ apply multivariable Cauchy to the first-response
+operator with $n-1$ unweighted directions and use
+$(n-1)^{n-1}\le e^{n-1}(n-1)!$. The case $n=1$ is
+\eqref{or-first}. Symmetry permits any selected bounded direction
+to carry the weight.
+
+For a direction supported in S, choose
+$w_S(n)=e^{\kappa d(n,S)}$. Equations \eqref{or-first} and
+\eqref{or-higher} give exponential decay away from S. If all
+directions are supported in sets $S_i$, applying the bound
+separately to each weighted direction gives the factor
+$e^{-\kappa\max_i d(n,S_i)}$. No tree-length estimate is inferred.
+Integration along a straight coarse segment gives
+\begin{equation}\label{or-finite-change}
+ \norm{A_{\rm ord}(B')-A_{\rm ord}(B)}_{N_{\alpha,w}}
+       \le C_\kappa\norm{B'-B}_{\infty,w}.
+\end{equation}
+Thus finite changes supported in S have the same spatial decay.
+For complete infinite fields use bounded truncated weights and
+pass to the limit. For weights that decay to zero, literal
+Fr\'echet responses are first read on bounded directions with
+finite weighted norm; the formulas define their bounded extension
+to the full weighted space. The support weights satisfy $w_S\ge1$
+and require no such qualification.
+
+This proves locality of the particular ordinary representative
+defined in \eqref{or-transfer}; the field-dependent gauge has been
+estimated rather than treated as harmless by gauge equivalence.
+It does not assert locality of every gauge-equivalent representative,
+identify the separately moving source gauge, or cover mixed
+retained-history geometries. The action-minimum statement remains
+the finite homogeneous small-global-field theorem proved earlier.
+
+
+% No preamble. Notebook 16 classical coarse-action module. Unique labels: ca-.
+% Place after the wr- response module. Standard theorem environments and \norm.
+
+\section{The classical coarse action and its gauge identity}
+\label{ca-section}
+
+We remain on finite compatible periodic regulators, with fine
+spacing $\eta=L^{-j}$ and final coarse spacing one. The action
+$\mathcal S_\eta(U)$ is the coupling-free Wilson action in the
+normalization of Notebook 15. Set
+$\mathcal W_\eta(A)=\mathcal S_\eta(e^{i\eta A})$.
+All coarse pairings below use the normalized color trace and
+the physical coarse measure, which is one at this scale.
+Transposes are bilinear after complexification. The constants
+are independent of refinement and periodic volume.
+
+Let $A_*(B)$ be the corrected-constraint minimizer in the fixed
+flat gauge slice, and put $U_*(B)=e^{i\eta A_*(B)}$. Its
+ordinary-feasible representative $U_{\rm ord}(B)$ is related
+to $U_*(B)$ by the genuine gauge transformation constructed in
+Notebook 15. Define
+\begin{equation}\label{ca-definition}
+ V(B)=\mathcal W_\eta(A_*(B))
+     =\mathcal S_\eta(U_*(B))
+     =\mathcal S_\eta(U_{\rm ord}(B)).
+\end{equation}
+These are equal holomorphic functions on a uniform complex
+coarse supremum ball. Indeed the analytic Wilson density,
+written with $P+P^{-1}$, is invariant under complex matrix
+gauge conjugation as well. Only the real fields have the
+minimum interpretation. The scalar total action scales with
+volume; the uniform estimates below state that dependence.
+
+\subsection{The multiplier is the exact derivative of the action}
+\label{ca-envelope-section}
+
+Write $\mathcal F(A)=QA+\mathcal R(A)$ and use the exact
+chart and flat-slice space
+\[
+ A=\xi+H[B-\mathcal R(A)],\qquad
+ \xi\in\mathcal X=\ker Q\cap\ker(R_0D^T).
+\]
+Here $R_0$ is the fixed scalar gauge projection, distinct from
+the nonlinear remainder $\mathcal R$ and denoted $R$ in the
+response module. Put
+\begin{equation}\label{ca-chart-differential}
+ T_A=(I+HD\mathcal R(A))^{-1},\qquad H_A=T_AH.
+\end{equation}
+Differentiating the analytic minimizer in a coarse direction $c$
+gives the exact formula
+\begin{equation}\label{ca-response-decomposition}
+ D_BA_*(B)[c]=H_Ac+T_AD_B\xi(B)[c],\qquad A=A_*(B).
+\end{equation}
+The second summand is a slice tangent because
+$D_B\xi(B)[c]\in\mathcal X$.
+
+\begin{proposition}[Classical envelope identity]\label{ca-envelope}
+Let $E(A)=D\mathcal W_\eta(A)$ denote the Euler field under
+the physical fine pairing. The multiplier from the exact
+stationarity construction satisfies
+\begin{equation}\label{ca-first-derivative}
+ DV(B)[c]=\langle m(B),c\rangle_1,\qquad
+ m(B)=H_A^TE(A_*(B)).
+\end{equation}
+Equivalently,
+\begin{equation}\label{ca-multiplier}
+ \begin{split}
+ m(B)={}&(I+H^TD\mathcal R(A_*)^T)^{-1}\\
+ &\quad\cdot\{q[B-\mathcal R(A_*)]+H^TN(A_*)\},
+ \end{split}
+\end{equation}
+where $q=q_M$ is the physical flat Maxwell precision and
+$E(A)=KA+N(A)$ is the ordinary-coordinate force.
+\end{proposition}
+
+\begin{proof}
+Pair \eqref{ca-response-decomposition} with $E(A_*)$.
+Slice stationarity makes
+$\langle E(A_*),T_AD_B\xi(B)[c]\rangle_\eta=0$.
+The remaining term is exactly \eqref{ca-first-derivative}.
+This argument needs only slice stationarity, not a separate
+full-constraint multiplier theorem or gauge coverage.
+
+The transpose push-through identity gives
+$H_A^T=(I+H^TD\mathcal R(A_*)^T)^{-1}H^T$.
+The flat identities $H^TK\xi=0$ and $H^TKH=q$ imply
+$H^TKA_*=q[B-\mathcal R(A_*)]$, proving
+\eqref{ca-multiplier}. The force term is evaluated as
+$H^TN(A_*)=(S_{\rm jet}H)^Tf_\eta(S_{\rm jet}A_*)$;
+no rough force coefficient is differentiated. All identities
+extend bilinearly to the complex ball.
+\end{proof}
+
+Put $b=\norm{B}_\infty$. The uniform estimates
+$A_*=HB+O(b^2)$, $\mathcal R(A_*)=O(b^2)$,
+$H^TN(A_*)=O(b^2)$ and
+$\norm{D\mathcal R(A_*)^T}_{\infty\to\infty}=O(b)$
+in \eqref{ca-multiplier} prove
+\begin{equation}\label{ca-m-near-q}
+ \norm{m(B)-qB}_\infty\le Cb^2,
+ \qquad m(0)=0,\quad Dm(0)=q.
+\end{equation}
+The multiplier is holomorphic on a uniform coarse ball.
+In particular $D^2V(0)=q$. Its unweighted estimate
+$\norm{Dm(B)-q}_{\infty\to\infty}\le Cb$ also follows
+directly by Cauchy: for $b>0$ use a direction circle of radius
+$b$ inside a smaller common ball, and apply
+\eqref{ca-m-near-q} at points of norm at most $2b$.
+At $b=0$ use the displayed Taylor coefficient.
+
+Let $N_b$ denote the number of independent positive coarse
+bonds. Since $V(0)=0$, radial integration gives
+\begin{equation}\label{ca-radial}
+ V(B)=\frac12\langle B,qB\rangle_1
+       +\int_0^1\langle m(tB)-tqB,B\rangle_1\,dt.
+\end{equation}
+The fixed normalized color trace bound and
+\eqref{ca-m-near-q} therefore yield
+\begin{equation}\label{ca-cubic-remainder}
+ \boxed{\quad
+ \left|V(B)-\frac12\langle B,qB\rangle_1\right|
+          \le C N_b\norm{B}_\infty^3.
+ \quad}
+\end{equation}
+This holds on the complex ball. It is a volume-uniform
+density estimate, not a volume-independent total-action bound.
+
+\subsection{Local coarse gauge invariance}
+\label{ca-gauge-section}
+
+For a real coarse site field $\omega$ put $g=e^{i\omega}$,
+$D=e^{iB}$ and
+\begin{equation}\label{ca-coarse-gauge}
+ D^g(c)=g(c_-)D(c)g(c_+)^{-1},\qquad
+ B^g=\frac1i\log D^g.
+\end{equation}
+All logarithms use the common small branch. At coarse spacing
+one the local analytic multiplication gives a constant
+$C_c\ge1$ such that
+\begin{equation}\label{ca-coarse-gauge-bound}
+ \norm{B^g}_\infty\le C_c(b+w),\qquad
+ w=\norm{\omega}_\infty.
+\end{equation}
+No additional regularity is required of $\omega$: coarse
+first differences are bounded by $2w$.
+
+Let $b_0,r_0$ be the ordinary-minimum radii of Notebook 15,
+and write
+$\norm{A_{\rm ord}(B)}_{N_\alpha}\le C_Ab$.
+The smooth point-value extension there satisfies
+\begin{equation}\label{ca-smooth-gauge-lift}
+ (E_{\rm pt}\omega)|_{\rm coarse}=\omega,\qquad
+ \norm{E_{\rm pt}\omega}_{C^{2,\alpha}}\le C_Ew.
+\end{equation}
+Set $h=e^{iE_{\rm pt}\omega}$, so $h|_{\rm coarse}=g$.
+The fine gauge-action bound, valid for both $h$ and $h^{-1}$,
+is
+\begin{equation}\label{ca-fine-gauge-bound}
+ \norm{A^h}_{N_\alpha}
+       \le C_G(\norm A_{N_\alpha}+C_Ew).
+\end{equation}
+
+Choose one $\delta>0$ so that all logarithms and gauge actions
+stay in their established domains and
+\begin{equation}\label{ca-comparison-margins}
+ C_c\delta<b_0/2,\qquad
+ C_G(C_AC_c+C_E)\delta<r_0/2.
+\end{equation}
+For real $b+w<\delta$, ordinary gauge covariance makes
+$U_{\rm ord}(B)^h$ feasible for coarse datum $B^g$.
+Its potential norm is below $r_0$, so minimality at $B^g$
+and exact gauge invariance give
+\[
+ V(B^g)\le\mathcal S_\eta(U_{\rm ord}(B)^h)=V(B).
+\]
+For the reverse comparison use
+$U_{\rm ord}(B^g)^{h^{-1}}$. Its ordinary coarse average is
+$(D^g)^{g^{-1}}=D$, and its norm is bounded by
+\[
+ C_G\{C_AC_c(b+w)+C_Ew\}<r_0.
+\]
+It is therefore an admissible competitor at $B$, proving
+$V(B)\le V(B^g)$. We have proved
+\begin{equation}\label{ca-gauge-invariance}
+ \boxed{\qquad V(B^g)=V(B)\qquad(b+w<\delta).\qquad}
+\end{equation}
+Both comparisons lie strictly inside the same uniform minimum
+radius. The reverse one uses the separately controlled minimizer
+at $B^g$, not an assumed inverse of the first comparison map.
+
+The two sides of \eqref{ca-gauge-invariance} are holomorphic
+in $(B,\omega)$ on a uniform smaller complex product ball.
+Their equality on an open set of the full real form implies
+equality on that connected product ball by the finite-dimensional
+holomorphic identity theorem, applied coordinate by coordinate.
+For example, reduce $\delta$ to respect all analytic domains
+and take $\norm B_\infty,\norm\omega_\infty<\delta/3$.
+This extension is an analytic identity; it is not a minimum
+claim for complex fields.
+
+\subsection{The exact classical Ward identity}
+\label{ca-ward-section}
+
+Define the coarse left exponential differential and the
+coarse covariant scalar difference by
+\begin{equation}\label{ca-left-differential}
+ \mathcal J_Bv=\int_0^1\operatorname{Ad}(e^{itB})v\,dt,
+ \qquad
+ (D_D\omega)(c)=\operatorname{Ad}_{D(c)}\omega(c_+)-\omega(c_-).
+\end{equation}
+The operator $\mathcal J_B$ is invertible on the fixed small
+complex ball. The ordinary coarse-potential velocity under
+$g(t)=e^{it\omega}$ is
+\begin{equation}\label{ca-gauge-velocity}
+ \left.\frac{d}{dt}B^{g(t)}\right|_{t=0}
+             =-\mathcal J_B^{-1}D_D\omega.
+\end{equation}
+The coarse spacing is one, so there is no additional length
+factor. Differentiate \eqref{ca-gauge-invariance} and use
+\eqref{ca-first-derivative}:
+\[
+ 0=-\langle m(B),\mathcal J_B^{-1}D_D\omega\rangle_1
+   =-\langle D_D^T\mathcal J_B^{-T}m(B),\omega\rangle_1.
+\]
+The site field $\omega$ is arbitrary. Hence
+\begin{equation}\label{ca-ward}
+ \boxed{\qquad D_D^T\mathcal J_B^{-T}m(B)=0.\qquad}
+\end{equation}
+The real identity extends holomorphically. Thus the
+left-coordinate classical coarse current is
+$j_{\rm cl}(B)=\mathcal J_B^{-T}m(B)$, not generally $m(B)$.
+No quantum determinant or quantum Ward assertion is involved.
+
+\subsection{A local classical Hessian and an auxiliary positive inverse}
+\label{ca-precision-section}
+
+The weighted multiplier response \eqref{wr-dm-near-q}, together
+with the envelope identity, gives
+\begin{equation}\label{ca-hessian-weighted}
+ Q_{\rm cl}(B):=D^2V(B)=Dm(B),\qquad
+ \norm{[Q_{\rm cl}(B)-q]c}_{\infty,w}
+       \le C_\kappa b\norm c_{\infty,w}
+\end{equation}
+for every admissible weight in \eqref{wr-weight}. As the
+Hessian of a holomorphic scalar function, $Q_{\rm cl}(B)$
+is symmetric for the physical bilinear transpose.
+It differentiates in the ordinary coarse potential $B$.
+A change to a based left-exponential fluctuation chart
+requires the coordinate Jacobians and its background-current
+second-derivative term; that differently based Hessian is
+not being identified with $Q_{\rm cl}(B)$ here.
+
+Use a fixed trace-orthonormal color and orientation basis in
+each coarse cell. For a block kernel $T$ define the weighted
+Schur norm
+\begin{equation}\label{ca-schur}
+ \norm T_\kappa=\max\left\{
+   \sup_n\sum_m e^{\kappa d(n,m)}\norm{T_{nm}},\,
+   \sup_m\sum_n e^{\kappa d(n,m)}\norm{T_{nm}}\right\}.
+\end{equation}
+Take $w_n(m)=e^{-\kappa d(n,m)}$ in
+\eqref{ca-hessian-weighted}. In each scalar output row,
+choose input phases to match its matrix entries. This bounds
+its absolute row sum with the factor $e^{\kappa d(n,m)}$.
+Summing the fixed number of component rows converts this to
+matrix-block norms; transpose symmetry gives the column bound.
+Consequently
+\begin{equation}\label{ca-hessian-schur}
+ \norm{Q_{\rm cl}(B)-q}_\kappa\le C'_{\kappa}b.
+\end{equation}
+The component factor depends only on dimension and color,
+not on refinement or volume. These finite-regulator row tests
+are bounded directions even for decaying weights.
+
+Let $a$ lie in a fixed interval $0<a_-\le a\le a_+$.
+The flat baseline estimates give, after fixing a sufficiently
+small common $\kappa$,
+\begin{equation}\label{ca-baseline-inverse}
+ \norm{(q+aI)^{-1}}_\kappa\le r_\kappa
+\end{equation}
+uniformly. Set $P_{\rm cl}(B)=Q_{\rm cl}(B)+aI$.
+For
+\begin{equation}\label{ca-inverse-radius}
+ C'_\kappa b\le a_-/2,\qquad
+ r_\kappa C'_\kappa b\le1/2,
+\end{equation}
+the real positive baseline $q\ge0$ and the Schur operator
+bound imply
+\begin{equation}\label{ca-accretivity}
+ \operatorname{Re}\langle x,P_{\rm cl}(B)x\rangle_{\rm Herm}
+                 \ge\frac{a_-}{2}\norm x_2^2
+\end{equation}
+even at complex $B$. The numerical-range pairing here is
+Hermitian; it is distinct from the analytic bilinear transpose.
+The Schur norm is a matrix algebra norm, so the Neumann series
+also gives
+\begin{equation}\label{ca-inverse-bounds}
+ \begin{split}
+ \norm{P_{\rm cl}(B)^{-1}}_\kappa&\le2r_\kappa,\\
+ \norm{P_{\rm cl}(B)^{-1}-(q+aI)^{-1}}_\kappa
+                         &\le2r_\kappa^2C'_\kappa b.
+ \end{split}
+\end{equation}
+This inverse is holomorphic and exponentially local in
+coarse-cell distance, with uniform constants.
+
+The positive $a$ is an auxiliary penalty added to a coarse
+classical Hessian. This is not a physical Yang--Mills mass gap
+or the precision of an integrated quantum effective action.
+Spatial kernel decay does not assert strict dependence on
+bounded background supports. Fluctuation determinants,
+Jacobian factors, quantum interactions and their iteration
+remain separate tasks. No finite total action is assigned
+here to arbitrary bounded fields on the infinite lattice.
+
+% No preamble. Finite-regulator quantum-domain interface; qg- labels.
+\section{Size of the flat constrained Gaussian fluctuations}
+\label{qg-section}
+
+There is a quantitative reason why the preceding smooth-background
+ball cannot itself be used as a uniform domain for integrating all
+fine Gaussian fluctuations. We prove it already at the flat
+reference, in four dimensions. Let $n_f=M^4n_c$ be the numbers
+of fine and coarse sites of a compatible periodic regulator,
+where $M=L^j\ge L\ge3$ and $\eta=M^{-1}$. Work in one fixed
+real trace-orthonormal color component; the flat operator acts
+identically on every color. Set
+\[
+ X=\ker Q\cap\ker(RD^T),\qquad K=d^Td.
+\]
+The positive restricted Maxwell form defines a centered real
+Gaussian $Z\in X$ with density proportional to
+$\exp[-\langle Z,KZ\rangle_\eta/2]$ relative to the
+physical Euclidean measure on $X$. Its covariance operator
+under the physical pairing is the constrained inverse
+$\mathcal C$ used above.
+
+\begin{lemma}\label{qg-dimension}
+For each real color component,
+\[
+ \dim X=3(n_f-n_c),\qquad
+ \operatorname{Tr}(d\mathcal C d^T)=\dim X.
+\]
+\end{lemma}
+\begin{proof}
+The map $Q$ on bonds is onto because $QH=I$, hence
+$\dim\ker Q=4(n_f-n_c)$. The scalar projection $R$ has
+rank $n_f-n_c$: its complementary projection has the full
+coarse scalar rank $n_c$. The map $RD^T$ from $\ker Q$
+onto $\operatorname{ran}R$ is surjective. Indeed the scalar
+operator $T=G'R$ satisfies $Q_0T=0$ and $R\mathcal L T=R$,
+where $\mathcal L=D^TD$. For $f\in\operatorname{ran}R$,
+the bond field $DTf$ has $QDTf=D_cQ_0Tf=0$ and
+$RD^TDTf=f$. Rank subtraction gives the dimension.
+
+Let $J_X$ embed $X$ isometrically into the physical bond
+Hilbert space, and let $K_X=J_X^TKJ_X$. Then
+$\mathcal C=J_XK_X^{-1}J_X^T$. Cyclicity of the finite
+operator trace gives
+$\operatorname{Tr}(d\mathcal C d^T)
+=\operatorname{Tr}(K_XK_X^{-1})=\dim X$.
+\end{proof}
+
+The physical covariance identity is
+$\mathbb E\langle f,Z\rangle_\eta\langle g,Z\rangle_\eta
+=\langle f,\mathcal Cg\rangle_\eta$.
+Thus the covariance of the actual coordinate values is
+$\eta^{-4}\mathcal C$, and that of the physical curls is
+$\eta^{-4}d\mathcal C d^T$. There are $6n_f$ positive
+plaquette components per color. Lemma~\ref{qg-dimension}
+therefore gives the exact average
+\begin{equation}\label{qg-curl-variance}
+ \boxed{\quad
+ \frac1{6n_f}\sum_p\mathbb E|(dZ)_p|^2
+     =\frac{M^4-1}{2}.
+ \quad}
+\end{equation}
+In particular at least one real curl coordinate has variance
+at least $(M^4-1)/2$, irrespective of the periodic volume.
+This conclusion uses the physical covariance normalization;
+omitting $\eta^{-4}$ would give a different and incorrect scale.
+
+Fix a deterministic background $A_0$, a radius $r>0$ and
+a coupling factor $g>0$. The event
+$N_\alpha(A_0+gZ)\le r$ bounds every physical first difference,
+and hence bounds the selected curl coordinate by $C r$,
+where the color-norm constant is fixed. It restricts a
+one-dimensional centered Gaussian of standard deviation
+at least $c\eta^{-2}$ to an interval of length at most
+$C r/g$; the interval center may depend on $A_0$.
+The maximum of the Gaussian density therefore proves
+\begin{equation}\label{qg-small-ball}
+ \boxed{\quad
+ \mathbb P\{N_\alpha(A_0+gZ)\le r\}
+       \le \min\left(1,\frac{C r\eta^2}{g}\right).
+ \quad}
+\end{equation}
+The bound is uniform in the deterministic background,
+refinement and compatible periodic volume. Thus for any
+sequence $g=g_\eta$ with $g_\eta/\eta^2\to\infty$, a fixed
+physical smooth ball has probability tending to zero under
+this constrained flat Gaussian reference.
+
+This is an obstruction to integrating all fluctuations inside
+the minimizer's fixed $N_\alpha$ ball, not an obstruction to
+a Yang--Mills theory. Equation~\eqref{qg-curl-variance} shows
+that the dimensionless microscopic curl $\eta^2dZ$ has
+bounded averaged variance. A quantum renormalization step
+must instead control suitable rescaled fluctuation fields
+and their tails while retaining smooth estimates for the
+background. Averaged or component variance bounds alone
+do not control a supremum over a growing number of variables,
+nor do they bound interacting polymer activities. No
+non-Gaussian probability estimate is inferred here.
+
+
+\section{The next interface to quantum integration}
+\label{nr16-next}
+
+The classical background and its response are now controlled
+on a uniform homogeneous small-field domain. The minimized
+action has a true nonlinear local response and a coarse
+Hessian close to the flat Maxwell precision. Adding an
+auxiliary positive coarse penalty gives a controlled inverse,
+but that penalty is not a physical mass and this inverse
+is not yet the covariance produced by the complete quantum
+renormalization step.
+
+Exponential response alone does not give strict background
+support for polymer activities. The physical Hessian,
+gauge-coordinate factors and multiple-insertion local
+decomposition require the separate constructions described
+below. Regions outside the chart and preservation of uniform
+complex-source bounds under quantum iteration remain essential.
+
+Notebook 17 now proves a relative energy comparison for the actual
+first-step reduced Hessian, retaining constraint curvature, and
+joint Gaussian bad-block estimates on the fixed-step domain. Its
+homogeneous flat current-scale theorem covers all previous averaging
+depths. Notebook 18 handles overlapping local interaction supports
+and strict background locality under a small local precision
+decomposition. Notebook 19 supplies the actual physical
+pivot Hessian and local measure factors. Notebook 20 closes
+the bare Wilson small-field integration. Notebook 21 supplies
+strict support for the minimized classical action, with
+arbitrary fixed cardinality reserve, and extends one
+classical-reference integration uniformly through earlier
+refinement. The next-coarse support transport, inherited
+quantum interactions and regional domains remain separate.
+
+The continuum obligations remain those of Notebook 01:
+a common nontrivial gauge-invariant observable hierarchy,
+Euclidean covariance and positivity in the limit, appropriate
+normalization and Yang--Mills identities, and the additional
+vacuum and mass-gap properties. The classical theorems here
+remove specific prerequisites; they do not establish those
+quantum conclusions.
+
+\begin{thebibliography}{9}
+\bibitem{prior16}
+\emph{Toward a four-dimensional Yang--Mills construction},
+research Notebooks 8--15 in the present workspace,
+16 October 2026. The weighted flat extension and inverse,
+uniform nonlinear constraint chart, Wilson force, constrained
+minimum and ordinary-average transfer are the prerequisites.
+\bibitem{source16}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}{Yang--Mills-LLM-experiment},
+deposited raw accounts I--III at commit
+\texttt{e392ef4501\allowbreak 3a581664ba\allowbreak b76b908671\allowbreak 70b30fe10e}.
+The provenance limitations of Notebook 15 remain in force.
+\end{thebibliography}
+\end{document}

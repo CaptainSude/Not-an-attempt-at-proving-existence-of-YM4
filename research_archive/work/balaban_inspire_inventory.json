@@ -1,0 +1,448 @@
+[
+  {
+    "id": "270214",
+    "title": "Convergent Renormalization Expansions for Lattice Gauge Theories",
+    "date": "1988",
+    "year": 1988,
+    "doc": null,
+    "doi": "10.1007/BF01217741"
+  },
+  {
+    "id": "16848",
+    "title": "The Variational Problem and Background Fields in Renormalization Group Method for Lattice Gauge Theories",
+    "date": "1985-06",
+    "year": [
+      1985,
+      null
+    ],
+    "doc": null,
+    "doi": "10.1007/BF01229381"
+  },
+  {
+    "id": "18463",
+    "title": "CONSTRUCTIVE GAUGE THEORY",
+    "date": "1986-05-19",
+    "year": 1986,
+    "doc": null,
+    "doi": "10.1007/978-1-4757-0363-4_5"
+  },
+  {
+    "id": "311406",
+    "title": "Experience using an automated fault location system with a time‐of‐flight wall detector array",
+    "date": "1990",
+    "year": [
+      1990,
+      null
+    ],
+    "doc": null,
+    "doi": "10.1063/1.39524"
+  },
+  {
+    "id": "13701",
+    "title": "Regularity and Decay of Lattice Green's Functions",
+    "date": "1983-07",
+    "year": 1983,
+    "doc": null,
+    "doi": "10.1007/BF01214744"
+  },
+  {
+    "id": "325748",
+    "title": "Properties of block renormalization group operators for Euclidean fermions in an external gauge field",
+    "date": "1991",
+    "year": 1991,
+    "doc": null,
+    "doi": "10.1063/1.529479"
+  },
+  {
+    "id": "460064",
+    "title": "A simple method for correlation functions via the effective actions in the renormalization group framework",
+    "date": "1997",
+    "year": 1997,
+    "doc": null,
+    "doi": "10.1006/aphy.1997.5690"
+  },
+  {
+    "id": "293540",
+    "title": "Proposal for an SSC Detector Software Subsystem",
+    "date": "1989-10",
+    "year": null,
+    "doc": "https://inspirehep.net/files/195e0ab0fbbb868aadb1f2720adbf835",
+    "doi": null
+  },
+  {
+    "id": "1449188",
+    "title": "Experience in using a software bus to build reusable scientific software",
+    "date": null,
+    "year": 1990,
+    "doc": null,
+    "doi": "10.1063/1.39572"
+  },
+  {
+    "id": "11614",
+    "title": "ULTRAVIOLET STABILITY FOR A MODEL OF INTERACTING SCALAR AND VECTOR FIELDS. 1. A LOWER BOUND",
+    "date": "1982-02",
+    "year": null,
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "17634",
+    "title": "Renormalization Group Approach to Lattice Gauge Fields Theories. 1. Generation of Effective Actions in a Small Fields Approximation and a Coupling Constant Renormalization in Four-dimensions",
+    "date": "1985-12",
+    "year": 1987,
+    "doc": null,
+    "doi": "10.1007/BF01215223"
+  },
+  {
+    "id": "93981",
+    "title": "An Alternative Approach to Constructive Lambda phi**4 in Four-Dimensions Quantum Field Theory",
+    "date": "1974",
+    "year": null,
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "11613",
+    "title": "ULTRAVIOLET STABILITY FOR A MODEL OF INTERACTING SCALAR AND VECTOR FIELDS. 2. AN UPPER BOUND",
+    "date": "1982-02",
+    "year": null,
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "1485279",
+    "title": "The Algebra of Block Spin Renormalization Group Transformations",
+    "date": "2016-09-04",
+    "year": null,
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "282446",
+    "title": "Block Renormalization Group for Euclidean Fermions",
+    "date": "1989",
+    "year": 1989,
+    "doc": null,
+    "doi": "10.1007/BF01257414"
+  },
+  {
+    "id": "197158",
+    "title": "PROPAGATORS AND RENORMALIZATION TRANSFORMATIONS FOR LATTICE GAUGE THEORIES. I",
+    "date": "1983",
+    "year": [
+      1984,
+      null,
+      null
+    ],
+    "doc": null,
+    "doi": "10.1007/BF01215753"
+  },
+  {
+    "id": "1334193",
+    "title": "From little bangs to Big Bang",
+    "date": null,
+    "year": 2013,
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "183932",
+    "title": "HIGGS (2, 3) QUANTUM FIELDS IN A FINITE VOLUME. 2. AN UPPER BOUND",
+    "date": "1982",
+    "year": [
+      1982,
+      null
+    ],
+    "doc": null,
+    "doi": "10.1007/BF01214890"
+  },
+  {
+    "id": "183732",
+    "title": "HIGGS (2, 3) QUANTUM FIELDS IN A FINITE VOLUME. 1. A LOWER BOUND",
+    "date": "1982",
+    "year": [
+      1982,
+      null
+    ],
+    "doc": null,
+    "doi": "10.1007/BF01403506"
+  },
+  {
+    "id": "15500",
+    "title": "Spaces of Regular Gauge Field Configurations on a Lattice and Gauge Fixing Conditions",
+    "date": "1984-09",
+    "year": 1985,
+    "doc": null,
+    "doi": "10.1007/BF01466594"
+  },
+  {
+    "id": "480329",
+    "title": "Renormalization and localization expansions. II: Expectation values of the 'fluctuation' measures",
+    "date": "1998",
+    "year": 1998,
+    "doc": null,
+    "doi": "10.1007/s002200050470"
+  },
+  {
+    "id": "12197",
+    "title": "(Proca) 2,3 Quantum Field in a Finite Volume. 3. Renormalization",
+    "date": "1982-06",
+    "year": [
+      1983,
+      null
+    ],
+    "doc": null,
+    "doi": "10.1007/BF01213217"
+  },
+  {
+    "id": "400352",
+    "title": "A Low temperature expansion for classical N vector models. 1: A Renormalization group flow",
+    "date": "1995",
+    "year": 1995,
+    "doc": null,
+    "doi": "10.1007/BF02099355"
+  },
+  {
+    "id": "14816",
+    "title": "RENORMALIZATION GROUP METHODS IN NONABELIAN GAUGE THEORIES",
+    "date": "1984-04",
+    "year": null,
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "282445",
+    "title": "Large Field Renormalization. 1: The Basic Step of the R Operation",
+    "date": "1989",
+    "year": 1989,
+    "doc": null,
+    "doi": "10.1007/BF01257412"
+  },
+  {
+    "id": "197159",
+    "title": "AVERAGING OPERATIONS FOR LATTICE GAUGE THEORIES",
+    "date": "1983",
+    "year": [
+      1985,
+      null,
+      null
+    ],
+    "doc": null,
+    "doi": "10.1007/BF01211042"
+  },
+  {
+    "id": "205315",
+    "title": "RECENT RESULTS IN CONSTRUCTING GAUGE FIELDS",
+    "date": "1984",
+    "year": null,
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "267819",
+    "title": "AN AUTOMATIC PROGRAMMING SYSTEM FOR PDEs BASED ON A RELATIONAL MODEL OF CONTINUOUS PHYSICS PROBLEMS AND A FUNCTIONAL MODEL OF MATHEMATICAL ANALYSIS",
+    "date": "1988-10",
+    "year": null,
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "15946",
+    "title": "Propagators for Lattice Gauge Theories in a Background Field",
+    "date": "1984-12",
+    "year": 1985,
+    "doc": null,
+    "doi": "10.1007/BF01240355"
+  },
+  {
+    "id": "311658",
+    "title": "Computing requirements for the SSC magnet test laboratory",
+    "date": "1990-03",
+    "year": null,
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "481796",
+    "title": "The large field renormalization operation for classical N-vector models",
+    "date": "1998",
+    "year": 1998,
+    "doc": null,
+    "doi": "10.1007/s002200050486"
+  },
+  {
+    "id": "1616246",
+    "title": "Complex Bosonic Many-Body Models: Overview of the Small Field Parabolic Flow",
+    "date": "2016-09-04",
+    "year": 2017,
+    "doc": "https://inspirehep.net/files/cd7b1e807e09260970dd16c7a16d525b",
+    "doi": [
+      "10.1007/s00023-017-0587-9",
+      "10.1007/s00023-017-0587-9"
+    ]
+  },
+  {
+    "id": "283938",
+    "title": "Block Averaging Renormalization Group for Lattice and Continuum Euclidean Fermions: Expected and Unexpected Results",
+    "date": "1989",
+    "year": 1989,
+    "doc": null,
+    "doi": "10.1007/BF00401587"
+  },
+  {
+    "id": "431755",
+    "title": "A low temperature expansion for classical N-vector models. II: Renormalization group equations",
+    "date": "1996",
+    "year": 1996,
+    "doc": null,
+    "doi": "10.1007/BF02506422"
+  },
+  {
+    "id": "14815",
+    "title": "Propagators and Renormalization Transformations for Lattice Gauge Theories. 2.",
+    "date": "1984-04",
+    "year": 1984,
+    "doc": null,
+    "doi": "10.1007/BF01240221"
+  },
+  {
+    "id": "257512",
+    "title": "INFRARED ASYMPTOTIC FREEDOM FOR PERTURBATIONS OF THE FREE LATTICE ELECTROMAGNETIC FIELD",
+    "date": "1987",
+    "year": null,
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "283939",
+    "title": "Large Field Renormalization. 2: Localization, Exponentiation, and Bounds for the R Operation",
+    "date": "1989",
+    "year": 1989,
+    "doc": null,
+    "doi": "10.1007/BF01238433"
+  },
+  {
+    "id": "103054",
+    "title": "Second Quantization of Classical Nonlinear Relativistic Field Theory. 1. Canonical Formalism",
+    "date": "1975",
+    "year": 1975,
+    "doc": null,
+    "doi": "10.1063/1.522696"
+  },
+  {
+    "id": "21632",
+    "title": "Effective Action and Cluster Properties of the Abelian Higgs Model",
+    "date": "1987-04-21",
+    "year": 1988,
+    "doc": null,
+    "doi": "10.1007/BF01225038"
+  },
+  {
+    "id": "274678",
+    "title": "Constructive gauge theory. 1",
+    "date": "1988",
+    "year": null,
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "183963",
+    "title": "ULTRAVIOLET STABILITY IN FIELD THEORY. THE PHI**4 in three-dimensions MODEL",
+    "date": "1982",
+    "year": [
+      null,
+      null
+    ],
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "114158",
+    "title": "Second Quantization of Classical Nonlinear Relativistic Field Theory. 2. Construction of Relativistic Interacting Local Quantum Field",
+    "date": "1976",
+    "year": 1976,
+    "doc": null,
+    "doi": "10.1007/BF01617875"
+  },
+  {
+    "id": "148737",
+    "title": "THE ULTRAVIOLET STABILITY BOUNDS FOR SOME LATTICE SIGMA MODELS. AND LATTICE HIGGS-KIBBLE MODELS.",
+    "date": "1979",
+    "year": null,
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "15945",
+    "title": "Renormalization of the Higgs Model: Minimizers, Propagators and the Stability of Mean Field Theory",
+    "date": "1984-12",
+    "year": 1985,
+    "doc": null,
+    "doi": "10.1007/BF01206191"
+  },
+  {
+    "id": "9075",
+    "title": "A low temperature expansion for the pseudoscalar Yukawa model of quantum fields in two space-time dimensions",
+    "date": "1980-03",
+    "year": [
+      1982,
+      1982
+    ],
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "96146",
+    "title": "Canonical quantization of classical nonlinear relativistic field theory",
+    "date": "1974",
+    "year": [
+      1974,
+      1974
+    ],
+    "doc": null,
+    "doi": "10.1007/BF02782161"
+  },
+  {
+    "id": "14813",
+    "title": "The Mass Gap for Higgs Models on a Unit Lattice",
+    "date": "1984-04",
+    "year": 1984,
+    "doc": null,
+    "doi": "10.1016/0003-4916(84)90121-0"
+  },
+  {
+    "id": "197160",
+    "title": "EXACT RENORMALIZATION GROUP FOR GAUGE THEORIES",
+    "date": "1983",
+    "year": null,
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "479487",
+    "title": "A low temperature expansion for classical N-vector models. III: A complete inductive description, fluctuation integrals",
+    "date": "1998",
+    "year": 1998,
+    "doc": null,
+    "doi": "10.1007/s002200050433"
+  },
+  {
+    "id": "312619",
+    "title": "Experience using an automated fault location system with a time-of-flight wall detector array",
+    "date": "1990-03",
+    "year": null,
+    "doc": null,
+    "doi": null
+  },
+  {
+    "id": "16302",
+    "title": "ULTRAVIOLET STABILITY OF THREE-DIMENSIONAL LATTICE PURE GAUGE FIELD THEORIES",
+    "date": "1985-03",
+    "year": [
+      1985,
+      null
+    ],
+    "doc": null,
+    "doi": "10.1007/BF01229380"
+  }
+]

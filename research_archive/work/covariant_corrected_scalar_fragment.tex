@@ -1,0 +1,356 @@
+% No preamble. Prefix ccs-. Actual covariant moving-reference tangents.
+\section{A covariant moving-reference scalar average}
+\label{ccs-section}
+
+We construct tangent operators for the actual ordinary composite
+average. The nonlinear constraint and its cutoff are unchanged.
+The construction uses the internal group-valued transport selected
+in that ordinary map, rather than an unverified identification with
+an older axial operator carrying the name \(Q'\).
+
+\subsection{Actual data and the primitive relative correction}
+\label{ccs-primitive-section}
+
+Fix odd \(\ell\ge3\), \(K=\ell^k\), and compatible nested centered
+blocks. Coordinates are current-link angles with counting scalar
+and bond inner products. Use
+\[
+ U^g(e)=g(e_-)U(e)g(e_+)^{-1},\qquad
+ (D_U\phi)(e)=\phi(e_-)-\operatorname{Ad}_{U(e)}\phi(e_+).
+\]
+The generator acts on all scalar sites. Scalar parameters have
+angle units at every level; no spacing factor is inserted into
+this formula.
+
+Let \(P_\ell(U;y,x)\) be exactly the internal group-valued transport
+entering the selected ordinary map \(M_\ell\). The actual definition
+in Ba{\l}aban, CMP109 (1987), pp.~252--254, (0.3),(0.5)--(0.12),
+supplies local analyticity, internal-block support, and
+\begin{equation}
+ P_\ell(U^g;y,x)=g(y)P_\ell(U;y,x)g(x)^{-1}.
+ \label{ccs-endpoint}
+\end{equation}
+At identity its derivative is the same arithmetic contour mean
+that occurs in the ordinary arithmetic differential.
+These facts also hold when \(P_\ell\) is the selected group mean
+of coordinate-order transporters; it need not be one axial path.
+
+The pinned deposition specifies this ordinary map at Raw I:
+831--845. Its relative contour and ordinary increments occur at
+46965--46978, and the moving-reference endpoint correction at
+47076--47086. Raw I:23913--23920 describes an older axial/nested
+scalar average. No equality with every such convention is needed:
+the following operators are defined directly using the actual
+\(P_\ell\).
+
+Freeze \(U\), put \(W=M_\ell(U)\), and for a small bond increment
+\(x\) define
+\begin{equation}
+ \begin{split}
+ r_U(x;y,z)
+   &=\frac1i\log\!\left[
+       P_\ell(e^{ix}U;y,z)P_\ell(U;y,z)^{-1}\right],\\
+ \alpha_U(x;y)&=\ell^{-d}\sum_{z\in B_\ell(y)}r_U(x;y,z),\\
+ a_U(x;y)&=e^{i\alpha_U(x;y)}.
+ \end{split}
+ \label{ccs-relative-mean}
+\end{equation}
+All relative logarithms vanish at \(x=0\), and \(a_U(0)=1\).
+Let
+\begin{equation}
+ Z_Ux=D\alpha_U(0)[x],\qquad
+ C_Ux=\frac1i\left.\frac d{ds}\right|_0
+                  M_\ell(e^{isx}U)W^{-1}.
+ \label{ccs-tangents}
+\end{equation}
+The local corrected output with this frozen reference is
+\[
+ \overline F_U(x;c)=a_U(x;c_-)^{-1}
+                         M_\ell(e^{ix}U)(c)a_U(x;c_+).
+\]
+It equals \(W\) at zero. Its left-relative differential is exactly
+\begin{equation}
+                     \overline C_U=C_U-D_WZ_U.
+ \label{ccs-primitive-correction}
+\end{equation}
+This is a moving-reference tangent identity. It is not an
+identification with the derivative of the fixed-identity corrected
+map at \(U\).
+
+\begin{lemma}[Primitive scalar intertwining]
+\label{ccs-primitive-lemma}
+Define
+\begin{equation}
+ (B_U\phi)(y)=\ell^{-d}\sum_{z\in B_\ell(y)}
+                  \operatorname{Ad}_{P_\ell(U;y,z)}\phi(z).
+ \label{ccs-primitive-B}
+\end{equation}
+With \(r_\ell\) restriction to the new centers,
+\begin{equation}
+ Z_UD_U=r_\ell-B_U,\qquad
+                  \overline C_UD_U=D_WB_U.
+ \label{ccs-primitive-intertwining}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For the fine gauge \(e^{is\phi}\), the relative contour derivative
+from \eqref{ccs-endpoint} is
+\[
+ \phi(y)-\operatorname{Ad}_{P_\ell(U;y,z)}\phi(z).
+\]
+Its fine left tangent is \(D_U\phi\). Averaging this expression
+proves the first identity. There is no logarithm Jacobian at this
+step: its argument is identity at the reference point.
+Ordinary covariance gives \(C_UD_U=D_Wr_\ell\). Subtract
+\(D_WZ_UD_U\) using \eqref{ccs-primitive-correction}.
+\end{proof}
+
+\subsection{Joint covariance and composition}
+\label{ccs-composition-section}
+
+For a fixed site gauge \(g\), let \(O_E(g),O_S(g),O_c(g)\)
+denote adjoint frames on fine bond source sites, fine scalar sites,
+and new centers. Since
+\[
+ e^{iO_E(g)x}U^g=(e^{ix}U)^g,
+\]
+the relative contour product at \(U^g\) is conjugated by \(g(y)\).
+The similarity-equivariant logarithm therefore gives
+\begin{equation}
+ \begin{split}
+ Z_{U^g}O_E(g)&=O_c(g)Z_U,\\
+ \overline C_{U^g}O_E(g)&=O_{E_c}(g)\overline C_U,\\
+ B_{U^g}O_S(g)&=O_c(g)B_U.
+ \end{split}
+ \label{ccs-primitive-covariance}
+\end{equation}
+Both the reference and the varied configuration are transformed.
+No multiplicative cocycle in the reference is assumed.
+Adjoint frames are orthogonal for the real invariant trace pairing,
+and complex orthogonal for its holomorphic bilinear continuation.
+
+At stage \(j\), evaluate \(C_j,\overline C_j,Z_j,B_j,D_j\)
+at the ordinary reference
+\[
+                         U_j=M_\ell^j(U).
+\]
+Set
+\begin{equation}
+ \begin{split}
+ C^{(t)}&=C_{t-1}\cdots C_0,\\
+ \overline C^{(t)}&=\overline C_{t-1}\cdots\overline C_0,\\
+ B^{(t)}&=B_{t-1}\cdots B_0,
+ \end{split}
+ \label{ccs-products}
+\end{equation}
+with identity products at \(t=0\).
+The first is exactly the derivative of the actual ordinary
+composition. Define \(Z^{(0)}=0\) and
+\begin{equation}
+        Z^{(t+1)}=B_tZ^{(t)}+Z_tC^{(t)}.
+ \label{ccs-Z-recursion}
+\end{equation}
+
+\begin{proposition}[Exact composite tangent identities]
+\label{ccs-composite-theorem}
+At the final level, writing \(C,\overline C,B,Z,D_c\) for these
+products and the final generator,
+\begin{equation}
+ C-\overline C=D_cZ,\qquad
+ \overline C D_{\rm all}=D_cB,\qquad
+                  ZD_{\rm all}=r_K-B.
+ \label{ccs-composite-identities}
+\end{equation}
+The operators have exact joint gauge covariance with the original
+fine and final ordinary reference frames.
+\end{proposition}
+
+\begin{proof}
+The primitive intertwining gives
+\(\overline C^{(t)}D_0=D_tB^{(t)}\).
+Suppose \(C^{(t)}=\overline C^{(t)}+D_tZ^{(t)}\).
+Then
+\[
+ C_tC^{(t)}
+  =\overline C_t\overline C^{(t)}
+        +D_{t+1}\{B_tZ^{(t)}+Z_tC^{(t)}\},
+\]
+which proves the first two identities by induction.
+For the third, insert
+\(Z_tD_t=r_\ell-B_t\) and
+\(C^{(t)}D_0=D_tr_{\ell^t}\) in
+\eqref{ccs-Z-recursion}; the two intermediate
+\(B_tr_{\ell^t}\) terms cancel.
+Finally, \eqref{ccs-primitive-covariance} telescopes at the
+ordinary reference backgrounds. These are not the
+fixed-identity corrected iterates.
+\end{proof}
+
+\subsection{Own-block locality and an exact constant row Gram matrix}
+\label{ccs-locality-section}
+
+For \(x\in B_K(y)\), let
+\(x=x_0,x_1,\ldots,x_k=y\) be its unique nested sequence of
+block centers. The scalar product in \eqref{ccs-products}
+has only this one ancestry. Consequently
+\begin{equation}
+ \begin{split}
+ B(U;y,x)&=K^{-d}\operatorname{Ad}_{P_{\rm hier}(U;y,x)},\\
+ P_{\rm hier}(U;y,x)
+  &=P_\ell(U_{k-1};x_k,x_{k-1})\cdots
+                                 P_\ell(U_0;x_1,x_0),
+ \end{split}
+ \label{ccs-hierarchical-B}
+\end{equation}
+and \(B(U;y,x)=0\) outside \(B_K(y)\).
+Each factor is one group element, even when obtained from a
+selected group mean of path transports.
+
+Its background dependencies lie in the same final block.
+A stage contour uses internal stage bonds. Each such ordinary
+bond reads the two descendant blocks at its endpoints, both
+inside the parent block by centered nested tiling. Iterating
+downwards proves that no coefficient of this scalar row reads
+a fine background edge crossing its final block boundary.
+The same conclusion holds for all of its derivatives.
+
+The rows of \(C\) and \(\overline C\) read only the two final
+endpoint blocks. The scalar \(Z\) row stays in one block:
+in \eqref{ccs-Z-recursion}, \(Z_t\) reads internal stage bonds,
+and \(C^{(t)}\) on these bonds reads only descendants inside
+their parent block. This is full coefficient locality, not
+merely support at flatness.
+
+\begin{theorem}[Covariant block projection]
+\label{ccs-projector-theorem}
+For every real or complex background in the common germ,
+\begin{equation}
+                 BB^T=K^{-d}I.
+ \label{ccs-row-Gram}
+\end{equation}
+In dimension four,
+\begin{equation}
+                  P_B=I-K^4B^TB
+ \label{ccs-projector}
+\end{equation}
+is the symmetric projector onto \(\ker B\), orthogonal for
+real fields. It is holomorphic, has one-final-block matrix
+and background support, and obeys
+\begin{equation}
+          P_B(U^g)=O_S(g)P_B(U)O_S(g)^T.
+ \label{ccs-projector-covariance}
+\end{equation}
+The normalized term \(\frac12\log\det BB^T\) vanishes identically.
+\end{theorem}
+
+\begin{proof}
+Distinct rows have disjoint scalar supports because the final
+blocks partition the fine sites. In the invariant bilinear
+pairing,
+\(\operatorname{Ad}_P\operatorname{Ad}_P^T=I\).
+Equation \eqref{ccs-hierarchical-B} therefore gives
+\[
+ (BB^T)_{yy}
+      =K^{-2d}\sum_{x\in B_K(y)}I=K^{-d}I,
+\]
+with zero off-diagonal blocks. This algebra remains valid on
+the complexified group. The projector assertions follow
+directly, and covariance follows from that of \(B\).
+\end{proof}
+
+\subsection{Flat values and the analytic domain}
+\label{ccs-analytic-section}
+
+At identity, the contour derivative in \(Z\) is the root term
+of the actual ordinary arithmetic differential. Subtraction
+of the two endpoint terms in
+\eqref{ccs-primitive-correction} leaves precisely
+\begin{equation}
+ (\overline C_1x)(c)=\ell^{-d}
+       \sum_{z\in B_\ell(c_-)}x([z,z+\ell e_\mu]),
+ \qquad B_1=Q_{0,\ell}.
+ \label{ccs-flat-primitive}
+\end{equation}
+Centered-block tiling then gives
+\begin{equation}
+             \overline C(1)=A_K^{\rm st},\qquad
+                         B(1)=Q_{0,K}.
+ \label{ccs-flat-composite}
+\end{equation}
+The bond map here is an angle map, with a primitive factor
+\(\ell\) relative to the normalized physical-potential map.
+There is no such factor for the scalar average.
+
+At fixed \(K\), each coefficient is a composition of local
+analytic maps reading finitely many links in one or two final
+blocks. A small link-angle product ball therefore works uniformly
+in volume and in unrelated preceding depth \(M\).
+Its radius and constants may depend on \(K\).
+Cauchy derivatives preserve the same support. Compatible tori
+are read with the prescribed local lifts and nested partition.
+
+The previously proved ordinary-reference trajectory gives a
+stronger optional bound. For \(U=e^{iA/K}\) in its small globally
+bounded physical-potential ball, stage angles are
+\(O(\ell^j\|A\|_\infty/K)\). Fixed-\(\ell\) local analytic
+Schur bounds and the sum
+\(\sum_{j<k}\ell^j/K\le(\ell-1)^{-1}\) imply
+\begin{equation}
+ \|B-Q_{0,K}\|_{{\rm count},\,2\to2}
+                    \le C\|A\|_\infty K^{-2}
+                    \qquad(d=4).
+ \label{ccs-physical-smallness}
+\end{equation}
+The corresponding counting scale for the angle bond map
+\(\overline C\) is \(K^{-1}\).
+These stronger estimates are not needed for fixed-\(K\)
+volume uniformity or the exact identity
+\eqref{ccs-row-Gram}.
+
+The induced scalar map of the fixed-identity corrected
+composition is a different operator. It contains logarithm
+Jacobians, and its row Gram matrix need not be constant.
+The present moving-reference construction avoids that issue;
+it must not be replaced by the fixed-identity derivative
+without the appropriate endpoint conversion.
+
+\subsection{A basis-free scalar completion}
+\label{ccs-completion-section}
+
+Let \(G_{\rm all}=D_{\rm all}^TD_{\rm all}\), and let \(V\)
+be any bilinear orthonormal frame of \(\ker B\). Define
+\begin{equation}
+ G_B=V^TG_{\rm all}V,\qquad
+ \widehat G_B=P_BG_{\rm all}P_B+K^{-2}(I-P_B).
+ \label{ccs-completion}
+\end{equation}
+The two projector subspaces reduce \(\widehat G_B\); hence
+\begin{equation}
+       \det\widehat G_B=\det G_B\,
+                        (K^{-2})^{\operatorname{rank}B}.
+ \label{ccs-completion-determinant}
+\end{equation}
+The extra factor is background independent.
+The ambient matrix \(\widehat G_B\) is exactly gauge covariant,
+without a need to choose gauge-covariant frames \(V\).
+
+For the companion vector matrix
+\[
+ Q_B=\mathcal H+D_{\rm all}P_BD_{\rm all}^T
+                         +a\overline C^T\overline C,
+\]
+the actual residual covariance and
+\eqref{ccs-projector-covariance} give the same conclusion.
+When the general tangent determinant identity and the needed
+spectral gaps are supplied separately, these observations
+permit a formulation using the two ambient matrices
+\(\widehat G_B,Q_B\), with no isolated global base site and
+no normalized row-Gram term.
+
+Locality and covariance alone do not prove those spectral gaps
+or the determinant identity. Once they hold, a fixed-\(K\)
+uniform complex perturbation neighborhood permits the usual
+diagonal logarithm argument. This does not compute a
+large-\(K\) vector Maxwell coefficient or establish a
+continuum Yang--Mills theory.

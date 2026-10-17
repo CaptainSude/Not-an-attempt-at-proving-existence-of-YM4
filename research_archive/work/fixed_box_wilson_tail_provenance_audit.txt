@@ -1,0 +1,77 @@
+INDEPENDENT AUDIT: FIXED-BOX CONDITIONAL WILSON TAIL
+17 October 2026. Audited work/fixed_box_wilson_tail_fragment.tex
+in full. PASS in its explicitly fixed-geometry scope. No requested
+mathematical correction.
+
+1. Forest and nonidentity boundary.
+The construction is valid: extend a tree of the connected boundary
+graph to a tree of the complete graph, then remove the boundary-tree
+edges. Every remaining component has exactly one boundary vertex.
+An added edge between already connected boundary vertices could not
+belong to the extended tree, so all retained forest edges belong to
+the integrated edge set. Gauge transformations fixed at every boundary
+vertex uniquely remove these forest edges. This uses no condition
+that the fixed boundary values equal I.
+
+The coordinate transformation is exactly triangular Haar:
+forest links <-> interior gauge values, followed by independent
+left/right translations of nonforest links. Normalized compact Haar
+integrates the gauge variables to1. This has neither a missing orbit
+Jacobian nor an untracked gauge-volume factor.
+
+2. Zero set and Hessian.
+For SU(N), h(U)=0 iff U=I. Flatness on the full cubical two-skeleton
+of the box gives a pure gauge, and identity boundary edges make its
+vertex gauge constant on the connected boundary. Normalize that
+constant away. The unique forest representative is then I.
+
+The linear nullspace check is also exact: da=0 on a cubical box
+implies a=dphi. Vanishing boundary edges makes phi constant on the
+boundary; vanishing forest edges propagates its chosen zero value
+to every vertex. Thus the restricted Hessian is positive definite.
+Its smallest eigenvalue may depend on R; the statement retains this.
+
+3. Unique global minimizer for perturbed boundary.
+The IFT gives the local critical branch. Strict convexity holds
+throughout one fixed coordinate ball after shrinking the boundary
+neighborhood. The compact complement of a smaller ball has positive
+action at V=I. Uniform continuity and S_V(y*(V))->0 preserve a
+positive relative gap there. Combining the convex ball and complement
+therefore proves global, not merely local, uniqueness for this fixed
+box and small boundary. The nested chart/ball choices in the fragment
+are compatible; no growing-box claim follows from them.
+
+4. Normalized probability and g powers.
+The lower denominator c g^n exp(-Smin/g^2) is uniform in the chosen
+boundary neighborhood. The local numerator has the SAME g^n, because
+it is integrated in the same n-dimensional chart and centered at the
+same exact minimizer. Its finite-dimensional Gaussian polynomial
+factor can be absorbed into a smaller exponential constant.
+The compact remainder gives C g^-n exp(-eta/g^2); splitting off
+exp(-eta/(2g^2)) controls the polynomial, and T<=r/g converts the
+remaining factor to exp(-cT^2). Every comparison sign and exponent
+is correct. The entire sup-coordinate window lies in one injective
+chart after r is reduced by the fixed finite-dimensional norm
+equivalence. Constants need not be dimension-uniform.
+
+5. Exact bare conditional interpretation.
+A positive edge along direction mu not contained in the topological
+boundary has every transverse coordinate in {1,...,R-1}. Each
+plaquette containing it changes one such coordinate by +/-1 and
+is therefore contained in the box. Consequently no exterior
+plaquette depends on an integrated edge. All differences between
+the full conditional action and S_V are fixed additive constants.
+This proves the stated actual conditional bare-Wilson interpretation,
+provided no local periodic identification is imposed.
+
+6. Scope.
+The proof assumes a fixed finite box and boundary data in a fixed
+small neighborhood after a consistently applied boundary gauge.
+It proves an unconstrained forest-coordinate event. It does not
+control an arbitrary exterior field, a nonlinear coarse-average
+fiber, a refined/growing physical box, or a mixed effective action.
+The normalization on a coarse constraint fiber is a separate
+problem; conditioning cannot be inferred from the unconditional
+tail. The fragment states all these limitations.
+
+No output/master edits or compilation were performed.

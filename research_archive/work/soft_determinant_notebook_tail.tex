@@ -1,0 +1,75 @@
+\section{The next comparison}
+
+The exact soft factorization and bounded coarse corrections reduce
+the required logarithm to the fine soft scalar/vector pair. Its
+short-current-time interval \(0<s<1\) and its physical infrared
+tail \(s>K^2\) both have uniformly bounded affine contributions.
+Writing
+\[
+ h^{\rm soft}_{M,K}(s)=[t^2]\left\{
+   \operatorname{Tr}_{0,E}e^{-sV(t)}
+       -2\operatorname{Tr}_{0,S}e^{-sT_s(t)}\right\},
+\]
+we therefore have the actual reduction
+\begin{equation}
+ \boxed{\displaystyle
+ \beta(\mathcal D_{M,K})
+       =\int_1^{K^2}h^{\rm soft}_{M,K}(s)\,\frac{ds}{s}+O(1),}
+ \label{soft-final-band-reduction}
+\end{equation}
+uniformly in preceding depth and endpoint on the stated structural
+systems. For \(K=1\) the intermediate interval is empty. The
+growing hard-projection vertices have been removed from this
+calculation by exact algebra. The actual effective-action Hessian
+remains present, with its now controlled relative physical vertices.
+
+Two distinct ingredients remain in identifying the logarithm.
+First, the soft infrared penalties must be compared to a specified
+massive reference without discarding their gauge cancellations.
+Second, the actual effective-action vertices must be compared to
+the reference vertices with constants uniform in preceding depth.
+The previously proved nonlinear Ward extraction matches their
+marginal momentum jets through field degree four; a summable
+remainder estimate for the determinant is still required.
+A sufficient concrete target, with \(\delta>0\), is
+\[
+ \left|h^{\rm soft}_{M,K}(s)-11\alpha_g\right|
+       \le C\left(s^{-\delta}+(s/K^2)^\delta\right),
+       \qquad 1\le s\le K^2.
+\]
+Its logarithmic-time integral gives the required
+\(22\alpha_g\log K+O(1)\). This displayed comparison is a target,
+not an estimate proved in this notebook.
+
+For a fixed logarithmically divergent one-loop lattice integral,
+Adams--Lee prove a universal logarithmic term with a finite remainder.
+Their theorem provides a useful reference-integral endpoint once
+its hypotheses and normalization are matched. It does not by itself
+apply uniformly to our growing block fibers and varying effective
+actions. The model-specific comparison must establish that interface.
+
+A positive actual block drift would activate the finite transfer
+and tuning results in Notebook 32. The full existence argument also
+requires the recorded measure matching, mixed and large-field
+histories, sourced continuum limits, nontriviality, Euclidean
+covariance, positivity and reconstruction. These remain part of the
+original goal. The spectral gaps here are Gaussian fluctuation
+estimates, not a Yang--Mills mass-gap theorem.
+
+\begin{thebibliography}{9}
+\bibitem{priorsoft}
+\emph{Toward a four-dimensional Yang--Mills construction},
+Notebooks 32--35 and the earlier classical support and Ward
+extraction modules in this workspace.
+\bibitem{adamslee}
+D.~H.~Adams and W.~Lee,
+\emph{Structure of logarithmically divergent one-loop lattice
+Feynman integrals}, Phys.\ Rev.\ D \textbf{77} (2008), 045010,
+\href{https://arxiv.org/abs/0709.0781}{arXiv:0709.0781}.
+\bibitem{sourcesoft}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}
+{Yang--Mills-LLM-experiment}, deposited accounts pinned at
+commit \texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+\end{thebibliography}
+\end{document}

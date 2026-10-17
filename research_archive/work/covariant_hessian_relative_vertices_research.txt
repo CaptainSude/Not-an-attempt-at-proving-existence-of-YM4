@@ -1,0 +1,230 @@
+LOCAL GAUGE COVARIANCE GIVES PHYSICAL RELATIVE HESSIAN VERTICES
+17 October 2026. Root research proof for independent audit.
+
+1. Precise statement
+
+Let L(a) be a family of left-relative bond Hessians on the unit lattice,
+in a fixed semisimple color representation. It may be the actual
+effective S_M''; it is NOT required to be the bare Wilson Hessian.
+Assume exact sitewise adjoint covariance, transpose symmetry, and
+uniform exponentially rooted current-coordinate Taylor kernels at zero
+through background degree two. The latter are the scalar-action kernels
+through degree four, including the local relative-coordinate changes.
+Let q=L(0) be translation invariant, color diagonal, and satisfy
+  sum_r q_(alpha,beta)(r)=0,
+  sum_r r_rho q_(alpha,beta)(r)=0
+for every bond-component pair alpha,beta and every rho.
+Thus its tail-coordinate Fourier symbol is O(|p|^2). For the actual
+q_M this follows from its previously proved midpoint Maxwell expansion;
+the analytic midpoint-to-tail phases preserve the order of vanishing.
+Assume its exponentially weighted row norm and moments are uniform.
+These inputs are available for actual S_M from the classical support
+module, Ward identities and the inputs of vector_short_time_research.
+For this application work on the chosen joint INFINITE classical
+structural system, where the continuous symbol and its exact moments
+are established. The same argument applies to explicit periodizations
+of those kernels. It does not identify an arbitrary actual finite
+winding kernel with that periodization or infer exact continuous
+moment cancellation from a discrete finite momentum grid.
+
+Set mu=1/K and consider a(t,e)=t mu A(e), where the physical field has
+  ||A||_phys,1 = ||A||_infinity
+                    +mu^-1 max_nearest |A(e')-A(e)| <= a_*.
+Differences compare bonds of the same component. Smoothly sampled
+compact physical fields satisfy this norm uniformly in K. The probe
+can later be extended polynomially using localized source kernels.
+
+Claim: coefficients L_j=[t^j]L(t mu A), j=1,2, have decompositions
+  L_1=D0^T Z_1+Z_1^T D0+E_1,
+  L_2=D0^T Z_2+Z_2^T D0+E_2,                          (1.1)
+where D0 here means the ordinary componentwise gradient of a BOND
+field (four copies of the scalar gradient), not the scalar gauge
+generator. Their counting operator bounds are
+  ||Z_1||<=C mu a_*,       ||E_1||<=C mu^2 a_*,
+  ||Z_2||<=C mu^2 a_*^2,  ||E_2||<=C mu^2 a_*^2.       (1.2)
+The constants are independent of K and old depth M. In particular,
+with R0=Delta_bond+mu^2 I,
+  ||R0^-1/2 L_j R0^-1/2||<=C_j a_*^j.                (1.3)
+
+The stronger mu^2 bound on Z2 is not needed for (1.3). The same
+decompositions hold for mixed second derivatives by polarization.
+For smooth physical directions localized to bounded block collars,
+the factors have exponentially rooted final-block operator bounds
+with the powers of mu in (1.2). A detailed localization argument is
+given in Section5; no sharp background cutoff is differentiated.
+
+2. Local path gauges, used only through two formal coefficients
+
+For every displacement r choose a path of length |r|_1 from x to x+r,
+translation covariantly, with the reverse path chosen for -r. One
+construction chooses a coordinate-order path when the first nonzero
+component of r is positive, then defines the negative-r path by reversal.
+The paths need not form a tree. Let W_xy(t) be adjoint transport along
+that chosen path, with convention matched to the gauge covariance of L.
+It is complex orthogonal coefficientwise and W_yx=W_xy^T.
+
+Fix a matrix-row source site x. Define a formal gauge g_x(z) by the
+chosen transport from x to z, so g_x(x)=I. This is a legitimate
+sitewise gauge; path consistency beyond the endpoint values is not
+required. A transformed edge is a closed product around the chosen
+x-to-z and x-to-z+e paths and that edge. The loop length is at most
+C(1+|z-x|), and a coordinate plaquette filling has area at most
+C(1+|z-x|)^2.
+
+Write its transformed link angle as t b1(z)+t^2 b2(z)+O(t^3).
+The linear coefficient is the ordinary signed sum of t mu A around
+the loop. Discrete Stokes and the physical first-difference assumption
+give
+  |b1(z)|<=C mu^2 a_* (1+|z-x|)^2.                   (2.1)
+For b2, the second coefficient of a product/logarithm is a sum of
+quadratic products of link first coefficients. There are at most the
+square of the loop length such pairs. Thus
+  |b2(z)|<=C mu^2 a_*^2 (1+|z-x|)^2.                 (2.2)
+The same bounds hold for complex colors by a fixed finite-dimensional
+norm. At mu<=1 all additional harmless polynomial factors can be
+absorbed by the existing exponential source reserve.
+
+These are formal jets. The unbounded gauge g_x is not inserted into
+a common global analytic ball. Its first two coefficients, and b1,b2,
+have polynomial growth. The exponentially rooted covariance identities
+extend to them by truncating the gauge far away, applying the finite
+identity, and passing absolutely in each Taylor coefficient. This is
+the same polynomial-jet argument already used for the affine probe.
+
+3. Comparison with the flat kernel dressed by parallel transport
+
+Gauge covariance, g_x(x)=I and the endpoint value g_x(y) give
+  L(t mu A)_(x alpha,y beta)
+     = L(b(t))_(x alpha,y beta) W_xy(t),               (3.1)
+with an immaterial inversion of both transport conventions if the
+opposite gauge sign is used. Define
+  L^P(t)_(x alpha,y beta)=q_(alpha,beta)(y-x) W_xy(t).
+It is transpose symmetric because q is and W_yx=W_xy^T.
+
+Expand L(b(t)) at zero using the already specified rooted kernels.
+At first order its difference from q is L'[b1]. At second order it is
+L'[b2]+(1/2)L''[b1,b1]. Equations (2.1)-(2.2), the exponential kernel
+moments and the bound |[t]W_xy|<=C mu a_* |x-y| give
+  ||[t](L-L^P)||_Schur<=C mu^2 a_*,
+  ||[t^2](L-L^P)||_Schur<=C mu^2 a_*^2.               (3.2)
+The L'' term is O(mu^4 a_*^2), and the product of L'[b1] with
+the transport first coefficient is O(mu^3 a_*^2); both are bounded
+as in (3.2). All Schur sums are in current fine coordinates with a
+fixed color/component fiber. No final-block dimension is counted.
+
+4. Ordered Laurent factorization and covariant completion
+
+An earlier draft incorrectly wrote L^P as a common covariant-difference
+quadratic form using only q(r)=q(-r)^T. Rotation audit caught that this
+would discard the component-skew part of q(r). Even the forward-gradient
+Maxwell kernel has such tail-coordinate shifts. The following ordered
+factorization is the replacement; no componentwise evenness is assumed.
+
+Apply the ordered Laurent divided-difference lemma of
+low_kernel_spatial_transport_research.md Section2 twice to the symbol q.
+The zero constant and linear jets make both divisions removable and give
+  q=D0^T H0 D0,                                      (4.1)
+where H0 acts on the component-gradient tensor and has uniform
+exponentially summable kernels. For a monomial z^r each division costs
+at most |r| and a smaller exponential; the two divisions therefore cost
+only a fixed second exponential moment. This supplies uniform constants
+in old depth M. Replace H0 by (H0+H0^T)/2, preserving (4.1), so H0 is
+symmetric. It remains color diagonal.
+
+Let D_A be the nearest-neighbor covariant COMPONENT gradient, and dress
+each H0 entry with the reverse-consistent endpoint transport W_xy:
+  H^P(A)_(x rho alpha,y sigma beta)
+           =H0_(rho alpha,sigma beta)(y-x) W_xy(A).
+Define Qcov(A)=D_A^T H^P(A) D_A. It is exactly covariant and symmetric,
+and Qcov(0)=q. Path-product derivatives have polynomial length factors,
+so H^P and Qcov have the same kind of uniform exponentially rooted
+current Taylor kernels through order two. For a fixed small complex
+current-angle ball, the path-product growth exp(C||a|| |r|) is absorbed
+by the exponential reserve. Thus the polynomial-gauge argument of
+Sections2--3 applies to Qcov as well as to L.
+
+Both have the SAME flat q, hence the SAME Peierls comparison L^P.
+Subtracting their two versions of (3.2) gives symmetric errors
+  ||[t](L-Qcov)||_Schur<=C mu^2 a_*,
+  ||[t^2](L-Qcov)||_Schur<=C mu^2 a_*^2.               (4.2)
+
+Write D_(tA)=D0+t F1+t^2 F2 and H^P(tA)=H0+t H1+t^2 H2
+through this order. Direct product expansion gives
+  ||F1||<=C mu a_*,   ||F2||<=C mu^2 a_*^2,
+  ||H1||<=C mu a_*,   ||H2||<=C mu^2 a_*^2.
+The H estimates again use exponential path moments. Set
+  Z1=(1/2)H1 D0+H0 F1,
+  Z2=(1/2)H2 D0+H1 F1+H0 F2.                         (4.3)
+Since H0,H1,H2 are symmetric, the first coefficient of Qcov is
+D0^T Z1+Z1^T D0, and the second is
+D0^T Z2+Z2^T D0+F1^T H0 F1. The counting norm of D0 is bounded by
+a dimensional constant. Consequently Z1=O(mu a_*), Z2=O(mu^2 a_*^2),
+and F1^T H0 F1=O(mu^2 a_*^2). Add the errors (4.2) to the zero-order
+parts E1,E2. This proves (1.1)-(1.2) without the false difference form.
+
+Finally ||D0 R0^-1/2||<=1 and ||R0^-1/2||<=mu^-1. These bounds
+give (1.3), including mixed derivatives by polarization. This proof
+uses exact covariance before estimating; the naive absolute bound
+on L'(a) by C||a|| would have lost one power of K.
+
+5. Source localization and physical weights
+
+For source estimates choose a fixed smooth physical partition on
+final-block collars, with bounded first derivatives and bounded overlap.
+Local source spaces consist of complete fields a_j supported in those
+collars with the physical norm in Section1. This is the same complete-
+field localization convention as classical_local_vertex_bounds.
+
+Every term constructing H1 or H2 reads source values only along its
+path, and F1,F2 have nearest-neighbor support. If a localized source
+label is far from both endpoints, that path must have correspondingly
+large length. The exponentially decaying coefficient H0(r) pays that
+length. Thus the factors in (4.3) and each transport-product term in
+E_j have final-block matrix bounds with exp[-c tau(row,column,sources)]
+and the displayed mu powers, after spending an exponential reserve.
+
+For the remainder in (3.2), each original Taylor kernel connects the
+matrix row, column and its current background sources exponentially.
+The local gauge coefficients b1,b2 connect any further source labels
+to x by the finite paths already described. If those paths are long,
+one of the original background-source distances or the matrix
+displacement is equally long; its exponential kernel pays the path.
+Discrete Stokes rewrites b1 using plaquette differences, whose source
+support is in the same smooth collar enlarged by one fine edge.
+Second coefficients involve pairs on the same path and obey the same
+tree bound. Polynomial path multiplicities are absorbed by the reserve.
+Schur summation in fine coordinates therefore gives exactly the
+uniform block-operator bounds, not a sum of K^4 independent entries.
+
+Weights e^(theta f(x/K)), for Lipschitz physical f, may be included:
+their changes along a path are at most exp(C theta mu |r|), absorbed
+by the current exponential reserve. When moving an ordinary gradient
+past the weight, the extra multiplication operator has norm O(theta mu),
+which is absorbed in E1 or E2 at their stated order. This supplies the
+weighted localized relative vertices needed between resolvents whose
+elliptic control is Delta_bond+mu^2I.
+
+6. Actual use and limits
+
+For L=S_M'' the old-depth-uniform inputs are exactly the action
+support/Cauchy bounds through order four and gauge covariance already
+used in Notebook34's ultraviolet theorem. The flat separate-component
+row sums follow from the quadratic Ward identity extended to linear
+scalar parameters. Thus (1.1)-(1.3) apply uniformly in M.
+
+The statement concerns bounded physical C1 fields and their localized
+jets. It does not give the same bound for arbitrary rapidly oscillating
+bounded physical potentials: their curvature can be O(K^-1) instead
+of O(K^-2). Nor is it an estimate for the hard-projection Ghat.
+
+For the actual vector soft completion, the affine on-shell identification
+removes the multiplier and gives q_coarse D_c=0 through the required
+jets. Then its first-two affine jets can be calculated from
+  S_M''(exp(i A/K))+D_A D_A^T
+       +Cbar_A^T [aI-S_MK''(M_K(exp(i A/K)))] Cbar_A.
+The corrected Cbar has full norm and physical background derivatives
+of order K^-1, while the displayed coarse Hessian has uniform local
+bounds. These auxiliary off-shell formulas are to be checked against
+the exact soft-vector determinant identity before using the new
+relative vertices to claim a bounded coarse vector correction.
+This note alone does not compute a one-loop logarithmic coefficient.

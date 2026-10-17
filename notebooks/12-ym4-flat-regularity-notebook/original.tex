@@ -1,0 +1,1234 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\HH}{\mathcal H}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 12: fine regularity on the flat current domain}
+\author{Research working document}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We strengthen the flat fine inverse from physical-cell Hilbert bounds
+to pointwise regularity for arbitrary bounded fine forcing. A discrete
+heat-kernel argument and the canceled finite-rank formula give uniform
+$C^{1,\alpha}$ estimates for every $\alpha<1$, exponential cell locality,
+and a componentwise Laplacian bound at zero current. An explicit
+counterexample rules out the endpoint and individual second-difference
+bounds. Scalar gauge identities then place the full current
+perturbation in the actual homogeneous source norms $N$ and $N_\beta$,
+without differentiating the current. A smaller uniform complex domain
+supports the full flat inverse and extension on bounded forcing.
+A massive heat-kernel subtraction also proves right-divergence
+estimates on H\"older data. Splitting the time integral at the
+output separation removes the exponent loss for each fixed
+exponent strictly between zero and one. A separate scalar proof
+applies under an explicit positive-penalty hypothesis.
+The distinct constrained-current inverse has
+the same bounded-forcing regularity on a further common ball.
+Nonflat backgrounds and retained histories remain separate.
+\end{abstract}
+
+\noindent\textbf{Status.}
+Research proofs checked by separate internal derivations and audits.
+No external certification or novelty claim is made. The baseline is
+valid for every odd $M$. The nonlinear constraint-current term uses
+$M=L^j$ with fixed odd $L\ge3$, as proved in Notebook 11. All norms
+use physical fine derivatives and volume, at final block scale one.
+
+\section{Previously established algebraic inputs}
+
+We use the exact homogeneous inverse and scalar source definitions of
+Notebook 09, and the corrected quadratic-composition bound of Notebook 11.
+Let $D$ be the fine scalar gradient, $\mathcal L=D^*D$, $Q_0$ the
+normalized scalar block average, and $Q=Q_M^{\rm st}$ the normalized
+straight one-form average. The scalar gauge is
+\[
+ G'=(\mathcal L+Q_0^*a'Q_0)^{-1},\qquad
+ R=I-G'Q_0^*(Q_0G'^2Q_0^*)^{-1}Q_0G',\qquad Z=G'RG'.
+\]
+The distinct positive penalty $a$ enters the fine one-form inverse.
+The scalar penalty $a'$ does not replace it. The identities
+\[
+ Q_0Z=0,\quad \mathcal L G'R=R,\quad
+ Z\mathcal L=G'R,\quad \mathcal L Z\mathcal L=R
+\]
+were proved from these definitions. They will also justify the
+fixed-refinement operator products on bounded forcing.
+
+The canceled Bloch formulas $G_0=F+\beta E_a^{-1}\beta^-$,
+including every central entry, are those proved in Notebook 09.
+We reuse their positive common strip and uniform coefficient bounds;
+no new pointwise assertion is assumed from their Hilbert estimates.
+For the scalar notation below, with $p_r=z+2\pi r$, set
+\[
+ a_r=\prod_\nu M^{-1}\sum_{s\in I_M}e^{ip_{r,\nu}s/M},\qquad
+ \omega_{r,\mu}=a_rM^{-1}\sum_{t=0}^{M-1}e^{ip_{r,\mu}t/M},
+\]
+\[
+ R_{s,2}=\sum_{r\ne0}\frac{a_ra_r^-}{P_r^2},\qquad
+ D_{s,2}=a_0a_0^-+P_0^2R_{s,2}.
+\]
+The symbols $P_r$ and the negative-argument convention are recalled
+in the next section. These are scalar denominators; the subscript
+$s,2$ is a name and does not designate a free matrix index.
+The homogeneous source value of the one-form penalty is $a=1$;
+a fixed compact positive interval is allowed throughout.
+% Pointwise flat inverse; no standalone preamble.
+% Requires amsmath/amssymb/amsthm, theorem environment, and \norm.
+% Every label introduced by this fragment has the unique prefix pt-.
+\section{Pointwise regularity for arbitrary fine forcing}
+\label{pt-section}
+
+The full flat inverse also obeys pointwise estimates. These estimates
+concern arbitrary bounded fine forcing, without assuming that it is a
+coarse lift. Retain fine spacing $\eta=M^{-1}$, odd $M$, unit coarse
+cells, the physical fine measure $\eta^d$, and
+\begin{equation}\label{pt-operator}
+ \mathcal A_a=d^*d+DRD^*+Q^*aQ,\qquad G_0=\mathcal A_a^{-1},
+ \qquad \mathcal L=D^*D.
+\end{equation}
+Here $d$ is the fine curl, $D$ the scalar gradient, $Q=Q_M^{\rm st}$,
+and $R$ is the matched homogeneous flat scalar source projection.
+The penalty lies in a fixed interval $0<a_-\le a\le a_+<\infty$;
+the normalized source value $a=1$ is included. The discussion applies
+to the homogeneous infinite lattice and compatible periodic regulators.
+
+For a fixed coarse-cell patch $U$, define the discrete pointwise norm
+\begin{equation}\label{pt-holder-norm}
+ \norm{u}_{1,\alpha;U}=\norm{u}_{\infty;U}
+  +\sum_\mu\norm{D_\mu^+u}_{\infty;U}
+  +\sum_\mu\sup_{\substack{x,y\in U\\x\ne y}}
+       \frac{|D_\mu^+u(x)-D_\mu^+u(y)|}{|x-y|_1^\alpha}.
+\end{equation}
+The points are actual fine-grid points and a fixed collar supplies the
+differences. Enlarging the patch by finitely many neighboring coarse
+cells changes only constants. Backward differences obey the same bounds.
+
+\begin{theorem}\label{pt-theorem}
+For each $0<\alpha<1$ there are $C_\alpha,\rho>0$, independent of
+odd $M$ and compatible periodic volume, such that the block from
+forcing in coarse cell $m$ to a fixed collar of coarse cell $n$ satisfies
+\begin{align}
+ \norm{G_0(n,m)}_{\ell^\infty\to C^{1,\alpha}}
+       &\le C_\alpha e^{-\rho|n-m|_1},
+       \label{pt-pointwise-bound}\\
+ \norm{(\mathcal L G_0)(n,m)}_{\ell^\infty\to\ell^\infty}
+       &\le C e^{-\rho|n-m|_1}.
+       \label{pt-laplacian-bound}
+\end{align}
+The first target norm is \eqref{pt-holder-norm}; $\mathcal L$ in
+the second estimate acts componentwise on the vector output.
+On tori use periodic coarse-cell distance. Weighted row and column
+block sums are uniformly bounded at every smaller positive exponent.
+Consequently bounded fine forcing produces uniformly bounded fields,
+first differences, locally $\alpha$-H\"older first differences, and
+componentwise Laplacians.
+\end{theorem}
+
+The constants need not stay bounded as $\alpha\uparrow1$. In fact a
+uniform Lipschitz estimate for the first differences, and a uniform
+bound for each individual second difference, are false in dimension
+$d\ge2$; an example is given below. No source weak-norm identification
+is inferred merely from the theorem's terminology.
+
+\subsection{Reduction to a scalar high-mode inverse}
+
+Use the aliases $p_r=z+2\pi r$, $r\in I_M^d$, with
+$I_M=\{-(M-1)/2,\ldots,(M-1)/2\}$, and write
+\begin{equation}\label{pt-alias-data}
+ u_{r,\mu}^{\pm}=M(e^{\pm ip_{r,\mu}/M}-1),\qquad
+ P_r=\sum_\mu u_{r,\mu}^+u_{r,\mu}^-,\qquad
+ \mathcal F_M(z)_{sr}=e^{i(z+2\pi r)\cdot s/M}.
+\end{equation}
+The common holomorphic chart from the full inverse theorem contains
+the real fundamental cube in the interior of $|\operatorname{Re}z_\mu|<K<2\pi$.
+For real $z$, $\mathcal F_M$ is unitary from alias counting $\ell^2$
+to physical-cell $L^2$. On the complex chart it and its inverse have
+uniformly bounded $L^2$ norms. In particular a bounded fine-cell input
+has alias coefficients bounded in $\ell^2$, and individually, by
+$C\norm{f}_\infty$.
+
+Recall the canceled inverse $G_0=F+\beta E_a^{-1}\beta^-$.
+Separate the scalar orientation-diagonal multiplier
+\begin{equation}\label{pt-high-scalar}
+ T_r=P_r^{-1}\quad(r\ne0),\qquad T_0=0.
+\end{equation}
+The difference $F-T$ is a fixed sum of rank-one operators per vector
+orientation: its central block, two mixed blocks, and one high/high
+term. Its high vectors are $\omega_{r,\mu}^-/P_r$ and the analytic
+transpose partners. The remaining scalar coefficients are uniformly
+bounded and holomorphic. Thus the only full-rank pointwise problem is
+\eqref{pt-high-scalar}. Minus signs on multipliers throughout this
+argument denote evaluation at negative full momentum, with the
+analytic transpose; they do not conjugate a complex variable.
+
+\subsection{Weighted heat estimates with complex Bloch twist}
+
+Let $p_s(n)$ be the continuous-time nearest-neighbor heat kernel on
+$\mathbb Z$ with generator $f(n+1)+f(n-1)-2f(n)$. Its Poisson-process
+representation gives
+\begin{equation}\label{pt-heat-moment}
+ \sum_n e^{tn}p_s(n)=e^{2s(\cosh t-1)},\qquad
+ \sum_n p_s(n)=1.
+\end{equation}
+It is symmetric and decreasing for $n\ge0$. For completeness, set
+$q_n=p_s(n)-p_s(n+1)$ on $n\ge0$. Then
+\[
+ q_0'=q_1-3q_0,\qquad
+ q_n'=q_{n-1}+q_{n+1}-2q_n\quad(n\ge1),
+\]
+with nonnegative initial data. This bounded cooperative system
+preserves nonnegativity, as follows by shifting its generator to a
+matrix with nonnegative entries and expanding the exponential.
+Also Fourier inversion gives
+\begin{equation}\label{pt-heat-origin}
+ p_s(0)=\frac1{2\pi}\int_{-\pi}^{\pi}
+               e^{-4s\sin^2(t/2)}\,dt
+       \le C(1+s)^{-1/2}.
+\end{equation}
+For $0\le r\le r_0$, summation by parts therefore yields the exact
+weighted variation identity
+\begin{align}
+ \sum_n e^{r|n|}|p_s(n+1)-p_s(n)|
+  &=(1+e^r)\left[p_s(0)
+       +(1-e^{-r})\sum_{n\ge1}e^{rn}p_s(n)\right]\notag\\
+  &\le C\left[(1+s)^{-1/2}
+                   +r e^{2s(\cosh r-1)}\right].
+       \label{pt-weighted-variation}
+\end{align}
+Take $s=M^2t$ and $r=\delta/M$, where $\delta$ is a fixed small
+constant. Multiplying the difference by $M$ gives
+\begin{equation}\label{pt-first-heat}
+ \sum_n e^{\delta|n|/M}
+       |D_\eta p_{M^2t}(n)|
+       \le C(t^{-1/2}+\delta)e^{C\delta^2t}.
+\end{equation}
+For $t<\eta^2$ the trivial $M$ bound is smaller than $t^{-1/2}$.
+The weight is submultiplicative. Apply
+\eqref{pt-first-heat} twice to
+$p_s=p_{s/2}*p_{s/2}$ to obtain the second-difference bound.
+Tensor products then give, for any specified composition of $k$ fine
+forward/backward differences in $d$ dimensions,
+\begin{equation}\label{pt-heat-two-derivatives}
+ \sum_{n\in\mathbb Z^d}e^{\delta|n|_1/M}
+       |D_\eta^k p_{M^2t}(n)|
+       \le Ct^{-k/2},\qquad 0<t\le1,\quad k=0,1,2.
+\end{equation}
+The displayed $p$ is a probability kernel. If it is instead written
+as a density against physical fine volume, the density factor $M^d$
+cancels the summation factor $M^{-d}$.
+
+The reconstructed Bloch heat operator has the exact image-sum kernel
+\begin{equation}\label{pt-twisted-heat}
+ H_z(t;s,s')=\sum_{k\in\mathbb Z^d}
+             e^{-iz\cdot k}p_{M^2t}(s-s'+kM).
+\end{equation}
+This convention uses ordinary summation over the fine-cell input
+index $s'$. The formula follows by finite Fourier inversion and
+continues to complex $z$ by the exponential moment bound.
+For $s$ in a fixed output collar and $s'$ in the input cell,
+\[
+ |e^{-iz\cdot k}|
+       \le C e^{\delta|s-s'+kM|_1/M}.
+\]
+Thus \eqref{pt-heat-two-derivatives}, including the corresponding
+output differences of the image sum, proves
+\begin{equation}\label{pt-twisted-derivatives}
+ \norm{D_\eta^kH_z(t)}_{\infty\to\infty}
+       \le Ct^{-k/2},\qquad 0<t\le1,\quad k=0,1,2.
+\end{equation}
+The difference between first-gradient rows at fine points $x,y$ is
+bounded both by $Ct^{-1/2}$ and, by telescoping, by
+$C|x-y|_1t^{-1}$. Interpolating these two elementary bounds gives
+\begin{equation}\label{pt-heat-holder}
+ \norm{H_z(t)}_{\infty\to C^{1,\alpha}}
+       \le C_\alpha t^{-(1+\alpha)/2},\qquad 0<t\le1.
+\end{equation}
+Subtracting the central heat mode changes this only by a bounded
+term, since $P_0,u_0$ and its plane-wave profile are uniformly bounded
+on the chart. For $t\ge1$, the high-alias bound
+$\operatorname{Re}P_r\ge c|r|^2$ and the individual input-coefficient
+bound instead give
+\begin{align}
+ &\norm{H_z(t)-e^{-tP_0}\Pi_0(z)}_{\infty\to C^{1,\alpha}}
+       \notag\\
+ &\qquad\le C\sum_{r\ne0}(1+|r|)^{1+\alpha}e^{-ct|r|^2}
+       \le C_\alpha e^{-ct/2}.
+       \label{pt-heat-large-time}
+\end{align}
+The high-mode inverse is therefore the convergent operator integral
+\begin{equation}\label{pt-scalar-integral}
+ T(z)=\int_0^\infty
+             \bigl[H_z(t)-e^{-tP_0}\Pi_0(z)\bigr],dt.
+\end{equation}
+The small-time integral is finite because
+$\int_0^1t^{-(1+\alpha)/2}\,dt=2/(1-\alpha)$.
+This proves a uniform holomorphic
+$\ell^\infty\to C^{1,\alpha}$ bound for $T$ for every $\alpha<1$.
+
+\subsection{Pointwise bounds for the rank corrections}
+
+The centered scalar and straight-vector averaging multipliers satisfy
+\begin{equation}\label{pt-alias-weights}
+ |a_r^\pm|\le Cw(r),\qquad
+ |\omega_{r,\mu}^\pm|\le\frac{Cw(r)}{1+|r_\mu|},\qquad
+ w(r)=\prod_\nu(1+|r_\nu|)^{-1}.
+\end{equation}
+Indeed, for a nonzero component, the numerator of
+$\sin((z_\nu+2\pi r_\nu)/2)/
+ [M\sin((z_\nu+2\pi r_\nu)/(2M))]$
+is uniformly bounded and its denominator has modulus at least
+$c|r_\nu|$ on the enlarged chart. The zero component is bounded
+directly. The vector multiplier has one extra longitudinal factor.
+This includes aliases at the edge of the fine zone.
+
+On a dyadic maximum-norm shell,
+\begin{equation}\label{pt-shell-sum}
+ \sum_{2^j\le|r|_\infty<2^{j+1}}w(r)
+                      \le C_d(j+1)^{d-1}.
+\end{equation}
+Choose a coordinate at the maximal scale. Its reciprocal weight sums
+to $O(1)$ over that shell, and each other coordinate contributes
+$O(j+1)$. Summing over the possible maximal coordinates proves
+\eqref{pt-shell-sum}. Consequently
+\begin{equation}\label{pt-rank-holder-sum}
+ \sum_{r\ne0}(1+|r|)^{1+\alpha}
+             \left|\frac{\omega_{r,\mu}^-}{P_r}\right|
+   \le C\sum_{r\ne0}w(r)(1+|r|)^{\alpha-1}
+   \le C_\alpha.
+\end{equation}
+Absolute Fourier summation now bounds the reconstructed high rank
+vectors in $C^{1,\alpha}$. Their central partners have the same bound.
+The Woodbury vector has
+\begin{equation}\label{pt-beta-bound}
+ |\beta_{r,\mu}|
+  \le C\left(\frac{|a_r^-|}{(1+|r|)^3}
+                  +\frac{|\omega_{r,\mu}^-|}{(1+|r|)^2}\right),
+       \qquad r\ne0,
+\end{equation}
+so its output profile satisfies the same weighted sum. Its canceled
+central component is bounded directly.
+
+The input rows of every rank term have uniformly bounded alias
+$\ell^2$ norm. By the physical-cell Fourier normalization,
+\[
+ |\text{input row}(f)|
+       \le C\norm{f}_{L^2(\text{physical cell})}
+       \le C\norm{f}_\infty.
+\]
+The cell has physical volume one; there is no factor $M^{d/2}$.
+Combining these row estimates with
+\eqref{pt-rank-holder-sum}--\eqref{pt-beta-bound} controls all rank
+corrections. The full reconstructed $G_0$ therefore has the required
+uniform holomorphic pointwise bound on the common chart.
+
+\subsection{The componentwise Laplacian}
+
+For the scalar term, $\mathcal L T=I-\Pi_0$ is bounded on
+$\ell^\infty$. Applying $\mathcal L$ to a high rank vector
+$\omega_{r,\mu}^-/P_r$ gives $\omega_{r,\mu}^-$. Its full
+reconstruction is a column of the physical adjoint average, minus
+its bounded central mode. Explicitly, for $x=n+s/M$, $M=2h+1$,
+\begin{equation}\label{pt-adjoint-average}
+ (Q^*B)_\mu(x)=b_s B_\mu(n)+(1-b_s)B_\mu(n-e_\mu),
+ \qquad b_s=\frac{s_\mu+h+1}{M}.
+\end{equation}
+These weights are nonnegative and sum to one. The Bloch profile is
+$b_s+(1-b_s)e^{-iz_\mu}$, uniformly bounded on the complex chart
+and any fixed collar. An absolute alias sum of $\omega$ is unnecessary
+and would introduce a spurious logarithmic loss.
+
+For the Woodbury vector, its high-alias formula gives
+\begin{equation}\label{pt-beta-laplacian}
+ (\mathcal L\beta)_{r,\mu}
+  =\frac{P_0u_{r,\mu}^+a_r^-}{P_rD_{s,2}}
+           -\omega_{r,\mu}^-k_\mu d_\mu^+.
+\end{equation}
+The first term is $O(w(r)/(1+|r|))$, absolutely summable by
+\eqref{pt-shell-sum}. The second is a bounded coefficient times
+the profile \eqref{pt-adjoint-average}, with its central subtraction.
+The canceled central Laplacian component is bounded. The same input
+row estimates as before now prove a uniform holomorphic
+$\ell^\infty\to\ell^\infty$ bound for $\mathcal L G_0$.
+This argument supplies neither H\"older continuity of its Laplacian
+nor bounds on all separate second differences. In particular the
+$Q^*$ profile can have transverse block jumps.
+
+\subsection{Gluing, exponential decay, and bounded forcing}
+
+The whole reconstructed inverse and its fine derivatives are periodic
+in coarse momentum. The full real symbol is invariant under the
+alias relabeling induced by $z\mapsto z+2\pi n$; the within-cell
+integer phase cancels wrapping of the alias index. The enlarged
+holomorphic charts agree on their real overlaps and hence glue.
+Individual separated central/high terms need not be periodic; they
+were used only to bound the whole symbol on each chart.
+
+Output collars consist of finitely many neighboring-cell copies,
+with bounded holomorphic factors $e^{iz\cdot n}$. Thus the common
+strip bounds hold as operator bounds into the discrete norm
+\eqref{pt-holder-norm}. For each fixed $M$ these are finite-dimensional
+Banach spaces, so entrywise holomorphy and the proved uniform norms
+give Banach-valued contour shifting. This proves
+\eqref{pt-pointwise-bound}--\eqref{pt-laplacian-bound} without a
+growing-dimension factor.
+
+In infinite volume the resulting absolutely summable blocks define
+the inverse on bounded forcing and agree with the Hilbert inverse
+on finitely supported fine forcing. The inverse identity extends
+through absolute convergence of the exponentially summable operator
+products at each fixed $M$. The source projection is not local, but
+$R=\mathcal L Z\mathcal L$ has exponentially summable cell $L^2$
+blocks. Finite-cell norm equivalence makes their pointwise blocks
+summable for each fixed $M$. That last identity argument need not
+be uniform in $M$: the pointwise inverse bound was proved uniformly
+by the heat and rank estimates above.
+
+Finite compatible tori sample the same symbol, giving exact
+periodizations and the same bounds in periodic distance, including
+short periods and multiplicities. Summing the cell kernels bounds
+the field and gradient globally and the gradient H\"older seminorm
+on every fixed collar. Nearby points lie in one enlarged collar;
+farther points use twice the gradient supremum. This also gives the
+global discrete H\"older bound, with periodic physical distance on
+tori.
+
+\subsection{A sharp obstruction to the Lipschitz endpoint}
+
+For $d\ge2$, take the compatible torus consisting of one coarse
+cell. At its sole coarse momentum, zero, the full inverse is
+$a^{-1}$ on the central constant mode and $P_r^{-1}$ on every high
+alias. Thus on fine mean-zero forcing it is exactly the scalar
+periodic inverse Laplacian, independently in each vector component.
+
+Choose a smooth cutoff $\chi$ supported in a small ball inside the
+unit continuum torus and equal to one near its center. Set
+\begin{equation}\label{pt-endpoint-example}
+ u_\varepsilon(x)=\chi(x)x_1x_2\,
+                       \frac12\log(|x|^2+\varepsilon^2).
+\end{equation}
+For $P=x_1x_2$ and $f(r)=\frac12\log(r^2+\varepsilon^2)$,
+harmonicity and homogeneity of $P$ give
+\begin{equation}\label{pt-endpoint-laplacian}
+ \Delta(Pf)=P\left(f''+\frac{d+3}{r}f'\right)
+   =P\frac{(d+2)r^2+(d+4)\varepsilon^2}
+                  {(r^2+\varepsilon^2)^2}.
+\end{equation}
+Since $|P|\le r^2/2$, this is bounded independently of $\varepsilon$.
+The cutoff-region derivatives are also uniformly bounded because
+that region stays away from zero. However
+\begin{equation}\label{pt-endpoint-divergence}
+ \partial_1\partial_2u_\varepsilon(0)=\log\varepsilon.
+\end{equation}
+
+For fixed $\varepsilon>0$, sample the smooth periodic function on
+increasingly fine odd grids and subtract its exact discrete mean.
+Define $f_{M,\varepsilon}=\mathcal L_\eta u_{M,\varepsilon}$.
+Its mean is zero, and Taylor convergence gives
+$\norm{f_{M,\varepsilon}}_\infty\le C+1$ for sufficiently large
+$M$, depending on $\varepsilon$. The full inverse returns exactly
+$u_{M,\varepsilon}$. Its mixed second fine difference at the origin
+converges to \eqref{pt-endpoint-divergence}. Choosing small
+$\varepsilon$ and then large $M$ proves that bounded forcing can
+produce arbitrarily large mixed second differences. A uniform
+Lipschitz bound on first differences would bound these differences
+and is therefore impossible. This does not contradict
+\eqref{pt-laplacian-bound}, which controls their Laplacian sum rather
+than each second difference separately.
+
+\subsection{Source scope}
+
+The theorem supplies arbitrary-forcing pointwise estimates for the
+matched homogeneous flat inverse, including its normalized $a=1$
+case. It does not by itself identify every numerical factor or term
+in the source's weak norms, establish nonflat estimates, handle
+general retained-history domains, or control the complete interacting
+current carrier. Those applications require exact norm and coordinate
+checks. The false endpoint above must not enter such a match through
+an implicit assertion that $C^{1,\alpha}$ controls all second derivatives.
+% Pointwise full-current neighborhood; no standalone preamble.
+% Requires amsmath/amssymb/amsthm, theorem environment, and \norm.
+% Uses the preceding pointwise baseline theorem. Labels have prefix pc-.
+\section{The full flat current in the pointwise weak norms}
+\label{pc-section}
+
+We now transfer the pointwise estimates to arbitrary bounded complex
+fine currents. The background remains exactly flat. For the corrected
+nonlinear constraint term, refinement is $M=L^j$ with fixed odd $L$,
+as in the independently audited fixed-step quadratic-composition
+theorem. The result does not use a pointwise bound for the projection
+$\Pi$ on arbitrary bounded fields and does not differentiate the current.
+
+\subsection{The source norms and spatial weights}
+
+At homogeneous $\ell=1$ and background $U=1$, deposited Raw I,
+lines 12740--12752, defines the equivalent norms
+\begin{equation}\label{pc-source-norms}
+ N(A)=\max\{\norm{A}_\infty,\norm{\nabla A}_\infty\},\qquad
+ N_\beta(A)=\max\{N(A),[\nabla A]_\beta\},
+ \quad 0\le\beta\le\beta_0<1.
+\end{equation}
+Here $\nabla$ collects the first fine differences of a vector field;
+the H\"older member can be taken on fixed coarse-cell collars.
+The pointwise estimates of the preceding section also imply its
+global discrete version. There is no Laplacian in $N_\beta$.
+The source explicitly excludes the Laplacian member for the current
+inverse at Raw I, lines 13759--13765.
+
+Let $\varpi(n)>0$ be a cell weight satisfying
+\begin{equation}\label{pc-weight-ratio}
+ \frac{\varpi(n)}{\varpi(m)}
+       \le e^{\kappa\operatorname{dist}(n,m)}.
+\end{equation}
+The distance is ordinary or periodic cell distance. Define
+$\norm{f}_{\infty,\varpi}$, $N_\varpi$, and $N_{\beta,\varpi}$
+by the corresponding weighted supremum over cells and fixed collars.
+Neighboring weights have uniformly bounded ratios. In particular
+$\varpi(n)=e^{\kappa\operatorname{dist}(n,m_0)}$ is allowed.
+These norms are applied to complete fields. We never sharply cut a
+differentiable field into cells before applying $D^*$, which would
+introduce artificial fine-scale boundary derivatives.
+
+Retain
+\begin{equation}\label{pc-scalar-data}
+ \mathcal L=D^*D,\qquad Z=G'RG',\qquad
+ \Lambda=Z\mathcal L D^*=G'RD^*,\qquad \Pi=I-D\Lambda.
+\end{equation}
+Stars denote physical adjoints on the real slice and their fixed
+analytic bilinear continuations for complex parameters. The
+penalized baseline is
+$G_0=(d^*d+DRD^*+Q^*aQ)^{-1}$, with matched unit-scale value $a=1$.
+
+\subsection{The scalar smoothing needed for the current}
+
+For a common small $\kappa>0$, the scalar inverse supplies constants
+independent of $M$ and compatible volume such that
+\begin{align}
+ \norm{Z\mathcal L f}_{\infty,\varpi}
+       &\le c_0\norm{f}_{\infty,\varpi},&
+ \norm{DZ\mathcal L f}_{\infty,\varpi}
+       &\le c_1\norm{f}_{\infty,\varpi},
+       \label{pc-scalar-bounded}\\
+ N_{\beta,\varpi}(DZf)
+       &\le z_1\norm{f}_{\infty,\varpi},&
+ N_{\beta,\varpi}(DZD^*f)
+       &\le z_2\norm{f}_{\infty,\varpi}.
+       \label{pc-scalar-holder}
+\end{align}
+Constants can be chosen at the fixed ceiling $\beta_0$, uniformly
+for $0\le\beta\le\beta_0$.
+
+Here is the pointwise proof of these additional scalar facts. The
+canceled alias matrix of $Z$ is the high diagonal $P_r^{-2}$ plus
+a fixed number of rank terms whose high vectors are $a_r^-/P_r^2$
+and their transpose partners. Its central entries have no massless
+pole. The high diagonal has the heat representation
+\begin{equation}\label{pc-biharmonic-heat}
+ \int_0^\infty t\,[H_z(t)-e^{-tP_0}\Pi_0(z)]\,dt.
+\end{equation}
+The weighted heat derivative bounds extend to every fixed integer
+order $k$: split the semigroup into $k$ equal-time factors, put one
+fine difference on each, and use weighted $L^1$ convolution.
+Thus the small-time bound is $C_kt^{-k/2}$. An additional
+$\beta$-H\"older output difference costs $t^{-\beta/2}$ by the
+same interpolation used for the baseline inverse. Input derivatives
+are derivatives of the kernel, or discrete summation by parts, and
+do not require derivatives of the forcing. The relevant integral is
+\[
+ \int_0^1 t^{1-(m+\beta)/2}\,dt<\infty
+                  \quad\text{if }m+\beta<4.
+\]
+For $Z\mathcal L,DZ\mathcal L$ the derivative orders are two and
+three. For the gradient H\"older members of $DZ,DZD^*$ they are
+two and three, respectively, before the extra $\beta$. Large times
+use the high-alias gap.
+
+For the rank terms, an input row with the required derivatives has
+uniform alias $\ell^2$ norm. Output vectors obey
+$|a_r/P_r^2|\le Cw(r)/(1+|r|)^4$, where
+$w(r)=\prod_\nu(1+|r_\nu|)^{-1}$ and its dyadic shell sum is
+$O((j+1)^{d-1})$. Every output derivative/H\"older order strictly
+below four is therefore absolutely summable. Physical-cell $L^2$
+input rows act on bounded forcing without a dimension factor.
+The same periodic holomorphic gluing as for $G_0$ gives exponential
+cell kernels and hence \eqref{pc-scalar-bounded}--\eqref{pc-scalar-holder}.
+Finite periodic sampling preserves the bounds.
+
+It follows, using the actual derivative of the complete field, that
+\begin{equation}\label{pc-lambda-on-N}
+ \norm{\Lambda A}_{\infty,\varpi}\le l_0N_\varpi(A),\qquad
+ \norm{D\Lambda A}_{\infty,\varpi}\le l_1N_\varpi(A),\qquad
+ \norm{\Pi A}_{\infty,\varpi}\le(1+l_1)N_\varpi(A).
+\end{equation}
+No assertion that $D\Lambda$ or $\Pi$ is bounded on unrestricted
+$\ell^\infty$ input is used.
+
+\subsection{Both current terms map $N$ to $N_\beta$}
+
+The matched local auxiliary factorization is
+\begin{equation}\label{pc-aux-factorization}
+ \Theta'_J=\mathfrak j_J^*\Lambda+\Lambda^*\mathfrak j_J
+       +\Lambda^*V_JD\Lambda+(D\Lambda)^*V_J^*\Lambda.
+\end{equation}
+The finite-incidence coefficient operators $\mathfrak j_J,V_J$
+and their analytic transposes have weighted pointwise norms at most
+$c_j\norm{J}_\infty,c_v\norm{J}_\infty$. They contain no derivative
+of $J$. The exact scalar identity $G_0\Lambda^*=DZ$ gives
+\begin{equation}\label{pc-outer-aux-smoothing}
+ G_0\Theta'_J
+  =G_0\mathfrak j_J^*\Lambda+DZ\mathfrak j_J
+       +DZV_JD\Lambda+DZD^*V_J^*\Lambda.
+\end{equation}
+Let $g_\beta$ bound $G_0$ from weighted bounded forcing to
+$N_{\beta,\varpi}$. Then
+\begin{equation}\label{pc-aux-N-bound}
+ N_{\beta,\varpi}(G_0\Theta'_JA)
+        \le C_{\rm aux}\norm{J}_\infty N_\varpi(A),
+\end{equation}
+where one possible constant is
+\[
+ C_{\rm aux}=g_\beta c_jl_0+z_1c_j+z_1c_vl_1+z_2c_vl_0.
+\]
+This is the homogeneous normalized source (J1), including weights.
+Its input requires $N$ only, not H\"older regularity of $A$ or $J$.
+
+For the full constraint term, write
+\begin{equation}\label{pc-constraint-weight}
+ \Theta_J=T_{v_J},\qquad v_J=E_J^T J,
+ \qquad
+ \langle A,T_vB\rangle_\eta
+      =2\langle C_j^{(2)}(A,B),v\rangle_1,
+\end{equation}
+where $E_J$ is the auxiliary normalized extension and $C_j^{(2)}$
+is the quadratic jet of the actual corrected fixed-$L$ composition.
+The previously proved auxiliary cell-Schur estimate gives, analytically,
+$\norm{v_J}_\infty\le C_v\norm{J}_\infty$ throughout its current ball.
+
+The direct pointwise estimate for $T_v$ uses the same physical
+factor as its Hilbert proof. At a step of fine spacing $h$, the
+quadratic coefficient is $(h/L)C_L$. Its finite coefficient tensor,
+paired with coarse measure and converted to the fine physical
+adjoint, has an absolute row sum at most $c_Lh\norm{v}_\infty$.
+The factor $L^d$ in this conversion is fixed. The quadratic chain
+rule expresses the full operator as
+\begin{equation}\label{pc-pointwise-chain}
+ T_v=\sum_{t=0}^{j-1}Q_{0:t}^*T_{h_t,v_t}Q_{0:t},\qquad
+ h_t=L^{t-j},\qquad v_t=Q_{t+1:j}^*v.
+\end{equation}
+Both flat $Q$ and its physical adjoint $Q^*$ have nonnegative row
+coefficients summing to one. They are $\ell^\infty$ contractions,
+including the covering-space multiplicities on short tori. Thus
+\[
+ \norm{T_v}_{\infty\to\infty}
+       \le\frac{c_L}{L-1}\norm{v}_\infty.
+\]
+The composition has fixed unit-cell range $R_*$, since its reading
+radii sum over the same geometric series. Consequently
+\begin{equation}\label{pc-T-pointwise}
+ \norm{T_vf}_{\infty,\varpi}
+       \le\tau_\infty\norm{v}_\infty
+                         \norm{f}_{\infty,\varpi}.
+\end{equation}
+The constant includes $e^{\kappa R_*}$. This is a coefficient-row
+argument, not a conversion of a final-cell Hilbert norm into a
+pointwise norm.
+
+The identity
+\begin{equation}\label{pc-Pi-outer}
+ G_0\Pi^*=G_0-DZD^*
+\end{equation}
+now places every smoothing operator outside the bounded current
+coefficients. Combining \eqref{pc-lambda-on-N},
+\eqref{pc-T-pointwise}, and \eqref{pc-Pi-outer} gives
+\begin{align}
+ N_{\beta,\varpi}(G_0\Pi^*\Theta_J\Pi A)
+       &\le C_{\rm con}\norm{J}_\infty N_\varpi(A),
+       \label{pc-constraint-N-bound}\\
+ C_{\rm con}&=(g_\beta+z_2)\tau_\infty C_v(1+l_1).
+       \notag
+\end{align}
+In particular no derivative of $J$ has appeared.
+
+There is also a constrained baseline estimate. Put
+\begin{equation}\label{pc-constrained-baseline}
+ \Gamma=G_0-H_{\rm src}q_{\rm aux}^{-1}H_{\rm src}^*,
+ \qquad q_{\rm aux}=q_M+aI.
+\end{equation}
+The extension $H_{\rm src}$ is pointwise local into $N_\beta$;
+its transpose maps bounded fine fields to bounded coarse fields
+by the physical-cell Schur bound; and
+$q_{\rm aux}^{-1}=QG_0Q^*$ is a local bounded coarse operator.
+Hence $\Gamma$ maps weighted bounded forcing to $N_\beta$ and
+\begin{equation}\label{pc-constrained-current}
+ N_{\beta,\varpi}(\Gamma\Theta_JA)
+      \le C\norm{J}_\infty\norm{A}_{\infty,\varpi}.
+\end{equation}
+
+\subsection{A common pointwise current neighborhood}
+
+\begin{theorem}\label{pc-theorem}
+Let $\varepsilon_H$ be the established full-current Hilbert/Schur
+radius, which is contained in the auxiliary radius. Define
+\begin{equation}\label{pc-radius}
+ C_*=C_{\rm aux}+C_{\rm con},\qquad
+ \varepsilon_{\rm pt}
+       =\min\{\varepsilon_H,(2C_*)^{-1}\},
+\end{equation}
+increasing $C_*$ by fixed norm-convention factors if necessary.
+For $\norm{J}_\infty<\varepsilon_{\rm pt}$, put
+\begin{equation}\label{pc-full-perturbation}
+ \Psi_J=\Theta'_J+\Pi^*\Theta_J\Pi,\qquad
+ K_J=G_0\Psi_J.
+\end{equation}
+The actual full homogeneous flat inverse is the convergent series
+\begin{equation}\label{pc-neumann-inverse}
+ G_1^Jf=(I-K_J)^{-1}G_0f
+                  =\sum_{n\ge0}K_J^nG_0f.
+\end{equation}
+It is holomorphic from the complex bounded-current ball to operators
+from bounded fine forcing into $N_\beta$, uniformly for
+$0\le\beta\le\beta_0$. With $g_N$ the baseline bounded-forcing-to-$N$
+constant, it obeys
+\begin{align}
+ N_\varpi(G_1^Jf)
+       &\le2g_N\norm{f}_{\infty,\varpi},
+       \label{pc-inverse-N}\\
+ N_{\beta,\varpi}(G_1^Jf)
+       &\le(g_\beta+2C_*\varepsilon_{\rm pt}g_N)
+                              \norm{f}_{\infty,\varpi}.
+       \label{pc-inverse-Nbeta}
+\end{align}
+All constants are independent of $M=L^j$ and compatible volume.
+For forcing supported in cell $m$, choosing
+$\varpi(n)=e^{\kappa\operatorname{dist}(n,m)}$ gives exponential
+coarse-cell locality in the pointwise target norms. The auxiliary
+inverse is the same result with only $\Theta'_J$ retained.
+\end{theorem}
+
+\begin{proof}
+Equations \eqref{pc-aux-N-bound} and
+\eqref{pc-constraint-N-bound} give
+\[
+ N_{\beta,\varpi}(K_JA)
+          \le C_*\norm{J}_\infty N_\varpi(A).
+\]
+The target dominates $N_\varpi$, so the ratio is below $1/2$
+on \eqref{pc-radius}. The series converges in weighted $N$.
+For every term after the zeroth, apply the stronger $N$-to-$N_\beta$
+bound to its outside $K_J$ and the $N$ contraction to the remaining
+factors. Summing gives \eqref{pc-inverse-N}--\eqref{pc-inverse-Nbeta}.
+The coefficient $\Theta_J=T_{E_J^TJ}$ is nonlinear in $J$ but is
+analytic on the auxiliary ball with the proved linear norm bound.
+Uniform convergence therefore gives Banach-valued holomorphy; no
+linear-current differentiation formula is presumed for the full family.
+
+For forcing in one cell, the exponentially weighted solution is in
+physical $L^2$ on the infinite lattice. It consequently equals the
+independently constructed Hilbert inverse on that input. Equality
+for bounded forcing follows by the absolutely summable pointwise
+cell kernels and the fixed-$M$ summability of the original operator
+products. The finite-volume proof is identical with periodic
+distance. The minimum with $\varepsilon_H$ ensures that both
+constructions use the same actual source inverse.
+\end{proof}
+
+The normalized extensions inherit the same bounds:
+$E_1^J=G_1^JQ^*q_1^J$ and $E_J=G_\pi^JQ^*q_J$.
+Here $Q^*$ maps bounded coarse fields to bounded fine fields, and
+the established coarse Schur bounds make $q_1^J,q_J$ bounded on
+weighted coarse $\ell^\infty$. Thus their output $N_\beta$ norms
+are uniform on the common ball.
+
+\subsection{What has and has not matched the source}
+
+The input and output norms in \eqref{pc-aux-N-bound} and
+\eqref{pc-constraint-N-bound} are the explicit homogeneous flat
+$N,N_\beta$ norms, up to fixed equivalent conventions for localized
+H\"older seminorms. The current has only a supremum bound. These
+estimates and \eqref{pc-inverse-Nbeta} supply the bounded-forcing
+members of the current program and their weighted versions.
+
+No current Laplacian estimate is asserted. The source expressly
+excludes that member, and the Laplacian of $DZD^*$ is an order-zero
+operator whose bounded-input pointwise norm has not been supplied.
+The following sections supply the one-form right-divergence members
+using complete weighted H\"older fields and smooth physical
+cutoffs, then treat the distinct scalar $G'$ under its stated
+penalty hypothesis.
+
+The fixed-step corrected-average source identification remains the
+one audited from the deposited transcriptions. These results are
+homogeneous and flat. They do not establish nonflat source stability,
+mixed retained-domain estimates or an interacting Yang--Mills
+ultraviolet limit. Companion Notebook 13 constructs a uniform
+analytic chart for the full fixed-reference nonlinear constraint;
+its moving-background identification is a further question.
+
+% Right-divergence and constrained-current members; no preamble.
+% Requires amsmath/amssymb/amsthm, theorem environment, and \norm.
+% Depends on the preceding pt- and pc- results. Labels have prefix rd-.
+\section{Right-divergence data and the constrained current inverse}
+\label{rd-section}
+
+The remaining right-divergence estimates require cancellation on
+H\"older input. We isolate that cancellation in a translation-invariant
+massive lattice Green function. The argument applies to the full
+homogeneous flat $G_0$ and its auxiliary and full current perturbations.
+It does not identify the distinct scalar inverse $G'$ with $G_0$.
+
+Use the admissible spatial weights and weak norms of the preceding
+section. Let $\norm{\lambda}_{\gamma,\varpi}$ denote the weighted
+supremum of the fine field and its $\gamma$-H\"older seminorm on
+fixed cell collars. Fields are kept complete; no H\"older datum is
+multiplied by a sharp cell indicator.
+
+\begin{theorem}\label{rd-theorem}
+For $0\le\beta<\gamma<1$ and a sufficiently small fixed spatial
+exponent $\kappa$, the homogeneous flat inverses satisfy
+\begin{equation}\label{rd-main-estimate}
+ N_{\beta,\varpi}(G D^*\lambda)
+       \le C_{\beta,\gamma}\norm{\lambda}_{\gamma,\varpi},
+ \qquad G\in\{G_0,G_\pi^J,G_1^J\}.
+\end{equation}
+The current lies in the previously established common pointwise and
+Hilbert ball. Constants are independent of refinement and compatible
+periodic volume. Here $D^*$ can be any specified physical fine
+divergence, with its fixed orientation contractions. Taking
+$\gamma=\beta+\varepsilon$, with fixed
+$0<\varepsilon<1-\beta_0$, makes the constants uniform for
+$0\le\beta\le\beta_0$. The source choice
+$\varepsilon=(1-\beta_0)/2$ is included.
+\end{theorem}
+
+This is a bound on the right-differentiated operator, not an estimate
+obtained by bounding $\norm{D^*\lambda}_\infty$. The constant can
+grow as $\gamma\downarrow\beta$; the endpoint is not claimed.
+The relevant source members are described at deposited Raw I,
+lines 13601--13615 and 13759--13765.
+
+\subsection{A remainder that accepts arbitrary bounded data}
+
+Introduce the comparison operator
+\begin{equation}\label{rd-massive-split}
+ G_m=(\mathcal L+1)^{-1}I,\qquad R_m=G_0-G_m.
+\end{equation}
+It is an auxiliary decomposition, not a change of source precision.
+Shrink the common complex chart so that $P_0+1$ is uniformly nonzero;
+on the real chart it is at least one. The high denominators already
+have this property. The high scalar diagonal of $R_m$ is
+\begin{equation}\label{rd-high-remainder}
+ \frac1{P_r}-\frac1{P_r+1}
+    =\int_0^\infty(1-e^{-t})e^{-tP_r}\,dt,
+                    \qquad r\ne0.
+\end{equation}
+The other terms are the finite-rank corrections of $G_0$ and the
+bounded central subtraction $-(P_0+1)^{-1}\Pi_0$.
+
+With one input derivative, one output derivative, and an output
+$\beta$-H\"older increment, the small-time bound from the heat
+estimates is
+\[
+ (1-e^{-t})t^{-(2+\beta)/2}\le t^{-\beta/2},
+                       \qquad0<t\le1.
+\]
+It is integrable. Lower output members are easier, and large times
+use the high-alias gap. In each rank term, the input derivative
+multiplies its row by one fine multiplier. The high row
+$\omega_s/P_s$ becomes $O(|\omega_s|/(1+|s|))$; the Woodbury row
+is bounded by
+$C(|a_s|/(1+|s|)^2+|\omega_s|/(1+|s|))$.
+Their alias $\ell^2$ norms are uniform. The output
+$C^{1,\beta}$ vectors retain the proved absolute alias sums for
+$\beta<1$.
+
+The full reconstructed remainder is periodic and holomorphic in
+the resulting pointwise operator norms. Chart gluing and contour
+shifting therefore give exponential coarse-cell kernels and
+\begin{equation}\label{rd-remainder-bound}
+ N_{\beta,\varpi}(R_mD^*f)
+                  \le C_\beta\norm{f}_{\infty,\varpi},
+                       \qquad0\le\beta<1.
+\end{equation}
+This remainder estimate genuinely accepts arbitrary bounded fine
+data. It requires no H\"older extension across a cell boundary:
+the right derivative has already been placed on its kernel.
+Compatible periodic sampling gives the same bound on tori.
+
+\subsection{Weighted heat moments down to the mesh scale}
+
+Let $p_t^\eta(v)$ be the full-lattice probability heat kernel of
+$\mathcal L$, with fine displacement $v\in\eta\mathbb Z^d$.
+For $0<\gamma<1$ and $k=2,3$, we have
+\begin{equation}\label{rd-heat-moment}
+ \sum_v e^{\kappa|v|_1}|v|_1^\gamma
+                   |D_\eta^kp_t^\eta(v)|
+       \le Ct^{(\gamma-k)/2},\qquad0<t\le1.
+\end{equation}
+The probability-kernel convention includes the physical normalization:
+if a kernel density is used instead, its $\eta^{-d}$ factor is
+canceled by physical summation.
+
+For $t\ge\eta^2$, apply the weighted heat variation estimate with
+physical exponential scale $\delta=\kappa+t^{-1/2}$. Its lattice
+parameter $\eta\delta$ lies in a fixed bounded interval. Semigroup
+splitting into $k$ factors gives
+\[
+ \sum_v e^{\delta|v|_1}|D_\eta^kp_t^\eta(v)|
+                \le C_kt^{-k/2},\qquad \eta^2\le t\le1,
+\]
+because $\delta^2t$ is bounded. The inequality
+$|v|^\gamma\le C_\gamma t^{\gamma/2}e^{|v|/\sqrt t}$
+proves \eqref{rd-heat-moment} in this range.
+
+For $0<t<\eta^2$, expand the finite difference into its fixed list
+of translates:
+\[
+ D_\eta^kp_t^\eta(v)
+    =\eta^{-k}\sum_jc_jp_t^\eta(v+\eta a_j),
+ \qquad |a_j|_1\le k,\quad\sum_j|c_j|\le C_k.
+\]
+The dimensionless random walk has time $t/\eta^2<1$, so its
+exponential and fixed positive moments are uniformly bounded.
+The weighted moment above is at most $C\eta^{\gamma-k}$.
+Since $k>\gamma$ and $t<\eta^2$,
+$\eta^{\gamma-k}\le t^{(\gamma-k)/2}$, proving
+\eqref{rd-heat-moment} also below the mesh time.
+
+For $t\ge1$, absorb $|v|^\gamma$ into a fixed additional
+exponential weight $e^{\delta_1|v|}$. The weighted heat estimates
+are bounded by $Ce^{c(\kappa+\delta_1)^2t}$. Choose
+$\kappa,\delta_1$ small enough that this is at most $Ce^{t/2}$.
+The massive factor $e^{-t}$ leaves an integrable tail. The required
+zeroth and first heat derivatives obey the analogous estimates
+without the polynomial moment.
+
+\subsection{Cancellation on complete fields}
+
+Every nonzero difference of the translation-invariant heat kernel
+has exact zero row sum:
+\begin{equation}\label{rd-zero-row}
+ \sum_vD_\eta^kp_t^\eta(v)=0\qquad(k\ge1).
+\end{equation}
+The local weighted H\"older norm implies
+\begin{equation}\label{rd-global-increment}
+ \varpi(\operatorname{cell}x)|\lambda(y)-\lambda(x)|
+ \le C\norm{\lambda}_{\gamma,\varpi}
+        e^{\kappa|x-y|_1}|x-y|_1^\gamma.
+\end{equation}
+At bounded separation use a common fixed collar and neighboring
+weight ratios. At larger separation use the two supremum bounds;
+the polynomial factor is then bounded below and the cell-weight
+ratio is controlled by physical distance up to a fixed offset.
+No derivative of the weight is taken.
+
+Subtract $\lambda(x)$ using \eqref{rd-zero-row}. Equations
+\eqref{rd-heat-moment}--\eqref{rd-global-increment} give
+\begin{align}
+ \norm{D_\eta^2e^{-t\mathcal L}\lambda}_{\infty,\varpi}
+   &\le Ct^{-1+\gamma/2}\norm{\lambda}_{\gamma,\varpi},
+       \label{rd-heat-second}\\
+ \norm{D_\eta^3e^{-t\mathcal L}\lambda}_{\infty,\varpi}
+   &\le Ct^{-3/2+\gamma/2}\norm{\lambda}_{\gamma,\varpi},
+                   \qquad0<t\le1.
+       \label{rd-heat-third}
+\end{align}
+The difference between two second-derivative output values is
+bounded by twice \eqref{rd-heat-second}, and by their physical
+separation times \eqref{rd-heat-third}. Interpolating yields
+\begin{equation}\label{rd-heat-holder}
+ [D_\eta^2e^{-t\mathcal L}\lambda]_{\beta,\varpi}
+       \le Ct^{-1+(\gamma-\beta)/2}
+                                  \norm{\lambda}_{\gamma,\varpi}.
+\end{equation}
+Its integral is finite, with
+\begin{equation}\label{rd-time-integral}
+ \int_0^1t^{-1+(\gamma-\beta)/2}\,dt
+                      =\frac2{\gamma-\beta}.
+\end{equation}
+For $\beta=0$ the supremum estimate suffices. The field member of
+$G_mD^*\lambda$ uses only the first heat derivative, whose
+$t^{-1/2}$ bound is integrable on bounded input. The gradient and
+its H\"older member use
+\eqref{rd-heat-second}--\eqref{rd-time-integral}. The large-time
+massive tail is integrable as above. Therefore
+\begin{equation}\label{rd-massive-bound}
+ N_{\beta,\varpi}(G_mD^*\lambda)
+                  \le C_{\beta,\gamma}
+                                  \norm{\lambda}_{\gamma,\varpi}.
+\end{equation}
+All singular-integral cancellation has occurred in this global
+translation-invariant calculation. On tori use the periodized heat
+kernel, or periodically extend the fields and weights to the cover.
+Periodic distance is no larger than cover distance, so the same
+moment bounds and multiplicities give identical constants.
+
+\subsection{Transfer to the actual current inverses}
+
+Adding \eqref{rd-remainder-bound} and \eqref{rd-massive-bound}
+proves \eqref{rd-main-estimate} for $G_0$. For either current
+family, the proved weak-space perturbation obeys
+\[
+ N_{\beta,\varpi}(K_JA)
+       \le C_*\norm{J}_\infty N_\varpi(A),\qquad
+ C_*\norm{J}_\infty<\tfrac12.
+\]
+Apply the same convergent series to the baseline datum:
+\begin{equation}\label{rd-current-transfer}
+ G^JD^*\lambda=(I-K_J)^{-1}G_0D^*\lambda.
+\end{equation}
+The baseline $N$ bound requires positive input H\"older regularity;
+the baseline $N_\beta$ bound uses $\gamma>\beta$. Every later term
+is controlled by the established $N$-to-$N_\beta$ perturbation
+bound. This proves the remaining assertions of
+\eqref{rd-main-estimate}. The larger H\"older-data constant does
+not shrink the current radius: it multiplies the initial datum,
+not the contraction. Holomorphy follows from the same Neumann series.
+
+Localization is legitimate with a smooth physical cutoff $\phi$
+of fixed support collar and bounded first derivative. The product
+difference identity gives
+$\norm{\phi\lambda}_{\gamma,\varpi}
+ \le C_\phi\norm{\lambda}_{\gamma,\varpi;\,	ext{collar}}$
+without a power of $\eta^{-1}$. A source-centered exponential weight
+then gives decay away from the support. A sharp cell indicator
+would generally create $\eta^{-\gamma}$ H\"older jumps and is not
+permitted by this argument. This matches the use of localized
+cutoffs in the stated source member.
+
+\subsection{The constrained-current member}
+
+The source separately defines, at Raw I, line 13735,
+\begin{equation}\label{rd-constrained-definition}
+ \widetilde G^J=(I-\Gamma\Theta_J)^{-1}\Gamma,
+ \qquad
+ \Gamma=G_0-H_{\rm src}q_{\rm aux}^{-1}H_{\rm src}^*.
+\end{equation}
+The preceding section proved $Q\Gamma=0$ and, for a uniform
+constant $B_\Gamma$,
+$N_{\beta,\varpi}(\Gamma f)
+ \le B_\Gamma\norm{f}_{\infty,\varpi}$.
+It also proved
+$\norm{\Theta_Jf}_{\infty,\varpi}
+ \le\tau_\infty C_v\norm{J}_\infty
+                      \norm{f}_{\infty,\varpi}$.
+Decrease the common current radius to
+\begin{equation}\label{rd-constrained-radius}
+ \varepsilon_{\rm all}
+  =\min\left\{\varepsilon_{\rm pt},
+             \frac1{2B_\Gamma\tau_\infty C_v}\right\},
+\end{equation}
+omitting the second restriction if its coefficient is zero.
+The series in \eqref{rd-constrained-definition} then converges in
+weighted pointwise norms and gives the source (J6) estimate
+\begin{equation}\label{rd-constrained-bound}
+ N_{\beta,\varpi}(\widetilde G^Jf)
+           \le2B_\Gamma\norm{f}_{\infty,\varpi},\qquad
+                 Q\widetilde G^J=0.
+\end{equation}
+For the bound, estimate the outside $\Gamma$ in $N_\beta$ and
+sum the remaining supremum-norm geometric series. For the exact
+constraint, every term begins on the left with $\Gamma$, so applying
+$Q$ gives zero term by term; the limit preserves the identity.
+The map is analytic, and source-centered weights give exponential
+coarse-cell locality. This statement keeps the source's constrained
+inverse distinct from $G_\pi^J$ and $G_1^J$.
+
+\subsection{Remaining distinctions}
+
+The right-divergence theorem covers $G_0,G_\pi^J,G_1^J$ for the
+stated H\"older input and also supplies the separate constrained
+current member \eqref{rd-constrained-bound}. The deposited source
+also names a right-divergence estimate for the distinct scalar
+inverse $G'$. That member is not inferred by replacing $G'$ with
+$G_0$. The following section gives its own scalar Woodbury adaptation
+for a penalty in a fixed positive interval; verifying any separately
+specified source penalty remains an application condition.
+
+No current Laplacian estimate is asserted. The positive-loss argument
+above will next be strengthened at each fixed equal exponent in
+$(0,1)$. The results are homogeneous and flat,
+with the corrected fixed-step constraint term already matched to
+the deposited transcription. They do not prove nonflat source
+stability, mixed retained-domain bounds, strict background locality,
+or an interacting Yang--Mills ultraviolet limit.
+
+% Independently internally audited strengthening of Notebook 12.
+% Prefix ss-. Depends on rd heat estimates and flat alias notation.
+\section{Equal-exponent Schauder bounds and the scalar inverse}
+\label{ss-section}
+
+The positive H\"older loss in the preceding right-divergence
+theorem is sufficient for the displayed source estimates. It is
+not necessary for a fixed exponent strictly between zero and one.
+The following refinement is useful for nonlinear elliptic equations,
+where an exponent loss at every iteration would not close a fixed
+point argument.
+
+\begin{theorem}\label{ss-equal-exponent}
+For every fixed $0<\alpha<1$, the homogeneous flat operators obey
+\begin{equation}\label{ss-main}
+ N_{\alpha,\varpi}(GD^*\lambda)
+       \le C_\alpha\norm{\lambda}_{\alpha,\varpi},
+ \qquad G\in\{G_0,G_\pi^J,G_1^J\}.
+\end{equation}
+The spatial exponent is sufficiently small, and the current is in
+the common ball for the $N$-to-$N_\alpha$ estimates established
+above. Constants are uniform in refinement and compatible volume.
+There is no uniform assertion as $\alpha$ tends to zero or one.
+\end{theorem}
+
+\begin{proof}
+Use $G_0=G_m+R_m$ from \eqref{rd-massive-split}.
+Equation \eqref{rd-remainder-bound} already controls $R_mD^*$
+from bounded input into $N_\alpha$ for every $\alpha<1$.
+Only the gradient H\"older member of $G_mD^*$ needs a new
+argument. The heat moment and exact row cancellation, with
+$\gamma=\alpha$, give
+\[
+ \norm{D^2e^{-t\mathcal L}\lambda}_{\infty,\varpi}
+       \le Ct^{-1+\alpha/2}\norm{\lambda}_{\alpha,\varpi},
+ \qquad
+ \norm{D^3e^{-t\mathcal L}\lambda}_{\infty,\varpi}
+       \le Ct^{-3/2+\alpha/2}\norm{\lambda}_{\alpha,\varpi}
+\]
+for $0<t\le1$, including times below the mesh scale.
+For two fine output sites in a fixed collar at distance
+$0<r\le1$, estimate their second-derivative difference by the
+first bound for $t<r^2$, and by $r$ times the second for $t\ge r^2$.
+The finite path used for this difference stays in a fixed enlarged
+collar, so its weight comparison costs only a fixed constant.
+Consequently the difference after integrating the massive heat
+kernel is bounded, divided by the input norm, by
+\begin{align}
+ C\int_0^{r^2}t^{-1+\alpha/2}\,dt
+ +Cr\int_{r^2}^1t^{-3/2+\alpha/2}\,dt+Cr
+ &\le C\left(\frac2\alpha+
+                     \frac2{1-\alpha}+1\right)r^\alpha.
+ \label{ss-split-integral}
+\end{align}
+The last term is the large-time massive tail, using its third
+derivative bound. Distances above one are controlled by the
+supremum bound. The latter uses
+$\int_0^1t^{-1+\alpha/2}dt=2/\alpha$ for the gradient and the
+integrable first heat derivative for the field. This proves the
+baseline assertion. It improves the preceding argument by
+splitting the time integral for each output separation before
+taking the H\"older supremum, rather than integrating a fixed
+H\"older operator norm down to zero time.
+
+The current transfer is exactly \eqref{rd-current-transfer}:
+the baseline datum is in $N_\alpha$, and the perturbation maps
+$N$ to $N_\alpha$ with a strict contraction in $N$. Its radius
+does not depend on the initial datum constant. Periodic extension,
+complete weighted fields and smooth localization work as before.
+\end{proof}
+
+\subsection{A separately normalized scalar statement}
+
+Let
+\[
+ G'=(\mathcal L+Q_0^*a'Q_0)^{-1},\qquad
+              0<a'_-\le a'\le a'_+<\infty,
+\]
+where the distinct scalar penalty ranges in a fixed compact
+positive interval. This hypothesis is explicit: no unprinted
+scale-dependent scalar penalty is assigned a value here.
+With the scalar aliases $a_r$, put
+\begin{equation}\label{ss-scalar-denominator}
+ A=a_0a_0^-,\quad
+ R_{s,1}=\sum_{r\ne0}\frac{a_ra_r^-}{P_r},\quad
+ \widehat R_{s,1}=a'^{-1}+R_{s,1},\quad
+ D_{s,1}=A+P_0\widehat R_{s,1}.
+\end{equation}
+The canceled scalar Woodbury formula is
+\begin{align}
+ G'_{00}&=\widehat R_{s,1}/D_{s,1},\nonumber\\
+ G'_{0s}&=-a_0^-a_s/(P_sD_{s,1}),
+ &G'_{r0}&=-a_r^-a_0/(P_rD_{s,1}),\nonumber\\
+ G'_{rs}&=\frac{\delta_{rs}}{P_r}
+       -\frac{P_0a_r^-a_s}{P_rP_sD_{s,1}},
+ &&r,s\ne0.
+ \label{ss-scalar-formula}
+\end{align}
+These formulas extend across $P_0=0$; no singular factor $1/P_0$
+remains. They follow by the rank-one inverse identity away from
+$P_0=0$ and analytic continuation. On the real compact chart,
+$D_{s,1}\ge A\ge c>0$. Alias Parseval bounds and the high-alias
+gap give uniform derivative bounds, so $D_{s,1}$ remains bounded
+away from zero on a common complex strip. The constants may
+depend on $a'_-,a'_+$.
+
+Subtract the scalar massive inverse $G_m=(\mathcal L+1)^{-1}$.
+The high diagonal has exactly the improved heat representation
+\eqref{rd-high-remainder}. All other terms in
+\eqref{ss-scalar-formula} have bounded central coefficients and
+high output vector $a_r^-/P_r$. This vector has uniform absolute
+alias summability after $1+\alpha$ physical differences when
+$\alpha<1$: the bound
+$|a_r|\le C\prod_\nu(1+|r_\nu|)^{-1}$ gives a dyadic shell sum
+bounded by $C(1+n)^{d-1}2^{-n(1-\alpha)}$. One right derivative
+leaves the input row bounded in alias $\ell^2$, since
+$|u_ra_r/P_r|\le C|a_r|/(1+|r|)$ for high aliases.
+The undifferentiated input rows have the same property.
+Uniform cell Fourier conversion, periodic gluing and contour
+shifting therefore give
+\begin{equation}\label{ss-scalar-remainder}
+ N_{\alpha,\varpi}\bigl((G'-G_m)D^*f\bigr)
+       \le C_\alpha\norm{f}_{\infty,\varpi}.
+\end{equation}
+The bounded central massive subtraction is included in this
+estimate. Only the complete reconstructed operator is periodized
+and shifted; the individual central pieces need not be periodic.
+
+Applying the same massive cancellation proof establishes
+\begin{equation}\label{ss-scalar-right-divergence}
+ N_{\alpha,\varpi}(G'D^*\lambda)
+       \le C_\alpha\norm{\lambda}_{\alpha,\varpi},
+                       \qquad0<\alpha<1.
+\end{equation}
+Using instead the preceding positive-loss proof also gives
+$N_{\beta,\varpi}(G'D^*\lambda)
+\le C_{\beta,\gamma}\norm{\lambda}_{\gamma,\varpi}$ for
+$0\le\beta<\gamma<1$. This proves the scalar analytic estimate
+for the stated penalty normalization. Application to a separately
+specified source penalty requires verifying its uniform positive
+interval. It neither replaces $G'$ by the one-form $G_0$ nor
+identifies their gauge projections.
+
+Equal H\"older exponents strictly between zero and one in
+\eqref{ss-main} do not assert a Lipschitz-gradient endpoint or a
+second-difference bound on arbitrary bounded forcing. The earlier
+endpoint counterexample remains applicable to those other claims.
+
+\begin{thebibliography}{9}
+\bibitem{repo}
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}
+{Pinned Yang--Mills-LLM-experiment account}, commit
+\texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+The homogeneous weak norms are Raw I:12740--12770; the bounded
+current assumption is I:12951--12966; the distinct right-divergence
+members are I:13601--13615; the current assertions and exclusion of
+the current Laplacian member are I:13749--13804.
+\bibitem{previous}
+Companion research proofs: Notebook 09, \emph{The flat fine inverse
+and a current neighborhood}; Notebook 11, \emph{The full flat
+constraint-current family}. Source operator matching is to the pinned
+deposited transcriptions. Original primary-paper arguments have not
+all been independently reverified.
+\end{thebibliography}
+\end{document}

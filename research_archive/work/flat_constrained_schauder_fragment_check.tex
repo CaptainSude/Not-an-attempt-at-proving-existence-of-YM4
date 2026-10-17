@@ -1,0 +1,293 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\begin{document}
+% No preamble. Unique prefix cg-. Requires amsmath/amssymb/amsthm and \norm.
+% Proof module for the fixed-flat-gauge nonlinear minimizer.
+
+\section{The constrained flat inverse preserves the H\"older exponent}
+\label{cg-section}
+
+We now establish the constrained Green estimate needed for the
+nonlinear fixed-gauge argument. The estimate concerns the
+homogeneous flat operators. It is not a nonflat Schauder theorem.
+All fine sums use physical measure $\eta^d$; transposes below use
+that measure and are bilinear after complexification.
+
+\subsection{Definitions and exact constraints}
+\label{cg-algebra}
+
+Set
+\begin{align}
+ K&=d^Td,&\mathcal L&=D^TD,&
+ \mathcal A_0&=K+DRD^T+Q^Ta_{\rm pen}Q,&G_0&=\mathcal A_0^{-1},
+                                                        \label{cg-flat}\end{align}
+where $D$ is the scalar fine gradient, $d$ the bond curl, and
+$Q=Q_M^{\rm st}$ the flat bond average. The one-form penalty is
+fixed in a compact positive interval. Define
+\begin{equation}\label{cg-extension}
+ q_{\rm aux}=(QG_0Q^T)^{-1},\qquad
+ H=G_0Q^Tq_{\rm aux},\qquad
+ \Gamma=G_0-Hq_{\rm aux}^{-1}H^T.
+\end{equation}
+The matched flat extension satisfies $QH=I$ and $RD^TH=0$.
+With the scalar source projection and its constrained biharmonic
+inverse, write
+\begin{equation}\label{cg-projection}
+ Z=G'RG',\qquad \Lambda=Z\mathcal LD^T=G'RD^T,
+ \qquad \Pi=I-D\Lambda.
+\end{equation}
+The established flat identities give
+\begin{equation}\label{cg-scalar-identities}
+ Q_0Z=0,\quad \mathcal LZ\mathcal L=R,\quad
+ Z\mathcal L^2Z=Z,\quad G_0\Lambda^T=DZ.
+\end{equation}
+Since $\Lambda H=0$, they imply
+$\Gamma\Lambda^T=DZ$,
+$\Lambda\Gamma=ZD^T$, and
+$\Lambda\Gamma\Lambda^T=Z$.
+Expanding the two projection factors therefore proves
+\begin{equation}\label{cg-constrained}
+ \boxed{\ \mathcal C=\Pi\Gamma\Pi^T=\Gamma-DZD^T\ }.
+\end{equation}
+
+The cochain relation $QD=D_cQ_0$ gives $Q\Pi=Q$.
+Also $RD^T\Pi=RD^T-R\mathcal LZ\mathcal LD^T=0$.
+Consequently
+\begin{equation}\label{cg-constraints}
+ Q\mathcal C=0,\qquad RD^T\mathcal C=0,
+ \qquad \mathcal C Q^T=0.
+\end{equation}
+The last identity uses symmetry of $\mathcal C$.
+Since $\Gamma\mathcal A_0=I-HQ$, any
+$\xi\in\mathcal X:=\ker Q\cap\ker(RD^T)$ satisfies
+$\Gamma K\xi=\xi$. The identity $D^TK=0$ then gives
+\begin{equation}\label{cg-inverse-identities}
+ \mathcal CK\xi=\xi\quad(\xi\in\mathcal X),
+ \qquad \mathcal CKH=0.
+\end{equation}
+For the second assertion, use
+$KH=Q^T(q_{\rm aux}-a_{\rm pen}I)$ and
+\eqref{cg-constraints}. On real regulators
+$\mathcal C=\Pi\Gamma\Pi^T$ is nonnegative and is exactly
+the inverse of the Maxwell form restricted to $\mathcal X$:
+its range lies in $\mathcal X$, and
+$\langle\xi,K\mathcal Cf\rangle=\langle\xi,f\rangle$
+for every $\xi\in\mathcal X$.
+The restricted form is coercive because there it equals the
+positive form $\mathcal A_0$.
+
+\subsection{Uniform statement}
+\label{cg-statement}
+
+Let $S_{\rm jet}=(I,\nabla)$ contain every ordinary fine first
+difference of bond components. Finite component selections,
+shifts and curl contractions are allowed. For a fixed
+$0<\alpha<1$, use complete-field H\"older norms on fixed unit-cell
+collars and admissible positive weights satisfying
+$\varpi(n)/\varpi(m)\le e^{\kappa d(n,m)}$.
+The norm $N_{\alpha,\varpi}$ contains the field supremum,
+first-difference supremum, and the $\alpha$-H\"older seminorm of
+the first differences. The input norm
+$\norm{f}_{\alpha,\varpi}$ contains the weighted supremum and
+the collar $\alpha$-H\"older seminorm.
+
+\begin{theorem}\label{cg-schauder}
+For a sufficiently small fixed spatial exponent $\kappa>0$,
+uniformly in refinement and compatible periodic volume,
+\begin{align}
+ N_{\alpha,\varpi}(\mathcal Cf)
+       &\le C_\alpha\norm{f}_{\infty,\varpi},
+                                                    \label{cg-bounded}\\
+ N_{\alpha,\varpi}
+   (\mathcal CS_{\rm jet}^T(f_0,f_1))
+       &\le C_\alpha\bigl(\norm{f_0}_{\infty,\varpi}
+                          +\norm{f_1}_{\alpha,\varpi}\bigr).
+                                                    \label{cg-jet}
+\end{align}
+The same estimates hold on the full lattice. Thus the derivative
+datum has the same H\"older exponent as the output gradient.
+No assertion is made at either endpoint $\alpha=0,1$.
+\end{theorem}
+
+\subsection{The extension subtraction in Gamma}
+
+The established flat equal-exponent estimate gives
+$N_{\alpha,\varpi}(G_0\nabla^Tf)
+\le C_\alpha\norm{f}_{\alpha,\varpi}$, and the bounded-forcing
+estimate gives $G_0:\ell^\infty\to N_\alpha$.
+The localized extension satisfies
+\begin{equation}\label{cg-H-locality}
+ \norm{H(\cdot,b)}_{C^{1,\alpha}(\text{collar }n)}
+       \le C_\alpha e^{-\rho d(n,b)}.
+\end{equation}
+Moreover $q_{\rm aux}^{-1}=QG_0Q^T$ has an exponentially
+summable coarse kernel. Hence
+\begin{equation}\label{cg-Gamma-derivative}
+ \Gamma\nabla^T=G_0\nabla^T
+          -Hq_{\rm aux}^{-1}(\nabla H)^T
+\end{equation}
+maps $C^\alpha_\varpi$ to $N_{\alpha,\varpi}$ uniformly.
+In fact its subtracted term accepts bounded data: the physical
+transpose row is an integral over cells of volume one, so
+\eqref{cg-H-locality} bounds it without any power of the fine-cell
+dimension. The weighted exponential kernels can then be convolved.
+The undifferentiated argument also proves
+$\Gamma:\ell^\infty_\varpi\to N_{\alpha,\varpi}$.
+
+\subsection{A massive biharmonic comparison}
+\label{cg-biharmonic}
+
+It remains to estimate $DZD^T\nabla^T$. Put
+$Z_m=(\mathcal L+1)^{-2}$. We first prove the stronger remainder
+bound
+\begin{equation}\label{cg-remainder}
+ N_{\alpha,\varpi}
+   (D(Z-Z_m)D^T\nabla^Tf)
+       \le C_\alpha\norm{f}_{\infty,\varpi}.
+\end{equation}
+The canceled scalar alias formula is
+\begin{align}
+ Z_{00}&=R_{s,2}/D_{s,2},&
+ Z_{0s}&=-\frac{a_0^-a_s}{P_s^2D_{s,2}},&
+ Z_{r0}&=-\frac{a_r^-a_0}{P_r^2D_{s,2}},\nonumber\\
+ Z_{rs}&=\frac{\delta_{rs}}{P_r^2}
+       -\frac{P_0^2a_r^-a_s}{P_r^2P_s^2D_{s,2}},
+ &&r,s\ne0,                                   \label{cg-Z-alias}
+\end{align}
+where $D_{s,2}=a_0a_0^-+P_0^2\sum_{r\ne0}a_ra_r^-/P_r^2$.
+These expressions are uniformly holomorphic on a common enlarged
+tube, with all displayed canceled denominators bounded away from
+zero. A fixed further shrinking does the same for $P_0+1$;
+the high massive denominators are already gapped.
+
+The high diagonal difference is exactly
+\begin{equation}\label{cg-high-remainder}
+ P_r^{-2}-(P_r+1)^{-2}
+ =\int_0^\infty t(1-e^{-t})e^{-tP_r}\,dt,
+ \qquad r\ne0.
+\end{equation}
+There are three external differences in
+$D(Z-Z_m)D^T\nabla^T$, and at most one further output
+difference and an $\alpha$-increment. The small-time absolute
+row bound is therefore
+\begin{equation}\label{cg-time-budget}
+ t(1-e^{-t})t^{-(4+\alpha)/2}\le t^{-\alpha/2},
+ \qquad 0<t\le1,
+\end{equation}
+which is integrable. The established complex heat-image bounds
+apply through these fixed derivative orders by semigroup
+splitting. The removed central mode is bounded at small times,
+and the high spectral gap controls large times.
+
+For the rank terms, the high output vector $a_r^-/P_r^2$ is
+multiplied by at most $C(1+|r|)^{2+\alpha}$.
+With $w(r)=\prod_\nu(1+|r_\nu|)^{-1}$, its absolute sum is
+bounded by
+\[
+ C\sum_{j\ge0}(1+j)^{d-1}2^{-j(2-\alpha)}<\infty.
+\]
+The two input differences leave a row bounded by
+$C|a_s|(1+|s|)^{-2}$, whose alias $\ell^2$ norm is uniform.
+Central terms are bounded. Physical-cell $L^2$ is dominated by
+the supremum without a dimension factor. Reconstruction, periodic
+gluing of the complete operator, and contour shifting give the
+exponentially local version of \eqref{cg-remainder}.
+Only the reconstructed operator is periodized; separated central
+chart terms need not individually be periodic.
+
+For the massive part use
+\begin{equation}\label{cg-massive-heat}
+ Z_m=\int_0^\infty t e^{-t}e^{-t\mathcal L}\,dt.
+\end{equation}
+The output gradient of $DZ_mD^T\nabla^Tf$ has four fine
+differences of the heat kernel. The required next difference
+has five. For $k=4,5$ the weighted moment estimate is
+\begin{equation}\label{cg-moments}
+ \sum_v e^{\kappa|v|_1}|v|_1^\alpha
+       |\nabla_\eta^k p_t^\eta(v)|
+       \le C_{k,\alpha}t^{(\alpha-k)/2},
+       \qquad 0<t\le1.
+\end{equation}
+For $t\ge\eta^2$, split into $k$ heat factors and use the
+weighted first-difference estimate at exponential scale
+$\kappa+t^{-1/2}$; the extra exponential pays for the moment.
+For $t<\eta^2$, expand the fixed $k$ differences into shifts of
+size at most $k\eta$. The dimensionless walk has time below one,
+giving $C\eta^{\alpha-k}\le Ct^{(\alpha-k)/2}$.
+Thus no sub-mesh time range is omitted.
+
+Every derivative row has sum zero. Subtracting the value of $f$
+at the output point and using the complete weighted H\"older
+increment bound gives
+\begin{align}
+ \norm{t\nabla^4e^{-t\mathcal L}f}_{\infty,\varpi}
+   &\le Ct^{-1+\alpha/2}\norm{f}_{\alpha,\varpi},\nonumber\\
+ \norm{t\nabla^5e^{-t\mathcal L}f}_{\infty,\varpi}
+   &\le Ct^{-3/2+\alpha/2}\norm{f}_{\alpha,\varpi}.
+                                                        \label{cg-cancellation}
+\end{align}
+For output separation $\eta\le r\le1$, split at $t=r^2$:
+below it use twice the first bound, and above it use $r$ times
+the second along a fine path in an enlarged fixed collar.
+The gradient difference, divided by the input norm, is at most
+\begin{equation}\label{cg-schauder-split}
+ C\int_0^{r^2}t^{-1+\alpha/2}\,dt
+ +Cr\int_{r^2}^1t^{-3/2+\alpha/2}\,dt+Cr
+ \le C\left(\frac2\alpha+\frac2{1-\alpha}+1\right)r^\alpha.
+\end{equation}
+The last term is the massive large-time tail, with a sufficiently
+small fixed exponential weight. Larger separations use the
+supremum bound. The gradient supremum is integrable for
+$\alpha>0$; the field supremum has absolute small-time budget
+$t\,t^{-3/2}=t^{-1/2}$. Therefore
+\begin{equation}\label{cg-massive-result}
+ N_{\alpha,\varpi}(DZ_mD^T\nabla^Tf)
+       \le C_\alpha\norm{f}_{\alpha,\varpi}.
+\end{equation}
+Combining \eqref{cg-remainder} and \eqref{cg-massive-result}
+proves the differentiated subtraction estimate. Without the
+last input derivative, the absolute budget is
+$t\,t^{-(3+\alpha)/2}$, integrable for $\alpha<1$; this gives
+$DZD^T:\ell^\infty_\varpi\to N_{\alpha,\varpi}$.
+Equation \eqref{cg-constrained} and
+\eqref{cg-Gamma-derivative} now prove
+Theorem~\ref{cg-schauder}.
+
+\subsection{Full-lattice identities and the application boundary}
+
+The massive estimates use complete fields and global heat-row
+cancellation. The remainder estimates use exponentially local
+pointwise cell kernels with input derivatives already on the
+kernel. No sharp restriction of a H\"older field to one cell is
+used. Exact periodization preserves the estimates, including
+small compatible tori and their incidence multiplicities.
+
+At each fixed spacing the identities above extend from Hilbert
+fields to bounded or admissibly weighted complete fields by
+absolute summability of the operator products. In particular
+$R=\mathcal LZ\mathcal L$ is exponentially summable; fixed-mesh
+equivalence of cell norms suffices for this identity argument.
+It is not necessary to call the gauge projection local.
+For $\xi\in\mathcal X\cap N_\alpha$, $K\xi$ can be read as
+a first-divergence datum with H\"older coefficients, and
+\eqref{cg-inverse-identities} agrees with that interpretation.
+
+This supplies the bounded-forcing and equal-exponent jet-forcing
+Green inputs for the fixed-flat-gauge nonlinear stationarity
+argument. The nonlinear action force, nonlinear constraint
+derivatives and strict-minimum argument are separate ingredients.
+No moving-gauge nonflat Schauder estimate, mixed retained-history
+result or interacting continuum limit is asserted here.
+
+\end{document}

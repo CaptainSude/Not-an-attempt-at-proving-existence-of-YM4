@@ -1,0 +1,17 @@
+LOCAL POSITIVE DRIFT / FINITE SHOOTING: INDEPENDENT AUDIT
+17 October 2026. theorem_audit.
+Read work/local_positive_drift_fragment.tex in full.
+
+RESULT: pass under its explicit UC and existing finite local-system hypotheses. No mathematical correction requested. No output edits or compilation.
+
+1. Parameter order and structural uniformity. R,J,b and the established amplitude return length q_a are fixed first. A finite multiple q of q_a is then chosen so C_cmp<=11alpha_g q logR and R^q>=K0. The exact leading cocycle and infinite classical marginal preservation apply only within one joint structural system. Their leading sum is>=delta=11alpha_g q logR. No exact finite short-lift additivity is asserted.
+
+2. Finite transfer. Given the stated joint compactness/moment passage for arbitrary varying old depths and cofinal compatible periods, a violating sequence with final period tending to infinity contradicts the uniform structural lower bound. Therefore a single N_drift works for all preceding depths. This is qualitative, and the fragment does not infer a rate. The inclusion of the long-ratio determinant in the same joint system is essential and is present.
+
+3. Actual errors. Leakage is made<=delta/(8q), and the zero-input parity plus inherited-input errors together<=delta/(8q), uniformly for all sufficiently weak real g. Thus q actual errors total<=delta/4. Combined with the finite leading lower bound delta/2, the actual decrement is>=delta/4. The upper bound q D_abs is immediate. The activity system is reused q/q_a times, so no new large-endpoint field-dilation estimate is smuggled into the parameter choice. Intermediate periods exceed the same chosen threshold.
+
+4. Shooting. The auxiliary clipped coupling max(gamma,Gamma_w)^-1/2 is continuous and always weak. Prescribed-coupling bounds apply to every realized sequence; adaptivity adds no new estimate. For a fixed finite horizon/regulator, the initial compact interval and absolute increments bound every intermediate gamma, so the evaluated couplings stay in a compact positive interval. The existing real finite quotient continuity suffices; no continuity at g=0, uniform modulus or continuous representative choice is required. At the two initial endpoints the terminal gamma brackets Gamma_*, so the intermediate value theorem applies.
+
+5. Removing clipping. Backward summation of the positive q-block decrements gives gamma_kq>=Gamma_*. Within a block gamma can drop by at most qD_abs. The terminal margin Gamma_*>=Gamma_w+qD_abs keeps every intermediate gamma>=Gamma_w. Thus the selected clipped history is an actual unmodified local trajectory. The bounds on gamma_bare and g_bare then follow, with q fixed before the arbitrary horizon m.
+
+6. Reality and normalization. The fragment explicitly restricts to real initial classes and real branches. Activity replacement uses equality of normalized finite totals, with constant changes assigned to exact vacuum factors. This is the genuine local density germ/continuation, not a claim about all large-field configurations. The final scope correctly excludes full Wilson-measure history, continuum measures, nontriviality and mass gap. No uniqueness or cross-horizon consistency of the tuned bare coupling is claimed.

@@ -1,0 +1,150 @@
+INDEPENDENT AUDIT: ACTUAL VECTOR SHORT-TIME ESTIMATE
+17 October 2026. Auditor: provenance.
+
+Audited work/vector_short_time_research.txt, Sections 1--7, including
+the added global straight-average estimate (2.2a).
+
+RESULT: PASS, conditional exactly on the inherited classical
+current-coordinate kernel and gauge-covariance inputs listed in
+Section 1. No mathematical correction requested. In particular, the
+argument proves the claimed absolute integral on 0<s<1, uniformly in
+the old depth M and composite endpoint K=ell^k. It does not prove the
+intermediate-time vector coefficient, a large-time vector bound, or
+the full signed determinant comparison.
+
+1. Counting coordinates and the composite constraint
+
+The primitive identity C_ell=A_ell-D_ell b_ell and its sampled-center
+gauge identity give the displayed recurrence by direct substitution:
+
+ C_ell^(r)(A_r-D_r b_r)
+ =A_(ell r)-D_(ell r)[b_ell^(r)A_r+R_ell b_r].
+
+There is no substitution of a direct-K contour map for the actual
+composite. The unrolled scalar restrictions in (2.2a) have counting
+L2 norm at most one. For A_r, the absolute row sum is r. A fine bond
+has precisely r longitudinal starting points among the partitioned
+strings, each weighted r^-d, so its column sum is r^(1-d).
+Thus the Schur estimate ||A_r||<=r^(1-d/2) is correct. In d=4 the
+geometric sum over r=ell^j is uniformly bounded. This independently
+verifies the weaker, sufficient ||C_K||=O(1) claim.
+
+The alternate row proof also checks: at most 2r^d occurrences of
+size at most r^(1-d) give the stated row-L2 estimate, while the two
+endpoint-block dependency geometry bounds the number of output
+rows reading a given fine bond by a dimension-only constant.
+Periodic occurrences must be interpreted as in the note; no
+physical mesh-volume factor belongs in this counting calculation.
+
+2. Analytic magnetic jets and stage clipping
+
+The stage-j ordinary affine background is
+t r^2 z_nu/K^2 in level-j coordinates. A final row reads only a
+fixed multiple of K/r such coordinates, hence its required stage
+amplitude is O(|t| r/K). Clipping the coordinate, independently at
+each stage, preserves holomorphy in t and agrees on the complete
+dependency closure of that row. It is unnecessary for the clipped
+fields to form a single blocking trajectory: only the selected row
+of the derivative product is identified with the actual trajectory.
+
+Primitive row AND column incidence justify (3.2) as an operator
+estimate, not merely an entrywise one. Each intervening unmarked
+product is a consecutive flat composite segment already bounded in
+Section 2. Consequently the subset expansion gives C_0^(n+1) for
+n marked stages and sums to (3.3). The sum of r/K is bounded
+independently of k. Cauchy therefore yields uniform first-two
+row jets at a centered final root.
+
+At another final root y, the indicated site gauge removes the
+constant t y_nu/K from the translated affine potential. Its frame
+jets grow polynomially in y, uniformly in K, as explicitly retained
+in (3.4). This is a statement about polynomial jets, not about a
+bounded operator family at a nonzero global affine field.
+
+3. Base-vector ultraviolet estimate
+
+At flatness q_M is bounded with a uniform current-lattice exponential
+Schur norm; D_bD_b^T has uniformly bounded nearest-neighbor
+coefficients for every pin spacing K. Therefore the short-time
+semigroup bound requires no spectral gap.
+
+For each diagonal root x, local gauge covariance permits the
+constant Cartan potential at x to be removed before differentiating
+the color trace. The remaining source is (z_nu-x_nu)/K^2.
+The uniform rooted source kernels through fourth action order
+absorb the polynomial distances. One second-order insertion and
+two first-order insertions then cost respectively K^-4 s and
+K^-4 s^2. Summing the dK^4 diagonal roots gives (4.2).
+
+The based scalar domain (zero at the selected centers) is preserved
+by sitewise adjoint frames, so using a local gauge for this
+covariance calculation does not require that the gauge itself be
+the identity at every center. No continuously variable torus flux
+is used.
+
+4. Block operator norms versus block dimension
+
+The fine source estimates imply polynomially growing, exponentially
+decaying K-block operator kernels for the first two magnetic jets.
+For nearby blocks, fine row/column Schur estimates control the
+block operator norm, with no K^4 factor. For separated blocks the
+fine distance is at least K times the block distance minus a fixed
+number of block widths; this supplies a uniform positive block
+exponent. The powers K^-2 per affine source compensate the current
+coordinate scale K in the source polynomials, with room to spare.
+
+The finite-range C_j block estimates then apply to a C^T C.
+Short-time semigroup expansions and one/two Duhamel insertions give
+(5.1), spending an exponential reserve to sum polynomial factors.
+This step does not take a trace on the fine block fiber.
+
+5. The decisive trace calculation
+
+The Duhamel difference (6.1) has the stated order and sign. The
+cyclicity identity
+
+ Tr_f[P_0 E_V C^T C E_B]
+     =Tr_c[C E_B P_0 E_V C^T]
+
+is exact. The right side sums ALL coarse roots, as the note
+emphasizes. At a coarse root Y it is a product through the
+finite-dimensional coarse fiber of dimension d dim(g), although
+the intermediate P_0 space has dimension proportional to K^4.
+The absolute trace is thus bounded by d dim(g) times the two
+operator norms. Their first-two jet coefficients decay
+exponentially in the distance of Y from zero, up to fixed
+polynomials. Summing Y costs a fixed constant. The Duhamel
+integration length supplies s, proving (6.3).
+
+For fixed K, P_0 has finite rank. The jet coefficient estimates
+also give absolute sums, justifying the cyclicity first on finite
+approximants and then in the structural infinite system.
+The holomorphic transpose poses no problem: at each coefficient
+the usual complex operator-norm trace inequality applies.
+
+6. Scope
+
+The final uniformity is in M, K and compatible regulator
+approximations of the specified infinite polynomial jets.
+Constants may depend on the fixed primitive ratio ell, chosen
+analytic mean, color group, penalty a and inherited classical
+kernel bounds. The estimate is not an assertion about arbitrary
+finite magnetic-flux families or direct-K ordinary means.
+
+The proof deliberately establishes only 0<s<1. Its exp(Cs)
+semigroup bound is not usable as a large-time decay bound.
+In particular the additional logarithmic based-ghost band found
+in the pinned-ghost analysis still needs a combined vector/ghost
+comparison or a different quotient reformulation.
+
+FRAGMENT FIDELITY ADDENDUM
+
+Read work/vector_short_time_fragment.tex in full against the passed
+research proof. PASS. The explicit scalar restrictions, global
+straight-average Schur proof, local analytic stage clipping, fixed
+coarse rank with P_0 retained, and all uniformity limitations are
+preserved. The opening now correctly states the final claim only
+for the actual joint infinite structural-system polynomial jets.
+Static check: 25 labels, all unique; all refs internal and resolved;
+no invalid control characters. No mathematical or transcription
+correction requested.

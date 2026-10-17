@@ -1,0 +1,387 @@
+% No preamble. Prefix fml-. Qualitative uniform finite leakage on cofinal periods.
+\section{Uniform disappearance of finite classical marginal leakage}
+\label{fml-section}
+
+This section gives a qualitative uniform statement along the
+standard nested compatible period family. It does not assert
+exact finite marginal preservation or an exponential convergence
+rate. The preceding classical depth may vary arbitrarily with
+the period. The proof uses the already established exact
+preservation of the true infinite Maxwell coefficient in each
+joint classical system, rather than identifying different
+limiting systems.
+
+\subsection{Period family and statement}
+\label{fml-setup-section}
+
+Fix the primitive ratio \(\ell\), an admissible composite ratio
+\(R=\ell^s\), auxiliary grouping \(J\), carrier exponent \(a_0\),
+and one positive common analytic radius \(b\). All these data
+are fixed. Let \(\mathcal P\) be a compatible nested family of
+cubic output periods tending to infinity and satisfying
+\begin{equation}
+ \text{for each fixed }q\ge0,\quad
+ R^q\mid N\quad\hbox{for all sufficiently late }N\in\mathcal P.
+ \label{fml-divisibility}
+\end{equation}
+All grouping and source-geometry divisibilities are also
+imposed. The standard nested source tori have this property;
+for example \(N=2\ell^k\) does when the fixed grouping is
+compatible. Arbitrary growing multiples of \(J\) with bounded
+\(\ell\)-adic valuation are not covered by this argument.
+
+Let \(\mathcal T_{M,R,N}\) be the actual pre-gauge classical
+substitution from the input torus of current period \(RN\)
+to the output torus of period \(N\). Use the actual finite
+short-lift Maxwell ratios, each normalized by its own actual
+finite homogeneous reference, and define
+\begin{equation}
+ \Lambda_{M,R,N}
+   =\beta_{MR,N}\mathcal T_{M,R,N}-\beta_{M,RN}.
+ \label{fml-leakage}
+\end{equation}
+This is a linear functional on the invariant finite activity
+quotient at the common \(a_0,b\). On an extracted input it
+is the finite classical marginal leakage.
+
+\begin{theorem}[Qualitative uniform finite leakage]
+\label{fml-theorem}
+For all sufficiently large lower period thresholds \(K\), set
+\begin{equation}
+ \omega_{R,J,b}(K)
+   =\sup_{\substack{M,\ N\in\mathcal P\\N\ge K}}
+      \ \sup_{\substack{x\ {\rm invariant}\\\|x\|\le b^2}}
+                     |\Lambda_{M,R,N}x|.
+ \label{fml-modulus}
+\end{equation}
+Then
+\begin{equation}
+                         \omega_{R,J,b}(K)\longrightarrow0
+                         \quad(K\longrightarrow\infty).
+ \label{fml-vanishing}
+\end{equation}
+The supremum allows every permitted preceding homogeneous
+depth \(M\), with no fixed-depth or bounded-depth restriction.
+\end{theorem}
+
+The function in \eqref{fml-modulus} is finite and decreasing
+above the reference thresholds. Indeed the uniform finite
+moment bound and fixed-\(R\) transport bound give
+\begin{equation}
+ \omega_{R,J,b}(K)\le C_\beta(B_R+1).
+ \label{fml-crude-bound}
+\end{equation}
+The factor \(b^{-2}\) in the dual moment norm cancels the
+input normalization \(b^2\). The theorem asserts a
+qualitative improvement of this bound, not a rate.
+
+\subsection{Compactness of varying finite input classes}
+\label{fml-input-compactness}
+
+Take any sequence \(M_n\), periods \(N_n\in\mathcal P\)
+tending to infinity, and invariant finite input classes
+\(x_n\) with \(\|x_n\|\le b^2\). Choose representatives
+\(E_n\) on the input tori with
+\begin{equation}
+                         \|E_n\|_{a_0,b}\le b^2+\epsilon_n,
+                         \qquad \epsilon_n\downarrow0.
+ \label{fml-near-minimal}
+\end{equation}
+Average each family over the finite translations by
+\(J\)-cells, translating its carriers and arguments
+together. Its anchored norm does not increase, because
+the translations permute the root sums. Its normalized
+total remains exactly the same by the total translation
+invariance of \(x_n\). The resulting array is covariant
+under \(J\)-cell translations, while the total retains
+all original unit-translation, point and local gauge
+identities. No coefficientwise gauge invariance is needed.
+
+Apply the proved analytic-interaction compactness argument
+at the same open radius \(b\). On every fixed embedded
+connected carrier, finite-dimensional Montel compactness
+gives local uniform convergence of its coefficient function.
+A countable diagonal extraction gives an infinite family
+\(E_\infty\). Fatou on finite rooted carrier collections,
+followed by radii increasing to \(b\), yields
+\begin{equation}
+                         \|E_\infty\|_{a_0,b}\le b^2.
+ \label{fml-limit-norm}
+\end{equation}
+There is no analytic-radius loss.
+
+Vacuum-normalized totals converge on compactly supported
+fields. The anchored cardinality reserve makes the
+large-carrier remainder uniformly small, and every fixed
+carrier eventually embeds without wrapping. Local gauge
+and spatial identities pass on their common compact-field
+domains by the same total-continuity argument. Thus
+\(E_\infty\) represents an invariant infinite class
+\(x_\infty\).
+
+Fixed-order total kernels converge locally, in particular
+\begin{equation}
+                K_{2,n}^{\rm in}\longrightarrow K_2(x_\infty).
+ \label{fml-input-kernel-limit}
+\end{equation}
+They have the common exponential row and moment bounds
+following from the activity norm. No numerical value of
+\(M_n\) enters this input compactness argument.
+
+\subsection{Joint extraction when the classical depth varies}
+\label{fml-varying-depth-section}
+
+The classical maps and references must be extracted jointly
+with the input interactions. For every fixed depth shift
+\(j\ge0\) and endpoint power \(L=R^q\), use the actual finite
+data at depth \(M_nR^j\), on compatible periods obtained
+from \(RN_n\) by finitely many divisions by \(R\) and \(L\).
+Condition \eqref{fml-divisibility} ensures that all these
+data exist for sufficiently large \(n\), and their periods
+still tend to infinity.
+
+For each fixed endpoint \(L\), an observed current output
+fiber contains only \(L^4\) times a fixed number of link
+and color coordinates. This dimension is independent of
+the preceding refinement \(M_n\). The previously proved
+classical inputs are uniform in that refinement:
+\begin{itemize}
+ \item a positive common holomorphic radius;
+ \item strict support and cardinality bounds;
+ \item complete \(C^{1,\alpha}\) bounds and the exact
+       \(1/L\) pre-gauge amplitude;
+ \item actual finite reference transport and minimum
+       comparison identities;
+ \item the controlled finite near-identity gauge comparisons.
+\end{itemize}
+Apply analytic compactness to the reference families and
+complete-output-family compactness to each fixed-endpoint
+map. One diagonal subsequence contains every depth shift
+and every endpoint power in this countable collection.
+
+Denote the resulting references by \(S_j^*\) and the maps
+by \(\mathcal T_{j,q}^*\), with endpoint \(R^q\). The index
+\(j\) records a relative depth shift. No assertion
+\(S_j^*=S_{M_*R^j}\) for a finite \(M_*\) is made.
+The uniform flat Maxwell normalization and exponential
+kernel bounds give
+\begin{equation}
+                           \beta(S_j^*)=1.
+ \label{fml-reference-normalization}
+\end{equation}
+
+The fixed-radius reference bounds, exact transport and
+scalar semigroup pass to this joint system. For compact
+fields the anchored tails justify passage of normalized
+reference values, without passage of an extensive vacuum
+energy. The scalar semigroup on every invariant input
+class uses the actual finite small connecting gauges
+and their endpoint estimates. These estimates are uniform
+in \(M_n\); their compact extraction and the summable-gauge
+argument therefore apply to this varying-depth sequence
+as well. They never require the numerical label \(M_n\)
+to be fixed.
+
+Equivalently, for each fixed endpoint pair, pass the finite
+comparison germ together with its actual controlled gauge
+data, and then use holomorphic continuation on the
+common field domain. The comparison germ can be smaller
+for a large endpoint; the uniform pre-gauge domain remains
+the same. The support estimate at fixed classical reserve
+is uniform in all endpoint powers, and no high-jet
+field-dilation radius is used here.
+
+The resulting system satisfies
+\begin{equation}
+ \mathcal T_{j,q}^*S_j^*=S_{j+q}^*,\qquad
+ \mathcal T_{j+q,r}^*\mathcal T_{j,q}^*
+                         =\mathcal T_{j,q+r}^*.
+ \label{fml-limit-semigroup}
+\end{equation}
+It also has the uniform quadratic-only spatial estimate
+at fixed \(b\) for arbitrarily large endpoints \(R^q\).
+It therefore satisfies precisely the hypotheses of
+the exact infinite Maxwell-preservation proof, which gives
+\begin{equation}
+                   \beta(\mathcal T_{0,1}^*x)=\beta(x)
+                   \quad\hbox{for every invariant }x.
+ \label{fml-limit-preservation}
+\end{equation}
+
+This is a varying-depth structural limit, not an invocation
+of a fixed-\(M\) limit theorem. Different limiting systems
+need not coincide. Every possible system extracted this
+way has \eqref{fml-limit-preservation}, which is the only
+property needed below.
+
+\subsection{The transported Hessian and its moment tails}
+\label{fml-Hessian-section}
+
+Let
+\begin{equation}
+                       H_n=Da_{M_n,R,N_n}(0)
+ \label{fml-linear-response}
+\end{equation}
+be the actual linearized pre-gauge angle map. It takes
+output current-angle directions on period \(N_n\) to
+input current-angle directions on period \(RN_n\).
+Its transpose in the scalar Hessian formula is the
+ordinary counting-coordinate transpose: all physical
+rescaling is already in this angle map.
+
+The complete support-family estimate and Cauchy at zero
+give
+\begin{equation}
+ |H_n(b,c)|
+       \le C_R e^{-\kappa_R d(\operatorname{root}(b),c)}.
+ \label{fml-response-envelope}
+\end{equation}
+The root is the final-unit cell containing the input
+bond after division of its coordinates by \(R\).
+Fixed internal link and color conventions are absorbed
+into \(C_R\). One may retain the amplitude \(1/R\), but
+\(R\) is fixed in this proof.
+
+Each root contains only \(O(R^4)\) input coordinates.
+Thus \eqref{fml-response-envelope} gives both row and
+column exponential Schur bounds, with constants independent
+of \(M_n\) and volume. Joint local holomorphic convergence
+implies local convergence \(H_n\to H_*\).
+
+The total first derivative of each input vanishes by
+global semisimple color invariance, and the actual
+pre-gauge map vanishes at zero. Consequently the exact
+finite Hessian chain rule is
+\begin{equation}
+                       K_{2,n}^{\rm out}
+                           =H_n^T K_{2,n}^{\rm in}H_n.
+ \label{fml-Hessian-product}
+\end{equation}
+There is no term involving the second derivative of
+the background map.
+
+The exponential envelopes for the two response legs
+and the input kernel give a uniform output exponential
+row bound. To see this, connect the two output source
+roots through the intermediate input roots. A fixed
+fraction of the minimum response and input decay
+exponent pays the output separation; the remaining
+geometric sums are bounded by their infinite-lattice
+sums. The \(O(R^4)\) fiber multiplicity is fixed. No
+factor from \(M_n^4\) fine coordinates appears.
+
+These bounds also prove local convergence of
+\eqref{fml-Hessian-product}: truncate its two intermediate
+root sums to a fixed neighborhood, pass the finite
+sum entrywise, and then remove the truncation using
+the common exponential majorant. Hence
+\begin{equation}
+ K_{2,*}^{\rm out}
+       =H_*^T K_2(x_\infty)H_*,
+ \label{fml-output-kernel-limit}
+\end{equation}
+which is the Hessian of
+\(\mathcal T_{0,1}^*x_\infty\). The same estimates give
+uniformly summable second displacement moments.
+
+\subsection{Convergence of the actual finite Maxwell ratios}
+\label{fml-moment-section}
+
+For locally converging torus kernels with a uniform
+exponential row bound, the symmetric short-lift second
+moments converge to the true infinite second moment.
+First restrict to a fixed displacement radius; that
+finite sum converges locally. The remaining second
+moment is bounded uniformly by an exponentially decaying
+tail in that radius. The short-lift cutoff
+\(\lfloor N_n/16\rfloor\) tends to infinity, so it
+produces no residual term. Fixed midpoint shifts are
+handled by the same majorant.
+
+The finite reference denominators tend uniformly to one
+by the established flat \(q_M\) periodization estimate,
+including for varying \(M_n\). Therefore
+\begin{align}
+ \beta_{M_n,RN_n}(x_n)
+                 &\longrightarrow\beta(x_\infty),\notag\\
+ \beta_{M_nR,N_n}(\mathcal T_{M_n,R,N_n}x_n)
+                 &\longrightarrow
+                     \beta(\mathcal T_{0,1}^*x_\infty).
+ \label{fml-ratio-limits}
+\end{align}
+These are the actual finite reference-normalized ratios.
+Their full nonlinear references have not been replaced
+by canonical periodizations, and no extensive total
+action limit is used.
+
+\subsection{Uniform contradiction and consequences}
+\label{fml-proof-section}
+
+\begin{proof}[Proof of Theorem~\ref{fml-theorem}]
+If \eqref{fml-vanishing} failed, there would be
+\(\delta>0\) and sequences as above with
+\[
+                     |\Lambda_{M_n,R,N_n}x_n|\ge\delta
+\]
+for every \(n\). Extract the joint subsequence constructed
+in the preceding sections. By \eqref{fml-ratio-limits},
+the limiting difference is
+\[
+ \beta(\mathcal T_{0,1}^*x_\infty)-\beta(x_\infty)=0
+\]
+by \eqref{fml-limit-preservation}. This contradicts the
+lower bound and proves the theorem.
+\end{proof}
+
+On extracted inputs the conclusion reads
+\begin{equation}
+ \sup_{\substack{M,\ N\in\mathcal P,\ N\ge K\\
+           \beta_{M,RN}(x)=0,\ \|x\|\le b^2}}
+       |\beta_{MR,N}(\mathcal T_{M,R,N}x)|
+                            \longrightarrow0.
+ \label{fml-extracted-conclusion}
+\end{equation}
+The unextracted statement \eqref{fml-modulus} is slightly
+stronger and needs no projection-loss factor. By linear
+homogeneity it gives, for arbitrary invariant inputs,
+\begin{equation}
+ |\Lambda_{M,R,N}x|
+       \le \omega_{R,J,b}(K)b^{-2}\|x\|,
+       \qquad N\in\mathcal P,\ N\ge K.
+ \label{fml-scaled-bound}
+\end{equation}
+
+For a prescribed per-step drift tolerance, choose \(K\)
+so that \(\omega_{R,J,b}(K)\) is sufficiently small.
+Every step of a permitted finite history whose output
+period remains at least \(K\) then has the same leakage
+bound, uniformly in the preceding depth and the length
+of that history. On the established envelope
+\(\|x\|\le C_{\rm int}b^2\), multiply the tolerance by
+\(C_{\rm int}\), or choose \(K\) so that
+\(\omega_{R,J,b}(K)\) is the desired tolerance divided
+by this fixed constant.
+
+\subsection{Qualifications}
+\label{fml-scope-section}
+
+The result is qualitative. It supplies no exponential
+rate, no summability of leakage over infinitely many
+changing periods, and no exact zero at finite volume.
+The per-step consequence is a magnitude bound, not a
+sign or an accumulated-drift assertion.
+
+The cofinal divisibility assumption
+\eqref{fml-divisibility} is part of the theorem. An
+extension to arbitrary increasing compatible multiples
+with bounded endpoint divisibility would require an
+additional uniform period-extension or local-volume
+comparison. It does not follow merely from \(N\to\infty\).
+
+The limiting systems have not been identified with
+one another. Exact infinite Maxwell preservation holds
+in each separately and rules out every nonzero leakage
+subsequence. No quantum drift sign, determinant value,
+infinite physical running trajectory, or global
+measure interpretation follows from this compactness
+argument.

@@ -1,0 +1,71 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 33: gauge-invariant determinant densities and Cartan probes}
+\author{Research working document}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We identify a constant-curvature calculation with the actual
+Maxwell coefficient of the leading quantum correction.
+The starting point is the exact vector, based-ghost and
+effective-Hessian determinant identity of Notebook 32.
+
+At a fixed composite endpoint, the matrices transform by
+background-gauge conjugation. Their diagonal color traces
+therefore define individually gauge-invariant analytic
+densities. Fixed-endpoint gaps and exponentially localized
+source kernels make their matrix logarithms local, uniformly
+in compatible volume. A rooted-density Ward argument proves
+that their quadratic affine coefficient is precisely the
+second-displacement moment of the total Hessian. This
+resolves the ambiguity that would arise from evaluating
+an arbitrary integration-by-parts density on an unbounded
+affine connection.
+
+Commuting affine connections are exactly Wilson stationary
+and are preserved by the actual centered ordinary averaging
+maps. An exponential-kernel uniqueness argument identifies
+their polynomial stationary jets with the constructed
+minimum section. The envelope identity extends the
+zero-current conclusion to the effective classical actions.
+The constraint multiplier consequently vanishes through
+the background orders needed for the Maxwell calculation.
+
+The resulting coefficient is an explicit diagonal trace
+expression on a constant Cartan-curvature probe, using
+the actual composite constraint and its normalized
+determinants. For the bare composite it involves the
+Wilson Hessian directly. The coarse contribution already
+has a uniform bound. We compute a specified massive
+continuum proper-time reference, including its positive
+logarithmic coefficient and a uniform finite-part bound.
+An exact heat-integral formula for the actual lattice
+coefficient isolates sufficient estimates on three
+heat-time intervals. Those estimates for the actual
+family remain incomplete. A closed-walk expansion proves
+the short-time bound for the actual based-ghost part,
+uniformly in endpoint and preceding depth. The vector
+part, the other heat-time intervals and the subsequent
+full-measure and continuum arguments remain.
+\end{abstract}
+
+All new arguments below are working proofs checked against
+the stated inputs from Notebooks 15--32. The matrix-logarithm
+locality estimates fix the endpoint before taking a volume
+limit. They are not estimates uniform in the ultraviolet
+depth. An affine field is used only through polynomial
+extensions of localized derivatives; no periodic family
+of continuously varying magnetic flux is assumed.

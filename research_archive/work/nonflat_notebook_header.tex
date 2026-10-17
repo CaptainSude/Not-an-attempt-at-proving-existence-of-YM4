@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 14: nonflat backgrounds and energy stability}
+\author{Research working document}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We pass from fixed-reference nonlinear averages to the actual
+moving-reference averaging operators in a small global connection
+chart. An explicit endpoint term corrects the change of derivative
+coordinates. An exact cumulative gauge relation controls ordinary
+reference backgrounds uniformly through the blocking depth, giving
+small perturbations of both source averaging operators in physical
+weighted norms. A separate Wilson plaquette calculation and a form
+resolvent argument then control a gauge-fixed inverse, including the
+scalar compression that defines its gauge projection. The inverse
+estimates concern the energy blocks, with at most one derivative on
+each side. They apply on a small global physical C1 ball, not yet on
+the source's full local-frame and retained-history domains.
+\end{abstract}
+\noindent\textbf{Status.}
+Research proofs checked through separate internal derivations and
+audits. No external certification or novelty claim is made. The
+explicit source-coordinate matches below refer to the deposited
+transcriptions at the pinned commit, not to newly recovered original
+CMP98 or CMP99b papers. The action and transpose normalizations are
+stated explicitly at the point where the Wilson operator is used.

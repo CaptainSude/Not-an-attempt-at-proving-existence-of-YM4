@@ -1,0 +1,101 @@
+17 October 2026. Root independent substantive read of
+determinant_gauge_bridge_research.md, Sections 1--7.
+
+Result: the finite identities and negative spectral test pass.
+This is an internal mathematical audit, not external certification
+and not a proof of the remaining uniform reference comparison.
+
+1. The left-relative constraint multiplier gives the exact Hessian
+L=s''-lambda.f''. The nonlinear pivot chart produces K0^T L K0;
+stationarity alone would not justify using s''.
+
+2. Based gauge invariance of the critical Lagrangian yields
+C D_b=L D_b=0. Actual contour covariance gives T D_b=-I.
+On ker C, shifting by D_b T v puts v in the contour-zero
+complement. The established retained positive Hessian therefore
+gives positivity of L modulo exactly these based gauge directions.
+
+3. Write each fiber vector in the same complement-plus-D_b
+coordinates. Its background-dependent coordinate Jacobian is the
+same for the two gauges. Integrating the vertical coordinate
+contributes |det(F D_b)|^-1. This proves
+det(A_T)^-1/2=det(D_b^T D_b) det(A_b)^-1/2.
+No orbit-density factor is discarded.
+
+4. The ambient coordinate matrix [K0,h] has absolute determinant
+|det C_p|^-1 and C[K0,h]=[0,I]. Its Schur complement proves
+det Q_b det(C Q_b^-1 C^T)=(det C_p)^2 det A_b.
+Target left-relative Haar density is constant at the target
+coordinate origin, so no j(log W) factor belongs in this identity.
+
+5. The exact local minimum comparison makes
+R=S_M-S_MK(F_K) nonnegative and critical near the saddle.
+Thus H_res=L-C^T q_eff C is positive semidefinite. Full gauge
+invariance annihilates the full infinitesimal gauge directions.
+The actual minimum-section derivative H obeys CH=I and
+H_res H=0. The canonical completion
+H_res+D_b D_b^T+C^T C is positive, by its nullspace argument.
+This supplies no uniform gap.
+
+6. At flat background the scalar trial equal to one except at
+all block centers has norm squared (K^d-1)n_c and energy 2d n_c.
+The stated Rayleigh upper bound and failure of a uniform CK^2
+inverse bound in dimension four follow. No lower spectral
+asymptotic is being asserted.
+
+7. Schur signs checked:
+log G_b=log G_f-log S_g;
+log Q_b=log Q_f-log S_v.
+Hence the coarse package is
+-logdet S_g +(1/2)logdet S_v -(1/2)logdet M_b.
+The globally based full ghost differs from the usual all-site
+massive ghost. The research explicitly keeps this zero-mode and
+mass comparison open.
+
+The numerical coefficient, its sign, a uniform depth-independent
+Maxwell finite-part estimate and full existence are not consequences
+of these exact finite identities.
+
+Later checked additions:
+
+8. Set H_b=H-D_b G_b^-1 D_b^T H. Then C H_b=I,
+D_b^T H_b=0, H_res H_b=0 and L H_b=C^T q_eff.
+For general Q_b=L+D_bD_b^T+C^TBC,
+Q_b H_b=C^T(q_eff+B), and
+q_eff+B=H_b^T Q_b H_b>0.
+Consequently M_b=(q_eff+B)^-1 exactly. Its logarithm
+enters the actual correction as +(1/2)logdet(q_eff+B).
+Canonical B=I-q_eff gives M_b=I, but retains q_eff in Q_b.
+
+9. The bounded coarse-factor proposition has actual upstream
+inputs. Read classical_support_localization_fragment.tex:
+cl-action-theorem, cl-action-norm, cl-hessian-support and the
+pair-supported quadratic baseline. These give the entire
+S_MK a uniform scalar support family with fixed arbitrary
+cardinality reserve. Compose with per-bond relative BCH,
+differentiate twice in the relative coordinate and through
+two background sources using reserved Cauchy margins.
+This retains the DS_MK times BCH-curvature term and yields
+uniform weighted Schur and source-incidence bounds for q_eff,
+independent of MK and volume.
+
+Choose a fixed a greater than twice its weighted Schur bound.
+The inverse of q_eff+aI has a uniform convergent Neumann series.
+The two determinant-Hessian traces are absolutely summable
+with exponential source separation, using these actual source
+bounds. Their second displacement moments are uniformly bounded.
+Finite reference denominators are bounded away from zero.
+This proves an O(1) Maxwell contribution of the coarse half-log,
+independent of endpoint, old depth and compatible volume.
+
+10. Three final notation/interface repairs requested and made:
+dim(P_c) includes color in its field-independent logarithm;
+K_c is the full normalized logdet Hessian and the half-log
+contribution has Hessian K_c/2; general reference difference
+uses C^T B C, with canonical B=I-q_eff and bounded-factor B=aI
+distinguished. The fixed-a remaining fine perturbation is
+-lambda.f''+a C^T C-eta^2 I.
+
+This addition controls one actual comparison contribution.
+The coupled fine vector/ghost comparison and its logarithmic
+coefficient are still unresolved.

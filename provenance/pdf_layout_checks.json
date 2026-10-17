@@ -1,0 +1,382 @@
+[
+  {
+    "pdf": "notebooks/01-ym4-construction-notebook/main.pdf",
+    "pages": 26,
+    "blank_pages": [],
+    "replacement_chars": [
+      13
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/02-ym4-reflection-notebook/main.pdf",
+    "pages": 11,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/03-ym4-current-cutoff-notebook/main.pdf",
+    "pages": 17,
+    "blank_pages": [],
+    "replacement_chars": [
+      2,
+      10
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/04-ym4-gaussian-locality-notebook/main.pdf",
+    "pages": 10,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/05-ym4-gauge-interaction-notebook/main.pdf",
+    "pages": 10,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/06-ym4-flat-maxwell-notebook/main.pdf",
+    "pages": 9,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/07-ym4-flat-locality-notebook/main.pdf",
+    "pages": 13,
+    "blank_pages": [],
+    "replacement_chars": [
+      12
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/08-ym4-flat-minimizer-notebook/main.pdf",
+    "pages": 9,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/09-ym4-flat-current-notebook/main.pdf",
+    "pages": 14,
+    "blank_pages": [],
+    "replacement_chars": [
+      9
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/10-ym4-flat-curvature-notebook/main.pdf",
+    "pages": 4,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/11-ym4-full-flat-current-notebook/main.pdf",
+    "pages": 7,
+    "blank_pages": [],
+    "replacement_chars": [
+      2
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/12-ym4-flat-regularity-notebook/main.pdf",
+    "pages": 16,
+    "blank_pages": [],
+    "replacement_chars": [
+      15
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/13-ym4-nonlinear-constraint-notebook/main.pdf",
+    "pages": 5,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/14-ym4-nonflat-background-notebook/main.pdf",
+    "pages": 13,
+    "blank_pages": [],
+    "replacement_chars": [
+      3
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/15-ym4-nonlinear-minimizer-notebook/main.pdf",
+    "pages": 21,
+    "blank_pages": [],
+    "replacement_chars": [
+      3,
+      5,
+      6,
+      7,
+      14,
+      16,
+      18,
+      19
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/16-ym4-nonlinear-response-notebook/main.pdf",
+    "pages": 13,
+    "blank_pages": [],
+    "replacement_chars": [
+      4,
+      7
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/17-ym4-gaussian-step-notebook/main.pdf",
+    "pages": 12,
+    "blank_pages": [],
+    "replacement_chars": [
+      2
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/18-ym4-overlapping-integration-notebook/main.pdf",
+    "pages": 17,
+    "blank_pages": [],
+    "replacement_chars": [
+      9
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/19-ym4-physical-step-notebook/main.pdf",
+    "pages": 12,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/20-ym4-bare-step-notebook/main.pdf",
+    "pages": 5,
+    "blank_pages": [],
+    "replacement_chars": [
+      1
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/21-ym4-classical-localization-notebook/main.pdf",
+    "pages": 15,
+    "blank_pages": [],
+    "replacement_chars": [
+      13
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/22-ym4-coarse-transport-notebook/main.pdf",
+    "pages": 11,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/23-ym4-gauge-covariance-notebook/main.pdf",
+    "pages": 7,
+    "blank_pages": [],
+    "replacement_chars": [
+      6
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/24-ym4-inherited-reentry-notebook/main.pdf",
+    "pages": 6,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/25-ym4-pre-gauge-notebook/main.pdf",
+    "pages": 5,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/26-ym4-auxiliary-grouping-notebook/main.pdf",
+    "pages": 7,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/27-ym4-composite-macrostep-notebook/main.pdf",
+    "pages": 15,
+    "blank_pages": [],
+    "replacement_chars": [
+      1,
+      4,
+      7,
+      13
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/28-ym4-common-domain-notebook/main.pdf",
+    "pages": 23,
+    "blank_pages": [],
+    "replacement_chars": [
+      10
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/29-ym4-gauge-extraction-notebook/main.pdf",
+    "pages": 27,
+    "blank_pages": [],
+    "replacement_chars": [
+      4,
+      5,
+      6,
+      10,
+      12,
+      13,
+      16
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/30-ym4-quantum-descent-notebook/main.pdf",
+    "pages": 24,
+    "blank_pages": [],
+    "replacement_chars": [
+      2,
+      3,
+      4,
+      23
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/31-ym4-finite-induction-notebook/main.pdf",
+    "pages": 20,
+    "blank_pages": [],
+    "replacement_chars": [
+      15,
+      20
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/32-ym4-determinant-flow-notebook/main.pdf",
+    "pages": 34,
+    "blank_pages": [],
+    "replacement_chars": [
+      24,
+      31,
+      33
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/33-ym4-cartan-trace-notebook/main.pdf",
+    "pages": 14,
+    "blank_pages": [],
+    "replacement_chars": [
+      13
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/34-ym4-pinned-ghost-notebook/main.pdf",
+    "pages": 17,
+    "blank_pages": [],
+    "replacement_chars": [
+      7
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/35-ym4-infrared-cancellation-notebook/main.pdf",
+    "pages": 24,
+    "blank_pages": [],
+    "replacement_chars": [
+      2,
+      22
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/36-ym4-soft-determinant-notebook/main.pdf",
+    "pages": 19,
+    "blank_pages": [],
+    "replacement_chars": [
+      2,
+      3
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/37-ym4-positive-drift/main.pdf",
+    "pages": 18,
+    "blank_pages": [],
+    "replacement_chars": [
+      3,
+      7,
+      10,
+      11
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/38-ym4-full-measure-bridge/main.pdf",
+    "pages": 19,
+    "blank_pages": [],
+    "replacement_chars": [
+      7,
+      8,
+      10,
+      16
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "notebooks/39-ym4-normalized-box-replacement/main.pdf",
+    "pages": 7,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "documents/01-start-here/main.pdf",
+    "pages": 3,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "documents/02-research-dossier/main.pdf",
+    "pages": 21,
+    "blank_pages": [],
+    "replacement_chars": [
+      18
+    ],
+    "out_of_bounds": []
+  },
+  {
+    "pdf": "documents/03-notebook-catalogue/main.pdf",
+    "pages": 42,
+    "blank_pages": [],
+    "replacement_chars": [],
+    "out_of_bounds": []
+  }
+]

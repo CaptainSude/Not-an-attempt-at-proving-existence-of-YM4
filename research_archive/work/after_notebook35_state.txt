@@ -1,0 +1,81 @@
+17 October 2026. Checkpoint after Notebook35, recorded on resumed goal.
+
+Full nontrivial four-dimensional Yang--Mills existence goal remains
+ACTIVE and unfinished. No goal-status mutation. The preceding user-
+facing acknowledgement was conversational, hence no research progress.
+This continuation revalidated the goal, sources, assembled notebook,
+and all three independent internal audits, then took new proof steps.
+There is no blocker; full existence is not established.
+
+Notebook35: outputs/ym4-infrared-cancellation-notebook.tex, assembled
+with work/build_infrared_cancellation.ps1. After the final two density
+wording repairs: 79491 bytes, 149 unique labels, 77 refs, no missing or
+duplicate refs, no control characters. Desktop compilation SUCCESS.
+The master construction notebook already records Notebook35; no master
+mathematical assertion was changed by these wording repairs.
+
+NEW35 RESULTS
+1. Positive-mass first scalar thermodynamic passage and massless order-
+of-limits anomaly checked explicitly. The isolated global base creates
+a constant-flat-connection quadratic response. The old physical quotient
+must cancel it; one cannot replace its factors by separate mass limits.
+2. Actual corrected moving-reference tangent: C-Cbar=Dc Z, Cbar D=Dc B,
+B(y,x)=K^-4 Ad(P_hier(y,x)) on its own block, BB^T=K^-4 I exactly.
+3. Exact actual determinant identity
+   D_actual=N_0[logdet Ghat-(1/2)logdet Q_B],
+   Ghat=P D^T D P+K^-2(I-P),
+   Q_B=H_res+D P D^T+a Cbar^T Cbar,
+   P=I-K^4 B^T B.
+It retains the original constraint/pivot/Haar normalization and full
+residual Hessian. Joint analytic continuation through flat stabilizers
+uses the final gapped factors; no separate globally based scalar limit.
+4. Both actual flat factors have cK^-2 gaps and uniform heat/inverse-
+moment estimates. Q_B dominates the full bond Laplacian up to a constant.
+The proof uses block Poincare, the scalar harmonic lift and product tent.
+5. Each factor has an invariant diagonal density; at fixed K its local
+source limits exist along the chosen joint classical structural system.
+The total actual Maxwell coefficient equals the coupled heat coefficient
+integral with vector minus twice scalar. This is a fixed-K infrared
+and locality result, not the uniform large-K magnetic comparison.
+
+AUDITS
+work/covariant_mean_zero_provenance_audit.txt
+work/covariant_mean_zero_modules_theorem_audit.txt
+work/mean_zero_gauge_bridge_rotation_audit.txt
+work/physical_vector_spectral_root_audit.txt
+work/joint_scalar_infrared_rotation_audit.txt
+work/flat_holonomy_cancellation_provenance_audit.txt
+Root also fully inspected the determinant powers, covariance, scalar
+normalization, gap proofs, density Ward extraction, and final repairs.
+Internal mathematical audits are not external certification.
+
+OBSTRUCTION / NEXT
+work/mean_zero_gauge_vertex_obstruction.txt shows a raw Ghat relative
+vertex of size at least c sqrt(K) on a compact pure-gauge family, while
+the heat trace is constant. Separate raw vertex bounds lose exact
+cancellation. Its header date is one day ahead of the task date; the
+content is the completed prior research, not evidence of a future run.
+
+New research begun in this continuation is in:
+ work/soft_scalar_coarse_reduction_research.txt
+ work/soft_scalar_coarse_reduction_provenance_audit.txt
+ work/covariant_hessian_relative_vertices_research.txt
+and the agents' new soft-vector / weighted-block notes.
+The scalar factorization already passed an independent audit:
+ det Ghat=det T det M,
+ T=Delta+K^-2 Pi, J=K^2 B^T, M=K^-2 J^T T^-1 J.
+T has a uniform physical complex domain; the coarse log M has uniformly
+rooted source kernels and an O(1) actual affine Maxwell coefficient.
+The new Hessian note is awaiting audit. Do not assume its claims are
+integrated or audited merely from this checkpoint.
+
+The full required leading coefficient remains
+ beta(D_actual)=22 alpha_g log K+O(1), uniformly in old depth and
+the required joint structural systems. No positive actual drift yet.
+The old point-pinned ghost 4 alpha_g logK must not be assigned to a
+new scalar splitting without its own comparison.
+
+Full existence also still requires the recorded global measure matching,
+mixed/large-field histories, sourced continuum limits, nontriviality,
+Euclidean covariance, positivity and reconstruction. The flat Gaussian
+gaps are not a Yang--Mills mass-gap theorem.

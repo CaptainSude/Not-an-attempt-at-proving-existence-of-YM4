@@ -1,0 +1,266 @@
+% No preamble. Notebook 15 candidate module, ot- labels.
+\section{Transfer to the ordinary homogeneous averaging constraint}
+\label{ot-section}
+
+The preceding minimizer was constructed for the corrected
+fixed-reference constraint $C^{(j)}(U)=D=e^{iB}$. The ordinary
+constraint is $M^{(j)}(U)=D$, with $M^{(j)}$ the homogeneous
+iteration of the ordinary group average. These two equalities
+are distinct. This section proves a transfer between their small
+field minimizers using actual gauge transformations. All fields
+are on finite compatible periodic regulators; final spacing is
+one. The radii and constants below are independent of refinement
+and volume. The bare Wilson action is gauge invariant.
+
+\subsection{An exact multilevel gauge identity}
+
+Let $C_t=C^{(t)}(U)$ and $b_0(U)=1$. Notebook 14 proves
+\begin{equation}\label{ot-cumulative}
+ b_{t+1}(U)=b_t(U)|_{t+1}\,a(C_t),\qquad
+ M^{(t)}(U)=C_t^{\,b_t(U)}.
+\end{equation}
+Here restriction is to the next coarse sites, and
+$a(C_t)$ is the endpoint mean at that step. In particular,
+on a fixed sufficiently small bounded-potential ball,
+\begin{equation}\label{ot-b-bound}
+ \norm{b_j(U)-1}_\infty+\norm{b_j(U)^{-1}-1}_\infty
+       \le C\norm{A}_\infty,\qquad U=e^{i\eta A}.
+\end{equation}
+These group-valued maps are holomorphic with uniform bounds
+on a common complex ball. This follows either directly from
+the product in \eqref{ot-cumulative} and the summability of
+the physical spacings, or from the established corrected
+trajectory bounds. Only a coarse supremum bound is needed here.
+
+For a fine gauge $g$, let $k_0=g$ and let $k_t$ be its induced
+gauge under the corrected iteration, so that
+$C^{(t)}(U^g)=C_t^{k_t}$. The one-step formula gives
+\[
+ k_{t+1}=a(C_t^{k_t})^{-1}\,k_t|_{t+1}\,a(C_t).
+\]
+Multiplication with \eqref{ot-cumulative}, applied also to
+$U^g$, proves by induction
+\begin{equation}\label{ot-exact-induced}
+ b_t(U^g)k_t=g|_t\,b_t(U),\qquad
+ k_j(U,g)=b_j(U^g)^{-1}\,g|_j\,b_j(U).
+\end{equation}
+Indeed the adjacent factors $a(C_t^{k_t})$ and their inverses
+cancel before the inductive identity is used. No multiplicative
+cocycle for the logarithmic endpoint average is assumed.
+
+\subsection{Uniform analytic action of smooth fine gauges}
+
+Write $\mathcal X_\alpha=C^{1,\alpha}$ for the complete
+potential norm and $\mathcal Z_\alpha=C^{2,\alpha}$ for scalar
+gauge parameters, as in the preceding section. There is a
+uniform analytic map
+\begin{equation}\label{ot-gauge-action}
+ \mathscr A_\eta(A,\lambda)(e)
+  =\frac1{i\eta}\log\bigl[
+      e^{i\lambda(e_-)}e^{i\eta A(e)}e^{-i\lambda(e_+)}\bigr]
+\end{equation}
+from a fixed small ball in
+$\mathcal X_\alpha\times\mathcal Z_\alpha$ to
+$\mathcal X_\alpha$, and
+\begin{equation}\label{ot-gauge-action-bound}
+ \norm{\mathscr A_\eta(A,\lambda)}_{\mathcal X_\alpha}
+       \le C\bigl(\norm{A}_{\mathcal X_\alpha}
+                       +\norm{\lambda}_{\mathcal Z_\alpha}\bigr).
+\end{equation}
+To justify the apparent division by $\eta$, put
+$\ell=\lambda(e_-)$ and $v=\nabla_\mu\lambda(e_-)$.
+The group element in \eqref{ot-gauge-action} equals
+\[
+ e^{i\eta\operatorname{Ad}_{e^{i\ell}}A(e)}
+        e^{i\ell}e^{-i(\ell+\eta v)}.
+\]
+For every small $(A,\ell,v)$ this analytic product is one
+at $\eta=0$. Its logarithm is therefore divisible by $\eta$
+as an analytic function, with a uniform extension for
+$0\le\eta\le1$. All its finite-dimensional derivatives are
+uniform on a smaller fixed complex jet ball. Discrete product,
+shift and analytic-composition estimates applied to
+$(A,\lambda,\nabla\lambda)$ prove
+\eqref{ot-gauge-action-bound} and holomorphy in the indicated
+Banach norms. A first potential difference uses at most two
+scalar differences. The same argument applies to its
+$\alpha$-H\"older seminorm, so no inverse-mesh loss occurs.
+For real Hermitian traceless arguments the output remains
+Hermitian traceless on the common logarithm branch.
+
+\subsection{Prescribing the induced coarse gauge}
+
+Use the smooth block-mean right inverse $H_b$ constructed in
+\eqref{ng-biharmonic-extension}--\eqref{ng-biharmonic-bounds}.
+It is a scalar operator tensored with the gauge Lie algebra.
+For bounded coarse $\theta$ define
+\begin{equation}\label{ot-K-definition}
+ \mathcal K(A,\theta)=\frac1i\log
+      k_j\bigl(e^{i\eta A},e^{iH_b\theta}\bigr).
+\end{equation}
+The exact formula \eqref{ot-exact-induced}, the bound
+\eqref{ot-b-bound}, the gauge-action estimate and
+$H_b:\ell^\infty\to\mathcal Z_\alpha$ show that
+$\mathcal K$ is uniformly bounded and holomorphic on a
+fixed ball in $\mathcal X_\alpha\times\ell^\infty$.
+Evaluation of $H_b\theta$ at coarse sites is bounded by
+its supremum norm. Thus this step does not presume that
+$H_b$ interpolates point values.
+
+At $\theta=0$ the induced gauge is one, so
+$\mathcal K(A,0)=0$. At the joint origin its differential is
+\begin{equation}\label{ot-K-linear}
+ D_\theta\mathcal K(0,0)=\mathcal G_0H_b=Q_0H_b=I.
+\end{equation}
+Uniform Cauchy estimates on a smaller ball consequently give
+\begin{equation}\label{ot-K-near-identity}
+ \norm{D_\theta\mathcal K(A,\theta)-I}_{\infty\to\infty}
+       \le C\bigl(\norm{A}_{\mathcal X_\alpha}
+                                    +\norm{\theta}_\infty\bigr).
+\end{equation}
+For small $A$ and any sufficiently small bounded coarse
+$\omega$, the contraction
+\[
+ \theta=\omega-\bigl[\mathcal K(A,\theta)-\theta\bigr]
+\]
+therefore has a unique solution in a fixed small ball.
+The solution satisfies $\norm{\theta}_\infty\le2\norm{\omega}_\infty$
+and depends holomorphically on $(A,\omega)$, with uniform
+Cauchy bounds on smaller balls. It is real for real inputs.
+Thus any small prescribed coarse gauge $e^{i\omega}$ is
+realized as the induced corrected gauge of a fine gauge
+$e^{iH_b\theta}$ of uniformly controlled smoothness.
+
+Suppose now that $U=e^{i\eta A}$ satisfies
+$M^{(j)}(U)=D$. By \eqref{ot-cumulative},
+$C^{(j)}(U)^{b_j(U)}=D$. Prescribe
+\[
+ \omega=\frac1i\log b_j(U),\qquad k_j(U,g)=b_j(U).
+\]
+The preceding construction produces a fine gauge $g$ such that
+\begin{equation}\label{ot-ordinary-to-corrected}
+ C^{(j)}(U^g)=D,\qquad
+ \mathcal S_\eta(U^g)=\mathcal S_\eta(U),\qquad
+ \norm{\mathscr A_\eta(A,\log(g)/i)}_{\mathcal X_\alpha}
+                     \le C\norm{A}_{\mathcal X_\alpha}.
+\end{equation}
+Here $\log(g)/i=H_b\theta$ on the chosen branch. This map
+takes sufficiently small ordinary-feasible fields into
+uniformly small corrected-feasible fields.
+
+\subsection{An ordinary-feasible representative of the minimizer}
+
+Let $U_*(B)=e^{i\eta A_*(B)}$ be the corrected minimizer
+constructed above, so $C^{(j)}(U_*)=D=e^{iB}$ and
+$\norm{A_*(B)}_{\mathcal X_\alpha}\le C\norm{B}_\infty$.
+We need a smooth fine gauge with specified \emph{point values}
+at the final coarse sites. For this purpose construct a
+different operator $E_{\rm pt}$ as follows. Choose a fixed
+smooth scalar bump $\varphi$ supported in
+$(-1/2,1/2)^d$ and satisfying $\varphi(0)=1$. On the
+periodic coarse lattice put
+\begin{equation}\label{ot-point-extension}
+ (E_{\rm pt}\omega)(x)=\sum_{n\in\mathbb Z^d}
+                  \varphi(x-n)\omega(n),
+\end{equation}
+with the coefficients extended periodically; evaluate the
+result at fine sites. This is well defined on every
+compatible torus, including the smallest coarse periods.
+Its derivatives through order three are bounded by
+$C\norm{\omega}_\infty$, since the translates have uniformly
+bounded overlap. Sampling and the integral formula for
+finite differences give, uniformly in $\eta$,
+\begin{equation}\label{ot-point-bounds}
+ E_{\rm pt}\omega|_{\rm coarse}=\omega,\qquad
+ \norm{E_{\rm pt}\omega}_{\mathcal Z_\alpha}
+                          \le C\norm{\omega}_\infty.
+\end{equation}
+Set
+\begin{equation}\label{ot-ordinary-representative}
+ \omega_*(B)=\frac1i\log b_j(U_*(B))^{-1},\quad
+ h_*(B)=e^{iE_{\rm pt}\omega_*(B)},\quad
+ U_{\rm ord}(B)=U_*(B)^{h_*(B)}.
+\end{equation}
+Ordinary gauge covariance and $h_*|_{\rm coarse}=b_j(U_*)^{-1}$
+give
+\begin{equation}\label{ot-ordinary-exact}
+ M^{(j)}(U_{\rm ord}(B))=D,\qquad
+ \mathcal S_\eta(U_{\rm ord}(B))=\mathcal S_\eta(U_*(B)).
+\end{equation}
+Indeed with the convention $V^g=g_-Vg_+^{-1}$,
+$(V^b)^h=V^{hb}$, so the two coarse gauges cancel in the
+required order. The ordinary potential
+$A_{\rm ord}(B)=\log U_{\rm ord}(B)/(i\eta)$ is holomorphic
+on a uniform coarse supremum ball and obeys
+\begin{equation}\label{ot-ordinary-bound}
+ \norm{A_{\rm ord}(B)}_{\mathcal X_\alpha}
+                              \le C\norm{B}_\infty.
+\end{equation}
+
+\begin{theorem}[Ordinary homogeneous constrained minimum]
+\label{ot-minimum}
+Fix $0<\alpha<1$, a fixed odd blocking ratio $L\ge3$,
+and the compact matrix gauge group and trace normalization
+used in the Wilson calculation. There are $b_0,r_0>0$,
+independent of the homogeneous refinement $M=L^j$ and
+finite compatible periodic volume, with the following
+property. For every real coarse potential
+$\norm{B}_\infty<b_0$, the field $U_{\rm ord}(B)$ in
+\eqref{ot-ordinary-representative} satisfies the ordinary
+constraint $M^{(j)}(U)=e^{iB}$ and minimizes the bare Wilson
+action among all fields $U=e^{i\eta A}$ satisfying that
+constraint and $\norm{A}_{\mathcal X_\alpha}<r_0$.
+Equality in this small field class implies gauge equivalence
+to $U_{\rm ord}(B)$. Its ordinary potential has the uniform
+bound \eqref{ot-ordinary-bound} and a holomorphic extension
+to a fixed complex coarse-data ball.
+\end{theorem}
+
+\begin{proof}
+The reduced-Hessian proof gives strict convexity of the
+corrected fixed-slice action on a fixed ball of the linear
+coordinate $\xi\in X$, for all sufficiently small $B$.
+In particular the corrected minimizer is the unique minimum
+on that ball. The constraint chart covers every sufficiently
+small corrected-feasible fixed-slice field, and
+$\xi=(I-HQ)A$ there; this coordinate is uniformly small in
+$\mathcal X_\alpha$ since $Q$ is bounded into coarse
+supremum norm and $H$ maps that norm into
+$\mathcal X_\alpha$.
+
+Given an ordinary-feasible field with
+$\norm{A}_{\mathcal X_\alpha}<r_0$, first apply
+\eqref{ot-ordinary-to-corrected}, and then the
+constraint-preserving flow into the flat slice. Both
+operations preserve the action and enlarge the potential
+norm by at most a fixed factor. Choose $r_0$ so small that
+the resulting fixed-slice field belongs to the chart and
+its $\xi$ belongs to the strict-convexity ball. The action
+comparison with $U_*(B)$ now follows from that convexity.
+Choose $b_0$ smaller, if necessary, so that
+$\norm{A_{\rm ord}(B)}_{\mathcal X_\alpha}<r_0$ and the
+minimizer coordinate belongs to the same convex ball.
+Equation \eqref{ot-ordinary-exact} transfers the comparison
+to $U_{\rm ord}(B)$. All radii can be chosen with fixed
+strict margins and are uniform in refinement and volume.
+
+If equality holds, strict convexity identifies the final
+fixed-slice field with $U_*(B)$. Both earlier operations
+are genuine gauge transformations, so the original field
+is gauge equivalent to $U_{\rm ord}(B)$. Since both have
+the same ordinary coarse constraint, the restriction of
+a connecting gauge to the coarse sites stabilizes that
+coarse field. No uniqueness of the gauge parameter is
+claimed. The analyticity and norm statements follow from
+\eqref{ot-b-bound}, \eqref{ot-gauge-action-bound} and the
+analytic corrected minimizer.
+\end{proof}
+
+This is a minimum in a fixed small \emph{global potential}
+class on each finite homogeneous regulator. It is not a
+global minimum over all lattice gauge fields, nor a claim
+about arbitrary local-frame or mixed-history constraints.
+The source's notation $M_{\mathfrak B}(U)=D$ includes more
+general geometries; only the explicitly defined ordinary
+homogeneous iteration is proved here. No continuum quantum
+measure or physical mass gap follows from this theorem.

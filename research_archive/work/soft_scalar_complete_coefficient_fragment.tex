@@ -1,0 +1,65 @@
+\section{The complete mean-zero scalar coefficient}
+\label{sgc-section}
+
+The exact factorization of Notebook 36 reads
+\[
+ \det\widehat G=\det T_s\det M_s,\qquad
+ T_s=D_A^TD_A+K^{-2}J_AJ_A^T.
+\]
+Here \(M_s=K^{-2}J_A^TT_s^{-1}J_A\) has one fixed color
+fiber per final block. Its actual Maxwell coefficient is uniformly
+bounded. The normalization is
+\(\beta(F)=2[t^2]F\) on the specified one-color affine probe;
+normalization at the flat field contributes zero.
+
+\begin{theorem}[Mean-zero scalar logarithm]
+\label{sgc-main}
+Under the actual structural and affine-identification hypotheses of
+Notebooks 35--36 and Theorem~\ref{spb-main},
+\begin{equation}
+ \left|\beta(\mathcal N_0\log\det\widehat G)
+                 -2\alpha_g\log K\right|\le C,
+ \qquad \alpha_g=\frac{C_H}{48\pi^2}.
+ \label{sgc-coefficient}
+\end{equation}
+The bound is uniform in preceding depth and in every applicable
+joint infinite structural system.
+\end{theorem}
+
+\begin{proof}
+The scalar part of the infrared-tail theorem in Notebook 36 bounds
+the integral over \(s>K^2\). Theorem~\ref{spb-main} removes the scalar
+soft penalty on \(0<s\le K^2\) with a bounded integrated error.
+The coarse factor \(M_s\) contributes a further bounded error.
+The exact unpinned scalar heat calculation of Notebook 34 therefore
+gives
+\begin{equation}
+ \beta(\mathcal N_0\log\det\widehat G)
+       =\int_0^{K^2}h_g(s)\,\frac{ds}{s}+O(1),
+ \qquad
+ h_g(s)=\frac{C_H}{3}s^2e^{-8s}I_0(2s)^2I_1(2s)^2.
+ \label{sgc-cutoff}
+\end{equation}
+The definition of \(h_g\) includes the factor \(-2\) multiplying
+the scalar heat coefficient. The minus sign comes from the heat
+representation of the logarithm, and the factor two from \(\beta\).
+No additional real/complex color multiplicity is introduced.
+
+The previously established elementary Bessel bounds imply
+\[
+ h_g(s)=O(s^4)\quad(0<s\le1),\qquad
+ h_g(s)=\alpha_g+O(s^{-1})\quad(s\ge1).
+ \]
+Thus \(\int_0^1|h_g(s)|\,ds/s\) and
+\(\int_1^\infty|h_g(s)-\alpha_g|\,ds/s\) are finite.
+Splitting \eqref{sgc-cutoff} at one proves
+\(\alpha_g\log(K^2)+O(1)\), including \(K=1\).
+\end{proof}
+
+This is the scalar determinant in the exact covariant mean-zero
+decomposition. The earlier globally point-pinned scalar determinant
+has a different logarithmic coefficient; its compensating vector
+factor is different as well. Only each complete, exactly normalized
+determinant combination is invariant under those changes of gauge
+decomposition. This theorem alone does not compute the vector
+coefficient or prove positive total drift.

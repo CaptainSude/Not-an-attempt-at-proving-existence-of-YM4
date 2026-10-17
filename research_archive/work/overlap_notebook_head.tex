@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 18: integrating overlapping cutoff interactions}
+\author{Research working document}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We extend the Gaussian cutoff expansion to interactions whose
+supports overlap and can have arbitrarily many cells. An explicit
+weighted local norm controls their expansion. The covariance forest
+is applied after grouping overlapping factors, but its derivatives
+retain their original cell endpoints. This prevents uncontrolled
+powers of the grouped support size at high-degree vertices. We
+obtain a nonvanishing partition function, a holomorphic logarithm
+with summable activities, and a bound linear in the interaction norm
+for its difference from the pure Gaussian cutoff logarithm.
+A support-algebra construction also gives strictly local background
+activities when the precision has a small local decomposition.
+For a real baseline, a tunable relative Gaussian comparison reduces
+the density cost per cell from a fixed exponential in its dimension
+to an exponential with an arbitrarily small coefficient. The
+theorems specify the covariance and coefficient estimates that
+the Yang--Mills quantum step must supply, and a final section
+identifies the corresponding original Ba\l aban integration route.
+\end{abstract}
+
+\section{The integration problem addressed here}
+\label{oc18-target}
+
+The nonlinear Wilson action and its coordinate factors generate
+interactions supported on several overlapping cells. Treating each
+connected collection as a single large Gaussian cell can introduce
+a loss growing with both its support size and its branching degree.
+The proof below keeps the original cell structure through the
+covariance derivatives and sums the resulting degree factorials
+exactly. The original Gaussian cell dimension stays fixed.
+
+This is an abstract integration theorem with explicit hypotheses.
+The homogeneous flat pivot Gaussian has the spectral and locality
+estimates from Notebooks 6 and 7; Notebook 17 records its joint
+fluctuation bounds. To apply the present theorem to the complete
+Yang--Mills integrand, the action, Haar and Jacobian contributions
+must be represented with the stated weighted local coefficient
+norm on the actual cutoff domain.
+
+The overlap, background-support, tunable-density and periodic
+arguments below have passed separate internal mathematical audits.
+

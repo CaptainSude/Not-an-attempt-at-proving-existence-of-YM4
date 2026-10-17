@@ -1,0 +1,464 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\title{A uniform flat auxiliary-current neighborhood}
+\author{Notebook 09 integration fragment}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+
+\noindent\textbf{Integration note.}
+The body below follows the full flat inverse theorem and the scalar
+source-gauge locality lemma. Those antecedents have separate internal
+derivations and audits. This fragment supplies the current argument;
+it does not replace their proofs. Its source application uses the
+deposited homogeneous flat operator definitions.
+
+% BEGIN NOTEBOOK FRAGMENT
+\section{A uniform neighborhood for the flat auxiliary current}
+\label{current-section}
+
+We keep the background equal to the identity and vary the current
+independently. Fine spacing is $M^{-1}$, with odd $M$, and the fine
+measure is $M^{-d}$. The one-form average is the corrected source
+average at flatness, already identified with $Q=Q_M^{\mathrm{st}}$.
+The scalar source projection is $R$, and $D$ is the fine scalar
+gradient. Write
+\[
+ \Delta_0=d_\eta^*d_\eta+DRD^*+Q^*aQ,
+ \qquad G_0=\Delta_0^{-1},
+ \qquad q_0=(QG_0Q^*)^{-1}.
+\]
+The homogeneous source convention has $a=1$ at unit physical block
+scale. All conclusions below also hold uniformly for a fixed compact
+interval $0<a_-\le a\le a_+<\infty$. We do not assert a bound for an
+unmatched sequence of penalties.
+
+The preceding flat inverse theorem and minimizing-extension theorem give
+\begin{equation}
+ q_0=q_M+aI,
+ \qquad E_0=G_0Q^*q_0,
+ \qquad QE_0=I,
+ \qquad RD^*E_0=0.
+ \label{current-base-identities}
+\end{equation}
+Here $q_M$ is the unpenalized constrained Maxwell precision. The
+addition of $aI$ must be retained in $q_0$. The normalized extension
+$E_0$ is unchanged by this penalty; a source convention
+$QH_0=\ell^{-1}$ instead uses $H_0=E_0\ell^{-1}$.
+
+All adjoints initially use these physical measures at the real flat
+reference. At complex current they denote the fixed bilinear
+transpose. They do not conjugate the varying complex current.
+
+\subsection{Current vertices and the weighted algebra}
+\label{current-vertices-section}
+
+For a fine bond $b$, the flat gauge expansion has mixed and polarized
+quadratic terms
+\begin{align}
+ c^{(1)}(A,\lambda)(b)
+ &=\frac{i}{2}[\lambda(b_-)+\lambda(b_+),A(b)],
+ \label{current-c1}\\
+ 2c^{(2)}(\lambda_1,\lambda_2)(b)
+ &=\frac{1}{2i}\bigl(
+ [\lambda_1(b_-),(D\lambda_2)(b)]
+ +[\lambda_2(b_-),(D\lambda_1)(b)]\bigr).
+ \label{current-c2}
+\end{align}
+These are the deposited formulas at Raw I:13698--13718 and
+I:13811--13821. Define the current-linear maps by
+\[
+ \langle\lambda,\mathfrak j_J A\rangle
+   =\langle c^{(1)}(A,\lambda),J\rangle,
+ \qquad \mathfrak k_J=\mathfrak j_J^*,
+\]
+\[
+ \langle\lambda_1,\mathfrak m_J\lambda_2\rangle
+   =2\langle c^{(2)}(\lambda_1,\lambda_2),J\rangle.
+\]
+All bond and site pairings carry the same fine volume weight.
+Set $\Lambda=G'RD^*$, with the fixed scalar source inverse $G'$.
+The scalar locality lemma gives uniform weighted bounds for
+$\Lambda$ and $D\Lambda$. The auxiliary perturbation is
+\begin{equation}
+ \Theta'_J=\mathfrak k_J\Lambda+
+       \Lambda^*\mathfrak j_J+\Lambda^*\mathfrak m_J\Lambda.
+ \label{current-theta-definition}
+\end{equation}
+This is precisely the auxiliary perturbation in Raw I:13725--13731.
+It is distinct from the additional nonlinear-constraint operator
+denoted there by $\Theta_J$.
+
+Group fine fields into unit coarse cells with their physical Hilbert
+norms. For block operators between these fine fibers, or between
+fine and fixed-dimensional coarse fibers, use
+\begin{equation}
+ \norm{T}_\kappa=
+ \max\left\{
+   \sup_x\sum_y e^{\kappa d(x,y)}\norm{T_{xy}},
+   \sup_y\sum_x e^{\kappa d(x,y)}\norm{T_{xy}}
+ \right\}.
+ \label{current-schur-norm}
+\end{equation}
+Here $d(x,y)=|x-y|_1$ in infinite volume and is periodic coarse-cell
+distance on a finite compatible torus. This norm is submultiplicative,
+including rectangular products, and transpose preserves it.
+
+\begin{lemma}[A current bound without derivatives of the current]
+\label{current-theta-bound}
+There is $\theta<\infty$, independent of refinement and compatible
+periodic volume, such that
+\begin{equation}
+ \norm{\Theta'_J}_\kappa\le\theta\norm{J}_\infty.
+ \label{current-theta-norm}
+\end{equation}
+The map $J\mapsto\Theta'_J$ is complex linear. The current requires no
+regularity beyond boundedness.
+\end{lemma}
+
+\begin{proof}
+Define the finite-incidence map $V_J$ from fine bonds to fine sites by
+\[
+ \langle\lambda,V_J A\rangle
+   =\frac{1}{2i}\langle[\lambda(b_-),A(b)],J(b)\rangle.
+\]
+Equation \eqref{current-c2} gives the exact form identity
+\[
+ \mathfrak m_J=V_JD+D^*V_J^*.
+\]
+Thus \eqref{current-theta-definition} becomes
+\begin{equation}
+ \Theta'_J=
+ \mathfrak j_J^*\Lambda+\Lambda^*\mathfrak j_J
+ +\Lambda^*V_JD\Lambda+(D\Lambda)^*V_J^*\Lambda.
+ \label{current-theta-factorization}
+\end{equation}
+If $|[X,Y]|\le c_{\rm br}|X||Y|$, both
+$\mathfrak j_J$ and $V_J$ have fine Hilbert operator norm at most
+$C_d c_{\rm br}\norm{J}_\infty$. Indeed there are at most $2d$
+incident bonds per site and two endpoints per bond; Cauchy--Schwarz
+and the common physical volume weight give this bound without a
+power of $M$. These coefficient maps have a fixed finite cell range,
+so the same estimate holds in \eqref{current-schur-norm}.
+
+Apply the weighted algebra inequality to
+\eqref{current-theta-factorization}, using the established bounds for
+$\Lambda,D\Lambda$. Every derivative is on a scalar leg through
+$D\Lambda$. No derivative acts on $J$, even if $J$ jumps at a cell
+boundary. The proof also applies to complex currents with the fixed
+bilinear transpose.
+\end{proof}
+
+Choose a common sufficiently small $\kappa>0$. The flat inverse,
+averaging and Maxwell locality results give constants $g,b,q$ with
+\begin{equation}
+ \norm{G_0}_\kappa\le g,
+ \qquad \norm{Q}_\kappa,\norm{Q^*}_\kappa\le b,
+ \qquad \norm{q_0}_\kappa\le q.
+ \label{current-input-bounds}
+\end{equation}
+The fine inverse result also gives all physical fine-difference
+sandwiches of total order at most two. These are established
+homogeneous flat inputs; they are not hypotheses about a nonflat
+source carrier. None of these constants includes a factor for the
+number of sites in a fine cell.
+
+\subsection{Uniform inverses and the exact quadratic remainder}
+\label{current-neighborhood-section}
+
+Define
+\begin{equation}
+ c=gb^2q,\qquad e=gbq,\qquad t_0=g(1+c),\qquad
+ \varepsilon=\frac{1}{4g\theta(1+c)}.
+ \label{current-radius}
+\end{equation}
+If $\theta=0$ the perturbation vanishes and the current restriction is
+unnecessary. Otherwise use the displayed positive radius.
+
+\begin{theorem}[Uniform flat auxiliary-current neighborhood]
+\label{current-neighborhood-theorem}
+For every complex bounded current with
+$\norm{J}_\infty<\varepsilon$, the operators
+\begin{equation}
+ G_J=(\Delta_0-\Theta'_J)^{-1},\qquad
+ q_J=(QG_JQ^*)^{-1},\qquad E_J=G_JQ^*q_J
+ \label{current-family}
+\end{equation}
+exist and depend holomorphically on $J$ in the weighted algebra. They
+are the deposited auxiliary family, with
+$G_J=G_\pi^J$, $q_J=\mathsf q_J$ and $E_J=H^J\ell$. Uniformly in odd $M$, compatible volume, and
+$a\in[a_-,a_+]$,
+\begin{equation}
+ \norm{G_J}_\kappa\le2g,\qquad
+ \norm{q_J}_\kappa\le2q,\qquad
+ QE_J=I,\qquad\norm{E_J}_\kappa\le4e.
+ \label{current-uniform-bounds}
+\end{equation}
+Let
+\begin{equation}
+ B_0=G_0-E_0QG_0=G_0-E_0q_0^{-1}E_0^*.
+ \label{current-B0}
+\end{equation}
+Then the exact formulas are
+\begin{align}
+ E_J-E_0
+   &=(I-B_0\Theta'_J)^{-1}B_0\Theta'_JE_0,
+ \label{current-extension-remainder}\\
+ q_J-q_0
+   &=-E_0^*\Theta'_J(I-B_0\Theta'_J)^{-1}
+                  B_0\Theta'_JE_0.
+ \label{current-quadratic-remainder}
+\end{align}
+In particular,
+\begin{equation}
+ \norm{E_J-E_0}_\kappa\le2t_0\theta e\norm{J}_\infty,
+ \qquad
+ \norm{q_J-q_0}_\kappa\le
+       2e^2\theta^2t_0\norm{J}_\infty^2.
+ \label{current-remainder-bounds}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Abbreviate $\Theta=\Theta'_J$. The first Neumann series gives
+\[
+ G_J=(I-G_0\Theta)^{-1}G_0,
+ \qquad
+ \norm{G_J-G_0}_\kappa\le2g^2\theta\norm{J}_\infty,
+\]
+because $\norm{G_0\Theta}_\kappa<1/4$.
+Writing $W_J=QG_JQ^*$, we obtain
+\[
+ \norm{q_0(W_J-W_0)}_\kappa
+ \le2qb^2g^2\theta\norm{J}_\infty
+ <\frac{c}{2(1+c)}<\frac12.
+\]
+The second Neumann series, with its specified order, is
+\[
+ q_J=[I+q_0(W_J-W_0)]^{-1}q_0.
+\]
+This proves \eqref{current-uniform-bounds}. Both series converge in
+the same Banach algebra and therefore prove holomorphy on the entire
+stated complex ball.
+
+The constrained covariance has
+\[
+ QB_0=B_0Q^*=0,\qquad
+ B_0\Delta_0=I-E_0Q,\qquad
+ \norm{B_0}_\kappa\le t_0.
+\]
+Apply $B_0$ to
+$(\Delta_0-\Theta)E_J=Q^*q_J$ and use $QE_J=I$. This gives
+$E_J-E_0=B_0\Theta E_J$, hence
+\eqref{current-extension-remainder}. No commutation of $B_0$ with
+$\Theta$ is used. The chosen radius has
+$\norm{B_0\Theta}_\kappa<1/4$.
+
+Multiplying the stationary equation by $E_0^*$ gives
+$q_J=q_0-E_0^*\Theta E_J$. The flat source gauge implies
+$\Lambda E_0=0$, and \eqref{current-theta-definition} then gives
+\begin{equation}
+ \Theta'_JE_0=\Lambda^*\mathfrak j_JE_0,
+ \qquad E_0^*\Theta'_JE_0=0.
+ \label{current-linear-cancellation}
+\end{equation}
+Substitution of \eqref{current-extension-remainder} proves
+\eqref{current-quadratic-remainder}. Finally
+$\norm{E_0}_\kappa\le e$ and
+$\norm{(I-B_0\Theta)^{-1}}_\kappa\le2$ give
+\eqref{current-remainder-bounds}.
+\end{proof}
+
+\subsection{Factorial derivatives and localized current legs}
+\label{current-derivatives-section}
+
+For a current in this ball put
+\begin{equation}
+ B_J=G_J-E_JQG_J,
+ \qquad t=2g(1+4c).
+ \label{current-BJ}
+\end{equation}
+Then $B_J$ is the symmetric constrained covariance and
+$\norm{B_J}_\kappa\le t$. All directional derivatives below are
+derivatives in current space, not fine spatial differences.
+
+\begin{proposition}[Exact derivative chains]
+\label{current-derivative-chains}
+For $n\ge1$ and bounded current directions $J_1,\ldots,J_n$,
+\begin{equation}
+ \begin{split}
+ D^nq_J[J_1,\ldots,J_n]
+ =-\sum_{\sigma\in S_n}
+ E_J^*\Theta'_{J_{\sigma(1)}}B_J
+ \Theta'_{J_{\sigma(2)}}\cdots B_J
+ \Theta'_{J_{\sigma(n)}}E_J.
+ \end{split}
+ \label{current-q-derivative-chain}
+\end{equation}
+Each summand contains $n-1$ factors $B_J$; for $n=1$ it is
+$-E_J^*\Theta'_{J_1}E_J$. The corresponding formula for $D^nE_J$
+is the sum of the ordered products
+$B_J\Theta'_{J_{\sigma(1)}}\cdots
+B_J\Theta'_{J_{\sigma(n)}}E_J$. Consequently
+\begin{align}
+ \norm{D^nq_J[J_1,\ldots,J_n]}_\kappa
+ &\le n!(4e)^2\theta^n t^{n-1}
+                   \prod_i\norm{J_i}_\infty,
+ \label{current-q-factorial}\\
+ \norm{D^nE_J[J_1,\ldots,J_n]}_\kappa
+ &\le n!(4e)(t\theta)^n\prod_i\norm{J_i}_\infty.
+ \label{current-E-factorial}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+At a fixed $J$, repeat the stationary-equation argument for a
+sufficiently small increment $K$. It gives the exact identities
+\begin{align}
+ B_{J+K}&=(I-B_J\Theta'_K)^{-1}B_J,
+ \label{current-B-increment}\\
+ E_{J+K}&=(I-B_J\Theta'_K)^{-1}E_J,
+ \label{current-E-increment}\\
+ q_{J+K}&=q_J-E_J^*\Theta'_K
+                    (I-B_J\Theta'_K)^{-1}E_J.
+ \label{current-q-increment}
+\end{align}
+The first is the resolvent identity for the quadratic form
+restricted to $\ker Q$, with its inverse extended by zero on
+$\ran Q^*$. Expanding the series and taking the coefficient
+multilinear in the directions produces exactly the permutations in
+\eqref{current-q-derivative-chain} and the extension formula. The
+norm bounds follow from submultiplicativity. The argument is valid
+at each point in the ball by using a sufficiently small increment;
+it does not enlarge the current domain.
+\end{proof}
+
+At zero current $Dq_0[J_1]=0$ by
+\eqref{current-linear-cancellation}. The earlier scalar gauge
+identity, with $Z=G'RG'$, gives the more explicit specializations
+\[
+ DE_0[J_1]=DZ\mathfrak j_{J_1}E_0,
+\]
+\begin{equation}
+ \begin{split}
+ D^2q_0[J_1,J_2]
+ ={}&-(\mathfrak j_{J_1}E_0)^*Z(\mathfrak j_{J_2}E_0)\\
+    &-(\mathfrak j_{J_2}E_0)^*Z(\mathfrak j_{J_1}E_0).
+ \end{split}
+ \label{current-zero-Hessian}
+\end{equation}
+The first extension response is a fine gradient. It need not
+preserve the original source gauge at nonzero current.
+
+\begin{proposition}[Paths through the current supports]
+\label{current-localized-paths}
+Let $J_{x_i}$ be supported on fine bonds based in cell $x_i$.
+There are constants $C_0,C_1$, independent of refinement, compatible
+volume, source locations and $n$, such that
+\begin{equation}
+ \begin{split}
+ &\norm{D^nq_J[J_{x_1},\ldots,J_{x_n}](b,c)}\\
+ &\quad\le C_0 C_1^n\prod_i\norm{J_{x_i}}_\infty
+ \sum_{\sigma\in S_n}
+ \exp\!\left[-\kappa\left(
+ d(b,x_{\sigma(1)})
+ +\sum_{i=1}^{n-1}d(x_{\sigma(i)},x_{\sigma(i+1)})
+ +d(x_{\sigma(n)},c)\right)\right].
+ \end{split}
+ \label{current-path-bound}
+\end{equation}
+Here $b,c$ are coarse cells with their fixed orientation/color
+fibers. Repeated source cells are allowed. The extension
+derivatives have the same path structure, with the appropriate
+fine/coarse end fibers.
+\end{proposition}
+
+\begin{proof}
+For a current supported in cell $x$, each coefficient vertex
+$\mathfrak j_{J_x}$ or $V_{J_x}$ reads and writes only a fixed
+neighboring-cell set of $x$, and its restricted operator norm is
+$O(\norm{J_x}_\infty)$. Expand each perturbation in a chain using
+\eqref{current-theta-factorization}. Between consecutive local
+vertices are products of the form $A B_J C^*$, with the appropriate
+scalar/bond domains and with $A,C$ among
+$I,\Lambda,D\Lambda$. Such products have a uniform weighted Schur
+bound and hence their $(x,y)$ block is bounded by a constant times
+$e^{-\kappa d(x,y)}$. The end products use $A E_J$ and obey the
+same statement.
+
+There are at most four choices per perturbation and a fixed number
+of neighboring cells per coefficient vertex. Their sizes and
+bounded offsets are absorbed into $C_1^n$. Multiplying the block
+bounds and then summing the permutations proves
+\eqref{current-path-bound}. This uses physical block operator norms
+before multiplying; it never counts the fine sites in a block.
+It also avoids convolution of pointwise bounds at a borderline
+exponential rate. Periodic distance obeys the same triangle
+inequality, so the proof is unchanged on compatible tori.
+\end{proof}
+
+\subsection{Fine derivatives, finite volume, and the scope of the result}
+\label{current-scope-section}
+
+The proved full flat inverse theorem controls every specified fine
+difference sandwich of total order at most two. Write
+$\mathcal D_\alpha$ and $\mathcal D_\beta$ for fixed words of those
+orders, with the appropriate orientation domains. The exact identity
+\begin{equation}
+ \begin{split}
+ \mathcal D_\alpha G_J\mathcal D_\beta
+ ={}&\mathcal D_\alpha G_0\mathcal D_\beta\\
+ &+(\mathcal D_\alpha G_0)\Theta'_J
+       (I-G_0\Theta'_J)^{-1}G_0\mathcal D_\beta
+ \end{split}
+ \label{current-spatial-derivative-transfer}
+\end{equation}
+therefore gives the same uniform weighted bounds when
+$\alpha+\beta\le2$. Derivatives act on the outside propagator
+factors, not on the current. The one-sided estimates also give
+the corresponding output fine derivatives of $E_J$. These are
+physical cell $L^2$ operator estimates; no pointwise or H\"older
+carrier estimate is inferred from them.
+
+The reference kernels on finite compatible tori are exact
+periodizations of the homogeneous kernels. All subsequent arguments
+take place in the weighted block algebra on that torus. They apply
+to arbitrary bounded periodic currents, without requiring them to
+be constant from cell to cell, and retain constants uniform even
+for short periods. The infinite-volume formulas follow in the
+same algebra. No passage through an unweighted growing-dimensional
+matrix norm is used.
+
+The result is a uniform complex neighborhood for the displayed
+\emph{auxiliary} flat family, with a quadratic precision remainder,
+factorial current derivatives, and paths through their current
+supports. The full source inverse instead has
+\[
+ G_1^J=[\Delta_0-\Theta'_J-\Pi^*\Theta_J\Pi]^{-1},
+ \qquad \Pi=I-D\Lambda.
+\]
+The separate nonlinear-constraint term $\Theta_J$ is not covered
+here. Its first coarse-precision derivative can already contain
+$-E_0^*\Theta^{[1]}_J E_0$. Thus the cancellation
+\eqref{current-linear-cancellation} is not a statement that the
+full physical precision has zero current derivative. Nonflat
+backgrounds, retained multiscale boundaries, source pointwise
+carrier norms, and the interacting ultraviolet limit remain
+outside this theorem.
+% END NOTEBOOK FRAGMENT
+\end{document}

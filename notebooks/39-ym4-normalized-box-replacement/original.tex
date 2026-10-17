@@ -1,0 +1,514 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 39: normalized local replacement in the bare Wilson measure}
+\author{Research proof draft}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We complete a normalized replacement operation for arbitrary finite
+collections of separated fixed boxes in the positive bare Wilson
+measure. On a good boundary the exact conditional law is restricted
+to its local gauge/minimizer window and divided by its actual
+conditional probability. On a bad boundary the law is unchanged.
+The operation preserves the exterior marginal, gauge invariance,
+and total raw partition mass. A positive expansion accounts for
+every discarded interior configuration.
+
+An explicit coupling has discrepancy marks dominated by independent
+Bernoulli variables of parameter \(a=Ce^{-cT^2}\). For the exterior
+jointly with any selected set \(A\) of box interiors, the exact
+total variation distance is
+\(\mathbb E[1-\prod_{i\in A}(1-p_i)]\le a|A|\).
+We also prove local entropy, sparse-defect, cluster,
+bounded-source and connected-cumulant comparison bounds. All are
+independent of the number of other boxes.
+
+The probability inputs are the full normalized Wilson bounds of
+Notebook 38, not Gaussian surrogates. Geometry and box size remain
+fixed. The operation has not been identified with a nonlinear
+coarse-average fiber or propagated through general mixed
+renormalization histories. This completes a restricted
+finite-measure theorem and gives a definite stopping point for
+handoff; it does not complete continuum Yang--Mills existence.
+\end{abstract}
+
+\section*{Inputs and proof boundary}
+
+The two quantitative inputs are the fixed-box conditional tail
+theorem and joint boundary-plaquette probability theorem
+proved in Notebook 38. Both concern the actual compact positive
+Wilson measure and include their normalization. Their box
+geometry, boundary gauge, adjoint-invariant window, period
+conditions and constants are restated below.
+The new argument is an exact normalized operation built from
+those inputs, together with its local comparison estimates.
+It does not use the earlier homogeneous determinant calculation.
+
+The group may be \(SU(N)\) for these bare-measure statements,
+with \(\tau=\operatorname{Tr}/N\). This does not extend the
+earlier \(SU(2)\) multiscale construction to every group.
+An internal audit is included in the research archive.
+Such review and successful typesetting do not certify
+all upstream arguments independently.
+
+
+
+% No preamble. Prefix nbr-. 17 October 2026.
+\section{A normalized fixed-box replacement for the full Wilson measure}
+\label{nbr-section}
+
+This section proves a restricted normalized replacement theorem for the
+\emph{actual positive bare Wilson measure}. It preserves the exterior
+marginal and the raw partition mass exactly, leaves bad-boundary boxes
+unchanged, and gives a sparse failure expansion and local comparison
+bounds uniform in the number of boxes. The fixed-box coordinates are
+not identified with a nonlinear coarse-average fiber.
+
+\subsection{Exact conditional structure and the established box estimates}
+\label{nbr-input-section}
+
+Let
+\[
+ \mu(dU)=Z_W^{-1}e^{-S_W(U)/g^2}\prod_e dU_e
+\]
+be the normalized positive Wilson measure on a finite compatible
+four-dimensional periodic lattice, with normalized link Haar measure.
+Fix \(R\ge2\), \(b\ge3\), and a finite collection \(I\) of embedded
+translates \(\Omega_i\) of \([0,R]^4\), with pairwise disjoint vertex
+sets and no local periodic identifications inside a box. The surrounding
+periods are divisible by \(2b\). Constants may depend on this fixed
+geometry and group, but not on the number or placement of boxes or on
+the surrounding volume.
+
+Let \(E_{\circ,i}\) be the edges of box \(i\) not contained in its
+topological boundary. The exterior variable \(\omega\) comprises every
+edge outside their union, including all box boundary edges; let
+\(\mu_{\rm ext}\) be its actual marginal. Write \(u_i\) for the
+interior edges. Every plaquette meeting \(E_{\circ,i}\) lies entirely
+in \(\Omega_i\). No plaquette therefore depends on two integrated
+interiors. The exact conditional law is
+\begin{equation}
+ \mu(d\omega,du)=\mu_{\rm ext}(d\omega)
+                    \prod_{i\in I}Q_i^\omega(du_i),
+ \label{nbr-disintegration}
+\end{equation}
+where \(Q_i^\omega\) is the normalized compact Wilson law of that box
+with its actual boundary fixed. It depends only on that boundary.
+All exterior action terms cancel from this normalization.
+
+Use the boundary-only tree gauge and then the forest rooted at the
+boundary vertices from the fixed-box result. Let \(B_i(\omega)\) be
+the event that some boundary plaquette has
+\(h(U_p)\ge\varepsilon_R^2\). On \(B_i^c\), the transformed boundary
+lies in the fixed small-boundary neighborhood. Let \(W_i(\omega)\)
+be the lifted window about its unique global conditional minimizer,
+\begin{equation}
+ \|x-x_*(V_i(\omega))\|_\infty\le gT,
+ \label{nbr-window}
+\end{equation}
+using the invariant edge/color norm in the forest coordinates.
+It is an actual measurable gauge-invariant event: the full tree
+representative and its unique minimizer transform by the same constant
+root conjugation.
+
+The already proved fixed-box conditional theorem supplies constants
+\(C,c,r,g_0>0\) such that
+\begin{equation}
+ Q_i^\omega(W_i^c)\le a:=Ce^{-cT^2}\quad\hbox{on }B_i^c,
+ \qquad 0<g\le g_0,\quad 1\le T\le r/g.
+ \label{nbr-conditional-tail}
+\end{equation}
+Choose a fixed \(T_0\ge1\) so that \(Ce^{-cT_0^2}\le1/2\), and
+henceforth take \(T_0\le T\le r/g\). Thus \(a\le1/2\).
+This estimate uses the entire compact conditional integral: its
+\(g^n e^{-S_{\min}/g^2}\) denominator and local numerator powers
+cancel, and its complementary compact region has a positive action
+gap. It is not a Gaussian-law substitution.
+
+The full Wilson boundary estimate supplies, for every \(S\subset I\),
+\begin{equation}
+ \mu_{\rm ext}\!\left(\bigcap_{i\in S}B_i\right)
+ \le\beta^{|S|},\qquad
+ \beta=\min\{1,24R^3z_b(g,\varepsilon_R)^{1/Q_b}\},
+ \quad Q_b=6b^4,
+ \label{nbr-boundary-tail}
+\end{equation}
+where
+\[
+ z_b(g,\delta)=\min\left\{1,
+ \exp\left[-\delta^2/g^2+
+ b^4\{4\dim G\log(1/g)+C_{G,4}\}\right]\right\}.
+\]
+Indeed the boundary events are exterior measurable. A union bound over
+one offending boundary plaquette in each box and the prescribed-
+plaquette Wilson estimate prove \eqref{nbr-boundary-tail}; the chosen
+plaquettes are distinct by vertex disjointness. Boundary independence
+is not assumed. These are fixed-geometry inputs from the full-measure
+box theorem, not assertions for arbitrary effective actions.
+
+\subsection{The normalized operation}
+\label{nbr-operation-section}
+
+Define
+\begin{equation}
+ p_i(\omega)=\mathbf1_{B_i^c}Q_i^\omega(W_i^c),\qquad
+ P_i^\omega=
+ \begin{cases}
+ Q_i^\omega(\,\cdot\mid W_i),&B_i^c,\\
+ Q_i^\omega,&B_i.
+ \end{cases}
+ \label{nbr-kernels}
+\end{equation}
+On good boundaries, \(1-p_i\ge1-a\ge1/2\); on bad boundaries
+\(p_i=0\) and the conditional law is left unchanged. All kernels are
+measurable finite-dimensional compact integrals. For \(J\subset I\),
+put
+\begin{equation}
+ \nu_J(d\omega,du)=\mu_{\rm ext}(d\omega)
+       \prod_{i\in J}P_i^\omega(du_i)
+       \prod_{i\notin J}Q_i^\omega(du_i),\qquad \nu=\nu_I.
+ \label{nbr-replacement}
+\end{equation}
+
+\begin{theorem}[Normalized fixed-box replacement]
+\label{nbr-main}
+The measures \(\nu_J\) are probability measures with exactly the
+original exterior marginal and with the Radon--Nikodym derivative
+\begin{equation}
+ \frac{d\nu_J}{d\mu}
+ =\prod_{\substack{i\in J\\B_i^c}}
+             \frac{\mathbf1_{W_i}(u_i)}{1-p_i(\omega)}.
+ \label{nbr-rn}
+\end{equation}
+They are gauge invariant. The same replacement applied to the
+unnormalized Wilson measure preserves its total mass \(Z_W\) exactly.
+There is a coupling of \(\mu\) and \(\nu\) with the same exterior
+whose box discrepancy marks are dominated by independent Bernoulli
+variables of parameter \(a\). Bad-boundary interiors are identical
+in this coupling. In particular every fixed local observable admits
+comparison bounds independent of \(|I|\), as quantified below.
+\end{theorem}
+\begin{proof}
+Conditioning on \(\omega\) and multiplying the normalized kernels
+proves \eqref{nbr-rn}. Each factor has conditional \(Q_i^\omega\)
+expectation one. Thus the product has expectation one and
+\begin{equation}
+ \int e^{-S_W/g^2}
+       \prod_{\substack{i\in J\\B_i^c}}
+          \frac{\mathbf1_{W_i}}{1-p_i}\prod_e dU_e=Z_W.
+ \label{nbr-raw-mass}
+\end{equation}
+Every exterior observable is preserved exactly. Gauge covariance of
+conditional Haar/Wilson laws, invariance of \(B_i\), and invariance
+of the lifted tree-gauge window show that \eqref{nbr-rn} is gauge
+invariant. The explicit coupling is constructed in the next subsection.
+\end{proof}
+
+The conditional denominators are exact boundary-dependent quantities,
+not Gaussian determinants or vacuum constants. They obey
+\begin{equation}
+ 0\le-\log(1-p_i)\le\frac{p_i}{1-a}\le\frac a{1-a}.
+ \label{nbr-denominator-bound}
+\end{equation}
+Their dependence is confined to the fixed box boundary. The full
+product density may nevertheless grow exponentially with \(|J|\);
+no uniform global density-ratio bound is asserted.
+The individual kernels also define resampling operators: keep the
+exterior and redraw interior \(i\) from \(P_i^\omega\). These
+operators commute for distinct boxes and are idempotent, because no
+resampling changes another box's boundary. Their product applied once
+to \(\mu\) gives \(\nu\).
+
+\subsection{An exact positive failure expansion and coupling}
+\label{nbr-coupling-section}
+
+On a good boundary with \(p_i>0\), let
+\(F_i^\omega=Q_i^\omega(\,\cdot\mid W_i^c)\).
+If \(p_i=0\), choose any probability kernel for \(F_i\); it will be
+multiplied by zero. For every \(\omega\),
+\begin{equation}
+ Q_i^\omega=(1-p_i)P_i^\omega+p_iF_i^\omega.
+ \label{nbr-one-mixture}
+\end{equation}
+Consequently
+\begin{align}
+ \mu&=\sum_{S\subset I}\mathcal M_S,\notag\\
+ \mathcal M_S(d\omega,du)
+ &=\mu_{\rm ext}(d\omega)
+   \prod_{i\in S}p_i\prod_{i\notin S}(1-p_i)
+   \prod_{i\in S}F_i^\omega(du_i)
+   \prod_{i\notin S}P_i^\omega(du_i).
+ \label{nbr-failure-expansion}
+\end{align}
+All terms are positive and their masses sum to one. The empty term is
+\(\prod_i(1-p_i(\omega))\,\nu\), not in general a constant multiple
+of \(\nu\). Thus no exterior reweighting is hidden in this expansion.
+
+To couple the measures, sample \(\omega\sim\mu_{\rm ext}\).
+Conditionally and independently across boxes, sample
+\(Y_i\sim P_i^\omega\), an independent Bernoulli mark \(D_i\) with
+parameter \(p_i\), and, when needed, \(Z_i\sim F_i^\omega\). Set
+\begin{equation}
+ X_i=\begin{cases}Y_i,&D_i=0,\\Z_i,&D_i=1.\end{cases}
+ \label{nbr-coupling}
+\end{equation}
+Then \((\omega,X)\sim\mu\) and \((\omega,Y)\sim\nu\).
+On a marked box, \(X_i\notin W_i\) and \(Y_i\in W_i\); elsewhere
+they are identical. Therefore \(D_i\) is precisely its discrepancy
+indicator. On bad boundaries \(p_i=0\), so the interior remains the
+same sample from the original law.
+
+Take independent uniform random variables \(U_i\), independent of the
+exterior, and realize \(D_i=\mathbf1_{U_i\le p_i(\omega)}\).
+Then \(D_i\le\mathbf1_{U_i\le a}\) simultaneously. This proves the
+iid Bernoulli domination asserted in Theorem~\ref{nbr-main}, and
+\begin{equation}
+ \mathbb P(D_i=1\text{ for all }i\in S)
+ =\mathbb E\prod_{i\in S}p_i\le a^{|S|}.
+ \label{nbr-discrepancy-joint}
+\end{equation}
+This stochastic domination concerns the coupling marks, not the
+possibly correlated bad boundaries.
+
+\subsection{Local total variation, observables and entropy}
+\label{nbr-local-section}
+
+Use the convention
+\(\|\lambda-\lambda'\|_{\rm TV}=\sup_E|\lambda(E)-\lambda'(E)|\).
+For \(A\subset I\), retain the whole exterior but only the interiors
+in \(A\). Conditionally, their replacement law is their original law
+conditioned on all its good-boundary windows, of probability
+\(\prod_{i\in A}(1-p_i)\). Hence
+\begin{equation}
+ \|\mu_{({\rm ext},A)}-\nu_{({\rm ext},A)}\|_{\rm TV}
+ =\mathbb E_{\mu_{\rm ext}}
+       \left[1-\prod_{i\in A}(1-p_i)\right]
+ \le a|A|.
+ \label{nbr-local-tv}
+\end{equation}
+The equality follows by integrating the conditional positive and
+negative density parts; equivalently, the coupling is identical with
+that conditional probability, and any discrepancy puts the original
+field outside the replacement support. For the marginal on \(A\)
+alone the same expression is an upper bound.
+
+For a bounded observable supported on the exterior and these interiors,
+\begin{equation}
+ |\mu(f)-\nu(f)|\le2\|f\|_\infty a|A|.
+ \label{nbr-local-observable}
+\end{equation}
+More generally, let \(\operatorname{osc}_i(f)\) be the supremum of the
+change when only box \(i\)'s interior changes. Telescoping along the
+coupling proves
+\begin{equation}
+ |\mu(f)-\nu(f)|
+ \le\sum_i\operatorname{osc}_i(f)\,\mathbb E p_i
+ \le a\sum_i\operatorname{osc}_i(f).
+ \label{nbr-oscillation}
+\end{equation}
+Thus local error depends on the region read by the observable, not on
+the total number of replaced boxes. Global total variation can approach
+one as that number grows.
+
+The local joint-with-exterior relative entropy is also exact:
+\begin{equation}
+ D(\nu_{({\rm ext},A)}\|\mu_{({\rm ext},A)})
+ =\mathbb E_{\mu_{\rm ext}}\sum_{i\in A}-\log(1-p_i)
+ \le\frac{|A|a}{1-a}.
+ \label{nbr-entropy}
+\end{equation}
+Substitute the local version of \eqref{nbr-rn}; all its window
+indicators equal one under \(\nu\). No assertion about finiteness of
+the reverse entropy is needed.
+
+\subsection{Untreated boundaries, exponential moments and clusters}
+\label{nbr-sparsity-section}
+
+The exterior marginal is unchanged, so
+\begin{equation}
+ \nu\!\left(\bigcap_{i\in S}B_i\right)
+ =\mu\!\left(\bigcap_{i\in S}B_i\right)\le\beta^{|S|}.
+ \label{nbr-retained-boundaries}
+\end{equation}
+Under \(\nu\), the original box defect (bad boundary or a failed window
+on a good boundary) is exactly \(B_i\) almost surely. Its good-boundary
+part has been removed by an exactly normalized conditional operation;
+its bad-boundary law has not been discarded or altered.
+
+On the coupling put \(C_i=\mathbf1_{B_i}\lor D_i\). These alternatives
+are disjoint at one box. Expanding a prescribed intersection over the
+subset assigned to the boundary alternative, and conditioning on the
+exterior, gives
+\begin{align}
+ \mathbb P(C_i=1\text{ for all }i\in S)
+ &\le\sum_{J\subset S}a^{|S|-|J|}
+       \mu_{\rm ext}\!\left(\bigcap_{i\in J}B_i\right)
+ \le(a+\beta)^{|S|}.
+ \label{nbr-combined-joint}
+\end{align}
+Let \(\varepsilon=\min(1,a+\beta)\).
+Expansion of the finite product proves, for \(t\ge0\),
+\begin{equation}
+ \mathbb E\exp\left(t\sum_{i\in A}C_i\right)
+ \le[1+\varepsilon(e^t-1)]^{|A|}.
+ \label{nbr-mgf}
+\end{equation}
+The discrepancy version has \(a\) in place of \(\varepsilon\), even
+conditionally on the exterior. This joint-inclusion argument does not
+assert iid stochastic domination for \(C\).
+For \(1\le k\le|A|\), a union bound gives
+\begin{equation}
+ \mathbb P\!\left(\sum_{i\in A}C_i\ge k\right)
+ \le\min\left\{1,\binom{|A|}{k}\varepsilon^k\right\}
+ \le\min\{1,(e|A|\varepsilon/k)^k\}.
+ \label{nbr-count-tail}
+\end{equation}
+For \(k>|A|\) the probability is zero. One may also optimize the
+Chernoff estimate from \eqref{nbr-mgf}.
+
+On any fixed adjacency graph of boxes with maximum degree
+\(\Delta\ge2\), there are at most \(\Delta^{2m}\) connected
+\(m\)-subsets containing a given vertex: encode a canonical spanning
+tree by its depth-first traversal. A cluster of size at least \(m\)
+contains such a subset. Therefore
+\begin{equation}
+ \mathbb P(|C\text{-cluster at }i|\ge m)
+       \le[\Delta^2\varepsilon]^m.
+ \label{nbr-cluster}
+\end{equation}
+The same argument gives \(a\) for discrepancies and \(\beta\) for
+defects under the replacement measure. These estimates are uniform
+in volume and the total number of boxes, at the fixed geometry/degree.
+For \(T(g)=(\log(1/g))^\alpha\), \(\alpha>1/2\), both \(a\)
+and \(\beta\) are smaller than every fixed power of \(g\) at small
+coupling. All fixed-region bounds inherit that property.
+
+\subsection{Exact source identities and local connected cumulants}
+\label{nbr-source-section}
+
+For bounded measurable single-box sources \(f_i(\omega,u_i)\) and an
+exterior source \(f_{\rm ext}(\omega)\), conditional independence gives
+\begin{align}
+ \nu\!\left(e^{f_{\rm ext}+\sum_i f_i}\right)
+ &=\int\mu_{\rm ext}(d\omega)e^{f_{\rm ext}}
+                             \prod_iP_i^\omega(e^{f_i}),
+ \label{nbr-source-replacement}\\
+ \mu\!\left(e^{f_{\rm ext}+\sum_i f_i}\right)
+ &=\int\mu_{\rm ext}(d\omega)e^{f_{\rm ext}}
+       \prod_i\bigl[(1-p_i)P_i^\omega(e^{f_i})
+                           +p_iF_i^\omega(e^{f_i})\bigr].
+ \label{nbr-source-original}
+\end{align}
+On good boundaries,
+\(P_i^\omega(e^{f_i})=Q_i^\omega(\mathbf1_{W_i}e^{f_i})/(1-p_i)\);
+on bad boundaries it is unchanged. The exact zero-source conditional
+masses remain in these denominators. No exterior-dependent factor is
+absorbed into a vacuum constant. The identities are positive expansions
+for real sources and absolutely valid for bounded complex sources.
+Cross-box sources use the full measure expansion, not a false product
+factorization in \eqref{nbr-source-replacement}.
+
+For any bounded \(F\) depending on the exterior and interiors in \(A\),
+\(\|F\|_\infty\le M\), the coupling yields
+\begin{equation}
+ |\mu(e^F)-\nu(e^F)|\le2e^M a|A|.
+ \label{nbr-source-difference}
+\end{equation}
+For real \(F\), both expectations are at least \(e^{-M}\), so their
+real logarithms differ by at most \(2e^{2M}a|A|\).
+
+Now let \(O_1,\ldots,O_q\) be bounded observables with the same fixed
+local dependence, put \(M_l=\|O_l\|_\infty>0\), and omit zero
+observables. Fix
+\(0<s_0<\log2\), \(d_0=2-e^{s_0}>0\).
+For \(F(t)=\sum_lt_lO_l\) and
+\(Z_\lambda(t)=\lambda(e^{F(t)})\), the weighted source ball
+\(\sum_l|t_l|M_l\le s_0\) satisfies
+\begin{equation}
+ |Z_\mu(t)-1|,\ |Z_\nu(t)-1|\le e^{s_0}-1<1.
+ \label{nbr-source-disk}
+\end{equation}
+Both functions are nonzero, with analytic logarithms zero at the
+origin on the same branch. The straight segment between their values
+also remains in this disk. Integrating \(1/z\) along it and using
+\eqref{nbr-source-difference} gives
+\begin{equation}
+ |\log Z_\mu(t)-\log Z_\nu(t)|
+       \le\frac{2e^{s_0}}{d_0}\,a|A|.
+ \label{nbr-log-source}
+\end{equation}
+For another bounded observable \(O\) whose support is included in
+\(A\), the normalized source numerator obeys
+\begin{equation}
+ \left|\frac{\mu(Oe^F)}{Z_\mu}
+             -\frac{\nu(Oe^F)}{Z_\nu}\right|
+ \le\frac{4\|O\|_\infty e^{s_0}}{d_0^2}\,a|A|.
+ \label{nbr-source-ratio}
+\end{equation}
+Indeed the numerator difference is at most
+\(2\|O\|_\infty e^{s_0}a|A|\), the denominator difference at most
+\(2e^{s_0}a|A|\), their moduli are at least \(d_0\), and
+\(|\nu(Oe^F)|\le\|O\|_\infty e^{s_0}\). Use
+\(d_0+e^{s_0}=2\) to obtain the displayed constant.
+
+Let \(k=(k_1,\ldots,k_q)\ne0\), \(n=\sum_l k_l\).
+Cauchy on radii \(s_0/(qM_l)\) gives the explicit connected-cumulant
+comparison
+\begin{equation}
+ \left|\partial^k(\log Z_\mu-\log Z_\nu)(0)\right|
+ \le\frac{2e^{s_0}}{d_0}\,a|A|\,
+           k!\left(\frac q{s_0}\right)^n\prod_l M_l^{k_l}.
+ \label{nbr-cumulant}
+\end{equation}
+Alternatively set inactive variables to zero and use radii
+\(s_0k_l/(nM_l)\). The factor preceding \(\prod M_l^{k_l}\)
+then improves from \(k!(q/s_0)^n\) to
+\[
+ \frac{k!(n/s_0)^n}{\prod_{k_l>0}k_l^{k_l}}
+       \le n!(e/s_0)^n.
+\]
+The last inequality uses \(k!\le\prod k_l^{k_l}\) and
+\(n^n\le e^n n!\). All finite generating functions are entire for
+bounded observables, so differentiation under their integrals is
+valid. Windows and coupling are held fixed during differentiation.
+These statements are for bounded observables with fixed local support;
+uniformity in a later cutoff applies only if their displayed bounds
+remain uniform. They do not constitute estimates for renormalized
+unbounded fields.
+
+\subsection{Natural stopping point and scope}
+\label{nbr-scope}
+
+This operation treats an arbitrary finite union of vertex-disjoint
+fixed boxes in the full positive bare measure. Its conditional
+normalizations are exact; it preserves the exterior marginal, total
+partition mass and gauge invariance; and it accounts for every removed
+configuration through a positive sparse expansion. Unlike conditioning
+the whole lattice on a simultaneous good event, it does not reweight
+the exterior distribution. It also supplies local comparison, source,
+cumulant and cluster bounds uniform in the number of boxes.
+
+The restriction is substantive. The box size and forest-coordinate
+conditional minimizer are fixed. No identification with an averaged
+coarse-constraint fiber, arbitrary growing component, collared
+multiscale determining set, scale-age estimate or effective action
+after renormalization is claimed. Bad-boundary boxes remain with their
+original conditional laws. Complex source formulas here come from
+bounded finite observables, not a complex-measure stability theorem.
+The result is a normalized local replacement input for future
+mixed-history analysis; it does not close the continuum existence,
+reconstruction, nontriviality or mass-gap problem.
+
+\end{document}

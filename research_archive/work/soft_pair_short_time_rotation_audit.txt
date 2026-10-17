@@ -1,0 +1,53 @@
+INDEPENDENT AUDIT: SOFT PAIR SHORT CURRENT TIMES
+18 October 2026. Rotation audit.
+Source: soft_pair_short_time_research.txt.
+Verdict: pass. No mathematical correction requested.
+
+The base action/gauge estimate is exactly the previously audited
+local vector short-time mechanism with all-site D. At each fine
+diagonal root, the affine constant is removed by a formal Cartan
+gauge; the first two insertion coefficients then carry K^-2 and
+K^-4 with only polynomial source-distance factors. Current
+exponential kernels absorb those factors. The K^4 block trace
+cancels the K^-4 second coefficient, giving the integrable
+C(s+s^2) bound on 0<s<=1. No gap is needed.
+
+The soft insertions have the correct forms:
+C=mu J^T,F=I for the scalar, and C=Cbar,F=a-q_MK for the
+vector. Both C factors have whole-block norm O(mu), including
+their first-two physical affine jets with polynomially weighted
+root bounds. F has a fixed coarse fiber and exponential kernels.
+This uses the actual corrected product, not the full ordinary C.
+The q_M and q_MK entries are the actual classical kernels.
+
+The semigroup estimates are operator block bounds before any trace.
+Their power series and insertion formulas keep exponential kernels
+and polynomial source weights for s<=1. This grouping creates no
+fine-fiber dimension factor.
+
+The rectangular cyclic identity retains P0:
+Tr_f[P0 E_W C^T F C E_B]
+ =Tr_c[F C E_B P0 E_W C^T].
+It sums all coarse diagonal blocks, rather than replacing the right
+side by a single coarse diagonal. The semigroup factors attach both
+coarse endpoints to block zero. Their exponential summability pays
+the polynomial affine weights, while the two C factors supply mu^2.
+The trace is then in a fixed coarse output fiber; the intermediate
+fine Hilbert space does not cost K^4. Hence the correction is
+C mu^2 s, with the correct Duhamel sign and time length.
+
+The actual vector identification is only through the established
+two affine stationary jets. Formal compact source truncations and
+absolute rooted moments justify their infinite evaluation. No
+continuous finite-torus flux or uniform finite winding statement is
+asserted.
+
+This closes the short current-time band for the soft pair, not the
+intermediate logarithmic coefficient.
+
+FRAGMENT FIDELITY. Full read of soft_pair_short_time_fragment.tex
+passes against the research proof. The actual operator definitions,
+two O(mu) factors, retained P0 in the rectangular trace identity,
+polynomial gauges, fixed coarse output rank, and scope are preserved.
+No correction requested.
+

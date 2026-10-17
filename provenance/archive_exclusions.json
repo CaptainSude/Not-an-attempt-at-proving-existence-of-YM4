@@ -1,0 +1,114 @@
+[
+  {
+    "path": "work\\balaban_cmp116.pdf",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\balaban_cmp122b.pdf",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\cmp109_attempt.pdf",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\cmp109_cutoff_primary.pdf",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\cmp109_primary.pdf",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\cmp116_primary.pdf",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\cmp119_primary.pdf",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\cmp122b_attempt.pdf",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\cmp122b_primary.pdf",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\euclid_cmp122b.html",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\handoff_inventory_scan.json",
+    "reason": "Full third-party extraction/metadata or redundant transient inventory"
+  },
+  {
+    "path": "work\\inherited_quantum_reentry_fragment_check.aux",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\inherited_quantum_reentry_fragment_check.log",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\inherited_quantum_reentry_fragment_check.out",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\inherited_quantum_reentry_fragment_check.pdf",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\luscher_weisz_9504006.pdf",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\luscher_weisz_9504006.txt",
+    "reason": "Full third-party extraction/metadata or redundant transient inventory"
+  },
+  {
+    "path": "work\\luscher_weisz_9505011.pdf",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\luscher_weisz_9505011.txt",
+    "reason": "Full third-party extraction/metadata or redundant transient inventory"
+  },
+  {
+    "path": "work\\lw_amplitude_p11.png",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\lw_background_p13.png",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\openaire_cmp116.json",
+    "reason": "Full third-party extraction/metadata or redundant transient inventory"
+  },
+  {
+    "path": "work\\openaire_cmp122b.json",
+    "reason": "Full third-party extraction/metadata or redundant transient inventory"
+  },
+  {
+    "path": "work\\quantum_activity_transport_fragment_check.aux",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\quantum_activity_transport_fragment_check.log",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\quantum_activity_transport_fragment_check.out",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\quantum_activity_transport_fragment_check.pdf",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  },
+  {
+    "path": "work\\rotation-theorem.png",
+    "reason": "Third-party PDF/image, transient compiler output, or downloaded web response"
+  }
+]

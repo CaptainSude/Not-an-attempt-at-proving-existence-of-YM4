@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage{mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 15: a uniform nonlinear constrained Wilson minimum}
+\author{Research working document}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We assemble a nonlinear small-field minimizer construction for the
+bare Wilson action on homogeneous finite periodic regulators.
+The constants and coarse-data analyticity radius are uniform in
+the refinement and volume. The proof requires an equal-exponent
+constrained Schauder estimate, an exact Wilson force factorization
+with removable mesh factors, and a two-Hilbert-direction bound
+for the nonlinear constraint curvature. These yield a strict
+minimum in a fixed flat gauge slice for the corrected average.
+A constraint-preserving gauge flow and a separate transfer to
+ordinary group averages then give a minimum, modulo gauge,
+among sufficiently small global physical C1-alpha potentials
+with prescribed ordinary coarse average. This is a finite-regulator
+classical ingredient for a constructive program. It does not yet
+construct an interacting continuum quantum theory.
+\end{abstract}
+
+\noindent\textbf{Status and provenance.}
+Research proofs subjected to separate internal mathematical audits;
+no external certification or novelty claim. Source matching refers
+to the deposited transcriptions at commit
+\texttt{e392ef45013a581664bab76b90867170b30fe10e} of
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}{Yang--Mills-LLM-experiment}.
+Original CMP98 and CMP99b pages have not all been independently
+recovered. The action and physical pairing match the deposited
+four-dimensional bare Wilson conventions; their source-coordinate
+Hessian is distinguished explicitly from the ordinary-potential
+Hessian used in the nonlinear argument.
+
+\section{The result and the remaining construction problem}
+\label{nm15-overview}
+
+Fix a matrix group $SU(N_c)$, normalized trace
+$\tau=\operatorname{Tr}/N_c$, an odd block ratio $L\ge3$,
+and $0<\alpha<1$. Fine spacing is $\eta=L^{-j}$ and the
+retained coarse spacing is one. The regulators are compatible
+finite periodic lattices. Potentials are Hermitian traceless
+on the real locus and are complexified for analytic estimates.
+The complete-field norm $N_\alpha$ controls the potential,
+its physical first differences and their $\alpha$-H\"older
+seminorms. Transposes always use physical sums. Fixed collar
+enlargements and orientation multiplicities are included in
+the constants, which may depend on $L,N_c,\alpha$.
+
+The final theorem is Theorem~\ref{ot-minimum}. In words,
+for sufficiently small arbitrary coarse data $B$ there is an
+analytic small fine field with the exact ordinary homogeneous
+constraint $M^{(j)}(U)=e^{iB}$, and its action is minimal among
+all fields in a fixed small $N_\alpha$ ball satisfying that
+constraint. Equality within the ball means gauge equivalence.
+The corrected representative also obeys the sharper expansion
+$A_*(B)=HB+O(\norm{B}_\infty^2)$ in $N_\alpha$, where $H$
+is the flat minimizing extension. All these bounds are uniform
+in the mesh and the compatible periodic volume.
+
+There are three distinct operations in the proof. The flat
+Green operator solves the nonlinear stationarity equation in
+a fixed gauge slice. A genuine gauge flow covers nearby fields
+with the \emph{same corrected constraint}. Finally, two explicit
+gauge constructions relate the corrected and ordinary constraint
+sets. Neither last step is a consequence of fixed-slice convexity
+alone. The ordinary representative need not be in the same flat
+gauge slice as the corrected one.
+
+The flat operator identities, canceled Fourier aliases, and
+physical exponential locality used below were derived in
+Notebooks 8--12. The exact nonlinear constraint chart is from
+Notebook 13. Notebook 14 supplies the ordinary/corrected gauge
+relation and reference-coordinate comparison. This document
+contains the additional estimates that close the nonlinear
+minimum argument. Its symbols are restated at their use, but
+the earlier flat alias estimates remain explicit prerequisites.
+
+This closes a concrete classical small-field step. It leaves
+open extension to local gauges and mixed retained histories,
+control of large fields, integration of interacting fluctuations,
+running-coupling estimates, and a nontrivial continuum observable
+hierarchy. Euclidean invariance, positivity, and the physical
+mass gap remain separate obligations. The gap in the constrained
+flat auxiliary problem is not a physical Yang--Mills mass gap.
+

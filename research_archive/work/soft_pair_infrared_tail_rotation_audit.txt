@@ -1,0 +1,106 @@
+INDEPENDENT AUDIT: LOCAL CUBIC-RESOLVENT INFRARED TAIL
+18 October 2026. Rotation audit.
+Source: soft_pair_infrared_tail_research.txt, revised after the
+ordered-Laurent and physical-distance clarifications.
+Verdict: substantive pass under its explicit inputs (I)--(III);
+their stated actual infinite-system application is justified by the
+repaired Hessian and soft-factor modules.
+
+1. Input audit
+
+The localization in (III) is essential. A global relative form norm
+alone would not support the rooted local trace. The repaired action
+Hessian supplies first/second coefficients with source-rooted
+Z/E energy factors. Physical rescaling produces uniform coefficients
+against L=I+K^2 Delta. Smooth complete-field localization and a
+smaller exponential allow both conjugation weights and two-sided
+weights centered at either marked source. Covariant D derivatives
+and the soft normalized J/Cbar terms have the same structure.
+
+For input (II), the revised proof uses q=D0^T H0 D0 with BOTH flat
+moments zero. It no longer uses the false common difference-square
+identity. Conjugation of H0 costs O(theta mu), kept between the
+gradient legs; outer-gradient errors have size O(theta mu) before
+physical scaling. Thus relative physical errors are O(theta).
+The range-K coarse penalty has a fixed physical weighted norm.
+
+The distance weights are now explicitly physical Lipschitz functions
+on fine sites, not piecewise constant block-index distances.
+Their infimum/supremum on one block differ by O(d), so conversion
+to final-block exponential factors costs only a fixed constant.
+
+2. Schatten normalization
+
+The bound Tr(P_x L^-3 P_x)<=C is uniform in K: the K^4 block
+volume is exactly canceled by the four-dimensional physical
+scaling in the inverse-third-power integral. The finite zero mode
+contributes N^-4<=1. Fixed color and component dimensions are the
+only additional multiplicities.
+
+The compression argument is correct: scalar Jensen applied to
+each eigenvector of P_x L^-1 P_x gives
+Tr[(P_x L^-1 P_x)^3]<=Tr(P_x L^-3 P_x).
+It does not interchange compression and a power. The resulting
+S6 bound for P_x L^-1/2 and Holder with 6,infinity,6 give the
+claimed block S3 bound, with no K^4 trace factor.
+
+3. Contour and source weights
+
+The chosen rays stay uniformly separated from the positive spectrum.
+X0>=c0 L suffices for a uniform energy-sandwiched resolvent:
+X0^(1/2)(z-X0)^-1X0^(1/2) is uniformly bounded there.
+The relative perturbation in (II) yields the weighted versions by
+a Neumann series with one fixed small theta.
+
+The two-sided source identity is exact. For example
+W_j R V_j R V_k R W_j
+=(W_j R W_j^-1)(W_j V_j W_j)(W_j^-1 R W_j)
+ (W_j^-1 V_k W_j)(W_j^-1 R W_j).
+After the energy normalizations the intermediate L factors cancel;
+no fractional-weight commutator is invoked.
+For two marks, the geometric mean of the two possible marked
+bounds gives four endpoint-to-source edges, whose union is
+connected and controls the required tree. Reduced exponents pay
+the coarse summations and fixed collar radii.
+
+4. Local third-resolvent trace
+
+The coefficient 2/u^2 in the third-pole contour formula is correct.
+The scalar residue of exp(-uz)/(z-lambda)^3 is
+u^2 exp(-u lambda)/2.
+
+Differentiating R^3 produces three resolvent factors, each with
+zero, one or two marks. Block resolution and S3-S3-S3 Holder
+bound the rooted trace. The block-zero projector stays in place;
+there is no cyclic identification of a partial trace.
+The rooted tree majorants make both intermediate block sums
+absolutely trace-norm convergent. The contour integral contributes
+exp(-lambda0 u)/u, so the final u^-3 exp(-lambda0 u) bound is
+valid for u>=1, including mixed second source derivatives.
+It is not a small-time asymptotic.
+
+5. Affine evaluation and actual scope
+
+A smooth physical partition of the affine field has complete-field
+C1 norms O(1+|j|). The rooted second-source tree bound is summable
+against these polynomial factors. This proves the uniform affine
+tail for the explicit representatives on the selected infinite
+structural system.
+
+The actual stationary affine jets are matched before estimating.
+Their matching constants need only be fixed-K statements; no
+unproved uniform stationary response is used. Diagonal color
+traces are individually invariant under the matching gauge.
+The result does not assert a finite-period continuous flux family,
+an arbitrary finite winding-kernel normalization, a middle-time
+plateau, or the universal logarithmic coefficient.
+
+No further mathematical correction requested.
+
+FRAGMENT FIDELITY. Full read of soft_pair_infrared_tail_fragment.tex
+passes against the revised research. The physical fine-site weights,
+ordered-Laurent correction, exact source-normalization identity,
+S6/S3 compression argument, third-pole coefficient, retained root
+projector, affine Taylor-kernel evaluation and infinite-system scope
+are all preserved. No correction requested.
+

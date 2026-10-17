@@ -1,0 +1,78 @@
+INDEPENDENT AUDIT: FLAT-HOLONOMY COMPENSATION
+17 October 2026. Auditor: provenance.
+
+Audited work/flat_holonomy_cancellation_research.txt, especially
+Sections 2--4. PASS. No correction requested.
+
+1. Branch identification
+
+Constant commuting current links exp(i t A_mu H/K) have all plaquette
+holonomies equal to the identity. Every short path representing the
+same displacement has the same commuting transporter, including paths
+in a lifted boundary block. Thus each ordinary blocking stage produces
+the constant connection with the corresponding multiplied angle.
+The actual selected mean is evaluated on identical transporters, so
+no stronger arbitrary-torus arithmetic property of the mean is needed.
+
+The same construction at all previous fine levels gives a bare
+Wilson field of zero action. The real Wilson action is nonnegative,
+so the current and final classical minimum values are zero.
+After the actual local root gauge, the field is in the selected
+small stationary chart. Uniqueness of that local minimum germ
+identifies it with the actual branch. This is a fixed finite-germ
+argument and does not claim a nonzero radius uniform in unrestricted
+polynomial backgrounds.
+
+The scalar domain with value zero at the one global base is preserved
+by every sitewise adjoint gauge. Consequently the scalar determinants
+are unchanged by the root gauge. Their spectra can be computed in
+the constant-link representative.
+
+2. Normalization and the scalar calculation
+
+The fine current torus has (KN)^4 sites and phase tA/K; the coarse
+torus has N^4 sites and phase tA. Therefore division by final volume
+N^4 leaves K^4/K^2=K^2 on the fine quadratic coefficient, while
+the coarse coefficient has factor one. The charge sum is C_H.
+This verifies precisely C_H |A|^2 (K^2-1) g_4 in (2.1).
+
+I independently derived the scalar cofactor identity and its
+Riemann-sum limit before reading this note; the formulas agree.
+The derivative kernel near zero is O(|p|^-2), so in dimension four
+the singular grid sum is uniformly O(epsilon^2), and the integration
+by parts has vanishing O(epsilon^2) boundary flux.
+
+3. Actual total and the Ward limit
+
+The actual correction D has the earlier fixed-K, uniform-volume
+exponential current/coarse kernel bounds. Its invariant density
+construction has zero total linear color jet. Differentiating the
+local gauge identity at zero therefore makes its Hessian annihilate
+gradients. Exponential moments allow the scalar gauge parameter to
+be linear, by cutoff approximation. Its gradient is a constant link
+field, so the infinite Hessian has zero constant-field response.
+
+The finite constant-link family is genuinely periodic, although it
+usually has nontrivial holonomy. The displayed finite Hessian row sum
+is correctly normalized by N^4. Uniform exponential tails permit
+each fixed central sum to pass along a structural subsequence; every
+limit has the same zero row sum. Hence the entire scalar sequence
+converges to zero. This uses fixed K before the thermodynamic limit.
+The existing uniform-old-M bounds allow varying old depth in the
+same subsequence argument; no uniform-in-K locality is inferred.
+
+4. Forced compensation
+
+The exact finite identity is
+2D=N_0(logdet G_f-logdet G_c-logdet Q_perp).
+Subtracting the vanishing normalized D coefficient yields exactly
+the positive coefficient in (4.1). The contribution of
+-one-half logdet Q_perp cancels the scalar half-ratio, with no
+additional factor of two.
+
+This is a zero-momentum, flat-holonomy test. It does not compute a
+Maxwell coefficient or disprove the desired combined determinant
+comparison. It does disprove a separate K-uniform O(1)
+constant-potential response for this physical determinant and
+shows why the common-mass scalar reference cannot simply replace
+the original separately massless based scalar ratio.

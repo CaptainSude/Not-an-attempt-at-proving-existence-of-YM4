@@ -1,0 +1,1622 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 38: positive full-measure embeddings and local defect bounds}
+\author{Research proof draft}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We move beyond the homogeneous local integral to exact statements
+about finite positive Wilson measures. A specified measurable
+completion of the actual local coarse map admits positive linear
+good and remainder operators whose sum is the exact pushforward.
+Their iterates retain every history and the full normalization.
+Under literal input-domain containment and the established local
+Ward identities, the good measure has the actual local analytic
+germ on each fixed finite regulator.
+
+Independently, a site-plane slab argument bounds prescribed
+large-curvature cells under the normalized Wilson measure, uniformly
+in the total volume. A compact-group conditional Laplace theorem
+controls fluctuations in a fixed box with small boundary data.
+A boundary-only tree gauge joins these results: prescribed
+separated boxes have a joint exponentially small probability of
+failure of explicit local gauge/minimizer windows. These are
+estimates on the entire bare Wilson measure, with the denominator
+included.
+
+The local box windows have not been identified with the averaged
+constraint windows of the iterated renormalization map. The
+all-history decomposition has not been bounded in a multiscale
+complete-density norm. We record this remaining interface, a
+precise match to the published large-field induction, and a
+regularity counterexample ruling out one insufficient shortcut.
+The continuum existence theorem is not established.
+\end{abstract}
+
+\section*{Relation to the construction and independence of inputs}
+
+Notebook 37 establishes a positive logarithmic drift and arbitrarily
+long finite weak homogeneous local histories within the working
+proof chain and its explicitly stated upstream hypotheses. Those
+histories alone do not represent the complete Wilson measure.
+Here we address that next interface.
+
+There are two distinct kinds of result below. The positive
+embedding uses the previously defined ordinary composite coarse
+map, stationary chart, pivot measure and local gauge Ward identity.
+Its local-germ assertion is conditional on literal containment of
+the real integration window in the represented input density.
+By contrast, the bare Wilson probability results are proved
+directly from compact-group integration, finite lattice geometry,
+and positivity. They do not require the earlier multiscale
+determinant calculation.
+
+All field and coupling arguments in the new probability bounds
+are real. The compact gauge groups and link Haar measures are
+normalized to mass one. Unless explicitly stated otherwise, a
+fixed-box constant may depend on its side length and the group,
+but not on the surrounding torus volume. Such a constant is not
+claimed uniform in a growing physical box at vanishing lattice
+spacing. The general \(SU(N)\) bare-measure lemmas do not extend
+all earlier \(SU(2)\) construction inputs to arbitrary groups.
+
+The source repository remains pinned at
+\texttt{e392ef45013a581664bab76b90867170b30fe10e}. This document is
+a mathematical research draft with separate internal audits, not
+an assertion of external verification of the preceding notebooks.
+The exact status of each result and each missing implication is
+part of its statement.
+
+
+
+% No preamble. Prefix fps-. 17 October 2026.
+\section{An exact positive finite-measure embedding of the retained sector}
+\label{fps-section}
+
+Fix a finite compatible periodic lattice and a compact connected matrix
+gauge group, with normalized link Haar measure. This section constructs
+an exact positive decomposition of the original finite Wilson measure
+under a specified real measurable coarse map. It does not estimate the
+complementary histories or identify the full pushforward with the
+homogeneous analytic density.
+
+The primitive ordinary mean, composite ratio \(R=\ell^s\), direct-\(R\)
+internal contour gauge, physical centered branch \(V_*(W)\), and retained
+pivot chart are the ones already established for the local macrostep.
+A global completion is fixed explicitly below. It agrees with that
+analytic map near the identity, but is not identified with an unspecified
+different large-field completion in the deposited account.
+
+\subsection{The global real map and its exact compact-gauge normalization}
+\label{fps-completion-section}
+
+For a contour tuple \((U_1,\ldots,U_n)\) from \(y\) to \(x\), set
+\(T=U_1\). On a sufficiently small conjugation-invariant identity
+neighborhood, let \(\Phi\) be the actual selected local mean on the
+reference-normalized tuple, with its original ordering, multiplicities
+and reference. On the Borel good set where all \(U_jT^{-1}\) lie in that
+neighborhood, define
+\[
+ P(U_1,\ldots,U_n)=\Phi(U_1T^{-1},\ldots,U_nT^{-1})T.
+\]
+On its complement put \(P=T\). The good set is endpoint-invariant, and
+local conjugation covariance gives, everywhere on the real group,
+\[
+ P(gU_1h^{-1},\ldots,gU_nh^{-1})=gP(U_1,\ldots,U_n)h^{-1}.
+\]
+Right covariance proves agreement with the original small-field mean.
+No alternative group mean is substituted.
+
+For each primitive ordinary coarse bond, compute these completed
+internal contours and its original center string \(T_c\). If every
+transported relative string \(U_xT_c^{-1}\) lies in the specified small
+logarithm domain, use the original formula
+\[
+ \exp\left[\ell^{-d}\sum_x\log(U_xT_c^{-1})\right]T_c;
+\]
+otherwise use \(T_c\). This defines a Borel gauge-covariant primitive
+map. Compose these primitive completions to obtain \(F\). Complete the
+independent direct-\(R\) internal contour \(P_R\) in the same way.
+Thus, with \(r\) restriction to final block centers,
+\begin{equation}
+ F(U^v)=F(U)^{r(v)},\qquad
+ P_R(U^v;y,x)=v(y)P_R(U;y,x)v(x)^{-1}.
+ \label{fps-global-covariance}
+\end{equation}
+The completion need not be continuous at its selected boundaries and
+is not asserted globally holomorphic. The original fine Wilson measure
+is unchanged: \(F\) is now a fully specified coarse observable of it.
+No equality with a direct-\(R\) ordinary average is used.
+
+Let \(H_R\) be the site-gauge group equal to the identity at every final
+block center, with product normalized Haar, and let \(n_s\) count its
+free site variables. For positive real \(g\), define
+\begin{equation}
+ q(h)=1-\operatorname{Re}\tau(h),\quad
+ G_R(U)=\sum_{y,x\ne y}q(P_R(U;y,x)),\quad
+ c(g)=\int_Ge^{-q(h)/g^2}\,dh>0.
+ \label{fps-compact-normalizer}
+\end{equation}
+This is the exact compact integral, not a Gaussian approximation.
+Equation~\eqref{fps-global-covariance} and independence of the site
+Haar variables give, for every real configuration,
+\begin{equation}
+ \int_{H_R}e^{-G_R(U^u)/g^2}\,du=c(g)^{n_s}.
+ \label{fps-orbit-normalization}
+\end{equation}
+Indeed its individual contour factors are
+\(P_R(U;y,x)u(x)^{-1}\), each with Haar integral \(c(g)\).
+
+\begin{lemma}[Pointwise orbit acceptance]
+\label{fps-markov-lemma}
+The kernel
+\begin{equation}
+ K_g(U,dV)=c(g)^{-n_s}\int_{H_R}
+       e^{-G_R(U^u)/g^2}\,\delta_{U^u}(dV)\,du
+ \label{fps-markov}
+\end{equation}
+is a probability kernel supported on \(F(V)=F(U)\).
+For every Borel \(0\le\chi(V,W)\le1\), put
+\(p_\chi(U)=\int K_g(U,dV)\chi(V,F(U))\). Then for every
+finite positive measure \(\mu\),
+\begin{equation}
+ F_*\mu=F_*(p_\chi\mu)+F_*((1-p_\chi)\mu),\qquad
+ 0\le p_\chi\le1.
+ \label{fps-markov-split}
+\end{equation}
+If \(\mu\) is \(H_R\)-invariant, then
+\begin{equation}
+ K_g^*\mu(dV)=c(g)^{-n_s}e^{-G_R(V)/g^2}\mu(dV).
+ \label{fps-invariant-insertion}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Normalization follows from \eqref{fps-orbit-normalization}; based gauge
+invariance of \(F\) gives the support statement. The split is therefore
+pointwise acceptance/rejection. For the last assertion, in the integral
+against each test function change \(U\) to \(U^u\), using invariance of
+\(\mu\), then integrate \(du\). For noninvariant input the corresponding
+formula uses its \(H_R\)-average, not its original density.
+\end{proof}
+
+\subsection{The actual local density and its positive domination}
+\label{fps-local-section}
+
+Let \(\mu\) be invariant under the full current-site gauge group and
+write its Haar Lebesgue decomposition
+\(\mu=\rho\,m_E+\mu_{\rm sing}\). Both parts are invariant by uniqueness
+of the decomposition and Haar invariance. Use only \(\rho m_E\) for the
+local coarea operator; every remaining positive singular part will stay
+in the complement.
+
+For \(W\) in a small real domain \(D\), set \(V=V_*(W)\). The actual
+chart \(\Phi_V(z)\) solves the relative constraint exactly and leaves
+every retained coordinate equal to \(z\). Choose an injective local
+sheet with a fixed real retained window \(\mathcal B_z\). An additional
+factor \(0\le\chi_{\rm extra}\le1\) may impose any further original
+pivot, contour or reconstructed-field restrictions; those factors are
+not silently dropped.
+
+Let \(n_e,n_c\) count positive current and coarse bonds, and set
+\(n_z=(\dim\mathfrak g)(n_e-n_c)\). In real Lie coordinates orthonormal
+for the chosen trace form, write
+\(d(e^{iX})=h_0j(X)dX\), with \(j(0)=1\).
+For the actual pivot blocks \(A_{c,p}\), define
+\[
+ D_R(V)=\prod_c\det(A_{c,p})^{-1}.
+\]
+All real small-chart orientations are fixed positive. Let
+\(j_c^{\rm str}(V;K_Vz)\) be the logarithm of
+\(\det A_{c,p}/\det D_pF_V(\Phi_V(z);c)\), zero at \(z=0\).
+The exact local density relative to coarse product Haar is
+\begin{align}
+ \ell_\mu(W)
+ &=c(g)^{-n_s}h_0^{n_e-n_c}D_R(V)
+   \int_{\mathcal B_z}\rho(e^{i\Phi_V(z)}V)
+       e^{-G_R(e^{i\Phi_V(z)}V)/g^2}\notag\\
+ &\qquad\times\prod_b j(\Phi_V(z)(b))
+       \exp\left[\sum_c j_c^{\rm str}(V;K_Vz)\right]
+       \chi_{\rm extra}\,dz.
+ \label{fps-local-density}
+\end{align}
+The target group delta contributes \(h_0^{-1}\) per coarse bond.
+The square ambient straightening and subsequent pivot elimination give
+this expression; a rectangular \(\det D\Phi\) is not substituted for
+the constraint Jacobian. Equivalently its unrearranged pivot factor is
+the product of inverse nonlinear pivot derivatives.
+For measurable \(\rho\), the local joint change of variables and
+Tonelli prove \eqref{fps-local-density} almost everywhere. It is a
+nonnegative measurable function. Applying
+\eqref{fps-invariant-insertion} to this actual local sheet gives
+\begin{equation}
+ \nu:=F_*\mu\ \ge\ 1_D\ell_\mu\,m_C.
+ \label{fps-local-domination}
+\end{equation}
+No global density or regularity for \(\nu\) is required.
+
+If the literal input chart has
+\(\rho(U)=Z_{\rm in}\exp[-S_M(U)/g^2+E_{\rm raw}(U)]\),
+put \(z=g\xi\). With the actual pulled-back action-plus-gauge Hessian
+\(A_M(V)\), its exact cubic-and-higher remainder and all measure factors
+in \(I\), the same formula is
+\begin{align}
+ \ell_\mu(W)
+ &=Z_{\rm in}c(g)^{-n_s}h_0^{n_e-n_c}D_R(V)
+       g^{n_z}(2\pi)^{n_z/2}\det A_M(V)^{-1/2}\notag\\
+ &\quad\times e^{-S_M(V)/g^2+E_{\rm raw}(V)}
+ \mathbb E_{A_M(V)^{-1}}
+       [\chi_{\rm window}\chi_{\rm extra}e^{I(V,g,\xi)}].
+ \label{fps-gaussian-density}
+\end{align}
+Here \(I\) contains \(-g^{-2}R_3\), all Haar and straightening
+logarithms, and the exact inherited fluctuation difference. Its field
+argument is \(\Phi_V(g\xi)\), not \(g\Phi_V(\xi)\).
+This is an exact positive-real identity only when the input density
+representation holds at every reconstructed field of the window.
+Holomorphic continuation alone does not furnish that condition.
+
+\subsection{An invariant positive good/remainder pair}
+\label{fps-invariant-section}
+
+Choose a fixed continuous \(\theta\ge0\) supported in \(D\), positive
+near the identity. Let \(\mathcal G_C\) be the full coarse-site gauge
+group with normalized Haar. Define
+\[
+ m_\theta(W)=\int_{\mathcal G_C}\theta(W^v)\,dv.
+\]
+It is invariant, and positive on the orbit saturation of
+\(\{\theta>0\}\). With value zero when \(m_\theta=0\), set
+\begin{equation}
+ a_\mu(W)=\frac{\int_{\mathcal G_C}
+                   \theta(W^v)\ell_\mu(W^v)\,dv}{m_\theta(W)},
+ \qquad \mathcal A_g\mu=a_\mu m_C.
+ \label{fps-orbit-extension}
+\end{equation}
+Only real values of the locally computed density are used, where
+\(\theta\) is supported. This is not a globally analytic extension.
+
+\begin{theorem}[Exact invariant positive split]
+\label{fps-positive-split}
+On the cone of full-gauge-invariant finite positive measures,
+\begin{equation}
+ 0\le\mathcal A_g\mu\le F_*\mu,\qquad
+ \mathcal R_g\mu:=F_*\mu-\mathcal A_g\mu\ge0.
+ \label{fps-positive-operators}
+\end{equation}
+Both operators are linear, preserve gauge invariance, and satisfy
+\(\mathcal A_g+\mathcal R_g=F_*\), including raw mass.
+\end{theorem}
+\begin{proof}
+The full pushforward is invariant by
+\eqref{fps-global-covariance}. Its Haar-absolutely-continuous part has
+an invariant nonnegative density \(f\), chosen by compact gauge
+averaging. Equation~\eqref{fps-local-domination} implies
+\(f\ge\ell_\mu\) almost everywhere on \(D\). For almost every \(W,v\),
+\[
+ \theta(W^v)\ell_\mu(W^v)\le\theta(W^v)f(W^v)
+                              =\theta(W^v)f(W).
+\]
+Integrating in \(v\) and dividing on \(m_\theta>0\) proves
+\(a_\mu\le f\). The positive singular part remains in the remainder.
+Tonelli, or truncation of the positive factor \(m_\theta^{-1}\),
+justifies this near its zero set. Linearity follows from the linear
+Haar-absolutely-continuous projection, local fiber integration and
+fixed \(\theta\). The remainder is positive by the proved inequality.
+\end{proof}
+
+The proof cannot be replaced by averaging a measure inequality and
+then dividing it by \(m_\theta\). It uses the invariant density bounding
+each orbit value before normalization. No uniform lower bound on
+\(m_\theta\) is needed. This remainder need not be the literal rejection
+in \eqref{fps-markov-split}: the normalized output average redistributes
+the local sector along coarse gauge orbits. Both splits are exact.
+
+\subsection{The local germ is retained on a fixed finite regulator}
+\label{fps-germ-section}
+
+\begin{lemma}[Finite orbit-overlap control]
+\label{fps-overlap}
+Let \(\ell\) be an analytic local density on a product potential ball of
+radius \(r\) on a connected finite coarse lattice. Assume its total
+infinitesimal gauge Ward identity holds there and it is invariant under
+constant color conjugations. There is \(\epsilon>0\), possibly depending
+on the finite graph, such that
+\begin{equation}
+ W,W^v\in D_\epsilon\quad\Longrightarrow\quad
+ \ell(W^v)=\ell(W).
+ \label{fps-overlap-identity}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Use a unitarily invariant matrix norm, paying the fixed color-coordinate
+equivalence constants in \(r\). Choose a rooted spanning tree with
+maximal root-path length \(D_{\rm tree}\). Write \(v_x=h_xc\), where
+\(c=v_o\), \(h_o=I\). Constant conjugation does not increase the
+invariant field norm. On each tree edge \(xy\),
+\[
+ h_y=(W^v_{xy})^{-1}h_xW^c_{xy}.
+\]
+Telescoping unitary products gives
+\(\|h_x-I\|\le C D_{\rm tree}\epsilon\).
+Choose \(\epsilon\) so every \(h_x=e^{i\lambda_x}\) uses one small
+logarithm chart, with
+\(\|\lambda_x\|\le C D_{\rm tree}\epsilon\).
+Along \(h_x(t)=e^{it\lambda_x}\), the transformed angles are bounded by
+\(C(1+D_{\rm tree})\epsilon\). Taking
+\(\epsilon\le cr/(1+D_{\rm tree})\) keeps the full real path inside
+the Ward domain. Integrate that identity, then apply constant
+conjugation invariance. No global logarithm of the original \(v\)
+was assumed.
+\end{proof}
+
+For the actual chosen sector, this application uses a product of
+\emph{invariant link/color balls} and \(\chi_{\rm extra}=1\), or extra
+indicators separately proved covariant. It is not asserted for arbitrary
+scalar-coordinate boxes or arbitrary extra cutoffs. The exact real-window
+proof precedes continuation. For a small real coarse gauge \(k\), physical
+branch uniqueness and the block-constant lift give
+\(V_*(W^k)=V_*(W)^{k^{\rm up}}\). With \(R_k\) the source-endpoint
+adjoint on relative fields and \(D_k\) its retained restriction,
+constraint equivariance and chart uniqueness imply
+\[
+ \Phi_{V_*(W^k)}(D_kz)=R_k\Phi_{V_*(W)}(z).
+\]
+Each retained adjoint is orthogonal and has determinant one. Hence it
+preserves the sharp product of color balls exactly. Input gauge
+invariance, conjugation invariance of the absolute contour penalty and
+the actual Haar/pivot change of variables prove equality of the
+\emph{literal real retained integrals}. No cutoff boundary term is
+omitted. These are the exact identities proved in the preceding local
+macrostep covariance argument; the analytic density then extends the
+differentiated Ward identity over its connected local ball. Constant
+conjugation follows by the same argument. The density version needs no
+new logarithm branch. For other cutoffs this application is conditional,
+while Theorem~\ref{fps-positive-split} remains unconditional.
+
+Choose \(\theta\) supported in \(D_\epsilon\),
+positive in its half ball. If \(W\) is in the half ball, then
+\(m_\theta(W)>0\), and every contributing \(W^v\) lies in
+\(D_\epsilon\). Consequently
+\begin{equation}
+ a_\mu(W)=\ell_\mu(W)\qquad\hbox{near the identity}.
+ \label{fps-germ-equality}
+\end{equation}
+Thus a real measurable global good measure has exactly the previously
+computed analytic germ. The graph-dependent shrink is explicit;
+common-ball Ward continuation alone is not invariance between arbitrary
+orbit endpoints whose connecting paths may leave that ball.
+
+\subsection{Full histories, sources and raw normalization}
+\label{fps-histories-section}
+
+At each finite stage fix the map, gauge penalty, positive coupling,
+window and output cutoff. Write
+\(\mathcal T_j^{\rm good}=\mathcal A_j\) and
+\(\mathcal T_j^{\rm rem}=\mathcal R_j\).
+Starting with the original unnormalized finite Wilson measure
+\(\mu_0=e^{-\gamma_0S_W}m_E\), define for every binary word \(h\)
+\[
+ \mu_h=\mathcal T_{n-1}^{h_{n-1}}\cdots
+                         \mathcal T_0^{h_0}\mu_0.
+\]
+Every history is a positive invariant finite measure. Repeatedly using
+Theorem~\ref{fps-positive-split} proves
+\begin{equation}
+ (F_{n-1}\circ\cdots\circ F_0)_*\mu_0
+     =\sum_{h\in\{{\rm good},{\rm rem}\}^n}\mu_h,
+ \qquad Z_W=\sum_h\mu_h(1).
+ \label{fps-history-identity}
+\end{equation}
+The same equality holds against every bounded terminal coarse
+observable. It is exact and includes all mixed histories, singular
+parts and raw vacuum factors; it supplies no smallness estimate for
+the remainder.
+
+For bounded gauge-invariant original observables, the same linear
+identities apply to their invariant signed numerator measures, by
+positive/negative decomposition. Equivalently apply them to
+\(e^{\sum t_iO_i}\mu_0\) on real compact source intervals and
+differentiate, holding step maps and windows fixed. This provides
+exact finite numerator and denominator bookkeeping, not uniform
+observable estimates in a refinement limit.
+
+To identify an all-good germ with the previously established
+homogeneous map, its input density must actually equal
+\(Z_j e^{-\gamma_jS_{M_j}+E_{j,\rm raw}}\), with \(\gamma_j=g_j^{-2}\), on a real neighborhood
+\(D_{\rm in}\), and one must verify the literal containment
+\begin{equation}
+ e^{i\Phi_{V_*(W)}(g_j\xi)}V_*(W)\in D_{\rm in}
+ \quad\hbox{for every retained \(\xi\) and the chosen \(W\)}.
+ \label{fps-literal-containment}
+\end{equation}
+Every additional indicator is retained, unless it is proved identically
+one there. Under this condition \eqref{fps-gaussian-density} is the
+actual homogeneous local map, and \eqref{fps-germ-equality} embeds that
+germ as a positive full-measure submeasure. For a fixed finite number
+of stages, sufficiently weak couplings and small angle windows can meet
+these finite margins: a logarithmic threshold is compatible with
+\(gT(g)\to0\). This is not a volume-uniform assertion about the tuned
+histories constructed earlier.
+
+With \(A_0\) the flat retained precision, the exact field-independent
+factor extracted in one stage is
+\begin{equation}
+ N_j=c(g_j)^{-n_s}h_0^{n_e-n_c}g_j^{n_z}(2\pi)^{n_z/2}
+                       D_R(1)\det(A_0)^{-1/2}.
+ \label{fps-vacuum-factor}
+\end{equation}
+The local output is
+\(Z_jN_j e^{-\gamma_jS_{M_{j+1}}+F_{j,\rm raw}}\).
+The raw correction contains the inherited background, actual pivot and
+Gaussian determinant ratios and the exact retained expectation; its
+value at zero is not discarded. Since \(S_{M_{j+1}}(0)=0\), if
+\[
+ F_{j,\rm raw}=\beta_jS_{M_{j+1}}+E_{j+1,\rm raw}+c_j,
+ \qquad c_j=F_{j,\rm raw}(0)-E_{j+1,\rm raw}(0),
+\]
+then the exact bookkeeping is
+\begin{equation}
+ \gamma_{j+1}=\gamma_j-\beta_j,\qquad
+ Z_{j+1}=Z_jN_j e^{c_j}.
+ \label{fps-exact-extraction}
+\end{equation}
+Replacing an input representative by \(E'_{\rm raw}=E_{\rm raw}+c\)
+requires \(Z'=Ze^{-c}\). Linearity of the orbit extension preserves
+all these scalars in the globally defined good submeasure. No global
+analytic classical action is required for these local identities.
+
+\subsection{The quantitative interface remains separate}
+\label{fps-boundary-section}
+
+Let \(\nu\) be the full terminal pushforward and \(\nu_{\rm good}\)
+its all-good submeasure. If the latter has positive mass, put
+\(\epsilon_{\rm bad}=1-\nu_{\rm good}(1)/\nu(1)\).
+Positivity and the mixture identity give
+\begin{equation}
+ \left|\frac{\nu(f)}{\nu(1)}-
+             \frac{\nu_{\rm good}(f)}{\nu_{\rm good}(1)}\right|
+ \le2\|f\|_\infty\epsilon_{\rm bad}.
+ \label{fps-mixture-bound}
+\end{equation}
+No useful bound on \(\epsilon_{\rm bad}\) has been proved here. In large
+volume, global all-good mass may be a poor criterion; a spatial
+mixed-history expansion can be necessary for local observables.
+
+The remaining tasks include uniform literal chart/orbit-domain matching,
+interacting coercivity and normalization estimates for the actual
+remainders, collared mixed-field factorization with the correct
+conditional means and compressed precisions, and observable bounds with
+the same full denominator. Homogeneous Gaussian bad-block bounds do not
+alone prove them. The present result is an exact positive finite bridge
+and an explicit remainder/history operator, not a completed global RG,
+continuum measure, reconstruction theorem or physical mass gap.
+
+
+% No preamble. Prefix fwp-. Full positive Wilson measure, 17 October 2026.
+\section{A full-measure Wilson Peierls bound}
+\label{fwp-section}
+
+We prove a rare-event estimate under the actual normalized positive
+Wilson measure. It is independent of the Gaussian small-field analysis.
+The event controlled here is large plaquette curvature; identifying it
+with the complement of the actual retained-coordinate window is a
+separate, unresolved interface.
+
+Let \(G=SU(N)\), \(m_G=\dim G\), \(\tau=\operatorname{Tr}/N\), and
+\[
+ \Lambda=\prod_{i=1}^d\mathbb Z/n_i\mathbb Z,\qquad
+ n_i=2m_i b,\quad m_i\ge1,\quad b\ge3.
+\]
+There are \(V=|\Lambda|\) sites, \(dV\) independent links and
+\(\binom d2V\) elementary unoriented plaquettes. Normalized Haar measure
+is used on every link. Set
+\begin{equation}
+ h(W)=1-\operatorname{Re}\tau(W)
+       =\tfrac12\|W-I\|_\tau^2,\qquad
+ A(U)=\sum_p h(U_p),\qquad
+ \mu_g(dU)=Z_g^{-1}e^{-A(U)/g^2}\prod_e dU_e,
+ \label{fwp-measure}
+\end{equation}
+where \(\|X\|_\tau^2=\tau(X^*X)\).
+All side lengths are at least six, avoiding short-period graph
+degeneracies.
+
+Fix any translated grid of cubes of side \(b\).
+Let \({\cal P}_j^{\rm int}\) be the plaquettes whose vertices are strictly
+inside cell \(j\), and define
+\begin{equation}
+ {\cal B}_j(\delta)
+ =\left\{\max_{p\in{\cal P}_j^{\rm int}}h(U_p)\ge\delta^2\right\}.
+ \label{fwp-event}
+\end{equation}
+Strict interior means that every coordinate of every used link endpoint
+lies strictly between the corresponding walls.
+
+\begin{theorem}[Prescribed bad cells]
+\label{fwp-main}
+There are \(g_0>0\) and \(C_{G,d}<\infty\), depending only on the group
+and dimension, such that for \(0<g\le g_0\) and every set \(S\) of
+distinct cells,
+\begin{equation}
+ \mu_g\left(\bigcap_{j\in S}{\cal B}_j(\delta)\right)
+ \le z_b(g,\delta)^{|S|},
+ \quad
+ z_b(g,\delta)=
+ \min\left\{1,
+ \exp\left[-\frac{\delta^2}{g^2}
+     +b^d\{d m_G\log(1/g)+C_{G,d}\}\right]\right\}.
+ \label{fwp-main-bound}
+\end{equation}
+Constants are uniform in volume and in the selected cells. The source
+regulators \(n=2L^M\), \(L\ge3\) odd, admit the construction with
+\(b=L^u\) for each fixed \(u\ge1\) and \(M\ge u\).
+\end{theorem}
+
+\subsection{Exact site-plane slabs and the normalized chessboard inequality}
+\label{fwp-slab-section}
+
+Every cell wall is an integer coordinate, or \emph{site}, plane.
+Its reflection preserves the lattice. An elementary plaquette cannot
+have vertices on both strict sides of such a plane. It either lies in
+the plane or belongs wholly to one adjacent closed half-space, possibly
+touching the plane. Conditional on tangential links in the two opposite
+reflection planes of the torus, the two open half configurations have
+reflected product Haar measures and reflected Wilson weights.
+The reflection quadratic form is therefore an integral of an absolute
+square against a nonnegative boundary weight. This proves the needed
+site-plane reflection positivity directly.
+
+To obtain the chessboard inequality for an arbitrary even number of
+cells, cut first in one coordinate into \(p=2m\) slabs of width \(b\).
+Let \({\cal H}\) be \(L^2\) of the product Haar measure on tangential
+links in one boundary plane. Integer translation identifies successive
+boundary spaces.
+
+For a bounded slab observable \(f\), supported strictly inside the
+slab in the cut direction, form the integral kernel \(K_f\) by integrating
+all nonboundary slab links. Give it the full action of every plaquette
+assigned to the slab, including plaquettes touching a boundary but not
+lying in it, and half the action of each plaquette lying entirely in
+either boundary. Multiply by \(f\).
+The compact integration domain and bounded integrand make \(K_f\)
+Hilbert--Schmidt.
+
+Gluing the kernels by boundary Haar integration gives exactly
+\begin{equation}
+ \operatorname{Tr}(K_{f_0}\cdots K_{f_{p-1}})
+       =Z_g\!\left[\prod_{j=0}^{p-1}f_j\right].
+ \label{fwp-gluing}
+\end{equation}
+Every boundary link is integrated once; every boundary plaquette gets
+two halves; every other link and plaquette is assigned once.
+No gauge-volume factor occurs. Reflection exchanges the two boundaries,
+preserves \(h(U_p)\), and inverts a chosen link coordinate when its
+orientation reverses. Haar invariance gives
+\begin{equation}
+ K_f^*=K_{\theta\overline f}.
+ \label{fwp-adjoint}
+\end{equation}
+For real indicators complex conjugation has no effect.
+
+Schatten H\"older, with the even integer \(p\), gives
+\begin{equation}
+ \left|\operatorname{Tr}\prod_{j=0}^{p-1}K_{f_j}\right|
+ \le\prod_{j=0}^{p-1}
+ \left[\operatorname{Tr}\bigl((K_{f_j}^*K_{f_j})^{p/2}\bigr)
+                                                  \right]^{1/p}.
+ \label{fwp-holder}
+\end{equation}
+Each factor is the exact Wilson partition integral with \(p\) alternating
+reflected copies of one slab. The torus period remains \(pb\).
+This explains precisely why the even cell count is required.
+
+Apply \eqref{fwp-holder} successively in all coordinate directions.
+A slab source is the product of its constituent cell sources.
+Orthogonal affine coordinate reflections commute on the unoriented
+graph, with the corresponding orientation inversions on link variables.
+The final factor associated with an original cell is therefore its
+full reflected dissemination. Intersections of cut planes require no
+extra normalization: every step is the exact one-axis gluing
+\eqref{fwp-gluing}.
+
+Write \(N_c=V/b^d\) for the number of cells. Let \(\Theta_j\) map the
+reference cell to cell \(j\) by the alternating reflection pattern;
+even counts make this pattern periodic. For a reference-cell observable
+\(f\), write
+\({\cal D}(f)=\prod_i\Theta_i f\).
+Pull each original observable back to this reference cell.
+The result of the iteration is
+\begin{equation}
+ \left|Z_g\left[\prod_j\Theta_j f_j\right]\right|
+ \le\prod_j Z_g[{\cal D}(f_j)]^{1/N_c}.
+ \label{fwp-chessboard}
+\end{equation}
+For nonnegative indicators, all terms are nonnegative. Dividing by the
+\emph{full} partition function, and using \(f_j=1\) off a selected set,
+gives
+\begin{equation}
+ \mu_g\left(\prod_{j\in S}\Theta_j f_j\right)
+ \le\prod_{j\in S}
+       \left(\frac{Z_g[{\cal D}(f_j)]}{Z_g}\right)^{1/N_c}.
+ \label{fwp-normalized}
+\end{equation}
+In particular, the normalization is not an independently chosen
+small-field partition function.
+
+The geometry used here is simpler than a diagonal fold: all walls are
+site planes and no alternating site/link scheme is needed.
+For \(n=2L^M\), \(b=L^u\), the number of cells in every direction is
+\(2L^{M-u}\), which is even despite \(L\) being odd.
+
+\subsection{A lower bound for the full normalization}
+\label{fwp-normalization-section}
+
+There are \(\epsilon_0>0\) and \(c_G\in(0,1]\) such that
+\begin{equation}
+ \operatorname{Haar}\{U:\|U-I\|_\tau\le\epsilon\}
+       \ge c_G\epsilon^{m_G},\qquad 0<\epsilon\le\epsilon_0.
+ \label{fwp-haar-ball}
+\end{equation}
+Indeed the Haar density in a fixed local exponential chart is smooth
+and strictly positive. This is a finite-dimensional group estimate.
+
+If all links lie in that \(\epsilon\)-ball, a four-term product
+telescoping and unitarity show
+\[
+ \|U_p-I\|_\tau\le4\epsilon,\qquad h(U_p)\le8\epsilon^2.
+\]
+For \(g\le g_0:=\min(\epsilon_0,1)\), restrict the full integral to
+\(\|U_e-I\|_\tau\le g\) on every link. It follows that
+\begin{equation}
+ Z_g\ge(c_Gg^{m_G})^{dV}
+             \exp\!\left[-8\binom d2V\right],
+ \qquad
+ -\frac1V\log Z_g
+       \le d m_G\log(1/g)+C_{G,d},
+ \label{fwp-z-lower}
+\end{equation}
+where one can take
+\[
+ C_{G,d}=8\binom d2+d\log(1/c_G).
+\]
+This is only a lower bound for the normalization. It does not claim
+that the small-link box has large probability.
+
+On the full dissemination of \({\cal B}_j(\delta)\), every cell
+contains a distinct interior plaquette of energy at least \(\delta^2\).
+Thus \(A(U)\ge N_c\delta^2\) there and
+\begin{equation}
+ Z_g[{\cal D}(\mathbf1_{\cal B})]
+       \le e^{-N_c\delta^2/g^2}.
+ \label{fwp-disseminated-energy}
+\end{equation}
+The remaining product Haar integral is at most one.
+Combining \eqref{fwp-z-lower} and \eqref{fwp-disseminated-energy}
+bounds each factor in \eqref{fwp-normalized} by the exponential in
+\eqref{fwp-main-bound}; it is also at most one.
+This proves Theorem~\ref{fwp-main}.
+
+More generally, a cell event forcing its strictly interior action to be
+at least \(e_j\) has the factor
+\begin{equation}
+ \min\left\{1,\exp\left[-e_j/g^2
+              +b^d\{d m_G\log(1/g)+C_{G,d}\}\right]\right\}.
+ \label{fwp-energy-general}
+\end{equation}
+A threshold \(\|U_p-I\|_\tau\ge\delta\) uses \(e_j=\delta^2/2\).
+At fixed \(b\), the threshold \(\delta(g)=gR(g)\) is rare whenever
+\(R(g)^2/\log(1/g)\to\infty\), for example
+\(R(g)=(\log(1/g))^a\) with \(a>1/2\).
+The explicit \(b^d\) cost precludes claiming the same constants when
+the cell size grows with the cutoff.
+
+\subsection{Prescribed plaquettes and Peierls clusters}
+\label{fwp-color-section}
+
+Let \(S\) be any prescribed set of distinct elementary plaquettes.
+Color \((x;\mu,\nu)\), \(\mu<\nu\), by \((x\bmod b,\mu,\nu)\).
+There are
+\begin{equation}
+ Q_b=b^d\binom d2
+ \label{fwp-color-count}
+\end{equation}
+colors. Choose deterministically a color occurring at least
+\(|S|/Q_b\) times, with anchor residue \(a\), and shift the cell grid
+by \(a-(1,\ldots,1)\). Every selected anchor has relative coordinates
+\((1,\ldots,1)\); its plaquette vertices have coordinates \(1\) or \(2\)
+and hence are strictly interior for \(b\ge3\).
+Distinct anchors of the fixed color lie in distinct cells.
+The fixed orientation prevents two selected plaquettes at one anchor.
+The all-bad event on \(S\) implies the bad-cell event on this subset.
+Therefore
+\begin{equation}
+ \mu_g\{h(U_p)\ge\delta^2\text{ for all }p\in S\}
+       \le z_b(g,\delta)^{|S|/Q_b}.
+ \label{fwp-arbitrary-plaquettes}
+\end{equation}
+This is a finite deterministic coloring argument, not an independence
+assumption. The chessboard proof holds for each of the translated grids.
+
+For the nearest-neighbor cell graph, of degree at most \(2d\), the
+number of connected sets of size \(m\) containing a fixed cell is at
+most \((2d)^{2m}\): choose a canonical spanning tree and its depth-first
+traversal. The traversal has length \(2(m-1)\) and determines the visited
+set. A cluster of size at least \(m\) contains such a connected subset
+of size exactly \(m\). Consequently
+\begin{equation}
+ \mu_g\{|\text{bad cluster at }j|\ge m\}
+       \le[(2d)^2z_b(g,\delta)]^m.
+ \label{fwp-cell-cluster}
+\end{equation}
+For any fixed finite-degree plaquette adjacency graph the same argument
+and \eqref{fwp-arbitrary-plaquettes} apply. For adjacency by shared
+vertices, \(\Delta_d=16\binom d2\) is a safe degree bound, giving
+\begin{equation}
+ \mu_g\{|\text{bad plaquette cluster at }p|\ge m\}
+       \le[\Delta_d^2z_b(g,\delta)^{1/Q_b}]^m.
+ \label{fwp-plaquette-cluster}
+\end{equation}
+Periodic identifications do not increase these counting bounds.
+These are intersection and cluster estimates, not a claim of full
+stochastic domination by a product measure.
+
+The union estimate for any bad cell is only \(N_c z_b\).
+Thus the theorem does not assert that an arbitrarily large torus lies
+entirely in one small-field sector with uniformly high probability.
+
+\subsection{The remaining large-field interface}
+\label{fwp-scope}
+
+The distinction between curvature and retained-coordinate windows is
+essential. For a link with distinct endpoints, gauge invariance at one
+endpoint makes its marginal left-invariant under \(G\). Hence
+\begin{equation}
+ \mu_g\{U_e\in A\}=\operatorname{Haar}(A)
+ \label{fwp-haar-marginal}
+\end{equation}
+for every measurable \(A\), independently of \(g\).
+An unfixed link is therefore outside a shrinking identity window with
+probability tending to one. Pure-gauge fields can have all plaquettes
+equal to \(I\) and individual links far from \(I\).
+
+The actual retained fluctuation \(\xi\) instead depends on the nonlinear
+constraint, its minimizing background, the contour gauge and the pivot
+chart. No result above proves that \(\|\xi\|>R\) forces the interior
+Wilson action to exceed \(c g^2R^2\). Such a deterministic, quantitative
+implication for the exact chart would be an additional input.
+A local tree-gauge estimate from small plaquettes does not by itself
+identify its potential with \(\xi\), or establish the required
+\(C^{1,\alpha}\) background domain.
+
+Global holonomy is a second obstruction. For example,
+\(U_1(x)=e^{i\theta H/n_1}\), \(U_\mu(x)=I\) for \(\mu\ne1\),
+has every plaquette equal to \(I\), while its noncontractible Wilson
+line is \(e^{i\theta H}\). Plaquette rarity cannot simply discard these
+sectors.
+
+Finally, the proof uses the positive bare Wilson measure. It has not
+been extended here to complex source measures, arbitrary conditioned
+boundaries or effective actions after many RG steps. It supplies a
+genuine full-measure large-field input: uniform prescribed-event and
+cluster bounds on the original regulator. It does not yet supply the
+exact retained-window implication, a convergent sum over all large-field
+components with analytic source and locality bounds, or a complete
+Wilson RG history.
+
+For context, the general reflection/chessboard framework is
+Fr\"ohlich--Israel--Lieb--Simon, \emph{Communications in Mathematical
+Physics} \textbf{62} (1978), 1--34,
+DOI \(10.1007/BF01940327\); gauge positivity is treated by
+Osterwalder--Seiler, \emph{Annals of Physics} \textbf{110} (1978),
+440--471, DOI \(10.1016/0003\text{-}4916(78)90039\text{-}8\).
+The site-plane gluing and normalization used here were proved explicitly
+above rather than imported with an unspecified boundary convention.
+
+
+
+\section{A normalized conditional Wilson tail in a fixed box}
+\label{fbw:section}
+
+This section controls the entire compact Wilson integral for a fixed
+box with small boundary data. The constants depend on the box. It
+does not identify this box gauge with the nonlinear constrained
+coordinates of the homogeneous renormalization step.
+
+Fix a cubical lattice box \(\Omega=\{0,\ldots,R\}^d\), \(d=4\),
+\(R\geq2\), with its full cubical cell structure. Let \(E_\partial\)
+be the edges in its topological boundary and \(E_\circ\) the remaining
+edges. The boundary edge graph is connected. Fix
+\(G=SU(N)\), with faithful normalized trace \(\tau=\operatorname{Tr}/N\),
+and put
+\[
+ h(U)=1-\operatorname{Re}\tau(U)
+     =\tfrac12\norm{U-I}_\tau^2,\qquad
+ S_V(U)=\sum_{p\subset\Omega}h(U_p).
+\]
+Boundary edge variables \(V\in G^{E_\partial}\) are prescribed.
+All remaining edges have normalized Haar measure. Gauge transformations
+are fixed to the identity at every boundary vertex.
+
+Choose a spanning forest \(\mathcal F\) of the full vertex set with
+exactly one boundary vertex in every component, and all interior
+vertices included. Its edges lie in \(E_\circ\). Such a forest exists:
+start with a spanning tree of the connected boundary graph, extend
+it to a spanning tree of the whole graph, and remove its boundary
+tree edges. There is a unique allowed gauge transformation making
+every forest edge the identity. Write \(y\in\mathcal Y=G^{E_\circ
+\setminus\mathcal F}\) for the remaining edge variables in that gauge.
+The number of real coordinates is
+\[
+ n=(\dim G)\,|E_\circ\setminus\mathcal F|.
+\]
+For this box \(n>0\). Fix an orthonormal real Lie algebra basis and
+write \(y=\exp(ix)\) componentwise on a neighborhood of the identity.
+Here \(\norm{x}_\infty=\max_e\norm{x_e}_\tau\) uses the
+adjoint-invariant Lie algebra norm on each edge.
+
+\begin{theorem}[Full conditional tail at fixed geometry]
+\label{fbw:theorem}
+There are a neighborhood \(\mathcal V\) of the identity boundary
+configuration, constants \(g_0,r,c,C>0\), and a real analytic
+function \(x_*(V)\) on \(\mathcal V\), with \(x_*(I)=0\), such that
+the following holds. The forest-gauge action has the unique global
+minimum \(y_*(V)=\exp(ix_*(V))\). For
+\(0<g\leq g_0\) and \(1\leq T\leq r/g\), its normalized Wilson
+measure satisfies
+\begin{equation}
+ \frac{\displaystyle
+    \int_{\mathcal Y\setminus W_{V,g,T}}
+           e^{-S_V(y)/g^2}\,dy}
+      {\displaystyle\int_{\mathcal Y}e^{-S_V(y)/g^2}\,dy}
+ \leq C e^{-cT^2},
+ \qquad
+ W_{V,g,T}=\{\exp(ix):\norm{x-x_*(V)}_\infty\leq gT\}.
+ \label{fbw:tail}
+\end{equation}
+The displayed window is contained in a single fixed exponential
+coordinate neighborhood. The same ratio is the probability of the
+corresponding gauge-fixed event under the original, ungauged box
+Wilson measure.
+\end{theorem}
+
+\begin{proof}
+We give the global normalization argument, including the gauge and
+topological points.
+
+\emph{Exact forest gauge.}
+Orient each forest component away from its boundary root. Recursively
+solving the transformation equation along its edges gives the unique
+interior gauge values. Changing from the original forest edge variables
+to these gauge values is triangular; each step is a left or right
+translation, or inversion, on \(G\), hence preserves normalized Haar
+measure. For fixed gauge values the other edge transformations preserve
+Haar independently. The change of variables is therefore an exact
+product-Haar identity. A gauge-invariant action and an event defined
+through the unique forest representative are independent of the
+interior gauge variables. Their integrals over those variables equal
+one. No determinant or volume factor is discarded. Boundary edges
+are unchanged even when \(V\ne I\); this is why a forest rooted at
+all boundary vertices is used.
+
+\emph{The unique zero and its Hessian.}
+At \(V=I\), zero action means every plaquette holonomy is \(I\).
+The cubical box is simply connected, so a flat edge field is a pure
+gauge: parallel transport from a fixed vertex is independent of the
+path, since elementary plaquette moves generate all path homotopies.
+Identity boundary edges force the vertex gauge to be constant on the
+connected boundary; normalize that constant to \(I\). The field
+thus has an allowed gauge transformation to the identity. Uniqueness
+of the forest representative gives \(y=I\). Consequently the
+continuous nonnegative function \(S_I\) has exactly one zero on the
+compact space \(\mathcal Y\).
+
+For a Lie algebra edge field \(a\), zero on boundary and forest edges,
+the quadratic part is
+\[
+ \tfrac12\sum_{p\subset\Omega}\norm{(da)_p}_\tau^2.
+\]
+If it vanishes, the elementary cellular Poincare lemma on a box gives
+\(a=d\phi\). Boundary connectedness lets us choose \(\phi=0\) at
+every boundary vertex. Vanishing on each forest edge then gives
+\(\phi=0\) at every vertex. Hence \(a=0\). The Hessian in the \(n\)
+remaining coordinates is positive definite. This is a finite
+dimensional assertion; no uniform lower eigenvalue as \(R\) varies
+is asserted.
+
+\emph{Uniform local well and global gap.}
+The analytic implicit-function theorem supplies a critical point
+\(x_*(V)\) near zero for \(V\) close to \(I\). Choose a coordinate
+ball about zero on which the Hessian at all such \(V\) is uniformly
+positive. On a smaller fixed ball about \(x_*(V)\), Taylor's theorem
+gives constants \(c_0,C_0>0\) with
+\begin{equation}
+ c_0|x-x_*(V)|^2\leq S_V(\exp(ix))-S_V(y_*(V))
+       \leq C_0|x-x_*(V)|^2.
+ \label{fbw:quadratic}
+\end{equation}
+The balls can be chosen uniformly after shrinking \(\mathcal V\).
+To see a global gap, first choose a still smaller ball about zero.
+On the compact complement its \(V=I\) action has a strictly positive
+minimum. Uniform continuity of \(S_V\), and \(S_V(y_*(V))\to0\),
+preserve half this gap for sufficiently small boundary data.
+Together with strict convexity on the coordinate ball this proves
+uniqueness of the global minimum and yields a fixed chart region
+\(\mathcal U\subset\mathcal Y\) and \(\eta>0\) for which
+\begin{equation}
+ S_V(y)\geq S_V(y_*(V))+\eta\quad(y\notin\mathcal U).
+ \label{fbw:gap}
+\end{equation}
+Choose \(\mathcal U\) small enough that the lower quadratic bound in
+\eqref{fbw:quadratic} holds on all of it, and large enough that a
+fixed ball about every \(x_*(V)\) lies in it. These choices are
+compatible by first making the convexity ball larger than the
+compact-complement ball and then shrinking \(\mathcal V\).
+The product Haar coordinate density on its closure is bounded above
+and below by positive constants.
+
+\emph{Denominator and local numerator.}
+Writing \(S_{\min}=S_V(y_*(V))\), integrate over the coordinate
+ball \(|x-x_*|\leq g\), reducing \(g_0\) as needed:
+\begin{equation}
+ Z_V(g)\geq c_1 g^n e^{-S_{\min}/g^2}.
+ \label{fbw:denominator}
+\end{equation}
+Within \(\mathcal U\), the complement of the window forces
+\(|x-x_*|\geq gT\). The lower quadratic bound and the upper Haar
+density bound give, for \(T\geq1\),
+\begin{align}
+ \int_{\mathcal U\setminus W_{V,g,T}}e^{-S_V/g^2}\,dy
+ &\leq C_1 e^{-S_{\min}/g^2}
+       \int_{|z|\geq gT}e^{-c_0|z|^2/g^2}\,dz \notag\\
+ &\leq C_2 g^n e^{-S_{\min}/g^2}e^{-c_2T^2}.
+ \label{fbw:localnumerator}
+\end{align}
+The elementary Gaussian tail estimate absorbs its finite dimensional
+polynomial factor by reducing \(c_2>0\).
+
+\emph{The rest of the compact group integral.}
+The remaining numerator is at most
+\(e^{-(S_{\min}+\eta)/g^2}\), since product Haar mass is one.
+After \eqref{fbw:denominator} its contribution is at most
+\(C_3g^{-n}e^{-\eta/g^2}\). Since
+\[
+ \sup_{0<g\leq g_0}g^{-n}e^{-\eta/(2g^2)}<\infty,
+\]
+and \(T\leq r/g\), choosing \(r\) small and
+\(c\leq \min\{c_2,\eta/(2r^2)\}\) bounds this contribution by
+\(C_4e^{-cT^2}\). Reduce \(r\) also to keep the entire sup-norm
+window inside the coordinate chart. Combining the two numerators
+with the denominator proves \eqref{fbw:tail}.
+\end{proof}
+
+\begin{corollary}[Logarithmic windows]
+\label{fbw:logwindow}
+For fixed \(a>1/2\), take \(T(g)=(\log(1/g))^a\). For every
+\(m>0\) there are \(g_m,C_m>0\) such that
+\[
+ \mu_{V,g}(\mathcal Y\setminus W_{V,g,T(g)})\leq C_m g^m
+ \quad(0<g\leq g_m,\ V\in\mathcal V).
+\]
+\end{corollary}
+\begin{proof}
+Here \(gT(g)\to0\) and \(T(g)^2/\log(1/g)\to\infty\).
+Apply \eqref{fbw:tail}.
+\end{proof}
+
+\paragraph{Conditional interpretation.}
+Embed the box in a larger lattice without local periodic
+identifications. A plaquette containing an edge of \(E_\circ\)
+lies entirely inside the box: an edge not in the boundary has all
+its transverse coordinates strictly inside the corresponding
+intervals. Thus, after the exterior and boundary edges are fixed,
+the part of the bare Wilson action depending on the integrated edges
+is exactly \(S_V\), up to an additive constant. Such constants cancel
+in the normalized law. The theorem is therefore a statement about
+the actual conditional bare Wilson measure whenever its boundary
+field belongs to \(\mathcal V\). A prescribed boundary gauge
+transformation bringing the data into \(\mathcal V\) also permits
+the theorem after transforming the event consistently.
+
+\paragraph{The precise interface left open.}
+This result controls a fixed-box forest-coordinate window about
+the unconstrained conditional minimizer. It does not control an
+arbitrary boundary field, a box growing with the cutoff, a
+nonlinear coarse-average fiber, or a mixed-history effective action
+whose global stability has not been proved. In particular an
+unconditional probability bound cannot simply be conditioned on a
+coarse-map value with no lower bound for the corresponding fiber
+normalization. The powers \(g^n\) cancel here because both integrals
+are estimated in the same compact conditional model. Extending
+that cancellation to the actual constrained local map is a
+remaining analytic task.
+
+
+\section{From curvature rarity to full-measure box windows}
+\label{fbb:section}
+
+The two preceding probability estimates can be joined without
+assuming that a boundary field is typically close to the identity
+in an unfixed gauge. The resulting windows are defined by an
+explicit local tree gauge and a conditional Wilson minimizer.
+They still differ from the nonlinear coarse-average windows in
+the homogeneous renormalization construction.
+
+\begin{lemma}[A boundary-only gauge at fixed geometry]
+\label{fbb:boundarygauge}
+For the fixed four-dimensional cubical box \(\Omega\), choose a
+spanning tree \(\mathcal T_\partial\) of its boundary edge graph
+and a root vertex. There is a finite constant \(L_R\) such that
+every boundary field has a boundary gauge, determined only by its
+boundary edges, with
+\[
+ V_e=I\quad(e\in\mathcal T_\partial),\qquad
+ \max_{e\in E_\partial}\norm{V_e-I}_\tau
+ \leq L_R\max_{p\subset\partial\Omega}\norm{U_p-I}_\tau.
+\]
+The estimate concerns boundary plaquettes, not plaquettes through
+the interior. No assertion uniform in \(R\) is made.
+\end{lemma}
+\begin{proof}
+Fix the root gauge to \(I\) and gauge the boundary tree edges to \(I\)
+by recursion. Every remaining boundary edge becomes the holonomy
+of its fixed tree fundamental loop. The boundary cubical complex is
+homeomorphic to \(S^3\); its two-skeleton has trivial fundamental
+group. Each of the finitely many fundamental loops is therefore a
+finite product of conjugates of elementary boundary plaquette
+loops and their inverses, as a word in the graph edge generators.
+This assertion follows directly from the cellular presentation of
+the fundamental group: the plaquette boundary words normally
+generate all relations in the graph fundamental group. Choose one
+such finite word once for each non-tree edge and let \(L_R\) be the
+largest number of plaquette factors used.
+
+For unitary matrices \(A_j\), telescoping gives
+\(\norm{\prod_j A_j-I}_\tau\leq\sum_j\norm{A_j-I}_\tau\).
+Conjugation and inversion preserve this distance. Applying this
+inequality to the chosen word proves the bound, regardless of
+the size of its conjugating holonomies.
+\end{proof}
+
+Choose \(\varepsilon_R>0\) so small that
+\(\sqrt2 L_R\varepsilon_R\) lies inside the small boundary
+neighborhood in Theorem~\ref{fbw:theorem}. We may and do take that
+neighborhood to be a conjugation-invariant product ball. Call a
+box boundary good when
+\[
+ h(U_p)<\varepsilon_R^2\quad\hbox{for every }p\subset\partial\Omega.
+\]
+On a good boundary, apply the boundary-only gauge in
+Lemma~\ref{fbb:boundarygauge}; extend its vertex values into the
+box arbitrarily, then perform the rooted forest gauge of
+Section~\ref{fbw:section}, keeping the transformed boundary fixed.
+The final representative is independent of that arbitrary extension:
+two extensions differ by an interior gauge, which the unique forest
+normalization removes. It is also the representative obtained by
+gauging the full spanning tree
+\(\mathcal T_\partial\cup\mathcal F\) to \(I\).
+
+Define the box bad event \(D_\Omega(g,T)\) as follows:
+the boundary is bad, or the boundary is good and the resulting
+interior representative lies outside \(W_{V,g,T}\). All these maps
+are measurable. The event is gauge invariant. Indeed, an arbitrary
+original gauge transformation changes the full tree representative
+only by constant conjugation at its root. The conditional minimizer
+transforms by that same conjugation, by uniqueness, and the local
+logarithm and edge-max norm respect conjugation.
+
+\begin{theorem}[Prescribed local box defects in the full Wilson measure]
+\label{fbb:boxes}
+Fix \(R,b\), with \(b\geq3\), and consider a periodic four-dimensional
+lattice with side lengths divisible by \(2b\). Let
+\(\Omega_1,\ldots,\Omega_m\) be embedded translates of the fixed box
+with pairwise disjoint vertex sets. Put
+\[
+ Q_b=b^4\binom42,\qquad
+ N_\partial=\#\{p:p\subset\partial\Omega\}=24R^3,
+\]
+and let \(z_b(g,\varepsilon_R)\) be the bad-cell factor of
+Section~\ref{fwp-section}. There are constants \(C,c,r,g_0>0\),
+independent of the total torus size and of the chosen boxes, such
+that
+\begin{equation}
+ \mu_g\left(\bigcap_{i=1}^m D_{\Omega_i}(g,T)\right)
+ \leq \left[
+       C e^{-cT^2}
+       +N_\partial z_b(g,\varepsilon_R)^{1/Q_b}
+       \right]^m
+ \quad(0<g\leq g_0,\ 1\leq T\leq r/g).
+ \label{fbb:joint}
+\end{equation}
+In particular, for every \(a>1/2\), the bracket with
+\(T(g)=(\log(1/g))^a\) is smaller than every fixed power of \(g\)
+as \(g\downarrow0\).
+\end{theorem}
+\begin{proof}
+Condition on every edge outside the union of the boxes' interior
+edge sets \(E_{\circ,i}\). This includes all box boundary edges.
+Every plaquette meeting \(E_{\circ,i}\) lies wholly in \(\Omega_i\).
+Disjointness of the vertex sets therefore ensures that no plaquette
+meets two integrated edge sets. The conditional law factorizes
+exactly into the independent conditional Wilson laws of the
+individual boxes; all remaining action terms are constant under
+these integrations.
+
+Write \(B_i\) for a bad boundary and \(F_i\) for the interior-window
+failure on a good boundary. Each \(B_i\) is measurable under the
+conditioning. The boundary gauge is also fixed under it, and it
+preserves the conditional product Haar law and the action.
+Theorem~\ref{fbw:theorem} consequently gives
+\[
+ \mathbb P(F_i\mid\hbox{conditioned edges})
+ \leq a_g\,\mathbf1_{B_i^c},\qquad a_g=Ce^{-cT^2}.
+\]
+The \(F_i\)'s are conditionally independent.
+
+For any subset \(J\) of boxes, a union bound over one offending
+boundary plaquette in each box, followed by the prescribed-plaquette
+bound of Section~\ref{fwp-section}, gives
+\begin{equation}
+ \mu_g\left(\bigcap_{i\in J}B_i\right)
+ \leq \left[N_\partial
+              z_b(g,\varepsilon_R)^{1/Q_b}\right]^{|J|}.
+ \label{fbb:boundaryrare}
+\end{equation}
+The selected plaquettes are distinct because the boxes have disjoint
+vertex sets. This is a correlated full-measure estimate; independence
+of the boundaries is not used.
+
+Expand \(\bigcap_i(B_i\cup F_i)\) over \(J\), the boxes assigned
+the boundary-bad alternative. Conditional factorization bounds
+the contribution for \(J\) by
+\(a_g^{m-|J|}\mu_g(\bigcap_{i\in J}B_i)\), after dropping other
+good-boundary indicators. Substituting
+\eqref{fbb:boundaryrare} and summing the binomial expression proves
+\eqref{fbb:joint}.
+
+Finally, the explicit bad-cell exponent has fixed threshold
+\(\varepsilon_R\) and fixed \(b\):
+\[
+ z_b(g,\varepsilon_R)^{1/Q_b}
+ \leq \exp\left[-\frac{\varepsilon_R^2}{Q_b g^2}
+                       +C_{b,G}\log(1/g)+C_{b,G}\right]
+\]
+for sufficiently small \(g\). This and
+Corollary~\ref{fbw:logwindow} prove the last assertion.
+\end{proof}
+
+\paragraph{What this joins, and what it does not.}
+The theorem gives joint rarity of actual, gauge-invariant local
+coordinate defects under the complete bare Wilson measure. It
+combines a correlated boundary estimate with conditional interior
+normalization and does not replace the Wilson measure by a Gaussian
+law. For a fixed separated grid of such boxes, the usual connected-set
+counting yields Peierls tails with the displayed bracket.
+
+The representative and minimizer are those of a fixed conditional
+box with all its boundary edges held fixed. They are not identified
+with the averaged, constrained minimizer and independent retained
+cutoffs of the existing multiscale map. No derivative regularity,
+complex-source estimate, growing-box constant, or post-renormalization
+reflection positivity follows from this theorem. Thus it is a
+concrete full-measure local bridge, while the multiscale mixed-history
+induction remains an additional theorem to prove.
+
+
+% No preamble. Prefix fmg-. Primary interface and proved finite geometry.
+\section{Local gauge coordinates and the complete-density interface}
+\label{fmg-section}
+
+The homogeneous local trajectory does not yet identify all sectors
+of the full Wilson integral. This section records a precise published
+interface, proves a finite local gauge lemma, and shows why that
+lemma alone does not supply a uniformly smooth physical background.
+
+\subsection{The strongest published complete-density input}
+\label{fmg-source}
+
+Ba{\l}aban's Theorem~1 in \emph{Commun.\ Math.\ Phys.}\ 122
+(1989), p.~355, supplies the complete effective-density class of
+\emph{Commun.\ Math.\ Phys.}\ 119 (1988), Section~2, provided the
+effective couplings of that construction remain sufficiently small.
+The density bounds are (0.1), pp.~355--356; its large-field
+exponentiation concludes at (1.98)--(1.102), pp.~390--391.
+The original articles are available at
+\href{https://scispace.com/pdf/large-field-renormalization-ii-localization-exponentiation-h8b7ih93xo.pdf}
+{CMP122-II} and
+\href{https://scispace.com/pdf/convergent-renormalization-expansions-for-lattice-gauge-29jyexd38e.pdf}
+{CMP119}.
+
+The relevant CMP119 input locations are:
+\[
+\begin{array}{c|l}
+\text{pages/equations}&\text{interface}\\ \hline
+243\text{--}244,\ (0.1)\text{--}(0.2)&
+       \text{full pushforward and the additional operation}\\
+246\text{--}248,\ (1.1)\text{--}(1.10)&
+       \text{partitions and collars}\\
+254\text{--}257,\ (2.1)\text{--}(2.18)&
+       \text{multiscale determining sets and histories}\\
+258,\ (2.19)\text{--}(2.22)&
+       \text{large-field operator factorization}\\
+258\text{--}262,\ (2.23)\text{--}(2.42)&
+       \text{action, analytic domains and boundary terms}.
+\end{array}
+\]
+In particular (2.38), p.~261, requires a local gauge with potential
+and first-derivative bounds, alongside the other multiscale
+regularity/current conditions. It is not a conclusion from one
+bare plaquette threshold. The theorem concerns the specified
+complete-density construction, not every small analytic local map.
+OCR-damaged numerical constants in these source formulas are not
+retranscribed here.
+
+To use that result for our exact \(F_R=M_\ell^s\) local step,
+one must either verify its complete induction class for this
+operator or prove a replacement large-field theorem. In particular:
+the full compact-field pushforward and partition must be specified;
+the good-sector term must equal our actual retained-window
+integral; exterior and transition data must be retained; and
+normalized complementary-region operations must be bounded.
+The source's own coupling recursion must be identified or replaced
+by an independently justified one. Uniform weakness of our tuned
+numbers alone is not equality of the two recursions.
+
+Our strict product-ball families have an invariant total.
+They do not automatically supply individually invariant local
+orbit/current extensions or uniform analytic estimates on
+multiscale determining sets. Nor does composition of averaging
+constraints identify a one-shot window with sequential primitive
+windows. These are concrete transfer obligations, without an
+assertion that the source theorem cannot be adapted.
+
+\subsection{An explicit finite cubical tree gauge}
+\label{fmg-tree}
+
+Let \(G\) be a compact matrix Lie subgroup of \(U(r)\), with
+operator norm. Let
+\(\Lambda_n=\{0,\ldots,n\}^d\), \(d\ge2\), carry its full cubical
+cell structure. Oppositely oriented bonds carry inverse matrices.
+For every vertex \(x\), let \(p(x)\) be the path from zero which
+first increases coordinate one, then coordinate two, and so on.
+These paths form a rooted spanning tree.
+
+\begin{lemma}[Finite cubical gauge bound]
+\label{fmg-tree-lemma}
+Suppose every elementary plaquette obeys
+\begin{equation}
+                  \|U(\partial p)-I\|\le\epsilon.
+ \label{fmg-plaquette-bound}
+\end{equation}
+Set
+\begin{equation}
+ v(x)=U(p(x)),\qquad
+ U^v(x,y)=v(x)U(x,y)v(y)^{-1}.
+ \label{fmg-gauge}
+\end{equation}
+Every tree edge of \(U^v\) is the identity, and each positive
+\(\mu\)-edge satisfies
+\begin{equation}
+ \|U^v(x,x+e_\mu)-I\|
+       \le\left(\sum_{\nu>\mu}x_\nu\right)\epsilon
+       \le(d-1)n\epsilon.
+ \label{fmg-edge-bound}
+\end{equation}
+Choose a fixed local exponential-chart radius
+\(0<\delta_G\le1\). If \((d-1)n\epsilon<\delta_G\), write
+\(U^v_b=\exp(i\eta A_b)\) in its unique local logarithm chart.
+For physical mesh \(\eta\) and side \(\ell=n\eta\),
+\begin{equation}
+ \|A\|_\infty
+       \le 2(d-1)n\epsilon/\eta
+       =2(d-1)\ell\epsilon/\eta^2 .
+ \label{fmg-physical-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The transformed edge is the product around the loop consisting
+of \(p(x)\), the additional \(\mu\)-edge and reverse \(p(x+e_\mu)\).
+Move the additional edge backwards past the later coordinate
+segments. There are exactly \(\sum_{\nu>\mu}x_\nu\) elementary
+square exchanges. Each exchange multiplies the loop holonomy
+by a conjugate of a plaquette or its inverse, and the final
+boundary word cancels. Unitary conjugation and inversion
+preserve distance to \(I\). Moreover
+\[
+       \|W_1\cdots W_m-I\|
+                     \le\sum_{j=1}^m\|W_j-I\|
+\]
+for unitary matrices, by telescoping. This proves
+\eqref{fmg-edge-bound}; tree edges require no exchanges.
+On the chosen local chart,
+\(\|\log W\|\le2\|W-I\|\), as follows from the scalar eigenangle
+bound. Dividing by \(\eta\) proves \eqref{fmg-physical-bound}.
+\end{proof}
+
+Before the logarithm, this gauge is a finite product of link
+matrices and inverses. With a strict chart margin it is real
+analytic and has a holomorphic continuation near each admitted
+compact configuration. No refinement-uniform complex radius
+or derivative bound follows just from
+\eqref{fmg-edge-bound}. On a general simply connected cell complex
+the same argument costs the filling areas of the tree fundamental
+loops; simple connectivity alone does not bound those areas.
+
+For a fixed finite current box the lemma gives local logarithmic
+coordinates from sufficiently small plaquettes. For a fixed
+physical box under refinement, its sufficient potential threshold
+is \(\epsilon=O(\eta^2 b/\ell)\). It does not yet identify relative
+fluctuations about a prescribed constrained minimum.
+
+\subsection{A gauge-invariant obstruction to physical smoothness}
+\label{fmg-holder-obstruction}
+
+Fix \(0<\alpha<1\), a small \(f>0\), and a nonzero Cartan
+generator \(H\) with \(\|H\|=1\). On a fixed physical cube
+with decreasing mesh \(\eta\), let \(x\) denote integer lattice
+coordinates and put
+\begin{equation}
+ U_1(x)=\exp\!\bigl(i\eta^2 f x_2\chi(x_1)H\bigr),\qquad
+ U_\mu(x)=I\quad(\mu\ne1),
+ \qquad
+ \chi(k)=\begin{cases}0&k\text{ even},\\1&k\text{ odd}.
+                     \end{cases}
+ \label{fmg-oscillating-field}
+\end{equation}
+All non-\(12\) plaquettes are \(I\), and
+\begin{equation}
+               U(\partial p_{12}(x))
+                    =\exp(-i\eta^2 f\chi(x_1)H).
+ \label{fmg-oscillating-curvature}
+\end{equation}
+Thus every plaquette is within \(\eta^2f\) of \(I\).
+
+\begin{proposition}[No uniform \(C^{1,\alpha}\) gauge]
+\label{fmg-no-smooth-gauge}
+For every fixed \(B<\infty\), sufficiently fine configurations
+\eqref{fmg-oscillating-field} admit no gauge representative
+\(U^v=\exp(i\eta A)\) on the cube satisfying
+\begin{equation}
+ \|A\|_\infty+\|\nabla_\eta A\|_\infty
+                         +[\nabla_\eta A]_\alpha\le B.
+ \label{fmg-smooth-assumption}
+\end{equation}
+The same assertion holds on an interior subcube containing
+adjacent plaquettes of both parities.
+\end{proposition}
+
+\begin{proof}
+For any \(A\) satisfying \eqref{fmg-smooth-assumption}, express
+a \(\mu\nu\)-plaquette by the exact jet variables
+\[
+ a=A_\mu(x),\quad b=A_\nu(x),\quad
+ c=\nabla_{\eta,\mu}A_\nu(x),\quad
+ e=\nabla_{\eta,\nu}A_\mu(x).
+\]
+Its product is
+\[
+ P_\eta=
+ e^{i\eta a}e^{i\eta b+i\eta^2c}
+                  e^{-i\eta a-i\eta^2e}e^{-i\eta b}.
+\]
+The constant term is \(I\) and the first coefficient in \(\eta\)
+vanishes. Consequently \((P_\eta-I)/\eta^2\) extends analytically
+to \(\eta=0\), with uniformly bounded first jet derivatives
+on each fixed bounded jet ball. Adjacent \(a,b\) differ by
+at most \(B\eta\), and adjacent \(c,e\) differ by at most
+\(B\eta^\alpha\). Hence
+\begin{equation}
+ \left\|(P_\eta(x)-I)/\eta^2
+             -(P_\eta(x+e_\rho)-I)/\eta^2\right\|
+                         \le C(B)\eta^\alpha .
+ \label{fmg-curvature-holder}
+\end{equation}
+The same inequality holds for the difference of their norms.
+But \(\eta^{-2}\|U(\partial p)-I\|\) is gauge invariant
+at each plaquette. For \eqref{fmg-oscillating-curvature}
+its adjacent values are zero and at least \(f/2\) for
+sufficiently small \(\eta\). This contradicts
+\eqref{fmg-curvature-holder}.
+\end{proof}
+
+This is an obstruction to every gauge, not merely to the chosen
+tree gauge. The example is already in that tree gauge, where
+\(A_1=\eta f x_2\chi(x_1)H\); its first derivative visibly grows
+like \(f\ell/\eta\). The stronger invariant argument above
+does not assert that a bounded \(C^1\) gauge alone is impossible.
+It excludes the fixed physical \(C^{1,\alpha}\) background ball
+needed here.
+
+There is no contradiction with the complete-density method.
+A raw fine field is not a uniformly smooth classical background.
+The useful decomposition is a regular constrained background
+plus rough fluctuations and explicitly retained exceptional
+regions. A plaquette tail or a local logarithmic chart alone
+does not construct that decomposition.
+
+\subsection{Flat torus holonomies and transition functions}
+\label{fmg-holonomy}
+
+On a periodic direction of \(N\) bonds and physical circumference
+\(\ell=N\eta\), consider
+\[
+       U_1(x)=e^{i\theta H/N},\qquad U_\mu(x)=I\quad(\mu\ne1).
+\]
+Its plaquettes are all \(I\), whereas the noncontractible loop is
+\(e^{i\theta H}\), unchanged up to conjugacy by a periodic gauge.
+If some periodic gauge has \(U_b^v=e^{i\eta A_b}\) with
+\(\|A\|_\infty\le b\), telescoping the loop gives
+\begin{equation}
+                  \|e^{i\theta H}-I\|\le N\eta b=\ell b.
+ \label{fmg-holonomy-bound}
+\end{equation}
+Thus zero plaquette curvature cannot force an arbitrarily small
+global physical potential. Local tree gauges trivialize this
+flat field on contractible cubes, but their transition data
+retain the holonomy. On overlaps the exact relation is
+\begin{equation}
+ U^{(i)}(x,y)=h_{ij}(x)U^{(j)}(x,y)h_{ij}(y)^{-1},
+ \qquad h_{ij}=v_i v_j^{-1}.
+ \label{fmg-transitions}
+\end{equation}
+Those data must be retained or integrated consistently. They
+cannot be set to identity because local plaquettes are small.
+
+\subsection{A scale-comparison fact supplied by local shooting}
+\label{fmg-couplings}
+
+Our actual weak finite trajectories obey
+\(\gamma_j=g_j^{-2}\ge\Gamma_{\mathrm w}>0\) and
+\(|\gamma_{j+1}-\gamma_j|\le D_{\mathrm{abs}}\).
+Telescoping yields, for any two stages,
+\begin{equation}
+ \frac{\gamma_i}{\gamma_j}
+       \le1+\frac{D_{\mathrm{abs}}}{\Gamma_{\mathrm w}}|i-j|,
+ \qquad
+ \frac{g_i}{g_j}
+       \le\left(1+\frac{D_{\mathrm{abs}}}
+                          {\Gamma_{\mathrm w}}|i-j|\right)^{1/2}.
+ \label{fmg-coupling-comparison}
+\end{equation}
+For the second inequality apply the first with \(i,j\) interchanged.
+Both reverse ratios satisfy the same bounds. No one-step
+monotonicity is used. This is a useful polynomial interscale
+comparison; it is not asserted to match every source radius
+inequality without checking its constants and domains.
+
+\subsection{The next normalized interface}
+\label{fmg-next}
+
+A direct full-measure route needs an exact gauge-invariant
+good/bad partition and a normalized conditional representation.
+Its good component must be the actual stationary-plus-fluctuation
+integral with its actual retained window. Its complementary
+replacement must be summable in component size, scale age and
+boundary geometry, uniformly in the allowed exterior data.
+A fixed-box conditional Wilson estimate is a genuine first input;
+its constants need not survive growing components or a nonlinear
+average constraint. Conversely, a normalized estimate on a
+coarse-average fiber cannot be inferred by conditioning an
+unconditional tail without controlling that fiber's normalization.
+
+The import route makes the same obligations through the published
+complete-density class instead of a new direct proof. Neither
+route has been completed by the local trajectory or by the
+geometric lemmas in this section. No continuum-existence conclusion
+is asserted here.
+
+
+\section{The remaining construction theorem}
+\label{fmb:remaining}
+
+The progress now has a precise measure-theoretic meaning. For one
+specified completion of the local coarse map, the full finite
+positive Wilson pushforward is the sum of positive history measures.
+At the bare level, large-curvature cells and explicit fixed-box
+gauge/minimizer defects have uniform-volume joint probability
+bounds. Neither assertion discards a bad sector or a vacuum factor.
+
+What remains is to make the two constructions refer to the same
+iterated local coordinates and to control their interaction. A
+useful next theorem is a \emph{complete-density transfer theorem}
+for the actual chosen coarse map. It would need to provide:
+\begin{enumerate}
+\item A spatial good/bad decomposition on determining sets with
+collars, prescribed exterior data, and retained holonomy/transition
+data. Its good-component integral must equal the existing
+constrained stationary-plus-fluctuation integral, with its actual
+independent windows, Haar factors, pivot factors and vacuum
+normalization.
+\item A normalized replacement on each complementary component.
+The numerator and denominator must be bounded together, uniformly
+in the admissible exterior field, component geometry, preceding
+depth and scale history. A bound sufficient for summation over
+components and their histories is required. Bare probability
+rarity or a Gaussian conditional estimate does not by itself
+provide this normalized replacement.
+\item Preservation of a specified complete-density class under the
+full step, with local analytic/source domains and coupling
+extraction belonging to that same class. The weak local shooting
+from Notebook 37 can be used only after its recursion has been
+identified with this full-density recursion, or after a shooting
+theorem has been proved for the latter.
+\end{enumerate}
+The published large-field induction discussed above is a possible
+route to this theorem after its hypotheses have been matched.
+The new direct probability estimates are another input to a proof;
+they do not already verify the published induction class.
+
+\paragraph{Why local rarity is not a global chart theorem.}
+For any fixed family of \(M\) boxes, the one-box defect estimate
+gives a union bound proportional to \(M\). If the number of boxes
+diverges with the cutoff, a small one-box probability does not
+imply that all boxes are good. For example, on the local tuned
+trajectories \(g_{\rm bare}\) has order \(n^{-1/2}\), while a
+logarithmic window yields a displayed estimate of order
+\(\exp[-c(\log n)^{2a}]\). This bound does not defeat a number
+of microscopic boxes growing exponentially in \(n\). This is
+a limitation of that union-bound inference, not a lower bound
+on the actual defect probability. The purpose of a component
+expansion is to allow defects and sum them with their correct
+weights, rather than assume a globally good field.
+
+\paragraph{After the complete-density theorem.}
+Continuum existence still requires common estimates for a
+sufficient gauge-invariant observable algebra, with renormalized
+short-distance insertions and the exact same denominator. Those
+estimates must produce a common subsequential continuum hierarchy,
+reflection positivity inherited from one positive regulator
+sequence, full Euclidean covariance, and the regularity needed
+for reconstruction. A quantitative lower witness and
+identification of the resulting fields and dynamics are needed
+to establish a nontrivial Yang--Mills theory. The physical mass
+gap is a subsequent assertion. The Gaussian gaps used in the
+local analysis are not that spectral statement.
+
+No uniqueness of the continuum limit is imposed merely for the
+sake of an existence proof. Nor is a particular contact-term
+convention required when an admissible consistent choice would
+suffice. The unresolved requirements above concern the actual
+measure, observable bounds and physical identification.
+
+\section*{Verification record and source access}
+
+The accompanying research notes preserve the exact finite-measure
+construction, the self-contained Wilson chessboard proof, the
+fixed-box conditional proof and their independent internal audits.
+The assembled source was checked for duplicate and missing labels
+and compiled with the desktop LaTeX compiler. These checks establish
+document consistency and typesetting; the mathematical evidence is
+the arguments and their stated hypotheses.
+
+Primary references used to locate the complete-density interface are
+T.~Ba{\l}aban, \emph{Convergent renormalization expansions for lattice
+gauge theories}, Communications in Mathematical Physics
+\textbf{119} (1988), 243--285,
+\href{https://doi.org/10.1007/BF01217741}{doi:10.1007/BF01217741},
+and \emph{Large field renormalization. II. Localization,
+exponentiation, and bounds for the \(R\) operation},
+Communications in Mathematical Physics \textbf{122} (1989),
+355--392,
+\href{https://doi.org/10.1007/BF01238433}{doi:10.1007/BF01238433}.
+The exact Section 2 induction class in the first paper, and the
+weak-coupling hypothesis in Theorem 1 of the second, are retained.
+No unchecked OCR constants or powers are supplied as theorem
+hypotheses. The first large-field paper's detailed replacement
+formula has not been newly verified from an accessible original
+in this pass; its exact audit remains part of any import route.
+
+\end{document}

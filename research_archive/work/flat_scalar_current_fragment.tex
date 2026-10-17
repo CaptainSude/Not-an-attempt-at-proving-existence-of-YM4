@@ -1,0 +1,204 @@
+\section{The scalar gauge inverse and bounded current vertices}
+\label{gauge-section}
+
+The fine inverse alone does not bound the current perturbation.
+The source gauge contains derivatives, so we first control its
+scalar constrained inverse in the same physical cell norms.
+Keep the matched scalar average $Q_0$, scalar Laplacian
+$\mathcal L=D^*D$, and the source operators
+\[
+ G'=(\mathcal L+Q_0^*a'Q_0)^{-1},\qquad
+ R=I-G'Q_0^*(Q_0G'^2Q_0^*)^{-1}Q_0G',
+ \qquad Z=G'RG'.
+\]
+All adjoints use the physical measures. Complex continuations use
+the fixed bilinear transpose, never conjugation of a varying parameter.
+
+\subsection{The constrained biharmonic inverse}
+
+The operator
+\[
+ Z=G'^2-G'^2Q_0^*(Q_0G'^2Q_0^*)^{-1}Q_0G'^2
+\]
+is the inverse of the quadratic form $\norm{\mathcal L\lambda}^2$
+on $\ker Q_0$, extended by zero on its orthogonal complement.
+Indeed it is the usual constrained inverse of $G'^{-2}$, and for
+$Q_0\lambda=0$ one has
+$\norm{G'^{-1}\lambda}^2=\norm{\mathcal L\lambda}^2$.
+It follows that $Q_0Z=0=ZQ_0^*$ and that $Z$ is independent of
+the auxiliary positive penalty $a'$. The constant scalar mode is
+excluded by the constraint, so no inverse is assigned to that mode.
+
+On a real nonzero Bloch fiber the constrained inverse is
+\[
+ Z_{rs}=\frac{\delta_{rs}}{P_r^2}
+ -\frac{a_r^-a_s}{P_r^2P_s^2W_2},
+ \qquad W_2=\frac{D_{s,2}}{P_0^2}.
+\]
+Its completely canceled form is
+\begin{align}
+ Z_{00}&=\frac{R_{s,2}}{D_{s,2}},
+ &Z_{0s}&=-\frac{a_0^-a_s}{P_s^2D_{s,2}}\quad(s\ne0),
+ \label{gauge-Z-central}\\
+ Z_{r0}&=-\frac{a_r^-a_0}{P_r^2D_{s,2}}\quad(r\ne0),
+ &Z_{rs}&=\frac{\delta_{rs}}{P_r^2}
+       -\frac{P_0^2a_r^-a_s}{P_r^2P_s^2D_{s,2}}
+          \quad(r,s\ne0).
+ \label{gauge-Z-high}
+\end{align}
+The notation $D_{s,2}$ denotes the scalar denominator, not a
+dependence on the second matrix index $s$. No central inverse
+power of $P_0$ remains. At zero coarse momentum the high averaging
+coefficients vanish: $Z$ is zero on the constant mode and equals
+$P_r^{-2}$ on the nonzero aliases. For $M=1$, it is identically zero.
+
+\begin{proposition}\label{gauge-Z-locality}
+Every placement of at most four total fine forward or backward
+differences on the two sides of $Z$ has a uniformly bounded
+holomorphic physical-cell symbol and a uniformly exponentially
+decaying cell-operator kernel. The bounds are independent of
+refinement and compatible periodic volume.
+\end{proposition}
+
+\begin{proof}
+Let the output order be $j$ and the input order be $l$, with
+$j+l\le4$. The high diagonal in \eqref{gauge-Z-high} is bounded
+by $C|r|^{j+l-4}$. Its high rank vectors are bounded by
+$C|a_r^-||r|^{j-4}$ and $C|a_r||r|^{l-4}$.
+Each order is at most four, so alias Parseval bounds both vector
+Hilbert norms uniformly. The central row and column use the same
+vectors; central multipliers are bounded. The scalar denominator
+$D_{s,2}$ stays uniformly away from zero on the common strip.
+For a complex rank-one matrix $vw^T$, its Hilbert norm is bounded
+by $\norm v_2\norm w_2$, without conjugating the analytic symbol.
+
+These are operator bounds before reconstruction and hence do not
+count the growing number of aliases. The finite Fourier reconstruction
+and its inverse are uniformly bounded in physical cell Hilbert
+norm, with the inverse containing its required $M^{-d}$ factor.
+Alias permutation and the integer-site phases give periodic gluing
+on the enlarged charts. Contour shifting gives exponential cell
+decay; summing at a smaller exponent gives weighted Schur bounds.
+Fourier sampling gives exact periodizations on finite tori, including
+the stated zero mode and small-period incidence multiplicities.
+\end{proof}
+
+The source definitions give
+\[
+ Q_0G'R=0,\quad \mathcal L G'R=R,\quad
+ RG'\mathcal L=R.
+\]
+Consequently
+\[
+ \Lambda:=G'RD^*=Z\mathcal L D^*,\qquad
+ D\Lambda=DZ\mathcal L D^*.
+\]
+The total fine derivative orders are three and four, respectively.
+Proposition~\ref{gauge-Z-locality} therefore bounds both operators
+in a common positive weighted cell-Schur norm. This is a Hilbert
+operator conclusion; it does not assert pointwise bounds for four
+fine derivatives.
+
+\subsection{A current perturbation with no derivative of the current}
+
+At the flat reference the deposited gauge BCH coefficients are
+\[
+ c^{(1)}(A,\lambda)(b)
+ =\frac i2[\lambda(b_-)+\lambda(b_+),A(b)],
+\]
+\[
+ 2c^{(2)}(\lambda_1,\lambda_2)(b)
+ =\frac1{2i}\bigl([\lambda_1(b_-),D\lambda_2(b)]
+                 +[\lambda_2(b_-),D\lambda_1(b)]\bigr).
+\]
+Define $\mathfrak j_J$, $\mathfrak k_J=\mathfrak j_J^*$ and
+the symmetric scalar form $\mathfrak m_J$ by pairing these two
+expressions with the fine current $J$. More explicitly, define
+\[
+ \langle\lambda,\mathfrak j_J A\rangle
+   =\langle c^{(1)}(A,\lambda),J\rangle,\qquad
+ \langle\lambda_1,\mathfrak m_J\lambda_2\rangle
+   =2\langle c^{(2)}(\lambda_1,\lambda_2),J\rangle.
+\]
+Also define
+the finite-incidence map $V_J$ through
+\[
+ \langle\lambda,V_J A\rangle
+ =\frac1{2i}\sum_b\eta^d
+           \langle[\lambda(b_-),A(b)],J(b)\rangle.
+\]
+Then, as a quadratic form,
+\[
+ \mathfrak m_J=V_JD+D^*V_J^*.
+\]
+The fixed Lie bracket norm and finite incidence give
+\[
+ \norm{\mathfrak j_J}_{2\to2}+\norm{V_J}_{2\to2}
+ \le C_d\norm J_\infty.
+\]
+For example, there are at most $2d$ incident contributions at a
+site, and each bond has two endpoints. Summing with the common
+fine volume measure pays exactly those fixed multiplicities.
+There is no power of $M$. The maps have a fixed cell range, so
+the same bound holds in each fixed weighted cell-Schur norm.
+
+The auxiliary current form of the deposited source is
+\begin{equation}\label{gauge-Theta}
+ \begin{split}
+ \Theta'_J
+ &=\mathfrak k_J\Lambda+\Lambda^*\mathfrak j_J
+                    +\Lambda^*\mathfrak m_J\Lambda\\
+ &=\mathfrak j_J^*\Lambda+\Lambda^*\mathfrak j_J
+   +\Lambda^*V_JD\Lambda+(D\Lambda)^*V_J^*\Lambda.
+ \end{split}
+\end{equation}
+Submultiplicativity of the weighted algebra proves, for a fixed
+positive exponent $\kappa$,
+\begin{equation}\label{gauge-Theta-bound}
+ \norm{\Theta'_J}_\kappa\le\theta\norm J_\infty,
+\end{equation}
+uniformly in $M$ and volume. The expression is linear and
+holomorphic in complex $J$. Fine derivatives act on the scalar
+legs through $D\Lambda$; no derivative of $J$ has been taken.
+If $J$ is supported in one coarse cell, its coefficient maps read
+that cell and write only fixed neighboring cells. This marked
+support will give the localized current derivatives below.
+
+\subsection{The zero-current cancellation}
+
+Let $E_0=G_0Q^*q_0$ be the normalized source extension, with
+$q_0=q_M+aI$. Its source gauge gives
+$\Lambda E_0=0$. Hence
+\[
+ \Theta'_J E_0=\Lambda^*\mathfrak j_J E_0,
+ \qquad E_0^*\Theta'_J E_0=0.
+\]
+For $\widetilde G_0=G_0-E_0q_0^{-1}E_0^*$ the identities
+\begin{equation}\label{gauge-response-identities}
+ G_0\Lambda^*=\widetilde G_0\Lambda^*=DZ,
+ \qquad \Lambda DZ=Z
+\end{equation}
+follow directly: for $\lambda=Zf$,
+$Q_0\lambda=0$ and $\mathcal L\lambda=RG'f$, so
+\[
+ (K+DRD^*+Q^*aQ)D\lambda=DRG'f=\Lambda^*f,
+ \qquad QD\lambda=0.
+\]
+In particular, exact differentiation of the auxiliary family at
+zero current gives
+\[
+ Dq_0[J]=0,\qquad DE_0[J]=DZ\mathfrak j_JE_0,
+\]
+\begin{equation}\label{gauge-current-hessian}
+ \begin{split}
+ D^2q_0[J_1,J_2]
+ ={}&-(\mathfrak j_{J_1}E_0)^*Z(\mathfrak j_{J_2}E_0)\\
+    &-(\mathfrak j_{J_2}E_0)^*Z(\mathfrak j_{J_1}E_0).
+ \end{split}
+\end{equation}
+Here $Dq_0$ means the current derivative of the auxiliary $q_J$
+at $J=0$, rather than a derivative of the fixed penalty. The first
+extension response is a fine gradient with zero coarse average and
+zero curl. The quadratic precision response can be nonzero.
+The separate constraint-current term in the full source family
+is not canceled by these identities.

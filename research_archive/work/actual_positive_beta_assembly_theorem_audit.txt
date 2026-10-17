@@ -1,0 +1,11 @@
+ACTUAL POSITIVE BETA ASSEMBLY: INDEPENDENT AUDIT
+17 October 2026. theorem_audit.
+Read work/actual_positive_beta_assembly_fragment.tex and the scalar companion work/soft_scalar_complete_coefficient_fragment.tex, using the independently passed spb, actual-base and fixed-reference proofs.
+
+RESULT: pass, subject to exactly the stated upstream structural/determinant/localized-vertex inputs. No correction requested.
+
+The actual four-factor identity has scalar log minus half vector log; beta=2 times the affine density coefficient converts this to heat h_vector-2h_scalar. Both coarse terms are uniformly bounded. Uniform soft UV and IR tails justify the remainder in the middle-band identity. On1<=s<=K^2, spb costs Cs/K^2, actual-base comparison C/s, and reference C/sqrt(s). Their combined bound is C(s^-1/2+s/K^2). Integrating against ds/s costs at most2C+C, while the constant11alpha_g integrates to22alpha_g logK. There is no additional factor2 or sign reversal. The K=1 empty band is covered by the bounded ends.
+
+The scalar companion uses the exact unpinned Bessel coefficient with its -2 heat factor already included. Its small-s behavior is O(s^4), and its large-s constant isalpha_g=C_H/(48pi^2). Thus its determinant coefficient is2alpha_g logK+O(1). Subtracting this from the exact full coefficient yields20alpha_g logK for the minus-half vector factor. These are values for this particular exact decomposition, not for separately point-pinned operators.
+
+Every uniform constant comes from the common actual classical kernel/vertex bounds and the fixed finite color dimension. The argument therefore applies to every jointly obtainable structural system supplying those hypotheses, including varying-depth limits; it needs no uniqueness or favorable subsequence. It does not assert a finite-period continuous-momentum identity. The positive long-block margin for K=R^q follows by choosing q after the fixed comparison constant. The fragment correctly leaves full Wilson-history identification and continuum fields outside its conclusion.

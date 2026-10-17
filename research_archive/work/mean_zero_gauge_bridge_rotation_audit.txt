@@ -1,0 +1,70 @@
+INDEPENDENT AUDIT: EXACT LOCAL MEAN-ZERO-GAUGE DETERMINANT BRIDGE
+18 October 2026. Rotation audit.
+
+Read physical_quotient_localization_research.txt in full, focusing on Sections 1--3, 4.3 and 6. Read covariant_corrected_scalar_research.txt Sections 1--7 in full for the actual source matching. Result: pass within the explicitly fixed-K local stationary germ. The separately saved mean_zero_gauge_spectral_research.txt supplies an independent flat spectral proof.
+
+1. Exact all-site determinant algebra
+
+On the real open set where fine and coarse all-site generators are injective, the scalar splitting into zero-at-centers parameters and center parameters has coordinate determinant one. The target decomposition contributes sqrt(det G_c), the fine decomposition sqrt(det G), and the translated contour Gaussian contributes no field determinant because T D_b=-I. Thus the all-site physical amplitude in (1.5) has exactly the stated a^(dim E_c-dim S_c) power after squaring.
+
+The block matrix B_a has the displayed Schur complement. The difference between the normalized logarithm formula and the raw amplitude is only the fixed a-power. The correction C-Cbar=D_c Z is removed by a unit-determinant shear; this is tangent algebra, not an identification of nonlinear Haar pushforwards.
+
+For arbitrary onto B and corrected Cbar with Cbar D=D_c B, the orthonormal fine gauge coordinates split into ran(G^1/2 V) and its complement. The first determinant is det G_B, the remaining target-gauge determinant is a^dim(S_c) det G_c det(BG^-1B^T). Removing its coupling leaves precisely the original physical Q_perp since P_c Cbar=P_c C.
+
+Jacobi in the orthonormal [V,B^T(BB^T)^-1/2] basis gives
+ det(BG^-1B^T)=det(BB^T) det G_B/det G.
+Combining formulas yields
+ I_act=a^(dim E_c/2) det G_B sqrt(det BB^T)/sqrt(det Q_B).
+In particular the coefficient of logdet G_B is one, not one half. The BB^T sign is positive. Replacing G_B by the full-site Ghat adds only the fixed complement mass determinant, so its normalized logarithm is unchanged.
+
+2. Reducible flat background and analytic continuation
+
+The generic injective real open set exists arbitrarily near flatness for SU(N): two sufficiently small cycle holonomies with common Lie centralizer zero suffice. For the stated regular diagonal X, commuting with X forces a Lie algebra element diagonal; the connected off-diagonal graph of Y then forces it scalar, hence zero in su(N). Small exponentials have the same local centralizers. The coarse finite connection can be chosen inside any prescribed small product germ, for each finite period.
+
+Injectivity of the actual fine generator follows from CD=D_c r: a fine parallel scalar has zero coarse restriction when D_c is injective, and then vanishes everywhere by transport from a center. This proof does not require an inverse uniform in volume.
+
+The actual leading amplitude is analytic on its original finite stationary germ. The final Ghat,Q_B and BB^T are positive at flatness by the independently proved block-mean spectral bounds. Their local determinant branches are therefore nonsingular there. Equality on the full-dimensional real injective open set implies equality throughout the connected complex germ. This continues the combined actual expression, rather than continuing singular separate global-base factors.
+
+The semisimple scope is essential for this particular generic-injectivity argument; an abelian factor is not covered silently.
+
+3. Actual moving-reference correction
+
+The exact selected contour group P(U;y,z), rather than an unverified older axial Q' convention, is used throughout. For the relative product P(e^{ix}U)P(U)^-1, the derivative of its local logarithm at x=0 is identity. Hence
+ Z_U D_U=r_ell-B_U,
+ B_U phi(y)=ell^-d sum_z Ad(P(U;y,z))phi(z)
+has exactly the displayed sign and no scale factor in angle coordinates.
+
+Differentiating the endpoint-conjugated relative output gives Cbar=C-D_W Z. Ordinary gauge covariance then gives Cbar D_U=D_W B_U. Simultaneously transforming the reference and increment proves the exact covariance of Z,B,Cbar; no multiplicative cocycle in the reference is needed.
+
+The ordered composite recurrence
+ Z^(t+1)=B_t Z^(t)+Z_t C^(t)
+is algebraically correct and uses ordinary intermediate references. It proves C-Cbar=D_c Z and Cbar D=D_c B, with the final ZD=r_K-B. There is no assumption that the composite corrected tangent is the derivative of one fixed-identity corrected nonlinear map.
+
+4. Own-block locality and the constant Gram matrix
+
+Nested centered tiling gives exactly one scalar ancestry for each input site. Therefore each composite B row is K^-d times one adjoint group transport on its own final block. Distinct rows have disjoint scalar supports. Orthogonality of each real adjoint transport, or the invariant bilinear continuation for complex transports, gives exactly BB^T=K^-d I.
+
+The same-block background claim uses only internal primitive contour edges and the established two-descendant-block locality of each ordinary coarse bond. Their descendant unions remain inside the parent block. Thus no cross-boundary background link enters a B row. The rows of Cbar retain two-block support. The explicit projector P_B=I-K^4 B^TB is consequently local, holomorphic and covariant.
+
+Flat endpoint differentiation leaves the straight angle average, while the scalar average has no extra ell factor. The products give Cbar(1)=A_K and B(1)=Q0_K. The optional uniform physical-background estimates in Section 6 use the stated ordinary-trajectory theorem; at fixed primitive ell their relative stage errors sum as sum ell^j/K, and the counting scales K^-2 for B and K^-1 for Cbar are consistent. They are not needed for the exact determinant formula or fixed-K germ.
+
+5. Fixed-K source locality and scope
+
+After the actual stationary substitution U=U_*(W), operator-index locality of the tangent formulas remains finite range, while their coefficient dependence on W is generally exponentially local, not finite support. The already proved stationary/classical source kernels provide precisely that exponential dependence. Equality and residual positivity concern the actual stationary W-germ or its gauge orbit, not arbitrary off-stationary current backgrounds.
+
+At fixed K, flat gaps and uniform analytic coefficient bounds justify a volume- and old-depth-uniform small complex W-ball. Weighted conjugation supplies exponentially local inverses; resolvent/analytic logarithm calculus then supplies diagonal and source kernels. A resolvent contour avoids any unsupported assertion that a raw weighted logarithm series automatically contracts.
+
+The moving-reference covariance and constant BB^T make both final ambient matrices covariant and give
+ D_actual=N_0[logdet Ghat-(1/2)logdet Q_B].
+This is a local gapped joint formulation at each fixed K, not an independent replacement of the earlier globally based massless factors. Its local kernels pass to structural limits jointly with the actual finite identity.
+
+No uniform-in-K complex radius, affine relative-vertex bound, magnetic logarithmic coefficient, or positive coupling drift follows from this audit. Those remain distinct estimates.
+
+No substantive correction was found. The author was asked only to spell out the stationary-germ versus finite operator-range/exponential source-range distinction in the locality section.
+
+FINAL PQL FRAGMENT FIDELITY
+Read work/physical_quotient_localization_fragment.tex in full after the author incorporated that distinction and the auxiliary normalization repair. Pass. The preliminary coupled formula is now the unnormalized determinant ratio on the injective set; its singular scalar logarithms are never evaluated separately at flatness. The actual gapped pair supplies the joint removable continuation. All determinant powers, actual moving-reference identities, flat angle scales, mean-zero spectral argument, and fixed-K source/local-limit qualifications agree with the checked research. No correction requested.
+
+FINAL CCS FRAGMENT FIDELITY
+Read work/covariant_corrected_scalar_fragment.tex in full. Pass. The relative-log derivative, endpoint-correction sign, ordinary-reference product ordering, Z recurrence, own-block support, exact complex-bilinear BB^T normalization, flat angle/scalar units, optional trajectory-based uniform estimate and basis-free scalar completion all agree with the audited proof. The fragment does not conflate this moving-reference tangent with a fixed-identity corrected map or change the original nonlinear constraint/cutoff. No correction requested.
+

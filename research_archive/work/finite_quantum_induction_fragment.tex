@@ -1,0 +1,503 @@
+% No preamble. Prefix fqi-. Cross-references only to this fragment and fcc-.
+\section{Exact finite local quantum induction}
+\label{fqi-section}
+
+This section combines the actual common-domain finite macro integral,
+finite-total quotient descent, the fixed-outer-radius force of
+Notebook30, and Theorem~\ref{fcc-theorem}. The result concerns the
+selected homogeneous \emph{local} macrostep and its specified
+holomorphic continuation. It does not identify the full Wilson
+pushforward, other field sectors, or arbitrary mixed histories.
+
+\subsection{Finite geometry, totals and the actual map}
+\label{fqi-setup-section}
+
+Fix the primitive ratio $\ell$, an elementary composite ratio
+$R=\ell^s$, auxiliary grouping $J$, and exponent $a_0=1/16$
+satisfying the strict common-domain budgets. At stage $j$ let
+\begin{equation}
+ M_j=M_0R^j,\qquad Q_j=Q_0/R^j.
+ \label{fqi-scales}
+\end{equation}
+The preceding homogeneous classical depth is $M_j$; the cubic
+current-unit torus period is $Q_j$, after resetting spacing to one.
+All periods are compatible integers and $J\mid Q_j$. Constants
+may depend on the fixed geometry and color conventions, but are
+uniform in depth and in the permitted periods above a lower
+threshold.
+
+On the period-$Q$ torus use the finite activity space and quotient
+of \eqref{fcc-norm-total}. For clarity, the raw and normalized totals
+are
+\begin{equation}
+ E^{\rm raw}(A)=\sum_HE_H(A|_H),\qquad
+ \Phi_E(A)=E^{\rm raw}(A)-E^{\rm raw}(0),\qquad
+ \|E\|_{Q;a_0,b}=\sup_i\sum_{H\ni i}e^{a_0|H|}\|E_H\|_b.
+ \label{fqi-totals}
+\end{equation}
+There are finitely many coordinates and connected $J$-cell carriers
+at each regulator. Equality of $\Phi_E$ on the full product ball
+is a closed linear kernel, so the quotient is Banach. We impose
+local gauge, translation, hypercubic and global color identities
+on totals, not individual coefficients. Use a simple Lie algebra
+for the scalar Maxwell functional; a finite componentwise version
+handles a semisimple product.
+
+Let $S_{M,Q}$ be the actual finite homogeneous ordinary minimum
+action, with $S_{M,Q}(0)=0$. It is not replaced by a canonical
+periodization of an independently selected infinite reference.
+The actual common-domain construction supplies
+\begin{align}
+ \mathcal F_j(E)&=\mathcal T_jE+\mathcal G_j(E),\notag\\
+ \mathcal G_j(E)&=\Delta_j+\mathcal Q_{{\rm det},j}
+                                      +\mathcal L_j(Q_E).
+ \label{fqi-map}
+\end{align}
+Here $\mathcal T_j$ is pre-gauge substitution, $Q_E$ is the exact
+inherited fluctuation difference, and $\mathcal L_j$ is the
+strict Gaussian logarithm with the fixed actual base exponent,
+precision, retained window and chart. The coupling $g_j$ and
+threshold $T_{{\rm cut},j}$ are held fixed when comparing inputs
+to this one map. Field-independent factors are tracked separately.
+
+On the original real common overlap, this is the exact chosen
+local macro integral. On the common radius-$b$ ball it is its
+proved holomorphic continuation, evaluated through pre-gauge
+fields inside the old activity domain. Identification throughout
+that ball with a globally defined gauge-orbit density requires
+the extra orbit-representation hypothesis of the common-domain
+theorem. It is not inferred from a quotient identity.
+
+\subsection{Exact finite quotient descent}
+\label{fqi-descent-section}
+
+\begin{lemma}[Finite descent of the actual quantum update]
+\label{fqi-descent-lemma}
+The actual finite maps $\mathcal F_j$, $\mathcal T_j$ and
+$\mathcal G_j$ descend to the invariant finite quotient on
+their admissible ball. No infinite periodization, kernel limit
+or translation averaging is required.
+\end{lemma}
+\begin{proof}
+If $[E]=[E']$, then on the entire input product ball
+\begin{equation}
+ E^{\rm raw}(A)-E'^{\rm raw}(A)=c,
+ \qquad c=E^{\rm raw}(0)-E'^{\rm raw}(0).
+ \label{fqi-constant-difference}
+\end{equation}
+The actual pre-gauge field $a_p(w)$ and all fluctuation fields
+$f_\lambda(w,\xi)$ used in the inherited construction lie in
+that ball on the fixed retained window and the established
+interpolation domains. Consequently
+\begin{equation}
+ E^{\rm raw}(f_1)-E^{\rm raw}(f_0)
+       =E'^{\rm raw}(f_1)-E'^{\rm raw}(f_0).
+ \label{fqi-same-insertion}
+\end{equation}
+The scalar inherited Gaussian insertion is identical, while
+the exterior background terms differ by $c$. The covariance,
+base action, chart, sharp window and measure factors are unchanged.
+The exact finite integrals therefore differ only by $e^c$.
+Their normalized holomorphic logarithms agree on the connected
+domain, using the common nonvanishing branch. A raw logarithm
+constant belongs to the vacuum normalization and disappears
+from the quotient. The localized arrays need not agree.
+
+Classical substitution descends immediately from
+\eqref{fqi-constant-difference} evaluated at $a_p(w)$;
+subtracting it gives descent of $\mathcal G_j$.
+The exact real-sector symmetry and holomorphic Ward continuation
+preserve the stipulated total identities. No carrierwise gauge
+identity is assumed.
+\end{proof}
+
+The constant in \eqref{fqi-constant-difference} must be compensated
+in a raw density, as specified below. For a real class, a chosen
+representative can be made real without increasing its norm by
+averaging $E_H(w)$ with $\overline{E_H(\overline w)}$.
+
+\subsection{Uniform finite difference and forcing estimates}
+\label{fqi-estimates-section}
+
+Let $\bar\epsilon$ be the family ceiling of the strict two-input
+comparison. For quotient inputs $x,y$ of norm at most
+$\bar\epsilon/4$, choose near-minimal representatives $Y$ of $y$
+and $D$ of $x-y$, and put $X=Y+D$. For arbitrarily small
+$\delta>0$,
+\begin{align}
+ \|Y\|&\le\bar\epsilon/4+\delta,\notag\\
+ \|D\|&\le\|x-y\|+\delta\le\bar\epsilon/2+\delta,\notag\\
+ \|X\|&\le3\bar\epsilon/4+2\delta<\bar\epsilon.
+ \label{fqi-compatible-representatives}
+\end{align}
+Both complete inputs are admissible and have invariant totals.
+Covariance of their arrays is unnecessary at finite volume.
+
+The actual Gaussian interpolation retains the base exponent and
+precision. In particular impose
+\begin{equation}
+ v\le\frac{\eta_*}{64e},\qquad
+ a_Q\bar\epsilon\le\frac{\eta_*}{128e},\qquad
+ a_Q=16C_TC_R\frac{g_jT_{{\rm cut},j}}b.
+ \label{fqi-comparison-budgets}
+\end{equation}
+The inherited difference is linear in $D$. The finite
+Banach-valued logarithm Cauchy estimate gives
+\begin{equation}
+ \|\mathcal G_j(x)-\mathcal G_j(y)\|_{Q_{j+1}}
+ \le L_{\mathrm{quant},j}\|x-y\|_{Q_j},\qquad
+ L_{\mathrm{quant},j}
+   =C_{\mathrm{quant}}\frac{g_jT_{{\rm cut},j}}b,\quad
+ C_{\mathrm{quant}}=1024eS_1C_TC_R.
+ \label{fqi-quantum-Lipschitz}
+\end{equation}
+Apply the family bound to the compatible $X,Y$, use
+Lemma~\ref{fqi-descent-lemma}, and let $\delta$ decrease to zero.
+No Fatou or local-limit argument is needed at a fixed regulator.
+The external determinants cancel in this difference, and no
+equal-low-jet hypothesis is used.
+
+For the zero input, choose one outer field radius $\rho$ after
+$R,J$ with all strict classical and Gaussian margins. Fix the
+same actual threshold, charts, covariance and branch before
+restricting to $b$. Notebook30's finite outer-domain force has
+a uniform anchored bound $H_*$ on $\rho$. Its total linear
+jet vanishes by semisimple adjoint invariance. Removing
+coefficientwise degrees zero and one and using homogeneous
+phase projection gives, for $b\le\rho/2$,
+\begin{equation}
+ \|\mathcal G_j(0)\|_{Q_{j+1}}\le C_Fb^2,
+ \qquad C_F=2H_*/\rho^2.
+ \label{fqi-force}
+\end{equation}
+This is an exactly equivalent normalized representative, not
+a low-jet approximation. Its vacuum constant is kept separately.
+The full force need not be $O(g^2)$: the pivot and Gaussian
+determinant terms can persist at zero coupling.
+
+\subsection{Finite references and the classical block}
+\label{fqi-classical-section}
+
+At stage $j$, use the finite Maxwell ratio of
+\eqref{fcc-projection}, normalized against the actual reference
+$S_j=[S_{M_j,Q_j}]$. For periods above its fixed threshold,
+\begin{equation}
+ \beta_j(S_j)=1,\qquad
+ \|\beta_j\|\le C_\beta b^{-2},\qquad
+ P_j=I-S_j\beta_j,\qquad
+ \|P_j\|\le p:=1+C_\beta C_S,\qquad
+ \|S_j\|\le C_Sb^2.
+ \label{fqi-projections}
+\end{equation}
+The $b^{-2}$ factor is retained and cancels only in the
+combined projection estimate. All constants are uniform in
+the permitted periods and preceding depth.
+
+The actual finite two-minimum comparison and ordinary
+composition give
+\begin{equation}
+ \mathcal T_jS_j=S_{j+1},\qquad
+ P_{j+1}\mathcal T_jP_j=P_{j+1}\mathcal T_j.
+ \label{fqi-reference-telescope}
+\end{equation}
+In dimension four the fine action has the identical
+$\eta^{d-4}=1$ normalization in both unit conventions.
+The identity concerns the full actual action, not merely
+its quadratic symbol. Put $A_j=P_{j+1}\mathcal T_j$.
+The finite classical semigroup for invariant totals yields
+\begin{equation}
+ A_{j+q-1}\cdots A_jP_j
+     =P_{j+q}\mathcal T_{M_j,R^q,Q_{j+q}}P_j.
+ \label{fqi-block-telescope}
+\end{equation}
+The direct map on the right is classical substitution.
+It does not replace the intervening quantum integrals or
+their sharp windows by a one-shot integral.
+
+Write $L=R^q$. Theorem~\ref{fcc-theorem} gives the block bound
+\begin{equation}
+ \theta(q,N):=p^2\left[
+ C_{\mathrm{low}}(J)L^{-\alpha}+\frac{6C_{\mathrm{high}}}L
+ +C_{\mathrm{err}}(J)(L^2+L+1)e^{-c(J)LN}\right],
+ \qquad N=Q_{j+q}.
+ \label{fqi-classical-block-bound}
+\end{equation}
+It retains the graded finite Ward defects and wrapping tails
+at the same $a_0,b$. Fix $J$, choose a finite $q$, and then
+a compatible $N_0$ above all reference, collar and period
+thresholds so that
+\begin{equation}
+                 \theta(q,N)\le1/4\qquad(N\ge N_0).
+ \label{fqi-period-threshold}
+\end{equation}
+Only afterward choose $b$ within the direct $L$ requirements
+of \eqref{fcc-radius} and all common domains. One-step
+transport has uniform bounds
+\begin{equation}
+ \|\mathcal T_j\|\le B_T,\qquad
+ \|A_j\|\le B,\qquad B\ge\max(1,pB_T).
+ \label{fqi-one-step-bound}
+\end{equation}
+The finite projection telescope remains exact although the
+period and functional $\beta_j$ change at each stage.
+It requires no identity $\beta_{j+1}\mathcal T_j=\beta_j$.
+
+\subsection{A uniform finite block envelope}
+\label{fqi-envelope-section}
+
+Define the extracted maps
+\begin{equation}
+ \Psi_j(x)=P_{j+1}\mathcal F_j(x)=A_jx+H_j(x),\qquad
+ H_j=P_{j+1}\mathcal G_j.
+ \label{fqi-extracted-map}
+\end{equation}
+Let $\nu$ bound $pL_{\mathrm{quant},j}$ over the step data.
+Equations \eqref{fqi-quantum-Lipschitz}--\eqref{fqi-force} give
+\begin{equation}
+ \operatorname{Lip}H_j\le\nu,\qquad
+ \|H_j(0)\|\le C_0b^2,\qquad C_0=pC_F.
+ \label{fqi-perturbation-bounds}
+\end{equation}
+Set
+\begin{equation}
+ K=B+1,\qquad L_q=\sum_{l=0}^{q-1}K^l,\qquad
+ K_{\mathrm{amp}}=\max\{1,2C_0L_q\},\qquad
+ C_{\mathrm{int}}=K^qK_{\mathrm{amp}}+C_0L_q.
+ \label{fqi-envelope-constants}
+\end{equation}
+Choose the common $b$ so that $C_{\mathrm{int}}b^2<\bar\epsilon/4$,
+and finally restrict the weak-coupling range so every strict
+budget holds and
+\begin{equation}
+ \nu\le\min\{1,(4qK^{q-1})^{-1}\}.
+ \label{fqi-nu-choice}
+\end{equation}
+For example, a sufficiently large fixed multiple of
+$\sqrt{\log(1/g)}$ with a fixed lower threshold has
+$gT(g)/b\to0$, $gT(g)^3\to0$ and $\tau(T(g))\to0$.
+The outer force remains uniform on this smaller coupling range.
+
+\begin{theorem}[Finite local induction with exact small representatives]
+\label{fqi-theorem}
+Use the actual finite maps, references and strict domains above.
+Choose $q,N_0,b$ and the weak-coupling range in the stated order.
+For every compatible finite history of $n$ steps with
+\begin{equation}
+ Q_0=R^nQ_n,\qquad Q_n\ge N_0,
+ \label{fqi-history-periods}
+\end{equation}
+and initial extracted class satisfying
+\begin{equation}
+ \beta_0(x_0)=0,\qquad
+ \|x_0\|\le r_b:=K_{\mathrm{amp}}b^2,
+ \label{fqi-initial-ball}
+\end{equation}
+the following conclusions hold for couplings in the permitted
+weak range.
+
+Every full $q$-step block preserves the radius-$r_b$ extracted
+ball and has Lipschitz constant at most $1/2$ when compared
+with the same prescribed coupling data. Every intermediate
+class has norm at most $C_{\mathrm{int}}b^2<\bar\epsilon/4$.
+At every stage one can choose an exactly equivalent connected
+finite representative on the same $a_0,b$ with norm at most
+$2C_{\mathrm{int}}b^2<\bar\epsilon/2$. Thus every actual next
+input and Gaussian budget remains valid. The changes of raw
+constant are compensated by the exact vacuum factors below.
+
+The constants are independent of the permitted number of
+blocks and of preceding depth. The result describes the
+selected homogeneous local germ and its continuation; its
+global measure interpretation retains the stated extra
+orbit-domain requirements.
+\end{theorem}
+
+\begin{proof}
+For a block starting at stage $j$ with an input in
+\eqref{fqi-initial-ball}, the one-step bound gives, inductively
+for $0\le k\le q$,
+\begin{equation}
+ \|x_{j+k}\|
+ \le K^kK_{\mathrm{amp}}b^2+C_0b^2\sum_{l<k}K^l
+ \le C_{\mathrm{int}}b^2<\bar\epsilon/4.
+ \label{fqi-intermediate-bound}
+\end{equation}
+This verifies the next map's domain before that map is invoked.
+It also applies to the zero-started comparison trajectory.
+
+For two trajectories using the same couplings, variation of
+constants bounds their difference by
+\begin{align}
+ \|\delta_q\|
+ &\le\left[\theta(q,Q_{j+q})
+       +\nu\sum_{k=0}^{q-1}B^{q-1-k}(B+\nu)^k\right]
+                                             \|\delta_0\|\notag\\
+ &=\left[\theta(q,Q_{j+q})+(B+\nu)^q-B^q\right]
+                                             \|\delta_0\|\notag\\
+ &\le\left[\frac14+q\nu K^{q-1}\right]\|\delta_0\|
+ \le\frac12\|\delta_0\|.
+ \label{fqi-Duhamel}
+\end{align}
+Only the initial full classical product uses
+\eqref{fqi-classical-block-bound}; every shorter product
+uses powers of $B$. The block output at zero has norm at
+most $C_0L_qb^2\le r_b/2$. Comparing with that output
+therefore proves invariance of the radius-$r_b$ ball.
+The output is extracted at every step by definition.
+
+Repeat by full blocks; any final partial block satisfies
+\eqref{fqi-intermediate-bound}. Condition
+\eqref{fqi-history-periods} ensures every full block output
+has the lower period required by
+\eqref{fqi-period-threshold}. On each fixed starting torus
+there are finitely many permitted steps. Uniformity as that
+torus grows does not assert an infinite sequence on one
+fixed finite regulator.
+
+For representative selection, choose at stage $j$ a finite
+family $E_j$ within $C_{\mathrm{int}}b^2$ of the quotient infimum.
+Then
+\begin{equation}
+ \|E_j\|_{Q_j;a_0,b}
+        \le2C_{\mathrm{int}}b^2<\bar\epsilon/2.
+ \label{fqi-chosen-family}
+\end{equation}
+The infimum need not be attained. This family is holomorphic
+on the full same $b$ ball, has connected carriers at the
+same exponent, and has exactly the required normalized total.
+Its total symmetries are unchanged. A real class permits the
+norm-nonincreasing real averaging described earlier.
+
+Use $E_j$ as the next input. Its norm is strictly inside the
+actual family ceiling, so the inherited support estimates
+and Gaussian theorem apply. Lemma~\ref{fqi-descent-lemma}
+shows that this choice changes no next quotient output.
+After the next step and actual finite reference subtraction,
+choose another such family. Every generated correction remains
+in the total. Since equality is exact, the positive
+near-minimal tolerance creates no accumulating approximation
+error and need not form a summable sequence. The raw constant
+is handled by \eqref{fqi-vacuum-update} below.
+\end{proof}
+
+This selection occurs at each finite regulator; it is not
+an inference from a small infinite class. Every winding
+contribution is part of the finite total estimated by
+Theorem~\ref{fcc-theorem} and the finite quantum bounds.
+The assertion does not say that an untouched canonical
+cluster array remains small. Selection is existential in
+a finite Banach quotient, not a proposed algorithm for
+finding a minimizing family. Exact equality and the uniform
+norm are the properties needed for this induction.
+
+The envelope also applies along an adaptively updated physical
+coupling sequence for as long as it stays weak. For the bound
+on a single such history one may freeze its realized coupling
+values and use the auxiliary zero-started comparison with those
+same values. This does not give a difference contraction
+between histories that have different updated couplings.
+
+\subsection{Exact vacuum compensation and coupling bookkeeping}
+\label{fqi-vacuum-section}
+
+Write the finite input density on the common chart as
+\begin{equation}
+ Z_j\exp[-\gamma_jS_j+E_j^{\rm raw}],\qquad
+ \gamma_j=g_j^{-2}.
+ \label{fqi-input-density}
+\end{equation}
+The finite exact chosen local step, with its known scalar
+normalization $N_j$, produces
+\begin{equation}
+ Z_jN_j\exp[-\gamma_jS_{j+1}+F_j^{\rm raw}].
+ \label{fqi-output-density}
+\end{equation}
+Let
+\[
+ \beta_{\rm out}=\beta_{j+1}([F_j^{\rm raw}]),\qquad
+ x_{j+1}=[F_j^{\rm raw}]-\beta_{\rm out}[S_{j+1}],
+\]
+and choose the small family $E_{j+1}$ representing this class.
+Since $S_{j+1}(0)=0$, equality of normalized totals gives
+\begin{align}
+ F_j^{\rm raw}(w)
+   &=\beta_{\rm out}S_{j+1}(w)
+                       +E_{j+1}^{\rm raw}(w)+c_j,\notag\\
+ c_j&=F_j^{\rm raw}(0)-E_{j+1}^{\rm raw}(0).
+ \label{fqi-constant-compensation}
+\end{align}
+The equality is on the entire common product domain. Hence
+the exact updates preserving \eqref{fqi-output-density} are
+\begin{equation}
+ \gamma_{j+1}=\gamma_j-\beta_{\rm out},\qquad
+ Z_{j+1}=Z_jN_j e^{c_j}.
+ \label{fqi-vacuum-update}
+\end{equation}
+If an input representative is replaced by
+$E'^{\rm raw}=E^{\rm raw}+c$ before integration, replace
+$Z_j$ by $Z_je^{-c}$. Both signs are fixed by the raw
+exponential, not by a convention about the quotient.
+On real inputs use the compatible real logarithm branches;
+constant $2\pi i$ changes in another compatible convention
+do not change the exponentials. No convergence of an extensive
+vacuum free energy is asserted.
+
+If the couplings are freely prescribed without satisfying
+\eqref{fqi-vacuum-update}, the theorem still bounds the
+corresponding projected maps. It does not then assert
+repeated factorization of one unchanged density. Along
+the actual update, the amplitude bounds hold only while
+the couplings stay in their proved weak range.
+
+For the unprojected value along the envelope,
+\begin{equation}
+ \|\mathcal F_j(x_j)\|
+ \le[B_TC_{\mathrm{int}}+C_F+L_{\mathrm{quant}}C_{\mathrm{int}}]b^2,
+ \qquad L_{\mathrm{quant}}=\sup_j L_{\mathrm{quant},j}.
+ \label{fqi-unprojected-bound}
+\end{equation}
+Separating $\mathcal T_jx_j$, $\mathcal G_j(0)$ and
+$\mathcal G_j(x_j)-\mathcal G_j(0)$ proves this bound.
+The finite Maxwell functional consequently gives
+\begin{equation}
+ |\gamma_{j+1}-\gamma_j|
+ \le C_\beta[B_TC_{\mathrm{int}}+C_F
+                              +L_{\mathrm{quant}}C_{\mathrm{int}}].
+ \label{fqi-increment-bound}
+\end{equation}
+This is uniform in the finite regulator but has no sign.
+For a specified finite number $n$ of steps, an initial
+inverse coupling exceeding the weak threshold by $n$ times
+this bound suffices for weak containment on that horizon.
+It does not select a desired final coupling, establish an
+averaged positive drift or control an infinite physical
+trajectory. Comparing different running-coupling histories
+would require an additional coupling-parameter comparison.
+
+\subsection{Precise closure and remaining obligations}
+\label{fqi-scope-section}
+
+The theorem closes the finite \emph{representative-budget}
+interface for this homogeneous local scheme. At every allowed
+stage the chosen connected family has norm $O(b^2)$ at the
+same carrier exponent and field radius. Every actual next
+input and Gaussian budget holds; finite normalized-total
+identities are exact; vacuum constants are compensated by
+\eqref{fqi-constant-compensation}--\eqref{fqi-vacuum-update}.
+The q-block amplitude contraction is at most one half for
+equal prescribed coupling data.
+
+This does not prove smallness of an untouched carrier array,
+identify a one-shot composite sector with sequential primitive
+sectors, supply large-field or mixed-history terms, or show
+that the local germs represent every global Wilson history.
+Those interpretations require their own orbit-domain and
+measure identities. Every retained window remains precisely
+the one in the common-domain theorem.
+
+A physical density trajectory must obey
+\eqref{fqi-vacuum-update} and remain weak. Its ultraviolet
+tuning and beta drift, other field sectors, vacuum limits,
+observables, nontriviality and a continuum measure remain
+separate. None follows solely from the finite representative
+induction proved here.

@@ -1,0 +1,94 @@
+SOFT SCALAR/VECTOR SHORT-TIME BAND
+17 October 2026. Research proof, theorem_audit; no output edits.
+
+1. Statement and scope
+
+Use d=4, K=ell^k, mu=K^-1, current counting coordinates and the chosen infinite structural system. The only unbounded backgrounds below are formal first-two polynomial jets of the actual commuting affine probe
+
+ U_alpha(t;x)=exp(i t x_nu H/K^2), alpha!=nu.
+
+There is no continuously varying finite-torus magnetic flux. Every rooted trace below is first computed on compact source truncations and then passed by exponential absolute moments. No uniform finite-volume winding identification is asserted.
+
+Let
+ Bs(t)=D(t)^T D(t),
+ Bv(t)=S_M''(U(t))+D(t)D(t)^T,
+ Ts(t)=Bs(t)+mu^2 J(t)J(t)^T,
+ Vtilde(t)=Bv(t)+Cbar(t)^T F(t) Cbar(t),
+ F(t)=aI-S_MK''(M_K(U(t))).                             (1.1)
+
+All Hessians are actual left-relative effective-action Hessians. The soft vector is the auxiliary family of svc; its first-two affine jets agree with the actual soft vector by svc-on-shell-match. P0,s and P0,v project onto scalar sites or initial bond sites in final block zero, respectively.
+
+Then uniformly in old depth M and endpoint K,
+
+ integral_0^1 |[t^2] Tr(P0,s exp[-s Ts(t)])| ds/s <= C,
+ integral_0^1 |[t^2] Tr(P0,v exp[-s Vtilde(t)])| ds/s <= C.   (1.2)
+
+The correction made by either soft coarse penalty alone satisfies the stronger bound C mu^2 s before integration. Thus the same uniform bound holds for the signed fine soft heat combination. This controls only fine heat times 0<s<1 (physical times 0<u<K^-2).
+
+2. The actual local base operators
+
+The flat kernels of Bs and Bv have uniform exponentially weighted fine-current Schur norms, independent of M,K. For the vector use the already proved actual q_M bound; no bare replacement occurs. Their first-two background derivatives have uniform exponentially rooted fine-current kernels: the S_M part uses its degree-three/four action kernels and exact left-coordinate covariance; the gauge terms are nearest-neighbor.
+
+For a diagonal root x, the Cartan gauge subtracting the constant affine potential at x changes the fine source to t(z_nu-x_nu)H/K^2. Diagonal color trace is unchanged. Therefore each first magnetic insertion supplies K^-2 times a polynomial in distances to x, and each second insertion supplies K^-4. Uniform fine exponential kernels absorb these polynomials. The flat semigroup power series has Schur norm bounded by C exp(Cs) for 0<=s<=1. One/two ordered Duhamel insertions give, for E=Bs or Bv,
+
+ |[t^2] tr_color(exp[-s E(t)])_(xx)|
+        <=C K^-4(s+s^2)exp(Cs).                         (2.1)
+
+There are K^4 scalar roots, or d K^4 bond roots, in block zero. Hence
+
+ |[t^2] Tr(P0,E exp[-s E(t)])|<=C(s+s^2)exp(Cs).          (2.2)
+
+This is precisely the earlier vector_short_time argument with all-site D in place of based D; the local bound becomes no harder. The scalar proof is the same nearest-neighbor special case. No spectral gap is needed on this time interval.
+
+3. Uniform operator jets of the soft coarse insertions
+
+Write either perturbation in the form C(t)^T F(t) C(t):
+
+ scalar: C(t)=mu J(t)^T, F(t)=I;
+ vector: C(t)=Cbar(t), F(t)=aI-S_MK''(M_K(U(t))).        (3.1)
+
+C maps fine variables to a fixed color/site or color/bond fiber per final block. Through degree two, the actual moving-reference physical bounds give
+
+ ||C_j(Y,X)|| <= C mu (1+|X|+|Y|)^p
+                          1_{d(X,Y)<=r0},             (3.2)
+
+with fixed r0,p; for J its support is its own block. One can center the affine source on the dependency collar and use the bounded physical C1 jets from svc, then restore the polynomial gauge frames. In the vector case M_K sends the affine probe to the coarse affine connection. The uniform actual S_MK kernels therefore give
+
+ ||F_j(Y,Z)|| <= C(1+|Y|+|Z|)^p exp[-kappa d(Y,Z)].      (3.3)
+
+Equations (3.2),(3.3) are whole-block Hilbert operator bounds, not sums over K^4 coordinates. In particular the penalty has degree-j block kernels of order mu^2 times a polynomial and an exponential.
+
+The base Bs/Bv jets likewise have polynomially weighted exponentially decaying final-block operator kernels, uniformly in K,M. This follows by grouping the fine rooted bounds; neighboring blocks are bounded by the fine Schur norm and separated blocks gain exp(-c K distance). The flat semigroup power series and its first-two insertion formulas then give the same polynomial/exponential block bound, with constants uniform for 0<=s<=1, for either E=B or E=B+C^TFC. This argument takes no fine trace.
+
+4. Keep the root projector in the exact trace identity
+
+Put W=B+C^TFC. Duhamel gives
+
+ exp(-sW)-exp(-sB)
+  =-integral_0^s exp[-(s-u)W] C^T F C exp[-uB] du.       (4.1)
+
+With the fine projector P0 retained, the exact cyclic identity is
+
+ Tr_f[P0 E_W C^T F C E_B]
+    =Tr_c[F C E_B P0 E_W C^T].                          (4.2)
+
+The right side sums all coarse diagonal blocks; it is not replaced by a single coarse block-zero diagonal. At degree two, expand its finitely many ordered coefficient products. Each has two C factors, hence mu^2. Equation (3.3) and the semigroup bounds connect both coarse endpoints to the retained fine root block, so the resulting absolute sum is bounded by
+
+ C mu^2 sum_(Y,Z)(1+|Y|+|Z|)^p
+                   exp[-kappa'(|Y|+|Z|+d(Y,Z))]
+ <=C' mu^2.                                            (4.3)
+
+Take the trace in the fixed-dimensional coarse fiber. A product through the large fine block-zero Hilbert space costs its coarse output rank, not the fine dimension. Consequently
+
+ |[t^2] Tr(P0{exp[-sW(t)]-exp[-sB(t)]})|
+                         <=C mu^2 s,  0<s<=1.          (4.4)
+
+For finite compact source truncations (4.2) is ordinary finite-rank trace cyclicity. The displayed rooted sum supplies the infinite limit and justifies coefficient extraction. This remains valid with the complex-bilinear transpose continuation because the coefficients are taken at the real flat point.
+
+Combine (2.2) and (4.4), divide by s and integrate on (0,1). This proves (1.2), with no dependence on M,K.
+
+5. What is and is not supplied
+
+The actual V and Vtilde have equal first-two affine jets, so (1.2) is the actual vector fine-band estimate. The scalar Ts is actual without an auxiliary substitution. With the scalar/vector coarse O(1) reductions, the ultraviolet interval below fine time one contributes a uniformly bounded term to the actual Maxwell coefficient.
+
+The proof uses only the already proved current-local action vertices, actual corrected-average physical jets, and coarse-factor trace identity. It does not establish the logarithmic coefficient on 1<s<K^2, does not compare the actual fine soft pair to a standard massive vector/ghost determinant, and gives no independent large-time cancellation. Those are separate statements.

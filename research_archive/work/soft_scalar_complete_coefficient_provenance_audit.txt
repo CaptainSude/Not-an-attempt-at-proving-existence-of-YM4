@@ -1,0 +1,49 @@
+COMPLETE MEAN-ZERO SCALAR COEFFICIENT: SIGN/FACTOR/SCOPE AUDIT
+17 October 2026.
+
+Read work/soft_scalar_complete_coefficient_fragment.tex in full,
+compared its use of spb-main with that theorem's saved statement,
+and checked the exact unpinned h_g formula and normalization in
+work/pinned_ghost_prefix_fragment.tex. The current task does not
+require a new full audit of the passed spb proof.
+
+RESULT: PASS under the fragment's stated structural, affine-jet,
+and spb inputs. No correction requested.
+
+1. Exact factorization gives
+   beta(logdet Ghat)=beta(logdet T_s)+beta(logdet M_s).
+The coarse term is O(1) by the scalar coarse theorem.
+
+2. beta(F)=2[t^2]F, while the logarithm has heat sign
+   log X=-int e^-sX ds/s + a field-independent reference.
+Thus the scalar heat coefficient entering beta(logdet T_s)
+is -2[t^2]Tr_0 e^-sT_s. The fragment's h_g already includes this
+-2. No second factor of two or color-root duplication is allowed.
+
+For the fine affine angle t x_nu H/K^2, a closed charged loop has
+second heat coefficient -(q^2/2K^4) E(area^2;return).
+The K^4 starting sites in one final block cancel K^-4.
+The color charge sum is exactly the stated C_H. Consequently
+   h_g=(C_H/3)s^2 e^-8s I_0(2s)^2 I_1(2s)^2
+has the correct block and physical normalization.
+
+3. spb controls the absolute integrated heat difference on
+0<s<=K^2 by O(1); multiplying by -2 preserves that conclusion.
+The scalar part of sft controls the actual T_s tail s>=K^2.
+Therefore no massless scalar tail is imported: the free heat
+coefficient is used only up to K^2.
+
+4. I_1(2s)=s+O(s^3), I_0(2s)=1+O(s^2), so h_g=O(s^4)
+at zero. Each large-s Bessel factor is e^(2s)/sqrt(4 pi s)
+times 1+O(s^-1); hence
+   h_g=C_H/(48 pi^2)+O(s^-1)=alpha_g+O(s^-1).
+Integration to K^2 yields 2 alpha_g log K+O(1).
+The remainder integrals are independent of K, and the cited
+coarse/tail/spb bounds are uniform in old M and the applicable
+joint infinite structural systems. K=1 causes no exception.
+
+5. This is the actual covariant mean-zero determinant, not the
+globally point-pinned determinant whose gap allows a further
+logarithmic interval to K^4. The fragment preserves this distinction
+and does not claim a vector coefficient, positive total drift,
+arbitrary actual finite winding estimates, or YM existence.

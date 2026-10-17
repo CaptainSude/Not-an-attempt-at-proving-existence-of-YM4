@@ -1,0 +1,38 @@
+Independent root audit, 17 October 2026
+
+Full read of wilson_continuum_heat_comparison_research.txt and its
+final wcr fragment. Passed after the continuum contact clarification.
+
+The exact plaquette density has jointly removable F_epsilon and a
+uniform analytic O(epsilon) error on fixed jet polydiscs. Plane-wave
+differentiation fixes the leading ordinary action vertices, rather
+than guessing a continuum replacement. The physical Hessian pairing
+and the powers epsilon^(4-n) are consistent. Left-relative BCH and
+current-curvature terms are present and of subleading engineering
+degree. The bare quadratic midpoint/source-site distinction is
+correctly separated from the exact full flat symbol delta(k) I.
+
+The first and second background vertex errors need only orders2,1.
+After two external derivatives their bubble integrand has order
+|k|, yielding O(s^-1/2) after the s^2 prefactor in dimension4.
+The deliberately loose |k|^-1 tadpole derivative bound is locally
+integrable and gives the same rate. Flat heat differences are better,
+O(s^-1). No inverse time-simplex parameter is introduced. The large
+momentum regions in the lattice and continuum are bounded separately.
+
+Root independently computed the continuum transverse two-point
+diagram: scalar H''=-q^2/(24 pi^2), hence h_scalar=-q^2/(96 pi^2);
+four vector orbital copies plus spin H''=q^2/pi^2 give
+h_vector=10q^2/(48 pi^2). Mixed orbital/spin traces vanish.
+Thus the exact charge sum gives h_vector-2h_scalar=11alpha_g,
+with beta integrating this to22alpha_g log K.
+
+The final fragment uses the already proved reanchoring identity only
+on the lattice. Continuum contact distributions do not need an
+unproved absolute spatial-moment bound: the explicit transverse
+diagram is matched directly to the magnetic heat density.
+
+Full abw and wcr fragment fidelity reads passed; no further correction.
+The apb assembly follows by the explicit three integrable errors.
+This confirms a scoped working proof, not full continuum existence
+or external certification of all preceding notebooks.

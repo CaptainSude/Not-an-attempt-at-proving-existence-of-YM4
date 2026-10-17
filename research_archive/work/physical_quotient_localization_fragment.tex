@@ -1,0 +1,343 @@
+\section{A local block-mean gauge for the actual determinant}
+\label{pql-section}
+
+This section first proves a finite-dimensional identity, then continues
+it jointly through the flat field. Its scalar gauge has zero block mean,
+rather than a point fixed in each block. The resulting scalar and vector
+operators have flat gaps of order $K^{-2}$ in current counting units.
+The local analytic continuation is uniform in volume and old depth for
+each fixed $K$; no uniform large-$K$ curvature comparison is asserted.
+
+\subsection{Actual residual data and an auxiliary coupled matrix}
+\label{pql-actual-data}
+
+Fix $K=\ell^k$, old depth $M$, and a compatible finite torus in four
+dimensions. Let $E,E_c$ be current and final bond-angle spaces. In this
+section $S,S_c$ contain \emph{all} fine and coarse scalar sites, with no
+global base removed. Use counting measures and trace-orthonormal color
+coordinates. Initially work on a real open set where the left-relative
+gauge generators $D:S\to E$ and $D_c:S_c\to E_c$ are injective.
+The actual ordinary constraint differential $C$ and center restriction
+$r:S\to S_c$ satisfy
+\begin{equation}
+ CD=D_cr,\qquad D_b=D|_{\ker r}.
+ \label{pql-ordinary-intertwining}
+\end{equation}
+Write the full Lagrangian, coarse and residual Hessians as
+\begin{equation}
+ L=s''-\lambda\cdot f'',\qquad q=s_{\rm eff}'',\qquad
+ \mathcal H=L-C^TqC.
+ \label{pql-residual}
+\end{equation}
+The actual minimum comparison supplies
+\begin{equation}
+ \mathcal H\ge0,\quad \mathcal H D=0,\quad CH=I,\quad
+ \mathcal H H=0.
+ \label{pql-minimum-identities}
+\end{equation}
+On $\ker C$ the nullspace is $\operatorname{ran}D_b$.
+The actual contour differential satisfies $TD_b=-I$.
+All of these statements retain the constraint-current curvature
+$\lambda\cdot f''$.
+
+Let $G=D^TD$, $G_c=D_c^TD_c$, and choose orthonormal bond frames
+$U,U_c$ perpendicular to the corresponding gauge ranges. Put
+\begin{equation}
+ A=U_c^TCU,\quad \mathcal H_\perp=U^T\mathcal H U,\quad
+ Q_\perp(a)=\mathcal H_\perp+aA^TA,\qquad a>0.
+ \label{pql-physical-auxiliary}
+\end{equation}
+The actual contour/pivot Gaussian amplitude $I_{\rm act}$ obeys
+\begin{equation}
+ I_{\rm act}^2
+ =\frac{\det G}{\det G_c}
+   \frac{a^{n_c-s_c}}{\det Q_\perp(a)},\qquad
+ n_c=\dim E_c,\quad s_c=\dim S_c.
+ \label{pql-all-site-amplitude}
+\end{equation}
+Indeed the constrained Gaussian change of variables
+$x=Uu+D(\lambda_b,\lambda_c)$ has Jacobian $\sqrt{\det G}$,
+while the target split has Jacobian $\sqrt{\det G_c}$.
+The target delta fixes $\lambda_c$, and $TD_b=-I$ integrates
+$\lambda_b$ with no background determinant. The remaining physical
+constraint has $AQ_\perp^{-1}A^T=a^{-1}I$, by
+\eqref{pql-minimum-identities}. This proves
+\eqref{pql-all-site-amplitude} with the actual target delta in
+left-relative coordinates; no additional target Haar factor is inserted.
+
+A preliminary projection-free form is
+\begin{equation}
+ \mathbb B_a(C)=
+ \begin{pmatrix}
+ \mathcal H+DD^T+aC^TC&\sqrt a\,C^TD_c\\
+ \sqrt a\,D_c^TC&G_c
+ \end{pmatrix},\qquad
+ I_{\rm act}^2=a^{n_c-s_c}
+                   \frac{(\det G)^2}{\det\mathbb B_a(C)}.
+ \label{pql-coupled-matrix}
+\end{equation}
+The ratio is first defined on the injective open set. Its normalized
+logarithm is the joint removable amplitude
+$\mathcal D=\log I_{\rm act}(W)-\log I_{\rm act}(1)$; the individual
+massless logarithms are not evaluated at the flat field. The gapped
+formula below supplies their joint continuation. We use
+$\mathcal N_0F=F(W)-F(1)$ only for functions defined there.
+Its quadratic form is
+$x^T\mathcal Hx+|D^Tx|^2+|\sqrt a Cx+D_c\psi|^2$.
+Taking the Schur complement in $G_c$ proves
+\eqref{pql-coupled-matrix}. Testing $x=0$ shows that this coupled
+matrix alone need not have a volume-uniform gap.
+If $C=\bar C+D_cZ$, the shear
+$\psi'=\psi+\sqrt a Zx$ has determinant one, and hence
+\begin{equation}
+ \det\mathbb B_a(C)=\det\mathbb B_a(\bar C).
+ \label{pql-shear}
+\end{equation}
+No inverse of $D_c$ is needed for this equality.
+
+\subsection{The exact block-mean determinant}
+\label{pql-mean-identity-section}
+
+Assume that $B:S\to S_c$ is onto and that tangent maps satisfy
+\begin{equation}
+ C-\bar C=D_cZ,\qquad \bar CD=D_cB.
+ \label{pql-tangent-identities}
+\end{equation}
+Neither $\bar C$ nor $B$ is required to be the differential of a
+nonlinear pushforward with a prescribed Haar density.
+Let $V$ have orthonormal columns spanning $\ker B$, and define
+\begin{equation}
+ P=VV^T=I-B^T(BB^T)^{-1}B,\quad
+ G_B=V^TD^TDV,\quad
+ Q_B=\mathcal H+DPD^T+a\bar C^T\bar C.
+ \label{pql-mean-operators}
+\end{equation}
+Then
+\begin{equation}
+ I_{\rm act}
+   =a^{n_c/2}\det G_B\,\det(BB^T)^{1/2}\det Q_B^{-1/2},
+ \label{pql-mean-amplitude}
+\end{equation}
+and therefore
+\begin{equation}
+ \mathcal D=\mathcal N_0\left[
+   \log\det G_B-\tfrac12\log\det Q_B
+                          +\tfrac12\log\det(BB^T)\right].
+ \label{pql-general-log}
+\end{equation}
+
+Here is a direct determinant proof. In orthonormal fine gauge
+coordinates $DG^{-1/2}$, the inserted map $DV$ has matrix $G^{1/2}V$,
+and the target gauge row of $\bar C$ is $G_c^{1/2}BG^{-1/2}$.
+Their product is zero. Split fine gauge coordinates into the range
+of $G^{1/2}V$ and its orthogonal complement. The first block contributes
+$\det G_B$; elimination of the second block removes the horizontal
+coarse-gauge row. Since $P_c\bar C=P_cC$, the remaining physical block
+is exactly $Q_\perp(a)$. Thus
+\begin{equation}
+ \det Q_B=a^{s_c}\det G_B\det G_c
+                    \det(BG^{-1}B^T)\det Q_\perp(a).
+ \label{pql-vertical-schur}
+\end{equation}
+Complete $V$ to an orthogonal frame by
+$W=B^T(BB^T)^{-1/2}$. The lower inverse block in this frame gives
+\begin{equation}
+ \det(BG^{-1}B^T)
+       =\det(BB^T)\frac{\det(V^TGV)}{\det G}.
+ \label{pql-jacobi}
+\end{equation}
+Combining \eqref{pql-all-site-amplitude},
+\eqref{pql-vertical-schur}, and \eqref{pql-jacobi} proves
+\eqref{pql-mean-amplitude}. In particular the scalar determinant
+has power one, not one half.
+
+There is no need to select a frame of $\ker B$ in the local formula.
+Set
+\begin{equation}
+ \widehat G=P D^TD P+K^{-2}(I-P).
+ \label{pql-full-scalar}
+\end{equation}
+The two $P$ subspaces reduce this operator and
+\begin{equation}
+ \det\widehat G=(K^{-2})^{s_c}\det G_B.
+ \label{pql-scalar-completion}
+\end{equation}
+Thus $G_B$ may be replaced by $\widehat G$ in
+\eqref{pql-general-log}; the extra factor is background-independent.
+
+\subsection{Actual moving-reference tangent maps}
+\label{pql-source-maps}
+
+The following construction uses the selected internal contour mean
+$P_\ell(U;y,x)$ appearing in the actual ordinary primitive average.
+Its needed properties are local analyticity, endpoint covariance,
+and arithmetic differential at the identity. No identification with
+a different axial contour convention is made.
+Use the gauge sign
+\[
+ (D_U\lambda)(e)=\lambda(e_-)
+                  -\operatorname{Ad}_{U(e)}\lambda(e_+).
+\]
+Let $r_x(U;v)$ be the left differential of $P_\ell(U;y,x)$ in the
+bond direction $v$, and define
+\begin{equation}
+ Z_Uv(y)=\ell^{-d}\sum_{x\in B_\ell(y)}r_x(U;v),\qquad
+ B_U\lambda(y)=\ell^{-d}\sum_{x\in B_\ell(y)}
+               \operatorname{Ad}_{P_\ell(U;y,x)}\lambda(x).
+ \label{pql-primitive-scalar}
+\end{equation}
+Endpoint covariance gives
+$Z_UD_U=r-B_U$. If $C_{{\rm ord},U}$ is the actual ordinary
+angle differential and
+$C_{{\rm mov},U}=C_{{\rm ord},U}-D_{M_\ell(U)}Z_U$, then
+\begin{equation}
+ C_{{\rm ord},U}=C_{{\rm mov},U}+D_{M_\ell(U)}Z_U,
+ \qquad C_{{\rm mov},U}D_U=D_{M_\ell(U)}B_U.
+ \label{pql-primitive-tangent}
+\end{equation}
+These formulas follow directly from the actual map and its selected
+contour mean; they do not modify its nonlinear constraint.
+
+Evaluate these maps at the ordinary intermediate backgrounds
+$U_j=M_\ell^j(U)$ and put
+\begin{equation}
+ \bar C=C_{{\rm mov},k-1}\cdots C_{{\rm mov},0},\qquad
+ B=B_{k-1}\cdots B_0.
+ \label{pql-composite-tangent}
+\end{equation}
+Induction in \eqref{pql-primitive-tangent} proves
+\eqref{pql-tangent-identities}; the endpoint remainder obeys
+$Z_{{\rm tot},j+1}=B_jZ_{{\rm tot},j}+Z_jC_{{\rm ord},j-1}\cdots
+C_{{\rm ord},0}$.
+Nested blocks give each fine scalar a unique parent chain. Hence
+\begin{equation}
+ B(y,x)=K^{-d}\operatorname{Ad}_{P_{\rm hier}(U;y,x)}
+       \quad(x\in B_K(y)),\qquad BB^T=K^{-d}I.
+ \label{pql-exact-scalar-normalization}
+\end{equation}
+The row supports are disjoint. Adjoint transports preserve the color
+inner product, and their bilinear complex continuations preserve the
+same identity. At flatness,
+\begin{equation}
+ B(0)=Q_{0,K},\qquad \bar C(0)=A_K^{\rm st},\qquad
+ P(0)=P_{\ker Q_{0,K}}.
+ \label{pql-flat-maps}
+\end{equation}
+The second identity follows by subtracting the two endpoint contour
+terms from the ordinary flat differential at each primitive step;
+the remaining straight-string averages compose exactly.
+
+Every map above has fixed-$K$ local coefficients. They transform
+covariantly under fine and coarse site gauges, because each defining
+contour transforms at its two endpoints. Consequently $P$ is a
+covariant scalar projection, $\widehat G$ a covariant scalar operator,
+and $Q_B$ a covariant bond operator. The scalar normalization in
+\eqref{pql-exact-scalar-normalization} is constant. Formula
+\eqref{pql-general-log} becomes
+\begin{equation}
+ \boxed{\displaystyle
+ \mathcal D=\mathcal N_0\left(
+           \log\det\widehat G-\tfrac12\log\det Q_B\right).}
+ \label{pql-covariant-pair}
+\end{equation}
+This equality still refers to the original ordinary constraint and
+its original contour/pivot normalization.
+
+\subsection{Continuation across stabilizers and flat coercivity}
+\label{pql-continuation}
+
+For $SU(N)$ the all-site injective locus is nonempty arbitrarily near
+flatness. Choose two coarse cycle holonomies $e^{i\epsilon X}$ and
+$e^{i\epsilon Y}$, with $X$ distinct diagonal and with the nonzero
+offdiagonal graph of the Hermitian matrix $Y$ connected. For small
+nonzero $\epsilon$ their common Lie centralizer is zero. Distributing
+these holonomies over their cycles gives arbitrarily small coarse
+backgrounds with injective $D_c$. If $D\lambda=0$, then
+\eqref{pql-ordinary-intertwining} implies $D_cr\lambda=0$;
+thus $r\lambda=0$, and parallel transport from one center proves
+$\lambda=0$. Injectivity is open at each finite regulator. The same
+argument works for compact semisimple groups by choosing generators
+with zero common Lie centralizer. An abelian factor requires a separate
+stabilizer treatment and is not included in this argument.
+
+At flatness block Poincare gives
+\begin{equation}
+ G_B(0)\ge cK^{-2}I,\qquad
+ \widehat G(0)\ge\min(c,1)K^{-2}I.
+ \label{pql-scalar-gap}
+\end{equation}
+Let $R_q$ be the uniform flat coarse Hessian bound and choose
+$a\ge R_q+1$. Since $qD_c=0$ at flatness,
+$C^TqC=\bar C^Tq\bar C$ there. The old-depth action dominates
+Maxwell, and therefore $Q_B(0)$ dominates
+\begin{equation}
+ d^*d+D P(0)D^*+(A_K^{\rm st})^*A_K^{\rm st}.
+ \label{pql-dominated-form}
+\end{equation}
+This form has a gap $cK^{-2}$, uniform in $M,K$ and volume.
+For a concise proof, use final physical units and decompose
+$v=t+D_\eta\phi$ with $D_\eta^*t=0$. Transverse alias Poincare
+controls $\norm{t}^2$ by $\norm{d_\eta v}^2+\norm{Qv}^2$.
+For $b=Q_0\phi$, the scalar energy-minimizing lift $H_sb$ has
+\[
+ P\Delta_\eta H_sb=0,\qquad
+ \norm{D_\eta H_sb}^2\le C\norm{d_cb}^2.
+\]
+The latter follows by retaining the central alias in
+$(\sum_r|a_r(p)|^2/P_r(p))^{-1}$; its symbol is at most
+$P_0/|a_0|^2\le C|d_c(p)|^2$. The zero mode lifts constantly.
+Block Poincare applied to $\phi-H_sb$ then gives
+\[
+ \norm{D_\eta\phi}^2
+ \le C\norm{d_cb}^2+C\norm{P\Delta_\eta\phi}^2.
+\]
+Finally $d_cb=Qv-Qt$ and $Q$ is a physical $L^2$ contraction.
+Combining these estimates and restoring counting units proves
+\begin{equation}
+ Q_B(0)\ge c_aK^{-2}I.
+ \label{pql-vector-gap}
+\end{equation}
+This proves the mean-zero gauge estimate directly; the projection
+here is not the earlier source projection onto $\Delta\ker Q_0$.
+
+The operators in \eqref{pql-covariant-pair} are invertible at
+flatness, although $D^TD$ and $D_c^TD_c$ are singular there.
+Their determinant branches are fixed by positivity. Equality on the
+nonempty injective real open set therefore extends holomorphically
+through flatness. This is a joint continuation of the finite actual
+amplitude, not a limit of its separate massless orbit factors.
+
+\subsection{The fixed-ratio local limit and its remaining scope}
+\label{pql-fixed-ratio}
+
+For fixed $K$, the moving-reference coefficients have finite range in the current background $U$. The identity and residual positivity are evaluated on the actual stationary $W$-germ, or its gauge orbit. After substitution $U=U_*(W)$, the source dependence in $W$ is generally exponential, not finite range.
+The actual classical support bounds give exponentially local
+$\mathcal H$ and its source derivatives, uniformly in old depth and
+volume. By \eqref{pql-exact-scalar-normalization},
+$P=I-K^dB^TB$ is itself local. The flat gaps permit a common
+fixed-$K$ product radius and a positive spatial exponent on which
+$\widehat G,Q_B$ have uniformly accretive real parts and bounded
+weighted resolvents. Their logarithms and local source derivatives
+then have exponentially summable kernels. This follows, for example,
+from a resolvent contour around the common positive spectrum and
+weighted conjugation; it does not assume a weighted Neumann series
+converges merely because an unweighted one does.
+
+Along any fixed jointly locally convergent classical structural
+system, compact-source determinant derivatives now pass jointly to
+the infinite-volume limit. The finite identity
+\eqref{pql-covariant-pair} identifies their total kernels with those
+of the actual leading correction before taking that limit. Vacuum
+constants are removed by $\mathcal N_0$. No uniqueness of the
+classical structural system is inferred. Covariant diagonal-density
+and affine-Maxwell consequences can be developed from this gapped
+pair separately, with their explicit source and limit conventions.
+
+The radius and weighted source constants in this paragraph may depend
+on $K$. Neither the flat gaps nor the exact identity yet prove a
+large-$K$ uniform curvature estimate, a bounded reference-comparison
+finite part, or the sign of the actual running coupling. The residual
+constraint-current term remains present unless a separate on-shell
+probe has been established.
+
+

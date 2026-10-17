@@ -1,0 +1,340 @@
+FULL-MEASURE LARGE-FIELD INTERFACE AND A FINITE LOCAL GAUGE LEMMA
+17 October 2026. Provenance research. No output/master/repository edits.
+
+STATUS
+This note revalidates the published complete-density input, identifies
+the still-unmatched interface to our exact homogeneous local macrostep,
+and proves a finite cubical gauge lemma plus a regularity obstruction.
+The latter are new elementary statements, not attributed to Bałaban.
+They explain why a plaquette probability bound is useful but cannot
+by itself put full Wilson samples in our physical C1-alpha background
+ball. The source theorem does not make that implication either.
+
+1. Primary statement and exact locations
+
+[119] T. Bałaban, CMP119 (1988), 243--285:
+ https://scispace.com/pdf/convergent-renormalization-expansions-for-lattice-gauge-29jyexd38e.pdf
+ DOI https://doi.org/10.1007/BF01217741
+[122II] T. Bałaban, CMP122 (1989), 355--392:
+ https://scispace.com/pdf/large-field-renormalization-ii-localization-exponentiation-h8b7ih93xo.pdf
+ DOI https://doi.org/10.1007/BF01238433
+These are primary article copies, reopened and read in this pass.
+Journal page numbers below are not browser-page numbers.
+
+Compact primary statement:
+[119] p.262, Theorem1, treats the density sequence generated from
+the vacuum-normalized Wilson density by its operations RT, subject
+to its recursive-coupling condition. Its induction class is Section2.
+[122II] p.355, Theorem1, completes that class when all effective
+couplings remain below a sufficiently small ceiling. Equation(0.1),
+pp.355--356, gives level/volume/background-uniform density bounds.
+The proof concludes at pp.390--391, (1.98)--(1.102). It is stronger
+than a small-field integral bound, but is a theorem for that defined
+complete-density construction, not every analytic small-field map.
+
+Primary location index:
+[119] pp.243--244, (0.1)--(0.2): full pushforward, additional R.
+[119] pp.246--248, (1.1)--(1.10): exact partitions and collars.
+[119] pp.254--257, (2.1)--(2.18): multiscale determining sets/history.
+[119] p.258, (2.19)--(2.22): large-field operator factorization.
+[119] pp.258--260, (2.23)--(2.33): action, E/R localization.
+[119] pp.261--262, (2.34)--(2.42): regularity and boundary domains.
+[122II] pp.356--359, (1.1)--(1.13): normalized denominator analysis.
+[122II] pp.384--390, (1.80)--(1.100): summation/exponentiation.
+
+Important precise input: [119] (2.38), p.261, is a local-gauge
+potential-and-first-derivative requirement within its multiscale
+regularity definition, alongside (2.34)--(2.37),(2.39). It is not
+an inference from a single bare plaquette bound.
+
+I do not reconstruct OCR-damaged powers/constants in these formulas.
+The theorem is imported with its actual Section2 class, by reference.
+The original Part I of CMP122, DOI10.1007/BF01257412, was retried:
+Euclid remained inaccessible; Springer supplied metadata/abstract.
+The exact normalized replacement formula of that part is therefore
+not newly certified from the original here. Its use in [122II] is
+visible, but is not a substitute for a full Part I formula audit.
+
+2. What current local results actually supply
+
+Our current finite model is an exact homogeneous local integral with
+constraint F_R=M_ell^s, R=ell^s; selected direct-R contour gauge;
+retained independent-link window; actual Haar and pivot factors;
+actual stationary classical action; vacuum factors; and an actual
+normalized-total quotient/extraction. Its remainder estimates and
+tuned weak trajectories are uniform in preceding homogeneous depth
+and permitted finite volume, after R,J and the analytic ball are fixed.
+
+Its finite orbit/gauge insertion is an exact equality on the stated
+local sector, with the stipulated continuation of its germ. It has
+not yet been identified with every sector of the full compact Wilson
+pushforward. Its actual one-loop sign, even once established, closes
+the local coupling condition; it does not establish that identification.
+
+The following are concrete proof obligations, not claims that the
+published statements are false or that they cannot be adapted.
+
+A. Full operator and partitions.
+Define a full compact-field pushforward with exactly F_R, including
+all completions outside its chosen local mean/chart domain. Choose
+a literal partition of unity whose good-sector term is exactly our
+retained-window integral and whose complementary terms are specified.
+A one-shot R constraint does not identify its window with the
+intersection of s primitive windows. [119](0.1),(1.1)--(1.10)
+locates the published full-operator interface.
+
+B. Which averaging class is permitted.
+[119] explicitly allows an averaging operation satisfying its
+general axioms. Thus using a composite average is not automatically
+excluded. Our fixed-R locality, endpoint covariance and selected
+mean identities are useful checks. What is still needed is either
+an exact verification of every averaging/variational hypothesis used
+in the complete-density proof, with its fixed-R constants, or a
+direct replacement proof. Merely renaming the paper's L as R does
+not check any history-dependent statement.
+
+C. Local backgrounds rather than one global physical chart.
+Our current stationary estimates cover globally small physical
+potentials and homogeneous constraints. A complete density needs
+background minimizers on determining sets with collars, prescribed
+exterior data, changing scales and holes. It must retain exterior
+holonomies/transition functions rather than assume that all such
+backgrounds have a single near-zero periodic potential. The exact
+source regularity interface is the p.261 definition listed above.
+
+D. Coefficients and analytic domains.
+Our strict connected families have a gauge-invariant total on a
+product ball. They do not automatically give separately invariant
+coefficient extensions on the source's local orbit/current domains.
+In particular the independent current J and multiscale background
+slots cannot be supplied by a physical stationary-current theorem.
+The saved source_stability_research.md correction remains in force:
+do not resurrect its superseded localized-three-map necessity claim;
+the deposited active source route uses global carriers. Whichever
+route is chosen still needs its actual domain-containment theorem.
+
+E. Boundary and large-field operations.
+The present local norm is not a bound on a normalized replacement
+on arbitrary bad components and their descendants. Such a replacement
+needs the actual numerator/denominator cancellation, its compatibility
+with remaining integrations, and a bound summable over component
+geometry and scale age. A small exceptional probability is not that
+normalized identity. Fixed-box conditional estimates can be a useful
+first local input; uniformity as components grow is a separate issue.
+
+F. Couplings must belong to the same sequence.
+Our shooting follows our actual extracted finite coefficients.
+The source theorem concerns its own RT construction and its own
+coupling recursion. Uniformly weak numbers with the same asymptotic
+size do not establish equality of the two recursions. A valid import
+may instead establish the complete-density hypotheses for our
+recursion directly. Then the source's proof, with verified constants,
+could be reused. That is a transfer theorem to prove, not an appeal
+to the universal expected one-loop coefficient.
+
+G. Finite topology and chart overlap.
+An atlas of local gauges must be incorporated into the exact
+integration, including transition data and the induced boundary
+constraints. The lemma below supplies one local chart. It does not
+replace this atlas or its normalized integration rule.
+
+This is a narrower and more useful target than re-proving every
+published large-field lemma: first state one exact complete-density
+induction class for our F_R and demonstrate its good-sector identity.
+Then either map that class into the published one or prove its
+boundary/normalized-replacement step. The current local theorem is
+available for the good interior of that proposed induction.
+
+3. A finite cubical tree-gauge lemma
+
+Let G be a compact matrix Lie subgroup of U(r), use the operator norm,
+and let Lambda_n={0,...,n}^d, d>=2, with all its nearest-neighbor
+bonds and elementary plaquettes. Opposite bonds carry inverse matrices.
+Assume
+          max_p ||U(partial p)-I|| <= epsilon.                 (3.1)
+
+Choose root0 and the coordinate path p(x) which increases coordinate1
+first, then coordinate2, ..., coordinate d, from0 to x. These paths
+form a rooted spanning tree. Set
+          v(x)=U(p(x)),   v(0)=I,
+          U^v(x,y)=v(x)U(x,y)v(y)^(-1).                       (3.2)
+Then each tree bond is exactly I, and
+          ||U^v(x,x+e_mu)-I||
+              <= (sum_(nu>mu) x_nu) epsilon
+              <= (d-1)n epsilon.                            (3.3)
+This is a real compact-group statement; no commutativity is assumed.
+
+Proof. U^v on that bond is the Wilson product around
+p(x), the extra mu-edge, and reverse p(x+e_mu). Move the extra
+mu-edge backwards across the later coordinate segments, one elementary
+square at a time. Exactly sum_(nu>mu)x_nu adjacent edge exchanges
+are required. The resulting boundary word cancels completely.
+Each exchange multiplies the loop product by a conjugate of an
+elementary plaquette or its inverse. Conjugation and inversion
+preserve its distance to I. For unitary W_l,
+          ||product_l W_l-I|| <= sum_l ||W_l-I||,             (3.4)
+by telescoping; hence (3.3). Tree edges correspond to no exchanges.
+
+Choose a fixed exponential-chart radius delta_G>0, at most1, so the
+principal matrix logarithm of a group element within delta_G of I
+lies in the Lie algebra chart. If (d-1)n epsilon<delta_G, all
+transformed bonds have unique such logarithms. For physical mesh eta,
+write U^v_b=exp(i eta A_b). The spectral estimate
+|theta|<=2|exp(i theta)-1| on this neighborhood gives
+          ||A||_infinity
+               <= 2(d-1)n epsilon/eta
+               = 2(d-1) ell epsilon/eta^2,
+          ell=n eta.                                      (3.5)
+The same construction is polynomial in the original link matrices
+and their inverses before taking the local logarithm. It is therefore
+real analytic, and has a holomorphic continuation on a neighborhood
+of each compact configuration satisfying a strict chart margin.
+No volume-independent complex neighborhood or derivative bound is
+claimed merely from (3.3).
+
+Consequences and exact scope:
+* At a fixed finite current box, sufficiently small plaquettes put
+  every orbit into a controlled local link-logarithm chart.
+* On a physical box of fixed side ell as eta decreases, the
+  sufficient potential bound is epsilon=O(eta^2 b/ell).
+  An unscaled small number epsilon(g) alone is insufficient.
+* This is a cubical filling estimate. On a general simply connected
+  lattice complex the same proof uses the filling area of each
+  tree fundamental loop. Simple connectivity alone gives no
+  uniform bound on those areas.
+* The lemma bounds the potential, not all its physical derivatives,
+  not the retained relative fluctuation around a prescribed minimum,
+  and not a normalized integral on an averaging fiber.
+
+4. Plaquette smallness does not imply a uniform physical C1-alpha gauge
+
+Here is a counterexample even with epsilon=eta^2 f, fixed arbitrarily
+small f>0, on a fixed physical cube. Choose a nonzero Cartan generator
+H with ||H||=1, and chi(k)=0 for even k,1 for odd k. Put
+          U_1(x)=exp(i eta^2 f x_2 chi(x_1) H),
+          U_mu(x)=I for mu!=1.                             (4.1)
+All plaquettes other than the 12-plaquettes are I. With the
+standard positive orientation,
+          U(partial p_12(x))
+                 =exp(-i eta^2 f chi(x_1) H).               (4.2)
+Thus (3.1) holds with epsilon=eta^2 f. Adjacent 12-plaquettes
+alternate between I and a matrix whose distance from I divided
+by eta^2 is at least f/2 for sufficiently small eta.
+
+Claim. Fix alpha in(0,1) and B<infinity. For sufficiently small eta,
+there is NO gauge transformation putting (4.1) into
+U^v=exp(i eta A) with
+  ||A||infinity + ||nabla_eta A||infinity
+                 + [nabla_eta A]_alpha <= B               (4.3)
+on the whole cube (or on an interior subcube containing these
+neighboring plaquettes). This is an obstruction to every gauge,
+not just to the coordinate tree gauge.
+
+Proof of the necessary regularity bound. For any A satisfying
+(4.3), the plaquette at x can be written exactly in the local
+jet variables
+  a=A_mu(x), b=A_nu(x),
+  c=nabla_mu A_nu(x), e=nabla_nu A_mu(x)
+as
+  P_eta=exp(i eta a) exp(i eta b+i eta^2 c)
+                   exp(-i eta a-i eta^2 e) exp(-i eta b).
+Its constant term is I and its coefficient linear in eta vanishes.
+Hence (P_eta-I)/eta^2 extends analytically to eta=0, jointly in
+(a,b,c,e), with uniformly bounded first jet derivatives on each
+fixed bounded jet ball and 0<=eta<=eta0(B). For adjacent plaquettes,
+the a,b differences are O(B eta), while c,e differences are
+O(B eta^alpha). Therefore
+  ||(P_eta(x)-I)/eta^2-(P_eta(x+e_r)-I)/eta^2||
+                       <= C(B) eta^alpha.                  (4.4)
+Taking norms cannot increase their difference. Under arbitrary gauge
+transformation P_eta(x) is conjugated at x, so
+eta^-2||P_eta(x)-I|| is pointwise gauge invariant. The adjacent
+values in (4.2) differ by at least f/2, contradicting (4.4).
+
+In the explicit tree gauge of Section3 the example is already fixed:
+the 1-direction tree edges at x_2=0 and all other tree edges are I.
+Its A_1=eta f x_2 chi(x_1)H has a first derivative of size
+approximately f ell/eta near the far side of the cube. This is a
+visible failure of that gauge; (4.4) proves the stronger impossibility
+of uniformly C1-alpha coordinates in any gauge.
+
+This counterexample does not contradict the complete-density source
+theorem. A raw sampled field is not supposed to be a uniformly smooth
+classical background at every fine mesh. The useful decomposition is
+a regular constrained/minimizing background PLUS rough fluctuations
+and explicitly handled exceptional regions. A local tree gauge alone
+does not construct that decomposition or bound its normalized weights.
+
+5. Flat torus holonomies are a different obstruction
+
+On a periodic direction with N bonds and physical circumference
+ell=N eta, take
+        U_1(x)=exp(i theta H/N),  U_mu(x)=I (mu!=1).          (5.1)
+Every plaquette is exactly I. The Wilson loop around that direction
+is exp(i theta H), invariant up to conjugacy under periodic gauge.
+If a periodic gauge has U^v_b=exp(i eta A_b) with ||A||infinity<=b,
+the elementary unitary-product inequality gives
+        ||exp(i theta H)-I|| <= N eta b = ell b.             (5.2)
+For a nontrivial holonomy, arbitrarily small global physical
+potential bounds cannot follow from zero plaquette curvature.
+On each contractible cube, Section3 sets the flat field to I.
+The local trivializations are joined by transition functions carrying
+the nontrivial global data.
+
+For two local gauges v_i,v_j the exact overlap relation is
+        U^(i)(x,y)=h_ij(x) U^(j)(x,y) h_ij(y)^(-1),
+        h_ij=v_i v_j^(-1).                                 (5.3)
+An integration scheme may retain this transition/exterior data or
+integrate it with the correct compact measure. It may not set it to
+identity because the local plaquettes are small. Likewise a bad-region
+complement need not be simply connected. This is why an atlas and
+determining-set formulation can be natural even though the underlying
+unconstrained finite lattice bundle was written with global links.
+
+6. One useful scale-comparison fact from the actual local trajectory
+
+Our weak finite trajectory has gamma_j=g_j^-2>=Gamma_w and
+|gamma_(j+1)-gamma_j|<=D_abs. Therefore, for any two of its stages,
+        gamma_i/gamma_j
+             <=1+(D_abs/Gamma_w)|i-j|,
+        g_i/g_j
+             <=sqrt(1+(D_abs/Gamma_w)|i-j|).                 (6.1)
+The reverse ratio obeys the same bound by interchanging i,j.
+Proof: telescope the bounded increments and divide by the positive
+lower bound. This does not require monotonicity at single steps.
+
+Thus the new trajectory supplies some polynomial interscale
+comparability, not only containment in a weak interval. It may help
+with mixed-history radius arithmetic. It is not asserted to be
+identical to every source inequality (2.6)--(2.9), whose precise
+constants and domains still require matching.
+
+7. Concrete H2 next theorem, separating two routes
+
+Import route:
+Specify a source-compatible full pushforward and its normalized
+large-field replacement. Verify the actual Section2 induction class
+on every admissible determining set, including boundary/current
+analytic domains, using our homogeneous interior as an input.
+Prove that its coupling extraction is our tuned one, or tune its
+own sequence with the now available actual-coefficient method.
+Only then invoke [122II] Theorem1 for the complete density.
+
+Direct route:
+For our chosen full compact operator, build a gauge-invariant
+good/bad partition with exact summation to1. Prove a good-component
+identity with the actual constrained background and retained window;
+give a normalized bad-component replacement that is uniform in its
+exterior data and summable in size, scale age and boundary geometry.
+The tree gauge and a fixed-box conditional Laplace estimate are
+concrete first lemmas. Neither supplies arbitrary-component or
+history-uniform normalization. Whole-lattice RP/chessboard bounds
+for bad plaquettes can provide probabilities, but do not identify
+the retained relative-field restrictions or the analytic domains.
+
+In both routes, there is a specific new obligation after a local
+probability estimate: match a normalized conditional measure with
+the stationary-plus-fluctuation coordinates and show that the
+remaining sectors are accounted for without an uncontrolled
+denominator or boundary factor. This is the theorem-level H2
+interface. No conclusion here claims continuum existence.

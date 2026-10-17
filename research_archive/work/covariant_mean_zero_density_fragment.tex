@@ -1,0 +1,207 @@
+% No preamble. Prefix cgd-. Depends on the checked covariant tangent bridge.
+\section{Actual local densities in the covariant mean-zero gauge}
+\label{cgd-section}
+
+Use the covariant tangent construction above, with all-site
+fine gauge generator \(D\), covariant scalar block average
+\(B\), corrected bond differential \(\bar C\), and
+\[
+ BB^T=K^{-4}I,\qquad
+ P=I-K^4B^TB,\qquad
+ \widehat G=P D^TD P+K^{-2}(I-P),\qquad
+ Q_B=\mathcal H+D P D^T+a\bar C^T\bar C.
+\]
+The actual finite determinant identity is
+\begin{equation}
+ D_{M,K}=\mathcal N_0
+       \left(\log\det\widehat G-\tfrac12\log\det Q_B\right).
+ \label{cgd-identity}
+\end{equation}
+Here \(\mathcal H\) is the full residual Hessian, not a
+substitution of the bare Wilson Hessian for \(S_M''\).
+The matrix \(P\) projects onto scalar fields with zero
+covariant block mean. It is not the projection onto
+fields zero at the block centers.
+
+\subsection{Gauge covariance and localized logarithms}
+\label{cgd-covariance-section}
+
+Let a fine site gauge induce orthogonal adjoint matrices
+\(O_S,O_E,O_c\) on fine scalars, fine bonds, and coarse
+scalars. The covariant tangent construction gives
+\[
+ B(U^g)=O_c B(U)O_S^T,\qquad
+ P(U^g)=O_S P(U)O_S^T,\qquad
+ \bar C(U^g)=O_{E_c}\bar C(U)O_E^T.
+\]
+Together with the exact covariance of \(D,\mathcal H\)
+this proves
+\begin{equation}
+ \widehat G(U^g)=O_S\widehat G(U)O_S^T,\qquad
+ Q_B(U^g)=O_EQ_B(U)O_E^T.
+ \label{cgd-covariance}
+\end{equation}
+These are also complex-orthogonal identities on the
+holomorphic germs. No choice of a frame for \(\ker B\)
+appears in them.
+
+Fix \(K\). The flat lower bounds for both matrices are
+\(cK^{-2}\), uniformly in old depth and volume. Their
+flat upper bounds and exponentially localized kernels,
+and their first-two source kernels after actual
+stationary substitution, are uniform in those same
+parameters at this fixed \(K\).
+The block-local scalar projection does not enlarge
+support beyond the corresponding final block; the
+bond construction has bounded range in final units.
+The old action and stationary response retain their
+established exponential source bounds.
+
+Consequently there is a complex output ball, allowed
+to depend on \(K\), on which both logarithms have
+source-rooted exponential kernels uniformly in volume
+and old depth. One direct proof is the logarithm series.
+Choose \(s_0\) larger than the flat upper spectral bound.
+At flatness \(\|I-T/s_0\|<1\), for either matrix \(T\).
+A sufficiently small exponential conjugation and
+background perturbation preserve that strict bound.
+Then
+\[
+ \log T=(\log s_0)I-
+       \sum_{n\ge1}\frac{(I-T/s_0)^n}{n}
+\]
+converges in the resulting weighted matrix algebra.
+First and second source derivatives cost at most
+polynomial factors in \(n\), absorbed by the geometric
+decay. Every source remains attached to the matrix
+product chain. Spending a smaller exponential converts
+the weighted bounds into absolute rooted sums.
+The fine fiber dimension is finite at this fixed \(K\).
+No endpoint-independent source constant is inferred
+from this argument.
+
+Group scalar sites and positive fine bonds by their
+initial final block \(x\), and define
+\begin{equation}
+ \rho_x(W)=\mathcal N_0\left\{
+  \operatorname{Tr}_{x,S}\log\widehat G(W)
+       -\tfrac12\operatorname{Tr}_{x,E}\log Q_B(W)\right\}.
+ \label{cgd-density}
+\end{equation}
+The finite sum is \(D_{M,K}\). Each diagonal color
+trace is individually gauge invariant by
+\eqref{cgd-covariance}. The actual stationary branch
+under an output gauge changes by a fine gauge; its
+root-gauge convention therefore does not change these
+traces. Along the chosen jointly locally convergent structural
+system, these densities have local infinite limits
+and absolutely summable polynomial source moments,
+without introducing a globally based scalar inverse.
+
+In particular, each of the two new factors separately
+has zero thermodynamic quadratic response to a
+constant commuting connection, at fixed \(K\).
+Apply its local Ward identity to a linear scalar
+parameter and pass the absolutely summable Hessian
+row sum. Thus the growing constant-connection terms
+of the globally based physical quotient have
+already canceled in the exact change of variables;
+they are not discarded by a subsequent limit.
+
+\subsection{Matching the actual Maxwell coefficient}
+\label{cgd-Maxwell-section}
+
+\begin{proposition}[Local density and actual affine coefficient]
+\label{cgd-density-theorem}
+In every joint infinite structural system at fixed \(K\),
+the density in \eqref{cgd-density} satisfies
+\begin{equation}
+ \beta(D_{M,K})=
+    2[t^2]\rho_0\bigl(w_\mu(n)=t n_\nu H\bigr),
+ \qquad \mu\ne\nu,\quad\tau(H^2)=1.
+ \label{cgd-Maxwell}
+\end{equation}
+The polynomial substitution uses the first two localized
+Taylor kernels. It is not an evaluation of a bounded-field
+analytic map at a nonzero unbounded connection.
+\end{proposition}
+
+\begin{proof}
+The linear color jet of each invariant density is zero
+for the semisimple color algebra. Its quadratic Ward
+identity kills gradients in either slot. Exponential
+source moments extend the identity to linear scalar
+parameters, so its row and column sums vanish for
+each fixed bond component. Write \(k_0(b,c)\) for that
+density's Hessian on the chosen component and color.
+Then
+\[
+ [t^2]\rho_0(t n_\nu H)
+   =\frac12\sum_{b,c}k_0(b,c)b_\nu c_\nu
+   =-\frac14\sum_{b,c}k_0(b,c)(b_\nu-c_\nu)^2.
+\]
+All sums are absolute. Translation covariance and
+reanchoring identify the last expression with
+\(-\frac14\sum_r r_\nu^2\mathcal K_{\mu\mu}(0,r)\),
+where \(\mathcal K\) is the actual total Hessian
+kernel. Its Maxwell moment is
+\(-\frac12\sum_r r_\nu^2\mathcal K_{\mu\mu}(0,r)\).
+This proves \eqref{cgd-Maxwell}.
+\end{proof}
+
+The actual stationary polynomial jets on this probe
+are the commuting affine fine connection established
+in Notebook 33. All gauge-covariant matrices may
+therefore be computed in that representative.
+The full effective classical Hessian and the
+covariant averaging operators remain in \(Q_B\);
+the formula does not replace their curvature
+derivatives by a continuum operator.
+
+\subsection{A coupled heat representation with the physical flat scale}
+\label{cgd-heat-section}
+
+Let \(\widehat G(t),Q_B(t)\) denote the actual affine
+jets just specified, and set
+\begin{equation}
+ h^{\rm mean}_{M,K}(s)
+  =[t^2]\left\{
+    \operatorname{Tr}_{0,E}e^{-sQ_B(t)}
+             -2\operatorname{Tr}_{0,S}e^{-s\widehat G(t)}
+         \right\}.
+ \label{cgd-heat-coefficient}
+\end{equation}
+The fixed-\(K\) logarithm/resolvent identities, or
+ordered Duhamel with the localized first-two vertices,
+give the exact representation
+\begin{equation}
+ \boxed{\displaystyle
+     \beta(D_{M,K})=
+        \int_0^\infty h^{\rm mean}_{M,K}(s)\,\frac{ds}{s}.}
+ \label{cgd-heat-identity}
+\end{equation}
+There is no additional coarse determinant in this
+covariant choice: \(BB^T=K^{-4}I\), and the added
+scalar complement in \(\widehat G\) contributes only
+a background-independent determinant.
+
+For precision, this is a fixed-\(K\) identity on
+localized Taylor kernels. The spectral gaps,
+exponential weighted kernels and finite polynomial
+vertices control the first-two Duhamel coefficients
+by an integrable small-time and exponentially
+decaying large-time envelope. Its constants may
+depend on \(K\). This justifies the logarithm
+integral, polynomial source substitution and local
+limit; it does not give a uniform curvature
+estimate as \(K\) grows.
+
+The new scalar and vector factors both have flat
+spectral scale \(K^{-2}\). The point-pinned ghost
+coefficient \(4\alpha_g\log K+O(1)\) of Notebook 34
+belongs to a different exact determinant splitting
+and must not be assigned to \(\widehat G\).
+The sum in \eqref{cgd-heat-identity} is the same
+actual coefficient. Its endpoint-uniform magnetic
+comparison remains to be proved in these new,
+local, gauge-covariant variables.

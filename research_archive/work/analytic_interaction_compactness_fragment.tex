@@ -1,0 +1,230 @@
+\section{Compactness of analytic interactions and coherent backgrounds}
+\label{aic-section}
+
+This is compactness of analytic local interactions and classical
+maps at fixed parameters. It is not compactness of probability
+measures or a continuum construction. It supplies a joint
+infinite-volume interface for the total-kernel Ward and spatial
+transport arguments.
+
+\subsection{A limiting interaction at the original radius}
+\label{aic-interaction-section}
+
+Fix a cell size \(J\), radius \(b>0\), exponent \(a>0\), and
+finitely many scalar coordinates per cell. Let compatible cubic
+tori exhaust the lattice. Suppose their connected analytic
+coefficients satisfy
+\begin{equation}
+ \sup_I\sum_{H\ni I}e^{a|H|}\|E_{N,H}\|_b\le\epsilon .
+ \label{aic-input}
+\end{equation}
+No consistency between volumes, or symmetry of individual
+coefficients, is assumed. For compactly supported fields define
+the vacuum-normalized total
+\begin{equation}
+ \Phi_N(A)=\sum_H\bigl[E_{N,H}(A|_H)-E_{N,H}(0)\bigr].
+ \label{aic-total}
+\end{equation}
+If \(K\) contains the cells meeting the field support, then
+\(|\Phi_N(A)|\le2|K|\epsilon\) for \(\|A\|_\infty<b\).
+
+\begin{proposition}[Interaction compactness without radius loss]
+\label{aic-interaction-proposition}
+There is a subsequence and a connected analytic family \(E_H\)
+on the original open radius-\(b\) polydiscs with
+\begin{equation}
+ \sup_I\sum_{H\ni I}e^{a|H|}\|E_H\|_b\le\epsilon .
+ \label{aic-limit-norm}
+\end{equation}
+Its vacuum-normalized total \(\Phi\) is absolutely convergent on
+compact fields. On every fixed finite field support and every
+radius \(r<b\), \(\Phi_N\) converges locally uniformly to \(\Phi\).
+In particular all fixed derivatives of the totals converge.
+\end{proposition}
+
+\begin{proof}
+Each fixed finite connected \(H\) has an unambiguous central
+embedding on sufficiently large tori. Its coefficients are bounded
+holomorphic functions on one finite-dimensional polydisc. Montel,
+or diagonal extraction of bounded Taylor coefficients followed by
+Cauchy estimates, gives a locally uniform subsequential limit.
+There are countably many carriers, translates and scalar Taylor
+indices, so one diagonal subsequence works for all of them.
+
+For a finite selection of carriers, Fatou at radius \(r<b\)
+passes their weighted bound. Increase \(r\) to \(b\), then
+exhaust the carriers, to obtain \eqref{aic-limit-norm}.
+The norm is the supremum on the open \(b\) polydisc. This
+retains its original radius without asserting uniform convergence
+at the boundary.
+
+For carriers meeting \(K\), the omitted large-carrier terms obey
+\begin{equation}
+ \sum_{\substack{H\cap K\ne\varnothing\\|H|>Q}}
+ |E_{N,H}(A|_H)-E_{N,H}(0)|
+       \le2|K|\epsilon e^{-aQ}.
+ \label{aic-carrier-tail}
+\end{equation}
+Only finitely many connected carriers of size at most \(Q\)
+meet \(K\). Once the torus side is much larger than \(JQ\)
+and the radius of \(K\), each has a unique central lift;
+winding carriers are covered by the tail. Convergence on the
+finite collection followed by \eqref{aic-carrier-tail} proves
+convergence of the totals. Finite-dimensional Cauchy then
+proves convergence of their fixed derivatives.
+\end{proof}
+
+The infinite kernels can therefore be derivatives of one analytic
+interaction, rather than unrelated subsequential tensors.
+Translations, signed permutations and reality of the totals pass
+by applying the convergence to a compact field and its fixed
+transform. For gauge invariance choose a compactly supported
+small site gauge \(v\) such that \(A,A^v\) lie in a smaller
+polydisc. The transformed field has support in the original
+support plus a finite edge neighborhood. Passing the identity
+\(\Phi_N(A^v)=\Phi_N(A)\) gives the limiting identity and
+its differentiated Ward equations. Constant conjugation preserves
+compact field support and passes as well. These are identities
+of totals; no symmetry of \(E_H\) is asserted.
+
+\subsection{Joint compactness of coherent complete-field families}
+\label{aic-background-section}
+
+Fix a preceding homogeneous depth \(M\) and endpoint ratio \(L\).
+The current output spacing in final units is \(h=L^{-1}\).
+Suppose the finite-regulator classical maps have the coherent
+families of the supported pre-gauge construction:
+\begin{align}
+ a_N|_i&=\sum_{X\ne\varnothing}a_{N;i,X}(w_X),
+       \qquad a_{N;i,X}(0)=0,\notag\\
+ \sup_i\sum_X e^{\kappa\tau(\{i\}\cup X)+A|X|}
+       \|a_{N;i,X}\|_{C^{1,\alpha};b}
+       &\le Cb/L .
+ \label{aic-background-norm}
+\end{align}
+The complete physical collar norm, including its maxima and
+first-gradient H\"older quotients, is inside the support sum.
+Coefficients with the same \(X\) restrict one global assignment
+and agree on overlapping collars.
+
+At fixed \(L\), each bounded collar has finitely many current
+coordinates. Apply Montel and a countable diagonal extraction
+to all fixed \(i,X\), output coordinates and Taylor indices.
+Overlap identities pass to the limits. Each complete collar
+norm is a finite collection of components and difference
+quotients with fixed physical denominators. It is lower
+semicontinuous under the convergence. Fatou thus preserves
+\eqref{aic-background-norm} with the same constants.
+
+The sum of terms with either
+\(\tau(\{i\}\cup X)>Q\) or \(|X|>Q\) is bounded by
+\[
+ C(b/L)\bigl(e^{-\kappa Q}+e^{-AQ}\bigr).
+\]
+The remaining supports form a finite set, since they lie in
+a fixed ball about \(i\). Hence the full complete fields
+converge locally uniformly at each finite set of roots.
+The limiting support series is normally convergent and
+defines an analytic map \(a\). Uniform Cauchy remainders
+also give its Banach-valued analyticity.
+
+For compact final support \(K\), any nonzero coefficient has
+\(X\cap K\ne\varnothing\). Its rooted tree therefore joins
+\(i\) to \(K\), yielding
+\begin{equation}
+ \|a(w)\|_{\text{complete collar }i}
+        \le C(b/L)e^{-\kappa\operatorname{dist}(i,K)}.
+ \label{aic-background-tail}
+\end{equation}
+A bound summed over cells of \(K\) differs only by that finite
+factor. The same estimate holds uniformly on centered finite
+tori with periodic distance. It gives summable output tails
+at fixed \(L\), including its fixed number of current coordinates
+per unit cell.
+
+This construction may be made jointly with the interaction
+extraction and with any countable collection of fixed \(M,L\).
+A cofinal sequence of tori can be chosen divisible by the first
+finitely many required powers at each diagonal stage. The
+result supplies coherent infinite families; it does not choose
+a unique background independently of the subsequence.
+
+\subsection{Summable fields and actual scalar composition}
+\label{aic-composition-section}
+
+The limiting interaction extends to summable coordinate fields
+with \(\|A\|_\infty\le\rho<b\). Coordinate Cauchy and the
+segment \(tA\) give
+\[
+ |E_H(A|_H)-E_H(0)|
+ \le\frac{C\|E_H\|_b}{b-\rho}
+                         \sum_{j\in H}|A_j|.
+\]
+Summing first over carriers containing each coordinate yields
+\begin{equation}
+ |\Phi(A)|\le\frac{C\epsilon}{b-\rho}\|A\|_{\ell^1},
+ \qquad
+ |\Phi(A)-\Phi(B)|
+       \le\frac{C\epsilon}{b-\rho}\|A-B\|_{\ell^1}
+ \label{aic-interaction-Lipschitz}
+\end{equation}
+when both fields lie in that interior ball. Coordinate counts
+are already in the \(\ell^1\) sum; there is no volume factor.
+The same estimates hold on the finite regulators.
+
+Choose \(L\) so the classical amplitude bound places \(a_N(w)\)
+in a fixed interior radius \(\rho<b\) on the final data domain.
+For compact \(w\), \eqref{aic-background-tail} gives uniform
+\(\ell^1\) tails of \(a_N(w)\). On centered representatives,
+the periodic distance from an output root to \(K\) is at least
+its centered distance from the origin minus the fixed radius
+of \(K\), so this tail bound is uniform in volume.
+Truncate the output to a large fixed region. On the region,
+both the interaction coefficients and the classical fields
+converge locally uniformly. Outside it use
+\eqref{aic-interaction-Lipschitz}. It follows that
+\begin{equation}
+ \Phi_N(a_N(w))\longrightarrow\Phi(a(w))
+ \label{aic-substitution-limit}
+\end{equation}
+locally uniformly on compact final supports and smaller data
+radii. This is convergence of actual scalar compositions,
+not only of formal Taylor series.
+
+For decaying noncompact intermediate inputs, apply coordinate
+Cauchy directly to \eqref{aic-background-norm}. Only supports
+containing the input coordinate \(j\) contribute, and their
+rooted tree spans \(i,j\). On an interior ball,
+\begin{equation}
+ \|\partial_{w_j}a_i\|
+     \le\frac{C}{b-\rho}
+                   e^{-\kappa\operatorname{dist}(i,j)}.
+ \label{aic-map-derivative}
+\end{equation}
+The fixed input and output fiber dimensions, including \(L^4\),
+are absorbed in \(C\). Summing over output roots proves an
+\(\ell^1\)-to-\(\ell^1\) derivative bound, uniform in volume
+at fixed \(L\). Segment integration gives the corresponding
+Lipschitz estimate. Since \(a(0)=0\), summable inputs have
+summable outputs.
+
+The same truncation proof therefore applies to finite
+compositions, provided every intermediate field remains in
+a strict common interior of its analytic domain. Finite-volume
+scalar identities, including a classical semigroup identity,
+can pass to a jointly extracted finite list of maps and
+interactions on compatible nested volumes. Separate arbitrary
+subsequences need not compose.
+
+\subsection{Scope}
+\label{aic-scope}
+
+The result jointly attains a subsequential analytic interaction
+and coherent classical families at fixed parameters. It supplies
+the total-kernel and complete-field hypotheses used by the
+spatial remainder theorem. It proves neither uniqueness,
+convergence of Gibbs measures, a continuum theory, nor consistency
+of a quantum update for all input families. Descent of the actual
+quantum map to a chosen interaction space, continuity there with
+its normalizations and cutoffs retained, and infinite iteration
+remain separate requirements.

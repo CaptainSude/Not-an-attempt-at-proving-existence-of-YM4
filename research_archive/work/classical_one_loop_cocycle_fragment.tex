@@ -1,0 +1,459 @@
+% No preamble. Prefix olc-. Fixed-regulator leading stationary amplitudes.
+\section{The actual leading determinant correction satisfies a cocycle}
+\label{olc-section}
+
+This section proves an exact identity of normalized leading stationary
+amplitudes at a fixed finite regulator. It compares these amplitudes
+through one auxiliary local orbit-tube integral. It does not identify
+direct and sequential sharp-window sectors at positive coupling.
+All maps, pivot factors and retained Hessians are those of the
+actual composite ordinary constraint.
+
+\subsection{Objects and statement}
+\label{olc-setup-section}
+
+Fix a finite compatible periodic regulator, a preceding homogeneous
+depth $M$, and two allowed ratios $R=\ell^r$, $L=\ell^s$.
+Let $X,Y,Z$ be the current, $R$-coarse and $RL$-coarse link
+configuration spaces, each with product normalized Haar measure.
+The actual iterated ordinary maps satisfy
+\begin{equation}
+ f=F_R:X\longrightarrow Y,\qquad
+ h=F_L:Y\longrightarrow Z,\qquad
+ h\circ f=F_{RL}.
+ \label{olc-maps}
+\end{equation}
+No equality with a direct-$R$ or direct-$RL$ ordinary average
+is used.
+
+The coupling-free action $S_M$ is the established homogeneous
+ordinary minimum action, normalized at the identity. For an
+allowed ratio $K$, write $V_*^{M,K}(W)$ for the physical
+gauge-zero stationary representative, using the independently
+chosen direct-$K$ internal contour gauge $P_K$. Let
+$A_{M,K}(W)$ be the full retained Hessian of $S_M+G_K$ there,
+in the actual constraint chart. Let $d_K(V_*)$ be the product
+of inverse pivot Jacobians. Define
+\begin{equation}
+ D_{M,K}(W)
+  =\log\frac{d_K(V_*^{M,K}(W))}{d_K(1)}
+   -\frac12\log\det\!\left[
+         A_{M,K}(W)A_{M,K}(0)^{-1}\right].
+ \label{olc-leading}
+\end{equation}
+Here $D_{M,K}(1)=0$. These are the actual $\Delta+\mathcal Q_{\det}$
+terms, with positive real branches near the identity and their
+given analytic continuations. Constraint curvature and the
+absolute contour-gauge Hessian are included in $A_{M,K}$.
+
+Let $V_p^{MR,L}(W)$ be the outer pre-root-gauge stationary
+representative, and let $\mathcal T_{MR,L}$ denote substitution
+into this field.
+
+\begin{theorem}[Finite leading-amplitude cocycle]
+\label{olc-theorem}
+On a real small-field germ,
+\begin{equation}
+ D_{M,RL}
+   =\mathcal T_{MR,L}D_{M,R}+D_{MR,L}.
+ \label{olc-cocycle}
+\end{equation}
+The identity extends to every connected common analytic domain
+already available for its two sides. The germ used in its proof
+may depend on the fixed regulator and the ratios.
+\end{theorem}
+
+The proof keeps all Haar, gauge and Gaussian normalization
+factors. They disappear only when each leading amplitude is
+divided by its value at the identity.
+
+\subsection{Based gauge groups and an exact insertion}
+\label{olc-groups-section}
+
+Let $H_R$ consist of current site gauges equal to the identity
+at every intermediate $R$-center, and let $H_{RL}$ be based
+at the final $RL$-centers. Restriction to intermediate centers
+gives
+\begin{equation}
+ 1\longrightarrow H_R\longrightarrow H_{RL}
+       \longrightarrow H_L\longrightarrow1,
+ \label{olc-group-sequence}
+\end{equation}
+where $H_L$ is the intermediate group based at final centers.
+The site coordinates split into the non-intermediate sites
+and the intermediate non-final centers. Embed $H_L$ by setting
+its other current-site values equal to the identity. The two
+factors have disjoint supports, so their direct product is
+$H_{RL}$ and normalized Haar is their product Haar.
+There is no background-dependent orbit-volume factor.
+
+Each based action is free. A gauge preserving every bond of a
+connected graph is determined by its value at one site; its
+value at a based center is the identity.
+The actual maps obey
+\begin{equation}
+ f(U^u)=f(U)^{u|_{\text{intermediate centers}}},\qquad
+ h(V^v)=h(V)^{v|_{\text{final centers}}}.
+ \label{olc-equivariance}
+\end{equation}
+Thus $f$ is $H_R$-invariant, $h$ is $H_L$-invariant, and
+$h\circ f$ is $H_{RL}$-invariant. Product link Haar is
+invariant under all these site actions.
+
+For $u\in H_K$, endpoint covariance of the actual direct-$K$
+contour variables gives
+\[
+ P_K(U^u;y,x)=P_K(U;y,x)u(x)^{-1}.
+\]
+With the actual nonnegative class penalty
+$q(v)=1-\operatorname{Re}\tau(v)$, whose unique zero is the
+identity, put $G_K(U)=\sum_{x\ {\rm not\ a\ center}}q(P_K(U;y,x))$.
+Then
+\begin{equation}
+ \int_{H_K}e^{-G_K(U^u)/g^2}\,du
+       =c(g)^{n_{s,K}},\qquad
+ c(g)=\int_G e^{-q(v)/g^2}\,dv .
+ \label{olc-gauge-insertion}
+\end{equation}
+It is therefore exact to insert $e^{-G_K/g^2}$ into an
+$H_K$-invariant tube integral and multiply by
+$c(g)^{-n_{s,K}}$. This factor is independent of the target
+field. Its asymptotic constant and power of $g$ need not be
+computed below.
+
+\subsection{A consistent local orbit-tube phase}
+\label{olc-tube-section}
+
+The original $S_M$ is known on a small-link domain. We first
+justify extending it to the particular saturated tube needed
+for an exact pushforward composition.
+
+Suppose two sufficiently small configurations $U,V$ satisfy
+$V=U^u$ with $u\in H_{RL}$. The bond equation, in a
+unitary-invariant matrix norm, yields
+\begin{equation}
+ \|u(x)-u(x+e_\mu)\|
+   \leq C\bigl(\|U(x,\mu)-I\|+\|V(x,\mu)-I\|\bigr).
+ \label{olc-gauge-edge}
+\end{equation}
+Every site has a path of at most $C_dRL$ edges to a final
+center, where $u=I$. Consequently
+\begin{equation}
+ \|u-I\|_\infty
+   \leq C_dRL\bigl(\|U-I\|_\infty+\|V-I\|_\infty\bigr).
+ \label{olc-gauge-small}
+\end{equation}
+Shrink the comparison ball so that the near-identity logarithm
+$\lambda=\log u$ exists. Its edge differences satisfy the
+same type of estimate as \eqref{olc-gauge-edge}.
+Along $u_t=\exp(t\lambda)$ the transformed links stay within
+a fixed multiple of the endpoint smallness. Fixed color-norm
+conversions are included in this constant. Shrinking the ball
+again keeps the whole path in the established action domain.
+Local Ward invariance therefore gives
+\begin{equation}
+                         S_M(U)=S_M(V).
+ \label{olc-phase-consistency}
+\end{equation}
+The same argument applies on the intermediate graph and to
+$H_L$. No radius uniform in $RL$ is claimed in this step.
+
+On the $H_{RL}$-saturation of this small representative
+neighborhood, define
+\begin{equation}
+                       S_{\rm ext}(U^u)=S_M(U).
+ \label{olc-extended-phase}
+\end{equation}
+Equation \eqref{olc-phase-consistency} makes the definition
+independent of the small representative. The free compact
+group action has an actual local slice $P_{RL}=I$: the unique
+based transformation to it is $u(x)=P_{RL}(U;y,x)$.
+Hence $S_{\rm ext}$ is smooth, and real analytic in local
+slice coordinates, and is invariant on the saturation.
+
+The local ordinary maps and contour variables extend
+equivariantly to this tube. One may use their endpoint-covariant
+relative-log formulas or define them from the slice. On
+overlaps the two definitions agree by
+\eqref{olc-equivariance} and the original local formulas.
+No measurable completion away from the tube is invoked.
+
+The proved physical branch is a strict local constrained
+minimum modulo the based orbit. Its actual retained
+Hessian after adding $G_K$ is positive. On the slice $P_K=I$,
+the gauge penalty is identically zero, so that positivity
+also gives positivity of the action Hessian on the quotient
+constrained tangent. The finite-dimensional implicit-function
+argument yields a unique local critical orbit in a smaller
+neighborhood.
+
+Choose a compact closure of a sufficiently small real target
+germ. Its stationary orbits form a compact set. Choose a smooth
+$H_{RL}$-invariant cutoff $\chi$, equal to one near these orbits
+and supported in a tube containing no other quotient saddle.
+It can be chosen one near every inner conditional minimum
+over a smaller compact outer saddle neighborhood as well:
+use continuity of the minimum maps, choose nested neighborhoods,
+and average the cutoff over the compact based action.
+The averaging leaves it one on the invariant inner neighborhood.
+The quotient phase has a positive gap on the remaining compact
+part of the support.
+
+This cutoff is an auxiliary device for determining a leading
+coefficient. It is neither the actual retained sharp window
+nor a proposed global Wilson density.
+
+\subsection{Exact Haar pushforward composition}
+\label{olc-pushforward-section}
+
+For $g>0$, consider the positive finite measure
+\begin{equation}
+              \chi(U)e^{-S_{\rm ext}(U)/g^2}\,d\mu_X(U).
+ \label{olc-tube-measure}
+\end{equation}
+The maps $f,h,h\circ f$ are submersions near all relevant
+orbits. At a small representative, the actual pivot blocks
+give full rank; equivariance preserves rank on the orbit.
+A smaller tube retains the property. Its local pushforward
+densities are thus smooth relative to product Haar.
+
+Write $J_g(V)$ for the pushforward density through $f$, and
+$I_g(W)$ for the density through $h\circ f$. Exact
+pushforward composition gives
+\begin{equation}
+                I_g(W)=\int_{h(V)=W}J_g(V)\,d\mu_h(V).
+ \label{olc-Fubini}
+\end{equation}
+Here $d\mu_h$ is the conditional coarea density relative to
+product Haar. Equivalently, test both sides against a smooth
+function of $W$ and use ordinary Fubini. No multiplication
+of formal delta distributions is required.
+
+The first pushforward is exactly $H_L$-invariant. Indeed,
+lift a based intermediate gauge by
+\eqref{olc-group-sequence}, use the $H_{RL}$ invariance of
+$\chi$ and $S_{\rm ext}$, and change the current Haar variables.
+This is precisely the invariance needed in the outer integral.
+
+The actual two-minimum comparisons identify the inner
+critical value and then the outer one:
+\begin{equation}
+ \min_{f(U)=V}S_{\rm ext}(U)=S_{MR}(V),\qquad
+ \min_{h(V)=W}S_{MR}(V)=S_{MRL}(W).
+ \label{olc-minimum-values}
+\end{equation}
+These are local comparisons on the chosen tube.
+The conditional minima depend smoothly on the outer
+parameters modulo the inner based orbit. The cutoff is one
+there. Outside the smaller outer saddle neighborhood, the
+compact quotient phase gap makes the contribution
+exponentially smaller. All uniformity here concerns the
+fixed finite regulator and fixed ratios only.
+
+\subsection{The finite-dimensional Laplace fact}
+\label{olc-Laplace-section}
+
+We record the elementary asymptotic used twice. In a finite
+real chart suppose
+\[
+ F(z,w)=s(w)+\tfrac12z^TA(w)z+O(|z|^3),\qquad A(w)>0,
+\]
+and the critical point is the unique local minimum on the
+chosen compact support. The density $m(z,w)$ is smooth and
+its cutoff is one near zero. On a small compact parameter
+germ the Hessian has a common positive lower bound. Then
+\begin{equation}
+ \int e^{-F(z,w)/g^2}m(z,w)\,dz
+  =e^{-s(w)/g^2}g^n(2\pi)^{n/2}
+        m(0,w)\det A(w)^{-1/2}[1+o(1)]
+ \label{olc-Laplace}
+\end{equation}
+uniformly in that parameter germ.
+
+To prove it, shrink the chart until $F-s\geq c|z|^2$.
+Set $z=g\xi$, first restrict $\xi$ to a fixed bounded set,
+and use Taylor's formula for uniform convergence to the
+Gaussian. A common Gaussian majorant removes that restriction.
+The compact remainder outside a smaller chart has a positive
+phase gap and is exponentially negligible. This proof also
+allows a smooth positive amplitude, whose leading value is
+its value at the saddle, and an amplitude family converging
+uniformly there with a bounded relative error.
+
+For an orbit integral, first insert
+\eqref{olc-gauge-insertion}. The phase becomes $S+G_K$.
+Its unique saddle is the gauge-zero representative: the
+quotient phase has its strict minimum there modulo the orbit,
+and on the compact based orbit $G_K$ has its unique zero
+at $P_K=I$. Away from a neighborhood of that representative,
+the sum of the quotient and gauge penalties has a positive
+gap. The actual retained chart therefore reduces the leading
+asymptotic to \eqref{olc-Laplace}, with the exact factor
+$c(g)^{-n_{s,K}}$ still present. No unspecified quotient
+volume form or ultraviolet-uniform error estimate is used.
+
+\subsection{Identification with the actual pivot and determinant}
+\label{olc-identification-section}
+
+The exact local constrained measure has, at its saddle,
+the factor
+\begin{equation}
+                       h_0^{\,n_e-n_c}d_K(V_*).
+ \label{olc-saddle-measure}
+\end{equation}
+Indeed relative Haar coordinates are
+$d(e^{iB})=h_0j(B)\,dB$ with $j(0)=1$; the normalized
+fluctuation straightening Jacobian is one at zero; and
+solving the constraint contributes the inverse pivot product.
+The target density is relative to group Haar. Consequently
+there is no extra factor $j(\log W)$ in
+\eqref{olc-saddle-measure}.
+
+Let $I_{M,K;g}$ denote an appropriate local tube pushforward.
+The phase-corrected, identity-normalized stationary amplitude is
+\begin{equation}
+ e^{D_{M,K}(W)}
+   =\lim_{g\downarrow0}
+       e^{[S_{MK}(W)-S_{MK}(1)]/g^2}
+          \frac{I_{M,K;g}(W)}{I_{M,K;g}(1)} .
+ \label{olc-normalized-amplitude}
+\end{equation}
+The gauge integral, powers of $g$, Haar constants, flat
+determinants and all scalar cutoff factors cancel in this
+ratio. The remaining saddle measure and Hessian are exactly
+\eqref{olc-leading}. A cutoff equal to one near the critical
+orbit changes no leading coefficient.
+
+The actual sharp-window integral has the same saddle,
+pivot factor and retained Hessian. Its variable is $z=g\xi$
+and its window is the actual product window of threshold
+$T(g)$. Choose $T(g)\to\infty$ with $gT(g)^3\to0$.
+The established centered Gaussian estimate makes its
+normalized logarithmic expectation
+\begin{equation}
+                          O\!\left(\tau(T(g))+g^2T(g)^6\right)
+                              \longrightarrow0.
+ \label{olc-sharp-leading}
+\end{equation}
+Thus the sharp-window and the auxiliary fixed-tube integrals
+have the same normalized leading amplitude. This does not
+equate the integrals at positive $g$.
+
+The auxiliary first pushforward supplies only the intermediate
+based $H_L$ invariance: its input was made $H_{RL}$-invariant.
+The phase and normalized leading amplitude therefore have
+that identity on the needed intermediate orbit. It suffices
+to replace the rooted outer saddle by $V_p$.
+The cutoff has not been made invariant under every output
+site gauge with nontrivial final-center values. The full
+local output gauge identity for the actual $D$ is the
+previously proved one from the zero-input quantum leading
+limit, not an additional invariance claimed for this cutoff.
+
+\subsection{Sequential saddle evaluation}
+\label{olc-proof-section}
+
+\begin{proof}[Proof of Theorem~\ref{olc-theorem}]
+Apply \eqref{olc-Laplace} on the $f$ fibers, uniformly over
+a compact neighborhood of the outer stationary orbit.
+With a scalar $c_1(g)$ independent of $V$,
+\begin{equation}
+ J_g(V)=c_1(g)e^{-S_{MR}(V)/g^2}
+                   e^{D_{M,R}(V)}[1+o(1)] .
+ \label{olc-inner-asymptotic}
+\end{equation}
+The relative error is uniform. Exact $H_L$ invariance reduces
+the full compact outer orbit to a small slice. The inner
+cutoff is one at every relevant conditional minimum.
+
+Insert \eqref{olc-inner-asymptotic} into
+\eqref{olc-Fubini}. The outer Laplace formula evaluates the
+smooth amplitude $e^{D_{M,R}(V)}$ at its existing classical
+minimum. With another scalar $c_2(g)$,
+\begin{equation}
+ I_g(W)=c_1(g)c_2(g)e^{-S_{MRL}(W)/g^2}
+       e^{D_{M,R}(V_p^{MR,L}(W))+D_{MR,L}(W)}[1+o(1)] .
+ \label{olc-sequential-asymptotic}
+\end{equation}
+The amplitude gradient has no factor $g^{-2}$ and hence
+does not alter the leading phase saddle. The outer rooted
+representative gives the same amplitude by the based
+$H_L$ invariance. The compact phase gap controls the
+remaining part of the outer integration.
+
+Direct evaluation of the same integral through $h\circ f$
+instead gives a scalar $c_{12}(g)$ and
+\begin{equation}
+ I_g(W)=c_{12}(g)e^{-S_{MRL}(W)/g^2}
+                         e^{D_{M,RL}(W)}[1+o(1)] .
+ \label{olc-direct-asymptotic}
+\end{equation}
+Normalize both equations by their values at $W=I$ after
+removing the phase. There $V_p=I$ and every $D$ is zero.
+All scalar factors cancel, without any computation of the
+relation between $c_{12}$ and $c_1c_2$. Taking $g$ to zero
+yields
+\[
+ e^{D_{M,RL}(W)}
+   =e^{D_{M,R}(V_p^{MR,L}(W))+D_{MR,L}(W)} .
+\]
+On the positive real germ the logarithms are real and
+zero at the identity. They therefore satisfy
+\eqref{olc-cocycle}, without a branch ambiguity.
+Both sides are given holomorphic pivot/determinant
+functionals. The identity theorem extends their germ
+identity to each connected common analytic domain.
+The smaller comparison germ used by Laplace does not
+shrink a domain already established for those functions.
+\end{proof}
+
+\subsection{Joint infinite systems and the Maxwell coefficient}
+\label{olc-limit-section}
+
+For fixed $R,L$, the existing modules give uniform anchored
+analytic families for all three $D$ terms. On a joint local
+limit system the finite identity passes on compact fields
+by local normal convergence and anchored tail bounds;
+the same bounds justify the classical substitutions.
+It gives a scalar quotient cocycle, not a coefficientwise
+identity of carrier decompositions.
+
+Apply exact preservation of the true infinite Maxwell
+coefficient under classical transport. Then
+\begin{equation}
+ \beta_{MRL}(D_{M,RL})
+   =\beta_{MR}(D_{M,R})+\beta_{MRL}(D_{MR,L}).
+ \label{olc-Maxwell-cocycle}
+\end{equation}
+Thus a long fixed-ratio leading coefficient is the sum of
+its consecutive step coefficients in this joint system.
+This proves neither their sign nor their convergence as
+the preceding depth grows.
+
+At finite volume, the symmetric short-cutoff moment
+$\beta_{M,N}$ does not commute exactly with classical
+transport. One must retain the separately controlled
+finite leakage when applying it to
+\eqref{olc-cocycle}. No exact finite scalar
+$\beta$ additivity is asserted.
+
+\subsection{Scope}
+\label{olc-scope-section}
+
+The result rests on a consistent local orbit-tube extension,
+exact finite Haar pushforward composition, and ordinary
+finite-dimensional saddle asymptotics using the actual
+pivot, contour penalty and retained Hessian. It assumes
+no ultraviolet-uniform stationary-phase remainder.
+
+It does not identify direct and sequential sharp-window
+sectors at positive $g$, extend the original local action
+to every gauge configuration, or identify every local
+sector with the full Wilson measure. The auxiliary cutoff
+disappears only from the leading coefficient.
+
+The background-field/ghost determinant comparison, a
+bounded comparison error in depth, the numerical
+logarithmic coefficient, its sign, physical coupling
+tuning and the treatment of the other field sectors
+remain separate from this cocycle.

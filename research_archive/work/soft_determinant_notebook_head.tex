@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 36: soft determinants and bounded coarse corrections}
+\author{Research working document}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We factor the actual covariant mean-zero determinant of Notebook 35
+into a soft scalar/vector pair and two determinants with one color
+fiber per final block. Both coarse determinants have uniformly bounded
+actual Maxwell coefficients as the block size grows. Their flat gaps
+alone would not prove this: we establish rooted physical source bounds,
+with all powers of the fine spacing and all fiber dimensions retained.
+
+A new gauge-covariant Hessian estimate controls the actual effective
+classical action through its first two background derivatives, uniformly
+in preceding depth. Local formal path gauges isolate curvature; an
+ordered Laurent factorization retains the shifted lattice components.
+This yields the relative vertices needed for the vector correction.
+The auxiliary off-shell family is identified with the actual one only
+through the proved on-shell affine jets.
+
+The fine soft pair has uniformly bounded short-time and long-time
+affine heat contributions. The latter follows from a local cubic
+resolvent formula and Schatten bounds that retain the block projector.
+Consequently only the intermediate heat interval can supply the
+required logarithm.
+
+The resulting reduction retains the full effective action and original
+constraint normalization. It does not yet compute the remaining fine
+determinant's logarithmic coefficient or establish continuum
+Yang--Mills existence.
+\end{abstract}
+
+\section*{Conventions and proof boundary}
+
+The primitive odd ratio \(\ell\) is fixed and \(K=\ell^k\).
+Current coordinates use counting pairings; their spacing in final
+physical units is \(K^{-1}\). Normalization \(\mathcal N_0\) subtracts
+the flat value, and \([t^2]\) means a Taylor coefficient.
+All actual identities refer to the homogeneous stationary germ
+constructed in the preceding notebooks. Exact finite determinant
+identities and finite flat spectral estimates are distinguished from
+uniform spatial and curvature estimates on a chosen joint infinite
+classical structural system. No uniqueness of that system is assumed.
+
+For a trace-normalized Cartan element \(H\), put
+\[
+ C_H=\sum_{q\in\operatorname{spec}(\operatorname{ad}_H)}q^2,
+ \qquad \alpha_g=\frac{C_H}{48\pi^2}.
+\]
+The target remains the actual coefficient
+\(22\alpha_g\log K+O(1)\), uniformly in preceding depth.
+The finite-part estimates below advance that comparison; they do not
+substitute a narrower objective for the existence problem.
+

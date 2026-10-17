@@ -1,0 +1,2134 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 35: infrared cancellation and physical heat bounds}
+\author{Research working document}
+\date{17 October 2026}
+\setlength{\emergencystretch}{5em}
+\begin{document}
+\maketitle
+\begin{abstract}
+We derive an exact local, gauge-covariant representation
+of the actual leading determinant using zero covariant
+block means in the scalar gauge. Both its scalar and
+vector factors have flat spectral gaps of order
+\(K^{-2}\), with uniform heat and inverse-power bounds.
+The finite amplitude identity continues jointly through
+the flat stabilizers and passes to local infinite
+systems at each fixed \(K\). Its invariant diagonal
+densities give the actual Maxwell moment directly.
+This closes the specific infrared passage left open
+by the earlier massless physical quotient.
+
+The exact finite physical quotient of Notebook 34 requires
+joint control of its scalar and physical determinants.
+We give an explicit reason: a globally based massless
+scalar determinant on a periodic constant Cartan connection
+has a nonzero quadratic response per volume, whereas the
+ordered thermodynamic and zero-mass limit gives zero.
+The fine/coarse scalar ratio has an extra term proportional
+to \(K^2-1\). The actual local gauge Ward identity and
+the finite quotient formula prove that the physical
+determinant cancels this term exactly in the thermodynamic
+limit. No flux seam or nonperiodic magnetic family is used.
+
+We also extend the flat physical spectral estimates to
+uniform heat-trace and inverse-power bounds. The
+rescaled inverse square has at most logarithmic trace
+growth; powers above two have uniformly bounded trace
+per final block. A local tent lift proves full
+Laplacian domination for the new vector gauge, so
+both new factors have the corresponding estimates.
+Their endpoint-uniform curvature comparison remains
+the next step toward a positive actual drift.
+\end{abstract}
+
+\section*{Scope and conventions}
+
+All actual operators are those of the homogeneous local
+construction in Notebooks 32--34. The primitive blocking
+ratio is fixed, \(K=\ell^k\), and \(M\) denotes the
+preceding homogeneous depth. Traces count real adjoint
+coordinates. For a normalized Cartan element \(H\),
+\(\tau(H^2)=1\), set
+\[
+ C_H=\sum_{q\in\operatorname{spec}(\operatorname{ad}_H)}q^2,
+ \qquad \alpha_g=\frac{C_H}{48\pi^2}.
+\]
+The complexified charge decomposition counts each real
+adjoint degree of freedom once in this trace convention.
+The notation \([t^2]\) denotes a Taylor coefficient,
+not a second derivative.
+
+The constant flat connection used below tests the
+zero-momentum Ward identity. It is different from the
+constant-curvature probe that extracts the Maxwell
+coefficient. The infrared order of limits is stated
+explicitly for each result.
+
+
+
+% No preamble. Prefix jsi-. Ordered scalar limit and exact holonomy obstruction.
+\section{The scalar infrared limit and a forced holonomy cancellation}
+\label{jsi-section}
+
+There are two different assertions in this section. A common positive
+physical mass gives a well-defined thermodynamic scalar reference,
+whose subsequent massless limit is \(\alpha_g\log K\). The original
+separately massless globally based determinants need not have that
+order-independent analytic limit. An exactly periodic flat connection
+gives a concrete obstruction and, through the actual finite determinant
+identity, forces a compensating response in the physical factor.
+
+\subsection{The mass convention and an exact base correction}
+\label{jsi-mass-section}
+
+Fix \(K=\ell^k\) and final torus side \(N\) in four dimensions.
+Current fine sites have physical spacing \(K^{-1}\), with side \(KN\);
+coarse sites have spacing one and side \(N\).
+All color coordinates are trace orthonormal.
+Let \(G_{\rm all}(U)\) be the covariant scalar Laplacian on all sites,
+and let \(G_b(U)\) be its principal minor after deleting the color
+coordinates at one common physical base \(o\). Deleting a site does
+not change the remaining diagonal entries.
+
+A common physical mass \(\delta>0\) means
+\begin{equation}
+ H_{f,\delta}=K^2G_{{\rm all},f}+\delta^2I,\qquad
+ H_{c,\delta}=G_{{\rm all},c}+\delta^2I.
+ \label{jsi-mass}
+\end{equation}
+Their principal minors are \(H_{f,\delta}^b,H_{c,\delta}^b\).
+With \(\mathcal N_0F=F(W)-F(1)\), define
+\begin{equation}
+ S_{\delta,N}^b=\frac12\mathcal N_0
+       \bigl(\log\det H_{f,\delta}^b-\log\det H_{c,\delta}^b\bigr).
+ \label{jsi-scalar-ratio}
+\end{equation}
+The fine counting mass is \(\delta/K\), not \(\delta\).
+At zero mass multiplication of the fine operator by \(K^2\)
+changes only a background-independent normalization.
+Equation \eqref{jsi-scalar-ratio} is a specified scalar comparison
+family. It is not automatically an exact mass deformation of the
+entire physical-quotient determinant identity.
+
+\begin{lemma}[Positive-mass base defect]
+\label{jsi-base-lemma}
+Put \(H=\epsilon^{-2}G_{\rm all}+\delta^2I\), \(R=H^{-1}\),
+where \(\epsilon=K^{-1}\) or \(1\). Then
+\begin{equation}
+       \det H^b=\det H\,\det R_{oo}.
+ \label{jsi-jacobi}
+\end{equation}
+At fixed \(\delta>0,K\), the normalized logarithm of the fixed color
+block \(R_{oo}\) has a complex product neighborhood and first-two
+bounded-direction derivative bounds independent of \(N\).
+Its first-two source kernels are exponentially summable in their
+distances from \(o\), including all fixed polynomial moments.
+No uniformity as \(\delta\downarrow0\) is asserted.
+\end{lemma}
+
+\begin{proof}
+The determinant identity is the block Jacobi identity. At real
+backgrounds,
+\[
+ \delta^2I\le H\le(16\epsilon^{-2}+\delta^2)I,
+ \qquad
+ (16\epsilon^{-2}+\delta^2)^{-1}I
+                      \le R_{oo}\le\delta^{-2}I.
+\]
+The nearest-neighbor coefficients have volume-independent operator
+bounds on a small complex product ball. The resolvent identity,
+and then the lower bound for \(R_{oo}\), give a smaller complex
+ball on which both inverses remain bounded uniformly in volume.
+The logarithm branch continued from zero is bounded there after
+normalization. Its first two derivatives also follow directly from
+\begin{align}
+ DR[v]&=-RH'[v]R,\notag\\
+ D^2R[v,w]&=RH'[v]RH'[w]R+RH'[w]RH'[v]R-RH''[v,w]R.
+ \label{jsi-resolvent-derivatives}
+\end{align}
+Differentiating \(\log\det R_{oo}\) uses only its fixed color trace.
+
+For exponential bounds, conjugate by a site weight whose ratios
+across nearest-neighbor edges differ from one by \(O(\kappa)\).
+Choose \(\kappa>0\), depending on \(\delta,\epsilon\), so the
+conjugation perturbation has norm at most \(\delta^2/4\).
+The weighted inverse is then bounded by \(2/\delta^2\).
+Spending a smaller exponent gives absolute row and column Schur
+bounds. The derivatives \(H',H''\) are local. Every source chain
+in \eqref{jsi-resolvent-derivatives}, and in the logarithmic
+derivatives, begins and ends at \(o\). Its exponential weights
+therefore control all source distances from \(o\), with a further
+exponent reserve for any fixed polynomial moment.
+\end{proof}
+
+Writing \(S_{\delta,N}^{\rm all}\) for the unbased half-ratio gives
+the exact comparison
+\begin{equation}
+ S_{\delta,N}^b=S_{\delta,N}^{\rm all}
+ +\frac12\mathcal N_0\bigl\{
+       \log\det(R_f)_{oo}-\log\det(R_c)_{oo}\bigr\}.
+ \label{jsi-defect}
+\end{equation}
+The lemma has two useful consequences. A base receding from fixed
+localized sources changes their first-two coefficients
+exponentially little. Alternatively, average the based functional
+over the \(N^4\) simultaneous coarse translations of the fine and
+coarse base. Reanchoring its Hessian at one output cell bounds the
+anchored second-moment norm of its difference from the unbased
+functional by
+\begin{equation}
+                         C_{\delta,K}N^{-4}.
+ \label{jsi-average-defect}
+\end{equation}
+Indeed summing the translated rooted defect kernel converts that
+row into its full source sum, divided by \(N^4\); its displacement
+moments are bounded by the lemma. This averaging is an estimate
+for the limit, not a claim that different finite base choices
+give identical functionals.
+
+After composition with the actual fixed-\(K\) stationary branch,
+the same conclusions use its previously proved localized source
+kernels. Under the Notebook 33 inputs the constants are uniform
+in old depth \(M\), still depending on \(K,\delta\).
+
+\subsection{The ordered localized Maxwell limit}
+\label{jsi-ordered-section}
+
+At positive mass, the unbased diagonal logarithm has exponentially
+localized Taylor kernels, by the same resolvent argument applied
+to its logarithm integral. Its color trace is gauge invariant.
+Its Hessian moments therefore define its affine curvature
+coefficient absolutely. This gives a way to take the limit without
+postulating an affine magnetic field on a torus: first pass to
+infinite kernels using compactly supported directions, then
+evaluate polynomial directions by their exponential moments.
+Symmetric short lifts of periodic kernels give the same result.
+At fixed \(K,\delta\), unbased winding contributions vanish
+exponentially in \(N\), and \eqref{jsi-average-defect} removes the
+averaged base contribution.
+
+For an actual stationary insertion, use fixed-\(K\) structural
+compactness followed by the polynomial-jet identification of
+Notebook 33. Every such limit has the same scalar expression
+below. This statement uses the already established source kernels;
+it does not infer locality from a finite determinant identity.
+
+Normalize the Maxwell functional by
+\(\beta(F)=2[t^2]\) of its localized constant-curvature density.
+For \(\mu\ne\nu\) and \(\tau(H^2)=1\), the current and coarse
+Cartan probes are
+\[
+ U_\mu(t;x)=e^{itx_\nu H/K^2},\qquad
+ W_\mu(t;y)=e^{ity_\nu H}.
+\]
+The unpinned scalar heat coefficient already established is
+\begin{equation}
+ \begin{split}
+ h(s)&=\frac{C_H}{3}s^2e^{-8s}I_0(2s)^2I_1(2s)^2,\\
+ h(s)&=O(s^4)\quad(s\downarrow0),\\
+ h(s)&=\alpha_g+O(s^{-1})\quad(s\to\infty),
+ \qquad \alpha_g=\frac{C_H}{48\pi^2}.
+ \end{split}
+ \label{jsi-heat}
+\end{equation}
+The \(K^4\) fine sites per final block cancel the curvature
+factor \(K^{-4}\). In common physical heat time \(u\), the fine
+and coarse coefficients are consequently \(h(K^2u)\) and \(h(u)\).
+
+\begin{proposition}[Ordered scalar reference limit]
+\label{jsi-ordered-theorem}
+Take the thermodynamic localized-kernel limit first, at fixed
+\(\delta>0\) and fixed \(K\). The resulting scalar coefficient is
+\begin{equation}
+ \beta_\delta(K)=\frac12\int_0^\infty
+           e^{-\delta^2u}\{h(K^2u)-h(u)\}\frac{du}{u}.
+ \label{jsi-beta-delta}
+\end{equation}
+It satisfies
+\begin{equation}
+             \lim_{\delta\downarrow0}\beta_\delta(K)
+                         =\alpha_g\log K.
+ \label{jsi-beta-limit}
+\end{equation}
+For \(K\ge1\) and \(0<\delta\le1/2\), the explicit reference
+also obeys
+\begin{equation}
+ |\beta_\delta(K)-\alpha_g\log K|
+       \le C\delta^2\{1+\log(1/\delta)\},
+ \label{jsi-mass-rate}
+\end{equation}
+where \(C\) is independent of \(K\).
+\end{proposition}
+
+\begin{proof}
+The localized logarithm heat formula, the preceding normalization,
+and \eqref{jsi-heat} give \eqref{jsi-beta-delta}.
+Without the mass factor, the paired integrand is absolutely
+integrable: use its small-\(s\) bound at zero and cancellation
+of \(\alpha_g\) at infinity. On \(\varepsilon<u<T\), its
+unhalved integral equals
+\[
+ \int_T^{K^2T}h(v)\frac{dv}{v}
+       -\int_\varepsilon^{K^2\varepsilon}h(v)\frac{dv}{v}.
+\]
+The limits are \(2\alpha_g\log K\) and zero, respectively.
+Dominated convergence proves \eqref{jsi-beta-limit}.
+
+For the rate, \(h\) is bounded on the whole positive axis.
+On \(0<u<1\), use \(1-e^{-\delta^2u}\le\delta^2u\);
+the resulting error is \(O(\delta^2)\), uniformly in \(K\).
+For \(u\ge1\), \eqref{jsi-heat} gives
+\(|h(K^2u)-h(u)|\le2C/u\) for every \(K\ge1\).
+Split the remaining integral at \(u=\delta^{-2}\).
+The first part is \(O(\delta^2\log(1/\delta))\), the
+second \(O(\delta^2)\).
+\end{proof}
+
+The uniformity in \eqref{jsi-mass-rate} belongs to the explicit
+reference after the thermodynamic limit. It does not interchange
+mass removal with that limit for the original based determinants.
+
+\subsection{An exact massless anomaly on a periodic flat connection}
+\label{jsi-anomaly-section}
+
+There is a direct obstruction to such an interchange, already
+at zero momentum. Consider one charged scalar \(q\) on a periodic
+\(n^4\) lattice, with constant phase \(e^{itqA}\) on direction
+\(\mu\). This is a legitimate periodic flat connection for every
+\(t\); no continuously varying magnetic flux is involved.
+Its unbased eigenvalues are
+\begin{equation}
+ \lambda_p(t)=2\sum_\nu
+       \{1-\cos(p_\nu+tqA\,\delta_{\mu\nu})\},
+       \qquad p\in(2\pi/n)\mathbb Z_n^4.
+ \label{jsi-spectrum}
+\end{equation}
+Put \(V=n^4\), and delete one scalar site to obtain \(G_n^b(t)\).
+Translation invariance of the resolvent diagonal and
+\eqref{jsi-jacobi} imply
+\begin{equation}
+ \det G_n^b(t)=\frac1V\prod_{p\ne0}\lambda_p(t)
+       \left\{1+\lambda_0(t)
+                    \sum_{p\ne0}\lambda_p(t)^{-1}\right\}.
+ \label{jsi-cofactor}
+\end{equation}
+Initially this is an identity away from zero eigenvalues;
+both sides continue analytically through \(t=0\).
+
+\begin{proposition}[Noncommuting mass and thermodynamic derivatives]
+\label{jsi-anomaly-theorem}
+Let
+\begin{equation}
+ g_4=\int_{[-\pi,\pi]^4}\frac{dp}{(2\pi)^4}
+             \frac1{2\sum_\nu(1-\cos p_\nu)}>0.
+ \label{jsi-green}
+\end{equation}
+Then
+\begin{equation}
+ \lim_{n\to\infty}n^{-4}[t^2]\log\det G_n^b(t)
+                           =q^2A^2g_4.
+ \label{jsi-anomaly}
+\end{equation}
+At every fixed positive scalar mass, the corresponding
+thermodynamic coefficient is zero, and remains zero when
+the mass is subsequently removed.
+\end{proposition}
+
+\begin{proof}
+Since \(\lambda_0(t)=q^2A^2t^2+O(t^4)\),
+\eqref{jsi-cofactor} gives, writing \(\lambda_p=\lambda_p(0)\),
+\begin{equation}
+ [t^2]\log\det G_n^b(t)
+   =q^2A^2\sum_{p\ne0}
+    \left\{\frac{\cos p_\mu}{\lambda_p}
+       -\frac{2\sin^2p_\mu}{\lambda_p^2}
+       +\frac1{\lambda_p}\right\}.
+ \label{jsi-cofactor-jet}
+\end{equation}
+The first two summands equal
+\(\partial_{p_\mu}(\sin p_\mu/\lambda_p)\).
+Their singularity is \(O(|p|^{-2})\), integrable in dimension
+four. Removing a radius-\(\varepsilon\) ball before integration
+by parts leaves boundary flux \(O(\varepsilon^2)\), so their
+Brillouin-zone integral is zero. Their grid sums converge:
+\begin{equation}
+ n^{-4}\sum_{0<|p|\le\varepsilon}|p|^{-2}
+                       \le C\varepsilon^2+O(n^{-2}).
+ \label{jsi-grid-bound}
+\end{equation}
+Outside that ball ordinary Riemann convergence applies.
+The same argument for \(\lambda_p^{-1}\) gives \(g_4\),
+proving \eqref{jsi-anomaly}.
+
+At fixed positive mass \(m\), the unbased coefficient per volume
+instead tends to the integral of
+\(\partial_{p_\mu}\{\sin p_\mu/(\lambda_p+m^2)\}\),
+which is zero by periodicity. Lemma~\ref{jsi-base-lemma}
+makes the based correction \(O(1)\) in these derivatives,
+so division by \(n^4\) removes it. Subsequent \(m\downarrow0\)
+still gives zero.
+\end{proof}
+
+The deleted block has fixed rank, but its massless derivative
+contribution is extensive. Equation \eqref{jsi-cofactor} identifies
+the soft global mode responsible for the failure. Summing
+adjoint charges replaces \(q^2\) by \(C_H\); for a vector of
+commuting constant angles the answer is \(C_H|A|^2g_4\),
+with mixed terms zero by coordinate reflections.
+
+\subsection{The actual branch and its forced physical compensation}
+\label{jsi-actual-section}
+
+Now use the actual final constant links and current representative
+\begin{equation}
+ W_\mu(t)=e^{itA_\mu H},\qquad
+ U_\mu(t)=e^{itA_\mu H/K}.
+ \label{jsi-flat-branch}
+\end{equation}
+Each ordinary blocking stage preserves this commuting connection:
+all paths with the same displacement have the same transporter,
+so the selected mean is evaluated on identical entries.
+The same flat lift exists through every old refinement \(M\).
+All plaquettes are identity. Since the real Wilson action is
+nonnegative, the associated classical minimum values are zero.
+After the actual local root gauge, uniqueness of the small
+minimum germ identifies this with the actual stationary branch.
+This is a fixed finite-germ argument.
+
+Every sitewise adjoint gauge preserves a scalar zero at the
+global base. Thus the globally based scalar determinants are
+unchanged by that root gauge and may be computed in
+\eqref{jsi-flat-branch}.
+Fine current volume is \((KN)^4\) and fine angle is \(tA/K\);
+coarse volume is \(N^4\) and angle is \(tA\).
+Proposition~\ref{jsi-anomaly-theorem} therefore gives
+\begin{equation}
+ \lim_{N\to\infty}N^{-4}[t^2]
+         (\log\det G_f-\log\det G_c)
+             =C_H|A|^2(K^2-1)g_4.
+ \label{jsi-orbit-anomaly}
+\end{equation}
+The generators on this branch are the same for every old \(M\).
+This is a flat-holonomy, zero-momentum response, not a Maxwell
+coefficient.
+
+\begin{proposition}[Forced compensation in the physical factor]
+\label{jsi-compensation-theorem}
+Fix \(K\) before taking the thermodynamic limit.
+For the actual leading correction and physical quotient,
+\begin{align}
+ \lim_{N\to\infty}N^{-4}[t^2]D_N(W(t))&=0,
+       \label{jsi-total-zero}\\
+ \lim_{N\to\infty}N^{-4}[t^2]\log\det Q_\perp(W(t))
+                  &=C_H|A|^2(K^2-1)g_4.
+       \label{jsi-compensation}
+\end{align}
+The same conclusion allows varying old depth under the
+previously established uniform-old-depth, fixed-\(K\) local
+kernel bounds.
+\end{proposition}
+
+\begin{proof}
+The actual correction \(D_N\) has translation-covariant Hessian
+kernels with common exponential row and source bounds at fixed
+\(K\). Every structural limit has invariant local densities and
+zero linear color jet. Its quadratic Ward identity consequently
+annihilates lattice gradients. Exponential moments extend this
+identity to linear scalar gauge parameters by cutoff approximation.
+Their gradients are constant link fields, so the infinite
+quadratic symbol vanishes at momentum zero.
+
+The finite normalized coefficient on \eqref{jsi-flat-branch} is
+one-half the contracted Hessian row sum. Uniform exponential
+tails make its distant part uniformly small. Every fixed
+central sum converges along a structural subsequence, and its
+full limiting row sum is zero by the preceding Ward argument.
+All subsequential scalar limits are therefore zero, proving
+\eqref{jsi-total-zero}. The uniform-old-\(M\) versions of these
+same bounds permit \(M\) to vary. No uniform-in-\(K\) locality
+is used.
+
+At finite \(N\) the exact physical-quotient identity is
+\begin{equation}
+ 2D_N=\mathcal N_0
+       (\log\det G_f-\log\det G_c-\log\det Q_\perp).
+ \label{jsi-actual-identity}
+\end{equation}
+Subtract \eqref{jsi-total-zero} from
+\eqref{jsi-orbit-anomaly} using the same branch, base and
+regulator. This yields \eqref{jsi-compensation}, including
+its sign and normalization.
+\end{proof}
+
+No claim that \(D_N(W(t))\) is identically zero at finite \(N\)
+is needed: a periodic constant connection may have nontrivial
+holonomy. Nevertheless, its thermodynamic constant-field
+response must vanish by locality and the Ward identity.
+Thus the term \(-\frac12\log\det Q_\perp\) cancels the scalar
+half-ratio exactly at zero momentum.
+
+\subsection{What the ordered limit does not identify}
+\label{jsi-scope}
+
+The positive result is
+\[
+ \lim_{\delta\downarrow0}\lim_{N\to\infty}
+       \{\hbox{localized regulated scalar Maxwell coefficient}\}
+                         =\alpha_g\log K.
+\]
+The original separately massless globally based family does not
+have an order-independent analytic local limit, as the periodic
+test \eqref{jsi-orbit-anomaly} proves.
+In particular a \(K\)-uniform \(O(1)\) constant-potential response
+for the separate physical determinant is false, despite its
+flat lower bound \(cK^{-2}\).
+
+The anomaly alone neither computes nor disproves equality of
+Maxwell coefficients after a suitable coupled cancellation.
+A valid joint vector/scalar regulator must preserve the
+rank-fixed but derivative-large base factors before its
+infrared limit. The exact finite quotient identity does not
+provide that regulated identity by itself. No continuum
+measure, nontriviality, or mass-gap conclusion follows here.
+
+
+% No preamble. Prefix pvs-. Actual flat physical spectral estimates.
+\section{Flat physical heat densities and the remaining curvature interface}
+\label{pvs-section}
+
+Fix dimension four, a color algebra of dimension \(n_{\mathfrak g}\),
+a primitive odd ratio \(\ell\), a composite \(K=\ell^k\), and any
+preceding homogeneous depth \(M\).
+Coordinates are current-link angles with counting inner products.
+On a cubic current torus of side \(KN\), there are \(N^4\) final
+\(K\)-blocks.
+All statements about varying backgrounds below are explicitly
+separated from the flat spectral theorem.
+
+\subsection{Actual flat inputs}
+\label{pvs-input-section}
+
+Let \(P_f,P_c\) be the fine and coarse physical projections at
+the flat field, and write
+\begin{equation}
+ \begin{split}
+ L&=q_M,\qquad A=P_cC_K|_{\operatorname{ran}P_f},\\
+ R&=L|_{\operatorname{ran}P_f}-A^Tq_{MK}A,\qquad
+ Q=R+aA^TA .
+ \end{split}
+ \label{pvs-operators}
+\end{equation}
+These are the actual residual physical operators of the finite
+quotient identity. The following previously proved facts are the
+only model-specific inputs:
+\begin{equation}
+ \begin{gathered}
+ L\ge d^Td,\qquad 0\le q_{MK},\qquad \|q_{MK}\|\le R_q,\\
+ R\ge0,\qquad Q\ge c_aK^{-2}I,\qquad c_a>0 .
+ \end{gathered}
+ \label{pvs-inputs}
+\end{equation}
+The constants are uniform in \(M,K,N\).
+For example, the physical alias proof gives
+\[
+ c_a=\min\{B_0^{-1},a/(A_0+B_0R_q)\},\qquad
+ A_0=2c_\omega^{-2},\quad
+ B_0=(1+2c_\omega^{-2})/4,\quad c_\omega=(2/\pi)^5.
+\]
+Flat operators are invariant under final-block translations.
+
+The globally based scalar gradient has the same range as the
+ordinary periodic gradient: subtracting the value of a scalar at
+the base does not change its gradient.
+Thus \(\operatorname{ran}P_f\) is the usual transverse Bloch
+space, including all harmonic one-forms at momentum zero.
+No estimate on an inverse globally based scalar operator is used.
+
+Choose a fixed \(a\ge R_q\). Then
+\begin{equation}
+ Q=L|_{\rm phys}+A^T(aI-q_{MK})A\ge\Delta_{\rm phys},
+ \qquad
+ Q\ge\tfrac12\Delta_{\rm phys}+\frac{c_a}{2K^2}I .
+ \label{pvs-combined-order}
+\end{equation}
+Here \(\Delta_{\rm phys}\) is the Maxwell form on the transverse
+space, where it is the scalar lattice Laplacian.
+
+\begin{theorem}[Uniform flat physical heat and inverse moments]
+\label{pvs-main}
+Put \(\widehat Q=K^2Q\), and define the heat trace per final block by
+\[
+ \widehat H_{M,K,N}(u)
+   =N^{-4}\operatorname{Tr}_{\rm phys}e^{-u\widehat Q}.
+\]
+There are \(C,c>0\), independent of \(M,K,N\), such that
+\begin{equation}
+ \widehat H_{M,K,N}(u)
+ \le C\left\{\frac{K^4}{(1+K^2u)^2}+N^{-4}\right\}e^{-cu},
+ \qquad u>0.
+ \label{pvs-heat}
+\end{equation}
+In the infinite flat structural system the corresponding block
+trace satisfies the same bound with \(N^{-4}\) omitted.
+For every \(p>0\),
+\begin{equation}
+ \operatorname{Tr}_{\rm block}\widehat Q^{-p}
+ \le C_p
+ \begin{cases}
+ K^{4-2p}+N^{-4},&0<p<2,\\
+ 1+\log K+N^{-4},&p=2,\\
+ 1+N^{-4},&p>2,
+ \end{cases}
+ \label{pvs-moments}
+\end{equation}
+again omitting \(N^{-4}\) in infinite volume.
+For each fixed real \(r\) and \(U\ge1\),
+\begin{equation}
+ \int_U^\infty u^{r-1}\widehat H_{M,K,N}(u)\,du
+ \le C_r(1+N^{-4})e^{-cU/2}.
+ \label{pvs-tail}
+\end{equation}
+These are unperturbed spectral statements. They do not assert a
+bound on a background derivative of a heat trace.
+\end{theorem}
+
+\begin{proof}
+For self-adjoint finite matrices \(X\ge Y\), the min--max theorem
+gives ordered eigenvalues \(\lambda_j(X)\ge\lambda_j(Y)\);
+therefore \(\operatorname{Tr}e^{-sX}\le
+\operatorname{Tr}e^{-sY}\).
+No operator monotonicity of the exponential is asserted.
+
+At momentum \(p\in(2\pi/n)\mathbb Z_n^4\), \(n=KN\), put
+\(P(p)=4\sum_\mu\sin^2(p_\mu/2)\).
+The physical Maxwell multiplicity is \(3n_{\mathfrak g}\)
+away from zero and \(4n_{\mathfrak g}\) at zero. Hence
+\begin{equation}
+ \operatorname{Tr}_{\rm phys}e^{-sQ}
+ \le 4n_{\mathfrak g}e^{-c_as/(2K^2)}
+                       \sum_p e^{-sP(p)/2}.
+ \label{pvs-minmax}
+\end{equation}
+For the one-dimensional scalar heat average
+\[
+ p_n(t)=\frac1n\sum_{m\ {\rm mod}\ n}
+                      e^{-4t\sin^2(\pi m/n)},
+\]
+use representatives \(|m|\le n/2\) and
+\(\sin(\pi|m|/n)\ge2|m|/n\).
+Gaussian summation for \(t\ge1\), and \(p_n(t)\le1\) for
+\(t\le1\), give
+\begin{equation}
+ p_n(t)\le n^{-1}+C(1+t)^{-1/2},\qquad
+ p_n(t)^4\le C\{n^{-4}+(1+t)^{-2}\}.
+ \label{pvs-scalar-heat}
+\end{equation}
+Since \(\sum_p e^{-tP(p)}=n^4p_n(t)^4\),
+division of \eqref{pvs-minmax} by \(N^4\) yields
+\[
+ N^{-4}\operatorname{Tr}e^{-sQ}
+ \le C\{K^4(1+s)^{-2}+N^{-4}\}e^{-cs/K^2}.
+\]
+Set \(s=K^2u\) to obtain \eqref{pvs-heat}.
+
+The normalized total trace equals the diagonal trace in any one
+final block, by final-block translation invariance.
+This equality does not turn the min--max argument into a
+pointwise operator comparison.
+In infinite volume, apply the same min--max argument in each
+finite-dimensional coarse Bloch fiber and integrate.
+Folding the Maxwell aliases gives \(K^4\) times the fine scalar
+heat density, proving the infinite statement directly.
+
+Positive spectral calculus gives
+\[
+ \operatorname{Tr}_{\rm block}\widehat Q^{-p}
+  =\frac1{\Gamma(p)}\int_0^\infty
+      u^{p-1}\operatorname{Tr}_{\rm block}e^{-u\widehat Q}\,du .
+\]
+Split at \(K^{-2}\) and \(1\) to obtain
+\eqref{pvs-moments}.
+For \(p>2\), one can instead use
+\(K^4/(1+K^2u)^2\le u^{-2}\) directly.
+The same inequality and exponential decay prove
+\eqref{pvs-tail}.
+\end{proof}
+
+The finite \(N^{-4}\) term is necessary: it retains the finite
+number of physical harmonic modes.
+The local inverse moment means
+\(\operatorname{Tr}(P_{\rm block}\widehat Q^{-p}P_{\rm block})\).
+It is not a claim of global trace class in infinite volume, nor
+an identification with a power of the compressed inverse.
+The logarithm in the \(p=2\) bound is an upper bound; no matching
+actual asymptotic is claimed.
+
+\subsection{An optional finite on-shell replacement}
+\label{pvs-onshell-section}
+
+On a finite real on-shell family with
+\(LD_f=0\) and \(qD_c=0\), set
+\[
+ Q_{\rm on}=L|_{\rm phys}+aA^TA=Q+A^Tq_{\rm phys}A.
+\]
+The minimum right inverse gives \(AQ^{-1}A^T=a^{-1}I\).
+Consequently the determinant lemma proves
+\begin{equation}
+ \frac{\det Q_{\rm on}}{\det Q}
+   =\det(I+a^{-1}q_{\rm phys}).
+ \label{pvs-onshell-determinant}
+\end{equation}
+Because \(q\) kills the coarse gauge space, the normalized
+logarithm on the right is the normalized full coarse
+\(\log\det(q+aI)\); only a field-independent power of \(a\)
+has been removed.
+The already proved coarse-factor Maxwell estimate can therefore
+control this replacement wherever its Maxwell moment is
+legitimately defined.
+
+This does not apply to an arbitrary off-shell family by omission
+of the multiplier curvature.
+The actual general form is
+\(L=s''-\lambda\cdot f''\).
+An infinite affine use of separate globally based physical
+determinants requires its own infrared justification.
+
+\subsection{A precise sufficient derivative estimate}
+\label{pvs-vertex-section}
+
+The following fixed-space lemma isolates an additional estimate
+which would suffice for an infrared second-variation bound.
+Its hypotheses are not established here for the actual varying
+physical quotient.
+
+\begin{lemma}[Relative-form vertices]
+\label{pvs-vertex-lemma}
+Let
+\(X(t)=X+tV_1+t^2V_2+O(t^3)\)
+be a real self-adjoint family on a fixed finite-dimensional
+Hilbert space, with \(X>0\). Suppose
+\begin{equation}
+ \|X^{-1/2}V_jX^{-1/2}\|\le L_j,\qquad j=1,2.
+ \label{pvs-vertex-hyp}
+\end{equation}
+Then
+\begin{equation}
+ \left|[t^2]\operatorname{Tr}e^{-uX(t)}\right|
+ \le8(L_2+L_1^2)\operatorname{Tr}e^{-uX/4},
+ \qquad u>0.
+ \label{pvs-vertex-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The single insertion has absolute value at most
+\[
+ uL_2\operatorname{Tr}(Xe^{-uX})
+ \le(2/e)L_2\operatorname{Tr}e^{-uX/2}.
+\]
+In an eigenbasis of \(X\), cyclic Duhamel gives the double
+insertion exactly as
+\begin{equation}
+ \frac u2\sum_{i,j}|(V_1)_{ij}|^2
+       \frac{e^{-u\lambda_i}-e^{-u\lambda_j}}
+                         {\lambda_j-\lambda_i},
+ \label{pvs-divided-difference}
+\end{equation}
+with the continuous value \(ue^{-u\lambda_i}\) at coincident
+eigenvalues.
+For \(a,b>0\),
+\begin{equation}
+ ab\,\frac{e^{-ua}-e^{-ub}}{b-a}
+ \le2\{ae^{-ua/2}+be^{-ub/2}\}.
+ \label{pvs-elementary}
+\end{equation}
+Indeed, assume \(b\ge a\).
+For \(b\ge2a\), use \(ab/(b-a)\le2a\).
+For \(a\le b\le2a\), use the derivative bound
+\(ue^{-ua}\), \(ab\le2a^2\), and
+\((ua)e^{-ua/2}\le2/e\).
+
+Write \(V_1=X^{1/2}BX^{1/2}\), with \(\|B\|\le L_1\).
+The row and column square sums of \(B\) are at most \(L_1^2\).
+Applying \eqref{pvs-elementary} to
+\eqref{pvs-divided-difference} bounds it by
+\[
+ 2uL_1^2\operatorname{Tr}(Xe^{-uX/2})
+ \le(8/e)L_1^2\operatorname{Tr}e^{-uX/4}.
+\]
+Together with the single insertion this proves the stated
+conservative constant.
+\end{proof}
+
+If \(X(t)=K^2Q_\perp(t)\) could be identified with a fixed
+physical space and satisfy \eqref{pvs-vertex-hyp} uniformly,
+Theorem~\ref{pvs-main} would give
+\begin{equation}
+ \int_1^\infty
+ \left|N^{-4}[t^2]\operatorname{Tr}e^{-uX(t)}\right|
+ \frac{du}{u}
+ \le C(L_2+L_1^2)(1+N^{-4}).
+ \label{pvs-conditional-tail}
+\end{equation}
+An infinite-volume version additionally requires a justified
+trace-and-derivative limit.
+Neither the uniform identification of varying physical spaces
+nor the actual bounds \eqref{pvs-vertex-hyp} follows from the
+flat gap.
+Derivatives of \(P_f,P_c\), the current, and the nonlinear
+constraint cannot be absorbed into an unproved constant.
+
+\subsection{The required scalar--physical cancellation}
+\label{pvs-scope-section}
+
+The separate physical determinant has a growing response even
+along constant commuting final link angles.
+The actual globally based finite identity and the local Ward
+limit give, at fixed \(K\),
+\begin{equation}
+ \lim_{N\to\infty}N^{-4}[t^2]\log\det Q_\perp(tA)
+   =C_H|A|^2(K^2-1)g_4,\qquad
+ g_4=\int_{[-\pi,\pi]^4}
+       \frac{dp}{(2\pi)^4\,4\sum_\mu\sin^2(p_\mu/2)}>0 .
+ \label{pvs-holonomy}
+\end{equation}
+Here the fine angles are \(tA/K\).
+This is the separately established flat-holonomy calculation:
+the same term in the scalar orbit-density ratio cancels
+\eqref{pvs-holonomy} in the actual total correction.
+It is a zero-momentum test, not a magnetic Maxwell coefficient.
+
+Accordingly, the spectral theorem does not permit an independent
+replacement of a massless physical or scalar factor by its
+massive infinite reference.
+A valid curvature comparison must preserve the coupled
+cancellation, or supply a justified joint infrared regulator.
+No actual vector logarithmic coefficient, its sign, or
+Yang--Mills existence conclusion is proved by this section.
+
+
+
+% No preamble. Prefix ccs-. Actual covariant moving-reference tangents.
+\section{A covariant moving-reference scalar average}
+\label{ccs-section}
+
+We construct tangent operators for the actual ordinary composite
+average. The nonlinear constraint and its cutoff are unchanged.
+The construction uses the internal group-valued transport selected
+in that ordinary map, rather than an unverified identification with
+an older axial operator carrying the name \(Q'\).
+
+\subsection{Actual data and the primitive relative correction}
+\label{ccs-primitive-section}
+
+Fix odd \(\ell\ge3\), \(K=\ell^k\), and compatible nested centered
+blocks. Coordinates are current-link angles with counting scalar
+and bond inner products. Use
+\[
+ U^g(e)=g(e_-)U(e)g(e_+)^{-1},\qquad
+ (D_U\phi)(e)=\phi(e_-)-\operatorname{Ad}_{U(e)}\phi(e_+).
+\]
+The generator acts on all scalar sites. Scalar parameters have
+angle units at every level; no spacing factor is inserted into
+this formula.
+
+Let \(P_\ell(U;y,x)\) be exactly the internal group-valued transport
+entering the selected ordinary map \(M_\ell\). The actual definition
+in Ba{\l}aban, CMP109 (1987), pp.~252--254, (0.3),(0.5)--(0.12),
+supplies local analyticity, internal-block support, and
+\begin{equation}
+ P_\ell(U^g;y,x)=g(y)P_\ell(U;y,x)g(x)^{-1}.
+ \label{ccs-endpoint}
+\end{equation}
+At identity its derivative is the same arithmetic contour mean
+that occurs in the ordinary arithmetic differential.
+These facts also hold when \(P_\ell\) is the selected group mean
+of coordinate-order transporters; it need not be one axial path.
+
+The pinned deposition specifies this ordinary map at Raw I:
+831--845. Its relative contour and ordinary increments occur at
+46965--46978, and the moving-reference endpoint correction at
+47076--47086. Raw I:23913--23920 describes an older axial/nested
+scalar average. No equality with every such convention is needed:
+the following operators are defined directly using the actual
+\(P_\ell\).
+
+Freeze \(U\), put \(W=M_\ell(U)\), and for a small bond increment
+\(x\) define
+\begin{equation}
+ \begin{split}
+ r_U(x;y,z)
+   &=\frac1i\log\!\left[
+       P_\ell(e^{ix}U;y,z)P_\ell(U;y,z)^{-1}\right],\\
+ \alpha_U(x;y)&=\ell^{-d}\sum_{z\in B_\ell(y)}r_U(x;y,z),\\
+ a_U(x;y)&=e^{i\alpha_U(x;y)}.
+ \end{split}
+ \label{ccs-relative-mean}
+\end{equation}
+All relative logarithms vanish at \(x=0\), and \(a_U(0)=1\).
+Let
+\begin{equation}
+ Z_Ux=D\alpha_U(0)[x],\qquad
+ C_Ux=\frac1i\left.\frac d{ds}\right|_0
+                  M_\ell(e^{isx}U)W^{-1}.
+ \label{ccs-tangents}
+\end{equation}
+The local corrected output with this frozen reference is
+\[
+ \overline F_U(x;c)=a_U(x;c_-)^{-1}
+                         M_\ell(e^{ix}U)(c)a_U(x;c_+).
+\]
+It equals \(W\) at zero. Its left-relative differential is exactly
+\begin{equation}
+                     \overline C_U=C_U-D_WZ_U.
+ \label{ccs-primitive-correction}
+\end{equation}
+This is a moving-reference tangent identity. It is not an
+identification with the derivative of the fixed-identity corrected
+map at \(U\).
+
+\begin{lemma}[Primitive scalar intertwining]
+\label{ccs-primitive-lemma}
+Define
+\begin{equation}
+ (B_U\phi)(y)=\ell^{-d}\sum_{z\in B_\ell(y)}
+                  \operatorname{Ad}_{P_\ell(U;y,z)}\phi(z).
+ \label{ccs-primitive-B}
+\end{equation}
+With \(r_\ell\) restriction to the new centers,
+\begin{equation}
+ Z_UD_U=r_\ell-B_U,\qquad
+                  \overline C_UD_U=D_WB_U.
+ \label{ccs-primitive-intertwining}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For the fine gauge \(e^{is\phi}\), the relative contour derivative
+from \eqref{ccs-endpoint} is
+\[
+ \phi(y)-\operatorname{Ad}_{P_\ell(U;y,z)}\phi(z).
+\]
+Its fine left tangent is \(D_U\phi\). Averaging this expression
+proves the first identity. There is no logarithm Jacobian at this
+step: its argument is identity at the reference point.
+Ordinary covariance gives \(C_UD_U=D_Wr_\ell\). Subtract
+\(D_WZ_UD_U\) using \eqref{ccs-primitive-correction}.
+\end{proof}
+
+\subsection{Joint covariance and composition}
+\label{ccs-composition-section}
+
+For a fixed site gauge \(g\), let \(O_E(g),O_S(g),O_c(g)\)
+denote adjoint frames on fine bond source sites, fine scalar sites,
+and new centers. Since
+\[
+ e^{iO_E(g)x}U^g=(e^{ix}U)^g,
+\]
+the relative contour product at \(U^g\) is conjugated by \(g(y)\).
+The similarity-equivariant logarithm therefore gives
+\begin{equation}
+ \begin{split}
+ Z_{U^g}O_E(g)&=O_c(g)Z_U,\\
+ \overline C_{U^g}O_E(g)&=O_{E_c}(g)\overline C_U,\\
+ B_{U^g}O_S(g)&=O_c(g)B_U.
+ \end{split}
+ \label{ccs-primitive-covariance}
+\end{equation}
+Both the reference and the varied configuration are transformed.
+No multiplicative cocycle in the reference is assumed.
+Adjoint frames are orthogonal for the real invariant trace pairing,
+and complex orthogonal for its holomorphic bilinear continuation.
+
+At stage \(j\), evaluate \(C_j,\overline C_j,Z_j,B_j,D_j\)
+at the ordinary reference
+\[
+                         U_j=M_\ell^j(U).
+\]
+Set
+\begin{equation}
+ \begin{split}
+ C^{(t)}&=C_{t-1}\cdots C_0,\\
+ \overline C^{(t)}&=\overline C_{t-1}\cdots\overline C_0,\\
+ B^{(t)}&=B_{t-1}\cdots B_0,
+ \end{split}
+ \label{ccs-products}
+\end{equation}
+with identity products at \(t=0\).
+The first is exactly the derivative of the actual ordinary
+composition. Define \(Z^{(0)}=0\) and
+\begin{equation}
+        Z^{(t+1)}=B_tZ^{(t)}+Z_tC^{(t)}.
+ \label{ccs-Z-recursion}
+\end{equation}
+
+\begin{proposition}[Exact composite tangent identities]
+\label{ccs-composite-theorem}
+At the final level, writing \(C,\overline C,B,Z,D_c\) for these
+products and the final generator,
+\begin{equation}
+ C-\overline C=D_cZ,\qquad
+ \overline C D_{\rm all}=D_cB,\qquad
+                  ZD_{\rm all}=r_K-B.
+ \label{ccs-composite-identities}
+\end{equation}
+The operators have exact joint gauge covariance with the original
+fine and final ordinary reference frames.
+\end{proposition}
+
+\begin{proof}
+The primitive intertwining gives
+\(\overline C^{(t)}D_0=D_tB^{(t)}\).
+Suppose \(C^{(t)}=\overline C^{(t)}+D_tZ^{(t)}\).
+Then
+\[
+ C_tC^{(t)}
+  =\overline C_t\overline C^{(t)}
+        +D_{t+1}\{B_tZ^{(t)}+Z_tC^{(t)}\},
+\]
+which proves the first two identities by induction.
+For the third, insert
+\(Z_tD_t=r_\ell-B_t\) and
+\(C^{(t)}D_0=D_tr_{\ell^t}\) in
+\eqref{ccs-Z-recursion}; the two intermediate
+\(B_tr_{\ell^t}\) terms cancel.
+Finally, \eqref{ccs-primitive-covariance} telescopes at the
+ordinary reference backgrounds. These are not the
+fixed-identity corrected iterates.
+\end{proof}
+
+\subsection{Own-block locality and an exact constant row Gram matrix}
+\label{ccs-locality-section}
+
+For \(x\in B_K(y)\), let
+\(x=x_0,x_1,\ldots,x_k=y\) be its unique nested sequence of
+block centers. The scalar product in \eqref{ccs-products}
+has only this one ancestry. Consequently
+\begin{equation}
+ \begin{split}
+ B(U;y,x)&=K^{-d}\operatorname{Ad}_{P_{\rm hier}(U;y,x)},\\
+ P_{\rm hier}(U;y,x)
+  &=P_\ell(U_{k-1};x_k,x_{k-1})\cdots
+                                 P_\ell(U_0;x_1,x_0),
+ \end{split}
+ \label{ccs-hierarchical-B}
+\end{equation}
+and \(B(U;y,x)=0\) outside \(B_K(y)\).
+Each factor is one group element, even when obtained from a
+selected group mean of path transports.
+
+Its background dependencies lie in the same final block.
+A stage contour uses internal stage bonds. Each such ordinary
+bond reads the two descendant blocks at its endpoints, both
+inside the parent block by centered nested tiling. Iterating
+downwards proves that no coefficient of this scalar row reads
+a fine background edge crossing its final block boundary.
+The same conclusion holds for all of its derivatives.
+
+The rows of \(C\) and \(\overline C\) read only the two final
+endpoint blocks. The scalar \(Z\) row stays in one block:
+in \eqref{ccs-Z-recursion}, \(Z_t\) reads internal stage bonds,
+and \(C^{(t)}\) on these bonds reads only descendants inside
+their parent block. This is full coefficient locality, not
+merely support at flatness.
+
+\begin{theorem}[Covariant block projection]
+\label{ccs-projector-theorem}
+For every real or complex background in the common germ,
+\begin{equation}
+                 BB^T=K^{-d}I.
+ \label{ccs-row-Gram}
+\end{equation}
+In dimension four,
+\begin{equation}
+                  P_B=I-K^4B^TB
+ \label{ccs-projector}
+\end{equation}
+is the symmetric projector onto \(\ker B\), orthogonal for
+real fields. It is holomorphic, has one-final-block matrix
+and background support, and obeys
+\begin{equation}
+          P_B(U^g)=O_S(g)P_B(U)O_S(g)^T.
+ \label{ccs-projector-covariance}
+\end{equation}
+The normalized term \(\frac12\log\det BB^T\) vanishes identically.
+\end{theorem}
+
+\begin{proof}
+Distinct rows have disjoint scalar supports because the final
+blocks partition the fine sites. In the invariant bilinear
+pairing,
+\(\operatorname{Ad}_P\operatorname{Ad}_P^T=I\).
+Equation \eqref{ccs-hierarchical-B} therefore gives
+\[
+ (BB^T)_{yy}
+      =K^{-2d}\sum_{x\in B_K(y)}I=K^{-d}I,
+\]
+with zero off-diagonal blocks. This algebra remains valid on
+the complexified group. The projector assertions follow
+directly, and covariance follows from that of \(B\).
+\end{proof}
+
+\subsection{Flat values and the analytic domain}
+\label{ccs-analytic-section}
+
+At identity, the contour derivative in \(Z\) is the root term
+of the actual ordinary arithmetic differential. Subtraction
+of the two endpoint terms in
+\eqref{ccs-primitive-correction} leaves precisely
+\begin{equation}
+ (\overline C_1x)(c)=\ell^{-d}
+       \sum_{z\in B_\ell(c_-)}x([z,z+\ell e_\mu]),
+ \qquad B_1=Q_{0,\ell}.
+ \label{ccs-flat-primitive}
+\end{equation}
+Centered-block tiling then gives
+\begin{equation}
+             \overline C(1)=A_K^{\rm st},\qquad
+                         B(1)=Q_{0,K}.
+ \label{ccs-flat-composite}
+\end{equation}
+The bond map here is an angle map, with a primitive factor
+\(\ell\) relative to the normalized physical-potential map.
+There is no such factor for the scalar average.
+
+At fixed \(K\), each coefficient is a composition of local
+analytic maps reading finitely many links in one or two final
+blocks. A small link-angle product ball therefore works uniformly
+in volume and in unrelated preceding depth \(M\).
+Its radius and constants may depend on \(K\).
+Cauchy derivatives preserve the same support. Compatible tori
+are read with the prescribed local lifts and nested partition.
+
+The previously proved ordinary-reference trajectory gives a
+stronger optional bound. For \(U=e^{iA/K}\) in its small globally
+bounded physical-potential ball, stage angles are
+\(O(\ell^j\|A\|_\infty/K)\). Fixed-\(\ell\) local analytic
+Schur bounds and the sum
+\(\sum_{j<k}\ell^j/K\le(\ell-1)^{-1}\) imply
+\begin{equation}
+ \|B-Q_{0,K}\|_{{\rm count},\,2\to2}
+                    \le C\|A\|_\infty K^{-2}
+                    \qquad(d=4).
+ \label{ccs-physical-smallness}
+\end{equation}
+The corresponding counting scale for the angle bond map
+\(\overline C\) is \(K^{-1}\).
+These stronger estimates are not needed for fixed-\(K\)
+volume uniformity or the exact identity
+\eqref{ccs-row-Gram}.
+
+The induced scalar map of the fixed-identity corrected
+composition is a different operator. It contains logarithm
+Jacobians, and its row Gram matrix need not be constant.
+The present moving-reference construction avoids that issue;
+it must not be replaced by the fixed-identity derivative
+without the appropriate endpoint conversion.
+
+\subsection{A basis-free scalar completion}
+\label{ccs-completion-section}
+
+Let \(G_{\rm all}=D_{\rm all}^TD_{\rm all}\), and let \(V\)
+be any bilinear orthonormal frame of \(\ker B\). Define
+\begin{equation}
+ G_B=V^TG_{\rm all}V,\qquad
+ \widehat G_B=P_BG_{\rm all}P_B+K^{-2}(I-P_B).
+ \label{ccs-completion}
+\end{equation}
+The two projector subspaces reduce \(\widehat G_B\); hence
+\begin{equation}
+       \det\widehat G_B=\det G_B\,
+                        (K^{-2})^{\operatorname{rank}B}.
+ \label{ccs-completion-determinant}
+\end{equation}
+The extra factor is background independent.
+The ambient matrix \(\widehat G_B\) is exactly gauge covariant,
+without a need to choose gauge-covariant frames \(V\).
+
+For the companion vector matrix
+\[
+ Q_B=\mathcal H+D_{\rm all}P_BD_{\rm all}^T
+                         +a\overline C^T\overline C,
+\]
+the actual residual covariance and
+\eqref{ccs-projector-covariance} give the same conclusion.
+When the general tangent determinant identity and the needed
+spectral gaps are supplied separately, these observations
+permit a formulation using the two ambient matrices
+\(\widehat G_B,Q_B\), with no isolated global base site and
+no normalized row-Gram term.
+
+Locality and covariance alone do not prove those spectral gaps
+or the determinant identity. Once they hold, a fixed-\(K\)
+uniform complex perturbation neighborhood permits the usual
+diagonal logarithm argument. This does not compute a
+large-\(K\) vector Maxwell coefficient or establish a
+continuum Yang--Mills theory.
+
+
+\section{A local block-mean gauge for the actual determinant}
+\label{pql-section}
+
+This section first proves a finite-dimensional identity, then continues
+it jointly through the flat field. Its scalar gauge has zero block mean,
+rather than a point fixed in each block. The resulting scalar and vector
+operators have flat gaps of order $K^{-2}$ in current counting units.
+The local analytic continuation is uniform in volume and old depth for
+each fixed $K$; no uniform large-$K$ curvature comparison is asserted.
+
+\subsection{Actual residual data and an auxiliary coupled matrix}
+\label{pql-actual-data}
+
+Fix $K=\ell^k$, old depth $M$, and a compatible finite torus in four
+dimensions. Let $E,E_c$ be current and final bond-angle spaces. In this
+section $S,S_c$ contain \emph{all} fine and coarse scalar sites, with no
+global base removed. Use counting measures and trace-orthonormal color
+coordinates. Initially work on a real open set where the left-relative
+gauge generators $D:S\to E$ and $D_c:S_c\to E_c$ are injective.
+The actual ordinary constraint differential $C$ and center restriction
+$r:S\to S_c$ satisfy
+\begin{equation}
+ CD=D_cr,\qquad D_b=D|_{\ker r}.
+ \label{pql-ordinary-intertwining}
+\end{equation}
+Write the full Lagrangian, coarse and residual Hessians as
+\begin{equation}
+ L=s''-\lambda\cdot f'',\qquad q=s_{\rm eff}'',\qquad
+ \mathcal H=L-C^TqC.
+ \label{pql-residual}
+\end{equation}
+The actual minimum comparison supplies
+\begin{equation}
+ \mathcal H\ge0,\quad \mathcal H D=0,\quad CH=I,\quad
+ \mathcal H H=0.
+ \label{pql-minimum-identities}
+\end{equation}
+On $\ker C$ the nullspace is $\operatorname{ran}D_b$.
+The actual contour differential satisfies $TD_b=-I$.
+All of these statements retain the constraint-current curvature
+$\lambda\cdot f''$.
+
+Let $G=D^TD$, $G_c=D_c^TD_c$, and choose orthonormal bond frames
+$U,U_c$ perpendicular to the corresponding gauge ranges. Put
+\begin{equation}
+ A=U_c^TCU,\quad \mathcal H_\perp=U^T\mathcal H U,\quad
+ Q_\perp(a)=\mathcal H_\perp+aA^TA,\qquad a>0.
+ \label{pql-physical-auxiliary}
+\end{equation}
+The actual contour/pivot Gaussian amplitude $I_{\rm act}$ obeys
+\begin{equation}
+ I_{\rm act}^2
+ =\frac{\det G}{\det G_c}
+   \frac{a^{n_c-s_c}}{\det Q_\perp(a)},\qquad
+ n_c=\dim E_c,\quad s_c=\dim S_c.
+ \label{pql-all-site-amplitude}
+\end{equation}
+Indeed the constrained Gaussian change of variables
+$x=Uu+D(\lambda_b,\lambda_c)$ has Jacobian $\sqrt{\det G}$,
+while the target split has Jacobian $\sqrt{\det G_c}$.
+The target delta fixes $\lambda_c$, and $TD_b=-I$ integrates
+$\lambda_b$ with no background determinant. The remaining physical
+constraint has $AQ_\perp^{-1}A^T=a^{-1}I$, by
+\eqref{pql-minimum-identities}. This proves
+\eqref{pql-all-site-amplitude} with the actual target delta in
+left-relative coordinates; no additional target Haar factor is inserted.
+
+A preliminary projection-free form is
+\begin{equation}
+ \mathbb B_a(C)=
+ \begin{pmatrix}
+ \mathcal H+DD^T+aC^TC&\sqrt a\,C^TD_c\\
+ \sqrt a\,D_c^TC&G_c
+ \end{pmatrix},\qquad
+ I_{\rm act}^2=a^{n_c-s_c}
+                   \frac{(\det G)^2}{\det\mathbb B_a(C)}.
+ \label{pql-coupled-matrix}
+\end{equation}
+The ratio is first defined on the injective open set. Its normalized
+logarithm is the joint removable amplitude
+$\mathcal D=\log I_{\rm act}(W)-\log I_{\rm act}(1)$; the individual
+massless logarithms are not evaluated at the flat field. The gapped
+formula below supplies their joint continuation. We use
+$\mathcal N_0F=F(W)-F(1)$ only for functions defined there.
+Its quadratic form is
+$x^T\mathcal Hx+|D^Tx|^2+|\sqrt a Cx+D_c\psi|^2$.
+Taking the Schur complement in $G_c$ proves
+\eqref{pql-coupled-matrix}. Testing $x=0$ shows that this coupled
+matrix alone need not have a volume-uniform gap.
+If $C=\bar C+D_cZ$, the shear
+$\psi'=\psi+\sqrt a Zx$ has determinant one, and hence
+\begin{equation}
+ \det\mathbb B_a(C)=\det\mathbb B_a(\bar C).
+ \label{pql-shear}
+\end{equation}
+No inverse of $D_c$ is needed for this equality.
+
+\subsection{The exact block-mean determinant}
+\label{pql-mean-identity-section}
+
+Assume that $B:S\to S_c$ is onto and that tangent maps satisfy
+\begin{equation}
+ C-\bar C=D_cZ,\qquad \bar CD=D_cB.
+ \label{pql-tangent-identities}
+\end{equation}
+Neither $\bar C$ nor $B$ is required to be the differential of a
+nonlinear pushforward with a prescribed Haar density.
+Let $V$ have orthonormal columns spanning $\ker B$, and define
+\begin{equation}
+ P=VV^T=I-B^T(BB^T)^{-1}B,\quad
+ G_B=V^TD^TDV,\quad
+ Q_B=\mathcal H+DPD^T+a\bar C^T\bar C.
+ \label{pql-mean-operators}
+\end{equation}
+Then
+\begin{equation}
+ I_{\rm act}
+   =a^{n_c/2}\det G_B\,\det(BB^T)^{1/2}\det Q_B^{-1/2},
+ \label{pql-mean-amplitude}
+\end{equation}
+and therefore
+\begin{equation}
+ \mathcal D=\mathcal N_0\left[
+   \log\det G_B-\tfrac12\log\det Q_B
+                          +\tfrac12\log\det(BB^T)\right].
+ \label{pql-general-log}
+\end{equation}
+
+Here is a direct determinant proof. In orthonormal fine gauge
+coordinates $DG^{-1/2}$, the inserted map $DV$ has matrix $G^{1/2}V$,
+and the target gauge row of $\bar C$ is $G_c^{1/2}BG^{-1/2}$.
+Their product is zero. Split fine gauge coordinates into the range
+of $G^{1/2}V$ and its orthogonal complement. The first block contributes
+$\det G_B$; elimination of the second block removes the horizontal
+coarse-gauge row. Since $P_c\bar C=P_cC$, the remaining physical block
+is exactly $Q_\perp(a)$. Thus
+\begin{equation}
+ \det Q_B=a^{s_c}\det G_B\det G_c
+                    \det(BG^{-1}B^T)\det Q_\perp(a).
+ \label{pql-vertical-schur}
+\end{equation}
+Complete $V$ to an orthogonal frame by
+$W=B^T(BB^T)^{-1/2}$. The lower inverse block in this frame gives
+\begin{equation}
+ \det(BG^{-1}B^T)
+       =\det(BB^T)\frac{\det(V^TGV)}{\det G}.
+ \label{pql-jacobi}
+\end{equation}
+Combining \eqref{pql-all-site-amplitude},
+\eqref{pql-vertical-schur}, and \eqref{pql-jacobi} proves
+\eqref{pql-mean-amplitude}. In particular the scalar determinant
+has power one, not one half.
+
+There is no need to select a frame of $\ker B$ in the local formula.
+Set
+\begin{equation}
+ \widehat G=P D^TD P+K^{-2}(I-P).
+ \label{pql-full-scalar}
+\end{equation}
+The two $P$ subspaces reduce this operator and
+\begin{equation}
+ \det\widehat G=(K^{-2})^{s_c}\det G_B.
+ \label{pql-scalar-completion}
+\end{equation}
+Thus $G_B$ may be replaced by $\widehat G$ in
+\eqref{pql-general-log}; the extra factor is background-independent.
+
+\subsection{Actual moving-reference tangent maps}
+\label{pql-source-maps}
+
+The following construction uses the selected internal contour mean
+$P_\ell(U;y,x)$ appearing in the actual ordinary primitive average.
+Its needed properties are local analyticity, endpoint covariance,
+and arithmetic differential at the identity. No identification with
+a different axial contour convention is made.
+Use the gauge sign
+\[
+ (D_U\lambda)(e)=\lambda(e_-)
+                  -\operatorname{Ad}_{U(e)}\lambda(e_+).
+\]
+Let $r_x(U;v)$ be the left differential of $P_\ell(U;y,x)$ in the
+bond direction $v$, and define
+\begin{equation}
+ Z_Uv(y)=\ell^{-d}\sum_{x\in B_\ell(y)}r_x(U;v),\qquad
+ B_U\lambda(y)=\ell^{-d}\sum_{x\in B_\ell(y)}
+               \operatorname{Ad}_{P_\ell(U;y,x)}\lambda(x).
+ \label{pql-primitive-scalar}
+\end{equation}
+Endpoint covariance gives
+$Z_UD_U=r-B_U$. If $C_{{\rm ord},U}$ is the actual ordinary
+angle differential and
+$C_{{\rm mov},U}=C_{{\rm ord},U}-D_{M_\ell(U)}Z_U$, then
+\begin{equation}
+ C_{{\rm ord},U}=C_{{\rm mov},U}+D_{M_\ell(U)}Z_U,
+ \qquad C_{{\rm mov},U}D_U=D_{M_\ell(U)}B_U.
+ \label{pql-primitive-tangent}
+\end{equation}
+These formulas follow directly from the actual map and its selected
+contour mean; they do not modify its nonlinear constraint.
+
+Evaluate these maps at the ordinary intermediate backgrounds
+$U_j=M_\ell^j(U)$ and put
+\begin{equation}
+ \bar C=C_{{\rm mov},k-1}\cdots C_{{\rm mov},0},\qquad
+ B=B_{k-1}\cdots B_0.
+ \label{pql-composite-tangent}
+\end{equation}
+Induction in \eqref{pql-primitive-tangent} proves
+\eqref{pql-tangent-identities}; the endpoint remainder obeys
+$Z_{{\rm tot},j+1}=B_jZ_{{\rm tot},j}+Z_jC_{{\rm ord},j-1}\cdots
+C_{{\rm ord},0}$.
+Nested blocks give each fine scalar a unique parent chain. Hence
+\begin{equation}
+ B(y,x)=K^{-d}\operatorname{Ad}_{P_{\rm hier}(U;y,x)}
+       \quad(x\in B_K(y)),\qquad BB^T=K^{-d}I.
+ \label{pql-exact-scalar-normalization}
+\end{equation}
+The row supports are disjoint. Adjoint transports preserve the color
+inner product, and their bilinear complex continuations preserve the
+same identity. At flatness,
+\begin{equation}
+ B(0)=Q_{0,K},\qquad \bar C(0)=A_K^{\rm st},\qquad
+ P(0)=P_{\ker Q_{0,K}}.
+ \label{pql-flat-maps}
+\end{equation}
+The second identity follows by subtracting the two endpoint contour
+terms from the ordinary flat differential at each primitive step;
+the remaining straight-string averages compose exactly.
+
+Every map above has fixed-$K$ local coefficients. They transform
+covariantly under fine and coarse site gauges, because each defining
+contour transforms at its two endpoints. Consequently $P$ is a
+covariant scalar projection, $\widehat G$ a covariant scalar operator,
+and $Q_B$ a covariant bond operator. The scalar normalization in
+\eqref{pql-exact-scalar-normalization} is constant. Formula
+\eqref{pql-general-log} becomes
+\begin{equation}
+ \boxed{\displaystyle
+ \mathcal D=\mathcal N_0\left(
+           \log\det\widehat G-\tfrac12\log\det Q_B\right).}
+ \label{pql-covariant-pair}
+\end{equation}
+This equality still refers to the original ordinary constraint and
+its original contour/pivot normalization.
+
+\subsection{Continuation across stabilizers and flat coercivity}
+\label{pql-continuation}
+
+For $SU(N)$ the all-site injective locus is nonempty arbitrarily near
+flatness. Choose two coarse cycle holonomies $e^{i\epsilon X}$ and
+$e^{i\epsilon Y}$, with $X$ distinct diagonal and with the nonzero
+offdiagonal graph of the Hermitian matrix $Y$ connected. For small
+nonzero $\epsilon$ their common Lie centralizer is zero. Distributing
+these holonomies over their cycles gives arbitrarily small coarse
+backgrounds with injective $D_c$. If $D\lambda=0$, then
+\eqref{pql-ordinary-intertwining} implies $D_cr\lambda=0$;
+thus $r\lambda=0$, and parallel transport from one center proves
+$\lambda=0$. Injectivity is open at each finite regulator. The same
+argument works for compact semisimple groups by choosing generators
+with zero common Lie centralizer. An abelian factor requires a separate
+stabilizer treatment and is not included in this argument.
+
+At flatness block Poincare gives
+\begin{equation}
+ G_B(0)\ge cK^{-2}I,\qquad
+ \widehat G(0)\ge\min(c,1)K^{-2}I.
+ \label{pql-scalar-gap}
+\end{equation}
+Let $R_q$ be the uniform flat coarse Hessian bound and choose
+$a\ge R_q+1$. Since $qD_c=0$ at flatness,
+$C^TqC=\bar C^Tq\bar C$ there. The old-depth action dominates
+Maxwell, and therefore $Q_B(0)$ dominates
+\begin{equation}
+ d^*d+D P(0)D^*+(A_K^{\rm st})^*A_K^{\rm st}.
+ \label{pql-dominated-form}
+\end{equation}
+This form has a gap $cK^{-2}$, uniform in $M,K$ and volume.
+For a concise proof, use final physical units and decompose
+$v=t+D_\eta\phi$ with $D_\eta^*t=0$. Transverse alias Poincare
+controls $\norm{t}^2$ by $\norm{d_\eta v}^2+\norm{Qv}^2$.
+For $b=Q_0\phi$, the scalar energy-minimizing lift $H_sb$ has
+\[
+ P\Delta_\eta H_sb=0,\qquad
+ \norm{D_\eta H_sb}^2\le C\norm{d_cb}^2.
+\]
+The latter follows by retaining the central alias in
+$(\sum_r|a_r(p)|^2/P_r(p))^{-1}$; its symbol is at most
+$P_0/|a_0|^2\le C|d_c(p)|^2$. The zero mode lifts constantly.
+Block Poincare applied to $\phi-H_sb$ then gives
+\[
+ \norm{D_\eta\phi}^2
+ \le C\norm{d_cb}^2+C\norm{P\Delta_\eta\phi}^2.
+\]
+Finally $d_cb=Qv-Qt$ and $Q$ is a physical $L^2$ contraction.
+Combining these estimates and restoring counting units proves
+\begin{equation}
+ Q_B(0)\ge c_aK^{-2}I.
+ \label{pql-vector-gap}
+\end{equation}
+This proves the mean-zero gauge estimate directly; the projection
+here is not the earlier source projection onto $\Delta\ker Q_0$.
+
+The operators in \eqref{pql-covariant-pair} are invertible at
+flatness, although $D^TD$ and $D_c^TD_c$ are singular there.
+Their determinant branches are fixed by positivity. Equality on the
+nonempty injective real open set therefore extends holomorphically
+through flatness. This is a joint continuation of the finite actual
+amplitude, not a limit of its separate massless orbit factors.
+
+\subsection{The fixed-ratio local limit and its remaining scope}
+\label{pql-fixed-ratio}
+
+For fixed $K$, the moving-reference coefficients have finite range in the current background $U$. The identity and residual positivity are evaluated on the actual stationary $W$-germ, or its gauge orbit. After substitution $U=U_*(W)$, the source dependence in $W$ is generally exponential, not finite range.
+The actual classical support bounds give exponentially local
+$\mathcal H$ and its source derivatives, uniformly in old depth and
+volume. By \eqref{pql-exact-scalar-normalization},
+$P=I-K^dB^TB$ is itself local. The flat gaps permit a common
+fixed-$K$ product radius and a positive spatial exponent on which
+$\widehat G,Q_B$ have uniformly accretive real parts and bounded
+weighted resolvents. Their logarithms and local source derivatives
+then have exponentially summable kernels. This follows, for example,
+from a resolvent contour around the common positive spectrum and
+weighted conjugation; it does not assume a weighted Neumann series
+converges merely because an unweighted one does.
+
+Along any fixed jointly locally convergent classical structural
+system, compact-source determinant derivatives now pass jointly to
+the infinite-volume limit. The finite identity
+\eqref{pql-covariant-pair} identifies their total kernels with those
+of the actual leading correction before taking that limit. Vacuum
+constants are removed by $\mathcal N_0$. No uniqueness of the
+classical structural system is inferred. Covariant diagonal-density
+and affine-Maxwell consequences can be developed from this gapped
+pair separately, with their explicit source and limit conventions.
+
+The radius and weighted source constants in this paragraph may depend
+on $K$. Neither the flat gaps nor the exact identity yet prove a
+large-$K$ uniform curvature estimate, a bounded reference-comparison
+finite part, or the sign of the actual running coupling. The residual
+constraint-current term remains present unless a separate on-shell
+probe has been established.
+
+
+
+
+% No preamble. Prefix mgs-. Flat mean-zero-gauge spectral estimates.
+\section{Both flat mean-zero-gauge factors have a physical-scale gap}
+\label{mgs-section}
+
+This section proves spectral estimates for the explicit flat matrices
+of the corrected all-site gauge construction.
+The exact nonlinear determinant identity and its continuation through
+the reducible flat background are separate inputs.
+No derivative estimate for a varying-background heat trace is inferred
+from these flat bounds.
+
+\subsection{Spaces and flat operators}
+\label{mgs-spaces-section}
+
+Work in dimension \(d=4\), on a cubic current torus of side \(KN\),
+with \(K=\ell^k\) odd, final centers \(Ky\), and the disjoint centered
+cubes \(B_y\) of side \(K\).
+All scalar and bond norms are counting norms.
+Let \(D\) be the full-site scalar gradient, \(d\) the curl, and
+\(\Delta_s=D^TD\).
+Let \(Q_0\) be the normalized scalar block average, and put
+\begin{equation}
+ P=I-Q_0^T(Q_0Q_0^T)^{-1}Q_0,\qquad \Pi=I-P .
+ \label{mgs-projections}
+\end{equation}
+Thus \(P\) projects onto block-mean-zero scalars, and \(\Pi\)
+onto block-constant scalars.
+Choose a block-diagonal orthonormal frame \(V\) for \(\ker Q_0\)
+and define
+\begin{equation}
+                       G_B=V^T\Delta_sV.
+ \label{mgs-ghost}
+\end{equation}
+At \(K=1\) this scalar space is empty; its trace is zero and
+its determinant is one.
+
+The actual flat corrected composite differential is the straight
+angle average \(A=A_K\). It obeys
+\begin{equation}
+ AD=D_cQ_0,\qquad \|A\|_{2\to2}\le K^{-1}.
+ \label{mgs-average}
+\end{equation}
+Here \(D_c\) is the coarse scalar gradient.
+The estimate is for this corrected differential; it is not
+asserted for the full ordinary unprojected constraint.
+
+Let \(L=q_M\) and \(q=q_{MK}\) be the actual flat classical
+Hessians. The established homogeneous inputs are
+\begin{equation}
+ L\ge d^Td,\qquad LD=0,\qquad 0\le q\le R_qI,
+ \label{mgs-classical-inputs}
+\end{equation}
+uniformly in old depth \(M\), endpoint \(K\), and volume.
+Choose a fixed \(a\ge R_q+1\), and set
+\begin{equation}
+ Q_B=L-A^TqA+DPD^T+aA^TA.
+ \label{mgs-vector}
+\end{equation}
+Its energy satisfies
+\begin{equation}
+ \langle x,Q_Bx\rangle
+ \ge \|dx\|^2+\|PD^Tx\|^2+\|Ax\|^2.
+ \label{mgs-energy-lower}
+\end{equation}
+Matching these matrices to the nonlinear bridge uses only its
+flat identifications \(B(1)=Q_0\) and \(\widehat C(1)=A_K\).
+
+\subsection{Scalar Poincare and a block-mean harmonic lift}
+\label{mgs-scalar-section}
+
+If \(Q_0\psi=0\), the Neumann cube Poincare inequality, summed
+over the blocks, gives
+\begin{equation}
+ \|\psi\|^2\le C_PK^2\|D\psi\|^2,\qquad C_P=1.
+ \label{mgs-poincare}
+\end{equation}
+Indeed the first nonzero cube eigenvalue is
+\(4\sin^2(\pi/(2K))\ge4/K^2\), and cube-internal edges
+are a subset of all edges.
+The case \(K=1\) is vacuous.
+In particular,
+\begin{equation}
+                         G_B\ge C_P^{-1}K^{-2}I.
+ \label{mgs-ghost-gap}
+\end{equation}
+
+For a coarse scalar \(b\), let \(H_b\) minimize
+\(\|D\phi\|^2\) subject to \(Q_0\phi=b\).
+The constraint is onto and fixes the constant nullspace, so the
+finite minimizer exists uniquely. Its Euler equation is
+\(P\Delta_sH_b=0\).
+Moreover,
+\begin{equation}
+ \|DH_b\|^2\le C_{\rm lift}K^2\|D_cb\|^2,\qquad
+ C_{\rm lift}=\frac{\pi^2}{4}\left(\frac\pi2\right)^8.
+ \label{mgs-harmonic-upper}
+\end{equation}
+To verify the normalization, lift a coarse frequency
+\(p\in[-\pi,\pi]^4\) to the central fine frequency \(p/K\).
+The scalar average has multiplier, up to a unit phase,
+\[
+ a_0(p)=\prod_{\mu=1}^4
+      \frac{\sin(p_\mu/2)}{K\sin(p_\mu/(2K))},
+ \qquad |a_0(p)|\ge(2/\pi)^4.
+\]
+Divide the lifted amplitude by \(a_0\).
+The fine difference obeys
+\[
+ |e^{ip_\mu/K}-1|
+       \le\frac{\pi}{2K}|e^{ip_\mu}-1|.
+\]
+Counting Parseval multiplies the fine squared amplitude by
+\(K^4\), relative to its coarse counterpart, proving
+\eqref{mgs-harmonic-upper}.
+The zero mode is constant and has zero energy.
+All selected frequencies are legitimate on the \(KN\)-periodic
+torus. For real data one may take the real part of a complex
+feasible lift; this preserves the constraint and does not
+increase energy, including at coarse Nyquist frequencies.
+
+For arbitrary \(\phi\), put \(b=Q_0\phi\) and
+\(\psi=\phi-H_b\). Then
+\[
+ Q_0\psi=0,\qquad
+ P\Delta_s\psi=P\Delta_s\phi=:g,\qquad
+ \|D\psi\|^2=\langle\psi,g\rangle.
+\]
+Equation \eqref{mgs-poincare} therefore gives
+\(\|D\psi\|\le\sqrt{C_P}K\|g\|\), and hence
+\begin{equation}
+ \|D\phi\|^2
+ \le 2C_PK^2\|P\Delta_s\phi\|^2
+           +2C_{\rm lift}K^2\|D_cQ_0\phi\|^2.
+ \label{mgs-scalar-control}
+\end{equation}
+
+\subsection{The full vector gap}
+\label{mgs-gap-section}
+
+\begin{theorem}[Uniform flat mean-zero-gauge coercivity]
+\label{mgs-gap-theorem}
+There is a constant \(C_{\rm gap}\), independent of \(M,K,N\),
+such that
+\begin{equation}
+ \|x\|^2\le C_{\rm gap}K^2
+       \{\|dx\|^2+\|PD^Tx\|^2+\|Ax\|^2\},
+ \qquad
+ Q_B\ge C_{\rm gap}^{-1}K^{-2}I .
+ \label{mgs-vector-gap}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Use the orthogonal periodic Hodge decomposition
+\(x=x_T+D\phi\), where \(D^Tx_T=0\).
+Harmonic one-forms are included in \(x_T\).
+The previously proved transverse alias estimate is
+\begin{equation}
+ \|x_T\|^2\le K^2
+       \{A_0\|P_cAx_T\|^2+B_0\|dx_T\|^2\},
+ \quad
+ A_0=2c_\omega^{-2},\quad
+ B_0=(1+2c_\omega^{-2})/4,\quad c_\omega=(2/\pi)^5.
+ \label{mgs-transverse}
+\end{equation}
+It is a Maxwell/averaging inequality, includes zero momentum,
+and has no old-depth dependence.
+
+By \eqref{mgs-average},
+\[
+ P_cAx_T=P_cAx,\qquad
+ \|D_cQ_0\phi\|^2
+ \le2\|Ax\|^2+2K^{-2}\|x_T\|^2.
+\]
+Also \(P\Delta_s\phi=PD^Tx\) and \(dx_T=dx\).
+Insert these identities in \eqref{mgs-scalar-control},
+then add \(\|x_T\|^2\) and apply \eqref{mgs-transverse}.
+A valid constant is
+\begin{equation}
+ C_{\rm gap}=
+ \max\{(1+4C_{\rm lift})B_0,\ 2C_P,\
+               (1+4C_{\rm lift})A_0+4C_{\rm lift}\}.
+ \label{mgs-gap-constant}
+\end{equation}
+This proves the first inequality in \eqref{mgs-vector-gap};
+\eqref{mgs-energy-lower} proves the second.
+\end{proof}
+
+No point-pinned scalar gap or inverse of a globally based scalar
+matrix occurs in this argument.
+
+\subsection{A local tent lift controls the full bond Laplacian}
+\label{mgs-tent-section}
+
+\begin{lemma}[Block-constant scalar lifting]
+\label{mgs-tent-lemma}
+There is a block-local map \(E:\operatorname{ran}\Pi\to
+\{\text{all scalar sites}\}\) such that
+\begin{equation}
+ \Pi E=I,\qquad \|E\|\le C_0,\qquad
+ \|DE\|\le C_1/K,\qquad
+ C_0=2^{d/2},\quad C_1^2=80d\,2^{d-1}.
+ \label{mgs-tent-bounds}
+\end{equation}
+These bounds include all periodic multiplicities.
+\end{lemma}
+
+\begin{proof}
+For \(K=2h+1\ge3\), put
+\[
+ f(r)=\frac K{h+1}\left(1-\frac{|r|}{h+1}\right),
+ \qquad -h\le r\le h.
+\]
+Its average is one, its mean square is at most two, and its
+endpoint value and adjacent differences are at most \(4/K\).
+If \(e\) equals \(c_y\) on \(B_y\), define
+\[
+ (Ee)(Ky+r)=c_y\prod_{\mu=1}^d f(r_\mu).
+\]
+The block mean is \(c_y\), and tensorization gives the stated
+norm bound. For a fixed direction, internal edges contribute
+at most
+\(16\,2^{d-1}K^{d-2}\sum_y|c_y|^2\)
+to the squared gradient norm.
+Interfaces contribute at most
+\(64\,2^{d-1}K^{d-3}\sum_y|c_y|^2\), because
+\(\sum_y|c_{y+e_\mu}-c_y|^2\le4\sum_y|c_y|^2\).
+Divide by
+\(\|e\|^2=K^d\sum_y|c_y|^2\) and sum directions.
+The same estimates count the repeated periodic interfaces when
+\(N=1\) or \(2\).
+For \(K=1\), take \(E=I\); the conservative constants still apply.
+\end{proof}
+
+For a bond field \(x\) and \(e\in\operatorname{ran}\Pi\),
+the equality \(Ee-e\in\operatorname{ran}P\) gives
+\[
+ \langle\Pi D^Tx,e\rangle
+  =\langle x,DEe\rangle-\langle PD^Tx,Ee-e\rangle.
+\]
+Thus
+\begin{equation}
+ \|\Pi D^Tx\|
+ \le\frac{C_1}{K}\|x\|+(C_0+1)\|PD^Tx\|.
+ \label{mgs-duality}
+\end{equation}
+This step uses only a local lifting and duality.
+
+The full bond Laplacian satisfies
+\(\langle x,\Delta_1x\rangle=\|dx\|^2+\|D^Tx\|^2\).
+Combining \eqref{mgs-duality},
+\eqref{mgs-energy-lower}, and \eqref{mgs-vector-gap}
+proves
+\begin{equation}
+ \begin{split}
+ \Delta_1&\le C_\Delta Q_B,\qquad
+ C_\Delta=1+2(C_0+1)^2+2C_1^2C_{\rm gap},\\
+ Q_B&\ge \frac1{2C_\Delta}\Delta_1
+                         +\frac1{2C_{\rm gap}K^2}I.
+ \end{split}
+ \label{mgs-laplacian-domination}
+\end{equation}
+
+\subsection{Uniform heat density and inverse moments for both factors}
+\label{mgs-heat-section}
+
+\begin{corollary}[Flat local-gauge heat bounds]
+\label{mgs-heat-corollary}
+For either \(O=Q_B\) or \(O=G_B\),
+\begin{equation}
+ N^{-4}\operatorname{Tr}e^{-uK^2O}
+ \le C\left\{\frac{K^4}{(1+K^2u)^2}+N^{-4}\right\}e^{-cu},
+ \qquad u>0,
+ \label{mgs-heat}
+\end{equation}
+uniformly in \(M,K,N\).
+The trace for \(G_B\) is in its block-local
+\(\ker Q_0\) frame.
+In the infinite flat structural system the \(N^{-4}\) term is
+omitted. Both factors obey the inverse-moment bounds and the
+weighted final-time exponential tail of
+Theorem~\ref{pvs-main}, with \(O\) in place of its physical \(Q\).
+\end{corollary}
+
+\begin{proof}
+For \(Q_B\), apply eigenvalue min--max to
+\eqref{mgs-laplacian-domination}.
+The comparison is the full scalar lattice heat trace, with a
+fixed rescaling of time and multiplicity \(4n_{\mathfrak g}\),
+times \(e^{-cs/K^2}\).
+
+For \(G_B\), \eqref{mgs-ghost-gap} gives
+\[
+ G_B\ge\tfrac12G_B+(2C_PK^2)^{-1}I.
+\]
+The eigenvalues of the compression \(V^T\Delta_sV\)
+dominate the correspondingly indexed full scalar eigenvalues,
+by the variational principle.
+Its heat trace is therefore at most the full scalar heat trace.
+The gap supplies the same exponential factor.
+
+The scalar heat estimate and the substitution \(s=K^2u\) are
+exactly those used in Theorem~\ref{pvs-main}.
+Final-block translation invariance identifies the normalized
+total with one block trace.
+Coarse Bloch integration proves the infinite version directly.
+Mellin integration gives the stated inverse powers and tails.
+\end{proof}
+
+The basis-free scalar completion used by the analytic determinant
+bridge is
+\begin{equation}
+ \widehat G_B=P\Delta_sP+K^{-2}(I-P).
+ \label{mgs-basis-free-scalar}
+\end{equation}
+At flatness its two subspaces reduce it. Its heat density in final
+time is exactly
+\[
+ N^{-4}\operatorname{Tr}e^{-uK^2\widehat G_B}
+ =N^{-4}\operatorname{Tr}e^{-uK^2G_B}
+                        +n_{\mathfrak g}e^{-u}.
+\]
+This extra term satisfies \eqref{mgs-heat}, after decreasing \(c\):
+for \(u\le1\),
+\(K^4/(1+K^2u)^2\ge1/4\), while for \(u\ge1\) it is at least
+\(1/(4u^2)\), and \(u^2e^{-(1-c)u}\) is bounded when \(c<1\).
+The normalized inverse moment adds exactly \(n_{\mathfrak g}\),
+which is absorbed in every case of \eqref{pvs-moments}.
+Thus the actual basis-free pair \(\widehat G_B,Q_B\) has the
+same heat, inverse-moment, and final-time tail bounds.
+
+These estimates concern the explicit flat local-gauge factors.
+They do not establish uniform relative-form derivatives under an
+affine curvature source, or identify separate massless factors
+with independent continuum references.
+The exact nonlinear determinant bridge and the remaining
+large-\(K\) curvature comparison must retain their own
+hypotheses and proofs.
+
+
+
+% No preamble. Prefix cgd-. Depends on the checked covariant tangent bridge.
+\section{Actual local densities in the covariant mean-zero gauge}
+\label{cgd-section}
+
+Use the covariant tangent construction above, with all-site
+fine gauge generator \(D\), covariant scalar block average
+\(B\), corrected bond differential \(\bar C\), and
+\[
+ BB^T=K^{-4}I,\qquad
+ P=I-K^4B^TB,\qquad
+ \widehat G=P D^TD P+K^{-2}(I-P),\qquad
+ Q_B=\mathcal H+D P D^T+a\bar C^T\bar C.
+\]
+The actual finite determinant identity is
+\begin{equation}
+ D_{M,K}=\mathcal N_0
+       \left(\log\det\widehat G-\tfrac12\log\det Q_B\right).
+ \label{cgd-identity}
+\end{equation}
+Here \(\mathcal H\) is the full residual Hessian, not a
+substitution of the bare Wilson Hessian for \(S_M''\).
+The matrix \(P\) projects onto scalar fields with zero
+covariant block mean. It is not the projection onto
+fields zero at the block centers.
+
+\subsection{Gauge covariance and localized logarithms}
+\label{cgd-covariance-section}
+
+Let a fine site gauge induce orthogonal adjoint matrices
+\(O_S,O_E,O_c\) on fine scalars, fine bonds, and coarse
+scalars. The covariant tangent construction gives
+\[
+ B(U^g)=O_c B(U)O_S^T,\qquad
+ P(U^g)=O_S P(U)O_S^T,\qquad
+ \bar C(U^g)=O_{E_c}\bar C(U)O_E^T.
+\]
+Together with the exact covariance of \(D,\mathcal H\)
+this proves
+\begin{equation}
+ \widehat G(U^g)=O_S\widehat G(U)O_S^T,\qquad
+ Q_B(U^g)=O_EQ_B(U)O_E^T.
+ \label{cgd-covariance}
+\end{equation}
+These are also complex-orthogonal identities on the
+holomorphic germs. No choice of a frame for \(\ker B\)
+appears in them.
+
+Fix \(K\). The flat lower bounds for both matrices are
+\(cK^{-2}\), uniformly in old depth and volume. Their
+flat upper bounds and exponentially localized kernels,
+and their first-two source kernels after actual
+stationary substitution, are uniform in those same
+parameters at this fixed \(K\).
+The block-local scalar projection does not enlarge
+support beyond the corresponding final block; the
+bond construction has bounded range in final units.
+The old action and stationary response retain their
+established exponential source bounds.
+
+Consequently there is a complex output ball, allowed
+to depend on \(K\), on which both logarithms have
+source-rooted exponential kernels uniformly in volume
+and old depth. One direct proof is the logarithm series.
+Choose \(s_0\) larger than the flat upper spectral bound.
+At flatness \(\|I-T/s_0\|<1\), for either matrix \(T\).
+A sufficiently small exponential conjugation and
+background perturbation preserve that strict bound.
+Then
+\[
+ \log T=(\log s_0)I-
+       \sum_{n\ge1}\frac{(I-T/s_0)^n}{n}
+\]
+converges in the resulting weighted matrix algebra.
+First and second source derivatives cost at most
+polynomial factors in \(n\), absorbed by the geometric
+decay. Every source remains attached to the matrix
+product chain. Spending a smaller exponential converts
+the weighted bounds into absolute rooted sums.
+The fine fiber dimension is finite at this fixed \(K\).
+No endpoint-independent source constant is inferred
+from this argument.
+
+Group scalar sites and positive fine bonds by their
+initial final block \(x\), and define
+\begin{equation}
+ \rho_x(W)=\mathcal N_0\left\{
+  \operatorname{Tr}_{x,S}\log\widehat G(W)
+       -\tfrac12\operatorname{Tr}_{x,E}\log Q_B(W)\right\}.
+ \label{cgd-density}
+\end{equation}
+The finite sum is \(D_{M,K}\). Each diagonal color
+trace is individually gauge invariant by
+\eqref{cgd-covariance}. The actual stationary branch
+under an output gauge changes by a fine gauge; its
+root-gauge convention therefore does not change these
+traces. Along the chosen jointly locally convergent structural
+system, these densities have local infinite limits
+and absolutely summable polynomial source moments,
+without introducing a globally based scalar inverse.
+
+In particular, each of the two new factors separately
+has zero thermodynamic quadratic response to a
+constant commuting connection, at fixed \(K\).
+Apply its local Ward identity to a linear scalar
+parameter and pass the absolutely summable Hessian
+row sum. Thus the growing constant-connection terms
+of the globally based physical quotient have
+already canceled in the exact change of variables;
+they are not discarded by a subsequent limit.
+
+\subsection{Matching the actual Maxwell coefficient}
+\label{cgd-Maxwell-section}
+
+\begin{proposition}[Local density and actual affine coefficient]
+\label{cgd-density-theorem}
+In every joint infinite structural system at fixed \(K\),
+the density in \eqref{cgd-density} satisfies
+\begin{equation}
+ \beta(D_{M,K})=
+    2[t^2]\rho_0\bigl(w_\mu(n)=t n_\nu H\bigr),
+ \qquad \mu\ne\nu,\quad\tau(H^2)=1.
+ \label{cgd-Maxwell}
+\end{equation}
+The polynomial substitution uses the first two localized
+Taylor kernels. It is not an evaluation of a bounded-field
+analytic map at a nonzero unbounded connection.
+\end{proposition}
+
+\begin{proof}
+The linear color jet of each invariant density is zero
+for the semisimple color algebra. Its quadratic Ward
+identity kills gradients in either slot. Exponential
+source moments extend the identity to linear scalar
+parameters, so its row and column sums vanish for
+each fixed bond component. Write \(k_0(b,c)\) for that
+density's Hessian on the chosen component and color.
+Then
+\[
+ [t^2]\rho_0(t n_\nu H)
+   =\frac12\sum_{b,c}k_0(b,c)b_\nu c_\nu
+   =-\frac14\sum_{b,c}k_0(b,c)(b_\nu-c_\nu)^2.
+\]
+All sums are absolute. Translation covariance and
+reanchoring identify the last expression with
+\(-\frac14\sum_r r_\nu^2\mathcal K_{\mu\mu}(0,r)\),
+where \(\mathcal K\) is the actual total Hessian
+kernel. Its Maxwell moment is
+\(-\frac12\sum_r r_\nu^2\mathcal K_{\mu\mu}(0,r)\).
+This proves \eqref{cgd-Maxwell}.
+\end{proof}
+
+The actual stationary polynomial jets on this probe
+are the commuting affine fine connection established
+in Notebook 33. All gauge-covariant matrices may
+therefore be computed in that representative.
+The full effective classical Hessian and the
+covariant averaging operators remain in \(Q_B\);
+the formula does not replace their curvature
+derivatives by a continuum operator.
+
+\subsection{A coupled heat representation with the physical flat scale}
+\label{cgd-heat-section}
+
+Let \(\widehat G(t),Q_B(t)\) denote the actual affine
+jets just specified, and set
+\begin{equation}
+ h^{\rm mean}_{M,K}(s)
+  =[t^2]\left\{
+    \operatorname{Tr}_{0,E}e^{-sQ_B(t)}
+             -2\operatorname{Tr}_{0,S}e^{-s\widehat G(t)}
+         \right\}.
+ \label{cgd-heat-coefficient}
+\end{equation}
+The fixed-\(K\) logarithm/resolvent identities, or
+ordered Duhamel with the localized first-two vertices,
+give the exact representation
+\begin{equation}
+ \boxed{\displaystyle
+     \beta(D_{M,K})=
+        \int_0^\infty h^{\rm mean}_{M,K}(s)\,\frac{ds}{s}.}
+ \label{cgd-heat-identity}
+\end{equation}
+There is no additional coarse determinant in this
+covariant choice: \(BB^T=K^{-4}I\), and the added
+scalar complement in \(\widehat G\) contributes only
+a background-independent determinant.
+
+For precision, this is a fixed-\(K\) identity on
+localized Taylor kernels. The spectral gaps,
+exponential weighted kernels and finite polynomial
+vertices control the first-two Duhamel coefficients
+by an integrable small-time and exponentially
+decaying large-time envelope. Its constants may
+depend on \(K\). This justifies the logarithm
+integral, polynomial source substitution and local
+limit; it does not give a uniform curvature
+estimate as \(K\) grows.
+
+The new scalar and vector factors both have flat
+spectral scale \(K^{-2}\). The point-pinned ghost
+coefficient \(4\alpha_g\log K+O(1)\) of Notebook 34
+belongs to a different exact determinant splitting
+and must not be assigned to \(\widehat G\).
+The sum in \eqref{cgd-heat-identity} is the same
+actual coefficient. Its endpoint-uniform magnetic
+comparison remains to be proved in these new,
+local, gauge-covariant variables.
+
+
+\section{The remaining comparison}
+
+Notebook 34 proves the complete based-ghost Maxwell
+contribution \(4\alpha_g\log K+O(1)\) and the full
+actual ultraviolet bound. In its original local
+gauge choice, the remaining vector coefficient
+must be \(18\alpha_g\log K+O(1)\) to obtain the
+specified continuum coefficient
+\(22\alpha_g\log K+O(1)\).
+
+The physical quotient remains an exact finite
+identity. Its separate massless factors cannot be
+replaced by independently regulated determinants:
+the constant-connection calculation gives an
+explicit noncommutation and the compensation
+that such a replacement would discard.
+
+The new covariant block-mean representation resolves
+that infrared issue algebraically. It is an exact
+identity for the actual finite amplitude, followed
+by a common local analytic continuation and a
+fixed-\(K\) local limit. Both factors have the
+physical flat spectral scale, and their diagonal
+densities have individual gauge identities.
+No separately singular globally based factor
+remains in the new heat formula.
+
+The next estimate is the uniform large-\(K\)
+magnetic comparison for this actual pair. The
+flat heat bounds do not by themselves bound
+its curvature insertions. The earlier point-pinned
+ghost coefficient belongs to the old splitting;
+the new scalar coefficient must be computed
+with its covariant mean projection retained.
+The required total is still
+\(22\alpha_g\log K+O(1)\), uniformly in preceding
+depth and the required structural systems.
+
+A positive actual block drift would activate the
+finite transfer and tuning results of Notebook 32.
+Full Yang--Mills existence also requires the
+measure matching, mixed and large-field histories,
+sourced continuum limits, nontriviality, Euclidean
+covariance, positivity and reconstruction in the
+construction notebook. Those requirements remain
+part of the same objective.
+
+\begin{thebibliography}{9}
+\bibitem{priorir}
+\emph{Toward a four-dimensional Yang--Mills construction},
+Notebooks 32--34 in this workspace.
+\bibitem{sourceir}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}
+{Yang--Mills-LLM-experiment}, deposited accounts pinned at
+commit \texttt{e392ef4501\allowbreak 3a581664ba\allowbreak b76b908671\allowbreak 70b30fe10e}.
+\end{thebibliography}
+\end{document}

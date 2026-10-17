@@ -1,0 +1,215 @@
+\section{A normalized conditional Wilson tail in a fixed box}
+\label{fbw:section}
+
+This section controls the entire compact Wilson integral for a fixed
+box with small boundary data. The constants depend on the box. It
+does not identify this box gauge with the nonlinear constrained
+coordinates of the homogeneous renormalization step.
+
+Fix a cubical lattice box \(\Omega=\{0,\ldots,R\}^d\), \(d=4\),
+\(R\geq2\), with its full cubical cell structure. Let \(E_\partial\)
+be the edges in its topological boundary and \(E_\circ\) the remaining
+edges. The boundary edge graph is connected. Fix
+\(G=SU(N)\), with faithful normalized trace \(\tau=\operatorname{Tr}/N\),
+and put
+\[
+ h(U)=1-\operatorname{Re}\tau(U)
+     =\tfrac12\norm{U-I}_\tau^2,\qquad
+ S_V(U)=\sum_{p\subset\Omega}h(U_p).
+\]
+Boundary edge variables \(V\in G^{E_\partial}\) are prescribed.
+All remaining edges have normalized Haar measure. Gauge transformations
+are fixed to the identity at every boundary vertex.
+
+Choose a spanning forest \(\mathcal F\) of the full vertex set with
+exactly one boundary vertex in every component, and all interior
+vertices included. Its edges lie in \(E_\circ\). Such a forest exists:
+start with a spanning tree of the connected boundary graph, extend
+it to a spanning tree of the whole graph, and remove its boundary
+tree edges. There is a unique allowed gauge transformation making
+every forest edge the identity. Write \(y\in\mathcal Y=G^{E_\circ
+\setminus\mathcal F}\) for the remaining edge variables in that gauge.
+The number of real coordinates is
+\[
+ n=(\dim G)\,|E_\circ\setminus\mathcal F|.
+\]
+For this box \(n>0\). Fix an orthonormal real Lie algebra basis and
+write \(y=\exp(ix)\) componentwise on a neighborhood of the identity.
+Here \(\norm{x}_\infty=\max_e\norm{x_e}_\tau\) uses the
+adjoint-invariant Lie algebra norm on each edge.
+
+\begin{theorem}[Full conditional tail at fixed geometry]
+\label{fbw:theorem}
+There are a neighborhood \(\mathcal V\) of the identity boundary
+configuration, constants \(g_0,r,c,C>0\), and a real analytic
+function \(x_*(V)\) on \(\mathcal V\), with \(x_*(I)=0\), such that
+the following holds. The forest-gauge action has the unique global
+minimum \(y_*(V)=\exp(ix_*(V))\). For
+\(0<g\leq g_0\) and \(1\leq T\leq r/g\), its normalized Wilson
+measure satisfies
+\begin{equation}
+ \frac{\displaystyle
+    \int_{\mathcal Y\setminus W_{V,g,T}}
+           e^{-S_V(y)/g^2}\,dy}
+      {\displaystyle\int_{\mathcal Y}e^{-S_V(y)/g^2}\,dy}
+ \leq C e^{-cT^2},
+ \qquad
+ W_{V,g,T}=\{\exp(ix):\norm{x-x_*(V)}_\infty\leq gT\}.
+ \label{fbw:tail}
+\end{equation}
+The displayed window is contained in a single fixed exponential
+coordinate neighborhood. The same ratio is the probability of the
+corresponding gauge-fixed event under the original, ungauged box
+Wilson measure.
+\end{theorem}
+
+\begin{proof}
+We give the global normalization argument, including the gauge and
+topological points.
+
+\emph{Exact forest gauge.}
+Orient each forest component away from its boundary root. Recursively
+solving the transformation equation along its edges gives the unique
+interior gauge values. Changing from the original forest edge variables
+to these gauge values is triangular; each step is a left or right
+translation, or inversion, on \(G\), hence preserves normalized Haar
+measure. For fixed gauge values the other edge transformations preserve
+Haar independently. The change of variables is therefore an exact
+product-Haar identity. A gauge-invariant action and an event defined
+through the unique forest representative are independent of the
+interior gauge variables. Their integrals over those variables equal
+one. No determinant or volume factor is discarded. Boundary edges
+are unchanged even when \(V\ne I\); this is why a forest rooted at
+all boundary vertices is used.
+
+\emph{The unique zero and its Hessian.}
+At \(V=I\), zero action means every plaquette holonomy is \(I\).
+The cubical box is simply connected, so a flat edge field is a pure
+gauge: parallel transport from a fixed vertex is independent of the
+path, since elementary plaquette moves generate all path homotopies.
+Identity boundary edges force the vertex gauge to be constant on the
+connected boundary; normalize that constant to \(I\). The field
+thus has an allowed gauge transformation to the identity. Uniqueness
+of the forest representative gives \(y=I\). Consequently the
+continuous nonnegative function \(S_I\) has exactly one zero on the
+compact space \(\mathcal Y\).
+
+For a Lie algebra edge field \(a\), zero on boundary and forest edges,
+the quadratic part is
+\[
+ \tfrac12\sum_{p\subset\Omega}\norm{(da)_p}_\tau^2.
+\]
+If it vanishes, the elementary cellular Poincare lemma on a box gives
+\(a=d\phi\). Boundary connectedness lets us choose \(\phi=0\) at
+every boundary vertex. Vanishing on each forest edge then gives
+\(\phi=0\) at every vertex. Hence \(a=0\). The Hessian in the \(n\)
+remaining coordinates is positive definite. This is a finite
+dimensional assertion; no uniform lower eigenvalue as \(R\) varies
+is asserted.
+
+\emph{Uniform local well and global gap.}
+The analytic implicit-function theorem supplies a critical point
+\(x_*(V)\) near zero for \(V\) close to \(I\). Choose a coordinate
+ball about zero on which the Hessian at all such \(V\) is uniformly
+positive. On a smaller fixed ball about \(x_*(V)\), Taylor's theorem
+gives constants \(c_0,C_0>0\) with
+\begin{equation}
+ c_0|x-x_*(V)|^2\leq S_V(\exp(ix))-S_V(y_*(V))
+       \leq C_0|x-x_*(V)|^2.
+ \label{fbw:quadratic}
+\end{equation}
+The balls can be chosen uniformly after shrinking \(\mathcal V\).
+To see a global gap, first choose a still smaller ball about zero.
+On the compact complement its \(V=I\) action has a strictly positive
+minimum. Uniform continuity of \(S_V\), and \(S_V(y_*(V))\to0\),
+preserve half this gap for sufficiently small boundary data.
+Together with strict convexity on the coordinate ball this proves
+uniqueness of the global minimum and yields a fixed chart region
+\(\mathcal U\subset\mathcal Y\) and \(\eta>0\) for which
+\begin{equation}
+ S_V(y)\geq S_V(y_*(V))+\eta\quad(y\notin\mathcal U).
+ \label{fbw:gap}
+\end{equation}
+Choose \(\mathcal U\) small enough that the lower quadratic bound in
+\eqref{fbw:quadratic} holds on all of it, and large enough that a
+fixed ball about every \(x_*(V)\) lies in it. These choices are
+compatible by first making the convexity ball larger than the
+compact-complement ball and then shrinking \(\mathcal V\).
+The product Haar coordinate density on its closure is bounded above
+and below by positive constants.
+
+\emph{Denominator and local numerator.}
+Writing \(S_{\min}=S_V(y_*(V))\), integrate over the coordinate
+ball \(|x-x_*|\leq g\), reducing \(g_0\) as needed:
+\begin{equation}
+ Z_V(g)\geq c_1 g^n e^{-S_{\min}/g^2}.
+ \label{fbw:denominator}
+\end{equation}
+Within \(\mathcal U\), the complement of the window forces
+\(|x-x_*|\geq gT\). The lower quadratic bound and the upper Haar
+density bound give, for \(T\geq1\),
+\begin{align}
+ \int_{\mathcal U\setminus W_{V,g,T}}e^{-S_V/g^2}\,dy
+ &\leq C_1 e^{-S_{\min}/g^2}
+       \int_{|z|\geq gT}e^{-c_0|z|^2/g^2}\,dz \notag\\
+ &\leq C_2 g^n e^{-S_{\min}/g^2}e^{-c_2T^2}.
+ \label{fbw:localnumerator}
+\end{align}
+The elementary Gaussian tail estimate absorbs its finite dimensional
+polynomial factor by reducing \(c_2>0\).
+
+\emph{The rest of the compact group integral.}
+The remaining numerator is at most
+\(e^{-(S_{\min}+\eta)/g^2}\), since product Haar mass is one.
+After \eqref{fbw:denominator} its contribution is at most
+\(C_3g^{-n}e^{-\eta/g^2}\). Since
+\[
+ \sup_{0<g\leq g_0}g^{-n}e^{-\eta/(2g^2)}<\infty,
+\]
+and \(T\leq r/g\), choosing \(r\) small and
+\(c\leq \min\{c_2,\eta/(2r^2)\}\) bounds this contribution by
+\(C_4e^{-cT^2}\). Reduce \(r\) also to keep the entire sup-norm
+window inside the coordinate chart. Combining the two numerators
+with the denominator proves \eqref{fbw:tail}.
+\end{proof}
+
+\begin{corollary}[Logarithmic windows]
+\label{fbw:logwindow}
+For fixed \(a>1/2\), take \(T(g)=(\log(1/g))^a\). For every
+\(m>0\) there are \(g_m,C_m>0\) such that
+\[
+ \mu_{V,g}(\mathcal Y\setminus W_{V,g,T(g)})\leq C_m g^m
+ \quad(0<g\leq g_m,\ V\in\mathcal V).
+\]
+\end{corollary}
+\begin{proof}
+Here \(gT(g)\to0\) and \(T(g)^2/\log(1/g)\to\infty\).
+Apply \eqref{fbw:tail}.
+\end{proof}
+
+\paragraph{Conditional interpretation.}
+Embed the box in a larger lattice without local periodic
+identifications. A plaquette containing an edge of \(E_\circ\)
+lies entirely inside the box: an edge not in the boundary has all
+its transverse coordinates strictly inside the corresponding
+intervals. Thus, after the exterior and boundary edges are fixed,
+the part of the bare Wilson action depending on the integrated edges
+is exactly \(S_V\), up to an additive constant. Such constants cancel
+in the normalized law. The theorem is therefore a statement about
+the actual conditional bare Wilson measure whenever its boundary
+field belongs to \(\mathcal V\). A prescribed boundary gauge
+transformation bringing the data into \(\mathcal V\) also permits
+the theorem after transforming the event consistently.
+
+\paragraph{The precise interface left open.}
+This result controls a fixed-box forest-coordinate window about
+the unconstrained conditional minimizer. It does not control an
+arbitrary boundary field, a box growing with the cutoff, a
+nonlinear coarse-average fiber, or a mixed-history effective action
+whose global stability has not been proved. In particular an
+unconditional probability bound cannot simply be conditioned on a
+coarse-map value with no lower bound for the corresponding fiber
+normalization. The powers \(g^n\) cancel here because both integrals
+are estimated in the same compact conditional model. Extending
+that cancellation to the actual constrained local map is a
+remaining analytic task.

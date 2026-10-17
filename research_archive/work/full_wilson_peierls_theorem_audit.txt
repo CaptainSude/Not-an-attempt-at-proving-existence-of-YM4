@@ -1,0 +1,47 @@
+Independent theorem audit: full Wilson Peierls bounds
+17 October 2026. PASS; no output edits or compilation.
+
+Read work/full_wilson_large_field_peierls_research.txt in full and checked
+work/full_wilson_peierls_fragment.tex for fidelity, particularly the actual
+site-plane link gluing and the sequential Schatten argument.
+
+1. A coordinate site plane cuts no nearest-neighbor plaquette across its
+two strict sides. Conditional tangential boundary links are the correct
+boundary data. Every transverse/touching link belongs to one closed slab;
+plaquettes entirely in a boundary receive the two half weights. The
+boundary Haar integrations reconstruct the full original Wilson integral
+with no gauge-volume normalization. Equal site-plane boundary spaces
+are identified by integer translation, including the minimum period6.
+
+2. K_f is Hilbert--Schmidt on the compact boundary group. Reflection plus
+orientation inversion gives K_f^*=K_(theta conjugate f). For p=2m,
+Schatten Holder produces Tr((K_f^*K_f)^(p/2))^(1/p), precisely the p-slab
+alternating reflection dissemination on the original torus. Subsequent
+coordinate applications are to full Wilson integrals again; strict cell
+interiors remain interior after prior orthogonal reflections. Thus the
+successive factors have exponent product_i(1/(2m_i))=1/N_c. Intersections
+of walls create no additional corner normalization. No power-of-two
+cell-count assumption is used; evenness is sufficient.
+
+3. The full partition lower bound has exactly E=dV Haar balls and
+P=choose(d,2)V plaquettes. Unitary telescoping gives norm U_p-I<=4g,
+energy<=8g^2. Hence Z>=(c_G g^dimG)^(dV)e^(-8P), which gives the stated
+b^d[d dimG log(1/g)+C_Gd] entropy term after the 1/N_c root. On fully
+disseminated bad events, one DISTINCT interior plaquette per cell gives
+energy>=N_c delta^2. The full normalized chessboard denominator is Z,
+not an unrelated small-field partition function. All exponents check.
+
+4. The finite residue/orientation coloring has Q_b=b^d choose(d,2).
+The chosen shift places every selected plaquette at coordinates1/2,
+strictly inside for b>=3. A fixed color gives distinct cells. The fixed
+loss1/Q_b and DFS cluster counts are valid also under periodic graph
+identifications; the stated safe plaquette degree is sufficient.
+
+5. Scope is honest: fixed b, positive bare Wilson measure, prescribed
+curvature events. No claimed retained-window implication, complex-source
+estimate, arbitrary-boundary estimate, or volume-independent all-good
+mass. The Haar link marginal and nontrivial flat torus holonomy examples
+correctly rule out tempting stronger conclusions.
+
+The fragment faithfully reproduces these arguments. No mathematical
+correction requested.

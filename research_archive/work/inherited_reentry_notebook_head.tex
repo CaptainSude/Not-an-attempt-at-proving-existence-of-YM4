@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 24: inherited interactions and the next-step norm test}
+\author{Research working document}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We separate an inherited analytic quantum correction into its
+stationary-background value and its fluctuation increment in
+the actual ordinary pivot chart. Directional Cauchy bounds the
+increment by a factor of order $gR$ divided by the available
+analytic margin, without a carrier-size derivative loss.
+The exact pivot incidence confines its projected support to
+the original blocks and their relevant endpoint neighbors.
+Connected-carrier compression then yields an explicit
+sufficient inequality for the stronger interaction norm
+required by the next Gaussian integration. Under that
+inequality and the existing covariance hypotheses, the
+inherited contribution to the connected logarithm has the
+same small factor. The inequality is not yet verified for
+the actual output decay constants as the block side varies.
+This result makes that parameter test, and the independent
+domain-stability problem, explicit.
+\end{abstract}
+
+Notebooks 21--23 provide the classical-reference integral,
+stationary-background transport, and local gauge covariance.
+The following argument treats the additional interactions
+produced by earlier integrations. It keeps their full
+background term outside the integral and controls the
+remaining fluctuation effect under a displayed norm budget.
+

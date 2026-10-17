@@ -1,0 +1,107 @@
+NOTEBOOK 38: ROOT MATHEMATICAL AND ASSEMBLY AUDIT
+17 October 2026.
+
+Files read in full:
+positive_finite_measure_embedding_research.txt (full fragment includes
+the ending/raw vacuum section truncated in one initial tool display);
+full_wilson_positive_split_fragment.tex;
+full_wilson_large_field_peierls_research.txt;
+full_wilson_peierls_fragment.tex;
+full_measure_large_field_interface_research.txt;
+full_measure_geometric_interface_fragment.tex (middle reread separately).
+Root authored and self-checked fixed_box_wilson_tail_fragment.tex and
+full_measure_box_bridge_fragment.tex; provenance independently audited
+both. Rotation independently checked the combined probability argument.
+
+POSITIVE EMBEDDING
+The global completion uses the original local mean/reference and a
+covariant reference-string fallback. It specifies a new global coarse
+observable of the original Wilson measure, not an unverified analytic
+continuation of the full action. Compact orbit normalization is exact.
+For invariant inputs the gauged sector has the same coarse pushforward.
+Local pivot coarea then gives domination, without falsely asserting
+that the gauged density is pointwise below the original density.
+
+The normalized output-orbit average is positive and dominated by the
+invariant Haar-ac density of the true pushforward. This uses orbitwise
+domination BEFORE dividing by m_theta. No lower bound on m_theta is
+needed for this finite measure argument. Haar-ac projection is positive
+linear, so singular histories stay in the positive remainder. Histories
+expand exactly and preserve raw mass/numerators. No locality or smallness
+of those remainders is inferred.
+
+Root challenged whether the literal retained window obeyed Ward
+identities. Verified the exact source:
+common_domain_macrostep_research.md, lines319--329; centered branch
+covariance and relative-chart source-endpoint adjoints preserve the
+product of invariant color BALLS. These are not arbitrary scalar boxes.
+The final fps fragment reproduces that real-window argument and requires
+extras to be absent or covariant. The finite orbit-overlap proof then
+legitimately preserves the local germ, after graph-dependent shrink.
+Literal positive-g input containment is separate and explicit.
+The homogeneous formula requires gamma_j=g_j^-2; this was added.
+Vacuum and extraction signs checked.
+
+BARE WILSON PEIERLS
+Site planes cut no plaquette across both strict sides. Tangential
+boundary link Haar variables are glued once, boundary plaquette action
+is assigned in halves. Bounded compact kernels are Hilbert--Schmidt;
+Schatten p with p=2m gives alternating reflected copies on the original
+torus. Sequential orthogonal gluing yields the cell inequality.
+The full partition lower bound has the correct factors:
+Z >= (c_G g^dimG)^(dV) exp[-8 binom(d,2)V].
+Dissemination creates N_c DISTINCT bad plaquettes, hence its energy
+cost N_c delta^2. Division and the 1/N_c root give the stated b^d
+entropy. Q_b=b^d binom(d,2) coloring and connected-set counts check.
+This is not product-measure stochastic domination or all-good probability.
+
+FIXED BOX
+For nonidentity boundary data the correct gauge is a forest rooted at
+EVERY boundary vertex, not a full-tree gauge fixing the boundary. The
+boundary spanning tree union this forest is used only after the separate
+boundary gauge in the combined theorem. Haar gauge volume is exactly1.
+At identity boundary, flatness+simple connectivity gives the unique
+forest representative; curl-free+zero forest/boundary gives SPD Hessian.
+IFT and the compact global gap yield the true unique global minimum.
+Denominator c g^n e^-Smin/g^2 cancels the local numerator's g^n.
+The outer compact contribution g^-n e^-eta/g^2 is exponentially bounded
+for 1<=T<=r/g. Constants depend on fixed box geometry.
+
+BOUNDARY BRIDGE
+The cubical boundary in d4 is S3; its two-skeleton has trivial pi1.
+Finite fundamental-loop fillings give boundary-only gauge control.
+h<epsilon_R^2 gives norm<sqrt2 epsilon_R, as used.
+Use Ad-invariant edge-max Lie norms, not scalar-coordinate max, for
+gauge-invariant defects. Unique minimizer and principal logs are
+equivariant. Conditional laws factor for vertex-disjoint boxes.
+Boundary-bad probabilities use prescribed distinct plaquettes and
+N_boundary=24R^3 choices. Expand boundary-bad/interior-tail alternatives:
+[C exp(-cT^2)+N_boundary z_b(g,epsilon_R)^(1/Q_b)]^m.
+No independent boundary law is assumed.
+
+GEOMETRIC INTERFACE
+Coordinate-tree exchange count sum_(nu>mu)x_nu is correct, nonabelian
+conjugations do not affect the unitary norm. Physical A bound scales
+as ell epsilon/eta^2. The alternating Cartan curvature example has
+plaquettes O(eta^2 f), while adjacent curvature NORMS have a fixed
+physical jump. A uniformly bounded C1alpha potential would force
+O(eta^alpha) jumps, so no such gauge exists. This does not disprove a
+C1 bound alone. Flat torus holonomies are retained as separate data.
+Coupling-ratio comparison follows directly from bounded increments.
+
+Primary CMP122-II first page independently reopened by root: Theorem1
+has the weak-effective-coupling hypothesis and refers to CMP119 §2.
+It explicitly distinguishes subsequent physical-observable analysis.
+Provenance checked precise class locations including CMP119 (2.38).
+No unverified OCR constants are imported.
+
+ASSEMBLY
+Seven fragments assembled by work/build_full_measure_bridge.ps1.
+Output outputs/ym4-full-measure-bridge/main.tex: 71,400 bytes;
+85 labels,39 references, zero duplicates/missing/control characters.
+Desktop compiler: SUCCESS for Notebook38 and updated master.
+All source fragments remained unchanged after successful assembly.
+Source checkout is clean at e392ef45013a581664bab76b90867170b30fe10e.
+
+Internal reviews and typesetting are not external certification.
+No full Yang--Mills existence or mass-gap theorem is claimed.

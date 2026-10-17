@@ -1,0 +1,82 @@
+17 October 2026. Checkpoint after Notebook 34, recorded on resumed goal.
+
+STATUS
+Full nontrivial four-dimensional Yang--Mills existence goal ACTIVE,
+unbudgeted and unfinished. No goal status mutation. The research leading
+to Notebook34 made progress; the subsequent acknowledgement of the user's
+pause/resume preference was conversational (no research progress).
+This resumed turn revalidated files and started new proof work.
+Latest developer enables proactive delegation. Existing agents provenance,
+rotation_audit and theorem_audit independently checked the new34 material.
+Their checks are internal, not external mathematical certification.
+
+OUTPUTS
+outputs/ym4-pinned-ghost-notebook.tex: Notebook34, 57118 bytes at checkpoint,
+98 unique labels, 48 references, no missing/duplicate labels or control
+characters. Desktop compile SUCCESS during preceding research interval.
+Build work/build_pinned_ghost.ps1 assembles head, pgp, pgl, vst, pqd, tail.
+outputs/ym4-construction-notebook.tex updated through34, 91440 bytes,
+desktop compile SUCCESS. Opening34 returned queued, not visibly opened.
+
+RESULTS
+PGP: In the actual infinite structural system at fixed K the ghost heat
+coefficient h_K=-2[t²]Tr_block exp(-sG_K(t)) is a returning-walk area
+moment. Unpinned h(s)=C_H/3 s² exp(-8s) I0(2s)² I1(2s)².
+alpha_g=C_H/(48 pi²); h(s)=alpha_g+O(1/s) at infinity, O(s^4) at zero.
+Poisson root-residue counting gives
+ integral_0^T (h-h_K)ds/s <= C K^-4(1+T).
+Thus integral_0^(K²)h_K ds/s=2 alpha_g log K+gamma_g+O(K^-2).
+
+PGL: Point-pinned scalar gap >=cK^-4 (matching previous upper bound).
+Neumann cube point Green estimate supplies Poincare. A fourth bridge
+area moment and killed-return heat estimate give h_K(s)<=C exp(-cs/K^4).
+Therefore the ENTIRE actual ghost contribution is
+ integral_0^infinity h_K ds/s=4 alpha_g log K+O(1), uniformly old M.
+Its interval K²..K^4 contributes 2 alpha_g log K+O(1).
+The separately bounded ghost tail after K² is FALSE.
+This integral equals beta(N0 logdet G), not beta(2 logdet G).
+
+VST: Full actual vector ultraviolet estimate
+ integral_0^1 |[t²]Tr_block exp(-sV)|ds/s<=C uniformly M,K.
+V=s_M''+DbDb^T+aC_K^TC_K on the stationary affine jets.
+Full ordinary C_K counting L2 norm is O(1); only projected PcC_K is O(K^-1).
+Composite endpoint-gauge recursion plus straight average bounds controls
+first two affine jets. Duhamel with coarse-fiber trace avoids a K^4 loss.
+This closes the entire actual short-time interval, not just its ghost.
+
+PQD: Actual finite identity, with globally based scalar generators,
+ residual R=L-C^T q C>=0, RDf=0,
+ Qperp=Uf^T R Uf+a(Uc^T C Uf)^T(Uc^T C Uf),
+ D=N0[ 1/2 logdet Gf -1/2 logdet Gc -1/2 logdet Qperp ].
+Gaussian coarea and independent canonical Schur proof fix all factors.
+At flatness Pc C_K=Pc Ast_K, norm<=K^-1, and
+ Qperp>=c_a K^-2 uniformly M,K,volume. Alias physical Poincare proves it.
+This is a flat fluctuation bound, not a Yang--Mills mass gap.
+Actual contour completion has a test Rayleigh value O(K^-3) in d4,
+so an ambient contour cK^-2 bound is FALSE.
+Specified infinite scalar reference:
+ 1/2 integral_0^infinity [h(K²u)-h(u)]du/u=alpha_g log K.
+No identification with unregulated globally based finite factors is proved.
+
+AUDITS
+work/pinned_ghost_prefix_provenance_audit.txt
+work/pinned_ghost_long_time_provenance_audit.txt
+work/vector_short_time_provenance_audit.txt
+work/physical_quotient_gap_rotation_audit.txt
+work/contour_heat_comparison_provenance_audit.txt
+Also fresh33 audits cartan_trace_provenance_audit.txt and
+cartan_heat_rotation_audit.txt. Root independently checked quotient Schur
+powers and ghost moments. Finite closed-walk n=4,6 enumeration agrees
+with Bessel prefix coefficients, as a sanity check only.
+
+NEXT
+Actual vector coefficient must be 18 alpha_g logK+O(1) to match total
+22 alpha_g logK. If vector prefix is 20 alpha_g logK, its remaining
+tail must cancel 2 alpha_g logK; vector prefix is not yet proved.
+Physical quotient route needs JOINT infrared passage, plus curvature
+control. Flat gap alone does not bound derivatives of global projections.
+Never separately substitute massive ghosts without proving cancellation.
+No actual positive block drift yet. Finite transfer and shooting remain
+conditional. Mixed/large-field histories, global measure matching,
+sourced limits, nontriviality, Euclidean covariance, positivity and
+reconstruction remain necessary for full existence.

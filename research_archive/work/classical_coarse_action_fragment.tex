@@ -1,0 +1,314 @@
+% No preamble. Notebook 16 classical coarse-action module. Unique labels: ca-.
+% Place after the wr- response module. Standard theorem environments and \norm.
+
+\section{The classical coarse action and its gauge identity}
+\label{ca-section}
+
+We remain on finite compatible periodic regulators, with fine
+spacing $\eta=L^{-j}$ and final coarse spacing one. The action
+$\mathcal S_\eta(U)$ is the coupling-free Wilson action in the
+normalization of Notebook 15. Set
+$\mathcal W_\eta(A)=\mathcal S_\eta(e^{i\eta A})$.
+All coarse pairings below use the normalized color trace and
+the physical coarse measure, which is one at this scale.
+Transposes are bilinear after complexification. The constants
+are independent of refinement and periodic volume.
+
+Let $A_*(B)$ be the corrected-constraint minimizer in the fixed
+flat gauge slice, and put $U_*(B)=e^{i\eta A_*(B)}$. Its
+ordinary-feasible representative $U_{\rm ord}(B)$ is related
+to $U_*(B)$ by the genuine gauge transformation constructed in
+Notebook 15. Define
+\begin{equation}\label{ca-definition}
+ V(B)=\mathcal W_\eta(A_*(B))
+     =\mathcal S_\eta(U_*(B))
+     =\mathcal S_\eta(U_{\rm ord}(B)).
+\end{equation}
+These are equal holomorphic functions on a uniform complex
+coarse supremum ball. Indeed the analytic Wilson density,
+written with $P+P^{-1}$, is invariant under complex matrix
+gauge conjugation as well. Only the real fields have the
+minimum interpretation. The scalar total action scales with
+volume; the uniform estimates below state that dependence.
+
+\subsection{The multiplier is the exact derivative of the action}
+\label{ca-envelope-section}
+
+Write $\mathcal F(A)=QA+\mathcal R(A)$ and use the exact
+chart and flat-slice space
+\[
+ A=\xi+H[B-\mathcal R(A)],\qquad
+ \xi\in\mathcal X=\ker Q\cap\ker(R_0D^T).
+\]
+Here $R_0$ is the fixed scalar gauge projection, distinct from
+the nonlinear remainder $\mathcal R$ and denoted $R$ in the
+response module. Put
+\begin{equation}\label{ca-chart-differential}
+ T_A=(I+HD\mathcal R(A))^{-1},\qquad H_A=T_AH.
+\end{equation}
+Differentiating the analytic minimizer in a coarse direction $c$
+gives the exact formula
+\begin{equation}\label{ca-response-decomposition}
+ D_BA_*(B)[c]=H_Ac+T_AD_B\xi(B)[c],\qquad A=A_*(B).
+\end{equation}
+The second summand is a slice tangent because
+$D_B\xi(B)[c]\in\mathcal X$.
+
+\begin{proposition}[Classical envelope identity]\label{ca-envelope}
+Let $E(A)=D\mathcal W_\eta(A)$ denote the Euler field under
+the physical fine pairing. The multiplier from the exact
+stationarity construction satisfies
+\begin{equation}\label{ca-first-derivative}
+ DV(B)[c]=\langle m(B),c\rangle_1,\qquad
+ m(B)=H_A^TE(A_*(B)).
+\end{equation}
+Equivalently,
+\begin{equation}\label{ca-multiplier}
+ \begin{split}
+ m(B)={}&(I+H^TD\mathcal R(A_*)^T)^{-1}\\
+ &\quad\cdot\{q[B-\mathcal R(A_*)]+H^TN(A_*)\},
+ \end{split}
+\end{equation}
+where $q=q_M$ is the physical flat Maxwell precision and
+$E(A)=KA+N(A)$ is the ordinary-coordinate force.
+\end{proposition}
+
+\begin{proof}
+Pair \eqref{ca-response-decomposition} with $E(A_*)$.
+Slice stationarity makes
+$\langle E(A_*),T_AD_B\xi(B)[c]\rangle_\eta=0$.
+The remaining term is exactly \eqref{ca-first-derivative}.
+This argument needs only slice stationarity, not a separate
+full-constraint multiplier theorem or gauge coverage.
+
+The transpose push-through identity gives
+$H_A^T=(I+H^TD\mathcal R(A_*)^T)^{-1}H^T$.
+The flat identities $H^TK\xi=0$ and $H^TKH=q$ imply
+$H^TKA_*=q[B-\mathcal R(A_*)]$, proving
+\eqref{ca-multiplier}. The force term is evaluated as
+$H^TN(A_*)=(S_{\rm jet}H)^Tf_\eta(S_{\rm jet}A_*)$;
+no rough force coefficient is differentiated. All identities
+extend bilinearly to the complex ball.
+\end{proof}
+
+Put $b=\norm{B}_\infty$. The uniform estimates
+$A_*=HB+O(b^2)$, $\mathcal R(A_*)=O(b^2)$,
+$H^TN(A_*)=O(b^2)$ and
+$\norm{D\mathcal R(A_*)^T}_{\infty\to\infty}=O(b)$
+in \eqref{ca-multiplier} prove
+\begin{equation}\label{ca-m-near-q}
+ \norm{m(B)-qB}_\infty\le Cb^2,
+ \qquad m(0)=0,\quad Dm(0)=q.
+\end{equation}
+The multiplier is holomorphic on a uniform coarse ball.
+In particular $D^2V(0)=q$. Its unweighted estimate
+$\norm{Dm(B)-q}_{\infty\to\infty}\le Cb$ also follows
+directly by Cauchy: for $b>0$ use a direction circle of radius
+$b$ inside a smaller common ball, and apply
+\eqref{ca-m-near-q} at points of norm at most $2b$.
+At $b=0$ use the displayed Taylor coefficient.
+
+Let $N_b$ denote the number of independent positive coarse
+bonds. Since $V(0)=0$, radial integration gives
+\begin{equation}\label{ca-radial}
+ V(B)=\frac12\langle B,qB\rangle_1
+       +\int_0^1\langle m(tB)-tqB,B\rangle_1\,dt.
+\end{equation}
+The fixed normalized color trace bound and
+\eqref{ca-m-near-q} therefore yield
+\begin{equation}\label{ca-cubic-remainder}
+ \boxed{\quad
+ \left|V(B)-\frac12\langle B,qB\rangle_1\right|
+          \le C N_b\norm{B}_\infty^3.
+ \quad}
+\end{equation}
+This holds on the complex ball. It is a volume-uniform
+density estimate, not a volume-independent total-action bound.
+
+\subsection{Local coarse gauge invariance}
+\label{ca-gauge-section}
+
+For a real coarse site field $\omega$ put $g=e^{i\omega}$,
+$D=e^{iB}$ and
+\begin{equation}\label{ca-coarse-gauge}
+ D^g(c)=g(c_-)D(c)g(c_+)^{-1},\qquad
+ B^g=\frac1i\log D^g.
+\end{equation}
+All logarithms use the common small branch. At coarse spacing
+one the local analytic multiplication gives a constant
+$C_c\ge1$ such that
+\begin{equation}\label{ca-coarse-gauge-bound}
+ \norm{B^g}_\infty\le C_c(b+w),\qquad
+ w=\norm{\omega}_\infty.
+\end{equation}
+No additional regularity is required of $\omega$: coarse
+first differences are bounded by $2w$.
+
+Let $b_0,r_0$ be the ordinary-minimum radii of Notebook 15,
+and write
+$\norm{A_{\rm ord}(B)}_{N_\alpha}\le C_Ab$.
+The smooth point-value extension there satisfies
+\begin{equation}\label{ca-smooth-gauge-lift}
+ (E_{\rm pt}\omega)|_{\rm coarse}=\omega,\qquad
+ \norm{E_{\rm pt}\omega}_{C^{2,\alpha}}\le C_Ew.
+\end{equation}
+Set $h=e^{iE_{\rm pt}\omega}$, so $h|_{\rm coarse}=g$.
+The fine gauge-action bound, valid for both $h$ and $h^{-1}$,
+is
+\begin{equation}\label{ca-fine-gauge-bound}
+ \norm{A^h}_{N_\alpha}
+       \le C_G(\norm A_{N_\alpha}+C_Ew).
+\end{equation}
+
+Choose one $\delta>0$ so that all logarithms and gauge actions
+stay in their established domains and
+\begin{equation}\label{ca-comparison-margins}
+ C_c\delta<b_0/2,\qquad
+ C_G(C_AC_c+C_E)\delta<r_0/2.
+\end{equation}
+For real $b+w<\delta$, ordinary gauge covariance makes
+$U_{\rm ord}(B)^h$ feasible for coarse datum $B^g$.
+Its potential norm is below $r_0$, so minimality at $B^g$
+and exact gauge invariance give
+\[
+ V(B^g)\le\mathcal S_\eta(U_{\rm ord}(B)^h)=V(B).
+\]
+For the reverse comparison use
+$U_{\rm ord}(B^g)^{h^{-1}}$. Its ordinary coarse average is
+$(D^g)^{g^{-1}}=D$, and its norm is bounded by
+\[
+ C_G\{C_AC_c(b+w)+C_Ew\}<r_0.
+\]
+It is therefore an admissible competitor at $B$, proving
+$V(B)\le V(B^g)$. We have proved
+\begin{equation}\label{ca-gauge-invariance}
+ \boxed{\qquad V(B^g)=V(B)\qquad(b+w<\delta).\qquad}
+\end{equation}
+Both comparisons lie strictly inside the same uniform minimum
+radius. The reverse one uses the separately controlled minimizer
+at $B^g$, not an assumed inverse of the first comparison map.
+
+The two sides of \eqref{ca-gauge-invariance} are holomorphic
+in $(B,\omega)$ on a uniform smaller complex product ball.
+Their equality on an open set of the full real form implies
+equality on that connected product ball by the finite-dimensional
+holomorphic identity theorem, applied coordinate by coordinate.
+For example, reduce $\delta$ to respect all analytic domains
+and take $\norm B_\infty,\norm\omega_\infty<\delta/3$.
+This extension is an analytic identity; it is not a minimum
+claim for complex fields.
+
+\subsection{The exact classical Ward identity}
+\label{ca-ward-section}
+
+Define the coarse left exponential differential and the
+coarse covariant scalar difference by
+\begin{equation}\label{ca-left-differential}
+ \mathcal J_Bv=\int_0^1\operatorname{Ad}(e^{itB})v\,dt,
+ \qquad
+ (D_D\omega)(c)=\operatorname{Ad}_{D(c)}\omega(c_+)-\omega(c_-).
+\end{equation}
+The operator $\mathcal J_B$ is invertible on the fixed small
+complex ball. The ordinary coarse-potential velocity under
+$g(t)=e^{it\omega}$ is
+\begin{equation}\label{ca-gauge-velocity}
+ \left.\frac{d}{dt}B^{g(t)}\right|_{t=0}
+             =-\mathcal J_B^{-1}D_D\omega.
+\end{equation}
+The coarse spacing is one, so there is no additional length
+factor. Differentiate \eqref{ca-gauge-invariance} and use
+\eqref{ca-first-derivative}:
+\[
+ 0=-\langle m(B),\mathcal J_B^{-1}D_D\omega\rangle_1
+   =-\langle D_D^T\mathcal J_B^{-T}m(B),\omega\rangle_1.
+\]
+The site field $\omega$ is arbitrary. Hence
+\begin{equation}\label{ca-ward}
+ \boxed{\qquad D_D^T\mathcal J_B^{-T}m(B)=0.\qquad}
+\end{equation}
+The real identity extends holomorphically. Thus the
+left-coordinate classical coarse current is
+$j_{\rm cl}(B)=\mathcal J_B^{-T}m(B)$, not generally $m(B)$.
+No quantum determinant or quantum Ward assertion is involved.
+
+\subsection{A local classical Hessian and an auxiliary positive inverse}
+\label{ca-precision-section}
+
+The weighted multiplier response \eqref{wr-dm-near-q}, together
+with the envelope identity, gives
+\begin{equation}\label{ca-hessian-weighted}
+ Q_{\rm cl}(B):=D^2V(B)=Dm(B),\qquad
+ \norm{[Q_{\rm cl}(B)-q]c}_{\infty,w}
+       \le C_\kappa b\norm c_{\infty,w}
+\end{equation}
+for every admissible weight in \eqref{wr-weight}. As the
+Hessian of a holomorphic scalar function, $Q_{\rm cl}(B)$
+is symmetric for the physical bilinear transpose.
+It differentiates in the ordinary coarse potential $B$.
+A change to a based left-exponential fluctuation chart
+requires the coordinate Jacobians and its background-current
+second-derivative term; that differently based Hessian is
+not being identified with $Q_{\rm cl}(B)$ here.
+
+Use a fixed trace-orthonormal color and orientation basis in
+each coarse cell. For a block kernel $T$ define the weighted
+Schur norm
+\begin{equation}\label{ca-schur}
+ \norm T_\kappa=\max\left\{
+   \sup_n\sum_m e^{\kappa d(n,m)}\norm{T_{nm}},\,
+   \sup_m\sum_n e^{\kappa d(n,m)}\norm{T_{nm}}\right\}.
+\end{equation}
+Take $w_n(m)=e^{-\kappa d(n,m)}$ in
+\eqref{ca-hessian-weighted}. In each scalar output row,
+choose input phases to match its matrix entries. This bounds
+its absolute row sum with the factor $e^{\kappa d(n,m)}$.
+Summing the fixed number of component rows converts this to
+matrix-block norms; transpose symmetry gives the column bound.
+Consequently
+\begin{equation}\label{ca-hessian-schur}
+ \norm{Q_{\rm cl}(B)-q}_\kappa\le C'_{\kappa}b.
+\end{equation}
+The component factor depends only on dimension and color,
+not on refinement or volume. These finite-regulator row tests
+are bounded directions even for decaying weights.
+
+Let $a$ lie in a fixed interval $0<a_-\le a\le a_+$.
+The flat baseline estimates give, after fixing a sufficiently
+small common $\kappa$,
+\begin{equation}\label{ca-baseline-inverse}
+ \norm{(q+aI)^{-1}}_\kappa\le r_\kappa
+\end{equation}
+uniformly. Set $P_{\rm cl}(B)=Q_{\rm cl}(B)+aI$.
+For
+\begin{equation}\label{ca-inverse-radius}
+ C'_\kappa b\le a_-/2,\qquad
+ r_\kappa C'_\kappa b\le1/2,
+\end{equation}
+the real positive baseline $q\ge0$ and the Schur operator
+bound imply
+\begin{equation}\label{ca-accretivity}
+ \operatorname{Re}\langle x,P_{\rm cl}(B)x\rangle_{\rm Herm}
+                 \ge\frac{a_-}{2}\norm x_2^2
+\end{equation}
+even at complex $B$. The numerical-range pairing here is
+Hermitian; it is distinct from the analytic bilinear transpose.
+The Schur norm is a matrix algebra norm, so the Neumann series
+also gives
+\begin{equation}\label{ca-inverse-bounds}
+ \begin{split}
+ \norm{P_{\rm cl}(B)^{-1}}_\kappa&\le2r_\kappa,\\
+ \norm{P_{\rm cl}(B)^{-1}-(q+aI)^{-1}}_\kappa
+                         &\le2r_\kappa^2C'_\kappa b.
+ \end{split}
+\end{equation}
+This inverse is holomorphic and exponentially local in
+coarse-cell distance, with uniform constants.
+
+The positive $a$ is an auxiliary penalty added to a coarse
+classical Hessian. This is not a physical Yang--Mills mass gap
+or the precision of an integrated quantum effective action.
+Spatial kernel decay does not assert strict dependence on
+bounded background supports. Fluctuation determinants,
+Jacobian factors, quantum interactions and their iteration
+remain separate tasks. No finite total action is assigned
+here to arbitrary bounded fields on the infinite lattice.

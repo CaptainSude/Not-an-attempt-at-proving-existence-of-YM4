@@ -1,0 +1,618 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\HH}{\mathcal H}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 08: a local flat minimizing extension}
+\author{Research working document}
+\date{16 October 2026}
+\setlength{\emergencystretch}{5em}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We construct an explicit minimizing right inverse for the homogeneous
+flat Maxwell block average. A scalar gauge choice with a squared
+Laplacian denominator removes the remaining complex massless poles
+from the minimizing field itself. The resulting potential and every
+first fine difference have exponential locality in coarse-cell
+distance, uniformly in refinement. The potential has physical
+discrete $C^{1,\alpha}$ bounds and its curvature has $C^\alpha$
+bounds for every fixed $\alpha<1$. The scalar gauge matches the
+projection in the deposited homogeneous flat source formulas.
+The componentwise fine Laplacian is also uniformly bounded and local;
+this uses the physical averaging adjoint rather than an absolute
+second-derivative Fourier sum. The
+corrected bond average and its normalization are checked separately.
+This supplies local flat response legs, but does not prove a
+nonflat or independent-current analytic response theorem.
+\end{abstract}
+
+\noindent\textbf{Status.}
+Research proof checked by separate internal derivations and audits.
+No external certification or novelty claim is made.
+The explicit quadratic construction is proved
+below. The final source identification uses deposited transcriptions
+of the primary operator definitions and their stated minimizing
+property; the unavailable original CMP99b proof has not been
+independently reverified here.
+
+\section{The minimizing problem and the local norms}
+
+Let $M$ be odd, $\eta=M^{-1}$, and use centered $M$-blocks.
+The normalized straight-string average and fine derivative are
+\[
+ (Q_M A)_\mu(n)=M^{-d-1}\sum_{s\in I_M^d}
+          \sum_{j=0}^{M-1}A_\mu(n+(s+je_\mu)/M),
+ \qquad I_M=\{-(M-1)/2,\ldots,(M-1)/2\},
+\]
+\[
+ (D_{\eta,\nu}A)_\mu(x)
+   =M[A_\mu(x+e_\nu/M)-A_\mu(x)],\qquad
+ (d_\eta A)_{\mu\nu}=D_{\eta,\mu}A_\nu-D_{\eta,\nu}A_\mu.
+\]
+Physical fine-volume norms have measure $M^{-d}$; unit coarse
+norms have counting measure. Define
+\[
+ q_M(B)=\inf_{Q_M A=B}\norm{d_\eta A}_\eta^2.
+\]
+Notebook 07 derived its bounded holomorphic Fourier symbol and
+uniform exponential locality. We use its notation below and recall
+the relevant cancellation explicitly.
+
+For fine values in a fixed physical cell, the local Hilbert norm is
+\[
+ \norm v_{\mathrm{cell},2}^2
+       =M^{-d}\sum_{s\in I_M^d}|v(s/M)|^2.
+\]
+The physical discrete $C^\alpha$ norm is the supremum norm plus
+\[
+ \sup_{s\ne t}
+ \frac{|v(s/M)-v(t/M)|}{|(s-t)/M|^\alpha}.
+\]
+The discrete $C^{1,\alpha}$ norm controls $v$, all full fine
+differences $D_{\eta,\nu}v$, and the $C^\alpha$ seminorms of
+these differences. Use a fixed physical collar whenever a fine
+difference or comparison crosses the cell boundary. Constants may
+depend on the collar size but never on $M$.
+
+\begin{theorem}\label{thm:extension}
+There is a linear extension $\HH_M$ on the infinite lattice and
+every compatible periodic lattice such that
+\[
+ Q_M\HH_M=I,\qquad
+ \norm{d_\eta\HH_M B}_\eta^2=q_M(B).
+\]
+It satisfies the scalar gauge condition defined in Section~\ref{sec:gauge}.
+Its reconstructed fine-cell symbol is holomorphic on a coarse
+momentum strip independent of $M$. For every fixed $0<\alpha<1$
+there are constants $C_\alpha,c_\alpha>0$, independent of $M$,
+such that its coarse-cell kernels obey
+\begin{equation}\label{eq:locality}
+ \begin{split}
+ &\norm{\HH_M(n)}_{\C^d\to C^{1,\alpha}_{\mathrm{cell}}}
+ +\norm{(d_\eta\HH_M)(n)}_{\C^d\to C^\alpha_{\mathrm{cell}}}\\
+ &\qquad+\norm{(\mathcal L_\eta\HH_M)(n)}_{\C^d\to L^\infty_{\mathrm{cell}}}
+ \le C_\alpha e^{-c_\alpha|n|_1}.
+ \end{split}
+\end{equation}
+Here $\mathcal L_\eta=\sum_\nu D_{\eta,\nu}^*D_{\eta,\nu}$
+acts componentwise on the potential; it is the scalar lattice
+Laplacian on each bond component, not the Maxwell curl precision.
+The same statement holds in physical cell Hilbert norms.
+Periodic kernels are exact periodizations and have uniform bounds
+in periodic coarse-cell distance.
+\end{theorem}
+
+Colors decouple at flatness; the scalar estimates act on each
+orthonormal color component. This theorem is about the stated
+full-block flat problem. Its physical source match is specified
+only in Section~\ref{sec:source}.
+
+\section{The alias quotient and its canceled symbol}
+
+For $r\in I_M^d$, put $p_r=z+2\pi r$ and define
+\[
+ a_r=a_M(p_r),\quad
+ a_M(p)=\prod_\nu\frac1M\sum_{s\in I_M}e^{ip_\nu s/M},
+ \quad
+ \omega_{r,\mu}=a_M(p_r)\frac1M\sum_{j=0}^{M-1}e^{ip_{r,\mu}j/M}.
+\]
+A superscript minus on $a_r$ or $\omega_r$ means evaluation at
+$-p_r$, not variable-dependent complex conjugation. Set
+\[
+ u_{r,\mu}^{\pm}=M(e^{\pm ip_{r,\mu}/M}-1),\quad
+ P_r=\sum_\mu u_{r,\mu}^+u_{r,\mu}^-
+     =4M^2\sum_\mu\sin^2(p_{r,\mu}/(2M)),
+\]
+\[
+ d_\mu^\pm=e^{\pm iz_\mu}-1,\qquad b_\mu=d_\mu^+d_\mu^-.
+\]
+Exact string telescoping gives
+\begin{equation}\label{eq:cochain}
+ \omega_{r,\mu}u_{r,\mu}^+=a_r d_\mu^+.
+\end{equation}
+The coarse average in a Fourier fiber is
+$B_\mu=\sum_r\omega_{r,\mu}A_{r,\mu}$. With physical-volume
+Parseval, fine fiber energies sum aliases without an extra $M^d$.
+
+For real nonzero $z$, the fine Maxwell energy in an alias is
+\[
+ P_r|A_r|^2-|(u_r^+)^*A_r|^2
+       =\min_\lambda P_r|A_r+u_r^+\lambda|^2.
+\]
+Fine gradients average to coarse gradients by \eqref{eq:cochain},
+and their scalar average is onto because $a_0\ne0$ on the central
+real zone. Thus the minimized form is the gauge quotient of
+\[
+ W=\diag\left(\sum_r\frac{\omega_{r,\mu}\omega_{r,\mu}^-}{P_r}\right),
+\]
+namely
+\[
+ q_M=W^{-1}-W^{-1}d^+(d^-W^{-1}d^+)^{-1}d^-W^{-1}.
+\]
+At $z=0$, the constant fine field realizes any constant coarse field
+with zero energy, so $q_M(0)=0$.
+
+Write
+\[
+ A=a_0a_0^-,\quad g_\mu=\omega_{0,\mu}\omega_{0,\mu}^-,\quad
+ R_\mu=\sum_{r\ne0}\frac{\omega_{r,\mu}\omega_{r,\mu}^-}{P_r},
+ \quad D_\mu=g_\mu+P_0R_\mu,\quad h_\mu=D_\mu^{-1},
+\]
+\[
+ h=\diag(h_\mu),\qquad
+ E=A^{-1}-\sum_\mu\frac{b_\mu R_\mu}{g_\mu D_\mu}.
+\]
+The central instance of \eqref{eq:cochain} gives
+$\sum_\mu b_\mu/g_\mu=P_0/A$, hence
+\begin{equation}\label{eq:q}
+ d^-hd^+=P_0E,\qquad
+ q_M=P_0h-\frac{hd^+d^-h}{E}.
+\end{equation}
+This expression has no inverse power of the central massless
+denominator $P_0$.
+
+\section{The additional scalar denominator has a uniform domain}
+
+Define
+\begin{equation}\label{eq:scalar-two}
+ R_{s,2}=\sum_{r\ne0}\frac{a_ra_r^-}{P_r^2},\qquad
+ D_{s,2}=A+P_0^2R_{s,2}.
+\end{equation}
+The scalar weights are
+\begin{equation}\label{eq:t}
+ t_{2,0}=\frac{a_0^-}{D_{s,2}},\qquad
+ t_{2,r}=\frac{P_0^2a_r^-}{P_r^2D_{s,2}}\quad(r\ne0).
+\end{equation}
+They satisfy $\sum_r a_rt_{2,r}=1$. For real nonzero momentum,
+they minimize $\sum_rP_r^2|\lambda_r|^2$ at a prescribed scalar
+block average. Indeed the scalar covariance is
+$\sum_r a_ra_r^-/P_r^2=D_{s,2}/P_0^2$ and the ordinary weighted
+least-squares formula gives \eqref{eq:t}.
+
+\begin{lemma}\label{lem:strip}
+There is a complex strip, with a positive real margin around the
+central Brillouin cube and width independent of $M$, on which
+$A,g_\mu,D_\mu,E,D_{s,2},a_0$ are uniformly separated from zero.
+All these functions, their required inverses, $P_0,R_\mu,R_{s,2}$
+and $q_M$ are uniformly bounded and holomorphic there.
+\end{lemma}
+
+\begin{proof}
+Here are the uniform estimates behind the strip argument, so its
+use introduces no additional source assumption. Fix $\pi<K<2\pi$
+and a small imaginary width $\delta$. For high aliases,
+\[
+ P_r(x)\ge c_K|r|^2,\qquad
+ \Re P_r(x+iy)\ge P_r(x)-e^\delta\sum_\nu y_\nu^2,
+ \quad |x_\nu|\le K.
+\]
+The first bound follows by taking distance from $2\pi M\mathbb Z$;
+for a nonzero retained coordinate that distance is at least
+$(2\pi-K)|r_\nu|$. Choose $\delta$ so the second term is smaller
+than half the high-alias gap. Discrete Parseval gives
+\[
+ \sum_r|a_r(x+iy)|^2\le e^{\sum|y_\nu|},\quad
+ \sum_r|\omega_{r,\mu}(x+iy)|^2
+       \le e^{\sum|y_\nu|+2|y_\mu|}.
+\]
+Cauchy--Schwarz bounds the corresponding bilinear products with
+negative arguments. Thus both high remainders in
+\eqref{eq:scalar-two} and the vector remainders are uniformly
+holomorphic and bounded, despite the growing number of aliases.
+
+On the real central cube, the centered factor
+$\sin(t/2)/(M\sin(t/(2M)))$ is between $2/\pi$ and one.
+Consequently $A\ge(2/\pi)^{2d}$,
+$g_\mu,D_\mu\ge(2/\pi)^{2d+2}$,
+$D_\mu\le1+d\pi^2/4$, and
+\[
+ E\ge\frac{4}{\pi^2(1+d\pi^2/4)}\quad(z\ne0),
+ \qquad E(0)=1.
+\]
+Also $0\le R_{s,2}\le1/16$, so
+$D_{s,2}\ge A$. The enlarged real cube has the same estimates
+with weaker fixed positive constants: replace $2/\pi$ by
+$\sin(K/2)/(K/2)$ and the high gap by
+$4(2\pi-K)^2/\pi^2$.
+
+Cauchy estimates on nested open tubes, retaining a real margin,
+give uniform derivatives. Integrating in imaginary directions first
+keeps $A,g_\mu,D_\mu,D_{s,2}$ nonzero. The formula for $E$ is
+then uniformly bounded and holomorphic; a second shrinking and its
+real gap keep it nonzero as well. Since $A=a_0a_0^-$ and each
+factor is bounded, both factors are bounded away from zero.
+All shrinkings are independent of $M$. No Cauchy disk leaves a
+previously controlled domain. For $M=1$ the high sums are empty
+and the conclusion holds directly.
+\end{proof}
+
+\section{The field and its exact central cancellation}
+
+For real nonzero momentum put
+\[
+ S=d^-hB,\qquad \theta=\frac{S}{P_0E},\qquad
+ F_r=P_r^{-1}\diag(\omega_r^-)q_MB.
+\]
+Define the proposed extension initially by
+\begin{equation}\label{eq:uncanceled-H}
+ \HH_rB=F_r+u_r^+t_{2,r}\theta.
+\end{equation}
+This formula explains the gauge choice. Its central term is defined
+on the complex null cone by the following cancellation:
+\begin{equation}\label{eq:H-central}
+ (\HH_0B)_\mu=\omega_{0,\mu}^-h_\mu B_\mu+
+ \frac{u_{0,\mu}^+}{a_0}
+       \left(R_\mu h_\mu-\frac{P_0R_{s,2}}{D_{s,2}}\right)
+       \frac{S}{E}.
+\end{equation}
+For a high alias,
+\begin{equation}\label{eq:H-high}
+ \HH_rB=P_r^{-1}\diag(\omega_r^-)q_MB
+       +\frac{u_r^+P_0a_r^-S}{P_r^2D_{s,2}E},\qquad r\ne0.
+\end{equation}
+
+\begin{proof}[Proof of the cancellation]
+The cochain identity and $g_\mu h_\mu=1-P_0R_\mu h_\mu$ give
+\[
+ \omega_{0,\mu}^-h_\mu d_\mu^+
+       =\frac{u_{0,\mu}^+}{a_0}(1-P_0R_\mu h_\mu).
+\]
+Also $A/D_{s,2}=1-P_0^2R_{s,2}/D_{s,2}$. Substitute these
+identities into the central part of \eqref{eq:uncanceled-H}.
+The two terms proportional to $P_0^{-1}$ cancel, leaving exactly
+\eqref{eq:H-central}. For high aliases, cancel one $P_0$ between
+\eqref{eq:t} and $\theta$, obtaining \eqref{eq:H-high}.
+\end{proof}
+
+Lemma~\ref{lem:strip} now makes both expressions holomorphic.
+At zero, $\HH_0(0)=I$ and every high alias vanishes, so constants
+are lifted to constants. No inverse of a zero harmonic eigenvalue
+has been introduced.
+
+\section{Constraint, minimal energy and scalar gauge}\label{sec:gauge}
+
+The Feynman minimizing field satisfies
+\[
+ \sum_r\diag(\omega_r)F_r=B-d^+\theta.
+\]
+The added gradient averages to $d^+\theta$, by
+\eqref{eq:cochain} and $\sum a_rt_{2,r}=1$. Thus $Q_M\HH_M=I$.
+Further, $d^-q_M=0$, so
+\[
+ (u_r^+)^*F_r=(a_r^-/P_r)d^-q_MB=0
+\]
+on real nonzero fibers. The field $F$ is fine transverse; its
+Maxwell and Feynman energies agree and equal $B^*q_MB$.
+The added gradient changes neither curl nor energy. This proves
+the minimizing identity in Theorem~\ref{thm:extension}, including
+the separately specified constant zero mode.
+
+Let $Q_0$ be the scalar block average and
+$\Delta=D_f^*D_f$ the positive fine scalar Laplacian. With the
+physical volume measures, $Q_0Q_0^*=I$ and $Q_0^*$ extends a
+coarse scalar as a blockwise constant fine scalar. For a positive
+coarse penalty $a'$, define
+\begin{equation}\label{eq:source-R}
+ G'=(\Delta+Q_0^*a'Q_0)^{-1},\quad
+ P=G'Q_0^*(Q_0G'^2Q_0^*)^{-1}Q_0G',\quad R=I-P.
+\end{equation}
+On a real finite regulator, $P$ is the orthogonal projection onto
+$\ran(G'Q_0^*)$. In particular,
+\begin{equation}\label{eq:R-range}
+ \ran R=\ker(Q_0G')
+         =(\Delta+Q_0^*a'Q_0)\ker Q_0
+         =\Delta\ker Q_0.
+\end{equation}
+On a nonzero Bloch fiber, equivalently
+$\ker R=\ran(\Delta^{-1}Q_0^*)$. This follows by taking the
+orthogonal complement in \eqref{eq:R-range}; the Laplacian is
+invertible in such a fiber. At zero one uses \eqref{eq:source-R},
+whose penalty treats scalar constants, rather than an undefined
+$\Delta^{-1}$.
+
+The divergence of the extension has the exact form
+\begin{equation}\label{eq:divergence}
+ (D_f^*\HH_MB)_r
+    =P_r^{-1}a_r^-\frac{P_0S}{D_{s,2}E}\qquad(z\ne0).
+\end{equation}
+The central expression is its canceled value
+$a_0^-S/(D_{s,2}E)$. Thus the divergence lies in
+$\ran(\Delta^{-1}Q_0^*)$, proving
+\begin{equation}\label{eq:gauge}
+ R D_f^*\HH_M=0.
+\end{equation}
+At zero the divergence is zero. The identities extend through the
+holomorphic formulas where appropriate; positivity and minimizing
+claims are made for real fields.
+
+The gauge is unique among minimizing fields. In a nonzero fiber
+the difference of two energy minimizers is a fine gradient
+$u_r^+\lambda_r$. Its zero average gives $\sum_ra_r\lambda_r=0$.
+Therefore $\Delta\lambda\in\ran R$, while the gauge condition
+gives $R\Delta\lambda=0$. Hence the difference vanishes. At zero,
+the coarse average fixes the fine constant harmonic one-form and
+all other zero-energy differences are high-alias gradients; the
+same argument removes them. Equivalently, \eqref{eq:t} minimizes
+the divergence norm among the Maxwell energy minimizers. This is
+different from minimizing the potential norm itself.
+
+\section{Uniform fine derivative estimates}
+
+The sine bounds used in Lemma~\ref{lem:strip} give, for high aliases
+on a fixed smaller tube,
+\[
+ w(r)=\prod_\nu(1+|r_\nu|)^{-1},\qquad
+ |a_r^-|\le Cw(r),\qquad
+ |\omega_{r,\mu}^-|\le\frac{Cw(r)}{1+|r_\mu|},
+\]
+\[
+ |u_r^+|\le C(1+|r|),\qquad |P_r|\ge c(1+|r|)^2.
+\]
+These estimates are valid up to the edge of the fine Brillouin
+zone; they do not expand in $r/M$. Equation~\eqref{eq:H-high}
+therefore gives
+\begin{equation}\label{eq:alias-bound}
+ \norm{\HH_r}\le\frac{Cw(r)}{(1+|r|)^2},\qquad
+ \norm{u_{r,\nu}^+\HH_r}
+       +\norm{u_r^+\wedge\HH_r}
+       \le\frac{Cw(r)}{1+|r|}.
+\end{equation}
+For curl, the gradient term vanishes exactly and one may also use
+\[
+ u_r^+\wedge\HH_r
+       =P_r^{-1}u_r^+\wedge[\diag(\omega_r^-)q_M].
+\]
+The central aliases and their first fine differences are bounded
+directly by \eqref{eq:H-central}.
+
+On a dyadic shell $2^j\le|r|_\infty<2^{j+1}$, choose a largest
+coordinate. Its harmonic sum over that shell is bounded, while
+each other coordinate contributes at most $C(j+1)$. Thus
+\[
+ \sum_{\text{shell }j}w(r)\le C_d(j+1)^{d-1}.
+\]
+Combining with \eqref{eq:alias-bound}, for every $\alpha<1$,
+\begin{equation}\label{eq:weighted-alias}
+ \sum_r(1+|r|)^\alpha
+ \left[\norm{\HH_r}+
+       \sum_\nu\norm{u_{r,\nu}^+\HH_r}
+       +\norm{u_r^+\wedge\HH_r}\right]\le C_\alpha.
+\end{equation}
+All constants are uniform in $M$. This absolute sum also proves
+uniform alias Hilbert operator bounds. It controls every full first
+fine derivative, unlike the simpler least-potential-norm gauge.
+This absolute-sum argument does not give the endpoint $\alpha=1$
+or pointwise second-derivative bounds. A separate physical-space
+identity does give the componentwise Laplacian bound below.
+
+\subsection{The componentwise Laplacian and the physical adjoint}
+
+Multiplication of the uncanceled formula by $P_r$ gives
+\begin{equation}\label{eq:laplacian-split}
+ P_r\HH_rB=\diag(\omega_r^-)q_MB+\mathcal Z_rB,
+ \qquad
+ \mathcal Z_rB=\frac{u_r^+a_r^-P_0S}{P_rD_{s,2}E}.
+\end{equation}
+The central expression is defined by cancellation as
+$\mathcal Z_0B=u_0^+a_0^-S/(D_{s,2}E)$.
+For high aliases the established bounds give
+$\norm{\mathcal Z_r}\le Cw(r)/(1+|r|)$.
+The same dyadic summation therefore proves uniform physical
+$C^\alpha$ bounds for the reconstructed remainder, on the fixed
+complex strip, for every $\alpha<1$.
+
+The first term of \eqref{eq:laplacian-split} is precisely
+$Q_M^*q_MB$ with the physical fine-volume adjoint. It should not
+be estimated by the absolute sum of its Fourier aliases.
+For $x=n+s/M$, $s\in I_M^d$, set
+$\beta_s=(s_\mu+(M-1)/2+1)/M$. Direct counting of the strings
+through that fine bond gives
+\begin{equation}\label{eq:adjoint-row}
+ (Q_M^*B)_\mu(n+s/M)
+ =\beta_s B_\mu(n)+(1-\beta_s)B_\mu(n-e_\mu),
+ \qquad 0\le\beta_s\le1.
+\end{equation}
+The physical adjoint multiplies the discrete averaging coefficient
+by $M^d$. The two string multiplicities sum to $M$, so the two
+remaining weights sum to one. Transverse coarse labels are fixed
+by the cell containing the fine basepoint. This proves a uniform
+fine supremum bound and fixed coarse range for $Q_M^*$.
+Its reconstructed Bloch multiplier is
+$\beta_s+(1-\beta_s)e^{-iz_\mu}$, uniformly bounded on the strip.
+Consequently $Q_M^*q_M$ has uniform supremum-valued holomorphic
+cell symbols and exponential coarse-cell locality.
+
+Equation~\eqref{eq:laplacian-split} now proves the claimed
+$L^\infty$ bound for $\mathcal L_\eta\HH_M$ and its exponential
+locality by the same contour argument used below. The adjoint term
+may jump between neighboring transverse blocks, so the proof
+does not claim a uniform H\"older bound for the Laplacian or
+separate pointwise bounds for all second fine derivatives.
+
+\section{Fine-cell reconstruction and exponential locality}
+
+At a fine position $x=n+s/M$, reconstruct the symbol by
+\begin{equation}\label{eq:cell-symbol}
+ \HH_{\mathrm{cell}}(z;s)
+       =\sum_r e^{i(z+2\pi r)\cdot s/M}\HH_r(z).
+\end{equation}
+For real $z$, the matrix of exponential factors is unitary from
+alias counting-measure $\ell^2$ to the cell norm with measure
+$M^{-d}$. For complex $z=x+iy$, multiplication by
+$e^{-y\cdot s/M}$ changes this norm and its inverse by at most
+$e^{\sum|y_\nu|/2}$. Thus no growing output-dimension factor
+appears in the physical Hilbert bound.
+
+For two physical fine positions $\xi,\xi'$ in a fixed cell or
+collar, the fixed strip gives
+\[
+ |e^{ip_r\cdot\xi}-e^{ip_r\cdot\xi'}|
+       \le C_\alpha(1+|r|)^\alpha|\xi-\xi'|^\alpha.
+\]
+This follows from the derivative and bounded-exponential estimates
+and $\min(1,t)\le t^\alpha$. Apply
+\eqref{eq:weighted-alias} to \eqref{eq:cell-symbol}, and to the
+symbols with factors $u_{r,\nu}^+$ or $u_r^+\wedge$.
+This proves bounded holomorphic cell symbols in physical discrete
+$C^{1,\alpha}$ for the potential and $C^\alpha$ for the curl.
+Collars cover differences across cell boundaries. A wrapped fine
+point carries the appropriate coarse Bloch factor, exactly as in
+the finite-difference symbol $u_r^+$.
+
+The individual alias vector is not a fixed-index periodic symbol.
+On real momenta, a shift by $2\pi$ permutes aliases modulo $M$;
+the full scalar covariance, vector covariance, quotient and coarse
+derivative are periodic. Formula~\eqref{eq:uncanceled-H} therefore
+has that permutation law. In \eqref{eq:cell-symbol}, a wrapped
+alias changes its phase by $e^{2\pi i s_\nu}=1$.
+The reconstructed symbol is genuinely coarse-periodic. The canceled
+holomorphic formulas on enlarged momentum charts agree on real
+overlaps and hence glue by the identity theorem. This argument
+also applies to the fine derivative and curl symbols.
+
+Finally shift each coarse Fourier contour within the common strip.
+Uniform operator bounds in the displayed cell norms give
+\eqref{eq:locality}, including on fixed collars. The explicit
+kernel acts by
+\[
+ (\HH_MB)(n+s/M)=\sum_m\HH_M(n-m;s)B(m).
+\]
+Exponential row sums give uniform coarse-$\ell^\infty$ to fine
+supremum and local H\"older bounds. The corresponding column sums
+use fine physical measure $M^{-d}$, which cancels the $M^d$ fine
+positions per cell; weighted Schur gives the coarse-$\ell^2$ to
+fine-volume-$\ell^2$ bounds. Finite tori sample the same periodic
+symbols, so their kernels are exact periodizations. Absolute
+convergence gives uniform periodic-distance estimates, including
+small periods with oriented-cell multiplicities.
+
+\section{The homogeneous source identification}\label{sec:source}
+
+The scalar and bond operators must be checked separately. Raw I,
+lines 23909--23918, transcribes CMP99b (3.18)--(3.19): its scalar
+$Q'_n$ is a uniform block average with adjoint transports.
+At flatness it is exactly $Q_0$. Raw I 23937--23944 transcribes
+CMP99b (3.24)--(3.25) as \eqref{eq:source-R}. The orthogonal
+projection calculation \eqref{eq:R-range} therefore identifies
+the scalar gauge used above with the deposited homogeneous flat
+source gauge. This is not the simpler projection $I-Q_0^*Q_0$.
+
+Raw I 24349--24373 transcribes the corrected one-step average
+of CMP98 (122)--(125). At the trivial configuration, all transports
+are identities, $Y=Y_x=0$, and the four displayed correction
+brackets vanish. The remaining linear operator is exactly
+\[
+ (QA)(c)=\sum_{x\in B(c_-)}L^{-d-1}A([x,x'])=Q_L^{\rm st}A(c).
+\]
+Raw I 47046--47048 gives the multilevel $Q_j$ as compositions of
+these one-step operators. The centered digit and longitudinal-string
+bijections of Notebook 06 give their flat composition
+$Q_{L^j}^{\rm st}$. This is the corrected fine-to-coarse constraint,
+distinct from the rooted next-step $Q^\flat$ used to eliminate
+Gaussian pivot bonds.
+
+For this homogeneous specialization, a source minimizing extension
+with $QH=I$ and $RD_f^*H=0$ must equal $\HH_M$ by the uniqueness
+argument above. If source notation instead reads $QH_0=\ell^{-1}$,
+the normalized operator is $H_0\ell$, as recorded in Raw I
+13638--13655. Omitting this normalization would compare different
+maps. The conclusion identifies the explicit deposited flat
+operator definitions and their stated minimizing property; it
+does not reproduce the original nonlinear minimizer theorem.
+The unavailable primary CMP99b text has not been independently
+verified in this check.
+
+An equivalent algebraic correction helps compare gauges. If $H$
+is any minimizing right inverse with $QD_f=d_cQ_0$, then
+\[
+ H_{\rm src}=(I-D_fG'RD_f^*)H
+\]
+is feasible, has the same curl energy, and satisfies the source
+gauge. Indeed $Q_0G'R=0$ and $\Delta G'R=R$ follow from
+\eqref{eq:source-R}. Thus $QH_{\rm src}=I$ and
+$RD_f^*H_{\rm src}=0$. Uniqueness identifies this correction
+with the explicit formulas proved local above; locality is supplied
+by those formulas, not assumed for a generic correction operator.
+
+\section{What the localized extension can support}
+
+The result supplies uniformly local fine potential, first-gradient
+and curl legs for the homogeneous flat source operator. For example,
+in a real differentiable family of self-adjoint stationary quadratic
+forms satisfying
+\[
+ QH=I,\qquad \Delta H=Q^*q,\qquad q=H^*\Delta H,
+\]
+differentiation gives the exact identity
+\[
+ \dot q=H^*\dot\Delta H-H^*\dot Q^*q-q\dot QH.
+\]
+It uses $Q\dot H=-\dot QH$ and requires no separate derivative
+bound on $\dot H$ in this first variation. Local variations of
+these stated coefficients can consequently be tested against the
+local flat legs just constructed.
+
+This conditional identity by itself does not show that the deposited
+independent-current family has this stationary representation, or
+that its coefficient variations have the required weighted bounds.
+No arbitrary nonflat background, hole, frozen boundary or mixed
+history is covered here. No sharp cutoff is moved by an untracked
+gauge change. The full complex carrier domain remains a separate
+construction task. Notebook 09 now proves the stationary
+representation and a uniform complex current neighborhood for the
+homogeneous auxiliary family $G_\pi^J$, including all-order localized
+current responses. Notebook 11 separately controls the additional
+nonlinear constraint term and the full flat $G_1^J$ family in the
+physical-cell algebra along $M=L^j$. Notebook 10 uses the full inverse to prove
+locality of the projection onto feasible curvature variations and
+an all-order expansion for small curvature-metric perturbations at
+fixed averaging constraint.
+
+\begin{thebibliography}{9}
+\bibitem{repo}
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}
+{Pinned Yang--Mills-LLM-experiment account}, commit
+\texttt{e392ef4501\allowbreak 3a581664ba\allowbreak b76b908671\allowbreak 70b30fe10e}.
+\bibitem{balaban109} T. Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field theories I},
+Commun. Math. Phys. 109 (1987), 249--301.
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-3ygai0vxt1.pdf}
+{Copy of the original article}.
+\end{thebibliography}
+\end{document}

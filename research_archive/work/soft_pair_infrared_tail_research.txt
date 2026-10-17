@@ -1,0 +1,302 @@
+UNIFORM AFFINE INFRARED TAIL VIA LOCAL CUBIC RESOLVENTS
+18 October 2026. Research proof, provenance; independent audit requested.
+
+Result. Uniform localized relative physical vertices, together with
+flat relative weighted resolvent control, imply an O(1) affine heat
+tail in final physical time u>=1. The proof retains the local block
+trace throughout; it makes no cyclic permutation across that block.
+It applies to the actual soft scalar/vector pair through their
+identified first two affine jets. The coarse determinant remainders
+are separate O(1) inputs. No intermediate-time plateau or logarithmic
+coefficient is inferred.
+
+1. Spaces and exact sufficient inputs
+
+Fix d=4, mu=1/K and compatible tori with current side KN, or the
+infinite lattice. The Hilbert space has fixed color/component fiber
+per fine site or positive bond. Partition it into centered final
+blocks indexed by Z^4 (or its N-periodic quotient), with projections
+P_x. Bond assignment is by initial site. Harmless fixed collars may
+be used for source spaces.
+
+The reference operator is
+  L=I+K^2 Delta,
+with the componentwise flat lattice Laplacian. Let X0 be the actual
+flat physical operator (K^2 times its current-counting matrix).
+We use the following precise inputs, uniform in K and old depth M.
+For the actual vector's spatial estimates we work on the chosen joint
+infinite structural system or on explicit periodizations of its
+kernels. Actual arbitrary finite-regulator gap and heat estimates are
+separate facts; no exact infinite moment cancellation is inferred from
+a finite momentum grid or from an unrelated finite winding kernel.
+The abstract argument below is also finite-volume uniform whenever
+all three inputs hold on the finite system in question.
+
+(I) X0 is positive self-adjoint and X0>=c0 L.
+
+(II) For bounded physical 1-Lipschitz weights f, W=exp(theta f),
+  ||L^-1/2 (W X0 W^-1-X0)L^-1/2|| <= C theta
+for all sufficiently small fixed theta. Scalar/bond weights use their
+site or initial site, respectively. The same assertion may be proved
+first for truncated distances. Its constants do not count block
+fiber dimension.
+
+(III) Let a_j be complete bounded physical C1 source fields supported
+in a fixed smooth collar of block j, with norm a_j^*=||a_j||phys,1.
+Write V_j for the first variation and V_jk for the mixed second
+variation of X at zero. For any weight W as in (II),
+  ||L^-1/2 W V_j W^-1 L^-1/2|| <= C a_j^*,
+  ||L^-1/2 W V_jk W^-1 L^-1/2|| <= C a_j^* a_k^*.
+Moreover, let f_j be physical distance to the fixed physical cube or
+collar of block j, and use W_j=exp(theta f_j) and bounded truncations.
+This is a 1-Lipschitz function of fine-site position divided by K,
+not the piecewise constant distance between block labels. Then
+  ||L^-1/2 W_j V_j W_j L^-1/2|| <= C a_j^*.
+For V_jk the analogous two-sided bound holds centered at j and at k,
+with right side C a_j^* a_k^*.
+
+The two-sided weights in the last input are important: they attach a
+source to both matrix ends. A mere unlocalized relative operator
+bound is insufficient for the local trace statement.
+
+These inputs may be stated for bilinear holomorphic jets. No complex
+self-adjointness is required. Only X0 and L are positive.
+
+2. Applicability of the inputs to the actual soft pair
+
+For the soft scalar T_s=Delta_A+mu^2 Pi_A, Section3 of
+soft_scalar_coarse_reduction_research.txt gives (I). The weighted
+relative proof in its Section5 gives (II). Its D/J derivative
+expansion gives (III), with physical sources even needing only their
+sup norm. J is normalized and block local, so its source derivatives
+carry no K^4 factor.
+
+For the soft vector use the flat domination established in the
+mean-zero and soft-vector modules: the operator dominates a fixed
+multiple of Delta_bond+mu^2 I in counting units. The added DJ term
+is positive. This gives (I) for X0=K^2 V0.
+
+For its action term, the covariant_hessian_relative_vertices proof
+gives, after physical rescaling, first-two jets of the form
+  Dphys^T Z + Z^T Dphys + E
+with uniformly bounded localized Z,E; the second-order Z may have
+an additional beneficial factor mu. These factors have exponential
+rooted final-block bounds. Conjugation commutators of Dphys with W
+are bounded O(theta). Multiplication by W_j on both sides is allowed
+by that rooted decay, with a smaller theta. Since
+||Dphys L^-1/2||<=1, this supplies (III).
+
+The covariant D_A D_A^T term has the same elementary derivative
+factorization. The soft averaging/coarse-Hessian term has uniformly
+bounded physical operator vertices: each corrected angle average
+and its localized physical derivatives has counting size O(mu).
+Its pair supplies mu^2, canceled by K^2. Its coarse fiber is fixed,
+and the old-depth action/source bounds are uniform. Its supports and
+coarse sums give (III) directly. The soft-vector note separately
+identifies these auxiliary first-two jets with the actual affine
+stationary jets, retaining the required residual/current terms.
+
+For (II), use precisely the repaired ordered Laurent factorization in
+Section4 of covariant_hessian_relative_vertices_research.txt:
+  q_M=D0^T H0 D0,
+where BOTH the constant and linear flat momentum jets vanish and H0
+is symmetric with uniform exponentially summable current kernels.
+Separate component row sums alone do not give this factorization,
+and no common componentwise difference-square identity is used.
+For a physical 1-Lipschitz weight, conjugating each outer ordinary
+gradient changes it by a bounded multiplication operator O(theta mu);
+conjugating H0 changes its norm by O(theta mu), using its exponential
+first moment. Retain the latter change BETWEEN the two gradients.
+After multiplying by K^2 and sandwiching with L^-1/2, the outer-gradient
+errors are O(theta+theta^2), and the middle error is O(theta mu).
+The flat covariant-gradient term has the same estimate. The bounded
+physical block penalty has fixed physical range; its coarse q_MK
+factor has uniform exponential moments. Its error is O(theta).
+This proves (II) without assuming the weighted absolute row norm of
+X0 is uniformly bounded (it generally grows as K^2).
+
+Thus this is a consequence of the LOCALIZED covariant relative-vertex
+proof and the soft-vector identification, not merely of the earlier
+unlocalized inequality ||X0^-1/2 V_j X0^-1/2||<=C.
+The actual polynomial-jet identification is only needed at each fixed
+K. Its constants need not be uniform in K.
+
+3. A dimension-free block Schatten estimate
+
+The elementary massive lattice heat bound implies
+  Tr(P_x L^-3 P_x)<=C,                                  (3.1)
+uniformly in K,N. One may integrate the flat heat trace against
+t^2 exp(-t)/2. Per final block that trace is at most
+  C{K^4/(1+K^2 t)^2+N^-4};
+its integral is bounded, including the finite zero mode. The same
+calculation applies to the infinite lattice. Fixed color/component
+multiplicity is absorbed in C.
+
+Importantly, compression and taking powers are not interchanged.
+For eigenvectors u_i of P_x L^-1 P_x in its finite-dimensional block,
+scalar Jensen for the spectral measure of L^-1 gives
+  <u_i,L^-1u_i>^3 <= <u_i,L^-3u_i>.
+Summing proves
+  ||P_x L^-1/2||_S6^6
+   =Tr[(P_xL^-1P_x)^3] <= Tr(P_xL^-3P_x)<=C.             (3.2)
+The analogous right-ended norm has the same bound. Therefore every
+operator of the form
+  L^-1/2 A L^-1/2,       ||A||<=C_A,
+satisfies
+  ||P_x L^-1/2 A L^-1/2 P_y||_S3 <= C C_A,              (3.3)
+by Schatten Holder with exponents 6,infinity,6.
+There is no factor proportional to the fine block rank K^4.
+
+4. Uniform contour and resolvent source kernels
+
+Choose 0<lambda0<c0/4 and a fixed angle 0<phi<pi/2.
+Let Gamma be the standard positively oriented Dunford contour
+consisting of the two rays lambda0+r exp(+-i phi), surrounding the
+positive spectrum to its right. At a finite regulator it can first
+be closed beyond the largest eigenvalue.
+
+For z on Gamma,
+  ||L^1/2(z-X0)^-1 L^1/2||<=C_Gamma.                    (4.1)
+Indeed X0>=c0 L, and the spectral norm of
+X0^1/2(z-X0)^-1X0^1/2 is uniformly bounded on these rays.
+Input(II) and a sufficiently small theta then give, by a relative
+resolvent Neumann expansion,
+  W(z-X0)^-1W^-1=L^-1/2 A_(z,W)L^-1/2,
+  ||A_(z,W)||<=C,                                      (4.2)
+uniformly on the whole contour. The sign in the resolvent is
+irrelevant for these norm estimates.
+
+Write R_z=(z-X0)^-1. Its first-two variations are the usual finite
+resolvent products R_z V_j R_z and
+R_z V_jk R_z+R_z V_j R_z V_k R_z+
+R_z V_k R_z V_j R_z (with the corresponding Taylor/derivative
+convention). Equations(4.1)--(4.2) and input(III) put each product,
+including its weighted versions, in the form in (3.3), with uniform
+middle-operator norm.
+
+Here is explicit source localization avoiding fractional-weight
+commutators. For a first variation, conjugating with a TWO-SIDED
+weight centered at j gives exactly
+  W_j (R_z V_j R_z) W_j
+   =(W_j R_z W_j^-1)(W_j V_j W_j)
+                         (W_j^-1 R_z W_j).
+Each factor has the relative normalization just described, so its
+outer factors are L^-1/2 and its middle is bounded. If a second
+source k is present, mark the occurrence of j and move W_j through
+all other factors. For example,
+  W_j(R_z V_j R_z V_k R_z)W_j
+   =R_+ (W_j V_j W_j) R_- (W_j^-1 V_k W_j) R_-.
+Input(III) bounds the unmarked conjugated vertex. The mixed primitive
+vertex V_jk uses its two-sided weighted bound. Repeating with k as
+the marked source gives both endpoint-to-source estimates.
+
+Combining these estimates with (3.3) proves, for n=0,1,2,
+  ||P_x (delta_(j1)...delta_(jn) R_z) P_y||_S3
+   <=C_n product a_j^* exp[-c tau(x,y,j1,...,jn)].        (4.3)
+For n=0 choose a one-sided distance weight from y. For n=1 the
+two-sided weight gives exp[-theta(dist(x,j)+dist(y,j))].
+For n=2 take the geometric mean of the separate j and k estimates.
+The resulting four edges form a connected graph on the marked
+vertices, so their length dominates its minimum connecting-tree
+length. Here tau allows auxiliary vertices in the connecting graph.
+The infimum and supremum of each physical f_j on a fixed block differ
+by at most a dimensional constant. Hence the fine-site weights just
+defined imply the displayed block-label exponential factors, up to a
+fixed multiplicative constant. Fixed collar sizes change only C_n.
+All statements hold for periodic distances as well. Truncating weights
+and taking limits is legitimate because every bound is uniform.
+
+5. Third resolvent power and the genuinely local trace
+
+For u>0, functional calculus gives
+  exp(-uX)= (2/u^2)(1/(2pi i))
+                integral_Gamma exp(-uz)(z-X)^-3 dz.     (5.1)
+For a scalar eigenvalue this is the residue of the third-order pole:
+the residue is u^2 exp(-u lambda)/2. Thus the displayed coefficient
+and sign are fixed.
+
+Differentiate (z-X)^-3=R_z R_z R_z through order two.
+Each term is a product of THREE differentiated-resolvent factors;
+the orders n1+n2+n3 sum to at most two. Insert the block resolution
+of identity between those factors. For the trace in block0,
+Schatten Holder gives
+  |Tr(P0 R_z^(n1) P_i R_z^(n2) P_j R_z^(n3) P0)|
+   <= ||P0 R_z^(n1)P_i||_S3
+      ||P_i R_z^(n2)P_j||_S3
+      ||P_j R_z^(n3)P0||_S3.                           (5.2)
+The root blocks remain where they belong. Nothing is moved cyclically
+through P0.
+
+Equation(4.3) and coarse convolution, spending an exponent, imply
+  |delta_(j1)...delta_(jn) Tr(P0 R_z^3 P0)|
+    <=C_n product a_j^* exp[-c' tau(0,j1,...,jn)]         (5.3)
+for n<=2. The sums over i,j are absolutely convergent in trace norm,
+uniformly in K,N,z. This also constructs the local infinite trace;
+one does not take an infinite extensive trace.
+
+On Gamma, Re z=lambda0+r cos phi. Hence for u>=1,
+  integral_Gamma |exp(-uz)| |dz|
+                  <= C exp(-lambda0 u)/u.
+Combine (5.1),(5.3) to get
+  |delta_(j1)...delta_(jn) Tr(P0 exp(-uX)P0)|
+   <= C_n u^-3 exp(-lambda0 u)
+       product a_j^* exp[-c' tau(0,j1,...,jn)] .          (5.4)
+The factor u^-3 is harmless on u>=1; it is not claimed to be the
+small-time asymptotic. Differentiation, contour integration, block
+summation and local limits are justified by the displayed absolute
+majorants. At finite K one may first use bounded compact sources
+and the actual local germ, then extend the coefficient by these bounds.
+
+6. Affine source and the actual infrared tail
+
+Choose a fixed smooth physical partition of unity on bounded final
+block collars with bounded first derivatives and finite overlap.
+Decompose the affine physical field
+  A_mu(x)= (x_nu/K) H,       mu!=nu,
+as a sum of complete supported fields a_j. Their physical C1 norms
+satisfy a_j^*<=C(1+|j|).
+Equation(5.4) for n=2 is summable with these polynomial weights.
+Consequently the formal affine Taylor coefficient satisfies
+  |[t^2] Tr_0 exp[-u X(t A_aff)]|
+                         <= C exp(-c u),       u>=1,   (6.1)
+uniformly in K and old M along the stated infinite structural
+systems. This is a Taylor-kernel evaluation, not an unbounded
+background inserted into a fixed sup ball.
+
+For the actual soft scalar and vector matrices, their first two
+stationary affine jets agree with these computed jets up to a fine
+gauge. The diagonal color traces are individually gauge invariant.
+Thus (6.1) bounds the ACTUAL affine coefficient, with no uniform-K
+stationary-response norm. The fixed-K polynomial-jet identification
+is used before the uniform explicit-representative estimate.
+
+Writing X_s=K^2 T_s and X_v=K^2 V, the combined physical infrared
+tail therefore satisfies
+  integral_1^infinity
+   |[t^2]{Tr_(0,E) exp(-u X_v(t))
+                      -2 Tr_(0,S) exp(-u X_s(t))}| du/u <= C.     (6.2)
+Equivalently this is the current-time tail s>=K^2 of the soft-pair
+Maxwell heat formula. The same result holds for either factor
+separately. Constant normalization terms have zero affine coefficient.
+
+No finite torus affine-flux family is asserted. At finite volume the
+source bounds hold for explicit periodizations, or any finite model
+for which (I)--(III) have separately been verified. The actual local
+polynomial coefficient is obtained in the chosen infinite structural
+system through the already proved fixed-K identification; arbitrary
+actual finite winding kernels are not identified with periodizations.
+
+7. What this removes and what it leaves
+
+Together with the exact soft factorization and the O(1) coarse
+Maxwell corrections, (6.2) removes the large-physical-time tail from
+the logarithmic calculation. It leaves the intermediate regime
+1<<s<<K^2 and the short-current-time reference contribution.
+The proof does not establish a plateau value, its sign, or a
+bounded comparison with a chosen continuum reference on that
+intermediate regime.
+
+For fidelity, the genuinely required new analytic input is(III)
+with source attachment, not just global relative-form boundedness.
+Sections2--5 explain precisely how the existing localized
+covariant-vertex and soft-factor bounds supply it.

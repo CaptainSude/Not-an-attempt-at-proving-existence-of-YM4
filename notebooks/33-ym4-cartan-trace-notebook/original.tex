@@ -1,0 +1,1247 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 33: gauge-invariant determinant densities and Cartan probes}
+\author{Research working document}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We identify a constant-curvature calculation with the actual
+Maxwell coefficient of the leading quantum correction.
+The starting point is the exact vector, based-ghost and
+effective-Hessian determinant identity of Notebook 32.
+
+At a fixed composite endpoint, the matrices transform by
+background-gauge conjugation. Their diagonal color traces
+therefore define individually gauge-invariant analytic
+densities. Fixed-endpoint gaps and exponentially localized
+source kernels make their matrix logarithms local, uniformly
+in compatible volume. A rooted-density Ward argument proves
+that their quadratic affine coefficient is precisely the
+second-displacement moment of the total Hessian. This
+resolves the ambiguity that would arise from evaluating
+an arbitrary integration-by-parts density on an unbounded
+affine connection.
+
+Commuting affine connections are exactly Wilson stationary
+and are preserved by the actual centered ordinary averaging
+maps. An exponential-kernel uniqueness argument identifies
+their polynomial stationary jets with the constructed
+minimum section. The envelope identity extends the
+zero-current conclusion to the effective classical actions.
+The constraint multiplier consequently vanishes through
+the background orders needed for the Maxwell calculation.
+
+The resulting coefficient is an explicit diagonal trace
+expression on a constant Cartan-curvature probe, using
+the actual composite constraint and its normalized
+determinants. For the bare composite it involves the
+Wilson Hessian directly. The coarse contribution already
+has a uniform bound. We compute a specified massive
+continuum proper-time reference, including its positive
+logarithmic coefficient and a uniform finite-part bound.
+An exact heat-integral formula for the actual lattice
+coefficient isolates sufficient estimates on three
+heat-time intervals. Those estimates for the actual
+family remain incomplete. A closed-walk expansion proves
+the short-time bound for the actual based-ghost part,
+uniformly in endpoint and preceding depth. The vector
+part, the other heat-time intervals and the subsequent
+full-measure and continuum arguments remain.
+\end{abstract}
+
+All new arguments below are working proofs checked against
+the stated inputs from Notebooks 15--32. The matrix-logarithm
+locality estimates fix the endpoint before taking a volume
+limit. They are not estimates uniform in the ultraviolet
+depth. An affine field is used only through polynomial
+extensions of localized derivatives; no periodic family
+of continuously varying magnetic flux is assumed.
+
+
+% No preamble. Prefix gdd-. Fixed endpoint, actual determinant densities.
+\section{Gauge-invariant diagonal determinant densities}
+\label{gdd-section}
+
+Fix a composite endpoint \(K=\ell^k\), a preceding homogeneous
+depth \(M\), and the actual finite periodic construction. The
+endpoint is fixed throughout this section. Constants may depend
+on \(K\); they will be uniform in the permitted volume and in
+the preceding depth where the upstream classical bounds are.
+Choose the fixed sufficiently large scalar \(a>0\) from the
+coarse determinant estimate of Notebook 32.
+
+At the actual stationary field \(U_*(W)\), use its left-relative
+objects
+\[
+ C=f'(0),\quad s'=C^T\lambda,\quad
+ \mathcal L=s''-\lambda\cdot f'',\quad
+ G_b=D_b^TD_b,\quad
+ Q_b=\mathcal L+D_bD_b^T+aC^TC,\quad
+ P_c=q_{\mathrm{eff}}+aI.
+\]
+The exact finite identity already established is
+\begin{equation}
+ D_{M,K}(W)=\mathcal N_0\left[
+       \log\det G_b-\frac12\log\det Q_b
+                           +\frac12\log\det P_c\right].
+ \label{gdd-exact-total}
+\end{equation}
+Here \(\mathcal N_0\) subtracts the value at \(W=1\).
+The matrices act, respectively, on noncenter scalar sites,
+current bonds, and output bonds, including their color coordinates.
+
+\subsection{Background covariance of the actual matrices}
+\label{gdd-covariance-section}
+
+For a fixed current-site gauge \(u\), let \(O_E\) denote
+the block-diagonal adjoint action at each current bond's
+initial site, \(O_S\) the corresponding action at noncenter
+scalar sites, and \(O_C\) its action at output bond initial
+centers. These matrices are orthogonal for real gauges.
+They are complex orthogonal on the holomorphic continuation.
+The transformation of a left-relative variation is linear:
+\[
+ (e^{ix}U)^u=e^{iO_Ex}U^u.
+\]
+The actual ordinary average is equivariant, so its relative
+target logarithm transforms by \(O_C\). Local gauge invariance
+of the two actual classical actions consequently gives
+\begin{align}
+ C(U^u)&=O_C C(U)O_E^T,&
+ \lambda(W^{u|_{\rm centers}})&=O_C\lambda(W),\notag\\
+ \mathcal L(U^u)&=O_E\mathcal L(U)O_E^T,&
+ D_b(U^u)&=O_E D_b(U)O_S^T. \label{gdd-transformations}
+\end{align}
+For the Lagrangian identity, differentiate
+\[
+ s_{U^u}(O_Ex)=s_U(x),\qquad
+ f_{U^u}(O_Ex)=O_Cf_U(x).
+\]
+The second equality and the multiplier transformation retain
+the entire \(\lambda\cdot f''\) term. No unconstrained
+stationarity is assumed here.
+
+The based scalar domain is unchanged by these transformations:
+zero values at all \(K\)-centers remain zero. The effective
+relative Hessian transforms by \(O_C\), since its target
+relative variable also transforms linearly. Thus
+\begin{equation}
+ G_b(U^u)=O_SG_b(U)O_S^T,\quad
+ Q_b(U^u)=O_EQ_b(U)O_E^T,\quad
+ P_c(W^{u|_{\rm centers}})=O_CP_c(W)O_C^T.
+ \label{gdd-matrix-covariance}
+\end{equation}
+These identities concern the fixed scalar completion \(aI\).
+They do not assert such covariance for an arbitrary
+background-dependent completion.
+
+\subsection{Fixed-endpoint locality of the matrix logarithms}
+\label{gdd-log-locality-section}
+
+We need locality of a diagonal logarithm, not merely locality
+of the trace of its derivatives. The required fixed-endpoint
+spectral and kernel inputs follow from the preceding modules,
+as follows.
+
+At zero background, \(G_b\) has a positive gap independent
+of volume when \(K\) is fixed. Indeed, join every site to
+its block center by a path of length at most \(c_dK\).
+For a scalar field vanishing at centers, Cauchy--Schwarz
+along these paths and summation in a block give
+\begin{equation}
+ \|\phi\|_2^2\le c_d K^{d+1}\|D_b\phi\|_2^2.
+ \label{gdd-pinned-Poincare}
+\end{equation}
+The crude exponent is sufficient here. This is compatible
+with the soft-mode upper bound in Notebook 32 and supplies
+no gap uniform as \(K\) grows.
+
+The flat constrained contour precision has its previously
+proved positive gap at fixed \(K\), uniformly in preceding
+depth and volume. On \(\ker C\), decompose a vector into
+its component in \(\operatorname{ran}D_b\) and its orthogonal
+complement. The form \(\mathcal L\) annihilates the first.
+For a horizontal vector \(v\in\ker C\), replace it by
+\(v+D_bTv\) to make its contour derivative zero.
+Its \(\mathcal L\) value is unchanged, and the orthogonal
+projection of this replacement back to the horizontal
+space is \(v\). The contour precision bound therefore
+controls \(\|v\|_2^2\). Its passage from retained
+coordinates to current bonds uses the fixed-\(K\)
+bounded insertion \(K_0\); this only changes the constant.
+On vertical vectors \(D_b\phi\), the divergence penalty
+has the lower bound
+\[
+ \|D_b^TD_b\phi\|_2^2
+       \ge \lambda_{\min}(G_b)\|D_b\phi\|_2^2.
+\]
+Thus \(\mathcal L+D_bD_b^T\) has a uniform fixed-\(K\)
+gap on \(\ker C\).
+
+The actual adjusted minimum-section derivative
+\[
+ H_b=H-D_bG_b^{-1}D_b^TH
+\]
+has \(CH_b=I\), \(D_b^TH_b=0\), and a bounded operator norm
+at fixed \(K\). The latter follows from the established
+minimum-response bound and the orthogonal projection
+in this formula. Write \(x=\xi+H_by\), \(C\xi=0\).
+The exact effective Schur identity gives
+\[
+ x^TQ_bx
+  =\xi^T(\mathcal L+D_bD_b^T)\xi
+                         +y^T(q_{\mathrm{eff}}+aI)y.
+\]
+Since \(q_{\mathrm{eff}}+aI\) has a fixed positive gap,
+this proves a flat gap for \(Q_b\), uniform in volume
+and preceding depth at fixed \(K\). Their upper spectral
+bounds and exponentially weighted matrix bounds follow
+from the actual strict classical families, the finite-range
+constraint at fixed \(K\), and the local gauge generator.
+\(P_c\) already has the stronger uniform bounds of Notebook 32.
+
+Compose these matrices with the actual stationary section.
+Its strict support kernels, together with those of the
+classical actions and local charts, give source-rooted
+matrix derivative bounds through order two. A sufficiently
+small common complex output ball preserves the flat
+gaps in operator norm. This ball may depend on \(K\),
+but not on volume or preceding depth.
+
+Here is an elementary logarithm argument making the
+locality consequence precise. For any one of these
+matrix families \(P(w)\), choose a fixed scalar \(s\)
+larger than its flat upper spectral bound and put
+\[
+ Z(w)=I-P(w)/s.
+\]
+At zero \(\|Z(0)\|_{2\to2}<1\), uniformly over the
+volumes under consideration. The exponentially weighted
+kernel bound implies that conjugating \(Z\) by a small
+exponential distance weight changes its operator norm
+by an arbitrarily small amount. First use bounded
+truncations of the distance weight; their uniform
+Lipschitz bound gives the same estimate, and then pass
+to kernel bounds. No unbounded similarity is assumed
+to act on all of \(\ell^2\). Shrink the background
+ball as well. The conjugated operators then have norm
+at most one fixed \(r_K<1\). Therefore
+\begin{equation}
+ \log P(w)=(\log s)I-\sum_{n\ge1}\frac{Z(w)^n}{n}
+ \label{gdd-log-series}
+\end{equation}
+converges with these exponential weights.
+Termwise differentiation through order two is permitted:
+there are at most \(n\) or \(n^2\) insertions, absorbed
+by the geometric factor \(r_K^{n-2}\).
+The actual source-rooted bounds attach every background
+source to the matrix-product chain. Exponential weights
+then connect the diagonal matrix coordinate and all
+sources. Conversion from weighted \(\ell^2\) to row
+sums spends a smaller exponent and a finite geometric
+sum. The internal fiber per output block is finite
+at fixed \(K\).
+
+In particular, if a diagonal color trace is assigned
+to a fixed output block \(x\), its quadratic kernel
+\(k_x(b,c)\) obeys, for some \(\kappa_K>0\),
+\begin{equation}
+ \sum_{b,c}e^{\kappa_K\tau(x,b,c)}|k_x(b,c)|\le C_K.
+ \label{gdd-rooted-kernel}
+\end{equation}
+Here the sum includes directions and colors, \(\tau\)
+is a connecting-tree distance in output units, and all
+finite multiplicities of current coordinates are included.
+Periodic bounds use shortest lifted distances. No extensive
+logarithm is taken to an infinite-volume limit.
+
+\subsection{A density with its own gauge identity}
+\label{gdd-density-section}
+
+Assign every noncenter current site to its unique centered
+\(K\)-block. Assign each positive current bond to the block
+containing its initial site, and each output bond to its
+initial output site. Define
+\begin{align}
+ \rho_x(w)=\mathcal N_0\bigg[
+ &\sum_{\substack{z\ {\rm noncenter}\\z\ {\rm in\ block}\ x}}
+                   \operatorname{tr}_{\mathfrak g}(\log G_b)_{zz}
+ -\frac12\sum_{\substack{e\ {\rm current}\\e_-\ {\rm in\ block}\ x}}
+                   \operatorname{tr}_{\mathfrak g}(\log Q_b)_{ee}
+ \notag\\
+ &+\frac12\sum_{\substack{c\ {\rm output}\\c_-=x}}
+                   \operatorname{tr}_{\mathfrak g}(\log P_c)_{cc}
+ \bigg].
+ \label{gdd-density}
+\end{align}
+All matrices in this formula are evaluated at \(U_*(e^{iw})\)
+or its output \(e^{iw}\), as appropriate. On the finite
+regulator,
+\begin{equation}
+                         D_{M,K}(e^{iw})=\sum_x\rho_x(w)
+ \label{gdd-density-total}
+\end{equation}
+exactly.
+
+Functional calculus respects the similarities in
+\eqref{gdd-matrix-covariance}. A diagonal color trace is
+unchanged by its site's orthogonal conjugation. Moreover,
+the actual minimum at gauge-transformed output is gauge
+equivalent to the transformed old minimum, on the established
+local germ. To see this, transform the constraint and action,
+then use the proved uniqueness of the local constrained
+critical orbit and its selected contour representative.
+The comparison need only hold on a finite real germ;
+analyticity supplies the local identities used below.
+It follows that \emph{each} \(\rho_x\), and each of its
+three displayed groups of terms, has its own local
+output gauge identity. This conclusion uses more than
+gauge invariance of their sum.
+
+The block assignment is translation covariant. Local
+convergence of the matrices and their derivatives, together
+with \eqref{gdd-log-series} and its uniform geometric tail,
+passes these densities and their quadratic kernels to
+any jointly compatible infinite system at fixed endpoint.
+There they are translation covariant, satisfy
+\eqref{gdd-rooted-kernel}, and retain the local gauge identity.
+No uniqueness of different structural limits is needed.
+
+\subsection{An affine-density formula for the total Maxwell moment}
+\label{gdd-moment-section}
+
+\begin{lemma}[Gauge-invariant rooted density and total moment]
+\label{gdd-moment-lemma}
+Let \(\rho_x\) be translation-covariant analytic scalar
+densities on an infinite lattice, with exponentially
+rooted quadratic kernels as in \eqref{gdd-rooted-kernel}.
+Assume every \(\rho_x\) is invariant under local gauge
+changes on its germ, and under global semisimple color
+conjugation. Fix one color and distinct directions
+\(\mu,\nu\). For the formal affine component
+\[
+                  A_\mu(z)=t z_\nu,\qquad A_\sigma=0
+                    \quad(\sigma\ne\mu),
+\]
+the quadratic density coefficient is
+\begin{equation}
+ [t^2]\rho_0(A)
+       =-\frac14\sum_r r_\nu^2 K_{\mu\mu}(0,r),
+ \label{gdd-affine-moment}
+\end{equation}
+where \(K=\sum_x D^2\rho_x(0)\) is the total Hessian
+kernel in that color. Both sides are absolutely convergent
+kernel expressions. The left side does not mean evaluation
+of an analytic map at an unbounded nonzero field.
+\end{lemma}
+
+\begin{proof}
+Global semisimple color invariance kills each density's
+linear derivative. Differentiating its local gauge identity
+at the origin therefore shows that its Hessian annihilates
+each compactly supported infinitesimal gradient in either
+slot. The exponential kernel bound extends this identity
+to polynomial gauge parameters by absolute summation.
+In particular it annihilates a constant one-form in any
+one color and direction: use the linear scalar gauge
+parameter with that gradient.
+
+Write \(k_0(b,c)\) for the selected same-component Hessian.
+Its row and column sums are zero. Consequently
+\[
+ \frac12\sum_{b,c} k_0(b,c)b_\nu c_\nu
+   =-\frac14\sum_{b,c}k_0(b,c)(c_\nu-b_\nu)^2.
+\]
+Every interchange is allowed by exponential rooted
+summability. Translation covariance gives
+\[
+ K(0,r)=\sum_x k_x(0,r)=\sum_x k_0(-x,r-x).
+\]
+The change of indices \(b=-x,\ c=r-x\) turns the last
+second moment into the right side of
+\eqref{gdd-affine-moment}. The same calculation with
+the translated affine field shows that the coefficient
+is independent of the selected density root.
+\end{proof}
+
+For the actual correction, the established Maxwell
+normalization is
+\(\beta(D)=-\tfrac12\sum_r r_\nu^2K_{\mu\mu}(0,r)\),
+in one normalized color. Thus the constructed density gives
+\begin{equation}
+                  \boxed{\ \beta(D_{M,K})
+                            =2[t^2]\rho_0(tz_\nu e_\mu)\ }.
+ \label{gdd-beta-density}
+\end{equation}
+The density construction applies separately to the
+three groups of terms in \eqref{gdd-density}, with the
+corresponding second-moment extraction on each.
+When the total has the established spatial symmetries,
+this is its Maxwell coefficient.
+
+The individual gauge identity is essential. For example,
+the Maxwell action may be written either as its curvature
+square density or, after summation by parts, as a density
+of the form \(\tfrac12 A\cdot d^*dA\). On an affine
+constant-curvature field the latter vanishes pointwise,
+while the former does not. Their totals agree on compact
+fields. The diagonal densities above avoid this ambiguity
+because their own gauge identities imply the row and
+column cancellations used in the proof.
+
+\subsection{Scope}
+\label{gdd-scope}
+
+The result identifies a specific, locally gauge-invariant
+trace density with the total Maxwell moment. It does not
+estimate that moment uniformly as \(K\) grows. The gap,
+analytic radius and decay exponent used for \(G_b,Q_b\)
+are permitted to deteriorate with \(K\). No positive
+coefficient or comparison with a massive reference
+follows from the density identity alone.
+
+
+% No preamble. Prefix cdmom-. Polynomial jets, not a periodic flux family.
+\section{Constant Cartan curvature and the actual stationary jets}
+\label{cdmom-section}
+
+We now use the diagonal-density construction to make a
+constant-curvature calculation an exact test of the actual
+Maxwell coefficient. All substitutions at an unbounded
+affine field mean substitutions into exponentially localized
+Taylor kernels at zero, through the required finite order.
+
+\subsection{Exact local Wilson and averaging identities}
+\label{cdmom-affine-section}
+
+Choose commuting traceless Hermitian matrices \(c_\mu,B_{\mu\nu}\)
+in a Cartan subalgebra of \(\mathfrak{su}(N)\), with
+\(B_{\mu\mu}=0\), and put
+\begin{equation}
+ A_\mu(x)=c_\mu+\sum_\nu B_{\mu\nu}x_\nu,\qquad
+ U_\mu(x)=e^{iA_\mu(x)}.
+ \label{cdmom-affine}
+\end{equation}
+The plaquette in the \(\mu,\nu\) plane is the constant matrix
+\[
+ e^{iF_{\mu\nu}},\qquad F_{\mu\nu}=B_{\nu\mu}-B_{\mu\nu}.
+\]
+The full Wilson Euler derivative is zero. For each varied
+bond and transverse direction, the two incident plaquettes
+give opposite transported sine terms. They agree after
+transport because all background links and plaquettes
+commute. The cancellation occurs as a Lie-algebra-valued
+identity, including against variations outside the Cartan
+subalgebra. This is a local infinite-lattice identity;
+an artificial finite-box boundary is not included.
+
+For a centered primitive block, write \(x=y+r\).
+Every coordinate-order root contour has transporter
+\[
+ \exp\{i[r\cdot A(y)+q_\Gamma(B,r)]\},
+\]
+where \(q_\Gamma\) is independent of \(y\).
+The selected mean is endpoint equivariant and conjugation
+equivariant. Its value on a tuple of diagonal matrices
+is diagonal: conjugation by every diagonal group element
+fixes the tuple, hence its output. Therefore the actual
+root transporter has the form
+\begin{equation}
+ P_\ell(U;y,y+r)=e^{ir\cdot A(y)}p_\ell(B,r).
+ \label{cdmom-contour}
+\end{equation}
+No log-arithmetic formula for the selected mean is assumed.
+
+The \(p_\ell\) factors cancel in the ordinary path product
+between neighboring blocks. Since \(B_{\mu\mu}=0\), this
+product is
+\[
+ U_x=e^{i\ell A_\mu(y)}
+       \exp\!\left\{i\ell\sum_\nu
+                 (B_{\mu\nu}-B_{\nu\mu})r_\nu\right\}.
+\]
+Its reference center string is \(e^{i\ell A_\mu(y)}\).
+The defining ordinary average takes the centered average
+of the relative logarithms, and \(\sum_r r_\nu=0\).
+It follows that the actual primitive and iterated maps obey
+\begin{equation}
+ M_\ell(U)(y,y+\ell e_\mu)=e^{i\ell A_\mu(y)},\qquad
+ F_K(U)(y,y+Ke_\mu)=e^{iK A_\mu(y)},\quad K=\ell^k.
+ \label{cdmom-average}
+\end{equation}
+Thus the output affine curvature is \(K^2F\).
+These are identities of local analytic germs, hence
+identities of formal curvature jets at each lattice site.
+They do not require a common bounded logarithm of the
+affine field on the whole infinite lattice.
+
+Apply the actual direct-\(K\) root gauge
+\(u(x)=P_K(U;y,x)\) in the block centered at \(y\).
+It is the identity at centers. Endpoint covariance makes
+the transformed contour equal to the identity and leaves
+the composite output unchanged. Wilson stationarity
+is preserved by gauge invariance. At every fixed order
+in a curvature parameter, the rooted candidate has
+polynomial growth in the block center. The within-block
+coordinate set is finite at fixed \(K\).
+
+\subsection{Why the formal candidate is the actual minimum jet}
+\label{cdmom-jet-section}
+
+\begin{lemma}[Polynomial extension of the stationary recursion]
+\label{cdmom-polynomial-lemma}
+Suppose an actual stationary equation in retained coordinates is
+\[
+ \mathcal A z+\mathcal B w+\mathcal N(w,z)=0,\qquad
+                     \mathcal N=O((w,z)^2).
+\]
+Assume \(\mathcal A,\mathcal A^{-1},\mathcal B\) have
+exponentially summable kernels, the inverse identities
+hold on finitely supported fields, and the mixed Taylor
+kernels of \(\mathcal N\) through a specified finite
+order have exponential rooted-tree bounds. Then its
+analytic solution jets extend uniquely to polynomial-growth
+input jets. Any polynomial-growth formal solution has
+those same coefficients through that order.
+\end{lemma}
+
+\begin{proof}
+For a polynomial-growth sequence \(v\),
+\[
+ (1+|j|)^m\le(1+|i|)^m(1+d(i,j))^m
+\]
+shows that convolution by an exponentially summable
+kernel is absolutely defined and preserves polynomial
+growth. Exponential summability also permits the two
+convolutions in the inverse identities to be interchanged.
+Those identities therefore hold on polynomial-growth
+sequences. In particular \(\mathcal A\) has no nonzero
+polynomial-growth nullvector.
+
+For a mixed kernel of any fixed finite degree, bound
+each input polynomial by a polynomial in the output
+coordinate times a polynomial in the joining-tree lengths.
+The exponential tree bound absorbs the latter factors.
+Thus the nonlinear Taylor coefficients are well defined.
+At order \(n\) the stationary equation is
+\[
+ \mathcal A z_n=h_n(w_1,\ldots,w_n,z_1,\ldots,z_{n-1}),
+\]
+and has the unique polynomial-growth solution
+\(\mathcal A^{-1}h_n\). These are also the equations
+obtained by differentiating the analytic bounded-field
+solution. Induction proves the assertion.
+\end{proof}
+
+For the actual constrained stationary branch at a fixed
+endpoint, these are established inputs: the flat retained
+precision has its exponential inverse, the affine
+constraint chart is local, and the classical scalar
+and stationary support families have exponentially
+localized mixed derivatives. The finite fiber dimension
+is per block; the whole lattice is not finite-dimensional
+in this application. Only finite-order jets are being
+extended.
+
+For the bare Wilson action, the rooted affine candidate
+above solves the constraint, contour and stationary
+equations coefficientwise, with unconstrained current
+and multiplier equal to zero. Lemma~\ref{cdmom-polynomial-lemma}
+therefore identifies it with the actual stationary
+section's polynomial jets. In particular this applies
+through the two background orders needed below.
+
+\subsection{The effective classical action is also stationary on this family}
+\label{cdmom-effective-section}
+
+The effective-action interface can be checked using the
+actual envelope identity, without replacing its Hessian
+by a bare Wilson Hessian.
+
+Fix any permitted finite homogeneous depth \(M\).
+The action \(S_M\) is the actual local minimum value of
+the bare Wilson action under \(F_M\). Its differential
+in left-relative output coordinates equals the target
+multiplier of that minimum. This identity is an equality
+of the established analytic kernels. It extends to
+polynomial input jets by their exponential bounds.
+
+Apply the preceding bare-action argument at the fixed
+endpoint \(M\), with fine curvature equal to the prescribed
+current curvature divided by \(M^2\). The explicit fine
+candidate is Wilson stationary, so its multiplier jets
+are zero. Consequently
+\begin{equation}
+          D_{\rm left}S_M(U^{\rm affine}(t))=0
+                 \quad\hbox{as formal jets through order two}.
+ \label{cdmom-effective-stationarity}
+\end{equation}
+The identity holds in every current-link component;
+it is not just a derivative along the one-parameter family.
+Indeed the envelope identifies the whole target multiplier,
+and the unconstrained fine Euler derivative is zero.
+
+At the next fixed endpoint \(K\), take the current affine
+field with curvature divided by \(K^2\), and root it by
+the actual direct-\(K\) based gauge. The classical local
+gauge identity, also extended coefficientwise by exponential
+bounds, preserves \eqref{cdmom-effective-stationarity}.
+This candidate satisfies the actual \(S_M\) constrained
+stationary equation with zero multiplier through the same
+orders. Apply Lemma~\ref{cdmom-polynomial-lemma} to the
+retained precision for \(S_M\). The candidate has exactly
+the actual current stationary jets, and
+\begin{equation}
+             \lambda_{M,K}(t)=O(t^3)
+ \label{cdmom-multiplier-jets}
+\end{equation}
+in this formal sense.
+
+All assertions so far fix each endpoint when invoking
+its inverse. They do not infer a gap uniform in \(M\)
+or \(K\) for a one-shot fine operator. However, the
+current-coordinate classical and stationary Taylor
+kernels at fixed \(K\) have the already established
+uniform bounds in preceding depth. Their polynomial
+moments consequently pass to any varying-depth
+structural limit by exponential domination.
+Thus \eqref{cdmom-effective-stationarity} and
+\eqref{cdmom-multiplier-jets} also hold in those joint
+systems. The effective Hessian \(s''\) still depends
+on \(S_M\); this result does not make it the bare
+Wilson Hessian.
+
+\subsection{An exact constant-curvature expression for the Maxwell coefficient}
+\label{cdmom-determinant-section}
+
+Fix a trace-orthonormal Cartan color \(H\), and distinct
+directions \(\mu,\nu\). The output probe is
+\[
+ w_\mu(n;t)=t n_\nu H,\qquad w_\sigma=0\quad(\sigma\ne\mu).
+\]
+Its unrooted current affine representative is
+\begin{equation}
+ U_\mu^{\rm aff}(x;t)=\exp(i t x_\nu H/K^2),\qquad
+ U_\sigma^{\rm aff}=I\quad(\sigma\ne\mu).
+ \label{cdmom-probe}
+\end{equation}
+By \eqref{cdmom-average}, its output is exactly the
+chosen formal probe. Its oriented \(\mu,\nu\) plaquette
+has angle \(-tH/K^2\).
+
+On this family write
+\begin{align}
+ G(t)&=D_b(U^{\rm aff}(t))^TD_b(U^{\rm aff}(t)),\notag\\
+ V_a(t)&=s''(U^{\rm aff}(t))
+           +D_b(U^{\rm aff}(t))D_b(U^{\rm aff}(t))^T
+           +aC(U^{\rm aff}(t))^TC(U^{\rm aff}(t)),\notag\\
+ P(t)&=q_{\rm eff}(w(t))+aI.
+ \label{cdmom-probe-matrices}
+\end{align}
+All are formal matrix jets around their flat positive
+operators. In particular no invertibility or positivity
+on a nonzero global magnetic background is assumed.
+Equation \eqref{cdmom-multiplier-jets} removes the
+\(-\lambda\cdot f''\) term through second order.
+The remaining Hessian \(s''\) retains the actual action.
+
+Use the same block-zero site and bond assignments as
+in the diagonal-density construction. Its pointwise
+gauge invariance allows removal of the root gauge,
+coefficientwise: the local gauge identities extend to
+these polynomial gauge jets by the same exponential
+summation. The density--moment lemma therefore gives
+\begin{equation}
+ \boxed{\begin{split}
+ \beta(D_{M,K})=[t^2]\bigg\{
+ &2\sum_{\substack{z\ {\rm noncenter}\\z\ {\rm in\ block}\ 0}}
+                   \operatorname{tr}_{\mathfrak g}(\log G(t))_{zz}\\
+ &-\sum_{\substack{e\ {\rm current}\\e_-\ {\rm in\ block}\ 0}}
+                   \operatorname{tr}_{\mathfrak g}(\log V_a(t))_{ee}\\
+ &+\sum_{\substack{c\ {\rm output}\\c_-=0}}
+                   \operatorname{tr}_{\mathfrak g}(\log P(t))_{cc}
+                      \bigg\}.
+ \end{split}}
+ \label{cdmom-exact-coefficient}
+\end{equation}
+Field-independent subtractions can be omitted inside
+\([t^2]\). The factors \(2,-1,+1\) follow from
+\(\beta=2[t^2]\rho_0\), and the determinant weights
+\(1,-\tfrac12,+\tfrac12\).
+
+Every coefficient on the right is defined by the
+localized matrix-logarithm derivatives at zero.
+Their source kernels absorb the polynomial weights,
+so the sums are convergent at fixed endpoint.
+For \(M=1\), \(s''\) in \(V_a(t)\) is the actual bare
+Wilson Hessian on an explicit commuting constant-curvature
+background. The coarse contribution is uniformly bounded
+in \(M,K\) by Notebook 32. Hence the remaining ultraviolet
+comparison can be made directly on the first two terms
+of \eqref{cdmom-exact-coefficient}.
+
+\subsection{What this settles and what it does not}
+\label{cdmom-scope}
+
+The formula matches an explicit constant-curvature trace
+calculation to the actual Maxwell extraction, with the
+actual composite average, stationary jets and measure
+factors. It removes the multiplier-curvature jets on
+this probe. It does not replace an arbitrary local
+density by its value on an affine field: the individual
+gauge identity of the chosen diagonal densities was
+essential.
+
+On a fixed periodic torus, constant nonzero Cartan flux
+has quantization conditions. No analytic family of
+periodic fluxes through zero is used here. Nor is an
+unbounded affine field substituted into the original
+bounded-field map. The identities are polynomial
+extensions of localized derivatives in an infinite
+joint system.
+
+The fine vector--ghost expression still needs a bound
+on its difference from a precisely normalized reference
+logarithm, uniform as \(K\) grows. The fixed-endpoint
+logarithm construction supplies no such bound and
+computes no sign. Mixed and large-field histories,
+the continuum observable construction and reconstruction
+remain separate requirements for full existence.
+
+
+% No preamble. Prefix mcr-. This is a continuum reference, not a lattice comparison.
+\section{A completely specified massive continuum reference}
+\label{mcr-section}
+
+We compute a reference with its regulator and normalization fixed.
+This supplies a target for comparison, not an identification of
+the actual constrained lattice determinant with that target.
+The background-field operators and heat coefficient agree with
+the conventions described in \cite{vassilevichctn}, Sections 3.4,
+4.2.1 and 8.3. The calculation below keeps the regulator and
+the one-color Maxwell extraction explicit.
+
+Use final physical coordinates on \(\mathbb R^4\), scalar mass
+\(m>0\), and a lower proper-time cutoff \(\epsilon^2>0\).
+Choose a Hermitian Cartan element \(H\) with
+\(\tau(H^2)=1\). Let \(q\) run over the eigenvalues of
+\(\operatorname{ad}_H\) on the complexified adjoint space,
+with multiplicities. Both signs of a nonzero charge are
+included. Complexification has the same trace as the
+original real color space; it does not introduce another
+factor of two. Put
+\[
+ C_H=\sum_q q^2.
+\]
+For one constant curvature component \(F_{12}=fH\), a charge
+sector has scalar operator \(L_q=-D_\mu D_\mu\), where one
+may choose \(D_2=\partial_2+iqf x_1\) and the other derivatives
+ordinary. The vector reference is
+\[
+ (V_q)_{\mu\nu}=L_q\delta_{\mu\nu}-2iqF^{(1)}_{\mu\nu},
+ \qquad F^{(1)}_{12}=f,\quad F^{(1)}_{21}=-f.
+\]
+The spin matrix has eigenvalues \(0,0,2qf,-2qf\).
+Its sign convention has no effect on its trace.
+We add \(m^2\) to both operators.
+
+\subsection{Exact diagonal heat traces}
+\label{mcr-heat-section}
+
+Fourier transformation in \(x_2\) reduces the magnetic
+plane to oscillators with eigenvalues \(|qf|(2n+1)\).
+For a normalized oscillator eigenfunction, integration
+of its shifted squared value gives
+\[
+ \int_{\mathbb R}\frac{dp_2}{2\pi}
+  \left|\psi_n\!\left(x_1+\frac{p_2}{qf}\right)\right|^2
+       =\frac{|qf|}{2\pi}.
+\]
+Thus this is a pointwise diagonal density calculation,
+without a finite-box degeneracy assumption. Summing the
+oscillator levels and multiplying by the heat density
+of the two free coordinates gives
+\begin{equation}
+ k_q(s;f)=(4\pi s)^{-2}\frac{qfs}{\sinh(qfs)}.
+ \label{mcr-scalar-heat}
+\end{equation}
+At \(qf=0\) the fraction is defined by its limit.
+The vector density is
+\[
+ k_q(s;f)\{2+2\cosh(2qfs)\}.
+\]
+
+Define the normalized proper-time determinant correction
+with weights \(-\tfrac12\log\det(V+m^2)+\log\det(L+m^2)\).
+Here this phrase means the following density integral;
+there is no infinite-volume determinant:
+\begin{equation}
+ {\cal R}_{\epsilon,m}(f)
+ =\frac1{16\pi^2}\int_{\epsilon^2}^{\infty}
+       \frac{ds}{s^3}e^{-m^2s}
+       \sum_q\left\{\frac{qfs}{\sinh(qfs)}
+                          \cosh(2qfs)-1\right\}.
+ \label{mcr-reference}
+\end{equation}
+The sign follows from
+\(\log P=-\int ds\,e^{-sP}/s\), after subtraction and
+the specified proper-time cutoff. The two vector
+polarizations with zero spin cancel the scalar ghost
+in this combined expression.
+
+For real \(|f|\max_q|q|<m^2\), the massive vector has
+positive bottom and the integral converges at infinity.
+On a smaller real interval, differentiation twice at
+zero is justified by a common exponentially decaying
+majorant. In particular, the notation \([f^2]\) below
+denotes half the second real derivative at zero.
+We do not assert a convergent complex Taylor series
+in a nonzero constant magnetic field.
+
+\begin{proposition}[Normalized reference coefficient]
+\label{mcr-coefficient}
+Set \(E_1(x)=\int_x^\infty e^{-u}\,du/u\). In the
+normalization \(\beta=2[f^2]\) used in this notebook,
+\begin{equation}
+ \beta_{\rm ref}(\epsilon,m)
+       =\frac{11C_H}{48\pi^2}E_1(m^2\epsilon^2).
+ \label{mcr-beta}
+\end{equation}
+In particular, with \(m=1\), \(\epsilon=K^{-1}\),
+\begin{equation}
+ \left|\beta_{\rm ref}(K^{-1},1)
+           -\frac{11C_H}{24\pi^2}\log K\right|
+ \le \frac{11C_H}{48\pi^2}(1+e^{-1}),\qquad K\ge1.
+ \label{mcr-finite-part}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The scalar magnetic factor and the spin factor give
+\[
+ \frac{x}{\sinh x}\cosh(2x)
+       =1+\frac{11}{6}x^2+O(x^4).
+\]
+Differentiating \eqref{mcr-reference} twice at zero
+therefore gives
+\[
+ [f^2]{\cal R}_{\epsilon,m}
+    =\frac{11C_H}{96\pi^2}
+           \int_{\epsilon^2}^{\infty}\frac{e^{-m^2s}}s\,ds.
+\]
+The substitution \(u=m^2s\) proves \eqref{mcr-beta}.
+For \(0<x\le1\),
+\[
+ E_1(x)-\log(1/x)
+   =\int_x^1\frac{e^{-u}-1}{u}\,du
+                  +\int_1^\infty\frac{e^{-u}}u\,du.
+\]
+The absolute value is at most \(1+e^{-1}\). This proves
+the asserted uniform finite part.
+\end{proof}
+
+For the repository's \(SU(N)\) normalization
+\(\tau=\operatorname{Tr}_{\rm fund}/N\), write
+\(H=\operatorname{diag}(h_1,\ldots,h_N)\). Then
+\(\sum_i h_i=0\), \(\sum_i h_i^2=N\), and the
+nonzero-color charges are \(h_i-h_j\), \(i\ne j\);
+the \(N-1\) Cartan charges vanish. Consequently
+\[
+ C_H=\sum_{i,j}(h_i-h_j)^2
+              =2N\sum_i h_i^2=2N^2.
+\]
+The coefficient of \(\log K\) is thus
+\(11N^2/(12\pi^2)\), or \(11/(3\pi^2)\) for \(SU(2)\),
+in this one-normalized-color convention.
+This is not a sum of \(N^2-1\) different Maxwell extractions.
+
+\subsection{Scale and regulator bookkeeping}
+\label{mcr-scaling-section}
+
+The same continuum reference can be written in current
+fine units, with cutoff \(s\ge1\), mass \(K^{-1}\), and
+curvature \(f/K^2\). Multiplication of that density by
+the block volume \(K^4\), followed by \(s=K^2u\), gives
+exactly \eqref{mcr-reference} with \(\epsilon=K^{-1}\),
+\(m=1\). Thus there is no additional factor of \(K^4\)
+in its extracted coefficient. This is a change of units
+within the continuum reference, not a replacement of a
+lattice heat kernel by a continuum kernel.
+
+Fixed positive changes of these continuum regulators
+have a bounded effect. For \(c,m>0\),
+\begin{equation}
+ |\beta_{\rm ref}(c/K,m)-\beta_{\rm ref}(1/K,1)|
+ \le\frac{11C_H}{24\pi^2}|\log(cm)|.
+ \label{mcr-regulator-change}
+\end{equation}
+Indeed, the difference of the two \(E_1\) integrals is
+bounded by the integral of \(du/u\) between their lower
+limits. Uniformity follows when \(cm\) remains in a
+fixed compact subinterval of \((0,\infty)\).
+This estimate does not compare a based ghost to an
+unbased massive ghost, change a lattice constraint, or
+control a massless zero-mode limit.
+
+
+
+% No preamble. Prefix ahc-. Actual fixed-endpoint identity; uniform estimates conditional.
+\section{The actual heat integral and a sufficient comparison estimate}
+\label{ahc-section}
+
+The Cartan identity also puts the missing comparison into
+heat-kernel form without changing the lattice operators.
+Use \(G(t),V_a(t)\) from \eqref{cdmom-probe-matrices}.
+Let \(\operatorname{Tr}_{0,S}\) be the diagonal color trace
+over noncenter scalar sites in block zero and
+\(\operatorname{Tr}_{0,E}\) that over current bonds with
+initial site in block zero. Define the formal coefficient
+\begin{equation}
+ h_{M,K}(s)=[t^2]\left\{
+   \operatorname{Tr}_{0,E}e^{-sV_a(t)}
+                  -2\operatorname{Tr}_{0,S}e^{-sG(t)}
+                         \right\}.
+ \label{ahc-h-definition}
+\end{equation}
+Every derivative here is evaluated at the flat positive
+operators and on the polynomial stationary jets. No
+heat evolution at a nonzero unbounded background is
+used. Put
+\[
+ b_c(M,K)=[t^2]\sum_{c_-=0}
+           \operatorname{tr}_{\mathfrak g}(\log P(t))_{cc}.
+\]
+Notebook 32 bounds \(|b_c|\) uniformly in \(M,K\).
+
+\begin{proposition}[Exact actual heat representation]
+\label{ahc-identity}
+In each joint infinite system at fixed \(K\),
+\begin{equation}
+ \beta(D_{M,K})=b_c(M,K)
+                   +\int_0^\infty h_{M,K}(s)\,\frac{ds}{s}.
+ \label{ahc-exact}
+\end{equation}
+The integral is absolutely convergent for fixed \(K\).
+The bounds establishing this statement may depend on \(K\).
+\end{proposition}
+
+\begin{proof}
+First use bounded compactly supported output directions.
+For a positive flat matrix family \(P(t)\), the local
+functional calculus gives
+\[
+ [t^2](\log P(t))_{ii}
+    =-\int_0^\infty [t^2](e^{-sP(t)})_{ii}\,\frac{ds}{s}.
+\]
+One can obtain this by differentiating the difference
+of the proper-time formulas for \(P(t)\) and \(P(0)\);
+their scalar reference term cancels.
+To justify the same formula on polynomial jets, write
+\(P(t)=P_0+tP_1+t^2P_2+O(t^3)\). Its heat coefficient is
+\begin{align}
+ [t^2]e^{-sP(t)}
+ ={}&-\int_0^s e^{-(s-u)P_0}P_2e^{-uP_0}\,du \notag\\
+ &+\int_{0<u<v<s}
+ e^{-(s-v)P_0}P_1e^{-(v-u)P_0}P_1e^{-uP_0}\,du\,dv .
+ \label{ahc-duhamel}
+\end{align}
+The \(P_j\) kernels are polynomially growing at worst,
+with exponential localization in their relative
+coordinates. This follows by inserting the affine
+source jets in the established rooted derivative kernels.
+
+The fixed-\(K\) flat gap and exponential matrix bound
+give exponentially weighted semigroup estimates.
+Indeed bounded truncated distance conjugation changes
+\(P_0\) in operator norm by less than half its gap if
+the exponent is small enough. The variation-of-constants
+bound then gives
+\(\|e^{-sP_0}\|_{\rm weighted}\le e^{-c_Ks}\).
+Spending smaller spatial exponents absorbs the
+polynomial factors in \eqref{ahc-duhamel}, after
+anchoring at the diagonal block. Its trace is bounded by
+\[
+ C_K(s+s^2)e^{-c'_Ks},\qquad s>0,
+\]
+with constants uniform in volume and, where the
+upstream bounds are, preceding depth. For small \(s\)
+the same estimate follows directly from the one and
+two insertion formulas. These bounds justify the
+proper-time integral, polynomial-jet extension and
+local infinite-volume passage by domination.
+Substituting the two log coefficients in
+\eqref{cdmom-exact-coefficient} proves
+\eqref{ahc-exact}, with signs \(+1,-2\) in
+\eqref{ahc-h-definition}.
+\end{proof}
+
+\subsection{A uniform short-time bound for the actual based ghost}
+\label{ahc-ghost-short-section}
+
+One part of the short-time comparison can be proved directly.
+It uses the actual based scalar domain and has constants
+independent of the preceding depth and endpoint.
+
+\begin{proposition}[Actual ghost ultraviolet bound]
+\label{ahc-ghost-short}
+In four dimensions put
+\[
+ h^g_K(s)=-2[t^2]\operatorname{Tr}_{0,S}e^{-sG(t)}.
+\]
+For every permitted \(K\), on the affine probe already
+identified with the actual stationary jets,
+\begin{equation}
+ 0\le h^g_K(s)\le C_H\{(8s)^4+6(8s)^3+7(8s)^2+8s\},
+                     \qquad s>0.
+ \label{ahc-ghost-poisson}
+\end{equation}
+Consequently
+\begin{equation}
+ \int_0^1 |h^g_K(s)|\,\frac{ds}{s}\le2280C_H.
+ \label{ahc-ghost-uv}
+\end{equation}
+Equivalently, the based-ghost part of the rescaled
+short-time integral over \(0<u<K^{-2}\) is bounded
+by this same constant.
+\end{proposition}
+
+\begin{proof}
+On the complexified charge-\(q\) space, the actual based
+operator is the covariant nearest-neighbor Laplacian
+with Dirichlet values at every \(K\)-center. Hence
+\[
+ G_q(t)=8I-A_q(t),
+\]
+where \(A_q\) is the covariant adjacency operator on
+noncenter sites. The diagonal is still \(8\), also
+at sites adjacent to a removed center: it comes from
+the full link norm of \(D_b\), with the center value
+set to zero.
+
+The diagonal of \(A_q(t)^n\) is a sum over length-\(n\)
+closed nearest-neighbor walks avoiding the centers.
+On the commuting affine field each walk has phase
+\[
+       \exp\{iqt\,{\cal A}_{\mu\nu}(\gamma)/K^2\},
+\]
+where \({\cal A}_{\mu\nu}(\gamma)\) is its oriented
+algebraic area in the selected coordinate plane.
+The contribution from a constant potential cancels
+on a closed walk. Taking the origin of the area
+coordinate at the starting site gives the elementary
+bound \(|{\cal A}_{\mu\nu}(\gamma)|\le n^2\).
+Thus the block trace coefficient is exactly
+\begin{equation}
+ h^g_K(s)=\frac{C_H}{K^4}e^{-8s}
+   \sum_{\substack{z\ {\rm noncenter}\\z\ {\rm in\ block}\ 0}}
+   \sum_{n\ge0}\frac{s^n}{n!}
+   \sum_{\substack{\gamma:z\to z,\ |\gamma|=n\\
+                    \gamma\ {\rm avoids\ centers}}}
+                         {\cal A}_{\mu\nu}(\gamma)^2.
+ \label{ahc-ghost-walk}
+\end{equation}
+All sums converge absolutely at each fixed \(s\);
+the factorial absorbs the factor \(n^4\). This
+also justifies extracting the formal quadratic
+coefficient without imposing periodic magnetic flux.
+Every term is nonnegative.
+
+There are at most \(K^4\) starting sites and at most
+\(8^n\) walks from each. It follows that
+\[
+ h^g_K(s)\le C_H e^{-8s}
+                   \sum_{n\ge0}\frac{(8s)^n n^4}{n!}.
+\]
+The fourth moment of this exponential generating
+series is \(x^4+6x^3+7x^2+x\) after multiplication
+by \(e^{-x}\); it follows by applying
+\((x\,d/dx)^4\) to \(e^x\). This proves
+\eqref{ahc-ghost-poisson}. Integrating its four
+monomials from zero to one with measure \(ds/s\)
+gives
+\[
+ C_H\left(\frac{8^4}{4}
+             +\frac{6\,8^3}{3}+\frac{7\,8^2}{2}+8\right)
+                         =2280C_H.
+\]
+\end{proof}
+
+This bound is uniform in \(M\) because the actual
+stationary ghost jets on this probe have already
+been identified with the same affine covariant
+Laplacian for every \(S_M\). No estimate for a
+separate massive inverse is used. The polynomial
+upper bound in \eqref{ahc-ghost-poisson} is not a
+useful large-time bound and does not settle the
+long-time comparison.
+
+\subsection{A quantitative target in physical heat time}
+\label{ahc-target-section}
+
+Set \(J_{M,K}(u)=h_{M,K}(K^2u)\), and
+\(\alpha_H=11C_H/(48\pi^2)\).
+The continuum calculation above has reference heat
+coefficient
+\[
+ J_K^{\rm ref}(u)=\alpha_H e^{-u}
+                         {\bf1}_{\{u\ge K^{-2}\}}.
+\]
+Thus the following is an exact difference identity,
+not yet a bound:
+\begin{equation}
+ \beta(D_{M,K})-\beta_{\rm ref}(K^{-1},1)
+ =b_c(M,K)+\int_0^\infty
+          \{J_{M,K}(u)-J_K^{\rm ref}(u)\}\,\frac{du}{u}.
+ \label{ahc-difference}
+\end{equation}
+It fixes the actual operator, regulator, sign, density,
+and rescaling in a proposed comparison.
+
+\begin{lemma}[Sufficient bounds on three heat-time intervals]
+\label{ahc-band-lemma}
+Suppose, for all required \(M,K\) and structural systems,
+there are constants \(C,\delta>0\), independent of them,
+such that
+\begin{align}
+ &\int_0^{K^{-2}}|J_{M,K}(u)|\,\frac{du}{u}\le C,
+                                      \label{ahc-uv-bound}\\
+ &|J_{M,K}(u)-\alpha_H|
+       \le C\{(K^2u)^{-\delta}+u^\delta\},
+          \quad K^{-2}\le u\le1,       \label{ahc-mid-bound}\\
+ &\int_1^\infty|J_{M,K}(u)|\,\frac{du}{u}\le C.
+                                      \label{ahc-ir-bound}
+\end{align}
+Then, with the already uniform coarse bound \(C_c\),
+\begin{equation}
+ \left|\beta(D_{M,K})
+       -\frac{11C_H}{24\pi^2}\log K\right|
+           \le C_c+2C+\frac{2C}{\delta}.
+ \label{ahc-log-conclusion}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Integrate the exact identity \eqref{ahc-exact} after
+the time rescaling. The constant \(\alpha_H\) on the
+middle interval integrates to \(2\alpha_H\log K\).
+Each error in \eqref{ahc-mid-bound} integrates to
+at most \(C/\delta\). The other intervals and the
+coarse term give the remaining terms.
+\end{proof}
+
+The full bounds \eqref{ahc-uv-bound}--\eqref{ahc-ir-bound}
+are not asserted here for the actual family uniformly in
+\(K\). Proposition~\ref{ahc-ghost-short} supplies the
+ghost part of the first bound; its vector part remains.
+The fixed-endpoint heat representation by itself gives
+only constants depending on \(K\). The middle interval asks for a
+continuum coefficient on heat lengths between the
+fine spacing and the final block size. The last
+interval is where the soft pinned-ghost modes are
+particularly relevant: the scalar gap alone may be
+of order \(K^{-4}\) in fine units, so rescaling by
+\(K^2\) does not give uniform damping. The combined
+coefficient must be estimated, or a weaker signed
+integral comparison must be proved. Bounding the
+separate inverse operators by a physical mass is
+not an available shortcut.
+
+For \(M>1\), \(V_a\) contains the actual \(S_M\)
+Hessian. Uniformity over that family is part of the
+conditions, not a consequence of computing the bare
+Wilson reference. A bounded comparison only at \(M=1\)
+would not by itself give the varying-depth margin
+needed by the finite drift-transfer theorem.
+
+
+
+\section{The remaining scale-dependent comparison}
+\label{ctn-next}
+
+For the bare composite, the new identification reduces
+the leading coefficient, up to the uniformly bounded
+coarse effective-Hessian term, to the constant-curvature
+jets of
+\[
+ \log\det(D_b^TD_b)
+ -\frac12\log\det
+       \bigl(S_{\mathrm W}''+D_bD_b^T+aC_K^TC_K\bigr).
+\]
+This is a statement about the actual diagonal trace density
+and its Maxwell moment. The formal Cartan probe makes
+the constrained-current curvature vanish in the required
+jets. It does not make either determinant individually
+uniformly massive at the final scale.
+
+The next estimate must compare this combined expression
+to a fully specified background-Feynman vector and ghost
+reference with infrared scale \(K^{-1}\), preserving its
+coarse-coordinate, color and action normalization. In
+particular, changing the based scalar domain, the vector
+constraint completion and the infrared regulator must
+be controlled together. The based-ghost Rayleigh bound
+from Notebook 32 still rules out a separate inverse
+bound of order \(K^2\).
+
+A sufficient result would give a constant \(C\), independent
+of \(K\), bounding the difference of the extracted
+Maxwell coefficients. The specified continuum reference
+now has an explicit positive logarithmic law and bounded
+finite part. The exact actual heat representation identifies
+the remaining comparison integral; the three interval
+estimates in Lemma~\ref{ahc-band-lemma} would bound it.
+Those estimates do not follow from the fixed-\(K\)
+convergence used here. The actual based-ghost part of
+the short-time interval is now bounded uniformly by
+the closed-walk argument; its vector counterpart and
+the other intervals remain. Uniformity over
+the structural systems needed by the finite drift-transfer
+theorem must also be retained.
+
+Once positive averaged drift is established with that
+scope, the conditional finite shooting theorem applies.
+The full four-dimensional existence objective still
+requires the other field sectors, the exact global
+measure representation, sourced continuum bounds,
+nontriviality, Euclidean symmetry, positivity and
+reconstruction.
+
+\begin{thebibliography}{9}
+\bibitem{vassilevichctn}
+D.~V.~Vassilevich,
+\emph{Heat kernel expansion: user's manual},
+Physics Reports 388 (2003), 279--360,
+\href{https://arxiv.org/abs/hep-th/0306138}{arXiv:hep-th/0306138}.
+Sections 3.4, 4.2.1 and 8.3 specify the background vector
+and ghost operators, their combined heat coefficient,
+and the constant magnetic scalar heat kernel.
+This source is not used as a proof of the actual constrained
+lattice comparison.
+\bibitem{priorctn}
+\emph{Toward a four-dimensional Yang--Mills construction},
+research Notebooks 15--32 in this workspace.
+The actual local minimum, strict mixed kernels, classical
+envelope, constrained Gaussian, gauge identities, determinant
+bridge and Maxwell normalization are the inputs used here.
+\bibitem{sourcectn}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}
+{Yang--Mills-LLM-experiment}, pinned deposited accounts at
+commit \texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+The centered ordinary average and its selected
+endpoint-equivariant mean are kept unchanged.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,342 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 13: a uniform nonlinear constraint chart}
+\author{Research working document}
+\date{16 October 2026}
+
+\begin{document}
+% Notebook 15 force fragment; no preamble. Unique label prefix wf-.
+% Requires standard theorem environments and a one-argument \norm macro.
+
+\section{A uniform nonlinear Wilson force in physical coordinates}
+\label{wf-section}
+
+We work first on finite compatible periodic regulators, with
+fine spacing $0<\eta\le1$, physical measure $\eta^d$ and
+normalized trace $\tau=\operatorname{Tr}/N_c$. The Lie algebra
+consists of Hermitian traceless matrices and is complexified for
+analytic arguments. All transposes use the fixed bilinear trace
+pairing. Constants are independent of refinement and volume.
+On the infinite lattice the formulas concern local variations;
+an arbitrary bounded field need not have finite total action.
+
+In dimension four the action, trace and physical pairing below
+match the deposited conventions: Raw I:454--467 sums the
+normalized Wilson density once per unoriented plaquette,
+I:474--479 places the coupling outside that action, and
+I:12756--12760 specifies the physical bilinear pairing.
+The source fluctuation chart is explicit at I:15643--15648.
+Here we differentiate the same action in the ordinary global
+coordinate $U=e^{i\eta A}$; its Hessian at nonzero $A$ is not
+silently identified with a differently based left-exponential
+Hessian. The original journal texts have not all been
+independently reverified.
+
+\subsection{Exact plaquette density and its removable scale factor}
+
+For $p=(x;\mu,\nu)$, $\mu<\nu$, define the physical jet
+\begin{equation}\label{wf-jet}
+ (\mathsf S_\eta A)_p=(a,b,c,e)
+  =\bigl(A_\mu(x),A_\nu(x),
+       \nabla_{\eta,\mu}A_\nu(x),
+       \nabla_{\eta,\nu}A_\mu(x)\bigr).
+\end{equation}
+Here $\nabla_{\eta,\rho}f(x)
+=\eta^{-1}(f(x+\eta e_\rho)-f(x))$. The plaquette
+holonomy is exactly
+\begin{equation}\label{wf-plaquette}
+ P_\eta(a,b,c,e)
+  =e^{i\eta a}e^{i\eta b+i\eta^2c}
+                    e^{-i\eta a-i\eta^2e}e^{-i\eta b}.
+\end{equation}
+This merely rewrites shifted link potentials; it is not a
+Taylor approximation. In potential coordinates set
+\begin{equation}\label{wf-action}
+ \mathcal W_\eta(A):=\mathcal S_\eta(e^{i\eta A})
+   =\eta^{d-4}\sum_p
+          \left[1-\frac12\tau(P_p+P_p^{-1})\right].
+\end{equation}
+In $d=4$ the prefactor is one, as in the deposit. For other
+fixed $d$ the displayed normalization defines the model used
+in this local calculation.
+
+\begin{lemma}\label{wf-removable}
+The matrix
+\[
+ \mathfrak F_\eta(z)=\frac{P_\eta(z)-I}{\eta^2}
+\]
+extends jointly holomorphically through $\eta=0$. The density
+\begin{equation}\label{wf-density}
+ L_\eta(z)=-\frac12\tau\bigl(\mathfrak F_\eta(z)^2
+                                              P_\eta(z)^{-1}\bigr)
+\end{equation}
+has uniformly bounded jet derivatives of every fixed order
+for $\eta\in[0,1]$ on a fixed smaller complex jet ball. Its
+quadratic Taylor part at $z=0$ is exactly
+\begin{equation}\label{wf-quadratic}
+ L_2(z)=\frac12\tau((c-e)^2),
+\end{equation}
+independently of $\eta$. Moreover
+\begin{equation}\label{wf-exact-action}
+ \mathcal W_\eta(A)=\eta^d\sum_p
+                           L_\eta((\mathsf S_\eta A)_p).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The matrix product \eqref{wf-plaquette} is entire in $\eta$
+and the finitely many complex jet coordinates. For every $z$,
+$P_0(z)=I$ and
+$\partial_\eta P_\eta(z)|_{\eta=0}=i(a+b-a-b)=0$.
+Thus the extension is explicitly
+\begin{equation}\label{wf-removable-integral}
+ \mathfrak F_\eta(z)
+  =\int_0^1(1-s)\,\partial_\eta^2P_{s\eta}(z)\,ds,
+\end{equation}
+where the derivative is with respect to the scalar argument
+before evaluation at $s\eta$. The inverse $P_\eta^{-1}$ is
+the reverse product of inverse exponentials and is entire.
+On $|\eta|\le2$ and a fixed bounded jet polydisc these
+expressions are bounded. Cauchy estimates in the jet
+coordinates give the asserted uniform derivative bounds
+on a smaller polydisc.
+
+At $z=0$, $\mathfrak F_\eta=0$, and direct differentiation
+gives
+\begin{equation}\label{wf-linear-F}
+ D_zP_\eta(0)[z]=i\eta^2(c-e),\qquad
+ D_z\mathfrak F_\eta(0)[z]=i(c-e).
+\end{equation}
+Equation \eqref{wf-quadratic} follows from
+\eqref{wf-density}. In particular
+$\mathfrak F_0(z)=i(c-e)-[a,b]$; the commutator is quadratic
+in the jet and does not change the quadratic density.
+Finally, the exact algebraic identity
+\[
+ P+P^{-1}-2I=(P-I)^2P^{-1}
+\]
+proves \eqref{wf-exact-action}. All inverse mesh factors
+cancel before a force derivative is taken.
+\end{proof}
+
+\subsection{The exact force and its local nonlinear coefficient}
+
+Put $R_\eta=L_\eta-L_2$ and define the jet gradient $f_\eta$
+by the fixed bilinear trace pairing:
+\begin{equation}\label{wf-gradient-definition}
+ DR_\eta(z)[w]=\sum_{\ell\in\{a,b,c,e\}}
+                                \tau(f_{\eta,\ell}(z)w_\ell).
+\end{equation}
+Projection onto the fixed traceless space is included. On a
+fixed small complex jet ball, uniformly in $\eta$,
+\begin{equation}\label{wf-pointwise-bounds}
+ \begin{gathered}
+ f_\eta(0)=Df_\eta(0)=0,\qquad
+ \norm{f_\eta(z)}\le C\norm{z}^2,\qquad
+ \norm{Df_\eta(z)}\le C\norm{z},\\
+ \norm{D^2f_\eta(z)}+\norm{D^3f_\eta(z)}\le C.
+ \end{gathered}
+\end{equation}
+These follow from Lemma~\ref{wf-removable} and Taylor's
+formula, since $R_\eta$ begins at degree three.
+
+Let $d$ be the ordinary fine curl, so $(dA)_p=c-e$, and
+let $K=d^Td$. Define $E_\eta(A)$ by
+$D\mathcal W_\eta(A)[H]=\langle E_\eta(A),H\rangle_\eta$.
+Then
+\begin{equation}\label{wf-force-factorization}
+ E_\eta(A)=KA+\mathsf S_\eta^T\mathcal N_\eta(A),
+ \qquad
+ \mathcal N_\eta(A)_p=f_\eta((\mathsf S_\eta A)_p).
+\end{equation}
+For a four-slot plaquette field $q$, the transpose is
+explicitly
+\begin{equation}\label{wf-jet-transpose}
+ \begin{split}
+ (\mathsf S_\eta^Tq)_\lambda(x)
+ ={}&\sum_{\nu>\lambda}\left[
+       q_{\lambda\nu}^{a}(x)
+                +\nabla_{\eta,\nu}^Tq_{\lambda\nu}^{e}(x)\right]\\
+ &+\sum_{\mu<\lambda}\left[
+       q_{\mu\lambda}^{b}(x)
+                +\nabla_{\eta,\mu}^Tq_{\mu\lambda}^{c}(x)\right],
+ \end{split}
+\end{equation}
+where $\nabla_{\eta,\rho}^Tq(x)
+=\eta^{-1}(q(x-\eta e_\rho)-q(x))$. Every slot has the same
+physical measure $\eta^d$. At quadratic order the $c,e$
+coefficients are $c-e,e-c$, confirming $K=d^Td$ with
+coefficient one. The derivative in
+\eqref{wf-jet-transpose} stays outside the nonlinear
+coefficient; a uniform pointwise bound on the unprocessed
+nonlinear force is not asserted.
+
+\subsection{Physical H\"older norms without a mesh loss}
+
+Fix $0<\alpha<1$. All fields are complete fields, with
+componentwise comparisons at translated sites. Define
+\begin{equation}\label{wf-Nalpha}
+ \begin{split}
+ N(A)&=\norm{A}_\infty+
+                  \max_\rho\norm{\nabla_{\eta,\rho}A}_\infty,\\
+ N_\alpha(A)&=N(A)+
+                  \max_\rho[\nabla_{\eta,\rho}A]_\alpha.
+ \end{split}
+\end{equation}
+The seminorms use physical distances in fixed enlarged
+unit-cell collars. Suprema supply longer-distance
+increments. This is equivalent to the complete-field
+$C^{1,\alpha}$ norm used in the minimizer argument, with
+constants independent of $\eta$.
+
+For two points at physical distance at most a fixed $R$,
+telescoping along an axis-aligned path gives
+\begin{equation}\label{wf-holder-telescoping}
+ \frac{|A(x)-A(y)|}{|x-y|^\alpha}
+ \le\sqrt d\,R^{1-\alpha}
+                      \max_\rho\norm{\nabla_{\eta,\rho}A}_\infty.
+\end{equation}
+At nearest-neighbor separation the factor is
+$\eta^{1-\alpha}$, not $\eta^{-\alpha}$. The derivative
+jet slots already have their H\"older seminorms in
+\eqref{wf-Nalpha}. Consequently
+\begin{equation}\label{wf-jet-norm}
+ \norm{\mathsf S_\eta A}_\infty\le C_JN(A),\qquad
+ \norm{\mathsf S_\eta A}_{C^\alpha}\le C_JN_\alpha(A).
+\end{equation}
+No second-difference supremum is needed.
+
+For a positive cell weight $\varpi$ with
+$\varpi(n)/\varpi(m)\le e^{\kappa d(n,m)}$, weight each
+complete local collar norm by $\varpi(n)$. Denote the
+resulting norms by $C^\alpha_\varpi$, $N_\varpi$ and
+$N_{\alpha,\varpi}$. Neighboring fixed collars have
+comparable weights. The same telescoping argument gives
+\begin{equation}\label{wf-weighted-jet}
+ \norm{\mathsf S_\eta H}_{C^\alpha_\varpi}
+       \le C_{J,\kappa}N_{\alpha,\varpi}(H),\qquad
+ \norm{\mathsf S_\eta H}_{\infty,\varpi}
+       \le C_{J,\kappa}N_\varpi(H).
+\end{equation}
+No derivative is taken of a weight and no field is cut
+sharply into cells. Periodic lifting gives the same bounds
+on compatible tori.
+
+\begin{theorem}\label{wf-nonlinear-theorem}
+On a fixed small complex $N_\alpha$ ball, $\mathcal N_\eta$
+is holomorphic and, uniformly in refinement and volume,
+\begin{align}
+ \norm{\mathcal N_\eta(A)}_{C^\alpha_\varpi}
+       &\le C N(A)N_{\alpha,\varpi}(A),
+                                           \label{wf-quadratic-bound}\\
+ \norm{\mathcal N_\eta(A)-\mathcal N_\eta(B)}_{C^\alpha_\varpi}
+       &\le C\bigl(N_\alpha(A)+N_\alpha(B)\bigr)
+                             N_{\alpha,\varpi}(A-B),
+                                           \label{wf-Lipschitz}\\
+ \norm{D\mathcal N_\eta(A)[H]}_{C^\alpha_\varpi}
+       &\le C\left[N(A)N_{\alpha,\varpi}(H)
+                         +N_\alpha(A)N_\varpi(H)\right].
+                                           \label{wf-directional}
+\end{align}
+Weighted estimates require only that their right sides be
+finite. The base fields are in the unweighted small ball;
+one may put the weight on a direction or difference.
+\end{theorem}
+
+\begin{proof}
+On each collar the product identity gives
+\[
+ [uv]_\alpha\le\norm{u}_\infty[v]_\alpha
+                         +[u]_\alpha\norm{v}_\infty.
+\]
+It remains valid with the weight on either factor.
+Write $z=\mathsf S_\eta A$. The supremum bound in
+\eqref{wf-pointwise-bounds} and integration of $Df_\eta$
+along the segment from $z(x)$ to $z(y)$ give
+\[
+ |f_\eta(z(x))-f_\eta(z(y))|
+       \le C\norm{z}_\infty|z(x)-z(y)|.
+\]
+Together with \eqref{wf-jet-norm} and
+\eqref{wf-weighted-jet}, this proves
+\eqref{wf-quadratic-bound}.
+
+The exact derivative is
+$Df_\eta(z)\mathsf S_\eta H$. Its coefficient has supremum
+at most $C\norm{z}_\infty$ and H\"older seminorm at most
+$C[z]_\alpha$, since $D^2f_\eta$ is bounded. The product
+estimate proves \eqref{wf-directional}. Integrating it
+along $B+s(A-B)$ proves \eqref{wf-Lipschitz}. In particular
+the unweighted local Lipschitz constant on a radius-$r$
+ball is at most $Cr$.
+
+The uniform local Taylor series for $f_\eta$ starts in
+degree two. The H\"older product inequality and
+\eqref{wf-jet-norm} make its substitution converge
+absolutely on a fixed smaller $N_\alpha$ ball. This proves
+holomorphy in the complete Banach norms. Higher derivatives
+follow from the same series or Cauchy's formula. With one
+weighted direction, use the weighted product inequality
+term by term. If a weight is not bounded below, the weighted
+statement is read on the intersection with the unweighted
+small ball; no embedding into that ball is presumed.
+\end{proof}
+
+For example the same proof gives
+\begin{equation}\label{wf-second-directional}
+ \norm{D^2\mathcal N_\eta(A)[H,K]}_{C^\alpha_\varpi}
+ \le C(1+N_\alpha(A))N_\alpha(H)N_{\alpha,\varpi}(K),
+\end{equation}
+with the weighted direction exchangeable by symmetry.
+Uniform bounds on a complex ball give factorial Cauchy
+bounds on every smaller ball. All these statements are
+about nonlinear coefficients before the exterior
+transpose in \eqref{wf-force-factorization}.
+
+\subsection{Energy Hessian and the minimizer interface}
+
+Differentiating \eqref{wf-force-factorization} once gives
+\begin{equation}\label{wf-energy-Hessian}
+ DE_\eta(A)=K+\mathsf S_\eta^T
+                Df_\eta(\mathsf S_\eta A)\mathsf S_\eta.
+\end{equation}
+The middle coefficient is symmetric for the fixed bilinear
+transpose, is local in the plaquette jet, and has supremum
+at most $CN(A)$. Thus for physical Hilbert directions $H,K$,
+\begin{equation}\label{wf-energy-form}
+ \left|D^2\mathcal W_\eta(A)[H,K]
+                         -\langle dH,dK\rangle_\eta\right|
+ \le CN(A)\norm{\mathsf S_\eta H}_{2,\eta}
+                         \norm{\mathsf S_\eta K}_{2,\eta}.
+\end{equation}
+This energy statement needs small $N(A)$, not a second
+background derivative. It is an ordinary-potential
+Hessian identity for the exactly specified Wilson action.
+
+For the fixed-gauge minimizer, the equal-exponent estimate
+for its selected flat constrained inverse $\mathcal C$,
+\[
+ \mathcal C\mathsf S_\eta^T:C^\alpha\longrightarrow N_\alpha,
+\]
+combines directly with Theorem~\ref{wf-nonlinear-theorem}.
+The resulting nonlinear map is quadratic and has
+Lipschitz constant $O(r)$ on a radius-$r$ ball, also for
+a single weighted direction. The constrained Green estimate
+is proved separately; a positive loss between input and
+output exponents would not suffice for this step. No
+additional fine derivative of $\mathcal N_\eta(A)$ or
+inverse power of $\eta$ is used in the contraction.
+
+\end{document}

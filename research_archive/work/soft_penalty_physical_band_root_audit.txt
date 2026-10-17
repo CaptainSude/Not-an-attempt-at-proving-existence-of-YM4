@@ -1,0 +1,44 @@
+Independent root audit, 17 October 2026
+
+Read soft_penalty_physical_band_complete_research.txt in full after the
+shifted-polynomial-family and linear-weight revisions.
+
+The stated O(u) penalty-removal theorem passes this internal audit,
+under precisely the previously established infinite structural-kernel,
+localized physical vertex, and corrected averaging hypotheses.
+
+Checks:
+1. Both physical base operators are gapless but I+X is comparable to
+   I+K^2 Delta. The contour belongs to I+X, not to a fictitious gapped X.
+2. The flat weighted resolvent bounds retain their lambda powers:
+   R=O(lambda^-1), gradient R=O(lambda^-1/2), and
+   gradient R gradient*=O(1). Relative perturbation with H+lambda
+   preserves these powers. Only linear weights are needed.
+3. Each actual first or second physical vertex contains at most one
+   gradient. A single insertion therefore decays as lambda^-3/2;
+   two first-order insertions decay as lambda^-2 even when both
+   gradients meet the middle resolvent. Both are contour-integrable
+   uniformly as physical heat time decreases to zero.
+4. Insert block projections between whole factors, not between a
+   gradient and a sharp indicator being differentiated. Exponential
+   convolution retains all source marks. Full-block source norms avoid
+   counting K^4 separate coordinate derivatives.
+5. A quadratic polynomial family suffices for the two semigroup jets.
+   This does not assert a uniform nonlinear physical analytic domain.
+6. Polynomially growing affine fields are reconstructed from localized
+   jets and exponentially summable source trees, not evaluated as a
+   nonzero field in a bounded analytic ball.
+7. The exact Duhamel difference has one bounded coarse penalty. Move
+   the rectangular C factors into a coarse trace while retaining P0
+   in its position. Its complete coarse diagonal sum is absolutely
+   summable. Fixed coarse fiber dimension, not fine rank, controls it.
+   The integrand is uniformly bounded, giving O(u), hence a bounded
+   integral against du/u over 0<u<=1.
+8. The auxiliary vector family matches the actual stationary vector
+   only through the established affine jets. The conclusion retains
+   this scope. No unrelated finite winding kernels are substituted.
+
+This is an internal mathematical check, not external certification.
+It does not establish the actual-base/reference comparison, the
+positive beta coefficient, a full Wilson measure trajectory, or
+four-dimensional continuum existence.

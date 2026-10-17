@@ -1,0 +1,15 @@
+# Independent audit of the ordinary-coordinate Wilson force
+
+16 October 2026. Full review of `wilson_nonlinear_force_research.md`. The module passes; no mathematical or normalization correction found. It concerns the explicitly normalized action in that note, without resolving a different source prefactor or chart.
+
+The plaquette jet is exact: shifted link potentials become `b+eta c` and `a+eta e`, so the four displayed exponentials have precisely the required eta and eta-squared factors. Both the constant and the first eta derivative of P-I vanish for every jet. The integral Taylor formula therefore removes eta squared jointly in eta and the jet, including complex eta. The inverse is an entire reverse product, so the density obtained from `(P-I)^2 P^{-1}` has uniform jet derivatives on a fixed compact complex neighborhood. Its quadratic term is exactly `tau((c-e)^2)/2` for every eta; the non-Abelian term `-[a,b]` enters the removable F only at quadratic jet order and therefore does not change that coefficient.
+
+The physical transpose in (3.4) is correct in each plaquette component: e differentiates A_mu in direction nu, while c differentiates A_nu in direction mu. The backward difference has the correct sign. Pairing all slots with the same eta^d measure yields the exact force `d^T d A+J_eta^T f_eta(J_eta A)` without a mesh prefactor. In particular the divergence remains outside the nonlinear coefficients, as required for the subsequent Green estimate.
+
+The complete-field Hölder argument is sound. Telescoping A between lattice sites introduces a physical path length, never an inverse power of eta; a nearest-neighbor difference contributes eta^(1-alpha). Periodic shortest lifts and fixed enlarged cubic collars preserve this estimate. The weighted versions never differentiate or sharply truncate the weight.
+
+The quadratic estimate (5.2), derivative tame estimate (5.4), integrated difference estimates (5.3)/(5.5), and second-derivative estimate (5.6) all follow from the stated uniform local analytic derivatives and the C^alpha product rule. The weight can be kept entirely on the varying direction. The treatment of weights not bounded below correctly retains the independent unweighted smallness condition.
+
+The substituted Taylor series proves holomorphy on a common N_alpha ball, with uniform factorial Cauchy bounds. The energy-form consequence uses only small N(A): the pointwise jet Hessian coefficient is O(N(A)), with the ordinary-gradient legs outside it. This gives exactly the first-derivative form bound required by the reduced constrained-action Hessian; it does not assert a pointwise bound on the undifferentiated force itself.
+
+The note explicitly leaves the equal-exponent constrained Green estimate separate. The older positive-loss estimate is not enough to close the N_alpha fixed point and is not used as though it were. Subject to that separately proved Green input, this force module supplies the uniform quadratic, Lipschitz and analytic estimates needed by `nonlinear_fixed_gauge_minimizer_research.md`.

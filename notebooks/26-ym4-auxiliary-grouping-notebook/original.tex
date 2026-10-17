@@ -1,0 +1,513 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 26: closing the support-weight compatibility test}
+\author{Research working document}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+An independent fixed grouping scale removes the unverified
+large-block decay premise in the inherited-interaction norm
+test. Physical averaging and its pivot chart keep their
+factor $L$. We carry quantum activities on current $J$-blocks
+and group Gaussian variables on current $JL$-blocks. After
+physical rescaling these return to next-current $J$-blocks.
+Known positive fixed-$L$ spatial decay becomes any prescribed
+finite decay exponent in the grouped graph when $J$ is large.
+The classical support expansions supply the finite cardinality
+reserves required for that regrouping. The tunable Gaussian
+density estimate then gives a fixed output support exponent,
+and both the new correction and inherited background term
+can return to the same positive carrier reserve.
+An explicit order of finite parameter choices satisfies the
+next-step support inequality. Analytic radii and norm constants
+remain explicit losses, so this closes support-weight
+compatibility without asserting a stable quantum induction.
+\end{abstract}
+
+Notebook 24 isolated a sufficient inequality that its original
+cell convention could not verify from positivity of fixed-$L$
+decay alone. Here the physical renormalization map, integration
+variables and sharp cutoff remain the same; the independent
+grouping changes how the support estimates are organized.
+The result applies to the homogeneous small-field step on a
+compatible cofinal family of periodic regulators.
+
+
+% Auxiliary Gaussian grouping. No preamble. Unique prefix ag-.
+\section{Auxiliary grouping recovers a fixed quantum support weight}
+\label{ag-section}
+
+The physical averaging ratio and the size of a Gaussian expansion
+cell need not coincide. We keep the exact source ratio $L$ fixed
+and group its Gaussian cells by a second integer $J$. This gives
+a finite-step recovery of one fixed connected-carrier exponent,
+without assigning arbitrary reserve to inherited quantum activities.
+It does not give contraction of activity amplitudes, stable analytic
+radii, or a quantum RG induction. All constants below are uniform
+in old refinement $M$ and compatible periodic volume after the
+finite parameters $L,J$ have been chosen.
+
+\subsection{The four graphs and parameter order}
+\label{ag-graphs-section}
+
+Fix the physical odd source ratio $L\ge5$. On the current unit
+lattice, source blocks have side $L$ and index graph
+$\Lambda_{\mathrm{src}}$. This is also the next-current unit graph
+after rescaling lengths by $L$. Choose an odd auxiliary integer
+$J$, conveniently $J=L^j$. Gaussian integration cells group
+$J^d$ source blocks, so their current physical side is $JL$;
+write their graph as $\Lambda_G$. After rescaling, these are
+$J$-blocks of the next current lattice.
+
+At every stage, inherited quantum carriers are $J$-blocks of
+that stage's current unit lattice; call their graph $\Lambda_Q$.
+The two projections are
+\begin{equation}\label{ag-projections}
+ \rho_J:\Lambda_{\mathrm{src}}\longrightarrow\Lambda_G,
+ \qquad
+ \pi_L:\Lambda_Q\longrightarrow\Lambda_G.
+\end{equation}
+Their fiber sizes are $J^d$ and $L^d$, respectively. Thus the
+coarsening ratio of inherited carrier graphs remains $L$.
+
+A centered odd $JL$ cube is both a union of $J^d$ centered
+$L$ cubes and a union of $L^d$ centered $J$ cubes. The two
+smaller tilings need not be nested in one another; their common
+$JL$ tiling is enough. Work on a cofinal family of compatible
+tori with periods divisible by $JL$. Taking $J=L^j$ preserves
+the original hierarchy on sufficiently large members. No claim
+for an incompatible short torus is needed.
+
+The relevant dimensions are
+\begin{equation}\label{ag-dimensions}
+ D_G=J^d d(L^d-1)\dim\mathfrak g,
+ \quad D_{\mathrm{bg}}=d(JL)^d\dim\mathfrak g,
+ \quad D_{\mathrm{in}}=dJ^d\dim\mathfrak g.
+\end{equation}
+They count retained Gaussian coordinates, all background
+coordinates of a Gaussian macrocell, and background coordinates
+of an inherited carrier cell. Grouping is a coordinate
+rearrangement. It changes no source average, pivot, or cutoff.
+
+Choose $L$ first using the fixed weight test below. At that
+fixed $L$, the previous theorems supply positive covariance,
+classical precision and stationary-background decay exponents.
+Then choose $J$ large enough for their finitely many conversion
+inequalities. Finally choose the product radius and coupling
+budgets. No large-$L$ lower bound for the old decay exponents
+is required in this order.
+
+\subsection{Covariance and precision on macro Gaussian cells}
+
+Let the unchanged real baseline satisfy
+$\lambda I\le C_0\le\Lambda_0I$ and, on source blocks,
+\begin{equation}\label{ag-source-covariance}
+ K_{\mathrm{src}}(\gamma_0)
+ =\sup_i\sum_j e^{\gamma_0d_{\mathrm{src}}(i,j)}
+                   \|(C_0)_{ij}\|<\infty,
+ \qquad \gamma_0>0,
+\end{equation}
+with the same column bound. These constants are uniform in
+$M$ and volume for the fixed source ratio $L$.
+For $i$ in macrocell $A$ and $j$ in macrocell $B$,
+\begin{equation}\label{ag-distance-projection}
+ d_G(A,B)\le J^{-1}d_{\mathrm{src}}(i,j)+d.
+\end{equation}
+It follows coordinatewise from block projection, including
+periodic distances. Since
+$\|(C_0)_{AB}\|\le\sum_{i\in A,j\in B}\|(C_0)_{ij}\|$,
+\begin{equation}\label{ag-covariance-bound}
+ K_G(\gamma):=\sup_A\sum_B e^{\gamma d_G(A,B)}\|(C_0)_{AB}\|
+ \le J^d e^{\gamma d}K_{\mathrm{src}}(\gamma/J).
+\end{equation}
+The same bound holds for columns. The spectrum is unchanged:
+the macro fibers are direct sums of the original Euclidean
+fibers, not averaged variables.
+
+For any terminal set $X$, projection of a terminal spanning
+tree gives
+\begin{align}
+ \tau_G(\rho_JX)
+ &\le 2J^{-1}\tau_{\mathrm{src}}(X)+d(|X|-1),\notag\\
+ \ell_G(\rho_JX)
+ &\le 4J^{-1}\tau_{\mathrm{src}}(X)+2d|X|.             \label{ag-support-projection}
+\end{align}
+The first line uses \eqref{ag-distance-projection} and
+$\ell_{\mathrm{src}}\le2\tau_{\mathrm{src}}$; the second
+uses $\ell_G\le2\tau_G$. These conservative constants suffice.
+
+The classical precision has a strict symmetric expansion
+$A(V)=A_0+\sum_X B_X(a|_X)$, with rows and columns in $X$.
+For some fixed $\sigma_0>0$ and any prescribed finite
+$A_{\mathrm{card}}$, the earlier support theorem gives
+\begin{equation}\label{ag-source-precision}
+ \sup_i\sum_{X\ni i}\sum_{j\in X}
+ e^{\sigma_0\tau_{\mathrm{src}}(X)+A_{\mathrm{card}}|X|}
+            \|(B_X)_{ij}\|_b\le C_A b.
+\end{equation}
+The radius may shrink with the reserve. The exponent
+$\sigma_0$ can be fixed first because it comes from the
+fixed-$L$ linear decay. The original conversion from current
+cells to source blocks is already included here.
+
+Use the Gaussian parameters
+\begin{equation}\label{ag-Gaussian-exponents}
+ \kappa_G=2,\qquad m_G=3,\qquad
+ \gamma_G=\kappa_G+2m_G=8.
+\end{equation}
+The strict Gaussian theorem requires $0<\kappa_G<m_G$;
+in particular $m_G=1$ would be invalid when $\kappa_G=2$.
+Group precision labels by $X'=\rho_JX$ and their matrix
+rows and columns into macrocells. Equation
+\eqref{ag-support-projection} shows that its required macro
+precision norm at exponent $\gamma_G$ is $O(b)$ if, in $d=4$,
+\begin{equation}\label{ag-precision-budget}
+ 32/J\le\sigma_0,\qquad A_{\mathrm{card}}\ge64.
+\end{equation}
+The absolute block row sum costs at most $J^d C_A b$:
+sum the source row bound over the at most $J^d$ source cells
+in one macrocell. Symmetry gives columns. Strict background
+support and individual symmetry survive grouping.
+
+This reserve belongs to classical precision coefficients,
+where it is available. It is not a new assumption on quantum
+activities. The same argument groups the classical remainder
+and the local Haar, pivot-Jacobian and gauge multipliers at
+their required fixed target weights. Their original classical
+or local coefficients admit the necessary finite reserve.
+Their small fluctuation bounds remain
+$O_{L,J}(gR^3+gR+g^2R^2)$ on the original retained window.
+
+\subsection{Regrouping the actual stationary support family}
+
+On source-block roots and next-current unit background labels,
+the matched one-step branch has strict families
+\begin{equation}\label{ag-source-stationary}
+ a_i(w)=\sum_Xu_{i;X}(w|_X),\qquad
+ \sup_i\sum_Xe^{\kappa_0\tau_{\mathrm{src}}(\{i\}\cup X)
+                       +A_{\mathrm{st}}|X|}
+                  \|u_{i;X}\|_r\le C_{A_{\mathrm{st}}}r,
+\end{equation}
+for some $\kappa_0>0$ and any prescribed finite
+$A_{\mathrm{st}}$, with the corresponding smaller radius.
+The output at $i$ is the whole current-background fiber of
+one source block.
+
+Group output roots and background labels by $\rho_J$.
+For macro root $I$ and macro support $Z$, its $i$-th
+source component is $\sum_{X:\rho_JX=Z}u_{i;X}$ for $i\in I$.
+Take the maximum over this whole macro output fiber before
+the support sum, and bound that maximum by the sum over
+$i\in I$. This costs $J^d$. The rooted projection inequality is
+\begin{equation}\label{ag-rooted-projection}
+ \tau_G(\{\rho_Ji\}\cup\rho_JX)
+ \le2J^{-1}\tau_{\mathrm{src}}(\{i\}\cup X)+d|X|.
+\end{equation}
+Consequently, if $8/J\le\kappa_0$ and $A_{\mathrm{st}}\ge16$,
+\begin{equation}\label{ag-macro-stationary}
+ \sup_I\sum_Ze^{4\tau_G(\{I\}\cup Z)}\|u_{I;Z}\|_r
+ \le J^d C_{A_{\mathrm{st}}}r=:C_{\mathrm{st}}r.
+\end{equation}
+This is the actual stationary background, with macro spatial
+exponent $\kappa_{\mathrm{st}}=4$. Its classical arbitrary
+reserve paid \eqref{ag-rooted-projection}. No quantum
+reserve was spent. The later Taylor expansion of a general
+activity still counts the full dimension $D_{\mathrm{bg}}$.
+
+\subsection{New fluctuation and normalization coefficients}
+
+The macro strict Gaussian theorem now has output reserve
+\begin{equation}\label{ag-new-reserve}
+ a_G=\min\{1/2,\kappa_G/4\}=1/2.
+\end{equation}
+Choose $\theta=1/(4D_G)$, so
+$\log\mathcal K_\theta\le5/8$. The macro precision norm is
+$O(b)$, hence its strengthened $\theta$-dependent smallness
+conditions can be imposed by shrinking $b$ with $L,J$ fixed.
+The edge constants may be large but remain finite.
+
+The actual cutoff is the product of the retained link/color
+balls. A bad macrocell implies $\|\xi_I\|_2>R$, so its joint
+tail is bounded by the Euclidean-block tail at the same
+threshold $R$. The opposite good-event bound involving the
+square root of the number of links cannot improve this bad
+threshold. The chart uses the original link supremum $R$.
+
+Two external normalization terms must be included. The local
+pivot-delta term
+\[
+ \log\frac{\mathcal D(V)}{\mathcal D(1)}
+       =-\sum_c\operatorname{Tr}\log\pi_c(V)
+\]
+has fixed source range. After grouping, it has anchored
+$O_{L,J}(b)$ norm with any fixed macro support weight,
+including $1/2$; a macrocell contains only $O(J^d)$ original
+local terms. This follows from its local formula, not from
+regrouping an old quantum coefficient family.
+
+For the Gaussian determinant, rerun its chain expansion on
+the macro baseline and precision labels. Let $K_\gamma$
+and $\nu_\gamma$ be their weighted row norms at $\gamma=8$,
+with $q=K_\gamma\nu_\gamma<1$. Then
+\begin{equation}\label{ag-det-series}
+ \mathcal Q(V)=-\tfrac12\log\det(A(V)A_0^{-1})
+   =\tfrac12\sum_{n\ge1}\frac{(-1)^n}{n}
+                        \operatorname{Tr}[(C_0B)^n].
+\end{equation}
+Expand each $B=\sum_YB_Y$, join every entire label $Y$ by
+a fixed minimizing tree, and join covariance endpoint pairs
+by fixed shortest paths. Their cyclic union is a connected
+declared carrier $H$. If $T$ is the sum of these tree/path
+lengths and $b_1$ the initial matrix index, then
+\begin{equation}\label{ag-det-geometry}
+ |H|\le T+1,\qquad z\in H\ \Longrightarrow\ d_G(z,b_1)\le T.
+\end{equation}
+The graph is connected and has at most $T$ distinct edges;
+these inequalities include anchors on added covariance paths.
+For $a_Q=1/2$ and $\delta_Q=1$,
+\[
+ \mathbf1_{\{z\in H\}}e^{a_Q|H|}
+ \le e^{1/2}e^{-d_G(z,b_1)}e^{(3/2)T}
+ \le e^{1/2}e^{-d_G(z,b_1)}e^{\gamma T}.
+\]
+The matrix trace is bounded by $D_G$ times the product of
+block norms. At fixed $b_1$, alternating the weighted
+covariance and precision-label row sums bounds a length-$n$
+chain by $D_Gq^n$; dropping the final closing constraint
+only enlarges this positive majorant. The precision weight
+pays the internal trees since $\tau(Y)\le\ell(Y)$.
+Summing $b_1$ gives $S_1=\sum_{z\in\mathbb Z^d}e^{-|z|_1}$.
+Thus the connected determinant coefficients satisfy
+\begin{equation}\label{ag-det-bound}
+ \sup_z\sum_{H\ni z}e^{|H|/2}\|\mathcal Q_H\|
+ \le\frac{D_Ge^{1/2}S_1}{2}\sum_{n\ge1}\frac{q^n}{n}
+ \le\frac{D_Ge^{1/2}S_1}{2}\frac q{1-q}.
+\end{equation}
+Each coefficient reads only its precision-label backgrounds,
+a subset of $H$. The baseline has no hidden background.
+Absolute convergence gives the equality and holomorphy.
+This is a fresh macro determinant proof with reserve $1/2$,
+not an attempted amplification of an old low-weight family.
+Field-independent determinants and powers of $g$ remain
+the separately tracked vacuum normalization.
+
+Together, the new Gaussian and normalization coefficients
+have reserve $1/2$ and a norm $\epsilon_{\mathrm{new}}$
+bounded by $O_{L,J}(b)$ plus the stated fluctuation-log bound.
+This concerns their support weight, not an all-scale
+smallness or contraction assertion.
+
+\subsection{Inherited interactions still project by the ratio L}
+
+Assume inherited connected activities on $\Lambda_Q$ satisfy
+\begin{equation}\label{ag-inherited-input}
+ \sup_i\sum_{H\ni i}e^{a_0|H|}\|E_H\|_b
+       \le\epsilon_{\mathrm{old}},\qquad a_0=1/16.
+\end{equation}
+The source fluctuation map still has ratio $L$. On the
+independent product background $\|a\|<b_-<b$, its exact
+increment obeys
+\begin{equation}\label{ag-inherited-increment}
+ \|\Delta E_H\|\le u\|E_H\|_b,\qquad
+ u=\frac{C_{\mathrm{ch}}(L)|g|R}
+        {b-b_- - C_{\mathrm{ch}}(L)|g|R},
+\end{equation}
+when the chart and positive denominator conditions hold.
+Directional Cauchy gives this estimate without a
+$J$-dependent coordinate count.
+
+Nonpivot outputs are bond-local. A pivot output reads two
+source $L$-blocks, which either lie in one macrocell or in
+adjacent macrocells. As both the source and quantum tilings
+refine the common $JL$ macrocell, its declared carrier obeys
+\begin{align}
+ Y(H)&\text{ is connected},&
+ |Y(H)|&\le\chi|\pi_LH|,\quad\chi=d+1,\notag\\
+ \mathbf1_{\{B\in Y(H)\}}
+ &\le\sum_{i\in H}\mathbf1_{\{d_G(B,\pi_Li)\le1\}}.
+                                                               \label{ag-pivot-geometry}
+\end{align}
+The safe anchor factor is $N_{\mathrm{near}}L^d$, with
+$N_{\mathrm{near}}=2d+1$; there is no extra $J^d$.
+Connected-carrier compression in the quantum graph gives
+\begin{equation}\label{ag-quantum-compression}
+ |\pi_LH|\le2^d+(2^d/k_L)|H|,\qquad
+ k_L=1+\lfloor(L-3)/4\rfloor.
+\end{equation}
+The target Gaussian multiplier exponent is at most
+\begin{equation}\label{ag-required-weight}
+ B_{\mathrm{req}}=4+\log\mathcal K_\theta+\kappa_G
+                  \le53/8.
+\end{equation}
+Consequently the inherited interaction weight is paid if
+\begin{equation}\label{ag-L-choice}
+ \frac{\chi2^d}{k_L}\frac{53}{8}\le\frac1{16}.
+\end{equation}
+In dimension four this asks for $k_L\ge8480$. For example
+$L=33921$ gives equality and $L=33925$ a strict margin.
+These crude numbers demonstrate a finite choice, not a
+useful numerical coupling range.
+
+After grouping equal carriers, let
+$Q_Y=\sum_{H:Y(H)=Y}\Delta E_H$ and
+$V_{\max}=uN_{\mathrm{near}}L^d\epsilon_{\mathrm{old}}$.
+The exact multiplier estimate yields
+\begin{equation}\label{ag-inherited-multiplier}
+ \epsilon_{\mathrm{int}}
+ \le e^{V_{\max}}u e^{(53/8)\chi2^d}
+             N_{\mathrm{near}}L^d\epsilon_{\mathrm{old}}.
+\end{equation}
+Indeed $\|Q_Y\|\le V_{\max}$ and
+$\|e^{Q_Y}-1\|\le e^{\|Q_Y\|}\|Q_Y\|$;
+\eqref{ag-pivot-geometry} and
+\eqref{ag-quantum-compression} then give the anchored sum.
+The base and inherited factors may share a support as
+distinct labels. Under the previously proved quarter
+budgets their connected-log difference is at most
+$4C_{\mathrm{out}}\epsilon_{\mathrm{int}}$.
+The old fluctuation-independent sum $\sum_HE_H(a)$ stays
+outside this integral.
+
+\subsection{Transport of both kinds of background term}
+
+Choose a positive common radius $b_{\mathrm{com}}$ no
+larger than $b_-$ and every domain of the new Gaussian,
+determinant and delta coefficients. In particular
+$b_{\mathrm{com}}\le b$; restricting the old activities to
+this smaller ball preserves their input norm. The inherited
+outer radius $b$ cannot silently be assigned to new
+coefficients constructed only on $b_-$.
+
+Use \eqref{ag-macro-stationary} and the transport parameters
+\begin{equation}\label{ag-transport-budget}
+ \beta=1/8,\quad a_{\mathrm{out}}=\mu=1/16,\quad
+ \delta_{\mathrm{tr}}=1,\qquad
+ t=\frac{C_{\mathrm{st}}r}{b_{\mathrm{com}}}
+                      \le\frac1{16D_{\mathrm{bg}}}.
+\end{equation}
+Then $\beta+\delta_{\mathrm{tr}}<\kappa_{\mathrm{st}}=4$
+and $D_{\mathrm{bg}}\log(1/(1-t))\le1/8$.
+New Gaussian and normalization coefficients already have
+carriers in $\Lambda_G$ and reserve $1/2$. Identity-projection
+transport returns reserve $1/16$ and norm at most
+\begin{equation}\label{ag-new-transport}
+ S_1\epsilon_{\mathrm{new}}.
+\end{equation}
+Their output carriers are $J$-blocks of the next current
+lattice, exactly the type assumed at the next stage.
+
+The old background term has carriers in $\Lambda_Q$ and
+must instead use $\pi_L$. Each of its $J$-current output
+fibers is a restriction of the containing $JL$ macro fiber,
+so it inherits the rooted bound anchored at $\pi_L(i)$.
+Compressed transport uses $c_0=2^d,c_1=2^d/k_L$ and
+the coordinate count $D_{\mathrm{in}}$. For $d=4$,
+\begin{equation}\label{ag-old-transport-budget}
+ c_1\beta+D_{\mathrm{in}}\log\frac1{1-t}
+ \le\frac2{k_L}+\frac1{8L^d}<\frac1{16},
+\end{equation}
+because $D_{\mathrm{in}}/D_{\mathrm{bg}}=L^{-d}$.
+It too returns reserve $1/16$, with norm at most
+\begin{equation}\label{ag-old-transport}
+ e^{\beta2^d}L^d S_1\epsilon_{\mathrm{old}}
+       =e^2L^d S_1\epsilon_{\mathrm{old}}.
+\end{equation}
+Its field-independent constants are tracked separately as
+vacuum terms. No reserve beyond $1/16$ was assumed for it.
+Treating it as if it already had the Gaussian output reserve
+$1/2$ would have been incorrect.
+
+Thus the full update has the same connected-carrier exponent
+$a_0=1/16$ and a one-step bound
+\begin{equation}\label{ag-weight-recurrence}
+ \epsilon_{\mathrm{next}}
+ \le e^2L^dS_1\epsilon_{\mathrm{old}}
+                     +S_1\epsilon_{\mathrm{new}},
+\end{equation}
+on the common smaller field domain. The inherited
+fluctuation effect is already included in
+$\epsilon_{\mathrm{new}}$ through
+\eqref{ag-inherited-multiplier}. This is recovery of a
+function-space weight, not contraction of its norm.
+
+\subsection{A finite choice of J and the remaining induction boundary}
+
+After fixing $L$ in \eqref{ag-L-choice}, choose $J=L^j$
+large enough that
+\begin{equation}\label{ag-J-choice}
+ 8/J\le\gamma_0,\qquad32/J\le\sigma_0,\qquad
+ 8/J\le\kappa_0.
+\end{equation}
+Every exponent on the right is positive for that fixed $L$,
+uniformly in $M$. Choose classical reserves at least $64$
+for precision and $16$ for the stationary family, and any
+additional finite amount needed for classical interaction
+grouping. Their established constructions permit this at
+a smaller radius. Hence the choices have a finite solution
+without any large-$L$ asymptotic estimate. The quantum
+family always starts on $J$-current cells; no extra quantum
+reserve is spent to amplify a macro spatial exponent.
+
+The analytic radius is still a real obstruction. In particular,
+\begin{equation}\label{ag-radius-loss}
+ r\le\frac{b_{\mathrm{com}}}{16D_{\mathrm{bg}}C_{\mathrm{st}}},
+ \qquad C_{\mathrm{st}}=J^dC_{A_{\mathrm{st}}},
+\end{equation}
+must be imposed along with all chart and precision domains.
+An incoming radius may itself have been produced by a
+previous step. This theorem does not turn
+\eqref{ag-radius-loss} into a self-map, nor compare it with
+the required running-coupling domains. The smoother pre-gauge
+representative and its analytic-germ extension have separate
+integral and activity-norm interfaces.
+
+Similarly, \eqref{ag-weight-recurrence} has a coefficient
+larger than one, and the normalization terms are $O(b)$,
+not automatically $O(g)$. Uniform amplitude control requires
+vacuum, relevant and marginal extraction and a coupling-flow
+estimate. Large-field pieces, mixed histories and observable
+bounds are unchanged obligations.
+
+The result is therefore specific: fixed $L,J$ and the exact
+source coordinates preserve a fixed positive connected
+support exponent through inherited insertion, normalized
+Gaussian integration, external normalization and stationary
+transport. This resolves the earlier circular support-weight
+test while leaving the analytic-domain and amplitude induction
+explicitly open.
+
+
+\begin{thebibliography}{9}
+\bibitem{prior26}
+\emph{Toward a four-dimensional Yang--Mills construction},
+research Notebooks 17--25 in this workspace.
+The weighted source covariance, arbitrary classical cardinality
+reserves, tunable strict Gaussian expansion, stationary support
+transport and inherited-interaction estimate are the principal
+inputs.
+\bibitem{balaban11626}
+T.~Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field
+theories. II. Cluster expansions},
+Commun. Math. Phys. \textbf{116} (1988), 1--22,
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-4penm4k7hc.pdf}{original article copy}.
+\bibitem{source26}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}{Yang--Mills-LLM-experiment},
+deposited raw accounts at commit
+\texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+\end{thebibliography}
+\end{document}

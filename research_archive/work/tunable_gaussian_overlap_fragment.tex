@@ -1,0 +1,259 @@
+% No preamble. Unique prefix otg-. Follows oi- and ob-.
+% Real-baseline refinement with tunable density and joint-tail constants.
+
+\section{A tunable density cost near a real Gaussian baseline}
+\label{otg-section}
+
+The fixed density factors in the preceding theorems can cost
+$\exp(cD)$ per interaction cell. That cost need not fit an
+application's support-decay exponent when a cell contains many
+coordinates. A real baseline allows a tunable factor
+$\exp(O(\theta D))$. The dominating Gaussian is correlated;
+a joint-tail estimate replaces independence.
+
+\begin{lemma}[Relative Gaussian density]\label{otg-density-lemma}
+Let $C_r$ be a real symmetric positive covariance in $N$
+dimensions, and let
+\[
+ M=C_r^{1/2}(I+F)C_r^{1/2},\qquad F^T=F,\qquad
+                       \|F\|\le\theta<1.
+\]
+Then
+\begin{equation}\label{otg-density}
+ |p_M(x)|
+ \le\left(\frac{1+\theta}{1-\theta}\right)^{N/2}
+                                p_{(1+\theta)C_r}(x).
+\end{equation}
+\end{lemma}
+\begin{proof}
+The determinant modulus obeys
+$|\det(I+F)|\ge(1-\theta)^N$. Moreover
+\[
+ (1+\theta)\operatorname{Herm}(I+F)-(I+F)^*(I+F)
+ =\theta I-(1-\theta)\operatorname{Herm}F-F^*F\ge0,
+\]
+using $\operatorname{Herm}F\le\theta I$ and
+$F^*F\le\theta^2I$.
+Congruence by $(I+F)^{-1}$ gives
+$\operatorname{Herm}(I+F)^{-1}\ge(1+\theta)^{-1}I$.
+Insert these two bounds in the Gaussian density, including
+the normalization of the real density on the right.
+\end{proof}
+
+\begin{lemma}[Correlated block tails]\label{otg-tail-lemma}
+Let $G$ be a centered real Gaussian on $D$-dimensional cells, with
+covariance at most $\Lambda_{\rm g} I$. For $0<\sigma\le1$ set
+\begin{equation}\label{otg-tail-constant}
+ p_{\sigma,R}(\Lambda_{\rm g})
+  =(1+\sigma)^{D/2}
+             \exp\left[-\frac{\sigma R^2}{2(1+\sigma)\Lambda_{\rm g}}\right].
+\end{equation}
+For every finite cell set $B$,
+\begin{equation}\label{otg-joint-tail}
+ \mathbb P\{\|G_i\|_2>R\text{ for all }i\in B\}
+                   \le p_{\sigma,R}(\Lambda_{\rm g})^{|B|}.
+\end{equation}
+Consequently, for $a_i\ge0$,
+\begin{equation}\label{otg-product-tail}
+ \mathbb E\prod_{i\in I}
+            (a_i+\mathbf1_{\{\|G_i\|_2>R\}})
+                  \le\prod_{i\in I}(a_i+p_{\sigma,R}(\Lambda_{\rm g})).
+\end{equation}
+\end{lemma}
+\begin{proof}
+On the event in \eqref{otg-joint-tail},
+$\sum_{i\in B}\|G_i\|^2>|B|R^2$.
+Exponential Markov with
+$t=\sigma/[2(1+\sigma)\Lambda_{\rm g}]$ gives
+\[
+ \mathbb P(\text{event})
+ \le e^{-t|B|R^2}\det(I-2tC_B)^{-1/2}
+ \le e^{-t|B|R^2}(1+\sigma)^{D|B|/2}.
+\]
+Expand the product into choices of bad singleton cells to
+obtain \eqref{otg-product-tail}. No independence is assumed.
+\end{proof}
+
+\subsection{The marked theorem for a small complex covariance family}
+
+Let $C_r$ be a fixed background-independent real covariance with
+$\lambda I\le C_r\le\Lambda_0 I$. Suppose the actual holomorphic
+complex symmetric covariance satisfies
+\begin{equation}\label{otg-close}
+ \sup_A\|C(A)-C_r\|\le\theta\lambda/2,\qquad
+                                  0<\theta\le1/4.
+\end{equation}
+Retain the actual covariance majorant $J$ and $A_\kappa$
+from \eqref{oi-decay}, the fixed cutoff, and the bounded local
+interaction multipliers of the marked theorem.
+For any fixed $0<\sigma\le1$ replace its constants by
+\begin{align}
+ \delta_\theta&=\theta\lambda/2,&
+ K_\theta&=\left(\frac{1+\theta}{1-\theta}\right)^{D/2}
+                     =e^{D\operatorname{artanh}\theta},\notag\\
+ p_{\theta,\sigma,R}
+       &=p_{\sigma,R}((1+\theta)\Lambda_0),&
+ \tau_\theta&=K_\theta p_{\theta,\sigma,R},&
+ c_\theta&=e^2/\delta_\theta,\notag\\
+ \epsilon_\theta&=\sup_i\sum_{Y\ni i}
+       v_YK_\theta^{|Y|}e^{4|Y|+\kappa\ell(Y)},&
+ \eta_\theta&=e^3\tau_\theta+\epsilon_\theta,&
+ \eta_{\theta,*}&=\frac1{4\max(1,c_\theta A_\kappa)}.
+                                                        \label{otg-mark-constants}
+\end{align}
+
+\begin{theorem}[Tunable marked expansion]\label{otg-mark-theorem}
+If $\eta_\theta\le\eta_{\theta,*}$, the conclusion
+\eqref{oi-log} holds with $2\eta_\theta$.
+Under the quarter budgets
+$e^3\tau_\theta\le\eta_{\theta,*}/4$ and
+$\epsilon_\theta\le\eta_{\theta,*}/4$,
+the interaction-difference bound is $8\epsilon_\theta$.
+\end{theorem}
+\begin{proof}
+A cell partition mask is a direct-sum pinching, and therefore
+contracts the operator norm of $C(A)-C_r$. Convex combinations
+of these masks have the same property. At a molecule BKAR
+mask the covariance differs from its real masked baseline by
+at most $\theta\lambda/2$. The degree-adapted cell endpoint
+polydisc, with radius budget $\delta_\theta$ and the actual
+majorant $J$, adds at most another $\theta\lambda/2$.
+The total relative perturbation from the real masked baseline
+has norm at most $\theta$.
+
+Lemma~\ref{otg-density-lemma} applies. Its dominating real
+Gaussian covariance is at most $(1+\theta)\Lambda_0I$.
+Bound nonsingleton molecule functions by $M_S$, and expand
+the singleton bounds $M_i+\mathbf1_{\mathrm{bad},i}$.
+Lemma~\ref{otg-tail-lemma} gives exactly the product bound
+used in the cell-endpoint Cauchy estimate, with
+\[
+ b_\theta(S)=K_\theta^{|S|}M_S+
+                      \tau_\theta\mathbf1_{\{|S|=1\}}.
+\]
+The overlap-animal, planted-tree, Mayer and interpolation
+arguments are unchanged.
+\end{proof}
+
+If $C(A)$ is identically the real baseline, one may use the
+larger budget $\delta_\theta=\theta\lambda$, because no
+background deviation consumes half of it.
+Operator closeness suffices for this marked theorem but does
+not imply strict background locality.
+
+\subsection{The tunable strictly local version}
+
+Assume the local precision and product-domain hypotheses of
+Section~\ref{ob-section}, now with $C_0$ real symmetric positive.
+Retain $K,\nu,v$, $J_{bc}=Ke^{-md(b,c)}$ and $A_\kappa$.
+Fix $0<\theta\le1/4$ and replace the precision constants by
+\begin{align}
+ \delta&=\theta\lambda,& \bar K&=K+\delta,& a&=\lambda/2,
+ \notag\\
+ s&=\min\{m/2,\;aem/(4\bar K)\},&
+ L&=\frac4\lambda\sum_z e^{-s|z|},\notag\\
+ v_1&=v(1+\delta/K),&
+ u&=Lv_1,& w&=\frac{L^2v_1}{1-u}.                \label{otg-precision-constants}
+\end{align}
+Require $K\nu<1$ and the strengthened smallness conditions
+\begin{equation}\label{otg-precision-small}
+ u\le\theta,\qquad
+ w\le\frac{\theta}{(1+\theta)\Lambda_0}.
+\end{equation}
+The earlier condition $v_1\le\lambda/4$ follows because
+$L\ge4/\lambda$ and $\theta\le1/4$.
+Define
+\begin{equation}\label{otg-strict-density-constants}
+ \rho_\theta=\frac{1+\theta}{1-\theta},\qquad
+ \mathcal K_\theta=
+     \left(\frac{1+\theta}{(1-\theta)^3}\right)^{D/2},
+ \qquad
+ \mathcal p_{\theta,\sigma,R}
+        =p_{\sigma,R}(\rho_\theta\Lambda_0).
+\end{equation}
+In \eqref{ob-smallness} replace
+$\widehat K_G,\widehat p_R$ by
+$\mathcal K_\theta,\mathcal p_{\theta,\sigma,R}$,
+and use $c_G=e^2/\delta$ with the present $\delta$.
+Denote the resulting quantities by
+$\mathcal\tau_\theta,\mathcal\epsilon_\theta,
+\mathcal\eta_\theta,\mathcal\eta_{\theta,*}$.
+
+\begin{theorem}[Tunable strictly local expansion]\label{otg-strict-theorem}
+Under \eqref{otg-precision-small} and
+$\mathcal\eta_\theta\le\mathcal\eta_{\theta,*}$,
+\eqref{ob-local-log} holds with bound
+$2S_{\kappa/2}\mathcal\eta_\theta$.
+Under the corresponding quarter budgets, its interaction
+difference is bounded by
+$8S_{\kappa/2}\mathcal\epsilon_\theta$.
+All domain, volume and symmetry scope statements of
+Section~\ref{ob-section} remain in force.
+\end{theorem}
+\begin{proof}
+Let $C_{r,M}$ be the real masked baseline on a moment set $M$.
+It is between $\lambda I$ and $\Lambda_0I$.
+Add only its selected complex cell endpoint perturbations to
+form $M_0$. Their norm is at most $\theta\lambda$, so
+\[
+ |p_{M_0}(x)|
+          \le K_\theta^{|M|}p_{(1+\theta)C_{r,M}}(x).
+\]
+The support-algebra bounds on the source-dependent matrix
+$E$ from Section~\ref{ob-section} are unchanged with the
+present constants. In particular the determinant correction
+has norm at most $(1-u)^{-D|M|/2}$ and the inverse correction
+costs at most $\exp(w\|x\|^2/2)$.
+
+Since $C_{r,M}\le\Lambda_0I$,
+$\|x\|^2\le\Lambda_0x^TC_{r,M}^{-1}x$.
+Condition \eqref{otg-precision-small} therefore gives
+\[
+ p_{(1+\theta)C_{r,M}}(x)e^{w\|x\|^2/2}
+ \le\left(\frac{\rho_\theta}{1+\theta}\right)^{D|M|/2}
+                                  p_{\rho_\theta C_{r,M}}(x).
+\]
+Combining this inequality with $u\le\theta$ and the
+baseline density factor proves
+\begin{equation}\label{otg-algebra-density}
+ \|p_{M_0+E}(x)\|_{\mathcal B_M}
+       \le\mathcal K_\theta^{|M|}
+                                  p_{\rho_\theta C_{r,M}}(x).
+\end{equation}
+The dominating Gaussian is real and correlated, with
+covariance at most $\rho_\theta\Lambda_0I$.
+Expand the bad singleton choices and use
+Lemma~\ref{otg-tail-lemma}. This gives
+\eqref{ob-moment-bound} with the new constants.
+All cell-endpoint, formal-factorization, Mayer, hull and
+bounded-multiplier interpolation arguments then apply.
+\end{proof}
+
+\subsection{The dimension tradeoff}
+
+For $\theta\le1/4$,
+\[
+ \log K_\theta\le\frac{16}{15}D\theta,\qquad
+ \log\mathcal K_\theta
+ =\frac D2[\log(1+\theta)-3\log(1-\theta)]
+                   \le\frac52D\theta .
+\]
+Thus $\theta=1/(4D)$ bounds these unmarked per-cell factors
+by $e^{4/15}$ and $e^{5/8}$, independently of $D$.
+The covariance-edge constant grows like $\theta^{-1}$,
+and the local precision neighborhood must meet
+\eqref{otg-precision-small}. If the other baseline constants
+stay fixed, this exchanges an exponential-in-$D$ interaction
+support cost for a polynomial edge-budget loss and a smaller
+precision neighborhood.
+
+The choice $\sigma=1$ retains the faster Gaussian tail
+$2^{D/2}e^{-R^2/(4\Lambda_{\rm g})}$. Alternatively,
+$\sigma=1/(4D)$ bounds its prefactor by $e^{1/8}$,
+but its exponent is only of order $R^2/(D\Lambda_{\rm g})$.
+The cutoff must satisfy the resulting tail budget in either
+case. The lemma does not show that the actual source
+covariance, coordinate family, local precision or cutoff
+admits these tuned neighborhoods. It removes a specific
+artificial density cost while keeping those hypotheses
+explicit.

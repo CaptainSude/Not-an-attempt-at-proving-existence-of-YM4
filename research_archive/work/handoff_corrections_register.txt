@@ -1,0 +1,257 @@
+HANDOFF CORRECTIONS, SUPERSESSIONS AND SCOPE REGISTER
+17 October 2026. Inventory through Notebook 39.
+
+Purpose: prevent reuse of superseded arguments and distinguish resolved
+local proof issues from the remaining construction obligations.
+
+AUTHORITY
+Current outputs and latest checkpoints are authoritative working statements.
+This register records existing research/audits, not a new certification of all
+proofs. Read old next-task paragraphs chronologically. Internal audits and
+successful typesetting are not external mathematical certification.
+The original assignment ended at38; final stopping Notebook39 is included.
+
+C01. GLOBAL CLAIM AND CERTIFICATION BOUNDARY
+Status: Persistent scope boundary. Notebooks: 01–39.
+The collection is an internally audited research construction, not external certification. Notebook 37 closes an actual local homogeneous leading-drift/tuning problem under the series inputs; 38–39 add positive full bare-measure results on specified domains. None states a complete continuum Yang–Mills construction. The main upstream multiscale target remains SU(2); later bare-Wilson SU(N) statements do not extend every earlier theorem to all groups.
+Evidence: work/final_push_existence_dependency_audit.txt; work/after_notebook37_state.txt; work/after_notebook38_state.txt
+
+C02. SOURCE PROVENANCE AND CHRONOLOGICAL OPEN TASKS
+Status: Reading/archival rule. Notebooks: 01 and source interface notes.
+The deposited conditional theorem and companion claims must be reported at their exact generality. Do not infer that every companion input is absent, or accept its full used domain from a theorem label. Earlier notes saying 'next task' are historical once later notebooks close that local task. A zero-byte downloaded PDF is not a usable source artifact; preserve the primary URL/source map and report the missing local file. The source checkout is pinned separately at e392ef45013a581664bab76b90867170b30fe10e.
+Evidence: work/final_push_existence_dependency_audit.txt; work/renormalized_induction_primary_sources.md; work/one_step_quantum_domains_source_research.md
+
+C03. ROTATION, CONTACT TERMS AND ALL-ORDER COMPACTNESS
+Status: Conditional reductions retained. Notebooks: 01.
+Anisotropic derivative white noise obstructs invariance of the full Euclidean random law, but its centered positive-halfspace observables are OS-null; it is not by itself a physical noninvariance counterexample. The angular type-below-four theorem separately assumes entire finite type, positive imaginary-angle kernels and detection. Free :F^2: type three does not establish the interacting estimate. The all-order source construction uses one translated fixed-side grid per selected patch tuple, with compatible subset estimates and explicit translated-grid uniformity; arbitrary shrinking partitions do not supply this for free.
+Evidence: work/rotation_research.md; work/all_order_research.md; work/compactness_research.md
+
+C04. UNMARKED COEFFICIENT EXTRACTION VERSUS CUTOFF VALIDATION
+Status: Logical relocation, actual matching still scoped. Notebooks: 01,03.
+The conditional Cauchy/pointed coefficient-extraction lemma is valid when its stated small-remainder hypothesis is supplied. The unfinished source (*) is the validation of the actual produced remainder on the selected cutoff/radius domain, not an additional unexplained gap inside that conditional lemma. Constants must be fixed before the epsilon/coupling choice. A Gaussian Hessian estimate does not identify the deposited running coefficient until coordinates and source responses are matched.
+Evidence: work/running_coupling_research.md; work/source_stability_research.md; work/cutoff_source_match_research.md
+
+C05. TWO-FRAME GEOMETRY AND NORMALIZED FOLDING
+Status: Corrected and integrated. Notebooks: 02.
+Odd-width coordinate cuts can alternate site and link types; one-frame admissibility does not inherit a stronger unrelated two-frame divisibility requirement. The reflected-image margin is only positive on a half-integer mesh, not the original >2h margin; the finite range 1<=length<=2w-1 suffices. A geometric placement alone is not the diagonal fold: exact feature/Haar gluing is needed. The first fold uses a full reflected source array and Jensen normalization, not a power of an unnormalized single-source partition function.
+Evidence: work/two_frame_geometry_research.md; work/diagonal_fold_research.md; work/folding_audit.md; work/reflection_assembly_audit.md
+
+C06. STRICT BACKGROUND SUPPORT IS STRONGER THAN LOCAL COVARIANCE
+Status: Hypotheses retained; later actual match. Notebooks: 03,04,18.
+The support-algebra theorem requires a baseline independent of all background variables and a small local precision decomposition on a product complex domain. A baseline C0(U_ref) chosen separately at each arbitrary reference localizes only the perturbation, not the reference dependence. Gauge or rotational invariance of every activity is not automatic. The tunable tail lemma is for centered real Gaussians. A harmless intermediate decay exponent in the support-algebra row estimate was corrected without changing final constants.
+Evidence: work/gaussian_cutoff_locality_research.md; work/gaussian_cutoff_locality_audit.md; work/overlapping_interaction_cutoff_audit.md
+
+C07. OVERLAP AND LARGE CELL-DIMENSION COSTS
+Status: Resolved abstractly in18. Notebooks: 05,18.
+The disjoint-cell theorem does not extend by treating overlapping interactions as giant independent cells: naive Cauchy bounds generate |Y|^degree losses. Notebook 18 uses molecules and cell-endpoint tree bookkeeping. A fixed per-dimension Gaussian density cost can defeat the source support budget; the tunable real-baseline comparison uses theta of order 1/D, retaining the resulting derivative constants. A countable extension is defined by convergent multiplier products, not by arbitrary choices of logarithms differing by 2 pi i.
+Evidence: work/interaction_cutoff_research.md; work/overlapping_interaction_cutoff_research.md; work/overlapping_interaction_tunable_audit.md
+
+C08. THE ACTUAL INDEPENDENT CUTOFF WINDOW
+Status: Source convention checked; extra indicators remain separate. Notebooks: 05,17,19,24.
+The fixed-domain route uses the retained-bond product window identified in CMP116. Adding a pivot/reconstructed-field/all-bond indicator makes the domain move under the chart and can destroy analytic dependence; it cannot be silently dropped or replaced. The exact pullback of any extra indicator must be retained unless covariant/fixed by a separate argument. Physical fluctuation radius and normalized Gaussian-variable radius are different.
+Evidence: work/pivot_cutoff_source_research.md; work/physical_current_pivot_precision_research.md; work/physical_pivot_measure_research.md
+
+C09. CLASSICAL HESSIAN REGULARITY
+Status: Corrected hypothesis; supplied later. Notebooks: 06,15,17.
+A merely differentiable minimizing branch gives a quadratic Peano coefficient along a line, not automatically a classical Hessian or an O(t^2) branch expansion. The effective-Hessian transfer uses a C2/analytic branch on a neighborhood and feasible constrained curves. Notebook 15 supplies the nonlinear branch and Notebook 17 the homogeneous match.
+Evidence: work/flat_maxwell_gap_research.md; work/flat_maxwell_lift_research.md; work/nonlinear_fixed_gauge_minimizer_research.md
+
+C10. AVERAGES, GAUGES AND BOUNDARIES MUST NOT BE IDENTIFIED
+Status: Persistent convention distinction. Notebooks: 06–09,13.
+The straight-string Q_st, rooted Q_flat, corrected fixed-reference derivative and ordinary composite derivative are different operators. The source minimizing lift uses a squared-Laplacian scalar correction; the earlier least-L2 lift is not interchangeable. Boundary lift arguments use all incident fine bonds and zero-extended rows, not a convention freezing crossing bonds. Zero modes and periodic repeated occurrences remain in the counting normalization.
+Evidence: work/flat_maxwell_boundary_research.md; work/flat_minimizer_source_gauge_research.md; work/flat_covariance_source_research.md
+
+C11. NORMALIZED MAXWELL COEFFICIENT
+Status: Explicitly proved, not inferred from ellipticity. Notebooks: 07,29,31–37.
+Uniform upper/lower Maxwell comparison alone does not prove that the p^2 coefficient of q_M is exactly one. Notebook 07's alias expansion gives that normalization. Later extraction compares against the actual normalized classical reference, not an arbitrary quadratic form with the same ellipticity constants.
+Evidence: work/flat_covariance_decay_research.md; work/flat_covariance_limit_research.md
+
+C12. POINTWISE ENDPOINTS AND PENALTY NORMALIZATION
+Status: Sharp scope retained. Notebooks: 08,09,12.
+Uniform C1,alpha estimates hold for alpha<1. The endpoint and arbitrary individual second-difference L-infinity bounds are false in general. A componentwise Laplacian estimate is a different statement. Scalar G' estimates retain the needed positive penalty interval; no unavailable a_n recursion is invented. Penalty independence of the gauge projection does not make G' itself penalty independent.
+Evidence: work/flat_pointwise_inverse_research.md; work/source_flat_weak_norm_match.md; work/flat_schauder_scalar_fragment.tex
+
+C13. FULL CURRENT AND NO-DERIVATIVE-OF-CURRENT ESTIMATES
+Status: Corrected by11–12. Notebooks: 09,11,12.
+The auxiliary current in09 omits the nonlinear constraint-current term, which is added in11. The gauge projection is not bounded on arbitrary L-infinity data;12 uses exact outer smoothing factorizations and Lambda/DLambda acting on N. No derivative of J is assumed. The deposited current estimates exclude the Laplacian member; right-divergence Holder data cannot be sharply cut into cells without creating mesh losses.
+Evidence: work/flat_full_constraint_current_research.md; work/flat_pointwise_current_research.md; work/source_flat_weak_norm_match.md
+
+C14. NONFLAT FORM STABILITY
+Status: Actual small global class only. Notebooks: 14.
+The Wilson Hessian calculation uses plaquette curvature to avoid a spurious inverse-mesh link-amplitude error. The resolvent theorem controls energy sandwiches with first derivatives on each side, not arbitrary one-sided second derivatives. Real coercivity additionally requires a positive definite baseline. The exact deposited bare-action normalization is separate from broader effective-action and graded source-domain identifications.
+Evidence: work/nonflat_wilson_inverse_research.md; work/nonflat_wilson_inverse_audit.md
+
+C15. ORDINARY REPRESENTATIVE AND LOCAL MINIMUM
+Status: Corrected representative; exact local scope. Notebooks: 15,16,30.
+The ordinary representative has linear lift H_ord=H plus an explicit fine gradient; it is not the source-gauge H, although its curl agrees. Point prescription uses the compact bump extension, while induced-gauge inversion uses the separate scalar lift. Local minimum comparisons require a common small coordinate ball and a controlled constraint-preserving gauge path. Equal action values alone do not prove orbit equivalence or quotient invariance.
+Evidence: work/ordinary_constraint_transfer_fragment.tex; work/ordinary_representative_locality_research.md; work/classical_summable_gauge_research.md
+
+C16. ONE-WEIGHT RESPONSE IS NOT MULTISUPPORT LOCALITY
+Status: Separate proof supplied in21. Notebooks: 16,21.
+Localized differentiability with one weighted insertion does not imply a strict background support series with arbitrary cardinality reserve. Notebook21 proves that stronger conclusion by a simultaneous support-valued fixed point using concrete smooth physical-cell partitions and mixed-insertion vertex norms. The ordinary point-rooted adjoint has an inverse-mesh obstruction and is not used as a uniformly bounded substitute.
+Evidence: work/classical_local_vertex_bounds_research.md; work/classical_support_localization_research.md; work/classical_support_localization_audit.md
+
+C17. GAUSSIAN TAILS AND THRESHOLDS
+Status: No full-measure inference. Notebooks: 17,24,38.
+A retained linkwise bad-block event implies Euclidean block norm greater than the same threshold R. The good event only bounds that norm by sqrt(number of links) times R and cannot improve the bad tail threshold. Correlated Gaussian tails do not control the normalized full Wilson measure without its own comparison. Notebook38 supplies separate full bare-measure estimates.
+Evidence: work/inherited_quantum_reentry_research.md; work/gaussian_joint_block_tail_fragment.tex; work/full_wilson_large_field_peierls_research.txt
+
+C18. ACTUAL REDUCED PRECISION AND MEASURE FACTORS
+Status: Both chart curvatures retained. Notebooks: 19–21,32.
+The reduced precision includes the constraint-chart curvature paired with the action gradient and the relative exponential-coordinate curvature paired with the current. Stationarity permits only the justified cancellations, not erasing either term before the chain rule. The pivot determinant ratio, Haar density and gauge remainder have local supports; the background-only delta determinant stays separate. The off-stationary centered analytic extension equals the physical integral only on the actual physical branch.
+Evidence: work/physical_current_pivot_precision_research.md; work/physical_pivot_measure_research.md; work/determinant_maxwell_trace_research.md
+
+C19. GLOBAL GAUGE INSERTION AND MEASURABLE COMPLETION
+Status: Domain condition retained. Notebooks: 20,27,38.
+A local analytic blocking map need not exist on every group configuration. Exact insertion over a full orbit needs a stated admissible invariant domain or a specified global Borel equivariant completion. The source's possible different large-field completion is not thereby identified. Inherited background continuation is not a fluctuation-coordinate change. Literal containment must hold for all retained real fields when matching the admitted integral.
+Evidence: work/composite_macrostep_integral_research.md; work/positive_finite_measure_embedding_research.txt
+
+C20. SUPPORT NORMS AND GENERATING MAJORANTS
+Status: Corrected and integrated. Notebooks: 21,22.
+Rooted composition uses graph Steiner-tree length, allowing auxiliary vertices; metric MST is used only after the explicit conversion. In21 the joint field-type maximum is inside each coefficient norm before the support sum. In22 the separate-family maximum is legitimate only because the positive scalar/type coefficient majorant explicitly sums all colors. A bound on sup_i sum_n does not bound sum_n sup_i: the repaired gradient proof bounds each v_n separately and pays the geometric denominator and adjusted contraction radius.
+Evidence: work/classical_local_vertex_bounds_research.md; work/classical_support_localization_research.md; work/coarse_stationary_support_research.md
+
+C21. TRANSPORT GEOMETRY AND PURE GAUGE DATA
+Status: Bounded one-step is not contraction. Notebooks: 22–25.
+Current substitution uses the correct current labels; a later regrouping is a distinct projection, not a second use of the same compression. The ordinary gauge-zero branch has pure-gauge data with boundary links of the original coarse amplitude, so uniform inverse-ratio suppression of that representative is false. Transport constants, analytic margins and coordinate dimensions must be paid explicitly.
+Evidence: work/quantum_activity_transport_research.md; work/coarse_stationary_support_research.md; work/pre_gauge_background_transport_research.md
+
+C22. WARD IDENTITIES, LOGS AND SPATIAL SYMMETRIES
+Status: Finite and infinite claims separated. Notebooks: 23,29.
+Equality of inherited integrals requires convergence on a common gauge domain; equality of logarithms also requires a zero-free integral and compatible branch. Exact cutoff covariance uses invariant color balls, not arbitrary scalar-coordinate rectangles. Hypercubic permutations require cubic periods or the preserving subgroup. Finite Ward identities at discrete momenta do not force exact zero-momentum mass exclusion; the continuous classification uses the jointly obtained infinite kernel or an explicit finite Ward repair.
+Evidence: work/small_field_gauge_covariance_research.md; work/composite_macrostep_symmetry_research.md; work/finite_volume_ward_extraction_research.md
+
+C23. PRE-GAUGE SMALLNESS AND JOINT DOMAINS
+Status: Closed for the stated local family in28. Notebooks: 25,28.
+A small pre-gauge background and analytic continuation of its invariant total do not by themselves identify the inherited Gaussian integral. The actual joint background/fluctuation family, its strict local fluctuation collar and empty-support part are required. In the common-domain theorem stationary substitution occurs before Gaussian integration, eliminating a second output transport loss.
+Evidence: work/composite_macrostep_joint_family_research.md; work/stationary_before_gaussian_research.md; work/common_domain_joint_transport_fragment.tex
+
+C24. AUXILIARY GROUPING PARAMETER ORDER
+Status: Corrected quantitative scheme. Notebooks: 26.
+The support algebra needs m_G>kappa_G; the preliminary choice m_G=1,kappa_G=2 was invalid and is replaced by m_G=3,kappa_G=2. The physical ratio is chosen before auxiliary J, with b_common restricted to every required old/new domain. A restricted old output fiber inherits its macro root. Weight compatibility does not imply field-domain or amplitude stability.
+Evidence: work/auxiliary_gaussian_grouping_research.md; work/auxiliary_gaussian_grouping_fragment.tex
+
+C25. ACTUAL COMPOSITE MAP
+Status: Exact map preserved. Notebooks: 27.
+The composed ordinary primitive averages are not replaced by direct-R averaging. The proof follows their nonlinear dependencies, actual pivot chain and endpoint covariance. The source's implicit Federbush equation is an example of a mean satisfying the source axioms, not an unsupported assertion about every selected mean. A finite local incidence argument alone would not prove Gaussian coercivity; the nullspace/Poincare argument supplies it.
+Evidence: work/composite_macrostep_geometry_research.md; work/composite_macrostep_gaussian_research.md
+
+C26. HIGH FIELD DEGREE
+Status: Not a gauge-invariant invariant subspace. Notebooks: 28.
+The inverse-ratio contraction assumes coefficientwise Taylor jets through degree four vanish. The phase projection costs at most six but is not gauge invariant, and the quantum map may regenerate low jets. The actual difference theorem uses one shared canonical core/tail assignment so the joint fluctuation parameter zero agrees coefficientwise with the background field parameter one.
+Evidence: work/high_jet_background_transport_research.md; work/high_jet_quantum_difference_research.md
+
+C27. FALSE QUADRATIC DIFFERENCE IDENTITY AND CARRIER REPAIR
+Status: Substantive algebraic correction integrated. Notebooks: 29.
+K(r)^T=K(-r) does not make each matrix K(r) symmetric. The naive two-field difference formula loses the odd-skew part. It is replaced by an ordered Laurent two-difference factorization using the exact zero and first moments. For localization, project the terminal sets first and choose the short macro graphs guaranteed by the projection lemma; the carrier is not the full projection of an arbitrary fine tree.
+Evidence: work/low_kernel_spatial_transport_research.md; work/low_kernel_spatial_transport_rotation_audit.md; work/low_kernel_spatial_transport_fragment.tex
+
+C28. SPATIAL GAIN AND ORDER OF LIMITS
+Status: Endpoint chosen after grouping. Notebooks: 29–31.
+A bound C(J)L^-alpha is not automatically a contraction when J is chosen after L. The classical semigroup permits an endpoint L=R^q to be chosen after fixed R,J. Infinite structural kernel results or exact periodizations do not automatically cover arbitrary finite winding kernels;31 supplies a separate finite repair. Auxiliary elliptic gaps are not physical mass gaps.
+Evidence: work/classical_background_semigroup_research.md; work/finite_classical_contraction_research.md
+
+C29. QUOTIENT DESCENT AND LOCAL LIMITS
+Status: Completed with stronger tails, not norm bounds alone. Notebooks: 30.
+The summable gauge interface needs an actual controlled connecting gauge, one constant at infinity, compact gauge truncations and a strict path margin. Invariant totals then extend from compact inputs. Quantum local-limit continuity requires explicit carrier-size, expansion-order and geometric tails, not a norm bound alone; later sections supersede provisional earlier formulations. Finite-history compatibility still requires actual intermediate families to meet their budgets.
+Evidence: work/classical_summable_gauge_research.md; work/quantum_local_limit_research.md; work/periodic_interaction_descent_fragment.tex
+
+C30. ZERO-INPUT FORCE, PARITY AND ADAPTED MARGINAL COORDINATE
+Status: Actual final route distinguished from fallback. Notebooks: 30,31.
+Fix the zero-input map on an outer rho-domain and then restrict to b; do not change the map when shrinking the inner domain. Removing constant/linear total jets yields O(b^2), not O(g^2) for the full correction because Delta+Qdet survives at g=0. The conservative inherited budget is eta/(128e). The generic adapted marginal coordinate is valid fallback research, but the actual infinite system later satisfies beta_next T=beta and does not need that correction.
+Evidence: work/quantum_zero_input_force_research.md; work/quantum_zero_input_parity_fragment.tex; work/adapted_coupling_coordinate_research.md; work/classical_marginal_transport_research.md
+
+C31. FINITE MARGINAL LEAKAGE AND EXACT REPRESENTATIVES
+Status: Qualitative finite repair, not equality. Notebooks: 31,32.
+Infinite exact Maxwell preservation does not imply beta_N preservation at finite periods. Varying-depth joint compactness yields qualitative uniform finite leakage along the stated cofinal nested periods, without a rate or summability. Finite induction uses equivalent exact representatives plus explicit vacuum compensation; there is no accumulating approximation error or need to choose a continuous representative section.
+Evidence: work/finite_classical_marginal_leakage_research.md; work/finite_quantum_induction_research.md; work/finite_quantum_coupling_continuity_research.md
+
+C32. LEADING DETERMINANT COCYCLE
+Status: Leading coefficient only. Notebooks: 32.
+The finite Laplace argument requires the actual nearby-field minimum comparison, a controlled orbit tube and exact Haar disintegration. The intrinsic auxiliary invariance in the intermediate integral is only the stated based subgroup H_L; full output local covariance comes separately. The identity concerns the leading determinant, not composition of complete positive-coupling sharp sectors. Both reduced-chart curvature terms and every trace derivative multiplicity remain.
+Evidence: work/classical_one_loop_cocycle_research.md; work/classical_one_loop_cocycle_rotation_audit.md; work/determinant_maxwell_trace_research.md
+
+C33. BASED GHOST AND ORDINARY CONSTRAINT NORMS
+Status: Counterexamples retained. Notebooks: 32–34.
+Point pinning has a gap of order K^-4, not K^-2; the full based-ghost coefficient is 4 alpha_g log K plus bounded error, so a bounded tail beyond K^2 is false. The extra logarithm needs vector cancellation. The full ordinary constraint has norm O(1), not O(K^-1), because sampled-center gauge directions prevent the latter shortcut. Only its physical coarse projection has the stronger bound. Canonical completion with coarse covariance I is distinct from the fixed aI completion used for uniform determinant estimates.
+Evidence: work/pinned_ghost_long_time_fragment.tex; work/vector_short_time_research.txt; work/contour_heat_comparison_research.txt; work/determinant_gauge_bridge_research.md
+
+C34. CARTAN PROBES AND COLOR NORMALIZATION
+Status: Actual and reference calculations separated. Notebooks: 33,37.
+Affine polynomial probes are local structural-system jets, not globally periodic finite flux families. The real color trace counts both roots as specified; no additional factor two is inserted. The vector coefficient is 10 alpha_g, the scalar heat coefficient is -alpha_g/2, and the determinant combination is 11 alpha_g, integrating to 22 alpha_g log K. A continuum reference value is not an actual lattice comparison theorem without the subsequent error estimates.
+Evidence: work/cartan_determinant_moment_fragment.tex; work/massive_cartan_reference_fragment.tex; work/wilson_continuum_heat_comparison_research.txt
+
+C35. NONCOMMUTING SCALAR INFRARED LIMITS
+Status: Exact joint replacement in35. Notebooks: 34,35.
+A massless globally based scalar determinant on flat holonomy can retain a nonzero thermodynamic quadratic response while the mass-first local limit gives zero. Scalar and physical factors therefore cannot be regularized independently and then identified with the actual finite determinant. The zero-covariant-block-mean pair uses a joint removable continuation through flat stabilizers; individual singular massless logarithms are never evaluated there.
+Evidence: work/joint_scalar_infrared_research.txt; work/physical_quotient_localization_research.txt; work/joint_scalar_infrared_rotation_audit.txt
+
+C36. SPECTRAL GAP DOES NOT CONTROL RAW CURVATURE VERTICES
+Status: Rejected shortcut; cancellation-preserving replacement. Notebooks: 35,36.
+Flat spectral/Schatten estimates do not imply uniform potential or curvature responses. A pure-gauge path makes the hard-projector raw relative vertices grow while the exact heat trace cancels. Smooth-weight averaging alone was not promoted as a complete curved repair. The successful route retains the joint determinant and uses covariant relative forms plus coarse corrections.
+Evidence: work/mean_zero_gauge_vertex_provenance_audit.txt; work/physical_vector_curvature_research.txt; work/soft_vector_coarse_reduction_research.txt
+
+C37. COVARIANT HESSIAN AND INFRARED TAIL REPAIRS
+Status: Corrected proof integrated in36. Notebooks: 36.
+The first componentwise covariant difference-square argument double counted symmetry and assumed unjustified componentwise evenness. The repaired proof uses ordered Laurent factorization with zero and first moments, includes gradient-gradient H_j terms, and compares closed-loop jets. It applies to exact infinite moments or periodizations, not arbitrary winding kernels. Localized second responses carry the full input/output/source tree. The tail uses physical fine-site weights and retains P0 in a third-resolvent Schatten proof rather than illegally cycling a local block trace.
+Evidence: work/covariant_hessian_relative_vertices_research.txt; work/covariant_hessian_relative_vertices_rotation_audit.txt; work/soft_pair_infrared_tail_rotation_audit.txt
+
+C38. ACTUAL-BASE AND WILSON-CONTINUUM HEAT COMPARISON
+Status: Final convention repairs in37. Notebooks: 37.
+The left-relative Hessian includes the current-curvature term; it cannot be dropped from the Ward vertex comparison. In source-site coordinates the bare Wilson quadratic symbol may have cubic phase terms; the stronger quartic error holds in midpoint coordinates or for the full flat Feynman base. Continuum root densities may contain contact distributions, so the proof uses lattice reanchoring plus an explicit continuum transverse two-point calculation, not a naive absolute continuum moment assertion. The O(1/s) and O(1/sqrt(s)) errors are uniform in the stated structural systems.
+Evidence: work/actual_base_ward_heat_comparison_research.txt; work/wilson_continuum_heat_comparison_research.txt; work/wilson_continuum_heat_comparison_theorem_audit.txt
+
+C39. POSITIVE OUTPUT-ORBIT ACCEPTANCE
+Status: Exact normalized measure argument. Notebooks: 38.
+Domination of the orbit-normalized accepted density is proved through the invariant Haar-absolutely-continuous density of the actual pushforward; dividing a previously averaged measure inequality by a variable orbit mass would not suffice. The literal germ uses gamma=g^-2, actual centered-background covariance and invariant color balls; extra indicators need their own covariance. Finite graph gauge interpolation may require a volume-dependent germ shrink. The global completion is explicitly chosen.
+Evidence: work/positive_finite_measure_embedding_research.txt; work/positive_finite_measure_embedding_rotation_audit.txt
+
+C40. FULL-MEASURE ESTIMATES DO NOT CLOSE THE RG WINDOW INTERFACE
+Status: Principal remaining existence boundary. Notebooks: 38,39.
+Full normalized Peierls estimates control gauge-invariant plaquette defects, not raw links whose marginals are Haar. The fixed-box conditional minimum is not the homogeneous nonlinear coarse-fiber minimum. Small plaquettes alone do not give a uniform physical C1,alpha gauge; sharp curvature oscillations give a counterexample. Global simultaneous-good probability need not stay near one with volume. Collared determining sets, transitions/holonomy, growing components, scale ages and complete mixed-history density bounds remain unproved for this scheme.
+Evidence: work/full_measure_large_field_interface_research.txt; work/full_measure_geometric_interface_fragment.tex; work/final_push_existence_dependency_audit.txt
+
+C41. NORMALIZED FIXED-BOX REPLACEMENT
+Status: Final restricted stopping theorem. Notebooks: 39.
+The product of exact conditional window denominators preserves the exterior and partition mass; the empty failure term has an exterior-dependent weight, not a constant vacuum factor. Iid domination applies to coupling discrepancy marks D, while bad-boundary or combined marks have only the proved joint-inclusion bounds. The exact TV formula retains the entire exterior; forgetting it gives an upper bound. Source comparisons hold for bounded fixed local observables with windows and coupling held fixed, not a renormalized unbounded source hierarchy.
+Evidence: work/normalized_box_replacement_research.txt; work/normalized_box_replacement_rotation_audit.txt
+
+ARCHIVE AND REUSE POLICY
+1. Preserve current authoritative sources01–39, their PDFs, the master map,
+   this catalogue, cited fragments/research/audits, checkpoints and builders.
+   Keep the original pinned repository separately.
+2. Inventory recursively including ignored files. Dedicated sources37–39
+   are outputs/*/main.tex; default rg omitted them. Do not recursively copy
+   the handoff directory into itself.
+3. Preserve other work as historical provenance, clearly non-authoritative.
+   Do not delete failed arguments: their corrections explain current
+   hypotheses. Earlier candidates, adapted-coordinate fallback, raw-vertex
+   proposals and old next-task checkpoints do not override integrated outputs.
+4. Preserve primary URLs/DOIs and extraction provenance. Flag zero-byte or
+   unavailable local downloads; do not present them as offline readable PDFs.
+   Original-source claims and the new research have separate authority.
+5. Compilation/render logs are build evidence, not proof certification.
+   Avoid duplicate scratch renders in the reader-facing archive; keep them
+   in a technical appendix if complete reproducibility is requested.
+6. This register groups substantive corrections. Minor repaired escaping/
+   control-character errors are not individually listed; current sources
+   and current compile logs supersede those transient versions.
+
+CURRENT UNRESOLVED CONSTRUCTION INTERFACES
+H2: connect the normalized full Wilson measure and all mixed/large-field
+histories to the nonlinear coarse-fiber windows, with uniform collared
+component replacement, transition/holonomy data and complete-density bounds.
+H3: external-observable-source estimates, renormalization/counterterms and
+all-order bounds in that full measure.
+H4: one common continuum observable hierarchy, with all source/domain matches.
+H5: reflection positivity, full Euclidean covariance and reconstruction for
+that hierarchy; the conditional rotation reduction alone is insufficient.
+H6: nontriviality and identification with interacting Yang–Mills, rather
+than a scalar, free or auxiliary sector.
+H7: the physical mass gap remains separate. Auxiliary blocked Gaussian
+gaps are not this conclusion.
+
+Notebook37 closes the local leading sign within its stated working inputs.
+Notebooks38–39 are actual finite positive bare-measure advances, but none
+of H2–H7 may be erased on that basis.
+

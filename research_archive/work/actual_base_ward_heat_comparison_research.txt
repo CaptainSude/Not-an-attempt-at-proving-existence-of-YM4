@@ -1,0 +1,321 @@
+UNIFORM ACTUAL-BASE HEAT COMPARISON FROM THE NONLINEAR WARD JETS
+17 October 2026. Rotation audit research. Independently audited by root and theorem_audit.
+No output or master edited.
+
+MAIN RESULT. For the actual homogeneous classical action S_M,
+the background-Feynman base operator
+ B_M(a)=S_M''(exp(i a))+D_a D_a^T
+has, on the selected infinite structural systems, a magnetic heat
+coefficient differing from the fixed M=1 Wilson base by O(1/s),
+uniformly in old depth M, for current heat time s>=1.
+The proof uses total heat two-point kernels and the existing
+gauge-invariant density/reanchoring identity. It does not cyclically
+permute a partial block trace, differentiate a massless determinant,
+or insert a finite-period varying magnetic flux.
+
+This conclusion is conditional only on the explicitly listed classical
+inputs in Section1. Those inputs are the previously proved current-unit
+classical kernel bounds, full nonlinear Ward identities, flat Maxwell
+normalization and ellipticity. The proof itself is Sections2--7.
+Reference coefficient evaluation, finite-regulator drift/trajectory,
+and full existence are separate.
+
+1. Exact inputs and why their constants can be uniform in M
+
+Work on Z^4 with a fixed compact simple semisimple color factor,
+Hermitian link-angle variables and the established normalized
+invariant trace. A finite direct sum can be treated factorwise.
+
+For every old depth M, let S_M be the actual gauge-invariant
+homogeneous classical minimum action, in CURRENT UNIT coordinates.
+Use the following established inputs:
+
+ (a) translations, the full hypercubic group, reality, and the
+     exact nonlinear local Ward identity;
+ (b) uniform exponentially rooted current-coordinate kernels of
+     field orders two, three and four, with a fixed positive
+     spatial exponent and all the finite moments used below;
+ (c) q_M=S_M''(1) is positive and satisfies
+       q_M(p)>=q_W(p),  q_M(p)D(p)=0,
+       q_M,mid(p)=|p|^2 I-pp^T+O(|p|^4)
+     uniformly in M. Here q_W=d_curl^T d_curl is the fixed
+     normalized Wilson flat Hessian;
+ (d) the ordinary-to-left-relative local exponential chart and its
+     first two field jets are included in the kernel bounds.
+
+The current input fiber has d dim(g) coordinates per site, independent
+of M. The bounds in (b) are the actual classical current-unit bounds,
+not the weaker statement that an arbitrary quantum interaction has
+constants depending on a newly chosen auxiliary grouping J. No
+J-dependent constant is hidden in the claim of uniformity in M.
+
+Let S_W=S_1. The total nonlinear Ward extraction, applied to
+R_M=S_M-S_W, has zero Maxwell coefficient by (c). It therefore gives,
+in bond-midpoint Fourier conventions,
+ R_2=O(|p|^4),
+ R_3=O((max |p_i|)^3),
+ R_4=O((max |p_i|)^2).                                  (1.1)
+All constants and all needed momentum derivatives are uniform in M
+by (b). Changing to source-site bond phases preserves these orders.
+
+The claim concerns the chosen infinite structural systems, where the
+continuous-momentum identities have been proved. It does not infer
+(1.1) from a finite momentum grid, or identify unrelated finite winding
+kernels with exact periodizations.
+
+2. Transfer to the actual left-relative Hessian vertices
+
+For a background ordinary angle a, use the actual local chart
+ Xi_a(B)=log(exp(iB)exp(ia))/i.
+Let J(a)B=D_B Xi_a(0)[B] and
+T(a)[B,C]=D_B^2 Xi_a(0)[B,C]. Its local analytic expansion has
+ J=I+J1(a)+J2(a,a)+O(a^3),     T=T1(a)+O(a^2).             (2.1)
+In particular T(0)=0. Its coefficients have fixed finite color
+norms and are local at the same bond.
+
+The left-relative Hessian of R_M is exactly
+ L_R(a)[B,C]
+ =R_M''(a)[J(a)B,J(a)C]+R_M'(a)[T(a)[B,C]].              (2.2)
+This formula retains the current times chart-curvature term.
+
+At degree zero it is R_2. At background degree one it is
+ R_3[a,B,C]+R_2[J1(a)B,C]+R_2[B,J1(a)C].                 (2.3)
+At degree two its coefficient is
+ (1/2)R_4[a,a,B,C]
+ +R_3[a,J1(a)B,C]+R_3[a,B,J1(a)C]
+ +R_2[J2(a,a)B,C]+R_2[B,J2(a,a)C]
+ +R_2[J1(a)B,J1(a)C]
+ +R_2[a,T1(a)[B,C]].                                   (2.4)
+For mixed derivatives polarize this identity, with the corresponding
+Taylor/derivative factors.
+
+Local products in J1,J2,T1 only merge momenta. They introduce no
+inverse momenta and no loss of vanishing degree. Thus (1.1)
+implies the following uniform low-momentum bounds for the ACTUAL
+relative Hessian differences:
+
+ flat difference: total momentum degree at least 4;
+ first background vertex difference: degree at least 3;
+ second background vertex difference: degree at least 2.             (2.5)
+
+All terms in (2.3)--(2.4) with R_2 have degree at least four;
+those with R_3 have degree at least three. In particular dropping
+the last term of (2.4) is unnecessary and would be unjustified.
+
+The gauge-fixing term D_a D_a^T is identical for M and W and cancels
+in the differences. Its first vertex is O(total momentum), and its
+second vertex is O(1). The same baseline orders hold for the Wilson
+relative action Hessian: its cubic total kernel starts at momentum
+degree one, while its quartic kernel is bounded.
+
+3. Fourier symbols and precise analytic estimates
+
+Put B_M=B_M(0)=q_M+D D^T. At flatness
+ B_W(p)=delta(p) I,      delta(p)=4 sum_mu sin^2(p_mu/2).
+The source lower bound in (c) gives
+ c delta(p)I<=B_M(p)<=C delta(p)I                         (3.1)
+with fixed positive c,C, uniformly in M. The upper bound follows
+from the uniform quadratic zero and bounded second moments.
+
+Choose a fixed small momentum ball |k|<r0. Write rho=|k|.
+Uniform analyticity, (1.1), and (2.5) imply, for derivatives of
+total order r<=2,
+ ||partial^r(B_M-B_W)(k)||<=C rho^(4-r),
+ ||partial B_M(k)||<=C rho,   ||partial^2 B_M(k)||<=C.    (3.2)
+
+For background direction a (including its bond/color index), define
+V_a^M(k,p) so that the first vertex for a source e^(ip.x)e_a maps
+a quantum Fourier mode k to k+p. Define
+W_ab^M(k;p,-p) as the second mixed vertex with those two backgrounds;
+it preserves quantum momentum k.
+Let delta denote M minus W. Then, at p=0, for every external-p
+derivative of order r<=2,
+ ||partial_p^r delta V_a(k,p)|_0||<=C rho^(3-r),
+ ||partial_p^r delta V_b(k+p,-p)|_0||<=C rho^(3-r),
+ ||partial_p^r delta W_ab(k;p,-p)|_0||<=C rho^(2-r).       (3.3)
+The shifted V_b derivative differentiates both its arguments; the
+total analytic bound gives the same estimate.
+For either baseline M or W one can use the convenient weaker bounds
+ ||partial_p^r V_a|_0||+
+ ||partial_p^r V_b(k+p,-p)|_0||<=C rho^(1-r),
+ ||partial_p^r W_ab|_0||<=C rho^(-r).                    (3.4)
+The negative powers in (3.4) for r=1,2 are only harmless upper
+bounds on analytic functions, not asserted singularities.
+In particular partial_p^2 W is actually bounded.
+
+All these symbols and their required derivatives are uniformly bounded
+outside the small momentum ball. At zero use continuity or integrate
+on the punctured ball; the final estimates are integrable.
+
+4. An exact heat two-point diagram identity
+
+At each fixed s>0 consider the second Taylor kernel of the total
+heat functional
+ F_s^M(a)=Tr(exp[-s B_M(a)]-exp[-s B_M(0)]).
+For compact sources this can be defined by its trace-class first-two
+Duhamel variations. Exponentially rooted current vertices and the
+bounded flat semigroup make those variations absolutely summable
+at fixed s. Equivalently define the translation-invariant Taylor
+kernel directly, without assigning an extensive vacuum trace.
+
+The full-trace identity, for compact directions a,b, is
+ D^2 F_s^M(0)[a,b]
+ =-s Tr(e^-sB_M B_M''[a,b])
+  +s^2 int_0^1 Tr(e^-s(1-v)B_M B_M'[a]
+                           e^-svB_M B_M'[b]) dv.         (4.1)
+It follows by differentiating
+ DF_s^M[a]=-s Tr(e^-sB_M B_M'[a]).
+The v integral supplies both ordered insertions; there is no
+additional factor two. This is a TOTAL trace identity, not a
+cyclic manipulation of the trace on one final block.
+
+The external momentum kernel H_ab^M(s,p) is consequently
+ -s int_BZ tr[e^-sB_M(k) W_ab^M(k;p,-p)] dk/(2pi)^4
+ +s^2 int_0^1 int_BZ
+   tr[e^-s(1-v)B_M(k+p) V_a^M(k,p)
+             e^-svB_M(k) V_b^M(k+p,-p)] dk/(2pi)^4 dv.  (4.2)
+This convention matches the input/output momenta of Section3;
+the equivalent cyclicly reordered formula gives the same integral.
+
+For fixed s the kernels have all finite spatial moments. Thus
+their external derivatives at p=0 can be taken under (4.2).
+The estimates below improve the naive exp(Cs) bounds uniformly
+as s tends to infinity.
+
+5. Elementary matrix heat estimates, with no spectral frames
+
+Let E_M(t,k)=exp[-tB_M(k)]. Uniform ellipticity and Duhamel
+differentiation give, for r=0,1,2 on the small punctured ball,
+ ||partial_k^r E_M(t,k)||
+ <=C_r rho^(-r) (1+t rho^2)^r exp[-c t rho^2].            (5.1)
+For r=1 the sharper expression is C t rho exp[-c t rho^2];
+for r=2 it is C(t+t^2 rho^2) exp[-c t rho^2].
+No eigenbasis or derivative of a spectral projection is used.
+
+For the difference use the exact formula
+ E_M(t,k)-E_W(t,k)
+ =-int_0^t E_M(t-u,k) [B_M(k)-B_W(k)] E_W(u,k) du.
+Differentiating at most twice and using (3.2) gives
+ ||partial_k^r(E_M-E_W)(t,k)||
+ <=C_r t rho^(4-r)(1+t rho^2)^r exp[-c t rho^2],
+                                      r=0,1,2.         (5.2)
+For example a derivative hitting an exponential contributes
+u rho, while one hitting the difference symbol reduces its
+fourth-order zero by one. Two exponential derivatives give at
+most u+u^2 rho^2. Every term has the displayed form.
+
+At a fixed distance from zero all derivatives instead have a
+polynomial-in-t times exp(-ct) bound, with constants uniform in M.
+These estimates hold for all t>=0; in particular they produce
+NO singularity when v approaches 0 or 1 in (4.2).
+
+6. Uniform O(1/s) difference of the Maxwell heat kernels
+
+Differentiate (4.2) twice in any external momentum coordinates,
+then subtract M and W.
+
+For the tadpole the differences are
+ (E_M-E_W) partial_p^2 W_W
+             +E_M partial_p^2(W_M-W_W).
+The first is bounded by C s rho^4 exp(-cs rho^2);
+the second by C exp(-cs rho^2). Including the outer factor s
+and integrating in four dimensions gives O(s^-2)+O(s^-1),
+uniformly for s>=1.
+
+For the bubble, telescope the product into four terms:
+replace either of the two V factors, or either of the two heat
+factors. Apply the product rule for the two external derivatives.
+
+In a vertex-replacement term, the two vertex factors have combined
+degree at least 3+1=4. If r derivatives hit them, their product is
+bounded by C rho^(4-r). The remaining 2-r derivatives of heat
+factors contribute at most rho^(-(2-r)) times a fixed polynomial
+in s rho^2, by (5.1). The two heat times sum to s. The entire
+differentiated product is therefore bounded by
+ C rho^2 P(s rho^2) exp[-cs rho^2].                       (6.1)
+
+In a heat-replacement term, (5.2) gives its heat time t<=s
+times rho^4 before differentiation, and the two ordinary vertices
+supply rho^2. After the two derivatives the bound is
+ C s rho^4 P(s rho^2) exp[-cs rho^2].                     (6.2)
+This estimate is valid uniformly over v in [0,1]; no inverse time
+simplex parameter appears.
+
+For a fixed polynomial P, four-dimensional Gaussian scaling gives
+ int rho^2 P(s rho^2)e^-csrho^2 dk<=C s^-3,
+ int rho^4 P(s rho^2)e^-csrho^2 dk<=C s^-4.
+Multiply by the bubble prefactor s^2: (6.1) is O(s^-1),
+and (6.2) is also O(s^-1). The complementary momentum region
+is exponentially small times a polynomial and obeys the same
+bound for s>=1.
+
+We have proved
+ |partial_p^2(H_ab^M-H_ab^W)(s,0)|<=C/s, s>=1,           (6.3)
+for every fixed external component/color choice, uniformly in M.
+The stronger matrix row version costs only the fixed external fiber.
+
+7. Conversion to the actual affine heat coefficient
+
+The diagonal color density of exp[-sB_M(a)] is individually gauge
+invariant because B_M is gauge covariant. At each fixed s its
+Taylor kernels have the moments needed for the already proved
+density Ward/reanchoring identity. It has zero linear jet for a
+semisimple color factor.
+
+For a normalized Cartan direction and alpha!=nu, let
+ h_M(s)=[t^2] tr_E(exp[-sB_M(a(t))])_(0,0),
+ a_alpha(t,x)=t x_nu H, other components zero,
+where the affine expression is a polynomial Taylor-kernel evaluation.
+That identity gives
+ h_M(s)= (1/4) partial_(p_nu)^2
+                         H_(alpha H,alpha H)^M(s,0).    (7.1)
+The factor is fixed by beta=2 times the affine density coefficient
+and beta=(1/2)partial_pnu^2 of the total Hessian. On the indicated
+diagonal component the midpoint/source-site phases cancel.
+
+The actual endpoint-K affine connection is a_alpha=t x_nu H/K^2.
+Translation of a diagonal root changes it by a constant pure gauge.
+Thus every diagonal coefficient in a final block is the same,
+and summing its K^4 sites cancels the K^-4 from the squared source.
+Its block heat coefficient is precisely h_M(s).
+This uses neither a finite-torus flux family nor a local cyclic trace.
+
+Combining (6.3),(7.1) proves the promised estimate
+                    |h_M(s)-h_W(s)|<=C/s, s>=1.         (7.2)
+The scalar ghost base D_a^TD_a is identical for M and W, so the
+same comparison holds for the signed vector-minus-two-ghost base
+combination without any scalar comparison error.
+
+In particular
+ int_1^(K^2) |h_M(s)-h_W(s)| ds/s <= C                  (7.3)
+uniformly in M,K. The infinite upper limit is also finite.
+
+8. Consequences, exact remaining inputs, and existence boundary
+
+This proves the previously missing uniform-old-depth comparison for
+the TRANSLATION-INVARIANT BASE. It complements, but does not replace,
+the separate soft-penalty comparison on physical time 0<u<=1,
+the actual short-current-time estimates, the soft infrared tail,
+and the bounded coarse determinant corrections.
+
+If those separately audited results are assembled, the actual
+Maxwell coefficient differs by O(1), uniformly in M,K, from the
+fixed Wilson base contribution on 1<=s<=K^2. A fixed-reference
+calculation giving h_W,combined(s)=b_*/2+O(s^-delta), delta>0,
+then gives b_* log K+O(1). This note has not evaluated b_* or its
+normalization, and does not import it from a different massive,
+Legendre or gauge-fixed reference.
+
+The uniformity claim uses the actual classical current-unit
+fixed-order kernel bounds in Section1. If only J-dependent quantum
+activity bounds, a flat spectral bound, or the linear Ward identity
+were available, this proof would not apply. In particular n=3,4
+must be controlled by the full nonlinear Ward completion and by
+uniform analytic moments, not by a formal pointwise O(p^m)
+statement with uncontrolled constants.
+
+No finite-regulator continuous-momentum identity, uniqueness of
+joint structural limits, full large-field RG history, running
+coupling trajectory, mass gap, or continuum reconstruction follows
+from this heat comparison. These remain distinct existence inputs.
+

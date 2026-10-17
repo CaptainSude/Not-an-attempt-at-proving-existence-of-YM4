@@ -1,0 +1,56 @@
+VISUAL PDF QA: BUNDLED NOTEBOOKS 01-20
+Reviewer: theorem_audit
+Date: 17 October 2026
+Status: PASS at the stated visual-review scope. No source changes requested.
+
+SCOPE AND METHOD
+The frozen notebook renders under work/handoff_build/visual were inspected using the view_image tool. This was real image inspection, not a conclusion drawn only from compilation logs or text extraction.
+All 22 contact sheets for notebooks 01-20 were opened and visually inspected, covering all 244 pages. Notebooks01 and15 each have contact-01.png and contact-02.png; every other assigned notebook has contact-01.png. In addition, all 21 pages flagged by the saved extraction report were opened as their separate page-NNN.png images. Notebook03 page12 was also enlarged to check its dense displays and equation-number clearance. Thus 22 individual page images were inspected beyond the contact-sheet review.
+No PDF, TeX source, master file or other deliverable was edited. This is visual/layout QA only; it is not a new mathematical correctness audit or a character-by-character transcription check of all 244 pages.
+
+CONTACT-SHEET COVERAGE (directory below work/handoff_build/visual; all listed sheets opened)
+01-ym4-construction-notebook: 26 pages; contact-01, contact-02.
+02-ym4-reflection-notebook: 11 pages; contact-01.
+03-ym4-current-cutoff-notebook: 17 pages; contact-01.
+04-ym4-gaussian-locality-notebook: 10 pages; contact-01.
+05-ym4-gauge-interaction-notebook: 10 pages; contact-01.
+06-ym4-flat-maxwell-notebook: 9 pages; contact-01.
+07-ym4-flat-locality-notebook: 13 pages; contact-01.
+08-ym4-flat-minimizer-notebook: 9 pages; contact-01.
+09-ym4-flat-current-notebook: 14 pages; contact-01.
+10-ym4-flat-curvature-notebook: 4 pages; contact-01.
+11-ym4-full-flat-current-notebook: 7 pages; contact-01.
+12-ym4-flat-regularity-notebook: 16 pages; contact-01.
+13-ym4-nonlinear-constraint-notebook: 5 pages; contact-01.
+14-ym4-nonflat-background-notebook: 13 pages; contact-01.
+15-ym4-nonlinear-minimizer-notebook: 21 pages; contact-01, contact-02.
+16-ym4-nonlinear-response-notebook: 13 pages; contact-01.
+17-ym4-gaussian-step-notebook: 12 pages; contact-01.
+18-ym4-overlapping-integration-notebook: 17 pages; contact-01.
+19-ym4-physical-step-notebook: 12 pages; contact-01.
+20-ym4-bare-step-notebook: 5 pages; contact-01.
+
+INDIVIDUAL-PAGE IMAGE COVERAGE
+01: page013.
+03: pages002,010,012 (012 is the additional dense-display check).
+07: page012.
+09: page009.
+11: page002.
+12: page015.
+14: page003.
+15: pages003,005,006,007,014,016,018,019.
+16: pages004,007.
+17: page002.
+18: page009.
+20: page001.
+
+FINDINGS
+1. All inspected contact sheets show consistent page geometry, intact text blocks, visible page numbers and appropriate separation of headings, prose and displayed equations. No blank notebook page, content cut off at a page edge, obvious collision, overlapping equation number or broken table was seen.
+2. The enlarged pages show legible mathematical glyphs, including large brackets, parentheses, norms, products, integrals and subscripts. No visible missing-glyph/replacement box was identified on any flagged page. Visible small squares have ordinary mathematical/QED roles, not apparent font-substitution failures.
+3. The saved pdf_inspection.json does NOT report zero replacement_chars for the assigned set: it lists 21 flagged pages. Parent clarified that the report combines NUL and U+FFFD extraction detections; a large math-extension glyph can create a text-extraction warning without a visible rendering defect. All 21 flagged pages were therefore visually checked. The visual result supports treating these particular entries as extraction/font-encoding diagnostics, not evidence of visible missing mathematical symbols. This audit does not claim to repair or normalize PDF text extraction.
+4. Some notebooks end with a short reference continuation page. Those pages contain visible content and page numbering, have no clipping, and are conventional bibliography pagination rather than unintended blank pages. No layout intervention is requested.
+5. Notebook03 page012, selected from the contact sheet for closer checking of dense formulas, has clear display separation and equation-number clearance.
+6. Lead documents01-start-here and02-research-dossier are outside this assignment. Their older bounds warnings in the same JSON were reported to the parent and are not covered by this pass. Parent confirmed notebook renders are frozen while lead documents are rebuilt separately.
+
+CONCLUSION
+The frozen bundled notebook01-20 render set passes this contact-sheet plus flagged-page visual QA. No actionable visual defect was found; no PDF-source change is requested. Mathematical certification, all-page high-resolution proofreading, accessibility/tagging and extraction-encoding remediation are outside this audit.

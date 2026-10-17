@@ -1,0 +1,265 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\providecommand{\hrbpath}[1]{\nolinkurl{#1}}
+\providecommand{\hncpath}[1]{\nolinkurl{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\setlength{\emergencystretch}{5em}
+\setcounter{tocdepth}{2}
+\author{Research handoff}
+\date{17 October 2026}
+
+\title{Four dimensional Yang--Mills research\ handoff guide}
+\begin{document}
+\maketitle
+\section*{What is being handed over}
+
+This bundle contains the current state of an attempt to complete
+a rigorous existence argument for a nontrivial four-dimensional
+Yang--Mills quantum theory. It includes a detailed research
+dossier, an annotated catalogue, all 39 proof notebooks as
+PDFs and editable LaTeX, and the underlying research and
+internal audit archive.
+
+The central conclusion is precise: the working local ultraviolet
+chain reaches a positive actual determinant drift and arbitrarily
+long finite weak homogeneous histories. The final notebooks also
+establish exact full finite-measure identities and normalized
+local Wilson replacement bounds. The complete continuum
+existence theorem remains open.
+
+The bundle is intended for a mathematician who can inspect
+the argument, challenge its dependencies, and continue at a
+specific unresolved theorem. It does not ask that reader
+to accept the collection as independently certified.
+
+\section*{The three reading documents}
+
+\begin{enumerate}
+\item \textbf{This start document} gives the result, the
+reading order, and the status boundaries.
+\item \textbf{The research dossier} explains the pinned
+repository baseline, our additions, the exact scope of
+the strongest working results, primary literature
+interfaces, and the remaining existence program.
+\item \textbf{The notebook catalogue} maps every notebook
+to its results, hypotheses, dependencies and limitations.
+It points to the accompanying correction register so superseded working
+notes cannot silently re-enter the proof.
+\end{enumerate}
+
+At the bundle root, \texttt{index.html} gives clickable
+links to every PDF and source. \texttt{README.txt}
+provides a plain-text route. The machine-readable
+manifest records paths, sizes and SHA-256 hashes.
+No external application account is needed to read
+the PDFs or sources.
+
+\section*{The substantial final stopping result}
+
+Notebook 39 finishes a restricted normalized replacement
+operation in the \emph{actual bare Wilson measure}.
+Take any finite family of vertex-disjoint boxes of
+fixed lattice side. Condition on their common exterior,
+which includes every boundary edge. Their interior
+Wilson laws factor exactly.
+
+On a good boundary, restrict a box law to its
+gauge-fixed conditional-minimizer window and divide
+by the exact probability of that window. On a bad
+boundary, keep the original law. The conditional
+tail bound ensures that every divisor is at least
+\(1-a_g\), with \(a_g=Ce^{-cT^2}\le1/2\).
+The operation preserves the exterior marginal,
+gauge invariance and total raw partition mass.
+A positive expansion retains every removed
+configuration.
+
+An explicit coupling gives, for a selected set
+\(A\) of interiors together with the whole exterior,
+\[
+ \|\mu_{({\rm ext},A)}-\nu_{({\rm ext},A)}\|_{\rm TV}
+ =\mathbb E\left[1-\prod_{i\in A}(1-p_i)\right]
+ \le |A|a_g.
+\]
+The convention is \(\|\lambda-\lambda'\|_{\rm TV}
+=\sup_E|\lambda(E)-\lambda'(E)|\). Thus a local
+comparison does not deteriorate when distant
+boxes are added. The theorem also supplies
+discrepancy, cluster, entropy, bounded-source
+and connected-cumulant estimates.
+
+Its restriction is essential: fixed boxes and
+their conditional minimizers are not yet the
+nonlinear coarse-average fibers and growing
+components of the multiscale construction.
+The theorem finishes a normalized local
+measure operation, not the existence problem.
+
+\section*{What is already in the working chain}
+
+\begin{description}
+\item[Local classical construction.]
+Flat coercivity, constrained lifts, weighted
+inverse kernels, refinement control, nonlinear
+minimizers and localized responses near the
+trivial orbit.
+\item[Actual local quantum integration.]
+The chosen composite ordinary map, exact
+constraint chart, independent retained window,
+Haar and pivot factors, gauge insertion,
+common analytic domain and supported expansion.
+\item[Finite local recursion.]
+Total Ward extraction, exact finite totals
+and vacuum bookkeeping, controlled remainder
+induction and finite coupling shooting.
+\item[Positive actual coefficient.]
+Under stated upstream inputs, Notebook 37
+obtains
+\[
+ \beta(\mathcal D_{M,K})=22\alpha_g\log K+O(1),
+ \qquad \alpha_g=C_H/(48\pi^2),
+\]
+uniformly in preceding depth and the
+required joint structural limits.
+\item[Full finite-measure progress.]
+Notebook 38 supplies exact positive history
+operators, normalized Wilson Peierls bounds,
+conditional box tails and gauge-invariant
+local defect bounds. Notebook 39 completes
+the normalized replacement just described.
+\end{description}
+
+The general \(SU(N)\) statements in the new
+bare-measure lemmas do not extend every
+earlier \(SU(2)\) construction input to all
+groups. Many local results depend on
+earlier modules; internal reviews are not
+external certification of that full chain.
+
+\section*{The next theorem}
+
+The first major unresolved step is a
+\emph{complete-density transfer theorem}
+for the actual chosen renormalization map.
+It must match a spatial good-component
+integral to the constrained background
+and retained coordinates already used,
+then bound normalized complementary
+components uniformly in their admissible
+exterior data, geometry and scale age.
+
+The coupling extraction must belong to
+that same full-density construction.
+Weak numbers produced by a local
+recursion are not automatically the
+effective couplings of a different
+published large-field theorem.
+Ba{\l}aban's complete-density induction
+is a serious route once its actual
+hypotheses have been matched.
+
+After this come uniform external
+observable-source estimates, a common
+continuum hierarchy, reflection positivity
+and full Euclidean covariance on the
+same limit, reconstruction, and a
+quantitative nontriviality and
+Yang--Mills identification argument.
+A physical mass gap is separate.
+
+\section*{A practical reading order}
+
+\begin{enumerate}
+\item Read the dossier's evidence rules and
+repository baseline, then its remaining
+theorem program. This prevents a local
+result from being mistaken for a
+continuum theorem.
+\item For an independent finite-measure
+entry point, read Notebooks 38 and 39.
+Their bare Wilson estimates do not
+require the earlier determinant work.
+\item For the local ultraviolet route,
+read Notebook 37 with its inputs from
+36, 32 and 31. Use the catalogue to
+trace older dependencies rather than
+guessing from chronology alone.
+\item Read Notebook 01 for conditional
+continuum reductions, with its
+historical sections interpreted through
+the final dossier and catalogue.
+\item Before importing a result from
+the original raw account, check the
+baseline's exact version and source
+locations. Several proof-status
+statements require reconciliation.
+\end{enumerate}
+
+\section*{Provenance and archive use}
+
+The examined repository is
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}
+{ethanwsussman/Yang--Mills-LLM-experiment},
+at commit
+\[
+ \texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+\]
+Its README explicitly reports an apparent
+\(\mathbb R^4\) existence argument. The
+baseline report does not erase that
+claim; it examines the precise theorem
+scope and unreconciled status statements
+in the deposited files.
+
+Our contributions are new to this
+project's record, not asserted novel
+relative to all literature. The bundle
+keeps proof, conditional input, open
+interface and superseded argument
+separate.
+
+Each notebook directory contains a
+readable PDF, its compiling
+\texttt{main.tex}, and the exact
+assembled \texttt{original.tex}.
+The distribution source has only
+documented layout adjustments for
+paragraph wrapping and two long
+displays. Mathematical content is
+unchanged. Historical research files
+may contain old absolute workspace
+paths or old task-status comments;
+these are provenance, not current
+instructions.
+
+Third-party primary articles and the
+source repository are linked and
+identified rather than republished.
+The provenance folder records the
+pinned tree and retrieval instructions.
+The reproduction folder documents
+building the delivered sources.
+The PDF compilation and visual
+inspection record states exactly
+what was checked.
+
+The handoff is ready for mathematical
+review and continuation. Its most
+important open boundary is the
+passage from the controlled local
+construction to the complete
+multiscale Wilson density.
+
+\end{document}

@@ -1,0 +1,104 @@
+INDEPENDENT AUDIT: SOFT VECTOR COARSE REDUCTION
+18 October 2026. Rotation audit.
+Source: soft_vector_coarse_reduction_research.txt, including the
+updated full-tree source estimate (7.5).
+Verdict: substantive pass under the stated existing classical,
+trajectory and affine-jet inputs. No output files edited.
+
+1. Exact determinants and positivity
+
+The update Q_B=V-(DJ)(DJ)^T gives
+det Q_B=det V det[I-J^TD^TV^-1DJ].
+Woodbury gives S=(I+J^TD^TQ_B^-1DJ)^-1, with the stated signs.
+Combining the independently audited scalar identity adds log M_s
+and subtracts one half log S. All matrices are massive near flatness
+at fixed K; no massless zero-mode determinant has entered.
+
+At flatness TT^T<=C_Delta Q_B, T=DJ, follows from
+D Pi D^T<=DD^T<=Delta_1<=C_Delta Q_B. Therefore
+(1+C_Delta)^-1 I<=S0<=I. This is a genuine condition-number
+bound, not a rank argument. The coarse fiber is one fixed color
+space per final site.
+
+2. Fine energy and weighted resolvents
+
+The equality C^TqC=Cbar^TqCbar at flatness follows from qD_c=0,
+not from a false small bound on the ordinary C. Hence
+V0=q_M+DD^T+A_K^T(a-q_MK)A_K.
+Its lower energy bound and gap give V0>=c(Delta_1+mu^2).
+The actual q_M symbol vanishes to order two and has uniform
+second absolute moments, so q_M<=C Delta_1. The angle A_K has
+full norm at most mu. These prove the stated matching upper bound.
+
+The estimate for q_M(p+i mu theta)-q_M(p) has the correct
+mu sqrt(delta) and mu^2 powers. Near zero it follows from the
+vanishing first jet; away from zero the symbol derivative is
+uniform. The block-coupled A_K penalty is handled separately by
+its counting row/column estimates and range K. No fine block
+dimension appears in these Hilbert operator estimates.
+
+Uniform analytic block-Bloch energy bounds imply exponential
+operator block kernels by operator-valued Fourier integration;
+the fiber dimension is not counted. The use of these bounds
+on the infinite structural system (and explicit periodizations)
+is sound. It does not identify arbitrary finite winding kernels
+with that system.
+
+3. Relative vertices and the corrected Hessian input
+
+The action-Hessian input must be the REPAIRED ordered-Laurent
+proof. I independently rejected its original common-difference
+identity and checked its replacement in
+covariant_hessian_relative_vertices_rotation_audit.txt.
+The current vector note uses the replacement, including the
+zero first momentum jet and the rooted derivative structure.
+
+Covariant-gradient derivatives have the same energy-leg form.
+The actual moving-reference corrected average and its physical
+derivatives have O(mu) counting norm on the established trajectory
+class. Two such factors give the required mu^2 in the coarse
+Hessian term. This is not a claim about the full ordinary average.
+
+Keeping R(A)=D_A^T Vtilde(A)^-1 D_A is essential. The marked J
+derivatives are outside R; no isolated differentiated DJ is
+estimated. The formula for R' has the correct three terms and
+minus sign. Twice differentiating gives only the asserted energy
+sandwiches, including the two V' insertions and mixed D'/V' terms.
+Both V0^-1/2 D and V0^-1/2 D' have the stated uniform bounds.
+
+4. Rooting the determinant density
+
+The strengthened pointwise tree bound for S''xy(i,j), with all
+four endpoints attached, is sufficient and necessary for the
+subsequent diagonal-density argument. Its summed weighted
+versions follow after decreasing the exponent. Rooted action
+vertices, weighted resolvents and own-block normalized J factors
+supply it without a K^4 count.
+
+The resolvent logarithm formula (7.7) has the correct signs and
+two insertion orders. Its diagonal block trace is kept at the
+root; no cyclic permutation of a partial trace is used.
+The bound ||(S0+t)^-1||weighted<=C/(1+t) makes the second-vertex
+and two-first-vertex terms integrable at infinity. Full trees
+therefore give exp[-m tau(0,x,y)], rather than merely decay in
+source separation. Polynomial affine source norms can be summed
+against this rooted bound.
+
+5. Actual matching and limitations
+
+The equality between Vtilde/Stilde and the actual operators is
+used only through the already identified two affine stationary
+jets. The old proof identifies full action-current stationarity
+and lambda=O(t^3), not just stationarity along one scalar path.
+This justifies dropping lambda.f'' and coarse-gradient terms
+through that order; it does not authorize doing so off shell.
+
+The resulting O(1) Maxwell remainder is uniform in M,K on the
+specified infinite structural systems. Fixed-K gauge covariance
+of the diagonal log density and the established polynomial-jet
+Ward/moment identity justify the extraction. This is not a
+continuum reference replacement, a finite winding-normalization
+theorem, or a determination of the logarithmic coefficient/sign.
+
+No further mathematical correction requested.
+

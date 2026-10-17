@@ -1,0 +1,362 @@
+% Notebook 14 body fragment; no preamble. Unique prefix nw-.
+% Requires amsmath, amssymb, amsthm and \norm; follows nc-/nb- fragments.
+% Main proof independently audited; source action convention scope explicit.
+
+\section{A nonflat Wilson Hessian and its full energy inverse}
+\label{nw-section}
+
+The averaging bounds above close the remaining averaging hypotheses
+of an energy-form perturbation argument. We first calculate the
+Wilson Hessian, including its normalization. The resulting theorem
+is for an explicitly defined Wilson operator with the deposited
+homogeneous averaging maps. Identification with every reused source
+symbol for an action Hessian is stated separately.
+
+\subsection{Action, charts, and an exact local decomposition}
+\label{nw-wilson}
+
+Write $\eta=M^{-1}\le1$ and $\tau=N_c^{-1}\operatorname{Tr}$.
+Fine fields have physical pairing
+$\langle B,C\rangle_\eta=\eta^d\sum_e\tau(B_eC_e)$.
+The sum is over positive bonds; plaquettes below are counted once,
+with $\mu<\nu$. On Hermitian fields this is the real Hilbert pairing;
+its complex extension is bilinear. Superscript $T$ always denotes
+that transpose, with no conjugation of a complex background.
+Define
+\begin{equation}\label{nw-action}
+ \mathcal S_\eta(U)=\eta^{d-4}\sum_p
+   \left(1-\frac12\tau(P_p+P_p^{-1})\right),\qquad
+ U_e(s,t)=e^{i\eta(sB_e+tC_e)}U_e,
+\end{equation}
+and define $\Delta_U$ by the mixed derivative of this action.
+There is no coupling prefactor in \eqref{nw-action}. At $U=1$,
+$\Delta_1=d^Td$, where $d$ is the ordinary physical plaquette curl.
+
+Let $U_e=e^{i\eta a_e}$, with
+\begin{equation}\label{nw-sizes}
+ \epsilon_0=\norm{a}_\infty,\qquad
+ \epsilon_1=\norm{\nabla a}_\infty,\qquad
+ F=\epsilon_1+\epsilon_0^2.
+\end{equation}
+The field can be complex; $\epsilon_0$ is bounded by a fixed small
+constant. Comparing opposite plaquette sides by the integral formula
+for matrix exponentials, and bounding the residual group commutator,
+gives
+\begin{equation}\label{nw-plaquette}
+ \norm{P_p-I}+\norm{P_p^{-1}-I}\le C\eta^2F.
+\end{equation}
+Indeed opposite potentials differ by at most $\eta\epsilon_1$,
+so their exponentials differ by $C\eta^2\epsilon_1$.
+For the remaining two constant potentials the commutator costs
+$C\eta^2\epsilon_0^2$. All path transports involved here have a
+fixed number of links and norm at most $e^{C\eta\epsilon_0}$.
+
+For the loop $e_1,\ldots,e_4$ around $p$, set
+$V_i=U_{e_1}\cdots U_{e_{i-1}}$.
+A negative traversal of the positive bond $f$ has exact chart
+increment $B_{-f}=-\operatorname{Ad}_{U_f^{-1}}B_f$.
+Put $X_i^B=\operatorname{Ad}_{V_i}B_{e_i}$ and
+\begin{equation}\label{nw-curl}
+ \mathcal C_U B=\eta^{-1}\sum_iX_i^B.
+\end{equation}
+The exact plaquette variation is
+$P_p(s,t)=\prod_i e^{i\eta(sX_i^B+tX_i^C)}P_p$.
+Every transport difference from identity is $O(\eta\epsilon_0)$,
+and therefore
+\begin{equation}\label{nw-curl-difference}
+ \mathcal C_U=d+E_U,\qquad
+ \norm{E_U}_{\infty\to\infty}
+       +\norm{E_U^T}_{\infty\to\infty}\le C\epsilon_0.
+\end{equation}
+The transpose norm uses physical measure. Fixed plaquette incidence
+also gives the same estimate in a weighted physical-cell Schur norm.
+
+Writing $S_B=\sum_iX_i^B$, direct mixed differentiation gives
+\begin{equation}\label{nw-mixed}
+ \partial_s\partial_tP_p\big|_0=-\eta^2
+ \left\{\frac{S_BS_C+S_CS_B}{2}
+ +\frac12\sum_{i<j}
+ ([X_i^B,X_j^C]+[X_i^C,X_j^B])\right\}P_p.
+\end{equation}
+For the oriented density $-\tau(P_p)$ the principal contribution is
+$\eta^d\tau(((\mathcal C_UB)(\mathcal C_UC)
++(\mathcal C_UC)(\mathcal C_UB))P_p)/2$.
+The remaining contribution is exactly
+\begin{equation}\label{nw-commutator-remainder}
+ \frac{\eta^d}{2\eta^2}\sum_{i<j}
+ \tau\left(([X_i^B,X_j^C]+[X_i^C,X_j^B])(P_p-I)\right),
+\end{equation}
+because a commutator has trace zero. The reverse loop has curl
+$-\operatorname{Ad}_{P_p^{-1}}\mathcal C_U$; cyclicity removes this
+adjoint transport from its principal quadratic term. Thus
+\begin{equation}\label{nw-hessian}
+ \Delta_U=\mathcal C_U^TM_U\mathcal C_U+V_U,\qquad
+ \tau(XM_{U,p}Y)=\frac14\tau((XY+YX)(P_p+P_p^{-1})),
+\end{equation}
+where $V_U$ is half \eqref{nw-commutator-remainder} plus half its
+reverse-loop version. Projection onto the fixed traceless Lie space
+is implicit in the definition of $M_U$. These coefficients are
+bilinearly symmetric and holomorphic. Equation \eqref{nw-plaquette}
+implies
+\begin{equation}\label{nw-coefficients}
+ \norm{M_U-I}\le C\eta^2F,
+ \qquad \norm{V_U}_{\infty\to\infty}
+       +\norm{V_U^T}_{\infty\to\infty}\le CF.
+\end{equation}
+Each curl has row and transpose-row norm $O(\eta^{-1})$.
+Consequently the ordinary bounded local operator
+$W_U=\Delta_U-\mathcal C_U^T\mathcal C_U$ has row and
+transpose-row norm $CF$: the two inverse mesh factors are paid for
+by $\eta^2$ in \eqref{nw-coefficients}. In particular
+\begin{equation}\label{nw-small-form}
+ \Delta_U-d^Td=d^TE_U+E_U^Td+E_U^TE_U+W_U
+       =S_v^TV_{\rm kin}S_v,
+ \quad S_v=(I,\nabla),
+\end{equation}
+with $\norm{V_{\rm kin}}_\kappa\le
+C(\epsilon_0+\epsilon_1+\epsilon_0^2)$.
+Here $\nabla$ contains all physical fine differences of bond
+components; the curl is a fixed component combination of them.
+The scalar gauge derivative is separately
+\begin{equation}\label{nw-scalar-gradient}
+ D_U\lambda(e)=\eta^{-1}
+  (\operatorname{Ad}_{U_e}\lambda(e_+)-\lambda(e_-))
+  =D\lambda+E_s\lambda,
+ \qquad \norm{E_s}_\kappa\le C\epsilon_0.
+\end{equation}
+All coefficients in these two estimates have fixed fine range.
+
+\subsection{The scalar compression and a form-resolvent lemma}
+\label{nw-scalar}
+
+For physical-cell block operators use the Banach algebra norm
+\begin{equation}\label{nw-schur}
+ \norm{T}_\kappa=\max\left\{
+ \sup_x\sum_y e^{\kappa d(x,y)}\norm{T_{xy}},
+ \sup_y\sum_x e^{\kappa d(x,y)}\norm{T_{xy}}\right\}.
+\end{equation}
+The norm is submultiplicative and invariant under transpose.
+Fine-cell spaces have measure $\eta^d$, so it introduces no power
+of the number of fine sites. The earlier flat inverse theorem gives
+\begin{equation}\label{nw-flat-blocks}
+ \norm{S_vG_0S_v^T}_\kappa\le K_v,
+ \quad G_0=(d^Td+DR_0D^T+Q^Ta_{\rm pen}Q)^{-1},
+\end{equation}
+for $a_{\rm pen}$ in a fixed compact positive interval.
+Both flat averages $Q=Q_M^{\rm st}$ and $Q_0$, and their transposes,
+have uniform weighted norms by physical row/column contraction and
+fixed final-scale range.
+
+For clarity the additional scalar input is derived explicitly.
+Let $G'_0=(\mathcal L+Q_0^Ta'Q_0)^{-1}$, $\mathcal L=D^TD$,
+where $a'$ lies in a fixed compact positive interval, and let
+$S_s=(I,D)$. In coarse Bloch aliases write $P_r$ for the fine
+Laplacian multiplier, $a_r$ for the scalar average, and
+\begin{align}
+ A&=a_0a_0^-,&
+ R_{s,k}&=\sum_{r\ne0}\frac{a_ra_r^-}{P_r^k},\nonumber\\
+ D_{s,2}&=A+P_0^2R_{s,2},&
+ N&=P_0+a'A+a'P_0R_{s,1}.                   \label{nw-scalar-denoms}
+\end{align}
+The scalar Woodbury formula has central entry
+$(R_{s,1}+(a')^{-1})/[A+P_0(R_{s,1}+(a')^{-1})]$,
+mixed entry $-a_0^-a_s/[P_s(A+P_0(R_{s,1}+(a')^{-1}))]$,
+and a high diagonal $P_r^{-1}$ plus a rank-one correction.
+These canceled expressions, high-alias gaps and alias Parseval
+give $\norm{S_sG'_0S_s^T}_\kappa\le K_s$.
+They also give the exact compression formula
+\begin{equation}\label{nw-compression}
+ C_0=Q_0(G'_0)^2Q_0^T=\frac{D_{s,2}}{N^2},
+ \qquad C_0^{-1}=\frac{N^2}{D_{s,2}}.
+\end{equation}
+On an enlarged real Bloch cube, $A\ge c>0$ and the high remainders
+are nonnegative and uniformly bounded. Thus $N,D_{s,2}$ are
+bounded above and away from zero. Their uniformly bounded
+holomorphic preliminary tube can be shrunk by a fixed amount to
+retain these lower bounds. Periodic physical-cell reconstruction
+and contour shifting prove
+$\norm{C_0}_\kappa+\norm{C_0^{-1}}_\kappa\le K_c$.
+The zero fiber gives $C_0=(a')^{-2}$; for $M=1$ it gives
+$(P_0+a')^{-2}$. No inverse of the unpenalized zero mode is used.
+
+We will repeatedly use the following elementary form identity.
+If $G=\mathcal A^{-1}$, $K=SGS^T$ has weighted norm at most $K_*$,
+and $I$ is a component of $S$, then for $K_*\norm{V}_\kappa<1$,
+\begin{equation}\label{nw-form-resolvent}
+ (\mathcal A+S^TVS)^{-1}
+ =G-GS^TV(I+KV)^{-1}SG,
+\end{equation}
+and the augmented block has norm at most
+$K_* /(1-K_*\norm{V}_\kappa)$ and differs from $K$ by at most
+$K_*^2\norm{V}_\kappa/(1-K_*\norm{V}_\kappa)$.
+The Neumann series in \eqref{nw-schur} proves these assertions and
+holomorphy. Multiplication verifies the inverse at each fixed
+spacing on the finite or infinite lattice. If the real baseline
+$\mathcal A$ is positive definite, the same smallness gives
+relative-form coercivity for real symmetric perturbations.
+
+\subsection{Conditional closure of the projected gauge inverse}
+\label{nw-conditional}
+
+\begin{theorem}\label{nw-energy-theorem}
+Suppose, in one common weighted algebra, that
+\begin{gather}
+ D_U=D+E_s,\quad Q_s(U)=Q_0+F_s,\quad Q_v(U)=Q+F_v,
+ \quad \Delta_U=d^Td+S_v^TV_{\rm kin}S_v,\nonumber\\
+ \norm{E_s}_\kappa+\norm{F_s}_\kappa+
+ \norm{F_v}_\kappa+\norm{V_{\rm kin}}_\kappa\le\varepsilon.
+                                                        \label{nw-hypotheses}
+\end{gather}
+Define
+\begin{align}
+ G'_U&=(D_U^TD_U+Q_s(U)^Ta'Q_s(U))^{-1},\nonumber\\
+ C_U&=Q_s(U)(G'_U)^2Q_s(U)^T,\nonumber\\
+ R_U&=I-G'_UQ_s(U)^TC_U^{-1}Q_s(U)G'_U,\nonumber\\
+ \mathcal A_U&=\Delta_U+D_UR_UD_U^T
+                     +Q_v(U)^Ta_{\rm pen}Q_v(U).       \label{nw-full-operator}
+\end{align}
+For a sufficiently small uniform $\varepsilon_*>0$, if
+$\varepsilon\le\varepsilon_*$ all these inverses exist and
+\begin{equation}\label{nw-energy-bound}
+ \norm{S_sG'_US_s^T}_\kappa+
+ \norm{C_U^{-1}}_\kappa+\norm{R_U}_\kappa+
+ \norm{S_v\mathcal A_U^{-1}S_v^T}_\kappa\le C.
+\end{equation}
+Each displayed block differs from its flat counterpart by at
+most $C\varepsilon$. Constants are uniform in refinement and
+compatible periodic volume; the full-lattice statement also holds.
+Holomorphic coefficient families give holomorphic inverse families.
+On real data $R_U$ is the orthogonal projection off
+$\operatorname{ran}(G'_UQ_s(U)^T)$.
+\end{theorem}
+
+\begin{proof}
+The scalar precision difference is
+\[
+ D^TE_s+E_s^TD+E_s^TE_s+
+ Q_0^Ta'F_s+F_s^Ta'Q_0+F_s^Ta'F_s.
+\]
+It equals $S_s^TV_sS_s$ with $\norm{V_s}_\kappa\le C_s\varepsilon$.
+The form identity controls the scalar energy block and its
+$O(\varepsilon)$ difference when $K_sC_s\varepsilon\le1/2$.
+Product expansion gives $\norm{C_U-C_0}_\kappa\le C'_s\varepsilon$.
+Equation \eqref{nw-compression} and
+\[
+ C_U^{-1}=(I+C_0^{-1}(C_U-C_0))^{-1}C_0^{-1}
+\]
+then control its inverse if $K_cC'_s\varepsilon\le1/2$.
+The formula for $R_U$ gives its bound and its
+$O(\varepsilon)$ difference. Its projection assertion is the Gram
+projection formula; for complex coefficients it is a bilinear
+holomorphic continuation rather than a positivity claim.
+
+The gauge difference is exactly
+\begin{equation}\label{nw-gauge-difference}
+ D_UR_UD_U^T-DR_0D^T
+ =D(R_U-R_0)D^T+E_sR_UD^T+DR_UE_s^T+E_sR_UE_s^T.
+\end{equation}
+The divergence $D^T$ on bonds is a fixed shifted component
+combination of $\nabla$. Keeping these derivatives in $S_v$,
+\eqref{nw-gauge-difference} is $S_v^TV_gS_v$ with norm
+$C_g\varepsilon$. The average-penalty difference
+$Q^Ta_{\rm pen}F_v+F_v^Ta_{\rm pen}Q+F_v^Ta_{\rm pen}F_v$
+is a bounded $I,I$ coefficient of size $C_a\varepsilon$.
+Thus $\mathcal A_U=\mathcal A_0+S_v^TV_{\rm tot}S_v$,
+with $\norm{V_{\rm tot}}_\kappa\le C_v\varepsilon$.
+A second application of \eqref{nw-form-resolvent}, with
+$K_vC_v\varepsilon\le1/2$, proves the result.
+\end{proof}
+
+The theorem controls $G_U$, $\nabla G_U$, $G_U\nabla^T$ and
+$\nabla G_U\nabla^T$, with exponential coarse-cell locality.
+It does not propagate one-sided second derivatives by this
+argument: differentiating $G_0S_v^T$ twice would require an
+unavailable total third-order baseline block.
+
+\subsection{Penalty independence and the homogeneous Wilson conclusion}
+\label{nw-conclusion}
+
+The scalar penalty is unnecessary for identifying the projection.
+Fix $\mathcal L_U=D_U^TD_U$ and $Q_s$, and let
+$G_b=(\mathcal L_U+Q_s^TbQ_s)^{-1}$,
+$E_b=G_bQ_s^T$. Whenever the inverse and Gram inverse exist,
+\begin{equation}\label{nw-range}
+ \operatorname{ran}E_b
+   =\{v:\mathcal L_Uv\in\operatorname{ran}Q_s^T\}.
+\end{equation}
+One inclusion follows by applying $\mathcal L_U$ to $G_bQ_s^T$.
+For the other, $\mathcal L_Uv=Q_s^Tw$ implies
+$v=G_bQ_s^T(w+bQ_sv)$.
+The range is therefore independent of the symmetric coarse penalty
+$b$. Its Gram inverse makes it nondegenerate, and
+$E_b(E_b^TE_b)^{-1}E_b^T$ is the unique bilinear projection
+onto this range along its orthogonal complement. Thus $R_U$ is
+penalty independent. The identity holds directly for complex data
+whenever the stated inverses exist, and on real data it is the
+ordinary orthogonal projection identity.
+
+We may consequently construct $R_U$ using $a'=1$.
+It agrees with a differently penalized source formula wherever
+that formula is defined, without estimating an unprinted scalar
+penalty sequence. An estimate for that other scalar inverse
+$G'_U$ itself still requires its own normalization bounds.
+
+\begin{corollary}\label{nw-wilson-corollary}
+Fix odd $L\ge3$, $M=L^j$, and the homogeneous full or periodic
+lattice. Let $Q_v(U)$ be the deposited product of corrected
+one-step derivatives at the ordinary reference trajectory, as
+in \eqref{nb-actual-product}, and let $Q_s(U)$ be the deposited
+scalar transported average \eqref{nb-scalar-average}.
+Define $\Delta_U$ by \eqref{nw-action}, $D_U$ by
+\eqref{nw-scalar-gradient}, and $R_U$ by
+\eqref{nw-full-operator} with auxiliary scalar penalty one.
+For $a_{\rm pen}$ in a fixed compact positive interval, there are
+$\rho,\kappa,C>0$, independent of $j$ and compatible volume, such that
+\begin{equation}\label{nw-final}
+ \norm{a}_\infty+\norm{\nabla a}_\infty<\rho
+ \quad\Longrightarrow\quad
+ \norm{(I,\nabla)
+ (\Delta_U+D_UR_UD_U^T+Q_v(U)^Ta_{\rm pen}Q_v(U))^{-1}
+ (I,\nabla)^T}_\kappa\le C.
+\end{equation}
+The inverse is holomorphic on this complex global $C^1$ ball,
+and its augmented block differs from the flat block by at most
+$C(\norm{a}_\infty+\norm{\nabla a}_\infty)$.
+\end{corollary}
+
+\begin{proof}
+Equations \eqref{nb-product-difference},
+\eqref{nb-scalar-difference}, and \eqref{nb-cell-Schur}
+give $\norm{Q_v(U)-Q}_\kappa+\norm{Q_s(U)-Q_0}_\kappa
+\le C\epsilon_0$.
+Their mechanism is the ordinary-reference estimate
+$\norm{\log V_t}\le Ch_t\epsilon_0$, a physical one-step
+coefficient difference $O(h_t\epsilon_0)$, and the geometric
+sum $\sum_{t<j}h_t\le1/(L-1)$; no derivative of a different
+nonlinear composition is substituted.
+Equations \eqref{nw-small-form} and \eqref{nw-scalar-gradient}
+supply the remaining hypotheses of Theorem~\ref{nw-energy-theorem}.
+\end{proof}
+
+The source convention check has a positive, concrete part.
+Raw I lines 453--467 normalize $\operatorname{tr}1=1$, count
+unoriented plaquettes once and define
+$\mathsf A(U)=\sum_p(1-\operatorname{Re}\operatorname{tr}P_p)$;
+lines 472--481 place the coupling separately. Thus this bare action
+is exactly \eqref{nw-action} in dimension four.
+Line 15645 uses the left chart $\mathsf A(e^{i\eta A}U_0)$,
+and line 77577 gives the color pairing $\operatorname{tr}AB$.
+Lines 13583--13593 define the full source operator
+$\Delta+D_URD_U^T+Q^TaQ$, with $a=1$ at unit scale.
+The remaining identification is to check that the reused
+$\mathsf A$ in the Hessian passage denotes this same bare action
+with the same physical summation convention. The separate source
+claim about $\Delta-D_U^TD_U$ also requires matching its precise
+one-form covariant curl. These are deposited-transcription
+references, not newly recovered original journal proofs.
+
+Corollary~\ref{nw-wilson-corollary} is a theorem for its explicitly
+defined Wilson operator and deposited homogeneous averages.
+It does not establish nonflat pointwise weak norms, nonflat current
+domains, mixed retained histories, arbitrary nontrivial reference
+connections, or an interacting continuum construction.

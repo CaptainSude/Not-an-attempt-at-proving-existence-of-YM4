@@ -1,0 +1,317 @@
+\section{A small representative before the rooted current gauge}
+\label{sv-section}
+
+Fix the base odd ratio $L$, dimension four, $0<\alpha<1$, the compact
+matrix gauge group and compatible finite periodic geometry. Write
+\begin{equation}
+ M=L^k,\qquad R=L^s,\qquad N=MR,\qquad
+ \eta=N^{-1},\qquad h_t=L^t\eta,\qquad h_k=R^{-1}.
+ \label{sv-scales}
+\end{equation}
+Coordinates in this section have final next-coarse spacing one. The
+current lattice after $k$ averages has spacing $1/R$. The datum
+$W=e^{iw}$ is a group datum, and $w$ is its link angle. All constants
+below are uniform in $k,s$ and volume for the fixed base $L$.
+
+Let $A_{\mathrm c,N}(w)$ be the established corrected fixed-gauge
+minimizer, and let $T_N$ be the explicit ordinary-representative
+transfer. Thus
+\begin{equation}
+ A_{\mathrm o,N}(w)=T_N(A_{\mathrm c,N}(w)),\qquad
+ U_N(w)=e^{i\eta A_{\mathrm o,N}(w)},\qquad
+ M_L^{k+s}(U_N(w))=e^{iw},\qquad
+ \|A_{\mathrm o,N}(w)\|_{\mathcal N_\alpha}\le C_{\mathrm o}\|w\|_\infty.
+ \label{sv-ordinary-minimizer}
+\end{equation}
+The last bound and a common complex product domain are uniform in the
+total depth $k+s$. Superscripts on $M_L$ mean iteration of the fixed-$L$
+ordinary average. Define
+\begin{equation}
+ V_{\mathrm p,k,s}(w)=M_L^k(U_N(w)),\qquad
+ a_{\mathrm p,k,s}(w)=\frac1i\log V_{\mathrm p,k,s}(w).
+ \label{sv-pre-representative}
+\end{equation}
+Exact composition gives
+\begin{equation}
+ M_L^s(V_{\mathrm p,k,s}(w))=e^{iw}.
+ \label{sv-iterated-constraint}
+\end{equation}
+For $s=1$ this is the pre-root-gauge representative used in the physical
+one-step construction. For $s>1$ it is a representative of the iterated
+constraint \eqref{sv-iterated-constraint}; a separately defined direct
+$R$-block average, pivot chart and centered integral are not identified
+with that iteration here.
+
+\subsection{The exact amplitude factor}
+\label{sv-amplitude-section}
+
+The proved ordinary-reference trajectory estimate is uniform in every
+prefix of the averaging sequence. With $U=e^{i\eta A}$ and
+$a=\|A\|_\infty$ sufficiently small, it states
+\begin{equation}
+ \left\|\frac1i\log M_L^t(U)\right\|_\infty
+ \le 3K_Vh_ta,\qquad
+ K_V=2+\frac{2K_\Gamma}{L-1},\qquad K_\Gamma=8m_\Gamma,
+ \label{sv-prefix-estimate}
+\end{equation}
+where $m_\Gamma$ is a fixed one-step contour-length bound. In that proof
+the only accumulated scale sum is
+\begin{equation}
+ \sum_{q<t}h_q=\frac{h_t-\eta}{L-1}.
+ \label{sv-prefix-sum}
+\end{equation}
+In particular its constants depend on the base $L$, not on the endpoint
+ratio $R$. Apply \eqref{sv-prefix-estimate} with $t=k$ and the ordinary
+minimizer in \eqref{sv-ordinary-minimizer}. On a smaller fixed ball,
+\begin{equation}
+ \boxed{\quad
+ \|a_{\mathrm p,k,s}(w)\|_\infty
+       \le \frac{C_0}{R}\|w\|_\infty,\qquad
+ C_0=3K_VC_{\mathrm o}.
+ \quad}
+ \label{sv-amplitude}
+\end{equation}
+This is also a complex estimate on the common logarithm branch. When
+$k=0$, it reduces to $a_{\mathrm p,0,s}=\eta A_{\mathrm o,N}$ with
+$\eta=1/R$, checking the normalization.
+
+The same trajectory proof gives a uniformly holomorphic physical map
+\begin{equation}
+ P_{k,N}(A)=\frac1{ih_k}\log M_L^k(e^{i\eta A}),\qquad
+ \|P_{k,N}(A)\|_\infty\le 3K_V\|A\|_\infty.
+ \label{sv-physical-prefix-map}
+\end{equation}
+Each output reads a fine-field neighborhood of physical radius at most
+$c_Lh_k$: the one-step dependence ranges sum geometrically. No physical
+adjoint of this ordinary map is used in this argument.
+
+\subsection{Strict supports without counting the output fiber}
+\label{sv-support-section}
+
+Support labels denote final unit cells, carrying the variables $w$.
+Let $\tau$ be periodic graph Steiner length, allowing auxiliary vertices.
+Fix an admissible exponent $\kappa$ from the classical support theorem,
+and any fixed cardinality reserve $a\ge0$. For a current lattice of
+spacing $h=1/R$, collect all bond components whose initial sites lie in
+one final cell $i$ into a Banach fiber $E_{h,i}$ with its maximum norm.
+The fiber dimension is of order $R^d$, but the norm is not a sum over
+those coordinates. For a strict support family define
+\begin{equation}
+ \|u\|_{\kappa,a;r}
+ =\sup_i\sum_{\varnothing\ne X}
+ e^{\kappa\tau(\{i\}\cup X)+a|X|}
+ \sup_{\|w_X\|_\infty<r}\|u_{i,X}(w_X)\|_{E_{h,i}}.
+ \label{sv-family-norm}
+\end{equation}
+The output maximum is inside the support sum. Complete fine-field input
+families use the established smooth partition and complete
+$\mathcal N_\alpha$ cell spaces.
+
+\begin{theorem}[Supported pre-gauge representative]
+\label{sv-support-theorem}
+There are $r_a>0$ and $C_a<\infty$, independent of $k,s$ and volume,
+such that for $0<r\le r_a$ the representative
+\eqref{sv-pre-representative} admits absolutely convergent strict
+holomorphic families
+\begin{equation}
+ a_{\mathrm p,k,s}(w)|_i
+   =\sum_{\varnothing\ne X}a_{\mathrm p;i,X}(w_X),\qquad
+ a_{\mathrm p;i,X}(0)=0,\qquad
+ \|a_{\mathrm p,k,s}\|_{\kappa,a;r}\le \frac{C_ar}{R}.
+ \label{sv-supported-amplitude}
+\end{equation}
+There is a uniformly supported linear operator
+$H_{\mathrm p,k,s}=D(P_{k,N}T_N)(0)H_N$ such that
+\begin{equation}
+ \|a_{\mathrm p,k,s}-R^{-1}H_{\mathrm p,k,s}w\|_{\kappa,a;r}
+       \le \frac{C_ar^2}{R}.
+ \label{sv-supported-remainder}
+\end{equation}
+Here $H_N$ is the corrected flat minimizing extension. The selected
+linear operator is not identified with a separately rooted source
+gauge extension.
+\end{theorem}
+
+\begin{proof}
+The classical support construction supplies
+$A_{\mathrm c,N}(w)$ in complete fine-field cells with norm at most
+$C_{a,0}r$, uniformly in $N$ and volume, including its linear part and
+quadratic remainder. The ordinary transfer $T_N$ is uniformly
+holomorphic $\mathcal N_\alpha\to\mathcal N_\alpha$ on a fixed ball,
+vanishes at zero, and has fixed final-physical dependence radius.
+Indeed its cumulative endpoint gauge is a local bounded analytic
+function of the fine potential, its point extension is a fixed smooth
+local interpolation, and its fine gauge action is a local analytic jet
+map with the apparent inverse-mesh singularity removed before taking
+derivatives.
+
+Consequently $F_{k,N}=P_{k,N}\circ T_N$ is uniformly bounded and
+holomorphic on a fixed $\mathcal N_\alpha$ ball into the physical bounded
+output field, and $F_{k,N}(0)=0$. Its dependence radius in final units is
+fixed. For the entire fiber $E_{h,i}$ the union of the individual output
+neighborhoods lies in one fixed collar of $i$, even though the number of
+components inside the fiber grows with $R$.
+
+Let $\rho$ be a common analytic input radius, $C_{\rm rec}$ the smooth
+reconstruction norm, $D_0$ the fixed number of input cell labels in that
+collar, and $R_0$ its graph radius. Banach-valued Cauchy and polarization
+give for the symmetric Taylor coefficients, including the factor
+$1/n!$, the mixed cell-slot bound
+\begin{equation}
+ v_n\le Kc^n,\qquad
+ c=\frac{eC_{\rm rec}D_0e^{\kappa R_0}}{\rho},\qquad n\ge1.
+ \label{sv-vertex-majorant}
+\end{equation}
+The constant $K$ bounds the output in its maximum norm on the analytic
+ball. Cauchy is applied to that whole Banach output; it is not applied
+to each scalar component followed by a sum over $R^d$ components.
+The coefficient norm places the output maximum before the sum over
+input cell labels, precisely as required by
+\eqref{sv-family-norm}.
+
+For substituted input supports $X_1,\ldots,X_n$ rooted at
+$j_1,\ldots,j_n$, the exact gluing inequality is
+\begin{equation}
+ \tau\left(\{i\}\cup\bigcup_qX_q\right)
+ \le \tau(\{i,j_1,\ldots,j_n\})
+                    +\sum_q\tau(\{j_q\}\cup X_q).
+ \label{sv-root-gluing}
+\end{equation}
+Also $e^{a|\cup_qX_q|}\le\prod_qe^{a|X_q|}$. The fixed coefficients of
+the local map add no variable support. Thus substitution of an input
+family of norm $t$ has output norm at most
+\begin{equation}
+ \sum_{n\ge1}Kc^nt^n=\frac{Kct}{1-ct}\le 2Kct
+                  \quad\hbox{if }ct\le\tfrac12.
+ \label{sv-support-majorant}
+\end{equation}
+Choose $r_a$ so $cC_{a,0}r_a\le1/2$, and shrink it to respect every
+previous evaluated-branch domain. These choices are independent of
+$R$. Finally $a_{\mathrm p,k,s}=h_kF_{k,N}(A_{\mathrm c,N}(w))$ gives
+\eqref{sv-supported-amplitude}. Separating the linear terms in the two
+analytic series gives \eqref{sv-supported-remainder}. Absolute
+convergence justifies rearrangement and identifies the sum with the
+actual representative.
+\end{proof}
+
+This proof neither uses the nonuniform ordinary-average physical
+adjoint nor infers tree locality from a one-weight response bound. The
+spatial exponent is in final unit cells; in current-unit distances it
+has length scale $R$. Uniformity in $R=L^s$ keeps the base $L$ fixed.
+
+\subsection{One-step physical identification and analytic continuation}
+\label{sv-germ-section}
+
+Set $s=1$. The physical construction uses the actual averaged-contour
+current gauge
+\begin{equation}
+ u(y)=1,\qquad u(x)=P_{V_{\mathrm p}}(y,x)
+       \quad(x\hbox{ in the block of }y),\qquad
+ V_*(W)=V_{\mathrm p}(W)^u.
+ \label{sv-root-gauge}
+\end{equation}
+It has $P_{V_*}=1$, $M_L(V_*)=W$ and, on the common complex branch,
+\begin{equation}
+ \|\log u/i\|_\infty
+   \le C_L\|a_{\mathrm p}\|_\infty\le C'_L\|w\|_\infty.
+ \label{sv-root-gauge-size}
+\end{equation}
+The classical local gauge-invariance theorem applies to both
+configurations and this gauge path after a common fixed shrink. Hence
+$S_M(V_*)=S_M(V_{\mathrm p})$. The existing minimum comparisons and
+common strict-convexity uniqueness identify \eqref{sv-root-gauge}
+with the physical centered branch. Gauge-zero is obtained by the
+explicit gauge and that comparison, not from stationarity alone.
+The gauge in \eqref{sv-root-gauge-size} need not have size $w/L$;
+boundary angles of $V_*$ can be of order $w$ even when
+\eqref{sv-amplitude} holds. Thus the earlier pure-gauge obstruction
+for the rooted representative is preserved.
+
+Let $E$ be a total holomorphic current-field functional on the angle
+product ball $\|a\|_\infty<b$, locally gauge invariant when its two
+arguments and the gauge lie in their common invariance domains. Then
+\begin{equation}
+ E_{\mathrm p}(w)=E(a_{\mathrm p,k,1}(w))
+ \label{sv-germ-extension}
+\end{equation}
+is holomorphic for
+\begin{equation}
+ \|w\|_\infty<\min\{r_{\rm class},Lb/C_0\},
+ \label{sv-germ-domain}
+\end{equation}
+with smaller margins if required. On a sufficiently small overlap
+around zero, both original compositions and the gauge path are
+admissible, so
+\begin{equation}
+ E(a_*(w))=E(a_{\mathrm p,k,1}(w)).
+ \label{sv-overlap-equality}
+\end{equation}
+The real gauge identity and holomorphic uniqueness prove this
+equality. Therefore \eqref{sv-germ-extension} is an analytic
+continuation of the original stationary-composition germ to
+\eqref{sv-germ-domain}. It does not assert that $E$ was already defined
+at $a_*(w)$ outside its original ball. No coefficientwise identity for
+an arbitrary decomposition $E=\sum_HE_H$ is inferred.
+
+If $E$ is an inherited logarithm, its original domain must already
+carry a nonvanishing integral and compatible holomorphic logarithm.
+The covariance of a possibly vanishing integral alone is insufficient.
+For $s>1$, $E(a_{\mathrm p,k,s})$ remains an analytic composition with
+the same amplitude improvement, but identifying it with a particular
+macrostep stationary germ requires that macrostep's branch and gauge
+comparison. A direct-$R$ chart is not supplied here.
+
+For any fixed $R=L^s>C_0$, the representative itself maps an angle ball
+of radius $b$ into the strictly smaller current angle ball of radius
+$C_0b/R$, provided $b$ is below the uniform classical radius. This
+geometric domain inclusion is proved; invariance is needed to identify
+the resulting composition with a stationary germ, not for the inclusion
+itself. It is not an activity-norm contraction.
+
+\subsection{The activity norm still has a coordinate cost}
+\label{sv-activity-scope}
+
+Suppose the inherited connected-carrier activities have scalar
+coordinate polydisc radius $b$, at most $D$ coordinates per actual old
+cell, and
+\begin{equation}
+ \sup_i\sum_{H\ni i}e^{a_0|H|}\|E_H\|_b\le\epsilon.
+ \label{sv-old-activity-norm}
+\end{equation}
+Let $\pi$ project those old cells to final cells, preserving connected
+images, with fibers bounded by $F_R$. Put $\beta=a_{\rm out}+\mu$.
+The established carrier-transport theorem, applied to
+\eqref{sv-supported-amplitude}, gives output norm at most
+$F_RS_\delta\epsilon$ whenever
+\begin{equation}
+ \beta+\delta\le\kappa,\qquad
+ \beta+D\log\frac1{1-C_ar/(Rb)}\le a_0.
+ \label{sv-activity-budget}
+\end{equation}
+Here $D$ is the actual old-cell scalar-coordinate count, not the output
+Banach fiber dimension in Theorem~\ref{sv-support-theorem}.
+Nevertheless if the chosen background/Gaussian cell has
+$D\asymp R^d$, the small-radius sufficient condition in
+\eqref{sv-activity-budget} still has $r/b=O(R/D)=O(R^{1-d})$.
+If $D$ stays fixed, that particular loss disappears but the projection
+factor $F_R$ can grow like $R^d$. Analytic-domain inclusion and a
+contracting activity-norm induction are distinct assertions.
+
+There is a further pointwise identity on the original common domain:
+with $V_*=V_{\mathrm p}^u$,
+\begin{equation}
+ (e^{iB}V_*)^{u^{-1}}(b)
+   =e^{i\operatorname{Ad}_{u(b_-)^{-1}}B(b)}V_{\mathrm p}(b).
+ \label{sv-fluctuation-gauge}
+\end{equation}
+For real $u$ the adjoint preserves the invariant color norm; it is
+uniformly bounded on the small complex domain. Using the right side
+to extend an inherited insertion with $B=\Phi_{V_*}(gz)$ is a possible
+next step. The coupling is inside the nonlinear chart; generally
+$\Phi_V(gz)\ne g\Phi_V(z)$. This section does not prove a larger-domain normalized
+Gaussian-integral identity. That needs the actual chart and
+fluctuation bounds, holomorphic domination, interaction norm control
+and equality of the two analytic integrals on an overlap, with the
+exact Gaussian, gauge penalty, pivot/Haar factors and cutoff arguments
+retained. No stable quantum iteration or running-coupling conclusion
+is made.

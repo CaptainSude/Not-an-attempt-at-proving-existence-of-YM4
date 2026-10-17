@@ -1,0 +1,755 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newcommand{\Herm}{\operatorname{Herm}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Sch}{\operatorname{Sch}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Bcal}{\mathcal B}
+\newcommand{\one}{\mathbf 1}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+\title{A local expansion of a Gaussian cutoff logarithm\\
+under a small local precision perturbation}
+\author{Research draft for independent mathematical audit}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+
+\noindent\textbf{Status: proof candidate, pending independent audit.}
+This standalone draft records a sufficient abstract theorem and its proposed
+proof. The support algebra, inverse estimate, density majorant, and final
+rooting argument have received one substantive internal review. The theorem
+has not been independently audited in full and has not been matched to the
+Yang--Mills fluctuation operators. It does not prove an interacting
+cutoff-transfer theorem.
+
+\medskip
+\noindent
+The purpose is to upgrade spatial localization in the positions of rare
+Gaussian cutoff defects to strict locality in the background variables.
+The extra hypothesis is a small sum of local perturbations of a fixed
+precision matrix. The proof expands the entire normalized marginal density,
+including its determinant and inverse. No derivative of a sharp indicator
+is taken.
+
+\section{Setting, constants, and proposed conclusion}
+
+Let $\Lambda\subset\Z^d$ be finite. Distances are nearest-neighbor lattice
+graph distances, and each block carries $D$ real coordinates, with $D$ fixed.
+Every constant below is uniform in $\Lambda$. The background domain is a
+product
+\[
+ \mathcal U_\Lambda=\prod_{b\in\Lambda}\mathcal U_b
+\]
+of open complex domains. A local function with support $Y$ is a bounded
+holomorphic function of $A|_Y$ on $\prod_{b\in Y}\mathcal U_b$.
+Its uniform norm is denoted $\norm{\cdot}_\infty$.
+
+Let $C_{0,\Lambda}=Q_{0,\Lambda}^{-1}$ be background-independent, complex
+symmetric, and satisfy
+\begin{equation}
+ \Herm C_{0,\Lambda}\ge\lambda I,\qquad
+ \norm{C_{0,\Lambda}}\le\Lambda_0,
+ \qquad 0<\lambda\le\Lambda_0<\infty.
+ \label{eq:baseline-gap}
+\end{equation}
+Real positive $C_{0,\Lambda}$ is the principal example. Fix $0<\kappa<m$
+such that the weighted block Schur bound
+\begin{equation}
+ K:=\sup_\Lambda\sup_{b\in\Lambda}
+       \sum_{c\in\Lambda}
+       e^{(\kappa+2m)d(b,c)}\norm{(C_{0,\Lambda})_{bc}}
+       <\infty
+ \label{eq:baseline-decay}
+\end{equation}
+holds. Transpose symmetry gives the same column bound.
+
+Consider the precision
+\begin{equation}
+ Q_\Lambda(A)=Q_{0,\Lambda}+V_\Lambda(A),\qquad
+ V_\Lambda(A)=\sum_{\varnothing\ne Y\subset\Lambda}V_Y(A|_Y),
+ \label{eq:precision}
+\end{equation}
+where each $V_Y$ is individually complex symmetric, is supported in
+$Y\times Y$ as a block matrix, and is holomorphic and local as above.
+Write $\ell(Y)$ for the minimum metric spanning-tree length of $Y$,
+with $\ell(\{b\})=0$. Assume
+\begin{equation}
+ \nu:=\sup_\Lambda\sup_{b\in\Lambda}
+       \sum_{Y\ni b}\sum_{c\in Y}
+       e^{(\kappa+2m)\ell(Y)}\norm{(V_Y)_{bc}}_\infty
+       <\infty.
+ \label{eq:local-norm}
+\end{equation}
+The same bound holds for columns. In particular the ordinary Schur norm
+of $V_\Lambda$ is at most $\nu$.
+
+Here are explicit sufficient smallness conditions. Define
+\begin{align}
+ \delta&=\lambda/4,&
+ v&=\frac{K^2\nu}{1-K\nu},&
+ v_1&=v(1+\delta/K),                                      \label{eq:vconstants}\\
+ s&=\min\left\{\frac m2,\frac{\lambda e m}{8(K+\delta)}\right\},&
+ L&=\frac4\lambda\sum_{z\in\Z^d}e^{-s|z|},&
+ V_*&=\frac{8\Lambda_0^2}{\lambda}.                       \label{eq:inverseconstants}
+\end{align}
+Require
+\begin{equation}
+ K\nu<1,\qquad v_1\le\lambda/4,\qquad
+ u:=Lv_1\le\frac12,\qquad
+ w:=\frac{L^2v_1}{1-u}\le\frac1{2V_*}.
+ \label{eq:smallness}
+\end{equation}
+These conditions hold when $\nu$ is sufficiently small with the baseline
+constants fixed. Set
+\begin{align}
+ \widehat\tau_R
+   &=\left(\frac{16V_*}{\lambda}\right)^{D/2}
+                         e^{-R^2/(8V_*)},                 \label{eq:tau}\\
+ A_\kappa
+   &=K\sum_{z\in\Z^d\setminus\{0\}}e^{-(m-\kappa)|z|},
+ &B_0&=\frac{8e^2A_\kappa}{\delta},
+ &a_*&=\min\{1/2,\kappa/4\}.                              \label{eq:clusterconstants}
+\end{align}
+Finally require
+\begin{equation}
+ \widehat\tau_R\le\frac1{2e^2\max\{1,B_0\}}.
+ \label{eq:cutoff-smallness}
+\end{equation}
+
+For a complex symmetric accretive covariance $C$, use the normalized
+Gaussian density
+\begin{equation}
+ p_C(x)=(2\pi)^{-N/2}(\det C)^{-1/2}
+                           e^{-x^TC^{-1}x/2}.
+ \label{eq:density}
+\end{equation}
+The determinant branch is the analytic branch on the accretive cone that
+agrees with the positive square root on real positive matrices. This
+density integrates to one. Its real-domain integral is absolutely
+convergent because
+\[
+ \Herm C^{-1}=C^{-*}(\Herm C)C^{-1}>0.
+\]
+Put $C_\Lambda(A)=Q_\Lambda(A)^{-1}$ and define the fixed-domain cutoff
+partition function
+\begin{equation}
+ Z_{\Lambda,R}(A)=
+  \int_{\R^{D|\Lambda|}}p_{C_\Lambda(A)}(x)
+        \prod_{b\in\Lambda}\one_{\{\norm{x_b}_2\le R\}}\,dx.
+ \label{eq:partition}
+\end{equation}
+The real domain and threshold do not move with the complex background.
+
+\begin{theorem}[Proposed strict-locality theorem]\label{thm:main}
+Under \eqref{eq:baseline-gap}--\eqref{eq:cutoff-smallness},
+$Z_{\Lambda,R}$ has a holomorphic logarithm, fixed by turning on the
+defect strength from zero, and an absolutely convergent representation
+\begin{equation}
+ \log Z_{\Lambda,R}(A)
+       =\sum_{H}E_{\Lambda,H}(A|_{H\cap\Lambda}).
+ \label{eq:local-log}
+\end{equation}
+Here $H$ ranges over finite connected sets in $\Z^d$, and the activities are
+strictly local, bounded, and holomorphic in the indicated variable
+background. They satisfy
+\begin{equation}
+ \sup_{b\in\Z^d}\sum_{H\ni b}
+     e^{a_*|H|}\norm{E_{\Lambda,H}}_\infty
+ \le
+ 2e^2\left(\sum_{z\in\Z^d}e^{-(\kappa/2)|z|}\right)
+                     \widehat\tau_R.
+ \label{eq:final-bound}
+\end{equation}
+One may take $H$ in the lattice hull of $\Lambda$ when $\Lambda$ is not
+geodesically convex.
+\end{theorem}
+
+\begin{remark}[Finite-volume dependence]
+The activity $E_{\Lambda,H}$ may depend on the entire
+\emph{background-independent} baseline $C_{0,\Lambda}$. Strict locality
+asserts only that its \emph{variable background dependence} reads
+$A|_{H\cap\Lambda}$. Neither equality of activities in different volumes
+nor existence of their thermodynamic limit follows from
+\eqref{eq:final-bound}. A consistency or comparison argument for the
+baselines is an additional obligation.
+\end{remark}
+
+\begin{remark}[Product-domain hypothesis]
+The product background domain is an explicit sufficient hypothesis.
+A weak gauge-potential ball or a constrained gauge domain is not
+automatically such a product. An application must supply an appropriate
+product chart or polydomain, or separately verify the support algebra
+and local-function bounds on the actual domain.
+\end{remark}
+
+\section{The support algebra and local covariance paths}
+
+For the proof, suppress $\Lambda$ from the notation. Fix a nonempty
+marked set $S\subset\Lambda$. For a background support $X\subset\Lambda$,
+let $\ell_S(X)$ be the minimum total length of a metric forest on
+$S\cup X$ in which every component meets $S$.
+Roots in $S$ may remain in different components, and
+$\ell_S(\varnothing)=0$. We have
+\begin{equation}
+ \ell_S(X\cup X')\le\ell_S(X)+\ell_S(X'),\qquad
+ S\subset S'\Longrightarrow\ell_{S'}(X)\le\ell_S(X).
+ \label{eq:forest-subadd}
+\end{equation}
+
+Consider formal families $F=(F_X)_X$ of bounded local holomorphic
+functions with norm
+\begin{equation}
+ \norm{F}_{\Bcal_S}
+       =\sum_Xe^{\kappa\ell_S(X)}\norm{F_X}_\infty.
+ \label{eq:supportnorm}
+\end{equation}
+Multiplication is union convolution,
+$(FG)_Z=\sum_{X\cup X'=Z}F_XG_{X'}$.
+Equation \eqref{eq:forest-subadd} makes the completion a commutative
+unital Banach algebra. Evaluation
+$F\mapsto\sum_XF_X(A|_X)$ is a bounded algebra homomorphism.
+Representations need not be unique; throughout use the explicit series
+in the $V_Y$, grouped by the union of their supports. Formal scalar
+variables multiplying the $V_Y$ can be retained until absolute
+convergence has been established.
+
+For matrices with entries in this support algebra, use the maximum of
+the row and column Schur norms, taking the block operator norm inside
+the support sum. This norm is submultiplicative.
+
+The covariance is the convergent Neumann series
+\begin{equation}
+ C(A)=\sum_{j\ge0}(-1)^j C_0(VC_0)^j.
+ \label{eq:neumann}
+\end{equation}
+Let $\Delta C=C-C_0$, and denote by $\Delta C_S$ its actual principal
+marginal on $S$.
+
+\begin{lemma}[Covariance paths with attached supports]\label{lem:path}
+The series \eqref{eq:neumann}, with its explicit local supports, obeys
+\begin{equation}
+ \max\left\{
+ \sup_{b\in S}\sum_{c\in S}e^{2m d(b,c)}
+                           \norm{(\Delta C_S)_{bc}}_{\Bcal_S},
+ \sup_{c\in S}\sum_{b\in S}e^{2m d(b,c)}
+                           \norm{(\Delta C_S)_{bc}}_{\Bcal_S}
+ \right\}\le v.
+ \label{eq:cov-supportbound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+In a term
+$C_0V_{Y_1}C_0\cdots V_{Y_j}C_0$ with endpoints $b,c\in S$,
+choose a spanning tree for each $Y_i$. Together with the covariance
+links between consecutive perturbations these trees connect all
+background supports to the endpoints. If $L_{\rm path}$ is the sum
+of the covariance-link distances and $\sum_i\ell(Y_i)$, then
+\[
+ \ell_S\left(\bigcup_iY_i\right)\le L_{\rm path},
+ \qquad d(b,c)\le L_{\rm path}.
+\]
+Therefore
+\[
+ e^{\kappa\ell_S(\cup_iY_i)+2m d(b,c)}
+          \le e^{(\kappa+2m)L_{\rm path}}.
+\]
+Successive weighted matrix row sums using
+\eqref{eq:baseline-decay} and \eqref{eq:local-norm} bound the order-$j$
+contribution by $K^{j+1}\nu^j$.
+The column calculation is identical. Summing $j\ge1$ gives
+$v=K^2\nu/(1-K\nu)$.
+\end{proof}
+
+In particular,
+$\norm{(\Delta C_S)_{bc}}_{\Bcal_S}\le v e^{-2m d(b,c)}$.
+This pays for the support of the \emph{full covariance marginal}.
+It is stronger than expanding only the covariance factors that will
+appear on a marked tree.
+
+\section{Tree interpolation and uniform inverse bounds}
+
+For a partition $\pi$ of $S$, let $v_\pi$ be the zero-one mask that
+retains covariance entries within each component and sets other entries
+to zero. The matrix $C_{0,S}(v_\pi)$ is a direct sum of principal
+submatrices, so it obeys \eqref{eq:baseline-gap}.
+The same is true for every mask in the convex hull of the partition
+masks.
+
+For a forest $F$ and parameters $t_e\in[0,1]$, the BKAR mask is
+\begin{equation}
+ s^F_{bc}(t)=
+ \begin{cases}
+ \min_{e\in\operatorname{path}_F(b,c)}t_e,
+                 &b,c\text{ in the same component},\\
+ 0,              &b,c\text{ in different components},
+ \end{cases}
+ \label{eq:bkar-mask}
+\end{equation}
+with diagonal entries equal to one. It belongs to that convex hull:
+integrate, over $r\in[0,1]$, the partition mask of the subforest
+retaining edges with $t_e\ge r$. This gives \eqref{eq:bkar-mask}.
+The forest formula may be applied directly on this partition polytope;
+no positivity assumption for every arbitrary coordinate-cube mask
+is needed \cite{AR,BKARnotes}.
+
+Fix a tree $T$ on $S$, $n=|S|\ge2$, with vertex degrees $d_b$.
+Put
+\begin{equation}
+ J_{bc}=K e^{-m d(b,c)},\qquad
+ r_{\{b,c\}}=
+       \frac{\delta}{\max(d_b,d_c)J_{bc}}
+                  \quad(\{b,c\}\in T).
+ \label{eq:cauchyradii}
+\end{equation}
+At a BKAR point $s^T$, allow independent complex increments $z_e$
+on its tree edges with $|z_e|<r_e$. Let $M_0$ be the resulting
+masked baseline $C_{0,S}(s^T+z)$.
+Since
+\[
+ \sum_{c:\{b,c\}\in T}\frac1{\max(d_b,d_c)}\le1,
+\]
+the perturbation of $C_{0,S}(s^T)$ has row and column norms at most
+$\delta$. Consequently
+\begin{equation}
+ \Herm M_0\ge\lambda I/2,\qquad
+ \norm{M_0}\le2\Lambda_0.
+ \label{eq:deformedgap}
+\end{equation}
+Moreover, its Schur norm with entry weight $e^{m d(b,c)}$ is at most
+$K+\delta$. For the perturbation part, this uses
+\[
+ \norm{(C_0)_{bc}}\le K e^{-(\kappa+2m)d(b,c)}
+\]
+in \eqref{eq:cauchyradii}.
+
+\begin{lemma}[Elementary weighted-conjugation inverse bound]
+\label{lem:inverse}
+Suppose $\Herm M\ge aI$ and the weighted Schur norm of $M$ at rate
+$m$ is at most $\overline K$. Let
+\[
+ s_0=\min\{m/2,aem/(4\overline K)\}.
+\]
+Then
+\begin{equation}
+ \norm{(M^{-1})_{bc}}\le(2/a)e^{-s_0d(b,c)}.
+ \label{eq:inverse-decay}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Fix $c$ and conjugate by the scalar block-diagonal weight
+$D_{bb}=e^{s_0d(b,c)}$. The triangle inequality for the distance gives
+\begin{align*}
+ \norm{DMD^{-1}-M}_{\Sch}
+ &\le \overline K\sup_{r\ge0}(e^{s_0r}-1)e^{-mr}\\
+ &\le \frac{2s_0\overline K}{em}\le a/2.
+\end{align*}
+The middle inequality follows from
+$e^{s_0r}-1\le s_0r e^{s_0r}$ and
+$\sup_{r\ge0}r e^{-(m-s_0)r}\le2/(em)$.
+As $\norm{M^{-1}}\le1/a$, a Neumann inverse yields
+$\norm{(DMD^{-1})^{-1}}\le2/a$.
+Its $(b,c)$ block is $e^{s_0d(b,c)}(M^{-1})_{bc}$,
+which proves \eqref{eq:inverse-decay}.
+\end{proof}
+
+Apply Lemma \ref{lem:inverse} with $a=\lambda/2$ and
+$\overline K=K+\delta$. The resulting rate is the $s$ in
+\eqref{eq:inverseconstants}, and
+\begin{equation}
+ \norm{M_0^{-1}}_{\Sch}\le L.
+ \label{eq:inverse-schur}
+\end{equation}
+This is uniform in $S,T,t,z$. The rate $s$ may be much smaller than
+$m$ or $\kappa$. Only the \emph{ordinary} inverse Schur norm $L$ is
+used below. All its matrix indices lie in the free root set $S$;
+its entries do not pay for attachment of background supports.
+Thus the proof does not require $\kappa<s$.
+
+\section{Expansion of the entire marginal Gaussian density}
+
+Apply the same mask $s^T+z$ to $C_S(A)=C_{0,S}+\Delta C_S$.
+Write the resulting matrix as $M=M_0+E$. Lemma \ref{lem:path}
+and \eqref{eq:cauchyradii} imply
+\begin{equation}
+ \norm{E}_{\Sch(\Bcal_S)}\le v_1=v(1+\delta/K).
+ \label{eq:maskedE}
+\end{equation}
+The $s^T$ part has norm at most $v$.
+The additional tree-edge row sums are bounded by
+$\delta v/K$, using the entry estimate
+$v e^{-2m d(b,c)}$ and the degree sum above.
+The column bound is the same.
+
+In the matrix support algebra set $F=M_0^{-1}E$.
+By \eqref{eq:smallness}, $\norm{F}_{\Sch(\Bcal_S)}\le u\le1/2$,
+so the full inverse and determinant expansions converge:
+\begin{align}
+ M^{-1}-M_0^{-1}
+    &=\sum_{j\ge1}(-F)^jM_0^{-1},&
+ \norm{M^{-1}-M_0^{-1}}_{\Sch(\Bcal_S)}
+    &\le w,                                             \label{eq:inverse-series}\\
+ \norm{\Tr\log(I+F)}_{\Bcal_S}
+    &\le Dn[-\log(1-u)].                                 \label{eq:det-series}
+\end{align}
+For \eqref{eq:det-series}, each trace is bounded by $Dn$ times
+the matrix Schur norm, and $\sum_{j\ge1}u^j/j=-\log(1-u)$.
+
+The exact Gaussian density identity is
+\begin{equation}
+ p_M(x)=p_{M_0}(x)
+ \exp\left\{-\frac12\Tr\log(I+F)
+            -\frac12x^T(M^{-1}-M_0^{-1})x\right\}.
+ \label{eq:fulldensity}
+\end{equation}
+It expands both the determinant and the inverse. It follows that
+\begin{equation}
+ \norm{p_M(x)}_{\Bcal_S}
+ \le |p_{M_0}(x)|
+       \exp\left\{\frac{Dn}{2}[-\log(1-u)]
+                              +\frac w2\norm{x}^2\right\}.
+ \label{eq:density-majorant}
+\end{equation}
+The quadratic estimate uses the row-and-column Schur bound in
+\eqref{eq:inverse-series}, applied to the block Euclidean norms of $x$.
+
+Equation \eqref{eq:deformedgap} gives
+\[
+ \Herm M_0^{-1}
+       =M_0^{-*}(\Herm M_0)M_0^{-1}\ge V_*^{-1}I,
+ \qquad |\det M_0|\ge(\lambda/2)^{Dn}.
+\]
+Using $u\le1/2$ and $w\le1/(2V_*)$, the right-hand side of
+\eqref{eq:density-majorant} is bounded by
+$(8V_*/\lambda)^{Dn/2}$ times the independent real Gaussian density
+with covariance $2V_*I$.
+For one $D$-dimensional block $G$ of that real Gaussian,
+\begin{equation}
+ \mathbb P(\norm{G}>R)
+ \le e^{-R^2/(8V_*)}
+            \mathbb E e^{\norm{G}^2/(8V_*)}
+ =2^{D/2}e^{-R^2/(8V_*)}.
+ \label{eq:tail}
+\end{equation}
+
+Set $q_b(x_b)=-\one_{\{\norm{x_b}>R\}}$.
+Combining \eqref{eq:density-majorant} and \eqref{eq:tail} proves
+the support-valued all-marked bound
+\begin{equation}
+ \left\|\int p_M(x)\prod_{b\in S}q_b(x_b)\,dx
+       \right\|_{\Bcal_S}
+ \le\widehat\tau_R^{\,n}.
+ \label{eq:algebra-tail}
+\end{equation}
+All coefficient sums, integrals, and matrix series can be interchanged
+using these absolute majorants. The indicators remain fixed measurable
+multipliers. The same bound covers $n=1$, with no tree increments.
+
+The inequality $v_1\le\lambda/4$ also ensures that evaluation of these
+matrices retains accretivity on the required interpolation domains.
+The determinant branches in \eqref{eq:fulldensity} agree with the
+normalized Gaussian branch, by continuation from zero perturbation.
+
+\section{Exact marked polymers and tree estimates}
+
+For a nonempty $S$, define
+\[
+ f_S(s;A)=\int p_{C_S(s;A)}(x)\prod_{b\in S}q_b(x_b)\,dx,
+ \qquad m(S)=f_S(1;A).
+\]
+These functions are holomorphic in a neighborhood of the partition
+polytope. The BKAR formula \cite{AR,BKARnotes} gives a sum over forests.
+At a forest mask the covariance matrix is block diagonal along forest
+components. Derivatives in the forest edges remain internal to those
+components. Therefore the forest sum factorizes exactly as
+\begin{equation}
+ m(S)=\sum_{\pi\text{ partition of }S}
+                         \prod_{B\in\pi}\zeta(B),
+ \label{eq:moment-partition}
+\end{equation}
+where $\zeta(\{b\})=m(\{b\})$ and
+\begin{equation}
+ \zeta(B)=\sum_{T\text{ tree on }B}\int_{[0,1]^T}
+                          \partial_T f_B(s^T(t))\,dt
+                  \qquad(|B|\ge2).
+ \label{eq:zeta}
+\end{equation}
+This identity also holds coefficientwise in the formal source series.
+Although covariance blocks can read overlapping background supports,
+the masked Gaussian matrix itself is block diagonal.
+
+Banach-valued Cauchy applied to \eqref{eq:algebra-tail}, in the
+polydisc \eqref{eq:cauchyradii}, yields
+\[
+ \norm{\partial_Tf_S(s^T)}_{\Bcal_S}
+ \le\widehat\tau_R^{\,n}\delta^{-(n-1)}
+       \prod_{\{b,c\}\in T}\max(d_b,d_c)J_{bc}.
+\]
+Each parameter is differentiated once, so no factorial appears from
+Cauchy. For integer $d\ge1$, $d^d\le e^d d!$, while
+$\sum_bd_b=2n-2$ and $\max(d_b,d_c)\le d_bd_c$.
+Thus
+\begin{equation}
+ \norm{\partial_Tf_S(s^T)}_{\Bcal_S}
+ \le\widehat\tau_R^{\,n}(e^2/\delta)^{n-1}
+                         \prod_{b\in S}d_b!\prod_{e\in T}J_e.
+ \label{eq:tree-bound}
+\end{equation}
+
+For completeness, the exact degree-weighted tree count is
+\begin{equation}
+ \sum_{T\text{ tree on }[n]}\prod_{i=1}^n d_i!
+       =(n-2)!\binom{3n-3}{n-2}.                         \label{eq:treecount}
+\end{equation}
+Indeed write $d_i=k_i+1$ with $\sum_i k_i=n-2$.
+The Pruefer count for this degree sequence is
+$(n-2)!/\prod_i k_i!$.
+Multiplication by $\prod_i d_i!$ leaves
+$(n-2)!\prod_i(k_i+1)$, whose sum is the coefficient of
+$z^{n-2}$ in $(1-z)^{-2n}$.
+In particular,
+\begin{equation}
+ \frac1{(n-1)!}\sum_T\prod_i d_i!
+       =\frac1{n-1}\binom{3n-3}{n-2}\le8^{n-1}.           \label{eq:treecountbound}
+\end{equation}
+
+To sum marked sets of size $n$ containing a fixed root, label the other
+$n-1$ vertices and divide by $(n-1)!$. Dropping distinctness only
+increases the upper bound; set the edge majorant at coincident labels
+to zero. For each fixed tree, successive leaf sums of
+$e^{\kappa d(b,c)}J_{bc}$ are bounded by $A_\kappa^{n-1}$.
+Equations \eqref{eq:tree-bound}--\eqref{eq:treecountbound} imply
+\begin{equation}
+ \sup_b\sum_{\substack{S\ni b\\|S|=n}}
+             e^{\kappa\ell(S)}\norm{\zeta(S)}_{\Bcal_S}
+           \le\widehat\tau_R^{\,n}B_0^{n-1}.
+ \label{eq:anchored-n}
+\end{equation}
+The singleton bound is \eqref{eq:algebra-tail}.
+Writing the canonical support representation as
+$\zeta(S)=\sum_X\zeta(S;X)(A|_X)$, we obtain
+\begin{equation}
+ \sup_b\sum_{S\ni b,X}
+ e^{\kappa\ell(S)+\kappa\ell_S(X)+\alpha|S|}
+                       \norm{\zeta(S;X)}_\infty
+ \le
+ \frac{\widehat\tau_Re^\alpha}
+      {1-B_0\widehat\tau_Re^\alpha}
+ \label{eq:polymernorm}
+\end{equation}
+whenever the denominator is positive.
+
+Expanding $\prod_b(1+q_b)$ and using \eqref{eq:moment-partition}
+gives the exact hard-core gas
+\begin{equation}
+ Z_{\Lambda,R}
+  =\sum_{\{S_1,\ldots,S_k\}\text{ pairwise disjoint}}
+                            \prod_i\zeta(S_i).
+ \label{eq:gas}
+\end{equation}
+The empty family has weight one. Compatibility concerns the
+\emph{marked sets} $S_i$, not the enlarged background supports.
+Replacing it by disjointness of the enlarged supports would change
+the partition function.
+
+\section{The logarithm and background-rooted bounds}
+
+Use the scalar majorants
+\[
+ \widetilde z(S)=e^{\kappa\ell(S)+|S|}
+                 \sum_Xe^{\kappa\ell_S(X)}
+                               \norm{\zeta(S;X)}_\infty,
+ \qquad a(S)=|S|.
+\]
+Equation \eqref{eq:polymernorm} with $\alpha=2$ and
+\eqref{eq:cutoff-smallness} imply
+\begin{equation}
+ \sum_{S':S'\cap S\ne\varnothing}\widetilde z(S')e^{|S'|}
+ \le |S|\,2e^2\widehat\tau_R\le |S|.
+ \label{eq:kp}
+\end{equation}
+The hard-core polymer criterion and rooted cluster estimate
+\cite{KP} give the absolutely convergent Mayer logarithm
+\begin{equation}
+ \log Z_{\Lambda,R}
+  =\sum_{k\ge1}\frac1{k!}\sum_{S_1,\ldots,S_k}
+           \varphi^T(S_1,\ldots,S_k)\prod_i\zeta(S_i).
+ \label{eq:mayer}
+\end{equation}
+Here $\varphi^T$ is the sum over connected graphs on $[k]$ of
+the product of $-\one_{\{S_i\cap S_j\ne\varnothing\}}$ over edges.
+Repeated marked polymers are allowed and are incompatible with
+themselves. The convergent expansion is the logarithm obtained by
+turning on an auxiliary defect strength from zero; it also proves
+zero-freeness on that defect polydisc.
+
+Expand each $\zeta(S_i)$ in its support series and group by
+\[
+ M=\bigcup_iS_i,\qquad X=\bigcup_iX_i,
+\]
+obtaining $U(M;X)(A|_X)$. The set $M$ is always nonempty.
+For a connected overlap graph of the marked polymers,
+\begin{equation}
+ \ell(M)\le\sum_i\ell(S_i),\qquad
+ \ell_M(X)\le\sum_i\ell_{S_i}(X_i),\qquad
+ |M|\le\sum_i|S_i|.
+ \label{eq:unionweights}
+\end{equation}
+For the first inequality, combine the trees on the $S_i$;
+overlapping components need no extra connecting edges.
+For the second, a forest attached to $S_i$ is also attached to
+the larger root set $M$, and \eqref{eq:forest-subadd} applies.
+The scalar majorant and rooted cluster bound consequently imply
+\begin{equation}
+ \sup_b\sum_{M\ni b,X}
+      e^{\kappa[\ell(M)+\ell_M(X)]+|M|}
+                      \norm{U(M;X)}_\infty
+      \le2e^2\widehat\tau_R.
+ \label{eq:markedlogbound}
+\end{equation}
+To check the rooting, a cluster whose marked union contains $b$
+has at least one polymer containing $b$. Choosing one such polymer
+overcounts. Its rooted Mayer sum with coefficient $1/(k-1)!$
+is at most $e^{a(S)}$. Summing its weighted activity uses exactly
+\eqref{eq:polymernorm} at $\alpha=2$, so no uncontrolled factor
+in the number of marks or polymers is introduced.
+
+Choose deterministic minimizing metric trees on $M$ and minimizing
+forests attaching $X$ to $M$, and realize their edges by deterministic
+shortest lattice paths. Their union $H(M,X)$ is connected and contains
+$M\cup X$. If
+\[
+ L(M,X)=\ell(M)+\ell_M(X),
+\]
+then
+\begin{equation}
+ |H(M,X)|\le|M|+L(M,X),\qquad
+ d(a,b)\le L(M,X)\quad(a\in M,\ b\in H(M,X)).
+ \label{eq:hull}
+\end{equation}
+If paths leave a nonconvex $\Lambda$, the coefficient still reads
+only the original support $X\subset\Lambda$.
+
+Group all $U(M;X)$ with the same $H(M,X)$ into $E_{\Lambda,H}$.
+This is a strictly local holomorphic function of $A|_{H\cap\Lambda}$.
+For $a\in M$, $b\in H$, and $a_*=\min\{1/2,\kappa/4\}$,
+\begin{equation}
+ e^{a_*|H|}
+ \le e^{|M|+\kappa L(M,X)}e^{-(\kappa/2)d(a,b)}.
+ \label{eq:rootcharge}
+\end{equation}
+Choose one marked $a$, or overcount by all $a\in M$.
+Sum first over the clusters containing this $a$ using
+\eqref{eq:markedlogbound}, and then over $a$.
+Equation \eqref{eq:rootcharge} proves \eqref{eq:final-bound}.
+This pays explicitly for a root lying in an added background support
+or connecting path rather than in a marked block.
+
+All series converge locally uniformly in the background and absolutely
+in the displayed majorants. They therefore preserve holomorphy and
+justify grouping and evaluation. This completes the proposed proof
+of Theorem \ref{thm:main}.
+
+\section{Why no disconnected unmarked component remains}
+
+The density expanded in \eqref{eq:fulldensity} is the normalized
+\emph{marginal on a nonempty marked set}. Every Neumann path in
+$\Delta C_S$ starts and ends in $S$.
+Every background support in its coefficients is thus attached to $S$
+before the inverse and determinant are expanded. Multiplication in
+$\Bcal_S$ preserves this attachment property.
+
+The factors $M_0^{-1}$ and the trace in the determinant series operate
+only on the already designated roots $S$.
+They cannot create a component consisting solely of remote
+background supports. In the subsequent logarithm every gas polymer
+contains at least one mark. There is no $M=\varnothing$ term.
+This is the precise cancellation supplied by normalized marginals;
+one need not begin with a bulk determinant and cancel disconnected
+source-only loops afterward.
+
+\section{Limits of the theorem and the model interface}
+
+The theorem is a sufficient statement for a Gaussian cutoff
+normalizer. The following points remain separate in a Yang--Mills
+application.
+\begin{enumerate}
+\item The actual independent-coordinate precision must admit
+  \eqref{eq:precision} and the uniformly small norm
+  \eqref{eq:local-norm} on the required complex domain.
+  A spectral gap and covariance decay alone do not imply that
+  local perturbation structure.
+\item Gauge constraints and coordinate choices must lead to fixed
+  block dimension and a fixed real cutoff domain during complex
+  background continuation. A moving cutoff domain is not covered.
+\item Baseline and perturbation constants must be uniform in scale,
+  history, and volume, and fixed before the target remainder tolerance.
+\item Nonquadratic interaction polymers require a joint expansion
+  and stability argument. This draft proves no such interacting
+  transfer.
+\item The positive exponent $a_*$ in \eqref{eq:final-bound} must be
+  compared with the numerical polymer norm actually needed downstream.
+  A stronger target exponent requires enough initial decay.
+\item Strict background locality does not imply consistency between
+  different finite volumes. The baseline $C_{0,\Lambda}$ can change,
+  affecting $E_{\Lambda,H}$ even for fixed $H$.
+\item A weak gauge-potential ball or constrained current domain is
+  not silently identified with the product domain used here.
+  An appropriate chart or a separate support-algebra argument is needed.
+\end{enumerate}
+
+Covariance entry decay alone cannot replace the locality hypothesis.
+For example,
+\[
+ C_{bc}(A)=(1+\varepsilon A_{x_*})I_D\,\one_{\{b=c\}},
+ \qquad |A_{x_*}|<1,\quad 0<\varepsilon<1/2,
+\]
+is uniformly accretive, bounded, holomorphic, and has zero
+off-diagonal covariance. Yet every singleton cutoff logarithm
+depends on the arbitrarily remote background coordinate $A_{x_*}$.
+The local precision hypothesis excludes precisely this type of
+uncontrolled remote dependence.
+
+Finally, if $R(g)=c_0(\log g^{-2})^p$ with $p>1/2$ and $c_0>0$,
+then the right-hand side of \eqref{eq:final-bound} is a fixed
+constant times
+$\exp[-c_0^2(\log g^{-2})^{2p}/(8V_*)]$.
+It is smaller than any prescribed fixed multiple of
+$g(\log g^{-2})^q$ for sufficiently small $g$, for every fixed
+real $q$. The threshold is independent of a remainder tolerance
+only when all preceding constants were chosen independently of
+that tolerance.
+
+\begin{thebibliography}{9}
+\bibitem{AR}
+A. Abdesselam and V. Rivasseau,
+\emph{Trees, forests and jungles: a botanical garden for cluster expansions},
+\href{https://arxiv.org/abs/hep-th/9409094}{arXiv:hep-th/9409094}.
+
+\bibitem{BKARnotes}
+A. Abdesselam,
+\emph{Notes on the Brydges--Kennedy--Abdesselam--Rivasseau forest
+interpolation formula}, Theorem 1 and the partition-polytope construction,
+\href{https://mabdesselam.github.io/BKAR.pdf}{author's notes}.
+
+\bibitem{KP}
+R. Koteck\'y and D. Preiss,
+\emph{Cluster expansion for abstract polymer models},
+Communications in Mathematical Physics \textbf{103} (1986), 491--498,
+\href{https://doi.org/10.1007/BF01211762}{doi:10.1007/BF01211762}.
+\end{thebibliography}
+
+\end{document}

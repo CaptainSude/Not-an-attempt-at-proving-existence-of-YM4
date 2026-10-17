@@ -1,0 +1,74 @@
+DELIVERY VERIFICATION RECORD
+17 October 2026
+
+MATHEMATICAL SCOPE
+This is a research handoff, not a completed continuum Yang-Mills proof.
+The final new theorem is Notebook39's normalized fixed-box operation.
+Root and independent internal reviewers checked that argument and its
+stated inputs. The handoff scope/provenance and all39 catalogue entries
+were reviewed independently. Earlier dependencies remain research
+arguments for the next mathematician to assess.
+
+REPOSITORY AND INVENTORY
+The baseline is pinned to e392ef45013a581664bab76b90867170b30fe10e.
+The packaging script verifies that exact HEAD and a clean checkout.
+The source map records hashes, exact raw line/page locators, published
+inputs and the unresolved crosswalk between repository status claims.
+The catalogue contains exactly39 unique numbered notebooks. Its linked
+evidence paths and references to all41 correction entries were checked.
+No claim is made that the pinned commit is the newest remote revision.
+
+PDF BUILD
+All39 notebook PDFs and all3 lead PDFs compiled successfully.
+Final recorded builds have zero overfull-box, undefined-reference or
+multiply-defined-label warnings. Sources use shell escape disabled.
+The final PDF set has622 pages:
+  556 pages in39 notebooks;
+  3 pages in the guide;
+  21 pages in the research dossier;
+  42 pages in the annotated catalogue.
+Every notebook also has the exact assembled original source; the
+distribution source changes only the documented wrapping/layout.
+
+ACTUAL-IMAGE REVIEW
+All622 pages were represented in contact sheets actually viewed:
+  Notebooks01-20:22 sheets,244 pages;22 individual pages enlarged.
+  Notebooks21-39:24 sheets,312 pages;19 individual pages enlarged.
+  Guide:1 sheet,3 pages;all3 individual pages enlarged.
+  Dossier:2 sheets,21 pages;9 individual pages enlarged.
+  Catalogue:3 sheets,42 pages;5 individual pages enlarged.
+No visible clipping, overlap, missing page image or obvious missing
+mathematical glyph was found in that scope. This is not a claim that
+every glyph on every page was read at full size.
+Automated page checks found no blank pages or text beyond the configured
+margins. Some math-font text extraction yields NUL characters; enlarged
+representative pages visibly render the delimiters correctly. Extraction
+flags are preserved as a technical limitation, not erased or falsely
+reported as proof of missing glyphs.
+
+Detailed scope reports are in research_archive/work:
+  handoff_visual_notebooks_01_20_audit.txt
+  handoff_visual_notebooks_21_39_audit.txt
+  handoff_visual_lead_root_audit.txt
+  handoff_visual_catalogue_audit.txt
+Mathematical/provenance reviews include:
+  normalized_box_replacement_root_audit.txt
+  normalized_box_replacement_rotation_audit.txt
+  handoff_core_provenance_audit.txt
+  handoff_catalogue_provenance_audit.txt
+The two wording refinements in the core provenance audit were applied.
+
+PORTABILITY AND INTEGRITY
+PDFs, standalone TeX sources, an HTML index and plain-text guide require
+no account or proprietary application to read. Portable build, verify,
+and pinned-repository retrieval scripts are included.
+The packaging process checks every local HTML link, records path/size/
+SHA-256 for each payload file, tests ZIP CRC and rereads every archived
+payload file against its manifest hash. The standalone verifier checks
+the delivered manifest. The manifest and SHA256SUMS exclude themselves.
+The original repository and full third-party papers are identified and
+retrievable rather than republished. Historical scripts may use original
+workspace paths; use reproduction/ for the portable route.
+
+Successful compilation, internal review and integrity checks have their
+stated scopes; they are not independent certification of the full proof.

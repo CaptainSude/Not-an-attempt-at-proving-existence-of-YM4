@@ -1,0 +1,268 @@
+% No preamble. Prefix ahc-. Actual fixed-endpoint identity; uniform estimates conditional.
+\section{The actual heat integral and a sufficient comparison estimate}
+\label{ahc-section}
+
+The Cartan identity also puts the missing comparison into
+heat-kernel form without changing the lattice operators.
+Use \(G(t),V_a(t)\) from \eqref{cdmom-probe-matrices}.
+Let \(\operatorname{Tr}_{0,S}\) be the diagonal color trace
+over noncenter scalar sites in block zero and
+\(\operatorname{Tr}_{0,E}\) that over current bonds with
+initial site in block zero. Define the formal coefficient
+\begin{equation}
+ h_{M,K}(s)=[t^2]\left\{
+   \operatorname{Tr}_{0,E}e^{-sV_a(t)}
+                  -2\operatorname{Tr}_{0,S}e^{-sG(t)}
+                         \right\}.
+ \label{ahc-h-definition}
+\end{equation}
+Every derivative here is evaluated at the flat positive
+operators and on the polynomial stationary jets. No
+heat evolution at a nonzero unbounded background is
+used. Put
+\[
+ b_c(M,K)=[t^2]\sum_{c_-=0}
+           \operatorname{tr}_{\mathfrak g}(\log P(t))_{cc}.
+\]
+Notebook 32 bounds \(|b_c|\) uniformly in \(M,K\).
+
+\begin{proposition}[Exact actual heat representation]
+\label{ahc-identity}
+In each joint infinite system at fixed \(K\),
+\begin{equation}
+ \beta(D_{M,K})=b_c(M,K)
+                   +\int_0^\infty h_{M,K}(s)\,\frac{ds}{s}.
+ \label{ahc-exact}
+\end{equation}
+The integral is absolutely convergent for fixed \(K\).
+The bounds establishing this statement may depend on \(K\).
+\end{proposition}
+
+\begin{proof}
+First use bounded compactly supported output directions.
+For a positive flat matrix family \(P(t)\), the local
+functional calculus gives
+\[
+ [t^2](\log P(t))_{ii}
+    =-\int_0^\infty [t^2](e^{-sP(t)})_{ii}\,\frac{ds}{s}.
+\]
+One can obtain this by differentiating the difference
+of the proper-time formulas for \(P(t)\) and \(P(0)\);
+their scalar reference term cancels.
+To justify the same formula on polynomial jets, write
+\(P(t)=P_0+tP_1+t^2P_2+O(t^3)\). Its heat coefficient is
+\begin{align}
+ [t^2]e^{-sP(t)}
+ ={}&-\int_0^s e^{-(s-u)P_0}P_2e^{-uP_0}\,du \notag\\
+ &+\int_{0<u<v<s}
+ e^{-(s-v)P_0}P_1e^{-(v-u)P_0}P_1e^{-uP_0}\,du\,dv .
+ \label{ahc-duhamel}
+\end{align}
+The \(P_j\) kernels are polynomially growing at worst,
+with exponential localization in their relative
+coordinates. This follows by inserting the affine
+source jets in the established rooted derivative kernels.
+
+The fixed-\(K\) flat gap and exponential matrix bound
+give exponentially weighted semigroup estimates.
+Indeed bounded truncated distance conjugation changes
+\(P_0\) in operator norm by less than half its gap if
+the exponent is small enough. The variation-of-constants
+bound then gives
+\(\|e^{-sP_0}\|_{\rm weighted}\le e^{-c_Ks}\).
+Spending smaller spatial exponents absorbs the
+polynomial factors in \eqref{ahc-duhamel}, after
+anchoring at the diagonal block. Its trace is bounded by
+\[
+ C_K(s+s^2)e^{-c'_Ks},\qquad s>0,
+\]
+with constants uniform in volume and, where the
+upstream bounds are, preceding depth. For small \(s\)
+the same estimate follows directly from the one and
+two insertion formulas. These bounds justify the
+proper-time integral, polynomial-jet extension and
+local infinite-volume passage by domination.
+Substituting the two log coefficients in
+\eqref{cdmom-exact-coefficient} proves
+\eqref{ahc-exact}, with signs \(+1,-2\) in
+\eqref{ahc-h-definition}.
+\end{proof}
+
+\subsection{A uniform short-time bound for the actual based ghost}
+\label{ahc-ghost-short-section}
+
+One part of the short-time comparison can be proved directly.
+It uses the actual based scalar domain and has constants
+independent of the preceding depth and endpoint.
+
+\begin{proposition}[Actual ghost ultraviolet bound]
+\label{ahc-ghost-short}
+In four dimensions put
+\[
+ h^g_K(s)=-2[t^2]\operatorname{Tr}_{0,S}e^{-sG(t)}.
+\]
+For every permitted \(K\), on the affine probe already
+identified with the actual stationary jets,
+\begin{equation}
+ 0\le h^g_K(s)\le C_H\{(8s)^4+6(8s)^3+7(8s)^2+8s\},
+                     \qquad s>0.
+ \label{ahc-ghost-poisson}
+\end{equation}
+Consequently
+\begin{equation}
+ \int_0^1 |h^g_K(s)|\,\frac{ds}{s}\le2280C_H.
+ \label{ahc-ghost-uv}
+\end{equation}
+Equivalently, the based-ghost part of the rescaled
+short-time integral over \(0<u<K^{-2}\) is bounded
+by this same constant.
+\end{proposition}
+
+\begin{proof}
+On the complexified charge-\(q\) space, the actual based
+operator is the covariant nearest-neighbor Laplacian
+with Dirichlet values at every \(K\)-center. Hence
+\[
+ G_q(t)=8I-A_q(t),
+\]
+where \(A_q\) is the covariant adjacency operator on
+noncenter sites. The diagonal is still \(8\), also
+at sites adjacent to a removed center: it comes from
+the full link norm of \(D_b\), with the center value
+set to zero.
+
+The diagonal of \(A_q(t)^n\) is a sum over length-\(n\)
+closed nearest-neighbor walks avoiding the centers.
+On the commuting affine field each walk has phase
+\[
+       \exp\{iqt\,{\cal A}_{\mu\nu}(\gamma)/K^2\},
+\]
+where \({\cal A}_{\mu\nu}(\gamma)\) is its oriented
+algebraic area in the selected coordinate plane.
+The contribution from a constant potential cancels
+on a closed walk. Taking the origin of the area
+coordinate at the starting site gives the elementary
+bound \(|{\cal A}_{\mu\nu}(\gamma)|\le n^2\).
+Thus the block trace coefficient is exactly
+\begin{equation}
+ h^g_K(s)=\frac{C_H}{K^4}e^{-8s}
+   \sum_{\substack{z\ {\rm noncenter}\\z\ {\rm in\ block}\ 0}}
+   \sum_{n\ge0}\frac{s^n}{n!}
+   \sum_{\substack{\gamma:z\to z,\ |\gamma|=n\\
+                    \gamma\ {\rm avoids\ centers}}}
+                         {\cal A}_{\mu\nu}(\gamma)^2.
+ \label{ahc-ghost-walk}
+\end{equation}
+All sums converge absolutely at each fixed \(s\);
+the factorial absorbs the factor \(n^4\). This
+also justifies extracting the formal quadratic
+coefficient without imposing periodic magnetic flux.
+Every term is nonnegative.
+
+There are at most \(K^4\) starting sites and at most
+\(8^n\) walks from each. It follows that
+\[
+ h^g_K(s)\le C_H e^{-8s}
+                   \sum_{n\ge0}\frac{(8s)^n n^4}{n!}.
+\]
+The fourth moment of this exponential generating
+series is \(x^4+6x^3+7x^2+x\) after multiplication
+by \(e^{-x}\); it follows by applying
+\((x\,d/dx)^4\) to \(e^x\). This proves
+\eqref{ahc-ghost-poisson}. Integrating its four
+monomials from zero to one with measure \(ds/s\)
+gives
+\[
+ C_H\left(\frac{8^4}{4}
+             +\frac{6\,8^3}{3}+\frac{7\,8^2}{2}+8\right)
+                         =2280C_H.
+\]
+\end{proof}
+
+This bound is uniform in \(M\) because the actual
+stationary ghost jets on this probe have already
+been identified with the same affine covariant
+Laplacian for every \(S_M\). No estimate for a
+separate massive inverse is used. The polynomial
+upper bound in \eqref{ahc-ghost-poisson} is not a
+useful large-time bound and does not settle the
+long-time comparison.
+
+\subsection{A quantitative target in physical heat time}
+\label{ahc-target-section}
+
+Set \(J_{M,K}(u)=h_{M,K}(K^2u)\), and
+\(\alpha_H=11C_H/(48\pi^2)\).
+The continuum calculation above has reference heat
+coefficient
+\[
+ J_K^{\rm ref}(u)=\alpha_H e^{-u}
+                         {\bf1}_{\{u\ge K^{-2}\}}.
+\]
+Thus the following is an exact difference identity,
+not yet a bound:
+\begin{equation}
+ \beta(D_{M,K})-\beta_{\rm ref}(K^{-1},1)
+ =b_c(M,K)+\int_0^\infty
+          \{J_{M,K}(u)-J_K^{\rm ref}(u)\}\,\frac{du}{u}.
+ \label{ahc-difference}
+\end{equation}
+It fixes the actual operator, regulator, sign, density,
+and rescaling in a proposed comparison.
+
+\begin{lemma}[Sufficient bounds on three heat-time intervals]
+\label{ahc-band-lemma}
+Suppose, for all required \(M,K\) and structural systems,
+there are constants \(C,\delta>0\), independent of them,
+such that
+\begin{align}
+ &\int_0^{K^{-2}}|J_{M,K}(u)|\,\frac{du}{u}\le C,
+                                      \label{ahc-uv-bound}\\
+ &|J_{M,K}(u)-\alpha_H|
+       \le C\{(K^2u)^{-\delta}+u^\delta\},
+          \quad K^{-2}\le u\le1,       \label{ahc-mid-bound}\\
+ &\int_1^\infty|J_{M,K}(u)|\,\frac{du}{u}\le C.
+                                      \label{ahc-ir-bound}
+\end{align}
+Then, with the already uniform coarse bound \(C_c\),
+\begin{equation}
+ \left|\beta(D_{M,K})
+       -\frac{11C_H}{24\pi^2}\log K\right|
+           \le C_c+2C+\frac{2C}{\delta}.
+ \label{ahc-log-conclusion}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Integrate the exact identity \eqref{ahc-exact} after
+the time rescaling. The constant \(\alpha_H\) on the
+middle interval integrates to \(2\alpha_H\log K\).
+Each error in \eqref{ahc-mid-bound} integrates to
+at most \(C/\delta\). The other intervals and the
+coarse term give the remaining terms.
+\end{proof}
+
+The full bounds \eqref{ahc-uv-bound}--\eqref{ahc-ir-bound}
+are not asserted here for the actual family uniformly in
+\(K\). Proposition~\ref{ahc-ghost-short} supplies the
+ghost part of the first bound; its vector part remains.
+The fixed-endpoint heat representation by itself gives
+only constants depending on \(K\). The middle interval asks for a
+continuum coefficient on heat lengths between the
+fine spacing and the final block size. The last
+interval is where the soft pinned-ghost modes are
+particularly relevant: the scalar gap alone may be
+of order \(K^{-4}\) in fine units, so rescaling by
+\(K^2\) does not give uniform damping. The combined
+coefficient must be estimated, or a weaker signed
+integral comparison must be proved. Bounding the
+separate inverse operators by a physical mass is
+not an available shortcut.
+
+For \(M>1\), \(V_a\) contains the actual \(S_M\)
+Hessian. Uniformity over that family is part of the
+conditions, not a consequence of computing the bare
+Wilson reference. A bounded comparison only at \(M=1\)
+would not by itself give the varying-depth margin
+needed by the finite drift-transfer theorem.
+

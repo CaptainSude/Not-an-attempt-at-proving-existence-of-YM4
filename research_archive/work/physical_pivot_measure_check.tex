@@ -1,0 +1,874 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,geometry}
+\geometry{margin=1in}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\begin{document}% Notebook 19 module. No preamble. Prefix pc-.
+% Uses norm, theorem/lemma/proposition/corollary and standard AMS packages.
+\section{The physical current-step chart and Gaussian precision}
+\label{pc-section}
+
+The current lattice has spacing one, the original lattice spacing
+is $M^{-1}$ with $M=L^k$, and the next spacing is fixed odd $L$.
+We work on compatible periodic tori with the ordinary block and
+corridor geometry. The original CMP109 choice has $L>11$; the
+local arguments below work for odd $L\ge3$. Positive current bonds
+and real color coordinates orthonormal for the normalized trace
+are counted once. Current pairings use counting measure.
+Transposes are bilinear after complexification; numerical-range
+bounds use the Hermitian pairing.
+
+Let $S_M(a)$ be the coupling-free Wilson action at the ordinary
+homogeneous minimizer with current datum $V=e^{ia}$. Notebooks
+15--16 give, on a uniform complex supremum ball,
+\begin{equation}\label{pc-classical-input}
+ m_M(a)=DS_M(a),\qquad
+ \norm{m_M(a)}_\infty\le C\norm a_\infty,\qquad
+ \norm{D^2S_M(a)-q_M}_\kappa\le C_\kappa\norm a_\infty.
+\end{equation}
+Here $q_M$ is the physical flat Maxwell precision. The norm
+$\norm{\cdot}_\kappa$ is the maximum of the exponentially weighted
+absolute row and column sums, with a fixed finite number of
+color and orientation coordinates per cell. It is a matrix
+algebra norm. We choose $\kappa$ below the common exponent of
+Notebooks 07 and 16. Regrouping unit cells into fixed $L$-blocks
+only changes fixed constants and the exponent.
+
+Let $K_L$ insert the pivot variables in the flat rooted constraint,
+and let $T_L$ be the averaged root-to-site contour derivative.
+Notebook 17 proves
+\begin{equation}\label{pc-flat-input}
+ \begin{gathered}
+ A_{M,0}=K_L^T(q_M+T_L^TT_L)K_L,\qquad
+ \gamma_*I\le A_{M,0}\le B_*I,\\
+ \norm{A_{M,0}}_\kappa+\norm{A_{M,0}^{-1}}_\kappa\le C_*.
+ \end{gathered}
+\end{equation}
+Constants below may depend on $L$, dimension, the color
+normalization and $\kappa$, but not on $M$ or periodic volume.
+
+\subsection{The actual ordinary average and its relative coordinates}
+\label{pc-source-maps}
+
+The source formulas are CMP109, pp.~253--255 and 265--268,
+(0.11)--(0.16), (2.3)--(2.13). Raw I, lines 46952--47000, and
+Raw II, lines 9045--9095 and 73865--73945, spell out their
+normalization. The following argument uses these explicit local
+maps, not a general-background estimate quoted from the deposit.
+
+Write $P_V(y,x)$ for the analytic group mean of the prescribed
+shortest root-to-$x$ contour products in the block centered at
+$y$. The mean is analytic near identity, its first derivative
+there is the arithmetic mean, and it is equivariant at both
+endpoints. With $V^u(b)=u(b_-)V(b)u(b_+)^{-1}$,
+\begin{equation}\label{pc-contour-gauge}
+ P_{V^u}(y,x)=u(y)P_V(y,x)u(x)^{-1}.
+\end{equation}
+All these contours are block-internal. For
+$c=(y,y+Le_\mu)$, $x'=x+Le_\mu$, and the straight reference
+transporter $R_c(V)=V([y,y+Le_\mu])$, the ordinary average is
+\begin{equation}\label{pc-ordinary-map}
+ \begin{split}
+ U_x(V)&=P_V(y,x)V([x,x'])P_V(y+Le_\mu,x')^{-1},\\
+ \mathcal M_L(V)(c)&=
+ \exp\left\{L^{-d}\sum_{x\in B(y)}
+      \log[U_x(V)R_c(V)^{-1}]\right\}R_c(V).
+ \end{split}
+\end{equation}
+This is the ordinary rooted map, not the fixed-reference
+corrected average. It reads two endpoint blocks and their
+connecting strings, and obeys
+\[
+ \mathcal M_L(V^u)=
+ \mathcal M_L(V)^{u|_{\text{block centers}}}.
+\]
+
+Define the source's left-relative coordinates
+\begin{equation}\label{pc-relative-maps}
+ \begin{split}
+ F_V(B;c)&=\frac1i\log[
+  \mathcal M_L(e^{iB}V)(c)\mathcal M_L(V)(c)^{-1}],\\
+ G^{\rm rel}_V(B;y,x)&=\frac1i\log[
+  P_{e^{iB}V}(y,x)P_V(y,x)^{-1}],\\
+ A_V&=D_BF_V(0)=LQ_V^\flat,\qquad
+ T_V=D_BG^{\rm rel}_V(0).
+ \end{split}
+\end{equation}
+$A_V$ is a rectangular constraint derivative; the reduced
+precision will be written $A_M(V)$. The source kernel convention is
+\begin{equation}\label{pc-kernel-convention}
+ (Q_V^\flat B)(c)=\sum_b L^{-d}Q_V^\flat(c,b)B(b).
+\end{equation}
+
+\begin{lemma}[One pivot per nonlinear equation]\label{pc-pivot-lemma}
+Let $p(c)$ be the middle current bond on the line through the
+centers of $c$, crossing their common interface. The full
+nonlinear equation $F_V(B;c)$ reads $p(c)$ and no other pivot.
+For $a=\log V/i$ sufficiently small,
+\begin{equation}\label{pc-pivot-inverse}
+ \pi_c(V)=Q_V^\flat(c,p(c))=I+O(\norm a_\infty),\qquad
+ h_V(c)=L^{d-1}\pi_c(V)^{-1},\qquad A_Vh_V=I.
+\end{equation}
+Here $h_V$ inserts only at the corresponding pivots. The linear
+insertion $K_V$ retains every nonpivot coordinate and sets
+\begin{equation}\label{pc-linear-insertion}
+ (K_Vz)(p(c))=-\pi_c(V)^{-1}
+       \sum_{b\text{ nonpivot}}Q_V^\flat(c,b)z(b).
+\end{equation}
+Thus $A_VK_V=0$ and $K_1=K_L$.
+\end{lemma}
+
+\begin{proof}
+No internal root contour contains a pivot. A string for another
+coarse bond has a different orientation or a different pair of
+endpoint blocks, and cannot contain $p(c)$. This proves the
+nonlinear incidence assertion. At identity, precisely $L$
+starting points in the straight-string average contain $p(c)$:
+their transverse coordinates are fixed and their longitudinal
+coordinate runs through the first block. Its coefficient in
+$Q_L^\flat$ is therefore $L^{-d}$, and in $A_1$ it is
+$L^{1-d}$. Analyticity gives the displayed inverse on a fixed
+small neighborhood. The common factor $L^{1-d}$ cancels when
+solving the linear equation, proving
+\eqref{pc-linear-insertion}.
+\end{proof}
+
+\subsection{Exact straightening, finite range, and the cutoff}
+\label{pc-chart-section}
+
+Write $F_V(B)=A_VB+C_V(B)$, where $C_V$ starts at degree two.
+The source straightening map is the solution of
+\begin{equation}\label{pc-straightening}
+ \widetilde D_V(B)=C_V(B-h_V\widetilde D_V(B)).
+\end{equation}
+For each output $c$, the right side depends on
+$\widetilde D_V(c)$ alone, by Lemma~\ref{pc-pivot-lemma}.
+A finite-dimensional contraction, with derivative zero at
+$B=0$, solves this equation uniquely and analytically on a
+uniform small ball. There are finitely many local cell types.
+No iteration propagates support to another constraint equation.
+Set
+\begin{equation}\label{pc-exact-chart}
+ \Phi_V(z)=K_Vz-h_V\widetilde D_V(K_Vz).
+\end{equation}
+Then
+\begin{equation}\label{pc-chart-identities}
+ F_V(\Phi_V(z))=0,\qquad
+ \Phi_V(z)(b)=z(b)\quad(b\text{ nonpivot}),
+\end{equation}
+and this is the unique small solution for the specified retained
+coordinates. It is therefore the actual source chart, rather
+than a different parametrization of the same fiber. Its first
+two derivatives are
+\begin{equation}\label{pc-chart-derivatives}
+ \begin{split}
+ D\Phi_V(0)&=K_V,\\
+ D^2\Phi_V(0)[u,v]
+   &=-h_VD^2F_V(0)[K_Vu,K_Vv]
+    =-2h_VC_V^{(2)}(K_Vu,K_Vv).
+ \end{split}
+\end{equation}
+$C_V^{(2)}$ denotes the bilinear homogeneous coefficient whose
+diagonal is the quadratic term, not the full Hessian.
+
+For precision estimates it is useful to record how finite
+dimensional analyticity gives uniform weighted bounds. Let
+$N_L$ bound the number of scalar coordinates read by a local
+output, $I_L$ the number of output neighborhoods containing a
+fixed input coordinate, and $\ell_L$ their diameter. Cauchy on a
+fixed smaller local polydisc bounds coordinate derivatives
+through order three by $C_L$. In particular, for
+$b=\norm a_\infty$,
+\begin{equation}\label{pc-local-operators}
+ \begin{split}
+ \norm{K_V}_\kappa+\norm{h_V}_\kappa+\norm{T_V}_\kappa
+      &\le C_{L,\kappa},\\
+ \norm{K_V-K_L}_\kappa+\norm{h_V-h_1}_\kappa
+       +\norm{T_V-T_L}_\kappa&\le C_{L,\kappa}b.
+ \end{split}
+\end{equation}
+The first and second fluctuation derivatives of $\Phi_V$,
+and its first and second background derivatives, have fixed
+finite range and uniform coefficient sums on a smaller ball.
+The corresponding second fluctuation derivative differs from
+its identity-background value by $O(b)$, by integrating its
+bounded background derivative. The same argument covers the
+mixed derivatives of total order at most three.
+
+More explicitly, if a local map $f_r$ has second coordinate
+derivatives bounded by $C_L$, define the contracted matrix by
+$\langle u,H_sv\rangle=\sum_rs_rD^2f_r[u,v]$. At most $I_L$
+outputs contain a fixed input, and each has at most $N_L$
+other inputs. Hence
+\begin{equation}\label{pc-contracted-tensor}
+ \norm{H_s}_\kappa\le
+ C_LI_LN_Le^{2\kappa\ell_L}\norm s_\infty.
+\end{equation}
+This proves the required row and column bounds without a volume
+factor. The first-derivative estimates use the same incidence
+count.
+
+After the source coupling scaling, the original relative link
+field is $\Phi_V(gz)$. Exactly,
+\begin{equation}\label{pc-cutoff-identity}
+ \Phi_V(gz)(b)=gz(b)\quad(b\text{ nonpivot}).
+\end{equation}
+Thus a retained-link product of indicators $|B'(b)|<r$ becomes
+$|z(b)|<r/|g|$, with no changed coordinate argument. CMP109,
+p.~267, explains the resulting control of eliminated pivots;
+CMP116, (2.2)--(2.3), explicitly uses the retained bond set.
+Raw II's abbreviated description as a product over bonds must
+not be used to discard other indicators. Any additional pivot,
+contour or reconstructed-field characteristic function remains
+at its exact pullback through $\Phi_V(gz)$. No equality between
+such an enlarged window and a rectangular retained window is
+claimed.
+
+\subsection{The exponential gauge factor}
+\label{pc-gauge-section}
+
+With normalized trace $\tau(I)=1$, the analytic absolute gauge
+function is
+\begin{equation}\label{pc-gauge-function}
+ \mathcal G(V)=\sum_y\sum_{\substack{x\in B(y)\\x\ne y}}
+ \left\{1-\frac12\tau[P_V(y,x)+P_V(y,x)^{-1}]\right\}.
+\end{equation}
+On real unitary fields this is the source sum of
+$1-\Re\tau P_V$. Its step factor is
+$\exp[-g^{-2}\mathcal G(V)]$; field-independent normalization
+and source contour indicators stay separate.
+
+Suppose $P_V(y,x)=1$ for every pair. Since
+$1-\tfrac12\tau(e^{iX}+e^{-iX})=\tfrac12\tau(X^2)+O(X^4)$,
+\begin{equation}\label{pc-gauge-hessian}
+ \begin{gathered}
+ \mathcal G(V)=0,\qquad
+ D_B\mathcal G(e^{iB}V)|_{B=0}=0,\\
+ D_z^2\mathcal G(e^{i\Phi_V(z)}V)|_{z=0}
+      =K_V^TT_V^TT_VK_V.
+ \end{gathered}
+\end{equation}
+The nonlinear contour term does not contribute at quadratic
+order because the first derivative of the penalty vanishes.
+This is the averaged-contour penalty, not a tree penalty.
+
+There is also an exact simplification. Contours are internal to
+blocks and contain no pivots. If $E_f$ extends retained
+coordinates by zero on pivots, then
+\begin{equation}\label{pc-gauge-pivot-independence}
+ \mathcal G(e^{i\Phi_V(z)}V)=\mathcal G(e^{iE_fz}V),\qquad
+ T_Vh_V=0,\qquad T_VK_V=T_VE_f.
+\end{equation}
+The gauge factor is thus literally a local function of the
+unchanged retained coordinates. Its cubic remainder after the
+quadratic term is bounded by $C_L$ times the sum of cubed local
+suprema of $|z|$. After $z\mapsto gz$ and division by $g^2$,
+this is $O(g)$ times that local cubic sum, as long as
+$|g|\norm z_\infty$ stays in the fixed chart radius.
+
+At a general background with $P_V\ne1$, the absolute function
+\eqref{pc-gauge-function} has a nonzero gradient and a
+contour-curvature Hessian residual. These terms are retained in
+its analytic extension and are $O(\norm a_\infty)$ perturbations
+of the flat coefficients. The formal gradient times
+$D^2\Phi_V$ vanishes by
+\eqref{pc-gauge-pivot-independence}. Replacing the absolute
+penalty by a relative one away from $P_V=1$ would change the
+source function and is not done here.
+
+\subsection{The physical stationary background}
+\label{pc-stationary-section}
+
+\begin{proposition}[Stationary homogeneous branch in the source gauge]
+\label{pc-stationary}
+For $W=e^{iw}$ with $\norm w_\infty$ sufficiently small, there
+is an analytic current configuration $V_*(W)$ satisfying
+\begin{equation}\label{pc-stationary-identities}
+ \mathcal M_L(V_*)=W,\qquad P_{V_*}(y,x)=1,\qquad
+ \norm{\log V_*/i}_\infty\le C_L\norm w_\infty.
+\end{equation}
+For real data it is a constrained local minimum of the
+classical action, and a stationary point of the action plus
+the absolute exponential-gauge function.
+\end{proposition}
+
+\begin{proof}
+Apply Notebook15 with final spacing $L$, original spacing
+$1/M$ and total ratio $ML$. Under $x'=x/L$, this is the
+already established unit-final-spacing theorem. In dimension
+four the coupling-free Wilson action has no extra scale
+factor; physical potential and derivative norms change only
+by fixed powers of $L$. Let $U_f(W)$ be that ordinary
+minimizer and set
+\[
+ V_p(W)=\mathcal M^k(U_f(W)).
+\]
+Exact composition gives $\mathcal M_L(V_p)=W$.
+Notebook14's ordinary trajectory and Notebook15's potential
+bound give $\norm{\log V_p/i}_\infty\le C_L\norm w_\infty$
+and a fine physical $N_\alpha$ bound $C_L\norm w_\infty$.
+
+Let $U_c(V)$ be the current-scale ordinary minimizer. Choose a
+common current comparison radius $\delta$ and then the data
+radius so that $U_f(W)$ is in the current minimum ball,
+every $U_c(V)$ with $\norm{\log V/i}_\infty<\delta$ is in
+the final-spacing-$L$ minimum ball, and
+$\norm{\log V_p/i}_\infty<\delta/2$. These are finitely many
+conditions $C_L\delta<r_0$ and
+$C_L\norm w_\infty<\delta/2$, independent of $M$ and volume.
+Current minimality gives
+\[
+ S_M(\log V_p/i)\le\mathcal S(U_f(W)).
+\]
+The reverse inequality follows because $U_c(V_p)$ is a full
+feasible competitor by ordinary composition and lies in its
+common minimum ball. Hence equality holds. For any $V$ in the
+current comparison ball with $\mathcal M_L(V)=W$, the same
+full-minimum comparison gives
+\begin{equation}\label{pc-minimum-comparison}
+ S_M(\log V/i)\ge\mathcal S(U_f(W))=S_M(\log V_p/i).
+\end{equation}
+This proves the required constrained minimum directly.
+
+Define a rooted current-site gauge by
+$u(y)=1$ at centers and $u(x)=P_{V_p}(y,x)$ in $B(y)$.
+It is local analytic and
+$\norm{\log u/i}_\infty\le C_L\norm{\log V_p/i}_\infty$.
+Set $V_*=V_p^u$. Equations
+\eqref{pc-contour-gauge} and \eqref{pc-ordinary-map} give
+$P_{V_*}=1$ and $\mathcal M_L(V_*)=W$ exactly. The local
+coarse gauge invariance of Notebook16, with its smooth fine
+extension and stricter common margins, gives
+$S_M(\log V_*/i)=S_M(\log V_p/i)$. Therefore
+\eqref{pc-minimum-comparison} applies with $V_*$ as well.
+The gauge function has zero gradient there by
+\eqref{pc-gauge-hessian}.
+
+All the maps are analytic on a uniform complex ball. The
+constraints and stationarity identities extend from the real
+form by holomorphic uniqueness. No complex minimum
+interpretation is asserted.
+\end{proof}
+
+\subsection{Both chart-curvature contributions to the Hessian}
+\label{pc-hessian-section}
+
+Let $a=\log V/i$ and define the ordinary potential in the
+source relative chart by
+\begin{equation}\label{pc-ordinary-coordinates}
+ \Xi_a(B)=\frac1i\log(e^{iB}e^{ia}),\qquad
+ a_V(z)=\Xi_a(\Phi_V(z)).
+\end{equation}
+For the bondwise left Jacobian
+$J_aX=\int_0^1\operatorname{Ad}(e^{ita})X\,dt$,
+\begin{equation}\label{pc-log-jacobian}
+ D\Xi_a(0)=J_a^{-1},\quad
+ J_a^{-1}=I+O(\norm a_\infty),\quad D^2\Xi_a(0)=O(\norm a_\infty).
+\end{equation}
+The last bound follows from analyticity and $\Xi_0(B)=B$.
+Put $K_a=J_a^{-1}K_V$. Then
+\begin{equation}\label{pc-second-coordinate}
+ \begin{split}
+ Da_V(0)&=K_a,\\
+ D^2a_V(0)[u,v]&=J_a^{-1}D^2\Phi_V(0)[u,v]
+                 +D^2\Xi_a(0)[K_Vu,K_Vv].
+ \end{split}
+\end{equation}
+Thus, at a gauge-zero physical background $V_*(W)$, the exact
+retained-coordinate Hessian of action plus gauge is
+\begin{equation}\label{pc-physical-precision}
+ \begin{split}
+ A_M(V)&=K_a^TH_M(a)K_a+\operatorname{Curv}_M(V)
+                  +K_V^TT_V^TT_VK_V,\\
+ \langle u,\operatorname{Curv}_M(V)v\rangle
+      &=\langle m_M(a),D^2a_V(0)[u,v]\rangle,\qquad
+ H_M(a)=D^2S_M(a).
+ \end{split}
+\end{equation}
+The two terms in \eqref{pc-second-coordinate} are respectively
+the nonlinear constraint curvature and the conversion from
+relative exponential to ordinary log coordinates. Both occur
+in \eqref{pc-physical-precision}.
+
+For an explicit check against the source current vertex, set
+\[
+ j_{\rm rel}=J_a^{-T}m_M(a),\qquad
+ H_{\rm left}=J_a^{-T}H_M(a)J_a^{-1}
+                     +\langle m_M(a),D^2\Xi_a(0)\rangle.
+\]
+Then the same precision is
+\begin{equation}\label{pc-source-current-form}
+ \begin{split}
+ \langle u,A_M(V)v\rangle={}&
+ \langle K_Vu,H_{\rm left}K_Vv\rangle
+ +\langle T_VK_Vu,T_VK_Vv\rangle\\
+ &-2\langle j_{\rm rel},h_VC_V^{(2)}(K_Vu,K_Vv)\rangle.
+ \end{split}
+\end{equation}
+This has the sign and factor of Raw I's source vertex.
+Differentiating the same action through a fine minimizing
+extension writes the physical current as $H_1^TJ$; pure gauge
+pieces pair to zero by gauge invariance. No independent $J$
+is introduced here. Constrained stationarity gives
+\begin{equation}\label{pc-current-stationarity}
+ K_V^Tj_{\rm rel}=0,\qquad
+ j_{\rm rel}=A_V^T\lambda,\quad \lambda=h_V^Tj_{\rm rel}.
+\end{equation}
+The second identity follows because $I-h_VA_V$ has range
+$\ker A_V$. It does not make $j_{\rm rel}$ zero and does
+not eliminate its contraction with $h_VC_V^{(2)}$.
+
+\subsection{Uniform precision, covariance, and uniqueness bounds}
+\label{pc-bounds-section}
+
+\begin{theorem}[Physical-background retained precision]
+\label{pc-precision-theorem}
+For the background of Proposition~\ref{pc-stationary}, with
+$b=\norm{\log V/i}_\infty$ sufficiently small,
+\begin{equation}\label{pc-precision-perturbation}
+ \norm{A_M(V)-A_{M,0}}_\kappa\le C_{L,\kappa}b.
+\end{equation}
+The full Hessian defined using the actual absolute gauge
+function has the same analytic estimate on a full small
+current-background ball. At arbitrary backgrounds it need
+not be centered, since its first derivative can be nonzero.
+For
+\begin{equation}\label{pc-radius}
+ C_{L,\kappa}b\le\gamma_*/2,\qquad
+ C_*C_{L,\kappa}b\le1/2,
+\end{equation}
+one has
+\begin{equation}\label{pc-inverse-bounds}
+ \begin{gathered}
+ \operatorname{Re}\langle z,A_M(V)z\rangle_{\rm Herm}
+       \ge\tfrac12\gamma_*\norm z_2^2,\qquad
+ \norm{A_M(V)^{-1}}_\kappa\le2C_*,\\
+ \norm{A_M(V)^{-1}-A_{M,0}^{-1}}_\kappa
+       \le2C_*^2C_{L,\kappa}b.
+ \end{gathered}
+\end{equation}
+The constants are uniform in all preceding classical depths
+$M=L^k$ and compatible periodic volumes.
+\end{theorem}
+
+\begin{proof}
+Equations \eqref{pc-local-operators} and
+\eqref{pc-log-jacobian} give
+$\norm{K_a-K_L}_\kappa\le C_{L,\kappa}b$, with all
+unperturbed factors uniformly bounded. Apply the weighted
+algebra inequality and \eqref{pc-classical-input} to the
+first term in \eqref{pc-physical-precision}. Its difference
+from $K_L^Tq_MK_L$ is $O(b)$. Apply
+\eqref{pc-contracted-tensor} to
+\eqref{pc-second-coordinate}, using
+$\norm{m_M(a)}_\infty\le Cb$, to obtain
+$\norm{\operatorname{Curv}_M(V)}_\kappa\le C_{L,\kappa}b$.
+The ordinary-log conversion part is even $O(b^2)$, but that
+improvement is unnecessary. The gauge term differs from its
+flat value by $O(b)$ through \eqref{pc-local-operators}.
+The absolute gauge residual off $P_V=1$ is a local analytic
+$O(b)$ term, so the same bound holds for that extension.
+
+The Schur bound controls the Hilbert operator norm. Together
+with \eqref{pc-flat-input}, it proves the accretivity assertion.
+The other bounds follow by the Neumann series in the weighted
+matrix algebra.
+\end{proof}
+
+For clarity, uniqueness of the source critical configuration
+can be obtained on a uniform common coordinate neighborhood,
+not merely from the Hessian at a point. Keep one fixed chart
+$\Phi_V$ and let $z$ vary. Local Cauchy gives
+$D\Phi_V(z)=K_L+O(b+\norm z_\infty)$, uniformly bounded
+second derivatives, and
+$\norm{a_V(z)}_\infty\le C_L(b+\norm z_\infty)$.
+The same chain-rule proof, including the absolute gauge
+contour residual, gives
+\begin{equation}\label{pc-uniform-convexity}
+ \left\|D_z^2\{S_M(a_V(z))+
+       \mathcal G(e^{i\Phi_V(z)}V)\}-A_{M,0}\right\|_\kappa
+       \le C_{L,\kappa}(b+\norm z_\infty).
+\end{equation}
+On a smaller real convex supremum ball this Hessian is bounded
+below by $\gamma_*/2$. There is at most one critical point in
+that ball. Every sufficiently small configuration on the same
+fiber belongs to this chart, by uniqueness for its retained
+relative coordinates. Thus the critical orbit and gauge-zero
+selection in CMP109 agree with the constructed branch whenever
+both are in this common homogeneous neighborhood. No global
+minimum outside that neighborhood is inferred.
+
+For any specified $\varepsilon>0$, the additional restriction
+$b\le\varepsilon\gamma_*/C_{L,\kappa}$ gives
+\begin{equation}\label{pc-relative-precision}
+ \norm{A_{M,0}^{-1/2}[A_M(V)-A_{M,0}]A_{M,0}^{-1/2}}_{2\to2}
+       \le\varepsilon.
+\end{equation}
+The counting covariance in the current retained coordinates
+is $A_M(V)^{-1}$; no factor $M^4$ is inserted.
+
+\begin{corollary}[The tunable covariance neighborhood]
+\label{pc-tunable-covariance}
+Let $C_0=A_{M,0}^{-1}$, so its real spectral bounds are
+$\lambda_{\rm cov}=B_*^{-1}$ and
+$\Lambda_{\rm cov}=\gamma_*^{-1}$. Fix any
+$0<\theta\le1/4$ before the coupling is chosen. If, in addition
+to \eqref{pc-radius}, the background radius satisfies
+\begin{equation}\label{pc-covariance-radius}
+ 2C_*^2C_{L,\kappa}b\le\frac{\theta}{2B_*},
+\end{equation}
+then
+\begin{equation}\label{pc-covariance-close}
+ \norm{A_M(V)^{-1}-C_0}_{2\to2}
+       \le\theta\lambda_{\rm cov}/2.
+\end{equation}
+This is exactly the covariance-neighborhood hypothesis of
+Notebook18's tunable marked theorem. A common covariance
+majorant and exponentially weighted row sum are uniform in
+$M$ and volume.
+\end{corollary}
+\begin{proof}
+Use \eqref{pc-inverse-bounds} and the Schur operator bound.
+The same weighted inverse estimate gives the entry majorant
+$J_{ij}=2C_*e^{-\kappa d(i,j)}$. For every smaller exponent
+$0<\kappa'<\kappa$, its weighted row sum is uniformly finite
+by the polynomial growth of the lattice, including periodic
+distance on compatible tori. The real baseline has the stated
+spectral bounds by \eqref{pc-flat-input}.
+\end{proof}
+The local interaction hypotheses of that marked theorem are
+still separate. Its strict-background-locality version further
+requires a support-valued precision expansion and an appropriate
+product background domain, which the present kernel estimate
+does not imply. Alternatively,
+\eqref{pc-relative-precision} gives relative covariance error
+at most $\varepsilon/(1-\varepsilon)$; the direct condition
+\eqref{pc-covariance-radius} matches the stated theorem without
+that conversion.
+
+At the centered physical background, the exact classical
+exponent after scaling is
+\begin{equation}\label{pc-scaled-exponent}
+ \begin{split}
+ &-g^{-2}\{S_M(a_V(gz))+\mathcal G(e^{i\Phi_V(gz)}V)\}\\
+ &\hspace{1cm}=-g^{-2}S_M(a)-\tfrac12\langle z,A_M(V)z\rangle
+                  +\text{terms of positive order in }g,
+ \end{split}
+\end{equation}
+locally for $|g|\norm z_\infty$ below the chart radius. The
+linear term vanishes by physical constrained stationarity and
+the gauge-zero condition. Haar density, the straightening
+Jacobian and the previously integrated action correction
+remain in the interaction; a coupling-suppressed quadratic
+Haar term is not asserted to vanish.
+
+\subsection{The remaining source interfaces}
+\label{pc-scope}
+
+The chart, gauge penalty, cutoff-coordinate identity and
+precision comparison above concern the exact homogeneous
+ordinary branch already matched in Notebooks15--17. They
+do not extend the source's independent-free-current family:
+the current in \eqref{pc-source-current-form} is the physical
+action derivative. Nor do they establish the full original
+orbit and polymer-restriction hypotheses of CMP116, or a
+mixed-history boundary theorem.
+
+Finite range of $\Phi_V,h_V,K_V,T_V$ means finite dependence
+on the current background $V$. The minimizing response
+$W\mapsto V_*(W)$ need not have strict finite support.
+Weighted fluctuation-kernel locality in
+\eqref{pc-precision-perturbation} is not a strict
+support-valued expansion in $W$ or in every original fine
+link. A complete localized expansion of the classical
+remainder and the Haar, Jacobian and prior-action terms is
+still a separate interaction theorem. Additional source
+cutoff factors, when present, retain their exact pullbacks.
+% No preamble. Local measure factors for Notebook19. Prefix pm-.
+\section{Local Haar, straightening, and exponential-gauge interactions}
+\label{pm-section}
+
+Use the exact current-step chart of Section~\ref{pc-chart-section}.
+The next block side $L$ is fixed, the current spacing is one,
+and constants are uniform in the preceding homogeneous depth $M$
+and compatible periodic volume. Backgrounds $V=e^{ia}$ range
+over a sufficiently small product ball in the independent
+current link coordinates $a(b)$. A slightly larger fixed ball
+is used for Cauchy estimates. This section localizes the measure
+factors; the classical and previously integrated action
+remainders are separate.
+
+Write $A_{c,p}=D_{p(c)}F_V(0;c)=L^{1-d}\pi_c(V)$ and define
+the square ambient straightening map
+\begin{equation}\label{pm-ambient-map}
+ \psi_V(B)=B-h_V\widetilde D_V(B),\qquad
+ F_V(\psi_V(B))=A_VB,\qquad
+ \Phi_V(z)=\psi_V(K_Vz).
+\end{equation}
+Its retained components equal those of $B$. The nonlinear
+equation for its pivot $p(c)$ reads that pivot and no other
+pivot. All maps and derivatives used below are local analytic
+functions on fixed neighborhoods.
+
+More explicitly, choose supports $Y_r$ of current cells for
+every primitive term below. Include both its background and
+retained fluctuation dependencies. There are fixed constants
+$s_L,r_L,n_L$ such that
+\begin{equation}\label{pm-support-bounds}
+ |Y_r|\le s_L,\qquad \operatorname{diam}Y_r\le r_L,
+ \qquad \ell(Y_r)\le s_Lr_L,\qquad
+ \sup_x\#\{r:x\in Y_r\}\le n_L.
+\end{equation}
+Here $\ell$ is shortest-tree length; periodic multiplicities
+are retained. Finite enlargement of the two-block chart
+neighborhoods and the block-internal contour neighborhoods
+gives these constants. The local implicit equations do not
+propagate support between different coarse equations.
+
+For nonnegative $a_0,\kappa$ define the primitive local norm
+\begin{equation}\label{pm-local-norm}
+ \|l\|_{a_0,\kappa,R}
+ =\sup_x\sum_{r:x\in Y_r}
+ e^{a_0|Y_r|+\kappa\ell(Y_r)}
+ \sup_{V\in\mathcal D_b,\,\|z|_{Y_r}\|_\infty\le R}|l_r(V,z)|.
+\end{equation}
+The fluctuation supremum may be taken over complex coordinates,
+so it also bounds the fixed real cutoff. In particular,
+\begin{equation}\label{pm-incidence-bound}
+ \|l\|_{a_0,\kappa,R}
+ \le n_Le^{a_0s_L+\kappa s_Lr_L}\sup_r\|l_r\|_\infty.
+\end{equation}
+Adding primitive terms with the same support preserves this
+bound by the triangle inequality.
+
+\subsection{The exact ambient Jacobian and the delta normalization}
+\label{pm-jacobian-section}
+
+\begin{lemma}[Straightening determinant]\label{pm-jacobian-lemma}
+On a fixed small complex chart,
+\begin{equation}\label{pm-jacobian-identity}
+ \det D\psi_V(B)=\prod_c
+ \frac{\det A_{c,p}}
+      {\det D_{p(c)}F_V(\psi_V(B);c)}.
+\end{equation}
+Each ratio is analytic, equals one at $B=0$, and has fixed
+local dependence.
+\end{lemma}
+\begin{proof}
+Order the variables as retained coordinates followed by
+pivots. The retained rows of $D\psi$ are $[I,0]$.
+The pivot-to-pivot block is block diagonal, because each local
+implicit equation reads only its own input pivot. Differentiating
+$F_V(\psi_V(B))=A_VB$ in that pivot gives
+\[
+ D_{p(c)}F_V(\psi_V(B);c)
+ D_{B(p(c))}\psi_V(B)(p(c))=A_{c,p}.
+\]
+Taking the determinant of this block triangular matrix proves
+\eqref{pm-jacobian-identity}. At zero, $DF_V=A_V$ and
+$D\psi=I$. All local blocks stay invertible on a smaller
+fixed domain.
+\end{proof}
+
+Let $\operatorname{Tr}_{\mathfrak g}$ denote the ordinary
+matrix trace in color-coordinate space. The logarithm of the
+normalized $c$ factor is
+\begin{equation}\label{pm-jacobian-log}
+ j_c^{\rm str}(V;B)=
+ -\operatorname{Tr}_{\mathfrak g}\log\left[
+ I+A_{c,p}^{-1}
+ \{D_{p(c)}F_V(\psi_V(B);c)-A_{c,p}\}\right],
+\end{equation}
+with branch zero at $B=0$. This is a determinant identity:
+the diagonal Jacobian block itself is $(DF_p)^{-1}A_p$,
+and no commutativity of color matrices is asserted.
+Local analyticity and the logarithm series imply, for a fixed
+$\rho_L>0$ and $|g|R<\rho_L$,
+\begin{equation}\label{pm-jacobian-bound}
+ \|j^{\rm str}(V;K_Vgz)\|_{a_0,\kappa,R}
+ \le C_{L,a_0,\kappa}|g|R.
+\end{equation}
+Indeed, the matrix perturbation inside the logarithm is at
+most $C_L|g|R$, which may be made at most $1/2$.
+
+The determinant in Lemma~\ref{pm-jacobian-lemma} belongs to
+the square ambient change of variables, not to the rectangular
+derivative $D\Phi_V$. To identify its measure role, for real
+backgrounds and test functions supported within the chart,
+\begin{equation}\label{pm-delta-reduction}
+ \begin{split}
+ \int dX\,\delta(F_V(X))f(X)
+ &=\mathcal D(V)\int dz\,
+ \exp\left\{\sum_cj_c^{\rm str}(V;K_Vz)\right\}
+ f(\Phi_V(z)),\\
+ \mathcal D(V)&=\prod_c(\det A_{c,p})^{-1}.
+ \end{split}
+\end{equation}
+First set $X=\psi_V(B)$ and then integrate the linear
+constraint $A_VB=0$ over pivots. The pivot determinants have
+the positive orientation of $L^{1-d}I$ on this real
+neighborhood. A group delta at identity contributes only its
+fixed exponential-coordinate normalization at $F=0$.
+After retained variables are scaled by positive real $g$,
+the additional factor $g^{\dim z}$ is field independent.
+Complex-background formulas are holomorphic continuations
+of the local densities; no complex distributional delta is used.
+
+The factor $\mathcal D(V)$ is independent of fluctuations
+but can depend on the prescribed next-scale field through $V$.
+It is kept outside the fluctuation interaction, not discarded.
+Its normalized logarithm is local:
+\begin{equation}\label{pm-background-determinant}
+ \log\frac{\mathcal D(V)}{\mathcal D(1)}
+ =-\sum_c\operatorname{Tr}_{\mathfrak g}
+       \log(A_{c,p}A_{1,c,p}^{-1}).
+\end{equation}
+Each term is $O(\|a\|_\infty)$ and has no small coupling
+factor $g$.
+
+\subsection{The relative Haar density}
+\label{pm-haar-section}
+
+Let $j(X)$ be the pullback density of Haar measure under
+$X\mapsto e^{iX}$, divided by its value at zero. Near zero
+it is nonvanishing and real analytic, with $j(0)=1$.
+Haar invariance under inversion gives $j(-X)=j(X)$ on
+the real form and hence by analytic continuation. Its local
+logarithm therefore satisfies
+\begin{equation}\label{pm-haar-even}
+ \log j(0)=D\log j(0)=0,\qquad |\log j(X)|\le C|X|^2.
+\end{equation}
+This uses the positive real density and then its analytic
+branch; it does not complexify an absolute determinant.
+Translation by $V$ preserves Haar measure, so the relative
+parametrization $e^{iX}V$ has the same density.
+
+The exact Haar logarithms after scaling are
+\begin{equation}\label{pm-haar-log}
+ j_b^{\rm H}(V;gz)=\log j(\Phi_V(gz)(b)).
+\end{equation}
+On retained bonds the argument is exactly $gz(b)$; on pivots
+it is the local chart function. From
+\eqref{pm-haar-even}, the uniform local chart bound, and
+\eqref{pm-incidence-bound},
+\begin{equation}\label{pm-haar-bound}
+ \|j^{\rm H}(V;gz)\|_{a_0,\kappa,R}
+ \le C_{L,a_0,\kappa}|g|^2R^2.
+\end{equation}
+Any unnormalized value $j(0)$ is field independent and remains
+in the overall normalization. A generally nonzero quadratic
+Haar term remains in the interaction with coefficient $g^2$.
+
+\subsection{The exact retained-coordinate gauge remainder}
+\label{pm-gauge-section}
+
+For a root-to-site pair $r=(y,x)$ define
+\begin{equation}\label{pm-gauge-primitive}
+ f_r(V;z)=1-\tfrac12\tau\left[
+ P_{e^{i\Phi_V(z)}V}(y,x)
+ +P_{e^{i\Phi_V(z)}V}(y,x)^{-1}\right].
+\end{equation}
+The source contours are internal to blocks and contain no
+pivots. By \eqref{pc-gauge-pivot-independence}, this is
+exactly the same expression with $\Phi_V(z)$ replaced by
+$E_fz$, where $E_f$ inserts zero at pivots. Consequently
+it is a local function of unchanged retained coordinates.
+
+On the full small product background domain define
+\begin{equation}\label{pm-gauge-remainder}
+ \begin{split}
+ v_r^{\rm G}(V;g,z)=-g^{-2}\bigl[
+ &f_r(V;gz)-f_r(V;0)-gD_zf_r(V;0)z\\
+ &-\tfrac12g^2D_z^2f_r(V;0)[z,z]\bigr].
+ \end{split}
+\end{equation}
+The singularity at $g=0$ is removable, with value zero.
+The finite-dimensional Taylor remainder gives
+\begin{equation}\label{pm-gauge-bound}
+ \|v^{\rm G}(V;g,z)\|_{a_0,\kappa,R}
+ \le C_{L,a_0,\kappa}|g|R^3,
+ \qquad |g|R<\rho_L.
+\end{equation}
+At a physical background $P_V=1$, both $f_r(V;0)$ and
+$D_zf_r(V;0)$ vanish. Thus this is precisely the logarithmic
+gauge interaction after its quadratic contribution has been
+included in the precision. Elsewhere it is the exact
+third-and-higher remainder after constant and linear terms
+are also separated. The full-domain definition supplies
+background holomorphy without treating $P_V=1$ as a product
+domain.
+
+\subsection{Local coefficient and multiplier bounds}
+\label{pm-coefficients-section}
+
+\begin{theorem}[Local measure interaction]\label{pm-measure-theorem}
+For the fixed geometry and product background domain above,
+the logarithmic interactions
+$j^{\rm str}(V;K_Vgz)$, $j^{\rm H}(V;gz)$ and
+$v^{\rm G}(V;g,z)$ are holomorphic and have primitive
+supports satisfying \eqref{pm-support-bounds}. For
+$|g|R<\rho_L$, their sum, regrouped by supports $Y$, obeys
+\begin{equation}\label{pm-combined-bound}
+ \sup_x\sum_{Y\ni x}e^{a_0|Y|+\kappa\ell(Y)}
+ \sup|v_Y(V;g,z)|
+ \le C_{L,a_0,\kappa}
+   (|g|R+|g|^2R^2+|g|R^3).
+\end{equation}
+The constants are independent of $M$ and periodic volume.
+If the right side is at most one, the same bound multiplied
+by $e$ holds with $|v_Y|$ replaced by $|e^{v_Y}-1|$.
+For $R\ge1$ and $|g|R\le1$, it is at most
+$C_{L,a_0,\kappa}|g|R^3$.
+\end{theorem}
+\begin{proof}
+Combine \eqref{pm-jacobian-bound},
+\eqref{pm-haar-bound} and \eqref{pm-gauge-bound} and group
+equal supports. The local coefficient assertion can also
+be seen directly from the convergent expansions
+\[
+ \begin{split}
+ j_c^{\rm str}(V;K_Vgz)&=\sum_{n\ge1}g^n s_{c,n}(V;z),\\
+ j_b^{\rm H}(V;gz)&=\sum_{n\ge2}g^n h_{b,n}(V;z),\\
+ v_r^{\rm G}(V;g,z)&=\sum_{n\ge3}g^{n-2}v_{r,n}(V;z).
+ \end{split}
+\]
+Each coefficient is homogeneous of degree $n$ in $z$,
+holomorphic in only the background coordinates of its support,
+and has local norm at most $C_0(C_1R)^n$ by Cauchy on a
+fixed fluctuation disc. Background Cauchy estimates on the
+smaller product domain preserve the same supports. These are
+anchored coefficient bounds, rather than an extensive bound
+on the full sum. Finally $|e^v-1|\le e|v|$ for $|v|\le1$.
+\end{proof}
+
+The support-cardinality factor $K^{|Y|}$ in the overlapping
+interaction theorem is absorbed by increasing $a_0$ by
+$\log\max(1,K)$. This is a fixed-$L$ statement, not a
+claim of uniform constants when $L$ or the cell dimension is
+allowed to increase. For a logarithmically growing cutoff
+$R(g)$, these measure interactions tend to zero as soon as
+$|g|R(g)^3\to0$.
+
+The fixed real cutoff is the original retained window
+$\|z(b)\|<R$. It remains unchanged because
+$\Phi_V(gz)(b)=gz(b)$ on retained bonds. Additional pivot,
+contour or reconstructed-field indicators retain their exact
+pullbacks and are not covered by this theorem. CMP116,
+p.~12 immediately before (2.3), explicitly uses the
+pivot-removed bond set; its (2.14), p.~15, keeps this retained
+cutoff fixed during Gaussian deformation. CMP109,
+pp.~266--268, (2.5) and (2.9)--(2.13), supplies the gauge
+and pivot setup. The unreadable product subscript of
+CMP109 (2.9) in the accessible OCR is not presented as a
+visually verified formula.
+
+These factors are strictly local in independent current
+backgrounds $V$. Substituting $V_*(W)$ does not give them
+strict finite support in $W$. The full classical remainder,
+the previously integrated interaction, the external factor
+\eqref{pm-delta-reduction}, and any extra cutoff indicators
+remain distinct obligations.
+\end{document}

@@ -1,0 +1,42 @@
+ROOT AUDIT OF NOTEBOOK 39
+17 October 2026
+
+Read normalized_box_replacement_fragment.tex in full and compared
+against the exact hypotheses of Notebook38. PASS.
+
+The boundary-rooted gauge and invariant window from38 are retained.
+Boundary events are functions of the common exterior. Variable
+interior sets share no plaquette, so conditional factorization is
+exact for vertex-disjoint embedded boxes. No Gaussian law substitutes
+for the compact conditional Wilson law.
+
+On a good boundary p_i<=a<=1/2, so the actual success denominator
+is uniformly positive. On bad boundaries P_i=Q_i,p_i=0. The product
+Radon--Nikodym factor has conditional expectation1, preserving exterior
+marginal and raw mass. It is not called a volume-uniform density ratio.
+The empty failure term is exterior-weighted, not a scalar multiple.
+
+The shared-exterior coupling has disjoint W/W^c support on every
+discrepancy. This gives EXACT TV for the joint exterior/A law and only
+an upper bound when exterior is forgotten. The event maximizing TV
+is measurable through the actual W_i(omega). Independent uniform
+marks give iid Bernoulli domination for discrepancies, not for the
+correlated bad boundaries. Combined marks use the proven inclusion
+bound and finite expansion. Local oscillation and entropy formulas
+have the correct direction and constants.
+
+Complex bounded sources lie in |Z-1|<=e^s0-1<1. The connecting segment
+stays in that disk, proving the logarithm estimate. Normalized source
+ratio uses d0+e^s0=2. Cauchy radii and the optimized n!(e/s0)^n bound
+are correct. These constants display observable sup norms; no
+cutoff-uniform renormalized field assertion is made.
+
+Notebook39 source:21,637bytes,38labels,8references; static checks
+passed and desktop compiler returnedSUCCESS. Distribution PDF is
+compiled separately from a documented layout-only derivative.
+Independent rotation audit passed both research and exact fragment.
+
+Scope: fixed bare Wilson boxes, arbitrary finite number, local errors
+independent of distant-box count. Not a nonlinear coarse-average fiber,
+growing-component estimate, multiscale full-density theorem or continuum
+existence proof. This completes the requested natural stopping theorem.

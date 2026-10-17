@@ -1,0 +1,3 @@
+# Preserve delivered bytes so the snapshot manifest remains verifiable.
+* -text
+*.pdf binary

@@ -1,0 +1,13 @@
+# Root audit of exact reference transport and the projected recurrence
+
+17 October 2026. Full read of extracted_macrostep_recurrence_rotation_research.md, including its updated quantum-descent input and finite-regulator scope.
+
+The reference identity passes. It is already the exact cdm-background identity in Notebook28, and its independent proof uses two genuine minima on the same fine graph. The physical C1alpha rescaling requires a smaller real comparison germ for a fixed finite R; common-domain holomorphy extends the identity afterward. Dimension four removes an action scale prefactor. The infinite statement is a normalized compact-field statement passed through the common support bounds, not an asserted limit of extensive actions. The independently established flat q_M coefficient fixes beta(S_M)=1.
+
+The projection algebra is exact: P_(j+1) T_j P_j=P_(j+1) T_j because T_j S_j=S_(j+1). It does not require beta_(j+1) T_j=beta_j. Therefore intermediate projections do not multiply the leading q-step classical estimate. The direct R^q bound applies in the quotient with its justified new localization and one common classical system.
+
+Variation of constants retains all q quantum terms. The perturbative sum is nu sum_(k=0)^(q-1) B^(q-1-k)(B+nu)^k=(B+nu)^q-B^q. Its upper bound q nu (B+nu)^(q-1) is correct. With theta_q<=1/4 and nu<=1/[4q(B+1)^(q-1)], the block Lipschitz constant is at most one half. The stated intermediate bound places every step inside epsilon_bar/4 before applying that comparison; the reasoning is not circular.
+
+The quadratic-force improvement is separately audited. Put C0=p*2H_*/rho^2, K_step=B+1, Lq=sum_(l<q)K_step^l and K_amp=max(1,2C0Lq). Then the radius K_amp*b^2 is block invariant, and every intermediate amplitude is bounded by [K_step^q K_amp+C0Lq]b^2. Choosing b small and g last meets the complete finite list of common-domain and comparison budgets. The unprojected amplitude stays O(b^2), giving a bounded absolute beta increment. None of these estimates gives its sign.
+
+Quantum quotient descent is now an established input from qll. The conclusion remains relative to its actual homogeneous local sector and fixed joint classical system. A freely prescribed weak coupling sequence is valid for these operator estimates but is an exact density trajectory only if gamma_next=gamma-beta(F). Fixed-coupling Lipschitz comparisons do not compare trajectories with different updated couplings. An invariant infinite quotient envelope does not by itself construct uniformly bounded actual finite-regulator histories; that separate interface remains explicit.

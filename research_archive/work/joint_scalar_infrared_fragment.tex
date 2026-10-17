@@ -1,0 +1,424 @@
+% No preamble. Prefix jsi-. Ordered scalar limit and exact holonomy obstruction.
+\section{The scalar infrared limit and a forced holonomy cancellation}
+\label{jsi-section}
+
+There are two different assertions in this section. A common positive
+physical mass gives a well-defined thermodynamic scalar reference,
+whose subsequent massless limit is \(\alpha_g\log K\). The original
+separately massless globally based determinants need not have that
+order-independent analytic limit. An exactly periodic flat connection
+gives a concrete obstruction and, through the actual finite determinant
+identity, forces a compensating response in the physical factor.
+
+\subsection{The mass convention and an exact base correction}
+\label{jsi-mass-section}
+
+Fix \(K=\ell^k\) and final torus side \(N\) in four dimensions.
+Current fine sites have physical spacing \(K^{-1}\), with side \(KN\);
+coarse sites have spacing one and side \(N\).
+All color coordinates are trace orthonormal.
+Let \(G_{\rm all}(U)\) be the covariant scalar Laplacian on all sites,
+and let \(G_b(U)\) be its principal minor after deleting the color
+coordinates at one common physical base \(o\). Deleting a site does
+not change the remaining diagonal entries.
+
+A common physical mass \(\delta>0\) means
+\begin{equation}
+ H_{f,\delta}=K^2G_{{\rm all},f}+\delta^2I,\qquad
+ H_{c,\delta}=G_{{\rm all},c}+\delta^2I.
+ \label{jsi-mass}
+\end{equation}
+Their principal minors are \(H_{f,\delta}^b,H_{c,\delta}^b\).
+With \(\mathcal N_0F=F(W)-F(1)\), define
+\begin{equation}
+ S_{\delta,N}^b=\frac12\mathcal N_0
+       \bigl(\log\det H_{f,\delta}^b-\log\det H_{c,\delta}^b\bigr).
+ \label{jsi-scalar-ratio}
+\end{equation}
+The fine counting mass is \(\delta/K\), not \(\delta\).
+At zero mass multiplication of the fine operator by \(K^2\)
+changes only a background-independent normalization.
+Equation \eqref{jsi-scalar-ratio} is a specified scalar comparison
+family. It is not automatically an exact mass deformation of the
+entire physical-quotient determinant identity.
+
+\begin{lemma}[Positive-mass base defect]
+\label{jsi-base-lemma}
+Put \(H=\epsilon^{-2}G_{\rm all}+\delta^2I\), \(R=H^{-1}\),
+where \(\epsilon=K^{-1}\) or \(1\). Then
+\begin{equation}
+       \det H^b=\det H\,\det R_{oo}.
+ \label{jsi-jacobi}
+\end{equation}
+At fixed \(\delta>0,K\), the normalized logarithm of the fixed color
+block \(R_{oo}\) has a complex product neighborhood and first-two
+bounded-direction derivative bounds independent of \(N\).
+Its first-two source kernels are exponentially summable in their
+distances from \(o\), including all fixed polynomial moments.
+No uniformity as \(\delta\downarrow0\) is asserted.
+\end{lemma}
+
+\begin{proof}
+The determinant identity is the block Jacobi identity. At real
+backgrounds,
+\[
+ \delta^2I\le H\le(16\epsilon^{-2}+\delta^2)I,
+ \qquad
+ (16\epsilon^{-2}+\delta^2)^{-1}I
+                      \le R_{oo}\le\delta^{-2}I.
+\]
+The nearest-neighbor coefficients have volume-independent operator
+bounds on a small complex product ball. The resolvent identity,
+and then the lower bound for \(R_{oo}\), give a smaller complex
+ball on which both inverses remain bounded uniformly in volume.
+The logarithm branch continued from zero is bounded there after
+normalization. Its first two derivatives also follow directly from
+\begin{align}
+ DR[v]&=-RH'[v]R,\notag\\
+ D^2R[v,w]&=RH'[v]RH'[w]R+RH'[w]RH'[v]R-RH''[v,w]R.
+ \label{jsi-resolvent-derivatives}
+\end{align}
+Differentiating \(\log\det R_{oo}\) uses only its fixed color trace.
+
+For exponential bounds, conjugate by a site weight whose ratios
+across nearest-neighbor edges differ from one by \(O(\kappa)\).
+Choose \(\kappa>0\), depending on \(\delta,\epsilon\), so the
+conjugation perturbation has norm at most \(\delta^2/4\).
+The weighted inverse is then bounded by \(2/\delta^2\).
+Spending a smaller exponent gives absolute row and column Schur
+bounds. The derivatives \(H',H''\) are local. Every source chain
+in \eqref{jsi-resolvent-derivatives}, and in the logarithmic
+derivatives, begins and ends at \(o\). Its exponential weights
+therefore control all source distances from \(o\), with a further
+exponent reserve for any fixed polynomial moment.
+\end{proof}
+
+Writing \(S_{\delta,N}^{\rm all}\) for the unbased half-ratio gives
+the exact comparison
+\begin{equation}
+ S_{\delta,N}^b=S_{\delta,N}^{\rm all}
+ +\frac12\mathcal N_0\bigl\{
+       \log\det(R_f)_{oo}-\log\det(R_c)_{oo}\bigr\}.
+ \label{jsi-defect}
+\end{equation}
+The lemma has two useful consequences. A base receding from fixed
+localized sources changes their first-two coefficients
+exponentially little. Alternatively, average the based functional
+over the \(N^4\) simultaneous coarse translations of the fine and
+coarse base. Reanchoring its Hessian at one output cell bounds the
+anchored second-moment norm of its difference from the unbased
+functional by
+\begin{equation}
+                         C_{\delta,K}N^{-4}.
+ \label{jsi-average-defect}
+\end{equation}
+Indeed summing the translated rooted defect kernel converts that
+row into its full source sum, divided by \(N^4\); its displacement
+moments are bounded by the lemma. This averaging is an estimate
+for the limit, not a claim that different finite base choices
+give identical functionals.
+
+After composition with the actual fixed-\(K\) stationary branch,
+the same conclusions use its previously proved localized source
+kernels. Under the Notebook 33 inputs the constants are uniform
+in old depth \(M\), still depending on \(K,\delta\).
+
+\subsection{The ordered localized Maxwell limit}
+\label{jsi-ordered-section}
+
+At positive mass, the unbased diagonal logarithm has exponentially
+localized Taylor kernels, by the same resolvent argument applied
+to its logarithm integral. Its color trace is gauge invariant.
+Its Hessian moments therefore define its affine curvature
+coefficient absolutely. This gives a way to take the limit without
+postulating an affine magnetic field on a torus: first pass to
+infinite kernels using compactly supported directions, then
+evaluate polynomial directions by their exponential moments.
+Symmetric short lifts of periodic kernels give the same result.
+At fixed \(K,\delta\), unbased winding contributions vanish
+exponentially in \(N\), and \eqref{jsi-average-defect} removes the
+averaged base contribution.
+
+For an actual stationary insertion, use fixed-\(K\) structural
+compactness followed by the polynomial-jet identification of
+Notebook 33. Every such limit has the same scalar expression
+below. This statement uses the already established source kernels;
+it does not infer locality from a finite determinant identity.
+
+Normalize the Maxwell functional by
+\(\beta(F)=2[t^2]\) of its localized constant-curvature density.
+For \(\mu\ne\nu\) and \(\tau(H^2)=1\), the current and coarse
+Cartan probes are
+\[
+ U_\mu(t;x)=e^{itx_\nu H/K^2},\qquad
+ W_\mu(t;y)=e^{ity_\nu H}.
+\]
+The unpinned scalar heat coefficient already established is
+\begin{equation}
+ \begin{split}
+ h(s)&=\frac{C_H}{3}s^2e^{-8s}I_0(2s)^2I_1(2s)^2,\\
+ h(s)&=O(s^4)\quad(s\downarrow0),\\
+ h(s)&=\alpha_g+O(s^{-1})\quad(s\to\infty),
+ \qquad \alpha_g=\frac{C_H}{48\pi^2}.
+ \end{split}
+ \label{jsi-heat}
+\end{equation}
+The \(K^4\) fine sites per final block cancel the curvature
+factor \(K^{-4}\). In common physical heat time \(u\), the fine
+and coarse coefficients are consequently \(h(K^2u)\) and \(h(u)\).
+
+\begin{proposition}[Ordered scalar reference limit]
+\label{jsi-ordered-theorem}
+Take the thermodynamic localized-kernel limit first, at fixed
+\(\delta>0\) and fixed \(K\). The resulting scalar coefficient is
+\begin{equation}
+ \beta_\delta(K)=\frac12\int_0^\infty
+           e^{-\delta^2u}\{h(K^2u)-h(u)\}\frac{du}{u}.
+ \label{jsi-beta-delta}
+\end{equation}
+It satisfies
+\begin{equation}
+             \lim_{\delta\downarrow0}\beta_\delta(K)
+                         =\alpha_g\log K.
+ \label{jsi-beta-limit}
+\end{equation}
+For \(K\ge1\) and \(0<\delta\le1/2\), the explicit reference
+also obeys
+\begin{equation}
+ |\beta_\delta(K)-\alpha_g\log K|
+       \le C\delta^2\{1+\log(1/\delta)\},
+ \label{jsi-mass-rate}
+\end{equation}
+where \(C\) is independent of \(K\).
+\end{proposition}
+
+\begin{proof}
+The localized logarithm heat formula, the preceding normalization,
+and \eqref{jsi-heat} give \eqref{jsi-beta-delta}.
+Without the mass factor, the paired integrand is absolutely
+integrable: use its small-\(s\) bound at zero and cancellation
+of \(\alpha_g\) at infinity. On \(\varepsilon<u<T\), its
+unhalved integral equals
+\[
+ \int_T^{K^2T}h(v)\frac{dv}{v}
+       -\int_\varepsilon^{K^2\varepsilon}h(v)\frac{dv}{v}.
+\]
+The limits are \(2\alpha_g\log K\) and zero, respectively.
+Dominated convergence proves \eqref{jsi-beta-limit}.
+
+For the rate, \(h\) is bounded on the whole positive axis.
+On \(0<u<1\), use \(1-e^{-\delta^2u}\le\delta^2u\);
+the resulting error is \(O(\delta^2)\), uniformly in \(K\).
+For \(u\ge1\), \eqref{jsi-heat} gives
+\(|h(K^2u)-h(u)|\le2C/u\) for every \(K\ge1\).
+Split the remaining integral at \(u=\delta^{-2}\).
+The first part is \(O(\delta^2\log(1/\delta))\), the
+second \(O(\delta^2)\).
+\end{proof}
+
+The uniformity in \eqref{jsi-mass-rate} belongs to the explicit
+reference after the thermodynamic limit. It does not interchange
+mass removal with that limit for the original based determinants.
+
+\subsection{An exact massless anomaly on a periodic flat connection}
+\label{jsi-anomaly-section}
+
+There is a direct obstruction to such an interchange, already
+at zero momentum. Consider one charged scalar \(q\) on a periodic
+\(n^4\) lattice, with constant phase \(e^{itqA}\) on direction
+\(\mu\). This is a legitimate periodic flat connection for every
+\(t\); no continuously varying magnetic flux is involved.
+Its unbased eigenvalues are
+\begin{equation}
+ \lambda_p(t)=2\sum_\nu
+       \{1-\cos(p_\nu+tqA\,\delta_{\mu\nu})\},
+       \qquad p\in(2\pi/n)\mathbb Z_n^4.
+ \label{jsi-spectrum}
+\end{equation}
+Put \(V=n^4\), and delete one scalar site to obtain \(G_n^b(t)\).
+Translation invariance of the resolvent diagonal and
+\eqref{jsi-jacobi} imply
+\begin{equation}
+ \det G_n^b(t)=\frac1V\prod_{p\ne0}\lambda_p(t)
+       \left\{1+\lambda_0(t)
+                    \sum_{p\ne0}\lambda_p(t)^{-1}\right\}.
+ \label{jsi-cofactor}
+\end{equation}
+Initially this is an identity away from zero eigenvalues;
+both sides continue analytically through \(t=0\).
+
+\begin{proposition}[Noncommuting mass and thermodynamic derivatives]
+\label{jsi-anomaly-theorem}
+Let
+\begin{equation}
+ g_4=\int_{[-\pi,\pi]^4}\frac{dp}{(2\pi)^4}
+             \frac1{2\sum_\nu(1-\cos p_\nu)}>0.
+ \label{jsi-green}
+\end{equation}
+Then
+\begin{equation}
+ \lim_{n\to\infty}n^{-4}[t^2]\log\det G_n^b(t)
+                           =q^2A^2g_4.
+ \label{jsi-anomaly}
+\end{equation}
+At every fixed positive scalar mass, the corresponding
+thermodynamic coefficient is zero, and remains zero when
+the mass is subsequently removed.
+\end{proposition}
+
+\begin{proof}
+Since \(\lambda_0(t)=q^2A^2t^2+O(t^4)\),
+\eqref{jsi-cofactor} gives, writing \(\lambda_p=\lambda_p(0)\),
+\begin{equation}
+ [t^2]\log\det G_n^b(t)
+   =q^2A^2\sum_{p\ne0}
+    \left\{\frac{\cos p_\mu}{\lambda_p}
+       -\frac{2\sin^2p_\mu}{\lambda_p^2}
+       +\frac1{\lambda_p}\right\}.
+ \label{jsi-cofactor-jet}
+\end{equation}
+The first two summands equal
+\(\partial_{p_\mu}(\sin p_\mu/\lambda_p)\).
+Their singularity is \(O(|p|^{-2})\), integrable in dimension
+four. Removing a radius-\(\varepsilon\) ball before integration
+by parts leaves boundary flux \(O(\varepsilon^2)\), so their
+Brillouin-zone integral is zero. Their grid sums converge:
+\begin{equation}
+ n^{-4}\sum_{0<|p|\le\varepsilon}|p|^{-2}
+                       \le C\varepsilon^2+O(n^{-2}).
+ \label{jsi-grid-bound}
+\end{equation}
+Outside that ball ordinary Riemann convergence applies.
+The same argument for \(\lambda_p^{-1}\) gives \(g_4\),
+proving \eqref{jsi-anomaly}.
+
+At fixed positive mass \(m\), the unbased coefficient per volume
+instead tends to the integral of
+\(\partial_{p_\mu}\{\sin p_\mu/(\lambda_p+m^2)\}\),
+which is zero by periodicity. Lemma~\ref{jsi-base-lemma}
+makes the based correction \(O(1)\) in these derivatives,
+so division by \(n^4\) removes it. Subsequent \(m\downarrow0\)
+still gives zero.
+\end{proof}
+
+The deleted block has fixed rank, but its massless derivative
+contribution is extensive. Equation \eqref{jsi-cofactor} identifies
+the soft global mode responsible for the failure. Summing
+adjoint charges replaces \(q^2\) by \(C_H\); for a vector of
+commuting constant angles the answer is \(C_H|A|^2g_4\),
+with mixed terms zero by coordinate reflections.
+
+\subsection{The actual branch and its forced physical compensation}
+\label{jsi-actual-section}
+
+Now use the actual final constant links and current representative
+\begin{equation}
+ W_\mu(t)=e^{itA_\mu H},\qquad
+ U_\mu(t)=e^{itA_\mu H/K}.
+ \label{jsi-flat-branch}
+\end{equation}
+Each ordinary blocking stage preserves this commuting connection:
+all paths with the same displacement have the same transporter,
+so the selected mean is evaluated on identical entries.
+The same flat lift exists through every old refinement \(M\).
+All plaquettes are identity. Since the real Wilson action is
+nonnegative, the associated classical minimum values are zero.
+After the actual local root gauge, uniqueness of the small
+minimum germ identifies this with the actual stationary branch.
+This is a fixed finite-germ argument.
+
+Every sitewise adjoint gauge preserves a scalar zero at the
+global base. Thus the globally based scalar determinants are
+unchanged by that root gauge and may be computed in
+\eqref{jsi-flat-branch}.
+Fine current volume is \((KN)^4\) and fine angle is \(tA/K\);
+coarse volume is \(N^4\) and angle is \(tA\).
+Proposition~\ref{jsi-anomaly-theorem} therefore gives
+\begin{equation}
+ \lim_{N\to\infty}N^{-4}[t^2]
+         (\log\det G_f-\log\det G_c)
+             =C_H|A|^2(K^2-1)g_4.
+ \label{jsi-orbit-anomaly}
+\end{equation}
+The generators on this branch are the same for every old \(M\).
+This is a flat-holonomy, zero-momentum response, not a Maxwell
+coefficient.
+
+\begin{proposition}[Forced compensation in the physical factor]
+\label{jsi-compensation-theorem}
+Fix \(K\) before taking the thermodynamic limit.
+For the actual leading correction and physical quotient,
+\begin{align}
+ \lim_{N\to\infty}N^{-4}[t^2]D_N(W(t))&=0,
+       \label{jsi-total-zero}\\
+ \lim_{N\to\infty}N^{-4}[t^2]\log\det Q_\perp(W(t))
+                  &=C_H|A|^2(K^2-1)g_4.
+       \label{jsi-compensation}
+\end{align}
+The same conclusion allows varying old depth under the
+previously established uniform-old-depth, fixed-\(K\) local
+kernel bounds.
+\end{proposition}
+
+\begin{proof}
+The actual correction \(D_N\) has translation-covariant Hessian
+kernels with common exponential row and source bounds at fixed
+\(K\). Every structural limit has invariant local densities and
+zero linear color jet. Its quadratic Ward identity consequently
+annihilates lattice gradients. Exponential moments extend this
+identity to linear scalar gauge parameters by cutoff approximation.
+Their gradients are constant link fields, so the infinite
+quadratic symbol vanishes at momentum zero.
+
+The finite normalized coefficient on \eqref{jsi-flat-branch} is
+one-half the contracted Hessian row sum. Uniform exponential
+tails make its distant part uniformly small. Every fixed
+central sum converges along a structural subsequence, and its
+full limiting row sum is zero by the preceding Ward argument.
+All subsequential scalar limits are therefore zero, proving
+\eqref{jsi-total-zero}. The uniform-old-\(M\) versions of these
+same bounds permit \(M\) to vary. No uniform-in-\(K\) locality
+is used.
+
+At finite \(N\) the exact physical-quotient identity is
+\begin{equation}
+ 2D_N=\mathcal N_0
+       (\log\det G_f-\log\det G_c-\log\det Q_\perp).
+ \label{jsi-actual-identity}
+\end{equation}
+Subtract \eqref{jsi-total-zero} from
+\eqref{jsi-orbit-anomaly} using the same branch, base and
+regulator. This yields \eqref{jsi-compensation}, including
+its sign and normalization.
+\end{proof}
+
+No claim that \(D_N(W(t))\) is identically zero at finite \(N\)
+is needed: a periodic constant connection may have nontrivial
+holonomy. Nevertheless, its thermodynamic constant-field
+response must vanish by locality and the Ward identity.
+Thus the term \(-\frac12\log\det Q_\perp\) cancels the scalar
+half-ratio exactly at zero momentum.
+
+\subsection{What the ordered limit does not identify}
+\label{jsi-scope}
+
+The positive result is
+\[
+ \lim_{\delta\downarrow0}\lim_{N\to\infty}
+       \{\hbox{localized regulated scalar Maxwell coefficient}\}
+                         =\alpha_g\log K.
+\]
+The original separately massless globally based family does not
+have an order-independent analytic local limit, as the periodic
+test \eqref{jsi-orbit-anomaly} proves.
+In particular a \(K\)-uniform \(O(1)\) constant-potential response
+for the separate physical determinant is false, despite its
+flat lower bound \(cK^{-2}\).
+
+The anomaly alone neither computes nor disproves equality of
+Maxwell coefficients after a suitable coupled cancellation.
+A valid joint vector/scalar regulator must preserve the
+rank-fixed but derivative-large base factors before its
+infrared limit. The exact finite quotient identity does not
+provide that regulated identity by itself. No continuum
+measure, nontriviality, or mass-gap conclusion follows here.

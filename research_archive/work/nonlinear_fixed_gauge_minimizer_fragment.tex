@@ -1,0 +1,417 @@
+% No preamble. Notebook 15 minimizer module. Unique labels: nm-.
+% Requires amsmath, amssymb, amsthm and a one-argument \norm macro.
+
+\section{A uniform local constrained Wilson minimum on the flat gauge slice}
+\label{nm-section}
+
+Fix an odd $L\ge3$, $M=L^j$, $\eta=M^{-1}$, final coarse scale one,
+and $0<\alpha<1$. The primary statement is on finite compatible
+periodic regulators. Constants may depend on $L$, dimension, the
+color norm, and $\alpha$, but not on $j$ or periodic volume. All
+transposes use the physical fine pairing $\eta^d\sum\tau(AB)$ and
+the corresponding coarse pairing; at complex fields they are
+bilinear transposes. In this module
+$\mathcal S(A)$ means the ordinary-potential action
+$\mathcal W_\eta(A)=\mathcal S_\eta(e^{i\eta A})$ of the force
+section, and $S_{\rm jet}=\mathsf S_\eta$. Write the average in its
+fixed-reference potential coordinate as
+\begin{equation}\label{nm-average}
+ \mathcal F(A)=QA+\mathcal R(A),\qquad Q=Q_M^{\rm st},\qquad
+ \mathcal R(0)=D\mathcal R(0)=0.
+\end{equation}
+The symbol $R$ without calligraphic font continues to denote the
+fixed flat scalar gauge projection. In particular, $R$ and
+$\mathcal R$ are different objects.
+
+\subsection{Two uniform estimates for the nonlinear constraint}
+\label{nm-average-estimates}
+
+The previously established nonlinear averaging ball gives a
+one-step dimensionless corrected map $F_L$ and physical map
+\begin{equation}\label{nm-one-step}
+ \mathcal F_h(A)=(Lh)^{-1}F_L(hA)=Q_hA+\mathcal R_h(A).
+\end{equation}
+Let $m_L$ bound the number of input bonds read by one output, and
+$N_L$ the number of outputs reading one input. On a fixed local
+complex neighborhood choose $K_0$ so that each matrix entry of
+$D(F_L-LQ_h)(X)$ has norm at most $K_0\norm{X}_\infty$.
+The corresponding remainder entries in physical coordinates are
+bounded by $K_0h\norm{A}_\infty/L$. With
+\begin{equation}\label{nm-local-constants}
+ D_\infty=\frac{m_LK_0}{L},\qquad
+ D_2=K_0\sqrt{m_LN_L}\,L^{d/2-1},\qquad
+ D_*=N_LK_0L^{d-1},\qquad S=\frac1{L-1},
+\end{equation}
+the physical transpose therefore satisfies
+\begin{equation}\label{nm-adjoint-one-step}
+ \norm{D\mathcal R_h(A)^T}_{\infty\to\infty}
+ \le D_*h\norm{A}_\infty.
+\end{equation}
+Indeed the transpose converts an ordinary column sum to a physical
+row sum with factor $(Lh)^d/h^d=L^d$. This factor is already
+included in $D_*$.
+
+Both $Q_h$ and its physical transpose are bounded-field
+contractions. If $a=\norm{A}_\infty$ belongs to the common nonlinear
+ball, the intermediate fields obey $\norm{A_t}_\infty\le2a$.
+The spacings $h_t=L^{t-j}$ satisfy $\sum_{t<j}h_t\le S$.
+Expanding the difference of the transposed nonlinear derivative
+product and its flat product thus proves
+\begin{equation}\label{nm-adjoint-composite}
+ \norm{D\mathcal R(A)^T}_{\infty\to\infty}
+ \le e^{2D_*aS}-1\le c_*a
+\end{equation}
+on a smaller fixed ball. The analogous derivative bounds in the
+bounded and physical Hilbert norms follow with $D_\infty$ and
+$D_2$. These are absolute physical row or column estimates, not
+inferences from the fine dimension. The local analytic expansions
+also make $A\mapsto D\mathcal R(A)^T$ holomorphic in this operator
+norm. Cauchy's estimate on a slightly larger common ball gives
+\begin{equation}\label{nm-adjoint-lipschitz}
+ \norm{D\mathcal R(A)^T-D\mathcal R(A')^T}_{\infty\to\infty}
+ \le c_{*,1}\norm{A-A'}_\infty.
+\end{equation}
+No bounded-field estimate for the gauge projection $\Pi$ is used.
+
+We also need a bound with two Hilbert directions, rather than just
+two bounded directions. Let $K_2$ bound the local bilinear Hessian
+$D^2F_L$ in the maximum norms of its inputs; it bounds the full
+second derivative, including its factor two. The scaling
+$D^2\mathcal F_h=(h/L)D^2F_L(hA)$, local Cauchy--Schwarz, and
+incidence counting give
+\begin{equation}\label{nm-hessian-one-step}
+ \left|\left\langle w,D^2\mathcal F_h(A)[B,C]\right\rangle_{Lh}\right|
+ \le k_2h\norm{w}_\infty\norm{B}_{2,h}\norm{C}_{2,h},
+ \qquad k_2=K_2N_LL^{d-1}.
+\end{equation}
+For clarity, replace each local input maximum by its local
+Euclidean norm. Summing the product over output bonds and applying
+Cauchy--Schwarz costs at most $N_L$; restoring the fine measure
+then converts $(Lh)^d(h/L)$ to the factor in
+\eqref{nm-hessian-one-step}.
+
+Let $P_t$ be the derivative of the nonlinear prefix through stage
+$t$, and $T_t$ the derivative of the suffix after stage $t+1$,
+both evaluated along the actual trajectory. The exact second-order
+chain rule is
+\begin{equation}\label{nm-hessian-chain}
+ D^2\mathcal F(A)[B,C]
+ =\sum_{t<j}T_tD^2\mathcal F_{h_t}(A_t)[P_tB,P_tC].
+\end{equation}
+The two prefix Hilbert norms are each at most $e^{2D_2aS}$ and the
+suffix transpose bounded-field norm at most $e^{2D_*aS}$.
+Pairing \eqref{nm-hessian-chain} with $w$ and using
+\eqref{nm-hessian-one-step} therefore proves the uniform form bound
+\begin{equation}\label{nm-hessian-composite}
+ \boxed{\quad
+ \left|\left\langle w,D^2\mathcal F(A)[B,C]\right\rangle_1\right|
+ \le k_2S e^{(4D_2+2D_*)aS}
+       \norm{w}_\infty\norm{B}_{2,\eta}\norm{C}_{2,\eta}.
+ \quad}
+\end{equation}
+
+\subsection{The exact reduced equation}
+\label{nm-reduction}
+
+Let $K=d^Td$, let $q=q_M$ be the Maxwell coarse precision, and let
+$H$ be the flat minimizing extension in the matched source gauge.
+The flat identities are
+\begin{equation}\label{nm-flat-identities}
+ QH=I,\qquad KH=Q^Tq,\qquad RD^TH=0.
+\end{equation}
+Set
+\begin{equation}\label{nm-slice-green}
+ \mathcal X=\ker Q\cap\ker(RD^T),\qquad
+ \mathcal C=\Pi\Gamma\Pi^T=\Gamma-DZD^T,
+ \qquad \Gamma=G_0-H(q+a_{\rm pen})^{-1}H^T.
+\end{equation}
+The established constrained-inverse identities give
+\begin{equation}\label{nm-constrained-identities}
+ Q\mathcal C=RD^T\mathcal C=\mathcal C Q^T=0,\qquad
+ \mathcal C K\xi=\xi\quad(\xi\in\mathcal X),\qquad
+ \mathcal C KH=0.
+\end{equation}
+On a real finite regulator, $\mathcal C$ is the positive
+variational inverse of $K$ on $\mathcal X$. Also
+$H^TK\xi=qQ\xi=0$. The semidefinite $q$ in these identities is
+not the positive auxiliary precision $q+a_{\rm pen}$.
+
+For coarse $B$ the exact local constraint chart is
+\begin{equation}\label{nm-chart}
+ A=\xi+H[B-\mathcal R(A)],\qquad \xi\in\mathcal X.
+\end{equation}
+It gives $\mathcal F(A)=B$ and $RD^TA=0$. Conversely, every small
+field satisfying these two conditions belongs to this chart,
+by taking $\xi=A-H[B-\mathcal R(A)]$. Its derivative in $\xi$ is
+$T_A=(I+HD\mathcal R(A))^{-1}$ restricted to $\mathcal X$.
+
+Write the ordinary-potential Wilson Euler derivative as
+\begin{equation}\label{nm-force}
+ E(A)=KA+N(A),\qquad N(A)=S_{\rm jet}^Tf_\eta(S_{\rm jet}A),
+\end{equation}
+where $S_{\rm jet}$ collects the finitely many local values and
+ordinary first differences used by the plaquette jet. Stationarity
+of the action in the chart is equivalent to
+$\mathcal C T_A^TE(A)=0$. The ordered inverse identity
+\[
+ T_A^T=I-D\mathcal R(A)^T
+       (I+H^TD\mathcal R(A)^T)^{-1}H^T
+\]
+and \eqref{nm-flat-identities}--\eqref{nm-chart} transform this
+condition exactly into
+\begin{equation}\label{nm-fixed-point}
+ \boxed{\quad
+ \xi=-\mathcal C N(A)
+ +\mathcal C D\mathcal R(A)^T
+       (I+H^TD\mathcal R(A)^T)^{-1}
+       \{q[B-\mathcal R(A)]+H^TN(A)\}.
+ \quad}
+\end{equation}
+In particular, the nonlinear constraint contributes the second
+term in \eqref{nm-fixed-point}; it cannot be omitted.
+
+\subsection{Uniform analytic contraction}
+\label{nm-contraction}
+
+Use the complete-field physical norm
+\begin{equation}\label{nm-norm}
+ \norm{A}_{\mathcal N_\alpha}
+ =\norm{A}_\infty+\norm{\nabla A}_\infty+[\nabla A]_\alpha.
+\end{equation}
+It controls the complete $C^\alpha$ norms of the jet, uniformly in
+$\eta$. Telescoping controls differences of $A$ at distances below
+one; its bounded norm handles larger distances. The flat extension
+and the constrained Green theorem proved above supply
+\begin{align}
+ H &: \ell^\infty_c\longrightarrow\mathcal N_\alpha,&
+ \mathcal C &: \ell^\infty_f\longrightarrow\mathcal N_\alpha,
+                                                        \label{nm-analytic-input-a}\\
+ \mathcal C S_{\rm jet}^T &: C^\alpha_f\longrightarrow\mathcal N_\alpha,
+ &q &: \ell^\infty_c\longrightarrow\ell^\infty_c.
+                                                        \label{nm-analytic-input-b}
+\end{align}
+The equal exponent in \eqref{nm-analytic-input-b} is essential.
+It uses the separate constrained biharmonic cancellation, including
+the fourth and fifth heat moments and the separation-dependent
+time split, not merely an estimate for $G_0$ or a theorem with
+loss of H\"older exponent.
+
+The transpose estimates for $H$ and its first differences give
+\begin{equation}\label{nm-transpose-input}
+ H^T:\ell^\infty_f\longrightarrow\ell^\infty_c,
+ \qquad H^TS_{\rm jet}^T=(S_{\rm jet}H)^T:
+       C^\alpha_f\longrightarrow\ell^\infty_c.
+\end{equation}
+For the second map the bounded input norm already suffices:
+the physical volume of a fine cell is fixed and the physical-cell
+Hilbert transpose rows of $S_{\rm jet}H$ are summable. Thus
+\eqref{nm-transpose-input} never differentiates a rough force
+coefficient.
+
+The Wilson jet calculation supplies a holomorphic function
+$f_\eta$ with $f_\eta(0)=Df_\eta(0)=0$ and the uniform estimates
+\begin{align}
+ \norm{f_\eta(S_{\rm jet}A)}_{C^\alpha}
+ &\le c_f\norm{A}_{\mathcal N_\alpha}^2,                 \label{nm-force-bound}\\
+ \norm{f_\eta(S_{\rm jet}A)-f_\eta(S_{\rm jet}A')}_{C^\alpha}
+ &\le c_f(\norm{A}_{\mathcal N_\alpha}+
+           \norm{A'}_{\mathcal N_\alpha})
+                 \norm{A-A'}_{\mathcal N_\alpha}.        \label{nm-force-lipschitz}
+\end{align}
+These estimates concern the coefficient before the outside
+transpose in \eqref{nm-force}.
+
+Shrink the common ball so that
+\begin{equation}\label{nm-neumann-smallness}
+ \norm{H}_{\infty\to\mathcal N_\alpha}
+       \norm{D\mathcal R(A)}_{\infty\to\infty}<\frac12,
+ \qquad
+ \norm{H^T}_{\infty\to\infty}
+       \norm{D\mathcal R(A)^T}_{\infty\to\infty}<\frac12.
+\end{equation}
+The first inequality makes \eqref{nm-chart} an analytic
+$\mathcal N_\alpha$ chart. Put $b=\norm{B}_\infty$ and
+$h_N=\norm{H}_{\infty\to\mathcal N_\alpha}$. Its contraction
+estimate gives
+\begin{equation}\label{nm-chart-estimates}
+ \norm{A(\xi,B)}_{\mathcal N_\alpha}
+ \le2(\norm{\xi}_{\mathcal N_\alpha}+h_Nb),\qquad
+ \norm{A(\xi,B)-A(\xi',B)}_{\mathcal N_\alpha}
+ \le2\norm{\xi-\xi'}_{\mathcal N_\alpha}.
+\end{equation}
+Define the coarse multiplier
+\begin{equation}\label{nm-multiplier}
+ m(A,B)=(I+H^TD\mathcal R(A)^T)^{-1}
+             \{q[B-\mathcal R(A)]+H^TN(A)\}.
+\end{equation}
+For $\norm{A}_{\mathcal N_\alpha},\norm{A'}_{\mathcal N_\alpha}\le r$
+in this chart, the preceding bounds imply
+\begin{equation}\label{nm-multiplier-bounds}
+ \norm{m(A,B)}_\infty\le C(b+r^2),\qquad
+ \norm{m(A,B)-m(A',B)}_\infty
+ \le C(b+r)\norm{A-A'}_{\mathcal N_\alpha}.
+\end{equation}
+For the first bound use inverse norm at most two,
+$\norm{\mathcal R(A)}_\infty\le Cr^2$, and
+$H^TN=(S_{\rm jet}H)^Tf_\eta$. For the second use the inverse
+difference identity and \eqref{nm-adjoint-lipschitz}; the change
+of the braces is $O(r\norm{A-A'})$, and the change of the inverse
+multiplies a quantity $O(b+r^2)$.
+
+Let $\Phi_B(\xi)$ denote the right side of
+\eqref{nm-fixed-point}, with $A=A(\xi,B)$. Then
+\begin{align}
+ \norm{\Phi_B(\xi)}_{\mathcal N_\alpha}
+ &\le C(r^2+rb+r^3),                                   \label{nm-contraction-size}\\
+ \norm{\Phi_B(\xi)-\Phi_B(\xi')}_{\mathcal N_\alpha}
+ &\le C(b+r)\norm{\xi-\xi'}_{\mathcal N_\alpha}.          \label{nm-contraction-lipschitz}
+\end{align}
+To check the constraint contribution, expand the difference of
+$D\mathcal R(A)^Tm(A,B)$ into its two factors and apply
+\eqref{nm-adjoint-composite}, \eqref{nm-adjoint-lipschitz}, and
+\eqref{nm-multiplier-bounds}; then use the bounded-input map
+$\mathcal C$ in \eqref{nm-analytic-input-a}. The force contribution
+uses \eqref{nm-analytic-input-b} and
+\eqref{nm-force-lipschitz}. Both contributions lie in $\mathcal X$.
+
+Choose a fixed small $\mathcal X$-ball and then $b_*>0$ so that its
+chart image stays in the preceding balls, \eqref{nm-contraction-size}
+maps it into itself, and \eqref{nm-contraction-lipschitz} is below
+one half. This constructs a unique small solution $\xi(B)$ for
+every complex $\norm{B}_\infty<b_*$. Uniform analytic contraction
+makes $\xi(B)$ and $A(B)$ holomorphic. The sharper bounds are
+\begin{equation}\label{nm-quadratic-remainder}
+ \norm{\xi(B)}_{\mathcal N_\alpha}\le Cb^2,
+ \qquad \norm{A(B)-HB}_{\mathcal N_\alpha}\le Cb^2,
+ \qquad \norm{A(B)}_{\mathcal N_\alpha}\le Cb.
+\end{equation}
+Indeed on $\norm{\xi}\le Kb^2$, after reducing $b_*$,
+\eqref{nm-chart-estimates} gives $r\le4h_Nb$. The right side of
+\eqref{nm-contraction-size} is then $C'b^2$. Take $K>2C'$, shrink
+$b_*$ again so that $Kb^2\le h_Nb$ and the Lipschitz bound is below
+one half, and use uniqueness in the original ball. The chart
+remainder $-H\mathcal R(A)$ proves the second estimate.
+If a complex coarse ball has distance $\delta$ from the boundary
+of the holomorphy ball and $\norm{A(B)}_{\mathcal N_\alpha}\le C_0$
+there, multivariable Cauchy gives, for $n\ge1$,
+\begin{equation}\label{nm-cauchy}
+ \norm{D^nA(B)[B_1,\ldots,B_n]}_{\mathcal N_\alpha}
+ \le C_0 n!\left(\frac e\delta\right)^n
+                    \prod_{i=1}^n\norm{B_i}_\infty.
+\end{equation}
+Use polyradii approaching $\delta/n$ and $n^n\le e^n n!$.
+
+\subsection{The real solution is a strict local minimum}
+\label{nm-minimum}
+
+For real fields the ordinary-coordinate Wilson Hessian has the
+form
+\begin{equation}\label{nm-action-hessian}
+ D^2\mathcal S(A)=K+S_{\rm jet}^TW(A)S_{\rm jet},
+ \qquad \norm{W(A)}_\infty\le C\norm{A}_{\mathcal N_\alpha}.
+\end{equation}
+This follows from the exact jet density whose quadratic Taylor
+part is the Maxwell density. It does not identify two different
+coordinate Hessians at a nonzero background.
+
+The flat full inverse's first-derivative energy bound gives
+\begin{equation}\label{nm-coercivity}
+ \norm{z}_{2,\eta}^2+\norm{\nabla z}_{2,\eta}^2
+ \le C_E\langle z,Kz\rangle_\eta\qquad(z\in\mathcal X).
+\end{equation}
+In fact both the gauge and averaging penalties in the positive
+full precision vanish on $\mathcal X$. Apply the uniform bound on
+$(I,\nabla)G_0(I,\nabla)^T$ to its square-root factorization.
+
+Let $z\in\mathcal X$ and $v=T_Az$. Differentiating the chart gives
+$v=z-HD\mathcal R(A)v$. The cross terms in its Maxwell energy
+vanish because $H^TKz=0$, while $q$ is positive semidefinite.
+Consequently
+\begin{equation}\label{nm-tangent-energy}
+ \langle v,Kv\rangle
+ =\langle z,Kz\rangle+
+   \langle D\mathcal R(A)v,qD\mathcal R(A)v\rangle
+ \ge\langle z,Kz\rangle.
+\end{equation}
+The uniform physical Hilbert bound $\norm{D\mathcal R(A)}_{2\to2}
+\le Cr$, together with the Hilbert bounds for $H$ and $\nabla H$,
+gives, after shrinking $r$,
+\begin{equation}\label{nm-tangent-hilbert}
+ \norm{v}_2\le2\norm{z}_2,\qquad
+ \norm{v}_2^2+\norm{\nabla v}_2^2
+ \le C\langle z,Kz\rangle.
+\end{equation}
+No fine Hilbert-to-pointwise bound is used here.
+
+Differentiate \eqref{nm-chart} once more. With
+$H_A=(I+HD\mathcal R(A))^{-1}H$ one obtains
+$A''=-H_AD^2\mathcal F(A)[v,v]$. Moreover,
+$H_A^TE(A)=m(A,B)$ by \eqref{nm-flat-identities} and
+\eqref{nm-multiplier}. The exact reduced Hessian is therefore
+\begin{equation}\label{nm-reduced-hessian}
+ \begin{split}
+ D_\xi^2[\mathcal S(A(\xi,B))][z,z]
+ ={}&\langle v,D^2\mathcal S(A)v\rangle\\
+ &-\langle m(A,B),D^2\mathcal F(A)[v,v]\rangle.
+ \end{split}
+\end{equation}
+By \eqref{nm-action-hessian}, \eqref{nm-tangent-energy}, and
+\eqref{nm-tangent-hilbert}, the first term is at least
+$(1-Cr)\langle z,Kz\rangle$. Equations
+\eqref{nm-hessian-composite}, \eqref{nm-multiplier-bounds}, and
+\eqref{nm-tangent-hilbert} bound the second term in absolute value
+by $C(b+r^2)\langle z,Kz\rangle$. Thus throughout a sufficiently
+small real chart,
+\begin{equation}\label{nm-strict-hessian}
+ D_\xi^2[\mathcal S(A(\xi,B))][z,z]
+ \ge\tfrac12\langle z,Kz\rangle
+ \ge c\norm{z}_{2,\eta}^2.
+\end{equation}
+
+\begin{theorem}[Uniform local minimum on the fixed flat gauge slice]
+\label{nm-theorem}
+For sufficiently small real coarse $B$, the analytic field $A(B)$
+constructed above is the unique stationary point in a fixed small
+chart of
+\[
+ \mathcal F(A)=B,\qquad RD^TA=0.
+\]
+It is a strict local minimum of the normalized Wilson action on
+that chart. Its radius, the bounds \eqref{nm-quadratic-remainder},
+the analytic derivative estimates \eqref{nm-cauchy}, and the reduced
+Hessian bound \eqref{nm-strict-hessian} are independent of
+refinement and compatible periodic volume.
+\end{theorem}
+
+\begin{proof}
+The contraction supplies the unique small stationary field. The
+converse chart following \eqref{nm-chart} includes every small
+feasible field in the fixed gauge slice. Integrating the positive
+Hessian \eqref{nm-strict-hessian} along a line segment in the real
+$\xi$-chart proves strict local minimality and local uniqueness.
+\end{proof}
+
+\subsection{Scope and normalization}
+\label{nm-scope}
+
+The statement concerns the corrected fixed-reference constraint
+and a fixed flat gauge condition. A separate gauge-orbit argument
+is required to transfer it to an unrestricted constrained minimum
+or to a constraint formulated with ordinary block averages. It
+does not assert a minimum among large fields or a nonflat source
+gauge identification.
+
+In dimension four the coupling-free action used here agrees with
+the deposited Wilson normalization: Raw I:464--479 puts $g^{-2}$
+outside the sum of $1-\operatorname{Re}\tau(P)$, and
+I:12756--12760 specifies the physical trace pairing. The source
+left-exponential Hessian at a nonzero background is a different
+coordinate Hessian from the ordinary-potential Hessian used here;
+the latter has been derived directly from the same action.
+
+On the infinite lattice the same uniformly local maps can define
+bounded stationary fields, but bounded fields generally have
+infinite total action. Without further finite-energy hypotheses,
+one must formulate stationarity and admissible local or decaying
+comparisons rather than a minimum of that total action. This
+module makes its minimum claim on finite periodic regulators.

@@ -1,0 +1,140 @@
+Independent audit of the actual pinned-ghost heat prefix
+17 October 2026
+
+Audited work/pinned_ghost_prefix_fragment.tex in full, with the
+actual based-ghost walk formula in actual_heat_comparison_fragment.tex
+and the preceding stationary-jet result in
+cartan_determinant_moment_fragment.tex.
+
+RESULT: Mathematical pass. Two scope clarifications were requested
+and acknowledged by the root:
+  (i) state explicitly that h_K is taken in a joint infinite-lattice
+      system at fixed K, rather than a finite torus with winding;
+ (ii) say "the same first two background jets" of the based operator
+      for every M, rather than implying an actual globally defined
+      nonzero affine stationary family.
+These do not change the proof or constants. No output was edited.
+Both requested clarifications were subsequently verified in the
+saved fragment opening. The final prefix fragment passes as saved.
+
+1. Actual operator and normalization
+
+In a charge-q color sector, D_b^T D_b is 8I minus magnetic adjacency
+on noncenter sites. The diagonal remains 8 next to a pin: this is
+Dirichlet killing, not a reflected walk with reduced degree.
+The formal current-link probe is exp(i t x_nu H/K^2). On a closed
+walk its phase is exp(i q t Area/K^2), independent of the starting
+point. The quadratic coefficient of this phase is
+-q^2 Area^2/(2K^4). Multiplication by the definition -2[t^2] gives
+the positive factor q^2/K^4. Summing charge multiplicities produces
+C_H, with no further real-versus-complex factor.
+
+The output block has K^4 residue classes, one of which is pinned.
+The unpinned comparison uses all K^4; their count cancels K^-4.
+Thus the stated unpinned h_infinity has exactly the final-coordinate
+normalization of the actual ghost term. In particular its limiting
+constant is alpha_g=C_H/(48 pi^2), and integrating to K^2 gives
+2 alpha_g log K=C_H log K/(24 pi^2).
+
+The actual stationary section has the same first and second probe
+jets as this explicit rooted affine candidate for every old M.
+Based gauge conjugation leaves the block diagonal color trace
+unchanged. Since the quadratic heat coefficient depends only on
+those two operator jets, the resulting h_K is the actual one for
+every M and every compatible structural limit. No M-dependent
+microscopic-coordinate count or time rescaling is introduced.
+
+2. Exact bridge-area calculation
+
+For one coordinate, conditioned on return, the positive and negative
+Poisson counts equal m and their times are independent uniform
+samples. The conditional mean count is s I_1(2s)/I_0(2s).
+At fixed m the signed point process has diagonal second-moment
+mass 2m du/s and off-diagonal density -2m du dv/s^2. Integrating
+gives the stated bridge covariance and v_s=2 I_1/I_0.
+
+Coordinates remain independent after conditioning each to return.
+There are almost surely no simultaneous jumps in distinct axes.
+The area variance is therefore v_s^2 times
+  integral_0^s (u-u^2/s) du
+  -s^-1 integral_0^s integral_0^s (min(u,v)-uv/s) du dv
+which equals v_s^2 s^2/12. Multiplication by the four-coordinate
+return probability proves
+  h_infinity=(C_H/3) s^2 e^-8s I_0(2s)^2 I_1(2s)^2.
+As a separate normalization check, its small-s term is C_H s^4/3,
+matching the eight oriented unit-area length-four loops divided
+by 4!.
+
+3. Asymptotic estimates
+
+The two Fourier integral representations and the elementary
+quadratic bounds on 2(1-cos theta) give
+  e^-2s I_j(2s)=(4 pi s)^-1/2+O(s^-3/2), j=0,1.
+Their derivatives are O(s^-3/2). Substitution in the exact product
+gives h_infinity=alpha_g+O(1/s) and |s h_infinity'|<=B.
+The series at zero gives O(s^4), so every integral used below
+converges with the stated error. No unproved monotonicity of the
+Bessel product is needed.
+
+4. Pinning comparison
+
+For a length-n closed walk with n>=1, list its n cyclic vertices,
+including the starting vertex but excluding its duplicate endpoint.
+Each vertex excludes at most one starting residue modulo K.
+Therefore r_K<=min(n,K^4), including the residue with a pinned root.
+Area is invariant under translation of a closed walk.
+
+The difference of the unpinned and killed block traces is thus
+exactly the nonnegative generating series written in the fragment.
+Replacing r_K by n gives
+  0<=h_infinity-h_K
+    <=K^-4 (s h_infinity'+8s h_infinity).
+The right side is nonnegative because it is itself a generating
+series with nonnegative coefficients; no sign of h_infinity'
+is assumed.
+
+Integrating with ds/s gives
+  K^-4 {h_infinity(T)+8 integral_0^T h_infinity(s) ds}.
+At T=K^2 this is O(K^-2), uniformly in K>=1.
+The zero-length walk has zero area, so it causes no exception.
+At K=1 the based space is empty and the bounds remain harmless.
+
+5. Fixed finite part and intermediate band
+
+The definition of gamma_g is absolutely convergent. The tail of
+(h_infinity-alpha_g)/s beyond K^2 is O(K^-2). Adding the pinning
+estimate gives the precise prefix law in the theorem, with one
+K-independent finite part gamma_g.
+
+For s>=1, the pinning bound is O(s/K^4), while the unpinned error
+is O(1/s). At s=K^2 u this is exactly
+  O((K^2 u)^-1+u/K^2), K^-2<=u<=1.
+The factors and the comparison to a vector contribution of
+10 alpha_g in the specified reference convention are consistent.
+
+6. Scope and document fidelity
+
+The walk shapes in this proof are closed in Z^4. A finite periodic
+trace also contains winding walks, and a nonzero affine magnetic
+family is not a periodic analytic family through zero. Thus this
+proof is for the infinite structural-system coefficient obtained
+after the earlier fixed-K local limit, not a uniform finite-torus
+prefix assertion. The requested opening clarification makes this
+explicit.
+
+The fragment proves a heat-time prefix through K^2, not the entire
+ghost determinant. In particular it does not bound the integral
+after K^2, infer a full determinant sign or establish the coupled
+vector/ghost drift. Its error constant is genuinely independent
+of M and of the structural limit because the relevant ghost jets
+are identical there.
+
+Static TeX check: 16 unique labels, no missing internal references,
+no bare quad/qquad escapes or invalid control characters. No
+compilation performed.
+
+Additional proposed extension checked separately in discussion:
+the root's Neumann-cube pinned gap of order K^-4, conditional bridge
+fourth-moment estimate, and Cauchy-Schwarz tail bound would control
+the entire ghost integral after K^4. That new result is not used
+to certify this prefix fragment and requires its own saved proof.

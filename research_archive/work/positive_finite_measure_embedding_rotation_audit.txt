@@ -1,0 +1,191 @@
+INDEPENDENT AUDIT: POSITIVE FINITE-MEASURE EMBEDDING
+17 October 2026. Rotation audit. No outputs or candidate edits.
+
+Audited file: work/positive_finite_measure_embedding_research.txt,
+Sections1--9, especially normalized output-orbit acceptance and
+literal local-germ matching.
+
+STATUS: mathematical and final-fragment pass under the stated local
+source-chart inputs. The requested normalization clarification is now
+explicit: in Section8's homogeneous identification gamma_j=g_j^(-2).
+The measure-theoretic Markov embedding in Sections3/5 allows arbitrary
+auxiliary g_j, but the normalized homogeneous formula (4.3) does not.
+No other correction found.
+
+1. Global completion and orbit normalization
+
+The selected local group mean is completed using its original reference
+path and original good set, not replaced by a different analytic mean.
+Under endpoint gauges, U_j T^-1 transforms by left-endpoint conjugation.
+Thus the branch condition is invariant and both the analytic branch and
+fallback T transform with the correct two endpoints. Composition
+therefore gives a Borel full ordinary map F with exact gauge covariance.
+This changes only the specified coarse observable of the original
+Wilson measure, not the fine measure itself.
+
+For the center-based gauge group H_R, each P_R(U;y,x) becomes
+P_R(U;y,x)u(x)^-1. Product Haar gives the exact orbit normalization
+c(g)^n_s for every fine configuration, including outside the local chart.
+The pointwise Markov kernel is normalized and preserves F exactly.
+Its acceptance/rejection pushforwards consequently add to the full
+pushforward for any finite positive input.
+
+For H_R-invariant mu, changing variables under the compact gauge group
+does give K_g^*mu=c(g)^(-n_s)e^(-G_R/g^2)mu. It would be false without
+the invariance or the stated input averaging. The manuscript keeps this
+distinction.
+
+2. Local coarea normalization
+
+The actual local pivot chart has a fixed positive orientation.
+The displayed factors multiply to the inverse nonlinear pivot
+Jacobian; no unsupported determinant of a rectangular retained map
+is used. Fine Haar densities contribute h_0^n_e, group delta contributes
+h_0^(-n_c), hence the net power h_0^(n_e-n_c).
+The substitution z=g xi gives g^n_z with n_z=dim(g)(n_e-n_c).
+The exact compact-gauge normalization c(g)^(-n_s), the background
+pivot factor and the Gaussian determinant remain visible.
+
+The local sector is bounded by the true pushforward because the
+whole gauged measure has exactly the same F pushforward. It is NOT
+because the gauged density is pointwise below the original density.
+The candidate uses the correct argument.
+
+The Haar-ac projection on fine measures is positive and linear.
+Discarding the singular part only from the good operator is legitimate;
+it remains in the remainder. Local change of variables applies to
+measurable densities almost everywhere by Tonelli. The positive real
+homogeneous formula requires literal containment of every reconstructed
+field in the actual input density domain. This requirement is explicit.
+
+3. Normalized output average: the important domination proof
+
+Let nu=F_*mu and write its Haar-ac part as f m_C. Gauge covariance
+and full input invariance imply invariance of nu and of its AC part.
+One may choose an invariant nonnegative density f by compact averaging.
+
+The local inequality nu>=1_D ell_mu m_C implies f>=ell_mu a.e. on D.
+Haar/Fubini therefore yields, for a.e. W and a.e. coarse gauge v,
+theta(W^v)ell_mu(W^v)<=theta(W^v)f(W).
+After orbit integration, division by m_theta(W)>0 gives a_mu(W)<=f(W).
+This remains valid without a uniform lower bound on m_theta. On its
+zero set define a_mu=0. Thus A_g mu is finite, invariant and dominated
+by the actual pushforward. Positivity, linearity and the exact
+remainder follow.
+
+In particular, the manuscript does NOT divide an averaged measure
+inequality by a variable orbit weight. It compares the invariant AC
+density before dividing. This is the essential substantive point.
+The resulting remainder need not equal the literal Markov rejection;
+the manuscript correctly distinguishes these two decompositions.
+
+4. Finite orbit overlap and germ agreement
+
+With gauge convention U_xy^v=v_xU_xy v_y^-1, write v_x=h_x c,
+c=v_o, h_o=I. The displayed recursion
+ h_y=(W_xy^v)^-1 h_x W_xy^c
+is correct. Iterating on a spanning tree gives
+||h_x-I||<=C D_tree epsilon. A single small logarithm of every h_x
+then exists. The path h_x(t)=exp(i t lambda_x) stays in the Ward
+domain after the stated shrink epsilon<=c r/(1+D_tree).
+The constant conjugation c is handled separately in an invariant
+matrix norm, with finite color-coordinate equivalence constants.
+
+Hence endpoint equality of local densities follows by integrating
+the actual infinitesimal Ward identity on a controlled path.
+It is not inferred merely from orbit membership.
+If theta is supported in this smaller ball, every contributing
+orbit endpoint has the same ell value. The normalized orbit average
+therefore equals ell exactly on a still smaller neighborhood.
+No analyticity of the real cutoff theta is required for this germ
+identity. The graph-diameter-dependent radius is explicitly retained.
+
+5. Histories, factors and scope
+
+The sum of the two positive linear operators is exactly F_*.
+Expanding a finite product gives the exact sum over all binary
+histories, including raw mass. No estimate of the remainder is needed
+for this algebra, and none is falsely inferred. Signed invariant
+observable measures can be treated by their positive/negative parts.
+
+For the homogeneous density, the substitution and Gaussian precision
+in (4.3) use the same physical coupling as its action weight:
+ gamma_j=g_j^-2. With that convention the extraction identity
+ gamma_(j+1)=gamma_j-beta_j and
+ Z_(j+1)=Z_j N_j exp(c_j)
+has the correct signs. Replacing E_raw by E_raw+c requires
+Z to be multiplied by exp(-c), also as stated.
+
+Finite-stage feasibility follows from finite-dimensional continuity,
+small real windows, and gT(g)->0. It does not imply the particular
+tuned family already enjoys a volume-uniform domain, nor that a
+retained-window complementary history is rare. These limitations
+remain explicit. The output is an exact full-measure bookkeeping
+and local-germ embedding theorem, not a full large-field RG estimate.
+
+6. Additional independent check: combining bare Peierls and fixed boxes
+
+The root's proposed fixed-box combination is valid with explicit
+geometry. In d=4, the boundary cubical complex of [0,R]^4 is a
+cubical S^3 and is simply connected. Fix a boundary spanning tree.
+Every remaining boundary edge, after the exact tree gauge, is the
+holonomy of a fixed fundamental loop, which is a product of finitely
+many conjugates of boundary plaquettes or their inverses. If A_R is
+the maximal number of factors in chosen fillings, then
+ ||V_e^g-I||<=A_R max_(boundary p)||U_p-I||.
+Choose epsilon below the fixed conditional-minimizer neighborhood
+radius divided by A_R.
+
+For boxes with disjoint closures, condition on all edges outside
+their interiors. No plaquette depends on interior edges of two boxes.
+Their conditional bare Wilson laws are consequently independent.
+Their boundary gauges are deterministic measurable functions of
+the conditioned variables and preserve the exact conditional Haar laws.
+
+Let a=min(1,C exp(-cT^2)) be the fixed-box normalized tail bound.
+Boundary-bad means some boundary plaquette has ||U_p-I||>epsilon.
+There are n_partial=24 R^3 such plaquettes in [0,R]^4.
+The all-prescribed-plaquette bound of
+full_wilson_large_field_peierls_research.txt gives, for k selected boxes,
+ P(all k boundaries bad)
+ <=[n_partial z_b(g,epsilon/sqrt(2))^(1/Q_b)]^k,
+because disjoint closures make the chosen plaquettes distinct.
+
+For the mixed failure event (boundary bad OR boundary good and
+forest-coordinate tail), conditional independence and expansion over
+the boundary-bad subset yield the exact bound
+ [a+n_partial z_b(g,epsilon/sqrt(2))^(1/Q_b)]^m
+for m prescribed boxes. This is a concrete full-measure local
+gauge/minimizer-window estimate. It remains an unconstrained fixed-box
+result, not a bound on the actual nonlinear RG constraint fiber.
+
+7. Final fragment fidelity and literal-window Ward addendum
+
+Read work/full_wilson_positive_split_fragment.tex in full after the
+normalization clarification. FINAL PASS.
+
+The fragment explicitly sets gamma_j=g_j^-2 for homogeneous matching.
+It additionally makes the local Ward application precise: the retained
+window is a product of invariant color balls, and extra indicators are
+absent or separately covariant. This is the correct hypothesis.
+For a small coarse gauge k, the physical branch transforms by its
+block-constant lift. Constraint covariance and uniqueness give the exact
+chart intertwining Phi_(V')(D_k z)=R_k Phi_V(z). Each retained source
+adjoint is orthogonal with determinant one (the compact group is
+connected), so the real sharp window and Lebesgue measure are preserved.
+The Haar/pivot density then transforms by the actual change of variables.
+This proves literal real-sector covariance before its analytic Ward
+continuation; there is no differentiated moving-boundary omission.
+
+The abstract positive split remains valid for an arbitrary measurable
+sector, while germ preservation is asserted only under these actual
+covariance hypotheses. This distinction is mathematically necessary
+and is retained in the fragment.
+
+All other substantive statements and factors match the independently
+audited research: exact compact orbit normalization, invariant AC
+density domination, finite tree-path margin, raw mass and vacuum signs,
+literal chart containment, and the remaining volume-uniform H2 gap.
+No correction requested.
+
+

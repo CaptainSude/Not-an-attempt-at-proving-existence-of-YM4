@@ -1,0 +1,147 @@
+% Candidate strengthening of Notebook 12; requires independent audit.
+% Prefix ss-. Depends on rd heat estimates and flat alias notation.
+\section{Equal-exponent Schauder bounds and the scalar inverse}
+\label{ss-section}
+
+The positive H\"older loss in the preceding right-divergence
+theorem is sufficient for the displayed source estimates. It is
+not necessary for a fixed exponent strictly between zero and one.
+The following refinement is useful for nonlinear elliptic equations,
+where an exponent loss at every iteration would not close a fixed
+point argument.
+
+\begin{theorem}\label{ss-equal-exponent}
+For every fixed $0<\alpha<1$, the homogeneous flat operators obey
+\begin{equation}\label{ss-main}
+ N_{\alpha,\varpi}(GD^*\lambda)
+       \le C_\alpha\norm{\lambda}_{\alpha,\varpi},
+ \qquad G\in\{G_0,G_\pi^J,G_1^J\}.
+\end{equation}
+The spatial exponent is sufficiently small, and the current is in
+the common ball for the $N$-to-$N_\alpha$ estimates established
+above. Constants are uniform in refinement and compatible volume.
+There is no uniform assertion as $\alpha$ tends to zero or one.
+\end{theorem}
+
+\begin{proof}
+Use $G_0=G_m+R_m$ from \eqref{rd-massive-split}.
+Equation \eqref{rd-remainder-bound} already controls $R_mD^*$
+from bounded input into $N_\alpha$ for every $\alpha<1$.
+Only the gradient H\"older member of $G_mD^*$ needs a new
+argument. The heat moment and exact row cancellation, with
+$\gamma=\alpha$, give
+\[
+ \norm{D^2e^{-t\mathcal L}\lambda}_{\infty,\varpi}
+       \le Ct^{-1+\alpha/2}\norm{\lambda}_{\alpha,\varpi},
+ \qquad
+ \norm{D^3e^{-t\mathcal L}\lambda}_{\infty,\varpi}
+       \le Ct^{-3/2+\alpha/2}\norm{\lambda}_{\alpha,\varpi}
+\]
+for $0<t\le1$, including times below the mesh scale.
+For two fine output sites in a fixed collar at distance
+$0<r\le1$, estimate their second-derivative difference by the
+first bound for $t<r^2$, and by $r$ times the second for $t\ge r^2$.
+The finite path used for this difference stays in a fixed enlarged
+collar, so its weight comparison costs only a fixed constant.
+Consequently the difference after integrating the massive heat
+kernel is bounded, divided by the input norm, by
+\begin{align}
+ C\int_0^{r^2}t^{-1+\alpha/2}\,dt
+ +Cr\int_{r^2}^1t^{-3/2+\alpha/2}\,dt+Cr
+ &\le C\left(\frac2\alpha+
+                     \frac2{1-\alpha}+1\right)r^\alpha.
+ \label{ss-split-integral}
+\end{align}
+The last term is the large-time massive tail, using its third
+derivative bound. Distances above one are controlled by the
+supremum bound. The latter uses
+$\int_0^1t^{-1+\alpha/2}dt=2/\alpha$ for the gradient and the
+integrable first heat derivative for the field. This proves the
+baseline assertion. It improves the preceding argument by
+splitting the time integral for each output separation before
+taking the H\"older supremum, rather than integrating a fixed
+H\"older operator norm down to zero time.
+
+The current transfer is exactly \eqref{rd-current-transfer}:
+the baseline datum is in $N_\alpha$, and the perturbation maps
+$N$ to $N_\alpha$ with a strict contraction in $N$. Its radius
+does not depend on the initial datum constant. Periodic extension,
+complete weighted fields and smooth localization work as before.
+\end{proof}
+
+\subsection{A separately normalized scalar statement}
+
+Let
+\[
+ G'=(\mathcal L+Q_0^*a'Q_0)^{-1},\qquad
+              0<a'_-\le a'\le a'_+<\infty,
+\]
+where the distinct scalar penalty ranges in a fixed compact
+positive interval. This hypothesis is explicit: no unprinted
+scale-dependent scalar penalty is assigned a value here.
+With the scalar aliases $a_r$, put
+\begin{equation}\label{ss-scalar-denominator}
+ A=a_0a_0^-,\quad
+ R_{s,1}=\sum_{r\ne0}\frac{a_ra_r^-}{P_r},\quad
+ \widehat R_{s,1}=a'^{-1}+R_{s,1},\quad
+ D_{s,1}=A+P_0\widehat R_{s,1}.
+\end{equation}
+The canceled scalar Woodbury formula is
+\begin{align}
+ G'_{00}&=\widehat R_{s,1}/D_{s,1},\nonumber\\
+ G'_{0s}&=-a_0^-a_s/(P_sD_{s,1}),
+ &G'_{r0}&=-a_r^-a_0/(P_rD_{s,1}),\nonumber\\
+ G'_{rs}&=\frac{\delta_{rs}}{P_r}
+       -\frac{P_0a_r^-a_s}{P_rP_sD_{s,1}},
+ &&r,s\ne0.
+ \label{ss-scalar-formula}
+\end{align}
+These formulas extend across $P_0=0$; no singular factor $1/P_0$
+remains. They follow by the rank-one inverse identity away from
+$P_0=0$ and analytic continuation. On the real compact chart,
+$D_{s,1}\ge A\ge c>0$. Alias Parseval bounds and the high-alias
+gap give uniform derivative bounds, so $D_{s,1}$ remains bounded
+away from zero on a common complex strip. The constants may
+depend on $a'_-,a'_+$.
+
+Subtract the scalar massive inverse $G_m=(\mathcal L+1)^{-1}$.
+The high diagonal has exactly the improved heat representation
+\eqref{rd-high-remainder}. All other terms in
+\eqref{ss-scalar-formula} have bounded central coefficients and
+high output vector $a_r^-/P_r$. This vector has uniform absolute
+alias summability after $1+\alpha$ physical differences when
+$\alpha<1$: the bound
+$|a_r|\le C\prod_\nu(1+|r_\nu|)^{-1}$ gives a dyadic shell sum
+bounded by $C(1+n)^{d-1}2^{-n(1-\alpha)}$. One right derivative
+leaves the input row bounded in alias $\ell^2$, since
+$|u_ra_r/P_r|\le C|a_r|/(1+|r|)$ for high aliases.
+The undifferentiated input rows have the same property.
+Uniform cell Fourier conversion, periodic gluing and contour
+shifting therefore give
+\begin{equation}\label{ss-scalar-remainder}
+ N_{\alpha,\varpi}\bigl((G'-G_m)D^*f\bigr)
+       \le C_\alpha\norm{f}_{\infty,\varpi}.
+\end{equation}
+The bounded central massive subtraction is included in this
+estimate. Only the complete reconstructed operator is periodized
+and shifted; the individual central pieces need not be periodic.
+
+Applying the same massive cancellation proof establishes
+\begin{equation}\label{ss-scalar-right-divergence}
+ N_{\alpha,\varpi}(G'D^*\lambda)
+       \le C_\alpha\norm{\lambda}_{\alpha,\varpi},
+                       \qquad0<\alpha<1.
+\end{equation}
+Using instead the preceding positive-loss proof also gives
+$N_{\beta,\varpi}(G'D^*\lambda)
+\le C_{\beta,\gamma}\norm{\lambda}_{\gamma,\varpi}$ for
+$0\le\beta<\gamma<1$. This proves the scalar analytic estimate
+for the stated penalty normalization. Application to a separately
+specified source penalty requires verifying its uniform positive
+interval. It neither replaces $G'$ by the one-form $G_0$ nor
+identifies their gauge projections.
+
+Equal H\"older exponents strictly between zero and one in
+\eqref{ss-main} do not assert a Lipschitz-gradient endpoint or a
+second-difference bound on arbitrary bounded forcing. The earlier
+endpoint counterexample remains applicable to those other claims.

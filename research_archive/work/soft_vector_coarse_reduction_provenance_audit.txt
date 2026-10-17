@@ -1,0 +1,86 @@
+SOFT VECTOR COARSE REDUCTION: INDEPENDENT PROVENANCE AUDIT
+18 October 2026.
+
+Audited:
+  work/soft_vector_coarse_reduction_research.txt, Sections 1--8;
+  work/soft_vector_coarse_reduction_fragment.tex, full fidelity;
+against the corrected ordered-Laurent proof in
+  work/covariant_hessian_relative_vertices_research.txt.
+
+RESULT: PASS with the scope stated in the current files. No formula
+correction requested. In particular, the O(1) conclusion is for the
+actual local affine Maxwell coefficient on the chosen infinite joint
+structural systems, not a uniform full nonlinear stationary-response
+theorem and not arbitrary actual finite winding kernels.
+
+1. Exact algebra and signs.
+With T=DJ, V=Q_B+TT^T, Woodbury gives
+  I-T^T V^-1 T=(I+T^T Q_B^-1 T)^-1.
+The determinant lemma gives det Q_B=det V det S, so its contribution
+to the actual normalized correction is -1/2 logdet S. The scalar
+identity contributes +logdet M_s. Equation (2.4), and the fragment's
+four-factor display, consequently have the correct signs and powers.
+No based/massless scalar determinant is silently inserted.
+
+2. The coarse spectrum.
+The proved bound D0D0^T<=Delta_1<=C_Delta Q_B,0 yields
+  ||Q_B,0^-1/2 D0J0||^2<=C_Delta.
+This proves S0>=1/(1+C_Delta), independently of its number of rows.
+The positive DJ update also preserves the actual finite flat gap
+and permits min--max for its finite flat heat estimate.
+
+3. Spatial estimates.
+On the chosen infinite system, q_M has both a zero constant and a
+zero linear momentum jet. This, together with its uniform analytic
+strip, proves the stated fine twist estimate; near zero its first
+derivative is O(|p|), and away from zero the positive scalar lattice
+symbol controls the bounded derivative. The O(mu) corrected average
+and its O(theta mu) twist give an O(theta mu^2) coarse correction.
+Hilbert-valued Bloch bounds then give operator-valued block kernels
+without a K^4 entry count. The explicit periodization qualification
+is necessary and is retained in both texts.
+
+4. Actual/auxiliary distinction.
+The auxiliary family retains S_M and the full relative-coordinate
+Hessians. Its equality to the actual residual completion is used only
+through the already established two affine on-shell jets:
+lambda=0, the relevant action currents vanish, and qD_c=0. Then
+C-Cbar=D_cZ gives C^TqC=Cbar^TqCbar to exactly that order.
+No off-shell residual equality or uniform stationary response is used.
+
+5. Physical relative vertices.
+The repaired Hessian proof uses q=d0^T H0 d0, obtained by two ordered
+Laurent divisions and BOTH flat moments. Its symmetric covariant
+completion, rather than a false common difference-square expression,
+gives the stated Z/E decomposition. The mu factors supply all needed
+energy legs. The corrected Cbar and its first two physical derivatives
+are O(mu); its two copies therefore cancel the possible mu^-2
+resolvent scale. The ordinary coarse-output derivatives and coarse
+action vertices enter only through their previously proved local
+physical Banach bounds.
+
+The potentially large derivative of DJ is genuinely avoided:
+R=D^T V^-1 D is differentiated first, keeping J and its derivatives
+outside it. Each D' costs mu and each bare inverse leg costs at most
+mu^-1; the Hessian insertions have the relative energy form. All
+terms in the second response therefore remain uniformly bounded.
+The full source/endpoint tree, not only decay in the source
+separation, is needed and is explicitly retained.
+
+6. Local log density.
+For log S=integral[(1+t)^-1 I-(S+t)^-1]dt, differentiating twice
+produces exactly the ordered expression (7.7). Its first term has
+two resolvents and its other two have three, hence the uniform
+(1+t)^-1 weighted resolvent estimate is integrable. The root block
+is never cycled through these products. The resulting density
+kernel has decay in tau(0,x,y), making the linearly growing affine
+source norms summable. A fixed color fiber, not the fine K^4 fiber,
+is traced here.
+
+7. Fidelity and boundary.
+The fragment preserves all the preceding distinctions, including
+the corrected Laurent factorization, arbitrary finite winding caveat,
+actual affine matching only through degree two, source-rooted log
+formula and signs. It does not claim the remaining fine soft-pair
+comparison, its logarithmic coefficient, or its sign.
+No output or other fragment was edited by this audit.

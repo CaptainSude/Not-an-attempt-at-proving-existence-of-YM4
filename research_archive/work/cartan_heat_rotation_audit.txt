@@ -1,0 +1,143 @@
+INDEPENDENT AUDIT OF THE NOTEBOOK33 HEAT AND CONTINUUM REFERENCE
+17 October 2026.
+
+Read after_notebook33_state.txt, actual_heat_comparison_fragment.tex,
+massive_cartan_reference_fragment.tex, and the relevant density/probe
+normalizations in the GDD/CDMOM fragments. This audit checks the
+heat representation, continuum normalization and actual ghost
+short-time proof. It takes the separately developed stationary-jet
+identification as its upstream input; it does not replace the
+effective S_M Hessian by the bare action.
+
+RESULT: these statements pass within their stated scope. The actual
+heat identity is fixed-K, and the new uniform estimate in the read
+fragment is only the ghost ultraviolet part.
+
+1. Proper-time and Duhamel normalization
+
+For P(t)=P0+tP1+t^2P2+..., the coefficient of the heat kernel is
+one negative P2 insertion plus the positive ordered two-P1
+insertion. There is no extra factor two: P2 is already the
+coefficient of t^2, not the second derivative.
+
+The proper-time identity for the normalized logarithm has a minus
+sign. Thus the actual density weights 2 log G-log V+log P give
+the heat integrand Tr e^-sV-2 Tr e^-sG, plus the coarse logarithm.
+The scale substitution s=K^2u leaves ds/s unchanged.
+
+The fixed-K gap and exponential locality justify this identity
+also on the polynomial stationary jets. More explicitly, bounded
+distance conjugation gives an L2 semigroup bound after making the
+conjugation error smaller than the flat gap. Entry/Schur bounds
+can have an additional fixed-K constant; the final displayed
+C_K(s+s^2)e^-c_Ks allows that constant. Smaller spatial weights
+absorb the polynomial growth of the one/two inserted vertices
+after anchoring at the root block. This controls both the
+small-time ds/s integrability and the large-time tail.
+
+No nonzero unbounded affine background operator is needed.
+One first uses compact sources and then the exponentially
+summable derivative kernels to pass their finite-order jets.
+Nor does the argument supply a uniform K-dependent spectral gap.
+
+2. Continuum magnetic reference
+
+The scalar diagonal Landau heat trace is
+ (4pi s)^-2 (qfs/sinh(qfs)).
+The two vector spin eigenvalues +/-2qf and two zeros give
+2+2cosh(2qfs). With determinant weights -1/2,+1, the
+zero-spin part cancels the scalar ghost, leaving precisely
+the stated proper-time integrand with cosh(2qfs).
+
+The expansion (x/sinh x)cosh(2x)=1+(11/6)x^2+O(x^4)
+therefore yields
+ beta_ref=11 C_H/(48pi^2) E1(m^2 epsilon^2)
+when beta=2[f^2]. The finite-part estimate and the fixed
+regulator-change estimate follow from integrating du/u
+between the displayed lower limits. The final-unit change
+uses block volume K^4, curvature f/K^2 and s=K^2u; it
+introduces no further K^4 in the extracted coefficient.
+
+Complexified adjoint charge multiplicities do not double the
+real trace. With tau=Tr_fund/N and tau(H^2)=1,
+C_H=sum_(i,j)(h_i-h_j)^2=2N^2, giving the stated SU(2)
+one-color coefficient 11/(3pi^2) of log K.
+
+For real |f|max|q|<m^2, the lowest massive vector energy is
+positive and the differentiated integrand has a common
+exponential majorant on a smaller real interval. The fragment
+correctly avoids claiming complex analyticity at a nonzero
+constant field. None of these continuum calculations identifies
+the constrained lattice determinant with this reference.
+
+3. Actual pinned ghost ultraviolet estimate
+
+The actual scalar domain is zero at every K-center. Consequently
+G_q=8I-A_q on noncenter sites, retaining diagonal 8 also adjacent
+to a removed center. This is the Dirichlet restriction of the
+full covariant gradient norm, not the graph Laplacian of the
+induced noncenter graph with reduced degrees.
+
+Each closed lattice walk has magnetic phase exp(iqt Area/K^2).
+The constant part of the affine potential cancels around a
+closed walk. Extracting t^2 and multiplying by -2 gives
+q^2 Area^2/K^4, with the stated positive sign and no missing
+factor. Both signs of each nonzero color charge are counted
+exactly once in C_H.
+
+There are at most K^4 roots per block and 8^n length-n walks.
+The bound |Area|<=n^2 is safe. Absolute convergence permits
+coefficient extraction, and the exponential generating fourth
+moment is x^4+6x^3+7x^2+x. Its ds/s integral to one is
+1024+1024+224+8=2280, as stated.
+
+The proof applies to infinite-lattice polynomial jets, without
+a continuously varying periodic flux. Uniformity in M depends
+on the already identified actual affine stationary ghost jets.
+The polynomial upper bound has no useful long-time content.
+
+4. Conditional heat comparison
+
+The exact actual-reference difference and the sufficient
+three-band lemma have the correct constants. In particular the
+constant alpha_H integrates over [K^-2,1] to 2alpha_H log K,
+and the two middle errors each integrate to at most C/delta.
+These conditions are sufficient, not necessary. A failure of
+one separate band estimate would not rule out a bounded signed
+comparison with cancellations between bands.
+
+5. Independent check of the subsequent full-ghost prefix formula
+
+The parent subsequently proposed an exact full unpinned ghost
+formula. Its probabilistic derivation also checks:
+
+ h_full(s)=C_H s^2 e^-8s I0(2s)^2 I1(2s)^2 / 3.
+
+Given return of one continuous-time coordinate walk, the number
+N of jumps has mean 2s I1(2s)/I0(2s). Conditional on its balanced
+signs, jump times are independent uniform times. Hence the bridge
+covariance is v(min(t,u)-tu/s), v=E[N]/s.
+For independent coordinate bridges X,Y and area A=int Y dX,
+conditional expectation first over X gives
+
+ E_X A^2=v[int Y^2-(int Y)^2/s].
+
+The two Y covariance integrals are v s^2/6 and v s^3/12,
+respectively, so E A^2=v^2s^2/12. Multiplying by the four-
+coordinate return probability e^-8s I0(2s)^4 gives the formula.
+
+The standard real Laplace expansion of the Bessel integral
+then gives h_full(s)=C_H/(48pi^2)+O(1/s) as s tends to infinity.
+For any length-n closed shape with nonzero area, at most n
+starting residues modulo K are killed by the periodic centers.
+The n=0 term has zero area. Thus
+
+ 0<=h_full-h_based
+   <=K^-4 [s h_full'(s)+8s h_full(s)].
+
+Its integral with ds/s through K^2 is bounded by
+K^-4[h_full(K^2)+8 int_0^(K^2) h_full(s)ds]=O(K^-2).
+This verifies the announced prefix mechanism. Any later
+whole-time ghost statement involving a K^-4 gap and fourth
+area moments requires its separate proof; it was not silently
+included in the original Notebook33 ultraviolet result.

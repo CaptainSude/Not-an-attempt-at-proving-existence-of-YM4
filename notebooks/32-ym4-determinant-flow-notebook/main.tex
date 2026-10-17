@@ -1,0 +1,3123 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 32: determinant composition and finite coupling tuning}
+\author{Research working document}
+\date{17 October 2026}
+\setlength{\emergencystretch}{5em}
+\begin{document}
+\maketitle
+\begin{abstract}
+We identify the actual leading quantum correction and the precise
+drift input needed for finite ultraviolet tuning. All statements
+use the composite ordinary constraint, its pivot coordinates,
+the absolute contour penalty and the retained Gaussian of the
+preceding construction.
+
+First, the finite classical Maxwell leakage tends uniformly to
+zero along a cofinal nested period family, even when the preceding
+homogeneous depth varies. The actual finite quantum map is jointly
+continuous in its interaction class and its positive real coupling;
+the continuity argument requires no continuous choice of small
+representatives.
+
+Second, we derive an explicit convergent trace formula for the
+Maxwell coefficient of the pivot and Gaussian determinants.
+Global color invariance removes the second stationary response
+only after the full scalar chain rule is taken. The constraint,
+current, gauge and logarithmic-chart curvature terms remain in
+the precision derivatives. At a fixed regulator, exact Haar
+pushforward composition and finite-dimensional Laplace asymptotics
+prove a cocycle for these actual leading determinants. Exact
+infinite classical Maxwell preservation then makes their
+coefficients additive across scales.
+
+An exact finite gauge and coarea identity also rewrites the
+leading correction as vector, based-ghost and coarse-constraint
+determinants. The coarse factors remain explicit. A flat
+Rayleigh test shows that the based ghost alone has no uniform
+gap at the final physical scale, so a reference comparison
+must retain the coupled cancellations. The coarse constraint
+covariance is identified with a shifted actual effective-Hessian
+inverse. For a fixed sufficiently large positive shift, its
+Maxwell contribution is uniformly bounded in depth and volume.
+
+Finally, under an explicitly unproved positive averaged drift
+hypothesis for the actual finite leading coefficients, a continuous
+shooting argument tunes arbitrarily long finite local histories
+to one fixed positive weak coupling. The auxiliary clipping is
+proved absent on the selected histories. This is a conditional
+tuning theorem, not an evaluation of the drift. A uniform positive
+block margin in every varying-depth structural limit would suffice:
+qualitative compactness transfers that margin to the actual finite
+regulators without a convergence rate.
+
+The remaining one-loop task is a bound on the difference between
+the actual composite coefficient and an explicitly normalized
+reference logarithm, uniform in depth. Mixed and large-field
+histories, continuum observables, nontriviality and reconstruction
+remain part of the full existence argument.
+\end{abstract}
+
+The objective remains a nontrivial four-dimensional Yang--Mills
+quantum theory. This notebook continues the actual homogeneous
+local construction of Notebooks 15--31. Its finite local density
+identities do not by themselves represent the entire Wilson
+measure. Results and conditional inputs are distinguished in
+the statements below.
+
+
+% No preamble. Prefix fml-. Qualitative uniform finite leakage on cofinal periods.
+\section{Uniform disappearance of finite classical marginal leakage}
+\label{fml-section}
+
+This section gives a qualitative uniform statement along the
+standard nested compatible period family. It does not assert
+exact finite marginal preservation or an exponential convergence
+rate. The preceding classical depth may vary arbitrarily with
+the period. The proof uses the already established exact
+preservation of the true infinite Maxwell coefficient in each
+joint classical system, rather than identifying different
+limiting systems.
+
+\subsection{Period family and statement}
+\label{fml-setup-section}
+
+Fix the primitive ratio \(\ell\), an admissible composite ratio
+\(R=\ell^s\), auxiliary grouping \(J\), carrier exponent \(a_0\),
+and one positive common analytic radius \(b\). All these data
+are fixed. Let \(\mathcal P\) be a compatible nested family of
+cubic output periods tending to infinity and satisfying
+\begin{equation}
+ \text{for each fixed }q\ge0,\quad
+ R^q\mid N\quad\hbox{for all sufficiently late }N\in\mathcal P.
+ \label{fml-divisibility}
+\end{equation}
+All grouping and source-geometry divisibilities are also
+imposed. The standard nested source tori have this property;
+for example \(N=2\ell^k\) does when the fixed grouping is
+compatible. Arbitrary growing multiples of \(J\) with bounded
+\(\ell\)-adic valuation are not covered by this argument.
+
+Let \(\mathcal T_{M,R,N}\) be the actual pre-gauge classical
+substitution from the input torus of current period \(RN\)
+to the output torus of period \(N\). Use the actual finite
+short-lift Maxwell ratios, each normalized by its own actual
+finite homogeneous reference, and define
+\begin{equation}
+ \Lambda_{M,R,N}
+   =\beta_{MR,N}\mathcal T_{M,R,N}-\beta_{M,RN}.
+ \label{fml-leakage}
+\end{equation}
+This is a linear functional on the invariant finite activity
+quotient at the common \(a_0,b\). On an extracted input it
+is the finite classical marginal leakage.
+
+\begin{theorem}[Qualitative uniform finite leakage]
+\label{fml-theorem}
+For all sufficiently large lower period thresholds \(K\), set
+\begin{equation}
+ \omega_{R,J,b}(K)
+   =\sup_{\substack{M,\ N\in\mathcal P\\N\ge K}}
+      \ \sup_{\substack{x\ {\rm invariant}\\\|x\|\le b^2}}
+                     |\Lambda_{M,R,N}x|.
+ \label{fml-modulus}
+\end{equation}
+Then
+\begin{equation}
+                         \omega_{R,J,b}(K)\longrightarrow0
+                         \quad(K\longrightarrow\infty).
+ \label{fml-vanishing}
+\end{equation}
+The supremum allows every permitted preceding homogeneous
+depth \(M\), with no fixed-depth or bounded-depth restriction.
+\end{theorem}
+
+The function in \eqref{fml-modulus} is finite and decreasing
+above the reference thresholds. Indeed the uniform finite
+moment bound and fixed-\(R\) transport bound give
+\begin{equation}
+ \omega_{R,J,b}(K)\le C_\beta(B_R+1).
+ \label{fml-crude-bound}
+\end{equation}
+The factor \(b^{-2}\) in the dual moment norm cancels the
+input normalization \(b^2\). The theorem asserts a
+qualitative improvement of this bound, not a rate.
+
+\subsection{Compactness of varying finite input classes}
+\label{fml-input-compactness}
+
+Take any sequence \(M_n\), periods \(N_n\in\mathcal P\)
+tending to infinity, and invariant finite input classes
+\(x_n\) with \(\|x_n\|\le b^2\). Choose representatives
+\(E_n\) on the input tori with
+\begin{equation}
+                         \|E_n\|_{a_0,b}\le b^2+\epsilon_n,
+                         \qquad \epsilon_n\downarrow0.
+ \label{fml-near-minimal}
+\end{equation}
+Average each family over the finite translations by
+\(J\)-cells, translating its carriers and arguments
+together. Its anchored norm does not increase, because
+the translations permute the root sums. Its normalized
+total remains exactly the same by the total translation
+invariance of \(x_n\). The resulting array is covariant
+under \(J\)-cell translations, while the total retains
+all original unit-translation, point and local gauge
+identities. No coefficientwise gauge invariance is needed.
+
+Apply the proved analytic-interaction compactness argument
+at the same open radius \(b\). On every fixed embedded
+connected carrier, finite-dimensional Montel compactness
+gives local uniform convergence of its coefficient function.
+A countable diagonal extraction gives an infinite family
+\(E_\infty\). Fatou on finite rooted carrier collections,
+followed by radii increasing to \(b\), yields
+\begin{equation}
+                         \|E_\infty\|_{a_0,b}\le b^2.
+ \label{fml-limit-norm}
+\end{equation}
+There is no analytic-radius loss.
+
+Vacuum-normalized totals converge on compactly supported
+fields. The anchored cardinality reserve makes the
+large-carrier remainder uniformly small, and every fixed
+carrier eventually embeds without wrapping. Local gauge
+and spatial identities pass on their common compact-field
+domains by the same total-continuity argument. Thus
+\(E_\infty\) represents an invariant infinite class
+\(x_\infty\).
+
+Fixed-order total kernels converge locally, in particular
+\begin{equation}
+                K_{2,n}^{\rm in}\longrightarrow K_2(x_\infty).
+ \label{fml-input-kernel-limit}
+\end{equation}
+They have the common exponential row and moment bounds
+following from the activity norm. No numerical value of
+\(M_n\) enters this input compactness argument.
+
+\subsection{Joint extraction when the classical depth varies}
+\label{fml-varying-depth-section}
+
+The classical maps and references must be extracted jointly
+with the input interactions. For every fixed depth shift
+\(j\ge0\) and endpoint power \(L=R^q\), use the actual finite
+data at depth \(M_nR^j\), on compatible periods obtained
+from \(RN_n\) by finitely many divisions by \(R\) and \(L\).
+Condition \eqref{fml-divisibility} ensures that all these
+data exist for sufficiently large \(n\), and their periods
+still tend to infinity.
+
+For each fixed endpoint \(L\), an observed current output
+fiber contains only \(L^4\) times a fixed number of link
+and color coordinates. This dimension is independent of
+the preceding refinement \(M_n\). The previously proved
+classical inputs are uniform in that refinement:
+\begin{itemize}
+ \item a positive common holomorphic radius;
+ \item strict support and cardinality bounds;
+ \item complete \(C^{1,\alpha}\) bounds and the exact
+       \(1/L\) pre-gauge amplitude;
+ \item actual finite reference transport and minimum
+       comparison identities;
+ \item the controlled finite near-identity gauge comparisons.
+\end{itemize}
+Apply analytic compactness to the reference families and
+complete-output-family compactness to each fixed-endpoint
+map. One diagonal subsequence contains every depth shift
+and every endpoint power in this countable collection.
+
+Denote the resulting references by \(S_j^*\) and the maps
+by \(\mathcal T_{j,q}^*\), with endpoint \(R^q\). The index
+\(j\) records a relative depth shift. No assertion
+\(S_j^*=S_{M_*R^j}\) for a finite \(M_*\) is made.
+The uniform flat Maxwell normalization and exponential
+kernel bounds give
+\begin{equation}
+                           \beta(S_j^*)=1.
+ \label{fml-reference-normalization}
+\end{equation}
+
+The fixed-radius reference bounds, exact transport and
+scalar semigroup pass to this joint system. For compact
+fields the anchored tails justify passage of normalized
+reference values, without passage of an extensive vacuum
+energy. The scalar semigroup on every invariant input
+class uses the actual finite small connecting gauges
+and their endpoint estimates. These estimates are uniform
+in \(M_n\); their compact extraction and the summable-gauge
+argument therefore apply to this varying-depth sequence
+as well. They never require the numerical label \(M_n\)
+to be fixed.
+
+Equivalently, for each fixed endpoint pair, pass the finite
+comparison germ together with its actual controlled gauge
+data, and then use holomorphic continuation on the
+common field domain. The comparison germ can be smaller
+for a large endpoint; the uniform pre-gauge domain remains
+the same. The support estimate at fixed classical reserve
+is uniform in all endpoint powers, and no high-jet
+field-dilation radius is used here.
+
+The resulting system satisfies
+\begin{equation}
+ \mathcal T_{j,q}^*S_j^*=S_{j+q}^*,\qquad
+ \mathcal T_{j+q,r}^*\mathcal T_{j,q}^*
+                         =\mathcal T_{j,q+r}^*.
+ \label{fml-limit-semigroup}
+\end{equation}
+It also has the uniform quadratic-only spatial estimate
+at fixed \(b\) for arbitrarily large endpoints \(R^q\).
+It therefore satisfies precisely the hypotheses of
+the exact infinite Maxwell-preservation proof, which gives
+\begin{equation}
+                   \beta(\mathcal T_{0,1}^*x)=\beta(x)
+                   \quad\hbox{for every invariant }x.
+ \label{fml-limit-preservation}
+\end{equation}
+
+This is a varying-depth structural limit, not an invocation
+of a fixed-\(M\) limit theorem. Different limiting systems
+need not coincide. Every possible system extracted this
+way has \eqref{fml-limit-preservation}, which is the only
+property needed below.
+
+\subsection{The transported Hessian and its moment tails}
+\label{fml-Hessian-section}
+
+Let
+\begin{equation}
+                       H_n=Da_{M_n,R,N_n}(0)
+ \label{fml-linear-response}
+\end{equation}
+be the actual linearized pre-gauge angle map. It takes
+output current-angle directions on period \(N_n\) to
+input current-angle directions on period \(RN_n\).
+Its transpose in the scalar Hessian formula is the
+ordinary counting-coordinate transpose: all physical
+rescaling is already in this angle map.
+
+The complete support-family estimate and Cauchy at zero
+give
+\begin{equation}
+ |H_n(b,c)|
+       \le C_R e^{-\kappa_R d(\operatorname{root}(b),c)}.
+ \label{fml-response-envelope}
+\end{equation}
+The root is the final-unit cell containing the input
+bond after division of its coordinates by \(R\).
+Fixed internal link and color conventions are absorbed
+into \(C_R\). One may retain the amplitude \(1/R\), but
+\(R\) is fixed in this proof.
+
+Each root contains only \(O(R^4)\) input coordinates.
+Thus \eqref{fml-response-envelope} gives both row and
+column exponential Schur bounds, with constants independent
+of \(M_n\) and volume. Joint local holomorphic convergence
+implies local convergence \(H_n\to H_*\).
+
+The total first derivative of each input vanishes by
+global semisimple color invariance, and the actual
+pre-gauge map vanishes at zero. Consequently the exact
+finite Hessian chain rule is
+\begin{equation}
+                       K_{2,n}^{\rm out}
+                           =H_n^T K_{2,n}^{\rm in}H_n.
+ \label{fml-Hessian-product}
+\end{equation}
+There is no term involving the second derivative of
+the background map.
+
+The exponential envelopes for the two response legs
+and the input kernel give a uniform output exponential
+row bound. To see this, connect the two output source
+roots through the intermediate input roots. A fixed
+fraction of the minimum response and input decay
+exponent pays the output separation; the remaining
+geometric sums are bounded by their infinite-lattice
+sums. The \(O(R^4)\) fiber multiplicity is fixed. No
+factor from \(M_n^4\) fine coordinates appears.
+
+These bounds also prove local convergence of
+\eqref{fml-Hessian-product}: truncate its two intermediate
+root sums to a fixed neighborhood, pass the finite
+sum entrywise, and then remove the truncation using
+the common exponential majorant. Hence
+\begin{equation}
+ K_{2,*}^{\rm out}
+       =H_*^T K_2(x_\infty)H_*,
+ \label{fml-output-kernel-limit}
+\end{equation}
+which is the Hessian of
+\(\mathcal T_{0,1}^*x_\infty\). The same estimates give
+uniformly summable second displacement moments.
+
+\subsection{Convergence of the actual finite Maxwell ratios}
+\label{fml-moment-section}
+
+For locally converging torus kernels with a uniform
+exponential row bound, the symmetric short-lift second
+moments converge to the true infinite second moment.
+First restrict to a fixed displacement radius; that
+finite sum converges locally. The remaining second
+moment is bounded uniformly by an exponentially decaying
+tail in that radius. The short-lift cutoff
+\(\lfloor N_n/16\rfloor\) tends to infinity, so it
+produces no residual term. Fixed midpoint shifts are
+handled by the same majorant.
+
+The finite reference denominators tend uniformly to one
+by the established flat \(q_M\) periodization estimate,
+including for varying \(M_n\). Therefore
+\begin{align}
+ \beta_{M_n,RN_n}(x_n)
+                 &\longrightarrow\beta(x_\infty),\notag\\
+ \beta_{M_nR,N_n}(\mathcal T_{M_n,R,N_n}x_n)
+                 &\longrightarrow
+                     \beta(\mathcal T_{0,1}^*x_\infty).
+ \label{fml-ratio-limits}
+\end{align}
+These are the actual finite reference-normalized ratios.
+Their full nonlinear references have not been replaced
+by canonical periodizations, and no extensive total
+action limit is used.
+
+\subsection{Uniform contradiction and consequences}
+\label{fml-proof-section}
+
+\begin{proof}[Proof of Theorem~\ref{fml-theorem}]
+If \eqref{fml-vanishing} failed, there would be
+\(\delta>0\) and sequences as above with
+\[
+                     |\Lambda_{M_n,R,N_n}x_n|\ge\delta
+\]
+for every \(n\). Extract the joint subsequence constructed
+in the preceding sections. By \eqref{fml-ratio-limits},
+the limiting difference is
+\[
+ \beta(\mathcal T_{0,1}^*x_\infty)-\beta(x_\infty)=0
+\]
+by \eqref{fml-limit-preservation}. This contradicts the
+lower bound and proves the theorem.
+\end{proof}
+
+On extracted inputs the conclusion reads
+\begin{equation}
+ \sup_{\substack{M,\ N\in\mathcal P,\ N\ge K\\
+           \beta_{M,RN}(x)=0,\ \|x\|\le b^2}}
+       |\beta_{MR,N}(\mathcal T_{M,R,N}x)|
+                            \longrightarrow0.
+ \label{fml-extracted-conclusion}
+\end{equation}
+The unextracted statement \eqref{fml-modulus} is slightly
+stronger and needs no projection-loss factor. By linear
+homogeneity it gives, for arbitrary invariant inputs,
+\begin{equation}
+ |\Lambda_{M,R,N}x|
+       \le \omega_{R,J,b}(K)b^{-2}\|x\|,
+       \qquad N\in\mathcal P,\ N\ge K.
+ \label{fml-scaled-bound}
+\end{equation}
+
+For a prescribed per-step drift tolerance, choose \(K\)
+so that \(\omega_{R,J,b}(K)\) is sufficiently small.
+Every step of a permitted finite history whose output
+period remains at least \(K\) then has the same leakage
+bound, uniformly in the preceding depth and the length
+of that history. On the established envelope
+\(\|x\|\le C_{\rm int}b^2\), multiply the tolerance by
+\(C_{\rm int}\), or choose \(K\) so that
+\(\omega_{R,J,b}(K)\) is the desired tolerance divided
+by this fixed constant.
+
+\subsection{Qualifications}
+\label{fml-scope-section}
+
+The result is qualitative. It supplies no exponential
+rate, no summability of leakage over infinitely many
+changing periods, and no exact zero at finite volume.
+The per-step consequence is a magnitude bound, not a
+sign or an accumulated-drift assertion.
+
+The cofinal divisibility assumption
+\eqref{fml-divisibility} is part of the theorem. An
+extension to arbitrary increasing compatible multiples
+with bounded endpoint divisibility would require an
+additional uniform period-extension or local-volume
+comparison. It does not follow merely from \(N\to\infty\).
+
+The limiting systems have not been identified with
+one another. Exact infinite Maxwell preservation holds
+in each separately and rules out every nonzero leakage
+subsequence. No quantum drift sign, determinant value,
+infinite physical running trajectory, or global
+measure interpretation follows from this compactness
+argument.
+
+
+% No preamble. Prefix fqc-. All equation references are internal.
+\section{Continuity in the real coupling at a finite regulator}
+\label{fqc-section}
+
+This section concerns the actual homogeneous local macrostep and its
+specified common-domain continuation. It supplies continuity needed
+for a finite endpoint argument. It proves no coupling sign, endpoint
+crossing, or identification with the full Wilson pushforward.
+
+\subsection{Fixed data and statement}
+\label{fqc-setup}
+
+Fix one allowed finite macrostep, including its preceding classical
+depth $M$, current and output tori, ratios $R,J$, common angle radius
+$b$, carrier exponent $a_0$, actual retained chart, and all strict
+common-domain budgets. Use the finite activity quotients by equality
+of vacuum-normalized totals on the full product ball. Their norms
+are infima of anchored family norms.
+
+Let $I$ be a compact interval contained in $(0,g_0]$, where $g_0$
+meets the common-domain and two-input comparison bounds. For example,
+take the continuous threshold
+\begin{equation}
+ T(g)=\max\{T_0,A\sqrt{\log(1/g)}\}.
+ \label{fqc-threshold}
+\end{equation}
+More generally, any positive continuous threshold satisfying those
+bounds suffices. Only continuity and boundedness on $I$ will be used.
+Denote the actual finite quotient map by
+\begin{equation}
+ F_g(x)=T_{\mathrm{cl}}x+\Delta+\mathcal Q_{\det}
+                         +\mathcal L_g(Q_x).
+ \label{fqc-map}
+\end{equation}
+Here $T_{\mathrm{cl}}$ is classical background transport, the next two
+terms are the fixed pivot and Gaussian determinant corrections, and
+$Q_x$ is the inherited fluctuation difference. The stationary
+backgrounds, precision and chart are independent of $g$. The
+coupling is inserted \emph{inside} the nonlinear chart as
+$\Phi_V(g\xi)$.
+
+\begin{theorem}[Finite real-coupling continuity]
+\label{fqc-theorem}
+On the common admissible quotient ball, for instance
+$\lVert x\rVert\leq\overline\epsilon/4$, the map
+$(g,x)\mapsto F_g(x)$ is jointly continuous for $0<g\leq g_0$.
+Both activity topologies use the same radius $b$ and exponent $a_0$.
+Consequently the actual extracted update
+\begin{equation}
+ (\gamma,x)\longmapsto
+ \left(\gamma-\beta_{\mathrm{out}}
+                 (F_{\gamma^{-1/2}}(x)),
+       P_{\mathrm{out}}F_{\gamma^{-1/2}}(x)\right)
+ \label{fqc-extracted-map}
+\end{equation}
+is continuous on its admissible positive weak-coupling domain.
+The finite maps $\beta_{\mathrm{out}},P_{\mathrm{out}}$ are normalized
+by the actual finite reference and do not depend on $g$.
+\end{theorem}
+
+The proof permits constants depending exponentially on the finite
+volume. It asserts neither a volume-uniform modulus nor continuity
+at $g=0$. In particular it does not require a continuous choice of
+near-minimal activity representatives.
+
+\subsection{Strict inherited-field margin}
+\label{fqc-margin-section}
+
+Fix one input class $x$ and choose one admissible representative
+$E$, held fixed as $g$ varies; one may take
+$\lVert E\rVert<\overline\epsilon/2$.
+The proved actual joint-family construction gives
+\begin{equation}
+ f_g(w,\xi)=\Omega_R(a_p(w),g\xi).
+ \label{fqc-actual-field}
+\end{equation}
+Its absolute rooted family bound supplies, under the strict budgets,
+\begin{equation}
+ \lVert a_p(w)\rVert_\infty\leq b/4,\qquad
+ \lVert f_g(w,\xi)\rVert_\infty\leq b/4
+ \label{fqc-margin}
+\end{equation}
+for all $\lVert w\rVert_\infty<b$, $g\in I$, and every actual
+retained link/color window of threshold $T(g)$. Fixed norm
+conversions have already been included in the common-domain
+constants. The argument below only requires a fixed inner radius
+$sb$ with $s<1$.
+
+Write $E_{\mathrm{raw}}(A)=\sum_H E_H(A|_H)$, and let
+$V_{\mathrm{in}}$ be the number of input $J$-cells. The anchored norm
+implies
+\begin{equation}
+ \sum_H\lVert E_H\rVert_b
+       \leq V_{\mathrm{in}}\lVert E\rVert_{a_0;b}.
+ \label{fqc-extensive-bound}
+\end{equation}
+Directional one-variable Cauchy on the product ball gives
+\begin{equation}
+ |E_{\mathrm{raw}}(A)-E_{\mathrm{raw}}(B)|
+ \leq
+ \frac{V_{\mathrm{in}}\lVert E\rVert_{a_0;b}}
+      {(1-s)b}\,\lVert A-B\rVert_\infty,
+ \qquad \lVert A\rVert_\infty,\lVert B\rVert_\infty\leq sb.
+ \label{fqc-input-cauchy}
+\end{equation}
+Indeed the segment between $A,B$ stays in the inner product ball;
+each unit max-norm direction has a complex disk of radius at least
+$(1-s)b$. Apply Cauchy on any smaller disk, integrate the derivative
+along the segment, sum using \eqref{fqc-extensive-bound}, and pass
+to the limiting disk radius. Thus an arbitrary input need only be
+bounded and holomorphic on its original $b$ ball. No extension
+past that ball is assumed.
+
+\subsection{Fixing the real integration window}
+\label{fqc-integral-section}
+
+Let $D$ be the total finite number of real retained scalar
+coordinates. Let $\Xi_1\subset\mathbb R^D$ be the product of the
+actual centered unit retained link/color balls. Its dilation
+$T(g)\Xi_1$ is exactly the actual window; its boundary is
+Lebesgue-null. Let $A(w)$ be the retained precision, with the
+fixed analytic square-root determinant branch. Changing real
+variables $\xi=T(g)\zeta$ gives the exact Gaussian expectation
+\begin{align}
+ Z_g(w)
+ ={}&\frac{\det A(w)^{1/2}}{(2\pi)^{D/2}}\,T(g)^D
+       \int_{\Xi_1}
+       \exp\bigl\{
+          -\tfrac12 T(g)^2\zeta^T A(w)\zeta
+          +V_{\mathrm{base}}(w,T(g)\zeta;g)
+ \notag\\[-2pt]
+ &\hspace{39mm}
+          +E_{\mathrm{raw}}(f_g(w,T(g)\zeta))
+          -E_{\mathrm{raw}}(a_p(w))
+       \bigr\}\,d\zeta .
+ \label{fqc-integral}
+\end{align}
+The background-only pivot and determinant terms may remain outside
+this expression as in \eqref{fqc-map}. Coupling powers, compact
+gauge-insertion constants and flat Haar constants are separately
+tracked vacuum factors. No contour deformation or replacement
+by a whole-fiber Euclidean cutoff occurs. The chart argument is
+$\Phi_V(gT(g)\zeta)$.
+
+The independent classical domains used in constructing the actual
+chart and base interaction give the following bounds on this
+fixed regulator. The precision and its determinant branch are
+bounded for all $\lVert w\rVert_\infty<b$. The local analytic
+coefficient maps are bounded and uniformly Lipschitz in their
+fluctuation arguments on a slightly larger fixed chart domain
+containing every $gT(g)\zeta$. Moreover
+$V_{\mathrm{base}}(w,T(g)\zeta;g)$ is uniformly bounded and
+uniformly continuous in $g\in I$, uniformly over the full open
+$b$ ball and $\zeta\in\Xi_1$.
+
+The last assertion follows directly from the exact factors as
+well. The classical and gauge Taylor remainders are analytic
+functions of $g\xi$, divided by $g^2$ after removing the constant,
+linear and quadratic terms. The remaining Haar and Jacobian
+factors are analytic in the same argument. On a compact positive
+$g$ interval all these expressions have bounded parameter
+derivatives on the fixed strict chart margin. Their removable
+singularities at zero coupling are not needed. An anchored bound
+on a classical support series bounds its extensive sum at this
+fixed volume.
+
+Since $a_p$ is independent of $g$, continuity of $gT(g)$ and these
+analytic bounds imply
+\begin{equation}
+ \sup_{\substack{\lVert w\rVert_\infty<b\\\zeta\in\Xi_1}}
+ \bigl\lVert f_g(w,T(g)\zeta)
+       -f_{g_*}(w,T(g_*)\zeta)\bigr\rVert_\infty
+       \longrightarrow0.
+ \label{fqc-field-continuity}
+\end{equation}
+Use \eqref{fqc-input-cauchy} for the inherited exponent. The
+Gaussian term has the same uniform continuity because $A(w)$
+is bounded and $T$ is continuous. Every exponent in
+\eqref{fqc-integral} has a common finite absolute bound; the
+prefactor is uniformly bounded and $\Xi_1$ has finite measure.
+Uniform domination therefore proves
+\begin{equation}
+ \lVert Z_g-Z_{g_*}\rVert_{H^\infty(b)}
+       \longrightarrow0 .
+ \label{fqc-z-continuity}
+\end{equation}
+This is a supremum over the entire open $b$ ball, not merely
+convergence on compact subballs.
+
+\subsection{A lower bound on the full ball and logarithms}
+\label{fqc-log-section}
+
+The strict Gaussian theorem supplies nonvanishing throughout
+the $b$ ball and a connected logarithm family with a common
+anchored bound $H_I$ for $g\in I$. If $V_{\mathrm{out}}$ is the
+number of output $J$-cells, its normalized total satisfies
+\begin{equation}
+ \sup_{\lVert w\rVert_\infty<b}
+  |\log Z_g(w)-\log Z_g(0)|
+       \leq 2V_{\mathrm{out}}H_I.
+ \label{fqc-log-bound}
+\end{equation}
+The bound is unaffected by raw logarithm constants.
+By \eqref{fqc-z-continuity} at $w=0$ and nonvanishing, on a
+compact positive interval around $g_*$,
+$m_0=\inf_{g\in I}|Z_g(0)|>0$. Hence
+\begin{equation}
+ \inf_{\substack{g\in I\\\lVert w\rVert_\infty<b}}
+       |Z_g(w)|
+ \geq m_0\exp(-2V_{\mathrm{out}}H_I)=:m_I>0.
+ \label{fqc-lower-bound}
+\end{equation}
+Nonvanishing alone would not yield such an infimum on the open
+ball; the uniform logarithm estimate is essential.
+
+When $\lVert Z_g-Z_{g_*}\rVert_b<m_I/2$, use the convergent
+power-series logarithm
+\begin{equation}
+ \ell_g(w)=
+ \log\left(1+\frac{Z_g(w)-Z_{g_*}(w)}{Z_{g_*}(w)}\right),
+ \qquad
+ \lVert\ell_g\rVert_b\leq
+          2m_I^{-1}\lVert Z_g-Z_{g_*}\rVert_b.
+ \label{fqc-log-ratio}
+\end{equation}
+If $l_g$ is any selected holomorphic logarithm of $Z_g$, then
+$l_g-l_{g_*}-\ell_g$ is constant on the connected product ball,
+because its exponential is one. Thus
+\begin{equation}
+ \bigl\lVert[l_g-l_g(0)]-[l_{g_*}-l_{g_*}(0)]\bigr\rVert_b
+ \leq 4m_I^{-1}\lVert Z_g-Z_{g_*}\rVert_b
+ \longrightarrow0.
+ \label{fqc-normalized-log-continuity}
+\end{equation}
+No continuity of a raw branch convention has been assumed.
+
+\subsection{From totals to the finite quotient norm}
+\label{fqc-quotient-section}
+
+Let $H_{\mathrm{all}}$ be the full connected output $J$-cell
+torus. Assign any bounded holomorphic normalized total $h$ to
+this one carrier and zero to all others. This is an admissible
+finite activity representation and gives
+\begin{equation}
+ \lVert[h]\rVert_{\mathrm{quot}}
+       \leq e^{a_0V_{\mathrm{out}}}\lVert h\rVert_b.
+ \label{fqc-single-carrier}
+\end{equation}
+If $h$ has invariant total, this representative retains that
+property; coefficientwise gauge invariance is unnecessary.
+The exterior terms in \eqref{fqc-map} are independent of $g$.
+Applying \eqref{fqc-single-carrier} to
+\eqref{fqc-normalized-log-continuity} proves, for fixed $x$,
+\begin{equation}
+ \lVert F_g(x)-F_{g_*}(x)\rVert_{\mathrm{quot}}
+       \longrightarrow0.
+ \label{fqc-fixed-input-continuity}
+\end{equation}
+The volume cost in \eqref{fqc-single-carrier} is intentional.
+It avoids an unsupported inference about the norm continuity
+of every canonical cluster coefficient or relocalized array.
+
+\subsection{Joint continuity and finite histories}
+\label{fqc-joint-section}
+
+The finite two-input estimate is uniform on $I$:
+\begin{equation}
+ \lVert F_g(x)-F_g(y)\rVert_{\mathrm{quot}}
+ \leq
+ \left[B_T+C_{\mathrm{quant}}
+                  \sup_{h\in I}\frac{hT(h)}b\right]
+       \lVert x-y\rVert_{\mathrm{quot}}.
+ \label{fqc-input-lipschitz}
+\end{equation}
+It follows from admissible near-minimal representatives
+$Y,D,X=Y+D$ and the stronger comparison budget
+$a_Q\overline\epsilon\leq\eta_*/(128e)$. It does not require
+a continuous representative selection. For $(g,x)\to(g_*,x_*)$,
+split the difference as
+\[
+ F_g(x)-F_{g_*}(x_*)
+   =F_g(x)-F_g(x_*)+F_g(x_*)-F_{g_*}(x_*).
+\]
+Equations \eqref{fqc-input-lipschitz} and
+\eqref{fqc-fixed-input-continuity} make both terms tend to
+zero. Boundedness of the actual finite $\beta_{\mathrm{out}}$
+and $P_{\mathrm{out}}$, together with continuity of
+$\gamma\mapsto\gamma^{-1/2}$, proves
+Theorem~\ref{fqc-theorem}.
+
+Every fixed finite composition of the extracted updates is
+continuous while all intermediate inputs and couplings remain
+in their common admissible domains. This follows by induction
+over the finite stages. One can work near a trajectory lying
+strictly within these domains, or use the finite-induction
+envelope to ensure admissibility on a prescribed parameter
+interval.
+
+Near-minimal representatives implementing the history may
+jump with the initial coupling. Exact finite-total descent
+makes the quotient update and its beta increment independent
+of those choices. Raw vacuum factors remain separately
+tracked by their exact compensation identities; an endpoint
+statement about $\gamma$ does not require a continuous raw
+representative convention.
+
+Continuity alone supplies no endpoint crossing. An
+intermediate-value argument also needs values on opposite
+sides of the desired endpoint and control keeping the
+intervening histories weak and admissible. A bound on the
+magnitude of each increment may keep a sufficiently high
+finite initial $\gamma$ weak, but it does not tune a fixed
+terminal coupling or establish an ultraviolet trajectory.
+The present conclusion remains finite-volume, positive-coupling,
+and confined to the specified local analytic map.
+
+
+% No preamble. Prefix dmt-. Exact actual pivot/Gaussian drift and trace kernels.
+\section{An explicit trace formula for the pivot and Gaussian drift}
+\label{dmt-section}
+
+Fix the primitive ratio, a composite ratio \(R\), the actual
+composite ordinary average, its selected pivots and the direct-\(R\)
+internal contour gauge. The preceding homogeneous classical
+depth \(M\) is arbitrary. All finite-regulator formulas in this
+section are exact. Their infinite-volume interpretation uses one
+chosen joint local-limit system with the previously proved uniform
+exponential bounds. No numerical value, sign, old-depth limit or
+universal beta coefficient is asserted.
+
+\subsection{The exact external factors}
+\label{dmt-definitions-section}
+
+Use real Lie coordinates orthonormal for the normalized trace,
+and their bilinear complexification. Write current link angles
+as \(a\) and final coarse link angles as \(w\). Retained-coordinate
+matrix traces use the actual Euclidean counting coordinates of
+the Gaussian integral. They carry no extra old fine-volume factor.
+
+Let \(F_R\) be the actual composite ordinary group average. Its
+relative constraint and differential are
+\begin{equation}
+ F_a(B)=\frac1i\log\!\left[
+     F_R(e^{iB}e^{ia})F_R(e^{ia})^{-1}\right],
+ \qquad C_a=D_BF_a(0).
+ \label{dmt-relative-constraint}
+\end{equation}
+For the unique selected pivot \(p(c)\) of a final bond \(c\),
+\begin{equation}
+ (C_a)_{c,p(c)}=R^{1-d}\pi_c(a),\qquad
+ \pi_c(0)=I.
+ \label{dmt-pivot-block}
+\end{equation}
+The actual pivot insertion, retained insertion and chart satisfy
+\begin{align}
+ C_ah_a&=I,\qquad
+ K_a=E_{\rm free}-h_aC_aE_{\rm free},\notag\\
+ D_z\Phi_a(0)&=K_a,\qquad
+ D_z^2\Phi_a(0)[u,v]
+       =-h_aD_B^2F_a(0)[K_au,K_av].
+ \label{dmt-chart-identities}
+\end{align}
+The chart solves \(F_a(\Phi_a(z))=0\) and has retained
+coordinates exactly \(z\).
+
+Let \(G_R\) be the actual absolute contour gauge function.
+It is not replaced by a background-relative penalty. Define
+\begin{equation}
+ \mathcal W_M(a)=S_M(e^{ia})+G_R(e^{ia}),\qquad
+ f(a,z)=\frac1i\log[e^{i\Phi_a(z)}e^{ia}],
+ \label{dmt-pulled-action}
+\end{equation}
+so \(f(a,0)=a\), and set
+\begin{equation}
+ \mathscr A_M(a)
+    =D_z^2[\mathcal W_M(f(a,z))]_{z=0}.
+ \label{dmt-independent-precision}
+\end{equation}
+This is the full analytic precision on the independent
+background ball. Its Gaussian need not be centered at an
+arbitrary independent background.
+
+The actual physical branch \(a_*(w)\) satisfies
+\[
+ a_*(0)=0,\qquad F_R(e^{ia_*(w)})=e^{iw},\qquad
+ P_R(e^{ia_*(w)};y,x)=I.
+\]
+It is the centered branch of the integral. Put
+\begin{equation}
+ A(w)=\mathscr A_M(a_*(w)),\qquad
+ A_0=\mathscr A_M(0),\qquad C_0=A_0^{-1}.
+ \label{dmt-physical-precision}
+\end{equation}
+The exact external logarithms are
+\begin{equation}
+ \Delta(w)=-\sum_c\log\det\pi_c(a_*(w)),\qquad
+ \mathcal Q_{\det}(w)
+       =-\frac12\log\det[A(w)A_0^{-1}],\qquad
+ D_M=\Delta+\mathcal Q_{\det}.
+ \label{dmt-leading-correction}
+\end{equation}
+All logarithmic branches in this display vanish at zero.
+The factor \(R^{1-d}\) cancels between each pivot determinant
+and its zero-background value.
+
+The signs follow from the inverse pivot Jacobian and the
+Gaussian factor \(\det A^{-1/2}\). There is no additional
+background Haar factor \(j(a_*)\): the exact link Haar coordinates
+are left-relative and give \(j(\Phi_a(g\xi))\), whose logarithm
+vanishes at \(g=0\). The fluctuation straightening ratio is also
+one at \(\xi=0\). Powers of \(g\), the gauge-insertion constant
+and flat Gaussian constants are field independent and remain
+outside \(D_M\). These definitions retain the actual mean,
+composite map, chart and gauge; a direct-\(R\) replacement of
+the constraint or an axial covariance would give a different
+formula.
+
+\subsection{The complete finite-regulator chain rule}
+\label{dmt-chain-section}
+
+For final coarse directions \(u,v\), write
+\begin{equation}
+ H_u=Da_*(0)u,\qquad B_{uv}=D^2a_*(0)[u,v].
+ \label{dmt-stationary-responses}
+\end{equation}
+Define independent-background vertices by
+\begin{align}
+ \mathscr A_1[p]&=D\mathscr A_M(0)[p],&
+ \mathscr A_2[p,q]&=D^2\mathscr A_M(0)[p,q],\notag\\
+ \pi_{c,1}[p]&=D\pi_c(0)[p],&
+ \pi_{c,2}[p,q]&=D^2\pi_c(0)[p,q].
+ \label{dmt-background-vertices}
+\end{align}
+The physical derivatives are
+\begin{align}
+ A_u&=\mathscr A_1[H_u],&
+ A_{uv}&=\mathscr A_2[H_u,H_v]+\mathscr A_1[B_{uv}],\notag\\
+ \pi_{c,u}&=\pi_{c,1}[H_u],&
+ \pi_{c,uv}&=\pi_{c,2}[H_u,H_v]+\pi_{c,1}[B_{uv}].
+ \label{dmt-full-composition}
+\end{align}
+
+\begin{proposition}[Exact finite trace Hessian]
+\label{dmt-finite-hessian}
+For the actual finite integral,
+\begin{align}
+ D^2D_M(0)[u,v]
+ ={}&-\sum_c\operatorname{tr}
+       \{\pi_{c,uv}-\pi_{c,u}\pi_{c,v}\}\notag\\
+ &-\frac12\operatorname{Tr}
+       \{C_0A_{uv}-C_0A_uC_0A_v\}.
+ \label{dmt-full-hessian}
+\end{align}
+Here lowercase trace acts on one pivot color block and
+uppercase trace acts on all retained coordinates.
+\end{proposition}
+\begin{proof}
+Differentiate the logarithmic determinants in
+\eqref{dmt-leading-correction}, using
+\[
+ D\log\det A[B]=\operatorname{Tr}(A^{-1}B),
+ \qquad D(A^{-1})[B]=-A^{-1}BA^{-1},
+\]
+and \(\pi_c(0)=I\). Products need not commute. Cyclicity of
+the trace makes the answer symmetric in \(u,v\).
+\end{proof}
+
+In particular, constrained stationarity does not say that
+the left current of \(S_M\) vanishes. It does not permit
+deleting the constraint-curvature terms inside
+\(\mathscr A_1\) or \(\mathscr A_2\).
+
+\subsection{The second stationary response cancels after taking the scalar trace}
+\label{dmt-color-section}
+
+Introduce the independent-background scalar
+\begin{equation}
+ d_M(a)=-\sum_c\log\det\pi_c(a)
+       -\frac12\log\det[\mathscr A_M(a)A_0^{-1}].
+ \label{dmt-independent-scalar}
+\end{equation}
+This function is not asserted to be invariant under arbitrary
+local background gauges. The constant-color symmetry suffices
+for the next lemma.
+
+\begin{lemma}[Semisimple cancellation of the first derivative]
+\label{dmt-linear-cancellation}
+For a semisimple Lie algebra,
+\begin{equation}
+                         Dd_M(0)=0.
+ \label{dmt-zero-linear}
+\end{equation}
+Consequently the full Hessian in
+\eqref{dmt-full-hessian} reduces to
+\begin{align}
+ D^2D_M(0)[u,v]
+ ={}&-\sum_c\operatorname{tr}
+ \{\pi_{c,2}[H_u,H_v]
+       -\pi_{c,1}[H_u]\pi_{c,1}[H_v]\}\notag\\
+ &-\frac12\operatorname{Tr}
+ \{C_0\mathscr A_2[H_u,H_v]
+       -C_0\mathscr A_1[H_u]C_0\mathscr A_1[H_v]\}.
+ \label{dmt-reduced-hessian}
+\end{align}
+\end{lemma}
+\begin{proof}
+Let \(O=\operatorname{Ad}_k\) in the fixed real orthonormal
+Lie basis. Endpoint covariance of the actual averages gives
+\begin{equation}
+                  \pi_c(Oa)=O\pi_c(a)O^{-1}.
+ \label{dmt-pivot-color}
+\end{equation}
+The unique small pivot chart is equivariant because both
+its constraint and retained-coordinate prescription are.
+The absolute contour gauge is a sum of class functions,
+and the actual scalar action is invariant under global
+conjugation. Thus, with \(O_{\rm ret}\) the direct sum
+on retained coordinates,
+\begin{equation}
+ \mathscr A_M(Oa)
+       =O_{\rm ret}\mathscr A_M(a)O_{\rm ret}^{\,T},
+ \qquad O_{\rm ret}^{\,T}O_{\rm ret}=I.
+ \label{dmt-precision-color}
+\end{equation}
+The flat precision commutes with this representation.
+Equations \eqref{dmt-pivot-color}--\eqref{dmt-precision-color}
+prove invariance of \eqref{dmt-independent-scalar}, first
+on the real domain and then by holomorphic continuation
+with its zero-at-origin branches.
+
+A semisimple Lie algebra has no invariant linear functional
+on one adjoint color slot. Apply the invariance to a variation
+on one current bond. Its linear functional is therefore zero.
+Doing this for every bond proves \eqref{dmt-zero-linear}.
+The argument applies separately to the pivot sum and the
+Gaussian trace logarithm.
+
+After substituting \eqref{dmt-full-composition} into
+\eqref{dmt-full-hessian}, the coefficient of \(B_{uv}\)
+is precisely \(Dd_M(0)[B_{uv}]\). This proves
+\eqref{dmt-reduced-hessian}.
+\end{proof}
+
+This cancellation does not say that
+\(\mathscr A_1=0\), \(\pi_{c,1}=0\), or that the current and
+chart-curvature operators vanish. For an abelian factor,
+retain \eqref{dmt-full-hessian} unless its linear functional
+has been separately shown to vanish.
+
+\subsection{The actual flat stationary lift}
+\label{dmt-lift-section}
+
+The first response appearing in
+\eqref{dmt-reduced-hessian} is explicit in the proved flat
+operators. Let
+\begin{equation}
+ C_R=D_a\{\log F_R(e^{ia})/i\}_{a=0},\qquad
+ h=h_0,\quad K=K_0,\quad P_M=q_M+T_R^TT_R.
+ \label{dmt-flat-data}
+\end{equation}
+Here \(q_M\) is the ordinary homogeneous classical Hessian,
+and \(T_R\) is the linearized direct-\(R\) internal contour
+map. The constraint in \(C_R\) is still the composite map.
+The angle/counting normalization gives
+\begin{equation}
+ A_0=K^TP_MK,\qquad
+ B_M=K^TP_Mh=K^Tq_Mh,\qquad
+ H=h-KC_0B_M.
+ \label{dmt-flat-lift}
+\end{equation}
+The simplification uses \(T_Rh=0\), since internal contours
+use no pivots.
+
+To verify the formula, use the identity-background affine
+chart
+\begin{align}
+ \log F_R(e^{ia})/i&=C_Ra+\mathcal C_R(a),
+ \qquad \mathcal C_R(0)=D\mathcal C_R(0)=0,\notag\\
+ \mathfrak a(w,z)&=Kz+hw-h\mathcal C_R(\mathfrak a(w,z)).
+ \label{dmt-affine-chart}
+\end{align}
+Put
+\(\mathcal T_M(w,z)=\mathcal W_M(\mathfrak a(w,z))\).
+Since the full action is stationary at zero,
+\begin{equation}
+ D_z\mathcal T_M(w,z)
+       =A_0z+B_Mw+O((|w|+|z|)^2).
+ \label{dmt-affine-stationarity}
+\end{equation}
+The positive flat retained Hessian and the established
+local uniqueness identify its analytic critical point
+with the physical branch. Thus
+\(z_u=-C_0B_Mu\) and \(H_u=hu+Kz_u\), proving
+\eqref{dmt-flat-lift}. No \(M^d\) or \(R^d\) transpose
+factor belongs in these angle-coordinate matrices.
+
+For completeness, the second response retained in the
+general formula is also explicit. Set \(t_u=(u,z_u)\)
+and define \(z_{uv}\) by the counting-pairing identity
+\begin{equation}
+ \langle\zeta,A_0z_{uv}\rangle
+       =-D^3\mathcal T_M(0)[(0,\zeta),t_u,t_v]
+       \quad\hbox{for every retained }\zeta.
+ \label{dmt-second-stationary}
+\end{equation}
+Then
+\begin{equation}
+ B_{uv}=-hD^2\mathcal C_R(0)[H_u,H_v]+Kz_{uv}.
+ \label{dmt-second-background}
+\end{equation}
+These equations follow by twice differentiating the retained
+stationarity equation and \eqref{dmt-affine-chart}; they are
+available even when the color cancellation is not.
+
+\subsection{The complete precision vertices}
+\label{dmt-precision-vertices-section}
+
+Set
+\begin{equation}
+ E_a=D_zf(a,0),\qquad T_a=D_z^2f(a,0).
+ \label{dmt-chart-tensors}
+\end{equation}
+With
+\[
+ J_aX=\int_0^1\operatorname{Ad}(e^{ita})X\,dt,\qquad
+ \Xi_a(B)=\frac1i\log[e^{iB}e^{ia}],
+\]
+the exact tensors are
+\begin{align}
+ E_a&=J_a^{-1}K_a,\notag\\
+ T_a[u,v]&=-J_a^{-1}h_aD_B^2F_a(0)[K_au,K_av]
+       +D_B^2\Xi_a(0)[K_au,K_av].
+ \label{dmt-both-chart-curvatures}
+\end{align}
+Consequently the arbitrary-background precision is
+\begin{equation}
+ \mathscr A_M(a)[u,v]
+       =D^2\mathcal W_M(a)[E_au,E_av]
+                  +D\mathcal W_M(a)[T_a(u,v)].
+ \label{dmt-complete-precision}
+\end{equation}
+The two terms of \(T_a\) are respectively nonlinear constraint
+curvature and conversion from the left-relative exponential
+coordinate to the ordinary link logarithm. The absolute gauge
+function remains inside \(\mathcal W_M\), so its nonphysical
+background curvature is included as well. Its gradient
+vanishes on the physical branch, but this does not permit
+replacing the independent analytic family by a relative
+quadratic gauge form.
+
+Write \(W_n=D^n\mathcal W_M(0)\), so that
+\(W_1=0\), \(W_2=P_M\), \(E_0=K\). Define
+\[
+ E_1[p]=D_aE_0[p],\qquad E_2[p,q]=D_a^2E_0[p,q],
+ \qquad T_0=T_{a=0},\qquad T_1[p]=D_aT_0[p].
+\]
+For retained directions \(r,s\), direct differentiation gives
+\begin{align}
+ \mathscr A_1[p][r,s]
+ ={}&W_3[p,Kr,Ks]
+       +W_2[E_1[p]r,Ks]+W_2[Kr,E_1[p]s]\notag\\
+ &+W_2[p,T_0(r,s)].
+ \label{dmt-first-precision-vertex}
+\end{align}
+The last term is a first-background-order current and
+constraint contribution; it remains despite \(W_1=0\).
+The second vertex is
+\begin{align}
+ \mathscr A_2[p,q][r,s]
+ ={}&W_4[p,q,Kr,Ks]\notag\\
+ &+W_3[p,E_1[q]r,Ks]+W_3[p,Kr,E_1[q]s]\notag\\
+ &+W_3[q,E_1[p]r,Ks]+W_3[q,Kr,E_1[p]s]\notag\\
+ &+W_2[E_2[p,q]r,Ks]+W_2[Kr,E_2[p,q]s]\notag\\
+ &+W_2[E_1[p]r,E_1[q]s]
+       +W_2[E_1[q]r,E_1[p]s]\notag\\
+ &+W_3[p,q,T_0(r,s)]\notag\\
+ &+W_2[p,T_1[q](r,s)]
+       +W_2[q,T_1[p](r,s)].
+ \label{dmt-second-precision-vertex}
+\end{align}
+Only the \(W_1D_a^2T\) term disappears at zero.
+The pivot vertices follow by twice differentiating
+\begin{equation}
+             \pi_c(a)=R^{d-1}(D_BF_a(0))_{c,p(c)}.
+ \label{dmt-pivot-vertex-definition}
+\end{equation}
+All chart operations here use the actual finite-dimensional
+logarithm and mean, and have finite range at the fixed \(R\).
+
+\subsection{The classical cubic and quartic vertices}
+\label{dmt-classical-vertices-section}
+
+The classical vertices in
+\eqref{dmt-first-precision-vertex}--\eqref{dmt-second-precision-vertex}
+can be evaluated from the previously proved simultaneous
+corrected-slice equations. This avoids an unproved bound for
+the ordinary rooted average's physical adjoint.
+
+Use the fine extension \(\mathcal H_M\), constrained Green
+operator \(\mathcal C_M\), flat coarse Hessian \(q_M\),
+corrected constraint remainder \(\mathcal R_M\), Wilson
+jet \(f_\eta\), and its finite jet map \(\mathcal S\).
+With the physical fine transposes and measures, the exact
+pair \(Y=(A,m)\) obeys
+\begin{align}
+ A={}&\mathcal H_Ma-\mathcal H_M\mathcal R_M(A)
+       -\mathcal C_M\mathcal S^Tf_\eta(\mathcal SA)
+       +\mathcal C_MD\mathcal R_M(A)^Tm,\notag\\
+ m={}&q_Ma-q_M\mathcal R_M(A)
+       +(\mathcal S\mathcal H_M)^Tf_\eta(\mathcal SA)
+       -\mathcal H_M^TD\mathcal R_M(A)^Tm.
+ \label{dmt-classical-pair}
+\end{align}
+Write \(Y=\mathcal L_Ma+\mathcal V_M(Y)\), where
+\(\mathcal L_M=(\mathcal H_M,q_M)\) and
+\(\mathcal V_M(0)=D\mathcal V_M(0)=0\).
+For \(\mathcal V_n=D^n\mathcal V_M(0)\), its responses are
+\begin{align}
+ Y_1[u]&=\mathcal L_Mu,\notag\\
+ Y_2[u,v]&=\mathcal V_2[\mathcal L_Mu,\mathcal L_Mv],\notag\\
+ Y_3[u,v,t]&=\mathcal V_3[
+                  \mathcal L_Mu,\mathcal L_Mv,\mathcal L_Mt]\notag\\
+ &\quad+\mathcal V_2[Y_2[u,v],\mathcal L_Mt]
+       +\mathcal V_2[Y_2[u,t],\mathcal L_Mv]
+       +\mathcal V_2[Y_2[v,t],\mathcal L_Mu].
+ \label{dmt-classical-response-recursion}
+\end{align}
+These are derivatives, not Taylor coefficients, so no factorial
+is omitted. The scalar envelope \(DS_M(a)=m(a)\) and equality
+of the corrected and ordinary action values yield
+\begin{align}
+ D^3S_M(0)[u,v,t]
+       &=\langle(Y_2[u,v])_m,t\rangle,\notag\\
+ D^4S_M(0)[u,v,t,r]
+       &=\langle(Y_3[u,v,t])_m,r\rangle.
+ \label{dmt-classical-scalar-vertices}
+\end{align}
+Add the explicit local derivatives of \(G_R\) to obtain
+\(W_3,W_4\).
+
+These are finite compositions of the proved propagators and
+finite-range analytic vertices. The uniform estimates use
+complete physical cell spaces and smooth supported
+reconstruction, not unweighted sums over \(M^4\) microscopic
+coordinates. The fine \(\eta^4\) measure is already in the
+physical transposes of \eqref{dmt-classical-pair}. It must
+not be inserted again into the retained-coordinate traces.
+
+\subsection{Absolute trace convergence and local kernels}
+\label{dmt-convergence-section}
+
+The strict precision theorem supplies symmetric pieces with
+matrix rows and columns in their carrier and an analytic bound
+of the following form, at fixed positive
+\(\sigma,a,\rho\):
+\begin{equation}
+ \sup_i\sum_{Y\ni i}\sum_{j\in Y}
+ e^{\sigma\tau(Y)+a|Y|}
+ \|(\mathscr A_M-A_0)_{Y,ij}\|_\rho\le N.
+ \label{dmt-strict-row-input}
+\end{equation}
+This is uniform in preceding depth and permitted volume.
+The precision-composition theorem supplies the same form
+after stationary substitution, keeping the actual matrix
+rows rooted in their original carrier. The flat covariance
+has an exponential Schur bound. The pivot scalar and
+stationary field have their established strict and rooted
+bounds.
+
+\begin{lemma}[Source-rooted trace bounds]
+\label{dmt-trace-convergence}
+On a fixed smaller analytic domain, the actual Hessian
+kernel
+\[
+ \mathcal K_{xy}=D^2D_M(0)[e_x,e_y]
+\]
+has an exponentially summable row bound
+\begin{equation}
+       \sup_x\sum_y e^{m d(x,y)}|\mathcal K_{xy}|
+                       \le C_D
+ \label{dmt-kernel-decay}
+\end{equation}
+for some \(m>0\). The traces in both
+\eqref{dmt-full-hessian} and
+\eqref{dmt-reduced-hessian} are absolutely convergent on
+compact or summable variation directions. Constants may
+depend on the fixed geometry, color and radii, but not
+on preceding depth or volume.
+\end{lemma}
+\begin{proof}
+A derivative in one background coordinate \(x\) acts only
+on carriers containing \(x\). Cauchy bounds it by a fixed
+constant times \(\rho^{-1}\) times the original majorant.
+Two derivatives require both source slots in the carrier
+and give \(\rho^{-2}\).
+
+Reduce the spatial exponent in
+\eqref{dmt-strict-row-input}. For each matrix row \(i\),
+the unused exponent pays \(e^{-\delta d(i,x)}\), since
+\(\tau(Y)\ge d(i,x)\) when \(i,x\in Y\). Its sum over
+\(i\) is the finite lattice bound \(S_\delta\), also
+uniformly on periodic graphs. With a second source \(y\),
+spend another exponent portion on
+\(\tau(Y)\ge d(x,y)\).
+
+For the composed precision, this yields, after fixed
+exponent reductions,
+\begin{align}
+ \sum_{ij}e^{m_1[d(i,x)+d(j,x)]}
+                   \|(A_x)_{ij}\|&\le C_1,\notag\\
+ \sum_{ij}\|(A_{xy})_{ij}\|
+                   &\le C_2e^{-m_1d(x,y)}.
+ \label{dmt-entry-source-bounds}
+\end{align}
+For the first line, use
+\(d(i,x)+d(j,x)\le2\tau(Y)\) and reserve an additional
+exponent for the row summation. Finite fiber and color
+factors are absorbed into the constants.
+
+The same argument before composition, followed by the
+exponentially decaying external lift \(H\), bounds the
+separate terms of \eqref{dmt-reduced-hessian}. Thus the
+proof does not use cancellation of non-absolutely
+convergent quantities.
+
+The trace with \(A_{xy}\) is bounded by its absolute-entry
+sum and the covariance entry envelope. For the other
+trace expand
+\begin{equation}
+ \operatorname{Tr}(C_0A_xC_0A_y)
+ =\sum_{i,j,k,l}\operatorname{tr}
+     \{C_{0,ij}(A_x)_{jk}C_{0,kl}(A_y)_{li}\}.
+ \label{dmt-trace-expansion}
+\end{equation}
+The source-root bounds and covariance envelope make this
+absolutely convergent. The \(x\)-root weight at \(j\),
+the covariance weight between \(j\) and \(i\), and the
+\(y\)-root weight at \(i\) jointly pay \(d(x,y)\).
+All remaining factors are absolutely summable. Hence
+\[
+ |\operatorname{Tr}(C_0A_xC_0A_y)|
+                         \le C_3e^{-m_2d(x,y)}
+\]
+for a smaller positive \(m_2\). The pivot traces have the
+same bound by local dependence before composition and the
+rooted stationary family, or directly by their composed
+strict scalar expansion. A final exponent reduction
+allows the row sum in \eqref{dmt-kernel-decay}.
+\end{proof}
+
+Grouping retained coordinates into auxiliary \(J\)-cells
+only regroups these traces; it inserts no extra factor
+\(J^d\) into the exact identities.
+
+On the infinite lattice a total log determinant at a
+noncompact background need not exist as an extensive
+number. The displayed formulas concern local kernels
+and derivatives on compact or summable directions.
+They are defined by the absolutely convergent sums above
+or by a chosen joint local limit of the actual finite
+matrices and vertices. The common majorants permit that
+limit. No arbitrary finite activity is identified with
+the periodization of an independently selected infinite
+one.
+
+\subsection{A convergent Maxwell moment of the traces}
+\label{dmt-Maxwell-section}
+
+Assume the chosen infinite total has the established
+translation, hypercubic and local gauge identities, and
+fix one simple color factor. The midpoint Hessian symbol
+then has
+\begin{equation}
+ \widehat{\mathcal K}_{\mu\nu}^{ab}(p)
+ =\delta^{ab}\beta(D_M)
+       (|p|^2\delta_{\mu\nu}-p_\mu p_\nu)+O(|p|^4).
+ \label{dmt-Maxwell-symbol}
+\end{equation}
+For \(\mu\ne\nu\), choose one trace-orthonormal color
+vector \(t^a\), and let \(e_{x,\mu,a}\) be its final
+unit-spacing link direction. The midpoint offsets
+cancel for the diagonal orientation \(\mu,\mu\).
+Therefore
+\begin{equation}
+ \boxed{\displaystyle
+ \beta(D_M)=-\frac12\sum_{r\in\mathbb Z^4}r_\nu^2
+       D^2D_M(0)[e_{0,\mu,a},e_{r,\mu,a}].}
+ \label{dmt-Maxwell-moment}
+\end{equation}
+There is no color sum here. Hypercubic and color symmetry
+make the choices equivalent. The minus sign comes from
+twice differentiating \(e^{ip\cdot r}\); the factor
+\(1/2\) extracts the coefficient of \(p_\nu^2\).
+The actual classical reference has coefficient one in
+this normalization.
+
+Writing \(H_r=H e_{r,\mu,a}\), substitution of
+\eqref{dmt-reduced-hessian} gives
+\begin{align}
+ \beta(D_M)
+ ={}&\frac12\sum_r r_\nu^2\sum_c\operatorname{tr}
+ \{\pi_{c,2}[H_0,H_r]
+       -\pi_{c,1}[H_0]\pi_{c,1}[H_r]\}\notag\\
+ &+\frac14\sum_r r_\nu^2\operatorname{Tr}
+ \{C_0\mathscr A_2[H_0,H_r]
+       -C_0\mathscr A_1[H_0]C_0\mathscr A_1[H_r]\}.
+ \label{dmt-explicit-Maxwell-trace}
+\end{align}
+Every sum is absolutely convergent by
+Lemma~\ref{dmt-trace-convergence}. Truncating the external
+displacement at distance \(L\) has error at most
+\(C_{m'}e^{-m'L}\) for any \(0<m'<m\).
+Internal trace tails likewise have exponential bounds
+after anchoring the sources and spending a spare exponent.
+
+At an actual finite regulator, the trace Hessian formulas
+remain exact. Apply the chosen symmetric short-lift
+moment and divide by the moment of the actual finite
+reference to obtain its finite Maxwell ratio. That
+reference denominator is \(1+O(e^{-cN})\), not
+automatically exactly one. No finite Ward identity at
+discrete momenta is interpolated to obtain
+\eqref{dmt-Maxwell-symbol}; its use requires the stated
+infinite kernel and symmetries, or the separately
+justified local-limit passage.
+
+\subsection{What has and has not been reduced}
+\label{dmt-scope-section}
+
+The leading zero-input drift is expressed by actual local
+pivot vertices, the flat stationary lift
+\eqref{dmt-flat-lift}, the retained covariance, and the
+full precision vertices
+\eqref{dmt-first-precision-vertex}--\eqref{dmt-second-precision-vertex}.
+The classical cubic and quartic vertices have the finite
+operator recursion
+\eqref{dmt-classical-pair}--\eqref{dmt-classical-scalar-vertices}.
+All signs and coordinate normalizations are fixed.
+
+The second physical stationary response was included
+before being removed by the proved semisimple color
+identity. The physical current was not replaced by an
+independent parameter, and neither chart-curvature
+contribution was omitted.
+
+Evaluating \eqref{dmt-explicit-Maxwell-trace}, comparing
+its values as \(M\) grows, determining a sign or a
+universal coefficient, and controlling a physical
+coupling trajectory remain further tasks. Absolute
+convergence of the trace expression alone proves none
+of those conclusions.
+
+
+% No preamble. Prefix dgb-. Exact finite identities, not a uniform comparison.
+\section{An exact gauge and coarea bridge for the actual determinant}
+\label{dgb-section}
+
+This section rewrites the actual leading correction as coupled
+vector, ghost and coarse-constraint determinants. It keeps the
+constraint-current curvature and every finite orbit-density factor.
+It also exhibits a soft mode that prevents a separate uniformly
+massive estimate for the based ghost. The bounded finite-part
+comparison with a standard background-Feynman determinant remains
+a separate estimate.
+
+\subsection{The actual multiplier Hessian}
+\label{dgb-setup-section}
+
+Fix a finite compatible regulator and endpoint $K=\ell^k$.
+Let $U=V_*^{M,K}(W)$ be the physical stationary representative,
+so $F_K(U)=W$ and $P_K(U)=I$. All matrices use the actual
+current-link angle and scalar-site counting coordinates in a real
+trace-orthonormal color basis.
+
+In left-relative coordinates define
+\begin{equation}
+ s(x)=S_M(e^{ix}U),\qquad
+ f(x)=\frac1i\log\!\left[F_K(e^{ix}U)W^{-1}\right],
+ \qquad C=f'(0).
+ \label{dgb-relative-coordinates}
+\end{equation}
+The target coordinate is a relative increment at $W$, not its
+ordinary logarithm. Constrained stationarity gives a unique
+multiplier $\lambda$ with $s'(0)=C^T\lambda$. Put
+\begin{equation}
+ \mathcal L=s''(0)-\sum_c\lambda_c f_c''(0).
+ \label{dgb-Lagrangian}
+\end{equation}
+This is the Hessian of the critical Lagrangian
+$s-\lambda\cdot f$. Its second term is the full
+constraint-current curvature.
+
+Let $C_p$ be the invertible actual pivot block, $I_p$ the pivot
+insertion, and $E$ the retained insertion. Write
+\begin{equation}
+ h=I_pC_p^{-1},\qquad K_0=E-hCE,\qquad
+ Ch=I,\qquad CK_0=0.
+ \label{dgb-chart-linear}
+\end{equation}
+The subscript distinguishes $K_0$ from the endpoint ratio $K$.
+The nonlinear source chart satisfies
+\begin{equation}
+ \Phi'(0)=K_0,\qquad
+ \Phi''(0)[u,v]=-h f''(0)[K_0u,K_0v].
+ \label{dgb-chart-curvature}
+\end{equation}
+Consequently
+\[
+ D_z^2s(\Phi(z))\big|_{z=0}=K_0^T\mathcal L K_0 .
+\]
+The actual absolute contour penalty vanishes at the saddle;
+its Hessian is $T^TT$, where $T$ differentiates the contour
+logarithms in the established normalization. Thus
+\begin{equation}
+ A_T=K_0^T(\mathcal L+T^TT)K_0>0.
+ \label{dgb-actual-precision}
+\end{equation}
+Apart from field-independent constants, the actual leading
+amplitude is
+\begin{equation}
+                  |\det C_p|^{-1}\det(A_T)^{-1/2}.
+ \label{dgb-actual-amplitude}
+\end{equation}
+The real determinant signs are fixed from the flat convention.
+All logarithms below are normalized at $W=1$ and then continued
+on their chosen holomorphic branches.
+
+\subsection{The based gauge nullspace}
+\label{dgb-nullspace-section}
+
+Let $D_b$ send scalar site parameters vanishing at every
+$K$-center to their left-relative infinitesimal gauge variations
+at $U$. Exact based invariance of the ordinary constraint gives
+\begin{equation}
+                              CD_b=0.
+ \label{dgb-based-constraint}
+\end{equation}
+The scalar $s-\lambda\cdot f$ is based-gauge invariant and is
+critical at zero. Differentiating its gauge identity there gives
+\begin{equation}
+                              \mathcal L D_b=0.
+ \label{dgb-based-null}
+\end{equation}
+This need not hold for $s''$ without its multiplier-curvature
+term. The actual contour endpoint covariance gives
+\begin{equation}
+                              TD_b=-I
+ \label{dgb-contour-gauge}
+\end{equation}
+with the standard orientation. Changing the generator sign
+changes only this sign. A fixed color normalization in the
+gauge penalty contributes only a background-independent
+factor, canceled by normalization.
+
+The based action is free, hence $D_b$ is injective and
+\begin{equation}
+                              G_b=D_b^TD_b>0.
+ \label{dgb-based-ghost}
+\end{equation}
+On $\ker C$, the form $\mathcal L$ is nonnegative, has
+nullspace precisely $\operatorname{ran}D_b$, and is positive
+on its quotient. Indeed, for any $x\in\ker C$, use
+\eqref{dgb-contour-gauge} to add a unique based gauge vector
+making $Tx=0$. Equation \eqref{dgb-based-null} leaves its
+$\mathcal L$ value unchanged. On this contour-zero complement,
+the positive form \eqref{dgb-actual-precision} equals
+$\mathcal L$. Equality occurs only for a vertical vector.
+
+\subsection{A finite Gaussian gauge-change identity}
+\label{dgb-gauge-change-section}
+
+\begin{lemma}[Gauge replacement with its orbit density]
+\label{dgb-gauge-lemma}
+Let $B_0$ be a symmetric nonnegative form on a finite space
+$Z$, with nullspace $\operatorname{ran}V$, positive on the
+quotient. Suppose $F_1,F_2:Z\to\mathbb R^s$ have invertible
+$F_jV$. Then
+\begin{equation}
+ |\det(F_1V)|\det(B_0+F_1^TF_1)^{-1/2}
+   =|\det(F_2V)|\det(B_0+F_2^TF_2)^{-1/2}.
+ \label{dgb-gauge-identity}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Choose one complement $E_0$ to $\operatorname{ran}V$ and set
+$z=E_0u+V\alpha$. The change-of-variable Jacobian is the same
+in the two integrals. The $B_0$ term depends only on $u$.
+Integration over $\alpha$ yields
+$(2\pi)^{s/2}/|\det(F_jV)|$, independently of $u$, by
+translation and an invertible linear change of variables.
+The remaining integral in $u$ is common. This proves
+\eqref{dgb-gauge-identity}; no orbit-coordinate density
+has been discarded.
+\end{proof}
+
+Apply the lemma on retained coordinates, with vertical insertion
+$V$ characterized by $K_0V=D_b$. Take
+$F_1=TK_0$ and $F_2=D_b^TK_0$. Equations
+\eqref{dgb-contour-gauge} and \eqref{dgb-based-ghost} give
+$F_1V=-I$ and $F_2V=G_b$. Therefore
+\begin{equation}
+ \det(A_T)^{-1/2}
+     =\det(G_b)\det(A_b)^{-1/2},\qquad
+ A_b=K_0^T(\mathcal L+D_bD_b^T)K_0.
+ \label{dgb-divergence-replacement}
+\end{equation}
+This replaces the actual contour gauge by based covariant
+divergence. It does not yet replace it by a full-site massive
+background-Feynman gauge.
+
+\subsection{Coarea removes the pivot}
+\label{dgb-coarea-section}
+
+Choose any symmetric coarse matrix $B$ such that
+\begin{equation}
+ Q_b=\mathcal L+D_bD_b^T+C^TBC>0,\qquad
+ M_b=CQ_b^{-1}C^T>0.
+ \label{dgb-completion}
+\end{equation}
+A completion exists at each fixed finite saddle: the first
+two terms are positive on $\ker C$, so a sufficiently large
+scalar $B$ makes the complementary Schur block positive.
+The condition is positivity of $Q_b$. Merely requiring
+$B>0$ need not suffice; conversely $B$ itself may be indefinite.
+
+Let $n$ and $m$ be the ambient and constraint dimensions.
+The same constrained Gaussian has the exact evaluations
+\begin{align}
+ \int_{\mathbb R^n}\delta(Cx)e^{-x^TQ_bx/2}\,dx
+  &=(2\pi)^{(n-m)/2}|\det C_p|^{-1}\det(A_b)^{-1/2}
+       \notag\\
+  &=(2\pi)^{(n-m)/2}
+           [\det Q_b\,\det M_b]^{-1/2}.
+ \label{dgb-coarea-integral}
+\end{align}
+For the first, write $x=K_0z+hy$. In retained/pivot order,
+this transformation has determinant $(\det C_p)^{-1}$,
+and $Cx=y$. For the second, the normalized full Gaussian
+of covariance $Q_b^{-1}$ sends $Cx$ to a Gaussian of covariance
+$M_b$; its density at zero gives the factor.
+Equivalently,
+\begin{equation}
+ \det Q_b\,\det(CQ_b^{-1}C^T)
+                         =(\det C_p)^2\det A_b .
+ \label{dgb-coarea-determinant}
+\end{equation}
+
+The delta in \eqref{dgb-coarea-integral} uses the target's
+relative Lie coordinate. The actual target measure is group
+Haar, whose density at that coordinate origin is the fixed
+$h_0$. It supplies no factor $j(\log W)$.
+If one instead uses induced Euclidean measure on $\ker C$,
+its coarea factor is precisely included in
+\eqref{dgb-coarea-integral}.
+
+For a scalar expression $F$, write
+$\mathcal N_0F=F(W)-F(1)$. Combining
+\eqref{dgb-actual-amplitude},
+\eqref{dgb-divergence-replacement} and
+\eqref{dgb-coarea-integral} proves the exact identity
+\begin{equation}
+ \boxed{\displaystyle
+ D_{M,K}
+   =\mathcal N_0\left[
+       \log\det G_b-\frac12\log\det Q_b
+                    -\frac12\log\det M_b\right].}
+ \label{dgb-main-identity}
+\end{equation}
+The pivot has disappeared, but the coarse-constraint
+determinant remains. Every completion allowed in
+\eqref{dgb-completion} gives the same combined expression.
+The individual terms need not be completion-independent
+or locally gauge invariant.
+
+At fixed regulator these are identities on a positive real
+germ and then on their chosen analytic branches. The algebraic
+identity \eqref{dgb-coarea-determinant} also continues wherever
+its inverses exist. No uniform complex domain for the three
+individual logarithms, as $K$ or volume grows, follows from
+the combined identity.
+
+\subsection{A positive completion from the actual minimum action}
+\label{dgb-residual-section}
+
+In the same relative target coordinate set
+\[
+ s_{\rm eff}(y)=S_{MK}(e^{iy}W),\qquad
+ q_{\rm eff}=s_{\rm eff}''(0).
+\]
+The envelope identity gives $s_{\rm eff}'(0)=\lambda$.
+The residual scalar
+\[
+                 \mathcal R(x)=s(x)-s_{\rm eff}(f(x))
+\]
+is critical and nonnegative near zero by the actual local
+minimum comparison. It is invariant under the full local
+fine gauge group, because both scalar actions are locally
+gauge invariant and the composite map is equivariant.
+Its Hessian is therefore
+\begin{equation}
+ H_{\rm res}=\mathcal L-C^Tq_{\rm eff}C\geq0,\qquad
+ H_{\rm res}D_f=0
+ \label{dgb-residual-Hessian}
+\end{equation}
+for every fine infinitesimal gauge direction, with any
+convenient fixed global base convention.
+The nonnegativity uses the proved minimum comparison,
+not stationarity alone.
+
+Let $H$ be the actual derivative of the minimum section in
+these relative coordinates. Since $CH=I$ and the residual
+vanishes identically along that section, its positive
+semidefinite Hessian obeys
+\begin{equation}
+                     H_{\rm res}H=0,\qquad
+                     \mathcal LH=C^Tq_{\rm eff}.
+ \label{dgb-residual-lift}
+\end{equation}
+No independently chosen flat lift is substituted for $H$.
+
+A canonical completion is
+\begin{equation}
+                Q_b=H_{\rm res}+D_bD_b^T+C^TC>0.
+ \label{dgb-canonical-completion}
+\end{equation}
+Indeed a null vector would satisfy $Cx=0$, $D_b^Tx=0$
+and $x^T\mathcal Lx=0$. The constrained quotient positivity
+then gives $x=D_b\alpha$, and $G_b\alpha=0$ implies $x=0$.
+This is \eqref{dgb-completion} with $B=I-q_{\rm eff}$,
+which need not be positive itself. No uniform lower
+spectral bound for \eqref{dgb-canonical-completion} is
+asserted as $K$ grows.
+
+The general coarse compression can also be identified
+exactly. Set
+\begin{equation}
+                   H_b=H-D_bG_b^{-1}D_b^TH .
+ \label{dgb-adjusted-lift}
+\end{equation}
+Then $CH_b=I$, $D_b^TH_b=0$, $H_{\rm res}H_b=0$, and
+$\mathcal LH_b=C^Tq_{\rm eff}$. For every completion
+\eqref{dgb-completion}, it follows that
+\begin{equation}
+ Q_bH_b=C^T(q_{\rm eff}+B),\qquad
+ q_{\rm eff}+B=H_b^TQ_bH_b>0.
+ \label{dgb-effective-Schur}
+\end{equation}
+Multiplication by the inverses gives
+\begin{equation}
+ Q_b^{-1}C^T=H_b(q_{\rm eff}+B)^{-1},\qquad
+ \boxed{\,M_b=(q_{\rm eff}+B)^{-1}\,}.
+ \label{dgb-coarse-identification}
+\end{equation}
+Thus \eqref{dgb-main-identity} is equivalently
+\begin{equation}
+ D_{M,K}=\mathcal N_0\left[
+      \log\det G_b-\frac12\log\det Q_b
+                   +\frac12\log\det(q_{\rm eff}+B)\right].
+ \label{dgb-effective-determinant}
+\end{equation}
+The coarse covariance is the inverse of the actual
+relative-coordinate effective Hessian with its completion.
+For the canonical choice $B=I-q_{\rm eff}$, it is exactly
+$M_b=I$ and that coarse logarithm vanishes. The coarse
+physics remains inside
+$H_{\rm res}=\mathcal L-C^Tq_{\rm eff}C$ and hence in $Q_b$;
+no uniform reference comparison is thereby obtained.
+
+\subsection{A soft based-ghost mode}
+\label{dgb-soft-ghost-section}
+
+At the flat background $D_b$ is the nearest-neighbor gauge
+gradient on scalar functions vanishing at the $K$-centers.
+Take $K\geq3$ on a compatible unit-current torus and choose
+one real color. Let $\varphi$ be zero at all centers and
+one elsewhere. If there are $n_c$ centers, there are
+$n_f=K^dn_c$ current sites, and exactly $2d$ incident
+unit-difference bonds per center. Hence
+\begin{equation}
+ \|\varphi\|_2^2=(K^d-1)n_c,\qquad
+ \|D_b\varphi\|_2^2=2dn_c,\qquad
+ \lambda_{\min}(G_b)\leq\frac{2d}{K^d-1}.
+ \label{dgb-Rayleigh}
+\end{equation}
+This is an upper Rayleigh bound, not a matching spectral
+asymptotic. In four dimensions it implies
+\[
+                         \|G_b^{-1}\|\geq\frac{K^4-1}{8}.
+\]
+A final-physical-scale mass is $K^{-2}$ in the current
+coordinates. Thus the estimate $\|G_b^{-1}\|\leq CK^2$
+is false uniformly in $K$. After resetting final spacing
+to one, $K^2G_b$ still has a Rayleigh eigenvalue tending
+to zero.
+
+This counterexample does not refute a bounded Maxwell
+finite-part difference for the complete expression
+\eqref{dgb-main-identity}. It rules out estimating the
+based ghost separately as a uniformly massive operator.
+The vector and coarse determinant must be kept coupled.
+
+\subsection{An explicit full-site and coarse Schur decomposition}
+\label{dgb-full-Schur-section}
+
+Fix one final center as a global base. Let $D_f$ now denote
+the fine gauge generator for all scalar sites except that
+base, and split its domain into the non-$K$-centers and the
+other $K$-centers:
+\[
+                            D_f=[\,D_b,D_e\,].
+\]
+These are disjoint site-coordinate columns, not orthogonal
+images. The globally based action is free. Therefore
+\begin{align}
+ G_f&=D_f^TD_f>0,\notag\\
+ S_g&=D_e^T(I-D_bG_b^{-1}D_b^T)D_e>0,\notag\\
+ \det G_f&=\det G_b\,\det S_g .
+ \label{dgb-ghost-Schur}
+\end{align}
+For any positive $Q_b$ as above, set
+\begin{equation}
+ Q_f=Q_b+D_eD_e^T,\qquad
+ S_v=I+D_e^TQ_b^{-1}D_e.
+ \label{dgb-vector-Schur-data}
+\end{equation}
+The determinant lemma gives
+\begin{equation}
+                         \det Q_f=\det Q_b\,\det S_v .
+ \label{dgb-vector-Schur}
+\end{equation}
+Consequently the actual correction is exactly
+\begin{equation}
+ D_{M,K}=\mathcal N_0\left[
+   \log\det G_f-\frac12\log\det Q_f
+   -\log\det S_g+\frac12\log\det S_v
+   -\frac12\log\det M_b\right].
+ \label{dgb-full-decomposition}
+\end{equation}
+$S_g,S_v$ are coarse-site matrices; $M_b$ is a coarse-bond
+matrix. The first two terms resemble a vector/ghost
+combination, but all coarse corrections remain.
+$G_f$ is globally based; it is not yet the translation-invariant
+all-site massive ghost of a reference calculation.
+If no nonbase coarse site remains, the corresponding
+zero-dimensional determinants are one. For the canonical
+completion $M_b=I$ by \eqref{dgb-coarse-identification};
+the general formula retains all three coarse terms.
+
+For \eqref{dgb-canonical-completion}, the vector operator is
+\begin{equation}
+ Q_f=s''+D_fD_f^T-\lambda\cdot f''
+                         +C^T(I-q_{\rm eff})C.
+ \label{dgb-vector-operator}
+\end{equation}
+If a proposed matched massive reference is
+$P_\eta=s''+D_fD_f^T+\eta^2I$, with $\eta=K^{-1}$,
+the exact difference is
+\begin{equation}
+ Q_f-P_\eta=-\lambda\cdot f''
+                     +C^T(I-q_{\rm eff})C-\eta^2I.
+ \label{dgb-reference-difference}
+\end{equation}
+The multiplier term vanishes at the flat background,
+but its first and second background derivatives can
+contribute to the determinant Hessian. Neither that
+vanishing nor the coarse rank bounds its Maxwell
+coefficient by itself. Equation
+\eqref{dgb-reference-difference} is a comparison interface,
+not an identification with an operator named in a
+different background-field convention.
+Any logarithmic comparison using $P_\eta$ additionally
+requires its invertibility on the chosen finite germ.
+No uniform such neighborhood is inferred here.
+
+\subsection{A uniformly bounded coarse effective-Hessian factor}
+\label{dgb-coarse-bound-section}
+
+The general identification in
+\eqref{dgb-coarse-identification} permits a uniform estimate
+for one actual comparison term. Use the established strict
+scalar family of the entire action $S_{MK}$, including its
+pair-supported quadratic baseline. On a fixed small complex
+ball it has uniform spatial bounds and an arbitrary
+prescribed fixed cardinality reserve, independent of
+$MK$ and compatible volume.
+
+For $W=e^{iw}$, set
+\[
+                    \Xi_w(y)=\frac1i\log(e^{iy}e^{iw}).
+\]
+This is a per-bond analytic map with uniformly bounded
+derivatives on a fixed small joint ball. With
+$E_w=D_y\Xi_w(0)$ and $U_w=D_y^2\Xi_w(0)$,
+\begin{equation}
+ q_{\rm eff}(w)[u,v]
+   =D^2S_{MK}(w)[E_wu,E_wv]
+                 +DS_{MK}(w)[U_w(u,v)].
+ \label{dgb-coarse-BCH}
+\end{equation}
+The background-current term is retained.
+Compose each scalar support coefficient with $\Xi_w(y)$,
+differentiate twice in $y$, and up to twice in $w$ using
+fixed spare Cauchy radii. No support enlargement occurs.
+Rows, columns and background source slots stay in the
+same carrier. A fixed cardinality reserve absorbs their
+finite counting factors.
+
+Consequently, for some fixed $\mu,\rho>0$,
+\begin{equation}
+       \sup_{\|w\|_\infty<\rho}
+                    \|q_{\rm eff}(w)\|_\mu\leq R_\mu,
+ \label{dgb-coarse-Schur}
+\end{equation}
+where $\|\cdot\|_\mu$ is the maximum of the exponentially
+weighted absolute block row and column sums.
+The bound is uniform in $MK$ and volume. After reducing
+the exponent to $m>0$, its source derivatives satisfy
+\begin{align}
+ \sum_{ij}e^{m[d(i,x)+d(j,x)]}
+       |(\partial_xq_{\rm eff})_{ij}|&\leq C_1,\notag\\
+ \sum_{ij}|(\partial_x\partial_yq_{\rm eff})_{ij}|
+                              &\leq C_2e^{-md(x,y)}.
+ \label{dgb-coarse-source-bounds}
+\end{align}
+To obtain these bounds, split the carrier-tree exponential
+between its source separation and its row-to-source
+distance, then sum that distance. The coarse cell fiber
+has fixed dimension, with no factor from $K^4$ fine
+coordinates.
+
+\begin{proposition}[Bounded actual coarse determinant contribution]
+\label{dgb-coarse-proposition}
+Choose a fixed $a>2R_\mu$ and the completion $B=aI$.
+The second-background-derivative kernel of
+\[
+                \tfrac12\mathcal N_0
+                        \log\det(q_{\rm eff}+aI)
+\]
+has a uniform exponential row bound, independent of the
+preceding depth, endpoint and compatible volume.
+Its true infinite Maxwell coefficient, and its actual
+finite reference-normalized coefficients above the
+reference threshold, have a uniform absolute bound.
+\end{proposition}
+
+\begin{proof}
+In the weighted Schur algebra, the Neumann series gives
+\begin{equation}
+ P_c=q_{\rm eff}+aI,\qquad
+                         \|P_c^{-1}\|_\mu\leq 2/a.
+ \label{dgb-coarse-inverse}
+\end{equation}
+The corresponding fine completion is positive on the
+real germ: write $x=\xi+H_by$, $C\xi=0$.
+Equation \eqref{dgb-effective-Schur} makes the cross term
+zero, leaving the positive constrained-divergence form
+in $\xi$ and $y^T(q_{\rm eff}+aI)y$.
+No uniform fine spectral gap is inferred.
+
+At finite volume the series
+\begin{equation}
+ \log\det P_c
+   =(\dim P_c)\log a+
+      \sum_{n\geq1}\frac{(-1)^{n+1}}n
+                \operatorname{Tr}(a^{-1}q_{\rm eff})^n
+ \label{dgb-coarse-log-series}
+\end{equation}
+converges absolutely. Let $K_c$ be the Hessian kernel of
+$\mathcal N_0\log\det P_c$; the desired half-logarithm
+has Hessian $K_c/2$. Explicitly,
+\begin{equation}
+ K_c(x,y)=\operatorname{Tr}\left[
+       P_c^{-1}q_{{\rm eff},xy}
+       -P_c^{-1}q_{{\rm eff},x}
+                   P_c^{-1}q_{{\rm eff},y}\right].
+ \label{dgb-coarse-trace}
+\end{equation}
+The first trace is bounded by the second line of
+\eqref{dgb-coarse-source-bounds} and the inverse bound.
+For the second trace, use the two source-rooted first
+derivative bounds and spend a spare inverse-edge
+exponent to connect their roots. Absolute summation gives
+\begin{equation}
+                            |K_c(x,y)|
+                                \leq C_a e^{-m'd(x,y)}
+ \label{dgb-coarse-Hessian-decay}
+\end{equation}
+for a fixed $m'>0$, uniformly in depth and volume.
+Periodic sums are bounded by their infinite-lattice
+counterparts. Its second displacement moment is therefore
+uniformly bounded. The finite reference denominators
+are uniformly bounded below above their established
+threshold, which proves the finite statement as well.
+\end{proof}
+
+The actual action's local gauge identity makes its
+relative Hessian transform by orthogonal bond-frame
+conjugation under real local gauges. Thus the coarse
+massive determinant has the appropriate total local
+gauge identity on its common germ; no coefficientwise
+Ward identity was used in the proof.
+With $B=aI$, \eqref{dgb-effective-determinant} now reduces
+the unbounded-endpoint comparison to the fine combination
+\[
+ \log\det G_b-\tfrac12\log\det\!
+       \left[s''-\lambda\cdot f''
+                     +D_bD_b^T+aC^TC\right],
+\]
+up to the proved uniformly bounded coarse contribution.
+For a general completion the full-site vector difference
+is $-\lambda\cdot f''+C^TBC-\eta^2I$. For this fixed-$a$
+choice it is
+\begin{equation}
+              Q_f-P_\eta
+                    =-\lambda\cdot f''+aC^TC-\eta^2I.
+ \label{dgb-fixed-a-difference}
+\end{equation}
+Equation \eqref{dgb-reference-difference} instead records
+the canonical completion $B=I-q_{\rm eff}$.
+Each comparison uses all factors from its one chosen
+completion.
+
+\subsection{The remaining uniform comparison}
+\label{dgb-scope-section}
+
+The deposited outline asserts a bounded error in the
+Maxwell coefficient when its composite determinant is
+compared with a massive vector/ghost reference, at
+$\eta=\ell^{-k}$. The exact identities above do not
+establish that error bound. In particular, the formal
+background effective-action convention and massless
+nonzero-external-momentum amplitudes of a reference
+calculation do not identify this constrained normalizer
+automatically.
+
+For a precisely matched reference, after removing the
+bounded coarse effective-Hessian contribution, the
+full-site formulation must still control the Maxwell
+moment of the coarse-site package
+\[
+                         -\log\det S_g+\tfrac12\log\det S_v,
+\]
+together with the global-base and ghost-mass correction,
+and the Maxwell moment of
+$\log\det Q_f-\log\det P_\eta$ with all multiplier,
+coarse-completion and mass terms for the selected
+completion. They must also identify
+the reference background with the actual smooth pre-gauge
+minimum and preserve the actual finite extraction and
+zero-mode conventions. Based-gauge covariance allows
+evaluating \eqref{dgb-main-identity} at that pre-gauge
+representative, but does not replace it by an arbitrary
+external interpolation.
+
+Each determinant Hessian has the concrete formula
+\begin{equation}
+ D^2\log\det P[u,v]
+   =\operatorname{Tr}\left(
+       P^{-1}P_{uv}-P^{-1}P_uP^{-1}P_v\right).
+ \label{dgb-trace-interface}
+\end{equation}
+The established fixed-$K$ bounds make the relevant
+second-displacement-moment trace sums meaningful. Their
+constants may depend on $K$; they do not prove an $O(1)$
+bound as $K\to\infty$.
+The soft mode \eqref{dgb-Rayleigh} shows why a separate
+uniform inverse estimate cannot supply this step.
+A coupled cancellation or a scale-resolved comparison
+is still required. No universal coefficient, sign,
+averaged drift or ultraviolet coupling trajectory is
+deduced here.
+
+
+% No preamble. Prefix olc-. Fixed-regulator leading stationary amplitudes.
+\section{The actual leading determinant correction satisfies a cocycle}
+\label{olc-section}
+
+This section proves an exact identity of normalized leading stationary
+amplitudes at a fixed finite regulator. It compares these amplitudes
+through one auxiliary local orbit-tube integral. It does not identify
+direct and sequential sharp-window sectors at positive coupling.
+All maps, pivot factors and retained Hessians are those of the
+actual composite ordinary constraint.
+
+\subsection{Objects and statement}
+\label{olc-setup-section}
+
+Fix a finite compatible periodic regulator, a preceding homogeneous
+depth $M$, and two allowed ratios $R=\ell^r$, $L=\ell^s$.
+Let $X,Y,Z$ be the current, $R$-coarse and $RL$-coarse link
+configuration spaces, each with product normalized Haar measure.
+The actual iterated ordinary maps satisfy
+\begin{equation}
+ f=F_R:X\longrightarrow Y,\qquad
+ h=F_L:Y\longrightarrow Z,\qquad
+ h\circ f=F_{RL}.
+ \label{olc-maps}
+\end{equation}
+No equality with a direct-$R$ or direct-$RL$ ordinary average
+is used.
+
+The coupling-free action $S_M$ is the established homogeneous
+ordinary minimum action, normalized at the identity. For an
+allowed ratio $K$, write $V_*^{M,K}(W)$ for the physical
+gauge-zero stationary representative, using the independently
+chosen direct-$K$ internal contour gauge $P_K$. Let
+$A_{M,K}(W)$ be the full retained Hessian of $S_M+G_K$ there,
+in the actual constraint chart. Let $d_K(V_*)$ be the product
+of inverse pivot Jacobians. Define
+\begin{equation}
+ D_{M,K}(W)
+  =\log\frac{d_K(V_*^{M,K}(W))}{d_K(1)}
+   -\frac12\log\det\!\left[
+         A_{M,K}(W)A_{M,K}(0)^{-1}\right].
+ \label{olc-leading}
+\end{equation}
+Here $D_{M,K}(1)=0$. These are the actual $\Delta+\mathcal Q_{\det}$
+terms, with positive real branches near the identity and their
+given analytic continuations. Constraint curvature and the
+absolute contour-gauge Hessian are included in $A_{M,K}$.
+
+Let $V_p^{MR,L}(W)$ be the outer pre-root-gauge stationary
+representative, and let $\mathcal T_{MR,L}$ denote substitution
+into this field.
+
+\begin{theorem}[Finite leading-amplitude cocycle]
+\label{olc-theorem}
+On a real small-field germ,
+\begin{equation}
+ D_{M,RL}
+   =\mathcal T_{MR,L}D_{M,R}+D_{MR,L}.
+ \label{olc-cocycle}
+\end{equation}
+The identity extends to every connected common analytic domain
+already available for its two sides. The germ used in its proof
+may depend on the fixed regulator and the ratios.
+\end{theorem}
+
+The proof keeps all Haar, gauge and Gaussian normalization
+factors. They disappear only when each leading amplitude is
+divided by its value at the identity.
+
+\subsection{Based gauge groups and an exact insertion}
+\label{olc-groups-section}
+
+Let $H_R$ consist of current site gauges equal to the identity
+at every intermediate $R$-center, and let $H_{RL}$ be based
+at the final $RL$-centers. Restriction to intermediate centers
+gives
+\begin{equation}
+ 1\longrightarrow H_R\longrightarrow H_{RL}
+       \longrightarrow H_L\longrightarrow1,
+ \label{olc-group-sequence}
+\end{equation}
+where $H_L$ is the intermediate group based at final centers.
+The site coordinates split into the non-intermediate sites
+and the intermediate non-final centers. Embed $H_L$ by setting
+its other current-site values equal to the identity. The two
+factors have disjoint supports, so their direct product is
+$H_{RL}$ and normalized Haar is their product Haar.
+There is no background-dependent orbit-volume factor.
+
+Each based action is free. A gauge preserving every bond of a
+connected graph is determined by its value at one site; its
+value at a based center is the identity.
+The actual maps obey
+\begin{equation}
+ f(U^u)=f(U)^{u|_{\text{intermediate centers}}},\qquad
+ h(V^v)=h(V)^{v|_{\text{final centers}}}.
+ \label{olc-equivariance}
+\end{equation}
+Thus $f$ is $H_R$-invariant, $h$ is $H_L$-invariant, and
+$h\circ f$ is $H_{RL}$-invariant. Product link Haar is
+invariant under all these site actions.
+
+For $u\in H_K$, endpoint covariance of the actual direct-$K$
+contour variables gives
+\[
+ P_K(U^u;y,x)=P_K(U;y,x)u(x)^{-1}.
+\]
+With the actual nonnegative class penalty
+$q(v)=1-\operatorname{Re}\tau(v)$, whose unique zero is the
+identity, put $G_K(U)=\sum_{x\ {\rm not\ a\ center}}q(P_K(U;y,x))$.
+Then
+\begin{equation}
+ \int_{H_K}e^{-G_K(U^u)/g^2}\,du
+       =c(g)^{n_{s,K}},\qquad
+ c(g)=\int_G e^{-q(v)/g^2}\,dv .
+ \label{olc-gauge-insertion}
+\end{equation}
+It is therefore exact to insert $e^{-G_K/g^2}$ into an
+$H_K$-invariant tube integral and multiply by
+$c(g)^{-n_{s,K}}$. This factor is independent of the target
+field. Its asymptotic constant and power of $g$ need not be
+computed below.
+
+\subsection{A consistent local orbit-tube phase}
+\label{olc-tube-section}
+
+The original $S_M$ is known on a small-link domain. We first
+justify extending it to the particular saturated tube needed
+for an exact pushforward composition.
+
+Suppose two sufficiently small configurations $U,V$ satisfy
+$V=U^u$ with $u\in H_{RL}$. The bond equation, in a
+unitary-invariant matrix norm, yields
+\begin{equation}
+ \|u(x)-u(x+e_\mu)\|
+   \leq C\bigl(\|U(x,\mu)-I\|+\|V(x,\mu)-I\|\bigr).
+ \label{olc-gauge-edge}
+\end{equation}
+Every site has a path of at most $C_dRL$ edges to a final
+center, where $u=I$. Consequently
+\begin{equation}
+ \|u-I\|_\infty
+   \leq C_dRL\bigl(\|U-I\|_\infty+\|V-I\|_\infty\bigr).
+ \label{olc-gauge-small}
+\end{equation}
+Shrink the comparison ball so that the near-identity logarithm
+$\lambda=\log u$ exists. Its edge differences satisfy the
+same type of estimate as \eqref{olc-gauge-edge}.
+Along $u_t=\exp(t\lambda)$ the transformed links stay within
+a fixed multiple of the endpoint smallness. Fixed color-norm
+conversions are included in this constant. Shrinking the ball
+again keeps the whole path in the established action domain.
+Local Ward invariance therefore gives
+\begin{equation}
+                         S_M(U)=S_M(V).
+ \label{olc-phase-consistency}
+\end{equation}
+The same argument applies on the intermediate graph and to
+$H_L$. No radius uniform in $RL$ is claimed in this step.
+
+On the $H_{RL}$-saturation of this small representative
+neighborhood, define
+\begin{equation}
+                       S_{\rm ext}(U^u)=S_M(U).
+ \label{olc-extended-phase}
+\end{equation}
+Equation \eqref{olc-phase-consistency} makes the definition
+independent of the small representative. The free compact
+group action has an actual local slice $P_{RL}=I$: the unique
+based transformation to it is $u(x)=P_{RL}(U;y,x)$.
+Hence $S_{\rm ext}$ is smooth, and real analytic in local
+slice coordinates, and is invariant on the saturation.
+
+The local ordinary maps and contour variables extend
+equivariantly to this tube. One may use their endpoint-covariant
+relative-log formulas or define them from the slice. On
+overlaps the two definitions agree by
+\eqref{olc-equivariance} and the original local formulas.
+No measurable completion away from the tube is invoked.
+
+The proved physical branch is a strict local constrained
+minimum modulo the based orbit. Its actual retained
+Hessian after adding $G_K$ is positive. On the slice $P_K=I$,
+the gauge penalty is identically zero, so that positivity
+also gives positivity of the action Hessian on the quotient
+constrained tangent. The finite-dimensional implicit-function
+argument yields a unique local critical orbit in a smaller
+neighborhood.
+
+Choose a compact closure of a sufficiently small real target
+germ. Its stationary orbits form a compact set. Choose a smooth
+$H_{RL}$-invariant cutoff $\chi$, equal to one near these orbits
+and supported in a tube containing no other quotient saddle.
+It can be chosen one near every inner conditional minimum
+over a smaller compact outer saddle neighborhood as well:
+use continuity of the minimum maps, choose nested neighborhoods,
+and average the cutoff over the compact based action.
+The averaging leaves it one on the invariant inner neighborhood.
+The quotient phase has a positive gap on the remaining compact
+part of the support.
+
+This cutoff is an auxiliary device for determining a leading
+coefficient. It is neither the actual retained sharp window
+nor a proposed global Wilson density.
+
+\subsection{Exact Haar pushforward composition}
+\label{olc-pushforward-section}
+
+For $g>0$, consider the positive finite measure
+\begin{equation}
+              \chi(U)e^{-S_{\rm ext}(U)/g^2}\,d\mu_X(U).
+ \label{olc-tube-measure}
+\end{equation}
+The maps $f,h,h\circ f$ are submersions near all relevant
+orbits. At a small representative, the actual pivot blocks
+give full rank; equivariance preserves rank on the orbit.
+A smaller tube retains the property. Its local pushforward
+densities are thus smooth relative to product Haar.
+
+Write $J_g(V)$ for the pushforward density through $f$, and
+$I_g(W)$ for the density through $h\circ f$. Exact
+pushforward composition gives
+\begin{equation}
+                I_g(W)=\int_{h(V)=W}J_g(V)\,d\mu_h(V).
+ \label{olc-Fubini}
+\end{equation}
+Here $d\mu_h$ is the conditional coarea density relative to
+product Haar. Equivalently, test both sides against a smooth
+function of $W$ and use ordinary Fubini. No multiplication
+of formal delta distributions is required.
+
+The first pushforward is exactly $H_L$-invariant. Indeed,
+lift a based intermediate gauge by
+\eqref{olc-group-sequence}, use the $H_{RL}$ invariance of
+$\chi$ and $S_{\rm ext}$, and change the current Haar variables.
+This is precisely the invariance needed in the outer integral.
+
+The actual two-minimum comparisons identify the inner
+critical value and then the outer one:
+\begin{equation}
+ \min_{f(U)=V}S_{\rm ext}(U)=S_{MR}(V),\qquad
+ \min_{h(V)=W}S_{MR}(V)=S_{MRL}(W).
+ \label{olc-minimum-values}
+\end{equation}
+These are local comparisons on the chosen tube.
+The conditional minima depend smoothly on the outer
+parameters modulo the inner based orbit. The cutoff is one
+there. Outside the smaller outer saddle neighborhood, the
+compact quotient phase gap makes the contribution
+exponentially smaller. All uniformity here concerns the
+fixed finite regulator and fixed ratios only.
+
+\subsection{The finite-dimensional Laplace fact}
+\label{olc-Laplace-section}
+
+We record the elementary asymptotic used twice. In a finite
+real chart suppose
+\[
+ F(z,w)=s(w)+\tfrac12z^TA(w)z+O(|z|^3),\qquad A(w)>0,
+\]
+and the critical point is the unique local minimum on the
+chosen compact support. The density $m(z,w)$ is smooth and
+its cutoff is one near zero. On a small compact parameter
+germ the Hessian has a common positive lower bound. Then
+\begin{equation}
+ \int e^{-F(z,w)/g^2}m(z,w)\,dz
+  =e^{-s(w)/g^2}g^n(2\pi)^{n/2}
+        m(0,w)\det A(w)^{-1/2}[1+o(1)]
+ \label{olc-Laplace}
+\end{equation}
+uniformly in that parameter germ.
+
+To prove it, shrink the chart until $F-s\geq c|z|^2$.
+Set $z=g\xi$, first restrict $\xi$ to a fixed bounded set,
+and use Taylor's formula for uniform convergence to the
+Gaussian. A common Gaussian majorant removes that restriction.
+The compact remainder outside a smaller chart has a positive
+phase gap and is exponentially negligible. This proof also
+allows a smooth positive amplitude, whose leading value is
+its value at the saddle, and an amplitude family converging
+uniformly there with a bounded relative error.
+
+For an orbit integral, first insert
+\eqref{olc-gauge-insertion}. The phase becomes $S+G_K$.
+Its unique saddle is the gauge-zero representative: the
+quotient phase has its strict minimum there modulo the orbit,
+and on the compact based orbit $G_K$ has its unique zero
+at $P_K=I$. Away from a neighborhood of that representative,
+the sum of the quotient and gauge penalties has a positive
+gap. The actual retained chart therefore reduces the leading
+asymptotic to \eqref{olc-Laplace}, with the exact factor
+$c(g)^{-n_{s,K}}$ still present. No unspecified quotient
+volume form or ultraviolet-uniform error estimate is used.
+
+\subsection{Identification with the actual pivot and determinant}
+\label{olc-identification-section}
+
+The exact local constrained measure has, at its saddle,
+the factor
+\begin{equation}
+                       h_0^{\,n_e-n_c}d_K(V_*).
+ \label{olc-saddle-measure}
+\end{equation}
+Indeed relative Haar coordinates are
+$d(e^{iB})=h_0j(B)\,dB$ with $j(0)=1$; the normalized
+fluctuation straightening Jacobian is one at zero; and
+solving the constraint contributes the inverse pivot product.
+The target density is relative to group Haar. Consequently
+there is no extra factor $j(\log W)$ in
+\eqref{olc-saddle-measure}.
+
+Let $I_{M,K;g}$ denote an appropriate local tube pushforward.
+The phase-corrected, identity-normalized stationary amplitude is
+\begin{equation}
+ e^{D_{M,K}(W)}
+   =\lim_{g\downarrow0}
+       e^{[S_{MK}(W)-S_{MK}(1)]/g^2}
+          \frac{I_{M,K;g}(W)}{I_{M,K;g}(1)} .
+ \label{olc-normalized-amplitude}
+\end{equation}
+The gauge integral, powers of $g$, Haar constants, flat
+determinants and all scalar cutoff factors cancel in this
+ratio. The remaining saddle measure and Hessian are exactly
+\eqref{olc-leading}. A cutoff equal to one near the critical
+orbit changes no leading coefficient.
+
+The actual sharp-window integral has the same saddle,
+pivot factor and retained Hessian. Its variable is $z=g\xi$
+and its window is the actual product window of threshold
+$T(g)$. Choose $T(g)\to\infty$ with $gT(g)^3\to0$.
+The established centered Gaussian estimate makes its
+normalized logarithmic expectation
+\begin{equation}
+                          O\!\left(\tau(T(g))+g^2T(g)^6\right)
+                              \longrightarrow0.
+ \label{olc-sharp-leading}
+\end{equation}
+Thus the sharp-window and the auxiliary fixed-tube integrals
+have the same normalized leading amplitude. This does not
+equate the integrals at positive $g$.
+
+The auxiliary first pushforward supplies only the intermediate
+based $H_L$ invariance: its input was made $H_{RL}$-invariant.
+The phase and normalized leading amplitude therefore have
+that identity on the needed intermediate orbit. It suffices
+to replace the rooted outer saddle by $V_p$.
+The cutoff has not been made invariant under every output
+site gauge with nontrivial final-center values. The full
+local output gauge identity for the actual $D$ is the
+previously proved one from the zero-input quantum leading
+limit, not an additional invariance claimed for this cutoff.
+
+\subsection{Sequential saddle evaluation}
+\label{olc-proof-section}
+
+\begin{proof}[Proof of Theorem~\ref{olc-theorem}]
+Apply \eqref{olc-Laplace} on the $f$ fibers, uniformly over
+a compact neighborhood of the outer stationary orbit.
+With a scalar $c_1(g)$ independent of $V$,
+\begin{equation}
+ J_g(V)=c_1(g)e^{-S_{MR}(V)/g^2}
+                   e^{D_{M,R}(V)}[1+o(1)] .
+ \label{olc-inner-asymptotic}
+\end{equation}
+The relative error is uniform. Exact $H_L$ invariance reduces
+the full compact outer orbit to a small slice. The inner
+cutoff is one at every relevant conditional minimum.
+
+Insert \eqref{olc-inner-asymptotic} into
+\eqref{olc-Fubini}. The outer Laplace formula evaluates the
+smooth amplitude $e^{D_{M,R}(V)}$ at its existing classical
+minimum. With another scalar $c_2(g)$,
+\begin{equation}
+ I_g(W)=c_1(g)c_2(g)e^{-S_{MRL}(W)/g^2}
+       e^{D_{M,R}(V_p^{MR,L}(W))+D_{MR,L}(W)}[1+o(1)] .
+ \label{olc-sequential-asymptotic}
+\end{equation}
+The amplitude gradient has no factor $g^{-2}$ and hence
+does not alter the leading phase saddle. The outer rooted
+representative gives the same amplitude by the based
+$H_L$ invariance. The compact phase gap controls the
+remaining part of the outer integration.
+
+Direct evaluation of the same integral through $h\circ f$
+instead gives a scalar $c_{12}(g)$ and
+\begin{equation}
+ I_g(W)=c_{12}(g)e^{-S_{MRL}(W)/g^2}
+                         e^{D_{M,RL}(W)}[1+o(1)] .
+ \label{olc-direct-asymptotic}
+\end{equation}
+Normalize both equations by their values at $W=I$ after
+removing the phase. There $V_p=I$ and every $D$ is zero.
+All scalar factors cancel, without any computation of the
+relation between $c_{12}$ and $c_1c_2$. Taking $g$ to zero
+yields
+\[
+ e^{D_{M,RL}(W)}
+   =e^{D_{M,R}(V_p^{MR,L}(W))+D_{MR,L}(W)} .
+\]
+On the positive real germ the logarithms are real and
+zero at the identity. They therefore satisfy
+\eqref{olc-cocycle}, without a branch ambiguity.
+Both sides are given holomorphic pivot/determinant
+functionals. The identity theorem extends their germ
+identity to each connected common analytic domain.
+The smaller comparison germ used by Laplace does not
+shrink a domain already established for those functions.
+\end{proof}
+
+\subsection{Joint infinite systems and the Maxwell coefficient}
+\label{olc-limit-section}
+
+For fixed $R,L$, the existing modules give uniform anchored
+analytic families for all three $D$ terms. On a joint local
+limit system the finite identity passes on compact fields
+by local normal convergence and anchored tail bounds;
+the same bounds justify the classical substitutions.
+It gives a scalar quotient cocycle, not a coefficientwise
+identity of carrier decompositions.
+
+Apply exact preservation of the true infinite Maxwell
+coefficient under classical transport. Then
+\begin{equation}
+ \beta_{MRL}(D_{M,RL})
+   =\beta_{MR}(D_{M,R})+\beta_{MRL}(D_{MR,L}).
+ \label{olc-Maxwell-cocycle}
+\end{equation}
+Thus a long fixed-ratio leading coefficient is the sum of
+its consecutive step coefficients in this joint system.
+This proves neither their sign nor their convergence as
+the preceding depth grows.
+
+At finite volume, the symmetric short-cutoff moment
+$\beta_{M,N}$ does not commute exactly with classical
+transport. One must retain the separately controlled
+finite leakage when applying it to
+\eqref{olc-cocycle}. No exact finite scalar
+$\beta$ additivity is asserted.
+
+\subsection{Scope}
+\label{olc-scope-section}
+
+The result rests on a consistent local orbit-tube extension,
+exact finite Haar pushforward composition, and ordinary
+finite-dimensional saddle asymptotics using the actual
+pivot, contour penalty and retained Hessian. It assumes
+no ultraviolet-uniform stationary-phase remainder.
+
+It does not identify direct and sequential sharp-window
+sectors at positive $g$, extend the original local action
+to every gauge configuration, or identify every local
+sector with the full Wilson measure. The auxiliary cutoff
+disappears only from the leading coefficient.
+
+The background-field/ghost determinant comparison, a
+bounded comparison error in depth, the numerical
+logarithmic coefficient, its sign, physical coupling
+tuning and the treatment of the other field sectors
+remain separate from this cocycle.
+
+
+% No preamble. Prefix fbt-. Conditional qualitative positive block transfer.
+\section{Qualitative transfer of a positive leading block drift}
+\label{fbt-section}
+
+The compactness and moment-passage inputs in this section are
+available for the actual homogeneous local macrostep. Its
+positivity hypothesis is explicitly additional and unproved.
+The conclusion requires no quantitative finite-volume rate.
+
+\subsection{The actual fixed-length coefficients}
+\label{fbt-setup}
+
+Fix the primitive ratio, elementary composite ratio \(R\),
+grouping \(J\), common analytic domains and extraction
+convention. Fix a finite \(q\ge1\), chosen to be a multiple
+of the activity-envelope block length \(q_a\) when applying
+the tuning consequence below. Let \(\mathcal P\) be the
+compatible nested cubic period family: every fixed power
+of \(R\) divides all sufficiently late periods in
+\(\mathcal P\).
+
+For a \(q\)-step block with final period \(N\in\mathcal P\),
+put
+\begin{equation}
+ M_j=MR^j,\qquad Q_j=R^{q-j}N,\qquad 0\le j\le q.
+ \label{fbt-block-scales}
+\end{equation}
+Here \(M\) is any permitted preceding homogeneous depth.
+Let \(D_{M_j,R;Q_{j+1}}\) be the actual finite leading
+correction \(\Delta+\mathcal Q_{\det}\) of step \(j\).
+Define
+\begin{equation}
+ b_{0,j}^{M,N}
+    =\beta_{M_jR,Q_{j+1}}(D_{M_j,R;Q_{j+1}}),
+ \qquad
+ B_q(M,N)=\sum_{j=0}^{q-1}b_{0,j}^{M,N}.
+ \label{fbt-finite-coefficients}
+\end{equation}
+Each functional is the actual finite short-lift ratio
+normalized by its actual finite classical reference.
+These coefficients are real on the real branches.
+No finite ratio is replaced by an infinite moment.
+
+The uniform outer-domain leading-family bound and the
+finite moment estimate give, above the fixed reference
+threshold,
+\begin{equation}
+                          |b_{0,j}^{M,N}|\le B_0
+ \label{fbt-leading-bound}
+\end{equation}
+uniformly in depth and permitted volume. The reference
+denominators are bounded below by \(1/2\).
+
+\subsection{Varying-depth structural limits and their moments}
+\label{fbt-compactness}
+
+Take any \(M_n\) and any \(N_n\in\mathcal P\) tending to
+infinity. The old depths need not be bounded or converge.
+Extract jointly the classical references and background
+maps at the shifted depths \(M_nR^j\), their required
+fixed-order vertices, the actual retained flat precisions
+and covariances, and all \(q\) leading corrections in
+\eqref{fbt-finite-coefficients}.
+The uniform strict support, common-domain and exponential
+source-Hessian bounds provide such a subsequence. If a
+structural reference comparison requires additional fixed
+depth shifts or endpoint powers, include their countable
+collection in the same diagonal extraction. Cofinal
+divisibility guarantees their eventual finite availability.
+
+Write the limiting corrections as \(D_j^*\), with true
+infinite Maxwell functional \(\beta_{j+1}^*\) at output
+scale \(j+1\), and set
+\begin{equation}
+                       B_q^*=\sum_{j=0}^{q-1}
+                                         \beta_{j+1}^*(D_j^*).
+ \label{fbt-limit-sum}
+\end{equation}
+The scale indices describe the structural limit. They
+do not identify it with one fixed finite-depth system.
+
+These are actual determinant structural limits. At fixed
+\(R\) the retained fiber per current block has fixed finite dimension;
+the whole retained operator still has dimension growing with volume.
+Local matrix convergence and exponential envelopes pass
+products and the inverse identity \(A_0C_0=I\) by truncating
+the intermediate sums. The chart and pivot maps are fixed;
+common-domain Cauchy estimates give convergence of classical
+vertices through order four. The absolutely convergent
+trace formula therefore identifies the limiting Hessian
+with the same actual determinant expression. One may
+equivalently extract the strict scalar families jointly
+and identify their Hessians in this way. No old fine
+coordinate count occurs.
+
+\begin{lemma}[Passage of the actual finite moments]
+\label{fbt-moment-lemma}
+Along every such joint subsequence,
+\begin{equation}
+ b_{0,j}^{M_n,N_n}\longrightarrow
+                      \beta_{j+1}^*(D_j^*)\quad(0\le j<q),
+ \qquad
+ B_q(M_n,N_n)\longrightarrow B_q^*.
+ \label{fbt-moment-limits}
+\end{equation}
+\end{lemma}
+\begin{proof}
+For a fixed \(j\), the leading source-Hessian kernels
+converge locally and have a common exponential row
+bound. Restrict their short-lift second moment first
+to a fixed displacement radius. The finite sum converges.
+The rest has a uniformly summable exponential
+second-moment tail. The finite short-lift cutoff tends
+to infinity since \(Q_{j+1}=R^{q-j-1}N_n\to\infty\).
+
+The actual finite reference denominator tends uniformly
+to one by the flat normalized classical periodization
+estimate, even for these varying depths. Division proves
+the first assertion. The sum has fixed finite length
+\(q\), proving the second. Neither an extensive total
+limit nor a regulator convergence rate was used.
+\end{proof}
+
+\subsection{The conditional positive transfer}
+\label{fbt-positive-section}
+
+\paragraph{Unproved structural positivity hypothesis.}
+Assume there is one \(\delta>0\) such that \emph{every}
+joint structural infinite limit obtainable above satisfies
+\begin{equation}
+                                  B_q^*\ge\delta.
+ \label{fbt-positive-hypothesis}
+\end{equation}
+The same margin must work for all varying-depth and
+permitted-period sequences. Positivity in one selected
+fixed-depth limit is insufficient.
+
+\begin{proposition}[Uniform finite block lower bound]
+\label{fbt-transfer-proposition}
+Under \eqref{fbt-positive-hypothesis}, for every
+\(0<\varepsilon<\delta\) there is a threshold
+\(N_*(\varepsilon)\), independent of preceding depth,
+such that
+\begin{equation}
+ B_q(M,N)\ge\delta-\varepsilon
+ \quad\hbox{for all permitted }M,\quad
+ N\in\mathcal P,\quad N\ge N_*(\varepsilon).
+ \label{fbt-finite-lower}
+\end{equation}
+In particular the finite block is at least \(\delta/2\)
+above one uniform period threshold.
+\end{proposition}
+\begin{proof}
+Otherwise choose \(N_n\to\infty\) in \(\mathcal P\)
+and old depths \(M_n\) such that
+\(B_q(M_n,N_n)<\delta-\varepsilon\).
+Take a joint structural subsequence. By
+Lemma~\ref{fbt-moment-lemma}, its limiting sum is at most
+\(\delta-\varepsilon\), contradicting
+\eqref{fbt-positive-hypothesis}.
+\end{proof}
+
+The threshold is also uniform in a block's starting
+stage: absorb that stage into its preceding depth \(M\).
+Its final period is the \(N\) in
+\eqref{fbt-block-scales}. The proof gives no numerical
+threshold or convergence rate.
+
+\subsection{The finite tuning input needs only this qualitative bound}
+\label{fbt-tuning-section}
+
+Take \(q\) to be a multiple of \(q_a\). Write
+\(\mathcal F_{j,g}\) for the actual finite quantum extraction map,
+\(x_j\) for the actual real extracted input class, and
+\(d_j(g,x)=\beta_{j+1}(\mathcal F_{j,g}(x))\) for its
+inverse-coupling decrement. On the established
+finite activity envelope the actual decrement obeys
+\begin{align}
+ |d_j(g,x_j)-b_{0,j}|
+ \le{}&C_{\rm int}\omega(N_{\min})
+       +C_{{\rm par},\beta}
+                    \{\tau(T(g))+g^2T(g)^6\}\notag\\
+ &+C_{{\rm in},\beta}\,gT(g)/b.
+ \label{fbt-actual-error}
+\end{align}
+The first term tends qualitatively to zero as the
+period threshold increases. The other terms tend to
+zero in the weak-coupling limit at the fixed field
+radius and chosen real threshold \(T(g)\).
+
+Use \eqref{fbt-finite-lower} with
+\(\varepsilon=\delta/2\). Raise the period threshold
+and lower the weak-coupling ceiling until
+\eqref{fbt-actual-error} is at most \(\delta/(4q)\).
+Then every permitted \(q\)-step block satisfies
+\begin{equation}
+ \frac{\delta}{4}\le
+       \sum_{j=k}^{k+q-1}d_j(g_j,x_j)
+       \le qD_{\rm abs}.
+ \label{fbt-actual-block}
+\end{equation}
+The upper bound is the proved absolute-increment bound.
+Repeating the \(q_a\)-step activity blocks gives the same
+intermediate envelope throughout this longer block.
+No new large-endpoint field-dilation estimate is used.
+
+These are the positive block bounds used in the
+continuous clipped-recursion shooting argument.
+Put \(\Gamma_{\rm w}=g_{\rm w}^{-2}\), where
+\(g_{\rm w}\) is the chosen weak-coupling ceiling.
+For a terminal inverse coupling
+\(\Gamma_*\ge\Gamma_{\rm w}+qD_{\rm abs}\), that argument
+then gives an initial value in
+\begin{equation}
+ [\,\Gamma_*+m\delta/4,\ \Gamma_*+mqD_{\rm abs}\,]
+ \label{fbt-shooting-interval}
+\end{equation}
+which makes \(mq\) genuine weak local extraction steps
+and reaches \(\Gamma_*\). This remains conditional on
+\eqref{fbt-positive-hypothesis}.
+
+If an averaged formulation for arbitrary finite
+interval lengths is desired, write \(n=mq+r\),
+\(0\le r<q\), and use \eqref{fbt-leading-bound} on
+the final fringe. For intervals entirely above the
+common period threshold,
+\begin{equation}
+ \sum_{j=k}^{k+n-1}b_{0,j}
+ \ge cn-C_{\rm fin},\qquad
+ c=\frac{\delta}{2q},\qquad
+ C_{\rm fin}=(q-1)(B_0+c).
+ \label{fbt-optional-fringe}
+\end{equation}
+Indeed the complete blocks contribute at least
+\(m\delta/2\), and the fringe contributes at least
+\(-rB_0\). The shooting proof needs only the fixed-block
+bound, so this additional formulation is optional.
+
+\subsection{The remaining sign problem}
+\label{fbt-scope}
+
+Include the one long-ratio \(R^q\) determinant in the
+joint extraction. The proved leading cocycle and true
+infinite classical marginal preservation give
+\begin{equation}
+                         B_q^*
+                          =\beta_q^*(D_{0,R^q}^*).
+ \label{fbt-long-ratio}
+\end{equation}
+A uniformly positive reference comparison for this
+coefficient in every structural limit would therefore
+supply \eqref{fbt-positive-hypothesis}. The equality
+itself proves no sign.
+
+Once that positive structural margin is established,
+qualitative compactness is enough for the needed finite
+block lower bound; a separate exponential regulator
+rate is unnecessary. This section does not establish
+the margin, exact finite marginal additivity, summability
+of errors over an infinite history, uniqueness of the
+old-depth limit, or convergence of tuned local densities
+to a continuum measure.
+
+
+% No preamble. Prefix fts-. Conditional finite endpoint tuning only.
+\section{Finite ultraviolet tuning under an averaged drift hypothesis}
+\label{fts-section}
+
+The finite activity induction, leakage estimate, zero-input
+parity remainder and real-coupling continuity are available.
+This section gives a conditional endpoint argument for their
+actual finite local maps. Its additional hypothesis is a
+uniformly positive averaged drift of the \emph{actual finite}
+leading determinant coefficients. That hypothesis is not
+proved here.
+
+\subsection{The actual decrement on the induction envelope}
+\label{fts-decrement-section}
+
+Fix the finite-induction data: elementary ratio $R$, grouping
+$J$, radius $b$, carrier exponent $a_0$, amplitude block length
+$q_a$, endpoint radius $r_b=K_{\mathrm{amp}}b^2$, and intermediate
+bound $C_{\mathrm{int}}b^2$. All references and $\beta_j$ are the
+actual finite reference-normalized ones. For a real extracted
+input define
+\begin{align}
+ d_j(g,x)&=\beta_{j+1}(F_{j,g}(x)),\notag\\
+ \gamma_{j+1}&=\gamma_j-d_j(g_j,x_j),\qquad
+ g_j=\gamma_j^{-1/2},\notag\\
+ x_{j+1}&=P_{j+1}F_{j,g_j}(x_j).
+ \label{fts-actual-update}
+\end{align}
+Real branches and real initial data give real decrements.
+The activity induction applies to every realized weak
+coupling sequence while the permitted periods stay above
+its threshold. In particular $x_0=0$ is allowed.
+
+Write
+\begin{equation}
+ b_{0,j}=\beta_{j+1}
+       \bigl(D_{M_j,R;N_{j+1}}\bigr)
+ \label{fts-leading-coefficient}
+\end{equation}
+for the finite pivot/Gaussian leading correction. It is
+independent of $g$ and of the inherited interaction, but
+depends on the actual classical data and regulator. It is
+not replaced by an independently selected infinite coefficient.
+
+Since every $x_j$ is extracted, the finite leakage bound,
+parity estimate and quantum input comparison give
+\begin{align}
+ |d_j(g,x_j)-b_{0,j}|
+ \leq{}& C_{\mathrm{int}}\omega(N_{\min})
+   +C_{\mathrm{par},\beta}
+       \{\tau(T(g))+g^2T(g)^6\}\notag\\
+ &+C_{\mathrm{in},\beta}\frac{gT(g)}b .
+ \label{fts-decrement-error}
+\end{align}
+The first term is the finite classical leakage, the second
+includes the fixed outer-radius factor, and the third includes
+$C_{\mathrm{int}}$ and the beta bound. This follows from
+$F=T+G$ and $G(x)=G(0)+(G(x)-G(0))$. The $b^2$ in the
+inner-radius remainder cancels beta's $b^{-2}$ bound.
+No exact finite identity $\beta_{\mathrm{out}}T
+=\beta_{\mathrm{in}}$ is used.
+
+At fixed $b,R,J$, any prescribed tolerance $\epsilon>0$
+in \eqref{fts-decrement-error} can be obtained by raising
+one period threshold and then lowering a coupling ceiling.
+The choices are independent of the number of permitted
+steps. The finite-induction magnitude bound also supplies
+\begin{equation}
+                 |d_j(g,x_j)|\leq D_{\mathrm{abs}}
+ \label{fts-absolute-increment}
+\end{equation}
+uniformly on the envelope and in the allowed history lengths
+and regulators.
+
+\subsection{The additional hypothesis and positive block increments}
+\label{fts-hypothesis-section}
+
+\paragraph{Unproved averaged-drift hypothesis.}
+Assume that there are constants $c>0$ and
+$C_{\mathrm{fin}}\geq0$, independent of old depth and the
+permitted finite periods, such that
+\begin{equation}
+       \sum_{j=k}^{k+n-1}b_{0,j}\geq cn-C_{\mathrm{fin}}
+ \label{fts-drift-hypothesis}
+\end{equation}
+on the contemplated stage intervals. It suffices to assume
+this for the block length and starting stages used below.
+No pointwise positivity of an individual coefficient is required.
+
+Choose $q$ to be a positive multiple of $q_a$ with
+$C_{\mathrm{fin}}\leq cq/4$. Strengthen the period and
+coupling thresholds until the error in
+\eqref{fts-decrement-error} is at most $c/4$. Every $q$-step
+sequence of projected maps started in the endpoint ball,
+at arbitrary prescribed couplings in that weak range, then
+satisfies
+\begin{equation}
+ B_-\leq\sum_{j=k}^{k+q-1}d_j(g_j,x_j)\leq B_+,
+ \qquad
+ B_-=\frac{cq}{2}>0,\qquad B_+=qD_{\mathrm{abs}}.
+ \label{fts-block-decrements}
+\end{equation}
+Indeed the lower bound is
+$cq-C_{\mathrm{fin}}-q\epsilon\geq cq/2$, and the upper
+bound follows from \eqref{fts-absolute-increment}.
+
+Each consecutive $q_a$ subblock returns to the same endpoint
+ball. Thus the same $C_{\mathrm{int}}b^2$ envelope controls
+the entire larger block. This step repeats already proved
+quantum blocks; it does not invoke a new direct large-endpoint
+high-degree estimate or require a new field radius depending
+on $q$.
+
+\subsection{A continuous auxiliary clipped recursion}
+\label{fts-clipping-section}
+
+Let $\Gamma_{\mathrm w}=g_{\mathrm w}^{-2}>0$ be the
+strengthened weak threshold. For the shooting proof only,
+evaluate the map for every real scalar $\gamma$ at
+\begin{equation}
+ g_{\mathrm{eval}}(\gamma)
+       =\max\{\gamma,\Gamma_{\mathrm w}\}^{-1/2},
+ \label{fts-clipped-evaluation}
+\end{equation}
+while leaving the scalar update unclipped:
+\begin{align}
+ \gamma_{\mathrm{next}}
+       &=\gamma-d_j(g_{\mathrm{eval}}(\gamma),x),\notag\\
+ x_{\mathrm{next}}
+       &=P_{j+1}F_{j,g_{\mathrm{eval}}(\gamma)}(x).
+ \label{fts-clipped-update}
+\end{align}
+This is auxiliary when $\gamma<\Gamma_{\mathrm w}$; no
+physical density interpretation is assigned there.
+Its evaluated couplings always belong to the proved weak
+range. Starting in the endpoint ball, finite induction
+keeps all activity arguments admissible independently
+of the scalar value.
+
+Joint real-coupling and quotient continuity, together with
+continuity of the maximum in
+\eqref{fts-clipped-evaluation}, makes every finite clipped
+history continuous in its initial $\gamma$. On a compact
+initial interval, \eqref{fts-absolute-increment} bounds all
+intermediate scalars. Hence their evaluated couplings
+belong to a compact positive interval. Neither continuity
+at zero coupling nor a continuous representative selection
+nor a volume-uniform modulus is needed.
+
+Since \eqref{fts-decrement-error} and
+\eqref{fts-drift-hypothesis} apply to every admissible
+realized weak sequence, the clipped history also obeys
+\eqref{fts-block-decrements}.
+
+\subsection{Endpoint tuning and removal of clipping}
+\label{fts-tuning-section}
+
+\begin{theorem}[Conditional finite ultraviolet tuning]
+\label{fts-theorem}
+Assume \eqref{fts-drift-hypothesis} with the uniformity just
+specified. Fix $m\geq1$ and a permitted finite history of
+$mq$ steps whose final period is above the strengthened
+threshold, with the nested-family compatibility conditions.
+Fix a terminal inverse coupling satisfying
+\begin{equation}
+       \Gamma_*\geq\Gamma_{\mathrm w}+qD_{\mathrm{abs}}.
+ \label{fts-terminal-margin}
+\end{equation}
+For $x_0=0$, or any fixed real extracted input in the
+endpoint ball, some initial inverse coupling in
+\begin{equation}
+       [\,\Gamma_*+mB_-,\ \Gamma_*+mB_+\,]
+ \label{fts-shooting-interval}
+\end{equation}
+generates $mq$ genuine weak local extraction steps and
+ends exactly at $\Gamma_*$. The actual scalar relation
+is $\gamma_{j+1}=\gamma_j-\beta_{j+1}(F_{j,g_j}(x_j))$,
+with $g_j=\gamma_j^{-1/2}$ throughout.
+\end{theorem}
+
+\begin{proof}
+Run the clipped recursion with the fixed initial activity.
+Summing \eqref{fts-block-decrements}, the final scalar
+at the left endpoint of \eqref{fts-shooting-interval}
+is at most $\Gamma_*$, while at the right endpoint it
+is at least $\Gamma_*$. Continuity and the intermediate
+value theorem give a clipped history ending at $\Gamma_*$.
+
+For this selected history, sum the positive \emph{future}
+block decrements to obtain
+\begin{equation}
+ \Gamma_*+(m-k)B_-\leq\gamma_{kq}
+                   \leq\Gamma_*+(m-k)B_+,
+ \qquad 0\leq k\leq m.
+ \label{fts-endpoint-bounds}
+\end{equation}
+Within any block, \eqref{fts-absolute-increment} implies
+\begin{equation}
+ \gamma_{kq+r}\geq\gamma_{kq}-rD_{\mathrm{abs}}
+       \geq\Gamma_*-qD_{\mathrm{abs}}
+       \geq\Gamma_{\mathrm w},
+ \qquad 0\leq r\leq q.
+ \label{fts-no-clipping}
+\end{equation}
+Thus clipping never occurred on the selected history.
+Its scalar and activity updates are the actual local
+extraction updates, and its coupling stays weak.
+The exact finite representative and vacuum compensation
+identities implement the same normalized local density
+at every step.
+\end{proof}
+
+The initial bare coupling therefore obeys
+\begin{equation}
+ (\Gamma_*+mB_+)^{-1/2}
+       \leq g_{\mathrm{initial}}
+       \leq(\Gamma_*+mB_-)^{-1/2}.
+ \label{fts-bare-coupling-bounds}
+\end{equation}
+Conditional on the drift hypothesis, this tunes arbitrarily
+long finite histories to one fixed positive weak endpoint,
+with bare coupling of order $m^{-1/2}$. It proves no
+uniqueness of the tuned initial value or consistency between
+the choices at different $m$.
+
+\subsection{What remains unproved}
+\label{fts-scope-section}
+
+The additional input is precisely
+\eqref{fts-drift-hypothesis} for the actual finite
+determinant coefficients with their actual extraction.
+The established activity bounds, parity, continuity and
+qualitative finite leakage do not prove it. A determinant
+cocycle can telescope the infinite counterpart, but a
+quantitative one-loop comparison and finite-regulator
+control must still yield the required positive averaged
+finite drift.
+
+The horizons considered here are multiples of $q$, enough
+for an unbounded ultraviolet subsequence if that drift
+input is supplied. No assertion about every integer
+horizon is needed. The initial period grows to keep the
+final period above the common threshold. The theorem
+does not establish convergence of the tuned measures,
+mixed or large-field histories, a nontrivial continuum
+limit, or reconstruction. Its density statement remains
+the one for the specified homogeneous local extraction
+map and its justified continuation.
+
+
+\section{The remaining determinant estimate and the existence argument}
+\label{dfn-next}
+
+The leading correction is now an actual functional,
+\[
+ D_{M,R}=\Delta_{M,R}+\mathcal Q_{\mathrm{det},M,R},
+\]
+with an exact Hessian trace formula and an exact finite
+composition law. In a jointly compatible infinite system its
+Maxwell coefficient satisfies
+\[
+ \beta_{MRL}(D_{M,RL})
+   =\beta_{MR}(D_{M,R})+\beta_{MRL}(D_{MR,L}).
+\]
+These identities supply the algebra for accumulated drift;
+they do not determine its value or sign.
+
+The exact gauge and coarea bridge makes the comparison
+operators concrete. With its stated finite coordinates,
+\[
+ D_{M,K}=\mathcal N_0\!\left[
+    \log\det G_b-\frac12\log\det Q_b
+                 -\frac12\log\det(CQ_b^{-1}C^T)\right],
+\]
+where \(\mathcal N_0\) subtracts the value at the identity.
+The inverse pivot has been accounted for by coarea.
+In fact \(CQ_b^{-1}C^T=(q_{\mathrm{eff}}+B)^{-1}\).
+Choosing one fixed sufficiently large \(B=aI\), the
+coarse term \(\tfrac12\mathcal N_0\log\det(q_{\mathrm{eff}}+aI)\)
+has a uniformly bounded Maxwell coefficient by the
+proved coarse-action support bounds.
+The remaining comparison concerns the fine combination
+\[
+ \mathcal N_0\!\left[
+ \log\det G_b-\frac12\log\det
+ \bigl(s''-\lambda\cdot f''+D_bD_b^T+aC^TC\bigr)\right].
+\]
+In particular, the point-anchor Rayleigh test rules out a
+uniform physical mass estimate for the based ghost alone.
+
+A concrete route is to compare the composite determinant from
+the bare Wilson action to a background-field vector and ghost
+reference at the same cutoff and infrared scale. With every
+normalization specified, the desired estimate has the form
+\[
+ \bigl|\beta(D_{1,R^k})-B_k^{\mathrm{ref}}\bigr|\le C,
+ \qquad
+ \bigl|B_k^{\mathrm{ref}}-a\,k\bigr|\le C',
+ \qquad a>0,
+\]
+with constants independent of \(k\). Neither displayed bound is
+proved in this notebook. The stationary lift, constrained-current
+curvature and measure factors must be included in that comparison.
+A coefficient quoted for a different effective action does not
+establish these estimates for the present one.
+
+The drift hypothesis required for shooting concerns the actual
+finite regulators, including arbitrary permitted preceding depths.
+An infinite comparison must therefore retain the uniformity and
+joint-limit compatibility needed to transfer a positive block
+margin to those finite coefficients. The qualitative transfer
+proposition supplies that passage once a positive margin holds
+in every relevant structural limit; a quantitative
+finite-volume convergence rate is unnecessary for this purpose.
+No exact finite commutation of Maxwell extraction with classical
+transport has been assumed.
+
+Once that drift is supplied, the conditional shooting theorem
+closes the finite weak-coupling trajectory issue for this local
+map. The subsequent existence argument must still incorporate
+all required field histories with their exact measure identities,
+prove uniform source estimates, construct a nontrivial continuum
+observable hierarchy, and establish its Euclidean symmetry,
+positivity and reconstruction properties. These requirements are
+those of Notebook 01; the determinant and tuning arguments do not
+replace them.
+
+\begin{thebibliography}{9}
+\bibitem{priorflow}
+\emph{Toward a four-dimensional Yang--Mills construction},
+research Notebooks 15--31 in this workspace.
+The local minimum, exact constrained integral, common-domain
+quantum map, finite induction and classical Maxwell transport
+are the principal inputs.
+\bibitem{lwbackground}
+M.~L\"uscher and P.~Weisz,
+\emph{Background field technique and renormalization in lattice
+gauge theory}, Nucl. Phys. B \textbf{452} (1995), 213--233.
+\href{https://arxiv.org/abs/hep-lat/9504006}{Primary preprint}.
+\bibitem{lwmatching}
+M.~L\"uscher and P.~Weisz,
+\emph{Computation of the relation between the bare lattice
+coupling and the MS coupling in SU(N) gauge theories to two
+loops}, Nucl. Phys. B \textbf{452} (1995), 234--260.
+\href{https://arxiv.org/abs/hep-lat/9505011}{Primary preprint}.
+These papers supply background-field formalism and reference
+amplitudes to investigate. They are not used here as a proof of
+the required comparison with our constrained determinant.
+\bibitem{sourceflow}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}
+{Yang--Mills-LLM-experiment}, deposited raw accounts at commit
+\texttt{e392ef4501\allowbreak 3a581664ba\allowbreak b76b908671\allowbreak 70b30fe10e}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,242 @@
+Research checkpoint: 17 October 2026
+
+The active unbudgeted goal is a rigorous nontrivial four-dimensional
+Yang--Mills existence argument, followed by the mass gap if existence
+is completed. The goal remains active and incomplete.
+
+Notebook29 is assembled and compiled successfully:
+  outputs/ym4-gauge-extraction-notebook.tex
+Title: Total Ward extraction and classical spatial gain.
+Assembly in order:
+  work/gauge_extraction_notebook_head.tex
+  work/macrostep_symmetry_fragment.tex                 msy-
+  work/pregauge_holder_prefix_fragment.tex              pgh-
+  work/analytic_interaction_compactness_fragment.tex    aic-
+  work/total_kernel_ward_extraction_fragment.tex         tkw-
+  work/classical_background_semigroup_fragment.tex      csg-
+  work/low_kernel_spatial_transport_fragment.tex        lst-
+  work/activity_quotient_fragment.tex                   aqb-
+  work/gauge_extraction_notebook_tail.tex
+Final expanded file: 96,893 bytes.
+Static check: 155 labels,79 references,no duplicates or missing
+references, no invalid controls. Built-in compiler returned success.
+Opening in the editor returned queued, not confirmed visible.
+The updated master outputs/ym4-construction-notebook.tex also compiled.
+
+1. Actual local-sector symmetries
+The selected source mean must satisfy its permutation axiom CMP109
+(0.7), in addition to endpoint covariance. Centered nested composite
+blocking, direct-R contour gauge, actual link/color-ball cutoff,
+Gaussian and pivot determinants preserve x -> Sx+Rn. Thus output
+unit translations and full signed permutations hold on cubic tori.
+They hold for the total correction, not necessarily its coefficients.
+Relative orientation reversal is B -> -Ad(V^-1)B, a real orthogonal
+change preserving the retained balls. Arbitrary measurable global
+completion and additional asymmetric indicators remain outside scope.
+
+2. Total nonlinear Ward extraction
+Uniform activity locality yields fixed-order exponential kernels,
+with constants depending on fixed J. A joint subsequential infinite
+kernel has continuous momentum Ward identities. For simple color
+group, subtract beta times any exact invariant reference normalized
+by Gamma2^S=|p|²I-pp^T+O(p4). The actual S_MR qualifies: Notebook07
+explicit q_M alias formula gives this normalization; Notebook16
+identifies it with the classical Hessian. Residual vertices:
+  Gamma2=O(p4), Gamma3=O(p3), Gamma4=O(p2).
+Exact gauge generator:
+  delta A=-dλ+(i/2)[λ_-+λ_+,A]+(1/12)[A,[A,dλ]]+O(A4 λ).
+Cubic Ward: K3(A,B,dλ)=K2(A,LλB)+K2(B,LλA).
+Quartic Ward: K4(...,dλ)=sum K3(...,Lλ...)+2 sum K2(...,Qλ...).
+Midpoint full inversion gives parity (-1)^n.
+After K2 cancellation, the degree-one cubic polynomial is transverse
+in two independent momenta; mixed monomials force it to vanish.
+Quartic constant then vanishes by the next Ward identity.
+Tail-coordinate analytic phases preserve these vanishing orders.
+Exact algebraic rebase: g_next^-2=g^-2-beta, Eren=E-E(0)-beta S_MR.
+No sign, positivity or coupling trajectory follows from this identity.
+
+3. Coherent pre-gauge C1alpha supports
+P_h(A)=(ih)^-1 log M_ell^k(exp(i eta A)), h=1/L.
+Translation covariance on the aligned h lattice and uniform C0
+holomorphic derivatives give complete C1alpha norm ≤C(b+b²).
+Thus pre-gauge angle a=hP_h(A_o) has coefficient-family bounds
+amplitude Cbh, unscaled first differences Cbh² and gradient Hölder
+differences Cbh^(2+alpha)|r|^alpha.
+All complete maxima and Hölder quotients are inside the support sum.
+One global Taylor/partition assignment is made before restrictions
+to collars, so coefficients agree on overlapping collars.
+Constants fixed at the primitive scale before L and J.
+
+4. Low spatial remainder bound
+Assume exact infinite kernels (or explicitly periodized such kernels)
+and coherent complete background families with rooted weights
+exp(kappa tau+A|X|). Choose J so 2(a0+1)/J≤kappa and A≥4(a0+1).
+After total moment cancellation, construct new connected activities:
+  ||B||_(a0,b) ≤ C(J) epsilon L^-alpha.
+C(J) is fixed BEFORE L, but AFTER J.
+Cubic zeroth/first moments cancel frozen and one-gradient terms.
+Quartic zeroth moment cancels the frozen product.
+
+IMPORTANT AUDIT REPAIR: The naive quadratic identity using
+Δa^T K(r) Δa was false for a matrix kernel with only reciprocity
+K(r)^T=K(-r). It was removed from the active proof.
+Valid replacement: ordered Laurent divided differences B_j factor
+K(z)=sum (zrho^-1-1) Htilde_rho,tau(z)(ztau-1), with Htilde(1)=0.
+Each divided difference costs 1/[e(sigma-sigma')] in combined row
+Wiener norm and reduces vanishing order by at most one.
+Two applications at sigma,3sigma/4,sigma/2 plus one shift cost
+16 exp(sigma/2)/(e² sigma²).
+Integration by parts gives
+  P2=(1/2)sum Da(x)^T Htilde(r)[Da(x+r)-Da(x)].
+Near offsets≤L: h²*h^(2+alpha). Far: two h² factors, endpoint
+root trees exp(Cm/(JL)) paid by kernel decay.
+Carrier rerooting includes the anchor; original anchor count is
+(JL)^4 S1, no further coordinate count. Near cubic orderh^(4+alpha),
+quartic h5; far sum ≤C J4 epsilon(L+2) exp(-sigma L/8).
+Compact final inputs give exponentially decaying a by rooted supports;
+both original and rewritten sums converge, justifying integration
+by parts. The result is a new representation of the total, not an
+automatic bound on an earlier canonical representation.
+
+5. Classical scalar semigroup
+Two ordinary minimum comparisons on the same fine graph give
+U_MR1(D1) gauge equivalent to U_MR1R2(Z), with
+D1=M_ell^(k+s1)U_MR1R2(Z).
+Physical C1alpha rescaling costs R2^(2+alpha); for fixed finite
+ratios a smaller real comparison ball suffices uniformly in M.
+Gauge-invariant total E therefore obeys
+  T_(MR1,R2) T_(M,R1)E=T_(M,R1R2)E.
+Both maps are analytic on the same b ball if each R>C0; germ equality
+continues there even when the variational comparison used a smaller
+real ball. For finite q, successive backgrounds equal direct R^q.
+This allows R,J fixed before selecting q, overcoming the circular
+one-step expression C(J)R^-alpha.
+Sequential quantum windows and generated terms do NOT collapse to
+one direct R^q integral.
+
+Audits
+  composite_macrostep_symmetry_theorem_audit.md
+  pregauge_holder_prefix_rotation_audit.md
+  total_kernel_ward_extraction_provenance_audit.md
+  classical_background_semigroup_theorem_audit.md
+  low_kernel_spatial_transport_theorem_audit.md
+  low_kernel_spatial_transport_rotation_audit.md
+  total_kernel_ward_extraction_rotation_audit.md
+  classical_background_semigroup_rotation_audit.md
+  analytic_interaction_compactness_theorem_audit.md
+  analytic_interaction_compactness_provenance_audit.md
+  activity_quotient_theorem_audit.md
+Root independently read all research and final fragments, including
+the Laurent repair. Rotation audits passed with one carrier wording
+clarification, adopted: project terminal sets and choose the short
+macro connecting graphs from the projection lemma; do not require H
+to include the entire projection of an arbitrary fine tree.
+
+REGULATOR AND REPRESENTATION INTERFACES
+
+A. work/finite_volume_ward_extraction_research.md by provenance.
+Independent theorem audit passes:
+  work/finite_volume_ward_extraction_theorem_audit.md.
+Symmetric short midpoint-diameter lift cutoff N/16 preserves tensor
+permutations and point symmetries. Ward operators only shift/merge
+slots, so defects live in diameter≤N/16+2; relative periodization
+is injective there. Torus exact Ward plus exponentially small tail
+gives continuous lifted Ward defects O(C(J)e^-c mu(J)N).
+Define beta_N=b_E/b_S from transverse Hessian p² coefficient;
+b_S=1 for local Wilson; for actual classical S_MR exact periodization
+of known q_MR gives b_S=1+exponential error.
+Residual mass/quadratic, cubic-linear and quartic-constant jets
+are exponentially small, not exactly zero.
+Discarded degree≤4 kernel tail has a strict carrier bound at a
+smaller cardinal exponent by original H size≥cN/J.
+Principal finite-volume remainder localization and accumulation of
+these errors through RG still need proof.
+
+B. work/analytic_interaction_compactness_research.md by root.
+NOW INCLUDED IN29 as aic; theorem and provenance audits and fragment
+fidelity pass. Explicit interior ell1-to-ell1 derivative estimate
+added to Section4.
+Montel diagonal extraction of all connected E_H, Fatou retaining
+the full b-ball norm, and exp(-a|H|) tails give convergence of
+vacuum-normalized totals on compactly supported fields. Winding H
+must be large, so they are covered by the same tail. Total gauge
+and spatial identities pass, and kernels are derivatives of this
+one limiting interaction.
+Joint diagonal extraction of coherent pgh coefficients gives an
+infinite complete support family with the same bound. For compact w,
+its output has exp(-kappa dist(i,supp w)) spatial decay.
+On ||A||∞≤rho<b, coordinate Cauchy gives
+  |Phi(A)|≤C epsilon/(b-rho) ||A||ell1.
+This supplies continuity of background substitution into decaying
+fields and descent of jointly extracted finite scalar identities.
+Not a quantum measure or a regulator-independent quantum map.
+
+C. work/activity_quotient_research.md by provenance.
+NOW INCLUDED IN29 as aqb; theorem audit and root read pass.
+The activity space modulo equality of vacuum-normalized
+totals on compact fields is Banach (common kernel of continuous
+evaluations is closed). Beta is continuous with bound C(J)b^-2.
+If ||S_M||≤C_S b² and beta(S_M)=1, full-reference subtraction is
+bounded independently of b. Equivalence extends to ell1 fields in
+a strict product-ball margin, enabling classical substitution.
+The reference b² bound is realized by removing coefficientwise
+degrees0,1 from a uniform fixed-rho representation of S_M:
+total linear term is zero, and remaining norm≤2M_S b²/rho².
+Conditional classical quotient contraction combines lst and
+Notebook28 high-degree transport after fixed J and then L:
+ C_ext,out C_ext,in [C_low(J)L^-alpha+6 C_high/L].
+The common positive b is chosen after that finite L.
+IMPORTANT: scalar descent is proved on the unrestricted quotient.
+Action on the invariant quotient additionally requires the infinite
+connecting gauge identity to extend to the input total. Compact gauge
+approximation with transformed fields converging in ell1 inside a
+strict margin suffices. Joint finite invariant approximation proves
+it for a particular input, not automatically for every quotient class.
+The displayed operator theorem keeps this extra every-class hypothesis.
+Actual quantum descent and stable coupled recurrence remain open.
+
+ACTIVE NEXT AGENT WORK
+rotation_audit:
+  work/classical_summable_gauge_research.md (being written).
+  Promising direct route: actual finite minimum comparison supplies
+  a connecting gauge; take a diagonal gauge subsequence. If U,V both
+  decay exponentially to identity, U^g=V gives |dg|≤C(|U-I|+|V-I|).
+  Exterior cube shells in d≥2 connect with O(r) paths, forcing one
+  constant at infinity and exponential decay modulo that constant.
+  Global adjoint invariance removes the constant. Compact truncations
+  of residual gauge should give ell1 convergence of transformed fields.
+  Domain/path control remains to check; no theorem asserted yet.
+provenance:
+  work/periodic_interaction_descent_research.md (being written).
+  Candidate bounded finite periodization: average a representative over
+  J-cell translations via Cesaro+Montel to obtain covariant coefficients
+  in the same class with no norm loss. Define periodic energy by
+  sum_(i mod N) sum_(H contains i) E_H(A_periodic)/|H|.
+  Need precise wrapped-carrier norm, tensor periodization, null-class
+  descent, total finite Ward identities and holomorphic convergence.
+  Do not assume these from the proposed formula.
+theorem_audit:
+  Independently audit both new candidates when saved. It has completed
+  all29 audits. Quantum integration descent is not yet proved.
+
+POSSIBLE NEXT QUANTUM ROUTE (NOT A THEOREM)
+Write fixed-g elementary F_M(E)=T_M E+G_M(E), with the quantum
+inherited difference in G Lipschitz O(gT/b) for any input difference
+inside the common norm ball, from the same cluster Cauchy argument.
+For finite q, telescope every generated G_i; bound the finite
+amplification by C(R,J)^q and choose g last. Use classical semigroup
+only on the inherited background and separately on transported
+generated terms. After a bounded extraction, seek a contraction
+of the normalized residual plus an actual coupling recurrence.
+Input and output quantum maps must first be shown well-defined
+under changes of representation, and the common force/invariant
+ball must be proved. Coupling beta sign/drift is still a major
+model-specific obligation. Do not treat an abstract Lipschitz
+recursion or arbitrary weak-coupling path as a Yang--Mills continuum
+trajectory.
+
+Literature baseline and full remaining objective are in
+work/after_notebook28_state.txt and
+work/renormalized_induction_primary_sources.md.
+Large fields, mixed histories, sourced observable bounds, nontrivial
+continuum limits, Euclidean symmetry and reconstruction remain required.

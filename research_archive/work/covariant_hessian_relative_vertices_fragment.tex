@@ -1,0 +1,332 @@
+\section{Covariance and physical relative Hessian vertices}
+\label{chr-section}
+
+This section controls the first two background coefficients of an
+actual action Hessian.  It does not estimate the moving hard
+mean-zero projection, nor compute a logarithmic determinant
+coefficient.  The argument uses exact gauge covariance before
+taking absolute values.
+
+\subsection{Hypotheses and conclusion}
+\label{chr-hypotheses}
+
+Work on the current unit lattice with counting inner products and a
+fixed finite bond/color fiber.  Let \(L(a)\) be a transpose-symmetric
+family of left-relative bond Hessians.  Assume that it is exactly
+covariant under sitewise adjoint frames and that its current-coordinate
+Taylor kernels through background degree two at zero have uniform
+exponentially rooted absolute row bounds.  The transposed bounds are
+included.  For an action Hessian, these are the action kernels through
+degree four together with the local relative-coordinate changes.
+
+Write \(q=L(0)\).  Assume that \(q\) is translation invariant, scalar
+on each color factor, and exponentially summable, uniformly in the
+old classical depth.  In source-site coordinates impose the
+componentwise moment conditions
+\begin{equation}
+ \sum_r q_{\alpha\beta}(r)=0,\qquad
+ \sum_r r_\rho q_{\alpha\beta}(r)=0
+ \quad\text{for every }\alpha,\beta,\rho .
+ \label{chr-moments}
+\end{equation}
+Thus its Fourier symbol vanishes to order two.  No symmetry of
+\(q_{\alpha\beta}(r)\) in \(\alpha,\beta\) at a fixed \(r\) is assumed.
+Only the full transpose relation
+\(q_{\alpha\beta}(r)=q_{\beta\alpha}(-r)^T\) is used.
+
+The actual application here is on a chosen infinite structural system,
+where these continuous-momentum moments have been established.
+Explicit periodizations of that system are also covered with the
+specified lifted paths.  An arbitrary actual finite-regulator winding
+kernel is not silently identified with such a periodization.
+
+Set \(\mu=K^{-1}\leq1\).  For a complete physical field \(A\), define
+\begin{equation}
+ \|A\|_{\mathrm{phys},1}
+ =\|A\|_\infty+
+   \mu^{-1}\max_{\substack{e,e'\text{ nearest}\\
+                          \text{same component}}}
+                     |A(e')-A(e)| .
+ \label{chr-physical-norm}
+\end{equation}
+Let \(L_j=[t^j]L(t\mu A)\), \(j=1,2\), and suppose
+\(\|A\|_{\mathrm{phys},1}\leq a_*\).
+Here \(D_0\) denotes the ordinary componentwise gradient of a
+\emph{bond field}, not the scalar gauge generator.  Put
+\(R_0=D_0^TD_0+\mu^2I\).
+
+\begin{theorem}
+\label{chr-main}
+Under these hypotheses there are operators \(Z_j,E_j\) such that
+\begin{equation}
+ L_j=D_0^TZ_j+Z_j^TD_0+E_j,\qquad j=1,2,
+ \label{chr-decomposition}
+\end{equation}
+with
+\begin{align}
+ \|Z_1\|&\leq C\mu a_*,
+ &\|E_1\|&\leq C\mu^2a_*,
+ \notag\\
+ \|Z_2\|&\leq C\mu^2a_*^2,
+ &\|E_2\|&\leq C\mu^2a_*^2 .
+ \label{chr-bounds}
+\end{align}
+Consequently
+\begin{equation}
+ \|R_0^{-1/2}L_jR_0^{-1/2}\|
+       \leq C_j a_*^j,\qquad j=1,2.
+ \label{chr-relative}
+\end{equation}
+The constants are independent of \(K\) and of the old depth.
+Mixed second coefficients follow by polarization.  For directions
+supported in fixed smooth physical collars, the factors admit
+exponentially rooted final-block operator bounds with the same
+powers of \(\mu\).
+\end{theorem}
+
+For the actual homogeneous classical action \(S_M\), the hypotheses
+come from the established uniform support and Cauchy bounds, gauge
+covariance, and the flat normalization
+\[
+ q_{M,\mathrm{mid}}(p)=|p|^2I-pp^T+O(|p|^4).
+\]
+The analytic midpoint-to-source-site phases preserve the zero and
+first jets, so they imply \eqref{chr-moments}.  This last input is
+stronger than row-sum cancellation alone.
+
+\subsection{Formal local path gauges}
+\label{chr-local-gauge}
+
+For each displacement \(r\), choose a translation-covariant
+coordinate path of length \(|r|_1\), with the negative-displacement
+path defined by reversal.  Denote its adjoint transport by
+\(W_{xy}(a)\).  It obeys \(W_{yx}=W_{xy}^T\) and is complex
+orthogonal coefficientwise.
+
+Fix the source site \(x\) of a matrix row.  The transports from \(x\)
+to every \(z\) define a formal site gauge \(g_x(z)\), with
+\(g_x(x)=I\).  A transformed edge is a loop consisting of the two
+selected paths and that edge.  Its length is at most
+\(C(1+|z-x|)\); a plaquette filling uses at most
+\(C(1+|z-x|)^2\) plaquettes.  Write its link-angle jet as
+\[
+ b(t,z)=t b_1(z)+t^2b_2(z)+O(t^3).
+\]
+Discrete Stokes at first order and the physical first-difference
+bound give
+\begin{equation}
+ |b_1(z)|\leq C\mu^2a_*(1+|z-x|)^2.
+ \label{chr-b1}
+\end{equation}
+The second coefficient of the product and its logarithm is a sum
+of quadratic pairs of first link coefficients.  There are at most
+the square of the loop length such pairs.  Hence
+\begin{equation}
+ |b_2(z)|\leq C\mu^2a_*^2(1+|z-x|)^2.
+ \label{chr-b2}
+\end{equation}
+
+These are formal coefficient identities.  The potentially
+unbounded gauge \(g_x\) is not placed in a global analytic ball.
+One first truncates its polynomial jets far from \(x\), applies
+the finite covariance identity, and then passes coefficientwise.
+The exponentially rooted bounds absorb the polynomial tails.
+In particular this step does not assert a finite-period identity
+for an unbounded affine field.
+
+Gauge covariance and \(g_x(x)=I\) give, with a consistent choice
+of transport orientation,
+\begin{equation}
+ L(t\mu A)_{x\alpha,y\beta}
+        =L(b(t))_{x\alpha,y\beta}W_{xy}(t\mu A).
+ \label{chr-gauge-identity}
+\end{equation}
+The inverse convention gives the same argument with both
+orientations reversed.  Define the dressed flat kernel
+\[
+ L^P(t)_{x\alpha,y\beta}
+     =q_{\alpha\beta}(y-x)W_{xy}(t\mu A).
+\]
+Using \eqref{chr-b1}--\eqref{chr-b2} and the rooted Taylor kernels,
+\begin{align}
+ \|[t](L-L^P)\|_{\mathrm{Schur}}
+     &\leq C\mu^2a_*,
+ \notag\\
+ \|[t^2](L-L^P)\|_{\mathrm{Schur}}
+     &\leq C\mu^2a_*^2 .
+ \label{chr-peierls-error}
+\end{align}
+At second order the terms are \(L'[b_2]\),
+\(\frac12L''[b_1,b_1]\), and the product of \(L'[b_1]\)
+with the first transport coefficient.  The latter two have,
+respectively, the stronger powers \(\mu^4\) and \(\mu^3\).
+All sums are fine current-coordinate Schur sums; no final-block
+fiber dimension is inserted.
+
+\subsection{Ordered factorization and covariant completion}
+\label{chr-factorization}
+
+A common difference-square formula would be invalid here: the
+product of two equal-displacement differences is symmetric in
+the bond components and would discard the odd-displacement,
+skew-component part of \(q(r)\).  Even the forward-gradient Maxwell
+kernel has such shifted entries.  Instead use an ordered Laurent
+factorization.
+
+For a Laurent series \(F\), define
+\[
+ {\cal B}_jF(z)=
+ \frac{F(1,\ldots,1,z_j,\ldots,z_d)
+       -F(1,\ldots,1,1,z_{j+1},\ldots,z_d)}{z_j-1}.
+\]
+The quotient is removable.  Applying the telescoping identity
+twice, and using \eqref{chr-moments}, gives
+\begin{equation}
+ q(z)=\sum_{\rho,\tau}(z_\rho^{-1}-1)
+       H_{\rho\tau}(z)(z_\tau-1),\qquad
+ H_{\rho\tau}(z)=-z_\rho{\cal B}_\tau{\cal B}_\rho q(z).
+ \label{chr-laurent}
+\end{equation}
+Each monomial division costs at most \(|r|_1\) terms with no
+increase in exponent length.  Spending an exponential reserve
+twice therefore yields a uniform exponentially summable \(H\).
+For example an input exponent \(\sigma\) gives an output
+exponent \(\sigma/2\) and a bound
+\[
+ \|H\|_{\sigma/2}
+ \leq \frac{16e^{\sigma/2}}{e^2\sigma^2}\|q\|_\sigma
+\]
+in the combined absolute row norm; the analogous column bound
+follows in the same way.  Replace \(H\) by \((H+H^T)/2\), where
+the transpose includes displacement reversal and both gradient
+and bond indices.  The factorization is unchanged.  We have
+\begin{equation}
+                  q=D_0^TH_0D_0,\qquad H_0=H_0^T.
+ \label{chr-flat-factor}
+\end{equation}
+The color-scalar property is preserved.
+
+Dress each \(H_0\) entry by its endpoint transport:
+\[
+ H^P(a)_{x\rho\alpha,y\tau\beta}
+       =(H_0)_{\rho\alpha,\tau\beta}(y-x)W_{xy}(a).
+\]
+Let \(D_a\) be the nearest-neighbor covariant component gradient
+and define
+\begin{equation}
+                  Q_{\mathrm{cov}}(a)
+                   =D_a^TH^P(a)D_a .
+ \label{chr-completion}
+\end{equation}
+This family is exactly covariant and transpose symmetric, with
+\(Q_{\mathrm{cov}}(0)=q\).  Its first two Taylor kernels have
+uniform exponentially rooted bounds: path derivatives only add
+polynomial length factors.  On a sufficiently small complex
+current-angle ball, the path-product factor
+\(\exp(C\|a\|_\infty|r|)\) is paid by the exponential reserve.
+
+Apply the local-gauge argument to \(Q_{\mathrm{cov}}\) as well
+as to \(L\).  They have the same flat \(q\), hence the same dressed
+flat comparison \(L^P\).  Subtraction of their two estimates
+\eqref{chr-peierls-error} gives symmetric errors
+\begin{equation}
+ {\cal E}_j=[t^j](L(t\mu A)-Q_{\mathrm{cov}}(t\mu A)),
+ \qquad
+ \|{\cal E}_j\|_{\mathrm{Schur}}
+           \leq C\mu^2a_*^j,\quad j=1,2.
+ \label{chr-completion-error}
+\end{equation}
+This argument does not presume that the paths generated by
+\eqref{chr-completion} coincide with the initially selected
+endpoint paths.
+
+\subsection{Coefficient expansion and localization}
+\label{chr-expansion}
+
+Write, through second order,
+\[
+ D_{t\mu A}=D_0+tF_1+t^2F_2,\qquad
+ H^P(t\mu A)=H_0+tH_1+t^2H_2.
+\]
+Nearest-neighbor differentiation and exponential path moments give
+\begin{align}
+ \|F_1\|+\|H_1\|&\leq C\mu a_*,
+ \notag\\
+ \|F_2\|+\|H_2\|&\leq C\mu^2a_*^2 .
+ \label{chr-factor-bounds}
+\end{align}
+All \(H_j\) are symmetric.  Set
+\begin{align}
+ Z_1&=\tfrac12H_1D_0+H_0F_1,
+ \notag\\
+ Z_2&=\tfrac12H_2D_0+H_1F_1+H_0F_2,
+ \notag\\
+ E_1&={\cal E}_1,\qquad
+ E_2=F_1^TH_0F_1+{\cal E}_2 .
+ \label{chr-exact-z}
+\end{align}
+Direct expansion of \eqref{chr-completion} proves
+\eqref{chr-decomposition}.  The counting norm of \(D_0\) is bounded
+by a dimensional constant, so \eqref{chr-factor-bounds} and
+\eqref{chr-completion-error} prove \eqref{chr-bounds}.
+Finally,
+\[
+ \|D_0R_0^{-1/2}\|\leq1,\qquad
+ \|R_0^{-1/2}\|\leq\mu^{-1},
+\]
+which proves \eqref{chr-relative}.
+
+For localization, use complete directions supported in a fixed
+smooth physical partition with bounded overlap and bounded physical
+first derivatives.  The terms \(F_1,F_2\) have nearest-neighbor
+support.  Each marked source in \(H_1,H_2\) lies on a selected
+endpoint path.  A distant source forces a long path, and the
+exponential \(H_0\) kernel pays its length.  In the remainders,
+a source on a local-gauge path is connected to the fixed matrix
+row through the original background-source endpoint.  The
+original rooted Taylor bound pays that distance.  Discrete
+Stokes uses source differences in the same smooth collar,
+enlarged by one fine edge.  Polynomial path multiplicities are
+absorbed by a smaller exponential exponent.
+
+Thus the factors in \eqref{chr-exact-z} and the \(E_j\) have
+rooted final-block bounds of the form
+\(\exp[-c\tau(\text{row},\text{column},\text{source labels})]\)
+with the powers in \eqref{chr-bounds}.  Fine-coordinate Schur
+summation proves the block-operator estimate; summing \(K^4\)
+independent entry bounds is unnecessary.  No sharp source cutoff
+is differentiated.
+
+Physical weights \(\exp(\theta f(x/K))\), with \(f\) Lipschitz,
+change a path factor by at most
+\(\exp(C\theta\mu|r|)\), again paid by the exponential reserve.
+Commuting \(D_0\) past the weight produces \(O(\theta\mu)\).
+When multiplied by \(Z_1\) or \(Z_2\), this has the zero-order
+size required for \(E_1\) or \(E_2\).  This supplies the weighted
+localized form of the theorem.
+
+\subsection{Scope of the actual application}
+\label{chr-scope}
+
+For \(L=S_M''\), the hypotheses are the uniform action support and
+Cauchy bounds through degree four, actual gauge covariance, and
+the already normalized flat kernel.  The result concerns bounded
+physical \(C^1\) fields and their localized jets.  It does not give
+the same gain for rapidly oscillating bounded potentials, whose
+fine curvature may be \(O(K^{-1})\), and it gives no estimate for
+the hard-projection scalar operator.
+
+In the intended soft-vector application, the exact on-shell
+identification and its source-coordinate conventions must first
+justify the relevant affine jets of
+\[
+ S_M''(e^{iA/K})+D_AD_A^T+
+ \overline C_A^T
+ \bigl[aI-S_{MK}''(M_K(e^{iA/K}))\bigr]\overline C_A .
+\]
+The corrected constraint's full \(O(K^{-1})\) bound and its
+physical source derivatives are separate inputs.  The present
+theorem supplies the action-Hessian relative vertices.  It does
+not by itself identify a soft-vector determinant, control every
+stationary response, or determine a one-loop sign.
+

@@ -1,0 +1,81 @@
+Research checkpoint: 17 October 2026
+
+The active goal remains completion of a nontrivial four-dimensional
+Yang--Mills existence argument. It has not been completed or paused.
+
+Notebook 28 is assembled at outputs/ym4-common-domain-notebook.tex
+from common_domain_notebook_head, common_domain_joint_transport,
+common_domain_classical_support, common_domain_macrostep,
+high_jet_background_transport, high_jet_quantum_difference, and
+common_domain_notebook_tail fragments in work/.
+The built-in desktop compiler returned success for this output and
+the updated outputs/ym4-construction-notebook.tex. Opening 28 was
+queued; visibility was not confirmed.
+
+The fixed-domain theorem uses the actual composite macrostep of
+Notebook 27. Its input/output radius b and carrier exponent a0=1/16
+agree; all constants are uniform in earlier classical depth and
+compatible finite volume. The strict Gaussian logarithm is nonzero.
+The exact update is E(ap)+pivot log+Gaussian determinant log+log Z.
+It is a verified local germ and its specified continuation; global
+orbit-density identification, other histories, and large fields
+are not consequences of analytic continuation.
+
+The background map contracts coefficientwise remainders whose
+field Taylor jets through degree four vanish, by C_H/R.
+With one compatible canonical family assignment, two admissible
+complete inputs with matching coefficientwise low jets satisfy
+  ||F(E1)-F(E2)|| <= [C_H/R+C_quant*g*T/b] ||E1-E2||.
+The coefficientwise degree>=5 projection has norm at most 6.
+R>=24 C_H followed by sufficiently small g gives full difference
+factor1/12 and projected factor1/2. The full output can regenerate
+low jets; this is not an invariant physical input class or a
+completed nonlinear induction. The Taylor split need not preserve
+gauge invariance. Root and provenance independently checked this
+proof; the latter saved high_jet_quantum_difference_provenance_audit.md.
+
+Next-stage agents:
+- rotation_audit: actual spatial symmetries of composite map/gauge/
+  cutoff and the low-momentum quadratic classification, to be saved
+  as composite_macrostep_symmetry_research.md. Root independently
+  checked reflection fluctuation B -> -Ad(V_b^-1)B and the need for
+  midpoint Fourier variables. Use cubic cofinal tori for full
+  hypercubic symmetry, and an exponentially local infinite-kernel
+  limit for continuous momentum Ward identities. A quadratic scalar
+  coefficient alone is not a nonlinear marginal extraction.
+- theorem_audit: independently audit that symmetry note when saved.
+- provenance: primary-paper nonlinear Ward/subtraction formulas and
+  the actual induction closing estimates in CMP109 sections4--5 and
+  CMP116 pp21--22. Its initial literature map is
+  renormalized_induction_primary_sources.md. Reuse the earlier
+  running_coupling_research.md rather than duplicate endpoint tuning.
+
+Important primary-source distinction: CMP109 Theorem3 is completed
+in CMP116 on its original orbit/current domains, under weak running
+couplings. CMP122-II completes the large-field density theorem under
+the same coupling condition and explicitly says the separate
+trajectory proof was unpublished as of1989. A bounded later search
+has not located that precise proof; do not claim none exists.
+The source theorem is not automatically a theorem for our one-shot
+composite constraint/window or our product-ball activity norm.
+
+Next mathematical target: combine the high-degree contraction with
+spatial localization and nonlinear gauge identities to extract the
+low-degree marginal sector, normalize the classical quadratic
+coefficient, and obtain a uniform stable amplitude/coupling flow.
+Then close actual measure identities, large fields/mixed histories,
+source/observable limits, nontriviality and reconstruction. Mass gap
+remains a later infrared target.
+
+Latest primary transfer findings from provenance:
+CMP109 p263 (1.19) assumes EACH localized activity is gauge
+invariant on its orbit-invariant domain. Our canonical activities
+are only gauge invariant after summation. Applying the source
+Ward/extraction algorithm therefore requires gauge-compatible
+localization or cancellations at the total-kernel level before
+localizing; it is not supplied by product-ball analyticity.
+CMP109 p285 (4.17)--(4.18), p288 (4.30), and pp297--298
+(5.38),(5.43) use first-difference Holder control rather than a
+full second-derivative bound. This qualitatively matches the
+pre-gauge C1alpha framework, but the actual mixed kernel/support
+estimates and uniform scale constants remain to be proved.

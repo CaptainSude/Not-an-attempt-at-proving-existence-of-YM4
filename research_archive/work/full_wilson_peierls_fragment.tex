@@ -1,0 +1,320 @@
+% No preamble. Prefix fwp-. Full positive Wilson measure, 17 October 2026.
+\section{A full-measure Wilson Peierls bound}
+\label{fwp-section}
+
+We prove a rare-event estimate under the actual normalized positive
+Wilson measure. It is independent of the Gaussian small-field analysis.
+The event controlled here is large plaquette curvature; identifying it
+with the complement of the actual retained-coordinate window is a
+separate, unresolved interface.
+
+Let \(G=SU(N)\), \(m_G=\dim G\), \(\tau=\operatorname{Tr}/N\), and
+\[
+ \Lambda=\prod_{i=1}^d\mathbb Z/n_i\mathbb Z,\qquad
+ n_i=2m_i b,\quad m_i\ge1,\quad b\ge3.
+\]
+There are \(V=|\Lambda|\) sites, \(dV\) independent links and
+\(\binom d2V\) elementary unoriented plaquettes. Normalized Haar measure
+is used on every link. Set
+\begin{equation}
+ h(W)=1-\operatorname{Re}\tau(W)
+       =\tfrac12\|W-I\|_\tau^2,\qquad
+ A(U)=\sum_p h(U_p),\qquad
+ \mu_g(dU)=Z_g^{-1}e^{-A(U)/g^2}\prod_e dU_e,
+ \label{fwp-measure}
+\end{equation}
+where \(\|X\|_\tau^2=\tau(X^*X)\).
+All side lengths are at least six, avoiding short-period graph
+degeneracies.
+
+Fix any translated grid of cubes of side \(b\).
+Let \({\cal P}_j^{\rm int}\) be the plaquettes whose vertices are strictly
+inside cell \(j\), and define
+\begin{equation}
+ {\cal B}_j(\delta)
+ =\left\{\max_{p\in{\cal P}_j^{\rm int}}h(U_p)\ge\delta^2\right\}.
+ \label{fwp-event}
+\end{equation}
+Strict interior means that every coordinate of every used link endpoint
+lies strictly between the corresponding walls.
+
+\begin{theorem}[Prescribed bad cells]
+\label{fwp-main}
+There are \(g_0>0\) and \(C_{G,d}<\infty\), depending only on the group
+and dimension, such that for \(0<g\le g_0\) and every set \(S\) of
+distinct cells,
+\begin{equation}
+ \mu_g\left(\bigcap_{j\in S}{\cal B}_j(\delta)\right)
+ \le z_b(g,\delta)^{|S|},
+ \quad
+ z_b(g,\delta)=
+ \min\left\{1,
+ \exp\left[-\frac{\delta^2}{g^2}
+     +b^d\{d m_G\log(1/g)+C_{G,d}\}\right]\right\}.
+ \label{fwp-main-bound}
+\end{equation}
+Constants are uniform in volume and in the selected cells. The source
+regulators \(n=2L^M\), \(L\ge3\) odd, admit the construction with
+\(b=L^u\) for each fixed \(u\ge1\) and \(M\ge u\).
+\end{theorem}
+
+\subsection{Exact site-plane slabs and the normalized chessboard inequality}
+\label{fwp-slab-section}
+
+Every cell wall is an integer coordinate, or \emph{site}, plane.
+Its reflection preserves the lattice. An elementary plaquette cannot
+have vertices on both strict sides of such a plane. It either lies in
+the plane or belongs wholly to one adjacent closed half-space, possibly
+touching the plane. Conditional on tangential links in the two opposite
+reflection planes of the torus, the two open half configurations have
+reflected product Haar measures and reflected Wilson weights.
+The reflection quadratic form is therefore an integral of an absolute
+square against a nonnegative boundary weight. This proves the needed
+site-plane reflection positivity directly.
+
+To obtain the chessboard inequality for an arbitrary even number of
+cells, cut first in one coordinate into \(p=2m\) slabs of width \(b\).
+Let \({\cal H}\) be \(L^2\) of the product Haar measure on tangential
+links in one boundary plane. Integer translation identifies successive
+boundary spaces.
+
+For a bounded slab observable \(f\), supported strictly inside the
+slab in the cut direction, form the integral kernel \(K_f\) by integrating
+all nonboundary slab links. Give it the full action of every plaquette
+assigned to the slab, including plaquettes touching a boundary but not
+lying in it, and half the action of each plaquette lying entirely in
+either boundary. Multiply by \(f\).
+The compact integration domain and bounded integrand make \(K_f\)
+Hilbert--Schmidt.
+
+Gluing the kernels by boundary Haar integration gives exactly
+\begin{equation}
+ \operatorname{Tr}(K_{f_0}\cdots K_{f_{p-1}})
+       =Z_g\!\left[\prod_{j=0}^{p-1}f_j\right].
+ \label{fwp-gluing}
+\end{equation}
+Every boundary link is integrated once; every boundary plaquette gets
+two halves; every other link and plaquette is assigned once.
+No gauge-volume factor occurs. Reflection exchanges the two boundaries,
+preserves \(h(U_p)\), and inverts a chosen link coordinate when its
+orientation reverses. Haar invariance gives
+\begin{equation}
+ K_f^*=K_{\theta\overline f}.
+ \label{fwp-adjoint}
+\end{equation}
+For real indicators complex conjugation has no effect.
+
+Schatten H\"older, with the even integer \(p\), gives
+\begin{equation}
+ \left|\operatorname{Tr}\prod_{j=0}^{p-1}K_{f_j}\right|
+ \le\prod_{j=0}^{p-1}
+ \left[\operatorname{Tr}\bigl((K_{f_j}^*K_{f_j})^{p/2}\bigr)
+                                                  \right]^{1/p}.
+ \label{fwp-holder}
+\end{equation}
+Each factor is the exact Wilson partition integral with \(p\) alternating
+reflected copies of one slab. The torus period remains \(pb\).
+This explains precisely why the even cell count is required.
+
+Apply \eqref{fwp-holder} successively in all coordinate directions.
+A slab source is the product of its constituent cell sources.
+Orthogonal affine coordinate reflections commute on the unoriented
+graph, with the corresponding orientation inversions on link variables.
+The final factor associated with an original cell is therefore its
+full reflected dissemination. Intersections of cut planes require no
+extra normalization: every step is the exact one-axis gluing
+\eqref{fwp-gluing}.
+
+Write \(N_c=V/b^d\) for the number of cells. Let \(\Theta_j\) map the
+reference cell to cell \(j\) by the alternating reflection pattern;
+even counts make this pattern periodic. For a reference-cell observable
+\(f\), write
+\({\cal D}(f)=\prod_i\Theta_i f\).
+Pull each original observable back to this reference cell.
+The result of the iteration is
+\begin{equation}
+ \left|Z_g\left[\prod_j\Theta_j f_j\right]\right|
+ \le\prod_j Z_g[{\cal D}(f_j)]^{1/N_c}.
+ \label{fwp-chessboard}
+\end{equation}
+For nonnegative indicators, all terms are nonnegative. Dividing by the
+\emph{full} partition function, and using \(f_j=1\) off a selected set,
+gives
+\begin{equation}
+ \mu_g\left(\prod_{j\in S}\Theta_j f_j\right)
+ \le\prod_{j\in S}
+       \left(\frac{Z_g[{\cal D}(f_j)]}{Z_g}\right)^{1/N_c}.
+ \label{fwp-normalized}
+\end{equation}
+In particular, the normalization is not an independently chosen
+small-field partition function.
+
+The geometry used here is simpler than a diagonal fold: all walls are
+site planes and no alternating site/link scheme is needed.
+For \(n=2L^M\), \(b=L^u\), the number of cells in every direction is
+\(2L^{M-u}\), which is even despite \(L\) being odd.
+
+\subsection{A lower bound for the full normalization}
+\label{fwp-normalization-section}
+
+There are \(\epsilon_0>0\) and \(c_G\in(0,1]\) such that
+\begin{equation}
+ \operatorname{Haar}\{U:\|U-I\|_\tau\le\epsilon\}
+       \ge c_G\epsilon^{m_G},\qquad 0<\epsilon\le\epsilon_0.
+ \label{fwp-haar-ball}
+\end{equation}
+Indeed the Haar density in a fixed local exponential chart is smooth
+and strictly positive. This is a finite-dimensional group estimate.
+
+If all links lie in that \(\epsilon\)-ball, a four-term product
+telescoping and unitarity show
+\[
+ \|U_p-I\|_\tau\le4\epsilon,\qquad h(U_p)\le8\epsilon^2.
+\]
+For \(g\le g_0:=\min(\epsilon_0,1)\), restrict the full integral to
+\(\|U_e-I\|_\tau\le g\) on every link. It follows that
+\begin{equation}
+ Z_g\ge(c_Gg^{m_G})^{dV}
+             \exp\!\left[-8\binom d2V\right],
+ \qquad
+ -\frac1V\log Z_g
+       \le d m_G\log(1/g)+C_{G,d},
+ \label{fwp-z-lower}
+\end{equation}
+where one can take
+\[
+ C_{G,d}=8\binom d2+d\log(1/c_G).
+\]
+This is only a lower bound for the normalization. It does not claim
+that the small-link box has large probability.
+
+On the full dissemination of \({\cal B}_j(\delta)\), every cell
+contains a distinct interior plaquette of energy at least \(\delta^2\).
+Thus \(A(U)\ge N_c\delta^2\) there and
+\begin{equation}
+ Z_g[{\cal D}(\mathbf1_{\cal B})]
+       \le e^{-N_c\delta^2/g^2}.
+ \label{fwp-disseminated-energy}
+\end{equation}
+The remaining product Haar integral is at most one.
+Combining \eqref{fwp-z-lower} and \eqref{fwp-disseminated-energy}
+bounds each factor in \eqref{fwp-normalized} by the exponential in
+\eqref{fwp-main-bound}; it is also at most one.
+This proves Theorem~\ref{fwp-main}.
+
+More generally, a cell event forcing its strictly interior action to be
+at least \(e_j\) has the factor
+\begin{equation}
+ \min\left\{1,\exp\left[-e_j/g^2
+              +b^d\{d m_G\log(1/g)+C_{G,d}\}\right]\right\}.
+ \label{fwp-energy-general}
+\end{equation}
+A threshold \(\|U_p-I\|_\tau\ge\delta\) uses \(e_j=\delta^2/2\).
+At fixed \(b\), the threshold \(\delta(g)=gR(g)\) is rare whenever
+\(R(g)^2/\log(1/g)\to\infty\), for example
+\(R(g)=(\log(1/g))^a\) with \(a>1/2\).
+The explicit \(b^d\) cost precludes claiming the same constants when
+the cell size grows with the cutoff.
+
+\subsection{Prescribed plaquettes and Peierls clusters}
+\label{fwp-color-section}
+
+Let \(S\) be any prescribed set of distinct elementary plaquettes.
+Color \((x;\mu,\nu)\), \(\mu<\nu\), by \((x\bmod b,\mu,\nu)\).
+There are
+\begin{equation}
+ Q_b=b^d\binom d2
+ \label{fwp-color-count}
+\end{equation}
+colors. Choose deterministically a color occurring at least
+\(|S|/Q_b\) times, with anchor residue \(a\), and shift the cell grid
+by \(a-(1,\ldots,1)\). Every selected anchor has relative coordinates
+\((1,\ldots,1)\); its plaquette vertices have coordinates \(1\) or \(2\)
+and hence are strictly interior for \(b\ge3\).
+Distinct anchors of the fixed color lie in distinct cells.
+The fixed orientation prevents two selected plaquettes at one anchor.
+The all-bad event on \(S\) implies the bad-cell event on this subset.
+Therefore
+\begin{equation}
+ \mu_g\{h(U_p)\ge\delta^2\text{ for all }p\in S\}
+       \le z_b(g,\delta)^{|S|/Q_b}.
+ \label{fwp-arbitrary-plaquettes}
+\end{equation}
+This is a finite deterministic coloring argument, not an independence
+assumption. The chessboard proof holds for each of the translated grids.
+
+For the nearest-neighbor cell graph, of degree at most \(2d\), the
+number of connected sets of size \(m\) containing a fixed cell is at
+most \((2d)^{2m}\): choose a canonical spanning tree and its depth-first
+traversal. The traversal has length \(2(m-1)\) and determines the visited
+set. A cluster of size at least \(m\) contains such a connected subset
+of size exactly \(m\). Consequently
+\begin{equation}
+ \mu_g\{|\text{bad cluster at }j|\ge m\}
+       \le[(2d)^2z_b(g,\delta)]^m.
+ \label{fwp-cell-cluster}
+\end{equation}
+For any fixed finite-degree plaquette adjacency graph the same argument
+and \eqref{fwp-arbitrary-plaquettes} apply. For adjacency by shared
+vertices, \(\Delta_d=16\binom d2\) is a safe degree bound, giving
+\begin{equation}
+ \mu_g\{|\text{bad plaquette cluster at }p|\ge m\}
+       \le[\Delta_d^2z_b(g,\delta)^{1/Q_b}]^m.
+ \label{fwp-plaquette-cluster}
+\end{equation}
+Periodic identifications do not increase these counting bounds.
+These are intersection and cluster estimates, not a claim of full
+stochastic domination by a product measure.
+
+The union estimate for any bad cell is only \(N_c z_b\).
+Thus the theorem does not assert that an arbitrarily large torus lies
+entirely in one small-field sector with uniformly high probability.
+
+\subsection{The remaining large-field interface}
+\label{fwp-scope}
+
+The distinction between curvature and retained-coordinate windows is
+essential. For a link with distinct endpoints, gauge invariance at one
+endpoint makes its marginal left-invariant under \(G\). Hence
+\begin{equation}
+ \mu_g\{U_e\in A\}=\operatorname{Haar}(A)
+ \label{fwp-haar-marginal}
+\end{equation}
+for every measurable \(A\), independently of \(g\).
+An unfixed link is therefore outside a shrinking identity window with
+probability tending to one. Pure-gauge fields can have all plaquettes
+equal to \(I\) and individual links far from \(I\).
+
+The actual retained fluctuation \(\xi\) instead depends on the nonlinear
+constraint, its minimizing background, the contour gauge and the pivot
+chart. No result above proves that \(\|\xi\|>R\) forces the interior
+Wilson action to exceed \(c g^2R^2\). Such a deterministic, quantitative
+implication for the exact chart would be an additional input.
+A local tree-gauge estimate from small plaquettes does not by itself
+identify its potential with \(\xi\), or establish the required
+\(C^{1,\alpha}\) background domain.
+
+Global holonomy is a second obstruction. For example,
+\(U_1(x)=e^{i\theta H/n_1}\), \(U_\mu(x)=I\) for \(\mu\ne1\),
+has every plaquette equal to \(I\), while its noncontractible Wilson
+line is \(e^{i\theta H}\). Plaquette rarity cannot simply discard these
+sectors.
+
+Finally, the proof uses the positive bare Wilson measure. It has not
+been extended here to complex source measures, arbitrary conditioned
+boundaries or effective actions after many RG steps. It supplies a
+genuine full-measure large-field input: uniform prescribed-event and
+cluster bounds on the original regulator. It does not yet supply the
+exact retained-window implication, a convergent sum over all large-field
+components with analytic source and locality bounds, or a complete
+Wilson RG history.
+
+For context, the general reflection/chessboard framework is
+Fr\"ohlich--Israel--Lieb--Simon, \emph{Communications in Mathematical
+Physics} \textbf{62} (1978), 1--34,
+DOI \(10.1007/BF01940327\); gauge positivity is treated by
+Osterwalder--Seiler, \emph{Annals of Physics} \textbf{110} (1978),
+440--471, DOI \(10.1016/0003\text{-}4916(78)90039\text{-}8\).
+The site-plane gluing and normalization used here were proved explicitly
+above rather than imported with an unspecified boundary convention.
+

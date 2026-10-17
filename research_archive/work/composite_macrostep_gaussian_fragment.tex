@@ -1,0 +1,326 @@
+\section{The retained Gaussian for the composite macrostep}
+\label{cmq-section}
+
+Fix an odd primitive ratio $\ell\geq3$, a finite macro ratio
+$R=\ell^s$, $s\geq1$, and an arbitrary preceding classical depth
+$M=\ell^k$, $k\geq0$. Current lattice spacing is one. All constants
+in this section may depend on the fixed $\ell,s$, but are independent
+of $M$ and compatible periodic volume. We use the actual composite
+ordinary constraint $F_R=\mathcal M_\ell^s$ and an independently chosen
+direct-$R$ internal contour gauge. No equality with a direct-$R$
+ordinary average is used.
+
+\subsection{Established classical inputs and the actual flat constraint}
+\label{cmq-input-section}
+
+Let $S_M(a)$ be the homogeneous ordinary classical minimum action
+at current datum $e^{ia}$. Its flat Hessian $q_M$ has the previously
+established variational description
+\begin{equation}
+ \langle B,q_MB\rangle
+ =\inf_{Q_M^{\rm st} A=B}\|d_{1/M}A\|_{1/M}^2,
+ \qquad
+ \|d_1B\|_2^2\leq\langle B,q_MB\rangle
+ \leq C_d\|B\|_2^2,
+ \quad C_d=2^{d+6}(d-1).
+ \label{cmq-classical-input}
+\end{equation}
+The case $M=1$ is included. In current counting norms, $q_M$ has a
+uniform weighted Schur bound at some positive exponent $\kappa_q$.
+On a common independent-background product ball, the earlier
+classical construction also gives
+\begin{equation}
+ DS_M(0)=0,\qquad
+ \|DS_M(a)\|_\infty\leq C\|a\|_\infty,
+ \qquad
+ \|D^2S_M(a)-q_M\|_\kappa\leq C_\kappa\|a\|_\infty
+ \label{cmq-classical-nonlinear-input}
+\end{equation}
+at a sufficiently small positive exponent. These are inputs from
+the homogeneous classical action; their constants do not depend
+on the next chosen macro ratio.
+
+Define the composite \emph{angle} differential
+\begin{equation}
+ C_RB=\left.\frac{d}{dt}\frac1i
+            \log F_R(e^{itB})\right|_{t=0}.
+ \label{cmq-constraint}
+\end{equation}
+It is not divided by $R$. The exact composite geometry supplies
+the following facts. A row for the final bond $c=(y,y+Re_\mu)$
+reads only unit bonds in the union of its two endpoint $R$-blocks.
+Endpoint gauge covariance gives
+\begin{equation}
+ C_RD\phi(c)=\phi(y+Re_\mu)-\phi(y),
+ \qquad D\phi(b)=\phi(b_+)-\phi(b_-).
+ \label{cmq-gradient}
+\end{equation}
+Choose the unit centerline interface pivot
+\begin{equation}
+ p(c)=\big[y+(R-1)e_\mu/2,\ y+(R+1)e_\mu/2\big].
+ \label{cmq-pivot}
+\end{equation}
+At level $t$ its unique affected intermediate bond has endpoints
+$y+(R-\ell^t)e_\mu/2$ and $y+(R+\ell^t)e_\mu/2$.
+Thus the primitive pivot coefficient $\ell^{1-d}$ multiplies
+along one chain and yields
+\begin{equation}
+ (C_R)_{c,p(c')}=R^{1-d}\delta_{cc'}I.
+ \label{cmq-pivot-coefficient}
+\end{equation}
+These statements hold in the periodic covering geometry with
+the specified lifted paths and distinct opposite interfaces.
+
+Let $E_f$ insert nonpivot coordinates and zero at pivots. Define
+\begin{equation}
+ (h_Rw)(p(c))=R^{d-1}w(c),\qquad
+ K_R=(I-h_RC_R)E_f.
+ \label{cmq-retained-map}
+\end{equation}
+Then $C_Rh_R=I$, $C_RK_R=0$, $K_R$ retains its input coordinates,
+and $\operatorname{ran}K_R=\ker C_R$. Both maps have fixed
+$R$-range. One conservative finite norm bound is
+\begin{equation}
+ r_\ell=1+\frac{2d(\ell-1)}\ell,\qquad
+ c_R=\big[\ell r_\ell\sqrt{2d+2}\big]^s,\qquad
+ \|C_R\|\leq c_R,\qquad
+ \|K_R\|^2\leq k_R^2:=1+R^{2d-2}c_R^2.
+ \label{cmq-retained-upper}
+\end{equation}
+Indeed the primitive counting norm is bounded by
+$\ell r_\ell\sqrt{2d+2}$ and these angle spaces compose.
+The retained and pivot parts of $K_Rz$ have disjoint coordinate
+supports, which proves the last bound.
+
+\subsection{The independent contour gauge and a local nullspace argument}
+\label{cmq-patch-section}
+
+Use the actual direct-$R$ internal averaged contours solely as
+gauge fixing, with flat derivative
+\begin{equation}
+ (T_RB)(y,x)=\operatorname{av}_{\Gamma:y\to x}
+              \sum_{b\in\Gamma}\operatorname{or}(b)B_b.
+ \label{cmq-contour}
+\end{equation}
+Every contour stays in its own centered $R$-block. Consequently
+\begin{equation}
+ T_RD\phi(y,x)=\phi(x)-\phi(y),\qquad T_Rh_R=0.
+ \label{cmq-contour-gradient}
+\end{equation}
+For normalized trace $\tau$, the absolute real gauge action
+$G_R(V)=\sum_{y,x}[1-\operatorname{Re}\tau(P_R(V;y,x))]$
+has zero constant and linear terms at $V=1$, and flat Hessian
+$T_R^TT_R$. This follows from
+$P_R(e^{itB})=I+itT_RB+O(t^2)$ and unitarity, or from its
+local logarithm. In the complex domain use
+$1-\tau(P+P^{-1})/2$. The elementary row/column estimate gives
+\begin{equation}
+ \|T_R\|^2\leq t_R^2:=d(R-1)(R^d-1).
+ \label{cmq-contour-upper}
+\end{equation}
+The two factors bound contour length and the number of target
+rows through an internal bond. This is the actual averaged
+contour penalty, not an assumed tree-coordinate penalty.
+
+Let $\Omega$ be the rectangular cube consisting of the $3^d$
+centered $R$-blocks indexed by $\{-1,0,1\}^d$. Include all
+positive unit bonds with both endpoints in $\Omega$ and all
+unit plaquettes with vertices there. Let $T_{R,\Omega}$ contain
+all internal contour rows in these blocks, and let
+$C_{R,\Omega}$ contain the neighboring-center rows whose two
+centers belong to this cube. The two-block locality places every
+one of these rows inside the chosen bond set. Set
+\begin{equation}
+ \mathcal L_{R,\Omega}
+ =d_\Omega^Td_\Omega+T_{R,\Omega}^TT_{R,\Omega}
+                         +C_{R,\Omega}^TC_{R,\Omega},
+ \qquad \sigma_R=\lambda_{\min}(\mathcal L_{R,\Omega}).
+ \label{cmq-local-matrix}
+\end{equation}
+
+\begin{lemma}[Local positivity]
+\label{cmq-local-positivity}
+The finite scalar matrix in \eqref{cmq-local-matrix} has
+$\sigma_R>0$.
+\end{lemma}
+\begin{proof}
+If its quadratic form vanishes, $d_\Omega B=0$. The rectangular
+grid is simply connected: its plaquette relations imply path
+independence and hence $B=D\phi$ on every bond of $\Omega$.
+Equation \eqref{cmq-contour-gradient} makes $\phi$ constant on
+each $R$-block. Equation \eqref{cmq-gradient} makes the constants
+on neighboring blocks equal. Its local use is justified by
+extending $\phi$ arbitrarily outside $\Omega$ and then using
+two-block locality of the row. The coarse block graph is
+connected, so $\phi$ is constant on all of $\Omega$ and $B=0$.
+The matrix therefore has trivial kernel and is positive definite.
+\end{proof}
+
+This explicitly excludes the gauge and harmonic obstructions.
+Mere finiteness of a local matrix would not have supplied the
+required positivity.
+
+Translate the patch over all $R$-block centers. Every bond occurs
+at least once, whereas every plaquette, contour row and
+constraint row occurs at most $3^d$ times. Thus
+\begin{equation}
+ \sigma_R\|B\|_2^2
+ \leq3^d\big(\|d_1B\|_2^2+\|T_RB\|_2^2+\|C_RB\|_2^2\big).
+ \label{cmq-global-patch}
+\end{equation}
+On a compatible torus, pull the periodic field back to the
+ordinary covering cube and retain repeated occurrences. Summing
+the same local inequalities has exactly the same multiplicity
+bound; an embedded nonwrapping patch is not required. The
+distinct-interface assumptions of the composite chart remain
+in force.
+
+Combining \eqref{cmq-classical-input} and
+\eqref{cmq-global-patch}, for $B\in\ker C_R$ we obtain
+\begin{equation}
+ \langle B,q_MB\rangle+\|T_RB\|_2^2
+ \geq\gamma_R\|B\|_2^2,\qquad
+ \gamma_R=\sigma_R/3^d>0.
+ \label{cmq-field-gap}
+\end{equation}
+The upper bound on arbitrary $B$ is
+$(C_d+t_R^2)\|B\|_2^2$. None of these constants depends on $M$.
+
+\subsection{Precision, covariance and weighted inverse}
+\label{cmq-inverse-section}
+
+At flat background both scalar gradients vanish. Therefore the
+second derivative of the nonlinear constraint chart contributes
+no gradient-times-chart-curvature term. The exact retained flat
+precision is
+\begin{equation}
+ A_{M,R,0}=K_R^T(q_M+T_R^TT_R)K_R.
+ \label{cmq-flat-precision}
+\end{equation}
+Since retained restriction of $K_Rz$ is $z$,
+\begin{equation}
+ \gamma_R I\leq A_{M,R,0}\leq B_R I,\qquad
+ B_R=(C_d+t_R^2)k_R^2,\qquad
+ B_R^{-1}I\leq A_{M,R,0}^{-1}\leq\gamma_R^{-1}I.
+ \label{cmq-sandwich}
+\end{equation}
+There are $d(R^d-1)\dim\mathfrak g$ retained real coordinates
+per $R$-block. Their normalized Gaussian has density
+\begin{equation}
+ (2\pi)^{-n/2}\det(A_{M,R,0})^{1/2}
+        \exp[-\tfrac12 z^TA_{M,R,0}z]\,dz.
+ \label{cmq-density}
+\end{equation}
+Its covariance is the counting inverse $A_{M,R,0}^{-1}$.
+There is no original-fine volume factor $M^d$ in these current
+coordinates. Haar and nonlinear Jacobian terms remain in the
+interaction.
+
+For a block matrix, write $\|A\|_{{\rm Sch},\alpha}$ for the
+maximum of its exponentially weighted row and column sums of
+block operator norms. Regrouping the current $q_M$ bound into
+$R$-blocks gives, for $\alpha/R\leq\kappa_q$,
+\begin{equation}
+ \|q_M\|_{{\rm Sch},\alpha;R}
+ \leq R^d e^{\alpha d} K_q(\alpha/R).
+ \label{cmq-regroup}
+\end{equation}
+The fixed-range maps $K_R,T_R$ and weighted matrix
+multiplication then give some $\alpha_R>0$ and $A_R^*<\infty$
+such that
+\begin{equation}
+ \|A_{M,R,0}\|_{{\rm Sch},\alpha_R}\leq A_R^*
+ \label{cmq-precision-schur}
+\end{equation}
+uniformly in $M$ and compatible volume.
+
+Here is an explicit inverse argument. Fix an $R$-block $j$ and
+put $W_{ii}=e^{t d(i,j)}I$. Periodic distance is used on a torus.
+For $0<t\leq\alpha_R/2$, both the row and column Schur bounds
+of $WAW^{-1}-A$ are at most
+\begin{equation}
+ \sup_i\sum_k\|A_{ik}\|(e^{t d(i,k)}-1)
+ \leq\frac{2tA_R^*}{e\alpha_R}.
+ \label{cmq-conjugation}
+\end{equation}
+Indeed $e^{tx}-1\leq txe^{tx}$ and
+$\sup_{x\geq0}xe^{-\alpha_Rx/2}=2/(e\alpha_R)$.
+Choose
+\begin{equation}
+ t_R^{\rm loc}
+ =\min\left\{\frac{\alpha_R}{2},
+                  \frac{e\alpha_R\gamma_R}{4A_R^*}\right\}.
+ \label{cmq-rate}
+\end{equation}
+The perturbation has Hilbert norm at most $\gamma_R/2$.
+The resolvent identity and \eqref{cmq-sandwich} give
+$\|(WAW^{-1})^{-1}\|\leq2/\gamma_R$, whence
+\begin{equation}
+ \|(A_{M,R,0}^{-1})_{ij}\|
+ \leq\frac2{\gamma_R}e^{-t_R^{\rm loc}d(i,j)}.
+ \label{cmq-entry-decay}
+\end{equation}
+On the infinite lattice, truncated distance weights give the
+same estimates and may be removed in each matrix entry. At
+$\kappa_R=t_R^{\rm loc}/2$ this implies
+\begin{equation}
+ \|A_{M,R,0}^{-1}\|_{{\rm Sch},\kappa_R}
+ \leq\frac2{\gamma_R}
+       \sum_{z\in\mathbb Z^d}e^{-t_R^{\rm loc}|z|_1/2}.
+ \label{cmq-covariance-schur}
+\end{equation}
+Periodic sums are bounded by this same lattice sum by shortest
+representatives. The proof uses both the real gap and the
+already-established decay of $q_M$; a spectral sandwich alone
+would not imply locality.
+
+\subsection{The independent-background extension}
+\label{cmq-background-section}
+
+Let $\Phi_a(z)$ be the actual finite-range analytic pivot chart
+for the composite relative constraint at $V=e^{ia}$, retaining
+$z$ exactly. Define
+\begin{equation}
+ a_V(z)=\frac1i\log[e^{i\Phi_a(z)}e^{ia}],\qquad
+ A_{M,R}(a)
+ =\left.D_z^2\{S_M(a_V(z))+G_R(e^{i\Phi_a(z)}e^{ia})\}
+                                                     \right|_{z=0}.
+ \label{cmq-background-precision}
+\end{equation}
+The action contribution is exactly
+\begin{equation}
+ (Da_V)^T D^2S_M(a)Da_V+\langle DS_M(a),D^2a_V\rangle.
+ \label{cmq-chain-rule}
+\end{equation}
+Thus both constraint-straightening curvature and ordinary-log
+curvature are retained. The gauge contribution is its full
+absolute Hessian, including its residual away from $P_R=I$.
+
+The local chart derivatives have fixed-$R$ row/column bounds on
+a smaller product ball. Contracting their local second
+derivatives against the supremum bound for $DS_M(a)$, and using
+\eqref{cmq-classical-nonlinear-input}, proves at a smaller fixed
+exponent
+\begin{equation}
+ \|A_{M,R}(a)-A_{M,R,0}\|_{{\rm Sch},\kappa_R}
+ \leq C_{R,\kappa_R}\|a\|_\infty.
+ \label{cmq-background-bound}
+\end{equation}
+Every contraction is a finite local incidence sum; no extensive
+gradient norm or old-$M$ coordinate count occurs. A sufficiently
+small background ball gives complex accretivity and a
+holomorphic weighted inverse by its Neumann series. For example,
+one may require both
+$C_{R,\kappa_R}\|a\|_\infty<\gamma_R/2$ and
+$\|A_{M,R,0}^{-1}\|_{{\rm Sch},\kappa_R}
+ C_{R,\kappa_R}\|a\|_\infty<1/2$.
+
+These are uniform-old-depth Gaussian statements for the chosen
+composite constraint and independent contour gauge. Physical
+centering requires the separate stationary-branch comparison;
+the exact Haar, delta, gauge-insertion and cutoff normalization
+requires the separate integral argument. Strict background
+carrier coefficients require the classical support composition,
+not merely \eqref{cmq-background-bound}. This section proves
+neither a quantum induction nor a uniform estimate as $R$ tends
+to infinity.

@@ -1,0 +1,421 @@
+% No preamble. Prefix fps-. 17 October 2026.
+\section{An exact positive finite-measure embedding of the retained sector}
+\label{fps-section}
+
+Fix a finite compatible periodic lattice and a compact connected matrix
+gauge group, with normalized link Haar measure. This section constructs
+an exact positive decomposition of the original finite Wilson measure
+under a specified real measurable coarse map. It does not estimate the
+complementary histories or identify the full pushforward with the
+homogeneous analytic density.
+
+The primitive ordinary mean, composite ratio \(R=\ell^s\), direct-\(R\)
+internal contour gauge, physical centered branch \(V_*(W)\), and retained
+pivot chart are the ones already established for the local macrostep.
+A global completion is fixed explicitly below. It agrees with that
+analytic map near the identity, but is not identified with an unspecified
+different large-field completion in the deposited account.
+
+\subsection{The global real map and its exact compact-gauge normalization}
+\label{fps-completion-section}
+
+For a contour tuple \((U_1,\ldots,U_n)\) from \(y\) to \(x\), set
+\(T=U_1\). On a sufficiently small conjugation-invariant identity
+neighborhood, let \(\Phi\) be the actual selected local mean on the
+reference-normalized tuple, with its original ordering, multiplicities
+and reference. On the Borel good set where all \(U_jT^{-1}\) lie in that
+neighborhood, define
+\[
+ P(U_1,\ldots,U_n)=\Phi(U_1T^{-1},\ldots,U_nT^{-1})T.
+\]
+On its complement put \(P=T\). The good set is endpoint-invariant, and
+local conjugation covariance gives, everywhere on the real group,
+\[
+ P(gU_1h^{-1},\ldots,gU_nh^{-1})=gP(U_1,\ldots,U_n)h^{-1}.
+\]
+Right covariance proves agreement with the original small-field mean.
+No alternative group mean is substituted.
+
+For each primitive ordinary coarse bond, compute these completed
+internal contours and its original center string \(T_c\). If every
+transported relative string \(U_xT_c^{-1}\) lies in the specified small
+logarithm domain, use the original formula
+\[
+ \exp\left[\ell^{-d}\sum_x\log(U_xT_c^{-1})\right]T_c;
+\]
+otherwise use \(T_c\). This defines a Borel gauge-covariant primitive
+map. Compose these primitive completions to obtain \(F\). Complete the
+independent direct-\(R\) internal contour \(P_R\) in the same way.
+Thus, with \(r\) restriction to final block centers,
+\begin{equation}
+ F(U^v)=F(U)^{r(v)},\qquad
+ P_R(U^v;y,x)=v(y)P_R(U;y,x)v(x)^{-1}.
+ \label{fps-global-covariance}
+\end{equation}
+The completion need not be continuous at its selected boundaries and
+is not asserted globally holomorphic. The original fine Wilson measure
+is unchanged: \(F\) is now a fully specified coarse observable of it.
+No equality with a direct-\(R\) ordinary average is used.
+
+Let \(H_R\) be the site-gauge group equal to the identity at every final
+block center, with product normalized Haar, and let \(n_s\) count its
+free site variables. For positive real \(g\), define
+\begin{equation}
+ q(h)=1-\operatorname{Re}\tau(h),\quad
+ G_R(U)=\sum_{y,x\ne y}q(P_R(U;y,x)),\quad
+ c(g)=\int_Ge^{-q(h)/g^2}\,dh>0.
+ \label{fps-compact-normalizer}
+\end{equation}
+This is the exact compact integral, not a Gaussian approximation.
+Equation~\eqref{fps-global-covariance} and independence of the site
+Haar variables give, for every real configuration,
+\begin{equation}
+ \int_{H_R}e^{-G_R(U^u)/g^2}\,du=c(g)^{n_s}.
+ \label{fps-orbit-normalization}
+\end{equation}
+Indeed its individual contour factors are
+\(P_R(U;y,x)u(x)^{-1}\), each with Haar integral \(c(g)\).
+
+\begin{lemma}[Pointwise orbit acceptance]
+\label{fps-markov-lemma}
+The kernel
+\begin{equation}
+ K_g(U,dV)=c(g)^{-n_s}\int_{H_R}
+       e^{-G_R(U^u)/g^2}\,\delta_{U^u}(dV)\,du
+ \label{fps-markov}
+\end{equation}
+is a probability kernel supported on \(F(V)=F(U)\).
+For every Borel \(0\le\chi(V,W)\le1\), put
+\(p_\chi(U)=\int K_g(U,dV)\chi(V,F(U))\). Then for every
+finite positive measure \(\mu\),
+\begin{equation}
+ F_*\mu=F_*(p_\chi\mu)+F_*((1-p_\chi)\mu),\qquad
+ 0\le p_\chi\le1.
+ \label{fps-markov-split}
+\end{equation}
+If \(\mu\) is \(H_R\)-invariant, then
+\begin{equation}
+ K_g^*\mu(dV)=c(g)^{-n_s}e^{-G_R(V)/g^2}\mu(dV).
+ \label{fps-invariant-insertion}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Normalization follows from \eqref{fps-orbit-normalization}; based gauge
+invariance of \(F\) gives the support statement. The split is therefore
+pointwise acceptance/rejection. For the last assertion, in the integral
+against each test function change \(U\) to \(U^u\), using invariance of
+\(\mu\), then integrate \(du\). For noninvariant input the corresponding
+formula uses its \(H_R\)-average, not its original density.
+\end{proof}
+
+\subsection{The actual local density and its positive domination}
+\label{fps-local-section}
+
+Let \(\mu\) be invariant under the full current-site gauge group and
+write its Haar Lebesgue decomposition
+\(\mu=\rho\,m_E+\mu_{\rm sing}\). Both parts are invariant by uniqueness
+of the decomposition and Haar invariance. Use only \(\rho m_E\) for the
+local coarea operator; every remaining positive singular part will stay
+in the complement.
+
+For \(W\) in a small real domain \(D\), set \(V=V_*(W)\). The actual
+chart \(\Phi_V(z)\) solves the relative constraint exactly and leaves
+every retained coordinate equal to \(z\). Choose an injective local
+sheet with a fixed real retained window \(\mathcal B_z\). An additional
+factor \(0\le\chi_{\rm extra}\le1\) may impose any further original
+pivot, contour or reconstructed-field restrictions; those factors are
+not silently dropped.
+
+Let \(n_e,n_c\) count positive current and coarse bonds, and set
+\(n_z=(\dim\mathfrak g)(n_e-n_c)\). In real Lie coordinates orthonormal
+for the chosen trace form, write
+\(d(e^{iX})=h_0j(X)dX\), with \(j(0)=1\).
+For the actual pivot blocks \(A_{c,p}\), define
+\[
+ D_R(V)=\prod_c\det(A_{c,p})^{-1}.
+\]
+All real small-chart orientations are fixed positive. Let
+\(j_c^{\rm str}(V;K_Vz)\) be the logarithm of
+\(\det A_{c,p}/\det D_pF_V(\Phi_V(z);c)\), zero at \(z=0\).
+The exact local density relative to coarse product Haar is
+\begin{align}
+ \ell_\mu(W)
+ &=c(g)^{-n_s}h_0^{n_e-n_c}D_R(V)
+   \int_{\mathcal B_z}\rho(e^{i\Phi_V(z)}V)
+       e^{-G_R(e^{i\Phi_V(z)}V)/g^2}\notag\\
+ &\qquad\times\prod_b j(\Phi_V(z)(b))
+       \exp\left[\sum_c j_c^{\rm str}(V;K_Vz)\right]
+       \chi_{\rm extra}\,dz.
+ \label{fps-local-density}
+\end{align}
+The target group delta contributes \(h_0^{-1}\) per coarse bond.
+The square ambient straightening and subsequent pivot elimination give
+this expression; a rectangular \(\det D\Phi\) is not substituted for
+the constraint Jacobian. Equivalently its unrearranged pivot factor is
+the product of inverse nonlinear pivot derivatives.
+For measurable \(\rho\), the local joint change of variables and
+Tonelli prove \eqref{fps-local-density} almost everywhere. It is a
+nonnegative measurable function. Applying
+\eqref{fps-invariant-insertion} to this actual local sheet gives
+\begin{equation}
+ \nu:=F_*\mu\ \ge\ 1_D\ell_\mu\,m_C.
+ \label{fps-local-domination}
+\end{equation}
+No global density or regularity for \(\nu\) is required.
+
+If the literal input chart has
+\(\rho(U)=Z_{\rm in}\exp[-S_M(U)/g^2+E_{\rm raw}(U)]\),
+put \(z=g\xi\). With the actual pulled-back action-plus-gauge Hessian
+\(A_M(V)\), its exact cubic-and-higher remainder and all measure factors
+in \(I\), the same formula is
+\begin{align}
+ \ell_\mu(W)
+ &=Z_{\rm in}c(g)^{-n_s}h_0^{n_e-n_c}D_R(V)
+       g^{n_z}(2\pi)^{n_z/2}\det A_M(V)^{-1/2}\notag\\
+ &\quad\times e^{-S_M(V)/g^2+E_{\rm raw}(V)}
+ \mathbb E_{A_M(V)^{-1}}
+       [\chi_{\rm window}\chi_{\rm extra}e^{I(V,g,\xi)}].
+ \label{fps-gaussian-density}
+\end{align}
+Here \(I\) contains \(-g^{-2}R_3\), all Haar and straightening
+logarithms, and the exact inherited fluctuation difference. Its field
+argument is \(\Phi_V(g\xi)\), not \(g\Phi_V(\xi)\).
+This is an exact positive-real identity only when the input density
+representation holds at every reconstructed field of the window.
+Holomorphic continuation alone does not furnish that condition.
+
+\subsection{An invariant positive good/remainder pair}
+\label{fps-invariant-section}
+
+Choose a fixed continuous \(\theta\ge0\) supported in \(D\), positive
+near the identity. Let \(\mathcal G_C\) be the full coarse-site gauge
+group with normalized Haar. Define
+\[
+ m_\theta(W)=\int_{\mathcal G_C}\theta(W^v)\,dv.
+\]
+It is invariant, and positive on the orbit saturation of
+\(\{\theta>0\}\). With value zero when \(m_\theta=0\), set
+\begin{equation}
+ a_\mu(W)=\frac{\int_{\mathcal G_C}
+                   \theta(W^v)\ell_\mu(W^v)\,dv}{m_\theta(W)},
+ \qquad \mathcal A_g\mu=a_\mu m_C.
+ \label{fps-orbit-extension}
+\end{equation}
+Only real values of the locally computed density are used, where
+\(\theta\) is supported. This is not a globally analytic extension.
+
+\begin{theorem}[Exact invariant positive split]
+\label{fps-positive-split}
+On the cone of full-gauge-invariant finite positive measures,
+\begin{equation}
+ 0\le\mathcal A_g\mu\le F_*\mu,\qquad
+ \mathcal R_g\mu:=F_*\mu-\mathcal A_g\mu\ge0.
+ \label{fps-positive-operators}
+\end{equation}
+Both operators are linear, preserve gauge invariance, and satisfy
+\(\mathcal A_g+\mathcal R_g=F_*\), including raw mass.
+\end{theorem}
+\begin{proof}
+The full pushforward is invariant by
+\eqref{fps-global-covariance}. Its Haar-absolutely-continuous part has
+an invariant nonnegative density \(f\), chosen by compact gauge
+averaging. Equation~\eqref{fps-local-domination} implies
+\(f\ge\ell_\mu\) almost everywhere on \(D\). For almost every \(W,v\),
+\[
+ \theta(W^v)\ell_\mu(W^v)\le\theta(W^v)f(W^v)
+                              =\theta(W^v)f(W).
+\]
+Integrating in \(v\) and dividing on \(m_\theta>0\) proves
+\(a_\mu\le f\). The positive singular part remains in the remainder.
+Tonelli, or truncation of the positive factor \(m_\theta^{-1}\),
+justifies this near its zero set. Linearity follows from the linear
+Haar-absolutely-continuous projection, local fiber integration and
+fixed \(\theta\). The remainder is positive by the proved inequality.
+\end{proof}
+
+The proof cannot be replaced by averaging a measure inequality and
+then dividing it by \(m_\theta\). It uses the invariant density bounding
+each orbit value before normalization. No uniform lower bound on
+\(m_\theta\) is needed. This remainder need not be the literal rejection
+in \eqref{fps-markov-split}: the normalized output average redistributes
+the local sector along coarse gauge orbits. Both splits are exact.
+
+\subsection{The local germ is retained on a fixed finite regulator}
+\label{fps-germ-section}
+
+\begin{lemma}[Finite orbit-overlap control]
+\label{fps-overlap}
+Let \(\ell\) be an analytic local density on a product potential ball of
+radius \(r\) on a connected finite coarse lattice. Assume its total
+infinitesimal gauge Ward identity holds there and it is invariant under
+constant color conjugations. There is \(\epsilon>0\), possibly depending
+on the finite graph, such that
+\begin{equation}
+ W,W^v\in D_\epsilon\quad\Longrightarrow\quad
+ \ell(W^v)=\ell(W).
+ \label{fps-overlap-identity}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Use a unitarily invariant matrix norm, paying the fixed color-coordinate
+equivalence constants in \(r\). Choose a rooted spanning tree with
+maximal root-path length \(D_{\rm tree}\). Write \(v_x=h_xc\), where
+\(c=v_o\), \(h_o=I\). Constant conjugation does not increase the
+invariant field norm. On each tree edge \(xy\),
+\[
+ h_y=(W^v_{xy})^{-1}h_xW^c_{xy}.
+\]
+Telescoping unitary products gives
+\(\|h_x-I\|\le C D_{\rm tree}\epsilon\).
+Choose \(\epsilon\) so every \(h_x=e^{i\lambda_x}\) uses one small
+logarithm chart, with
+\(\|\lambda_x\|\le C D_{\rm tree}\epsilon\).
+Along \(h_x(t)=e^{it\lambda_x}\), the transformed angles are bounded by
+\(C(1+D_{\rm tree})\epsilon\). Taking
+\(\epsilon\le cr/(1+D_{\rm tree})\) keeps the full real path inside
+the Ward domain. Integrate that identity, then apply constant
+conjugation invariance. No global logarithm of the original \(v\)
+was assumed.
+\end{proof}
+
+For the actual chosen sector, this application uses a product of
+\emph{invariant link/color balls} and \(\chi_{\rm extra}=1\), or extra
+indicators separately proved covariant. It is not asserted for arbitrary
+scalar-coordinate boxes or arbitrary extra cutoffs. The exact real-window
+proof precedes continuation. For a small real coarse gauge \(k\), physical
+branch uniqueness and the block-constant lift give
+\(V_*(W^k)=V_*(W)^{k^{\rm up}}\). With \(R_k\) the source-endpoint
+adjoint on relative fields and \(D_k\) its retained restriction,
+constraint equivariance and chart uniqueness imply
+\[
+ \Phi_{V_*(W^k)}(D_kz)=R_k\Phi_{V_*(W)}(z).
+\]
+Each retained adjoint is orthogonal and has determinant one. Hence it
+preserves the sharp product of color balls exactly. Input gauge
+invariance, conjugation invariance of the absolute contour penalty and
+the actual Haar/pivot change of variables prove equality of the
+\emph{literal real retained integrals}. No cutoff boundary term is
+omitted. These are the exact identities proved in the preceding local
+macrostep covariance argument; the analytic density then extends the
+differentiated Ward identity over its connected local ball. Constant
+conjugation follows by the same argument. The density version needs no
+new logarithm branch. For other cutoffs this application is conditional,
+while Theorem~\ref{fps-positive-split} remains unconditional.
+
+Choose \(\theta\) supported in \(D_\epsilon\),
+positive in its half ball. If \(W\) is in the half ball, then
+\(m_\theta(W)>0\), and every contributing \(W^v\) lies in
+\(D_\epsilon\). Consequently
+\begin{equation}
+ a_\mu(W)=\ell_\mu(W)\qquad\hbox{near the identity}.
+ \label{fps-germ-equality}
+\end{equation}
+Thus a real measurable global good measure has exactly the previously
+computed analytic germ. The graph-dependent shrink is explicit;
+common-ball Ward continuation alone is not invariance between arbitrary
+orbit endpoints whose connecting paths may leave that ball.
+
+\subsection{Full histories, sources and raw normalization}
+\label{fps-histories-section}
+
+At each finite stage fix the map, gauge penalty, positive coupling,
+window and output cutoff. Write
+\(\mathcal T_j^{\rm good}=\mathcal A_j\) and
+\(\mathcal T_j^{\rm rem}=\mathcal R_j\).
+Starting with the original unnormalized finite Wilson measure
+\(\mu_0=e^{-\gamma_0S_W}m_E\), define for every binary word \(h\)
+\[
+ \mu_h=\mathcal T_{n-1}^{h_{n-1}}\cdots
+                         \mathcal T_0^{h_0}\mu_0.
+\]
+Every history is a positive invariant finite measure. Repeatedly using
+Theorem~\ref{fps-positive-split} proves
+\begin{equation}
+ (F_{n-1}\circ\cdots\circ F_0)_*\mu_0
+     =\sum_{h\in\{{\rm good},{\rm rem}\}^n}\mu_h,
+ \qquad Z_W=\sum_h\mu_h(1).
+ \label{fps-history-identity}
+\end{equation}
+The same equality holds against every bounded terminal coarse
+observable. It is exact and includes all mixed histories, singular
+parts and raw vacuum factors; it supplies no smallness estimate for
+the remainder.
+
+For bounded gauge-invariant original observables, the same linear
+identities apply to their invariant signed numerator measures, by
+positive/negative decomposition. Equivalently apply them to
+\(e^{\sum t_iO_i}\mu_0\) on real compact source intervals and
+differentiate, holding step maps and windows fixed. This provides
+exact finite numerator and denominator bookkeeping, not uniform
+observable estimates in a refinement limit.
+
+To identify an all-good germ with the previously established
+homogeneous map, its input density must actually equal
+\(Z_j e^{-\gamma_jS_{M_j}+E_{j,\rm raw}}\), with \(\gamma_j=g_j^{-2}\), on a real neighborhood
+\(D_{\rm in}\), and one must verify the literal containment
+\begin{equation}
+ e^{i\Phi_{V_*(W)}(g_j\xi)}V_*(W)\in D_{\rm in}
+ \quad\hbox{for every retained \(\xi\) and the chosen \(W\)}.
+ \label{fps-literal-containment}
+\end{equation}
+Every additional indicator is retained, unless it is proved identically
+one there. Under this condition \eqref{fps-gaussian-density} is the
+actual homogeneous local map, and \eqref{fps-germ-equality} embeds that
+germ as a positive full-measure submeasure. For a fixed finite number
+of stages, sufficiently weak couplings and small angle windows can meet
+these finite margins: a logarithmic threshold is compatible with
+\(gT(g)\to0\). This is not a volume-uniform assertion about the tuned
+histories constructed earlier.
+
+With \(A_0\) the flat retained precision, the exact field-independent
+factor extracted in one stage is
+\begin{equation}
+ N_j=c(g_j)^{-n_s}h_0^{n_e-n_c}g_j^{n_z}(2\pi)^{n_z/2}
+                       D_R(1)\det(A_0)^{-1/2}.
+ \label{fps-vacuum-factor}
+\end{equation}
+The local output is
+\(Z_jN_j e^{-\gamma_jS_{M_{j+1}}+F_{j,\rm raw}}\).
+The raw correction contains the inherited background, actual pivot and
+Gaussian determinant ratios and the exact retained expectation; its
+value at zero is not discarded. Since \(S_{M_{j+1}}(0)=0\), if
+\[
+ F_{j,\rm raw}=\beta_jS_{M_{j+1}}+E_{j+1,\rm raw}+c_j,
+ \qquad c_j=F_{j,\rm raw}(0)-E_{j+1,\rm raw}(0),
+\]
+then the exact bookkeeping is
+\begin{equation}
+ \gamma_{j+1}=\gamma_j-\beta_j,\qquad
+ Z_{j+1}=Z_jN_j e^{c_j}.
+ \label{fps-exact-extraction}
+\end{equation}
+Replacing an input representative by \(E'_{\rm raw}=E_{\rm raw}+c\)
+requires \(Z'=Ze^{-c}\). Linearity of the orbit extension preserves
+all these scalars in the globally defined good submeasure. No global
+analytic classical action is required for these local identities.
+
+\subsection{The quantitative interface remains separate}
+\label{fps-boundary-section}
+
+Let \(\nu\) be the full terminal pushforward and \(\nu_{\rm good}\)
+its all-good submeasure. If the latter has positive mass, put
+\(\epsilon_{\rm bad}=1-\nu_{\rm good}(1)/\nu(1)\).
+Positivity and the mixture identity give
+\begin{equation}
+ \left|\frac{\nu(f)}{\nu(1)}-
+             \frac{\nu_{\rm good}(f)}{\nu_{\rm good}(1)}\right|
+ \le2\|f\|_\infty\epsilon_{\rm bad}.
+ \label{fps-mixture-bound}
+\end{equation}
+No useful bound on \(\epsilon_{\rm bad}\) has been proved here. In large
+volume, global all-good mass may be a poor criterion; a spatial
+mixed-history expansion can be necessary for local observables.
+
+The remaining tasks include uniform literal chart/orbit-domain matching,
+interacting coercivity and normalization estimates for the actual
+remainders, collared mixed-field factorization with the correct
+conditional means and compressed precisions, and observable bounds with
+the same full denominator. Homogeneous Gaussian bad-block bounds do not
+alone prove them. The present result is an exact positive finite bridge
+and an explicit remainder/history operator, not a completed global RG,
+continuum measure, reconstruction theorem or physical mass gap.

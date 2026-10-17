@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 34: ghost asymptotics and the physical determinant}
+\author{Research working document}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We determine the complete based-ghost contribution to the
+actual leading determinant's Maxwell coefficient. An exact
+returning-walk area calculation gives the unpinned lattice
+heat coefficient. Counting the root residues excluded by
+the pins controls the difference through a specified
+heat-time interval. Through the block diffusion time
+\(K^2\), the actual contribution has a fixed finite part
+and an \(O(K^{-2})\) error.
+
+The flat pinning gap is of order \(K^{-4}\), rather than
+\(K^{-2}\). A pointwise Neumann Green-function estimate
+proves the matching lower bound. A fourth area moment
+and a killed-return heat bound then control the tail
+past \(K^4\). Together they give the entire actual ghost
+coefficient \(C_H\log K/(12\pi^2)+O(1)\), uniformly in
+the preceding classical depth and the permitted infinite
+structural systems.
+
+This is twice the ghost logarithm of the massive reference
+used in Notebook 33. The extra logarithm comes from the
+interval \(K^2\) to \(K^4\) and must be compensated by the
+actual vector determinant. It supplies a quantitative
+test of the remaining coupled comparison, not the full
+Yang--Mills existence argument.
+
+We also prove the full actual vector short-time bound,
+including the composite ordinary constraint. Its flat
+derivative has a uniform counting-\(\ell^2\) bound,
+and its affine magnetic jets are controlled through
+the fixed-ratio hierarchy. A localized trace identity
+uses the fixed coarse fiber dimension to avoid a
+factor equal to the growing fine block volume.
+Together with the ghost estimate, this closes the
+actual ultraviolet heat interval.
+
+Finally an exact finite determinant identity separates
+the full fine and coarse gauge-orbit density factors
+from a residual precision on the physical quotient.
+That physical precision has a uniform flat gap of
+order \(K^{-2}\). An explicit contour-gauge test shows
+why the same gap cannot simply be assigned to the
+unprojected contour completion. A paired scalar
+reference has an exact infrared cancellation; applying
+it to the actual finite identity still requires a
+joint infrared limit and uniform curvature-source
+estimates for the physical operator.
+\end{abstract}
+
+\section*{Inputs, conventions and scope}
+
+The actual construction, fixed-\(K\) local infinite limits
+and determinant-density identities are those of Notebooks
+32 and 33. The input identities are:
+\begin{enumerate}
+\item On the normalized output probe
+\(w_\mu(n)=t n_\nu H\), \(\mu\ne\nu\), \(\tau(H^2)=1\),
+the first two actual stationary jets agree with current
+affine links \(U_\mu(x)=\exp(i t x_\nu H/K^2)\).
+This holds for every preceding homogeneous classical
+action \(S_M\). Only these jets are used.
+\item The based generator \(D_b\) has scalar domain zero
+at every \(K\)-center, and \(G(t)=D_b(t)^TD_b(t)\).
+The Maxwell contribution of its normalized log determinant
+is \(2[t^2]\operatorname{Tr}_{0,S}\log G(t)\), where the
+trace includes noncenter sites in one centered block
+and their adjoint color coordinates.
+\item The actual total coefficient splits into this ghost
+term, the vector term
+\(-[t^2]\operatorname{Tr}_{0,E}\log V_a(t)\), and a
+uniformly bounded coarse term. Here
+\(V_a=s_M''+D_bD_b^T+aC_K^TC_K\) on the required jets;
+the constraint multiplier curvature vanishes through
+the same two orders. The fixed \(a\) is the large
+positive completion from Notebook 32.
+\end{enumerate}
+
+The charge factor is \(C_H=\sum_q q^2\), where \(q\)
+runs over the eigenvalues of \(\operatorname{ad}_H\)
+on the complexified adjoint space, with multiplicities.
+There is no doubling of the real adjoint trace.
+For \(SU(N)\) with \(\tau=\operatorname{Tr}_{\rm fund}/N\),
+\(C_H=2N^2\). We write \(\alpha_g=C_H/(48\pi^2)\).
+All estimates below are in four dimensions.
+
+The proofs have been checked internally against these
+inputs. This notebook does not assert a full
+endpoint-uniform vector comparison, positive total
+drift, a continuum measure, or reconstruction.
+

@@ -1,0 +1,148 @@
+CHECKPOINT AFTER NOTEBOOK 38
+17 October 2026. Goal remains ACTIVE; no full existence theorem.
+
+Authoritative new output:
+outputs/ym4-full-measure-bridge/main.tex
+71,400 bytes,85 labels,39 references; all static checks clean;
+desktop compile SUCCESS. Dedicated local LaTeX project.
+Builder: work/build_full_measure_bridge.ps1.
+Master outputs/ym4-construction-notebook.tex updated through38;
+desktop compile SUCCESS.
+
+Parts, in order:
+full_measure_bridge_head.tex
+full_wilson_positive_split_fragment.tex (fps-)
+full_wilson_peierls_fragment.tex (fwp-)
+fixed_box_wilson_tail_fragment.tex (fbw:)
+full_measure_box_bridge_fragment.tex (fbb:)
+full_measure_geometric_interface_fragment.tex (fmg-)
+full_measure_bridge_tail.tex
+
+PREVIOUS RESULT
+Notebook37's actual logarithmic coefficient is22alpha_g logK+O1
+uniform in olddepth and required structural systems, under its upstream
+working inputs. It yields arbitrarily long finite tuned weak LOCAL
+homogeneous histories. It is not global Wilson history control.
+See after_notebook37_state.txt for exact proof chain.
+
+NEW RESULT A: EXACT FINITE POSITIVE EMBEDDING
+Choose actual composite ordinary map, globally Borel completed with
+original local mean/reference-string fallback; chosen direct contour
+also completed equivariantly. This is a specified coarse observable
+of the original fine Wilson measure, not identification with any
+different unspecified source completion.
+
+c(g)=integral_G exp[-(1-Re tau h)/g^2] dh exactly.
+Based gauge insertion normalizes pointwise by c(g)^n_s.
+Any retained sector gives an exact positive Markov acceptance/rejection.
+Local actual Haar/pivot coarea yields F_*mu >=1_D ell_mu m_C.
+
+For invariant input, choose theta supportedD and
+m_theta(W)=integral theta(W^v)dv.
+A_g mu=[integral theta(W^v)ell_mu(W^v)dv/m_theta(W)]m_C
+(zero ifm_theta0). The invariant Haar-ac density of F_*mu dominates
+every numerator orbit value; hence0<=A_gmu<=F_*mu.
+R_g=F_*-A_g positive linear, invariant. All binary histories sum
+exactly to full iterated pushforward, rawmass and finite numerators.
+No smallness or local polymer structure ofR_g follows.
+
+Local-germ identity at fixedfinitevolume uses Ward overlap:
+tree-depthD gives shrinkepsilon<=cr/(1+D). Every small orbit endpoint
+connected insideWardball after factoring constantconjugation.
+Actual literal product of invariant COLOR BALLS is covariant through
+centeredbackgroundandrelativechart endpointadjoints; no boundaryterm.
+Forarbitrarycutoff germassertion conditional. Gamma_j=g_j^-2 essential
+forhomogeneousfactorization. Literalinputcontainment musthold forALL
+realretainedfields; analyticcontinuationalone insufficient.
+Vacuumfactors and extraction signs allretained.
+
+NEW RESULT B: FULL BARE WILSON PEIERLS
+Onn_i=2m_i b,b>=3 (compatible2L^M,b=L^u),
+z_b(g,delta)=min(1,exp[-delta^2/g^2+
+b^d(d dimG log1/g+C_G,d)]).
+For m prescribed distinct interiorbadcells,
+P(each containsplaquetteh>=delta^2)<=z_b^m.
+Exactsiteplanekernels+evenSchattenHolder+fullZlowerbound proveit.
+Any prescribed distinctplaquettesS:
+P(allbad)<=z_b^(|S|/Q_b), Q_b=b^d binom(d,2).
+Connectedbadclusters getPeierlstails. Uniform surroundingvolume,
+fixedb. NoGaussianreplacement, nostochasticdominationclaim.
+RawlinkmarginalsHaar andflattorusholonomies prohibitdirectrawlink
+or globaltrivialholonomy conclusions.
+
+NEW RESULT C: FULL CONDITIONAL FIXED-BOX TAIL
+Omega=[0,R]^4 fixedR>=2, allboundaryedgesfixedsmallV.
+Interiorgaugesidentityonboundary. Forestrootedateachboundaryvertex
+setsforestedgesI exactly withHaarvolume1.
+AtV=I uniqueflatzero andSPDcurlHessian; compactness+IFT gives
+uniqueglobalminx*(V), localquadraticwell andouterenergygapeta.
+Z>=c g^n e^-Smin/g^2. Localtailnumerator<=C g^n e^-Smin/g^2 e^-cT^2.
+Outerrelativepartg^-n e^-eta/g^2 absorbedfor1<=T<=r/g.
+Thusactualnormalizedconditionaltail<=Ce^-cT^2.
+Windowmax_e||x_e-x*_e||_tau<=gT isAd-invariant.
+This isunconstrainedconditionalbarebox, notnonlinearaveragefiber.
+
+NEW RESULT D: UNCONDITIONAL FULL-MEASURE LOCAL BOX BRIDGE
+BoundarycomplexS3; fixedboundarytreefundamentalloops havefinite
+boundaryplaquettefillings. Boundary-onlygauge gives
+||V_e-I||<=L_R max_boundaryp||U_p-I||.
+Chooseepsilon_Rfixed so sqrt2L_Repsilon_R liesinC'sboundaryball.
+DefectD_i=boundaryhas h>=epsilon_R^2 ORgoodboundaryandCwindowfails.
+It isgaugeinvariant (fulltreerepresentativeconstantconjugacy,
+uniqueminimizerandlogequivariant,Ad-invariantnorm).
+For m prescribedvertex-disjointboxes:
+P(intersectionD_i)<=[Ce^-cT^2+
+24R^3 z_b(g,epsilon_R)^(1/Q_b)]^m.
+Proofconditionalinteriorindependencegivenoutside+correlatedboundary
+Peierlsunionoverdistinctplaquettes+binomialalternatives.
+ForT=(log1/g)^a,a>1/2, bracketissuperpolynomiallysmalling.
+ConstantsfixedR,b,uniformsurroundingvolume.
+NotidentifiedwithactualRGconstrainedretainedwindows.
+
+NEW GEOMETRIC/SOURCE CLARITY
+Cubetreegauge||U^v-I||<=(d-1)n epsilon;
+physicalpotential||A||<=2(d-1)ell epsilon/eta^2.
+AlternatingCartancurvatureplaquettesO(eta^2 f) prohibituniform
+C1alpha gauge: gauge-invariant adjacentcurvaturenormjump>=f/2
+versusnecessaryO(eta^alpha). Thusrawplaquettesmallnesscannot
+supply smoothclassicalbackground; stationary+roughfluctuations
+decompositionstillneeded.
+Torusflattransition/holonomysectors retained.
+Boundedlocalinversecouplingincrements givebothg_i/g_j<=
+sqrt(1+D_abs|i-j|/Gamma_w).
+
+PRIMARY INTERFACE
+CMP122-II1989Theorem1p355 completesCMP1191988Section2densityclass
+subjecttoITS effectivecouplingsweak. Itdoesnotautomaticallyimport
+ourlocalrecursion. CMP119p261(2.38) explicitlocalpotential/derivative
+gaugeinput; fullhistoryclass(2.18), operators(2.19-22), analytic/
+boundaryterms(2.23-42). NoOCRdamagedconstantsreconstructed.
+PartI exactnormalizedreplacementformula stillneedsauditingfromoriginal.
+
+AUDITS
+full_measure_bridge_root_audit.txt
+positive_finite_measure_embedding_rotation_audit.txt (finalfps§7)
+full_wilson_peierls_theorem_audit.txt
+fixed_box_wilson_tail_provenance_audit.txt
+full_measure_box_bridge_provenance_audit.txt
+full_measure_geometric_interface_theorem_audit.txt
+Researchnotes: positive_finite_measure_embedding_research.txt;
+full_wilson_large_field_peierls_research.txt;
+full_measure_large_field_interface_research.txt.
+
+NEXT TARGET
+JoinexactpositivehistorybranchtoactualspatialRGwindows:
+good-componentidentityoncollareddeterminingsets, actualconstrained
+minimizerandindependentwindows, exteriorholonomy/transitiondata;
+normalizedbad-componentreplacementuniforminexterior,size,scaleage;
+summablemixedhistoryboundsandcomplete-densityinduction;
+couplingextractionidenticaltotheonebeing tuned(orretuneactualfullclass).
+CanverifyBałabanclassforourscheme orprovedirectly. Newbareboxbounds
+areinputs, notclosureofH2.
+ThenH3sources/counterterms/allorderbounds,H4commoncontinuumhierarchy,
+H5RP/fullEuclideancovariance/reconstruction,H6nontrivialYMidentification.
+MassgapH7separate. Fullmapupdatedfinal_push_existence_dependency_audit.txt.
+
+No source-repository edits, publication or external messages.
+Source remainscleanpinned e392ef45013a581664bab76b90867170b30fe10e.
+Internal review/typesetting notexternalcertificationof38notebooks.

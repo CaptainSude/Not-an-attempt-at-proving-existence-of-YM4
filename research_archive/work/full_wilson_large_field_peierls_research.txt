@@ -1,0 +1,339 @@
+FULL WILSON PEIERLS BOUNDS FROM SITE-PLANE CHESSBOARD ESTIMATES
+17 October 2026. Rotation audit research. Independent audit requested.
+This concerns the actual positive normalized Wilson measure, not a
+Gaussian approximation. No repository or output file was modified.
+
+MAIN PROVED RESULT. Fix a cell side b>=3. On a periodic unit lattice
+with side lengths n_i=2m_i b, the probability that any prescribed
+m distinct cells each contain an interior plaquette with
+1-Re tau(U_p)>=delta^2 is at most z_b(g,delta)^m, where
+ z_b(g,delta)
+ =min{1, exp[-delta^2/g^2
+          +b^d(d dim(G) log(1/g)+C_(G,d))]}.             (0.1)
+The constants are uniform in the torus volume and in the selected
+cells. The actual source family n=2L^M, L odd, admits this geometry
+with b=L^u for every fixed u>=1 and M>=u.
+
+A finite shifted-grid/coloring argument also controls every prescribed
+set of distinct bad plaquettes, with a fixed exponent loss depending
+on b,d. Connected clusters consequently have Peierls tails when z_b
+is small. These statements use the full normalized Wilson measure.
+
+WHAT IS NOT PROVED. These curvature events have not been identified
+with complements of the actual retained-coordinate windows about
+a nonlinear constrained minimizer. Raw link windows cannot have
+this property: every single-link marginal of the unfixed Wilson
+measure is exactly Haar, independent of g. The theorem does not
+supply a full large-field RG expansion or its analytic source bounds.
+
+1. Measure, exact energy, and regulator geometry
+
+Let G=SU(N), m_G=dim G, tau=Tr/N, and let all independent links carry
+normalized Haar measure. The same proof works for a compact connected
+matrix group with the analogous faithful trace norm and local Haar
+ball bound. Work on
+ Lambda=product_i Z/n_i Z,    n_i=2m_i b, m_i>=1, b>=3.
+Let V=|Lambda|, E=dV, P=binom(d,2)V, with elementary unoriented
+plaquettes counted once. The side lengths are at least six, so there
+are no period-one or period-two graph degeneracies.
+
+For a group matrix W define
+ h(W)=1-Re tau(W)=(1/2)||W-I||_tau^2>=0,
+ ||X||_tau^2=tau(X^*X).
+The action, partition function and probability are
+ A(U)=sum_p h(U_p),
+ Z_g=integral exp[-A(U)/g^2] product_e dU_e,
+ mu_g(dU)=Z_g^-1 exp[-A(U)/g^2] product_e dU_e.            (1.1)
+This is the actual real positive Wilson measure, with no gauge fixing.
+
+Fix a translated grid of cubes of side b with vertices at
+s+b j, j_i in Z/(2m_i). In each cell use only observables whose link
+support is strictly inside the geometric cube: every endpoint of
+a used link has all coordinates strictly between the corresponding
+two walls. Let P_j^int consist of elementary plaquettes all of whose
+vertices have this property. This set is nonempty for b>=3.
+The basic bad event is
+ B_j(delta)={max_(p in P_j^int) h(U_p)>=delta^2}.          (1.2)
+
+All coordinate walls are SITE planes with integer offsets. Their
+reflections preserve the lattice. The number 2m_i of cells in every
+direction is even. These are the only reflection/period requirements
+used below. No diagonal reflection or alternating site/link scheme
+is needed. For n=2L^M and b=L^u, every count is 2L^(M-u), which is
+even although L is odd. The proof works at the original regulator.
+
+2. Exact site-plane reflection and slab kernels
+
+Here is a direct proof specialized to the needed positive Wilson
+case; it avoids assuming a chessboard theorem for an unverified
+boundary convention.
+
+A coordinate site plane never cuts the relative interior of an
+elementary link or plaquette across both sides. A plaquette either
+lies in the plane or belongs wholly to one of the adjacent closed
+half-spaces, perhaps touching the plane. On a torus a reflection
+uses two opposite site planes. Conditional on links lying in these
+planes, the two open half configurations are independent copies
+with reflected weights. Consequently the reflected quadratic form
+is an integral of an absolute square with a nonnegative boundary
+weight. This proves the required site reflection positivity.
+
+For the full arbitrary-even-count chessboard inequality, cut in one
+coordinate into p=2m slabs of width b. Boundary variables are the
+tangential links lying in one site plane. Use their product Haar
+space H=L^2(boundary links). All boundaries are canonically identified
+by integer translation in the cut direction.
+
+For a bounded slab observable f supported strictly inside the slab,
+define K_f(U_left,U_right) by integrating all remaining slab links,
+with:
+ - the full Wilson factor for every plaquette assigned to the slab,
+   including those touching a boundary but not lying in it;
+ - one half of the action of every plaquette entirely on each boundary;
+ - the factor f.
+Each link not in a boundary is integrated once in this kernel.
+Every plaquette has exactly one of the indicated assignments. Since
+the domain is compact and |f| is bounded, K_f is a bounded integral
+kernel, hence Hilbert--Schmidt.
+
+Gluing p kernels with the boundary Haar integrations gives exactly
+ Tr(K_(f_0)...K_(f_(p-1)))
+  =Z_g[product_j f_j].                                  (2.1)
+No gauge-volume factor appears. Each boundary link is integrated once,
+each boundary plaquette receives two halves, and every other plaquette
+and link is assigned once. Reflection interchanges left and right,
+preserves h(U_p), and inverts a link if its chosen orientation reverses.
+Haar invariance under inversion gives
+ K_f^*=K_(theta conjugate(f)).                           (2.2)
+Our indicators are real.
+
+Schatten Hölder for the even integer p gives
+ |Tr product_j K_(f_j)|
+ <= product_j (Tr(K_(f_j)^* K_(f_j))^(p/2))^(1/p).        (2.3)
+The right member for a fixed j is the partition integral of p
+alternating reflected copies of that slab. This is an exact
+ordinary Wilson torus with the original period pb, not a different
+action. Odd p would not give this direct alternating gluing.
+
+Apply (2.3) successively in all d coordinate directions.
+At each stage, a slab source is the product of the sources in its
+constituent cells. Orthogonal affine coordinate reflections commute
+on the underlying unoriented graph, with the corresponding link
+orientation inversions. Thus the final factor indexed by an original
+cell is the full reflected dissemination of that cell's observable.
+This sequential proof handles intersections of cut planes by exact
+one-axis graph gluings; no independent corner normalization is inserted.
+
+Let N_c=V/b^d be the number of cells, and let Theta_j map the reference
+cell to cell j by the usual alternating reflections. Even cell counts
+make this pattern periodic. For bounded cell observables f_j define
+ D(f_j)=product_i Theta_i f_j, where the original cell observable is
+first pulled back to the reference cell. The result is
+ |Z_g[product_j Theta_j f_j]|
+ <=product_j Z_g[D(f_j)]^(1/N_c).                        (2.4)
+For real indicators all terms are nonnegative.
+
+After dividing by Z_g, factors with f_j=1 are precisely Z_g^(1/N_c).
+Therefore, for a selected set S of cells,
+ mu_g(product_(j in S) Theta_j f_j)
+ <=product_(j in S) (Z_g[D(f_j)]/Z_g)^(1/N_c).            (2.5)
+This exact normalization is important: the denominator is the full
+Wilson partition function, not an independently chosen small-field
+partition function.
+
+3. A volume-uniform lower bound for the full partition function
+
+There are constants epsilon_0>0 and c_G in (0,1] such that
+ Haar{U:||U-I||_tau<=epsilon}>=c_G epsilon^m_G,
+                    0<epsilon<=epsilon_0.              (3.1)
+This follows by integrating the smooth strictly positive Haar density
+in any fixed local exponential chart. It is a finite-dimensional
+compact-group fact; no background or volume enters.
+
+If every link is in this epsilon ball, unitarity and a four-term
+product telescoping give ||U_p-I||_tau<=4epsilon. Consequently
+ h(U_p)<=(1/2)(4epsilon)^2=8epsilon^2.
+For 0<g<=min(epsilon_0,1), restrict the full partition integral to
+the box ||U_e-I||_tau<=g for every link. Then
+ Z_g >= (c_G g^m_G)^(dV) exp[-8 binom(d,2)V].             (3.2)
+In particular
+ -(1/V)log Z_g
+ <= d m_G log(1/g)+C_(G,d),
+ C_(G,d)=8 binom(d,2)+d log(1/c_G).                      (3.3)
+The lower bound is crude but sufficient. It is not the assertion that
+the small-link box carries most of the measure. It is only a lower
+bound for the normalization, which is then distributed over N_c
+copies by (2.5).
+
+4. Prescribed bad cells under the full normalized measure
+
+For the event (1.2), every reflected copy remains a cell-interior
+plaquette-energy event. Distinct cell interiors contain distinct
+plaquettes. On its full dissemination, each cell therefore contributes
+at least delta^2 to A(U), so
+ Z_g[D(1_B)]<=exp[-N_c delta^2/g^2].                     (4.1)
+The remaining product Haar integral is at most one.
+
+Combine (4.1) and (3.3):
+ (Z_g[D(1_B)]/Z_g)^(1/N_c)
+ <=exp[-delta^2/g^2
+             +b^d{d m_G log(1/g)+C_(G,d)}].              (4.2)
+The same bound holds for any cell event forcing its interior action
+to be at least delta^2, and for any reflected placement within the cell.
+Using (2.5) proves
+ mu_g(intersection_(j in S) B_j(delta))<=z_b(g,delta)^|S|. (4.3)
+If the right exponential exceeds one, use the trivial bound one.
+The claim is uniform in volume and in the set S; the cells need only
+be distinct, since strict interior support already separates them.
+
+More generally, if event E_j forces interior action at least e_j>=0,
+the right side is
+ product_(j in S) min{1,exp[-e_j/g^2+
+                 b^d{d m_G log(1/g)+C_(G,d)}]}.          (4.4)
+This does not require a particular shape of the interior event.
+
+For fixed b and delta(g)=g R(g), (4.2) is
+ exp[-R(g)^2+C_b log(1/g)+C_b].
+It tends to zero when R(g)^2/log(1/g) tends to infinity, for example
+R(g)=(log(1/g))^a with a>1/2. A norm threshold
+||U_p-I||_tau>=delta instead gives e_j=delta^2/2.
+Constants are not uniform in a cell side b growing with the cutoff;
+the b^d entropy cost is explicit.
+
+5. Arbitrary prescribed plaquettes and cluster bounds
+
+The fixed-grid support condition can be removed at a finite cost.
+Let S be any prescribed collection of distinct elementary plaquettes.
+Write a positive plaquette as (x;mu,nu), mu<nu. Color it by
+ (x mod b, mu,nu).
+There are
+ Q_b=b^d binom(d,2)                                    (5.1)
+colors. Some color contains at least |S|/Q_b plaquettes. Fix this color,
+with anchor residue a, and use the grid shifted by s=a-(1,...,1).
+Every anchor in that color lies at relative position (1,...,1) of
+a cell. Its plaquette vertices have coordinates 1 or 2, so are strictly
+interior for b>=3. Distinct anchors of the fixed color belong to
+distinct cells; the fixed orientation prevents two selected
+plaquettes with the same anchor.
+
+The event that all plaquettes in S have h>=delta^2 implies the
+corresponding bad-cell event on this deterministic color subset.
+Equation (4.3) thus gives, for z_b<=1,
+ mu_g(h(U_p)>=delta^2 for all p in S)
+       <=z_b(g,delta)^(|S|/Q_b).                        (5.2)
+No independence and no random coloring are used. The grid may depend
+on the prescribed set through its selected color; translation
+invariance and (2.5) hold for every one of the finitely many shifts.
+
+For the fixed cell graph with nearest-neighbor adjacency, degree at most
+2d, a canonical spanning-tree traversal bounds the number of connected
+sets of size m containing a chosen cell by (2d)^(2m).
+If its bad cluster has size at least m, it contains such a connected
+set of size exactly m. Therefore
+ mu_g(|bad cluster at j|>=m)
+     <=[(2d)^2 z_b(g,delta)]^m.                          (5.3)
+The same argument works for the plaquette graph with a fixed finite
+adjacency degree Delta_d, using z_b^(1/Q_b).
+For adjacency by shared vertices, Delta_d<=16 binom(d,2) is a safe
+dimension-only bound. It gives
+ mu_g(|bad plaquette cluster at p|>=m)
+     <=[Delta_d^2 z_b(g,delta)^(1/Q_b)]^m.                (5.4)
+Periodic identifications cannot increase the degree or this counting
+bound. These are Peierls probability bounds, not a claim of full
+stochastic domination by independent Bernoulli variables.
+
+In particular a fixed local bad event is uniformly rare as g tends
+to zero. The probability of ANY bad cell in a growing torus is only
+bounded by N_c z_b; the theorem does not claim that the entire lattice
+is in one small-field sector with a volume-independent probability.
+
+6. Why this does not automatically control retained-window complements
+
+There are three distinct issues.
+
+(a) Raw links are not rare near the identity.
+For a link with distinct endpoints, gauge invariance at one endpoint
+makes its marginal left-invariant under G. Thus it is exactly Haar:
+ mu_g(U_e in A)=Haar(A)                                  (6.1)
+for every measurable A and every g. The probability that a raw link
+lies outside a shrinking identity window tends to one, not zero.
+Pure-gauge configurations have every plaquette equal to I while their
+individual links can be arbitrarily far from I. Therefore no
+plaquette Peierls estimate can directly imply rarity of an unfixed
+raw-link window complement.
+
+(b) A gauge-fixed fluctuation window is a different observable.
+The actual retained variable xi is produced after a background-dependent
+nonlinear constrained chart, a chosen contour gauge, and a coarse
+constraint. Its bad event ||xi||>R is not, from the material proved
+here, an event forcing one cell's Wilson energy to exceed c g^2 R^2.
+A proof would need a quantitative geometric/energetic implication
+for that exact chart, perhaps after selecting a suitable local
+background and allowing gauge transformations. A local tree gauge
+can control potentials from small plaquettes, but it does not
+automatically identify those potentials with xi, its minimizing
+background, or the needed C1alpha domain.
+
+(c) Curvature smallness does not fix global holonomy sectors.
+On a periodic lattice set U_1(x)=exp(i theta H/n_1) and all other
+links to I. All plaquettes equal I, while the noncontractible
+Wilson line is exp(i theta H), which can be nontrivial. Thus
+plaquette control alone cannot place the entire field in a global
+trivial-holonomy chart. A complete construction must retain or
+control these sectors rather than declaring them part of an
+energetically suppressed plaquette event.
+
+The theorem also assumes the positive bare Wilson measure. It has not
+been extended here to a complex analytic source measure, arbitrary
+conditioned boundaries, or a general effective action after many RG
+steps. Reflection positivity and exact plaquette assignment must be
+proved anew if those objects replace (1.1).
+
+7. Consequence for H2 and precise missing interfaces
+
+PROVED:
+ - actual normalized finite-volume Wilson probabilities;
+ - uniform-volume prescribed bad-cell and bad-plaquette bounds;
+ - original odd-L torus compatibility;
+ - local bad-cluster Peierls tails at sufficiently weak coupling;
+ - thresholds delta=gR with R^2 dominating log(1/g), at fixed b.
+
+NOT PROVED:
+ - a deterministic implication from the actual retained-window
+   complement to the bad-energy events above, with constants uniform
+   in the full RG history;
+ - an exact decomposition and convergent summation of all large-field
+   components, including gauge/holonomy sectors and interfaces;
+ - complex-source, locality and polymer norm bounds for that
+   decomposition compatible with the iterated small-field map;
+ - passage from these bare probabilities to tightness, reconstruction,
+   nontriviality or a mass gap.
+
+Thus this is a genuine full-measure H2 input, but not a closure of H2.
+It isolates an explicit rare geometric event and the exact missing
+bridge to the retained-coordinate cutoff.
+
+8. Primary-source context and proof provenance
+
+The proof above is self-contained for the stated site-plane geometry.
+The standard framework is:
+ J. Frohlich, R. Israel, E.H. Lieb, B. Simon,
+ "Phase transitions and reflection positivity. I. General theory
+ and long range lattice models", Communications in Mathematical
+ Physics 62 (1978), 1--34, DOI 10.1007/BF01940327.
+ https://doi.org/10.1007/BF01940327
+ Primary institutional record:
+ https://collaborate.princeton.edu/en/publications/phase-transitions-and-reflection-positivity-i-general-theory-and-/
+
+For gauge reflection positivity and transfer-matrix background:
+ K. Osterwalder and E. Seiler, "Gauge field theories on a lattice",
+ Annals of Physics 110 (1978), 440--471,
+ DOI 10.1016/0003-4916(78)90039-8.
+ https://doi.org/10.1016/0003-4916(78)90039-8
+
+These references are contextual; no unavailable theorem statement or
+unread page is substituted for the explicit slab proof in Section2.
+The earlier internally audited diagonal_fold_research.md also supplies
+the same sequential cellwise Holder mechanism for more complicated
+mirrors. Only the simpler site-plane case is needed here.
+

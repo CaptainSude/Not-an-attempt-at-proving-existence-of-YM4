@@ -1,0 +1,347 @@
+% No preamble. Prefix csgq-. Fixed joint homogeneous background system.
+\section{Summable connecting gauges and the invariant quotient}
+\label{csgq-section}
+
+This section closes the gauge-invariance interface for classical
+substitution on the analytic interaction quotient. Its finite-regulator
+inputs are the actual ordinary-minimum comparison and equality theorem,
+the ordinary-to-corrected transfer, the constraint-preserving flat-slice
+flow, and the coherent pre-gauge support estimates. It does not assume a
+weighted estimate for the nonlinear gauge-fixing inverse.
+
+\subsection{Joint limits, domains and the statement}
+\label{csgq-input-section}
+
+Fix a preceding homogeneous refinement $M$, a finite allowed endpoint
+ratio $L$, and a single joint subsequence of compatible cubic regulators.
+Let
+\begin{equation}
+ e^{ia_{L,N}(w)}=P_{M,L,N}(e^{iw})
+       \longrightarrow e^{ia_L(w)}
+ \label{csgq-background-limit}
+\end{equation}
+locally at every current link, locally uniformly in the finitely many
+variables of each compactly supported final field $w$. The current
+lattice has spacing $1/L$ in final physical units. Assume the established
+coherent support bound
+\begin{equation}
+ \|a_L(w)|_i\|_\infty
+ \le \rho e^{-\kappa\operatorname{dist}(i,K)},\qquad
+ \rho=\frac{C_A b}{L},
+ \qquad \|w\|_\infty<b,\quad \operatorname{supp}w\subset K.
+ \label{csgq-background-decay}
+\end{equation}
+Here $K$ is a finite set of final cells. The same assertion holds for
+every other compact datum in the ball. Joint analytic compactness and
+the finite-regulator support estimates supply this input; unrelated
+pointwise choices of subsequences do not replace it.
+
+Use a unitarily invariant matrix norm for group elements. Its comparison
+with the scalar-coordinate maximum norm defining the activity polydisc
+has fixed color-dependent constants. In particular, constant conjugation
+is not silently treated as an isometry of that coordinate maximum norm.
+All such comparison constants are included below. The dimension is
+$d\ge2$, with $d=4$ in the application. Constants in summability estimates
+may depend on fixed $L$ and on a finite compact support, but not on
+preceding refinement or approximating volume.
+
+Let $\mathcal Q_{\rm inv}$ be the quotient of anchored analytic
+interactions by equality of their vacuum-normalized totals on compact
+fields. Its invariant totals are invariant under constant global
+adjoint transformations and under compact local gauge paths that stay
+inside the analytic field ball. An identity for arbitrary disconnected
+endpoint gauges is not part of the conclusion. The summable-field
+extension of the quotient gives, for $0<\rho_1<b$,
+\begin{equation}
+ |\Phi_E(A)-\Phi_E(B)|
+ \le \frac{\|[E]\|_{\mathcal Q}}{b-\rho_1}
+                 \|A-B\|_{\ell^1_{\rm cell}},
+ \qquad \|A\|_\infty,\|B\|_\infty\le\rho_1.
+ \label{csgq-summable-continuity}
+\end{equation}
+The normalized total is absolutely convergent on these summable fields,
+and its value depends only on the class.
+
+\begin{theorem}[Universal local gauge identity for a fixed joint map]
+\label{csgq-main}
+Under these inputs, the scalar substitution
+\begin{equation}
+ [E]\longmapsto
+       \bigl(w\longmapsto \Phi_E(a_L(w))\bigr)
+ \label{csgq-substitution}
+\end{equation}
+preserves local gauge invariance for every invariant input class on a
+common smaller germ. If
+\begin{equation}
+             C_g C_A/L<1/2,
+ \label{csgq-margin-condition}
+\end{equation}
+where $C_g$ is the fixed group/chart constant constructed below, the
+compact connecting paths have a common strict margin in the original
+radius-$b$ field ball. The local analytic identity then holds throughout
+the connected common coarse domain:
+\begin{equation}
+             \Phi_E(a_L(w^v))=\Phi_E(a_L(w))
+ \label{csgq-gauge-identity}
+\end{equation}
+for the allowed compact local gauge transformations.
+
+The connecting gauges and domain choices are independent of $E$.
+Consequently, when the separately established connected representation
+and boundedness estimates for classical substitution apply,
+\eqref{csgq-substitution} is an action on the whole invariant quotient
+for this fixed joint background system.
+\end{theorem}
+
+\subsection{The small gauge supplied by the actual equality proof}
+\label{csgq-finite-section}
+
+We record the quantitative consequence of the ordinary-minimum equality
+proof. For an ordinary-feasible fine field $U=e^{i\eta A}$, the first
+transfer uses $g_1=e^{iH_b\theta}$. Its induced-gauge implicit equation
+and the cumulative gauge $b_j(U)$ obey
+\begin{equation}
+ \|\theta\|_\infty\le2\|\omega\|_\infty,\qquad
+ \omega=\log b_j(U)/i,\qquad
+ \|\omega\|_\infty\le C\|A\|_{C^{1,\alpha}}.
+ \label{csgq-first-transfer}
+\end{equation}
+The proved bound $H_b:\ell^\infty\to C^{2,\alpha}$ controls this gauge
+uniformly in mesh and volume. The constraint-preserving flat-slice flow
+has scalar velocity
+\begin{equation}
+ \lambda(t)=\mathcal L_{A(t)}A(t),\qquad
+ \|\lambda(t)\|_{C^{2,\alpha}}
+ \le C e^{-t}\|R_0D^T A(0)\|_{C^\alpha}
+ \le C e^{-t}\|A(0)\|_{C^{1,\alpha}}.
+ \label{csgq-flow}
+\end{equation}
+Integrating its actual unitary gauge ODE therefore gives
+\begin{equation}
+ \|g_2-I\|_\infty
+ \le C\int_0^\infty\|\lambda(t)\|_\infty\,dt
+ \le C\|A(0)\|_{C^{1,\alpha}}.
+ \label{csgq-integrated-gauge}
+\end{equation}
+Finally the selected ordinary representative is obtained from the
+strict corrected minimizer by
+$h_*=e^{iE_{\rm pt}\omega_*}$, where
+$\|\omega_*\|_\infty\le C\|B\|_\infty$ and
+$E_{\rm pt}:\ell^\infty\to C^{2,\alpha}$ is the fixed smooth
+point-value extension.
+
+If equality holds in the two minimum comparisons, strict convexity on
+the fixed slice identifies the intervening field with that corrected
+minimizer. The product of the actual transfer gauges consequently maps
+$U$ to the selected ordinary minimizer and satisfies
+\begin{equation}
+ \|g_{\rm eq}-I\|_\infty
+       \le C\bigl(\|A\|_{C^{1,\alpha}}+\|B\|_\infty\bigr).
+ \label{csgq-equality-gauge}
+\end{equation}
+The constants are uniform on the established smaller comparison balls.
+This is stronger than equality of action values alone. It uses no
+inverse massless gauge Laplacian and no unproved spatial locality of
+$\mathcal L_A$.
+
+For a compact coarse gauge $v=e^{i\theta}$, extend its prescribed values
+to the original fine lattice by
+$\widehat v=e^{iE_{\rm pt}\theta}$. This extension is compact in physical
+space and has $C^{2,\alpha}$ norm bounded by $C\|\theta\|_\infty$,
+uniformly in the fine mesh. The fields
+$U_{\rm ord}(w)^{\widehat v}$ and $U_{\rm ord}(w^v)$ obey the same
+ordinary constraint. The two minimum comparisons, one using the
+inverse gauge, give equality. Equation \eqref{csgq-equality-gauge}
+therefore provides an actual fine gauge $g_N$ with
+\begin{equation}
+ U_{\rm ord,N}(w^v)=U_{\rm ord,N}(w)^{g_N},\qquad
+ \|g_N-I\|_\infty\le C(b+\|\theta\|_\infty)\le\delta.
+ \label{csgq-finite-orbit}
+\end{equation}
+Choose the data and local gauge neighborhoods so that $\delta$ is a
+fixed small number. Every competitor has complete fine-potential norm
+at most $C(b+\|\theta\|_\infty)$ and hence lies in the actual comparison
+class. Ordinary covariance of the prefix gives
+\begin{equation}
+ e^{ia_{L,N}(w^v)}
+       =\bigl(e^{ia_{L,N}(w)}\bigr)^{g_N|_{\rm current}}.
+ \label{csgq-prefix-orbit}
+\end{equation}
+
+\subsection{An infinite connecting gauge and its tail}
+\label{csgq-tail-section}
+
+Fix real compact $w,\theta$ in these neighborhoods. The endpoint
+configurations already converge along the specified joint subsequence.
+Compactness of the group and a diagonal subsequence over current sites
+give a limiting gauge for this pair. Taking a further subsequence of
+gauges changes neither specified endpoint limit. With
+$U=e^{ia_L(w)}$ and $V=e^{ia_L(w^v)}$, local passage gives
+\begin{equation}
+ V_{xy}=g(x)U_{xy}g(y)^{-1},\qquad
+                 \sup_x\|g(x)-I\|\le\delta.
+ \label{csgq-infinite-orbit}
+\end{equation}
+No simultaneous or holomorphic choice of $g$ for all pairs is required.
+Both endpoints have exponential decay because $w,w^v$ are compact.
+
+\begin{lemma}[One constant at infinity]
+\label{csgq-constant-lemma}
+Let compact-group link fields $U,V$ on $\mathbb Z^d$, $d\ge2$, satisfy
+$V=U^g$. Suppose their positive bonds based at $x$ obey
+\begin{equation}
+       \|U_b-I\|+\|V_b-I\|\le C_K e^{-\mu|x|_\infty}.
+ \label{csgq-endpoint-tail}
+\end{equation}
+Then there is a single $c\in G$ such that
+\begin{equation}
+ \|g(x)-c\|\le C'_K(1+|x|_\infty)e^{-\mu|x|_\infty}.
+ \label{csgq-gauge-tail}
+\end{equation}
+Thus $c^{-1}g-I$ is summable. If $\|g-I\|_\infty\le\delta$, its
+supremum is at most $2\delta$.
+\end{lemma}
+\begin{proof}
+The edge equation implies $g(y)=V_{xy}^{-1}g(x)U_{xy}$.
+Unitary invariance of the matrix norm gives
+\begin{equation}
+       \|g(y)-g(x)\|\le\|U_{xy}-I\|+\|V_{xy}-I\|.
+ \label{csgq-edge-bound}
+\end{equation}
+The ray $g(ne_1)$ is Cauchy, with tail $O(e^{-\mu n})$, and
+its limit $c$ belongs to $G$. For $n=|x|_\infty$, the lattice boundary
+of $[-n,n]^d$ connects $x$ to $ne_1$ by a path of length at most
+$C_dn$. A boundary coordinate can be held at $\pm n$ while the other
+coordinates are adjusted; a second boundary coordinate permits changing
+its sign. This uses $d\ge2$. Each positive lower endpoint has norm at
+least $n-1$. Summing \eqref{csgq-edge-bound} along the path gives
+$C_dnC_Ke^{-\mu(n-1)}$. Combining this with the ray tail proves
+\eqref{csgq-gauge-tail}. Polynomial shell growth proves summability.
+Taking the limit in the small-supremum bound and using
+$\|c^{-1}g-I\|=\|g-c\|$ gives the last assertion.
+\end{proof}
+
+For the actual fields, \eqref{csgq-background-decay} implies
+\eqref{csgq-endpoint-tail} with $\mu$ a positive multiple of
+$\kappa/L$, after enclosing their finite final supports in a cube.
+Support-dependent constants are harmless for equality of evaluations.
+In one dimension the two ends can have different constants; the
+restriction $d\ge2$ is substantive.
+
+\subsection{Compact gauge paths with a common strict margin}
+\label{csgq-path-section}
+
+Put $h=c^{-1}g$. Then $h-I\in\ell^1$ and
+\begin{equation}
+                         U^h=c^{-1}Vc.
+ \label{csgq-normalized-gauge}
+\end{equation}
+For sufficiently small $\delta$ choose the common Hermitian logarithm
+$h(x)=e^{i\lambda(x)}$. It has small supremum and belongs to $\ell^1$.
+Let $\lambda_n$ equal $\lambda$ inside a current cube of radius $n$
+and vanish outside, and set $h_n=e^{i\lambda_n}$. These gauges are
+compact and
+\begin{equation}
+ \|h_n-h\|_{\ell^1}\longrightarrow0,\qquad
+ \|U^{h_n}_b-U^h_b\|
+       \le\|h_n(x)-h(x)\|+\|h_n(y)-h(y)\|.
+ \label{csgq-compact-gauge-limit}
+\end{equation}
+Hence the transformed links, and their potentials on a common strict
+logarithm chart, converge in cell $\ell^1$. A smooth physical cutoff is
+not needed on this fixed current lattice: the truncation jump itself
+decays exponentially.
+
+The paths, not just their endpoints, stay in the analytic domain.
+The edge equation and the Lipschitz bound for the small logarithm give
+\begin{equation}
+ \|\lambda(y)-\lambda(x)\|
+ \le C\bigl(\|a_L(w)_b\|+\|a_L(w^v)_b\|\bigr)\le C\rho.
+ \label{csgq-log-gradient}
+\end{equation}
+For all sufficiently large $n$, the exterior truncation jump of
+$\lambda_n$ is also at most $\rho$. Duhamel's formula for real
+Hermitian matrices yields, for $0\le t\le1$,
+\[
+ \|e^{it\lambda_n(y)}-e^{it\lambda_n(x)}\|
+                  \le\|\lambda_n(y)-\lambda_n(x)\|.
+\]
+The small link logarithm and fixed color-norm comparisons consequently
+give
+\begin{equation}
+ \sup_{0\le t\le1}
+   \left\|\frac1i\log\bigl(U^{e^{it\lambda_n}}\bigr)\right\|_\infty
+                    \le C_g\rho.
+ \label{csgq-path-margin}
+\end{equation}
+Here $C_g$ is independent of support, truncation radius, refinement and
+volume. Condition \eqref{csgq-margin-condition} places these paths
+strictly below $b/2$. At a smaller fixed endpoint ratio, restricting
+the data radius gives a local germ instead; a whole-ball margin is
+not inferred without the condition.
+
+The input field in \eqref{csgq-path-margin} is summable rather than
+compact. Before invoking the defining invariance of the quotient,
+truncate its potential to a much larger cube containing the support of
+$\lambda_n$ and all adjacent bonds. Inside the gauge support this
+compact input is unchanged. Outside, the gauge is the identity and
+the field is either unchanged or zero. The same strict path bound
+therefore holds. Compact-field local gauge invariance and then
+\eqref{csgq-summable-continuity}, as the input truncation tends to
+infinity, give
+\begin{equation}
+              \Phi_E(\log U^{h_n}/i)=\Phi_E(\log U/i).
+ \label{csgq-compact-path-identity}
+\end{equation}
+Now send $n$ to infinity using \eqref{csgq-compact-gauge-limit} and
+\eqref{csgq-summable-continuity}. Extend constant global adjoint
+invariance to summable fields by the same compact-input approximation.
+The result is
+\begin{equation}
+ \Phi_E(a_L(w))
+   =\Phi_E(\operatorname{Ad}_{c^{-1}}a_L(w^v))
+   =\Phi_E(a_L(w^v)).
+ \label{csgq-real-identity}
+\end{equation}
+This proof uses the same gauges and margins for every invariant class.
+
+\subsection{Analytic continuation and precise scope}
+\label{csgq-scope-section}
+
+To finish Theorem \ref{csgq-main}, differentiate
+\eqref{csgq-real-identity} at zero compact coarse gauge parameter.
+The resulting infinitesimal identity is holomorphic in the finitely
+many coarse field variables on their connected product ball and
+vanishes on a real open set. It therefore vanishes throughout that
+complex ball. Integrating it along any allowed compact local gauge
+path that stays in the ball proves \eqref{csgq-gauge-identity}.
+This argument does not extend an infinitesimal Ward identity to
+arbitrary disconnected endpoint transformations.
+
+The same endpoint method preserves the spatial symmetries required
+by the invariant quotient, when the actual finite blocking and
+minimum problem have those symmetries. The transformed ordinary
+minimizer and the selected minimizer at transformed data are small
+feasible fields with equal minimum values. The actual equality proof
+supplies the controlled gauge; prefix covariance gives the endpoint
+orbit relation; compact data give exponential tails. The preceding
+compact-gauge argument applies, and the input total's spatial symmetry
+supplies the remaining change of variables. Constant adjoint covariance
+is exact for the equivariant construction, or follows from the small
+comparisons and connectedness of the compact group. Symmetry of
+individual carrier coefficients is unnecessary.
+
+Universality means that every admissible interaction class can be
+evaluated using this one fixed joint infinite background system.
+It does not assert uniqueness among different regulator subsequences.
+Semigroup identities require the maps and their compositions to
+belong to the same joint system; finite-regulator identities alone
+do not establish consistency for unrelated limits.
+
+The connected representation and boundedness of the quotient action
+remain separate analytic inputs. This section proves their missing
+universal gauge identity from the actual finite transfer and flow,
+endpoint decay, and summable-field continuity. It concerns homogeneous
+small fields, $d\ge2$, and compact local gauge paths. It proves neither
+quantum-integral descent on the quotient nor quantum induction,
+large-orbit or mixed-history control, or a continuum measure.

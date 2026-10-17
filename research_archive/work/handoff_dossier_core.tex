@@ -1,0 +1,656 @@
+\section{Purpose, conclusion and evidence rules}
+\label{hdc-purpose}
+
+This dossier transfers a sustained attempt to complete a rigorous
+existence argument for a nontrivial four-dimensional Yang--Mills
+quantum theory. The project starts from the repository
+\emph{Yang--Mills-LLM-experiment}, hosted at
+\texttt{ethanwsussman/Yang--Mills-LLM-experiment} with a README
+note signed LA, and from the Ba{\l}aban renormalization literature. The detailed
+baseline assessment below distinguishes the repository's stated
+ambition from the precise scope of its displayed results.
+
+At handoff there is a substantial local ultraviolet construction
+in the working proof chain, together with new exact statements
+about full finite Wilson measures. There is not yet a completed
+continuum existence proof. A complete-density multiscale theorem,
+observable estimates, and continuum identification still require
+mathematical arguments.
+
+The final research step, Notebook 39, completes a restricted
+normalized replacement operation on arbitrary collections of
+separated fixed boxes in the actual bare Wilson theory. Its
+denominator is controlled, its exterior marginal is preserved,
+and its effect on local bounded observables does not grow with
+the number of distant boxes. This is a natural stopping point
+for the present round: one finite-measure operation is complete,
+and its remaining distance from a multiscale construction is explicit.
+
+\subsection{What a proof claim in this bundle means}
+
+The documents distinguish five kinds of statement.
+\begin{enumerate}
+\item A \emph{derived working result} has a written argument in the
+included notebooks, with its assumptions and scope stated. Many
+recent modules have separate internal mathematical audits.
+This is not independent professional verification of all earlier
+dependencies.
+\item A \emph{conditional reduction} proves an implication from
+explicit model bounds. Its hypotheses are not counted as established
+merely because the reduction is proved.
+\item A \emph{published input} is tied to an actual primary statement.
+Its use requires matching its domains, normalizations and uniformities.
+\item An \emph{open interface} is a step of this proposed route
+for which no complete argument is supplied here. A different
+route to existence might replace it.
+\item A \emph{superseded argument} is retained for provenance, with
+its correction or replacement identified. Its presence in the
+research archive is not an endorsement.
+\end{enumerate}
+
+The terms our addition and derived here identify contributions
+to this project record. They are not claims of novelty relative
+to the whole literature. The compact-group Laplace, tree-gauge,
+coupling and chessboard mechanisms have standard antecedents.
+Their precise assembly and use in the present program are what
+this dossier records.
+
+\subsection{The archive's order of authority}
+
+Read the final handoff documents for the current map, then the
+numbered notebooks for statements and proofs. Read each
+notebook's dependencies before treating its theorem as
+unconditional. The research archive contains fragments,
+calculation notes, audits and historical checkpoints. Later
+corrections override earlier speculation and earlier next-task
+paragraphs.
+
+The catalogue supplies an entry for every numbered notebook:
+its location, central results, assumptions, dependencies and
+limitations. The manifest identifies exact files by SHA-256.
+The repository is pinned separately; a future remote update
+is not silently substituted for the examined commit.
+
+\section{The target and the hierarchy of conclusions}
+\label{hdc-target}
+
+The working regulator is a finite four-dimensional periodic
+Wilson lattice gauge theory, principally for \(SU(2)\) in the
+inherited construction. At positive coupling its compact group
+integral exists automatically. The hard question is a nontrivial
+continuum theory at vanishing lattice spacing, with the
+quantum-field properties needed to identify it as Yang--Mills.
+
+Three conclusions must be distinguished. A continuum limit of
+separated scalar action-density correlations is a useful
+observable sector. Reconstruction from a sufficient Euclidean
+hierarchy could give a local relativistic quantum observable
+theory. Identifying it as nontrivial Yang--Mills requires an
+adequate gauge-invariant algebra and its relation to the lattice
+theory and short-distance normalization. A physical mass gap is
+a further spectral assertion. A result for \(SU(2)\) does not
+by itself cover every compact simple gauge group.
+
+Subsequential existence is a legitimate target. A unique cutoff
+limit or preferred contact-term convention is not imposed
+solely for convenience. What is indispensable is one consistent
+limiting hierarchy with the requisite positivity, covariance,
+regularity and physical interpretation.
+
+\subsection{Distinct parameters and uniformities}
+
+In the main local chain, \(M\) denotes preceding homogeneous
+classical depth; \(\ell\) is the fixed primitive ratio;
+\(R=\ell^s\) is a fixed composite quantum ratio; \(J\) is a
+fixed auxiliary grouping; \(N\) is a finite period; \(b\) is
+a small analytic radius; \(g\) is the running coupling; and
+\(K\) is a large endpoint ratio in determinant comparisons.
+In physical lattice statements \(\eta\) denotes mesh size.
+Individual theorem statements control any changes of notation.
+
+Uniformity in \(M,N\) on a fixed small ball is not uniformity on
+arbitrary exterior fields. Constants depending on fixed \(R,J\)
+are not uniform as either grows. A fixed-box bound uniform in
+surrounding volume is not a bound on a physical box containing
+more and more lattice sites. An infinite structural kernel is
+not automatically the actual finite winding kernel. Required
+old-depth shifts, endpoint ratios and source derivatives must
+belong to one joint structural limit.
+
+\section{The local construction added in this project}
+\label{hdc-local}
+
+The main route is
+\[
+ \begin{gathered}
+ \text{flat coercivity and classical minimizers}\\
+ \longrightarrow\text{actual local quantum integral}\\
+ \longrightarrow\text{Ward extraction and finite induction}\\
+ \longrightarrow\text{actual positive determinant drift}\\
+ \longrightarrow\text{arbitrarily long finite weak local histories}.
+ \end{gathered}
+\]
+The catalogue supplies every intermediate notebook, rather than
+replacing this chain by an appeal to perturbation theory.
+
+\subsection{Flat and nonlinear classical analysis}
+
+Notebooks 06--17 develop flat coercivity, constrained lifts,
+weighted inverse kernels, refinement limits, pointwise regularity
+and nonlinear response estimates for the homogeneous classical
+minimization problem. The construction tracks physical pairings,
+contour constraints, gauge directions, and the relation between
+a prescribed coarse field and its fine minimizer.
+
+Their endpoint is a family of local minimized classical actions
+\(S_M\), analytic charts, and localized response kernels near
+the trivial orbit. The support estimates matter because quantum
+integration must preserve spatial summability, not merely
+analyticity on a finite-dimensional ball.
+
+These results concern regular homogeneous backgrounds. They do
+not give a minimizer theorem on every determining set with
+holes, arbitrary exterior boundary fields, or independent
+complex currents. Their estimates cannot be used on those
+domains by renaming variables.
+
+\subsection{The actual local quantum integral}
+
+Notebooks 18--28 formulate and control one fixed composite
+ordinary coarse map \(F_R=\mathcal M_\ell^s\), its chosen
+direct-\(R\) contour gauge, and its retained-coordinate
+small-field sector. The nonlinear constraint chart
+\(\Phi_V(z)\) keeps the retained coordinates unchanged and
+solves the pivot variables. Its integration field is
+\[
+                 U=e^{i\Phi_V(g\xi)}V,
+\]
+not \(e^{ig\Phi_V(\xi)}V\). This distinction affects
+higher-order interactions and the exact Jacobian.
+
+The pullback includes Haar densities, the square ambient
+straightening, the pivot constraint derivative, the contour
+gauge penalty, the actual reduced Hessian, and the independent
+retained link/color-ball window. A rectangular determinant of
+the retained embedding cannot replace the constraint Jacobian.
+
+The compact gauge insertion uses the exact normalizer
+\[
+ c(g)=\int_G\exp[-(1-\operatorname{Re}\tau h)/g^2]\,dh.
+\]
+For a literal represented input density the local output
+has the following factorization, with notation abbreviated
+but the normalization displayed:
+\begin{align*}
+ &Z_{\rm in}\,c(g)^{-n_s}h_0^{n_e-n_c}D_R(V)\,
+ g^{n_z}(2\pi)^{n_z/2}\det A_M(V)^{-1/2}\\
+ &\quad{}\times e^{-S_M(V)/g^2+E_{\rm raw}(V)}
+ \mathbb E_{A_M(V)^{-1}}
+       [\chi_{\rm window}\chi_{\rm extra}e^{I(V,g,\xi)}].
+\end{align*}
+Here \(n_z=(\dim\mathfrak g)(n_e-n_c)\), \(D_R\) is the
+actual pivot factor, \(h_0\) is the Haar density at the origin
+in the chosen Lie coordinates, and \(I\) contains all higher
+action, Haar, straightening and inherited fluctuation terms.
+Individual notebooks define every factor without shorthand.
+
+The common-domain argument prevents uncontrolled shrinkage of
+the analytic field ball at every step. It uses the actual
+pre-gauge representative and transports the \emph{entire}
+inherited insertion, including its background value.
+It does not merely change a fluctuation variable and forget
+its cutoff. Strict connected support families and
+overlapping-carrier expansions provide the spatial norms.
+
+Composition of primitive constraints identifies the ordinary
+coarse map. It does not identify one composite retained window
+with an intersection of sequential primitive windows. Also a
+holomorphic continuation of a local integral is not a
+representation of the full positive measure outside its
+real integration domain.
+
+\subsection{Ward extraction and finite local induction}
+
+Notebooks 29--31 use Ward identities of the total functional
+to isolate its marginal Maxwell contribution. They do not
+assume that each arbitrarily selected activity is separately
+gauge invariant. The remaining interactions are relocalized
+and controlled in a suitable representative of the exact
+finite total.
+
+That representative need not be the original canonical cluster
+array. Equivalence of the total and its compensating vacuum
+constant are tracked: changing \(E\) to \(E+c\) requires
+changing \(Z\) to \(Ze^{-c}\). Dropping that factor would
+destroy a later full-measure normalization comparison.
+
+The finite induction bounds the local remainder for permitted
+weak coupling sequences and sufficiently large compatible
+periods. It does not itself force the couplings to remain
+weak. Positive drift and finite shooting supply that part.
+
+\subsection{The actual logarithmic drift}
+
+Notebooks 32--37 compute the leading coefficient for the
+actual constrained determinant. An exact soft reduction
+expresses it as a fine scalar/vector pair and coarse factors.
+The coarse Maxwell contributions and both heat-integral ends
+are bounded uniformly in preceding depth.
+
+On the remaining band \(1<s<K^2\), source-localized resolvents
+remove soft penalties with an integrable error. Nonlinear
+Ward jets through field degree four compare the actual
+effective-action vector base with the Wilson base;
+left-relative chart-current terms remain present.
+A direct Wilson-to-continuum comparison controls the
+remaining error and fixes signs and color multiplicities.
+
+With \(\tau(H^2)=1\) and the full adjoint charge trace,
+\[
+ C_H=\sum_{q\in\operatorname{spec}(\operatorname{ad}_H)}q^2,
+ \qquad \alpha_g=\frac{C_H}{48\pi^2},
+\]
+the working theorem is
+\[
+       \beta(\mathcal D_{M,K})=22\alpha_g\log K+O(1).
+\]
+The error is uniform in old depth and every applicable
+joint infinite structural system, under the classical and
+local quantum inputs explicitly used in the series.
+For \(\tau=\operatorname{Tr}/N\), the color calculation
+gives \(C_H=2N^2\); this does not establish earlier
+construction inputs for every \(SU(N)\).
+
+Here \(\beta=2[t^2]\) on the normalized affine probe.
+The signed contributions of the mean-zero scalar and vector
+factors to \(\mathcal D\) have coefficients
+\(2\alpha_g\) and \(20\alpha_g\). An older point-pinned
+ghost decomposition distributes logarithms differently;
+its scalar coefficient cannot be combined with the new
+mean-zero vector factor.
+
+\subsection{Finite weak histories and the recursion actually tuned}
+
+Finite moment transfer converts the positive margin in every
+joint structural limit to a uniform finite block margin.
+The geometric ratios are fixed first; a block of \(q\)
+steps then dominates the bounded comparison error; periods
+and the weak ceiling are chosen so the actual errors do
+not consume that margin.
+
+A continuous clipped finite recursion is shot to a fixed
+weak endpoint \(\Gamma_*\), where \(\Gamma=g^{-2}\).
+Positive future blocks show clipping did not occur on
+the selected trajectory. With \(m\) blocks,
+\[
+ (\Gamma_*+mqD_{\rm abs})^{-1/2}
+ \le g_{\rm bare}\le
+ (\Gamma_*+m\delta/4)^{-1/2}.
+\]
+This supplies arbitrarily long finite \emph{homogeneous local}
+weak histories. It does not claim uniqueness, consistency
+between horizons, or that a full large-field density has
+the same extracted recursion. That identification remains open.
+
+\section{The full-measure additions}
+\label{hdc-fullmeasure}
+
+Notebooks 38--39 add exact finite positive-measure results.
+Their bare Wilson probability theorems are independent of
+the earlier determinant work. The local-germ embedding uses
+the already established coarse chart and Ward identities.
+
+\subsection{Exact positive history operators}
+
+Fix a measurable equivariant completion of the actual local
+coarse map, using its original mean on its good set and
+its original reference string outside. This specifies a
+global coarse observable of the original fine measure;
+it does not invent a global analytic effective action.
+
+The compact based-gauge insertion gives a probability
+kernel preserving the coarse field. An actual retained
+sheet yields a local density with
+\[
+                  F_*\mu\ge 1_D\ell_\mu\,m_C.
+\]
+For a nonnegative cutoff \(\theta\) supported in \(D\),
+let \(m_\theta(W)=\int\theta(W^v)\,dv\). Define
+\[
+ \mathcal A_g\mu(dW)=
+ \frac{\int\theta(W^v)\ell_\mu(W^v)\,dv}{m_\theta(W)}\,m_C(dW),
+\]
+with value zero when \(m_\theta=0\). The invariant
+absolutely continuous density of the true pushforward
+bounds every numerator orbit value. Hence
+\[
+       0\le\mathcal A_g\mu\le F_*\mu,\qquad
+       \mathcal R_g=F_*-\mathcal A_g\ge0.
+\]
+These linear invariant operators retain singular parts
+in the remainder. Their finite products account for
+every history, raw mass and observable numerator exactly.
+
+Local-germ equality uses a finite orbit-overlap lemma
+and the literal invariant-ball cutoff Ward identity.
+Its radius may shrink with graph diameter. Every
+reconstructed real field must also lie where the input
+measure actually has the claimed density.
+Holomorphic continuation alone supplies neither condition.
+
+\subsection{Actual Wilson rarity and conditional normalization}
+
+For site-plane cells of fixed side \(b\ge3\) and torus
+periods \(n_i=2m_i b\), exact Haar slab gluing and even
+Schatten H\"older give a chessboard inequality.
+A lower bound on the \emph{full} partition function yields
+\begin{align*}
+ \mu_g\left(\bigcap_{j\in S}B_j(\delta)\right)
+ &\le z_b(g,\delta)^{|S|},\\
+ z_b&=\min\{1,e^{-\delta^2/g^2+
+       b^d(d\dim G\log(1/g)+C_{G,d})}\}.
+\end{align*}
+Each \(B_j\) forces an interior plaquette energy
+\(1-\operatorname{Re}\tau U_p\ge\delta^2\).
+Finite coloring gives prescribed-plaquette bounds with
+exponent loss \(Q_b=b^d\binom d2\).
+This is a normalized interacting Wilson estimate,
+uniform in surrounding volume.
+
+For a fixed box \([0,R]^4\) with small prescribed
+boundary edges, a forest rooted at every boundary
+vertex removes the interior gauge redundancy exactly.
+At identity boundary its representative has a unique
+zero-action field and a positive Hessian. Compactness
+and the implicit-function theorem give a unique global
+conditional minimum for nearby data. Numerator and
+denominator have the same local factor \(g^n\);
+the outer compact region has a fixed energy gap. Thus
+\[
+      \mu_{V,g}(W_{V,g,T}^c)\le Ce^{-cT^2},
+      \qquad 1\le T\le r/g.
+\]
+The window uses an adjoint-invariant edge-max norm
+about that conditional minimizer.
+
+The boundary complex is \(S^3\). Boundary tree loops
+have finite boundary-plaquette fillings, so small
+boundary curvature supplies a boundary-only small
+gauge. Conditioning on the exterior of vertex-disjoint
+boxes makes their interiors independent. Combining
+the estimates gives
+\[
+ \mu_g\left(\bigcap_{i=1}^m D_i\right)
+ \le \left[Ce^{-cT^2}
+       +24R^3 z_b(g,\varepsilon_R)^{1/Q_b}\right]^m.
+\]
+Here \(D_i\) is a bad boundary or a failed local
+gauge/minimizer window. It is an event in the complete
+bare measure. It is not yet the nonlinear averaged
+constraint window of the iterated map.
+
+\subsection{The final normalized replacement}
+
+Notebook 39 conditions on the common exterior \(\omega\).
+The interior laws factor as \(\prod_iQ_i^\omega\).
+On a good boundary put
+\[
+ p_i(\omega)=Q_i^\omega(W_i^c)\le a_g,\qquad
+ P_i^\omega=Q_i^\omega(\,\cdot\mid W_i).
+\]
+On a bad boundary take \(P_i^\omega=Q_i^\omega\) and
+\(p_i=0\). The operation does not remove bad boundaries.
+
+For the original exterior marginal \(\rho\), set
+\[
+          \nu(d\omega,dx)=\rho(d\omega)\prod_iP_i^\omega(dx_i).
+\]
+This preserves probability and, in the unnormalized
+version, the original raw partition mass.
+Its Radon--Nikodym factor is a product of good-window
+indicators divided by their actual probabilities
+\(1-p_i(\omega)\ge1-a_g\).
+
+An explicit coupling changes an interior only on a
+conditionally independent failure of probability \(p_i\).
+For the exterior jointly with a selected set \(A\),
+total variation, with convention
+\(\sup_E|\mu(E)-\nu(E)|\), is exactly
+\[
+ \mathbb E_\rho\left[1-\prod_{i\in A}(1-p_i)\right]
+ \le |A|a_g.
+\]
+The estimate is independent of the number of other
+boxes. The full theorem gives sparse discrepancy
+bounds, retains correlated bad boundaries, and
+transfers bounded local sources with the same
+normalized laws.
+
+This completes a finite localized replacement theorem.
+It does not cover arbitrary growing components,
+repeated scales, or nonlinear coarse-average fibers.
+Preserving normalization does not establish that the
+homogeneous coupling recursion remains unchanged.
+
+\section{The remaining theorem program}
+\label{hdc-open}
+
+\subsection{H2 Complete-density transfer for the chosen map}
+
+The first major unresolved theorem is propagation of
+a complete density for the same full Wilson measure
+and coupling recursion as the local construction.
+There are two routes.
+
+An import route verifies the entire induction class
+of Ba{\l}aban's complete-density theorem for the chosen
+coarse map and operations. That theorem is conditional
+on its own effective couplings staying weak.
+Matching their expected size or one-loop sign is not
+a match of the recursion. The primary-source map
+appears in the baseline assessment and Notebook 38.
+
+A direct route builds a spatial determining-set
+decomposition with collars, a regular constrained
+background, rough fluctuations and exceptional
+regions. It proves exact good-component integration
+with the actual window and Haar, gauge, pivot and
+vacuum factors. It then bounds normalized replacement
+on every allowed complementary component, with
+constants summable in geometry and scale age.
+Notebook 39 supplies a restricted fixed-box example.
+
+The proof should state admissible exterior fields,
+transition or holonomy data, constraints, conditional
+measures, analytic domains and the component norm.
+Its denominator lower bound must be compatible with
+the numerator's boundary energy. An unrelated
+Gaussian normalization cannot be inserted after
+conditioning.
+
+Several shortcuts are excluded. Unfixed raw link
+marginals are Haar. Flat periodic fields can have
+nontrivial holonomy. Even plaquettes of size
+\(O(\eta^2)\) can have alternating physical curvature
+whose adjacent norms prohibit every uniformly
+bounded \(C^{1,\alpha}\) gauge. Small curvature
+alone is not a smooth-background construction.
+
+\subsection{H3 Observable and source estimates}
+
+After complete-density control, external source
+estimates are needed for a specified gauge-invariant
+observable algebra. Analyticity in a connection
+background is not analyticity in an external
+composite-observable source. The latter changes the
+density, local counterterms, translation properties
+and possibly its large-field estimates.
+
+A useful first target is renormalized action density
+on reflected separated test supports. Its source
+neighborhood must be uniform in mesh and volume
+in the exact cells used by reflection. Mixed
+derivatives must obey all-order distributional
+bounds, for example factorial bounds in stated
+test-function seminorms. Fixed-point-number bounds
+with no controlled growth in that number do not
+supply field reconstruction estimates.
+
+Numerator and denominator must belong to the same
+positive regulator construction. Notebook 39's
+bounded-source theorem does not control renormalized
+fields whose supremum norms grow with refinement.
+
+\subsection{H4 A common continuum hierarchy}
+
+Once actual model bounds are available, extract one
+diagonal subsequence for a countable dense test
+algebra and extend by uniform continuity. Products,
+mixed insertions, subtraction conventions and
+required contact extensions must be compatible
+on that same subsequence. Compactness of analytic
+interactions on a background ball is a different
+problem from tightness or distributional
+compactness of physical correlations.
+
+Separated correlations may not determine every
+distribution needed for local fields. A route
+avoiding particular coincidence extensions should
+state why; otherwise those extensions and
+counterterms must be constructed compatibly with
+positivity and covariance.
+
+\subsection{H5 Positivity, rotations and reconstruction}
+
+Reflection positivity must descend from the same
+positive finite measures and limiting observable
+algebra. Estimates for a substitute measure or
+unrelated subsequence cannot simply be combined
+with it.
+
+Hypercubic symmetry is not \(O(4)\) covariance.
+The reflection-based restoration mechanism has
+conditional geometric and source-cell reductions
+in the early notebooks. Its uniform model
+estimates still need to hold for all transformed
+supports, cell positions and all-order constants
+used by that argument.
+
+Osterwalder--Schrader reconstruction requires the
+chosen hierarchy's precise regularity and
+positivity hypotheses and an appropriate vacuum
+sector. Unique vacuum or clustering needs its
+own estimate. If existence can use a suitable
+sector or decomposition instead, that choice
+should be explicit.
+
+\subsection{H6 Nontrivial Yang--Mills identification}
+
+A positive beta coefficient does not establish
+nonzero positive-energy states in the reconstructed
+theory. A quantitative lower witness must survive
+the same limit. In a reconstructed theory, a
+strict inequality
+\[
+ \|\psi\|^2-\langle\psi,e^{-tH}\psi\rangle>0,\qquad t>0,
+\]
+would certify positive-energy content. The task is
+to prove such a witness from the cutoff theory.
+
+A non-Gaussian scalar composite is not by itself
+an interaction witness: a quadratic composite of
+a free Gaussian field is already non-Gaussian.
+The algebra, tensor laws and short-distance
+normalizations must be sufficient to identify
+the limit as Yang--Mills. A sufficient
+identification criterion should be stated and
+proved; no speculative criterion is promoted to
+a theorem in this dossier.
+
+\subsection{H7 Physical mass gap and group scope}
+
+The gap in an auxiliary constrained Gaussian,
+typically at the blocking scale, is not a
+positive gap in the interacting Hamiltonian
+above the vacuum. A physical infrared estimate
+must be uniform in the same continuum sequence.
+An \(SU(2)\) construction does not settle the
+all-compact-simple-group target. These are
+separate from finishing the ultraviolet program.
+
+\section{How a successor can use the bundle}
+\label{hdc-continuation}
+
+\subsection{A recommended first pass}
+
+Read the start document, the baseline assessment
+and catalogue entries 31--39. Then inspect
+Notebook 37's actual coefficient theorem and
+trace its upstream inputs, or independently
+begin with Notebooks 38--39's bare Wilson
+arguments. These routes need different
+expertise and can be reviewed in parallel.
+
+For the drift, prioritize relative
+Hessian/current terms, nonlinear Ward jets,
+the determinant decomposition, infrared and
+source-localized traces, and the transfer from
+joint structural limits to finite drift.
+For complete-density transfer, prioritize
+domains, coarse-map completion, retained-window
+equality, exterior normalization and coupling
+extraction.
+
+\subsection{A concrete next research deliverable}
+
+The next useful deliverable is a theorem for a
+collared component with the actual averaged
+constraint. It should specify:
+\begin{enumerate}
+\item the component, exterior data,
+gauge/transition variables and compact
+conditional integral;
+\item the constrained background and retained
+map with its full Jacobian;
+\item an exact normalized replacement or
+good/remainder identity preserving the fine
+measure when components are summed;
+\item a bound in the complete-density
+induction's actual norm;
+\item compatibility with neighboring regions,
+scale changes, sources and coupling extraction.
+\end{enumerate}
+
+Verifying the published induction class may
+be more efficient than rebuilding its
+geometry. Choose by an exact hypothesis
+comparison. A direct construction changing
+the coarse map must redo its local
+identification and drift transfer.
+
+\subsection{Review and reproducibility}
+
+Internal audits and successful compilation
+are recorded, not called external
+certification. A successor should look for
+hidden domain enlargement, dependence on a
+supposedly uniform parameter, an unrelated
+conditional denominator, or identities
+combined from different limits. These are
+specific failure modes encountered and
+repaired during this project.
+
+Portable sources contain the assembled
+notebooks and historical fragments.
+Reproduction instructions give compile
+commands; the manifest records delivered
+bytes. Third-party articles are linked
+rather than republished. The repository
+can be fetched at its pinned commit and
+checked against the recorded tree.
+
+The outcome is a detailed foundation and
+continuation program. The ambition remains
+existence; the bundle makes the difference
+between that ambition and the established
+arguments inspectable.

@@ -1,0 +1,156 @@
+Independent audit: soft scalar coarse reduction
+18 October 2026. Provenance.
+
+Read work/soft_scalar_coarse_reduction_research.txt in full. Checked its
+inputs against nonflat_reference_averages_research.md Sections2--3,6,
+covariant_corrected_scalar_research.txt Sections5--6, the mgs tent
+proof, and the actual stationary polynomial-jet identification in
+cartan_determinant_moment_fragment.tex.
+
+STATUS: PASS. No substantive correction or unjustified upgrade found.
+The additional coarse determinant has a uniformly bounded actual
+affine Maxwell coefficient. The result does not compute the remaining
+soft scalar or full vector logarithmic coefficients.
+
+1. Uniform physical input is actually available
+
+The ordinary-reference amplitude theorem applies to globally bounded
+complex physical potentials without requiring first differences.
+Its C1 statement is a separate later result. At stage j the ordinary
+link angle is O(ell^j ||A||/K), and the accumulated hierarchical
+transport departure is bounded by the geometric sum
+  sum_(j<k) ell^j/K <= 1/(ell-1).
+The selected primitive means are analytic at fixed ell and contribute
+the same type of estimate as literal path products.
+
+For each normalized column J_y, the K^4 scalar entries have coefficient
+K^-2. If each transport difference is O(||A||), then its counting
+column norm is O(||A||), not O(K^2||A||). Distinct columns have disjoint
+site support, so this proves the global operator estimate as well.
+Block Banach Cauchy on a common physical sup ball gives all derivatives
+through order two uniformly in K. It uses an operator-valued map on a
+sup-norm block space; there is no absolute Taylor sum over K^4 scalar
+coordinates.
+
+The actual selected moving-reference B has own-block background
+support, even through the hierarchy. Thus J and its derivatives are
+block local. Ordinary reference amplitudes, rather than an incorrectly
+contractive full ordinary flat bond derivative, are the input here.
+
+2. Exact factorization and flat ellipticity
+
+In the real orthogonal frame [V,J], T has the stated blocks.
+Jacobi gives det GB=det T det(J^T T^-1 J). Since
+det Ghat=(mu^2)^nc det GB and M=mu^2 J^T T^-1 J,
+  det Ghat=det T det M
+exactly. Positive real branches followed by holomorphic uniqueness
+justify the normalized logarithms. No massless globally based
+determinant is split off.
+
+Internal-block Poincare gives
+mu^2||P0 phi||^2 <= C_P||D0 phi||^2 without differentiating the
+sharp block mean. Therefore (3.1) is valid with its conservative c.
+The tent lift composed with J0 has J0^T E=I and derivative norm
+O(mu). Minimizing scalar energy with this constraint gives
+  0<=S<=C1^2 mu^2 I,
+  M0=(I+mu^-2 S)^-1.
+Thus (3.2) has a uniform positive lower bound, including the coarse
+constant mode where S vanishes and M0 equals one. At K=1 the same
+argument uses the bounded unit-lattice gradient.
+
+3. Uniform complex and weighted inverse estimates
+
+The local covariant gradient has E_D=O(mu||A||). The positive T0
+comparison controls both D0 T0^-1/2 and mu T0^-1/2. These imply the
+relative estimate (4.1), including the mu^2(Pi-Pi0) penalty. The
+complex-bilinear transpose causes no problem because the proof is in
+ordinary complex operator norm relative to the real positive T0.
+
+Writing R=T0^-1/2(I+E)^-1T0^-1/2 proves the stated R, DR, RD^T and
+DRD^T scales. The resolvent identity then gives M-M0=O(||A||).
+This yields a K-independent physical potential radius for M and T,
+not the false uniform raw-vertex estimate for the hard Ghat.
+
+The same proof applies to exponential conjugations: one-edge weight
+differences are O(theta mu), and J's whole support has bounded
+physical diameter. The weighted transpose uses the opposite weight
+and remains a separate bounded factor; no self-adjointness of the
+complex perturbed resolvent is assumed. Distances from a source
+block, initially bounded/truncated if necessary, give uniform
+exponential block operator bounds.
+
+After multiplication by mu^2 and two normalized J columns, M has
+fixed-color-fiber exponential coarse kernels with no fine-fiber
+multiplicity. Their Schur sum controls the change under small coarse
+weighting by O(theta). A common contour for log M and its resolvents
+therefore exists uniformly in K on a smaller physical ball.
+
+4. Rooted derivative estimates
+
+A localized first source contributes delta D=O(mu), or delta J=O(1).
+The exact delta T consists of delta D^T D, D^T delta D, and the
+mu^2 derivative of JJ^T. In a differentiated coarse M chain,
+  R costs mu^-2,
+  DR and RD^T cost mu^-1,
+  DRD^T costs 1.
+The outer factor mu^2 balances the remaining powers. For example,
+  mu^2 J^T RD^T delta D RJ
+has total power mu^0. For two first insertions, the possible central
+pieces are R, DR, RD^T or DRD^T, and the same balancing holds.
+A second primitive derivative has the same indicated one-source
+power (or a better power) and joint block support.
+
+Each restricted product connects its two external matrix blocks and
+the one or two source blocks. Product exponential decay controls a
+connecting tree. Any remaining intermediate coarse sum is absorbed
+by spending part of the exponent; its dimension and graph are fixed.
+There are finitely many derivative terms independent of K.
+This establishes (5.3) in block Banach derivative norm.
+
+Differentiation of a fixed resolvent contour for log M uses exactly
+those first and second kernels. Its products again connect all marked
+blocks; coarse-fiber trace costs only dim(g). Thus the resulting
+rooted second derivatives have summable polynomial moments uniformly
+in K. No conversion to a sum over individual fine-coordinate operator
+norms is needed or justified.
+
+Compatible periodic distances and repeated supports preserve these
+arguments. The thermodynamic coefficient statement is on a chosen
+joint structural system, not an assertion of uniqueness.
+
+5. The actual affine coefficient, including old-depth dependence
+
+M transforms by the coarse-site adjoint frame, so each diagonal color
+trace log M is individually invariant. Its linear color jet vanishes
+for a semisimple algebra. At fixed K, the existing actual stationary
+polynomial-jet theorem identifies the current representative, up to
+fine gauge, with
+  fine angle_mu(x)=t x_nu H/K^2.
+This theorem applies to the effective S_M and passes to varying-old-M
+structural systems at fixed K; it does not replace S_M'' by Wilson.
+
+In the present physical variable A the coefficient is
+  A_mu(x)/t=(x_nu/K)H,
+whose sup norm in final block j is at most C(1+|j|).
+Insert these block directions into the uniform rooted second
+derivative bound for log M. The double sum of
+(1+|j1|)(1+|j2|) times exponential tree decay is finite uniformly in K.
+The invariant-density affine/total-moment identity then proves (6.1).
+
+This is the key distinction: stationary identification is invoked for
+each fixed K, but the coefficient is estimated directly on its known
+affine representative. No K-uniform norm for the nonlinear stationary
+response is used. The scalar construction itself has no old-M
+dependence, so old-M uniformity follows once that identification holds.
+Second stationary gauge jets are harmless by the individual gauge
+identity; the affine evaluation is of Taylor kernels, not an unbounded
+argument in the holomorphic sup ball.
+
+6. Exact remaining boundary
+
+The proof establishes an O(1) actual Maxwell contribution from log M
+and therefore the displayed soft replacement formulas. It does not
+prove that log T already has its massive-reference logarithm, or that
+the corresponding vector correction is O(1). Uniform flat ellipticity
+and a physical sup-domain alone do not prove a magnetic curvature
+comparison. Those limitations are correctly retained in Section7.

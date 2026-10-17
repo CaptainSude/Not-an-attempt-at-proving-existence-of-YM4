@@ -1,0 +1,269 @@
+% No preamble. Prefix pgl-. Entire pinned ghost coefficient; vector still needed.
+\section{The pinning scale and the entire based-ghost logarithm}
+\label{pgl-section}
+
+The pinning scale is longer than the block diffusion
+time. We now control it sharply enough to determine
+the whole actual based-ghost Maxwell contribution.
+All statements retain the infinite-system and formal
+jet conventions of Section~\ref{pgp-section}.
+
+\subsection{The correct flat pinned gap}
+\label{pgl-gap-section}
+
+\begin{lemma}[Four-dimensional point-pinned Poincare bound]
+\label{pgl-gap}
+Let \(G_K(0)\) be the flat scalar lattice Laplacian on
+functions vanishing at every site of \(K\mathbb Z^4\).
+There is a constant \(c>0\), independent of \(K\), such
+that
+\begin{equation}
+                     G_K(0)\ge cK^{-4}I.
+ \label{pgl-gap-bound}
+\end{equation}
+The statement holds on compatible finite periodic
+volumes and on the infinite lattice.
+\end{lemma}
+
+\begin{proof}
+It suffices to prove a block inequality using only
+edges internal to each centered cube. For \(K=1\)
+the domain is zero; assume \(K\ge2\).
+The Neumann graph Laplacian of a path with \(K\)
+vertices has eigenvalues
+\[
+ \lambda_j=4\sin^2\frac{\pi j}{2K},\qquad
+                  0\le j<K.
+\]
+Its normalized cosine eigenvectors have squared
+values at most \(2/K\). Products give an eigenbasis
+\(\psi_{\boldsymbol j}\) in four dimensions, with
+\[
+ |\psi_{\boldsymbol j}(x)|^2\le16K^{-4},\qquad
+ \lambda_{\boldsymbol j}
+       =\sum_{\ell=1}^4\lambda_{j_\ell}
+                          \ge c|\boldsymbol j|^2/K^2.
+\]
+Consequently the point diagonal of the zero-mean
+Neumann inverse is uniformly bounded:
+\[
+ \sum_{\boldsymbol j\ne0}
+       \frac{|\psi_{\boldsymbol j}(x)|^2}
+            {\lambda_{\boldsymbol j}}
+ \le CK^{-2}
+       \sum_{\substack{\boldsymbol j\in\{0,\ldots,K-1\}^4\\
+                        \boldsymbol j\ne0}}
+                              |\boldsymbol j|^{-2}\le C.
+\]
+The last sum is \(O(K^2)\), by shells in four dimensions.
+
+Write a block field as \(\phi=\bar\phi+u\), with
+\(u\) of mean zero. Its internal edge energy is
+denoted by \(E_B(\phi)\). Spectral Cauchy--Schwarz
+gives \(|u(x)|^2\le C E_B(\phi)\), and the first
+nonzero Neumann eigenvalue gives
+\(\|u\|_2^2\le CK^2 E_B(\phi)\).
+At the pinned center, \(\bar\phi=-u(x_{\rm center})\).
+It follows that
+\[
+ \|\phi\|_{2,B}^2=\|u\|_{2,B}^2+K^4|\bar\phi|^2
+                                  \le CK^4 E_B(\phi).
+\]
+Sum over disjoint blocks. Internal edges are a
+subset of all edges, proving \eqref{pgl-gap-bound}.
+The infinite statement follows first on finitely
+supported fields and then by closure.
+\end{proof}
+
+Together with the constant-off-centers trial function
+from Notebook 32, this gives the sharp order \(K^{-4}\)
+of the bottom of the flat based spectrum. The finite
+periodic upper test gives at most \(8/(K^4-1)\);
+the same order follows in infinite volume by large
+cutoffs. It does not give a mass of order \(K^{-1}\).
+
+\subsection{A killed-return bound and an area fourth moment}
+\label{pgl-tail-inputs-section}
+
+Let \(p_s^K(x,y)\) be the heat kernel killed on visiting
+a center. At the flat background it is the kernel of
+\(e^{-sG_K(0)}\). For \(s\ge1\), free-kernel domination
+and \eqref{pgl-gap-bound} imply
+\begin{equation}
+ p_s^K(x,x)\le Cs^{-2}e^{-c s/K^4},
+                         \qquad x\notin K\mathbb Z^4.
+ \label{pgl-killed-return}
+\end{equation}
+Indeed split \(e^{-sG_K/2}\delta_x\) into a time
+\(s/4\) contraction followed by time \(s/4\)
+smoothing:
+\[
+ p_s^K(x,x)
+ =\|e^{-sG_K/2}\delta_x\|_2^2
+ \le e^{-c s/(2K^4)}p_{s/2}^K(x,x)
+ \le e^{-c s/(2K^4)}p_{s/2}^{\rm free}(0,0).
+\]
+The last free return is \(O(s^{-2})\) by the
+one-dimensional integral estimates already proved.
+Absorb the harmless factor two in \(c\).
+
+\begin{lemma}[Fourth area moment of the returning walk]
+\label{pgl-area-fourth}
+For \(s\ge1\), the free four-dimensional walk satisfies
+\begin{equation}
+ \mathbb E[{\cal A}(s)^4\mid X(s)=0]\le Cs^4,\qquad
+ \mathbb E[{\cal A}(s)^4{\bf1}_{\{X(s)=0\}}]\le Cs^2.
+ \label{pgl-fourth-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For a returning one-dimensional coordinate, its
+balanced jump count \(m\) satisfies the exact identity
+\[
+ \mathbb E[m^2\mid X_1(s)=0]
+ =\frac{\sum_{m\ge1}m^2s^{2m}/(m!)^2}{I_0(2s)}
+ =s^2.
+\]
+Thus \(\mathbb E m\le s\) as well. Given the bridge
+path \(Y=X_\nu\) and the count \(m\) for \(X_\mu\),
+its area is
+\[
+ {\cal A}(s)=\sum_{i=1}^m Y(U_i)-\sum_{i=1}^m Y(V_i),
+\]
+where the \(U_i,V_i\) are independent uniforms in
+\([0,s]\), independent of \(Y\). The deterministic
+mean terms cancel. The fourth moment formula for a
+sum of independent centered variables and Jensen's
+inequality give
+\[
+ \mathbb E[{\cal A}(s)^4\mid m,Y]
+ \le C(m+m^2)\,\frac1s\int_0^s|Y(u)|^4\,du.
+\]
+For clarity, centering \(Y(U_i)\) changes its fourth
+moment by at most a fixed factor; the square of its
+second moment is at most its fourth moment.
+
+Given the balanced count \(l\) of \(Y\), the value
+\(Y(u)\) is the difference of two independent
+\(\operatorname{Binomial}(l,u/s)\) variables.
+The same centered-sum formula bounds its fourth
+moment by \(C(l+l^2)\), uniformly in \(u\).
+Averaging counts therefore gives
+\[
+ \mathbb E[|Y(u)|^4\mid Y(s)=0]\le C(s+s^2)\le Cs^2.
+\]
+The two coordinate bridges and their counts are
+independent. Combining the last bounds proves
+the conditional \(Cs^4\) estimate. The four-dimensional
+return probability is \(p_s^4\le Cs^{-2}\), proving
+the unconditional bound.
+\end{proof}
+
+\begin{proposition}[Uniform ghost tail past the pinning scale]
+\label{pgl-tail}
+For \(s\ge1\),
+\begin{equation}
+ 0\le h_K^g(s)\le C e^{-c s/K^4}.
+ \label{pgl-ghost-tail-pointwise}
+\end{equation}
+In particular,
+\begin{equation}
+           \int_{K^4}^\infty h_K^g(s)\,\frac{ds}{s}\le C,
+ \label{pgl-tail-integral}
+\end{equation}
+uniformly in \(K,M\).
+\end{proposition}
+
+\begin{proof}
+At each noncenter starting site \(x\), the squared-area
+walk formula has the probabilistic form
+\[
+ h_K^g(s)=\frac{C_H}{K^4}
+ \sum_{\substack{x\ {\rm noncenter}\\x\ {\rm in\ block}\ 0}}
+ \mathbb E_x\left[{\cal A}(s)^2
+    {\bf1}_{\{X(s)=x,\ X\ {\rm avoids\ centers}\}}\right].
+\]
+Translate the area coordinate to \(x\), which changes
+no area on a closed walk. Cauchy--Schwarz bounds each
+expectation by
+\[
+ \left(\mathbb E[{\cal A}(s)^4
+                       {\bf1}_{\{X(s)=0\}}]\right)^{1/2}
+                  \left(p_s^K(x,x)\right)^{1/2}
+ \le C e^{-c s/K^4},
+\]
+using \eqref{pgl-killed-return} and
+\eqref{pgl-fourth-bound}. The block has at most \(K^4\)
+sites, canceling the prefactor. Integrate with
+\(s=K^4v\), \(v\ge1\), to obtain
+\eqref{pgl-tail-integral}.
+\end{proof}
+
+\subsection{The additional logarithm that the vector must cancel}
+\label{pgl-full-section}
+
+\begin{theorem}[Entire actual based-ghost coefficient]
+\label{pgl-full}
+There is a constant \(C\), independent of \(M,K\) and
+the permitted joint structural system, such that
+\begin{equation}
+ \left|\int_0^\infty h_K^g(s)\,\frac{ds}{s}
+                      -4\alpha_g\log K\right|\le C.
+ \label{pgl-full-law}
+\end{equation}
+More specifically,
+\begin{equation}
+ \int_{K^2}^{K^4} h_K^g(s)\,\frac{ds}{s}
+                         =2\alpha_g\log K+O(1),
+ \label{pgl-extra-log}
+\end{equation}
+and the tail past \(K^4\) is uniformly bounded.
+\end{theorem}
+
+\begin{proof}
+The proof of Proposition~\ref{pgp-pinning} gave, for
+every \(T>0\),
+\[
+ 0\le\int_0^T(h_\infty^g-h_K^g)\,\frac{ds}{s}
+ \le K^{-4}\left\{h_\infty^g(T)
+                    +8\int_0^T h_\infty^g(s)\,ds\right\}.
+\]
+Set \(T=K^4\). The right side is uniformly bounded,
+while the unpinned integral is
+\(\alpha_g\log(K^4)+\gamma_g+O(K^{-4})\).
+This proves the full prefix law with an \(O(1)\)
+error. Add Proposition~\ref{pgl-tail} to get
+\eqref{pgl-full-law}. Subtracting
+\eqref{pgp-prefix-law} gives \eqref{pgl-extra-log}.
+\end{proof}
+
+Recall explicitly that
+\[
+ \int_0^\infty h_K^g(s)\,\frac{ds}{s}
+   =2[t^2]\operatorname{Tr}_{0,S}\log G(t)
+   =\beta\bigl(\mathcal N_0\log\det G\bigr),
+\]
+with the determinant-density and Maxwell normalization
+of Notebook 33. Thus the displayed factor two is the
+affine coefficient extraction, not an extra determinant.
+Its coefficient \(4\alpha_g=C_H/(12\pi^2)\) is
+twice the \(2\alpha_g=C_H/(24\pi^2)\) of the
+continuum ghost with mass \(K^{-1}\) in current
+fine units and the same ultraviolet scale.
+This difference is an actual pinning effect in the
+separated determinant; it is not a failure of the
+normalization.
+
+In particular, a uniform estimate on the separated
+ghost tail starting at \(K^2\) is false. Its positivity
+and \eqref{pgl-extra-log} prove a logarithmic lower
+bound on that tail. The total reference coefficient
+is \(22\alpha_g\log K\); hence a bounded comparison
+for the full actual determinant requires the vector
+contribution to be \(18\alpha_g\log K+O(1)\), since
+the coarse determinant is bounded. Equivalently,
+the vector must compensate the additional ghost
+logarithm relative to its massive reference.
+No such vector estimate is established by this
+scalar calculation.

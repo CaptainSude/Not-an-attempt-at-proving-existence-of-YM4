@@ -1,0 +1,166 @@
+Primary one-loop universality inputs for the actual mean-zero determinant
+18 October 2026. Research/source interface, not a coefficient import.
+
+1. Current exact object and source revalidation
+
+Notebook35 is outputs/ym4-infrared-cancellation-notebook.tex. Its actual
+leading correction has the now-audited finite identity
+  D_(M,K)=N0[log det Ghat_(M,K) - (1/2)log det Q_(M,K)].
+The moving-reference B has BB^T=K^-4 I. Both ambient factors are
+gauge covariant and have flat physical-scale gaps; their diagonal
+log densities give the actual total Maxwell moment. Their affine
+heat identity is proved at each fixed K, uniformly in old M/volume.
+The large-K curvature bound remains explicit.
+
+Applied only the two authorized wording edits to the work cgd fragment:
+local limits are along the chosen joint structural system; ordered,
+not cyclic, Duhamel is used for a block trace. The assembled Notebook35
+still had the older phrases at lines1962/2040 at this revalidation;
+it was not edited. No other scope or formula correction was found.
+
+Local material reread: one_loop_comparison_primary_sources.md,
+one_loop_reference_interface_research.md, running_coupling_research.md,
+renormalized_induction_primary_sources.md, and the saved primary
+Luescher--Weisz text. Local Bałaban PDF placeholders were zero bytes;
+the public CMP109 primary PDF was reopened rather than treated as
+readable local evidence.
+
+2. A useful rigorous theorem, stronger than a generic universality claim
+
+Adams--Lee, "Structure of logarithmically divergent one-loop lattice
+Feynman integrals", Phys.Rev.D77 (2008) 045010:
+  https://arxiv.org/pdf/0709.0781
+  https://doi.org/10.1103/PhysRevD.77.045010
+Primary locations: §II, pp5--7, (7)--(14); §III (21)--(24);
+§IV (29)--(31); Appendix A, p19, theorem (A1).
+
+Their fixed-integrand hypotheses use
+  I(p,a)= integral_BZ(a) V(k,p,a)/C(k,p,a) d^4k,
+  V=a^-m F(ak,ap), C=a^-n G(ak,ap),
+with smooth F,G, finite polynomial continuum limits, positive
+denominator, elliptic leading continuum denominator, no additional
+zero of G(k,0), infrared finiteness, and lattice divergence degree zero.
+The result is
+  I=f(p)log(a mu)+g(p)+h(p,mu)+o(1),
+with universal f and a finite remainder. Their convergent-integral
+theorem gives |I-I_cont| <= c(p)a log(1/a). A positive auxiliary mass
+regularizes the Taylor subtraction in (21). The constants are for
+the specified integrand; no uniform family parameter is asserted.
+
+This theorem can certify a standard reference calculation once its
+integrand and normalization are identified. It does not already
+identify our constrained determinant.
+
+3. Why Luescher--Weisz alone is not that identification
+
+Primary background-field paper:
+  https://arxiv.org/pdf/hep-lat/9504006
+  https://doi.org/10.1016/0550-3213(95)00346-T
+§7, pp19--20, invokes lattice power counting. §8, pp20--21, (8.1),
+compares renormalized formal vertex functionals subject to BRS,
+background-gauge and shift identities, after matching at zero
+background. Our proved background covariance is only one of these
+inputs; the mean-zero constrained determinant is not thereby a
+Legendre vertex functional satisfying all the other identities.
+
+Primary explicit amplitude:
+  https://arxiv.org/pdf/hep-lat/9505011
+  https://doi.org/10.1016/0550-3213(95)00338-S
+§5, (5.7), computes a massless nonzero-momentum background two-point
+amplitude. It is useful for a reference coefficient, but is not
+the missing uniform zero-momentum massive/constraint comparison.
+The precise convention and mass-versus-momentum cautions already
+recorded in one_loop_reference_interface_research.md remain valid.
+
+4. What the Bałaban source does and does not supply at this interface
+
+Primary CMP109:
+  https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-3ygai0vxt1.pdf
+  https://doi.org/10.1007/BF01215223
+Theorem2, p259, announces the SU(2) weak-coupling trajectory and defers
+its perturbative proof. Sections4--5 classify and extract the actual
+Ward-compatible Maxwell term; (5.36)--(5.42), p297, do not by themselves
+evaluate its sign or prove our different coarse-map finite part.
+CMP116 completes the stated small-field induction, as previously
+audited; no new exact uniform-K determinant-comparison theorem was
+located in this focused primary-source search.
+
+The deposition's raw I3901--4014 is still an outlined comparison
+to a massive background-Feynman vector/ghost pair. Our new actual
+identity improves its missing infrared interface, but does not turn
+that outline into a source theorem. The earlier globally based
+scalar comparison is now known to require its exact compensation.
+
+5. Precise obstruction to direct application of the one-loop theorem
+
+These are conclusions from our actual formulas, not attributed to the
+papers above.
+
+(a) The new pair is periodic at final-block scale. Its Bloch fiber has
+O(K^4) fine coordinates. Sending a=K^-1 to zero changes the fiber,
+projection and background vertices; it does not give a single fixed
+F,G in the theorem merely by writing a Bloch determinant.
+
+(b) H_res contains the effective S_M Hessian and constraint curvature.
+The existing uniform flat q_M bounds and fixed-K source estimates do
+not identify its magnetic vertices with the Wilson background-Feynman
+vertices uniformly in M,K.
+
+(c) The theorem's pointwise integral asymptotic does not license
+differentation at zero external momentum without an infrared-safe
+Taylor-subtraction representation or a uniform analytic neighborhood.
+The actual target is already a zero-momentum second spatial moment.
+
+(d) Pure background gauge covariance does not bound every separate
+relative vertex. The independent audit of
+mean_zero_gauge_vertex_obstruction.txt confirms an actual compact
+pure-gauge orbit for which the scalar first relative vertex grows
+at least sqrt(K), while every total heat trace is constant.
+Cancellation must be kept before an absolute estimate.
+
+6. Concrete route now available
+
+First derive an EXACT scalar/vector/coarse Schur identity, preserving
+all current and residual terms, against a fully specified massive
+Wilson reference. The theorem agent is working on this algebra.
+Then prove the coarse correction's combined Maxwell moment is bounded
+uniformly in K and old M. A fixed number of coarse degrees of freedom
+per final block is helpful, but neither finite rank nor a flat gap
+alone proves that bound: their background vertices must be controlled.
+
+For the remaining translation-invariant Wilson reference, combine
+diagrams or trace terms before estimating. If the combined Taylor
+integrals satisfy the fixed-integrand assumptions in §2, that theorem
+supplies the logarithmic coefficient and finite remainder. A separate
+normalization calculation must match the Hermitian color trace and
+the actual beta functional. No number is imported here.
+
+An alternative sufficient target can be stated entirely in terms of
+the actual coupled heat coefficient, so it avoids separate raw-vertex
+bounds. Write the established identity as
+  beta_(M,K)= integral_0^infinity h_(M,K)(s) ds/s.
+Suppose there are b_*,delta>0 and C independent of M,K such that
+  integral_0^1 |h_(M,K)(s)| ds/s <= C,
+  |h_(M,K)(s)-b_*/2|
+      <= C[s^-delta+(s/K^2)^delta],       1<=s<=K^2,
+  integral_(K^2)^infinity |h_(M,K)(s)| ds/s <= C.
+Then direct integration proves
+  |beta_(M,K)-b_* log K| <= 2C+2C/delta.
+This is a proved conditional reduction, not an estimate already
+available for the actual pair. It identifies the missing intermediate
+time comparison exactly. Uniform heat bounds alone concern the flat
+trace and do not establish these differentiated inequalities.
+
+The desired error need only be integrable over logarithmic time. A
+scale-derivative version with an integrable defect also suffices; a
+mere limit of the derivative to b_* would allow a log-log divergence
+and is weaker than the bounded finite part needed here.
+
+7. Usable outcome and boundary
+
+There is now a precise primary theorem available for the reference
+integrals, with a convergence rate strong enough to control a finite
+part. The model-specific task is the uniform combined comparison,
+not a new generic assertion that one-loop coefficients are universal.
+No uniform actual drift, full trajectory, or continuum existence
+theorem is claimed by this research note.

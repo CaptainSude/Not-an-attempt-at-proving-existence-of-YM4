@@ -1,0 +1,59 @@
+Notebook36 root audit, 17 October 2026.
+
+Read the full new scalar research and fragment, corrected covariant
+Hessian research and chr fragment, vector research and svc draft, and
+infrared cubic-resolvent research. The scalar proof independently passed
+provenance; the repaired Hessian independently passed rotation and
+theorem audits. Vector and infrared final audits are being collected.
+
+Checks completed by root:
+- Scalar Jacobi normalization: detGhat=detT detM, including the entire
+  mu^(2 dim coarse) factor. M0 is uniformly positive by the tent lift.
+- Uniform scalar domain relies on normalized J columns and soft mu^2Pi,
+  so it does not repeat the false hard-projection relative-vertex claim.
+- Source-resolvent power counting keeps coarse fibers fixed. Each deltaD
+  supplies mu; each penalty insertion mu^2. Rooted bounds use Banach
+  norms on full block directions, not K^4 separate coordinate sums.
+- The actual affine comparison needs only fixed-K stationary jet
+  identification; direct bounds on the representative provide K
+  uniformity. There is no silently uniform stationary inverse.
+- The first chv common-difference formula was INVALID. Rotation caught
+  the component-skew obstruction, and the earlier positive assessment
+  was withdrawn. The saved repaired proof uses two ordered Laurent
+  divisions, the zero AND first momentum moments, and a symmetric
+  covariant completion. Explicit Z1,Z2 retain all product terms.
+- chv formal gauge first jets gain mu^2 by Stokes and physical C1;
+  second jets gain mu^2 by path-pair counting. Current exponential
+  source moments control the polynomial gauge extension and locality.
+- Vector Woodbury normalization: detQB=detV detS, so the actual coarse
+  contribution is logM-(1/2)logS. The flat S condition number follows
+  from DPiD^T<=Delta<=C QB, not rank alone.
+- The auxiliary Vtilde equals the actual V only through the two
+  on-shell affine jets. Multiplier and coarse current vanishing are
+  retained as inputs; no off-shell replacement is claimed.
+- Root requested and author incorporated full source trees for S
+  derivatives and separate infinite/periodized versus actual finite
+  winding scopes. Continuous moments cannot be inferred from a finite
+  discrete momentum grid. Exact finite algebra and flat heat bounds
+  remain separate from this infinite spatial argument.
+- The infrared contour identity uses (2/u^2) integral exp(-uz)R(z)^3.
+  The residue factor is correct. Block Schatten6 bounds for L^-1/2
+  follow from scalar Jensen, not a false compression-power equality.
+  Three Schatten3 factors give a local trace bound without commuting
+  the block projector. Two-sided source weights supply the root tree.
+- Root requested the IR note replace its ambiguous common difference
+  claim by the corrected ordered Laurent proof and retain the same
+  infinite-kernel scope. Final fidelity remains to be checked.
+
+No proof of the intermediate heat plateau, actual positive drift,
+continuum Yang--Mills existence, or mass gap is asserted here.
+
+FINAL NOTEBOOK36 ASSEMBLY UPDATE, 17 October 2026
+The final vector, infrared and short-time research/fragment audits
+passed. Root read the final IR fragment and found fidelity preserved.
+Notebook36 assembled to64,856 bytes with114 unique labels and65 refs;
+no static-reference/control errors. Desktop compilation SUCCESS.
+The later Notebook37 supplies the intermediate comparison and local
+positive drift under the same stated structural inputs; Notebook36's
+own conclusion remains the bounded-end reduction. Full existence and
+mass gap remain open.

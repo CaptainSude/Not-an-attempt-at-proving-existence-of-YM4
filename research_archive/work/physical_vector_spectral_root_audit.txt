@@ -1,0 +1,36 @@
+17 October 2026. Root independent mathematical read of complete
+work/physical_vector_spectral_fragment.tex (pvs-).
+
+PASS for stated scope.
+Actual flat residual Q=L_phys+A^T(a-q)A dominates Maxwell for a>=Rq;
+averaging this bound with the known c_a K^-2 gap is valid.
+The proof uses eigenvalue min--max for traces, not the false
+operator-monotonicity of exp(-X).
+Physical Maxwell multiplicities are 3 dim(g) off zero, 4 dim(g) atzero;
+the all-mode upperbound4 dim(g) is correct. Discrete sine lower bound
+and Gaussian sum give n^-1+C(1+t)^-1/2; its fourth power has the
+claimed two-term bound with dimension-dependent constant.
+Dividing n^4=(KN)^4 by N^4 gives the exact K^4 numerator and N^-4
+harmonic correction. Rescaling s=K²u gives the claimed heat bound.
+Translation invariance justifies per-block trace identification atflat;
+no pointwise operator order is inferred. Infinite Bloch min--max valid.
+Mellin splits at K^-2 and1 give K^(4-2p), logK, constant according to
+p<2,p=2,p>2. Exponential tail is uniform for all fixed real r.
+
+Optional on-shell determinant lemma: AQ^-1A^T=a^-1I gives
+det(Q+A^TqA)/detQ=det(I+q/a), withcoarsephysicaldimensions.
+q annihilates coarse gauge, so fullcoarse normalizedlogdet agrees.
+Restriction to validon-shellfamily andjustifiedMaxwell extraction isretained.
+
+Relative-form heatvariation lemma: singleV2 insertion boundedby
+uL2 Tr(Xexp(-uX)); doubleV1 cyclicDuhamel factoru/2 correct.
+For b>=2a the divided-difference estimate follows ab/(b-a)<=2a;
+for a<=b<=2a it follows 2ua² exp(-ua)<=4/e a exp(-ua/2).
+Rows and columns of B=X^-1/2 V1 X^-1/2 have square sums<=L1².
+The resulting 8(L2+L1²) Tr exp(-uX/4) is conservative and valid.
+Actual background hypotheses explicitly UNPROVED. Flat heat/Schatten
+estimates alone do not prove them, locality, coefficient or existence.
+
+The holonomy compensation agrees with root's independent derivation
+in flat_holonomy_cancellation_research.txt. It iszero-momentum,
+not the Maxwell coefficient.

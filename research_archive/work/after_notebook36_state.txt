@@ -1,0 +1,31 @@
+Notebook36 assembly checkpoint, 17 October 2026
+
+outputs/ym4-soft-determinant-notebook.tex assembled from the seven parts
+in work/build_soft_determinant.ps1. 64,856 bytes; 114 unique labels;
+65 references; zero missing references, duplicates, control characters,
+or detected bare TeX commands. Desktop compilation SUCCESS.
+
+Final IR fragment was independently read by rotation and provenance.
+Root read the complete research earlier and the final fragment here,
+including source attachments, physical weights, Schatten compression
+inequality, ordered cubic resolvents, and actual affine identification.
+No new fidelity issue found.
+
+Notebook36 conclusion:
+ beta(D_actual)=integral_1^(K^2) h_soft(s) ds/s + O(1)
+uniformly in old depth and the chosen infinite classical structural
+systems. Both coarse determinants and both heat ends are bounded.
+The full original normalization and actual effective action remain.
+The plateau 11 alpha_g and positive actual drift are NOT established
+by Notebook36.
+
+User resumed the goal for a final push before handoff. New work:
+work/soft_penalty_physical_band_complete_research.txt now proves the
+soft penalty heat difference O(s/K^2) throughout 0<s<=K^2.
+Root independent audit passed, saved separately. TeX fragment pending.
+Rotation is attempting the actual-base heat comparison from total
+Ward vertex extraction. Provenance is auditing the full existence
+dependency chain. No new positive drift or existence conclusion yet.
+
+Master notebook already records Notebook36 and has compiled successfully.
+Notebook35 final wording repairs were previously compiled successfully.

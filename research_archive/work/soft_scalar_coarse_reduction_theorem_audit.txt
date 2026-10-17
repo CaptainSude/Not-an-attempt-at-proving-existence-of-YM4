@@ -1,0 +1,16 @@
+SOFT SCALAR FRAGMENT: INDEPENDENT SUBSTANTIVE AND FIDELITY AUDIT
+17 October 2026, theorem_audit.
+
+Read in full work/soft_scalar_coarse_reduction_research.txt and work/soft_scalar_coarse_reduction_fragment.tex. The fragment faithfully preserves the proof, including the actual moving-reference B, complex-bilinear transpose convention, and actual affine/source-limit scope.
+
+Exact algebra: in [V,J], Jacobi gives det(V^T Delta V)=det T det(J^T T^-1 J). Multiplication by (mu^2)^dim Sc gives precisely det Ghat=det T det M. No volume/color exponent is lost. The K=1 endpoint is covered.
+
+Flat estimates: internal Neumann Poincare controls only the mean-zero part and never differentiates a block indicator. The displayed c is safe. The product-tent right inverse gives a uniformly bounded scalar constrained Schur energy <=C mu^2; hence c'I<=M0<=I. This is the needed stronger conclusion, not a claim inferred from rank.
+
+Uniform domain/weights: normalized J columns have K^4 entries of size K^-2, so their whole-column operator norm and Banach derivatives are dimension-free. Physical link perturbations make D-D0=O(mu||A||); the relative expansion of T has balanced powers. Under physical exponential weights the two transpose factors acquire opposite weights, and the same relative estimate works without complex positivity. Restricted energy sandwiches give exponential block operator estimates; no K^4 trace is taken.
+
+Rooted derivatives: first and second differentiated M=mu^2 J^T R J terms have balanced mu powers, with finite primitive source support. Inserting block projections retains all endpoints and sources, so the full tree estimate (ssc-rooted) follows rather than merely source-separation decay. The contour logarithm preserves that estimate with fixed coarse color fibers. This justifies the local-density affine partition argument.
+
+Scope: the determinant identity is finite; the actual Maxwell statement uses the already established fixed-K local structural limit and affine stationary-jet identification. It does not assume a uniform full stationary response as K grows, nor identify arbitrary finite winding densities with infinite ones. The final warning about the unresolved fine scalar magnetic comparison is correct.
+
+RESULT: substantive and fragment fidelity pass; no correction requested. No compilation and no output edit.

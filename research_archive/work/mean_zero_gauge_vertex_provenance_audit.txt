@@ -1,0 +1,27 @@
+Independent audit of mean_zero_gauge_vertex_obstruction.txt
+18 October 2026. Provenance.
+
+PASS. The example is an actual compact pure-gauge conjugation of the
+covariant scalar completion, on a finite compatible torus large enough
+for the fixed physical cutoff neighborhood.
+
+For v=K^-2 1_B, its counting norm is one and Xv=v. The centered affine
+phase gives w=PSv=Sv and
+  ||w||^2=q^2(K^2-1)/(12K^2).
+The two normal faces contribute
+  ||Dw||^2 >= 2q^2 h^2/K^3,
+so <w,Xw> >= 2q^2 h^2/K. Consequently the squared relative first
+vertex applied to v is
+  <w,(X^-1+X-2)w> >= 2q^2 h^2/K-q^2/6.
+Its norm grows at least c|q|sqrt(K).
+
+The extension of S is bounded in physical coordinates and has fine
+first difference O(1/K). It therefore does not exploit an unbounded
+gauge or an infinite-volume trace. The eigenvalues and total heat trace
+remain constant under the exact unitary conjugation. This correctly
+demonstrates cancellation between the second vertex and the two-first-
+vertex term, not a failure of the mean-zero determinant or its gap.
+
+It refutes uniform raw relative-vertex bounds over all these gauges.
+It does not refute a magnetic moving-frame estimate or a bound for the
+combined gauge-invariant curvature trace.

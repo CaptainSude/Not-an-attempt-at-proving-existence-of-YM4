@@ -1,0 +1,356 @@
+ACTUAL COMPOSITE-CONSTRAINT VECTOR ULTRAVIOLET ESTIMATE
+17 October 2026. Research proof for independent adversarial audit.
+
+Status: a proof candidate for a uniform short-time estimate, using the
+previously proved uniform current-coordinate classical action bounds.
+No continuum/lattice comparison or intermediate/long-time vector
+estimate is claimed. No output file has been edited.
+
+1. Statement and precise inherited inputs
+
+Fix the primitive odd ratio ell>=3 and the actual selected analytic
+source mean. K=ell^k, while M is an arbitrary preceding homogeneous
+depth. All operators below use CURRENT ANGLE COUNTING coordinates.
+In an actual joint infinite structural system on the current lattice,
+define
+
+ B_M(t)=s_M''(U(t))+D_b(t)D_b(t)^T,
+ C_K(t)=the left-relative derivative of the actual composite M_ell^k,
+ V_M,K(t)=B_M(t)+a C_K(t)^T C_K(t),
+ U_mu(t;x)=exp(i t x_nu H/K^2), mu!=nu, tau(H^2)=1.
+
+Here s_M'' is the actual left-relative Hessian, and a>0 is fixed.
+All coefficients through t^2 are formal polynomial jets at t=0.
+Notebook33 identifies these with the actual stationary jets and
+removes the multiplier-curvature term through this order. It does
+NOT replace s_M'' by the bare Wilson Hessian.
+
+Inputs from the existing classical theory:
+ (i) q_M=s_M''(1) has a uniform exponentially weighted current
+     matrix Schur bound, independent of M and volume, and is positive.
+ (ii) The full scalar action, including its quadratic baseline, has
+      uniform current-cell support/Cauchy bounds through order four
+      on a fixed small complex product ball. The cell/color dimension
+      here is fixed, independent of M,K.
+ (iii) The relative Hessian and based gradient are exactly covariant
+       under local gauge transformations in left-relative coordinates.
+       Their exponentially localized identities extend to polynomial
+       jets. Setting scalar values to zero at centers is preserved by
+       any sitewise adjoint transformation.
+ (iv) The primitive ordinary source map has the explicit formula and
+      arithmetic differential in composite_macrostep_geometry_research
+      Sections1-3. Its left-relative derivative is a fixed finite-range
+      analytic matrix function of its local primitive background.
+      The full composite row reads only its two final endpoint blocks.
+
+Claim proved below from these inputs:
+
+  integral_0^1 |[t^2] Tr_(block0,E) exp(-s V_M,K(t))| ds/s <= C,
+
+where C may depend on ell, the fixed chosen mean, a, the classical
+analytic bounds and the color group, but not on M,K or the selected
+structural system. The upstream local operator estimates are uniform
+in compatible regulator volume; the displayed affine-jet conclusion
+itself is an infinite-system assertion. This is the vector part of
+the actual ultraviolet band.
+Together with the established ghost bound it gives the full actual
+short-time bound. It gives no long-time cancellation.
+
+2. A uniform flat counting-L2 bound for the ACTUAL composite C_K
+
+Write D_r for the scalar forward difference on the lattice of spacing
+r, as an ANGLE difference (no division by r). Let A_r be the straight
+angle averaging map from unit bonds to r-bonds:
+
+ (A_r v)(y,mu)=r^-d sum_(x in centered r-block at y)
+                           sum_(h=0)^(r-1) v_mu(x+h e_mu).
+
+Let b_ell be the scalar row given by the mean internal root-contour
+sum in one primitive ell-block. The actual primitive arithmetic
+differential is exactly
+
+ C_ell=A_ell-D_ell b_ell.                          (2.1)
+
+Its gauge identity is C_ell D_1=D_ell R_ell, where R_ell
+restricts a scalar field to the new centers. The straight operators
+satisfy A_ell^(r) A_r=A_(ell r). This follows directly by tiling
+the larger centered block by the smaller ones and concatenating
+the ell strings of length r.
+
+Induction therefore gives
+
+ C_(ell^k)=A_(ell^k)-D_(ell^k) b_(ell^k),
+ b_(ell r)=b_ell^(r) A_r+R_ell b_r.                (2.2)
+
+At a fixed final center y, the scalar row b_K(y,.) is a sum of
+the rows b_ell^(ell^j)(y,.) A_(ell^j), 0<=j<k.
+The restriction in (2.2) merely keeps that same nested center.
+There is no sum over all intermediate centers at this step.
+
+For clarity, the full scalar operator identity includes the final
+restrictions explicitly:
+
+ b_K=sum_(j=0)^(k-1) R_(ell^(j+1)->K)
+                            b_ell^(ell^j) A_(ell^j).       (2.2a)
+
+The restrictions are counting-L2 contractions. There is also a direct
+stronger global estimate for A_r: its absolute row sums are r and
+its column sums are r^(1-d). For a column, the two adjacent
+longitudinal output intervals have complementary multiplicities
+adding to r; the transverse output block is unique. This remains
+true with the prescribed periodic occurrences. The Schur test gives
+
+ ||A_r||_(2->2)<=r^(1-d/2).
+
+Thus (2.2a), the fixed operator bound for b_ell, and
+||D_final||<=2 sqrt(d) already give a uniform full C_K bound in d=4.
+The row-and-incidence proof below is a second verification and also
+records the localized information used later.
+
+A row of A_r has coefficients at most r^(1-d) and at most
+2r^d nonzero bond occurrences. Hence
+
+ ||A_r(c,.)||_l2 <= sqrt(2) r^(1-d/2).             (2.3)
+
+The row l1 norm b_* of the fixed primitive b_ell is finite.
+In d=4 the triangle inequality gives
+
+ ||b_K(y,.)||_l2 <= sqrt(2)b_* sum_(j>=0) ell^-j.
+
+Thus each full C_K row has a bounded l2 norm, uniformly in K.
+This is O(1), NOT O(K^-1). The sampled-center gauge identity
+precludes the latter general claim.
+
+Every fine bond belongs to the dependency sets of at most N_d
+different final output rows, with N_d depending only on dimension.
+Indeed an internal bond lies in one final block and can affect
+only coarse bonds incident to that block; a crossing bond can affect
+only the neighboring pair. A conservative N_d=4d covers oriented
+and periodic lifted occurrences. Consequently, if R_* bounds the
+row l2 norms,
+
+ sum_c |C_K v(c)|^2
+ <= R_*^2 sum_c sum_(b in supp C_K(c,.)) |v(b)|^2
+ <= N_d R_*^2 ||v||_2^2.                          (2.4)
+
+The color differential at flatness is the same scalar matrix in
+each trace-orthonormal color component. Hence there is a fixed
+C_0>=1 such that every consecutive flat composite segment has
+counting-L2 norm at most C_0, including the empty segment.
+The source periods at least 2K and their prescribed local lifts
+preserve the stated finite incidence bound. No physical measure
+factor has been inserted in this counting-space conclusion.
+
+3. Uniform local magnetic jets of the full composite constraint
+
+First consider one final output row in the two K-blocks near zero.
+At stage j, put r=ell^j. The exact affine averaging identity gives
+the stage background, in level-j lattice coordinates,
+
+ w_j(z)=t (r^2/K^2) z_nu H in component mu.
+
+Every intermediate background coordinate needed by this final row
+has |z|<=c_ell K/r, by the exact nested dependency geometry. Hence
+
+ ||w_j||_needed <= c_ell |t| r/K.                  (3.1)
+
+Extend these needed stage background values, separately at each
+stage, to globally bounded angle fields with the same supremum
+bound, for example by clipping the coordinate outside a larger
+fixed dependency box. These extensions need not themselves be
+successive blockings. They are used only to estimate the product
+of derivative matrices. On all entries contributing to the selected
+row they coincide with the actual successive affine backgrounds,
+so the selected product row is exactly the actual one.
+
+Let F_j be the flat primitive matrix and E_j(t) the difference
+between the primitive derivative at this extended stage background
+and F_j. The primitive analytic finite-range bound gives, on one
+fixed disk |t|<rho_0,
+
+ ||E_j(t)||_(2->2) <= C_ell |t| ell^j/K.           (3.2)
+
+Both the row and column incidences of a primitive matrix are fixed.
+Thus its entrywise analytic estimate indeed implies this operator
+bound, with no number-of-sites factor.
+
+Expand the product of F_j+E_j by its subsets of marked stages.
+Every intervening product of flat matrices is an actual flat
+composite segment, bounded by C_0 from Section2. A term with n
+marked stages therefore costs at most C_0^(n+1) times the product
+of the n error norms. Summing yields
+
+ ||product_j(F_j+E_j(t))||_(2->2)
+ <= C_0 product_j(1+C_0||E_j(t)||)
+ <= C_0 exp(C C_0 |t| sum_(j<k) ell^j/K)
+ <= C_0 exp(C C_0 |t|/(ell-1)).                   (3.3)
+
+This proves a uniform analytic l2 bound for the actual selected row.
+Cauchy on a fixed smaller disk gives uniform row l2 bounds for
+the Taylor coefficients C_0,C_1,C_2 of C_K(t) near that root.
+
+For an arbitrary coarse row at y, translating the affine field
+adds a constant Cartan potential. It is removed by the exact
+site gauge exp(i t y_nu x_mu H/K). Gauge covariance expresses
+that row by the centered row and input/output adjoint frames.
+On its two K-blocks, derivatives of these frames through order two
+are bounded by a fixed polynomial in |y|, independently of K.
+For example the individual frame exponents are bounded by
+C|t|(1+|y|)^2. Thus, for j=0,1,2,
+
+ ||C_j(y,.)||_l2 <= C_j (1+|y|)^(2j).             (3.4)
+
+Their support is still the same two final blocks. This statement
+concerns polynomial jets and does not assert an analytic operator
+family at a nonzero unbounded affine field.
+
+Group fine bonds by their initial-site K-block and final bonds
+by their initial coarse site. The latter fiber has fixed dimension
+r_c=d dim(g). From (3.4) and finite incidence, C_j has uniformly
+bounded finite-range block operator kernels with polynomial
+growth of degree at most 2j in the block indices. In particular
+C_0 and C_0^T have uniform weighted block Schur norms for every
+fixed block exponent.
+
+4. The base vector B_M has a direct uniform ultraviolet bound
+
+At t=0, B_0=q_M+D_bD_b^T is a bounded positive operator with a
+uniform fine-lattice exponential Schur bound. No spectral gap
+is needed. Hence, for 0<=s<=1, its semigroup has a uniform
+exponential matrix bound, by its convergent power series in
+that Schur algebra.
+
+The ordinary and relative scalar action bounds through order
+four imply that the first and second background derivatives of
+B have exponentially rooted fine-coordinate kernels uniformly
+in M. The nearest-neighbor based-gradient term has the same
+property uniformly in the center spacing K.
+
+For each fine diagonal bond rooted at x, apply a Cartan gauge
+which subtracts the constant potential t x_nu H/K^2. The
+diagonal color heat trace is unchanged. In that gauge the
+source field is t(z_nu-x_nu)H/K^2. Each first magnetic
+vertex has the factor K^-2; each quadratic vertex has K^-4.
+The remaining source-coordinate polynomials are absorbed by
+the uniform fine exponential kernels.
+
+The one-insertion/two-insertion heat formula therefore gives
+
+ |[t^2] tr_g (exp(-sB(t)))_(xx)|
+                  <= C K^-4 (s+s^2) exp(Cs), 0<s<=1.        (4.1)
+
+This uses only local matrix gauge covariance and the polynomial
+extension of its exponentially summable Taylor identities.
+It is not an evaluation on a globally bounded nonzero affine
+configuration. There are d K^4 bond roots in one block, so
+
+ |[t^2] Tr_(block0,E) exp(-sB(t))|
+                            <= C(s+s^2) exp(Cs).             (4.2)
+
+Its integral with ds/s on (0,1) is uniformly bounded.
+
+5. Uniform macroblock bounds needed for the constraint insertion
+
+The B_j kernels, j=0,1,2, also have uniformly bounded
+exponentially decaying K-block operator kernels, with a fixed
+polynomial in the block indices for j>0. To see this directly,
+the fine source polynomials are divided by K^(2j), while
+positions in block X have magnitude at most CK(1+|X|).
+This leaves at most a fixed polynomial in |X|+|Y|, uniformly
+in K>=1. Fine matrix Schur bounds control each block operator
+norm with no factor from the block dimension.
+
+For well-separated blocks, the fine distance is at least
+K(d_block(X,Y)-d). Thus a smaller fixed positive block
+exponent is summable uniformly in K. The finitely many
+neighboring block offsets are controlled by the full fine
+operator norm. These observations also apply to the flat
+matrices and to all the needed polynomially weighted products.
+
+Set A(t)=a C_K(t)^T C_K(t) and V(t)=B(t)+A(t).
+Section3 gives the same block bounds for A_j and V_j. At
+t=0 their weighted block Schur norms are uniform in M,K.
+The block semigroup power series and the one/two insertion
+formulas imply, for E=B or V and j=0,1,2, a bound of the form
+
+ ||([t^j] exp(-sE(t)))_(XY)||
+ <= C (1+|X|+|Y|)^p exp(-kappa|X-Y|), 0<=s<=1,            (5.1)
+
+with fixed constants; for j>0 one can also keep the usual
+factors s and s+s^2. Products of polynomial kernels are
+controlled by reducing the block exponent. This derivation
+does not trace over the large fine block fiber.
+
+6. Exact localized trace cyclicity with a fixed coarse rank
+
+Let P_0 project onto fine bonds rooted in block zero.
+The exact Duhamel difference is
+
+ exp(-sV(t))-exp(-sB(t))
+  =-a integral_0^s exp(-(s-u)V(t))
+                      C_K(t)^T C_K(t) exp(-uB(t)) du.       (6.1)
+
+At each coefficient through t^2, cyclicity gives
+
+ Tr_fine[P_0 E_V C^T C E_B]
+             =Tr_coarse[C E_B P_0 E_V C^T].                (6.2)
+
+IMPORTANT: P_0 is retained. The right side is the sum of ALL
+coarse diagonal blocks, not the single coarse block-zero
+density. Thus this does not assert an unjustified equality
+between arbitrary fine and coarse local trace densities.
+
+For each coarse root Y, the diagonal block on the right is
+the product of a map from the fine block-zero Hilbert space
+to its r_c-dimensional coarse fiber and a map back. By
+(3.4),(5.1), all coefficients through degree two of these
+two maps have norms bounded by
+
+ C (1+|Y|)^p exp(-kappa'|Y|).
+
+The absolute trace of their product is bounded by r_c times
+the product of these operator bounds, independent of the
+dimension d dim(g) K^4 of the intervening fine block.
+Summing Y gives a uniform finite constant. Expanding the
+degree-two coefficient of (6.2) therefore proves
+
+ |[t^2] Tr_(block0,E)
+       {exp(-sV(t))-exp(-sB(t))}| <= Cs, 0<s<=1.           (6.3)
+
+One may justify (6.2) first on finite boxes/compact sources;
+the displayed rooted sums are absolute and supply the limit.
+Equivalently each factor through the finite P_0 is trace
+class for fixed K, while the estimate uses the fixed coarse
+fiber dimension to avoid the growing K^4 bound.
+The algebra holds for the holomorphic bilinear transpose;
+at the flat real point it is the usual adjoint.
+
+Combining (4.2) and (6.3) proves the claim in Section1.
+All constants in this argument are uniform in the preceding
+depth M and the composite endpoint K=ell^k.
+
+7. Scope and earlier dead ends
+
+The invalid shortcut would be ||C_K||=O(K^-1) for the full
+ordinary map. Sampled-center gauge transformations rule it out.
+The actual weaker O(1) estimate proved in Section2 is enough.
+It uses the COMPOSITE fixed-ell hierarchy. Direct-K contour
+averaging can have very different raw row bounds; it was not
+substituted for that hierarchy.
+
+Bounding a local trace simply by its fine block dimension would
+lose K^4. The constraint comparison instead keeps one explicit
+C^T C insertion and takes the trace on its fixed-rank coarse
+fiber with the fine block projector still in place.
+
+The argument supplies only the absolute heat integral for
+0<s<1, equivalently physical times 0<u<K^-2. Its semigroup
+bounds use exp(Cs), not a uniform large-time gap. It neither
+proves the continuum coefficient on intermediate times nor
+the cancellation of the soft based-ghost contribution at
+large times. The latter may require a combined signed integral.
+
+There is no assertion about a continuously varying magnetic
+flux on a finite periodic lattice. All affine probes above
+are polynomial jets in the compatible infinite structural
+system, as in Notebook33.

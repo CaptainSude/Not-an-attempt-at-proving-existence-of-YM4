@@ -1,0 +1,911 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\diag}{\operatorname{diag}}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 07: exponential locality of the flat Gaussian}
+\author{Research working document}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We derive uniform exponential spatial decay for the flat quadratic
+effective action and its constrained Gaussian covariance. The action
+is a gauge quotient of an averaged Feynman covariance. An exact
+algebraic cancellation removes its apparent complex massless poles.
+A discrete Parseval estimate controls the growing number of fine
+Fourier aliases and supplies a complex momentum strip independent of
+refinement. The fixed local gauge penalty and pivot insertion then
+combine this locality with the spectral gap proved in Notebook 06.
+The result supplies the exponentially local flat reference required
+by the earlier Gaussian cutoff theorems. It does not control the
+actual complex-background perturbations or prove a nonlinear continuum
+Yang--Mills limit.
+\end{abstract}
+
+\noindent\textbf{Status.}
+Research proof under internal review. No external certification or
+novelty claim is made. The flat variational model is defined explicitly
+below. Its identification with the physical Gaussian retains the
+smooth constrained-minimizer and coordinate requirements of Notebook 06;
+Section~\ref{sec:source} records the precise deposited source match.
+
+\section{The result and its scope}
+
+Fix dimension $d$ and odd next-step blocking factor $L\ge3$.
+Let $M=L^k$ be the refinement from physical spacing $\eta=M^{-1}$
+to spacing one. More generally, any odd positive $M$ is allowed.
+Use the straight-string average and physical volume norms of Notebook 06,
+and define
+\[
+ q_M(B)=\inf_{Q_M^{\rm st}A=B}\norm{d_\eta A}_\eta^2.
+\]
+For finite periodic lattices this is a finite-dimensional quadratic
+form. Its translation-invariant kernel and infinite-volume version
+will follow from the Fourier calculation below.
+
+Let $T_L$ be the averaged rooted-path map within fixed $L$-blocks,
+$S_L=Q_L^\flat$ the next-step rooted constraint, and $K_L$ the
+actual flat insertion of pivot bonds into the retained nonpivot
+coordinates. The reduced precision is
+\begin{equation}\label{eq:reduced}
+ A_{M,0}=K_L^*[q_M+T_L^*T_L]K_L.
+\end{equation}
+All stars here are real Hilbert-space adjoints in the fixed volume
+conventions. Their holomorphic continuations are bilinear transposes,
+not variable-dependent complex conjugations.
+
+\begin{theorem}\label{thm:flat-decay}
+There are positive constants $\rho,C_q$, depending only on $d$, such that
+the unit-lattice action kernel satisfies
+\[
+ \norm{q_M(x)}\le C_qe^{-\rho|x|_1}
+\]
+uniformly in $M$. There are positive $c,C$, depending only on fixed
+$d,L$ and the fixed color norm, such that the retained-coordinate
+covariance satisfies
+\[
+ \norm{A_{M,0}^{-1}(n,\alpha;m,\beta)}
+ \le Ce^{-c|n-m|_1}.
+\]
+Here $n,m$ are $L$-block indices and $\alpha,\beta$ are retained
+bond labels within a block. Finite periodic kernels are exact
+periodizations, with uniform exponential bounds in periodic distance.
+\end{theorem}
+
+The theorem concerns the homogeneous full-block quadratic problem.
+A boundary upper bound, such as that of Notebook 06, does not imply
+that a boundary effective covariance is a restriction of this one.
+An arbitrary retained-history or nonflat operator needs its own match.
+
+\section{The exact alias formula and the gauge quotient}
+
+Let $I_M=\{-(M-1)/2,\ldots,(M-1)/2\}$ and, for coarse momentum
+$z$, write $p_r=z+2\pi r$, $r\in I_M^d$. Define the entire multipliers
+\[
+ a_M(p)=\prod_{\nu=1}^d\frac1M\sum_{s\in I_M}e^{ip_\nu s/M},
+ \qquad
+ \ell_{M,\mu}(p)=\frac1M\sum_{s=0}^{M-1}e^{ip_\mu s/M},
+\]
+\[
+ \omega_\mu(p)=a_M(p)\ell_{M,\mu}(p).
+\]
+This is the actual one-form averaging multiplier. Its longitudinal
+factor occurs in addition to the centered block factor in that
+direction. A scalar block average alone would be the wrong operator.
+
+Write
+\[
+ u_{r,\mu}^{\pm}(z)=M(e^{\pm ip_{r,\mu}/M}-1),\qquad
+ P_r(z)=\sum_\mu u_{r,\mu}^+(z)u_{r,\mu}^-(z)
+       =4M^2\sum_\mu\sin^2(p_{r,\mu}/(2M)),
+\]
+\[
+ d_\mu^\pm(z)=e^{\pm iz_\mu}-1,\qquad
+ b_\mu(z)=d_\mu^+(z)d_\mu^-(z)=4\sin^2(z_\mu/2).
+\]
+Minus means analytic substitution of the negative argument. It agrees
+with conjugation on real momenta only. String telescoping gives
+\begin{equation}\label{eq:gradient-symbol}
+ \omega_\mu(p_r)u_{r,\mu}^+(z)=a_M(p_r)d_\mu^+(z),
+\end{equation}
+and the corresponding minus identity.
+
+With physical-volume Parseval normalization,
+$B_\mu(z)=\sum_r\omega_\mu(p_r)A_{r,\mu}$.
+An embedded plane wave has the same fine-volume and coarse-volume
+norm, so no extra $M^d$ factor enters the alias covariance.
+
+For real $z\ne0$ in the central Brillouin zone, all $P_r>0$.
+The fine Maxwell energy in one alias is
+\[
+ P_r|A_r|^2-| (u_r^+)^*A_r|^2
+ =\inf_\lambda P_r|A_r+u_r^+\lambda|^2.
+\]
+By \eqref{eq:gradient-symbol}, fine gradients produce precisely coarse
+gradients. They produce every scalar multiple of $d^+$ because the
+central $a_M(z)$ is nonzero on this real zone. Thus Maxwell minimization
+equals Feynman minimization with the coarse representative allowed to
+vary by a gradient. The averaged Feynman covariance is diagonal:
+\begin{equation}\label{eq:feynman}
+ W(z)=\diag(c_\mu(z)),\qquad
+ c_\mu(z)=\sum_{r\in I_M^d}
+       \frac{\omega_\mu(p_r)\omega_\mu(-p_r)}{P_r(z)}.
+\end{equation}
+For real momenta its numerators are squared absolute values.
+Minimizing the positive Feynman form at prescribed coarse datum $B'$
+gives $B'^*W^{-1}B'$. A subsequent minimization over
+$B'=B+d^+\lambda$ gives the full-space precision
+\begin{equation}\label{eq:quotient}
+ q_M=W^{-1}-W^{-1}d^+
+       (d^-W^{-1}d^+)^{-1}d^-W^{-1}.
+\end{equation}
+This also follows by the ordinary scalar Schur complement.
+Neither $W^{-1}$ nor the transverse compression of $W^{-1}$ alone
+is generally this quotient.
+
+At $z=0$, every nonzero alias has $a_M(2\pi r)=0$.
+The average reads fine constants, which realize every constant
+coarse field with zero Maxwell energy. Therefore
+\begin{equation}\label{eq:zero-mode}
+ q_M(0)=0.
+\end{equation}
+The harmonic sector is handled explicitly; no inverse of its zero
+Feynman eigenvalue is assigned.
+
+\section{Cancellation of the complex massless denominator}
+
+Separate the central alias and define
+\[
+ A(z)=a_M(z)a_M(-z),\quad
+ g_\mu(z)=\omega_\mu(z)\omega_\mu(-z),\quad
+ R_\mu(z)=\sum_{r\ne0}
+       \frac{\omega_\mu(p_r)\omega_\mu(-p_r)}{P_r(z)},
+\]
+\[
+ D_\mu=g_\mu+P_0R_\mu,\qquad h_\mu=D_\mu^{-1}.
+\]
+The central gradient identity implies
+\begin{equation}\label{eq:central-identity}
+ \sum_\mu\frac{b_\mu}{g_\mu}=\frac{P_0}{A}.
+\end{equation}
+All removable one-variable factors are understood analytically.
+Set
+\begin{equation}\label{eq:E}
+ E=A^{-1}-\sum_\mu\frac{b_\mu R_\mu}{g_\mu D_\mu}.
+\end{equation}
+Subtracting $D_\mu^{-1}-g_\mu^{-1}$ in
+\eqref{eq:central-identity} proves exactly
+\[
+ \sum_\mu b_\mu h_\mu=P_0E.
+\]
+On the original real nonzero set, $W^{-1}=P_0\diag(h_\mu)$.
+Substitution in \eqref{eq:quotient} and cancellation gives
+\begin{equation}\label{eq:canceled}
+ (q_M)_{\mu\nu}(z)
+ =P_0(z)h_\mu(z)\delta_{\mu\nu}
+  -\frac{h_\mu(z)d_\mu^+(z)d_\nu^-(z)h_\nu(z)}{E(z)}.
+\end{equation}
+There is no inverse power of $P_0$ left. This removes its entire
+complex null set, rather than just the real zero at the origin.
+We will prove that the remaining denominators are uniformly nonzero
+on a complex strip. The resulting formula is zero at $z=0$, agreeing
+with \eqref{eq:zero-mode}. For $M=1$, $A=g_\mu=D_\mu=E=1$
+and $R_\mu=0$, giving the usual finite-range Maxwell precision.
+
+\section{A complex momentum strip independent of refinement}
+
+\subsection{Alias Parseval prevents a factor $M^d$}
+
+Discrete orthogonality gives, for real $x,y$ in one coordinate,
+\[
+ \sum_{r\in I_M}\left|
+       \frac1M\sum_{s\in I_M}e^{i(x+2\pi r+iy)s/M}
+                         \right|^2
+ =\frac1M\sum_{s\in I_M}e^{-2ys/M}\le e^{|y|}.
+\]
+Taking products and using $|\ell_{M,\mu}(x+2\pi r+iy)|\le
+e^{|y_\mu|}$ proves
+\begin{equation}\label{eq:alias-parseval}
+ \sum_r|\omega_\mu(x+2\pi r+iy)|^2
+ \le e^{\sum_\nu|y_\nu|+2|y_\mu|}.
+\end{equation}
+The same bound holds for the negative arguments. Cauchy--Schwarz
+therefore bounds the sum of absolute products in \eqref{eq:feynman}
+by the same expression. The number of aliases does not appear.
+
+\subsection{High aliases and real denominator gaps}
+
+Choose $K=\pi+\varepsilon$ with $0<\varepsilon\le1/4$.
+For real $|x_\mu|\le K$, every nonzero alias has a coordinate whose
+distance from $2\pi M\mathbb Z$ is at least $2\pi-K$. Hence
+\[
+ P_r(x)\ge H_K:=4(2\pi-K)^2/\pi^2>0\quad(r\ne0).
+\]
+For complex perturbations,
+\begin{align*}
+ \Re P_r(x+iy)
+ &=P_r(x)-2M^2\sum_\mu\cos((x_\mu+2\pi r_\mu)/M)
+                                  [\cosh(y_\mu/M)-1]\\
+ &\ge P_r(x)-e^{\delta}\sum_\mu y_\mu^2
+ \qquad(|y_\mu|\le\delta\le1).
+\end{align*}
+Choose a positive $\delta$ so $de^\delta\delta^2<H_K/2$.
+All high-alias denominators then have real part at least $H_K/2$.
+Equation \eqref{eq:alias-parseval} proves that each $R_\mu$ is
+holomorphic and uniformly bounded on this open tube. The central
+finite averages and $P_0$ are uniformly bounded there too. For example
+$|M(e^{iz/M}-1)|\le |z|e^{|\Im z|/M}$.
+
+On the enlarged real cube, set
+\[
+ c_K=\frac{\sin(K/2)}{K/2}>0,\qquad
+ g_*=c_K^{2d+2},\qquad D_*=1+dK^2/H_K.
+\]
+The centered factor
+$r_M(t)=\sin(t/2)/[M\sin(t/(2M))]$, with $r_M(0)=1$,
+satisfies $c_K\le r_M(t)\le1$ for $|t|\le K$.
+Using real alias Parseval gives
+\begin{equation}\label{eq:real-gaps}
+ A\ge c_K^{2d},\qquad
+ g_\mu,D_\mu\ge g_*,\qquad
+ 0\le R_\mu\le H_K^{-1},\qquad D_\mu\le D_*.
+\end{equation}
+For real nonzero $x$,
+\[
+ E(x)=\frac{\sum_\mu b_\mu(x)/D_\mu(x)}{P_0(x)}
+      \ge\frac{c_K^2}{D_*},
+\]
+since $|d_\mu^+(x)|\ge c_K|x_\mu|$ and $P_0(x)\le|x|^2$.
+At zero, \eqref{eq:E} gives $E(0)=1$.
+
+\subsection{Two successive shrinkings}
+
+Take nested real cubes strictly between $[-\pi,\pi]^d$ and
+$(-K,K)^d$, with nested positive imaginary widths. Cauchy's estimates
+on the initial tube give uniform derivatives for $A,g_\mu,D_\mu$
+on the first smaller tube. Integrating along $x+ity$ and using
+\eqref{eq:real-gaps} keeps these functions uniformly away from zero
+on a still smaller tube, independently of $M$.
+
+Formula \eqref{eq:E} is now holomorphic and uniformly bounded.
+Apply Cauchy's estimate once more, using its real lower bound, to keep
+$E$ uniformly away from zero on a final tube. Its real cube still
+strictly contains $[-\pi,\pi]^d$. Thus some fixed $\rho_0>0$ gives
+a uniformly bounded holomorphic formula \eqref{eq:canceled} for
+$|\Im z_\mu|<\rho_0$, with a positive real margin around the central
+Brillouin cube. The order of these steps avoids assuming the desired
+nonvanishing of $E$ while estimating it. No Cauchy disk leaves an
+already controlled open domain.
+
+\section{Periodic gluing, kernels, and the reduced inverse}
+
+The central-alias split is not individually $2\pi$ periodic.
+The full quotient is periodic on real momenta: shifting by $2\pi$
+permutes alias labels modulo $M$, the fine symbols have period
+$2\pi M$, and the coarse gradient is unchanged. The continuous
+zero-mode value agrees as well. The analytic extensions on adjacent
+enlarged Brillouin charts consequently agree on their open real
+overlaps. Applying the identity theorem successively in the complex
+coordinates makes them agree holomorphically. The positive real margin
+is what supplies genuine overlaps. They therefore define one bounded
+holomorphic periodic symbol on a strip of fixed width.
+
+For its infinite-lattice coefficient
+\[
+ q_M(x)=(2\pi)^{-d}\int_{[-\pi,\pi]^d}e^{iz\cdot x}q_M(z)\,dz,
+\]
+shift each contour in the sign of $x_\mu$. For every fixed
+$0<\rho<\rho_0$ this gives
+\[
+ \norm{q_M(x)}\le C_qe^{-\rho|x|_1}.
+\]
+Reducing the exponent gives an absolutely summable weighted kernel.
+Finite tori evaluate the same variational symbol on their momentum
+grids, so their kernels are exactly its periodizations. Absolute
+convergence justifies every image sum. The weighted row sum on a
+torus is bounded by the infinite weighted row sum because periodic
+distance is at most the distance of each representative. These
+bounds include short periods with the correct oriented-cell
+multiplicities.
+
+\subsection{Direct infinite-volume variational identification}
+
+The symbol also gives the actual infinite-volume infimum, without
+interchanging an infimum and a volume limit. For real nonzero momentum
+let $h=\diag(h_\mu)$ and
+\[
+ \theta=\frac{d^-hB}{d^-hd^+},\qquad B'=B-d^+\theta.
+\]
+The real upper and lower bounds on $D_\mu$ imply
+$|d^+\theta|\le C|B|$ and $|B'|\le C|B|$, uniformly in $M$.
+The Feynman minimizing fiber for $B'$ is
+\[
+ A_r^F=\diag(\omega_\mu(-p_r))\frac{P_0}{P_r}hB'.
+\]
+For the central alias the ratio is one; for the others it is bounded
+by $d\pi^2/4$ on the central real cube. Alias Parseval bounds
+$\sum_r|A_r^F|^2\le C|B|^2$.
+Moreover $d^-hB'=0$ and \eqref{eq:gradient-symbol} imply that every
+$A_r^F$ is fine transverse. Its Maxwell and Feynman energies agree.
+
+Restore the exact coarse datum by adding only the central fine gradient:
+\[
+ A_0=A_0^F+u_0^+\theta/a_M(z),\qquad A_r=A_r^F\ (r\ne0).
+\]
+Its average is $B$ and its Maxwell energy is unchanged. The added
+bond field is uniformly bounded because
+$|u_0^+|/|d^+|\le\pi/2$ and $|a_M(z)|\ge(2/\pi)^d$.
+The scalar $\theta$ can be singular at zero, but this actual bond
+field is not. These measurable minimizing fibers define a fine
+$L^2$ field for every coarse $L^2$ field. The zero point has measure
+zero in infinite volume; on a finite torus use its constant lift.
+This proves the required variational identification directly.
+
+\subsection{The fixed local maps introduce no refinement dependence}
+
+$T_L$ uses paths inside one $L$-block. Each $S_L$ row uses only
+the two endpoint blocks of its coarse bond. Its center-line interface
+pivot has discrete coefficient $L^{-d}$, and no other row uses that
+pivot. Thus $K_L$ is the identity on retained coordinates and has
+pivot rows $-L^d(S_L)_{\rm free}$. It is finite range, with coefficients
+depending only on fixed $d,L$.
+
+Group retained coordinates by the $L$-block containing their bond
+basepoint. There are $d(L^d-1)$ scalar retained coordinates per block
+in this convention, with a fixed extra color multiplicity. Since
+unit-site distance between blocks $n,m$ is at least
+$L|n-m|_1-d(L-1)$, the action kernel and these fixed finite-range maps
+give constants $\eta_0,C_A>0$, independent of $M$, with
+\begin{equation}\label{eq:precision-schur}
+ \sum_n e^{\eta_0|n|_1}\norm{A_{M,0}(n)}\le C_A.
+\end{equation}
+This is the locality input that the spectral gap alone did not supply.
+
+Notebook 06 proves $A_{M,0}\ge\gamma_*I$ uniformly in refinement
+and volume. Hence the finite-dimensional block Bloch symbol obeys
+$A_M(\kappa)\ge\gamma_*I$ for every real $\kappa$.
+One can infer this either from the infinite-volume form inequality
+or from its values on the dense union of finite-torus momentum grids
+and continuity of the symbol.
+
+By \eqref{eq:precision-schur}, $A_M(\kappa)$ is holomorphic for
+$|\Im\kappa|_\infty<\eta_0$. For $|y|_\infty\le\eta_0/2$,
+\[
+ \norm{A_M(x+iy)-A_M(x)}
+ \le |y|_\infty\sum_n|n|_1 e^{(\eta_0/2)|n|_1}
+                                      \norm{A_{M,0}(n)}
+ \le C_1|y|_\infty,
+\]
+where $C_1$ is uniform. Choose a positive
+$\eta_C<\min(\eta_0/2,\gamma_*/(2C_1))$, omitting the second
+restriction if $C_1=0$. A Neumann inverse about the real symbol gives
+\[
+ A_M(\kappa)^{-1}\text{ holomorphic},\qquad
+ \norm{A_M(\kappa)^{-1}}\le2/\gamma_*
+ \quad(|\Im\kappa|_\infty<\eta_C).
+\]
+Contour shifting proves exponential decay of its block kernel and
+completes Theorem~\ref{thm:flat-decay}.
+
+Finite tori sample this same inverse symbol. Their covariance is the
+periodization of the infinite inverse kernel, rather than the inverse
+of a truncated infinite covariance. On each fixed region the image
+error tends to zero exponentially as every period tends to infinity,
+uniformly in $M$ when comparing the same refinement. No large-period
+assumption was needed for the uniform bound itself.
+
+\section{The free low-momentum normalization}
+
+Let $U_\mu(z)=e^{iz_\mu/2}$ and pass to the bond-midpoint convention
+$q_M^{\rm mid}(z)=U(-z)q_M(z)U(z)$. The canceled formula becomes
+\[
+ (q_M^{\rm mid})_{\mu\nu}(z)
+ =P_0h_\mu\delta_{\mu\nu}
+  -\frac{4h_\mu\sin(z_\mu/2)\sin(z_\nu/2)h_\nu}{E}.
+\]
+The functions $g_\mu,R_\mu$ are even in every momentum coordinate;
+for $R_\mu$, reflect the corresponding alias index in its symmetric
+set. The phases cancel in each product of positive and negative
+arguments. Thus $h_\mu,E$ are even too, and
+$h_\mu(0)=E(0)=1$, $R_\mu(0)=0$.
+Uniform Cauchy bounds in the established neighborhood give
+\[
+ h_\mu(z)=1+O(|z|^2),\qquad E(z)=1+O(|z|^2),\qquad
+ P_0(z)=\sum_\mu z_\mu^2+O(|z|^4),
+\]
+with constants independent of $M$. Hence, for small real momentum,
+\[
+ q_M^{\rm mid}(p)=|p|^2I-pp^T+O(|p|^4).
+\]
+This checks the Maxwell normalization of the flat quadratic model.
+It is not a statement about an interacting renormalized coupling
+or the nonlinear continuum limit.
+
+% Audited ultraviolet-limit proof; insert before the source section.
+% Uses only the host document's packages and theorem environments.
+\section{The ultraviolet limit of the flat Gaussian baseline}
+\label{limit-section}
+
+The common complex strip gives more than uniform locality: the flat
+precision and covariance have limits as the original spacing tends to
+zero. We prove a quantitative rate, including the aliases near the edge
+of the fine Brillouin zone. This is a limit of the homogeneous free
+baseline in the fixed retained coordinates.
+
+For a matrix kernel $F(i,j)$ on a lattice with finite-dimensional fibers,
+use the exponentially weighted Schur norm
+\begin{equation}\label{limit-schur-definition}
+ \norm{F}_\kappa=
+ \max\left\{
+ \sup_i\sum_j e^{\kappa\operatorname{dist}(i,j)}\norm{F(i,j)},
+ \sup_j\sum_i e^{\kappa\operatorname{dist}(i,j)}\norm{F(i,j)}
+ \right\}.
+\end{equation}
+The fiber norm is the fixed operator norm. On the unit lattice the
+distance is $|i-j|_1$. For reduced operators we group all coordinates
+into the fixed $L$-blocks and use block distance. Grouping a unit-lattice
+kernel changes constants and, if needed, reduces its exponent; these
+changes depend only on $d,L$ and the fixed fiber dimension. Matrix
+products below use one common grouping. The triangle inequality for
+distance proves
+\begin{equation}\label{limit-schur-algebra}
+ \norm{FG}_\kappa\le\norm{F}_\kappa\norm{G}_\kappa.
+\end{equation}
+The same convention applies in periodic distance on a torus, with the
+actual periodic incidence multiplicities.
+
+\begin{theorem}\label{limit-theorem}
+There are a periodic holomorphic symbol $q_\infty$ and constants
+$\rho_*,C>0$, independent of odd $M$, such that
+\begin{equation}\label{limit-symbol-rate}
+ \sup_{|\operatorname{Im}z|_\infty\le\rho_*}
+       \norm{q_M(z)-q_\infty(z)}\le CM^{-2}.
+\end{equation}
+At a fixed sufficiently small $\kappa>0$,
+\begin{equation}\label{limit-action-rate}
+ \norm{q_M-q_\infty}_\kappa\le C_\kappa M^{-2}.
+\end{equation}
+Set
+\[
+ A_{\infty,0}=K_L^*(q_\infty+T_L^*T_L)K_L,
+ \qquad C_{M,0}=A_{M,0}^{-1},\quad
+ C_{\infty,0}=A_{\infty,0}^{-1}.
+\]
+Then $A_{\infty,0}\ge\gamma_*I$, and at a possibly smaller fixed
+positive exponent,
+\begin{equation}\label{limit-covariance-rate}
+ \norm{A_{M,0}-A_{\infty,0}}_\kappa+
+ \norm{C_{M,0}-C_{\infty,0}}_\kappa
+ \le C_{d,L,\kappa}M^{-2}.
+\end{equation}
+The same bounds hold uniformly on compatible periodic tori. Their
+kernels are exact periodizations of the infinite kernels. If the
+shortest nonzero period tends to infinity, the thermodynamic and
+$M\to\infty$ limits commute on every fixed finite set of coordinates.
+\end{theorem}
+
+\subsection{Sinc notation and the exact limiting alias sum}
+
+Continue to use $I_M=\{-(M-1)/2,\ldots,(M-1)/2\}$ and
+$p_r(z)=z+2\pi r$. To distinguish finite and limiting denominators,
+write the earlier $P_r$ as $P_{M,r}$. Define
+\begin{equation}\label{limit-sinc}
+ s_M(w)=\frac{\sin(w/2)}{M\sin(w/(2M))},\qquad
+ s(w)=\frac{\sin(w/2)}{w/2},\qquad s(0)=1,
+\end{equation}
+with all removable values filled, and
+\begin{equation}\label{limit-denominators}
+ P_{M,r}=4M^2\sum_\nu\sin^2\frac{p_{r,\nu}}{2M},
+ \qquad P_{\infty,r}=\sum_\nu p_{r,\nu}^2.
+\end{equation}
+The paired averaging numerators are
+\begin{align}
+ N_{M,r,\mu}
+ &=s_M(p_{r,\mu})^2\prod_\nu s_M(p_{r,\nu})^2,
+ \label{limit-numerator-finite}\\
+ N_{\infty,r,\mu}
+ &=s(p_{r,\mu})^2\prod_\nu s(p_{r,\nu})^2.
+ \label{limit-numerator-infinite}
+\end{align}
+Indeed the longitudinal averaging phase
+$\exp(i(M-1)p_\mu/(2M))$ tends to $\exp(ip_\mu/2)$, but it
+cancels exactly between the positive and negative arguments of each
+covariance numerator. There is consequently no phase error of order
+$M^{-1}$. These are analytic products, not complex absolute squares.
+Physical-volume Parseval normalization gives no additional power of
+$M$ in the alias sum.
+
+Define the high-alias remainders
+\begin{equation}\label{limit-remainders}
+ R_{M,\mu}=
+ \sum_{r\in I_M^d\setminus\{0\}}\frac{N_{M,r,\mu}}{P_{M,r}},
+ \qquad
+ R_{\infty,\mu}=
+ \sum_{r\in\mathbb Z^d\setminus\{0\}}
+                         \frac{N_{\infty,r,\mu}}{P_{\infty,r}}.
+\end{equation}
+We first prove normal convergence and a uniform rate for the second
+sum. These estimates also justify the explicit continuum formula below.
+
+\subsection{High-alias bounds uniform up to the fine cutoff}
+
+Fix $\pi<K<2\pi$ and work on
+\[
+ \mathcal B_{K,\rho}=
+ \{x+iy:|x_\nu|\le K,\ |y_\nu|\le\rho\},
+ \qquad 0<\rho\le1.
+\]
+Put $a=2\pi-K$ and $c_0=4a^2/\pi^2$. If a retained component
+$r_\nu\ge1$, the two possible nearest distances of
+$x_\nu+2\pi r_\nu$ to $2\pi M\mathbb Z$ obey
+\[
+ 2\pi r_\nu-K\ge ar_\nu,\qquad
+ 2\pi(M-r_\nu)-K
+ \ge2\pi(r_\nu+1)-K\ge ar_\nu.
+\]
+The negative case is symmetric. The principal distance is at most
+$\pi M$, so the elementary sine lower bound gives
+\[
+ P_{M,r}(x)\ge c_0|r|_2^2\qquad(r\ne0).
+\]
+Moreover, direct expansion of the complex sine gives
+\[
+ \operatorname{Re}P_{M,r}(x+iy)
+ \ge P_{M,r}(x)-e^\rho\sum_\nu y_\nu^2.
+\]
+Choose $\rho$ so that $de^\rho\rho^2\le c_0/2$. Then
+\begin{equation}\label{limit-high-denominator}
+ |P_{M,r}(z)|\ge\operatorname{Re}P_{M,r}(z)
+ \ge\frac{c_0}{2}|r|_2^2\qquad(r\ne0).
+\end{equation}
+This bound includes $|r_\nu|$ comparable to $M$. The continuum
+denominator, for every nonzero integer alias, satisfies
+\begin{equation}\label{limit-high-denominator-infinite}
+ \operatorname{Re}P_{\infty,r}(z)
+ =\sum_\nu(x_\nu+2\pi r_\nu)^2-\sum_\nu y_\nu^2
+ \ge\frac{c_0}{2}|r|_2^2.
+\end{equation}
+For this last inequality use $|x_\nu+2\pi r_\nu|\ge a|r_\nu|$
+when $r_\nu\ne0$, and $a^2\ge c_0$.
+
+The integral representation of sinc bounds the zero-index factor by
+$e^{\rho/2}$. For $r_\nu\ne0$,
+\[
+ |\sin((z_\nu+2\pi r_\nu)/2)|\le\cosh(\rho/2),
+ \qquad |z_\nu+2\pi r_\nu|\ge a|r_\nu|.
+\]
+Hence
+\begin{equation}\label{limit-sinc-weight}
+ |s(p_{r,\nu})|\le\frac{C_s}{1+|r_\nu|}.
+\end{equation}
+The same estimate holds for retained $s_M$ factors. For a nonzero
+index, use the preceding distance estimate to obtain
+\[
+ |M\sin(p_{r,\nu}(z)/(2M))|
+ \ge |M\sin((x_\nu+2\pi r_\nu)/(2M))|
+ \ge(a/\pi)|r_\nu|;
+\]
+for zero index, use the centered finite exponential average.
+
+Set
+\[
+ \mathcal W_{r,\mu}=(1+|r_\mu|)^{-2}
+                         \prod_\nu(1+|r_\nu|)^{-2},
+ \qquad
+ B_2=\sum_{m\in\mathbb Z}(1+|m|)^{-2}=\pi^2/3-1.
+\]
+Equations \eqref{limit-high-denominator}--\eqref{limit-sinc-weight}
+give the summable majorant
+\begin{equation}\label{limit-majorant}
+ \left|\frac{N_{M,r,\mu}}{P_{M,r}}\right|
+ +\left|\frac{N_{\infty,r,\mu}}{P_{\infty,r}}\right|
+ \le C\frac{\mathcal W_{r,\mu}}{|r|_2^2}.
+\end{equation}
+The finite term here is used only for retained aliases. In particular,
+the infinite remainder is holomorphic in the box interior and
+continuous uniformly on the closed box. Its tail has the explicit bound
+\begin{equation}\label{limit-tail}
+ \sum_{|r|_\infty>N}\frac{\mathcal W_{r,\mu}}{|r|_2^2}
+ \le\frac{2d B_2^{d-1}}{(N+1)^3}.
+\end{equation}
+To verify it, discard the additional orientation factor, use
+$|r|_2\ge N+1$, and cover the tail by the $d$ coordinate tails;
+$\sum_{|m|>N}(1+|m|)^{-2}\le2/(N+1)$.
+
+\subsection{A second-order rate without a small-alias restriction}
+
+Let $f(w)=w/\sin w$, with its removable value at zero. For all
+retained aliases and $M\ge3$,
+\begin{equation}\label{limit-compact-rectangle}
+ \left|\operatorname{Re}\frac{p_{r,\nu}}{2M}\right|
+ \le\frac\pi2+\frac{K-\pi}{6}<\frac{2\pi}3,
+ \qquad
+ \left|\operatorname{Im}\frac{p_{r,\nu}}{2M}\right|\le\frac16.
+\end{equation}
+Thus $f$ and $(f(w)-1)/w^2$ are bounded on one fixed rectangle,
+after filling the removable value at zero. The exact identity
+\begin{equation}\label{limit-factor-comparison}
+ s_M(p)=s(p)f(p/(2M)),\qquad
+ |f(p/(2M))-1|\le C|p|^2/M^2
+\end{equation}
+holds even at the largest aliases. For $r\ne0$,
+$\sum_\nu|p_{r,\nu}|^2\le C|r|_2^2$. Telescoping the fixed
+$2d+2$ factors in the numerator therefore gives
+\begin{equation}\label{limit-numerator-error}
+ |N_{M,r,\mu}-N_{\infty,r,\mu}|
+ \le CM^{-2}|r|_2^2\mathcal W_{r,\mu}.
+\end{equation}
+The removable analytic function
+$((\sin w/w)^2-1)/w^2$ is bounded on the same rectangle, yielding
+\begin{equation}\label{limit-denominator-error}
+ |P_{M,r}-P_{\infty,r}|
+ \le CM^{-2}\sum_\nu|p_{r,\nu}|^4
+ \le CM^{-2}|r|_2^4.
+\end{equation}
+Divide \eqref{limit-numerator-error} by the lower denominator bound.
+For the reciprocal-denominator difference, divide
+\eqref{limit-denominator-error} by the product of the two lower
+bounds. The powers of $|r|$ cancel in both operations, giving
+\begin{equation}\label{limit-summand-error}
+ \left|\frac{N_{M,r,\mu}}{P_{M,r}}
+       -\frac{N_{\infty,r,\mu}}{P_{\infty,r}}\right|
+ \le CM^{-2}\mathcal W_{r,\mu}.
+\end{equation}
+Since $\sum_r\mathcal W_{r,\mu}\le B_2^d$, these retained-alias
+errors sum to $O(M^{-2})$. The missing aliases are bounded by
+\eqref{limit-tail} with $N=(M-1)/2$, giving $O(M^{-3})$. Consequently
+\begin{equation}\label{limit-remainder-rate}
+ \sup_{z\in\mathcal B_{K,\rho}}
+ |R_{M,\mu}(z)-R_{\infty,\mu}(z)|\le CM^{-2}.
+\end{equation}
+No estimate above assumes $|r|/M$ is small. The case $M=1$ can be
+included by enlarging the constant; it has no high aliases.
+
+\subsection{The canceled continuum symbol and its removable zeros}
+
+To avoid confusion with the reduced precision $A_{M,0}$, denote the
+principal scalar averaging weight in this subsection by
+$\mathfrak a_M$. Define its limit and the other limiting quantities by
+\begin{align}
+ P(z)&=\sum_\nu z_\nu^2,&
+ \mathfrak a(z)&=\prod_\nu s(z_\nu)^2,&
+ g_{\infty,\mu}(z)&=\mathfrak a(z)s(z_\mu)^2,
+ \label{limit-central}\\
+ D_{\infty,\mu}&=g_{\infty,\mu}+P R_{\infty,\mu},&
+ h_{\infty,\mu}&=D_{\infty,\mu}^{-1}.&&
+ \nonumber
+\end{align}
+Here $\mathfrak a_M(z)=\prod_\nu s_M(z_\nu)^2$ is the quantity
+previously called the central $A(z)$, not a retained-coordinate matrix.
+Keep $d_\mu^\pm=e^{\pm iz_\mu}-1$ and $b_\mu=d_\mu^+d_\mu^-$,
+and set
+\begin{equation}\label{limit-E}
+ E_\infty=\mathfrak a^{-1}-\sum_\mu
+ \frac{b_\mu R_{\infty,\mu}}
+      {g_{\infty,\mu}D_{\infty,\mu}}.
+\end{equation}
+The explicit limiting precision is
+\begin{equation}\label{limit-explicit-symbol}
+ (q_\infty)_{\mu\nu}(z)
+ =P(z)h_{\infty,\mu}(z)\delta_{\mu\nu}
+ -\frac{h_{\infty,\mu}(z)d_\mu^+(z)d_\nu^-(z)
+                  h_{\infty,\nu}(z)}{E_\infty(z)}.
+\end{equation}
+
+On real nonzero momenta, this is the gauge quotient of the continuum
+alias covariance with diagonal entries
+\begin{equation}\label{limit-continuum-covariance}
+ c_{\infty,\mu}(x)=
+ \sum_{r\in\mathbb Z^d}
+ \frac{s(x_\mu+2\pi r_\mu)^2
+               \prod_\nu s(x_\nu+2\pi r_\nu)^2}
+      {\sum_\nu(x_\nu+2\pi r_\nu)^2}.
+\end{equation}
+Explicitly, if $W_\infty=\diag(c_{\infty,\mu})$, it equals
+$W_\infty^{-1}-W_\infty^{-1}d^+
+(d^-W_\infty^{-1}d^+)^{-1}d^-W_\infty^{-1}$.
+The singular principal Feynman term of
+\eqref{limit-continuum-covariance} is not used at $x=0$; the canceled
+formula \eqref{limit-explicit-symbol} supplies the continuation.
+
+Choose a closed smaller box inside the established common holomorphic
+domain, still with a real margin beyond $[-\pi,\pi]^d$. The finite
+denominators $g_{M,\mu},D_{M,\mu},E_M$ have uniform positive modulus
+lower bounds there. At the central alias,
+\eqref{limit-factor-comparison} and the direct sine expansion give
+$O(M^{-2})$ convergence of $P_{M,0}$ to $P$ and
+$\mathfrak a_M,g_{M,\mu}$ to their limits. Together with
+\eqref{limit-remainder-rate}, this gives $O(M^{-2})$ convergence of
+$D_{M,\mu}$ and then $E_M$. Their lower bounds pass to the limits.
+The canceled rational expression is uniformly Lipschitz on this
+bounded set separated from its denominator zeros. This proves
+\eqref{limit-symbol-rate} on the smaller strip.
+
+Every one-variable zero at $z_\nu+2\pi r_\nu=0$ is filled by the
+entire sinc function. If $z_\nu=0$ and $r_\nu\ne0$, that sinc
+factor is zero and the alias term vanishes; its high denominator is
+still nonzero by \eqref{limit-high-denominator-infinite}. At $z=0$,
+all high numerators vanish, while
+\[
+ \mathfrak a(0)=g_{\infty,\mu}(0)
+ =D_{\infty,\mu}(0)=E_\infty(0)=1,
+ \qquad P(0)=d^\pm(0)=0.
+\]
+Thus $q_\infty(0)=0$. The exact identity
+$\sum_\mu b_\mu/g_{\infty,\mu}=P/\mathfrak a$ holds with
+the removable one-variable factors filled. It removes the whole
+complex null cone $P=0$ from \eqref{limit-explicit-symbol}.
+There is no exceptional rule on coordinate axes.
+
+The separated central and remainder pieces need not be periodic.
+The full finite-$M$ quotients are periodic on their common tube,
+so their uniform limit is periodic. Alternatively, reindex the
+absolutely convergent full sum \eqref{limit-continuum-covariance}
+on the real overlaps and apply the identity theorem. This also
+identifies the formula across Brillouin-chart seams.
+
+\subsection{Weighted convergence, inversion, and compatible tori}
+
+Choose $0<\kappa<\rho_0<\rho_*$. In the Fourier convention used
+above, shift the $\nu$th contour by $i\rho_0\operatorname{sign}(x_\nu)$.
+Equation \eqref{limit-symbol-rate} gives
+\[
+ \norm{(q_M-q_\infty)(x)}
+ \le CM^{-2}e^{-\rho_0|x|_1}.
+\]
+Summation proves \eqref{limit-action-rate}, with the explicit factor
+\begin{equation}\label{limit-weighted-rate}
+ \norm{q_M-q_\infty}_\kappa
+ \le\frac{C}{M^2}
+ \left(\frac{1+e^{-(\rho_0-\kappa)}}
+            {1-e^{-(\rho_0-\kappa)}}\right)^d.
+\end{equation}
+Grouping into the fixed $L$-block fibers preserves this rate.
+Because $K_L,T_L$ are fixed finite-range maps,
+\[
+ A_{M,0}-A_{\infty,0}=K_L^*(q_M-q_\infty)K_L,
+ \qquad
+ \norm{A_{M,0}-A_{\infty,0}}_\kappa
+ \le\norm{K_L}_\kappa^2\norm{q_M-q_\infty}_\kappa.
+\]
+This is an operator-norm limit as well. Hence the real lower gap
+$A_{M,0}\ge\gamma_*I$ passes to $A_{\infty,0}$.
+The uniform locality and gap argument already proved for the flat
+covariance applies to the limit too. Reducing the exponential weight
+below the pointwise inverse-kernel decay exponent yields
+\[
+ \sup_M\norm{C_{M,0}}_\kappa+\norm{C_{\infty,0}}_\kappa<\infty.
+\]
+The exact resolvent identity and \eqref{limit-schur-algebra} then give
+\[
+ C_{M,0}-C_{\infty,0}
+ =C_{M,0}(A_{\infty,0}-A_{M,0})C_{\infty,0},
+\]
+\[
+ \norm{C_{M,0}-C_{\infty,0}}_\kappa
+ \le\norm{C_{M,0}}_\kappa
+     \norm{A_{M,0}-A_{\infty,0}}_\kappa
+     \norm{C_{\infty,0}}_\kappa
+ \le C_{d,L,\kappa}M^{-2}.
+\]
+This completes the infinite-volume estimate. In the sequence $M=L^k$
+its rate is $O(L^{-2k})$.
+
+Let $\Gamma$ be a compatible full-rank period lattice. Unit-lattice
+symbols sampled on the torus Fourier grid have periodized kernels, so
+\begin{equation}\label{limit-periodization}
+ (q_M^\Gamma-q_\infty^\Gamma)(x,y)
+ =\sum_{\gamma\in\Gamma}(q_M-q_\infty)(x-y+\gamma).
+\end{equation}
+The periodic distance is no greater than the distance of each image;
+thus its weighted Schur norm is bounded by
+\eqref{limit-weighted-rate}, independently of volume.
+
+For retained operators require $\Gamma\subset L\mathbb Z^d$ and
+the same periodic pivot convention. In $L$-block coordinates all
+operators have fixed finite-dimensional fibers. Periodization
+commutes with multiplication of absolutely summable block kernels:
+expand both image sums and decompose the intermediate point into a
+fundamental-domain point and its period translate. Therefore
+periodizing $A_{M,0}C_{M,0}=I=C_{M,0}A_{M,0}$ proves
+\[
+ C_{M,0}^\Gamma=(A_{M,0}^\Gamma)^{-1},
+\]
+with $A_{M,0}^\Gamma$ exactly the finite periodic source matrix.
+The same reasoning holds for the limit. This verifies the
+volume-uniform version of \eqref{limit-covariance-rate}, including
+short tori with coincident images and their correct multiplicities.
+
+If the shortest nonzero period tends to infinity, uniform exponential
+decay makes the image error vanish on every fixed finite coordinate
+set. Combining this error with the volume-independent $M^{-2}$ bound
+proves that the two limits commute. Growing volume with a bounded
+periodic direction instead produces a cylindrical limit. The proof
+uses exact homogeneous periodization; it says nothing about an
+arbitrary Dirichlet or retained-history covariance being a compression
+or periodization of the homogeneous one.
+
+\begin{remark}\label{limit-scope}
+The limit is the order-zero homogeneous Gaussian baseline. Under the
+finite-level constrained-minimizer identification, it is expressed in
+the actual retained integration coordinates of the source step. It
+does not establish an interacting Yang--Mills ultraviolet limit,
+nonflat-background convergence, independent-current derivative
+bounds, or arbitrary retained-history boundary matching. Those
+interfaces are unchanged, and no sharp cutoff domain is moved by
+the calculation.
+\end{remark}
+
+\section{The actual flat source covariance}\label{sec:source}
+
+The maps must remain distinct. $Q_M^{\rm st}$ goes from original
+spacing $M^{-1}$ to unit spacing; the rooted composition has the
+same energy infimum through the explicit gradient adjustment of
+Notebook 06. $S_L,T_L,K_L$ concern the next unit-to-$L$ step.
+The averaged Feynman covariance $W$ is an intermediate calculation,
+not the actual reduced fluctuation covariance.
+
+Raw II, the small-field step around lines 73860--74020, records the
+quadratic expansion, exponential gauge fixing, straightening of the
+nonlinear constraint, coupling rescaling, and pivot elimination of
+CMP109 (2.11)--(2.13). At $(U,J)=(1,0)$, the stationary action
+Hessian is $q_M$, the gauge Hessian is $T_L^*T_L$, and the constraint
+straightening starts at quadratic order. Its second derivative
+therefore does not change the stationary Hessian. Haar and Jacobian
+terms remain in the fluctuation interaction. The retained Gaussian
+coordinates are exactly the nonpivot variables inserted by $K_L$.
+Under the smooth constrained-minimizer identification of Notebook 06,
+the source covariance is consequently
+\[
+ C^{(k)}(1)=\bigl(K_L^*[q_M+T_L^*T_L]K_L\bigr)^{-1}.
+\]
+
+The kernel convention matters: Raw I, lines 46960--47000, writes
+the discrete next-step matrix coefficient as $L^{-d}Q^\flat(c,b)$.
+At flatness its pivot kernel is the identity, so the actual insertion
+coefficient is $-Q^\flat(c,b)=-L^dS_L(c,b)$ on nonpivot columns,
+exactly as used here. No nonlocal inverse is hidden in this pivot map.
+
+The source's differently gauge-fixed auxiliary $G_1$ is not the
+Feynman inverse used in \eqref{eq:feynman}. Its transcribed identities
+$G_1^{-1}=\Delta_1+DRD^*+Q^*aQ$,
+$H_1=G_1Q^*(QG_1Q^*)^{-1}$, $QH_1=I$, and $RD^*H_1=0$
+instead give $H_1^*\Delta_1H_1=(QG_1Q^*)^{-1}-a$.
+The variational source match identifies that physical action Hessian
+with $q_M$; it does not identify the two auxiliary propagators.
+
+The result supplies a uniformly positive, bounded, exponentially
+local flat covariance on the exact retained coordinates of this
+full-block step. What remains for the Gaussian cutoff application
+is weighted control of the actual complex independent-current
+precision perturbation or its source responses. The flat proof
+does not provide those derivatives, arbitrary-reference background
+locality, mixed-history domain bounds, or permission to change a
+sharp cutoff's integration coordinates. Overlapping interactions
+and the continuum Yang--Mills obligations also remain separate.
+
+\begin{thebibliography}{9}
+\bibitem{repo} \href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}
+{Pinned Yang--Mills-LLM-experiment account}, commit
+\texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+\bibitem{balaban109} T. Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field theories I},
+Commun. Math. Phys. 109 (1987), 249--301.
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-3ygai0vxt1.pdf}
+{Copy of the original article}.
+\end{thebibliography}
+\end{document}

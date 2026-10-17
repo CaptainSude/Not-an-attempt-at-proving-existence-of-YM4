@@ -1,0 +1,169 @@
+\section{From curvature rarity to full-measure box windows}
+\label{fbb:section}
+
+The two preceding probability estimates can be joined without
+assuming that a boundary field is typically close to the identity
+in an unfixed gauge. The resulting windows are defined by an
+explicit local tree gauge and a conditional Wilson minimizer.
+They still differ from the nonlinear coarse-average windows in
+the homogeneous renormalization construction.
+
+\begin{lemma}[A boundary-only gauge at fixed geometry]
+\label{fbb:boundarygauge}
+For the fixed four-dimensional cubical box \(\Omega\), choose a
+spanning tree \(\mathcal T_\partial\) of its boundary edge graph
+and a root vertex. There is a finite constant \(L_R\) such that
+every boundary field has a boundary gauge, determined only by its
+boundary edges, with
+\[
+ V_e=I\quad(e\in\mathcal T_\partial),\qquad
+ \max_{e\in E_\partial}\norm{V_e-I}_\tau
+ \leq L_R\max_{p\subset\partial\Omega}\norm{U_p-I}_\tau.
+\]
+The estimate concerns boundary plaquettes, not plaquettes through
+the interior. No assertion uniform in \(R\) is made.
+\end{lemma}
+\begin{proof}
+Fix the root gauge to \(I\) and gauge the boundary tree edges to \(I\)
+by recursion. Every remaining boundary edge becomes the holonomy
+of its fixed tree fundamental loop. The boundary cubical complex is
+homeomorphic to \(S^3\); its two-skeleton has trivial fundamental
+group. Each of the finitely many fundamental loops is therefore a
+finite product of conjugates of elementary boundary plaquette
+loops and their inverses, as a word in the graph edge generators.
+This assertion follows directly from the cellular presentation of
+the fundamental group: the plaquette boundary words normally
+generate all relations in the graph fundamental group. Choose one
+such finite word once for each non-tree edge and let \(L_R\) be the
+largest number of plaquette factors used.
+
+For unitary matrices \(A_j\), telescoping gives
+\(\norm{\prod_j A_j-I}_\tau\leq\sum_j\norm{A_j-I}_\tau\).
+Conjugation and inversion preserve this distance. Applying this
+inequality to the chosen word proves the bound, regardless of
+the size of its conjugating holonomies.
+\end{proof}
+
+Choose \(\varepsilon_R>0\) so small that
+\(\sqrt2 L_R\varepsilon_R\) lies inside the small boundary
+neighborhood in Theorem~\ref{fbw:theorem}. We may and do take that
+neighborhood to be a conjugation-invariant product ball. Call a
+box boundary good when
+\[
+ h(U_p)<\varepsilon_R^2\quad\hbox{for every }p\subset\partial\Omega.
+\]
+On a good boundary, apply the boundary-only gauge in
+Lemma~\ref{fbb:boundarygauge}; extend its vertex values into the
+box arbitrarily, then perform the rooted forest gauge of
+Section~\ref{fbw:section}, keeping the transformed boundary fixed.
+The final representative is independent of that arbitrary extension:
+two extensions differ by an interior gauge, which the unique forest
+normalization removes. It is also the representative obtained by
+gauging the full spanning tree
+\(\mathcal T_\partial\cup\mathcal F\) to \(I\).
+
+Define the box bad event \(D_\Omega(g,T)\) as follows:
+the boundary is bad, or the boundary is good and the resulting
+interior representative lies outside \(W_{V,g,T}\). All these maps
+are measurable. The event is gauge invariant. Indeed, an arbitrary
+original gauge transformation changes the full tree representative
+only by constant conjugation at its root. The conditional minimizer
+transforms by that same conjugation, by uniqueness, and the local
+logarithm and edge-max norm respect conjugation.
+
+\begin{theorem}[Prescribed local box defects in the full Wilson measure]
+\label{fbb:boxes}
+Fix \(R,b\), with \(b\geq3\), and consider a periodic four-dimensional
+lattice with side lengths divisible by \(2b\). Let
+\(\Omega_1,\ldots,\Omega_m\) be embedded translates of the fixed box
+with pairwise disjoint vertex sets. Put
+\[
+ Q_b=b^4\binom42,\qquad
+ N_\partial=\#\{p:p\subset\partial\Omega\}=24R^3,
+\]
+and let \(z_b(g,\varepsilon_R)\) be the bad-cell factor of
+Section~\ref{fwp-section}. There are constants \(C,c,r,g_0>0\),
+independent of the total torus size and of the chosen boxes, such
+that
+\begin{equation}
+ \mu_g\left(\bigcap_{i=1}^m D_{\Omega_i}(g,T)\right)
+ \leq \left[
+       C e^{-cT^2}
+       +N_\partial z_b(g,\varepsilon_R)^{1/Q_b}
+       \right]^m
+ \quad(0<g\leq g_0,\ 1\leq T\leq r/g).
+ \label{fbb:joint}
+\end{equation}
+In particular, for every \(a>1/2\), the bracket with
+\(T(g)=(\log(1/g))^a\) is smaller than every fixed power of \(g\)
+as \(g\downarrow0\).
+\end{theorem}
+\begin{proof}
+Condition on every edge outside the union of the boxes' interior
+edge sets \(E_{\circ,i}\). This includes all box boundary edges.
+Every plaquette meeting \(E_{\circ,i}\) lies wholly in \(\Omega_i\).
+Disjointness of the vertex sets therefore ensures that no plaquette
+meets two integrated edge sets. The conditional law factorizes
+exactly into the independent conditional Wilson laws of the
+individual boxes; all remaining action terms are constant under
+these integrations.
+
+Write \(B_i\) for a bad boundary and \(F_i\) for the interior-window
+failure on a good boundary. Each \(B_i\) is measurable under the
+conditioning. The boundary gauge is also fixed under it, and it
+preserves the conditional product Haar law and the action.
+Theorem~\ref{fbw:theorem} consequently gives
+\[
+ \mathbb P(F_i\mid\hbox{conditioned edges})
+ \leq a_g\,\mathbf1_{B_i^c},\qquad a_g=Ce^{-cT^2}.
+\]
+The \(F_i\)'s are conditionally independent.
+
+For any subset \(J\) of boxes, a union bound over one offending
+boundary plaquette in each box, followed by the prescribed-plaquette
+bound of Section~\ref{fwp-section}, gives
+\begin{equation}
+ \mu_g\left(\bigcap_{i\in J}B_i\right)
+ \leq \left[N_\partial
+              z_b(g,\varepsilon_R)^{1/Q_b}\right]^{|J|}.
+ \label{fbb:boundaryrare}
+\end{equation}
+The selected plaquettes are distinct because the boxes have disjoint
+vertex sets. This is a correlated full-measure estimate; independence
+of the boundaries is not used.
+
+Expand \(\bigcap_i(B_i\cup F_i)\) over \(J\), the boxes assigned
+the boundary-bad alternative. Conditional factorization bounds
+the contribution for \(J\) by
+\(a_g^{m-|J|}\mu_g(\bigcap_{i\in J}B_i)\), after dropping other
+good-boundary indicators. Substituting
+\eqref{fbb:boundaryrare} and summing the binomial expression proves
+\eqref{fbb:joint}.
+
+Finally, the explicit bad-cell exponent has fixed threshold
+\(\varepsilon_R\) and fixed \(b\):
+\[
+ z_b(g,\varepsilon_R)^{1/Q_b}
+ \leq \exp\left[-\frac{\varepsilon_R^2}{Q_b g^2}
+                       +C_{b,G}\log(1/g)+C_{b,G}\right]
+\]
+for sufficiently small \(g\). This and
+Corollary~\ref{fbw:logwindow} prove the last assertion.
+\end{proof}
+
+\paragraph{What this joins, and what it does not.}
+The theorem gives joint rarity of actual, gauge-invariant local
+coordinate defects under the complete bare Wilson measure. It
+combines a correlated boundary estimate with conditional interior
+normalization and does not replace the Wilson measure by a Gaussian
+law. For a fixed separated grid of such boxes, the usual connected-set
+counting yields Peierls tails with the displayed bracket.
+
+The representative and minimizer are those of a fixed conditional
+box with all its boundary edges held fixed. They are not identified
+with the averaged, constrained minimizer and independent retained
+cutoffs of the existing multiscale map. No derivative regularity,
+complex-source estimate, growing-box constant, or post-renormalization
+reflection positivity follows from this theorem. Thus it is a
+concrete full-measure local bridge, while the multiscale mixed-history
+induction remains an additional theorem to prove.

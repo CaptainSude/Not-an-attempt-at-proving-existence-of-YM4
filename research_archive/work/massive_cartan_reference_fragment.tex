@@ -1,0 +1,174 @@
+% No preamble. Prefix mcr-. This is a continuum reference, not a lattice comparison.
+\section{A completely specified massive continuum reference}
+\label{mcr-section}
+
+We compute a reference with its regulator and normalization fixed.
+This supplies a target for comparison, not an identification of
+the actual constrained lattice determinant with that target.
+The background-field operators and heat coefficient agree with
+the conventions described in \cite{vassilevichctn}, Sections 3.4,
+4.2.1 and 8.3. The calculation below keeps the regulator and
+the one-color Maxwell extraction explicit.
+
+Use final physical coordinates on \(\mathbb R^4\), scalar mass
+\(m>0\), and a lower proper-time cutoff \(\epsilon^2>0\).
+Choose a Hermitian Cartan element \(H\) with
+\(\tau(H^2)=1\). Let \(q\) run over the eigenvalues of
+\(\operatorname{ad}_H\) on the complexified adjoint space,
+with multiplicities. Both signs of a nonzero charge are
+included. Complexification has the same trace as the
+original real color space; it does not introduce another
+factor of two. Put
+\[
+ C_H=\sum_q q^2.
+\]
+For one constant curvature component \(F_{12}=fH\), a charge
+sector has scalar operator \(L_q=-D_\mu D_\mu\), where one
+may choose \(D_2=\partial_2+iqf x_1\) and the other derivatives
+ordinary. The vector reference is
+\[
+ (V_q)_{\mu\nu}=L_q\delta_{\mu\nu}-2iqF^{(1)}_{\mu\nu},
+ \qquad F^{(1)}_{12}=f,\quad F^{(1)}_{21}=-f.
+\]
+The spin matrix has eigenvalues \(0,0,2qf,-2qf\).
+Its sign convention has no effect on its trace.
+We add \(m^2\) to both operators.
+
+\subsection{Exact diagonal heat traces}
+\label{mcr-heat-section}
+
+Fourier transformation in \(x_2\) reduces the magnetic
+plane to oscillators with eigenvalues \(|qf|(2n+1)\).
+For a normalized oscillator eigenfunction, integration
+of its shifted squared value gives
+\[
+ \int_{\mathbb R}\frac{dp_2}{2\pi}
+  \left|\psi_n\!\left(x_1+\frac{p_2}{qf}\right)\right|^2
+       =\frac{|qf|}{2\pi}.
+\]
+Thus this is a pointwise diagonal density calculation,
+without a finite-box degeneracy assumption. Summing the
+oscillator levels and multiplying by the heat density
+of the two free coordinates gives
+\begin{equation}
+ k_q(s;f)=(4\pi s)^{-2}\frac{qfs}{\sinh(qfs)}.
+ \label{mcr-scalar-heat}
+\end{equation}
+At \(qf=0\) the fraction is defined by its limit.
+The vector density is
+\[
+ k_q(s;f)\{2+2\cosh(2qfs)\}.
+\]
+
+Define the normalized proper-time determinant correction
+with weights \(-\tfrac12\log\det(V+m^2)+\log\det(L+m^2)\).
+Here this phrase means the following density integral;
+there is no infinite-volume determinant:
+\begin{equation}
+ {\cal R}_{\epsilon,m}(f)
+ =\frac1{16\pi^2}\int_{\epsilon^2}^{\infty}
+       \frac{ds}{s^3}e^{-m^2s}
+       \sum_q\left\{\frac{qfs}{\sinh(qfs)}
+                          \cosh(2qfs)-1\right\}.
+ \label{mcr-reference}
+\end{equation}
+The sign follows from
+\(\log P=-\int ds\,e^{-sP}/s\), after subtraction and
+the specified proper-time cutoff. The two vector
+polarizations with zero spin cancel the scalar ghost
+in this combined expression.
+
+For real \(|f|\max_q|q|<m^2\), the massive vector has
+positive bottom and the integral converges at infinity.
+On a smaller real interval, differentiation twice at
+zero is justified by a common exponentially decaying
+majorant. In particular, the notation \([f^2]\) below
+denotes half the second real derivative at zero.
+We do not assert a convergent complex Taylor series
+in a nonzero constant magnetic field.
+
+\begin{proposition}[Normalized reference coefficient]
+\label{mcr-coefficient}
+Set \(E_1(x)=\int_x^\infty e^{-u}\,du/u\). In the
+normalization \(\beta=2[f^2]\) used in this notebook,
+\begin{equation}
+ \beta_{\rm ref}(\epsilon,m)
+       =\frac{11C_H}{48\pi^2}E_1(m^2\epsilon^2).
+ \label{mcr-beta}
+\end{equation}
+In particular, with \(m=1\), \(\epsilon=K^{-1}\),
+\begin{equation}
+ \left|\beta_{\rm ref}(K^{-1},1)
+           -\frac{11C_H}{24\pi^2}\log K\right|
+ \le \frac{11C_H}{48\pi^2}(1+e^{-1}),\qquad K\ge1.
+ \label{mcr-finite-part}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The scalar magnetic factor and the spin factor give
+\[
+ \frac{x}{\sinh x}\cosh(2x)
+       =1+\frac{11}{6}x^2+O(x^4).
+\]
+Differentiating \eqref{mcr-reference} twice at zero
+therefore gives
+\[
+ [f^2]{\cal R}_{\epsilon,m}
+    =\frac{11C_H}{96\pi^2}
+           \int_{\epsilon^2}^{\infty}\frac{e^{-m^2s}}s\,ds.
+\]
+The substitution \(u=m^2s\) proves \eqref{mcr-beta}.
+For \(0<x\le1\),
+\[
+ E_1(x)-\log(1/x)
+   =\int_x^1\frac{e^{-u}-1}{u}\,du
+                  +\int_1^\infty\frac{e^{-u}}u\,du.
+\]
+The absolute value is at most \(1+e^{-1}\). This proves
+the asserted uniform finite part.
+\end{proof}
+
+For the repository's \(SU(N)\) normalization
+\(\tau=\operatorname{Tr}_{\rm fund}/N\), write
+\(H=\operatorname{diag}(h_1,\ldots,h_N)\). Then
+\(\sum_i h_i=0\), \(\sum_i h_i^2=N\), and the
+nonzero-color charges are \(h_i-h_j\), \(i\ne j\);
+the \(N-1\) Cartan charges vanish. Consequently
+\[
+ C_H=\sum_{i,j}(h_i-h_j)^2
+              =2N\sum_i h_i^2=2N^2.
+\]
+The coefficient of \(\log K\) is thus
+\(11N^2/(12\pi^2)\), or \(11/(3\pi^2)\) for \(SU(2)\),
+in this one-normalized-color convention.
+This is not a sum of \(N^2-1\) different Maxwell extractions.
+
+\subsection{Scale and regulator bookkeeping}
+\label{mcr-scaling-section}
+
+The same continuum reference can be written in current
+fine units, with cutoff \(s\ge1\), mass \(K^{-1}\), and
+curvature \(f/K^2\). Multiplication of that density by
+the block volume \(K^4\), followed by \(s=K^2u\), gives
+exactly \eqref{mcr-reference} with \(\epsilon=K^{-1}\),
+\(m=1\). Thus there is no additional factor of \(K^4\)
+in its extracted coefficient. This is a change of units
+within the continuum reference, not a replacement of a
+lattice heat kernel by a continuum kernel.
+
+Fixed positive changes of these continuum regulators
+have a bounded effect. For \(c,m>0\),
+\begin{equation}
+ |\beta_{\rm ref}(c/K,m)-\beta_{\rm ref}(1/K,1)|
+ \le\frac{11C_H}{24\pi^2}|\log(cm)|.
+ \label{mcr-regulator-change}
+\end{equation}
+Indeed, the difference of the two \(E_1\) integrals is
+bounded by the integral of \(du/u\) between their lower
+limits. Uniformity follows when \(cm\) remains in a
+fixed compact subinterval of \((0,\infty)\).
+This estimate does not compare a based ghost to an
+unbased massive ghost, change a lattice constraint, or
+control a massless zero-mode limit.
+

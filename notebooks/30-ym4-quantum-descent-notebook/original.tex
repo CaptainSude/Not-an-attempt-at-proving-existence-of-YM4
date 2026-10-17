@@ -1,0 +1,2078 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 30: quantum descent and renormalized block stability}
+\author{Research working document}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We continue the existence argument by constructing the local quantum
+update on the complete interaction quotient of Notebook 29.
+Actual finite minimum comparisons supply connecting gauges that,
+in the infinite local limit, approach one constant exponentially.
+Compact gauge approximation then proves that classical substitution
+preserves local gauge invariance for every invariant input class.
+A norm-preserving periodic construction identifies finite normalized
+interactions independently of their carrier representation, including
+wrapping supports and exact finite Ward identities.
+
+The actual strict Gaussian expansion is continuous in its local
+analytic data. Its proof uses support incidence, strict marked-order
+tails, an explicit positive inherited-cardinality margin and finite
+dimensional dominated convergence. These estimates define the
+homogeneous local quantum map on the invariant quotient and bound
+the input dependence of its quantum remainder by
+\(C(gT/b)\). Finite translation averaging identifies limits of varying
+finite inputs with the same map, giving compatibility for every fixed
+finite history inside the common budgets.
+
+We then examine the renormalized recurrence using the actual classical
+reference actions and the finite endpoint ratio \(R^q\).
+Exact reference transport cancels intermediate classical projections.
+A fixed outer field domain and vanishing total linear jet give
+an \(O(b^2)\) zero-input quantum force on the inner radius \(b\).
+The extracted activities therefore have an \(O(b^2)\) invariant
+envelope under a finite block of sufficiently weak steps, with
+all intermediate inputs in the common domain. Every quantum
+correction and vacuum factor remains present. These estimates concern
+the homogeneous local sector relative to one fixed joint classical
+system. The running
+coupling must obey its actual extraction equation; a prescribed
+sequence of small parameters does not by itself furnish that
+trajectory. Mixed and large-field histories, sourced bounds and
+the continuum observable theory remain necessary for existence.
+\end{abstract}
+
+The objective is a nontrivial four-dimensional Yang--Mills quantum
+theory. All results here use the finite constructions of Notebooks
+15--29 with their stated common domains and actual retained-link
+windows. The proofs below add explicit bridges between finite
+normalized integrals, infinite analytic interaction classes and
+renormalized activity estimates. They do not assume that equality
+of infinite compact-field totals automatically identifies a finite
+integral, nor that a final norm bound alone proves continuity.
+
+
+
+% No preamble. Prefix csgq-. Fixed joint homogeneous background system.
+\section{Summable connecting gauges and the invariant quotient}
+\label{csgq-section}
+
+This section closes the gauge-invariance interface for classical
+substitution on the analytic interaction quotient. Its finite-regulator
+inputs are the actual ordinary-minimum comparison and equality theorem,
+the ordinary-to-corrected transfer, the constraint-preserving flat-slice
+flow, and the coherent pre-gauge support estimates. It does not assume a
+weighted estimate for the nonlinear gauge-fixing inverse.
+
+\subsection{Joint limits, domains and the statement}
+\label{csgq-input-section}
+
+Fix a preceding homogeneous refinement $M$, a finite allowed endpoint
+ratio $L$, and a single joint subsequence of compatible cubic regulators.
+Let
+\begin{equation}
+ e^{ia_{L,N}(w)}=P_{M,L,N}(e^{iw})
+       \longrightarrow e^{ia_L(w)}
+ \label{csgq-background-limit}
+\end{equation}
+locally at every current link, locally uniformly in the finitely many
+variables of each compactly supported final field $w$. The current
+lattice has spacing $1/L$ in final physical units. Assume the established
+coherent support bound
+\begin{equation}
+ \|a_L(w)|_i\|_\infty
+ \le \rho e^{-\kappa\operatorname{dist}(i,K)},\qquad
+ \rho=\frac{C_A b}{L},
+ \qquad \|w\|_\infty<b,\quad \operatorname{supp}w\subset K.
+ \label{csgq-background-decay}
+\end{equation}
+Here $K$ is a finite set of final cells. The same assertion holds for
+every other compact datum in the ball. Joint analytic compactness and
+the finite-regulator support estimates supply this input; unrelated
+pointwise choices of subsequences do not replace it.
+
+Use a unitarily invariant matrix norm for group elements. Its comparison
+with the scalar-coordinate maximum norm defining the activity polydisc
+has fixed color-dependent constants. In particular, constant conjugation
+is not silently treated as an isometry of that coordinate maximum norm.
+All such comparison constants are included below. The dimension is
+$d\ge2$, with $d=4$ in the application. Constants in summability estimates
+may depend on fixed $L$ and on a finite compact support, but not on
+preceding refinement or approximating volume.
+
+Let $\mathcal Q_{\rm inv}$ be the quotient of anchored analytic
+interactions by equality of their vacuum-normalized totals on compact
+fields. Its invariant totals are invariant under constant global
+adjoint transformations and under compact local gauge paths that stay
+inside the analytic field ball. An identity for arbitrary disconnected
+endpoint gauges is not part of the conclusion. The summable-field
+extension of the quotient gives, for $0<\rho_1<b$,
+\begin{equation}
+ |\Phi_E(A)-\Phi_E(B)|
+ \le \frac{\|[E]\|_{\mathcal Q}}{b-\rho_1}
+                 \|A-B\|_{\ell^1_{\rm cell}},
+ \qquad \|A\|_\infty,\|B\|_\infty\le\rho_1.
+ \label{csgq-summable-continuity}
+\end{equation}
+The normalized total is absolutely convergent on these summable fields,
+and its value depends only on the class.
+
+\begin{theorem}[Universal local gauge identity for a fixed joint map]
+\label{csgq-main}
+Under these inputs, the scalar substitution
+\begin{equation}
+ [E]\longmapsto
+       \bigl(w\longmapsto \Phi_E(a_L(w))\bigr)
+ \label{csgq-substitution}
+\end{equation}
+preserves local gauge invariance for every invariant input class on a
+common smaller germ. If
+\begin{equation}
+             C_g C_A/L<1/2,
+ \label{csgq-margin-condition}
+\end{equation}
+where $C_g$ is the fixed group/chart constant constructed below, the
+compact connecting paths have a common strict margin in the original
+radius-$b$ field ball. The local analytic identity then holds throughout
+the connected common coarse domain:
+\begin{equation}
+             \Phi_E(a_L(w^v))=\Phi_E(a_L(w))
+ \label{csgq-gauge-identity}
+\end{equation}
+for the allowed compact local gauge transformations.
+
+The connecting gauges and domain choices are independent of $E$.
+Consequently, when the separately established connected representation
+and boundedness estimates for classical substitution apply,
+\eqref{csgq-substitution} is an action on the whole invariant quotient
+for this fixed joint background system.
+\end{theorem}
+
+\subsection{The small gauge supplied by the actual equality proof}
+\label{csgq-finite-section}
+
+We record the quantitative consequence of the ordinary-minimum equality
+proof. For an ordinary-feasible fine field $U=e^{i\eta A}$, the first
+transfer uses $g_1=e^{iH_b\theta}$. Its induced-gauge implicit equation
+and the cumulative gauge $b_j(U)$ obey
+\begin{equation}
+ \|\theta\|_\infty\le2\|\omega\|_\infty,\qquad
+ \omega=\log b_j(U)/i,\qquad
+ \|\omega\|_\infty\le C\|A\|_{C^{1,\alpha}}.
+ \label{csgq-first-transfer}
+\end{equation}
+The proved bound $H_b:\ell^\infty\to C^{2,\alpha}$ controls this gauge
+uniformly in mesh and volume. The constraint-preserving flat-slice flow
+has scalar velocity
+\begin{equation}
+ \lambda(t)=\mathcal L_{A(t)}A(t),\qquad
+ \|\lambda(t)\|_{C^{2,\alpha}}
+ \le C e^{-t}\|R_0D^T A(0)\|_{C^\alpha}
+ \le C e^{-t}\|A(0)\|_{C^{1,\alpha}}.
+ \label{csgq-flow}
+\end{equation}
+Integrating its actual unitary gauge ODE therefore gives
+\begin{equation}
+ \|g_2-I\|_\infty
+ \le C\int_0^\infty\|\lambda(t)\|_\infty\,dt
+ \le C\|A(0)\|_{C^{1,\alpha}}.
+ \label{csgq-integrated-gauge}
+\end{equation}
+Finally the selected ordinary representative is obtained from the
+strict corrected minimizer by
+$h_*=e^{iE_{\rm pt}\omega_*}$, where
+$\|\omega_*\|_\infty\le C\|B\|_\infty$ and
+$E_{\rm pt}:\ell^\infty\to C^{2,\alpha}$ is the fixed smooth
+point-value extension.
+
+If equality holds in the two minimum comparisons, strict convexity on
+the fixed slice identifies the intervening field with that corrected
+minimizer. The product of the actual transfer gauges consequently maps
+$U$ to the selected ordinary minimizer and satisfies
+\begin{equation}
+ \|g_{\rm eq}-I\|_\infty
+       \le C\bigl(\|A\|_{C^{1,\alpha}}+\|B\|_\infty\bigr).
+ \label{csgq-equality-gauge}
+\end{equation}
+The constants are uniform on the established smaller comparison balls.
+This is stronger than equality of action values alone. It uses no
+inverse massless gauge Laplacian and no unproved spatial locality of
+$\mathcal L_A$.
+
+For a compact coarse gauge $v=e^{i\theta}$, extend its prescribed values
+to the original fine lattice by
+$\widehat v=e^{iE_{\rm pt}\theta}$. This extension is compact in physical
+space and has $C^{2,\alpha}$ norm bounded by $C\|\theta\|_\infty$,
+uniformly in the fine mesh. The fields
+$U_{\rm ord}(w)^{\widehat v}$ and $U_{\rm ord}(w^v)$ obey the same
+ordinary constraint. The two minimum comparisons, one using the
+inverse gauge, give equality. Equation \eqref{csgq-equality-gauge}
+therefore provides an actual fine gauge $g_N$ with
+\begin{equation}
+ U_{\rm ord,N}(w^v)=U_{\rm ord,N}(w)^{g_N},\qquad
+ \|g_N-I\|_\infty\le C(b+\|\theta\|_\infty)\le\delta.
+ \label{csgq-finite-orbit}
+\end{equation}
+Choose the data and local gauge neighborhoods so that $\delta$ is a
+fixed small number. Every competitor has complete fine-potential norm
+at most $C(b+\|\theta\|_\infty)$ and hence lies in the actual comparison
+class. Ordinary covariance of the prefix gives
+\begin{equation}
+ e^{ia_{L,N}(w^v)}
+       =\bigl(e^{ia_{L,N}(w)}\bigr)^{g_N|_{\rm current}}.
+ \label{csgq-prefix-orbit}
+\end{equation}
+
+\subsection{An infinite connecting gauge and its tail}
+\label{csgq-tail-section}
+
+Fix real compact $w,\theta$ in these neighborhoods. The endpoint
+configurations already converge along the specified joint subsequence.
+Compactness of the group and a diagonal subsequence over current sites
+give a limiting gauge for this pair. Taking a further subsequence of
+gauges changes neither specified endpoint limit. With
+$U=e^{ia_L(w)}$ and $V=e^{ia_L(w^v)}$, local passage gives
+\begin{equation}
+ V_{xy}=g(x)U_{xy}g(y)^{-1},\qquad
+                 \sup_x\|g(x)-I\|\le\delta.
+ \label{csgq-infinite-orbit}
+\end{equation}
+No simultaneous or holomorphic choice of $g$ for all pairs is required.
+Both endpoints have exponential decay because $w,w^v$ are compact.
+
+\begin{lemma}[One constant at infinity]
+\label{csgq-constant-lemma}
+Let compact-group link fields $U,V$ on $\mathbb Z^d$, $d\ge2$, satisfy
+$V=U^g$. Suppose their positive bonds based at $x$ obey
+\begin{equation}
+       \|U_b-I\|+\|V_b-I\|\le C_K e^{-\mu|x|_\infty}.
+ \label{csgq-endpoint-tail}
+\end{equation}
+Then there is a single $c\in G$ such that
+\begin{equation}
+ \|g(x)-c\|\le C'_K(1+|x|_\infty)e^{-\mu|x|_\infty}.
+ \label{csgq-gauge-tail}
+\end{equation}
+Thus $c^{-1}g-I$ is summable. If $\|g-I\|_\infty\le\delta$, its
+supremum is at most $2\delta$.
+\end{lemma}
+\begin{proof}
+The edge equation implies $g(y)=V_{xy}^{-1}g(x)U_{xy}$.
+Unitary invariance of the matrix norm gives
+\begin{equation}
+       \|g(y)-g(x)\|\le\|U_{xy}-I\|+\|V_{xy}-I\|.
+ \label{csgq-edge-bound}
+\end{equation}
+The ray $g(ne_1)$ is Cauchy, with tail $O(e^{-\mu n})$, and
+its limit $c$ belongs to $G$. For $n=|x|_\infty$, the lattice boundary
+of $[-n,n]^d$ connects $x$ to $ne_1$ by a path of length at most
+$C_dn$. A boundary coordinate can be held at $\pm n$ while the other
+coordinates are adjusted; a second boundary coordinate permits changing
+its sign. This uses $d\ge2$. Each positive lower endpoint has norm at
+least $n-1$. Summing \eqref{csgq-edge-bound} along the path gives
+$C_dnC_Ke^{-\mu(n-1)}$. Combining this with the ray tail proves
+\eqref{csgq-gauge-tail}. Polynomial shell growth proves summability.
+Taking the limit in the small-supremum bound and using
+$\|c^{-1}g-I\|=\|g-c\|$ gives the last assertion.
+\end{proof}
+
+For the actual fields, \eqref{csgq-background-decay} implies
+\eqref{csgq-endpoint-tail} with $\mu$ a positive multiple of
+$\kappa/L$, after enclosing their finite final supports in a cube.
+Support-dependent constants are harmless for equality of evaluations.
+In one dimension the two ends can have different constants; the
+restriction $d\ge2$ is substantive.
+
+\subsection{Compact gauge paths with a common strict margin}
+\label{csgq-path-section}
+
+Put $h=c^{-1}g$. Then $h-I\in\ell^1$ and
+\begin{equation}
+                         U^h=c^{-1}Vc.
+ \label{csgq-normalized-gauge}
+\end{equation}
+For sufficiently small $\delta$ choose the common Hermitian logarithm
+$h(x)=e^{i\lambda(x)}$. It has small supremum and belongs to $\ell^1$.
+Let $\lambda_n$ equal $\lambda$ inside a current cube of radius $n$
+and vanish outside, and set $h_n=e^{i\lambda_n}$. These gauges are
+compact and
+\begin{equation}
+ \|h_n-h\|_{\ell^1}\longrightarrow0,\qquad
+ \|U^{h_n}_b-U^h_b\|
+       \le\|h_n(x)-h(x)\|+\|h_n(y)-h(y)\|.
+ \label{csgq-compact-gauge-limit}
+\end{equation}
+Hence the transformed links, and their potentials on a common strict
+logarithm chart, converge in cell $\ell^1$. A smooth physical cutoff is
+not needed on this fixed current lattice: the truncation jump itself
+decays exponentially.
+
+The paths, not just their endpoints, stay in the analytic domain.
+The edge equation and the Lipschitz bound for the small logarithm give
+\begin{equation}
+ \|\lambda(y)-\lambda(x)\|
+ \le C\bigl(\|a_L(w)_b\|+\|a_L(w^v)_b\|\bigr)\le C\rho.
+ \label{csgq-log-gradient}
+\end{equation}
+For all sufficiently large $n$, the exterior truncation jump of
+$\lambda_n$ is also at most $\rho$. Duhamel's formula for real
+Hermitian matrices yields, for $0\le t\le1$,
+\[
+ \|e^{it\lambda_n(y)}-e^{it\lambda_n(x)}\|
+                  \le\|\lambda_n(y)-\lambda_n(x)\|.
+\]
+The small link logarithm and fixed color-norm comparisons consequently
+give
+\begin{equation}
+ \sup_{0\le t\le1}
+   \left\|\frac1i\log\bigl(U^{e^{it\lambda_n}}\bigr)\right\|_\infty
+                    \le C_g\rho.
+ \label{csgq-path-margin}
+\end{equation}
+Here $C_g$ is independent of support, truncation radius, refinement and
+volume. Condition \eqref{csgq-margin-condition} places these paths
+strictly below $b/2$. At a smaller fixed endpoint ratio, restricting
+the data radius gives a local germ instead; a whole-ball margin is
+not inferred without the condition.
+
+The input field in \eqref{csgq-path-margin} is summable rather than
+compact. Before invoking the defining invariance of the quotient,
+truncate its potential to a much larger cube containing the support of
+$\lambda_n$ and all adjacent bonds. Inside the gauge support this
+compact input is unchanged. Outside, the gauge is the identity and
+the field is either unchanged or zero. The same strict path bound
+therefore holds. Compact-field local gauge invariance and then
+\eqref{csgq-summable-continuity}, as the input truncation tends to
+infinity, give
+\begin{equation}
+              \Phi_E(\log U^{h_n}/i)=\Phi_E(\log U/i).
+ \label{csgq-compact-path-identity}
+\end{equation}
+Now send $n$ to infinity using \eqref{csgq-compact-gauge-limit} and
+\eqref{csgq-summable-continuity}. Extend constant global adjoint
+invariance to summable fields by the same compact-input approximation.
+The result is
+\begin{equation}
+ \Phi_E(a_L(w))
+   =\Phi_E(\operatorname{Ad}_{c^{-1}}a_L(w^v))
+   =\Phi_E(a_L(w^v)).
+ \label{csgq-real-identity}
+\end{equation}
+This proof uses the same gauges and margins for every invariant class.
+
+\subsection{Analytic continuation and precise scope}
+\label{csgq-scope-section}
+
+To finish Theorem \ref{csgq-main}, differentiate
+\eqref{csgq-real-identity} at zero compact coarse gauge parameter.
+The resulting infinitesimal identity is holomorphic in the finitely
+many coarse field variables on their connected product ball and
+vanishes on a real open set. It therefore vanishes throughout that
+complex ball. Integrating it along any allowed compact local gauge
+path that stays in the ball proves \eqref{csgq-gauge-identity}.
+This argument does not extend an infinitesimal Ward identity to
+arbitrary disconnected endpoint transformations.
+
+The same endpoint method preserves the spatial symmetries required
+by the invariant quotient, when the actual finite blocking and
+minimum problem have those symmetries. The transformed ordinary
+minimizer and the selected minimizer at transformed data are small
+feasible fields with equal minimum values. The actual equality proof
+supplies the controlled gauge; prefix covariance gives the endpoint
+orbit relation; compact data give exponential tails. The preceding
+compact-gauge argument applies, and the input total's spatial symmetry
+supplies the remaining change of variables. Constant adjoint covariance
+is exact for the equivariant construction, or follows from the small
+comparisons and connectedness of the compact group. Symmetry of
+individual carrier coefficients is unnecessary.
+
+Universality means that every admissible interaction class can be
+evaluated using this one fixed joint infinite background system.
+It does not assert uniqueness among different regulator subsequences.
+Semigroup identities require the maps and their compositions to
+belong to the same joint system; finite-regulator identities alone
+do not establish consistency for unrelated limits.
+
+The connected representation and boundedness of the quotient action
+remain separate analytic inputs. This section proves their missing
+universal gauge identity from the actual finite transfer and flow,
+endpoint decay, and summable-field continuity. It concerns homogeneous
+small fields, $d\ge2$, and compact local gauge paths. It proves neither
+quantum-integral descent on the quotient nor quantum induction,
+large-orbit or mixed-history control, or a continuum measure.
+
+
+% No preamble. Prefix pid-. Canonical normalized periodization only.
+\section{Bounded finite periodization of analytic interaction classes}
+\label{pid-section}
+
+Use the infinite activity space and normalized-total quotient of
+Notebook29. Fix the cell size $J$, at most $D$ scalar coordinates
+per cell, exponent $a>0$, and radius $b>0$. Carriers are nonempty
+finite connected subsets of the cell graph $\mathbb Z^d$, and
+\begin{equation}
+ \|E\|_{a,b}=\sup_i\sum_{H\ni i}e^{a|H|}\|E_H\|_b,
+ \qquad
+ \Phi_E(A)=\sum_H[E_H(A|_H)-E_H(0)]
+ \label{pid-space}
+\end{equation}
+on compact fields. Let $\Lambda_N=(\mathbb Z/N\mathbb Z)^d$;
+the underlying current lattice has period $NJ$. Write $\pi_N$
+for cell and coordinate projection and $A^{\rm per}$ for the
+infinite periodic lift of a finite field. It is bounded, generally
+not summable. Internal link directions and color types are
+identified by their actual periodic conventions.
+
+\begin{theorem}[Canonical normalized periodization]
+\label{pid-theorem}
+Every class with a $J$-cell-translation-invariant normalized total
+has a translation-covariant representative without increasing the
+norm of any chosen input representative. There is a canonical
+linear periodization map
+\begin{equation}
+ \operatorname{Per}_N:\mathcal Q^{\rm tr}_{a,b}
+                   \longrightarrow\mathcal Q^N_{a,b},
+ \qquad \|\operatorname{Per}_N\|\le1,
+ \label{pid-operator}
+\end{equation}
+where the finite quotient uses connected torus carriers and
+equality of vacuum-normalized totals. Its scalar functional is
+holomorphic on the original open radius-$b$ polydisc. Every
+fixed derivative tensor is the exact relative periodization of
+the infinite total tensor. Total spatial and color symmetries
+pass whenever they preserve the torus. Local gauge invariance
+passes on the specified common logarithmic chart.
+\end{theorem}
+
+The proof retains raw constants in carrier norms and normalizes
+only the total. It does not identify the result with an unrelated
+actual finite-regulator quantum output.
+
+\subsection{Translation averaging without norm loss}
+\label{pid-averaging-section}
+
+Let $\tau_t$ translate carriers, their coordinate slots and their
+functions by a cell-lattice vector $t$. It is an isometry of the
+activity space. If $[E]$ is translation invariant, then
+$[\tau_tE]=[E]$. For centered F\o lner cubes $F_m$, put
+\begin{equation}
+ E^{(m)}=\frac1{|F_m|}\sum_{t\in F_m}\tau_tE.
+ \label{pid-Cesaro}
+\end{equation}
+Its norm is at most $\|E\|_{a,b}$, and for every fixed $s$,
+\begin{equation}
+ \|\tau_sE^{(m)}-E^{(m)}\|_{a,b}
+ \le\frac{|(F_m+s)\mathbin\triangle F_m|}{|F_m|}
+                                      \|E\|_{a,b}\longrightarrow0.
+ \label{pid-Folner-bound}
+\end{equation}
+Each fixed carrier has finitely many input coordinates. Countable
+Montel extraction gives locally uniform limits $E_H^{\rm cov}$
+for all carriers. Fatou, first on finite carrier collections and
+smaller polydiscs and then at the original open radius, yields
+\begin{equation}
+ \|E^{\rm cov}\|_{a,b}\le\|E\|_{a,b}.
+ \label{pid-covariant-bound}
+\end{equation}
+Equation~\eqref{pid-Folner-bound} passes componentwise and gives
+exact covariance. On a compact input supported in $K$, the
+omitted carriers with $|H|>Q$ contribute at most
+$2|K|\|E\|_{a,b}e^{-aQ}$. The finite remaining sum converges,
+so $\Phi_{E^{\rm cov}}=\Phi_E$. No uniqueness of this covariant
+representative is needed.
+
+Only cell translations are averaged. Finer unit translations,
+point symmetries and color invariance need not hold for the
+individual representative and will pass through its total.
+
+\subsection{The exact orbit count and wrapped carrier norm}
+\label{pid-orbit-section}
+
+For a covariant representative define
+\begin{equation}
+ U_N^E(A)=\sum_{i\in\Lambda_N}\sum_{H\ni i}
+                 \frac{E_H(A^{\rm per}|_H)}{|H|},
+ \qquad
+ \Phi_N^{[E]}(A)=U_N^E(A)-U_N^E(0).
+ \label{pid-density}
+\end{equation}
+Choose one fundamental representative for each cell $i$. The
+formula is independent of that choice by covariance. Its series
+is absolutely convergent in the supremum norm on the full open
+$b$ polydisc, bounded by $N^d\|E\|_{a,b}$ before normalization.
+
+Let $\mathcal O$ be an orbit of finite carriers under
+$N\mathbb Z^d$. A nonempty finite carrier has no nonzero
+translation stabilizer. Every point in a representative $H$
+corresponds to exactly one incidence pair $(i,H')$ with
+$i\in\Lambda_N$, $H'\in\mathcal O$ and $i\in H'$. Hence
+\begin{equation}
+ \sum_{i\in\Lambda_N}\sum_{\substack{H'\in\mathcal O\\ i\in H'}}
+                      \frac1{|H'|}=1.
+ \label{pid-incidence}
+\end{equation}
+Covariance and periodicity make the summand value constant on
+the orbit. Therefore
+\begin{equation}
+ U_N^E(A)=\sum_{\mathcal O}E_H(A^{\rm per}|_H),
+                   \qquad H\text{ any representative of }\mathcal O.
+ \label{pid-orbit-sum}
+\end{equation}
+This counts each carrier orbit once, including those whose
+projection is not injective.
+
+For a connected nonempty torus carrier $K$, set
+\begin{equation}
+ E_{N,K}(A|_K)=
+       \sum_{\mathcal O:\,\pi_NH=K}E_H(A^{\rm per}|_H).
+ \label{pid-grouped-family}
+\end{equation}
+Coordinate repetition is a linear map of maximum norm one.
+Every summand is holomorphic on the original $b$ polydisc and
+strictly supported on $K$. Projection preserves connectedness.
+
+Fix a torus cell $j$ and one infinite lift. For every orbit
+meeting $j$, choose one representative containing that lift.
+Distinct orbits give distinct carriers. Since
+$|\pi_NH|\le|H|$, this gives
+\begin{align}
+ \sum_{K\ni j}e^{a|K|}\|E_{N,K}\|_b
+ &\le\sum_{\mathcal O:\,j\in\pi_NH}
+                         e^{a|\pi_NH|}\|E_H\|_b\notag\\
+ &\le\sum_{H\ni j}e^{a|H|}\|E_H\|_b
+ \le\|E\|_{a,b}.
+ \label{pid-wrapped-bound}
+\end{align}
+This proves normal convergence of the grouped family and the
+no-loss carrier estimate. Choosing one incidence here is an
+upper bound for the norm; the exact energy multiplicities were
+already counted in \eqref{pid-incidence}. No factor
+$|\pi_NH|/|H|$ belongs in the energy.
+
+The raw grouped coefficients retain their constants. Normalizing
+each coefficient separately could cost a factor two, and is
+unnecessary. For example the constant singleton family
+$E_{\{i\}}=c$ is the zero normalized class, but its raw periodic
+total is $N^dc$. A canonical unnormalized exponential therefore
+needs an additional vacuum convention.
+
+\subsection{Derivatives, representative independence and local stability}
+\label{pid-kernel-section}
+
+Let $K_n^E(i_1,\alpha_1;\ldots;i_n,\alpha_n)$ be the infinite
+total derivative kernel, with cell indices and internal types
+separated. At every fixed $n$, connected-carrier Cauchy estimates
+give absolute anchored summability with a positive spatial
+exponent. Constants can depend on $n,D,J,a,b$; no uniform
+all-order absolute Taylor norm is being asserted.
+
+Differentiate \eqref{pid-orbit-sum}. A derivative in a periodic
+coordinate differentiates each old occurrence of that coordinate.
+Translate its first occurrence $i_1+Nz_1$ to a fixed lift $i_1$.
+Every carrier through $i_1$ occurs exactly once. The remaining
+slots then range over all their periodic lifts. Thus
+\begin{align}
+ &D^nU_N^E(0)[e_{i_1,\alpha_1},\ldots,e_{i_n,\alpha_n}]
+ \notag\\
+ &\qquad=\sum_{z_2,\ldots,z_n\in\mathbb Z^d}
+ K_n^E(i_1,\alpha_1;
+       i_2+Nz_2,\alpha_2;\ldots;i_n+Nz_n,\alpha_n).
+ \label{pid-kernel-periodization}
+\end{align}
+Repeated finite slots include both coincident and distinct
+infinite lifts with their ordinary multilinear multiplicities.
+Absolute anchored summability justifies the rearrangement.
+
+A null class has all $K_n=0$ for $n\ge1$. Its normalized
+periodic total has every Taylor coefficient zero and hence is
+zero on the connected finite-dimensional $b$ polydisc. Two
+covariant representatives of the same class therefore give the
+same normalized energy. This proves independence of the
+translation-averaging subsequence. The scalar map is linear
+even if representative selection is not. Taking representatives
+approaching the quotient infimum in
+\eqref{pid-covariant-bound},\eqref{pid-wrapped-bound} proves
+\eqref{pid-operator}, and
+\begin{equation}
+ |\Phi_N^{[E]}(A)|\le2N^d\|[E]\|_{\mathcal Q}.
+ \label{pid-energy-bound}
+\end{equation}
+
+There is exact scalar tiling consistency. For an integer $q>0$,
+repeat $A$ on $\Lambda_{qN}$. The density in
+\eqref{pid-density} is then $N$-periodic, so
+\begin{equation}
+ \Phi_{qN}^{[E]}(A\text{ repeated})=q^d\Phi_N^{[E]}(A).
+ \label{pid-tiling}
+\end{equation}
+A rectangular multiple has its corresponding volume factor.
+
+There is also eventual exact stabilization of each fixed lifted
+coefficient. Let $K$ be a fixed finite connected infinite carrier
+and choose, conservatively, $N>4\operatorname{diam}(K)+4$.
+The copies $K+Nz$ are disjoint and nonadjacent. A connected $H$
+with $\pi_NH=\pi_NK$ lies in their union, hence in one copy;
+surjectivity of its projection makes it equal to that copy.
+Equation~\eqref{pid-grouped-family} consequently has one orbit,
+and under lifted coordinates
+\begin{equation}
+ E_{N,\pi_NK}=E_K
+ \label{pid-fixed-carrier}
+\end{equation}
+on the full original polydisc. This gives local normal convergence
+of canonical periodizations without a winding-tail estimate for
+fixed $K$. It asserts neither global norm convergence nor
+stabilization on carriers growing with $N$.
+
+\subsection{Local gradients and exact finite gauge invariance}
+\label{pid-gauge-section}
+
+For a fixed infinite scalar coordinate $i$ and any bounded field
+$\|A\|_\infty\le\rho<b$, define
+\begin{equation}
+ G_i^E(A)=\sum_{H\ni\operatorname{cell}(i)}
+                                 \partial_iE_H(A|_H).
+ \label{pid-gradient}
+\end{equation}
+Directional Cauchy gives
+\begin{equation}
+ |G_i^E(A)|\le\frac{\|E\|_{a,b}}{b-\rho}.
+ \label{pid-gradient-bound}
+\end{equation}
+If $A,B$ agree in a $Q$-cell neighborhood of $i$, each differing
+summand has a connected carrier of size at least $cQ$. Thus
+\begin{equation}
+ |G_i^E(A)-G_i^E(B)|
+       \le\frac{2\|E\|_{a,b}}{b-\rho}e^{-caQ}.
+ \label{pid-gradient-tail}
+\end{equation}
+This proves continuity under compact truncation of bounded
+fields. On compact fields $G_i^E$ is the derivative of
+$\Phi_E$. A null family therefore has $G_i^E=0$ on all
+bounded interior fields, even without covariance of that
+representative.
+
+For a covariant representative, the same first-slot reanchoring
+used above works at any periodic interior field and gives
+\begin{equation}
+ \partial_iU_N^E(A)=G_i^E(A^{\rm per}).
+ \label{pid-periodic-gradient}
+\end{equation}
+This is another proof that null classes periodize to constant
+raw totals and to zero normalized totals.
+
+Suppose the infinite normalized total is locally gauge invariant.
+For a fixed unit-current site $v$, its infinitesimal logarithmic
+gauge field $\mathcal L_v(A)$ reads only the incident bond
+potentials and is supported on those finitely many bonds.
+On compact fields the Ward identity is
+\begin{equation}
+ \sum_{i\text{ incident to }v}
+                    G_i^E(A)\mathcal L_{v,i}(A)=0.
+ \label{pid-local-Ward}
+\end{equation}
+Compactly truncate an arbitrary bounded interior $A$. The local
+generator values stabilize, and \eqref{pid-gradient-tail}
+passes the gradient terms. Thus \eqref{pid-local-Ward} holds
+for bounded periodic fields too. Using
+\eqref{pid-periodic-gradient}, identify all incident orientations
+and periodic multiplicities. The finite total obeys
+\begin{equation}
+ D\Phi_N^{[E]}(A)[\mathcal L_{\lambda,N}(A)]=0
+ \label{pid-finite-Ward}
+\end{equation}
+for every finite torus gauge parameter. No noncompact infinite
+gauge path has been applied to $\Phi_E$; only a local gradient
+identity was extended by absolute convergence.
+
+The logarithmic generator must be holomorphic on the domain.
+If $b$ lies inside its fixed chart radius, the assertion holds
+on the whole open $b$ polydisc. Otherwise keep full-$b$
+holomorphy of the interaction and restrict the gauge assertion
+explicitly to $b_g=\min(b/2,r_{\log}/2)$, where $r_{\log}$ is
+a fixed radius of holomorphy for that generator. The actual
+small-field setup already chooses $b$ inside this chart. Finite
+gauge invariance follows along any gauge path whose fields stay
+in the common domain. Large paths leaving it are not covered.
+
+All finite nonlinear Ward equations also pass coefficientwise
+in field degree. At any fixed order, differentiating the compact
+infinite identity uses finitely many local generator coefficients,
+nearest-neighbor shifts and coincident-slot embeddings of total
+kernels. Equation~\eqref{pid-kernel-periodization} commutes with
+these operations: summing images turns an infinite coincidence
+condition into the exact periodic one. Fixed-order summability
+justifies it. Equivalently, differentiate the exact analytic
+identity \eqref{pid-finite-Ward}.
+
+\subsection{Other symmetries and the finite-history boundary}
+\label{pid-scope-section}
+
+Any finer translation, hypercubic or global color symmetry of
+the infinite total is inherited by its kernels. Relative
+periodization commutes with each symmetry preserving the torus.
+Taylor uniqueness gives the same symmetry of the normalized
+finite total. Negative bonds use the signed reversal of their
+positive-bond logarithmic coordinate. No symmetry of individual
+$E_{N,K}$ is needed. Reality follows similarly; a real covariant
+representative can also be obtained by averaging with its
+complex-conjugate reflection without norm increase.
+
+This completes Theorem~\ref{pid-theorem}. The canonical finite
+functionals have exact Ward identities and a no-loss connected
+representation. They need not equal an unrelated actual
+finite-regulator family. Two uniformly bounded finite sequences
+can have the same infinite local interaction while differing
+by winding-supported terms at every finite size. Compactness
+does not assert those terms are exactly absent.
+
+Consequently, inserting $\operatorname{Per}_N[E]$ into a quantum
+integral requires either an actual history/normalization comparison
+or a construction using these periodized inputs from the outset.
+Stationary backgrounds, retained windows, Gaussian normalizations
+and gauge factors are not identified by periodizing the interaction
+alone. Raw exponentials also require a separately specified vacuum
+convention. No quantum integration identity, continuity of the
+actual quantum update, or infinite induction is proved here.
+
+
+% No preamble. Prefix qll-. Actual homogeneous local sector, fixed classical system.
+\section{A local limit and quotient descent of the quantum macrostep}
+\label{qll-section}
+
+Fix the composite ratio \(R\), auxiliary grouping \(J\), preceding
+homogeneous depth \(M\), real retained link/color windows, cutoff
+threshold \(T\), positive coupling \(g\), and common field radius
+\(b\) from the common-domain construction. All fluctuation-cell
+dimensions are fixed once \(R,J\) are fixed. Compatible cubic
+tori exhaust the current and next lattices together. Write
+\[
+ \|E\|_{a_0,b}
+   =\sup_i\sum_{H\ni i}e^{a_0|H|}\|E_H\|_b,
+ \qquad a_0=1/16,
+\]
+for the connected activity norm. Quotient classes identify
+vacuum-normalized totals on compact fields, as in Notebook29.
+
+The actual finite local correction has the decomposition
+\begin{align}
+ \mathcal F_N(E_N)
+   &=\mathcal T_NE_N+\Delta_N+\mathcal Q_{{\rm det},N}
+                         +\mathcal L_N(Q_{E_N}),\notag\\
+ \mathcal G_N(E_N)
+   &=\Delta_N+\mathcal Q_{{\rm det},N}
+                         +\mathcal L_N(Q_{E_N}).
+ \label{qll-finite-map}
+\end{align}
+Here \(\mathcal T_N\) is pre-gauge background substitution,
+\(Q_{E_N}\) is the inherited fluctuation difference in the
+actual chart, and \(\mathcal L_N\) is the strict Gaussian
+cluster logarithm with its fixed classical base factors and
+precision. The pivot term, determinant, sharp windows and
+field-independent normalization are those of the finite
+common-domain integral. Only after constructing this expression
+do we subtract its value at zero background to form a quotient
+total. A separately tracked vacuum normalization is not
+identified with zero.
+
+\subsection{One fixed, input-independent classical system}
+\label{qll-data-section}
+
+Call coefficients \emph{locally normal} when every fixed lifted
+finite carrier coefficient converges uniformly on compact
+subsets of its finite-dimensional background polydisc.
+For joint coefficients require this convergence uniformly on
+the fixed real window of their finitely many fluctuation
+coordinates. Matrix coefficients use their finite block norm.
+The final norm bound is on the original open \(b\) ball;
+local normal convergence is only asserted on compact subsets.
+
+Choose one common regulator subsequence with the following
+actual classical data.
+
+\begin{enumerate}
+\item Every fixed baseline covariance entry \(C_{0,N}(i,j)\)
+converges. The baseline has the uniform exponential Schur
+bounds and positive spectral lower bound used in the strict
+Gaussian theorem.
+\item The strict precision coefficients \(B_{N,Y}\), classical
+base exponents, pivot-log factors, and coherent pre-gauge
+and joint-chart support coefficients converge locally normally.
+Both matrix indices of \(B_{N,Y}\) belong to \(Y\).
+\item All stronger support bounds, analytic neighborhoods,
+strict sufficient budgets and exact local scalar identities
+are those of the established finite construction. Aggregate
+primitive labels by carrier and type before taking limits:
+there are only finitely many types per fixed carrier, including
+precision, base, inherited and bad-block types.
+\end{enumerate}
+
+These data are chosen independently of the inherited interaction.
+At fixed parameters their strict families admit a countable
+diagonal extraction. Each fixed coefficient has finitely many
+coordinates. For the real fluctuation window, use the actual
+unwindowed chart's holomorphic extension to a common complex
+neighborhood and its uniform Cauchy bounds. Bounded measurable
+functions alone would not give this compactness. The sharp
+indicators remain fixed; they are not differentiated or subjected
+to a complex change of variables.
+
+The actual flat formulas already give compatible periodized
+baseline kernels. More generally, joint entrywise extraction
+with the stated uniform bounds preserves every finite
+principal spectral inequality. The conclusions below refer to
+the selected limiting classical system, not to an arbitrary
+different sequence of baselines or classical branches.
+
+\subsection{Explicit strict transport margins}
+\label{qll-margins-section}
+
+The common-domain proof permits the following stricter choices.
+Fix its \(B=53/8\), primitive constants and classical support
+reserves first. Choose \(R\) so that
+\begin{equation}
+ c_1(R)B\le a_0/4,
+ \qquad c_1(R)=\frac{5^d2^d}{k_R},
+ \qquad k_R=1+\lfloor(R-3)/4\rfloor .
+ \label{qll-R-margin}
+\end{equation}
+After fixing \(R\), choose \(J\) and its logarithmic tail
+collar so that, with the actual tail-to-margin ratio \(t\),
+\begin{equation}
+ t<1,\qquad
+ D(J)\log\frac1{1-t}\le a_0/4.
+ \label{qll-J-margin}
+\end{equation}
+This is possible because its sufficient bound is a constant
+times \(J^{2d}e^{-\kappa_0\ell_{\rm tail}/2}\), which tends
+to zero with the established choice of collar. It is independent
+of the later choice of \(b\). Thus
+\begin{equation}
+ \delta_{\rm card}
+   :=a_0-c_1(R)B-D(J)\log\frac1{1-t}
+   \ge a_0/2>0.
+ \label{qll-card-margin}
+\end{equation}
+The original weak half allocations alone would only give a
+nonnegative margin; \eqref{qll-R-margin}--\eqref{qll-J-margin}
+make the needed strictness explicit.
+
+In the positive joint core/tail majorant, restricting original
+carriers to \(|H|>Q\) now gives the bound
+\begin{equation}
+ C\epsilon e^{-\delta_{\rm card}Q}.
+ \label{qll-input-carrier-tail}
+\end{equation}
+Choose also a fixed \(\zeta>1\) sufficiently close to one that
+\begin{equation}
+ \zeta t<1,\qquad
+ c_1(R)B+D(J)\log\frac1{1-\zeta t}<a_0.
+ \label{qll-tail-degree-margin}
+\end{equation}
+Replacing \(t\) by \(\zeta t\) in the exact scalar-multiindex
+majorant gives an \(O(\zeta^{-k})\) bound above tail-expansion
+degree \(k\). If \(t=0\), there are no positive tail degrees.
+The rooted spatial weight and the strict spatial budget
+\(\kappa_{\rm tail}>B+\delta\) control omitted remote supports.
+The whole output-fiber maximum remains inside the support sum.
+
+Choose \(b\), then the permitted \(T,g\), within the common-domain
+order with strict slack in the precision, density, bad-block
+and multiplier inequalities. Equivalently use the smaller
+quarter budgets of the two-input comparison. Strictness allows
+a fixed bookkeeping dilation greater than one in the positive
+majorants below. All these choices are uniform in volume and
+in preceding \(M\) when the established classical estimates
+are uniform there.
+
+\subsection{Continuity of the actual strict Gaussian construction}
+\label{qll-Gaussian-section}
+
+\begin{lemma}[Local construction continuity]
+\label{qll-Gaussian-lemma}
+Use fixed finite-dimensional fluctuation cells, fixed real
+windows, the classical data above, and locally normal multiplier
+coefficients under uniform strict budgets. Fix deterministic
+connecting graphs that agree on every bounded lifted
+configuration for sufficiently large periods. The canonical
+connected Gaussian logarithm coefficients then have unique
+locally normal limits for those limiting local data and
+assignments. Their original anchored bound holds on the full
+open \(b\) ball.
+\end{lemma}
+
+\begin{proof}
+The proof retains the construction's positive majorants, not
+merely its final activity norm.
+
+First expand the precision inverse in its \(B_Y\) labels.
+A term has the form
+\[
+ C_0(b,u_1)B_{Y_1}(u_1,v_1)C_0(v_1,u_2)
+       \cdots B_{Y_r}(u_r,v_r)C_0(v_r,c).
+\]
+Every intermediate index belongs to a retained precision
+carrier, because both indices of \(B_Y\) lie in \(Y\).
+The endpoints \(b,c\) belong to the finite moment-root set
+\(\mathcal M\). If \(X=\bigcup_jY_j\), the final connected
+carrier contains \(\mathcal M\cup X\). Masked baseline
+inverses act on the finite set \(\mathcal M\). External
+determinant trace chains have the same property. Consequently
+a fixed final carrier bounds every primitive spatial label
+and covariance-chain index. No hidden unbounded index excursion
+or new spatial reserve is needed. The full \(C_0\) kernel entry
+is used as an entry, not as an unrecorded walk expansion.
+
+Next keep tags on primitive positive weights and dilate them:
+\begin{equation}
+ B_Y\mapsto zB_Y,\qquad
+ w_Y\mapsto zw_Y,\qquad q_i\mapsto zq_i,
+ \qquad |z|\le1+\delta_0
+ \label{qll-mark-dilation}
+\end{equation}
+for a sufficiently small fixed \(\delta_0>0\).
+Here \(w_Y\) are interaction multipliers and \(q_i\) are
+bad-block factors. Strict budgets make the same positive
+overlap, endpoint-tree and Mayer majorants summable on this
+disc. Scaling a bad-block factor only scales its joint-tail
+activity weight; no new cutoff or differentiability assertion
+is involved.
+
+Every nonempty logarithm polymer contains an interaction or
+bad-block mark. Mayer repetitions repeat such marks. Covariance
+forest edges number at most the molecule count minus one,
+while each inverse or determinant density order counts its
+precision occurrences. Thus the remaining combinatorial tails
+are \(O((1+\delta_0)^{-k})\), together with the strict geometric
+precision-order tail if counted separately. There is no
+unmarked unbounded combinatorial order left.
+
+For a fixed final carrier and bounded orders there are only
+finitely many discrete choices, since primitive labels have
+already been aggregated by carrier and type. A retained term
+depends on finitely many baseline entries and analytic
+precision or multiplier coefficients. Its Gaussian moment
+uses a finite principal covariance. The partition masks and
+degree-adapted endpoint perturbations remain in the common
+accretive neighborhood. Matrix determinants and inverses are
+continuous holomorphic functions there. The established
+density majorant is integrable on the entire fixed real
+Gaussian space, uniformly in the regulator.
+
+Dominated convergence therefore passes the Gaussian integrals
+and compact forest-parameter integrals. The fixed sharp
+indicators are only bounded measurable factors; they remain
+untouched. Multiplier convergence is uniform on their compact
+retained windows. The argument is uniform on compact background
+polydiscs, or equivalently follows there from the common
+holomorphic bounds and uniqueness of the limit.
+
+The order-tail bounds now pass each complete coefficient.
+Deterministic hull grouping preserves this convergence.
+Winding configurations cannot remain in a fixed bounded
+lifted carrier as the period grows. The final anchored
+cardinality bound controls the omitted large carriers when
+passing normalized totals on compact fields.
+
+Finally apply Fatou to finite carrier selections at radius
+\(r<b\), then increase \(r\) to \(b\) and exhaust the carriers.
+This retains the original full open-domain bound. Compact-total
+convergence follows by the same cardinality-tail argument as
+analytic interaction compactness. The result is uniqueness of
+the local limit for the selected local data and assignments,
+not convergence in the global anchored norm.
+\end{proof}
+
+\subsection{Inherited insertions and external factors}
+\label{qll-inherited-section}
+
+Let finite input families converge locally normally with a
+uniform activity budget. The core/tail construction evaluates
+each input coefficient at an analytic core in a fixed strict
+interior of its old \(b\) polydisc, then expands only in its
+small supported tail. It retains the projected input carrier
+and every attached background or fluctuation support.
+
+Truncate original carrier size, remote support extent and
+tail-expansion degree. Equations
+\eqref{qll-input-carrier-tail}--\eqref{qll-tail-degree-margin}
+and the rooted exponential bound give uniform positive tails.
+On the remaining finite list, ordinary Cauchy estimates pass
+all needed input derivatives and evaluations. The actual core
+and fluctuation chart remain in their fixed interior margin,
+uniformly on the real retained windows. The complete-fiber
+norm prevents an extra output-coordinate count. Hence
+\(Q_{E_N}\) has locally normal coefficient limits. The
+compatible assignment is linear in the inherited input.
+Equal-carrier exponentiation then preserves local convergence
+and the required multiplier bounds.
+
+Lemma~\ref{qll-Gaussian-lemma} applies to \(\mathcal L_N\).
+The external pivot factors pass by local analytic composition.
+The external determinant term passes by its absolutely
+convergent closed-chain trace series, with every precision
+label and its indices retained. Classical substitution passes
+by the proved summable-field composition limit. We conclude
+that \eqref{qll-finite-map} has locally normal connected
+coefficient limits under these hypotheses.
+
+\subsection{Canonical periodization and quantum quotient descent}
+\label{qll-descent-section}
+
+The periodization theorem supplies a covariant representative
+of every translation-invariant class without norm increase,
+a connected finite-periodic representation at the same
+\(a_0,b\), and exact independence of that representative as
+a finite vacuum-normalized total. It also supplies finite
+local gauge and spatial identities on the common chart.
+For a fixed covariant representative, its fixed lifted
+coefficients stabilize exactly by
+\eqref{pid-fixed-carrier}; in particular they converge locally
+normally. On covariant representatives the orbit construction
+is linear, including on differences.
+
+\begin{theorem}[Quantum map on the selected local quotient]
+\label{qll-descent-theorem}
+Under the fixed classical-system, strict-margin and domain
+hypotheses above, canonical periodized inputs define a
+well-defined limiting map \(\mathcal F_g\) on a sufficiently
+small ball of invariant analytic interaction classes.
+Its output has a connected representation at the same
+\(a_0,b\). The map preserves the local total gauge and spatial
+identities of the actual sector. Writing \(\mathcal T\) for
+classical substitution, the quantum remainder is
+\(\mathcal G_g=\mathcal F_g-\mathcal T\).
+\end{theorem}
+
+\begin{proof}
+Choose an allowed covariant representative \(E\). Its finite
+periodizations and the fixed classical data meet the preceding
+local-continuity hypotheses. They therefore produce a limiting
+connected family \(\mathcal F(E)\).
+
+If \(E'\) represents the same class, its finite periodized
+normalized total is exactly the same. Their actual inherited
+fluctuation differences agree as scalar insertions, and their
+background terms agree after the chosen normalization.
+If raw conventions differ, their constant scalar factor is
+handled in the separate vacuum normalization. The fixed
+Gaussian, windows and chart are otherwise identical.
+Consequently their actual finite output normalized totals
+agree, with compatible nonvanishing logarithm branches.
+The canonical coefficient arrays need not agree.
+
+Passing their local limits and then compact normalized totals
+shows \([\mathcal F(E)]=[\mathcal F(E')]\). This proves descent.
+The exact finite local gauge and spatial identities pass on
+compact backgrounds and their allowed transforms. Holomorphic
+continuation gives their local complex identities on the
+common ball. Norm bounds pass by Fatou. The same reasoning
+applies to \(\mathcal T\) and hence to the indicated remainder.
+\end{proof}
+
+\subsection{A quotient Lipschitz estimate without a high-jet hypothesis}
+\label{qll-Lipschitz-section}
+
+Let \(\bar\epsilon\) be a representative budget for which the
+strict finite two-input comparison holds. It can be chosen so
+the base exponent norm \(v\), inherited norms and bad-block
+budget have the spare allocations used there; for example
+\begin{equation}
+ v\le\eta_*/(64e),\qquad
+ q(E)\le\eta_*/(128e)
+       \quad\hbox{when }\|E\|_{a_0,b}\le\bar\epsilon,
+ \qquad 0<\eta_*\le1.
+ \label{qll-comparison-budgets}
+\end{equation}
+The actual linear inherited difference satisfies
+\begin{equation}
+ q(D)\le16C_TC_R\,\frac{gT}{b}\|D\|_{a_0,b}.
+ \label{qll-increment-bound}
+\end{equation}
+For two quotient classes of norm at most \(\bar\epsilon/4\),
+choose covariant near-minimal representatives \(Y\) of \(y\)
+and \(D\) of \(x-y\), and set \(X=Y+D\). For small \(\varepsilon>0\),
+\begin{align}
+ \|Y\|&\le\bar\epsilon/4+\varepsilon,\notag\\
+ \|D\|&\le\|x-y\|_{\mathcal Q}+\varepsilon
+                    \le\bar\epsilon/2+\varepsilon,\notag\\
+ \|X\|&\le3\bar\epsilon/4+2\varepsilon<\bar\epsilon .
+ \label{qll-compatible-representatives}
+\end{align}
+Covariant averaging permits these choices without norm loss.
+This construction controls the representative difference;
+two unrelated near-minimal representatives would not do so.
+
+For completeness, interpolate the inherited exponent from
+\(Q_Y\) to \(Q_Y+zQ_D\). When \(q(D)>0\), use
+\begin{equation}
+ L_D=\frac{\eta_*}{32e\,q(D)}\ge2.
+ \label{qll-interpolation-radius}
+\end{equation}
+The strict base, inherited and bad-block budgets keep the
+Gaussian logarithm family bounded by \(S_1\eta_*\) throughout
+this disc. Banach-valued Cauchy gives the finite difference
+bound \(64eS_1q(D)\). If \(q(D)=0\), the difference is zero.
+Combining with \eqref{qll-increment-bound} yields, after
+local limits, Fatou and \(\varepsilon\downarrow0\),
+\begin{equation}
+ \|\mathcal G_g(x)-\mathcal G_g(y)\|_{\mathcal Q}
+ \le C_{\rm quant}\frac{gT}{b}\|x-y\|_{\mathcal Q},
+ \qquad C_{\rm quant}=1024eS_1C_TC_R .
+ \label{qll-quantum-Lipschitz}
+\end{equation}
+The pivot and determinant terms cancel because the classical
+system is input independent. No fifth-order or other jet
+vanishing of \(D\) was used in this logarithm comparison.
+
+If \(B_R\) denotes the established bounded classical transport
+constant at this fixed geometry, then
+\begin{equation}
+ \|\mathcal F_g(x)-\mathcal F_g(y)\|_{\mathcal Q}
+ \le\left(B_R+C_{\rm quant}\frac{gT}{b}\right)
+                                  \|x-y\|_{\mathcal Q}.
+ \label{qll-full-Lipschitz}
+\end{equation}
+The finite comparison uses the same compatible carrier
+assignments on both inputs. Its difference family converges
+locally by the construction just proved, so Fatou applies
+to that family before the quotient infimum is taken.
+This is a small inherited-input dependence of the quantum
+remainder; it is not contraction of the whole unextracted map.
+
+\subsection{Varying actual inputs and finite-history compatibility}
+\label{qll-varying-section}
+
+\begin{theorem}[Varying-input compatibility]
+\label{qll-varying-theorem}
+Let finite input families \(E_N\) have exactly invariant
+normalized totals, uniform strict budgets and a locally normal
+limit \(E\). Use the same input-independent classical system,
+fixed windows and exact insertion domains. The actual finite
+outputs have local limits by the construction above, and their
+limiting normalized class is \(\mathcal F_g([E])\).
+The input and output carrier assignments need not be covariant.
+\end{theorem}
+
+\begin{proof}
+Sections~\ref{qll-Gaussian-section} and
+\ref{qll-inherited-section} apply directly to \(E_N\):
+they require local input convergence and uniform positive
+tails, not the designation \emph{canonical periodization}.
+This produces a local output from that particular limiting
+carrier family.
+
+To identify its class, average each finite \(E_N\) over its
+finite cell-translation group. The norm does not increase.
+Its raw finite total is unchanged: normalized translation
+invariance implies raw invariance because the zero field
+is fixed by translation. Thus the actual finite quantum
+output normalized total is also unchanged.
+
+Extract a locally normal subsequence of these covariant
+averages, with limit \(E^{\rm cov}\). Their identical finite
+normalized totals and interaction compactness imply
+\([E^{\rm cov}]=[E]\). The averaged inputs and the canonical
+periodizations of \(E^{\rm cov}\) converge locally normally
+to the same covariant family. Their input-independent
+classical data are the same. Construction continuity therefore
+gives identical canonical limiting output families.
+
+Passing the equality between the original and averaged
+finite output normalized totals identifies the original
+limiting class with \(\mathcal F_g([E])\). This reasoning
+applies to any extracted covariant average limit, so no
+interaction-dependent replacement of the classical system
+is needed. Canonical arrays themselves need not agree.
+\end{proof}
+
+By induction, every fixed finite number of actual homogeneous
+local steps agrees, at the normalized local-total level, with
+the corresponding composition of limiting quotient maps,
+provided every intermediate actual finite input remains within
+the uniform budgets and analytic insertion domains and the
+classical systems and nested regulators are chosen jointly.
+At each stage use Theorem~\ref{qll-varying-theorem}, then the
+next stage's local continuity. Joint finite lists and countable
+fixed parameter systems can be extracted by the earlier
+diagonal construction when their hypotheses hold.
+
+All intermediate windows, Gaussian integrations and generated
+corrections remain present in this assertion. Each finite
+vacuum normalization is tracked separately; the quotient
+statement neither discards it from the integral nor proves
+convergence of an extensive vacuum energy. This is not an
+identification of sequentially cut off integrals with one
+one-shot integral.
+
+An infinite quotient relocalization does not by itself provide
+small representatives of the actual finite winding remainders.
+Thus an infinite quotient bound alone does not supply the
+intermediate finite-input hypotheses just stated. If finite
+classical reference subtraction is later used, the required
+interface is local normal convergence of the actual reference
+families and convergence of its extraction coefficients;
+equality with a canonical periodized reference is unnecessary
+and is not asserted here.
+
+\subsection{Scope}
+\label{qll-scope}
+
+The result gives an actual local limit and a continuous
+quantum map for the selected homogeneous local sector and
+fixed classical system, with the established same-radius
+analytic continuation and exact insertion representation.
+It is not an assertion about the full Wilson measure or
+mixed and large-field histories. It does not prove uniqueness
+across arbitrary classical subsequences.
+
+The one-input bounds and the small quantum Lipschitz factor
+do not themselves provide an invariant renormalized ball.
+A finite block still retains all generated quantum terms;
+full-reference extraction, amplitude closure, an actual
+coupling trajectory and the remaining field sectors and
+observable limits require further work. No infinite
+trajectory or continuum construction follows merely from
+the finite-history compatibility proved here.
+
+
+% No preamble. Prefix zif-. The optional fixed-coupling parity refinement stays in research.
+\section{Quadratic forcing from a fixed outer field domain}
+\label{zif-section}
+
+Fix the composite geometry $R,J$, carrier exponent $a_0=1/16$,
+and the jointly chosen, input-independent classical system of
+the preceding local-limit theorem. The gauge Lie algebra is
+semisimple, in particular it may be $\mathfrak{su}(2)$.
+Constants may depend on the fixed geometry and color conventions,
+but are uniform in preceding homogeneous depth $M$ and compatible
+volume. The input of the quantum step in this section is zero.
+
+\subsection{One outer construction and its restrictions}
+\label{zif-outer-section}
+
+The classical precision, stationary-map, pivot and base-interaction
+coefficients have independent outer product domains. After $R,J$
+are fixed, choose one radius $\rho>0$ on which all their strict
+support and Gaussian-neighborhood budgets hold with a fixed
+margin. No inherited activity is evaluated in this construction.
+With the actual retained link/color window of threshold $T$, write
+\begin{align}
+ \mathcal G_{M,g,T}(0)
+   &=\Delta_M+\mathcal Q_{{\rm det},M}
+                         +\mathcal L_{M,g,T},\notag\\
+ \mathcal L_{M,g,T}(w)
+   &=\log\mathbb E_{C_M(w)}
+             [\chi_T(\xi)e^{V_{\rm base}(w,\xi;g)}].
+ \label{zif-zero-decomposition}
+\end{align}
+The covariance, stationary branch and charts are independent of
+$g$. Field-independent powers of $g$, flat determinants, Haar
+constants and the compact gauge-insertion normalization remain
+in the separately tracked vacuum factor.
+
+The actual outer-domain construction gives an anchored family
+with
+\begin{align}
+ \|\mathcal G_{M,g,T}(0)\|_{a_0,\rho}
+ &\le H(\rho,g,T),\notag\\
+ H(\rho,g,T)
+ &:=(C_\Delta+C_{\rm det})\rho
+       +2S_1\bigl[e^3\tau(T)+e^{v(g,T)}v(g,T)\bigr],\notag\\
+ v(g,T)&\le C_{\rm base}(gT^3+gT+g^2T^2),
+ \label{zif-outer-bound}
+\end{align}
+with harmless fixed enlargements of the constants if needed.
+Choose $T=T(g)\ge1$ and $g_0>0$ so that every strict base and
+bad-block budget holds on $\rho$ for $0<g\le g_0$ and
+\begin{equation}
+ \sup_{M,\,0<g\le g_0}H(\rho,g,T(g))\le H_*<\infty.
+ \label{zif-uniform-outer}
+\end{equation}
+A sufficiently large fixed multiple of
+$\sqrt{\log(1/g)}$, with a fixed lower threshold, is one
+permitted choice after reducing $g_0$. This is a bound on a
+coefficient family, not on an extensive total.
+
+For $0<b<\rho$, fix these outer data and restrict their
+coefficients. The zero-input integral on $b$ is exactly the
+restriction of \eqref{zif-zero-decomposition}: its chart,
+covariance, window $T(g)$, measure factors and logarithm branch
+are unchanged. A field radius enters the estimates, not the
+defining integral. The infinite statement uses the same
+outer-domain local-limit system followed by restriction.
+Unrelated subsequences at different radii are not identified.
+Two alternative valid carrier assignments for that same finite
+integral also give the same normalized class by the established
+local-limit theorem.
+
+\subsection{Remove the total constant and linear sectors}
+\label{zif-force-section}
+
+\begin{theorem}[Uniform quadratic zero-input force]
+\label{zif-theorem}
+Under \eqref{zif-uniform-outer}, for every $b\le\rho/2$ the
+zero-input correction has a representative of its
+vacuum-normalized class satisfying
+\begin{equation}
+ \|[\mathcal G_{M,g,T(g)}(0)]\|_{\mathcal Q,a_0,b}
+       \le C_F b^2,
+ \qquad C_F=\frac{2H_*}{\rho^2}.
+ \label{zif-force-bound}
+\end{equation}
+The constant is independent of $b,M$ and volume. The same
+representative estimate holds before taking a local limit if
+the hypotheses are imposed on the actual finite regulators.
+\end{theorem}
+
+\begin{proof}
+The actual zero-input total is globally adjoint invariant:
+the real retained-window change of variables, equivalently
+the local gauge theorem of the common-domain integral, gives
+this identity. Its derivative at zero in each link slot is
+an invariant linear functional on the adjoint Lie algebra.
+It vanishes on commutators, and
+$[\mathfrak g,\mathfrak g]=\mathfrak g$; hence its total
+linear jet is zero. This reasoning passes from finite
+regulators to compact-field derivatives on the chosen limit.
+Individual carrier coefficients need not have zero linear
+jets or be separately gauge invariant.
+
+Let $P_n$ be homogeneous phase projection in all background
+coordinates of one carrier. Cauchy's formula on radii below
+$\rho$, followed by their increasing limit, gives
+\begin{equation}
+ \|P_n E_H\|_b\le(b/\rho)^n\|E_H\|_\rho.
+ \label{zif-phase-bound}
+\end{equation}
+Replace the outer family by
+\begin{equation}
+ E_H^{\ge2}:=\sum_{n\ge2}P_nE_H.
+ \label{zif-representative}
+\end{equation}
+It retains every declared carrier and represents the same
+normalized total: constants are normalized away and the
+sum of the linear sectors is zero. Sum
+\eqref{zif-phase-bound} first over degree for each carrier,
+then over anchored carriers. This yields
+\begin{equation}
+ \|E^{\ge2}\|_{a_0,b}
+ \le\frac{(b/\rho)^2}{1-b/\rho}\|E\|_{a_0,\rho}
+ \le\frac{2H_*}{\rho^2}b^2.
+ \label{zif-geometric-bound}
+\end{equation}
+There is no exchange of a root supremum with an order sum.
+The argument is identical at finite volume and on the
+normally convergent infinite family.
+\end{proof}
+
+For a Lie algebra with an abelian factor, the adjoint argument
+alone does not remove a linear total; its vanishing would be
+an additional hypothesis. Vacuum removal here changes only
+the normalized class. It does not discard the corresponding
+physical scalar normalization.
+
+Let the actual full reference satisfy
+$\beta(S_{MR})=1$ and
+$\|[S_{MR}]\|_{\mathcal Q,b}\le C_Sb^2$, as obtained
+from its fixed outer classical representation. Then
+\begin{equation}
+ P_{MR}=I-S_{MR}\beta,
+ \qquad \|P_{MR}\|\le p:=1+C_\beta C_S
+ \label{zif-projection}
+\end{equation}
+has a bound independent of $b$. Therefore
+\begin{align}
+ \|P_{MR}\mathcal G_{M,g,T(g)}(0)\|_{\mathcal Q,b}
+      &\le C_0b^2,\qquad C_0=pC_F,\notag\\
+ |\beta(\mathcal G_{M,g,T(g)}(0))|
+      &\le C_\beta C_F.
+ \label{zif-extracted-beta}
+\end{align}
+The $b^{-2}$ factor in the norm of $\beta$ is present;
+the proven $b^2$ forcing cancels it. The finite representative
+estimate does not by itself define a finite extraction
+functional: a finite $\beta_N$ must separately have the
+corresponding bounded normalization on the actual reference.
+
+\subsection{Order of choices and the limits of the conclusion}
+\label{zif-scope-section}
+
+The outer radius and bound are chosen once after $R,J$.
+The final inner radius may subsequently be reduced to meet
+any fixed finite block of classical transport constraints.
+For a prescribed family ceiling $\bar\epsilon$, the inherited
+quantum difference coefficient is proportional to $gT(g)/b$.
+A sufficient budget, with the constants of the common-domain
+theorem, is
+\begin{equation}
+ \frac{16C_TC_RgT(g)}b\,\bar\epsilon
+       \le\frac{\eta_*}{128e}.
+ \label{zif-inherited-budget}
+\end{equation}
+The denominator $128e$ is the stronger two-input comparison
+budget used for the quotient Lipschitz estimate. It is met by
+reducing $g_0$ after the positive $b$ and
+$\bar\epsilon$ have been fixed. Thus a ceiling of the form
+$\bar\epsilon\le\eta_*/(\text{constant}\,a_Q)$,
+where $a_Q=16C_TC_RgT/b$, creates no radius cycle.
+The base and bad-block budgets remain separate requirements.
+
+If all intermediate extracted amplitudes have norm at most
+$C_{\rm int}b^2$, the bounded classical transport, the force
+bound and the fixed-coupling quantum Lipschitz bound give
+an unprojected one-step amplitude bounded by a constant
+times $b^2$. Its Maxwell increment is consequently bounded
+independently of $b$. This provides neither its sign nor
+control of infinitely many accumulated increments.
+
+Finally, $\Delta_M$ and $\mathcal Q_{{\rm det},M}$ have
+no small factor $g$. Their removal of constant and linear
+sectors yields $O(b^2)$, not $O(g^2)$. A bound of the latter
+kind for the full force would require a separate proved
+cancellation or subtraction. Nothing here is a contraction
+in the joint coupling--activity variables, a large-field
+estimate, or an identification of the local sector with the
+full Wilson measure.
+
+
+% No preamble. Prefix eqr-. Infinite local quotient; finite-history boundary explicit.
+\section{Reference extraction and a contractive finite-block recurrence}
+\label{eqr-section}
+
+Work on the selected joint homogeneous classical system of
+Sections~\ref{csgq-section} and \ref{qll-section}. Fix the primitive
+odd ratio $\ell$, the elementary composite ratio $R=\ell^s$, the
+auxiliary grouping $J$, and carrier exponent $a_0=1/16$.
+At stage $j$ the preceding depth is $M_j=M_0R^j$. Each stage uses
+the same cell grouping and analytic radius in its own current units.
+All constants below may depend on this fixed geometry, but are uniform
+in $M_j$. Use a simple gauge Lie algebra, in particular
+$\mathfrak{su}(2)$, so the Maxwell functional is scalar. The finite
+family of componentwise references gives the corresponding version
+for a semisimple product.
+
+The local quantum quotient map is an established input from
+Theorem~\ref{qll-descent-theorem}, with its strict domain, periodization,
+classical-system and logarithm-branch hypotheses. The discussion below
+does not replace that theorem by an inference from compact-field
+equality alone. The actual finite-regulator history remains a separate
+issue stated at the end.
+
+\subsection{The actual reference transports exactly}
+\label{eqr-reference-section}
+
+Let $U_M(D)$ be the selected ordinary homogeneous minimum and let
+\begin{equation}
+ S_M(D)=S_{\rm bare}(U_M(D)),\qquad S_M(1)=0,
+ \qquad
+ P_{M,R}(W)=\mathcal M_\ell^k U_{MR}(W),\quad M=\ell^k.
+ \label{eqr-reference-definition}
+\end{equation}
+The trace convention and plaquette counting are fixed, and the coupling
+is outside $S_M$. Classical background substitution is
+\[
+        (\mathcal T_{M,R}E)(W)=E(P_{M,R}(W)).
+\]
+It contains no fluctuation integration.
+
+\begin{lemma}[Exact reference identity]
+\label{eqr-reference-lemma}
+On the specified common local analytic domains in dimension four,
+\begin{equation}
+                  \mathcal T_{M,R}S_M=S_{MR}.
+ \label{eqr-reference-transport}
+\end{equation}
+This identity holds for the actual ordinary classical reference,
+not merely for a reference with the same quadratic normalization.
+It passes to the jointly chosen infinite normalized classes.
+\end{lemma}
+\begin{proof}
+On a finite compatible regulator put
+\[
+ U_2=U_{MR}(W),\qquad D=\mathcal M_\ell^kU_2,\qquad U_1=U_M(D).
+\]
+Both fine configurations are fields on the same oriented graph.
+Its fine spacing is $1/M$ in $D$ units and $1/(MR)$ in $W$ units.
+Exact ordinary composition gives
+\begin{equation}
+ \mathcal M_\ell^kU_1=D=\mathcal M_\ell^kU_2,\qquad
+ \mathcal M_\ell^{k+s}U_1=W=\mathcal M_\ell^{k+s}U_2.
+ \label{eqr-two-constraints}
+\end{equation}
+The actual minimum comparison balls can be made common for fixed $R$.
+Indeed a fine physical potential changes units by
+$A_1^W(x)=R A_1(Rx)$, so
+\begin{equation}
+ \|A_1^W\|_{C^{1,\alpha}}
+       \le CR^{2+\alpha}\|A_1\|_{C^{1,\alpha}}.
+ \label{eqr-reference-rescaling}
+\end{equation}
+The prefix bound is
+$\|\log D/i\|_\infty\le C_A\|\log W/i\|_\infty/R$.
+Thus, for fixed $R$, a sufficiently small real $W$ ball places
+both fields in both needed comparison classes, uniformly in
+preceding refinement and volume.
+
+The minimum at $D$ gives $S_{\rm bare}(U_1)\le S_{\rm bare}(U_2)$;
+the minimum at $W$ gives the reverse inequality. In dimension four
+the coupling-free bare action is the same plaquette sum under this
+coordinate relabeling: its physical prefactor is
+$\eta^{d-4}=1$. Hence the two actions agree. This is also the identity
+$S_M(V^\star)=S_M(V_p)=S_{MR}$ in the actual common-domain
+factorization.
+
+Both sides are holomorphic on the specified connected common domain.
+Uniqueness from the real germ continues the identity there.
+For $R>C_A$, the angle estimate maps the common $b$ ball into itself;
+the smaller real comparison ball does not cause a repeated analytic
+radius loss. No minimum assertion at complex fields is used.
+
+For the fixed joint infinite system, pass vacuum-normalized values on
+compact $W$ using the connected interaction bounds and summable-field
+continuity. These are the same hypotheses used for the classical
+substitution limit. No convergence of an extensive infinite action
+value is asserted. The finite references vanish at the trivial field,
+so the normalized identity has no vacuum ambiguity.
+\end{proof}
+
+The exact flat midpoint symbol and its identification with the
+classical Hessian give
+\begin{equation}
+ q_M(p)=|p|^2I-pp^T+O(|p|^4),\qquad \beta(S_M)=1.
+ \label{eqr-reference-beta}
+\end{equation}
+This normalization was proved by the flat symbol calculation;
+ellipticity alone would not imply it. The fixed-outer-radius
+classical support estimate and its zero total linear jet also give
+\begin{equation}
+                    \|[S_M]\|_{\mathcal Q,b}\le C_Sb^2,
+ \label{eqr-reference-size}
+\end{equation}
+uniformly in $M$ and in the subsequent inner radius $b$.
+An arbitrary Maxwell-normalized local Wilson reference need not obey
+\eqref{eqr-reference-transport} as a full nonlinear functional.
+
+\subsection{The projection telescope}
+\label{eqr-projection-section}
+
+Write $\mathcal Q_j$ for the invariant quotient at stage $j$ and set
+\begin{equation}
+ S_j=[S_{M_j}],\qquad
+ P_j=I-S_j\beta_j,\qquad
+ \mathcal T_j=\mathcal T_{M_j,R},\qquad
+ A_j=P_{j+1}\mathcal T_j.
+ \label{eqr-projections}
+\end{equation}
+The notation $S_j\beta_j$ denotes a rank-one operator.
+Because $\beta_j(S_j)=1$, $P_j$ projects onto $\ker\beta_j$.
+The established coefficient and reference estimates give
+\begin{equation}
+ \|\beta_j\|\le C_\beta b^{-2},\qquad
+ \|P_j\|\le p:=1+C_\beta C_S.
+ \label{eqr-projection-norm}
+\end{equation}
+The $b^{-2}$ factor has been cancelled by
+\eqref{eqr-reference-size}, not omitted.
+
+\begin{lemma}[Cancellation of every intermediate extraction]
+\label{eqr-telescope-lemma}
+The actual references satisfy
+\begin{equation}
+ P_{j+1}\mathcal T_jP_j=P_{j+1}\mathcal T_j.
+ \label{eqr-intertwining}
+\end{equation}
+Consequently, for every finite $q$,
+\begin{align}
+ A_{j+q-1}\cdots A_j
+   &=P_{j+q}\mathcal T_{j+q-1}\cdots\mathcal T_j,
+       \label{eqr-product}\\
+ A_{j+q-1}\cdots A_jP_j
+   &=P_{j+q}\mathcal T_{M_j,R^q}P_j.
+       \label{eqr-direct-product}
+\end{align}
+The second identity uses the classical semigroup on the same joint
+invariant system.
+\end{lemma}
+\begin{proof}
+For $x\in\mathcal Q_j$, the difference between the two sides of
+\eqref{eqr-intertwining} is
+$-\beta_j(x)P_{j+1}\mathcal T_jS_j$.
+By \eqref{eqr-reference-transport}, this is
+$-\beta_j(x)P_{j+1}S_{j+1}=0$.
+Repeated application removes the intermediate projections.
+The actual scalar semigroup modulo gauge, together with the
+universal summable-gauge identity of Section~\ref{csgq-section},
+gives \eqref{eqr-direct-product}.
+\end{proof}
+
+The proof does not require
+$\beta_{j+1}\mathcal T_j=\beta_j$.
+Nor does it require equality of sequential and direct carrier arrays.
+The common scalar class may be estimated using its separately
+justified direct connected representation. If instead
+$\mathcal T_jS_j=S_{j+1}+D_j$, the error in
+\eqref{eqr-intertwining} is
+$-P_{j+1}D_j\beta_j$, potentially costing
+$b^{-2}\|D_j\|$. The actual identity makes that error exactly zero.
+
+Use the supported low-kernel and high-jet transport estimates on the
+same infinite system. Their explicit common-domain and reserve
+hypotheses give
+\begin{equation}
+ \left\|A_{j+q-1}\cdots A_j\big|_{\ker\beta_j}\right\|
+ \le\theta_q:=
+ p^2\left[C_{\rm low}(J)R^{-q\alpha}
+                     +6C_{\rm high}R^{-q}\right].
+ \label{eqr-classical-block}
+\end{equation}
+The fixed grouping $J$ is chosen before $q$; its finite constant is
+not assumed uniform as $J$ grows. Choose a finite $q$ so that
+$\theta_q\le1/4$. Then choose $b$ to meet the direct $R^q$
+high-jet disk and all classical margins. The constants in
+\eqref{eqr-classical-block} do not deteriorate just because $b$
+is reduced. Bounded one-step transport gives constants
+\begin{equation}
+ \|\mathcal T_j\|\le B_T,\qquad
+                 \|A_j\|\le B,\qquad B\ge\max(1,pB_T),
+ \label{eqr-one-step-linear}
+\end{equation}
+uniform in $j$. These may be large; no one-step classical
+contraction is asserted.
+
+\subsection{The local quantum remainder at fixed coupling}
+\label{eqr-quantum-section}
+
+Let $\mathcal F_j$ be the actual limiting local quotient map with
+specified coupling $g_j$, retained threshold $T_{{\rm cut},j}$,
+and the fixed classical system. Write
+\begin{equation}
+ \mathcal F_j(x)=\mathcal T_jx+\mathcal G_j(x),\qquad
+ \Psi_j(x):=P_{j+1}\mathcal F_j(x)=A_jx+H_j(x),
+ \qquad H_j=P_{j+1}\mathcal G_j.
+ \label{eqr-quantum-split}
+\end{equation}
+The remainder includes the pivot and Gaussian determinant terms and
+the full base Gaussian logarithm. Those terms are not discarded.
+The output of $\Psi_j$ belongs to $\ker\beta_{j+1}$.
+
+Let $\bar\epsilon$ be the representative ceiling from the strict
+two-input comparison. The quotient maps are defined on the ball of
+radius $\bar\epsilon/4$. Equation
+\eqref{qll-quantum-Lipschitz} gives
+\begin{equation}
+ \|\mathcal G_j(x)-\mathcal G_j(y)\|_{\mathcal Q}
+ \le L_{{\rm quant},j}\|x-y\|_{\mathcal Q},\qquad
+ L_{{\rm quant},j}
+       =C_{\rm quant}\frac{g_jT_{{\rm cut},j}}b.
+ \label{eqr-quantum-lipschitz}
+\end{equation}
+It has no equal-low-jet hypothesis. One can see the domain margin
+directly from \eqref{qll-compatible-representatives}: choose
+covariant near-minimal representatives for $y$ and $x-y$ and add
+them. Both complete inputs then have norm less than
+$\bar\epsilon$. Independent near-minimal representatives for $x$
+and $y$ would not control their difference.
+
+Choose a uniform number $\nu$ with
+\begin{equation}
+ pL_{{\rm quant},j}\le\nu,\qquad
+ \|H_j(x)-H_j(y)\|\le\nu\|x-y\|.
+ \label{eqr-projected-lipschitz}
+\end{equation}
+All comparisons here hold the coupling, threshold, classical saddle
+and cutoff data fixed at each step. The limiting map is well defined
+by Theorem~\ref{qll-descent-theorem}; the finite comparison and its
+passage to the quotient are provided by
+Section~\ref{qll-Lipschitz-section}.
+
+There are two useful forcing estimates. The original common-domain
+bound gives
+\begin{align}
+ \|H_j(0)\|&\le f, \notag\\
+ f&\le p\sup_j\left[
+ (C_\Delta+C_{\rm det})b+
+ 2S_1\{e^3\tau(T_{{\rm cut},j})+e^{v_j}v_j\}\right],
+ \notag\\
+ v_j&\le C_{\rm base}
+       (g_jT_{{\rm cut},j}^3+g_jT_{{\rm cut},j}
+                              +g_j^2T_{{\rm cut},j}^2).
+ \label{eqr-crude-force}
+\end{align}
+More strongly, fix the outer zero-input construction of
+Section~\ref{zif-section} and then restrict to $b\le\rho/2$.
+Equations \eqref{zif-force-bound} and
+\eqref{zif-extracted-beta} yield
+\begin{equation}
+ \|\mathcal G_j(0)\|\le C_Fb^2,\qquad
+ \|H_j(0)\|\le C_0b^2,\qquad
+ C_F=\frac{2H_*}{\rho^2},\quad C_0=pC_F.
+ \label{eqr-quadratic-force}
+\end{equation}
+These are the same actual maps restricted from a common outer
+domain, not radius-dependent replacements. The force need not be
+$O(g_j^2)$.
+
+\subsection{A finite-block perturbation estimate}
+\label{eqr-block-section}
+
+\begin{lemma}[Duhamel bound with a contractive classical block]
+\label{eqr-Duhamel-lemma}
+Suppose the maps in \eqref{eqr-quantum-split} are evaluated on
+their common admissible neighborhood,
+\eqref{eqr-classical-block} and \eqref{eqr-one-step-linear} hold,
+and \eqref{eqr-projected-lipschitz} holds. For two trajectories
+using the same prescribed step couplings and other fixed data,
+with their initial difference in $\ker\beta_j$, one has
+\begin{align}
+ \|\delta_q\|
+ &\le\left[
+ \theta_q+\nu\sum_{k=0}^{q-1}
+                    B^{q-1-k}(B+\nu)^k\right]\|\delta_0\|
+       \notag\\
+ &=\left[\theta_q+(B+\nu)^q-B^q\right]\|\delta_0\|
+       \notag\\
+ &\le\left[\theta_q+q\nu(B+\nu)^{q-1}\right]\|\delta_0\|.
+ \label{eqr-Duhamel-bound}
+\end{align}
+The sum formula includes $\nu=0$ by continuity.
+If $\|H_i(0)\|\le f$, then any trajectory obeys
+\begin{equation}
+ \|x_{j+k}\|\le(B+\nu)^k\|x_j\|
+                     +f\sum_{l=0}^{k-1}(B+\nu)^l
+ \label{eqr-elementary-size}
+\end{equation}
+as long as the intermediate maps remain admissible.
+\end{lemma}
+\begin{proof}
+The exact variation-of-constants identity is
+\begin{align}
+ \delta_q={}&A_{j+q-1}\cdots A_j\delta_0 \notag\\
+ &+\sum_{k=0}^{q-1}A_{j+q-1}\cdots A_{j+k+1}
+   \bigl[H_{j+k}(x_{j+k})-H_{j+k}(y_{j+k})\bigr].
+ \label{eqr-Duhamel-identity}
+\end{align}
+An empty product is the identity. The elementary difference bound
+is $\|\delta_k\|\le(B+\nu)^k\|\delta_0\|$.
+Apply the improved classical product bound only to the first term
+in \eqref{eqr-Duhamel-identity}; bound each shorter product by the
+corresponding power of $B$. This proves the first line of
+\eqref{eqr-Duhamel-bound}. The difference-of-powers identity gives
+the second line, and bounding every sum term by
+$(B+\nu)^{q-1}$ gives the third.
+
+For a single step,
+$\|\Psi_i(x)\|\le(B+\nu)\|x\|+f$.
+Induction proves \eqref{eqr-elementary-size}.
+No contraction of a shorter classical product was presumed.
+\end{proof}
+
+The leading classical term in \eqref{eqr-Duhamel-bound} has no
+growing factor from intermediate projections. The remaining
+perturbative sum has finite length $q$, fixed before the coupling
+is made small.
+
+\subsection{An invariant quadratic amplitude envelope}
+\label{eqr-envelope-section}
+
+\begin{theorem}[Extracted finite-block contraction on the local quotient]
+\label{eqr-envelope-theorem}
+Use the selected joint infinite homogeneous system, the actual
+reference family, the transport estimates
+\eqref{eqr-classical-block}--\eqref{eqr-one-step-linear},
+the quantum maps of Theorem~\ref{qll-descent-theorem}, and the
+fixed-outer-radius force of Theorem~\ref{zif-theorem}.
+Choose a finite $q$ with $\theta_q\le1/4$. Put
+\begin{equation}
+ K=B+1,\qquad L_q=\sum_{l=0}^{q-1}K^l,\qquad
+ K_{\rm amp}=\max\{1,2C_0L_q\},\qquad
+ C_{\rm int}=K^qK_{\rm amp}+C_0L_q.
+ \label{eqr-envelope-constants}
+\end{equation}
+Choose the common positive $b\le\rho/2$ to satisfy all direct
+$R^q$ classical and high-jet domain restrictions and
+\begin{equation}
+                  C_{\rm int}b^2<\bar\epsilon/4.
+ \label{eqr-inner-radius}
+\end{equation}
+Finally choose the weak-coupling range and thresholds so that the
+strict two-input budgets, including
+\eqref{zif-inherited-budget}, hold and
+\begin{equation}
+             \nu\le\min\left\{1,\frac1{4qK^{q-1}}\right\}.
+ \label{eqr-nu-choice}
+\end{equation}
+
+For each initial stage $j$, every $q$-step extracted block maps
+\begin{equation}
+ \{x\in\ker\beta_j:\ \|x\|\le r_b\},
+                \qquad r_b=K_{\rm amp}b^2,
+ \label{eqr-invariant-ball}
+\end{equation}
+into the corresponding radius-$r_b$ ball at stage $j+q$, with
+Lipschitz constant at most $1/2$. Every intervening amplitude is
+at most $C_{\rm int}b^2<\bar\epsilon/4$.
+
+For a prescribed countable sequence of couplings in this weak
+range, with its fixed common classical local-limit system,
+the extracted quotient recursion is therefore defined for all
+stages starting in \eqref{eqr-invariant-ball}. At block endpoints
+two trajectories using that same sequence contract by $2^{-n}$
+after $n$ blocks. These conclusions also bound a density-preserving
+running trajectory for as long as it stays in the prescribed
+weak-coupling regime.
+\end{theorem}
+\begin{proof}
+Start in \eqref{eqr-invariant-ball}. For $0\le k\le q$,
+\eqref{eqr-elementary-size}, $\nu\le1$, and
+\eqref{eqr-quadratic-force} give
+\begin{equation}
+ \|x_{j+k}\|
+ \le K^kK_{\rm amp}b^2+C_0b^2\sum_{l=0}^{k-1}K^l
+ \le C_{\rm int}b^2<\bar\epsilon/4.
+ \label{eqr-intermediate-bound}
+\end{equation}
+This induction verifies, before the next step is invoked, that
+each input lies in the common admissible neighborhood. The
+same holds for the trajectory starting at zero and for any
+second input in the ball.
+
+Equation \eqref{eqr-Duhamel-bound} and
+\eqref{eqr-nu-choice} make the block Lipschitz constant at most
+$1/4+1/4=1/2$. Its zero-input output has norm at most
+$C_0L_qb^2\le r_b/2$. Therefore its output at any $x$ in
+\eqref{eqr-invariant-ball} has norm at most
+$\|x\|/2+r_b/2\le r_b$.
+The output is extracted at every step by definition.
+
+All estimates are uniform in the initial homogeneous depth.
+Repeat the argument block by block. This constructs the
+stated infinite sequence of quotient classes for fixed
+prescribed step data; it asserts no convergence of a single
+nonautonomous trajectory to a fixed point. Applying the same
+block Lipschitz bound to two trajectories with identical data
+gives the $2^{-n}$ difference estimate.
+\end{proof}
+
+The parameter order is noncircular. Choose the primitive data,
+the elementary $R$ and grouping $J$ with the strict
+Section~\ref{qll-margins-section} margins, then choose the finite
+$q$ using \eqref{eqr-classical-block}. The outer radius and
+$H_*$ in Section~\ref{zif-section} are fixed before the final
+inner radius. Then choose $b$ by
+\eqref{eqr-inner-radius} and the direct $R^q$ restrictions.
+Only afterward decrease the coupling ceiling. For example,
+thresholds equal to a sufficiently large fixed multiple of
+$\sqrt{\log(1/g)}$, with a fixed lower threshold, have
+$gT(g)/b\to0$, $gT(g)^3\to0$ and $\tau(T(g))\to0$.
+Thus the comparison and forcing budgets can be met uniformly
+on $0<g\le g_0$. In particular
+\[
+ \frac{16C_TC_RgT(g)}b\,\bar\epsilon
+                   \le\frac{\eta_*}{128e}
+\]
+is imposed with the stronger two-input budget.
+The constants $p,B,\theta_q$ do not grow just because $b$
+is reduced.
+
+For comparison, the weaker force \eqref{eqr-crude-force} also
+suffices for a fixed-radius envelope. With the same $K,L_q$,
+take
+\begin{equation}
+ r=\frac{\bar\epsilon}{8K^q},\qquad
+ f\le\frac{r}{2L_q}.
+ \label{eqr-crude-envelope}
+\end{equation}
+Then intermediate norms are at most
+$\bar\epsilon/8+r/2<\bar\epsilon/4$, and the same proof
+preserves the radius-$r$ extracted ball. The quadratic
+version is stronger because it controls the Maxwell
+increment independently of the inner radius.
+
+\subsection{Density bookkeeping and bounded coupling increments}
+\label{eqr-coupling-section}
+
+Along the quadratic envelope the unprojected one-step value obeys
+\begin{equation}
+ \|\mathcal F_j(x_j)\|
+ \le \left[B_TC_{\rm int}+C_F
+                       +L_{{\rm quant},j}C_{\rm int}\right]b^2.
+ \label{eqr-unprojected-size}
+\end{equation}
+This follows by separating $\mathcal T_jx_j$,
+$\mathcal G_j(0)$ and
+$\mathcal G_j(x_j)-\mathcal G_j(0)$.
+The norm of $\beta$ consequently gives
+\begin{equation}
+ |\beta_{j+1}(\mathcal F_j(x_j))|
+ \le C_\beta\left[B_TC_{\rm int}+C_F
+                       +L_{{\rm quant},j}C_{\rm int}\right].
+ \label{eqr-beta-increment-bound}
+\end{equation}
+The factor $b^{-2}$ has again been paid by a proved $b^2$
+amplitude. This is an absolute bound, with no sign.
+
+For the actual density, write $\gamma_j=g_j^{-2}$. The
+one-step classical factorization is
+\[
+        \exp[-\gamma_j S_{j+1}+\mathcal F_j(x_j)].
+\]
+Full-reference extraction gives the exact identity
+\begin{equation}
+ \mathcal F_j(x_j)
+  =\beta_{j+1}(\mathcal F_j(x_j))S_{j+1}+\Psi_j(x_j),
+ \qquad
+ \gamma_{j+1}
+  =\gamma_j-\beta_{j+1}(\mathcal F_j(x_j)).
+ \label{eqr-density-running}
+\end{equation}
+The negative sign is forced by the displayed classical exponent.
+A freely prescribed weak coupling sequence need not satisfy
+\eqref{eqr-density-running}. The theorem bounds the extracted
+amplitudes uniformly over such sequences as operator estimates;
+it identifies a continuation of the same density only along
+a sequence satisfying this extra update.
+
+Two trajectories that separately update their couplings need
+not use the same maps: their coupling and threshold parameters
+also differ. Equation \eqref{eqr-quantum-lipschitz} controls only
+the inherited-input dependence at fixed coupling. Thus the
+$1/2$ block estimate is not a contraction in the joint
+coupling--activity variables.
+
+For a fixed finite number of steps,
+\eqref{eqr-beta-increment-bound} permits choosing the initial
+inverse coupling sufficiently large to retain a positive
+weak-coupling range. It does not control an infinite sum of
+increments, establish their sign, or prove asymptotic freedom.
+It does not prove that a physical running trajectory remains
+in the regime needed by Theorem~\ref{eqr-envelope-theorem}.
+
+\subsection{What the quotient envelope does not supply}
+\label{eqr-scope-section}
+
+The conclusions concern the invariant infinite quotient of
+the actual homogeneous local germ and its specified analytic
+continuation. They hold for every admissible input class
+on one fixed joint classical system. No uniqueness across
+arbitrary classical regulator subsequences is asserted.
+
+Theorem~\ref{qll-varying-theorem} identifies fixed finite
+histories only when their actual finite intermediate input
+families satisfy the uniform budgets and insertion-domain
+hypotheses. A small quotient norm, or a newly localized
+infinite representative, does not automatically provide those
+bounds for the actual finite winding remainders. For a fixed
+finite $q$, crude canonical estimates and an additional radius
+reduction may furnish a finite history, but that construction
+must be supplied separately. The infinite quotient envelope
+is not a regulator-uniform finite RG induction.
+
+If extraction is performed before the local limit, it must
+use the actual finite reference $S_{M,N}$ and a specified
+finite coefficient functional $\beta_N$ with the required
+normalization and convergence. The finite-volume Ward
+construction supplies a candidate cutoff-jet functional.
+One must not assume that $S_{M,N}$ equals the canonical
+periodization of an independently selected infinite reference.
+The exact classical identity holds for the actual finite
+references; compatibility of projected finite histories
+requires the separate coefficient and family statements.
+
+The quotient removes field-independent totals. Physical
+vacuum factors remain separately tracked, and their
+extensive limits are not supplied by this theorem.
+Large-field and mixed histories, global measure consistency,
+observables and the continuum limit remain outside this
+local amplitude result.
+
+The intermediate projection obstruction is therefore resolved:
+the actual classical reference transports exactly, so its
+extractions telescope. Combined with the proved local quantum
+quotient map and quadratic force, this yields the finite-block
+contraction and invariant amplitude envelope above. It does
+not constitute a completed Yang--Mills construction.
+
+
+\section{The next construction problem}
+\label{qdn-next-section}
+
+The normalized local quantum map and its finite-history compatibility
+now have a specified construction. Their domains and positive
+majorants are uniform in preceding homogeneous classical depth.
+They provide the setting in which an equivalent connected
+representation can be used at the next local integration.
+Field-independent vacuum factors remain separately tracked;
+no convergence of an extensive vacuum energy is inferred.
+
+The actual inverse coupling obeys
+\[
+ \gamma_{j+1}=\gamma_j-
+       \beta_{j+1}\bigl(\mathcal F_{j,g_j}(E_j)\bigr),
+ \qquad \gamma_j=g_j^{-2}.
+\]
+Completing its weak-coupling trajectory is the next essential
+step. Absolute increment bounds alone do not establish its
+direction or permit the ultraviolet cutoff to be removed at a
+fixed interacting endpoint. The generated drift must be evaluated
+with the actual determinants, cutoff factors and inherited
+interaction. Its normalization must agree with the reference
+action used in the exact density identity.
+
+The activity estimates concern the specified homogeneous
+small-field sector. The full Wilson construction must also
+incorporate mixed and large-field histories, identify the
+continued local representation on their required gauge-orbit
+domains, and obtain uniform estimates with observable sources.
+Those estimates feed the compactness, rotation, nontriviality
+and reconstruction obligations in Notebook 01.
+
+\begin{thebibliography}{9}
+\bibitem{priorqdn}
+\emph{Toward a four-dimensional Yang--Mills construction},
+research Notebooks 15--29 in this workspace. The ordinary minimum
+and gauge transfer, strict overlapping Gaussian expansion,
+common-domain quantum map and total Ward extraction are the
+principal inputs.
+\bibitem{balaban109qdn}
+T.~Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field
+theories. I. Generation of effective actions in a small field
+approximation and a coupling constant renormalization in four
+dimensions},
+Commun. Math. Phys. \textbf{109} (1987), 249--301.
+\href{https://doi.org/10.1007/BF01215223}{Publisher record}.
+\bibitem{balaban116qdn}
+T.~Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field
+theories. II. Cluster expansions},
+Commun. Math. Phys. \textbf{116} (1988), 1--22.
+\href{https://doi.org/10.1007/BF01239022}{Publisher record}.
+The finite localization and resummation architecture is checked
+against the original article. The quotient and local-continuity
+proofs in this notebook are stated and proved separately.
+\bibitem{bkarqdn}
+A.~Abdesselam, notes on the BKAR formula, Theorem 1.
+\href{https://mabdesselam.github.io/BKAR.pdf}{Author-hosted notes}.
+The finite forest identity is used with the explicit positive
+majorants and strict margins of the preceding construction.
+\bibitem{sourceqdn}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}
+{Yang--Mills-LLM-experiment}, deposited raw accounts at commit
+\texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+\end{thebibliography}
+\end{document}

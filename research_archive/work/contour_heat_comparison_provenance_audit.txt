@@ -1,0 +1,199 @@
+INDEPENDENT AUDIT: PHYSICAL-QUOTIENT DETERMINANT REFORMULATION
+17 October 2026. Auditor: provenance.
+
+Audited work/contour_heat_comparison_research.txt, Sections 1--10.
+
+RESULT: PASS. Sections 1--4 and 8 give the stated actual finite
+identity, with all orbit-density powers retained. The flat quotient
+gap, full-versus-projected averaging distinction, contour-gap
+counterexample, and explicitly labelled scalar reference calculation
+also check. No mathematical correction requested. The unresolved
+joint massless/affine limit and projected source estimates in
+Sections 4 and 10 are essential; none follows from the finite identity
+or from its flat physical gap alone.
+
+1. Actual inputs and applicability
+
+The relevant finite spaces use current-link angles and counting
+coordinates. One global final site is the base for both S_f and S_c;
+S_b vanishes at every final center. Their coordinate splitting is
+orthogonal as site-coordinate spaces, but their gradient images
+are not assumed orthogonal. Both globally based gradients are
+injective, since a zero value propagates from the base along the
+connected graph.
+
+The actual composite source constraint supplies C D_f=D_c r,
+the invertible pivot supplies surjectivity of C, and the selected
+contour gauge supplies T D_b=-I. These identities are independent
+of replacing the primitive hierarchy by a direct-K average.
+The actual minimum-value comparison supplies
+
+ H_res=L-C^T q C >=0,   H_res D_f=0,
+ C H=I,                H_res H=0,
+
+where L includes the multiplier-curvature term. Thus the proof
+applies to the actual finite small-field germ, not merely an
+arbitrary quadratic model with the correct flat symbol.
+
+The claimed nullspace on ker C follows from actual contour
+positivity: if x is in ker C and H_res x=0, adding D_b T x
+sets its contour derivative to zero without changing either
+constraint or residual energy. Positivity on the simultaneous
+constraint/contour slice forces this adjusted vector to vanish.
+Consequently x lies in im D_b. This also proves the assertion
+that R is positive on ker A: remove the coarse vertical component
+of C U_f u by a fine vertical lift, apply this nullspace statement,
+then use orthogonality to im D_f.
+
+The ambient constrained integral is the already established leading
+actual Gaussian amplitude with its source pivot normalization.
+It is not a new assertion that a global Wilson integral equals a
+Gaussian. The Haar and target normalizations remain those of the
+local source germ used in the earlier coarea lemma.
+
+2. Orbit densities and Gaussian dimensions
+
+The fine change x=U_f u+D_f(lambda_b,lambda_c) has Jacobian
+sqrt(det G_f). The target basis [U_c,D_c] has Jacobian
+sqrt(det G_c), so its delta contributes the inverse square root.
+The equation in target coordinates is exactly
+
+ Cx=U_c A u+D_c(Bu+lambda_c).
+
+Integrating lambda_c sets it to -Bu. Because H_res is vertically
+null, the action reduces to u^T R u. The remaining contour
+expression is a translation of -lambda_b, so integration over
+lambda_b has no background determinant. It gives only the
+displayed Gaussian power.
+
+The physical right inverse H_perp has A H_perp=I and
+R H_perp=0. Thus Q_perp H_perp=a A^T and
+A Q_perp^-1 A^T=a^-1 I. The constrained physical Gaussian
+therefore has determinant factor
+a^(dim ran P_c/2) det(Q_perp)^(-1/2).
+
+The identity dim S_f=dim S_b+dim S_c makes the Gaussian powers
+agree with the original ambient integral. Consequently the powers
+in (2.6)--(2.7) are correct. In particular the coarse orbit factor
+cannot be omitted, and it is not an additional Haar factor
+j(log W). The a-only factor is background independent.
+
+3. Ambient and direct matrix checks
+
+Q_res reduces on the fine physical/vertical decomposition.
+Its vertical block is G_f in the orthonormal gradient frame;
+its physical block is Q_perp. Thus (3.2) follows exactly.
+The endpoint-gauge replacement C -> C+D_c Z is harmless only
+after multiplication by P_c, with the residual action kept
+correctly identified.
+
+I also independently checked the Section 8 determinant proof.
+C_gg kills ran B_g. On that space the nonzero determinant is
+det G_b. Eliminating the complementary target-gauge block cancels
+the coarse-gauge part of C U_f, leaving R+A^T A. The scalar Schur
+identity gives
+
+ det(r G_f^-1 r^T)=det G_b/det G_f,
+
+and hence det Q_b=(det G_b)^2 det G_c det Q_perp/det G_f.
+Substitution in the earlier canonical determinant formula
+reproduces (2.7), independently of the measure calculation.
+
+The optional on-shell formula (3.4) has the correct powers:
+its coarse completion contributes det G_c times the determinant
+of q on the physical space plus a. Its applicability remains
+restricted to the stated on-shell germ where those completions
+are invertible; it is not needed for the general residual identity.
+
+4. Flat projected averaging and gap
+
+The straight angle map has row sum K and column sum K^(1-d),
+with periodic multiplicities. Therefore its counting L2 norm
+is at most K^-1 in four dimensions. The actual ordinary map
+differs by a coarse gradient, so P_c C_K=P_c A_K^st exactly
+at flatness. Its full unprojected norm is only O(1), as the
+separate nested-contour proof correctly records.
+
+Although the finite projections use globally based gradients,
+at flatness their images coincide with the images of all periodic
+gradients: subtracting a constant scalar makes a scalar based
+without changing its gradient. Bloch transversality is therefore
+legitimate at flatness; at p=0 the harmonic one-forms survive.
+
+The scaling v=Kx gives ||v||_(2,eta)^2=K^-2||x||_count^2
+and leaves four-dimensional Maxwell energy unchanged. The alias
+argument is correct:
+
+ - high aliases have the uniform positive lower bound used;
+ - orientationwise alias Parseval bounds their averaged
+   contribution by ||v_high||;
+ - the central diagonal Omega_0 is uniformly invertible;
+ - Omega_0 u_0=a_0 d_c implies
+   v_0=P_(u_0)^perp Omega_0^-1 y_0.
+
+Thus (6.6) follows with the stated A_0,B_0. Subtracting the actual
+coarse q_(MK) term, whose uniform bound is R_q, gives (6.7).
+The final c_a K^-2 lower bound follows with exactly the displayed
+minimum defining c_a. No uniform nonflat projection derivative
+bound is inferred.
+
+5. Contour counterexample
+
+For positive transverse coordinates the internal root bond is
+read precisely when direction 1 is first in the coordinate-order
+contour. Its mean weight is 1/d. Therefore the stated jump of
+phi=T_K e occurs across h^(d-1) distinct bonds. The sign of
+D_b is fixed by T_K D_b=-I; only the magnitude enters (7.4).
+For x=e+D_b phi, both T_K x=0 and C_K x=C_K e are exact.
+Flat gauge nullity leaves its action energy equal to that of e.
+The uniform full C_K norm then gives the O(K^-3) Rayleigh
+upper bound in dimension four. This contradicts a proposed
+uniform c K^-2 ambient contour gap, while claiming no matching
+asymptotic for its smallest eigenvalue.
+
+6. Scalar reference and remaining limits
+
+The difference h(K^2 u)-h(u) is absolutely integrable with du/u
+using h(u)=O(u^4) at zero and h(u)=alpha_g+O(u^-1) at infinity.
+The displayed change of variable proves the scalar reference
+coefficient alpha_g log K, including the one-half factor.
+A common physical mass tends to this value by dominated
+convergence for each fixed K.
+
+This calculation is correctly identified as a reference, not as
+the actual infinite limit of globally based finite determinants.
+At nonflat finite fields the scalar inverses and projectors have
+only regulator-dependent analytic domains. The exact finite
+identity cannot by itself establish locality of their separate
+logarithms, bound projection source derivatives uniformly, or
+justify an affine/infrared interchange. The physical flat gap
+does not remove those obligations.
+
+FINAL FRAGMENT FIDELITY ADDENDUM
+
+Read work/physical_quotient_determinant_fragment.tex in full against
+the audited research note. PASS after the author's three escaping
+repairs and explicit K>=3 qualification in the contour test.
+The three damaged L_flat tokens are now L_{\mathrm{flat}}; a fresh
+read confirms zero bare CR characters.
+
+All substantive interfaces are retained: actual finite current-angle
+coordinates, full multiplier-curvature term, both fine/coarse orbit
+densities, target delta normalization, a-only normalization, independent
+canonical Schur verification, globally based flat Bloch interpretation,
+uniform physical quotient gap, and the contour Rayleigh obstruction.
+
+The scope separation is explicit both at the beginning and near the
+end. The actual finite identity has only fixed-regulator analytic
+continuation. The scalar heat calculation is a specified infinite
+reference, with a common physical-time infrared cancellation; it is
+not claimed to equal the separate limits of the globally based
+finite determinants. The need for a joint infrared/local-limit
+identity and uniform nonflat projected source estimates remains
+explicit. The 21 alpha_g log K physical-vector contribution is
+identified only as the conditional target, not a proved coefficient.
+
+Static verification: 42 labels, all unique; all references internal
+and resolved; no invalid control characters or bare CRs. No remaining
+mathematical, normalization, scope, or transcription correction
+requested. No compilation was performed.

@@ -1,0 +1,377 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,geometry}
+\geometry{margin=1in}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\begin{document}
+% No preamble. Unique prefix oi-. Standard theorem environments and amsmath.
+% Abstract overlapping-support Gaussian cutoff theorem; actual RG matching
+% and strict background support are explicitly separate.
+
+\section{Overlapping interactions in a Gaussian cutoff integral}
+\label{oi-section}
+
+The disjoint-cell cutoff expansion extends to overlapping interaction
+supports, including supports of unbounded size, under an explicit
+weighted multiplier norm. The essential step is to retain the original
+cell endpoints when differentiating covariance edges between larger
+interaction molecules. This controls the degree factorials without
+enlarging the fixed Gaussian cell dimension. The statement below is
+abstract; it does not verify the fluctuation coordinates or interaction
+bounds of the Yang--Mills construction.
+
+\subsection{Assumptions and quantitative statement}
+
+Let $\Lambda$ be a finite metric set of cells, each carrying
+$x_i\in\mathbb R^D$, with $D$ fixed. Let $A$ vary in an open complex
+background domain. The complex symmetric covariance $C(A)$ is
+holomorphic and obeys, uniformly in volume and background,
+\begin{equation}\label{oi-covariance}
+ \operatorname{Herm}C\ge\lambda I,\qquad
+ \|C\|\le\Lambda_0,\qquad 0<\lambda\le\Lambda_0.
+\end{equation}
+For $i\ne j$ assume
+\begin{equation}\label{oi-decay}
+ \|C_{ij}\|\le J_{ij}=J_{ji},\qquad J_{ii}=0,\qquad
+ A_\kappa=\sup_i\sum_j e^{\kappa d(i,j)}J_{ij}<\infty.
+\end{equation}
+Write $\ell(S)$ for the minimum metric spanning-tree length of a
+nonempty set $S$, with $\ell(\{i\})=0$. Gaussian expectations use
+\[
+ p_C(x)=(2\pi)^{-D|\Lambda|/2}(\det C)^{-1/2}
+                     \exp(-x^TC^{-1}x/2),
+\]
+with the analytic determinant branch on the accretive cone.
+
+Fix the real cutoff
+\[
+ \chi_i=\mathbf1_{\{\|x_i\|_2\le R\}},\qquad
+ \chi_Y=\prod_{i\in Y}\chi_i.
+\]
+Consider a finite labelled family of nonempty interaction supports
+$Y\subset\Lambda$. Distinct labels may share a support.
+The functions $V_Y(A,x_Y)$ are measurable in the real variables and
+holomorphic in $A$ where $\chi_Y=1$, and
+\begin{equation}\label{oi-multiplier}
+ v_Y=\sup_{A,\;\chi_Y=1}|e^{V_Y(A,x_Y)}-1|<\infty.
+\end{equation}
+No values outside that cutoff region or real-field derivatives are
+required. Define $w_Y=\chi_Y(e^{V_Y}-1)$, extended by zero.
+Set
+\begin{align}
+ \delta&=\lambda/2,&
+ V_*&=8\Lambda_0^2/\lambda,&
+ K_G&=(2V_*/\lambda)^{D/2},\notag\\
+ p_R&=2^{D/2}e^{-R^2/(4V_*)},&
+ \tau&=K_Gp_R,& c_G&=e^2/\delta,                 \label{oi-constants}\\
+ \epsilon&=\sup_i\sum_{Y\ni i}
+      v_Y K_G^{|Y|}e^{4|Y|+\kappa\ell(Y)},&
+ \eta&=e^3\tau+\epsilon,&
+ \eta_*&=\frac1{4\max(1,c_GA_\kappa)}.           \label{oi-smallness}
+\end{align}
+The interaction sum counts labels. These sufficient constants are
+not asserted to be optimal.
+
+\begin{theorem}[Overlapping Gaussian cutoff interactions]
+\label{oi-theorem}
+If $\eta\le\eta_*$, then
+\[
+ Z_V(A)=\mathbb E_{C(A)}
+   \left[\prod_{i\in\Lambda}\chi_i
+              \exp\left(\sum_YV_Y\right)\right]
+\]
+is nonzero and has a holomorphic logarithm defined by a convergent
+expansion
+\begin{equation}\label{oi-log}
+ \log Z_V(A)=\sum_{\varnothing\ne X\subset\Lambda}U_V(X;A),\qquad
+ \sup_i\sum_{X\ni i}e^{\kappa\ell(X)+|X|}
+       \|U_V(X;\cdot)\|_\infty\le2\eta .
+\end{equation}
+The constants do not depend on the number or sizes of supports.
+If
+\begin{equation}\label{oi-quarter}
+ e^3\tau\le\eta_*/4,\qquad \epsilon\le\eta_*/4,
+\end{equation}
+the canonical expansion also satisfies
+\begin{equation}\label{oi-difference}
+ \sup_i\sum_{X\ni i}e^{\kappa\ell(X)+|X|}
+      \|U_V(X;\cdot)-U_0(X;\cdot)\|_\infty
+ \le8\epsilon ,
+\end{equation}
+where $U_0$ is the pure Gaussian cutoff forest/Mayer expansion.
+The support label $X$ concerns fluctuation cells; strict locality
+in the background is a separate assertion.
+\end{theorem}
+
+\subsection{First expansion: disjoint interaction molecules}
+
+Put $q_i=-\mathbf1_{\mathrm{bad},i}$. The identity
+\begin{equation}\label{oi-product}
+ \prod_i\chi_i e^{\sum_YV_Y}
+       =\prod_i(1+q_i)\prod_Y(1+w_Y)
+\end{equation}
+is exact, and $q_iw_Y=0$ whenever $i\in Y$.
+For a nonempty set $S$ let
+\begin{align}
+ a_S(x_S)&=
+ \sum_{\substack{\mathcal F\ne\varnothing,\;\cup_{Y\in\mathcal F}Y=S\\
+                  \mathcal F\ {\rm overlap\text{-}connected}}}
+                         \prod_{Y\in\mathcal F}w_Y(x_Y),\notag\\
+ M_S&=
+ \sum_{\substack{\mathcal F\ne\varnothing,\;\cup_{Y\in\mathcal F}Y=S\\
+                  \mathcal F\ {\rm overlap\text{-}connected}}}
+                         \prod_{Y\in\mathcal F}v_Y .       \label{oi-molecules}
+\end{align}
+Each label is used at most once in these sums. Connectivity refers
+to the intersection graph of the chosen supports. Then
+$|a_S|\le M_S$. Define $f_S=a_S$ for nonsingletons and
+$f_{\{i\}}=a_{\{i\}}+q_i$. Grouping overlap components in
+\eqref{oi-product} gives exactly
+\begin{equation}\label{oi-disjoint}
+ \prod_i\chi_i e^{\sum_YV_Y}
+   =\sum_{\mathcal P\ {\rm pairwise\ disjoint}}
+                               \prod_{S\in\mathcal P}f_S(x_S).
+\end{equation}
+The grouping is unique: interaction components and bad singleton
+marks have disjoint supports. Introduce
+\begin{equation}\label{oi-b}
+ b(S)=K_G^{|S|}M_S+\tau\mathbf1_{\{|S|=1\}}.
+\end{equation}
+
+\begin{lemma}[Overlap-animal estimate]\label{oi-animal}
+If $\epsilon\le1$, then
+\begin{equation}\label{oi-primitive-norm}
+ \sup_i\sum_{S\ni i}b(S)e^{\kappa\ell(S)+3|S|}
+       \le e^3\tau+\epsilon=\eta .
+\end{equation}
+\end{lemma}
+\begin{proof}
+Set $u_Y=v_YK_G^{|Y|}e^{3|Y|+\kappa\ell(Y)}$.
+For an overlap-connected family,
+$\ell(\cup Y)\le\sum_Y\ell(Y)$ and
+$|\cup Y|\le\sum_Y|Y|$: join spanning trees of the supports,
+which share vertices along their intersection graph.
+Since $K_G\ge1$, its contribution to the interaction part of
+\eqref{oi-primitive-norm} is at most $\prod_Yu_Y$.
+
+Majorize a connected family anchored at $i$ by rooted spanning
+trees of its intersection graph, choosing a root support containing
+$i$. Dropping distinctness of labels only increases the sum.
+The nonnegative rooted-tree majorant is the monotone iterative
+solution of
+\[
+ T_Y=u_Y\exp\left(\sum_{Z:\,Z\cap Y\ne\varnothing}T_Z\right).
+\]
+If $T_Z\le u_Ze^{|Z|}$, then
+\[
+ \sum_{Z:\,Z\cap Y\ne\varnothing}T_Z
+ \le\sum_{j\in Y}\sum_{Z\ni j}u_Ze^{|Z|}
+ \le\epsilon |Y|\le |Y|.
+ \]
+Thus the bound persists through iteration, and
+$\sum_{Y\ni i}T_Y\le\epsilon$. Every original connected family
+is included at least once. The remaining bad singleton term is
+$e^3\tau$.
+\end{proof}
+
+\subsection{Covariance forests with original cell endpoints}
+
+Fix disjoint primitive supports $S_1,\ldots,S_n$. Introduce a
+covariance parameter $s_{ab}$ for each pair of molecules, multiplying
+all blocks between $S_a$ and $S_b$ and leaving internal blocks
+unchanged. Partition masks in these parameters are direct sums of
+actual principal submatrices of $C$. Their convex hull retains
+\eqref{oi-covariance}, so the BKAR forest formula applies there.
+At a forest mask both the covariance and the product of primitive
+functions factorize over the forest components.
+
+For a molecule-tree $T$, expand each covariance derivative into
+its original endpoint cells:
+\begin{equation}\label{oi-cell-derivative}
+ \partial_{s_{ab}}
+      =\sum_{i\in S_a,\;j\in S_b}\partial_{z_{ij}},
+\end{equation}
+where $z_{ij}$ multiplies just $C_{ij}$ and $C_{ji}$.
+Choose one endpoint pair for each tree edge and let $d_i$ count
+the resulting degree of cell $i$. No chosen endpoint pair repeats.
+At the real forest mask, allow complex increments with radii
+\begin{equation}\label{oi-radii}
+ r_{ij}=\frac{\delta}{\max(d_i,d_j)J_{ij}}.
+\end{equation}
+Zero covariance edges contribute zero and can be omitted.
+Every block row and column of the perturbation has sum at most
+$\delta$, hence its operator norm is at most $\delta$. On the
+whole polydisc,
+\[
+ \operatorname{Herm}M\ge\lambda I/2,\quad
+ \|M\|\le2\Lambda_0,\quad
+ \operatorname{Herm}M^{-1}\ge V_*^{-1}I,\quad
+ |\det M|\ge(\lambda/2)^{D|\cup S_a|}.
+\]
+Thus $|p_M|$ is bounded by $K_G^{|\cup S_a|}$ times the product
+real Gaussian density with cell covariance $V_*I$. For singletons
+use $|f_i|\le M_i+\mathbf1_{\mathrm{bad},i}$ and its independent
+Gaussian tail bound $p_R$. For other supports use $|f_S|\le M_S$.
+This proves
+\[
+ \left|\mathbb E_M\prod_a f_{S_a}\right|
+       \le\prod_a b(S_a).
+\]
+Cauchy's estimate, once in every chosen covariance edge, yields
+\begin{equation}\label{oi-tree-bound}
+ \left|\partial_{T,\ {\rm endpoints}}
+          \mathbb E_{C(s)}\prod_a f_{S_a}\right|
+ \le c_G^{n-1}\prod_a b(S_a)
+                   \prod_i d_i!\prod_{ij\in T}J_{ij}.
+\end{equation}
+Indeed,
+$\prod_{ij}\max(d_i,d_j)\le\prod_i d_i^{d_i}
+ \le e^{2(n-1)}\prod_i d_i!$.
+The factorials are attached to original cells, including degree-zero
+cells with $0!=1$, and not to the sizes or degrees of whole molecules.
+Neither indicators nor interaction multipliers are differentiated.
+
+Forest components now regroup \eqref{oi-disjoint} into the exact
+hard-core gas
+\begin{equation}\label{oi-effective-gas}
+ Z_V=\sum_{\mathcal Q\ {\rm pairwise\ disjoint}}
+                                 \prod_{X\in\mathcal Q}\zeta(X).
+\end{equation}
+Here $\zeta(X)$ sums partitions of $X$ into disjoint primitive
+supports and molecule trees with their BKAR integrals. The
+one-primitive case is its un-interpolated expectation.
+
+\subsection{Endpoint factorials and the rooted-tree sum}
+
+\begin{lemma}\label{oi-tree-lemma}
+Under \eqref{oi-primitive-norm} and $\eta\le\eta_*$,
+\begin{equation}\label{oi-zeta-bound}
+ \sup_i\sum_{X\ni i}|\zeta(X)|
+                  e^{\kappa\ell(X)+2|X|}\le\eta .
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $\widehat b(S)=b(S)e^{\kappa\ell(S)+2|S|}$ and
+$\widehat J_{ij}=e^{\kappa d(i,j)}J_{ij}$.
+The union weight is dominated by these support weights and endpoint
+edge weights: spanning trees inside the supports together with
+the chosen covariance edges connect their union.
+
+Root a molecule tree and retain the incoming cell at each nonroot
+vertex. Let $F_i$ majorize planted trees whose root molecule
+contains $i$ and carries one extra incoming half-edge at $i$.
+This half-edge has no covariance weight; it increments the cell
+degree. Allowing repeated or overlapping primitive supports
+enlarges the positive majorant. With
+$t_k=c_G\sum_j\widehat J_{kj}F_j$, its recursion is
+\begin{equation}\label{oi-recursion}
+ F_i=\sum_{S\ni i}\widehat b(S)
+              (1-t_i)^{-1}\prod_{k\in S}(1-t_k)^{-1}.
+\end{equation}
+To verify its normalization, suppose $n_k$ children depart from
+cell $k$. The unordered-child factor, after summing endpoint
+assignments, is $1/\prod_k n_k!$. The cell-degree factorial in
+\eqref{oi-tree-bound} is $\prod_k n_k!$, except that the incoming
+cell has $(n_i+1)!$. The residual factors are $1$ at every
+ordinary cell and $n_i+1$ at the incoming cell. Their nonnegative
+geometric series give exactly \eqref{oi-recursion}.
+This can equivalently be obtained from ordered children weighted
+by the inverse factorial of their total number. It is the rooted
+labelled-tree exponential series; repeated labels are used only
+for the upper bound.
+
+Define the recursion by finite-height truncation. If $F_j\le2\eta$,
+then $t_k\le2c_GA_\kappa\eta\le1/2$, and
+\[
+ F_i\le2\sum_{S\ni i}\widehat b(S)2^{|S|}
+      \le2\sum_{S\ni i}\widehat b(S)e^{|S|}
+      \le2\eta.
+\]
+This gives a convergent planted majorant. At an unplanted root
+the extra factor $(1-t_i)^{-1}$ is absent, so its sum over root
+supports containing $i$ is at most
+$\sum_{S\ni i}\widehat b(S)2^{|S|}\le\eta$.
+In an original disjoint primitive family whose union contains
+$i$, precisely one support contains $i$; root the tree there.
+This proves \eqref{oi-zeta-bound}.
+
+In particular a molecule of $m$ cells with equal endpoint parameter
+$t$ has unplanted generating function $(1-t)^{-m}$. Its degree-$d$
+coefficient is $(m)_d/d!$, a rising factorial divided by $d!$.
+Replacing this by the crude block bound $m^d d!$ would lose the
+support-exponential control.
+\end{proof}
+
+\subsection{Logarithm and analytic comparison}
+
+For $z'(X)=|\zeta(X)|e^{\kappa\ell(X)+|X|}$,
+\eqref{oi-zeta-bound} gives the Kotecky--Preiss condition
+with size function $|X|$:
+\[
+ \sum_{Y:\,Y\cap X\ne\varnothing}z'(Y)e^{|Y|}
+       \le |X|\eta\le |X|.
+\]
+The absolutely convergent Mayer logarithm, grouped by the union
+of each connected overlap cluster, defines $U_V$. The union
+weight is at most the product of its polymer weights. Anchor a
+cluster at $i$ by distinguishing a polymer containing $i$ and
+apply the pinned cluster estimate. It gives
+\begin{equation}\label{oi-pinned}
+ \sup_i\sum_{X\ni i}e^{\kappa\ell(X)+|X|}|U_V(X)|
+ \le\sup_i\sum_{Y\ni i}
+       |\zeta(Y)|e^{\kappa\ell(Y)+2|Y|}\le\eta.
+\end{equation}
+Uniform background suprema can be taken at every preceding step.
+Locally uniform convergence proves holomorphy and identifies
+$Z_V$ with the exponential of this logarithm, proving
+nonvanishing and \eqref{oi-log}.
+
+For \eqref{oi-difference}, replace every $w_Y$ by $t w_Y$ while
+retaining the bad singleton marks. This interpolates bounded
+multipliers. Its interaction norm is $|t|\epsilon$.
+If $\epsilon>0$, set $\rho=\eta_*/(2\epsilon)\ge2$.
+Under \eqref{oi-quarter}, all estimates hold for $|t|\le\rho$
+because $\eta(t)\le3\eta_*/4$. The canonical activity vector is
+holomorphic on this disk in the rooted activity norm and bounded
+by $2\eta_*$. Banach-valued Cauchy therefore gives
+\[
+ \|U(1)-U(0)\|\le\frac{2\eta_*}{\rho-1}\le8\epsilon .
+\]
+The case $\epsilon=0$ is immediate. At $t=0$ only bad singleton
+primitives remain, so $U(0)$ is the original pure Gaussian cutoff
+forest/Mayer expansion. This completes the proof.
+
+\subsection{Scope of the abstract result}
+
+The same conclusion holds for countably many labelled interactions
+under \eqref{oi-smallness}, defining the integrand by the uniformly
+convergent product of their bounded multipliers on the cutoff,
+or equivalently by its finite-family limit. No convergence of the
+chosen logarithms $V_Y$ themselves is asserted. If
+$u_Y=\sup_{\rm cutoff}|V_Y|\le1$, then
+$v_Y\le2u_Y$ is a sufficient conversion to the required norm.
+Finite range is optional; the weighted summability is the actual
+hypothesis. The factor $K_G^{|Y|}$ budgets the Gaussian density
+cost but does not allow the original cell dimension $D$ to grow
+with the regulator.
+
+The argument establishes locality of support labels in fluctuation
+space. A covariance depending on a remote background variable may
+give every activity the same remote dependence, even if the
+covariance is diagonal. Strict background support consequently
+requires the separate local-precision/support-algebra hypotheses.
+Actual Yang--Mills use also requires the stated independent cell
+coordinates, uniform complex spectrum, fixed cutoff domain and
+weighted interaction bounds. None is inferred here from a global
+interaction stability estimate or from pointwise inverse bounds.
+
+The imported expansion results are the BKAR forest formula on the
+convex hull of partition masks (Abdesselam--Rivasseau,
+arXiv:hep-th/9409094) and the Kotecky--Preiss hard-core polymer
+theorem, \emph{Communications in Mathematical Physics} \textbf{103}
+(1986), 491--498. The molecule grouping, cell-endpoint Cauchy
+estimate and endpoint-factorial tree sum above supply the new
+overlapping-support step.
+
+\end{document}
+

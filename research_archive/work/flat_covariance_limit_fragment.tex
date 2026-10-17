@@ -1,0 +1,414 @@
+% Audited ultraviolet-limit proof; insert before the source section.
+% Uses only the host document's packages and theorem environments.
+\section{The ultraviolet limit of the flat Gaussian baseline}
+\label{limit-section}
+
+The common complex strip gives more than uniform locality: the flat
+precision and covariance have limits as the original spacing tends to
+zero. We prove a quantitative rate, including the aliases near the edge
+of the fine Brillouin zone. This is a limit of the homogeneous free
+baseline in the fixed retained coordinates.
+
+For a matrix kernel $F(i,j)$ on a lattice with finite-dimensional fibers,
+use the exponentially weighted Schur norm
+\begin{equation}\label{limit-schur-definition}
+ \norm{F}_\kappa=
+ \max\left\{
+ \sup_i\sum_j e^{\kappa\operatorname{dist}(i,j)}\norm{F(i,j)},
+ \sup_j\sum_i e^{\kappa\operatorname{dist}(i,j)}\norm{F(i,j)}
+ \right\}.
+\end{equation}
+The fiber norm is the fixed operator norm. On the unit lattice the
+distance is $|i-j|_1$. For reduced operators we group all coordinates
+into the fixed $L$-blocks and use block distance. Grouping a unit-lattice
+kernel changes constants and, if needed, reduces its exponent; these
+changes depend only on $d,L$ and the fixed fiber dimension. Matrix
+products below use one common grouping. The triangle inequality for
+distance proves
+\begin{equation}\label{limit-schur-algebra}
+ \norm{FG}_\kappa\le\norm{F}_\kappa\norm{G}_\kappa.
+\end{equation}
+The same convention applies in periodic distance on a torus, with the
+actual periodic incidence multiplicities.
+
+\begin{theorem}\label{limit-theorem}
+There are a periodic holomorphic symbol $q_\infty$ and constants
+$\rho_*,C>0$, independent of odd $M$, such that
+\begin{equation}\label{limit-symbol-rate}
+ \sup_{|\operatorname{Im}z|_\infty\le\rho_*}
+       \norm{q_M(z)-q_\infty(z)}\le CM^{-2}.
+\end{equation}
+At a fixed sufficiently small $\kappa>0$,
+\begin{equation}\label{limit-action-rate}
+ \norm{q_M-q_\infty}_\kappa\le C_\kappa M^{-2}.
+\end{equation}
+Set
+\[
+ A_{\infty,0}=K_L^*(q_\infty+T_L^*T_L)K_L,
+ \qquad C_{M,0}=A_{M,0}^{-1},\quad
+ C_{\infty,0}=A_{\infty,0}^{-1}.
+\]
+Then $A_{\infty,0}\ge\gamma_*I$, and at a possibly smaller fixed
+positive exponent,
+\begin{equation}\label{limit-covariance-rate}
+ \norm{A_{M,0}-A_{\infty,0}}_\kappa+
+ \norm{C_{M,0}-C_{\infty,0}}_\kappa
+ \le C_{d,L,\kappa}M^{-2}.
+\end{equation}
+The same bounds hold uniformly on compatible periodic tori. Their
+kernels are exact periodizations of the infinite kernels. If the
+shortest nonzero period tends to infinity, the thermodynamic and
+$M\to\infty$ limits commute on every fixed finite set of coordinates.
+\end{theorem}
+
+\subsection{Sinc notation and the exact limiting alias sum}
+
+Continue to use $I_M=\{-(M-1)/2,\ldots,(M-1)/2\}$ and
+$p_r(z)=z+2\pi r$. To distinguish finite and limiting denominators,
+write the earlier $P_r$ as $P_{M,r}$. Define
+\begin{equation}\label{limit-sinc}
+ s_M(w)=\frac{\sin(w/2)}{M\sin(w/(2M))},\qquad
+ s(w)=\frac{\sin(w/2)}{w/2},\qquad s(0)=1,
+\end{equation}
+with all removable values filled, and
+\begin{equation}\label{limit-denominators}
+ P_{M,r}=4M^2\sum_\nu\sin^2\frac{p_{r,\nu}}{2M},
+ \qquad P_{\infty,r}=\sum_\nu p_{r,\nu}^2.
+\end{equation}
+The paired averaging numerators are
+\begin{align}
+ N_{M,r,\mu}
+ &=s_M(p_{r,\mu})^2\prod_\nu s_M(p_{r,\nu})^2,
+ \label{limit-numerator-finite}\\
+ N_{\infty,r,\mu}
+ &=s(p_{r,\mu})^2\prod_\nu s(p_{r,\nu})^2.
+ \label{limit-numerator-infinite}
+\end{align}
+Indeed the longitudinal averaging phase
+$\exp(i(M-1)p_\mu/(2M))$ tends to $\exp(ip_\mu/2)$, but it
+cancels exactly between the positive and negative arguments of each
+covariance numerator. There is consequently no phase error of order
+$M^{-1}$. These are analytic products, not complex absolute squares.
+Physical-volume Parseval normalization gives no additional power of
+$M$ in the alias sum.
+
+Define the high-alias remainders
+\begin{equation}\label{limit-remainders}
+ R_{M,\mu}=
+ \sum_{r\in I_M^d\setminus\{0\}}\frac{N_{M,r,\mu}}{P_{M,r}},
+ \qquad
+ R_{\infty,\mu}=
+ \sum_{r\in\mathbb Z^d\setminus\{0\}}
+                         \frac{N_{\infty,r,\mu}}{P_{\infty,r}}.
+\end{equation}
+We first prove normal convergence and a uniform rate for the second
+sum. These estimates also justify the explicit continuum formula below.
+
+\subsection{High-alias bounds uniform up to the fine cutoff}
+
+Fix $\pi<K<2\pi$ and work on
+\[
+ \mathcal B_{K,\rho}=
+ \{x+iy:|x_\nu|\le K,\ |y_\nu|\le\rho\},
+ \qquad 0<\rho\le1.
+\]
+Put $a=2\pi-K$ and $c_0=4a^2/\pi^2$. If a retained component
+$r_\nu\ge1$, the two possible nearest distances of
+$x_\nu+2\pi r_\nu$ to $2\pi M\mathbb Z$ obey
+\[
+ 2\pi r_\nu-K\ge ar_\nu,\qquad
+ 2\pi(M-r_\nu)-K
+ \ge2\pi(r_\nu+1)-K\ge ar_\nu.
+\]
+The negative case is symmetric. The principal distance is at most
+$\pi M$, so the elementary sine lower bound gives
+\[
+ P_{M,r}(x)\ge c_0|r|_2^2\qquad(r\ne0).
+\]
+Moreover, direct expansion of the complex sine gives
+\[
+ \operatorname{Re}P_{M,r}(x+iy)
+ \ge P_{M,r}(x)-e^\rho\sum_\nu y_\nu^2.
+\]
+Choose $\rho$ so that $de^\rho\rho^2\le c_0/2$. Then
+\begin{equation}\label{limit-high-denominator}
+ |P_{M,r}(z)|\ge\operatorname{Re}P_{M,r}(z)
+ \ge\frac{c_0}{2}|r|_2^2\qquad(r\ne0).
+\end{equation}
+This bound includes $|r_\nu|$ comparable to $M$. The continuum
+denominator, for every nonzero integer alias, satisfies
+\begin{equation}\label{limit-high-denominator-infinite}
+ \operatorname{Re}P_{\infty,r}(z)
+ =\sum_\nu(x_\nu+2\pi r_\nu)^2-\sum_\nu y_\nu^2
+ \ge\frac{c_0}{2}|r|_2^2.
+\end{equation}
+For this last inequality use $|x_\nu+2\pi r_\nu|\ge a|r_\nu|$
+when $r_\nu\ne0$, and $a^2\ge c_0$.
+
+The integral representation of sinc bounds the zero-index factor by
+$e^{\rho/2}$. For $r_\nu\ne0$,
+\[
+ |\sin((z_\nu+2\pi r_\nu)/2)|\le\cosh(\rho/2),
+ \qquad |z_\nu+2\pi r_\nu|\ge a|r_\nu|.
+\]
+Hence
+\begin{equation}\label{limit-sinc-weight}
+ |s(p_{r,\nu})|\le\frac{C_s}{1+|r_\nu|}.
+\end{equation}
+The same estimate holds for retained $s_M$ factors. For a nonzero
+index, use the preceding distance estimate to obtain
+\[
+ |M\sin(p_{r,\nu}(z)/(2M))|
+ \ge |M\sin((x_\nu+2\pi r_\nu)/(2M))|
+ \ge(a/\pi)|r_\nu|;
+\]
+for zero index, use the centered finite exponential average.
+
+Set
+\[
+ \mathcal W_{r,\mu}=(1+|r_\mu|)^{-2}
+                         \prod_\nu(1+|r_\nu|)^{-2},
+ \qquad
+ B_2=\sum_{m\in\mathbb Z}(1+|m|)^{-2}=\pi^2/3-1.
+\]
+Equations \eqref{limit-high-denominator}--\eqref{limit-sinc-weight}
+give the summable majorant
+\begin{equation}\label{limit-majorant}
+ \left|\frac{N_{M,r,\mu}}{P_{M,r}}\right|
+ +\left|\frac{N_{\infty,r,\mu}}{P_{\infty,r}}\right|
+ \le C\frac{\mathcal W_{r,\mu}}{|r|_2^2}.
+\end{equation}
+The finite term here is used only for retained aliases. In particular,
+the infinite remainder is holomorphic in the box interior and
+continuous uniformly on the closed box. Its tail has the explicit bound
+\begin{equation}\label{limit-tail}
+ \sum_{|r|_\infty>N}\frac{\mathcal W_{r,\mu}}{|r|_2^2}
+ \le\frac{2d B_2^{d-1}}{(N+1)^3}.
+\end{equation}
+To verify it, discard the additional orientation factor, use
+$|r|_2\ge N+1$, and cover the tail by the $d$ coordinate tails;
+$\sum_{|m|>N}(1+|m|)^{-2}\le2/(N+1)$.
+
+\subsection{A second-order rate without a small-alias restriction}
+
+Let $f(w)=w/\sin w$, with its removable value at zero. For all
+retained aliases and $M\ge3$,
+\begin{equation}\label{limit-compact-rectangle}
+ \left|\operatorname{Re}\frac{p_{r,\nu}}{2M}\right|
+ \le\frac\pi2+\frac{K-\pi}{6}<\frac{2\pi}3,
+ \qquad
+ \left|\operatorname{Im}\frac{p_{r,\nu}}{2M}\right|\le\frac16.
+\end{equation}
+Thus $f$ and $(f(w)-1)/w^2$ are bounded on one fixed rectangle,
+after filling the removable value at zero. The exact identity
+\begin{equation}\label{limit-factor-comparison}
+ s_M(p)=s(p)f(p/(2M)),\qquad
+ |f(p/(2M))-1|\le C|p|^2/M^2
+\end{equation}
+holds even at the largest aliases. For $r\ne0$,
+$\sum_\nu|p_{r,\nu}|^2\le C|r|_2^2$. Telescoping the fixed
+$2d+2$ factors in the numerator therefore gives
+\begin{equation}\label{limit-numerator-error}
+ |N_{M,r,\mu}-N_{\infty,r,\mu}|
+ \le CM^{-2}|r|_2^2\mathcal W_{r,\mu}.
+\end{equation}
+The removable analytic function
+$((\sin w/w)^2-1)/w^2$ is bounded on the same rectangle, yielding
+\begin{equation}\label{limit-denominator-error}
+ |P_{M,r}-P_{\infty,r}|
+ \le CM^{-2}\sum_\nu|p_{r,\nu}|^4
+ \le CM^{-2}|r|_2^4.
+\end{equation}
+Divide \eqref{limit-numerator-error} by the lower denominator bound.
+For the reciprocal-denominator difference, divide
+\eqref{limit-denominator-error} by the product of the two lower
+bounds. The powers of $|r|$ cancel in both operations, giving
+\begin{equation}\label{limit-summand-error}
+ \left|\frac{N_{M,r,\mu}}{P_{M,r}}
+       -\frac{N_{\infty,r,\mu}}{P_{\infty,r}}\right|
+ \le CM^{-2}\mathcal W_{r,\mu}.
+\end{equation}
+Since $\sum_r\mathcal W_{r,\mu}\le B_2^d$, these retained-alias
+errors sum to $O(M^{-2})$. The missing aliases are bounded by
+\eqref{limit-tail} with $N=(M-1)/2$, giving $O(M^{-3})$. Consequently
+\begin{equation}\label{limit-remainder-rate}
+ \sup_{z\in\mathcal B_{K,\rho}}
+ |R_{M,\mu}(z)-R_{\infty,\mu}(z)|\le CM^{-2}.
+\end{equation}
+No estimate above assumes $|r|/M$ is small. The case $M=1$ can be
+included by enlarging the constant; it has no high aliases.
+
+\subsection{The canceled continuum symbol and its removable zeros}
+
+To avoid confusion with the reduced precision $A_{M,0}$, denote the
+principal scalar averaging weight in this subsection by
+$\mathfrak a_M$. Define its limit and the other limiting quantities by
+\begin{align}
+ P(z)&=\sum_\nu z_\nu^2,&
+ \mathfrak a(z)&=\prod_\nu s(z_\nu)^2,&
+ g_{\infty,\mu}(z)&=\mathfrak a(z)s(z_\mu)^2,
+ \label{limit-central}\\
+ D_{\infty,\mu}&=g_{\infty,\mu}+P R_{\infty,\mu},&
+ h_{\infty,\mu}&=D_{\infty,\mu}^{-1}.&&
+ \nonumber
+\end{align}
+Here $\mathfrak a_M(z)=\prod_\nu s_M(z_\nu)^2$ is the quantity
+previously called the central $A(z)$, not a retained-coordinate matrix.
+Keep $d_\mu^\pm=e^{\pm iz_\mu}-1$ and $b_\mu=d_\mu^+d_\mu^-$,
+and set
+\begin{equation}\label{limit-E}
+ E_\infty=\mathfrak a^{-1}-\sum_\mu
+ \frac{b_\mu R_{\infty,\mu}}
+      {g_{\infty,\mu}D_{\infty,\mu}}.
+\end{equation}
+The explicit limiting precision is
+\begin{equation}\label{limit-explicit-symbol}
+ (q_\infty)_{\mu\nu}(z)
+ =P(z)h_{\infty,\mu}(z)\delta_{\mu\nu}
+ -\frac{h_{\infty,\mu}(z)d_\mu^+(z)d_\nu^-(z)
+                  h_{\infty,\nu}(z)}{E_\infty(z)}.
+\end{equation}
+
+On real nonzero momenta, this is the gauge quotient of the continuum
+alias covariance with diagonal entries
+\begin{equation}\label{limit-continuum-covariance}
+ c_{\infty,\mu}(x)=
+ \sum_{r\in\mathbb Z^d}
+ \frac{s(x_\mu+2\pi r_\mu)^2
+               \prod_\nu s(x_\nu+2\pi r_\nu)^2}
+      {\sum_\nu(x_\nu+2\pi r_\nu)^2}.
+\end{equation}
+Explicitly, if $W_\infty=\diag(c_{\infty,\mu})$, it equals
+$W_\infty^{-1}-W_\infty^{-1}d^+
+(d^-W_\infty^{-1}d^+)^{-1}d^-W_\infty^{-1}$.
+The singular principal Feynman term of
+\eqref{limit-continuum-covariance} is not used at $x=0$; the canceled
+formula \eqref{limit-explicit-symbol} supplies the continuation.
+
+Choose a closed smaller box inside the established common holomorphic
+domain, still with a real margin beyond $[-\pi,\pi]^d$. The finite
+denominators $g_{M,\mu},D_{M,\mu},E_M$ have uniform positive modulus
+lower bounds there. At the central alias,
+\eqref{limit-factor-comparison} and the direct sine expansion give
+$O(M^{-2})$ convergence of $P_{M,0}$ to $P$ and
+$\mathfrak a_M,g_{M,\mu}$ to their limits. Together with
+\eqref{limit-remainder-rate}, this gives $O(M^{-2})$ convergence of
+$D_{M,\mu}$ and then $E_M$. Their lower bounds pass to the limits.
+The canceled rational expression is uniformly Lipschitz on this
+bounded set separated from its denominator zeros. This proves
+\eqref{limit-symbol-rate} on the smaller strip.
+
+Every one-variable zero at $z_\nu+2\pi r_\nu=0$ is filled by the
+entire sinc function. If $z_\nu=0$ and $r_\nu\ne0$, that sinc
+factor is zero and the alias term vanishes; its high denominator is
+still nonzero by \eqref{limit-high-denominator-infinite}. At $z=0$,
+all high numerators vanish, while
+\[
+ \mathfrak a(0)=g_{\infty,\mu}(0)
+ =D_{\infty,\mu}(0)=E_\infty(0)=1,
+ \qquad P(0)=d^\pm(0)=0.
+\]
+Thus $q_\infty(0)=0$. The exact identity
+$\sum_\mu b_\mu/g_{\infty,\mu}=P/\mathfrak a$ holds with
+the removable one-variable factors filled. It removes the whole
+complex null cone $P=0$ from \eqref{limit-explicit-symbol}.
+There is no exceptional rule on coordinate axes.
+
+The separated central and remainder pieces need not be periodic.
+The full finite-$M$ quotients are periodic on their common tube,
+so their uniform limit is periodic. Alternatively, reindex the
+absolutely convergent full sum \eqref{limit-continuum-covariance}
+on the real overlaps and apply the identity theorem. This also
+identifies the formula across Brillouin-chart seams.
+
+\subsection{Weighted convergence, inversion, and compatible tori}
+
+Choose $0<\kappa<\rho_0<\rho_*$. In the Fourier convention used
+above, shift the $\nu$th contour by $i\rho_0\operatorname{sign}(x_\nu)$.
+Equation \eqref{limit-symbol-rate} gives
+\[
+ \norm{(q_M-q_\infty)(x)}
+ \le CM^{-2}e^{-\rho_0|x|_1}.
+\]
+Summation proves \eqref{limit-action-rate}, with the explicit factor
+\begin{equation}\label{limit-weighted-rate}
+ \norm{q_M-q_\infty}_\kappa
+ \le\frac{C}{M^2}
+ \left(\frac{1+e^{-(\rho_0-\kappa)}}
+            {1-e^{-(\rho_0-\kappa)}}\right)^d.
+\end{equation}
+Grouping into the fixed $L$-block fibers preserves this rate.
+Because $K_L,T_L$ are fixed finite-range maps,
+\[
+ A_{M,0}-A_{\infty,0}=K_L^*(q_M-q_\infty)K_L,
+ \qquad
+ \norm{A_{M,0}-A_{\infty,0}}_\kappa
+ \le\norm{K_L}_\kappa^2\norm{q_M-q_\infty}_\kappa.
+\]
+This is an operator-norm limit as well. Hence the real lower gap
+$A_{M,0}\ge\gamma_*I$ passes to $A_{\infty,0}$.
+The uniform locality and gap argument already proved for the flat
+covariance applies to the limit too. Reducing the exponential weight
+below the pointwise inverse-kernel decay exponent yields
+\[
+ \sup_M\norm{C_{M,0}}_\kappa+\norm{C_{\infty,0}}_\kappa<\infty.
+\]
+The exact resolvent identity and \eqref{limit-schur-algebra} then give
+\[
+ C_{M,0}-C_{\infty,0}
+ =C_{M,0}(A_{\infty,0}-A_{M,0})C_{\infty,0},
+\]
+\[
+ \norm{C_{M,0}-C_{\infty,0}}_\kappa
+ \le\norm{C_{M,0}}_\kappa
+     \norm{A_{M,0}-A_{\infty,0}}_\kappa
+     \norm{C_{\infty,0}}_\kappa
+ \le C_{d,L,\kappa}M^{-2}.
+\]
+This completes the infinite-volume estimate. In the sequence $M=L^k$
+its rate is $O(L^{-2k})$.
+
+Let $\Gamma$ be a compatible full-rank period lattice. Unit-lattice
+symbols sampled on the torus Fourier grid have periodized kernels, so
+\begin{equation}\label{limit-periodization}
+ (q_M^\Gamma-q_\infty^\Gamma)(x,y)
+ =\sum_{\gamma\in\Gamma}(q_M-q_\infty)(x-y+\gamma).
+\end{equation}
+The periodic distance is no greater than the distance of each image;
+thus its weighted Schur norm is bounded by
+\eqref{limit-weighted-rate}, independently of volume.
+
+For retained operators require $\Gamma\subset L\mathbb Z^d$ and
+the same periodic pivot convention. In $L$-block coordinates all
+operators have fixed finite-dimensional fibers. Periodization
+commutes with multiplication of absolutely summable block kernels:
+expand both image sums and decompose the intermediate point into a
+fundamental-domain point and its period translate. Therefore
+periodizing $A_{M,0}C_{M,0}=I=C_{M,0}A_{M,0}$ proves
+\[
+ C_{M,0}^\Gamma=(A_{M,0}^\Gamma)^{-1},
+\]
+with $A_{M,0}^\Gamma$ exactly the finite periodic source matrix.
+The same reasoning holds for the limit. This verifies the
+volume-uniform version of \eqref{limit-covariance-rate}, including
+short tori with coincident images and their correct multiplicities.
+
+If the shortest nonzero period tends to infinity, uniform exponential
+decay makes the image error vanish on every fixed finite coordinate
+set. Combining this error with the volume-independent $M^{-2}$ bound
+proves that the two limits commute. Growing volume with a bounded
+periodic direction instead produces a cylindrical limit. The proof
+uses exact homogeneous periodization; it says nothing about an
+arbitrary Dirichlet or retained-history covariance being a compression
+or periodization of the homogeneous one.
+
+\begin{remark}\label{limit-scope}
+The limit is the order-zero homogeneous Gaussian baseline. Under the
+finite-level constrained-minimizer identification, it is expressed in
+the actual retained integration coordinates of the source step. It
+does not establish an interacting Yang--Mills ultraviolet limit,
+nonflat-background convergence, independent-current derivative
+bounds, or arbitrary retained-history boundary matching. Those
+interfaces are unchanged, and no sharp cutoff domain is moved by
+the calculation.
+\end{remark}

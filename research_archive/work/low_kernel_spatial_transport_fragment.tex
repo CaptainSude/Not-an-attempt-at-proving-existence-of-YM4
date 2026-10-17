@@ -1,0 +1,409 @@
+\section{Connected localization of spatially canceled low kernels}
+\label{lst-section}
+
+This section proves a connected-activity norm estimate for the
+canceled \emph{total} kernels. Its inputs are coherent complete-field
+support families and exact infinite-lattice moment cancellations.
+It also applies to explicitly periodized versions of those inputs,
+with their lifted sums. It does not silently impose lifted moment
+identities on an arbitrary finite torus kernel.
+
+\subsection{Inputs and parameter order}
+\label{lst-input-section}
+
+Work in dimension four. A current coordinate consists of a site,
+positive bond direction and color, with fixed internal dimension \(v\).
+For \(n=2,3,4\), let \(K_n\) be a translation-invariant symmetric
+\(n\)-linear kernel. Anchor its first site at \(x\), write the other
+sites as \(x+r_2,\ldots,x+r_n\), and put
+\(m=\sum_{j=2}^n|r_j|_1\). Internal indices are included in all sums.
+Assume
+\begin{equation}
+ \sup_{\text{first internal index}}
+ \sum_{\text{other indices},r_2,\ldots,r_n}
+       e^{\sigma m}|K_n(0,r_2,\ldots,r_n)|
+       \le \epsilon b^{-n}.
+ \label{lst-kernel-bound}
+\end{equation}
+The constants \(\sigma,\epsilon\) can incorporate the fixed old
+grouping \(J\). Fixed-order Cauchy and a connected activity bound
+supply this estimate with a smaller spatial exponent.
+
+Use tail-site coordinates. Assume componentwise
+\begin{align}
+ \sum_r r^\gamma K_2(r)&=0
+                          &&(|\gamma|\le3),\notag\\
+ \sum_{r,s}K_3(r,s)&=0,\qquad
+ \sum_{r,s}r_\rho K_3(r,s)=
+ \sum_{r,s}s_\rho K_3(r,s)=0
+                          &&(\rho=1,\ldots,4),\notag\\
+ \sum_{r,s,t}K_4(r,s,t)&=0.
+ \label{lst-moments}
+\end{align}
+These are consequences of the stronger vanishing orders in
+Theorem~\ref{tkw-theorem}; analytic conversion from midpoint
+to tail coordinates preserves those orders.
+
+Fix an integer endpoint ratio \(L\), put \(h=L^{-1}\), and let
+\(a(w)\) be an analytic current-angle background on the radius-\(b\)
+final-field ball. Current sites have physical spacing \(h\).
+Assume coherent complete-field strict families: on every fixed
+enlarged final-unit collar rooted at \(i\),
+\begin{equation}
+ a|_i=\sum_{X\ne\varnothing}a_{i,X}(w_X),\qquad
+ a_{i,X}(0)=0,\qquad
+ \sup_i\sum_X e^{\kappa\tau(\{i\}\cup X)+A|X|}
+           \|a_{i,X}\|_{C^{1,\alpha};b}
+       \le C_* b h .
+ \label{lst-background}
+\end{equation}
+The derivatives in this norm are physical. Coefficients on
+overlapping collars restrict one global assignment. All maxima,
+first derivatives and first-gradient H\"older quotients are
+inside the support sum. A fixed collar contains any coordinate
+paths whose current length is at most \(L\); enlarging it changes
+only fixed constants and possibly decreases \(\kappa\).
+These are the complete-family inputs of the supported pre-gauge
+background construction, not bounds merely on the summed field.
+
+Let \(P_n(a)=K_n(a,\ldots,a)/n!\), fix \(a_0>0\), and set
+\(c=a_0+1\). Choose \(J\) once with
+\begin{equation}
+ \frac{2c}{J}\le\kappa,\qquad A\ge4c .
+ \label{lst-budgets}
+\end{equation}
+
+\begin{theorem}[Low-kernel spatial transport]
+\label{lst-theorem}
+There are \(C,L_0\), depending on
+\(\sigma,J,C_*,a_0,\alpha\) and the fixed internal dimension,
+but not on \(L,b\), volume or preceding refinement, such that
+for \(L\ge L_0\) there are connected activities on final \(J\)-cells
+with
+\begin{equation}
+ \sum_H B_H(w_H)=\sum_{n=2}^4P_n(a(w)),\qquad
+ \sup_I\sum_{H\ni I}e^{a_0|H|}\|B_H\|_b
+                      \le C\epsilon L^{-\alpha}.
+ \label{lst-conclusion}
+\end{equation}
+The construction is linear in the total kernels.
+Individual \(B_H\) need not be gauge invariant.
+The scalar identity is vacuum-normalized and absolutely
+convergent for compactly supported final fields.
+\end{theorem}
+
+The constant is fixed after \(J\) and before \(L\).
+One can therefore set \(L=R^q\) with fixed \(R,J\) and
+choose a finite \(q\) afterward. This statement does not
+identify \(q\) successive quantum integrations with one
+direct fluctuation integral.
+
+\subsection{A valid quadratic difference factorization}
+\label{lst-quadratic-section}
+
+The matrix kernel need not be symmetric at each displacement,
+even though Hessian reciprocity gives
+\(K_2(r)^T=K_2(-r)\). We use a Laurent factorization that
+does not require pointwise symmetry. Set
+\[
+ F(z)=\sum_r K_2(r)z^r,\qquad
+ d_\rho^+(z)=z_\rho-1,\qquad
+ d_\rho^-(z)=z_\rho^{-1}-1 .
+\]
+The exponential bound makes \(F\) holomorphic on a product
+annulus. Equation~\eqref{lst-moments} says its jets through
+degree three at \(z=(1,\ldots,1)\) vanish.
+
+For a Laurent function define the ordered divided difference
+\begin{equation}
+ {\cal B}_jF(z)=
+ \frac{F(1,\ldots,1,z_j,\ldots,z_4)
+        -F(1,\ldots,1,1,z_{j+1},\ldots,z_4)}
+      {z_j-1}.
+ \label{lst-divided-difference}
+\end{equation}
+Its singularity at \(z_j=1\) is removable, and
+\[
+ F(z)-F(1)=\sum_j(z_j-1){\cal B}_jF(z).
+\]
+For a monomial \(z^r\), the quotient in coordinate \(j\)
+has \(|r_j|\) monomials, each at absolute exponent length
+at most \(|r|_1\), including negative exponents. Therefore,
+for \(0<\sigma'<\sigma\), the combined absolute row Wiener
+norm obeys
+\begin{equation}
+ \sup_u\sum_{j,v,r}e^{\sigma'|r|_1}
+       |({\cal B}_jF)_{uv}(r)|
+ \le\frac1{e(\sigma-\sigma')}\,
+             \sup_u\sum_{v,r}e^{\sigma|r|_1}|F_{uv}(r)|.
+ \label{lst-Wiener-quotient}
+\end{equation}
+Here the \(j\) sum is inside the row supremum. The bound
+uses \(\sum_j|r_j|=|r|_1\) and
+\(\sup_{t\ge0}t e^{-(\sigma-\sigma')t}
+ =[e(\sigma-\sigma')]^{-1}\).
+The local Taylor series also shows that
+\({\cal B}_j\) lowers a vanishing order by at most one.
+
+Apply the identity twice, using exponents
+\(\sigma,3\sigma/4,\sigma/2\). Put
+\[
+ H_{\rho\tau}={\cal B}_\tau{\cal B}_\rho F,\qquad
+ \widetilde H_{\rho\tau}(z)=-z_\rho H_{\rho\tau}(z).
+\]
+Since \(d_\rho^-(-z_\rho)=d_\rho^+\), this gives
+\begin{equation}
+ F(z)=\sum_{\rho,\tau}
+       d_\rho^-(z)\widetilde H_{\rho\tau}(z)d_\tau^+(z),
+ \qquad \widetilde H_{\rho\tau}(1)=0.
+ \label{lst-factorization}
+\end{equation}
+In fact the jets of \(\widetilde H_{\rho\tau}\) through
+degree one vanish. Its combined kernel bound is
+\begin{equation}
+ \sup_u\sum_{\rho,\tau,v,r}
+     e^{(\sigma/2)|r|_1}
+           |(\widetilde H_{\rho\tau})_{uv}(r)|
+ \le \frac{16e^{\sigma/2}}{e^2\sigma^2}
+                           \epsilon b^{-2}.
+ \label{lst-H-bound}
+\end{equation}
+The factor \(e^{\sigma/2}\) pays the unit shift. No symmetry
+of the individual \(\widetilde H_{\rho\tau}\) is asserted.
+
+Let \(D_\rho a(x)=a(x+e_\rho)-a(x)\), the unscaled current
+difference. Integration by parts transfers one difference
+to each field. The zero sum in \eqref{lst-factorization}
+then gives the exact identity
+\begin{equation}
+ P_2(a)=\frac12\sum_{x,r,\rho,\tau}
+ [D_\rho a(x)]^T\widetilde H_{\rho\tau}(r)
+            [D_\tau a(x+r)-D_\tau a(x)].
+ \label{lst-quadratic-identity}
+\end{equation}
+The sign follows because \(d_\rho^-\) is the bilinear
+adjoint of \(d_\rho^+\). Compactly supported fields give
+the identity directly; the absolute majorants below
+extend it to the substituted fields. No positivity or
+second field derivative is used.
+
+\subsection{Cubic and quartic cancellation}
+\label{lst-higher-algebra}
+
+Put
+\begin{equation}
+ \ell_r(x)=\sum_\rho r_\rho D_\rho a(x),\qquad
+ R_r(x)=a(x+r)-a(x)-\ell_r(x).
+ \label{lst-Taylor}
+\end{equation}
+In the anchored cubic expression
+\[
+ P_3(a)=\frac16\sum_{x,r,s}
+                K_3(r,s)[a(x),a(x+r),a(x+s)],
+\]
+replace each shifted factor by \(a(x)+\ell+R\).
+The zeroth moment cancels the all-anchor term. The
+first moments cancel \(a,\ell,a\) and \(a,a,\ell\).
+Six terms remain: the two with one \(R\) and no \(\ell\),
+the \(\ell,\ell\) term, the two mixed \(\ell,R\) terms,
+and the \(R,R\) term, always with unshifted first factor.
+
+For the quartic expression subtract the all-anchor product
+using its zeroth moment, then telescope the three shifted
+factors. Each of three terms has one difference
+\(a(x+r_j)-a(x)\) and three endpoint or anchor factors.
+All cancellations are made in the total kernels before
+triangle inequalities or final carrier assignment.
+
+\subsection{Near-displacement coefficient bounds}
+\label{lst-near-section}
+
+Split these exact residual sums into \(m\le L\) and \(m>L\).
+Neither restricted kernel is claimed to retain zero moments.
+For the quadratic identity use \(m=|r|_1\).
+In the near case all evaluations and coordinate paths lie
+in a fixed final-unit collar. Coherence in
+\eqref{lst-background} gives rooted coefficient-family bounds
+\begin{align}
+ |a|&\le Cbh,\qquad
+ |\ell_r|\le Cbh^2|r|_1,\notag\\
+ |a(x+r)-a(x)|&\le Cbh^2|r|_1,\qquad
+ |R_r|\le Cbh^{2+\alpha}|r|_1^{1+\alpha}.
+ \label{lst-near-fields}
+\end{align}
+For a negative coordinate traversal, the positive difference
+is evaluated at the lower endpoint with the traversal sign.
+Subtracting its value at the anchor and using the physical
+gradient H\"older bound proves the last estimate.
+Each inequality is for the weighted sum of coefficient
+norms, with its suprema and H\"older quotients inside that
+sum. It is not deduced from a bound on the scalar sum.
+
+All near factors can be rooted at the anchor cell.
+Multiplication glues rooted trees and support unions, so
+their weights are submultiplicative. In the quadratic
+identity,
+\[
+ |D_\rho a(x)|\le Cbh^2,\qquad
+ |D_\tau a(x+r)-D_\tau a(x)|
+                      \le Cbh^{2+\alpha}|r|_1^\alpha.
+\]
+Its product is therefore
+\begin{equation}
+ Cb^2h^{4+\alpha}|r|_1^\alpha.
+ \label{lst-near-quadratic}
+\end{equation}
+Sum it with \eqref{lst-H-bound}. The six cubic products
+are bounded by
+\begin{equation}
+ Cb^3h^{4+\alpha}(1+m)^6.
+ \label{lst-near-cubic}
+\end{equation}
+The leading \(a,a,R\) term has that power of \(h\);
+\(a,\ell,\ell\) has \(h^5\), and the others have still
+higher powers. The quartic telescoping is bounded by
+\begin{equation}
+ Cb^4h^5(1+m).
+ \label{lst-near-quartic}
+\end{equation}
+The weighted kernel sums cancel \(b^n\) and pay all
+fixed displacement moments. Per original current anchor,
+the three bounds are respectively
+\(C\epsilon h^{4+\alpha}\),
+\(C\epsilon h^{4+\alpha}\), and \(C\epsilon h^5\).
+
+\subsection{Connected carriers and the anchor count}
+\label{lst-carriers-section}
+
+For each product coefficient keep its final-unit anchor
+\(i_0\) and the endpoint roots actually used. In a near
+term the complete collar permits the common root \(i_0\).
+In a far term use the endpoint roots and any neighboring
+roots needed for \(Da\). Their number is at most a fixed
+\(n_0\), independent of \(L\) and the displacement.
+
+Project the finite root set and, for each field-factor
+occurrence, the terminal set consisting of its root
+and variable support \(X\) to final \(J\)-cells.
+For each projected terminal set choose a deterministic
+short macro connecting graph supplied by the projection
+lemma. Take the connected union of these macro graphs
+as \(H\), including the anchor. The fine Steiner
+lengths below bound those chosen macro graphs; the
+carrier need not contain the full projection of an
+arbitrary fine connecting tree. The projection bound gives
+\begin{align}
+ |H|&\le1+T,\notag\\
+ T&\le\frac2J\left[
+       \tau(\text{roots})+
+       \sum_{\mathrm{occ}}\tau(\{\text{root}\}\cup X)\right]
+         +4\left[n_0+\sum_{\mathrm{occ}}|X|\right].
+ \label{lst-tree-bound}
+\end{align}
+Let \(j(x)\) be the final \(J\)-cell containing \(x/L\).
+For \(z\in H\), its graph distance to \(j(x)\) is at
+most \(T\). Hence
+\begin{equation}
+ e^{a_0|H|}1_{\{z\in H\}}
+ \le e^{a_0}e^{-\operatorname{dist}(z,j(x))}e^{cT}.
+ \label{lst-reroot}
+\end{equation}
+The budgets \eqref{lst-budgets} pay every attached
+tree and support-cardinality factor. The fixed
+\(e^{4cn_0}\) is absorbed into \(C\); near root-joining
+trees have bounded length.
+
+There are exactly \((JL)^4\) current anchor sites
+per final \(J\)-cell, with the same centered-boundary
+convention throughout. Therefore
+\begin{equation}
+ \sum_{x\in\mathbb Z^4}
+ e^{-\operatorname{dist}(z,j(x))}
+ \le (JL)^4 S_1,\qquad
+ S_1=\sum_{y\in\mathbb Z^4}e^{-|y|_1}.
+ \label{lst-anchor-count}
+\end{equation}
+The first internal-index count is the fixed \(v\).
+There is no additional count of all output coordinates.
+The near contributions are consequently
+\(CJ^4\epsilon L^{-\alpha}\) for degrees two and
+three, and \(CJ^4\epsilon L^{-1}\) for degree four.
+
+\subsection{Far displacements and convergence}
+\label{lst-far-section}
+
+For \(m>L\), use the same exact residual formulas but
+root each endpoint separately. The cubic and quartic
+factors obey
+\[
+ |a|\le Cbh,\qquad
+ |\ell_r|\le Cbh^2m,\qquad
+ |R_r|\le Cbh(1+hm).
+\]
+Their products are bounded by
+\(Cb^3h^3(1+m)^2\) and \(Cb^4h^4\).
+For the quadratic expression both first differences
+are bounded by \(Cbh^2\) at their own roots, so its
+product is bounded by \(Cb^2h^4\).
+
+The finite endpoint-root tree has
+\[
+ \tau(\text{roots})\le C_d(m/L+1).
+\]
+After \eqref{lst-reroot} this costs at most
+\(C\exp(C'm/(JL))\). Use the common kernel exponent
+\(\sigma_*=\sigma/2\), supplied by \eqref{lst-H-bound}
+and also available for \(K_3,K_4\). Choose \(L_0\)
+so that \(C'/(JL)\le\sigma_*/4\). One half of
+\(\sigma_*\) pays the extra tree weight and the fixed
+polynomial, leaving an exponentially small tail.
+After \eqref{lst-anchor-count} the total far bound is
+\begin{equation}
+ CJ^4\epsilon(L+2)e^{-\sigma_*L/4}
+                 \le C'\epsilon L^{-\alpha},
+       \qquad L\ge L_0 .
+ \label{lst-far-bound}
+\end{equation}
+All constants here are fixed before \(L\).
+
+The absolute majorants justify regrouping by connected
+\(H\) and give holomorphic coefficients on the same
+open \(b\)-ball, with their bounded supremum norm.
+For compactly supported \(w\), each nonzero field-factor
+coefficient has variable support meeting that compact
+set, since it vanishes at zero. Its final carrier
+contains that support. The anchored bound therefore
+implies convergence of the total sum, bounded by a
+constant times the number of final \(J\)-cells meeting
+the support. For that compact support \(K\), every
+nonzero field coefficient also has
+\(\tau(\{i\}\cup X)\ge\operatorname{dist}(i,K)\).
+Equation~\eqref{lst-background} therefore gives
+exponential spatial decay of \(a(w)\) and its first
+differences. The original quadratic kernel sum is
+absolutely convergent as well, so truncation and
+exhaustion justify its integration by parts without
+a boundary term. The near and far
+bounds prove Theorem~\ref{lst-theorem}.
+
+\subsection{Scope of the relocalization}
+\label{lst-scope}
+
+The result is a bounded connected localization of
+the canceled low-degree \emph{total} functional.
+It is stronger than extensive scalar power counting
+and needs no invariant individual carriers. For a
+residual analytic activity \(E-\beta S\), its
+coefficientwise degree-\(\ge5\) part can be transported
+by the previous high-jet estimate, while the total
+degrees two through four use the present construction.
+The two localizations may change the representation.
+
+This section does not prove canonical finite-torus
+wrapping control, an infinite-volume quantum measure,
+equality of sequential and direct cutoff integrals,
+boundedness of a complete quantum map on a quotient
+of representations, or a coupling trajectory.
+The classical scalar semigroup permits the choice
+\(L=R^q\) for a gauge-invariant total, but removes
+none of those separate interfaces.

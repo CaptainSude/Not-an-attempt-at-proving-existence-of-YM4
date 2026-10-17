@@ -1,0 +1,340 @@
+\section{Strict support of the physical stationary background}
+\label{st-section}
+
+Fix odd $L$, dimension four, color and the compatible periodic source
+geometry with distinct block interfaces. Current spacing is one, old
+fine spacing is $M^{-1}$ with $M=L^k$, and next-coarse spacing is $L$.
+Write $V=e^{ia}$ and $W=e^{iw}$. These $a,w$ are link angles. In current
+physical units the next-coarse potential is $w/L$; in next-coarse unit
+coordinates it is $w$. All formulas below use $w$, not $w/L$.
+Constants may depend on fixed $L$, but not on $M$ or volume.
+
+Group current coordinates into $L$-block cells, indexed by next-coarse
+cells. The retained nonpivot coordinate $z$ and next-coarse datum $w$
+have fixed real dimensions per block
+\begin{equation}
+ D_z=d(L^d-1)\dim\mathfrak g,\qquad D_w=d\dim\mathfrak g,
+ \qquad D=D_z+D_w=dL^d\dim\mathfrak g.                         \label{st-dimensions}
+\end{equation}
+No fluctuation coupling has yet been inserted in $z$. Fixed-dimensional
+norm equivalences are included in all radii. Scalar Cauchy estimates use
+an actual coordinate product polydisc after this conversion.
+
+We use the previously established ordinary source average and pivot
+chart, the physical gauge-zero branch obtained by the two minimum
+comparisons, and the strict scalar classical-action expansion. The flat
+retained precision has the uniform bounds
+\begin{equation}
+ A_{M,0}=K_L^T(q_M+T_L^TT_L)K_L,\qquad C_{M,0}=A_{M,0}^{-1},
+ \qquad \gamma_*I\le A_{M,0}\le B_*I,                         \label{st-flat-precision}
+\end{equation}
+and both matrices have uniformly exponentially summable block rows and
+columns. Strict scalar support is available with any prescribed finite
+cardinality reserve, at the cost of a smaller uniform product radius.
+The result proved here is one uniform classical-background transport,
+not a claim of closure of repeated quantum RG steps.
+
+\subsection{A local affine pivot chart}
+\label{st-affine-section}
+
+At the identity background let
+\begin{equation}
+ F_1(a)=\frac1i\log M_L(e^{ia})=A_1a+C_1(a),\qquad
+ C_1(0)=DC_1(0)=0.                                           \label{st-constraint}
+\end{equation}
+The actual source normalization is
+\begin{equation}
+ A_1=LQ_L^{\rm flat},\qquad A_1h_1=I,\qquad A_1K_L=0,
+ \qquad h_1(c)=L^{d-1}I\text{ at }p(c).                       \label{st-pivot-normalization}
+\end{equation}
+The pivot coefficient in $Q_L^{\rm flat}$ is $L^{-d}$, hence its
+coefficient in $A_1$ is $L^{1-d}$. Nonpivot restriction of $K_L$ is the
+identity; $h_1$ has only pivot entries.
+
+Prescribe the next-coarse datum $w$ and the retained absolute logarithmic
+coordinates $z$ by solving
+\begin{equation}
+ a=K_Lz+h_1w-h_1C_1(a).                                     \label{st-affine-equation}
+\end{equation}
+Each ordinary constraint equation reads its own pivot and no other
+pivot. Thus this is a family of independent finite-dimensional
+Lie-algebra-block implicit equations, with neighboring nonpivot values
+as parameters. Their derivative in the pivot at zero is invertible.
+There are only finitely many local types. A common small contraction
+therefore gives a holomorphic solution $a=\mathfrak a(w,z)$ satisfying
+\begin{align}
+ F_1(\mathfrak a(w,z))&=w,&
+ \mathfrak a(w,z)|_{\rm nonpivot}&=z,\notag\\
+ \|\mathfrak a(w,z)\|_\infty
+    &\le C_L(\|w\|_\infty+\|z\|_\infty),&
+ \mathfrak a(w,z)&=K_Lz+h_1w+O((\|w\|+\|z\|)^2).
+                                                               \label{st-affine-bounds}
+\end{align}
+Iteration does not spread to another pivot equation. The dependency
+neighborhood and all local analytic constants are fixed at $L$ and
+independent of $M$ and volume. This is the unique small constraint
+solution with the specified nonpivot values, equivalently the
+identity-background ambient source straightening evaluated at
+$K_Lz+h_1w$.
+
+\subsection{Scalar support and the exact flat mixed term}
+\label{st-scalar-section}
+
+Let $G$ be the actual averaged-contour exponential gauge action, in the
+coupling-free normalization, and define
+\begin{equation}
+ T_M(w,z)=S_M(\mathfrak a(w,z))+G(e^{i\mathfrak a(w,z)}).
+                                                               \label{st-action}
+\end{equation}
+The strict scalar support theorem applies to this fixed-range analytic
+substitution and the local gauge action. After fixed $L$-block
+regrouping it yields
+\begin{align}
+ T_M(w,z)&=\sum_{X\ne\varnothing}T_X(w|_X,z|_X),             \label{st-scalar-expansion}\\
+ \mathcal K&:=\sup_i\sum_{X\ni i}
+ e^{\sigma\tau(X)+A_{\mathrm c}|X|}\|T_X\|_\rho<\infty.         \label{st-scalar-norm}
+\end{align}
+Here $\tau$ is graph Steiner length on the $L$-block graph, allowing
+auxiliary vertices, $\sigma>0$, and $A_{\mathrm c}>0$ is any prescribed
+finite reserve. The coordinate-polydisc radius $\rho$ and $\mathcal K$
+are uniform in $M$ and volume. Every coefficient starts at degree at
+least two: the action does so, the chart vanishes at zero, and the gauge
+action has no constant or linear part at the identity.
+
+Put $P_M=q_M+T_L^TT_L$. The full scalar action is stationary at zero, so
+only the linear chart enters its quadratic term:
+\begin{equation}
+ T_M^{(2)}(w,z)=\tfrac12
+ \langle K_Lz+h_1w,P_M(K_Lz+h_1w)\rangle.                    \label{st-quadratic-action}
+\end{equation}
+Thus
+\begin{align}
+ D_zT_M(w,z)&=A_{M,0}z+B_Mw+N_M(w,z),\notag\\
+ B_M&=K_L^TP_Mh_1=K_L^Tq_Mh_1,&
+ N_M(0,0)&=DN_M(0,0)=0.                                    \label{st-gradient-split}
+\end{align}
+The last simplification follows from $T_Lh_1=0$, because the root
+contours are block internal and contain no pivot. The rectangular
+$B_M$ has uniform exponential block bounds. The pairings here are
+counting pairings of the stated angle coordinates; no additional
+$L^4$ transpose factor is introduced. Replacing $w$ by the next-coarse
+physical potential means substituting $w=L a_{\rm next}$ explicitly.
+
+\subsection{An analytic mixed-slot bound from scalar supports}
+\label{st-gradient-section}
+
+The supports in \eqref{st-scalar-expansion} are not uniformly bounded.
+The finite-range vertex lemma therefore cannot be applied directly to
+their gradient. In particular, crude polarization followed by
+$|X|^n$ slot counting can produce a factorial loss. Coordinatewise
+Cauchy gives the needed stronger conclusion.
+
+Write $u=(w,z)$ in a fixed scalar basis. On the coordinate polydisc
+there are $D|X|$ variables. If $M_X=\|T_X\|_\rho$, its scalar Taylor
+coefficients satisfy
+\begin{equation}
+ |c_{X,\beta}|\le M_X\rho^{-|\beta|}.                       \label{st-scalar-cauchy}
+\end{equation}
+For one retained derivative coordinate $\alpha$ at a cell $i\in X$,
+differentiating the product of geometric series gives, for $t<\rho$,
+\begin{equation}
+ \sum_{\beta\ge e_\alpha}
+ \beta_\alpha |c_{X,\beta}|t^{|\beta|-1}
+ \le\frac{M_X}{\rho}(1-t/\rho)^{-D|X|-1}.                   \label{st-gradient-cauchy}
+\end{equation}
+Sum the at most $D_z$ output components. A symmetric multilinear Taylor
+coefficient distributes each scalar monomial coefficient among its
+ordered slots with multinomial weights summing to one. Consequently
+the sum of its ordered cell-slot operator norms is bounded by the same
+absolute scalar coefficient sum, with fixed norm-conversion constants
+absorbed in this bound. Every output and input-slot root lies in $X$,
+so their rooted Steiner length is at most $\tau(X)$.
+
+For $0<\kappa\le\sigma$, the supremum of the all-order positive row
+series is therefore bounded by
+\begin{equation}
+ \mathcal G(t)=\frac{D_z}{\rho}\sup_i\sum_{X\ni i}
+ e^{\kappa\tau(X)}M_X(1-t/\rho)^{-D|X|-1}.                  \label{st-row-series}
+\end{equation}
+Choose $t_0<\rho/2$ such that
+\begin{equation}
+ D\log\frac1{1-t_0/\rho}\le\frac{A_{\mathrm c}}2.
+ \qquad\text{Then}\qquad
+ \mathcal G(t_0)\le\frac{2D_z\mathcal K}{\rho}=:M_g.         \label{st-majorant-radius}
+\end{equation}
+The supremum over output cells cannot be interchanged with the order
+sum. Instead let $v_n$ be the supremum of the order-$n$ mixed-slot row
+norm. Equation \eqref{st-row-series} gives the separate bound
+$v_n\le M_gt_0^{-n}$. Removing degrees zero and one gives the positive
+majorant for $N_M$:
+\begin{equation}
+ \Phi(t)=\sum_{n\ge2}v_nt^n
+ \le\frac{M_g(t/t_0)^2}{1-t/t_0},\qquad
+ \Phi'(t)\le\frac{8M_gt}{t_0^2}\quad(0\le t\le t_0/2).
+                                                               \label{st-nonlinear-majorant}
+\end{equation}
+This deliberate geometric factor makes the order/root-supremum
+bookkeeping valid. It leaves an analytic quadratic majorant uniform in
+refinement and volume.
+
+The original $X$ is a fixed coefficient carrier at the flat baseline,
+not an additional variable support. After substituting families for
+$w,z$, their union is the actual variable support. Internal rooted
+connections through $X$ have already been paid by
+\eqref{st-row-series}. This preserves strict dependence on the original
+next-coarse variables.
+
+\subsection{The support-valued stationary fixed point}
+\label{st-contraction-section}
+
+For a prescribed finite $a_{\mathrm c}\ge0$, use
+\begin{equation}
+ \|u\|_{\kappa,a_{\mathrm c};r}
+ =\sup_i\sum_X e^{\kappa\tau(\{i\}\cup X)+a_{\mathrm c}|X|}
+             \sup_{\|w|_X\|<r}\|u_{i;X}(w|_X)\|.            \label{st-rooted-norm}
+\end{equation}
+The source $w$ has singleton norm $e^{a_{\mathrm c}}r$. For joint insertion
+in $N_M$, use the maximum of the separate $w$- and $z$-family norms and
+color slots by scalar coordinate and field type. The positive scalar
+majorant above already sums all such colors and types, while each
+scalar-component family is bounded by its vector-family norm. This
+does not identify that maximum with
+$\sum_X\|(w_X,z_X)\|$, which could be larger.
+
+Linear exponential block bounds act in \eqref{st-rooted-norm} by their
+weighted row sums. The rooted Steiner union inequality and
+$e^{a_{\mathrm c}|\cup X_r|}\le\prod_r e^{a_{\mathrm c}|X_r|}$ allow the
+proved support-substitution lemma to use
+\eqref{st-nonlinear-majorant}. Stationarity becomes
+\begin{equation}
+ z=-C_{M,0}B_Mw-C_{M,0}N_M(w,z).                            \label{st-stationary-fixed-point}
+\end{equation}
+Let $c_0$ bound the weighted norm of $C_{M,0}$ and choose
+$\ell_0\ge\max\{1,\|C_{M,0}B_M\|_\kappa\}$ uniformly. Put
+\begin{equation}
+ r_*\le\min\left\{\frac{t_0}{2},
+                  \frac{t_0^2}{16c_0M_g}\right\},\qquad
+ r\le\frac{r_*}{2\ell_0e^{a_{\mathrm c}}}.                     \label{st-data-radius}
+\end{equation}
+Decrease these radii further so that reconstruction and evaluation stay
+within the common prior chart and uniqueness neighborhoods. On the
+family ball $\|z\|\le2\ell_0e^{a_{\mathrm c}}r$, the map
+\eqref{st-stationary-fixed-point} is a contraction with constant at most
+$1/2$ and preserves that ball. Hence it has a unique holomorphic
+supported solution with
+\begin{equation}
+ \|z_*\|_{\kappa,a_{\mathrm c};r}\le2\ell_0e^{a_{\mathrm c}}r,
+ \qquad
+ \|z_*+C_{M,0}B_Mw\|_{\kappa,a_{\mathrm c};r}\le C_{a_{\mathrm c}}r^2.
+                                                               \label{st-retained-support}
+\end{equation}
+Evaluation gives a genuine stationary solution on each finite
+regulator. Picard iteration defines an absolutely convergent rooted
+expansion with original $w$-cell leaves.
+
+The finite-range chart $\mathfrak a$ can now be substituted by the
+finite-range support lemma. Define
+\begin{equation}
+ a_*(w)=\mathfrak a(w,z_*(w)),\qquad
+ H_{{\rm cur},M}=h_1-K_LC_{M,0}B_M.                          \label{st-current-extension}
+\end{equation}
+Then
+\begin{equation}
+ \|a_*\|_{\kappa,a_{\mathrm c};r}\le C_{a_{\mathrm c}}r,
+ \qquad
+ \|a_*-H_{{\rm cur},M}w\|_{\kappa,a_{\mathrm c};r}
+                                      \le C_{a_{\mathrm c}}r^2.          \label{st-current-support}
+\end{equation}
+This $H_{{\rm cur},M}$ is the current-angle extension, distinct from the
+earlier original-fine extension. It has a uniform exponential
+rectangular block bound and $A_1H_{{\rm cur},M}=I$. Its source gauge
+condition will follow by identifying the physical branch below; no
+gauge-zero conclusion is inferred from stationarity alone. Local
+exponentiation also supplies strict families for $e^{ia_*}-I$ and its
+inverse minus the identity. For activity transport the bound
+$s(r)=C_{a_{\mathrm c}}r$ on the potential itself is sufficient.
+
+\subsection{Identification of the physical gauge-zero branch}
+\label{st-identification-section}
+
+For real small $w$, the already proved two-scale minimum comparison and
+rooted averaged-contour gauge construction give a branch
+$V_{{\rm old},*}(e^{iw})=e^{ia_{{\rm old},*}}$ with
+\begin{align}
+ M_L(V_{{\rm old},*})&=e^{iw},& P_{V_{{\rm old},*}}(y,x)&=1,\notag\\
+ \|a_{{\rm old},*}\|_\infty&\le C_L\|w\|_\infty,&
+ S_M(a)&\ge S_M(a_{{\rm old},*})                           \label{st-known-minimum}
+\end{align}
+for every real feasible $a$ in the common small comparison ball. The
+actual gauge action is nonnegative on real unitary fields and vanishes
+at $P=1$. Hence
+\begin{equation}
+ S_M(a)+G(e^{ia})\ge S_M(a_{{\rm old},*})+G(V_{{\rm old},*})
+                                                               \label{st-action-comparison}
+\end{equation}
+on that feasible neighborhood. The affine chart parametrizes every
+sufficiently small feasible field by its retained absolute coordinates.
+Thus $z_{{\rm old},*}=a_{{\rm old},*}|_{\rm nonpivot}$ is a critical
+point of $T_M(w,\cdot)$.
+
+The scalar support expansion and Cauchy with fixed margins give
+\begin{equation}
+ \|D_z^2T_M(w,z)-A_{M,0}\|_\kappa
+                \le C_L(\|w\|_\infty+\|z\|_\infty).         \label{st-convexity}
+\end{equation}
+For each coefficient, contract its third derivative with the bounded
+direction $(w,z)$; summing the second retained matrix index costs only
+$|X|$, paid by a cardinality spare. Its input/output distance is at
+most $\tau(X)$. Symmetry gives the column bound. This calculation
+differentiates the full scalar action, so both chart curvature and
+actual gauge curvature remain included. It does not use the ordinary
+rooted average's physical adjoint.
+
+Choose a common real retained supremum ball and a data ball making
+\eqref{st-convexity} at most $\gamma_*/2$. The retained Hessian is
+positive on this convex ball, so there is at most one critical point.
+Both $z_*$ from \eqref{st-stationary-fixed-point} and
+$z_{{\rm old},*}$ lie inside after a uniform shrink. Therefore
+\begin{equation}
+ e^{ia_*(w)}=V_{{\rm old},*}(e^{iw}),\qquad
+ M_L(e^{ia_*(w)})=e^{iw},\qquad P_{e^{ia_*(w)}}(y,x)=1.       \label{st-physical-identities}
+\end{equation}
+This identifies with a known gauge-zero minimum; a generic critical
+equation was not used to assert the gauge condition. Holomorphy and the
+finite-dimensional identity theorem extend these identities from the
+real ball to the common complex product domain. Real minimum
+inequalities are not extended as inequalities. Linearizing the last
+identity gives $T_LH_{{\rm cur},M}=0$.
+
+\subsection{Transport conclusion and its domain limitation}
+\label{st-scope-section}
+
+For any prescribed finite cardinality reserve and sufficiently small
+positive $\kappa$, \eqref{st-current-support} is now a strict-support
+expansion of the actual physical stationary background in its original
+next-coarse angle variables. The radius is uniform in old refinement
+and volume. Output roots are $L$-blocks of current fields and input
+labels are next-coarse cells on the same block graph. If an activity
+uses another current-cell convention, its projection to this graph and
+the finite fiber multiplicity must be included explicitly; fixed
+regrouping is not a contraction estimate. Coefficients can depend on
+the fixed baseline and regulator. Strict variable support does not by
+itself assert volume consistency of a chosen decomposition.
+
+There is a concrete obstruction to inferring an $L^{-1}$ contraction
+of the angle supremum domain. Take small coarse pure-gauge data
+$W(y,y')=g_yg_{y'}^{-1}$ and set the current-site gauge to $g_y$
+throughout each $L$-block. Its current field is the identity internally
+and equals $W$ on the corresponding block-boundary links. It has
+$P_V=1$, ordinary average $W$ and zero classical action. By the same
+minimum comparison and uniqueness it is the physical stationary
+representative. Its boundary angle is of order $\|w\|$, not
+$\|w\|/L$. The physical conversion $a_{\rm next}=w/L$ does not change
+that fact about the angle-domain map.
+
+This theorem supplies one uniform step and an explicit small-domain
+bound $s(r)=C_ar$ for substitution in supplied analytic activities.
+Preservation of a quantum activity norm, any associated radius loss,
+and a compatible common domain under repeated integrations require
+separate proofs. No running-coupling, mixed-history, large-field or
+interacting continuum conclusion follows here.

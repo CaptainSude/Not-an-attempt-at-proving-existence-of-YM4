@@ -1,0 +1,106 @@
+Independent audit of the full pinned-ghost logarithm
+17 October 2026
+
+Read work/pinned_ghost_long_time_fragment.tex in full against
+the independently checked prefix calculation and the parent's
+proposed derivation. RESULT: Mathematical pass.
+
+1. Sharp flat gap
+
+The Neumann path eigenvalues and cosine amplitudes give
+|psi_j(x)|^2<=16/K^4 and lambda_j>=c|j|^2/K^2 in a four-dimensional
+K-block. The nonzero-mode sum of |j|^-2 is O(K^2), including the
+coordinate faces and axes. Hence the zero-mean point Green
+diagonal is O(1), uniformly at every site of the block.
+
+Writing phi=mean+u, the center pin gives mean=-u(center).
+Spectral Cauchy-Schwarz controls |u(center)|^2 by internal
+energy; the Neumann gap controls ||u||^2 by K^2 times energy.
+Thus ||phi||^2<=C K^4 E_internal. Summing blocks uses a subset
+of all graph edges, so gives the claimed global lower gap.
+The extension from finitely supported fields by closure is
+valid, and the compatible periodic version has the same bound.
+For K=1 the domain is empty, as explicitly handled.
+
+Together with the previously checked constant-off-centers
+test, this is the sharp K^-4 order. The infinite upper bound
+can indeed be obtained by cutoff functions on increasingly
+many blocks at fixed K; their boundary energy per volume
+vanishes. It is not a K^-2 gap.
+
+2. Killed return
+
+The semigroup split has the correct time and square:
+  p_s(x,x)=||exp(-sG/2)delta_x||^2
+  <=exp(-lambda s/2) p_(s/2)(x,x).
+Infinite-lattice killing is dominated by the free walk, whose
+return is O(s^-2) for s>=1. This gives
+  p_s^K(x,x)<=C s^-2 exp(-c s/K^4).
+The retained opening convention makes this an infinite-system
+heat bound. It is not justified by replacing a finite-torus
+free return probability by its infinite-lattice value.
+
+3. Conditional fourth moment
+
+The exact balanced-count identity E[m^2|return]=s^2 follows by
+shifting the factorial series, and E m<=s follows from it.
+Given the other bridge Y and m, positive and negative jump
+times are independent uniform samples. Their mean terms
+cancel, and the independent centered-sum fourth-moment formula
+gives C(m+m^2) times the time average of |Y|^4.
+
+Conditional on its own count l, Y(u) is the difference of two
+independent binomials. Its fourth moment is bounded by C(l+l^2)
+uniformly in u. The coordinate bridges and their counts are
+independent after conditioning on return. Therefore
+E[Area^4|full return]<=C s^4 for s>=1. Multiplication by the
+four-dimensional return probability O(s^-2) gives
+E[Area^4 1_return]<=C s^2. No stochastic independence between
+area and the pin-avoidance event is needed.
+
+4. Tail and full logarithm
+
+Cauchy-Schwarz combines that fourth moment with killed return:
+  E_x[Area^2 1_return-and-avoid]
+  <=C s * (s^-2 exp(-c s/K^4))^(1/2)
+  <=C exp(-c' s/K^4).
+At most K^4 roots cancel the explicit K^-4 curvature factor.
+Changing variables s=K^4 v then bounds the integral from K^4
+to infinity with ds/s by one K-independent constant.
+
+The exact prefix pinning comparison holds for every upper
+time T. At T=K^4 its error is O(1), because h_infinity is
+uniformly bounded. The unpinned integral is
+4 alpha_g log K+gamma_g+O(K^-4). Adding the bounded actual
+tail proves the entire ghost result. Subtracting the audited
+K^2 prefix leaves 2 alpha_g log K+O(1) on [K^2,K^4].
+In particular the separated ghost tail beginning at K^2
+cannot have a uniform O(1) bound.
+
+5. Normalization and scope
+
+The exact normalization is
+  integral h_K^g(s) ds/s
+    =2[t^2]Tr_(0,S) log G(t)
+    =the ghost contribution to beta(logdet G).
+Since alpha_g=C_H/(48 pi^2), its full logarithmic coefficient
+is C_H/(12 pi^2), twice the specified massive-reference ghost
+coefficient C_H/(24 pi^2). The numerical factors in the
+fragment are correct. I suggested making this equality
+explicit rather than saying "contribution of 2 logdet G to
+the Maxwell coefficient", which might be read as applying
+beta a second time to the doubled determinant.
+
+If the full actual-reference comparison is eventually proved,
+the specified total coefficient 22 alpha_g and the bounded
+coarse factor would require the actual vector coefficient
+18 alpha_g. This is correctly stated as a requirement, not
+as a vector estimate derived from the scalar proof.
+
+Uniformity in old M and structural limits comes from the
+actual first-two-jet identification: the ghost jets, pin
+lattice and walk formula are identical for every old depth.
+The proof does not claim a globally analytic unbounded
+magnetic stationary family or a finite periodic flux family.
+The entire separated ghost contribution is now controlled;
+the coupled vector comparison and full existence remain open.

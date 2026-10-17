@@ -1,0 +1,45 @@
+RAW RELATIVE VERTICES CAN GROW IN THE LOCAL MEAN-ZERO GAUGE
+18 October 2026. Research observation, rotation audit.
+
+This is a proved obstruction to one overly strong sufficient estimate. It does not obstruct the mean-zero determinant identity, its flat gap, or a gauge-covariant heat comparison.
+
+Take the flat full-site scalar completion
+  Ghat=P Delta_s P+K^-2 Pi,
+  X=K^2 Ghat=K^2 P Delta_s P+Pi,
+where Pi is the projection onto scalars constant in each centered K-block and P=I-Pi. Use odd K=2h+1>=3 in dimension four. Work on the infinite lattice, or a sufficiently large compatible finite torus. Color can be restricted to one nonzero charged complex root space of a compact semisimple algebra; a real two-dimensional adjoint plane gives the same norm calculation.
+
+Let B be one block centered at zero, and let
+  v=K^-2 1_B
+in a unit color direction. Then ||v||=1 and Xv=v.
+
+Choose a scalar phase S(x)=q x_mu/K on B and all its nearest neighbors, where q!=0 is an adjoint charge. Extend S smoothly, in the physical variable x/K, to zero outside a fixed larger finite number of K-blocks. The extension has
+  ||S||_infty<=C|q|,       ||D S||_infty<=C|q|/K.
+For example multiply x_mu/K by a fixed smooth cutoff equal to one on [-1,1]^4 and zero outside [-2,2]^4 in physical coordinates.
+
+The actual moving-reference scalar construction is gauge covariant. Applying the compact site gauge to the vacuum therefore gives exactly
+  X(t)=exp(itS) X exp(-itS)
+on the charged space. This is an actual small gauge transform of the stationary vacuum, considered on its gauge orbit; it need not be the chosen root-gauge representative. The resulting fine link angles are bounded by C|t|/K. On a finite torus the spectrum and every total heat trace are unchanged for all real t.
+
+Put w=P S v. Since the centered block mean of x_mu is zero,
+  w=S v,       ||w||^2=q^2(K^2-1)/(12K^2)<q^2/12.
+It is zero outside B. The two mu-normal faces contribute
+  ||D w||^2 >= 2 K^3 [q h/K^3]^2
+                         =2q^2 h^2/K^3.
+Thus
+  <w,Xw>=K^2||D w||^2 >=2q^2 h^2/K.                 (1)
+
+The first coefficient is X'(0)=i[S,X]. Since Xv=v and Sv=w,
+  X^-1/2 X'(0) X^-1/2 v
+     =i(X^-1/2-X^1/2)w.
+By positive spectral calculus,
+  ||X^-1/2 X'(0) X^-1/2 v||^2
+   =<w,(X^-1+X-2)w>
+   >=2q^2 h^2/K-q^2/6.                              (2)
+Consequently the relative-form vertex norm is at least c|q|sqrt(K) for all sufficiently large K.
+
+All assertions are finite-dimensional on a sufficiently large torus; no unbounded gauge transformation or infinite trace is necessary. Periods need only fit the fixed cutoff neighborhood without overlap. The scalar completion is positive with the already proved cK^-2 gap, so its inverse in (2) exists.
+
+The heat traces nevertheless have exactly zero first and second variation, because X(t) is an orthogonal/unitary conjugate of X. The growing first relative vertex is canceled by the second vertex and by the two-insertion term. Therefore the abstract separate-vertex criterion in physical_vector_curvature_research.txt Section 6 is sufficient but cannot be adopted as a uniform estimate over all small physical-potential gauges in this raw ambient representation.
+
+This does not refute such a criterion after a suitable covariant moving frame, nor address only one specifically gauge-fixed magnetic probe. It shows why a sharp proof should preserve the exact gauge cancellation rather than bound every raw relative vertex separately.
+

@@ -1,0 +1,325 @@
+FIXED WILSON BASE TO THE EXPLICIT CONTINUUM HEAT COEFFICIENT
+17 October 2026. Rotation audit research. Independent audit requested.
+No outputs edited. This is a direct fixed-reference calculation, not an
+appeal to a general one-loop universality theorem.
+
+MAIN RESULT. Let h_W,v(s) and h_W,g(s) be the affine Cartan heat
+coefficients of the fixed normalized Wilson background-Feynman vector
+base and its full scalar covariant Laplacian, respectively, on Z^4.
+With tau(H^2)=1, C_H=Tr_ad(ad_H^2), and alpha_g=C_H/(48 pi^2),
+ |h_W,v(s)-10 alpha_g| <= C s^(-1/2),
+ |h_W,g(s)+alpha_g/2| <= C s^(-1/2),     s>=1.             (0.1)
+The second error can alternatively be sharpened using the existing exact
+scalar Bessel formula. The direct argument below treats both operators
+by the same lattice-to-continuum vertex comparison.
+
+Combined with actual_base_ward_heat_comparison_research.txt,
+ h_M,v(s)-2h_g(s)=11 alpha_g+O(s^(-1/2))                  (0.2)
+uniformly in old classical depth M, under precisely that note's
+actual classical hypotheses. Hence
+ int_1^(K^2) (h_M,v(s)-2h_g(s)) ds/s
+      =22 alpha_g log K+O(1).                            (0.3)
+No additional charge-multiplicity factor is present.
+
+1. Fixed operators, coordinates, and the local continuum expansion
+
+Use Hermitian Lie algebra variables, the source's normalized invariant
+trace tau, and the unit-lattice Wilson action
+ S_W(U)=sum_(x,mu<nu) [1-(1/2)tau(P_(x,mu,nu)+P_(x,mu,nu)^(-1))].
+There is one unoriented plaquette in this sum. On real fields it is
+the usual 1-Re tau P action. The Hessian is in the left-relative chart
+ U'=exp(i B)U. The vector operator is
+ B_W(a)=S_W''(exp(i a))+D_a D_a^T.                        (1.1)
+Here D_a phi(x,mu)=Ad_(exp(i a_mu(x))) phi(x+e_mu)-phi(x);
+transpose is the fixed real/bilinear counting transpose, extended
+analytically. The scalar operator is L_W(a)=D_a^T D_a.
+
+We prove the leading vertices without guessing an off-shell action.
+Introduce a physical mesh epsilon and physical link field A, so
+a=epsilon A. For one plaquette use the exact physical jet
+ z=(a,b,c,e)
+  =(A_mu(x),A_nu(x),nabla_(epsilon,mu) A_nu(x),
+                           nabla_(epsilon,nu) A_mu(x)).
+The plaquette is exactly
+ P_epsilon(z)
+ =exp(i epsilon a)exp(i epsilon b+i epsilon^2 c)
+            exp(-i epsilon a-i epsilon^2 e)exp(-i epsilon b).
+Set
+ F_epsilon=(P_epsilon-I)/epsilon^2,
+ L_epsilon=-(1/2)tau(F_epsilon^2 P_epsilon^(-1)).          (1.2)
+The exact identity P+P^-1-2I=(P-I)^2 P^-1 gives
+ S_epsilon(A)=epsilon^4 sum_(x,mu<nu)
+                         L_epsilon(J_epsilon A)        (1.3)
+in dimension four.
+
+P_0=I and its first epsilon derivative vanishes. Thus F_epsilon
+extends jointly holomorphically across epsilon=0. Direct expansion gives
+ F_0=i(c-e)-[a,b]=i{c-e+i[a,b]},
+ L_0=(1/2)tau({c-e+i[a,b]}^2).                           (1.4)
+On a fixed bounded complex jet polydisc, L_epsilon-L_0 and every
+fixed field derivative are O(epsilon), uniformly as epsilon tends
+to zero. This follows from joint holomorphy and Cauchy's formula,
+not from an uncontrolled remainder of a noncommuting logarithm.
+
+For plane waves at bounded complex physical momenta p, the difference
+symbol (exp(i epsilon p_mu)-1)/epsilon is jointly analytic and
+equals i p_mu+O(epsilon). Consequently the fixed field-order vertices
+of (1.3), after physical normalization, converge with error O(epsilon)
+to those of
+ S_c(A)=(1/2)int sum_(mu<nu) tau(F_mu nu(A)^2) dx,
+ F_mu nu=partial_mu A_nu-partial_nu A_mu+i[A_mu,A_nu].    (1.5)
+The convergence holds jointly with any fixed number of momentum
+derivatives on a bounded physical-momentum polydisc.
+
+For clarity about all powers: the physical Hessian in the physical
+pairing epsilon^4 sum is epsilon^-2 times the unit-lattice Hessian
+at a=epsilon A. The nth ordinary action vertex therefore obeys
+ Gamma_n^W(epsilon p_1,...,epsilon p_n)
+   =epsilon^(4-n) Gamma_n^c(p_1,...,p_n)
+                     +O(epsilon^(5-n)), n=2,3,4.        (1.6)
+In midpoint coordinates the n=2 bare vertex has the stronger
+O(epsilon^4) correction. Source-site phases can instead produce
+O(epsilon^3) bare cross entries. The FULL flat Feynman base is exactly
+delta(p)I in either convention and has the O(epsilon^4) correction
+used in Section2.
+The identity follows either by differentiating (1.3) or by comparing
+coefficients in its joint convergent power series; momentum
+conservation leaves n-1 independent momenta.
+
+The physical left-relative chart is
+ Xi_(epsilon,A)(B)=log(exp(i epsilon B)exp(i epsilon A))/(i epsilon)
+                 =A+B+O(epsilon).
+Its first B derivative is I+O(epsilon), and its second B derivative
+is O(epsilon). Thus passing to the relative Hessian does not change
+the limiting continuum operator. More explicitly, its exact formula
+is
+ S''(A)[J_A B,J_A C]+S'(A)[T_A(B,C)].                     (1.7)
+The second summand is retained. In unit-lattice engineering degree,
+the first relative correction to a cubic Hessian vertex contains
+Gamma_2 times a local field factor and has momentum degree at least
+two; corrections to the quartic Hessian vertex have momentum degree
+at least one, or two for the Gamma_2/current terms. Thus they are
+within the remainders asserted below.
+
+Finally,
+ epsilon^-1 D_(epsilon A)
+ =epsilon^-1{Ad_(exp(i epsilon A_mu)) shift_(epsilon e_mu)-I}
+ -> D_(c,A),mu=partial_mu+i ad_(A_mu)                    (1.8)
+jointly on the same plane-wave jets. Its product with its transpose
+has the same convergence and engineering scaling. Hence the continuum
+limit of (1.1) is the ordinary continuum Yang--Mills Hessian plus
+D_(c,A)D_(c,A)^T.
+
+With the sign convention (1.8), integration by parts in (1.5) gives
+ B_c(A)_mu nu=-D_(c,A)^2 delta_mu nu-2i ad_(F_mu nu).
+An opposite convention for the adjoint representation reverses both
+covariant signs consistently and leaves the heat traces below unchanged.
+The scalar limit is L_c(A)=-D_(c,A)^2. The action normalization in
+(1.5) gives coefficient one in their flat Laplacians.
+
+2. Precise low-momentum vertex bounds
+
+Use one fixed source-site Fourier convention; passing from midpoint
+variables only inserts analytic phases equal to one at zero. Put
+ rho=|k|, and take k in a fixed small punctured ball. The flat
+symbols of either scalar or vector are
+ B_W(0,k)=delta(k)I,  B_c(0,k)=|k|^2 I,
+ delta(k)=4 sum_mu sin^2(k_mu/2).                         (2.1)
+For momentum derivatives of order r<=2,
+ |partial^r(delta-|k|^2)|<=C rho^(4-r).                  (2.2)
+
+Define V_a(k,p) as the first background vertex mapping quantum
+momentum k to k+p. Define W_ab(k;p,-p) as the mixed second background
+vertex preserving k. Use the same convention on the continuum.
+The homogeneous leading polynomial in (1.6)--(1.8) gives
+ delta V=V_W-V_c=O((|k|+|p|)^2),
+ delta W=W_W-W_c=O((|k|+|p|)^1),                         (2.3)
+jointly as all momenta tend to zero. V_c is homogeneous of degree one,
+and W_c is constant in all momenta. The scalar vertices satisfy the
+same assertions, directly from (1.8). No Ward identity at a finite
+momentum grid is used here.
+
+The joint analytic Taylor expansion implies, at p=0 and r<=2,
+ ||partial_p^r delta V_a(k,p)||+
+ ||partial_p^r delta V_b(k+p,-p)|| <= C rho^(2-r),        (2.4)
+ ||partial_p^r delta W_ab(k;p,-p)|| <= C rho^(1-r).       (2.5)
+For r=2 in (2.5) this is only a loose upper bound on a bounded
+analytic derivative: bounded <=C/rho for rho<1. In particular it
+does not assert a genuine singularity. The shifted vertex in (2.4)
+includes derivatives in both its internal and external arguments.
+
+For either lattice or continuum baseline one may use
+ ||partial_p^r V||<=C rho^(1-r),
+ ||partial_p^r W||<=C rho^(-r), r<=2.                    (2.6)
+The negative exponents again mean harmless overestimates. On the
+lattice all required vertices and derivatives are bounded away from
+the low-momentum ball. Continuum vertices are polynomials of the
+explicit degrees just stated.
+
+3. Exact comparison of the heat two-point diagrams
+
+For either operator take the translation-invariant second kernel of
+the total heat variation against compact background sources. The
+exact identity is
+ D^2 Tr e^-sB[a,b]
+ =-s Tr(e^-sB B''[a,b])
+  +s^2 int_0^1 Tr(e^-s(1-v)B B'[a] e^-svB B'[b]) dv.     (3.1)
+It may be defined by these trace-class variations; an extensive
+vacuum trace is not needed. In the continuum the insertions are
+first-order differential operators, but for fixed s>0 the compact
+source variations in (3.1) are justified by Gaussian smoothing.
+Alternatively the right hand side directly defines the second
+kernel. At p=0 and after at most two p derivatives its Fourier
+integrals are absolutely convergent uniformly in v, as the
+explicit estimates below show.
+
+Let H_ab(s,p) denote that external Fourier kernel. Then it equals
+ -s int tr[e^-sB(k) W_ab(k;p,-p)] dk/(2pi)^4
+ +s^2 int_0^1 int tr[
+ e^-s(1-v)B(k+p) V_a(k,p)
+ e^-svB(k) V_b(k+p,-p)] dk/(2pi)^4 dv.                   (3.2)
+For the lattice the domain is [-pi,pi]^4; for the continuum it
+is R^4. Equation (3.2) uses cyclicity only for the total trace.
+It does not move operators through a trace on a finite block.
+
+We compare (3.2) after two external derivatives, first on a common
+small momentum ball. The elementary heat bounds are
+ ||partial_k^r E(t,k)||
+   <=C rho^-r(1+t rho^2)^r e^-c t rho^2,
+ ||partial_k^r(E_W-E_c)(t,k)||
+   <=C t rho^(4-r)(1+t rho^2)^r e^-c t rho^2, r<=2.      (3.3)
+They follow by direct differentiation or Duhamel and (2.2).
+They hold for all t>=0, with no inverse power of t. Therefore
+neither v=0 nor v=1 introduces a time-simplex singularity.
+
+In the tadpole term a second W derivative difference is bounded
+by C rho^-1, while a heat difference times a bounded second W
+derivative costs C s rho^4. After the outer s factor, their
+four-dimensional integrals are respectively
+ C s int rho^-1 e^-csrho^2 dk =O(s^-1/2),
+ C s^2 int rho^4 e^-csrho^2 dk=O(s^-2).                  (3.4)
+The first bound is deliberately conservative; W_c has no momentum
+derivatives and the actual lattice second derivative is bounded.
+
+In the bubble telescope its two heat and two vertex factors.
+A replaced vertex supplies degree two, the other supplies degree
+one. Two external derivatives reduce the resulting degree by at
+most two, whether they hit vertices or exponentials. The
+differentiated product is bounded by
+ C rho P(s rho^2)e^-csrho^2.                             (3.5)
+Here P is a fixed polynomial and the two heat times sum to s.
+After the prefactor s^2, the integral of (3.5) is O(s^-1/2).
+
+A replaced heat factor gives its time <=s times rho^4, while
+the two ordinary vertices supply rho^2. After two derivatives
+the bound is
+ C s rho^4 P(s rho^2)e^-csrho^2.                         (3.6)
+After s^2 and integration it is O(s^-1). These bounds are
+uniform on the entire time simplex.
+
+The lattice complementary region has a fixed positive flat spectral
+gap, so all its differentiated integrals are bounded by a fixed
+polynomial in s times e^-cs. The continuum complementary region
+has the same property, using its polynomial vertices and the
+Gaussian tail on R^4. No ultraviolet continuum integral is compared
+without its positive heat time.
+
+Thus, for s>=1,
+ |partial_p^2(H_W-H_c)(s,0)|<=C s^-1/2.                 (3.7)
+The proof is equivalent to rescaling k=xi/sqrt(s) in the low ball,
+but (3.3)--(3.6) give a common integrable majorant and control the
+time-simplex endpoints explicitly. Analytic lattice phases and
+left-chart corrections need not have any extra parity: the
+conservative half-power rate already suffices.
+
+4. From total kernels to rooted affine coefficients
+
+For either LATTICE scalar or vector heat operator the diagonal
+color-trace density is gauge invariant. Its fixed-s Taylor kernels
+have the moments needed for the density Ward/reanchoring identity.
+The linear color jet is zero for the semisimple gauge group. For
+a_alpha(t,x)=t x_nu H, alpha!=nu, that identity gives
+ h(s)=[t^2] tr(e^-sB(a(t)))_(0,0)
+     =(1/4) partial_(p_nu)^2 H_(alpha H,alpha H)(s,0).     (4.1)
+Continuum local source kernels may contain contact distributions.
+We do not assert their absolute spatial-moment regularity or use a
+continuum reanchoring theorem. Instead Section5 directly computes
+the transverse continuum diagram derivative and verifies that its
+one-quarter is exactly the explicit magnetic heat coefficient.
+In particular there is no polarization factor hidden in (4.1).
+
+Combining (3.7),(4.1) reduces the fixed lattice coefficient to the
+explicit continuum coefficient, with error C s^-1/2.
+
+5. Explicit continuum value and charge normalization
+
+For one charge q (an eigenvalue of ad_H on the complexified adjoint
+space), choose a single curvature F_12=fH. The scalar diagonal heat
+density is exactly
+ k_q(s;f)=(4 pi s)^-2 (qfs)/sinh(qfs).                   (5.1)
+Fourier transformation in x_2 turns the magnetic plane into harmonic
+oscillators of eigenvalues |qf|(2n+1). The integral over their centers
+contributes |qf|/(2pi); summing n and multiplying by the two free
+directions proves (5.1) pointwise. No finite-volume degeneracy is used.
+
+For the vector the spin matrix has eigenvalues 0,0,+2qf,-2qf,
+so its diagonal trace is
+ k_q(s;f){2+2cosh(2qfs)}.                               (5.2)
+At each fixed s>0 these formulas are twice differentiable at f=0.
+We use their quadratic coefficient, not a claim of convergence of
+an infinite-proper-time massless determinant at nonzero field.
+
+Since x/sinh x=1-x^2/6+O(x^4) and
+2+2cosh(2x)=4+4x^2+O(x^4), (5.1)--(5.2) give
+ [f^2]k_q=-q^2/(96 pi^2),
+ [f^2](vector density)=10q^2/(48 pi^2).                 (5.3)
+Sum over all adjoint charges, both signs included. Complexification
+does not double the trace of the original real color space. Therefore
+ C_H=sum_q q^2, alpha_g=C_H/(48 pi^2),
+ h_c,g=-alpha_g/2,       h_c,v=10alpha_g.                 (5.4)
+This proves (0.1).
+
+Here is the promised direct diagram verification. Take an external
+a_mu with p=p_nu e_nu, mu!=nu. In one charge sector the scalar
+first vertex is 2q k_mu and the second is the constant 2q^2.
+Only the bubble contributes to the external second derivative.
+Completing the square in its Gaussian integral gives
+ H_scalar,bubble(s,p)
+   =2q^2 s(4pi s)^-2 int_0^1 exp[-s v(1-v)p^2] dv.
+Thus H_scalar''(s,0)=-q^2/(24pi^2), whose one-quarter is
+the scalar value in (5.3). For vectors the orbital piece is four
+copies. The two spin vertices have trace product 8q^2 p^2, so
+their second-derivative contribution is q^2/pi^2. Mixed spin/orbital
+terms have zero Lorentz trace. The one-quarter vector value is
+therefore -q^2/(24pi^2)+q^2/(4pi^2)=10q^2/(48pi^2), exactly (5.3).
+This directly identifies the continuum quantity in (3.7), with no
+claim about absolute moments of continuum contact distributions.
+
+For tau=Tr_fund/N on SU(N), tau(H^2)=1 gives
+C_H=2N^2. No further factor two is inserted.
+
+6. Combined consequence and the remaining existence boundary
+
+The preceding actual-base comparison gives
+ h_M,v-h_W,v=O(1/s) uniformly M. The scalar is independent of M.
+Consequently (0.2) holds uniformly in M, and
+ int_1^(K^2) (h_M,v-2h_g) ds/s
+ =11alpha_g log(K^2)+O(int_1^infty s^-3/2 ds)
+ =22alpha_g log K+O(1).                                 (6.1)
+
+The determinant sign is fixed: for logdet G-(1/2)logdet V, the
+proper-time quadratic density is (1/2)h_v-h_g; extracting
+beta=2[t^2] gives exactly h_v-2h_g. Thus (6.1), and not its
+negative or twice its value, is the signed Maxwell coefficient
+from the middle base band.
+
+Combining this with the separately proved actual soft-factor
+determinant identities, bounded coarse corrections, short-time
+control, physical-band penalty comparison and infrared-tail bounds
+is an additional assembly step. This note does not silently
+identify any separately regularized singular factors. It proves
+the fixed-reference ingredient and its direct uniform-M base
+consequence. It does not establish a full large-field RG history,
+a running trajectory outside its stated weak domain, construction
+of the continuum measure, or a mass gap.
+

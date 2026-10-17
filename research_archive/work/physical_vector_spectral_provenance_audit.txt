@@ -1,0 +1,94 @@
+INDEPENDENT AUDIT: FLAT PHYSICAL VECTOR HEAT AND MOMENTS
+17 October 2026. Auditor: provenance.
+
+Audited work/physical_vector_curvature_research.txt and the complete
+work/physical_vector_spectral_fragment.tex.
+
+RESULT: PASS. No mathematical or transcription correction requested.
+The actual flat spectral estimates are proved from the stated
+previously audited inputs. The relative-vertex lemma is proved as an
+abstract fixed-space statement; its actual nonflat hypotheses remain
+explicitly unproved. The zero-momentum holonomy limitation is retained.
+
+1. Flat order and trace normalization
+
+For fixed a>=R_q,
+Q=L|phys+A^T(aI-q_(MK))A>=L|phys>=Delta_phys.
+Together with Q>=c_a K^-2 I this gives the displayed half-sum
+lower bound. At flatness globally based and all periodic gradient
+images agree, so the transverse Bloch description is correct.
+The multiplicities are 3 dim(g) off zero and 4 dim(g) at zero.
+
+The heat inequality uses min--max for total traces, not operator
+monotonicity of the exponential. Translation by one final block
+makes the normalized total trace equal the compressed diagonal
+trace in any block. This does not claim a pointwise comparison.
+
+2. Heat sum and finite harmonic term
+
+The elementary scalar estimate follows from
+sin(pi |m|/n)>=2|m|/n for |m|<=n/2 and Gaussian summation.
+With n=KN, dividing n^4 p_n(s/2)^4 by N^4 gives precisely
+K^4(1+s)^-2 plus N^-4, with the common gap factor.
+The N^-4 contribution is necessary for the finite harmonic modes.
+It does not disappear merely by using a positive physical gap.
+
+The infinite result follows independently by integrating finite
+coarse Bloch fibers and folding aliases. It does not require an
+interchange of finite varying-background determinants.
+
+3. Physical time and inverse moments
+
+Setting s=K^2u gives the stated physical heat bound, including
+the unchanged N^-4 term. The bound K^4/(1+K^2u)^2<=u^-2
+proves the uniform infrared tail.
+
+The spectral integral for Qhat^-p is positive, so the local trace
+can be integrated directly. The intervals (0,K^-2), (K^-2,1),
+and (1,infinity) give respectively the displayed
+K^(4-2p), log K, or constant bounds according to p relative to 2.
+The finite harmonic term contributes only C_p N^-4.
+The note correctly distinguishes a trace of the inverse moment
+from a power of a compressed inverse and from global trace class.
+
+4. Optional on-shell determinant
+
+With the stated on-shell identities, the coarse physical Schur
+compression is A Q^-1 A^T=a^-1 I. The matrix determinant lemma
+therefore gives det Q_on/det Q=det(I+a^-1 q_phys).
+Since q kills the coarse vertical space, its normalized logarithm
+equals that of q+aI on the full coarse space, up to a fixed
+power of a. The clause requiring a legitimately defined Maxwell
+moment is necessary and is preserved in the fragment.
+
+5. Relative-form vertices
+
+The single insertion bound follows from
+|Tr V_2 e^-uX|<=L_2 Tr X e^-uX.
+The cyclic double Duhamel insertion has exactly the displayed
+u/2 divided-difference coefficient; its coincident value gives
+u^2/2 on a diagonal matrix, as required.
+
+For b>=2a, ab/(b-a)<=2a proves the scalar estimate directly.
+For a<=b<=2a, the derivative bound u e^-ua and ab<=2a^2,
+together with (ua)e^-ua/2<=2/e, imply the claimed conservative
+right side. Writing V_1=X^1/2 B X^1/2, each row and column
+square sum of B is at most ||B||^2. This gives
+2u L_1^2 Tr X e^-uX/2, followed by 8/e times
+L_1^2 Tr e^-uX/4. Thus constant 8 in the final lemma is safe.
+
+The conditional infrared conclusion then uses the flat heat
+bound at u/4. No short-time derivative conclusion or actual
+uniform nonflat identification of physical spaces is inferred.
+
+6. Scope and fidelity
+
+The fragment preserves the research proof, its finite harmonic
+correction, the optional on-shell qualification, and the explicit
+absence of actual relative-vertex bounds.
+The physical determinant's growing flat-holonomy response is
+correctly attributed to the separately proved scalar/Ward
+cancellation, not deduced from the spectral theorem.
+The flat spectral gap and trace bounds do not make a separate
+massless-factor comparison valid. No vector Maxwell logarithm,
+sign, or existence conclusion is asserted.

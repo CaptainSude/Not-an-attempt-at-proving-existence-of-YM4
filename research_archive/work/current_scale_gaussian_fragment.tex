@@ -1,0 +1,266 @@
+% Notebook 17 module. No preamble. Unique label prefix cs-.
+% Requires the usual norm macro and jt-real-theorem from the joint-tail module.
+\section{The Gaussian at an arbitrary current renormalization scale}
+\label{cs-section}
+
+The fixed-ratio bare Gaussian and the Gaussian used after earlier
+classical minimizations are different objects. We now extract the
+uniform bounds for the latter. They are already contained in
+Notebooks 05--07; this section supplies the current-scale probability
+normalization and records how Notebook 15 removes the earlier
+homogeneous smooth-minimizer hypothesis.
+
+\subsection{The retained coordinates and their exact precision}
+
+Set the current lattice spacing to one. The original spacing is
+$M^{-1}$, with $M=L^k$, while the next blocking ratio $L\ge3$ is fixed
+and odd. All regulators are compatible periodic tori. Let
+\[
+ q_M(B)=\inf_{Q_M^{\rm st}A=B}\norm{d_{1/M}A}_{1/M}^2
+\]
+be the classical flat effective quadratic form. The fine norm has
+volume factor $M^{-d}$ and the current norm is counting measure.
+Next-step maps are denoted by $Q_L^\flat,T_L,K_L$: respectively the
+rooted constraint, averaged root-to-site contour map, and pivot
+insertion. These are the fixed-$L$ maps of Notebook 05. The map
+$K_L$ inserts a field in $\ker Q_L^\flat$ and is the identity on
+the retained nonpivot coordinates. It is not a gauge-selected
+fine minimizing extension.
+
+The actual flat exponential-gauge quadratic model on the retained
+variables $z$ is
+\begin{equation}\label{cs-precision}
+ A_{M,0}=K_L^T(q_M+T_L^TT_L)K_L,\qquad
+ d\mu_{M,0}(z)=
+ (2\pi)^{-n/2}\det(A_{M,0})^{1/2}
+ e^{-z^TA_{M,0}z/2}\,dz .
+\end{equation}
+Here $n$ counts independent real bond/color coordinates once, using
+a real color basis orthonormal for the normalized trace. Thus
+\begin{equation}\label{cs-counting}
+ \operatorname{Cov}_{\rm count}(z)=A_{M,0}^{-1}.
+\end{equation}
+There is no factor $M^d$ in \eqref{cs-counting}: these are
+\emph{current-unit} coordinates, not original fine potential values.
+The coupling has already been removed from the Gaussian by the
+change of field $B=g_kK_Lz$ at linear order. The nonlinear constraint
+correction, Haar density and coordinate Jacobian are kept outside
+the chosen Gaussian in \eqref{cs-precision}. In particular, a
+coupling-suppressed quadratic Haar term may be part of the
+interaction; no vanishing of that term is asserted.
+
+\subsection{Uniform spectral bounds, including all previous depths}
+
+The normalized cochain contraction in Notebook 06 gives
+\begin{equation}\label{cs-energy-sandwich}
+ \norm{d_1B}_1^2\le q_M(B)\le C_d\norm B_1^2,
+ \qquad C_d=2^{d+6}(d-1).
+\end{equation}
+The compact lift proves the upper bound for odd $M\ge3$; $M=1$
+uses the identity lift and satisfies the same displayed bound.
+These estimates hold for all current fields, not just a transverse
+Fourier sector.
+
+For clarity we record the fixed geometric constants of Notebook 06.
+On the cube of $3^d$ neighboring $L$-blocks form the finite matrix
+\[
+ \mathcal M_L=d_\Omega^Td_\Omega+
+ T_{0,\Omega}^TT_{0,\Omega}+
+ Q_{{\rm st},\Omega}^TQ_{{\rm st},\Omega},
+ \quad \sigma(d,L)=\lambda_{\min}(\mathcal M_L)>0.
+\]
+Its kernel is trivial: zero curl gives a gradient, the tree rows
+make its scalar potential constant on each block, and the averaging
+rows equate neighboring block constants. Summing the local
+inequality gives the axial gap
+$\gamma_{\rm loc}=\sigma(d,L)/3^d$ on
+$\ker Q_L^{\rm st}\cap\ker T_0$. Periodic repetitions are counted
+with multiplicity, so the same constant applies on short compatible
+tori.
+
+Put
+\begin{equation}\label{cs-constants}
+ \begin{split}
+ d_0&=2\sqrt d,\qquad
+ t_0=\sqrt{d(L-1)(L^d-1)},\qquad
+ r_L=1+2d(L-1)/L,\\
+ K_*^2&=1+L^{2d}(2d+2)r_L^2,\\
+ \gamma_*&=
+ \left((1+d_0t_0)^2/\gamma_{\rm loc}+d_0^2\right)^{-1},
+ \qquad B_*=(C_d+t_0^2)K_*^2.
+ \end{split}
+\end{equation}
+The flat gauge bridge of Notebook 05 gives
+\[
+ q_M(B)+\norm{T_LB}^2\ge\gamma_*\norm B^2
+ \quad (Q_L^\flat B=0).
+\]
+One can see the constraint compatibility directly. First subtract
+the rooted gradient $D(T_LB)$ to obtain $B_T$ with
+$T_LB_T=Q_L^{\rm st}B_T=0$. Convert it by a block-mean-zero
+gradient to the tree representative $B_0$. Their curls agree and
+$\norm{B_T}\le(1+d_0t_0)\norm{B_0}$. Apply the axial gap and
+weighted Cauchy--Schwarz to
+$B=B_T+D(T_LB)$. This argument uses the lower inequality in
+\eqref{cs-energy-sandwich}; it does not confuse the rooted and
+straight constraints.
+
+Since $z$ is a coordinate restriction of $K_Lz$ and
+$\norm{K_L}\le K_*$, the full precision sandwich is
+\begin{equation}\label{cs-spectral}
+ \gamma_*I\le A_{M,0}\le B_*I,
+ \qquad
+ B_*^{-1}I\le A_{M,0}^{-1}\le\gamma_*^{-1}I.
+\end{equation}
+All constants are independent of $k$, $M$ and the torus volume.
+There is no need to replace this proved bound by an assumed
+transverse ellipticity statement.
+
+\subsection{Weighted locality and its scope}
+
+Group the retained coordinates by their fixed next-step $L$-cells.
+For a block matrix $F$, use the weighted Schur norm
+\[
+ \norm F_\kappa=
+ \max\left\{
+ \sup_i\sum_j e^{\kappa|i-j|_1}\norm{F_{ij}},
+ \sup_j\sum_i e^{\kappa|i-j|_1}\norm{F_{ij}}
+ \right\},
+\]
+with periodic distance on finite regulators. Notebook 07,
+its flat-decay theorem and section on periodic gluing and the reduced inverse,
+prove constants $\kappa_*>0,C_*<\infty$, depending only on fixed
+geometry, such that
+\begin{equation}\label{cs-weighted}
+ \norm{A_{M,0}}_{\kappa_*}
+ +\norm{A_{M,0}^{-1}}_{\kappa_*}\le C_*.
+\end{equation}
+The proof there first establishes a uniform holomorphic Fourier
+strip for $q_M$, then uses fixed-range $K_L,T_L$, the real gap
+\eqref{cs-spectral}, and a smaller strip for the inverse.
+Exact periodization gives the same conclusion on compatible tori.
+This additional locality does not follow from a spectral sandwich
+alone. It concerns the flat retained-coordinate matrix; it is not
+strict locality in a varying background.
+
+\subsection{Joint value-and-difference tails on the current lattice}
+
+Let $\nabla_1$ contain all forward unit differences of every bond
+component, and define
+\begin{equation}\label{cs-tested-field}
+ Y=\begin{pmatrix}K_Lz\\\nabla_1K_Lz\end{pmatrix}.
+\end{equation}
+The elementary bound
+$\norm{\nabla_1}\le2\sqrt d$ and
+\eqref{cs-spectral} imply
+\begin{equation}\label{cs-tested-covariance}
+ 0\le\operatorname{Cov}_{\rm count}(Y)\le
+ K_{\rm cur}I,
+ \qquad K_{\rm cur}=(1+4d)K_*^2/\gamma_*.
+\end{equation}
+Because $K_L$ and the difference stencil have fixed range,
+\eqref{cs-weighted} also supplies exponential block decay for this
+tested covariance, with a fixed loss in its constant.
+
+If each tested cell uses at most $m$ scalar coordinates and every
+coordinate is tested in at most $\nu$ cells, the real joint-tail
+theorem~\ref{jt-real-theorem} gives
+\begin{equation}\label{cs-joint-tail}
+ \mathbb P\left(
+ \max_{i\in I_b}|Y_i|>R\text{ for every }b\in S\right)
+ \le
+ \left[m\sqrt2\exp\left\{-\frac{R^2}{4\nu K_{\rm cur}}\right\}
+ \right]^{|S|}.
+\end{equation}
+Fixed current-scale cells, including fixed collars for derivatives,
+have $m,\nu$ independent of $M$. The Gaussian is correlated;
+independence is neither asserted nor needed. For $g_kY$, replace
+$R$ by $R/g_k$. If $R(g)=c(\log g^{-2})^p$ with $p>1/2$, the
+bracket at radius $R(g)$ is smaller than any fixed power of $g$
+below a sufficiently small ceiling.
+
+To restore the physical current spacing $a$, write
+$Z_{\rm phys}(x)=a^{-1}(K_Lz)(x/a)$ in four dimensions. Then
+\[
+ (aZ_{\rm phys},a^2\nabla_aZ_{\rm phys})=Y.
+\]
+This is the current-step normalization. It differs from treating
+all original fine variables between $M^{-1}$ and one as a single
+fluctuation. It also differs from the bare fixed-ratio formula
+$(LI,\nabla_{1/L})C_L(LI,\nabla_{1/L})^T$, whose coordinates use
+next-coarse spacing one. Both statements are consistent after their
+scales and Gaussian models are specified.
+
+\subsection{What is now identified with the deposited source}
+
+Notebook 07's source section records the chain from the deposited
+small-field step to \eqref{cs-precision}: Raw II:73865--73950
+straightens the constraint, rescales by $g_k$, and eliminates the
+pivots; Raw I:46960--47000 fixes the pivot coefficient convention.
+At the trivial field the action Hessian is $q_M$, the exponential
+gauge Hessian is $T_L^TT_L$, and the action gradient vanishes.
+Consequently the quadratic start of the constraint-straightening
+correction does not change this Hessian. Haar and Jacobian factors
+remain in the interaction.
+
+The smooth-minimizer premise in that earlier identification is now
+supplied, in the homogeneous setting, by Notebook 15's theorem on
+transfer to the ordinary homogeneous averaging constraint. It
+constructs an analytic local branch for the ordinary iterated group
+average, with real action minimality in a fixed small global
+potential class. At each finite regulator the ordinary constraint
+is an analytic submersion at the identity. Its derivative is onto,
+as follows from the fixed-step pivot right inverses and their
+composition. Thus every tangent-feasible field is the tangent to
+a feasible curve. Comparing the local minimum with these curves
+shows that its second derivative is the quadratic variational
+infimum for the rooted derivative. Notebook 06's explicit
+gradient adjustment identifies that infimum with the displayed
+$Q_M^{\rm st}$ infimum. The gradient adjustment preserves energy;
+it does not identify the two averaging maps as maps on potentials.
+
+Accordingly \eqref{cs-precision} is the homogeneous flat source
+Gaussian under the deposited ordinary-average and normalization
+conventions already matched in those notebooks. The nonlinear
+branch need not equal an independently chosen axial representative:
+the locally minimizing action and its flat Hessian agree modulo
+gauge. This does not re-certify every original journal convention,
+extend the result to mixed histories or holes, or identify a
+nonflat independent-current analytic family.
+
+\subsection{A distinct fixed-slice perturbation consequence}
+
+There is also a useful quadratic model without pivot coordinates.
+Let $X_L=\ker Q_L^{\rm st}\cap\ker(R_LD_1^T)$ be the fixed flat
+source-gauge slice for the unit-to-$L$ step, and let $J_L$ be its
+isometric inclusion. The fixed-$L$ Maxwell covariance proved in
+Notebooks 09 and 12 implies
+\[
+ J_L^Td_1^Td_1J_L\ge c_LI
+\]
+for some $c_L>0$, uniformly in compatible volume. For example one
+may take $c_L=(L^2\norm{C_L})^{-1}$, where $C_L$ uses next-coarse
+spacing one. Hence
+\begin{equation}\label{cs-slice-gap}
+ c_LI\le J_L^Tq_MJ_L\le C_dI.
+\end{equation}
+This gives the same kind of current-scale value-and-difference
+tail bound on $X_L$, uniformly in $M$.
+
+Notebook 16 proves that the ordinary coarse classical Hessian
+satisfies $D^2V_M(B)=q_M+O(\norm B_\infty)$ in weighted row and
+column norms. Its compression to this fixed slice therefore has a
+relative perturbation bounded by $C\norm B_\infty/c_L$. This is
+a valid input to the abstract complex relative-quadratic tail
+theorem on a sufficiently small common background ball. It is an
+effective classical Gaussian family in a fixed linear slice.
+It is not automatically the source's nonlinear fiber Gaussian:
+the latter also contains chart-curvature/current terms, exponential
+gauge fixing, and an exact cutoff-coordinate prescription.
+Notebook 19 now performs that additional physical-branch
+identification, keeping both chart-curvature terms and the
+actual absolute gauge function.
+Nor is weighted locality of this compressed inverse inferred by
+conjugating with weights which do not preserve $X_L$; the weighted
+inverse assertion \eqref{cs-weighted} concerns the separately
+proved pivot-coordinate family.

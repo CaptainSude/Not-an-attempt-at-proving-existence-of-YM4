@@ -1,0 +1,183 @@
+% No preamble. Follows cv- concrete inputs and cl- support localization.
+% Unique prefix ci-.
+\section{One integration of the classical action at every earlier depth}
+\label{ci-section}
+
+The support theorem upgrades the bare calculation of Notebook 20.
+Its exact scope matters: $S_M$ is the classical action obtained
+by minimizing the original Wilson action through the earlier
+ratio $M$. The following integral uses $S_M$ and the source
+gauge and measure factors. It has no previously generated
+quantum correction $E_k$. Thus the result is uniform through
+classical depth, not a claim that the quantum induction is
+already closed.
+
+Let $\Phi_V$ be Notebook 19's exact retained chart, let
+$a=\log V/i$, and put
+\begin{equation}\label{ci-action}
+ \mathcal T_{M,V}(x)=
+ S_M\bigl(\log(e^{i\Phi_V(x)}V)/i\bigr)
+                    +\mathcal G(e^{i\Phi_V(x)}V).
+\end{equation}
+The full product-domain Hessian is
+$A_M(V)=D_x^2\mathcal T_{M,V}(0)$, including the absolute
+gauge function away from its zero slice. Its flat baseline is
+$A_{M,0}=K_L^T(q_M+T_L^TT_L)K_L$.
+The preceding support construction gives local scalar
+coefficients $\mathcal T_{M,Y}$ and symmetric precision
+coefficients with all their retained rows, columns and
+background dependence in $Y$.
+
+Group unit current cells into fixed $L$-blocks, assigning their
+retained positive bonds to them. The Gaussian cell dimension
+is then $D=d(L^d-1)\dim\mathfrak g$, independent of $M$ and
+volume. Any bounded change of support convention and anchor
+multiplicity in this grouping costs constants depending only
+on $L$. After the spatial-exponent and cardinality reserves
+proved above, the resulting coefficients have exactly the
+weighted support norms of Notebook 18.
+
+Define the logarithmic interaction $v_{M,Y}$ by subtracting
+the constant, linear and quadratic terms from each
+$-g^{-2}\mathcal T_{M,Y}(a,gz)$ and adding the normalized
+straightening-Jacobian and Haar logarithms of Notebook 19.
+The gauge Taylor remainder is already included in
+$\mathcal T_{M,Y}$ and is not counted twice. There is a
+common small product background ball such that, for every
+fixed required support-cardinality weight and a sufficiently
+small spatial exponent,
+\begin{align}
+ \nu_M(b)&\le C_L b,\label{ci-inputs}\\
+ \sup_i\sum_{Y\ni i}e^{a_0|Y|+\kappa\ell(Y)}
+                      \|v_{M,Y}\|_{b,R}
+       &\le C_{L,a_0,\kappa}gR^3,
+       \qquad R\ge1,\quad gR<r_L.\notag
+\end{align}
+Here $\nu_M$ is the precision support norm, not just the
+norm of the summed matrix, and $\ell$ is the metric tree
+length used by Notebook 18. All constants are uniform in
+the earlier classical depth and periodic volume.
+
+\begin{theorem}[Uniform classical-reference integration]
+\label{ci-theorem}
+Fix odd $L$, the gauge group, $c>0$ and $p>1/2$, and set
+$R(g)=c(\log g^{-2})^p$. There are
+$b,g_0,a_*,C,c_*>0$, independent of $M=L^k$ and compatible
+periodic volume, for which
+\begin{equation}\label{ci-normalized}
+ Z_{M,g}(V)=\int d\mu_{A_M(V)^{-1}}(z)\,
+       \chi_{R(g)}(z)\exp\left(\sum_Yv_{M,Y}(V,z)\right)
+\end{equation}
+has a holomorphic logarithm on the independent current
+background product ball $\|a\|_\infty<b$, for $0<g<g_0$.
+There is a convergent connected-support expansion
+\begin{equation}\label{ci-result}
+ \log Z_{M,g}(V)=\sum_HE_{M,g,H}(V|_H),\qquad
+ \sup_i\sum_{H\ni i}e^{a_*|H|}\|E_{M,g,H}\|_b
+       \le C\{gR(g)^3+e^{-c_*R(g)^2}\}.
+\end{equation}
+Its canonical difference from the pure Gaussian cutoff
+expansion has norm at most $CgR(g)^3$.
+\end{theorem}
+\begin{proof}
+Notebook 19 supplies the flat spectral constants and weighted
+inverse uniformly in $M$. Choose the spatial exponents in
+Notebook 18 smaller than both that inverse exponent and half
+the available Steiner exponent for the support coefficients.
+Choose a fixed $0<\theta\le1/4$, for example $1/(4D)$.
+The arbitrary fixed cardinality reserve in the support
+theorem pays $4+\log\mathcal K_\theta$ in its interaction norm.
+The first bound in \eqref{ci-inputs} permits one
+$M$-independent $b>0$ satisfying every local-precision
+smallness condition of its tunable strictly local theorem.
+
+The interaction parameter is at most $CgR^3$ by the second
+bound in \eqref{ci-inputs}. The bad-cell parameter is at most
+$Ce^{-c_*R^2}$ by the correlated real-baseline comparison.
+The retained-bond rectangles are covered by the cell tail
+argument of Notebook 20 and remain fixed under the exact
+chart. A common $g_0$ makes both quarter budgets hold and
+keeps the recovered whole field within its analytic radius.
+Apply Notebook 18 and its periodic extension.
+\end{proof}
+
+At a physical background $V_*(W)$, the sum of the separated
+linear terms is exactly zero and the gauge constant is zero.
+Thus \eqref{ci-normalized} is the actual fluctuation factor
+of the constrained classical-reference integral in that
+chart. On the larger product domain it is the explicitly
+centered analytic extension, as in Notebook 20.
+
+The normalization factors are equally controlled. With
+$B_M(V)=A_M(V)-A_{M,0}$ and $C_{M,0}=A_{M,0}^{-1}$, set
+\begin{equation}\label{ci-det}
+ \mathcal Q_M(V)=-\tfrac12\log\det(A_M(V)A_{M,0}^{-1})
+   =\tfrac12\sum_{n\ge1}\frac{(-1)^n}{n}
+                         \operatorname{Tr}[(C_{M,0}B_M(V))^n].
+\end{equation}
+The closed-chain proof of Notebook 20 uses only weighted
+covariance row sums and the precision-label norm.
+Equation \eqref{ci-inputs} supplies those uniformly in $M$,
+even though the precision supports are no longer bounded
+in size. Joining each label by a minimal tree and each
+covariance link by a shortest path gives the same bound.
+Consequently $\mathcal Q_M$ has strictly local connected
+activities with anchored norm at most $Cb$. The separate
+delta factor
+$\log[\mathcal D(V)/\mathcal D(1)]=-\sum_c\operatorname{Tr}
+\log\pi_c(V)$ has fixed-range anchored norm at most $Cb$.
+Neither normalization term is silently counted as $O(g)$.
+
+For real physical backgrounds define $I^{\rm sf}_{M,g}(V)$
+to be the constrained current group integral with weight
+$\exp[-g^{-2}(S_M(\log U/i)+\mathcal G(U))]$, restricted
+to the local retained chart and its specified rectangle.
+Using the notation $N_b,N_c,n,c_H,\mathcal D$ from
+Notebook 20, its exact formula is
+\begin{equation}\label{ci-exact}
+ \begin{split}
+ I^{\rm sf}_{M,g}(V)={}&
+ c_H^{N_b-N_c}g^n\mathcal D(1)
+       (2\pi)^{n/2}(\det A_{M,0})^{-1/2}
+                       e^{-S_M(a)/g^2}\\
+ &\times\exp\left\{
+ \log\frac{\mathcal D(V)}{\mathcal D(1)}
+       +\mathcal Q_M(V)+\sum_HE_{M,g,H}(V|_H)\right\}.
+ \end{split}
+\end{equation}
+There is no unaccounted field-dependent normalization in
+this defined integral. A gauge-insertion identity outside
+the chart would additionally require $S_M$ itself to be
+defined and gauge invariant on the chosen admissible
+rooted-gauge-invariant domain. The small-potential construction
+does not assert that extension. The exact chart formula above
+does not require it.
+
+\section{The next induction problem}
+\label{ci-next}
+
+The classical-reference integral is now controlled uniformly
+over the number of earlier classical averaging steps.
+This removes a separate localization premise from the
+homogeneous small-field argument. Its support statement
+initially records dependence on independent current potentials.
+Notebook 22 supplies the further strict support expansion of
+the actual stationary background $V_*(W)$ and transports the
+generated activities into $W$, with explicit radius and
+support-weight losses. Notebook 23 proves local gauge
+invariance of the complete correction, including the
+normalization factors, and its quadratic Ward identity.
+
+Notebook 24 then supplies a conditional inherited-interaction
+bound, and Notebook 26 meets its support-weight test by using
+a persistent auxiliary-cell convention. The next problem is
+stable analytic domains and control of the accumulated
+interaction sizes, with extraction of vacuum and marginal
+terms and estimates along the required coupling trajectory.
+The bounded one-step estimates do not supply this recurrence.
+Notebook 25's smaller representative gives one analytic
+continuation tool for addressing the domain problem.
+Large-field complements and mixed histories must be included
+in the same induction. The continuum observable bounds,
+symmetry restoration and reconstruction remain the final
+existence obligations recorded in Notebook 01.

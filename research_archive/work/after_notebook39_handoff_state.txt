@@ -1,0 +1,44 @@
+CURRENT HANDOFF STATE AFTER NOTEBOOK39
+17 October 2026
+
+The requested natural mathematical stopping point is complete.
+Notebook39 proves the exactly normalized local replacement theorem
+for separated fixed boxes in the actual positive bare Wilson measure,
+using the fixed-box probability inputs in Notebook38.
+Its conditional denominators, preserved exterior marginal, raw mass,
+positive failure expansion, coupling, exact local joint total variation,
+entropy, defect/cluster bounds and bounded-source cumulant comparisons
+are written and internally audited.
+
+Authoritative assembled source:
+  outputs/ym4-normalized-box-replacement/main.tex
+Distribution source and PDF:
+  outputs/ym4-handoff-2026-10-17/notebooks/39-ym4-normalized-box-replacement/
+
+All39 notebooks have standalone PDFs, distribution sources and exact
+original assembled sources. Three reading documents explain baseline,
+additions, assumptions, corrections and continuation. The final dossier
+is21 pages, the catalogue42 pages and the introductory guide3 pages.
+All42 PDFs compiled without overfull or undefined-reference warnings.
+Actual-image review covers all622 pages through contact sheets, with
+additional individual-page inspection documented in four review files.
+
+CURRENT MATHEMATICAL BOUNDARY
+The full continuum4D Yang-Mills existence theorem is not proved.
+Full H2 complete-density/mixed-history transfer for the chosen map,
+H3 observable-source bounds, H4 a common continuum hierarchy,
+H5 positivity/rotations/reconstruction, H6 nontrivial Yang-Mills
+identification, and H7 physical mass gap/group scope remain open
+in the senses detailed in the final dossier.
+
+The positive drift in Notebook37 is a local homogeneous result under
+its upstream inputs. The exact finite-history identities in38 do not
+bound all histories. The replacement in39 is for fixed bare boxes,
+not nonlinear coarse-average fibers, arbitrary growing components,
+or a post-RG effective action. It does not close H2 or H3.
+
+The latest user request is to finish this substantial result and provide
+a complete handoff, rather than continue indefinitely. Packaging and
+integrity validation complete that bounded goal. Older checkpoint next
+tasks are historical, superseded where the final dossier says so.
+No external sending or publication is authorized or performed.

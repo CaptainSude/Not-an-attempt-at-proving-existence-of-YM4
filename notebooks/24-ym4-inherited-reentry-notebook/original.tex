@@ -1,0 +1,429 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 24: inherited interactions and the next-step norm test}
+\author{Research working document}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We separate an inherited analytic quantum correction into its
+stationary-background value and its fluctuation increment in
+the actual ordinary pivot chart. Directional Cauchy bounds the
+increment by a factor of order $gR$ divided by the available
+analytic margin, without a carrier-size derivative loss.
+The exact pivot incidence confines its projected support to
+the original blocks and their relevant endpoint neighbors.
+Connected-carrier compression then yields an explicit
+sufficient inequality for the stronger interaction norm
+required by the next Gaussian integration. Under that
+inequality and the existing covariance hypotheses, the
+inherited contribution to the connected logarithm has the
+same small factor. The inequality is not yet verified for
+the actual output decay constants as the block side varies.
+This result makes that parameter test, and the independent
+domain-stability problem, explicit.
+\end{abstract}
+
+Notebooks 21--23 provide the classical-reference integral,
+stationary-background transport, and local gauge covariance.
+The following argument treats the additional interactions
+produced by earlier integrations. It keeps their full
+background term outside the integral and controls the
+remaining fluctuation effect under a displayed norm budget.
+
+
+% Conditional inherited-interaction bridge. No preamble. Prefix qi-.
+\section{A conditional bridge for inherited quantum interactions}
+\label{qi-section}
+
+This section is a finite-step result with an explicit unverified
+weight inequality. It uses the actual source fluctuation chart and
+does not claim that the available constants meet that inequality,
+that field domains are stable under iteration, or that an RG
+induction has closed. Fix odd $L\ge5$, color and compatible periodic source
+geometry; all displayed constants are uniform in old refinement
+$M$ and volume, but may depend on $L$.
+
+\subsection{The exact split before the next integration}
+
+After stationary transport, the activities are functions of the
+next-current unit-spacing potential, now denoted $a$. Their
+connected carriers $H$ are unit current cells. The following
+integration groups these cells into $L$-block Gaussian cells,
+with dimensions
+\begin{equation}\label{qi-dimensions}
+ D_G=d(L^d-1)\dim\mathfrak g,\qquad
+ D_{\mathrm{bg}}=dL^d\dim\mathfrak g.
+\end{equation}
+The first counts retained Gaussian coordinates; the second counts
+all background link coordinates in a block. The inherited unit-cell
+activity has at most $D_0=d\dim\mathfrak g$ background scalar
+coordinates per unit cell.
+
+Write $V_*(W)=e^{ia_*(w)}$, $W=e^{iw}$, for the actual matched
+stationary branch. The exact source insertion is
+\begin{equation}\label{qi-actual-insertion}
+ U=e^{i\Phi_{V_*(W)}(g\xi)}V_*(W).
+\end{equation}
+Keep its current background independent initially, and define
+\begin{align}
+ F(a,z)&=\frac1i\log\left(e^{i\Phi_{e^{ia}}(z)}e^{ia}\right),
+ &F(a,0)&=a,                                            \label{qi-map}\\
+ \Delta E_H(a,\xi)&=E_H(F(a,g\xi)|_H)-E_H(a|_H).         \label{qi-increment}
+\end{align}
+Then, on the common small domain,
+\begin{equation}\label{qi-exact-split}
+ \sum_H E_H\left(\left.\frac{\log U}{i}\right|_H\right)
+ =\sum_H E_H(a_*(w)|_H)
+       +\sum_H\Delta E_H(a_*(w),\xi).
+\end{equation}
+The first sum is outside the fluctuation integral. It is not
+discarded as a vacuum constant unless it is independent of $w$.
+There is no factor $g^{-2}$ in \eqref{qi-increment}: $E_H$ is
+already a dimensionless quantum exponent. Its linear and
+quadratic fluctuation terms may remain bounded interactions.
+
+\subsection{A value estimate without a carrier-size derivative loss}
+
+Suppose $E_H$ is bounded holomorphic on the scalar-coordinate
+product ball $|a|<b$, with $e_H=\norm{E_H}_b$, and
+\begin{equation}\label{qi-inherited-norm}
+ \sup_i\sum_{H\ni i}e^{a_0|H|}e_H\le\epsilon,
+ \qquad a_0>0,\qquad H\text{ connected}.
+\end{equation}
+The audited fixed-$L$ source chart supplies
+$b_{\mathrm{ch}},z_{\mathrm{ch}},C_{\mathrm{ch}}>0$ such that
+\begin{equation}\label{qi-displacement}
+ \norm{F(a,z)-a}_\infty\le C_{\mathrm{ch}}\norm z_\infty,
+ \quad \norm a_\infty<b_{\mathrm{ch}},\quad
+       \norm z_\infty<z_{\mathrm{ch}}.
+\end{equation}
+All fixed coordinate norm conversions are included in these constants.
+Choose $b_-<\min(b,b_{\mathrm{ch}})$ and set
+\begin{equation}\label{qi-domain-budget}
+ m=b-b_->0,\quad |g|R<z_{\mathrm{ch}},\quad
+ \delta=C_{\mathrm{ch}}|g|R<m,\quad
+ u=\frac{\delta}{m-\delta}.
+\end{equation}
+
+\begin{lemma}[Uniform inherited increment]\label{qi-increment-lemma}
+On the independent background ball $|a|<b_-$ and retained
+window $\norm\xi_\infty\le R$,
+\begin{equation}\label{qi-increment-bound}
+ \norm{\Delta E_H}\le u e_H.
+\end{equation}
+The increment is holomorphic in the independent background.
+If $\delta\le m/2$, then $u\le2C_{\mathrm{ch}}|g|R/m$.
+\end{lemma}
+\begin{proof}
+For fixed allowed $(a,\xi)$, put
+$h=F(a,g\xi)|_H-a|_H$. The one-variable function
+$f(\zeta)=E_H(a|_H+\zeta h)$ is bounded by $e_H$ on
+$|\zeta|<m/\delta$. Its Taylor series gives
+\[
+ |f(1)-f(0)|\le e_H\sum_{n\ge1}(\delta/m)^n=u e_H.
+\]
+The actual chart is holomorphic in $a$, proving the final statement.
+\end{proof}
+This estimates one directional value increment, not the absolute
+sum of its multivariate Taylor coefficients. It therefore has
+no $D_0|H|$ factor and does not replace the coordinate-count
+argument needed for strict support substitution. No cutoff
+indicator is differentiated.
+
+\subsection{Exact pivot geometry after Gaussian-cell projection}
+
+Use positive current bonds, assigned to their initial site, and
+let $\pi_L$ be centered $L$-cube projection. A nonpivot output
+of the actual map satisfies
+\[
+ \Phi_V(z)(b)=z(b),\qquad
+ F(a,z)(b)=\frac1i\log(e^{iz(b)}e^{ia(b)}),
+\]
+so it reads only that bond. A pivot $p(c)$ for
+$c=(y,y+Le_\mu)$ lies on the common interface of the two
+endpoint blocks, with initial site in the $y$ block. Its exact
+implicit equation reads only the retained links and background
+links in these two blocks. No other pivot enters the equation,
+so solving it does not propagate dependence farther.
+
+Define
+\begin{equation}\label{qi-projected-carrier}
+ Y(H)=\pi_L(H)\cup
+ \{\text{other endpoint block of }c: p(c)\text{ starts in }H\}.
+\end{equation}
+The increment reads only the independent $(a,\xi)$ fibers in
+$Y(H)$. This carrier is connected, and, with
+$\chi=d+1$ and $N_{\mathrm{near}}=2d+1$,
+\begin{align}
+ |Y(H)|&\le\chi|\pi_L(H)|,
+ &\ell(Y(H))&=|Y(H)|-1,                              \label{qi-projected-size}\\
+ \mathbf1_{\{B\in Y(H)\}}
+ &\le\sum_{i\in H}\mathbf1_{\{d_{\mathrm{block}}(B,\pi_L(i))\le1\}}.
+                                                               \label{qi-projected-anchor}
+\end{align}
+Indeed every extra block attaches to $\pi_L(H)$, and at most
+$d$ outward endpoint blocks are added per projected block.
+The conservative neighbor count $N_{\mathrm{near}}$ is enough
+for anchoring. A convention reading both incoming and outgoing
+endpoints may instead use $\chi=2d+1$. The positive oriented
+source convention gives the displayed $d+1$.
+
+This uses the actual one-pivot incidence. Enlarging each input
+cell by an entire radius-$O(L)$ current ball and paying its
+$O(L^d)$ volume would lose the sharper estimate.
+
+\subsection{The explicit sufficient interaction budget}
+
+Group equal carriers into the exact exponent
+\begin{equation}\label{qi-grouped-exponent}
+ Q_Y(a,\xi)=\sum_{H:Y(H)=Y}\Delta E_H(a,\xi).
+\end{equation}
+The absolute anchored estimates below justify this grouping.
+The strict-support, tunable real-baseline theorem of Notebook18
+requires the multiplier norm
+\begin{align}
+ \epsilon_{\mathrm{int}}
+ &=\sup_B\sum_{Y\ni B}v_Y\mathcal K_\theta^{|Y|}
+                       e^{4|Y|+\kappa\ell(Y)},
+ &v_Y&=\sup_{\mathrm{cutoff}}|e^{Q_Y}-1|,              \label{qi-integration-norm}\\
+ \mathcal K_\theta
+ &=\left(\frac{1+\theta}{(1-\theta)^3}\right)^{D_G/2},
+ &0<\theta&\le1/4.                                    \label{qi-density-cost}
+\end{align}
+The cutoff-local multiplier is
+$\chi_Y(e^{Q_Y}-1)$, extended by zero to all real fluctuations.
+All additional source restrictions remain present.
+
+Put
+\begin{equation}\label{qi-required-weight}
+ B_{\mathrm{req}}=4+\log\mathcal K_\theta+\kappa,
+ \qquad
+ k_L=1+\left\lfloor\frac{(L-1)/2-1}{2}\right\rfloor.
+\end{equation}
+Connected-carrier compression and \eqref{qi-projected-size} give
+\begin{equation}\label{qi-carrier-compression}
+ |Y(H)|\le\chi2^d+(\chi2^d/k_L)|H|.
+\end{equation}
+
+\begin{proposition}[Conditional inherited interaction re-entry]
+\label{qi-reentry-proposition}
+Assume the exact source chart, \eqref{qi-inherited-norm},
+\eqref{qi-domain-budget}, and the numerical inequality
+\begin{equation}\label{qi-reentry-condition}
+ \frac{\chi2^d}{k_L}B_{\mathrm{req}}\le a_0.
+\end{equation}
+Then, with
+$V_{\max}=u N_{\mathrm{near}}L^d\epsilon$,
+\begin{align}
+ \sup_B\sum_{Y\ni B}e^{B_{\mathrm{req}}|Y|}\norm{Q_Y}
+ &\le u e^{B_{\mathrm{req}}\chi2^d}
+                       N_{\mathrm{near}}L^d\epsilon,              \label{qi-exponent-bound}\\
+ \epsilon_{\mathrm{int}}
+ &\le e^{V_{\max}}u e^{B_{\mathrm{req}}\chi2^d}
+                       N_{\mathrm{near}}L^d\epsilon.              \label{qi-multiplier-bound}
+\end{align}
+In particular, for $V_{\max}\le\log2$ the first prefactor
+in \eqref{qi-multiplier-bound} is at most two.
+\end{proposition}
+\begin{proof}
+Equations \eqref{qi-increment-bound} and
+\eqref{qi-projected-anchor} first give
+\[
+ \sup_B\sum_{Y\ni B}\norm{Q_Y}
+       \le u N_{\mathrm{near}}L^d\epsilon=V_{\max}.
+\]
+Every individual exponent is therefore bounded by $V_{\max}$,
+and the multiplier estimate is exactly
+$v_Y\le e^{\norm{Q_Y}}\norm{Q_Y}\le e^{V_{\max}}\norm{Q_Y}$.
+One cannot retain the smaller individual-label bound $u e_H$
+after grouping many $H$ into one $Y$.
+
+For the weighted bound, \eqref{qi-carrier-compression} and
+\eqref{qi-reentry-condition} imply
+\[
+ e^{B_{\mathrm{req}}|Y(H)|}
+       \le e^{B_{\mathrm{req}}\chi2^d}e^{a_0|H|}.
+\]
+Use \eqref{qi-projected-anchor} and anchor at the at most
+$N_{\mathrm{near}}L^d$ current sites in neighboring blocks.
+The input norm \eqref{qi-inherited-norm} proves
+\eqref{qi-exponent-bound}. Connectedness gives
+$\ell(Y)=|Y|-1$, so the target weight in
+\eqref{qi-integration-norm} is at most
+$e^{B_{\mathrm{req}}|Y|}$. The multiplier estimate proves
+\eqref{qi-multiplier-bound}.
+\end{proof}
+Thus the edge-geometry weight is included, not only the
+$e^{4|Y|}$ term. If another estimate needs a factor $|H|^q$,
+require a strict margin
+$\rho=a_0-(\chi2^d/k_L)B_{\mathrm{req}}>0$ and use
+$\sup_{n\ge1}n^q e^{-\rho n}$. No extra reserve is assumed
+without such a budget.
+
+\subsection{Comparison of the connected logarithm coefficients}
+
+Assume the remaining covariance and precision hypotheses of
+Notebook18 hold on the independent background ball. Write its
+common smallness threshold as $\eta_*$ and its canonical strict
+connected coefficient estimate as
+$\norm{\mathcal U}_{\mathrm{out}}\le C_{\mathrm{out}}\eta$
+for $\eta\le\eta_*$. Here the output norm is the theorem's
+connected support norm in the original independent background
+variables, not merely the absolute scalar logarithm.
+
+\begin{corollary}[Inherited contribution to the logarithm]
+\label{qi-log-comparison}
+Let $\eta_{\mathrm{base}}$ include the Gaussian tail and the
+classical, measure and gauge interaction norms. If
+\[
+ \eta_{\mathrm{base}}\le\eta_*/4,
+ \qquad\epsilon_{\mathrm{int}}\le\eta_*/4,
+\]
+then the canonical coefficients with and without the inherited
+multipliers satisfy
+\begin{equation}\label{qi-log-bound}
+ \norm{\mathcal U_{\mathrm{full}}-
+             \mathcal U_{\mathrm{base}}}_{\mathrm{out}}
+       \le4C_{\mathrm{out}}\epsilon_{\mathrm{int}}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+If $\epsilon_{\mathrm{int}}=0$ the statement is immediate.
+Otherwise multiply only each inherited bounded multiplier
+$\chi_Y(e^{Q_Y}-1)$ by a complex parameter $\lambda$, keeping
+the base family fixed. At $\lambda=0$ and $1$ this gives the
+two exact integrals. It does not replace $Q_Y$ by $\lambda Q_Y$.
+Base and inherited factors with the same carrier are retained
+as distinct labelled hyperedges, as permitted by the overlap
+theorem; no cancellation or division by a base factor is used.
+For $|\lambda|\le R_\lambda=\eta_*/(2\epsilon_{\mathrm{int}})
+\ge2$, the total budget is at most $3\eta_*/4$.
+The canonical coefficient vector $\mathcal U(\lambda)$ is
+holomorphic in the output Banach space and bounded by
+$C_{\mathrm{out}}\eta_*$. Summing its Cauchy coefficient
+bounds gives
+\[
+ \norm{\mathcal U(1)-\mathcal U(0)}_{\mathrm{out}}
+ \le\frac{C_{\mathrm{out}}\eta_*}{R_\lambda-1}
+ \le4C_{\mathrm{out}}\epsilon_{\mathrm{int}}.
+\]
+\end{proof}
+The fluctuation-independent sum $\sum_HE_H(a)$ remains outside
+this comparison. It and the new connected coefficients are
+evaluated at $a_*(w)$ afterwards and transported on a common
+smaller domain by the transport theorem of Notebook 22.
+
+\subsection{The open parameter and domain tests}
+
+The tunable density estimate supplies
+\begin{equation}\label{qi-dimension-tuning}
+ \log\mathcal K_\theta\le\tfrac52 D_G\theta,
+ \qquad \theta=\frac1{4D_G} \Longrightarrow\
+ B_{\mathrm{req}}\le\frac{37}{8}+\kappa.
+\end{equation}
+Without this tuning, a cost $\log K_G=O(D_G)$ in the
+sufficient interaction norm would contribute $O(L^{d-1})$
+to \eqref{qi-reentry-condition}. Tuning removes that
+particular artificial dimension loss. It does not remove
+the smaller covariance-edge radius, the required $O(\theta)$
+precision neighborhood, or the $2^{D_G/2}$ Gaussian tail
+prefactor. The actual independent background ball must meet
+those strengthened precision conditions. For the actual
+linkwise color-ball cutoff
+$\chi_B=\prod_{b\in B}\mathbf1_{\{|\xi_b|\le R\}}$,
+the bad event is contained in $\{\norm{\xi_B}_2>R\}$.
+The valid Euclidean-block tail therefore uses threshold $R$.
+The good event only implies
+$\norm{\xi_B}_2\le\sqrt{d(L^d-1)}R$; this opposite-direction
+bound cannot improve the bad-event threshold. The chart
+uses link supremum and uses the original $R$ directly.
+No Euclidean block window is silently identified with the
+source linkwise window.
+
+For each fixed $L$, a logarithmic cutoff $R(g)$ can grow while
+$gR(g)\to0$, so the chart margin and a fixed Gaussian tail
+threshold can both be met by sufficiently small $g$. This
+does not prove the required all-scale coupling recursion.
+
+More fundamentally, the preceding integration supplies an
+actual reserve $a_0=a_0(L)$. Existing fixed-$L$ results give
+positivity, but no quantitative large-$L$ lower bound proving
+\begin{equation}\label{qi-open-L-test}
+ k_L a_0(L)\ge
+       \chi2^d[4+\log\mathcal K_\theta(L)+\kappa(L)].
+\end{equation}
+Positivity alone is compatible with $a_0(L)=e^{-L}$ and
+cannot establish this test. This is a missing estimate for
+the actual available constants, not a counterexample to
+Yang--Mills theory. A quantitative locality estimate as $L$
+varies, or an integration theorem with a smaller fixed
+carrier cost, is a concrete next target.
+
+The domain is also not automatic. One needs
+$\norm{a_*(w)}_\infty\le C_a(L)r\le b_-$, and coefficient
+transport may require $C_a(L)r/b$ of order
+$a_0/D_{\mathrm{bg}}$. No $L^{-1}$ contraction in link-angle
+supremum has been proved; a pure-gauge stationary branch can
+have crossing-link angle of order $w$. Repeated use of the
+one-step radius losses is therefore not a stable domain
+construction. The constants in \eqref{qi-multiplier-bound}
+need not be contractive, either.
+
+Finally, strict locality must be applied in the correct order.
+On independent $a$, \eqref{qi-grouped-exponent} has the strict
+joint $(a,\xi)$ carrier $Y$. Apply the Gaussian theorem on that
+product domain, then substitute the actual $a_*(w)$ into its
+holomorphic identity. Substitution first generally makes the
+background dependence nonlocal in $w$; its rooted connecting
+trees need their own support budget, and $Y$ alone is no
+longer a strict $w$-support. A term independent of $w$ but
+dependent on $\xi$ is still an interaction, not a vacuum
+constant. Neither order removes the later radius and weight
+losses.
+
+The proposition and corollary establish a usable conditional
+inherited-interaction module. The re-entry test, stable domains,
+relevant and marginal extraction, running couplings, and
+large-field and observable sectors remain separate obligations.
+
+In the extended construction, Notebook 26 supplies the support-weight
+test using independent fixed auxiliary cells. It re-expands the
+classical precision and Gaussian normalization on those cells
+and recovers a common positive quantum carrier exponent.
+That argument resolves this particular norm-weight interface;
+the domain and amplitude recurrence remains open.
+
+
+\begin{thebibliography}{9}
+\bibitem{prior24}
+\emph{Toward a four-dimensional Yang--Mills construction},
+research Notebooks 18--23 in this workspace.
+The tunable strict-support Gaussian expansion, exact pivot
+geometry, connected-carrier projection estimate, and
+stationary activity transport are the principal inputs.
+\bibitem{balaban11624}
+T.~Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field
+theories. II. Cluster expansions},
+Commun. Math. Phys. \textbf{116} (1988), 1--22,
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-4penm4k7hc.pdf}{original article copy}.
+\bibitem{source24}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}{Yang--Mills-LLM-experiment},
+deposited raw accounts at commit
+\texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+\end{thebibliography}
+\end{document}

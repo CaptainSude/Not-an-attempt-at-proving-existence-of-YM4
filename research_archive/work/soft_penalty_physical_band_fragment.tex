@@ -1,0 +1,307 @@
+\section{Removing the soft penalties up to physical time one}
+\label{spb-section}
+
+Work in dimension four, in current counting coordinates, on the chosen
+infinite structural system. Flat spatial bounds also pass to explicit periodizations by summing the exponentially decaying lifted kernels. This is not a linear-weight similarity on a finite torus. The affine coefficient itself is taken on the infinite structural system, not as a literal periodic magnetic flux; arbitrary actual finite winding kernels are not identified with those periodizations.
+Set $\mu=K^{-1}$. The affine background below means only the first
+two formal polynomial jets of
+\[
+ U_\alpha(t;x)=\exp(i t x_\nu H/K^2),\qquad \alpha\ne\nu.
+\]
+No nonzero unbounded field is inserted in a common analytic ball.
+
+\subsection{Actual families and the required inputs}
+\label{spb-inputs}
+
+Use the actual effective classical Hessians and moving-reference maps:
+\begin{align}
+ B_s(A)&=D_A^TD_A,&
+ B_v(A)&=S_M''(e^{i\mu A})+D_AD_A^T,\notag\\
+ T_s(A)&=B_s(A)+\mu^2J_AJ_A^T,&
+ \widetilde V(A)&=B_v(A)+\bar C_A^TF_A\bar C_A,\notag\\
+ F_A&=aI-S_{MK}''(M_K(e^{i\mu A})).
+ \label{spb-families}
+\end{align}
+All Hessians are left-relative, including their coordinate-current
+terms. The auxiliary vector $\widetilde V$ has the already established
+first two affine jets of the actual soft vector; equality off shell
+is not asserted.
+
+For either pair $(W,B)=(T_s,B_s)$ or
+$(W,B)=(\widetilde V,B_v)$, put $X_E=K^2E$ and write
+\begin{equation}
+ X_W=X_B+C_A^TF_AC_A,
+ \qquad
+ (C_A,F_A)=
+ \begin{cases}
+ (J_A^T,I),&\text{scalar},\\
+ (K\bar C_A,\ aI-S_{MK}''(M_K(e^{i\mu A}))),&\text{vector}.
+ \end{cases}
+ \label{spb-coarse-factor}
+\end{equation}
+The output fiber of $C_A$ has a fixed color/site or color/bond
+dimension per final block. Choose the fixed $a\ge R_q+1$, so that
+$F_0\ge I$ in the vector case.
+
+The proof uses the following established inputs, with constants
+uniform in $M,K$:
+
+\begin{enumerate}
+\item The actual flat $q_M$ has an exponential current-coordinate
+kernel, analytic double zero, Maxwell lower bound and uniform second
+moments. Hence, with the componentwise physical gradient
+$\nabla=K d_0$ and $H_0=I+\nabla^T\nabla$,
+\begin{equation}
+ cH_0\le I+X_{B,0}\le CH_0.
+ \label{spb-base-energy}
+\end{equation}
+\item The repaired covariant-Hessian theorem gives first-two physical
+$C^1$ vertices, with complete smooth source collars and full rooted
+operator bounds. The scaled gauge-generator products have the same
+property.
+\item The physical maps $K\bar C_A$, $J_A$ and their first-two
+background derivatives have uniform whole-block operator bounds and
+fixed physical range. The actual coarse Hessian has uniform rooted
+source kernels. Consequently $C_A^TF_AC_A$ has uniformly bounded
+zero-order physical vertices and full rooted source bounds.
+\end{enumerate}
+These inputs concern actual effective actions and corrected tangents.
+No bare Wilson replacement, full uniform nonlinear physical domain,
+or arbitrary high-frequency bounded-source estimate is used.
+
+\begin{theorem}
+\label{spb-main}
+Under these inputs, if $P_0$ is the appropriate fine scalar or bond
+projector onto final block zero, then
+\begin{equation}
+ \left|[t^2]\operatorname{Tr}
+ P_0\bigl(e^{-uX_W(t)}-e^{-uX_B(t)}\bigr)\right|
+       \le Cu,\qquad 0<u\le1,
+ \label{spb-physical-bound}
+\end{equation}
+uniformly in old depth $M$ and endpoint $K$. Equivalently,
+\begin{equation}
+ \left|[t^2]\operatorname{Tr}
+ P_0\bigl(e^{-sW(t)}-e^{-sB(t)}\bigr)\right|
+       \le C\frac{s}{K^2},\qquad 0<s\le K^2.
+ \label{spb-fine-bound}
+\end{equation}
+In particular the absolute $ds/s$ integral of the difference on this
+entire band is bounded uniformly.
+\end{theorem}
+
+\subsection{Shifted flat resolvents with physical spatial weights}
+\label{spb-resolvents}
+
+At zero the penalty in \eqref{spb-coarse-factor} is nonnegative and
+bounded uniformly. Thus \eqref{spb-base-energy} holds for $W$ too.
+Fix $E=B$ or $W$ and set
+\[
+ \mathcal B_0=I+X_{E,0},\qquad R_z=(\mathcal B_0-z)^{-1}.
+\]
+Use a sectorial contour with rays $\arg z=\pm\pi/4$, $|z|\ge1/4$,
+joined by the circular arc of radius $1/4$ to the left of the positive
+spectrum. The spectral theorem and energy comparison give
+\begin{align}
+ \|R_z\|&\le C(1+|z|)^{-1},\notag\\
+ \|\nabla R_z\|+\|R_z\nabla^T\|
+      &\le C(1+|z|)^{-1/2},\notag\\
+ \|\nabla R_z\nabla^T\|&\le C.
+ \label{spb-energy-resolvent}
+\end{align}
+For example,
+$\|(\mathcal B_0+|z|)^{1/2}R_z
+(\mathcal B_0+|z|)^{1/2}\|\le C$ on this contour.
+
+Only linear physical weights are needed for the nonlocal flat kernel.
+Conjugate by $e^{\theta\cdot x/K}$, with sufficiently small real
+$\theta$. The analytic double zero gives the fine-symbol estimate
+\[
+ \|q_M(p+i\mu\theta)-q_M(p)\|
+ \le C\{\mu|\theta|\sqrt{\delta(p)}+\mu^2|\theta|^2\}.
+\]
+After multiplication by $K^2$, this is a small form perturbation
+relative to $H_0$. The local gradient term has the same estimate.
+The coarse correction also does: its physical legs have bounded norm
+and fixed range, and its middle flat kernel has a uniform coarse
+analytic strip. The estimate remains true relative to $H_0+|z|$.
+A weighted resolvent Neumann series therefore proves
+\eqref{spb-energy-resolvent} uniformly after conjugation.
+Commuting a weight through $\nabla$ adds only $O(|\theta|)$ and
+is covered by the scalar resolvent estimate.
+
+For each pair of blocks choose the signs of $\theta$ along their
+separation. The restricted versions of all three bounds then acquire
+$e^{-m d(i,j)}$, for a common $m>0$. Internal block diameters change
+only the constant. These are whole-block Hilbert operator estimates,
+with no fine-entry trace or growing-fiber count. At fixed $K$ the
+operators are bounded lattice operators; finite-support approximation
+justifies the weighted kernels. All constants are uniform in $K$.
+
+\subsection{At most one unbounded derivative per vertex}
+\label{spb-vertices}
+
+Let $X_j=[t^j]X_E(tA)$, $j=1,2$, for a complete physical $C^1$
+direction of norm at most $a_*$. The repaired Hessian decomposition,
+multiplied by $K^2$, gives
+\begin{equation}
+ X_j=\nabla^T\overline Z_j+\overline Z_j^T\nabla
+                  +\overline E_j,
+ \qquad
+ \|\overline Z_j\|+\|\overline E_j\|\le C_j a_*^j.
+ \label{spb-first-order}
+\end{equation}
+Indeed $\overline Z_j=KZ_j$ and $\overline E_j=K^2E_j$;
+the improved $\overline Z_2=O(K^{-1})$ is not needed.
+The scaled gauge-generator terms have this form, and the physical
+coarse penalty contributes bounded zero-order terms. Mixed second
+coefficients follow by polarization.
+
+For directions in smooth physical collars $x,y$, each factor retains
+an exponential connecting-tree bound including its operator endpoints
+and every source. The significant fact is that every summand in
+\eqref{spb-first-order} has at most one unbounded physical derivative.
+An arbitrary second-order form bound would not give the following
+integrable resolvent powers.
+
+Only two jets are needed. If a full uniform nonlinear domain has not
+been provided, use the polynomial family
+$X(t)=X_0+tX_1+t^2X_2$, or its mixed quadratic version.
+Equation \eqref{spb-first-order} gives a small common parameter disk
+on which $I+X(t)$ is sectorial with the chosen contour. At each fixed
+$K$ this is ordinary holomorphic functional calculus for bounded
+operators. Its first-two semigroup jets equal the actual ones because
+only $X_0,X_1,X_2$ enter their resolvent derivatives. Thus this device
+adds no nonlinear-domain hypothesis.
+
+\subsection{Rooted semigroup derivatives}
+\label{spb-semigroup}
+
+Differentiated resolvents satisfy
+\begin{align}
+ \delta_xR_z&=-R_zX_xR_z,\notag\\
+ \delta_x\delta_yR_z
+  &=R_zX_xR_zX_yR_z+R_zX_yR_zX_xR_z-R_zX_{xy}R_z.
+ \label{spb-resolvent-derivatives}
+\end{align}
+One first-order insertion in \eqref{spb-first-order} costs
+$(1+|z|)^{-3/2}$ by \eqref{spb-energy-resolvent}; its zero-order
+part costs $(1+|z|)^{-2}$. Two first-order insertions cost at worst
+$(1+|z|)^{-2}$. If both derivatives face the middle resolvent, that
+piece costs $O(1)$ and both exterior resolvents cost
+$(1+|z|)^{-1}$. In the other arrangements there are two half-power
+energy legs and one full resolvent. The single $X_{xy}$ insertion
+again has exponent $-3/2$.
+
+Insert block projections between the already defined factors
+$R_z\nabla^T$, $\nabla R_z$ and the bounded vertex factors.
+No sharp block cutoff is commuted through a derivative. The weighted
+resolvent and vertex bounds then give, after an exponent reserve,
+\begin{align}
+ \|\delta_x(R_z)_{ij}\|
+  &\le C(1+|z|)^{-3/2}e^{-m\tau(i,j,x)},\notag\\
+ \|\delta_x\delta_y(R_z)_{ij}\|
+  &\le C\{(1+|z|)^{-3/2}+(1+|z|)^{-2}\}
+                         e^{-m\tau(i,j,x,y)}.
+ \label{spb-rooted-resolvent}
+\end{align}
+Every intermediate sum is over block operator norms; a smaller
+exponent pays the finite convolution multiplicities.
+
+Integrate these formulas on the Dunford contour for
+$e^{-u\mathcal B_0}$. The rays have positive real part, the joining
+arc has fixed length, and both powers in
+\eqref{spb-rooted-resolvent} are integrable at infinity, uniformly
+for $0<u\le1$. Since $e^{-uX}=e^u e^{-u(I+X)}$, one obtains
+\begin{align}
+ \|\delta_x(e^{-uX})_{ij}\|
+     &\le Ce^{-m'\tau(i,j,x)},\notag\\
+ \|\delta_x\delta_y(e^{-uX})_{ij}\|
+     &\le Ce^{-m'\tau(i,j,x,y)}.
+ \label{spb-rooted-semigroup}
+\end{align}
+For instance the ray integrals of $(1+\lambda)^{-3/2}$ and
+$(1+\lambda)^{-2}$ are bounded by fixed constants even when the
+factor $e^{-u\lambda/\sqrt2}$ is discarded.
+
+The undifferentiated semigroup has a uniform exponential restricted
+block bound too. The small linear-weight form perturbation retains
+the positive gradient energy, leaving numerical range bounded below
+by $-C$. Its real-time norm is at most $e^{Cu}$, and the weight gives
+the block decay. This uses only the flat generator.
+
+This resolvent argument avoids the nonintegrable middle-time factor
+that an overly crude split of a second Duhamel insertion would produce.
+It also retains the source roots which a global Cauchy bound alone
+would lose.
+
+\subsection{Affine reconstruction and the coarse trace}
+\label{spb-trace}
+
+Use a fixed smooth physical partition for the affine potential.
+Its direction in collar $x$ has physical $C^1$ norm at most
+$C(1+|x|)$. Summing its first and mixed second directions against
+\eqref{spb-rooted-semigroup} gives, for $n=0,1,2$,
+\begin{equation}
+ \|([t^n]e^{-uX(t)})_{ij}\|
+ \le C(1+|i|+|j|)^p e^{-m''d(i,j)},\qquad 0<u\le1.
+ \label{spb-affine-semigroup}
+\end{equation}
+At $u=0$ use the identity and zero differentiated coefficients.
+The sums are absolutely convergent polynomial-jet sums, not evaluations
+at a nonzero unbounded field.
+
+The physical $C_A,F_A$ in \eqref{spb-coarse-factor} have the same
+polynomial block bounds; $C_A$ has fixed physical range and order-one
+norm. In the vector case ordinary averaging sends the affine connection
+to the coarse affine connection, so the actual coarse Hessian supplies
+the required polynomial/exponential $F$ kernels.
+
+Retain $P_0$ in the exact physical-time Duhamel trace identity:
+\begin{equation}
+ \operatorname{Tr}_fP_0(e^{-uX_W}-e^{-uX_B})
+  =-\int_0^u\operatorname{Tr}_c
+       [FCe^{-vX_B}P_0e^{-(u-v)X_W}C^T]\,dv.
+ \label{spb-coarse-duhamel}
+\end{equation}
+The trace on the right sums all coarse diagonal blocks.
+Its degree-two coefficient has finitely many ordered terms.
+Equation \eqref{spb-affine-semigroup} and the $C,F$ estimates connect
+both coarse endpoints to the retained root block. Their absolute
+sum is bounded by a fixed multiple of
+\[
+ \sum_{Y,Z}(1+|Y|+|Z|)^p
+            e^{-m'''(|Y|+|Z|+d(Y,Z))}<\infty.
+\]
+Each diagonal trace is in a fixed-dimensional coarse output fiber.
+A product through the fine block-zero Hilbert space costs that coarse
+rank, not its growing fine dimension. Thus the integrand coefficient
+is bounded uniformly in $u,v,M,K$, including the endpoints $v=0,u$.
+The integral has length $u$, proving \eqref{spb-physical-bound}.
+
+For compact source truncations the cyclic trace step is ordinary
+finite-rank cyclicity with $P_0$ retained. The displayed absolute
+rooted sum gives the infinite limit and permits coefficient extraction.
+This completes the proof of Theorem~\ref{spb-main}.
+
+\subsection{Consequence and remaining comparison}
+\label{spb-scope}
+
+Equation \eqref{spb-fine-bound} implies
+\begin{equation}
+ \int_0^{K^2}\left|[t^2]\operatorname{Tr}
+ P_0(e^{-sW(t)}-e^{-sB(t)})\right|\frac{ds}{s}\le C.
+ \label{spb-integrated}
+\end{equation}
+Together with the coarse determinant reductions, this removes the
+soft penalties from the fine-to-physical-unit cutoff heat coefficient
+up to a uniform finite part. The vector conclusion is actual through
+the established affine matching; the scalar family is actual directly.
+
+The remaining middle-band comparison concerns the translation-invariant
+actual base $S_M''+DD^T$ and the ordinary scalar Laplacian.
+This section does not replace that effective Hessian by a fixed bare
+reference, compute its logarithmic coefficient, or prove the separate
+physical-time tail beyond one. A theorem for a fixed bare integrand
+is not imported as a uniform statement in the present family.
+

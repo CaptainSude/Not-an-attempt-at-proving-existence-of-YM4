@@ -1,0 +1,159 @@
+A CURVED HIERARCHICAL-TRANSPORT OBSTRUCTION SURVIVES SMOOTH WEIGHTS
+18 October 2026. Rotation audit research.
+This is a proved statement about the actual selected hierarchical
+transport construction on a uniformly bounded physical-C1 background
+family. It is NOT an assertion that the compactly supported family
+below is the globally selected constrained stationary branch.
+
+1. Setting and source convention
+
+Use the actual symmetrized coordinate-order contour mean from the
+selected source average. Its derivative at identity is the arithmetic
+mean of those contour derivatives. Fix primitive ell odd >=3 and
+K=ell^k. The smooth tensor-tent weights, B_w, P_w and basis-free
+scalar completion are those of smooth_weighted_gauge_research.txt.
+
+Work on one charged complex root plane with adjoint charge q!=0.
+All real statements can equivalently be made on its two-dimensional
+real adjoint plane. In a neighborhood containing one final block,
+take a Cartan link-angle family
+ a_1(t,x)=t x_2/K^2,       a_nu(t,x)=0 for nu!=1.        (1.1)
+Extend the physical potential A=K a/t smoothly to zero outside a
+fixed number of final blocks. The complete field obeys
+ ||A||_infty+K max_nearest|A(x+e)-A(x)|<=C
+uniformly in K. Work on a sufficiently large compatible finite torus
+so this compact extension is unambiguous.
+
+The construction B_w reads only the original final block. Thus its
+first derivative there depends only on (1.1), not on the extension.
+At level j, r_j=ell^j, the ordinary background's first Cartan
+coefficient is the same Landau field in the rescaled lattice:
+ a_(j),1(n)=r_j^2 n_2/K^2.                             (1.2)
+Indeed the flat arithmetic average of the primitive root contour
+term is zero for this affine field, since centered sums of each
+coordinate and of a product of distinct coordinates vanish.
+The straight angle average multiplies the physical affine field by
+the correct r_j factor. Induction gives (1.2).
+
+For an internal primitive contour from a parent z to child x, the
+linear average over coordinate orders integrates the affine Landau
+field as the straight-segment expression
+ (z_2+x_2)(x_1-z_1)/(2K^2)
+when written in original fine coordinates. Among the two relevant
+coordinate directions, half of the permutations traverse direction
+one before direction two and half after. Other coordinate directions
+do not contribute. No nonlinear formula for a group mean on commuting
+inputs is assumed; only its actual arithmetic derivative is used.
+
+2. The exact first hierarchical phase
+
+For the nested centers x=x_0,...,x_k=0 of a fine endpoint in the
+final block centered at zero, the first hierarchical phase is
+
+ Phi_K(x)=1/(2K^2) sum_(j=0..k-1)
+              (x_(j+1),2+x_j,2)(x_j,1-x_(j+1),1).       (2.1)
+
+The normalized range column of B_w(t)^T on the charged plane is
+ u(t,x)=exp[-i q t Phi_K(x)+O(t^2)] u(x),
+ u(x)=w(x)/sqrt(sum w^2).                              (2.2)
+Its norm is one and the row Gram is background independent.
+Also |Phi_K(x)|<=C_ell: the total length of the hierarchical route
+is at most C_ell K and the affine link coefficient is O(K^-1).
+
+3. A macroscopic phase jump at an internal interface
+
+Put r=K/ell, h_r=(r-1)/2, and consider neighboring endpoints
+ x^-=(h_r,x_2,x_3,...),  x^+=(h_r+1,x_2,x_3,...),
+with
+             15r/16<=x_2<=17r/16.                     (3.1)
+Their top child centers have first coordinates 0 and r; their
+second top-child coordinate is r. For every j<k, the difference
+of the first coordinates of their level-j ancestors is exactly
+ delta_j=ell^j, while delta_k=0. Their level-j second coordinates
+a_j are equal and satisfy
+ |a_j-x_2|<=(ell^j-1)/2,    a_(k-1)=r,    a_k=0.
+
+Subtract (2.1). One obtains the exact formula
+ 2K^2 [Phi_K(x^+)-Phi_K(x^-)]
+   =r^2-(ell-1) sum_(j=0..k-2) ell^j(a_j+a_(j+1))
+   =r^2-2x_2(r-1)+E,                                 (3.2)
+where
+ |E| <=(ell-1)/2 sum_j ell^j(ell^j+ell^(j+1)-2)
+       =(r-1)^2/2.                                   (3.3)
+
+For r>=9 and (3.1), (3.2)--(3.3) imply
+ 2K^2 [Phi_K(x^+)-Phi_K(x^-)]<=-r^2/4.
+In particular
+ |Phi_K(x^+)-Phi_K(x^-)|>=1/(8 ell^2).                 (3.4)
+
+This is an internal hierarchical-interface jump. It is not a jump
+in the original fine connection: its link angles and first physical
+differences obey the uniform small-scale bounds in Section1.
+
+4. The normalized range derivative has large physical energy
+
+Restrict the remaining coordinates to |x_nu|<=K/8, nu>=3.
+For ell>=3 and all sufficiently large K, both endpoints lie in a
+region where every tensor-tent factor is bounded below by a positive
+constant. Thus on these edges
+ u(x^-)>=c_d K^(-d/2),
+ |u(x^+)-u(x^-)|<=C_d K^(-d/2-1).                      (4.1)
+There are at least c_ell K^(d-1) such distinct edges.
+
+Let Pi be the flat smooth weighted range projection, P=I-Pi and
+ v=u in the chosen color direction. Put
+ w=P(Phi_K v)=(Phi_K-c)v,
+ c=<v,Phi_K v>.                                       (4.2)
+The phase and c are uniformly bounded. Combining (3.4),(4.1) gives,
+for all sufficiently large K,
+ |w(x^+)-w(x^-)|>=c_ell K^(-d/2).
+Consequently
+ ||D w||^2>=c_ell/K,       ||w||^2<=C_ell.              (4.3)
+
+The uniform tensor weights repair the outer block boundary but do
+not smooth these internal jumps.
+
+5. A growing first relative vertex of the actual scalar completion
+
+Let
+ X(t)=K^2 P_w(t) D_U(t)^T D_U(t) P_w(t)+Pi_w(t).
+At t=0, write X=X(0). The already proved flat gap gives X>0 and
+Xv=v. Differentiating the orthogonal projector and (2.2) gives
+ P_w'(0)v=i q w,       Pi_w'(0)v=-i q w.
+Since P v=0, all derivatives of D_U(t)^T D_U(t) drop out when
+the first derivative of X(t) is applied to v. Exactly,
+ X'(0)v=i q (X-I)w.                                   (5.1)
+There is no omission of a covariant-Laplacian derivative here:
+it is multiplied on the right by P v=0.
+
+It follows that
+ ||X^-1/2 X'(0) X^-1/2 v||^2
+   =q^2 <w,(X+X^-1-2)w>
+   >=q^2[K^2||D w||^2-2||w||^2]
+   >=c_ell q^2 K-C_ell q^2.                           (5.2)
+
+Thus the raw first relative-vertex norm grows at least as sqrt(K)
+even for the smooth weighted projector, on this uniformly bounded
+physical-C1 curved family.
+
+6. Exact conclusion and limitations
+
+The proved O(K^-1) bound for Cbar_w, constant Gram identity,
+flat spectral gap, and pure-gauge repair in the preceding note
+remain valid. Equation (5.2) shows that they do NOT imply a uniform
+relative-form bound for the moving scalar hard projection.
+
+The example uses the actual selected coordinate-order mean at first
+order, its actual ordinary hierarchy, and a legitimate small physical
+connection. Its compact extension is not shown here to be the chosen
+global stationary minimizer for prescribed final W. Therefore this
+note does not diagnose failure of a theorem restricted to that branch.
+It does refute a uniform raw-vertex assertion on the whole bounded
+physical-C1 neighborhood for this particular hierarchical B_w.
+
+The natural remaining options are a genuinely smooth covariant
+range construction with controlled internal derivatives, a
+cancellation-preserving heat/determinant treatment, or the separate
+soft scalar/vector completion. A simple change of endpoint weights
+alone does not establish the required curvature comparison.
+

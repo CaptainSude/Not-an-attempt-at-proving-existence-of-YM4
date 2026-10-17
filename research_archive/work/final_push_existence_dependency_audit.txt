@@ -1,0 +1,605 @@
+SKEPTICAL DEPENDENCY AUDIT: FROM LOCAL RG TO CONTINUUM YANG--MILLS
+17 October 2026. Provenance audit for the resumed final push.
+
+BOTTOM-LINE STATUS
+The workspace does not presently contain a complete Yang--Mills
+existence proof. Even a proved positive actual one-loop block drift
+would first close a finite homogeneous LOCAL trajectory theorem.
+Several independent model and continuum interfaces remain after it.
+The most substantial are matching that local trajectory to the full
+Wilson measure including mixed/large-field histories, obtaining
+uniform external-observable-source estimates, and constructing the
+continuum observable theory with the required axioms and identification.
+
+This document is a dependency audit, not certification of the many
+long internal proofs. "Available working module" below means a saved,
+explicitly scoped derivation with its stated inputs; internal repeated
+reads and successful TeX compilation are not independent mathematical
+certification. I directly rechecked the latest soft-vector and
+infrared-tail modules, sampled their upstream input statements, and
+traced the downstream existence obligations in the master notebook,
+the finite induction/tuning notes, and the pinned repository. I have
+not independently rederived every lemma in all thirty-six notebooks.
+
+0. Evidence and version boundaries
+
+The repository checkout remains clean at
+ e392ef45013a581664bab76b90867170b30fe10e
+in work/Yang--Mills-LLM-experiment. No repository or output file was
+edited for this audit. Its README describes an apparent very long
+YM4 argument being reorganized; that statement is not a theorem.
+The deposited zeroth draft is dated 6 October 2026. Its abstract,
+Theorem 0, and Sections 1.3/9 explicitly make deductions from declared
+proof inputs. The draft itself excludes number-of-points growth
+sufficient for Wightman fields, clustering/unique vacuum, mass gap,
+coincidence extensions and unconditional full rotations; see printed
+pp.3--6, 21--23 and 141--151. Its principal displayed result is for
+SU(2), separated action-density observables, not all compact simple
+groups or the full gauge-invariant field algebra.
+
+The draft's wording deserves accuracy: it does not say that every
+main-clause companion input is unwritten. It claims proofs in the
+companion account for many of them. Sections 7/9 separately list
+unfinished uniqueness/comparison inputs, and Section 9.1 lists
+fifteen Bałaban statements/readings used without a printed proof
+covering their use. This audit neither accepts those imports merely
+from their labels nor infers that no such proof can exist elsewhere.
+The exact used generality, normalization and domains must be checked.
+
+Primary links rechecked in this pass:
+ [JW] Jaffe--Witten, Quantum Yang--Mills Theory, especially pp.5--6:
+ https://www.claymath.org/wp-content/uploads/2022/06/yangmills.pdf
+ [B116] Bałaban, CMP116 (1988), 1--22, original article:
+ https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-4penm4k7hc.pdf
+ DOI https://doi.org/10.1007/BF01239022
+ [B122II] Bałaban, CMP122 (1989), 355--392, original article:
+ https://scispace.com/pdf/large-field-renormalization-ii-localization-exponentiation-h8b7ih93xo.pdf
+ DOI https://doi.org/10.1007/BF01238433
+ [AL] Adams--Lee, Structure of logarithmically divergent one-loop
+ lattice Feynman integrals, PRD77 (2008), 045010:
+ https://arxiv.org/abs/0709.0781
+
+Additional exact source maps already saved:
+ work/renormalized_induction_primary_sources.md
+ work/one_step_quantum_domains_source_research.md
+ work/mean_zero_one_loop_source_interface.txt
+ work/source_stability_research.md
+ work/nontriviality_research.md
+Their older "next task" paragraphs are chronological and must not be
+mistaken for current gaps when a later notebook closed that local task.
+
+1. Uniformities that must never be conflated
+
+Use M for preceding homogeneous classical refinement, R for the FIXED
+elementary composite quantum ratio, J for the FIXED auxiliary grouping,
+N for the retained period, b for the fixed small analytic radius, and
+g for the running coupling. K may denote a large composite endpoint
+ratio in the determinant comparison. These are different limits.
+
+(a) The classical and flat modules give many estimates uniform in
+M and compatible volume, on a small global physical-potential ball.
+They do not thereby hold on arbitrary mixed-history backgrounds, on
+independent free-current domains, or on large-field boundaries.
+
+(b) The local quantum induction fixes R,J and all geometric constants
+before choosing b and a weak-coupling ceiling. Its constants can be
+very large functions of R,J. Uniformity in the number of iterations
+does not imply uniformity as R or J changes.
+
+(c) The local induction works while realized couplings remain weak.
+An invariant remainder ball does not alone force this condition.
+Its finite continuity modulus need not be volume uniform; shooting
+needs only finite-regulator continuity.
+
+(d) The latest spatial/magnetic vector estimates use the chosen
+joint infinite structural system, or explicit periodizations of its
+exact infinite kernels. Arbitrary actual finite winding kernels are
+not identified with those periodizations. Actual finite gaps/flat
+heat estimates are separate, weaker facts.
+
+(e) A chosen structural system must include all required old-depth
+shifts, endpoint ratios, source derivatives and identities JOINTLY.
+One cannot combine a favorable scalar limit from one subsequence
+with a vector, reference action, or beta functional from another.
+
+(f) Positive drift for one fixed M, or one selected infinite limit,
+does not give the old-depth-uniform finite block bound needed by
+shooting. The positivity statement must cover EVERY jointly
+obtainable structural limit with one positive margin.
+
+(g) A gap c K^-2 for a constrained/penalized Gaussian is an auxiliary
+elliptic gap at the blocking scale. It is not a mass gap for the
+reconstructed interacting Yang--Mills Hamiltonian.
+
+(h) Holomorphy in the local connection background A is not the same
+as holomorphy in an external observable source w. The latter changes
+the density and its counterterms and may break translation symmetry.
+
+2. Available local chain, with its actual boundary
+
+2.1 Flat and classical data
+Notebooks 06--17 provide working proofs of uniform flat coercivity,
+compact lifts, weighted inverse kernels and refinement limits,
+pointwise regularity, homogeneous nonlinear classical minima and
+their local support expansions. The bare Wilson action/physical
+pairing conventions are explicitly matched in the deposited setting.
+Their endpoint is a family S_M of homogeneous minimized classical
+actions, local charts and responses near the trivial orbit.
+It is not an interacting continuum probability measure.
+
+2.2 Actual local quantum step
+Notebooks 18--28 retain the pivot incidence, independent retained
+window, nonlinear argument Phi_V(g xi), Haar, ambient Jacobian,
+gauge insertion and background-only determinant factors. They prove
+a common-domain connected expansion with strict support and a
+controlled inherited interaction on the prescribed local sector.
+The measurable completion of an equivariant gauge insertion is
+useful for an already defined invariant global density. It does not
+extend a local S_M/E germ to the full Wilson density by fiat.
+An arbitrary outside-chart completion can change the global model.
+
+2.3 Local renormalized recurrence
+Notebooks 29--31 use TOTAL Ward kernels, not unproved gauge invariance
+of every chosen activity. They extract the full classical reference,
+repair finite Ward errors, relocalize the remainder, and use exact
+finite equivalence modulo vacuum constants. The small representative
+need not be the original canonical cluster array; this is acceptable
+only because exact finite totals and the compensating vacuum factor
+are tracked. The saved finite induction proves a uniform remainder
+envelope for any permitted weak sequence of couplings and sufficiently
+large retained periods. This is genuinely stronger than a bound after
+taking an infinite limit, but remains a LOCAL analytic RG assertion.
+
+2.4 What the compactness/quotient modules compactify
+The Montel/Fatou and periodization results concern analytic interaction
+families and local classical maps in a fixed small-field product ball.
+They are not tightness of a family of physical quantum measures or
+convergence of renormalized Schwinger functions. Exact quotient descent
+does not preserve extra outside-domain information that was not in
+the quotient definition.
+
+2.5 Latest actual determinant reduction
+Notebooks 32--35 keep the actual coarea/gauge factors and multiplier
+curvature. The exact all-site moving-reference construction gives
+ C-Cbar=D_c Z,  Cbar D=D_c B,  BB^T=K^-4 I.
+For J=K^2 B^T, Pi=JJ^T, P=I-Pi, the actual local correction is
+ D_actual=N_0[logdet Ghat - (1/2)logdet Q_B],
+ Ghat=P D^T D P+K^-2 Pi,
+ Q_B=H_res+D P D^T+a Cbar^T Cbar.
+This algebra avoids the already demonstrated global-base massless
+order-of-limits anomaly. The pinned ghost's extra logarithm cannot
+be imported into a different determinant splitting.
+
+The new soft factors are
+ T_s=D^T D+K^-2 Pi,
+ V=Q_B+(DJ)(DJ)^T,
+ M_s=K^-2 J^T T_s^-1 J,
+ S=(I+J^T D^T Q_B^-1 D J)^-1.
+Their exact finite identity is
+ D_actual=N_0[logdet T_s-(1/2)logdet V
+                         +logdet M_s-(1/2)logdet S].
+The new working proofs bound the actual coarse Maxwell coefficients
+of logdet M_s and logdet S by O(1), uniformly in M,K on the chosen
+structural systems. They do not replace the fine effective Hessian
+by the bare Wilson one.
+
+I rechecked the soft-vector research and fragment in
+ work/soft_vector_coarse_reduction_provenance_audit.txt.
+The infrared proof and fragment are
+ work/soft_pair_infrared_tail_research.txt,
+ work/soft_pair_infrared_tail_fragment.tex.
+Rotation's independent research and final fidelity pass is in
+ work/soft_pair_infrared_tail_rotation_audit.txt.
+The corrected proof uses q_M=d_0^T H_0 d_0 with zero constant AND
+linear momentum jets; componentwise row sums alone are insufficient.
+Physical weights are Lipschitz at fine sites, not step functions of
+block labels. Local Schatten-6/Schatten-3 bounds from
+ Tr P_x(I+K^2 Delta)^-3 P_x<=C and THREE ordered resolvents give
+ int_1^infinity |[t^2](Tr_0 e^-uK^2V
+                         -2Tr_0 e^-uK^2T_s)| du/u<=C.
+The source-rooted two-sided relative bounds are essential.
+The fixed-K affine stationary-jet identification is used before
+the uniform explicit-representative estimate; no uniform stationary
+response is assumed. There is no cyclic rearrangement across P_0.
+
+This bounds the infrared END, not by itself the intermediate
+coefficient. During this audit, the passed soft-penalty comparison
+spb supplied the additional actual bridge: its integrated error is
+O(1) on the entire band 0<s<=K^2. Combined with the exact unpinned
+scalar Bessel calculation and the scalar coarse/infrared bounds,
+work/soft_scalar_complete_coefficient_fragment.tex now gives
+ beta(N_0 logdet Ghat)=2 alpha_g log K+O(1)
+on the same applicable structural systems. Its signs, factors and
+scope pass my independent check in
+work/soft_scalar_complete_coefficient_provenance_audit.txt.
+The actual effective vector base comparison is written in
+work/actual_base_ward_heat_comparison_research.txt. It proves a
+uniform O(1/s) actual-base-to-fixed-Wilson heat coefficient error from
+the nonlinear Ward jets, in every required structural system.
+Root and theorem both completed full internal reviews. The separate
+work/wilson_continuum_heat_comparison_research.txt now gives the
+fixed-Wilson-to-continuum comparison with O(s^-1/2) error and exact
+charge normalization. Its source-site phase correction and continuum
+contact-distribution clarification were incorporated before assembly.
+Root's final assembly is outputs/ym4-positive-drift/main.tex
+(Notebook37). These are working proofs from the stated upstream
+inputs, not external certification of those inputs or this series.
+The old pinned-ghost 4 alpha_g log K is not
+used in the mean-zero splitting. Flat spectra alone identify no
+magnetic coefficient.
+
+3. Actual leading coefficient: closed within the working local chain
+
+The assembled Notebook37 theorem gives, for every required joint
+structural system and permitted old M, in the fixed actual normalization,
+ beta(D_(M,K))=22 alpha_g log K+O(1),
+with an O(1) constant independent of M,K and of the structural limit.
+An equivalent positive fixed long-block margin would suffice; the
+full asymptotic is stronger than the shooting theorem needs.
+
+A useful heat version is a signed actual density coefficient h_M,K(s)
+whose ultraviolet and infrared contributions are bounded and for
+1<=s<=K^2 obeys, for some delta>0,
+ |h_M,K(s)-11 alpha_g|
+   <=C[s^-delta+(s/K^2)^delta].
+Integrating ds/s gives the desired 22 alpha_g log K+O(1).
+Other cancellation-preserving integrable bounds are equally valid.
+
+The soft-penalty comparison is now supplied by the passed spb module.
+The new Ward heat-comparison proof supplies the uniform
+actual-base-to-fixed-Wilson part. It and the separate reference
+evaluation have passed the recorded internal mathematical reviews.
+The assembled plateau is C[s^-1/2+s/K^2], with a uniformly bounded
+integral against ds/s. H0 is now closed within the explicit upstream
+working hypotheses, and H1 follows by the local positive-drift fragment.
+Gauge covariance and matching low momentum jets alone would not
+replace those proved estimates. The constant in
+a Cauchy estimate may grow with K; a growing Bloch fiber cannot be
+replaced by a fixed number of scalar entries.
+
+The pinned raw account I:3901--4014 displays the needed bounded
+comparison and a reference massive vector/ghost coefficient, with an
+outline via leading composition. It is the desired input, not a
+substitute for proving it in this actual scheme. The precise source
+formula is -1/2 logdet(D_W^2+eta^2)+logdet(Delta_0+eta^2), eta=L^-k.
+Our actual effective residual Hessian, constraint, gauge density and
+coarse terms must be matched before using its coefficient.
+
+[AL] gives a rigorous universality mechanism for a defined class of
+one-loop lattice integrals with fixed smooth scaling/power-counting,
+continuum denominator and infrared hypotheses. It does not directly
+verify those hypotheses uniformly for a K^4-dimensional Bloch family
+with actual M-dependent effective Hessians. Luescher--Weisz
+renormalizability results likewise require their actual background/
+BRS/shift and locality hypotheses; zero-momentum massive determinant
+extraction is not automatically the same as a nonzero-momentum 1PI
+calculation. A reference theorem can be imported after an exact
+operator/integrand comparison, not from a matching expected number.
+
+4. What positive actual drift would close
+
+The saved finite drift-transfer and shooting modules require only a
+uniform positive block margin in EVERY varying-depth structural limit.
+With fixed q and
+ sum_(j<q) beta_(j+1)^*(D_j^*) >= delta>0
+for all such limits, joint compactness and local Hessian second-moment
+convergence give the same finite bound delta/2 above one period
+threshold uniform in M. No quantitative finite-volume rate is needed.
+
+On the local remainder envelope, the actual decrement differs from
+its finite leading determinant value by
+ C_int omega(N_min)
+ +C_par,beta[tau(T(g))+g^2 T(g)^6]
+ +C_in,beta g T(g)/b.
+Here omega tends to zero on the cofinal compatible period family,
+and b,R,J are already fixed. Raise N_min and lower the coupling
+ceiling once to make this error smaller than the block margin.
+The clipped finite recursion and IVT then produce arbitrarily long
+REAL weak local histories ending at a prescribed weak terminal
+coupling, with g_bare of order (number of steps)^-1/2.
+
+This handoff uses the actual density update
+ gamma_next=gamma-beta(F), not a freely prescribed coupling sequence.
+The real extracted subspace is required; a complex beta cannot be
+ordered. All q-block output periods must stay above the threshold.
+The compatible initial period grows at least as R^(number of steps).
+
+The conclusion does NOT give a canonical tuned coupling for every
+cutoff, uniqueness of the tuned initial value, convergence of tuned
+measures, or consistency between horizons. Such uniqueness is not
+necessary for a subsequential existence theorem, but common observable
+bounds and a common limit sequence are necessary.
+
+Relevant exact files:
+ work/finite_quantum_induction_research.md
+ work/finite_classical_marginal_leakage_research.md
+ work/finite_quantum_coupling_continuity_research.md
+ work/finite_leading_drift_transfer_research.md
+ work/finite_trajectory_shooting_research.md
+ work/local_positive_drift_fragment.tex
+The last file now spells out the complete conditional implication:
+if |beta(D_(M,K))-22 alpha_g log K|<=C_cmp uniformly in every
+required structural system, choose q in q_a N with R^q>=K0 and
+C_cmp<=11 alpha_g q log R. Then delta=11 alpha_g q log R,
+finite leading q-block drift is at least delta/2, and the actual
+q-block decrement is at least delta/4 after fixed period/coupling
+threshold choices. For Gamma*>=g_w^-2+qD_abs, the tuned bare
+coupling satisfies
+ (Gamma*+mqD_abs)^-1/2 <= g_bare <= (Gamma*+m delta/4)^-1/2.
+The uniform coefficient hypothesis remains explicitly named there
+as a checkable interface and is now instantiated by Notebook37's
+actual coefficient theorem, under its stated upstream inputs.
+
+5. Next open handoff: full Wilson measure and all histories
+
+Required theorem, either proved directly or rigorously matched to
+the published scheme:
+For the tuned bare Wilson measures on the chosen finite regulators,
+an EXACT RG representation of the entire measure must decompose all
+small- and large-field histories, preserve normalized integrals, and
+satisfy a uniform complete-density class through every required step.
+It must include the complements of the retained windows, nontrivial
+gauge/topological configurations allowed by the regulator, collared
+boundary backgrounds, interrupted integrations and inherited terms.
+
+Our common-domain theorem controls a selected retained-window sector
+and its analytic continuation. The ordinary constraint composes, but
+sequential retained windows do not equal a one-shot composite window.
+The leading Gaussian cocycle proves an identity of g->0 amplitudes;
+it is not equality of the full positive-g sectors. A small Gaussian
+bad-cell probability does not alone control normalized bad-region
+replacements or their denominators through mixed histories.
+
+[B116] completes the ORIGINAL small-field induction class of CMP109,
+under its own coupling/domain/localized-coefficient hypotheses.
+[B122II], Theorem 1, printed p.355, proves the full CMP119 Section2
+density class conditional on every effective coupling being small;
+p.356 explicitly treats observable analysis as further work.
+The article says the separate trajectory proof was unpublished then.
+This historical statement is not evidence of nonexistence of later
+work, and this audit makes no exhaustive modern-literature claim.
+
+A valid import would specify every field/current space, source-free
+or sourced domain, radius, cutoff, normalization and localization
+consumer, and show that our exact densities satisfy that class.
+Replacing L by R or citing the theorem's title is insufficient.
+Alternatively use the original scheme entirely and verify its actual
+coupling/analytic inputs without mixing constructions.
+
+The deposited Section9.1's Pr1--Pr15 should be treated as an explicit
+audit list, not silently deleted. In particular the large-field
+regularity, normalization, localization and mixed-layer analytic
+readings are not covered merely by the homogeneous physical-ball
+classical lemmas. Conversely the older localized-three-map reading
+in source_stability_research.md was withdrawn as a necessary condition
+for the active GLOBAL-carrier route; do not resurrect that mistaken
+dependency. The real remaining task is the chosen global route's
+actual domains, containment and inheritance/arrest closure.
+
+6. Third open handoff: renormalized external observables
+
+A sufficient source theorem at ONE FIXED physical stopping spacing h
+would give, uniformly in ultraviolet cutoff and physical volume:
+ (i) an exact coarse density and denominator floor for the same
+     source-independent vacuum normalization;
+ (ii) a common complex source domain for arbitrary finite real
+      Lipschitz profiles, including translated/reflected copies;
+ (iii) a localized analytic counterterm functional E_a(w), E_a(0)=0,
+       and |exp(-E_a(w)) Zhat_a,Lambda(w)|<=exp(C |Lambda|/h^4);
+ (iv) anchored source-counterterm bounds with summable face errors
+      and mixed derivatives after fixing physical test supports;
+ (v) coherence under setting source coefficients to zero and
+     independence from the presentation of w as a sum.
+
+These are the explicit hypotheses in Notebook01's fixed-cell and
+factorial lemmas, not conclusions of the local background expansion.
+The entire finite Wilson integral being entire in finitely many
+source parameters supplies no cutoff-independent bound on them.
+Real-source positivity supplies no required complex estimate after
+divergent holomorphic counterterms are removed.
+
+One cannot simply differentiate the unsourced recurrence:
+inhomogeneous sources break the translation symmetry used in marginal
+extraction; their vacuum/contact terms can diverge; their local
+counterterm and operator mixing must be tracked. Input analyticity in
+an inherited interaction is useful but is not yet this sourced theorem.
+
+The existing reflection-cell reduction would turn the foregoing
+global estimates into cutoff/volume-independent LOCAL correlation
+bounds. Its lower denominator window concerns the actual minimizing
+backgrounds, not just a chosen coarse plaquette ball. The lattice
+chessboard inequality must apply to the original measure with its
+actual reflected source and the same normalization.
+
+For the lower two-point witness, a separate source/shadow decomposition
+and error estimate are needed. Upper correlation bounds do not prove
+it. The draft's Raw II late source lemma for this lower witness is
+distinct from its main correlation theorem.
+
+7. Fourth handoff: a common continuum hierarchy
+
+Required construction:
+Choose one joint sequence of tuned positive finite Wilson measures,
+ultraviolet spacings and growing physical volumes. For a countable
+dense family of all required local tests/observables, use actual
+uniform distributional bounds to extract all moments together, and
+extend continuously to the chosen test spaces. Check compatibility
+of products, centering/renormalization, tensor indices and Ward
+identities on this SAME hierarchy.
+
+Tightness of compact group-link variables at a fixed lattice is not
+tightness of rescaled composite fields as the lattice changes.
+The local analytic interaction compactness theorem does not supply
+this quantum hierarchy. Partition-function ultraviolet stability
+alone does not bound observable derivatives.
+
+Cutoff uniqueness, two-cutoff contraction, analytic parameterization
+of every torus limit, and a canonical contact-term extension are not
+mandatory prerequisites for a first subsequential existence result.
+Do not make the task harder by imposing them without need. But
+fixed-order separated bounds are not all-order reconstruction bounds.
+
+Notebook01's coherent-subset combinatorics and joint-flat-test patch
+argument provide an explicit sufficient OS growth condition, conditional
+on the translated-grid/source inputs above. The resulting regularity
+can be on tests flat on coincidence diagonals; a naive positive
+probability measure for an unsubtracted singular composite field is
+not a necessary extra requirement. One must nevertheless verify the
+exact reconstruction theorem's domain and growth hypotheses, not
+claim field operators merely from finitely many separated functions.
+
+8. Symmetries, positivity and state selection are separate handoffs
+
+Reflection positivity:
+Every finite OS matrix must be a limit of positive matrices from
+the SAME original positive Wilson sequence, with supported
+renormalized observables. Holomorphic continuation of a local
+small-field density is not itself a positive measure and does not
+automatically carry Wilson reflection positivity.
+
+Translations and rotations:
+Uniform distributional continuity is needed to turn dense lattice
+translations into continuous translations. Hypercubic invariance
+does not imply O(4). Notebook02's fixed-coupling same-limit diagonal
+reflection mechanism is a useful working input, but its passage to
+the ultraviolet hierarchy still needs the common sourced convergence.
+The scalar-sector rotation strategy additionally needs the stated
+interacting angular analytic/Gram growth bound. The free benchmark
+does not supply it. The draft's alternative far-flux condition is
+explicitly an unproved infrared hypothesis, not a consequence of
+asymptotic freedom.
+
+Vacuum/clustering:
+A positive Hamiltonian from a restricted reconstruction does not
+imply a unique vacuum or clustering. An ergodic-component argument
+requires an actual appropriate measure/local algebra and preservation
+of positivity/covariance/field domains in its components. The
+separated composite hierarchy alone is not that measure. An
+algebraic phase-selection proof or a direct clustering result is
+an alternative; neither can be replaced by the words "choose a phase".
+
+9. Nontriviality and Yang--Mills identification
+
+A valid lower and upper action-density two-point estimate, compared
+at two explicit separations of the SAME smearing and coupling scale,
+can give
+ <v,e^-tH v> <=q ||v||^2,  q<1.
+Then (1-e^-tH)v is a nonzero positive-energy vector and has zero
+projection onto all zero-energy components. Notebook01 gives
+explicit compatible bump shapes and a free relative-kernel target.
+The interacting witness and its error/limit must still be proved.
+This argument proves no spectral gap.
+
+A logarithmically running two-point function does not alone identify
+Yang--Mills. The explicit generalized-free spectral countermodel in
+work/nontriviality_research.md has the same r^-8/log^2 short-distance
+behavior. A Wick square of a generalized free field can additionally
+have a nonzero fourth cumulant. Appending an independent constant
+mode preserves the ultraviolet witness but destroys unique vacuum.
+Thus neither that witness nor "non-Gaussian composite" is an adequate
+replacement for identifying the underlying theory.
+
+For a Yang--Mills existence claim in the sense of [JW], construct an
+adequate mixed family of renormalized gauge-invariant curvature
+polynomials/derivatives (including tensor transformation laws),
+their short-distance normalization and mixing, and the quantum-field
+axioms. A single scalar named tr F^2 is a useful first sector, not
+the full identification. The stress tensor/OPE aspects of the target
+also require their own actual operator statements.
+
+If the full Clay target is intended, one must in addition treat every
+compact simple gauge group and prove a positive physical mass gap.
+Neither an SU(2) scalar-sector limit nor a constrained Gaussian gap
+settles those additional requirements.
+
+10. Exact theorem-level handoff map
+
+H0  Actual uniformly controlled leading determinant comparison
+    -> positive margin in every varying-depth structural limit.
+    CLOSED within Notebook37's stated upstream working inputs.
+    Final actual-base and fixed-Wilson comparisons passed internal
+    review. The preceding classical and local modules still require
+    external scrutiny; this is not independent certification.
+
+H1  H0 + finite moment transfer + finite local induction/parity/
+    continuity -> tuned arbitrarily long finite weak LOCAL histories.
+    CLOSED within the same working chain, by lpd with UC instantiated.
+    Thresholds and bare-coupling bounds are explicit in form, without
+    numerical constants or cross-horizon uniqueness. It does not imply H2.
+
+H2  Exact full Wilson/mixed-history matching + complete-density
+    estimates under those couplings -> global ultraviolet stability
+    for the same positive measure. OPEN transfer/direct construction.
+    Notebook38 PARTIAL ADVANCE: exact positive good/remainder operators
+    for a specified Borel equivariant coarse completion; all-history
+    raw-mass/numerator identities; finite local-germ embedding with
+    literal input containment and finite orbit-overlap shrink.
+    Independently: actual normalized bare-Wilson Peierls bounds,
+    fixed-box conditional tails and their combined gauge-invariant
+    box-window defect bound, uniform in surrounding volume.
+    These box windows have NOT been identified with the actual
+    nonlinear coarse-constraint windows. Growing components, arbitrary
+    admissible exterior data, source domains and full-history
+    normalization/locality estimates remain open. The global positive
+    split is bookkeeping, not a controlled spatial polymer expansion.
+    Notebook39 completes a restricted normalized bare-Wilson replacement
+    on arbitrary finite families of vertex-disjoint fixed boxes.
+    Exact conditional denominators preserve the exterior marginal/rawZ;
+    bad-boundary laws are unchanged. A positive failure expansion and
+    coupling give local TV, entropy, cluster and bounded-source/cumulant
+    comparisons independent of distant-box count. This is a completed
+    finite operation; it does not close the RG-fiber/growing-component
+    or post-renormalization parts of H2, nor renormalized-source H3.
+
+H3  H2 + uniformly analytic external sources, counterterm locality,
+    denominator and reflection-cell windows -> uniform local
+    correlations/all-order distributional bounds. OPEN model inputs;
+    the abstract reductions are available.
+
+H4  H3 + common diagonal limit/product compatibility -> a continuum
+    hierarchy on a specified test algebra. Conditional compactness
+    is routine only AFTER the actual bounds; not supplied by
+    analytic-interaction compactness alone.
+
+H5  H4 + same-limit RP, full Euclidean covariance, quantitative
+    reconstruction conditions and suitable vacuum sector
+    -> a relativistic local quantum observable theory.
+    Several conditional tools exist; hypotheses remain open.
+
+H6  H5 + an interacting lower witness + sufficient mixed curvature
+    observables/short-distance identification -> nontrivial YM.
+    OPEN; positive beta is not this conclusion.
+
+H7  H6 + an independent uniform physical infrared spectral estimate
+    -> mass gap; extend group-specific arguments as required.
+    OPEN and separate from the ultraviolet program.
+
+Some H2/H3 work may proceed in parallel with H0, and a fully matched
+published theorem may replace parts of a direct proof. No implication
+above is licensed merely because a neighboring notebook compiles.
+
+11. Most useful concrete next work after the full-measure bridge
+
+Notebook38 freezes a Borel equivariant coarse completion, gives
+positive exact history operators, and preserves the local analytic
+germ under explicit real-domain and Ward hypotheses. It also
+controls concrete gauge-invariant bare fixed-box defects.
+
+The next theorem must join those two branches: match a spatial
+good-component integral with the actual nonlinear constrained
+minimizer/window; prove normalized complementary-component
+replacement bounds uniform in admissible exterior data, component
+size and scale age; and propagate a complete-density induction
+whose coupling extraction is the one tuned. The primary Bałaban
+class is precisely indexed in the new interface note, but its
+hypotheses are not yet transferred. Only after this, formulate a
+sourced version at fixed physical h for reflected action-density
+tests, including the original global carrier and large-field
+consumers. The exact denominator must remain the same throughout.
+
+A credible final existence announcement would need a single theorem
+whose hypotheses are all either proved in the assembled argument or
+precisely matched to primary published theorems, with its finite
+measures, tuning sequence, observable algebra and reconstruction
+listed explicitly. The present collection is substantial preparatory
+research, but that theorem has not yet been obtained.

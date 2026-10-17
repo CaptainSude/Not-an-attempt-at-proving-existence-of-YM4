@@ -1,0 +1,205 @@
+% No preamble. Prefix csg-. Scalar classical background identities only.
+\section{Classical background composition modulo gauge}
+\label{csg-section}
+
+Fix the primitive odd ratio $\ell$ and write
+$M=\ell^k$, $R_1=\ell^{s_1}$ and $R_2=\ell^{s_2}$.
+Let $U_n(D)$ be the selected ordinary homogeneous Wilson
+minimizer at refinement $n$. The ordinary-minimum theorem
+of Notebook15 gives a refinement-uniform small global
+$C^{1,\alpha}$ comparison ball, a bound
+$\|A_{\mathrm o,n}(D)\|_{C^{1,\alpha}}
+\le C\|\log D/i\|_\infty$, and gauge equivalence whenever
+equality holds in that comparison class.
+
+Define the pre-root-gauge map and its scalar substitution by
+\begin{equation}
+ P_{M,R}(D)=M_\ell^k(U_{MR}(D)),\qquad
+ (\mathcal T_{M,R}E)(D)=E(P_{M,R}(D)).
+ \label{csg-maps}
+\end{equation}
+Here $R=\ell^s$ and $M_\ell^sP_{M,R}(D)=D$.
+All expressions include the natural identification of the
+nested lattices. The input $D$ lives on the next-coarse
+lattice and $P_{M,R}(D)$ on its $R$-times finer current
+lattice. The prefix estimate gives a common classical
+radius $b_{\mathrm{cl}}$ and constant $C_0$, independent of
+$M,R$ and compatible volume, such that
+\begin{equation}
+ \left\|\frac1i\log P_{M,R}(e^{iw})\right\|_\infty
+                \le\frac{C_0}{R}\|w\|_\infty.
+ \label{csg-amplitude}
+\end{equation}
+The operator $\mathcal T$ is a classical background
+substitution, not a fluctuation integral.
+
+\subsection{Two minimum comparisons on the same fine graph}
+\label{csg-comparison-section}
+
+For a final datum $Z$ put
+\begin{equation}
+ U_2=U_{MR_1R_2}(Z),\qquad
+ D_1=M_\ell^{k+s_1}(U_2)=P_{MR_1,R_2}(Z),\qquad
+ U_1=U_{MR_1}(D_1).
+ \label{csg-fields}
+\end{equation}
+Both fine fields live on the same original oriented graph.
+In final-$Z$ units its spacing is
+$\eta_2=(MR_1R_2)^{-1}$ and the $D_1$ spacing is $R_2^{-1}$.
+The definition of $U_{MR_1}(D_1)$ instead uses $D_1$-unit
+coordinates and spacing $\eta_1=(MR_1)^{-1}=R_2\eta_2$.
+This is a coordinate relabeling of the same links. In four
+dimensions the coupling-free Wilson action is the same
+plaquette sum in both conventions.
+
+Exact ordinary composition gives
+\begin{align}
+ M_\ell^{k+s_1}(U_1)&=D_1=M_\ell^{k+s_1}(U_2),\notag\\
+ M_\ell^{k+s_1+s_2}(U_1)&=Z=M_\ell^{k+s_1+s_2}(U_2).
+ \label{csg-feasibility}
+\end{align}
+For fixed finite $R_1,R_2$ both fields lie in the needed
+comparison balls after shrinking the real $Z$ radius,
+uniformly in $M$ and volume. Explicitly, a fine physical
+potential $A_1$ in $D_1$ units becomes
+\begin{equation}
+ A_1^Z(x)=R_2A_1(R_2x),\qquad
+ \|A_1^Z\|_{C^{1,\alpha}}
+          \le C R_2^{2+\alpha}\|A_1\|_{C^{1,\alpha}}.
+ \label{csg-rescaling}
+\end{equation}
+The reverse conversion decreases the norm up to a fixed
+convention constant, and decreases its supremum by $R_2^{-1}$.
+By \eqref{csg-amplitude}, $\|\log D_1/i\|\le C_0\|\log Z/i\|/R_2$.
+Thus $U_1$ in final units is bounded by
+$CR_2^{1+\alpha}\|\log Z/i\|$, while $U_2$ in $D_1$ units
+is bounded by $C\|\log Z/i\|/R_2$. These are finitely many
+radius restrictions for fixed ratios.
+
+The minimum at $D_1$, with competitor $U_2$, and the minimum
+at $Z$, with competitor $U_1$, yield respectively
+\begin{equation}
+ S(U_1)\le S(U_2),\qquad S(U_2)\le S(U_1).
+ \label{csg-comparisons}
+\end{equation}
+Equality and the ordinary-minimum equality clause give a
+fine gauge $g$ with $U_1=U_2^g$. This gauge is supplied by
+the small ordinary-to-corrected transfer, the
+constraint-preserving flow into the flat slice, and the
+inverse transfer from the same strict slice minimizer.
+These controlled gauge transformations can be joined to
+the identity inside a smaller common neighborhood.
+Equal action alone, without that equality clause, would
+not justify this conclusion.
+
+Ordinary gauge covariance gives
+\begin{equation}
+ M_\ell^k(U_1)=\bigl(M_\ell^k(U_2)\bigr)^{g|_{\mathrm{current}}}.
+ \label{csg-gauge-covariance}
+\end{equation}
+Consequently
+\begin{equation}
+ P_{M,R_1}(P_{MR_1,R_2}(Z))
+       \quad\hbox{is gauge equivalent to}\quad
+ P_{M,R_1R_2}(Z).
+ \label{csg-orbit-composition}
+\end{equation}
+The two selected representatives need not coincide. The
+connecting gauge need not be unique; its restriction to
+$D_1$ sites stabilizes $D_1$.
+
+\subsection{The scalar germ identity and its continuation}
+\label{csg-identity-section}
+
+\begin{theorem}[Classical background semigroup modulo gauge]
+\label{csg-theorem}
+Let $E$ be a scalar total functional holomorphic on a
+current-angle product ball and locally gauge invariant
+there. On finite compatible regulators,
+\begin{equation}
+ \mathcal T_{MR_1,R_2}(\mathcal T_{M,R_1}E)
+                   =\mathcal T_{M,R_1R_2}E
+ \label{csg-semigroup}
+\end{equation}
+as holomorphic germs at zero. The identity extends to every
+connected common product domain of the specified branches.
+The output $\mathcal T_{M,R}E$ is locally gauge invariant.
+In particular, for any fixed finite $q$,
+\begin{equation}
+ \mathcal T_{MR^{q-1},R}\cdots
+ \mathcal T_{MR,R}\mathcal T_{M,R}E
+                         =\mathcal T_{M,R^q}E.
+ \label{csg-iteration}
+\end{equation}
+If $R>C_0$ and $b$ lies in the common classical and original
+$E$ domains, both sides of \eqref{csg-iteration} are
+analytic on the same radius-$b$ ball and agree there.
+\end{theorem}
+\begin{proof}
+On a sufficiently small real $Z$ ball, the gauge path in
+\eqref{csg-gauge-covariance} remains inside the original
+domain of $E$. Total gauge invariance proves
+\eqref{csg-semigroup}. Both compositions are holomorphic;
+uniqueness from the real slice proves the germ identity
+and its continuation. No gauge identity for separate
+activity coefficients is used.
+
+To see local invariance of the output, extend a small
+coarse gauge smoothly to prescribed fine point values.
+The transformed minimum at $D$ is a small feasible
+competitor at $D^v$. Compare with the minimum at $D^v$,
+and perform the inverse-gauge comparison at $D$.
+Equality follows; the ordinary-minimum equality clause
+identifies the two configurations modulo fine gauge.
+Their partial averages are gauge equivalent, so evaluating
+$E$ gives local invariance. Analyticity continues this
+identity from the real overlap.
+
+The identity can now be iterated, proving
+\eqref{csg-iteration}. If each ratio is larger than $C_0$,
+\eqref{csg-amplitude} maps the radius-$b$ ball into itself
+at every substitution; the direct map has the same
+property. Thus both sides are analytic on the connected
+common $b$ ball. Their germ equality continues there,
+even if the real variational comparison required a
+smaller radius depending on the finite ratios or on $q$.
+This uses no complex minimum assertion.
+\end{proof}
+
+\subsection{Use and limitations of a finite iterate}
+\label{csg-scope-section}
+
+The direct representative in \eqref{csg-iteration} obeys
+the H\"older prefix estimates
+\begin{equation}
+ \|a_{M,R^q}\|_\infty\le CbR^{-q},\qquad
+ \|\Delta a_{M,R^q}\|_\infty\le CbR^{-2q},\qquad
+ \|\Delta^2a_{M,R^q}\|_\infty
+                         \le CbR^{-(2+\alpha)q},
+ \label{csg-iterated-scales}
+\end{equation}
+with primitive constants independent of $q$. Its complete
+supported families follow by applying the same prefix
+theorem at endpoint ratio $R^q$.
+
+This permits keeping the elementary $R$ and grouping $J$
+fixed before selecting a finite $q$. A separately proved
+bound $C(J)R^{-q\alpha}$ could then have a noncircular
+parameter order. Such an activity-norm estimate is not
+proved by the scalar identity alone.
+
+The canonical families from successive core/tail
+transports need not equal the direct family. Their scalar
+sums agree; a new justified localization may represent
+that common scalar function. No automatic bound for the
+old sequential family, or bounded relocalization on a
+chosen quotient norm, follows.
+
+Nor does \eqref{csg-iteration} identify sequential quantum
+integrals with one integral at ratio $R^q$. Sequential
+steps retain their separate gauge factors, normalizations,
+windows and newly generated interactions. Those terms do
+not disappear from an iterated quantum recursion. This
+is a finite classical background semigroup modulo gauge,
+uniform in preceding refinement and compatible volume;
+infinite iteration and regulator consistency remain open.

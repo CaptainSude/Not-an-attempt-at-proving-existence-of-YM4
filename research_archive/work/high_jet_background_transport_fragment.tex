@@ -1,0 +1,229 @@
+\section{A contraction for the coefficientwise high-field-degree background}
+\label{cdh-section}
+
+The following result concerns only the inherited background
+$E(a_p(w))$. It uses the actual pre-gauge representative and the
+same incoming and outgoing activity exponent and field radius.
+It does not identify a gauge-invariant marginal extraction.
+
+Fix $a_0>0$ and a primitive odd $\ell$. Old carriers $H$ are
+connected sets of current $J$-cells; output carriers are
+$J$-cells of the next current lattice, or current $JR$-cells,
+where $R=\ell^s$ and $J=\ell^j$. The projection has fiber $R^d$
+and satisfies
+\begin{equation}
+ |\pi_RH|\leq2^d+\frac{2^d}{k_R}|H|,
+ \qquad k_R=1+\left\lfloor\frac{R-3}{4}\right\rfloor.
+ \label{cdh-compression}
+\end{equation}
+Use compatible finite regulators. Write
+\begin{equation}
+ \|E\|_{a_0,b}
+ =\sup_i\sum_{H\ni i}e^{a_0|H|}\|E_H\|_b,
+ \label{cdh-input-norm}
+\end{equation}
+where each coefficient is holomorphic on its scalar-coordinate
+radius-$b$ product polydisc. Each old cell has
+$D(J)=dJ^d\dim\mathfrak g$ scalar coordinates.
+
+\subsection{Uniform transport on a larger field-scaling disk}
+\label{cdh-scaling-section}
+
+Choose $\kappa\geq a_0+1$ and a finite classical reserve
+$A\geq d\kappa$ before choosing $R$. The established pre-gauge
+theorem gives constants $C_A,\kappa_0,r_A>0$, fixed at primitive
+$\ell$ independently of $R,M$ and volume, with
+\begin{equation}
+ a_{p,i}(w)=\sum_Xa_{i;X}(w_X),\qquad a_{i;X}(0)=0,\qquad
+ \sup_i\sum_Xe^{\kappa_0\tau(\{i\}\cup X)+A|X|}
+                   \|a_{i;X}\|_r\leq C_A r/R
+ \quad(0<r\leq r_A).
+ \label{cdh-ap-input}
+\end{equation}
+The complete current-field maximum in one source $R$-block is
+inside the support sum. Put
+\begin{equation}
+ L_*=\frac{R}{8C_A}\geq2,\qquad
+ 0<b\leq\frac{r_A}{L_*},\qquad
+ f_\lambda(w)=a_p(\lambda w),\quad |\lambda|<L_*.
+ \label{cdh-scaling}
+\end{equation}
+The absolute rooted norm of $f_\lambda$ on the $b$-ball is at
+most $b/8$. Every support truncation therefore has that same
+component bound without cancellation.
+
+Cut the rooted supports at distance $\ell_{\rm tail}$, using
+exponent $\kappa_0/2$ for the tail, and group roots by $J$.
+Provided $2\kappa/J\leq\kappa_0/2$, its macro norm obeys
+\begin{equation}
+ s_{\rm tail}\leq J^d(b/8)e^{-\kappa_0\ell_{\rm tail}/2}.
+ \label{cdh-tail}
+\end{equation}
+The factor $J^d$ is the sum over old output roots before the
+macro-fiber maximum. Restriction to an old $J$-current input
+fiber introduces no additional coordinate sum.
+For $\ell_{\rm tail}\leq J$ use the conservative connected core
+$K_0(H)=N_{\infty,2}(\pi_RH)$. Its constants are
+\begin{equation}
+ c_0=5^d2^d,\qquad c_1=\frac{5^d2^d}{k_R},\qquad
+ h_0=2d,\qquad F=R^d,\qquad m=b/2.
+ \label{cdh-core-constants}
+\end{equation}
+Choose $R$ so that $c_1a_0\leq a_0/2$.
+Choose $J$ large and
+$\ell_{\rm tail}=\lceil c\log J+C\rceil$ with
+$c>4d/\kappa_0$, so that $\ell_{\rm tail}\leq J$ and
+\begin{equation}
+ t:=s_{\rm tail}/m\leq\tfrac12,\qquad
+ D(J)\log\frac1{1-t}\leq a_0/2.
+ \label{cdh-tail-budget}
+\end{equation}
+This is possible because
+$D(J)t\leq(d\dim\mathfrak g/4)J^{2d}
+e^{-\kappa_0\ell_{\rm tail}/2}\to0$.
+Larger $J$ required by other fixed-step modules can be used.
+These conditions do not depend on $b$.
+
+The joint core/tail theorem, specialized to no fluctuation
+variables and target exponent $a_0$, now gives a canonical
+connected family $U_\lambda$ with
+\begin{equation}
+ \sum_KU_{K,\lambda}(w_K)
+   =\sum_HE_H(a_p(\lambda w)|_H),\qquad
+ \|U_\lambda\|_{a_0,b}\leq C_0R^d\|E\|_{a_0,b},
+ \quad
+ C_0=e^{a_0 5^d2^d+2d}S_1.
+ \label{cdh-uniform-transport}
+\end{equation}
+Here $S_1=\sum_{z\in\mathbb Z^d}e^{-|z|_1}$ also bounds the
+periodic sum. Support choices are fixed independently of
+$\lambda$. The family is holomorphic in the anchored activity
+Banach space. The prefactor $C_0$ is independent of $J,R,M$ and
+volume; $R^d$ is explicit. Although the background substitution
+is nonlinear, this canonical construction is linear in $E$.
+
+\subsection{Coefficientwise fifth-order vanishing and contraction}
+\label{cdh-contraction-section}
+
+\begin{theorem}[High-field-degree background transport]
+\label{cdh-contraction}
+Assume, for every input carrier $H$, the full total field
+Taylor tensors satisfy
+\begin{equation}
+ D^nE_H(0)=0,\qquad n=0,1,2,3,4.
+ \label{cdh-jet-condition}
+\end{equation}
+This includes mixed derivatives in all coordinates of $H$.
+Under the preceding parameter choices, the connected output
+$\mathcal T_{R,J}E:=U_1$ has the same coefficientwise vanishing
+jets and obeys
+\begin{equation}
+ \|\mathcal T_{R,J}E\|_{a_0,b}
+ \leq C_0(8C_A)^5R^{d-5}\|E\|_{a_0,b}.
+ \label{cdh-general-contraction}
+\end{equation}
+In $d=4$, for any prescribed $0<q_{\rm contr}<1$, taking the
+finite power $R=\ell^s$ sufficiently large that
+\begin{equation}
+ R\geq C_0(8C_A)^5/q_{\rm contr}
+ \label{cdh-R-contraction}
+\end{equation}
+in addition to the earlier conditions makes this a genuine
+$q_{\rm contr}$ contraction. It is uniform in old depth and
+compatible volume.
+\end{theorem}
+
+\begin{proof}
+In the canonical expansion, a term of tail Taylor degree
+$q=|\nu|$ contains
+$(\partial^\nu E_H)(c_\lambda)/\nu!$ and $q$ supported tail
+factors. Core and tail both vanish at $\lambda=0$ termwise.
+For $q\leq4$, condition \eqref{cdh-jet-condition} makes the
+derivative at the core vanish to order at least $5-q$ in
+$\lambda$, and the tail factors supply order $q$.
+For $q\geq5$ the tail factors alone supply order at least five.
+This includes the core term $q=0$.
+Normal convergence on smaller disks permits differentiation
+and grouping: every canonical carrier, and hence $U_\lambda$
+as a Banach-valued function, has derivatives of orders zero
+through four equal to zero. No cancellation between carriers
+is used. The same argument in the field variable $w$ proves
+the claimed output jet condition.
+
+For completeness, if a Banach-valued holomorphic $F$ on
+$|\lambda|<L$ is bounded by $M$ and has a zero of order $p$ at
+zero, then
+\begin{equation}
+ \|F(\lambda)\|\leq M(|\lambda|/L)^p.
+ \label{cdh-Banach-Schwarz}
+\end{equation}
+The singularity of $F(\lambda)/\lambda^p$ is removable.
+On a circle of radius $\rho<L$ its norm is bounded by
+$M/\rho^p$; apply the scalar maximum principle to every
+bounded linear functional and send $\rho\uparrow L$.
+Applying this with $p=5$ to
+\eqref{cdh-uniform-transport}, at $\lambda=1$, gives
+$C_0R^dL_*^{-5}\|E\|$, which is
+\eqref{cdh-general-contraction}. A coefficientwise Cauchy
+remainder bound would contain an unnecessary
+$(1-L_*^{-1})^{-1}$ factor.
+\end{proof}
+
+The parameter order is noncircular: choose the finite reserve
+and its constants, then $R$, then $J$ and its tail truncation,
+and finally the single radius $b\leq8C_A r_A/R$ together with
+any other fixed classical restrictions. The same $b$ is used
+at the input and output. For the conservative halo in $d=4$
+and $a_0=1/16$, $C_0=e^{633}S_1$; no practically sized scale
+is asserted. This result concerns the background transport,
+not the new quantum correction or the inherited fluctuation
+increment.
+
+\subsection{A bounded Taylor subtraction, with its limitations}
+\label{cdh-projection-section}
+
+On the circular product polydisc, define the total homogeneous
+Taylor projection by
+\begin{equation}
+ (P_nE_H)(a)=\frac1{2\pi}\int_0^{2\pi}
+               e^{-int}E_H(e^{it}a)\,dt.
+ \label{cdh-phase-projection}
+\end{equation}
+It is the total-degree-$n$ Taylor polynomial, has carrier
+$H$, and satisfies $\|P_nE_H\|_b\leq\|E_H\|_b$.
+The phase integral estimates the complete homogeneous
+polynomial without summing its coordinate monomials.
+Consequently
+\begin{equation}
+ \mathcal R_{\geq5}E_H
+     =E_H-\sum_{n=0}^4P_nE_H,\qquad
+ \|\mathcal R_{\geq5}E\|_{a_0,b}\leq6\|E\|_{a_0,b}.
+ \label{cdh-projection-bound}
+\end{equation}
+No dimension factor, radius shrink or cardinal reserve is
+needed for this projection. The remainder meets
+\eqref{cdh-jet-condition}, and in $d=4$
+\begin{equation}
+ \|\mathcal T_{R,J}\mathcal R_{\geq5}E\|_{a_0,b}
+ \leq\frac{6C_0(8C_A)^5}{R}\|E\|_{a_0,b}.
+ \label{cdh-projected-bound}
+\end{equation}
+
+This is not a gauge-invariant extraction scheme. Local gauge
+transformations act nonlinearly and affinely in a link-potential
+chart, so the low-degree part and high-degree remainder of a
+gauge-invariant total need not be separately gauge invariant.
+The rooted/pre-gauge identity applies to the complete
+inherited functional before such a split; it cannot be applied
+separately to these pieces without another argument.
+
+Nor are the low jets automatically a finite-dimensional space
+of couplings. They include kernels on arbitrarily many carrier
+geometries and separations. Classifying their local
+gauge-invariant content, separating low momentum from field
+degree, constructing nonlinear Ward-compatible completions,
+and bounding marginal or relevant terms remain separate
+requirements. New quantum coefficients may regenerate low
+jets. The contraction proved here therefore supplies an
+irrelevant-background estimate, not a quantum induction,
+running coupling or continuum construction.

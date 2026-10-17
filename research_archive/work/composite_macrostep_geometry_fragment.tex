@@ -1,0 +1,379 @@
+\section{Geometry of the actual composite ordinary constraint}
+\label{cmg-section}
+
+Fix an odd primitive ratio $\ell\ge3$, a positive integer $s$, and
+$R=\ell^s$. Current spacing is one. An earlier classical refinement
+$M=\ell^k$ does not enter any map in this section. Constants are uniform
+in $M$ and compatible periodic volume once $\ell,s$ are fixed; no
+uniformity in $R\to\infty$ is asserted. Compatible source periods
+$2\ell^n$, $n\ge s$, suffice. Local paths are evaluated in their specified
+lifts, so the two opposite interfaces of a two-block periodic direction
+remain distinct. Translate the common block center to zero and identify
+the level-$t$ lattice with $\ell^t\mathbb Z^d$.
+
+The constraint constructed here is the actual composition of $s$
+ordinary primitive averages. It is not identified with a direct-$R$
+ordinary average or with $s$ separately truncated quantum integrals.
+The direct-$R$ contour variable used below is a separate gauge choice.
+
+\subsection{The source map and its exact covariance}
+\label{cmg-source-section}
+
+For a centered primitive block and $x\in B_\ell(y)$, let
+$\mathcal G_\ell(y,x)$ contain the shortest coordinate-order paths
+from $y$ to $x$. Every such path is internal to this block. Use the
+selected source group mean $\mathfrak M$ to define
+\begin{equation}
+ P_\ell(V;y,x)=
+ \mathfrak M\bigl(\{V(\Gamma):\Gamma\in\mathcal G_\ell(y,x)\}\bigr).
+ \label{cmg-contour}
+\end{equation}
+For $c=(y,y+\ell e_\mu)$, put $x'=x+\ell e_\mu$ and let
+$R_c(V)$ be the straight center transporter. The ordinary map is
+\begin{align}
+ U_x(V)&=P_\ell(V;y,x)V([x,x'])P_\ell(V;y+\ell e_\mu,x')^{-1},
+ \notag\\
+ \mathcal M_\ell(V)(c)
+ &=\exp\left\{\ell^{-d}\sum_{x\in B_\ell(y)}
+          \log[U_x(V)R_c(V)^{-1}]\right\}R_c(V).
+ \label{cmg-ordinary}
+\end{align}
+All logarithms use one common small branch. These are the ordinary
+average and contour definitions in \cite{balaban109cm}, pp.~252--254,
+(0.3), (0.5)--(0.12).
+
+The source axioms give local analyticity, the arithmetic differential
+at equal identity inputs, and endpoint covariance
+\begin{equation}
+ \mathfrak M(\{gU_jh^{-1}\})=
+ g\mathfrak M(\{U_j\})h^{-1}.
+ \label{cmg-mean-covariance}
+\end{equation}
+For completeness, (0.10) of that paper supplies one admissible
+realization as the unique small solution $P$ of
+$\sum_j\log(U_jP^{-1})=0$. The derivative with respect to $\log P$ at
+identity is minus the number of inputs times the identity, so the
+analytic implicit-function theorem gives uniqueness, analyticity and
+the arithmetic differential. Conjugating the defining logarithms
+proves \eqref{cmg-mean-covariance} for this realization. The paper
+explicitly permits any mean satisfying its axioms; the proof here
+uses those properties for the selected mean and does not replace it
+by a different one.
+
+With $V^u(b)=u(b_-)V(b)u(b_+)^{-1}$, it follows that
+\begin{align}
+ P_\ell(V^u;y,x)&=u(y)P_\ell(V;y,x)u(x)^{-1},\notag\\
+ \mathcal M_\ell(V^u)&=
+       \mathcal M_\ell(V)^{\,u|_{\text{new centers}}}.
+ \label{cmg-primitive-covariance}
+\end{align}
+Indeed every relative transporter inside the logarithm in
+\eqref{cmg-ordinary} is conjugated at its source center. The identities
+hold on the common analytic domains and extend to complex fields there.
+
+\subsection{One primitive pivot has one nonlinear consumer}
+\label{cmg-primitive-section}
+
+Select the unit interface bond
+\begin{equation}
+ p_\ell(c)=
+ [y+(\ell-1)e_\mu/2,\ y+(\ell+1)e_\mu/2].
+ \label{cmg-primitive-pivot}
+\end{equation}
+No internal contour reads this bond. A parallel string containing it
+must have direction $\mu$, the same transverse block center, and
+the same pair of longitudinal endpoint blocks. Hence it belongs to
+the output equation $c$. The reference center string has the same
+property. This is a statement about the actual products and group
+means before differentiation:
+\begin{equation}
+ \mathcal M_\ell(V)(c')\text{ is independent of }V(p_\ell(c))
+ \quad(c'\ne c).
+ \label{cmg-primitive-incidence}
+\end{equation}
+The local lifted strings distinguish opposite periodic interfaces.
+
+Let $C_\ell$ be the angle differential at identity, and let
+$t_y(B;x)$ be the arithmetic mean of the oriented sums of $B$ on
+the root-to-$x$ contours. Linearizing \eqref{cmg-ordinary} gives
+\begin{equation}
+ C_\ell B(c)=\ell^{-d}\sum_{x\in B_\ell(y)}
+ \left[t_y(B;x)+B([x,x+\ell e_\mu])
+             -t_{y+\ell e_\mu}(B;x+\ell e_\mu)\right].
+ \label{cmg-primitive-linear}
+\end{equation}
+The reference-string derivative cancels between the logarithms and
+the final factor. The root terms do not read the pivot. Exactly $\ell$
+starting sites have its transverse coordinates, and each corresponding
+positive string contains it once. Thus its full column is
+\begin{equation}
+ (C_\ell)_{c',p_\ell(c)}
+       =\ell^{1-d}\delta_{c,c'}I_{\mathfrak g}.
+ \label{cmg-primitive-coefficient}
+\end{equation}
+This is an angle derivative, without division by the coarse length.
+
+\subsection{Exact nonlinear incidence through the composition}
+\label{cmg-composite-section}
+
+Define
+\begin{equation}
+ \mathcal M_R^{\mathrm{comp}}=\mathcal M_\ell^s.
+ \label{cmg-composite}
+\end{equation}
+For a final bond $c=(y,y+Re_\mu)$ choose
+\begin{equation}
+ p_R(c)=[y+(R-1)e_\mu/2,\ y+(R+1)e_\mu/2].
+ \label{cmg-macro-pivot}
+\end{equation}
+Writing $h_t=\ell^t$, set
+\begin{equation}
+ b_t(c)=[y+(R-h_t)e_\mu/2,\ y+(R+h_t)e_\mu/2],
+ \qquad 0\le t\le s.
+ \label{cmg-pivot-chain}
+\end{equation}
+Its endpoints are level-$t$ sites because $R/h_t$ is odd.
+Moreover $b_0=p_R(c)$, $b_s=c$, and $b_t$ is exactly the primitive
+middle-interface pivot of $b_{t+1}$.
+
+\begin{proposition}
+\label{cmg-incidence-proposition}
+Changing the input group coordinate at $p_R(c)$ changes at level $t$
+at most $b_t(c)$. Consequently every final constraint reads its own
+selected pivot and no other selected pivot. Each final output reads
+only unit bonds whose endpoints lie in its two endpoint $R$-blocks,
+using the prescribed local lift. If $C_R$ denotes the composite angle
+differential at identity, then
+\begin{equation}
+ (C_R)_{c,p_R(c')}=R^{1-d}\delta_{c,c'}I_{\mathfrak g}.
+ \label{cmg-composite-coefficient}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The incidence assertion is induction along
+\eqref{cmg-pivot-chain}, applying
+\eqref{cmg-primitive-incidence} at spacing $h_t$.
+It is functional independence, so is valid for nonlinear variations,
+not only for the derivative. Distinct final bonds have distinct
+intermediate selected bonds.
+
+For locality, a level-$t$ output reads level-$(t-1)$ bonds in its two
+endpoint primitive blocks, including their connecting strings.
+The descendants centered at those intermediate sites tile the two
+centered blocks of side $\ell^t$. Iterating gives the stated unit-bond
+dependency set. On short compatible tori this is read in the local
+cover, not inferred merely from periodic set containment.
+
+Finally the chain rule along the single affected output multiplies
+$s$ copies of $\ell^{1-d}I$. There is no intermediate row sum.
+The product is $R^{1-d}I$, proving
+\eqref{cmg-composite-coefficient}.
+\end{proof}
+
+Composition of \eqref{cmg-primitive-covariance} gives
+\begin{equation}
+ \mathcal M_R^{\mathrm{comp}}(V^u)=
+ \mathcal M_R^{\mathrm{comp}}(V)^{\,u|_{R\text{-centers}}}.
+ \label{cmg-composite-covariance}
+\end{equation}
+With $D\phi(b)=\phi(b_+)-\phi(b_-)$, differentiate using
+$u=e^{-it\phi}$ to obtain
+\begin{equation}
+ C_RD\phi(c)=\phi(c_+)-\phi(c_-).
+ \label{cmg-gradient}
+\end{equation}
+The right side is an endpoint difference, or $R$ times the physical
+coarse gradient.
+
+\subsection{Local analytic elimination and unchanged retained coordinates}
+\label{cmg-chart-section}
+
+For a small background $V=e^{ia}$ define
+\begin{align}
+ F_{R,V}(B;c)&=\frac1i\log\left[
+ \mathcal M_R^{\mathrm{comp}}(e^{iB}V)(c)
+ \mathcal M_R^{\mathrm{comp}}(V)(c)^{-1}\right],\notag\\
+ A_{R,V}&=D_BF_{R,V}(0).
+ \label{cmg-relative-map}
+\end{align}
+Finite composition and the two-block dependency give a positive
+product domain in $a,B$, independent of volume and old $M$ at fixed
+$R$. Put
+\begin{equation}
+ \pi_c(V)=R^{d-1}(A_{R,V})_{c,p_R(c)}.
+ \label{cmg-pi}
+\end{equation}
+It is local analytic, $\pi_c(1)=I$, and on a common smaller domain
+$\lVert\pi_c-I\rVert\le1/2$, $\lVert\pi_c^{-1}\rVert\le2$.
+The right inverse inserts only at selected pivots:
+\begin{equation}
+ (h_{R,V}w)(p_R(c))=R^{d-1}\pi_c(V)^{-1}w(c),\qquad
+ (h_{R,V}w)(b)=0\ (b\text{ nonpivot}),\qquad A_{R,V}h_{R,V}=I.
+ \label{cmg-right-inverse}
+\end{equation}
+In particular its maximum row norm is at most $2R^{d-1}$.
+If $Q_{R,V}=A_{R,V}/R$ is the physical coarse-potential derivative,
+and its kernel is written as
+$QB(c)=\sum_bR^{-d}Q(c,b)B(b)$, that kernel's pivot coefficient
+is exactly $\pi_c(V)$. Thus the factors in
+\eqref{cmg-right-inverse} retain the source physical normalization.
+
+Let $E_f$ insert nonpivot values and zero at pivots, and abbreviate
+$A=A_{R,V}$, $h=h_{R,V}$. Define
+\begin{equation}
+ K_{R,V}=E_f-hAE_f,\qquad AK_{R,V}=0.
+ \label{cmg-insertion}
+\end{equation}
+Restriction of $K_{R,V}z$ to nonpivots is $z$. Write
+$F_{R,V}(B)=AB+\mathcal C_V(B)$, with
+$\mathcal C_V(0)=D\mathcal C_V(0)=0$, and solve
+\begin{equation}
+ \widetilde{\mathcal D}_V(B)
+       =\mathcal C_V(B-h\widetilde{\mathcal D}_V(B)).
+ \label{cmg-implicit-correction}
+\end{equation}
+For output $c$ the right side reads only its own unknown
+$\widetilde{\mathcal D}_V(B;c)$: other unknowns insert at pivots that
+the full nonlinear $c$ equation does not read. The implicit derivative
+at zero is identity. A finite-dimensional analytic implicit theorem,
+or contraction after imposing $\lVert D\mathcal C_V h\rVert<1/2$,
+therefore gives a unique local analytic solution. There are finitely
+many oriented neighborhood types, so one radius works in all volumes.
+Iteration does not spread its spatial dependency.
+
+The exact retained chart is
+\begin{align}
+ \Phi_{R,V}(z)
+   &=K_{R,V}z-h\widetilde{\mathcal D}_V(K_{R,V}z),\notag\\
+ F_{R,V}(\Phi_{R,V}(z))&=0,\qquad
+ \Phi_{R,V}(z)(b)=z(b)\quad(b\text{ nonpivot}).
+ \label{cmg-retained-chart}
+\end{align}
+It is the unique small solution with its prescribed retained values.
+Direct differentiation gives
+\begin{align}
+ D\Phi_{R,V}(0)&=K_{R,V},\notag\\
+ D^2\Phi_{R,V}(0)[v,w]
+   &=-hD^2F_{R,V}(0)[K_{R,V}v,K_{R,V}w].
+ \label{cmg-chart-derivatives}
+\end{align}
+The affine equation $F_{R,V}(B)=w$ is equally local:
+\begin{equation}
+ B=K_{R,V}z+hw-h\mathcal C_V(B).
+ \label{cmg-affine-chart}
+\end{equation}
+It has a common positive small product domain in $a,w,z$ and still
+retains $z$ exactly. Local finite dimension, Cauchy estimates and
+bounded neighborhood incidence give finite weighted first-derivative
+row and column bounds and finite contracted second-derivative bounds.
+Their constants may depend on $R$, but not on $M$ or volume.
+
+After coupling insertion the relative field is
+$\Phi_{R,V}(gz)$, whose retained values equal $gz$.
+It is not $g\Phi_{R,V}(z)$. Additional pivot, contour or reconstructed
+field indicators remain at their exact nonlinear arguments.
+
+\subsection{An independent direct-$R$ contour gauge}
+\label{cmg-gauge-section}
+
+Use the same selected source mean on root-to-site coordinate-order
+paths inside one centered $R$-block:
+\begin{equation}
+ P_R(V;y,x)=
+ \mathfrak M\bigl(\{V(\Gamma):\Gamma\in\mathcal G_R(y,x)\}\bigr).
+ \label{cmg-direct-contour}
+\end{equation}
+This does not redefine $\mathcal M_R^{\mathrm{comp}}$. Endpoint
+covariance gives
+\begin{equation}
+ P_R(V^u;y,x)=u(y)P_R(V;y,x)u(x)^{-1}.
+ \label{cmg-direct-covariance}
+\end{equation}
+Every path is internal to its block; every selected pivot crosses a
+block interface. Thus $P_R$ is exactly independent of all selected
+pivot group variables at every allowed background.
+
+Define
+\begin{equation}
+ T_{R,V}B(y,x)=
+ D_B\left.\frac1i\log[
+ P_R(e^{iB}V;y,x)P_R(V;y,x)^{-1}]\right|_{B=0}.
+ \label{cmg-T-definition}
+\end{equation}
+The pivot support of $h_{R,V}$ then gives
+\begin{equation}
+ T_{R,V}h_{R,V}=0,\qquad
+ T_{R,V}K_{R,V}=T_{R,V}E_f.
+ \label{cmg-T-identities}
+\end{equation}
+More strongly,
+\begin{equation}
+ P_R(e^{i\Phi_{R,V}(z)}V;y,x)
+       =P_R(e^{iE_fz}V;y,x).
+ \label{cmg-gauge-retained}
+\end{equation}
+The contour penalty therefore reads exactly the unchanged retained
+variables, although its coefficients still depend on $V$.
+
+For normalized trace $\tau$ put
+\begin{equation}
+ \mathcal G_R(V)=\sum_y\sum_{\substack{x\in B_R(y)\\x\ne y}}
+       \left[1-\tfrac12\tau(P_R(V;y,x)+P_R(V;y,x)^{-1})\right].
+ \label{cmg-gauge-action}
+\end{equation}
+It is nonnegative on real unitary fields. At a background with every
+$P_R=I$ its first derivative vanishes and its pulled-back Hessian,
+in counting/trace coordinates, is
+\begin{equation}
+ D_z^2\mathcal G_R(e^{i\Phi_{R,V}(z)}V)\big|_{z=0}
+       =K_{R,V}^{T}T_{R,V}^{T}T_{R,V}K_{R,V}.
+ \label{cmg-gauge-hessian}
+\end{equation}
+The second derivative of the chart contributes nothing because it
+is pivot supported and the gauge action is pivot independent. At
+identity, \eqref{cmg-direct-covariance} also gives
+\begin{equation}
+ T_{R,1}D\phi(y,x)=\phi(x)-\phi(y).
+ \label{cmg-T-gradient}
+\end{equation}
+
+\subsection{Clearing this gauge and the domain boundary}
+\label{cmg-clearing-section}
+
+Set $u_V(y)=I$ at all final centers and
+$u_V(x)=P_R(V;y,x)$ elsewhere in its block. Then, on the common
+domain,
+\begin{equation}
+ P_R(V^{u_V};y,x)=I,\qquad
+ \mathcal M_R^{\mathrm{comp}}(V^{u_V})
+       =\mathcal M_R^{\mathrm{comp}}(V).
+ \label{cmg-clearing}
+\end{equation}
+This is a geometric gauge operation, not by itself a minimum or
+stationarity argument.
+
+There are at most $d!$ contour orderings and every path has length
+at most $d(R-1)/2$. In a fixed matrix norm,
+$\lVert\prod_b e^{ia_b}-I\rVert\le
+\exp(\sum_b\lVert a_b\rVert)-1$. The selected local mean has a
+fixed Lipschitz constant near equal identity inputs, with the number
+of inputs bounded by $d!$. Consequently, when $R\lVert a\rVert_\infty$
+is sufficiently small,
+\begin{equation}
+ \lVert\log u_V/i\rVert_\infty
+       \le C R\lVert a\rVert_\infty.
+ \label{cmg-gauge-size}
+\end{equation}
+The constant here depends on dimension, group and the selected mean,
+not on $R$. For a pre-gauge representative
+$a_p=O(w/R)$ this gives $u=O(w)$. It does not give a rooted link-angle
+bound $O(w/R)$: endpoint gauge differences may have size $O(w)$.
+Nor does \eqref{cmg-gauge-size} make the local elimination radius
+uniform in $R$.
+
+The composite constraint, its actual local chart, and the independent
+contour gauge are thus established. Gaussian coercivity and locality,
+the physical minimum comparisons, the exact compact gauge insertion
+and all cutoff normalizations are separate modules. None of these
+geometric identities supplies a repeated quantum RG induction.

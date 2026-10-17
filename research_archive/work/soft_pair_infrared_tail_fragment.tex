@@ -1,0 +1,408 @@
+\section{A uniform affine infrared tail from local cubic resolvents}
+\label{sft-section}
+
+This section bounds the large-physical-time contribution of the actual
+soft scalar/vector pair. The proof retains the root block in every
+trace and introduces no factor counting its \(K^4\) fine variables.
+It uses the localized relative vertices proved above, not only a
+global relative-form estimate. It does not determine the
+intermediate-time logarithmic coefficient.
+
+\subsection{Precise operator and source inputs}
+\label{sft-input-section}
+
+Write \(\mu=K^{-1}\). Fine scalar or positive-bond spaces use counting
+inner products, with fixed color/component multiplicities. Assign a
+bond to the block containing its initial site. Let \(P_x\) be the
+orthogonal projection onto the final block \(x\), and put
+\begin{equation}
+ \mathcal L=I+K^2\Delta,
+ \label{sft-reference}
+\end{equation}
+where \(\Delta\) is the ordinary componentwise flat lattice Laplacian.
+Let \(X_0\) denote the flat physical operator, namely \(K^2\) times
+the corresponding counting matrix.
+
+For the vector spatial estimates, work on the chosen joint infinite
+structural system or on explicit periodizations of its kernels.
+Actual finite-regulator gaps and flat heat estimates are separate
+facts. A finite momentum grid does not imply exact infinite moment
+cancellation, and arbitrary finite winding kernels are not identified
+with these periodizations. The following abstract proof is also
+finite-volume uniform whenever its three inputs hold on the finite
+system in question.
+
+The first input is uniform positive ellipticity:
+\begin{equation}
+ X_0=X_0^*,\qquad X_0\ge c_0\mathcal L.
+ \label{sft-ellipticity}
+\end{equation}
+The second is a relative physical-weight estimate. For every bounded
+physical \(1\)-Lipschitz function \(f\), set \(W=e^{\theta f}\),
+using the fine-site position divided by \(K\). On bonds use their
+initial sites. For sufficiently small fixed \(\theta>0\), assume
+\begin{equation}
+ \left\|\mathcal L^{-1/2}
+       (WX_0W^{-1}-X_0)\mathcal L^{-1/2}\right\|
+       \le C\theta .
+ \label{sft-weighted-input}
+\end{equation}
+Bounded truncations of distance functions suffice.
+
+For the third input, let \(a_j\) be a complete physical \(C^1\) field
+supported in a fixed smooth collar of block \(j\), and write
+\begin{equation}
+ a_j^*=\|a_j\|_{\mathrm{phys},1}
+ =\|a_j\|_\infty+
+ K\max_{\substack{\mathrm{nearest}\\\mathrm{same\ component}}}
+       |a_j(e')-a_j(e)|.
+ \label{sft-source-norm}
+\end{equation}
+Denote the first and mixed second variations of \(X\) at zero by
+\(V_j\) and \(V_{jk}\). For every weight allowed above, require
+\begin{align}
+ \|\mathcal L^{-1/2}WV_jW^{-1}\mathcal L^{-1/2}\|
+     &\le Ca_j^*,\notag\\
+ \|\mathcal L^{-1/2}WV_{jk}W^{-1}\mathcal L^{-1/2}\|
+     &\le Ca_j^*a_k^*.
+ \label{sft-conjugated-vertices}
+\end{align}
+In addition, let \(f_j\) be physical distance to the fixed physical
+cube or collar of block \(j\), and \(W_j=e^{\theta f_j}\), initially
+with bounded truncations. The marked-source bounds are
+\begin{align}
+ \|\mathcal L^{-1/2}W_jV_jW_j\mathcal L^{-1/2}\|
+     &\le Ca_j^*,\notag\\
+ \|\mathcal L^{-1/2}W_jV_{jk}W_j\mathcal L^{-1/2}\|
+     &\le Ca_j^*a_k^*,
+ \label{sft-marked-vertices}
+\end{align}
+with the second bound also centered at \(k\).
+The function \(f_j\) is Lipschitz on fine physical positions:
+it is not a piecewise constant block-index distance. Its infimum
+and supremum on any one block differ by a dimensional constant.
+
+The two-sided weights in \eqref{sft-marked-vertices} attach a source
+to both operator ends. An unlocalized bound on
+\(X_0^{-1/2}V_jX_0^{-1/2}\) would not supply this input.
+All source jets may be holomorphic and bilinear. Only the flat
+operators \(X_0,\mathcal L\) are required to be positive.
+
+\subsection{Why the actual soft pair supplies these inputs}
+\label{sft-application-inputs}
+
+For \(T_s=D_A^TD_A+\mu^2\Pi_A\), the soft scalar theorem gives
+\eqref{sft-ellipticity}. Its weighted \(D,J\) expansion gives
+\eqref{sft-weighted-input}. Its first two source derivatives give
+\eqref{sft-conjugated-vertices}--\eqref{sft-marked-vertices}.
+Here \(J\) is normalized and own-block local, so its derivatives
+have no fine-fiber dimension loss. Scalar sources even need only
+their supremum norm.
+
+For the soft vector, the mean-zero Laplacian domination and gap,
+preserved by the positive \(DJ\) update, imply
+\eqref{sft-ellipticity} for \(X_0=K^2V_0\).
+The relative-Hessian theorem gives, after physical rescaling,
+first-two source jets of the form
+\begin{equation}
+ D_{\mathrm{phys}}^TZ+Z^TD_{\mathrm{phys}}+E,
+ \label{sft-energy-vertex}
+\end{equation}
+with uniformly bounded, exponentially source-rooted factors \(Z,E\).
+The second-order \(Z\) may have an additional beneficial factor
+\(\mu\). Since
+\(\|D_{\mathrm{phys}}\mathcal L^{-1/2}\|\le1\),
+these factors give the relative vertex bounds. For example,
+\[
+ W_jD_{\mathrm{phys}}^TZW_j
+ =D_{\mathrm{phys}}^T(W_jZW_j)
+   +[W_j,D_{\mathrm{phys}}^T]W_j^{-1}(W_jZW_j).
+\]
+The commutator in the second term is \(O(\theta)\); source-rooted
+decay bounds \(W_jZW_j\) at a smaller exponent. This proves the
+two-sided normalization without commuting a fractional power of
+\(\mathcal L\) through a weight.
+
+The covariant \(D_AD_A^T\) term has the same elementary structure.
+Each corrected angle average \(\bar C_A\), and each of its first
+two physical-background derivatives, has counting size \(O(\mu)\).
+Their pair therefore gives \(O(\mu^2)\), canceled by \(K^2\).
+The coarse Hessian has fixed color fiber and uniform source bounds.
+These terms supply zero-order vertices in
+\eqref{sft-energy-vertex}. The soft-vector module separately
+identifies this auxiliary family with the actual stationary affine
+jets through order two, retaining the current and residual terms.
+
+For completeness, the action contribution to
+\eqref{sft-weighted-input} uses precisely the repaired ordered
+Laurent factorization
+\begin{equation}
+ q_M=d_0^TH_0d_0.
+ \label{sft-ordered-factorization}
+\end{equation}
+Both the constant and linear flat momentum jets vanish, and \(H_0\)
+is symmetric with uniformly exponentially summable current kernels.
+Separate component row sums alone would not justify this step;
+no common componentwise difference-square identity is used.
+Conjugation changes each outer gradient by a bounded multiplication
+operator \(O(\theta\mu)\), and changes \(H_0\) by \(O(\theta\mu)\)
+using its exponential first moment. Keep the latter change between
+the two gradients. After multiplication by \(K^2\) and the two
+\(\mathcal L^{-1/2}\) factors, the outer errors are
+\(O(\theta+\theta^2)\) and the middle error is \(O(\theta\mu)\).
+The longitudinal term obeys the same estimate. The bounded physical
+block correction has fixed physical range, with a coarse Hessian
+having uniform exponential moments, so its error is \(O(\theta)\).
+This proves \eqref{sft-weighted-input} without a false uniform bound
+on the absolute row norm of \(X_0\), which can grow as \(K^2\).
+
+The uniform claims concern the explicit auxiliary source estimates.
+Their identification with the actual affine coefficient is used at
+each fixed \(K\); no uniform stationary-response bound is needed.
+
+\subsection{A block Schatten bound without a rank loss}
+\label{sft-schatten-section}
+
+The elementary massive lattice heat estimate gives
+\begin{equation}
+ \operatorname{Tr}(P_x\mathcal L^{-3}P_x)\le C
+ \label{sft-third-moment}
+\end{equation}
+uniformly in \(K\) and compatible volume. Indeed, integrate the
+flat heat trace against \(t^2e^{-t}/2\). On a torus of current side
+\(KN\), the heat trace per final block is at most
+\[
+ C\left\{\frac{K^4}{(1+K^2t)^2}+N^{-4}\right\}.
+\]
+Its indicated integral is bounded, including the finite zero mode.
+The infinite lattice obeys the same bound without that mode.
+
+Compression is not interchanged with taking powers. If \(u_i\) is
+an orthonormal eigenbasis of \(P_x\mathcal L^{-1}P_x\) in the block,
+scalar Jensen applied to the spectral measure of \(\mathcal L^{-1}\)
+gives
+\(\langle u_i,\mathcal L^{-1}u_i\rangle^3
+ \le\langle u_i,\mathcal L^{-3}u_i\rangle\).
+Therefore
+\begin{equation}
+ \|P_x\mathcal L^{-1/2}\|_{\mathfrak S_6}^6
+ =\operatorname{Tr}[(P_x\mathcal L^{-1}P_x)^3]
+ \le\operatorname{Tr}(P_x\mathcal L^{-3}P_x)\le C.
+ \label{sft-s6}
+\end{equation}
+The analogous right-ended norm has the same bound. Schatten
+Hölder with exponents \(6,\infty,6\) consequently yields
+\begin{equation}
+ \|P_x\mathcal L^{-1/2}A\mathcal L^{-1/2}P_y\|_{\mathfrak S_3}
+ \le C\|A\|.
+ \label{sft-s3}
+\end{equation}
+There is no factor proportional to the block rank \(K^4\).
+
+\subsection{A common contour and rooted resolvent derivatives}
+\label{sft-resolvent-section}
+
+Choose \(0<\lambda_0<c_0/4\) and \(0<\varphi<\pi/2\).
+Let \(\Gamma\) be the positively oriented Dunford contour on the
+rays \(\lambda_0+r e^{\pm i\varphi}\), enclosing the positive
+spectrum to their right. At finite regulator, first close it beyond
+the largest eigenvalue. For \(R_z=(z-X_0)^{-1}\),
+\begin{equation}
+ \|\mathcal L^{1/2}R_z\mathcal L^{1/2}\|\le C_\Gamma,
+ \qquad z\in\Gamma .
+ \label{sft-contour-bound}
+\end{equation}
+Indeed, \(X_0\ge c_0\mathcal L\), while the spectral norm of
+\(X_0^{1/2}R_zX_0^{1/2}\) is bounded on those rays.
+By \eqref{sft-weighted-input} and a relative resolvent Neumann
+expansion, choosing \(\theta\) sufficiently small gives
+\begin{equation}
+ WR_zW^{-1}=\mathcal L^{-1/2}A_{z,W}\mathcal L^{-1/2},
+ \qquad \|A_{z,W}\|\le C ,
+ \label{sft-twisted-resolvent}
+\end{equation}
+uniformly on the whole contour.
+
+The first and mixed second derivatives are
+\begin{align}
+ \delta_jR_z&=R_zV_jR_z,\notag\\
+ \delta_j\delta_kR_z
+  &=R_zV_{jk}R_z+R_zV_jR_zV_kR_z+R_zV_kR_zV_jR_z.
+ \label{sft-resolvent-derivatives}
+\end{align}
+Relative normalization cancels adjacent powers of \(\mathcal L\):
+each product is \(\mathcal L^{-1/2}A\mathcal L^{-1/2}\)
+with uniformly bounded \(A\).
+
+Source localization can be checked without any fractional-weight
+commutator. For a marked source \(j\),
+\begin{equation}
+ W_j(R_zV_jR_z)W_j
+ =(W_jR_zW_j^{-1})(W_jV_jW_j)(W_j^{-1}R_zW_j).
+ \label{sft-marked-first}
+\end{equation}
+For the ordered term with another source \(k\), put
+\(R_+=W_jR_zW_j^{-1}\), \(R_-=W_j^{-1}R_zW_j\); then
+\begin{equation}
+ W_j(R_zV_jR_zV_kR_z)W_j
+ =R_+(W_jV_jW_j)R_-(W_j^{-1}V_kW_j)R_-.
+ \label{sft-marked-second}
+\end{equation}
+The marked vertex uses \eqref{sft-marked-vertices} and the other
+vertex uses \eqref{sft-conjugated-vertices}. The primitive
+\(V_{jk}\) has the marked bound at either source. Thus
+\eqref{sft-s3} applies to every term.
+
+Write \(\tau\) for the shortest connected graph length in the
+final-block graph, allowing auxiliary vertices. The resulting
+block bounds, for \(n=0,1,2\), are
+\begin{equation}
+ \|P_x\delta_{j_1}\cdots\delta_{j_n}R_zP_y\|_{\mathfrak S_3}
+ \le C_n\prod_{\ell=1}^n a_{j_\ell}^*
+       e^{-c\tau(x,y,j_1,\ldots,j_n)}.
+ \label{sft-rooted-resolvent}
+\end{equation}
+For \(n=0\), use a one-sided distance weight from \(y\).
+For \(n=1\), the marked weight gives
+\(e^{-\theta[d(x,j)+d(y,j)]}\). For \(n=2\), take the
+geometric mean of the separate \(j\)- and \(k\)-centered estimates.
+Their four edges connect all marked vertices and dominate a
+connecting graph length. The infimum/supremum comparison of
+physical distances within each block changes only the constant.
+Fixed collars have the same effect. Periodic physical distances
+and bounded truncations give the identical conclusion whenever the
+inputs hold; the uniform bounds permit removal of the truncations.
+
+\subsection{Three resolvents preserve the local trace}
+\label{sft-heat-section}
+
+Functional calculus gives, for \(u>0\),
+\begin{equation}
+ e^{-uX}=\frac{2}{u^2}\frac1{2\pi i}
+       \int_\Gamma e^{-uz}(z-X)^{-3}\,dz .
+ \label{sft-cubic-calculus}
+\end{equation}
+The scalar residue of the third-order pole is
+\(u^2e^{-u\lambda}/2\), fixing both coefficient and sign.
+
+Differentiate \(R_z^3\) through order two. Each term is a product of
+three differentiated resolvents, with derivative orders
+\(n_1+n_2+n_3\le2\). Inserting the block resolution of the identity
+between them gives
+\begin{align}
+ &\left|\operatorname{Tr}
+  (P_0R_z^{(n_1)}P_iR_z^{(n_2)}P_jR_z^{(n_3)}P_0)\right|
+ \notag\\
+ &\qquad\le
+  \|P_0R_z^{(n_1)}P_i\|_{\mathfrak S_3}
+  \|P_iR_z^{(n_2)}P_j\|_{\mathfrak S_3}
+  \|P_jR_z^{(n_3)}P_0\|_{\mathfrak S_3}.
+ \label{sft-local-holder}
+\end{align}
+Here superscripts denote the indicated source derivatives, not
+ordinary powers. The root block stays in place. Nothing is moved
+cyclically through \(P_0\).
+
+Equation \eqref{sft-rooted-resolvent} and exponential convolution,
+with a smaller exponent, imply
+\begin{equation}
+ \left|\delta_{j_1}\cdots\delta_{j_n}
+       \operatorname{Tr}(P_0R_z^3P_0)\right|
+ \le C_n\prod_{\ell=1}^n a_{j_\ell}^*
+        e^{-c'\tau(0,j_1,\ldots,j_n)},\qquad n\le2.
+ \label{sft-cubic-root}
+\end{equation}
+The two intermediate block sums are absolutely convergent in trace
+norm, uniformly in \(K,z\) and the applicable volume. This constructs
+the infinite local trace without an infinite extensive trace.
+
+On the contour,
+\(\operatorname{Re}z=\lambda_0+r\cos\varphi\), whence
+\[
+ \int_\Gamma |e^{-uz}|\,|dz|
+       \le C u^{-1}e^{-\lambda_0u}.
+\]
+Combining this with
+\eqref{sft-cubic-calculus}--\eqref{sft-cubic-root} proves
+\begin{equation}
+ \left|\delta_{j_1}\cdots\delta_{j_n}
+       \operatorname{Tr}(P_0e^{-uX}P_0)\right|
+ \le C_nu^{-3}e^{-\lambda_0u}
+       \prod_{\ell=1}^n a_{j_\ell}^*
+       e^{-c'\tau(0,j_1,\ldots,j_n)},\quad u\ge1,\ n\le2.
+ \label{sft-rooted-heat}
+\end{equation}
+The displayed absolute majorants justify the differentiations,
+contour integral, block sums and local limits. At fixed \(K\), begin
+with bounded compact sources in the actual local germ, then extend
+their coefficients using these bounds. No small-time asymptotic is
+claimed by the harmless factor \(u^{-3}\).
+
+\subsection{The actual affine infrared contribution}
+\label{sft-affine-section}
+
+Choose a smooth physical partition of unity on fixed block collars,
+with uniformly bounded first derivatives and finite overlap.
+Decompose the affine physical field
+\begin{equation}
+ A_\alpha(x)=\frac{x_\beta}{K}H,\qquad \alpha\ne\beta,
+ \label{sft-affine}
+\end{equation}
+into complete supported fields \(a_j\).
+Their norms satisfy \(a_j^*\le C(1+|j|)\). The second source bound
+\eqref{sft-rooted-heat} is summable with these polynomial weights.
+Consequently
+\begin{equation}
+ \left|[t^2]\operatorname{Tr}_0 e^{-uX(tA)}\right|
+       \le Ce^{-cu},\qquad u\ge1,
+ \label{sft-affine-heat}
+\end{equation}
+uniformly in \(K\) and old depth on the stated structural systems.
+This is evaluation of exponentially localized Taylor kernels,
+not insertion of a nonzero unbounded field into a fixed analytic ball.
+
+The actual first two stationary affine jets agree with the explicit
+representatives just estimated, up to a fine gauge. Their diagonal
+color traces are individually gauge invariant. Thus the fixed-\(K\)
+polynomial-jet identification transfers
+\eqref{sft-affine-heat} to the actual coefficient before taking the
+uniform bound. It does not require a uniform-\(K\) norm for the
+full stationary response.
+
+For \(X_s=K^2T_s\) and \(X_v=K^2V\), we obtain
+\begin{theorem}[Uniform actual infrared tail]
+\label{sft-main}
+Under the established soft-factor and localized relative-vertex
+inputs, the actual affine coefficient satisfies
+\begin{equation}
+ \int_1^\infty
+  \left|[t^2]\left\{
+   \operatorname{Tr}_{0,E}e^{-uX_v(t)}
+     -2\operatorname{Tr}_{0,S}e^{-uX_s(t)}
+                 \right\}\right|\frac{du}{u}\le C .
+ \label{sft-tail}
+\end{equation}
+The constant is uniform in \(K\), old depth and the chosen joint
+infinite structural systems. Each factor separately obeys the same
+type of bound.
+\end{theorem}
+
+The fine link angle corresponding to \eqref{sft-affine} is
+\(t x_\beta H/K^2\). The change of variables \(s=K^2u\)
+identifies \eqref{sft-tail} with the current-time tail \(s\ge K^2\)
+of the actual soft-pair Maxwell heat formula.
+Constant determinant normalizations have zero affine coefficient.
+
+No finite torus affine-flux family is asserted. Finite source bounds
+apply to explicit periodizations or to finite models for which the
+three inputs were separately verified. The actual polynomial
+coefficient is obtained in the chosen infinite structural system by
+the fixed-\(K\) identification; unrelated actual finite winding
+kernels are not silently substituted.
+
+Together with the exact soft factorization and the bounded coarse
+Maxwell remainders, \eqref{sft-tail} removes the large-physical-time
+part from the logarithmic calculation. The remaining comparison is
+the short-current-time contribution and the intermediate range
+\(1\ll s\ll K^2\). Neither the value nor the sign of the logarithmic
+coefficient follows from this tail estimate.

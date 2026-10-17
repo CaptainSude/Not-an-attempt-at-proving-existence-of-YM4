@@ -1,0 +1,369 @@
+% No preamble. Prefix vst-. Actual composite-constraint vector UV bound.
+\section{A uniform short-time estimate for the actual vector operator}
+\label{vst-section}
+
+Fix the primitive odd ratio \(\ell\ge3\), the actual selected analytic
+source mean, and \(a>0\). Let \(K=\ell^k\), and let \(M\) be any
+preceding homogeneous depth. We work in an actual joint infinite
+structural system, with current-link angle counting coordinates.
+All affine substitutions below are polynomial jets at zero.
+No continuously varying periodic magnetic flux is used.
+
+Choose \(\mu\ne\nu\) and a Cartan element \(H\) with
+\(\tau(H^2)=1\), and write
+\[
+ U_\mu(t;x)=\exp(i t x_\nu H/K^2),\qquad U_\lambda(t;x)=1
+                       \quad(\lambda\ne\mu).
+\]
+The stationary-jet identification established in Notebook 33 gives,
+through order two, the actual vector family
+\begin{equation}
+ \begin{split}
+ B_M(t)&=s_M''(U(t))+D_b(t)D_b(t)^T,\\
+ V_{M,K}(t)&=B_M(t)+aC_K(t)^TC_K(t).
+ \end{split}
+ \label{vst-operators}
+\end{equation}
+Here \(s_M''\) is the actual left-relative Hessian,
+\(D_b\) has scalar values zero at the \(K\)-centers, and \(C_K\)
+is the left-relative derivative of the composite ordinary map
+\(M_\ell^k\). In particular, \(s_M''\) is not replaced by the
+bare Wilson Hessian when \(M>1\).
+
+The inputs used from the classical construction are uniform
+current-coordinate exponential bounds for \(q_M=s_M''(1)\),
+the complete scalar-action support/Cauchy bounds through order
+four on a fixed complex product ball, and the exact local gauge
+covariance of the relative Hessian. The local coordinate and
+color fibers have fixed dimension. The actual primitive
+averaging formula supplies finite-range analytic derivative
+matrices. Its composite output row reads only the two final
+endpoint blocks. These inputs are uniform in preceding depth
+and compatible regulator volume.
+
+\begin{theorem}[Actual vector ultraviolet bound]
+\label{vst-theorem}
+There is a constant \(C\), depending on the fixed primitive
+data, \(a\), the classical analytic bounds and the color group,
+but not on \(M,K\) or the selected structural system, such that
+\begin{equation}
+ \int_0^1\left|[t^2]\operatorname{Tr}_{0,E}
+                         e^{-sV_{M,K}(t)}\right|\frac{ds}{s}
+ \le C.
+ \label{vst-main}
+\end{equation}
+The trace is over fine bonds with initial site in block zero,
+including color. Together with the actual ghost ultraviolet
+bound, this proves the full short-time estimate on
+\(0<s<1\), or \(0<u<K^{-2}\) after \(s=K^2u\).
+\end{theorem}
+
+\subsection{Uniform flat bounds for the full composite constraint}
+\label{vst-flat-section}
+
+Let \(D_r\) be the scalar forward difference on the lattice
+of spacing \(r\), without division by \(r\). Define the
+straight angle average
+\begin{equation}
+ (A_r v)(y,\lambda)=r^{-d}
+       \sum_{x\in B_r(y)}\sum_{h=0}^{r-1}
+                              v_\lambda(x+h e_\lambda).
+ \label{vst-straight}
+\end{equation}
+Let \(b_\ell\) be the scalar mean of internal primitive
+root-contour sums. The actual arithmetic differential is
+\begin{equation}
+ C_\ell=A_\ell-D_\ell b_\ell,\qquad
+ C_\ell D_1=D_\ell R_\ell,
+ \label{vst-primitive}
+\end{equation}
+where \(R_\ell\) restricts scalar values to the new centers.
+Tiling centered blocks and concatenating strings gives
+\(A_\ell^{(r)}A_r=A_{\ell r}\). Consequently
+\begin{equation}
+ \begin{split}
+ C_K&=A_K-D_Kb_K,\\
+ b_{\ell r}&=b_\ell^{(r)}A_r+R_\ell b_r,\\
+ b_K&=\sum_{j=0}^{k-1}
+       R_{\ell^{j+1}\to K}\,b_\ell^{(\ell^j)}A_{\ell^j}.
+ \end{split}
+ \label{vst-recursion}
+\end{equation}
+Each scalar restriction in the last line is a counting
+\(L^2\) contraction. At a final center it merely retains
+the same nested center; it does not sum all intermediate
+centers.
+
+The absolute row sums of \(A_r\) equal \(r\), and its
+absolute column sums equal \(r^{1-d}\). For a column,
+the two neighboring longitudinal output intervals have
+complementary multiplicities summing to \(r\), and the
+transverse output block is unique. Thus
+\begin{equation}
+                \|A_r\|_{2\to2}\le r^{1-d/2}.
+ \label{vst-straight-norm}
+\end{equation}
+These counting identities retain their multiplicities
+on compatible periodic graphs. Since \(b_\ell\) is a
+fixed finite-range operator and
+\(\|D_K\|_{2\to2}\le2\sqrt d\), in \(d=4\)
+\begin{equation}
+ \|C_K\|_{2\to2}
+ \le K^{-1}+
+       \frac{2\sqrt d\,\|b_\ell\|_{2\to2}}{1-\ell^{-1}}.
+ \label{vst-full-flat}
+\end{equation}
+Every consecutive flat composite segment therefore has
+norm at most one fixed \(C_0\ge1\), including empty segments.
+This is an \(O(1)\) bound for the full ordinary map, not
+the generally false \(O(K^{-1})\) assertion.
+
+For localized information, a row of \(A_r\) has at most
+\(2r^d\) entries, each at most \(r^{1-d}\), so
+\[
+              \|A_r(c,\cdot)\|_2\le\sqrt2\,r^{-1}
+                         \quad(d=4).
+ \]
+Equation \eqref{vst-recursion} gives uniformly bounded
+rows of \(b_K\), and hence of \(C_K\).
+The two-block dependency also shows that each input
+bond occurs in only a dimension-dependent number of
+different final output rows. This gives a second direct
+row-and-incidence proof of the full bound.
+
+\subsection{Actual affine jets of the nonlinear composite derivative}
+\label{vst-magnetic-section}
+
+Fix first a final row with endpoint blocks near zero.
+At stage \(j\), put \(r=\ell^j\). The exact affine
+averaging identity gives the intermediate background
+angle, in that stage's lattice coordinates,
+\[
+                     w_j(z)=t(r^2/K^2)z_\nu H.
+\]
+The exact nested dependency geometry confines every
+needed coordinate to \(|z|\le c_\ell K/r\). Therefore
+\begin{equation}
+                  \|w_j\|_{\rm needed}
+                            \le c_\ell |t|r/K.
+ \label{vst-stage-smallness}
+\end{equation}
+At each stage independently, extend the needed values
+to a globally bounded field with this same bound, by
+clipping the coordinate outside a larger dependency box.
+The extensions need not be successive blockings.
+Every derivative entry contributing to the selected
+product row agrees with the actual affine stage, which
+is the only use of these extensions.
+
+Let \(F_j\) be the flat primitive derivative and
+\(E_j(t)\) its change at the extended background.
+The fixed primitive analytic and incidence bounds
+give, on one disk \(|t|<\rho_0\),
+\begin{equation}
+                  \|E_j(t)\|_{2\to2}
+                          \le C_\ell |t|\ell^j/K.
+ \label{vst-stage-error}
+\end{equation}
+Expand the derivative product by the subset of stages
+where \(E_j\) is used. A term with \(n\) marked stages
+has \(n+1\) intervening flat segments, each bounded by
+\(C_0\). Hence
+\begin{align}
+ \left\|\prod_j(F_j+E_j(t))\right\|
+ &\le C_0\prod_j(1+C_0\|E_j(t)\|)\notag\\
+ &\le C_0\exp\!\left(C C_0|t|
+                         \sum_{j<k}\ell^j/K\right)\notag\\
+ &\le C_0\exp(C C_0|t|/(\ell-1)).
+ \label{vst-product-bound}
+\end{align}
+The actual selected row consequently has a uniform
+analytic \(L^2\) bound. Cauchy estimates on a smaller
+fixed disk bound its Taylor coefficients through order two.
+
+For a row at coarse position \(y\), translating the
+affine field adds a constant Cartan potential. Remove
+it by the site gauge \(\exp(i t y_\nu x_\mu H/K)\).
+Exact gauge covariance expresses the row using its
+centered counterpart and input/output adjoint frames.
+On its two \(K\)-blocks the frame derivatives through
+order two are bounded by a fixed polynomial in \(|y|\),
+independently of \(K\). Writing
+\(C_K(t)=\sum_j t^j C^{[j]}\), one may take
+\begin{equation}
+        \|C^{[j]}(y,\cdot)\|_2
+                  \le C_j(1+|y|)^{2j},
+                  \qquad j=0,1,2.
+ \label{vst-row-jets}
+\end{equation}
+Their support remains in the same two endpoint blocks.
+This is a statement about polynomial jets; it does not
+assert a bounded analytic operator at a nonzero unbounded
+affine field.
+
+Group current bonds by their initial-site \(K\)-block,
+and final bonds by their initial coarse site. The latter
+fiber has fixed dimension \(r_c=d\dim\mathfrak g\).
+Equation \eqref{vst-row-jets} and finite incidence give
+finite-range block operator bounds with polynomial
+growth for \(C^{[j]}\) and their transposes.
+In particular \(C^{[0]}\) has a uniform weighted block
+Schur norm for every fixed block exponent.
+
+\subsection{The base vector before the constraint insertion}
+\label{vst-base-section}
+
+At zero,
+\[
+                 B_0=q_M+D_bD_b^T
+\]
+is positive and has a uniform exponentially weighted
+fine-lattice Schur norm. A spectral gap is unnecessary
+on \(0\le s\le1\): the Schur-algebra power series bounds
+its semigroup uniformly with exponential matrix decay.
+
+The actual scalar-action bounds through order four
+give uniform exponentially rooted kernels for the
+first two background derivatives of \(B\).
+The nearest-neighbor based-gradient term has the same
+property uniformly in the center spacing.
+For each fine diagonal bond rooted at \(x\), use a
+Cartan gauge to subtract the constant potential
+\(t x_\nu H/K^2\). The diagonal color heat trace is
+unchanged. Its source field is now
+\(t(z_\nu-x_\nu)H/K^2\). Each linear magnetic vertex
+has a factor \(K^{-2}\), and each quadratic vertex
+has \(K^{-4}\); uniform exponential kernels absorb
+the remaining coordinate polynomials.
+
+The one quadratic insertion and the ordered two linear
+insertions in the heat expansion therefore give
+\begin{equation}
+ \left|[t^2]\operatorname{tr}_{\mathfrak g}
+                         (e^{-sB(t)})_{xx}\right|
+        \le CK^{-4}(s+s^2)e^{Cs},\qquad 0<s\le1.
+ \label{vst-base-diagonal}
+\end{equation}
+The local gauge identities extend to these polynomial
+jets by their exponentially summable kernels.
+There are \(dK^4\) bond roots per block, so
+\begin{equation}
+ \left|[t^2]\operatorname{Tr}_{0,E}e^{-sB(t)}\right|
+                  \le C(s+s^2)e^{Cs}.
+ \label{vst-base-trace}
+\end{equation}
+Its \(ds/s\) integral is uniformly finite.
+
+\subsection{Uniform block estimates without tracing the large fiber}
+\label{vst-block-section}
+
+The coefficients \(B^{[j]}\), \(j\le2\), also have
+uniform exponentially decaying \(K\)-block operator
+kernels, with fixed polynomial growth in the block
+indices for \(j>0\). Fine positions in block \(X\)
+have magnitude at most \(CK(1+|X|)\), while the
+magnetic source coefficients contain \(K^{-2j}\).
+Fine Schur bounds control the operator norm of each
+block without its dimension as a prefactor.
+For distant blocks the fine distance is at least
+\(K(d_{\rm block}(X,Y)-d)\); a smaller fixed block
+exponent is therefore summable uniformly in \(K\).
+The finitely many nearby block offsets are controlled
+by the full fine operator norm.
+
+Set \(A(t)=aC_K(t)^TC_K(t)\). The preceding finite-range
+block bounds apply to \(A^{[j]}\) and to
+\(V^{[j]}=B^{[j]}+A^{[j]}\).
+For \(E=B,V\), the block power series at zero and the
+one/two insertion formulas imply, for \(j\le2\),
+\begin{equation}
+ \big\|([t^j]e^{-sE(t)})_{XY}\big\|
+ \le C(1+|X|+|Y|)^p e^{-\kappa|X-Y|},
+                         \qquad 0\le s\le1.
+ \label{vst-semigroup-block}
+\end{equation}
+All constants are uniform in \(M,K\).
+For positive \(j\) the usual factors \(s\) and
+\(s+s^2\) can also be retained. Products of polynomial
+kernels are controlled by spending a smaller block
+exponent. No trace over a \(K^4\)-dimensional fiber
+has yet been taken.
+
+\subsection{The constraint correction has fixed coarse trace rank}
+\label{vst-rank-section}
+
+Let \(P_0\) project onto current bonds rooted in block zero.
+The exact Duhamel difference is
+\begin{equation}
+ e^{-sV(t)}-e^{-sB(t)}
+   =-a\int_0^s e^{-(s-u)V(t)}
+              C_K(t)^TC_K(t)e^{-uB(t)}\,du.
+ \label{vst-difference}
+\end{equation}
+At each coefficient through degree two, cyclicity gives
+\begin{equation}
+ \operatorname{Tr}_{\rm fine}
+           (P_0E_VC^TCE_B)
+       =\operatorname{Tr}_{\rm coarse}
+           (CE_BP_0E_VC^T).
+ \label{vst-local-cyclicity}
+\end{equation}
+The projector \(P_0\) remains in this identity. The
+right side sums all coarse diagonal blocks; it is
+not identified with an arbitrary block-zero coarse
+trace density.
+
+For each coarse root \(Y\), its diagonal block on the
+right is a product through the fine block-zero Hilbert
+space. The outer fiber has dimension \(r_c\), independent
+of \(K\). Equations \eqref{vst-row-jets} and
+\eqref{vst-semigroup-block} bound the coefficients through
+degree two of the two maps by
+\[
+                     C(1+|Y|)^p e^{-\kappa'|Y|}.
+\]
+The absolute trace of their product is at most \(r_c\)
+times the product of these norms. Summing \(Y\) is
+uniformly finite. Expanding the quadratic coefficient
+in \eqref{vst-local-cyclicity}, and then integrating
+the Duhamel time, proves
+\begin{equation}
+ \left|[t^2]\operatorname{Tr}_{0,E}
+          (e^{-sV(t)}-e^{-sB(t)})\right|
+                    \le Cs,\qquad 0<s\le1.
+ \label{vst-rank-bound}
+\end{equation}
+One can first use finite boxes and compact sources.
+The displayed rooted sums are absolute and justify
+the limit. For fixed \(K\), the finite \(P_0\) also
+makes ordinary trace cyclicity legitimate; the
+estimate itself uses the small outer coarse fiber
+to avoid a \(K^4\) factor. Complex coefficients use
+the holomorphic bilinear transpose, which agrees
+with the adjoint at the real flat point.
+
+Combining \eqref{vst-rank-bound} with
+\eqref{vst-base-trace} and integrating \(ds/s\)
+proves Theorem~\ref{vst-theorem}.
+
+\subsection{What this estimate does and does not settle}
+\label{vst-scope}
+
+The argument uses the actual composite fixed-\(\ell\)
+hierarchy. A direct-\(K\) contour average can have
+different raw row bounds and was not substituted.
+The full ordinary map needs only the proved
+\(O(1)\) counting bound; sampled-center gauge
+directions forbid assuming \(O(K^{-1})\) for it.
+
+The final affine statement is in the infinite
+structural system. The uniform finite-regulator
+inputs and local limits do not turn it into a
+continuous magnetic-flux formula on an arbitrary
+torus. The semigroup estimates here use \(e^{Cs}\)
+on bounded time, not a uniform large-time gap.
+They prove neither the continuum coefficient on
+intermediate times nor the cancellation of the
+soft based-ghost contribution at large times.
+A combined signed-integral comparison remains
+an independent problem.

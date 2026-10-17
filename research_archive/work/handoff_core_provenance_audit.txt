@@ -1,0 +1,54 @@
+HANDOFF CORE AND START-DOCUMENT PROVENANCE/SCOPE AUDIT
+17 October 2026. Independent provenance-agent read.
+
+Files read in full:
+  work/handoff_dossier_core.tex
+  work/handoff_start_here_body.tex
+Cross-checks:
+  pinned repository e392ef45013a581664bab76b90867170b30fe10e;
+  work/handoff_repository_baseline.tex;
+  outputs/ym4-positive-drift/main.tex abstract/scope;
+  outputs/ym4-full-measure-bridge/main.tex abstract/scope;
+  outputs/ym4-normalized-box-replacement/main.tex abstract/inputs;
+  the previously audited fixed-box, geometric and full-measure bridge.
+
+RESULT
+The current hierarchy of conclusions and remaining obligations passes
+this substantive scope/provenance review. No new mathematical
+certification of the full upstream notebook chain is implied.
+
+The documents correctly distinguish:
+1. a claimed repository R4 existence argument from the qualified
+   zeroth-manuscript scalar/SU2 theorem and its proof-input ledger;
+2. local homogeneous analytic integration from the complete Wilson
+   density;
+3. positive drift in all required joint structural limits from the
+   separate actual-finite transfer and finite shooting theorem;
+4. exact all-history positive identities from a uniform multiscale
+   bound on those histories;
+5. normalized bare fixed-box replacement from nonlinear averaged
+   constraint fibers, growing components and post-RG densities;
+6. a physical quantum mass gap from an auxiliary elliptic gap.
+
+Notebook39's final scope is accurately reported. The common exterior
+is retained; bad boundaries are unchanged; good conditionals are
+normalized by the actual success probabilities; exterior plus selected
+interiors has the stated exact total-variation identity. Distant box
+count does not enter that local bound. The operation neither deletes
+bad-boundary configurations nor silently identifies a new RG coupling.
+
+TWO WORDING REFINEMENTS SENT TO ROOT
+A. The dossier's opening calls the repository "by Ethan W. Sussman and
+   collaborators". The pinned hosting account is ethanwsussman and
+   the README note is signed LA; the raw master author field is blank.
+   A formal author list is not established by those files alone.
+   Prefer identifying the hosting path and signed note.
+B. In the drift section, the numbers 2 alpha_g and 20 alpha_g are
+   the SIGNED CONTRIBUTIONS to the actual determinant correction.
+   Saying merely that the scalar/vector "factors" have those
+   coefficients can confuse logdet Q with its -1/2 multiplier.
+   Prefer stating that they contribute those coefficients to D.
+
+These are precision edits, not objections to the displayed total
+22 alpha_g log K + O(1) or to the finite replacement scope.
+No output, assembled notebook or handoff core was edited here.

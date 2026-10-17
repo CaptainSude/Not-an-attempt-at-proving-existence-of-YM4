@@ -1,0 +1,11 @@
+# Local build products; delivered PDFs and sources remain tracked.
+reproduction/_build/
+__pycache__/
+*.pyc
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+.DS_Store
+Thumbs.db

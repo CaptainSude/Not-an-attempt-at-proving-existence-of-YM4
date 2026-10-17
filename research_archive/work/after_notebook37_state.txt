@@ -1,0 +1,97 @@
+Final-push checkpoint, 17 October 2026
+
+USER OBJECTIVE
+Complete rigorous nontrivial four-dimensional Yang--Mills existence,
+or get as close as possible before handing the research to mathematicians.
+Goal remains ACTIVE and unbudgeted. Full existence is NOT achieved.
+Do not mark complete merely because this local stage is now assembled.
+
+NEW OUTPUTS
+outputs/ym4-soft-determinant-notebook.tex (Notebook36):
+64,856 bytes,114 labels,65 refs; static checks and desktop compile SUCCESS.
+
+outputs/ym4-positive-drift/main.tex (Notebook37, dedicated LaTeX project):
+assembled by work/build_positive_drift.ps1;63,617 bytes,98 labels,62 refs;
+no missing/duplicate refs or controls; desktop compile SUCCESS.
+Master outputs/ym4-construction-notebook.tex updated through37,
+96,103 bytes; final desktop compilation SUCCESS.
+Requested Notebook37 in the desktop source editor with live PDF preview;
+the UI tool returned queued. The final response includes its file link.
+
+NEW37 CONTENT
+spb: for each scalar/vector soft penalty,
+ |[t^2]Tr0(e^-sW-e^-sB)|<=C s/K^2, 0<s<=K^2.
+Use I+K^2B to avoid pretending the base is gapped. First-order
+physical vertices give contour powers lambda^-3/2 (one insertion)
+and lambda^-2 (two); full source roots reconstruct affine jets.
+Fixed-coarse-fiber Duhamel trace retains the fine root projector.
+
+sgc: actual mean-zero scalar beta(logdet Ghat)=2alpha_g logK+O1.
+This is not the older globally pinned ghost4alpha_g logarithm.
+Uses exact Bessel h_g, new penalty removal,36scalar IR/coarse bounds.
+
+abw: actual S_M''+DD^T versus Wilson base heat error O(1/s),
+uniform oldM, for s>=1. Total nonlinear Ward residual vertices
+have degrees(4,3,2). Full left-relative Hessian chain rule retains
+R2[a,T1(a)[B,C]]. Exact TOTAL heat two-point diagrams, two external
+derivatives, matrix Duhamel and Gaussian integration give the bound.
+No partial-trace cyclicity or spectral-projection derivatives.
+
+wcr: fixed Wilson versus continuum error O(s^-1/2).
+Exact jointly analytic physical plaquette density fixes continuum
+vertices. Weak remainders firstvertex O(p2),second O(p) suffice.
+The full flat Feynman symbol has O(p4) remainder even though bare
+source-site cross entries can have cubic phase terms.
+Lattice reanchoring only; continuum comparison uses explicit transverse
+diagrams to avoid unjustified absolute moments of contact distributions.
+Independent magnetic and momentum computations give
+ h_scalar=-alpha_g/2, h_vector=10alpha_g,
+ alpha_g=C_H/(48pi^2), sum signed=11alpha_g.
+
+apb: actual soft plateau on1<=s<=K^2:
+ |h_soft-11alpha_g|<=C(s^-1/2+s/K^2).
+Notebook36 bounded ends/coarse factors therefore yield
+ beta(D_actual)=22alpha_g logK+O1,
+uniformly oldM,K,EVERY applicable joint infinite structural system.
+Separate actual mean-zero factors have coefficients2alpha_g and20alpha_g.
+
+lpd: positive comparison supplies UC in every varying-depth system.
+Fix R,J,b first. Choose q multipleqa with Ccmp<=11alpha_g qlogR;
+delta=11alpha_g qlogR. Qualitative finite moment transfer gives
+leading finite q-block>=delta/2. Tighten periods/coupling until
+actual error perstep<=delta/(4q), hence actual block>=delta/4.
+Continuous clipped recursion tunes arbitrary mq-step finite
+homogeneous LOCAL histories toGamma*>=Gamma_w+qDabs; future
+positive blocks prove clipping was absent on selected history.
+ (Gamma*+mqDabs)^-1/2<=g_bare<=(Gamma*+m delta/4)^-1/2.
+No uniqueness or cross-horizon consistency is claimed.
+
+AUDITS
+Root full reads: spb research+fragment; abw research+fragment;
+wcr research+fragment; lpd full fragment versus32; apb arithmetic;
+scalar exact sign/factors. Separate audit files saved.
+Theorem independently passed abw,wcr,sgc,apb,lpd; final full abw/wcr
+fragment fidelity reads PASS, including the continuum contact repair.
+Provenance independently passed scalar and wrote lpd/dependency audit.
+Internal reviews do NOT externally certify the earlier 36 notebooks.
+
+NEXT MATHEMATICAL WORK / NO FULL EXISTENCE CLAIM
+H0 leading comparison and H1 finite LOCAL shooting now closed in the
+working chain under explicitly stated upstream classical/local inputs.
+H2 exact full Wilson measure representation across ALL mixed/large-field
+histories remains open. Freeze one scheme and match local windows,
+gauge insertion,coupling extraction,vacuum convention and complements.
+H3 external observable sources,counterterms,denominator/cell domains,
+all-order bounds still open. Background holomorphy does not supply them.
+H4 common continuum mixed-observable hierarchy still requires thosebounds.
+H5 full Euclidean covariance,RP from same positive sequence,quantitative
+reconstruction,vacuum sector remain open where stated.
+H6 interacting lower witness and adequate gauge-invariant curvature
+algebra/short-distance identification remain open.
+H7 physical mass gap separate; Gaussian gaps are not massgap.
+Full map: work/final_push_existence_dependency_audit.txt.
+
+No source-repository edits, external messages or publication performed.
+Source checkout remains pinned at e392ef45013a581664bab76b90867170b30fe10e.
+The main source construction principally concernsSU(2); general color
+formulas do not establish all upstream inputs for every simple group.

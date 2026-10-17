@@ -1,0 +1,382 @@
+% No preamble. Notebook 16 candidate module. Unique labels: wr-.
+% Requires amsmath, amssymb, amsthm and a one-argument \norm macro.
+
+\section{Exponential locality of nonlinear minimizer responses}
+\label{wr-section}
+
+Fix $0<\alpha<1$, an odd blocking ratio $L\ge3$, refinement
+$M=L^j$, fine spacing $\eta=M^{-1}$, and final spacing one.
+The primary statements are on finite compatible periodic
+regulators, with constants independent of refinement and volume.
+The coarse background may be nonconstant, but it lies in a fixed
+small complex bounded-field ball. We study the corrected-constraint
+minimizer $A(B)$ in its fixed flat gauge. A gauge-equivalent
+representative chosen by a different construction does not acquire
+these locality estimates merely from gauge equivalence.
+
+\subsection{Weighted spaces and the fixed flat inputs}
+\label{wr-spaces}
+
+Write
+\[
+ \mathcal F(A)=QA+\mathcal R(A),\qquad
+ D_A=D\mathcal R(A),\qquad
+ \mathcal X=\ker Q\cap\ker(RD^T).
+\]
+Here $R$ is the fixed scalar gauge projection and
+$\mathcal R$ is the nonlinear averaging remainder. All transposes
+use physical measure. Let $\mathcal N_\alpha$ be the complete
+potential norm consisting of the supremum, the suprema of all
+physical first differences, and their local $\alpha$-H\"older
+seminorms. Fix unit-cell collars of bounded physical size.
+
+Choose a sufficiently small fixed $\kappa>0$ allowed by the flat
+kernel and constrained Schauder estimates. An admissible positive
+cell weight satisfies
+\begin{equation}\label{wr-weight}
+ \frac{w(n)}{w(m)}\le e^{\kappa d(n,m)}.
+\end{equation}
+Weighted norms take the supremum of $w(n)$ times the appropriate
+local norm on the collar of cell $n$. Fine derivatives are taken
+on complete fields before these norms are evaluated. No sharp cell
+cutoff or derivative of the weight is inserted. Periodic distance
+is used on a torus, and fixed collar enlargements only change
+constants.
+
+On the infinite lattice a decaying admissible weight can allow
+unbounded weighted directions. Literal Fr\'echet responses of the
+original bounded-field map are first taken on globally bounded
+directions with finite weighted norm. The linearized formulas
+below then define bounded extensions to the full weighted spaces.
+Higher-response symmetry is initially understood on bounded
+directions. The localized corollaries use growing weights
+$w_S\ge1$ and require no such extension.
+
+The proved flat operator estimates, uniform for all these weights,
+are
+\begin{align}
+ H &: \ell^\infty_{c,w}\longrightarrow\mathcal N_{\alpha,w},&
+ \mathcal C &: \ell^\infty_{f,w}\longrightarrow\mathcal N_{\alpha,w},
+                                                       \label{wr-flat-a}\\
+ \mathcal C S_{\rm jet}^T &: C^\alpha_{f,w}\longrightarrow\mathcal N_{\alpha,w},
+ &q &: \ell^\infty_{c,w}\longrightarrow\ell^\infty_{c,w},
+                                                       \label{wr-flat-b}\\
+ H^T &: \ell^\infty_{f,w}\longrightarrow\ell^\infty_{c,w},&
+ (S_{\rm jet}H)^T &: \ell^\infty_{f,w}\longrightarrow\ell^\infty_{c,w}.
+                                                       \label{wr-flat-c}
+\end{align}
+The symbol $c$ denotes coarse fields and $f$ fine fields.
+The exponent in \eqref{wr-flat-b} is unchanged; the separately
+proved constrained biharmonic cancellation is needed for this.
+The transpose bounds in \eqref{wr-flat-c} use the physical volume
+one of a fine cell and summable derivative-extension kernels.
+
+Write the nonlinear Wilson force as
+$N(A)=S_{\rm jet}^Tf_\eta(S_{\rm jet}A)$. The local analytic
+coefficient and the complete-field H\"older product estimate give
+\begin{equation}\label{wr-force}
+ \norm{D[f_\eta(S_{\rm jet}A)]V}_{C^\alpha_w}
+ \le C\norm{A}_{\mathcal N_\alpha}
+                   \norm{V}_{\mathcal N_{\alpha,w}}.
+\end{equation}
+Thus $\mathcal C N'(A)$ and $H^TN'(A)$ have the corresponding
+weighted norms bounded by $C_\kappa\norm{A}_{\mathcal N_\alpha}$.
+The second operator is evaluated using $(S_{\rm jet}H)^T$;
+no rough nonlinear coefficient is differentiated.
+
+\subsection{A local estimate for the differentiated transpose}
+\label{wr-local-transpose}
+
+The full corrected average has a physical dependency radius
+$R_*$ independent of $j$. One may use the deposited two-block
+property, or sum the one-step radii using
+$\sum_{t<j}h_t\le(L-1)^{-1}$. Increase $R_*$ by a fixed cell
+collar margin. The established absolute physical row estimates are
+\begin{equation}\label{wr-row-estimates}
+ \norm{D_A}_{\infty\to\infty}\le c\norm{A}_\infty,
+ \qquad
+ \norm{D_A^T}_{\infty\to\infty}\le c_*\norm{A}_\infty.
+\end{equation}
+These inequalities hold in the absolute row norm as well.
+For the second inequality the one-step physical column factor
+is $L^d$, giving
+$N_LK_0L^{d-1}h\norm{A}_\infty$ before summing the spacings.
+It is not a comparison with the number of fine variables.
+
+Finite dependency immediately yields
+\begin{equation}\label{wr-weighted-rows}
+ \begin{split}
+ \norm{D_AV}_{\infty,w}
+ &\le ce^{\kappa R_*}\norm{A}_\infty\norm{V}_{\infty,w},\\
+ \norm{D_A^Tm}_{\infty,w}
+ &\le c_*e^{\kappa R_*}\norm{A}_\infty\norm{m}_{\infty,w}.
+ \end{split}
+\end{equation}
+The key additional estimate places the weight on a background
+variation while leaving the coarse multiplier unweighted:
+\begin{equation}\label{wr-mixed-transpose}
+ \boxed{\quad
+ \norm{(D_A^T)'[V]m}_{\infty,w}
+ \le C_*e^{2\kappa R_*}\norm{V}_{\infty,w}\norm{m}_\infty.
+ \quad}
+\end{equation}
+The constant is uniform on a fixed smaller complex background
+ball.
+
+\begin{proof}[Proof of \eqref{wr-mixed-transpose}]
+Fix an output fine bond $b$. Its row in $D_A^T$ reads only coarse
+bonds within $R_*$ of $b$. Each associated coefficient depends on
+$A$ only in the dependency set of that coarse bond, hence within
+$2R_*$ of $b$. The map from the bounded background ball into this
+physical absolute row space is analytic and uniformly bounded
+by \eqref{wr-row-estimates}. Cauchy on a fixed larger ball bounds
+its derivative by $C_*\norm{V}_\infty$.
+
+For this one row restrict $V$ to the union of those dependency
+sets. The restriction does not change the row derivative, and its
+supremum is at most
+$e^{2\kappa R_*}w(b)^{-1}\norm{V}_{\infty,w}$, with the fixed
+collar convention absorbed in $R_*$. This restriction is used
+only in a bounded-value coefficient map, where no field derivative
+is taken. Sum the resulting physical row against bounded $m$,
+multiply by $w(b)$, and take the supremum over $b$.
+The same argument works with lifted multiplicities on small tori.
+\end{proof}
+
+The doubled dependency radius in this proof is essential.
+Cauchy is applied to the uniformly bounded physical row, not
+separately to every fine coefficient followed by an uncontrolled
+count. Higher coefficient derivatives admit the analogous estimate
+with one weighted direction and the remaining directions bounded,
+with factorial constants from the analytic margin. The earlier
+two-Hilbert-direction Hessian incidence estimate is consistent
+with this bound but does not replace its proof.
+
+\subsection{Weighted variation of the chart and multiplier}
+\label{wr-variation}
+
+The exact chart and multiplier are
+\begin{equation}\label{wr-chart-multiplier}
+ \begin{split}
+ A&=\xi+H[B-\mathcal R(A)],\\
+ m&=(I+H^TD_A^T)^{-1}
+             \{q[B-\mathcal R(A)]+H^TN(A)\}.
+ \end{split}
+\end{equation}
+Let $r$ bound $\norm{A}_{\mathcal N_\alpha}$ and $b$ bound
+$\norm{B}_\infty$. The established unweighted estimate is
+\begin{equation}\label{wr-background-multiplier}
+ \norm{m}_\infty\le C(b+r^2).
+\end{equation}
+Neither $A$ nor $m$ is required to have a finite growing-weight
+norm. Only their variations will carry a weight.
+
+Shrink the common background radius once more, depending on
+$\kappa$, so that uniformly in admissible $w$,
+\begin{equation}\label{wr-inverse-smallness}
+ \norm{HD_A}_{\mathcal N_{\alpha,w}\to\mathcal N_{\alpha,w}}<\frac12,
+ \qquad
+ \norm{H^TD_A^T}_{\infty,w\to\infty,w}<\frac12.
+\end{equation}
+These inequalities follow from \eqref{wr-flat-a},
+\eqref{wr-flat-c}, and \eqref{wr-weighted-rows}. Their radii
+are independent of source location, refinement, and volume.
+
+For $z=\delta\xi$, $b_1=\delta B$, and $v=\delta A$, exact
+differentiation gives
+\begin{equation}\label{wr-chart-variation}
+ v=P_A(z+Hb_1),\qquad P_A=(I+HD_A)^{-1},\qquad
+ \norm{v}_{\mathcal N_{\alpha,w}}
+ \le2\bigl(\norm{z}_{\mathcal N_{\alpha,w}}
+                       +h_\kappa\norm{b_1}_{\infty,w}\bigr).
+\end{equation}
+Differentiate the defining equation for $m$ in
+\eqref{wr-chart-multiplier}. This preserves the noncommuting
+order and gives
+\begin{equation}\label{wr-multiplier-variation}
+ \boxed{\quad
+ \delta m=(I+H^TD_A^T)^{-1}
+ \{q(b_1-D_Av)+H^TN'(A)v-H^T(D_A^T)'[v]m\}.
+ \quad}
+\end{equation}
+Using \eqref{wr-force}, \eqref{wr-weighted-rows},
+\eqref{wr-mixed-transpose}, and
+\eqref{wr-background-multiplier},
+\begin{equation}\label{wr-multiplier-variation-bound}
+ \norm{\delta m}_{\infty,w}
+ \le C_\kappa\bigl(\norm{b_1}_{\infty,w}
+        +(r+b+r^2)\norm{v}_{\mathcal N_{\alpha,w}}\bigr).
+\end{equation}
+In particular the last term of
+\eqref{wr-multiplier-variation} needs the mixed transpose
+estimate; no weighted norm of the global background multiplier
+has been assumed.
+
+\subsection{The weighted response inverse}
+\label{wr-response-inverse}
+
+The selected minimizer solves
+\begin{equation}\label{wr-fixed-point}
+ \xi=\Phi_B(\xi)=-\mathcal C N(A)+\mathcal C D_A^Tm.
+\end{equation}
+Its variation is exactly
+\begin{equation}\label{wr-phi-variation}
+ \delta\Phi=-\mathcal C N'(A)v
+       +\mathcal C\{(D_A^T)'[v]m+D_A^T\delta m\}.
+\end{equation}
+The preceding estimates imply, for $r<1$,
+\begin{equation}\label{wr-phi-bound}
+ \norm{\delta\Phi}_{\mathcal N_{\alpha,w}}
+ \le C_\kappa\bigl((r+b)\norm{v}_{\mathcal N_{\alpha,w}}
+                            +r\norm{b_1}_{\infty,w}\bigr).
+\end{equation}
+For $b_1=0$, combine this with
+\eqref{wr-chart-variation}. Choose the chart and coarse
+background radii so that $2C_\kappa(r+b)<1/2$. Then
+\begin{equation}\label{wr-weighted-contraction}
+ \norm{D_\xi\Phi_B}_{\mathcal N_{\alpha,w}\cap\mathcal X
+                         \to\mathcal N_{\alpha,w}\cap\mathcal X}
+ <\frac12.
+\end{equation}
+Every term lies in $\mathcal X$ because it contains $\mathcal C$.
+The constrained space is closed on each finite regulator. The
+estimate does not use a bounded-field norm for the separate gauge
+projection.
+
+The derivative of the minimizer is therefore obtained by the
+weighted Neumann inverse
+\begin{equation}\label{wr-derivative-formula}
+ z=(I-D_\xi\Phi_B)^{-1}D_B\Phi_B[b_1],\qquad
+ D_BA(B)[b_1]=P_A(z+Hb_1).
+\end{equation}
+At the solution $\norm{A(B)}_{\mathcal N_\alpha}
+\le C\norm{B}_\infty$. Equations \eqref{wr-phi-bound} and
+\eqref{wr-derivative-formula} show that $z$ is
+$O(\norm{B}_\infty\norm{b_1}_{\infty,w})$.
+Also $P_A-I=-P_AHD_A$ is $O(\norm{B}_\infty)$ in the
+weighted norm. Consequently
+\begin{equation}\label{wr-main-response}
+ \boxed{\begin{aligned}
+ \norm{D_BA(B)[b_1]}_{\mathcal N_{\alpha,w}}
+ &\le C_\kappa\norm{b_1}_{\infty,w},\\
+ \norm{(D_BA(B)-H)[b_1]}_{\mathcal N_{\alpha,w}}
+ &\le C_\kappa\norm{B}_\infty\norm{b_1}_{\infty,w}.
+ \end{aligned}}
+\end{equation}
+This is a response estimate at arbitrary small nonconstant
+backgrounds derived using fixed flat operators and nonlinear
+coefficients. No nonflat source Schauder theorem is assumed.
+
+\subsection{Coarse multiplier responses}
+\label{wr-multiplier-responses}
+
+Now set $m(B)=m(A(B),B)$ and
+$v=D_BA(B)[b_1]$ in \eqref{wr-multiplier-variation}. It immediately
+gives
+\begin{equation}\label{wr-dm-bound}
+ \norm{D_Bm(B)[b_1]}_{\infty,w}
+ \le C_\kappa\norm{b_1}_{\infty,w}.
+\end{equation}
+More explicitly, putting $M_A=I+H^TD_A^T$ and subtracting
+$qb_1$ gives the exact expression
+\begin{equation}\label{wr-dm-remainder}
+ \begin{split}
+ (D_Bm(B)-q)b_1={}&(M_A^{-1}-I)qb_1\\
+ &+M_A^{-1}\{-qD_Av+H^TN'(A)v-H^T(D_A^T)'[v]m\}.
+ \end{split}
+\end{equation}
+At the solution the inverse difference, $D_A$, and $N'(A)$
+are $O(\norm{B}_\infty)$ in their respective weighted spaces.
+Although $(D_A^T)'$ need not vanish at zero, its multiplier
+has norm $\norm{m}_\infty=O(\norm{B}_\infty)$, so
+\eqref{wr-mixed-transpose} controls that term too. Thus
+\begin{equation}\label{wr-dm-near-q}
+ \boxed{\quad
+ \norm{(D_Bm(B)-q)b_1}_{\infty,w}
+ \le C_\kappa\norm{B}_\infty\norm{b_1}_{\infty,w}.
+ \quad}
+\end{equation}
+The multiplier is holomorphic as a global bounded-field map,
+and its derivative is holomorphic in these weighted operator
+spaces by the displayed formulas and the uniformly convergent
+weighted Neumann series.
+
+\subsection{Localized changes and all-order bounds with one weight}
+\label{wr-localization}
+
+If $b_1$ is supported in coarse cells $S$, choose
+$w_S(n)=e^{\kappa d(n,S)}$. This is admissible. Equation
+\eqref{wr-main-response} gives
+\begin{equation}\label{wr-local-response}
+ \norm{D_BA(B)[b_1]}_{\mathcal N_\alpha(C_n^+)}
+ \le C_\kappa e^{-\kappa d(n,S)}\norm{b_1}_\infty.
+\end{equation}
+Equations \eqref{wr-dm-bound} and \eqref{wr-dm-near-q}
+give the analogous coarse multiplier estimates. For two small
+backgrounds whose connecting coarse line segment stays inside
+the common ball, integrate these derivative bounds to obtain
+\begin{equation}\label{wr-finite-difference}
+ \norm{A(B')-A(B)}_{\mathcal N_{\alpha,w}}
+ +\norm{m(B')-m(B)}_{\infty,w}
+ \le C_\kappa\norm{B'-B}_{\infty,w}.
+\end{equation}
+The individual backgrounds may be globally nondecaying. On the
+full lattice truncated admissible weights and passage to their
+limit justify the same statement without assuming the difference
+in advance belongs to the growing-weight space.
+
+On a smaller common complex background ball,
+$B\mapsto D_BA(B)$ and $B\mapsto D_Bm(B)$ are holomorphic
+into the weighted operator spaces. On finite regulators this is
+finite-dimensional holomorphy with the uniform bounds just
+proved. Equivalently it follows from the local coefficient
+analyticity, the H\"older product estimates, and the weighted
+inverse formulas, which also apply to complete infinite fields.
+Background directions in this assertion are unweighted bounded
+coarse fields. If the singled-out weighted direction is unbounded
+on the infinite lattice, the operator-valued formulas specify the
+linearized extension just described, rather than a Fr\'echet
+derivative in an inadmissible background direction.
+
+Let $\delta>0$ be the margin to a larger complex background ball
+where the uniform weighted derivative bounds hold. Operator-valued
+multivariable Cauchy gives, for every $n\ge1$,
+\begin{equation}\label{wr-all-orders}
+ \boxed{\begin{split}
+ &\norm{D_B^n A(B)[b_1,\ldots,b_n]}_{\mathcal N_{\alpha,w}}
+       +\norm{D_B^n m(B)[b_1,\ldots,b_n]}_{\infty,w}\\
+ &\hspace{5mm}\le C_\kappa(n-1)!
+       \left(\frac e\delta\right)^{n-1}
+        \norm{b_1}_{\infty,w}\prod_{i=2}^n\norm{b_i}_\infty.
+ \end{split}}
+\end{equation}
+For $n=1$ this is the proved first-response estimate. For $n>1$
+use polyradii approaching $\delta/(n-1)$ and
+$(n-1)^{n-1}\le e^{n-1}(n-1)!$. Symmetry permits any single
+direction to carry the weight.
+
+If all directions are supported in sets $S_i$, applying
+\eqref{wr-all-orders} separately with each direction weighted
+gives decay $\exp[-\kappa\max_i d(n,S_i)]$ at an output cell
+$n$. This is a precise one-weight conclusion. It is not a
+fixed-exponent tree-length or ordered-path estimate among all
+insertion sites. Such stronger multivertex bounds require an
+additional branched expansion or multiweight argument.
+
+\subsection{Scope of the response theorem}
+\label{wr-scope}
+
+The exponent $\kappa$ is fixed once, and the allowed background
+ball is reduced by a fixed amount to satisfy the weighted
+inverse inequalities. Its radius does not depend on refinement,
+volume, the insertion location, or the particular admissible
+weight. The theorem does not assert that the largest unweighted
+existence radius already has this property.
+
+These results concern the selected corrected-constraint minimizer
+in the fixed flat gauge and its coarse multiplier. They do not
+identify its derivatives with a moving-gauge source minimizer,
+establish mixed-history estimates, or prove an interacting
+continuum limit. All action-minimum statements remain finite
+regulator statements; bounded infinite fields need not have finite
+total action.

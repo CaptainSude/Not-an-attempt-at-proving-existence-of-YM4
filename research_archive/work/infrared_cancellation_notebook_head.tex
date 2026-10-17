@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 35: infrared cancellation and physical heat bounds}
+\author{Research working document}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We derive an exact local, gauge-covariant representation
+of the actual leading determinant using zero covariant
+block means in the scalar gauge. Both its scalar and
+vector factors have flat spectral gaps of order
+\(K^{-2}\), with uniform heat and inverse-power bounds.
+The finite amplitude identity continues jointly through
+the flat stabilizers and passes to local infinite
+systems at each fixed \(K\). Its invariant diagonal
+densities give the actual Maxwell moment directly.
+This closes the specific infrared passage left open
+by the earlier massless physical quotient.
+
+The exact finite physical quotient of Notebook 34 requires
+joint control of its scalar and physical determinants.
+We give an explicit reason: a globally based massless
+scalar determinant on a periodic constant Cartan connection
+has a nonzero quadratic response per volume, whereas the
+ordered thermodynamic and zero-mass limit gives zero.
+The fine/coarse scalar ratio has an extra term proportional
+to \(K^2-1\). The actual local gauge Ward identity and
+the finite quotient formula prove that the physical
+determinant cancels this term exactly in the thermodynamic
+limit. No flux seam or nonperiodic magnetic family is used.
+
+We also extend the flat physical spectral estimates to
+uniform heat-trace and inverse-power bounds. The
+rescaled inverse square has at most logarithmic trace
+growth; powers above two have uniformly bounded trace
+per final block. A local tent lift proves full
+Laplacian domination for the new vector gauge, so
+both new factors have the corresponding estimates.
+Their endpoint-uniform curvature comparison remains
+the next step toward a positive actual drift.
+\end{abstract}
+
+\section*{Scope and conventions}
+
+All actual operators are those of the homogeneous local
+construction in Notebooks 32--34. The primitive blocking
+ratio is fixed, \(K=\ell^k\), and \(M\) denotes the
+preceding homogeneous depth. Traces count real adjoint
+coordinates. For a normalized Cartan element \(H\),
+\(\tau(H^2)=1\), set
+\[
+ C_H=\sum_{q\in\operatorname{spec}(\operatorname{ad}_H)}q^2,
+ \qquad \alpha_g=\frac{C_H}{48\pi^2}.
+\]
+The complexified charge decomposition counts each real
+adjoint degree of freedom once in this trace convention.
+The notation \([t^2]\) denotes a Taylor coefficient,
+not a second derivative.
+
+The constant flat connection used below tests the
+zero-momentum Ward identity. It is different from the
+constant-curvature probe that extracts the Maxwell
+coefficient. The infrared order of limits is stated
+explicitly for each result.
+

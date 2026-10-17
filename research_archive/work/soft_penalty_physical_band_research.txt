@@ -1,0 +1,137 @@
+SOFT PENALTY REMOVAL THROUGH FINAL PHYSICAL TIME ONE
+17 October 2026. Complete proof for independent audit, theorem_audit. No output edits.
+
+Purpose. Extend the fixed-coarse-fiber Duhamel comparison from fine time 0<s<1 to 0<s<=K^2. The new ingredient is an ordered resolvent estimate for source derivatives of the physical semigroups. It uses the repaired actual relative-Hessian theorem and no continuum replacement. The proof below includes the shifted contour, localized source trees and finite-rank trace argument. Independent audit is still required before promotion.
+
+1. Families and precise conclusion
+
+Work in d=4 in the chosen infinite structural system, current counting coordinates, mu=1/K. Flat spatial bounds pass to explicit periodizations by summing the exponentially decaying lifted kernels; this is not a linear-weight similarity on a finite torus. The actual affine coefficient is taken on the infinite structural system by polynomial jets, not as a literal periodic flux. Put
+
+ B_s(A)=D_A^T D_A,
+ B_v(A)=S_M''(exp(i mu A))+D_A D_A^T,
+ T_s(A)=B_s(A)+mu^2 J_A J_A^T,
+ Vtilde(A)=B_v(A)+Cbar_A^T F_A Cbar_A,
+ F_A=aI-S_MK''(M_K(exp(i mu A))).                       (1.1)
+
+These are exactly the scalar and auxiliary vector families in ssc/svc. Vtilde agrees with the actual vector through two affine jets; it is not an off-shell equality. Define physical operators X_E(A)=K^2 E(A), and physical coarse legs
+
+ scalar: C_A=J_A^T, F_A=I;
+ vector: C_A=K Cbar_A, F_A as above.
+
+Thus X_W=X_B+C_A^T F_A C_A. Every coarse output fiber has a fixed dimension. At zero F0 is positive (a>=R_q+1), both X_B0 are nonnegative, and the soft perturbation is nonnegative bounded. The physical base has no positive infinite-volume gap; none is assumed.
+
+Claim: for E=(T_s,B_s) or (Vtilde,B_v),
+
+ |[t^2] Tr(P0{exp[-u X_W(t)]-exp[-u X_B(t)]})|
+                     <=C u,       0<u<=1,             (1.2)
+
+uniformly in M,K. Here P0 is the appropriate fine scalar/bond projector onto final block zero, and t is the affine Cartan parameter. Equivalently, in fine time,
+
+ |[t^2] Tr(P0{exp[-s W(t)]-exp[-s B(t)]})|
+                     <=C s/K^2,   0<s<=K^2.            (1.3)
+
+Consequently the absolute ds/s integral of the difference on this entire band is <=C. This does not yet compare the translation-invariant actual base S_M''+DD^T with a Wilson/Feynman reference, nor estimate a physical-time tail beyond one.
+
+2. Uniform shifted flat energy and spatial resolvents
+
+Let nabla=K d0 be the componentwise physical gradient on the relevant fine fields, and H=I+nabla^T nabla. For either base, the actual q_M Maxwell lower bound and its uniform analytic double zero give
+
+ c H <= I+X_B0 <= C H.                                 (2.1)
+
+For the soft families the penalty C0^T F0 C0 is bounded uniformly, by ||K Cbar0||<=C, ||J0||=1, and ||F0||<=C. Hence (2.1) also holds with X_W0. This assertion and all spatial arguments below are on the infinite structural kernels or their explicit periodizations. They do not assert equality of arbitrary finite winding kernels to such periodizations.
+
+Fix B0=I+X_E0, E=B or W. For z on rays arg z=+-phi, 0<phi<pi/2, |z|>=r0>0, joined by a small arc to the left of the positive spectrum, the self-adjoint spectral theorem gives
+
+ ||(B0-z)^-1|| <=C(1+|z|)^-1,
+ ||nabla(B0-z)^-1||+||(B0-z)^-1 nabla^T||
+                                      <=C(1+|z|)^-1/2,
+ ||nabla(B0-z)^-1 nabla^T||<=C.                         (2.2)
+
+One may take r0 below half the lower bound in (2.1); the arc stays in the resolvent set. Along the rays Re z>0, so exp(-u z) decays at infinity.
+
+For the flat resolvents, linear physical weights suffice. Conjugate by exp(theta dot x/K), with any sufficiently small real vector theta. The fine q_M symbol estimate from svc and the elementary gradient commutator show that the twisted B0 differs by O(|theta|) as a form relative to H. The coarse penalty has the same property: C0 has fixed physical range and bounded norm; F0 has a uniform coarse analytic symbol. The estimate also holds relative to H+|z|. By (2.1), the spectral resolvent estimate may be written
+
+ ||(B0+|z|)^1/2 R_z (B0+|z|)^1/2||<=C_phi.
+
+Neumann inversion of the weighted resolvent gives the corresponding energy bounds uniformly in theta and z. Differentiating a weight through nabla costs only O(|theta|); its contribution is covered by the scalar resolvent bound. For each pair of final blocks choose the signs of theta to point from one block to the other. Restriction then gives every bound in (2.2) with an additional exp[-m d(i,j)]. A fixed reduction of m absorbs the bounded diameter of the internal fine block.
+
+Only linear weights are used for the nonlocal q_M here; no arbitrary Lipschitz-weight identity is inferred from its symbol. The scalar proof is the nearest-neighbor special case. All bounds are Hilbert operator bounds between whole blocks, not fine-entry trace estimates. For fixed K, the twisted operators are bounded lattice operators; their kernels and semigroups are obtained by finite-support approximation. The constants above are uniform as K varies.
+3. Physical vertices contain at most one differential factor
+
+For smooth complete directions of bounded physical C1 norm, write X_j=[t^j]X_E(tA), j=1,2. The repaired chr theorem, multiplied by K^2, gives
+
+ X_j=nabla^T Zbar_j+Zbar_j^T nabla+Ebar_j,              (3.1)
+
+with uniformly bounded block/source-rooted Zbar_j,Ebar_j. Explicitly Zbar_j=K Z_j and Ebar_j=K^2 E_j, so
+
+ ||Zbar_1||+||Ebar_1||<=C a_*,
+ ||Zbar_2||+||Ebar_2||<=C a_*^2.                        (3.2)
+
+The improved Zbar_2=O(mu) is not needed. The scaled gauge-generator products obey the same form. The physical soft penalty and its first two derivatives are bounded zero-order coarse-factor vertices. Their source estimates follow from corrected Cbar, normalized J, and the actual coarse Hessian as in svc. Thus (3.1)--(3.2) apply to all four families in (1.1).
+
+These statements include mixed second directions by polarization. For directions supported in smooth physical collars x,y, the primitive operator kernels retain an exponential connecting-tree weight including both operator endpoints and all source labels. All estimates are block Hilbert norms; no K^4 sum over sources occurs.
+
+The crucial structural fact is that each summand of (3.1) has at most ONE unbounded physical derivative. Treating it only as an arbitrary form-bounded second-order perturbation would lose the integrable high-resolvent powers used next.
+
+4. Source-localized semigroup coefficients without singular time splitting
+
+When the supplied actual data consist only of two jets, define the auxiliary polynomial family X(t)=X0+tX1+t^2X2; with two directions use its corresponding mixed quadratic polynomial. Equation (3.1) and H-comparison make these uniformly relatively bounded forms, and a sufficiently small parameter disk keeps I+X(t) sectorial with one common resolvent contour. At each fixed K the operators are bounded, so ordinary holomorphic functional calculus applies directly; the uniform form estimates control all constants. Its first two semigroup jets are exactly those of the actual family, since only X0,X1,X2 enter their differentiated resolvents. No full nonlinear physical domain independent of K is assumed.
+
+Write R_z=(B0-z)^-1. Differentiating the resolvent gives
+
+ delta_x R_z=-R_z X_x R_z,
+ delta_x delta_y R_z=
+   R_z X_x R_z X_y R_z+R_z X_y R_z X_x R_z
+                         -R_z X_xy R_z.                (4.1)
+
+Expand each X by (3.1). For one insertion, (2.2) gives O((1+|z|)^-3/2); its zero-order part is O((1+|z|)^-2). For two first-order insertions the worst bound is O((1+|z|)^-2). This includes the apparently dangerous arrangement with both derivatives on the middle resolvent: that middle piece costs O(1), while the two outer resolvents each contribute O((1+|z|)^-1). Other arrangements have two half-power derivative legs and one full resolvent, again total exponent -2. Terms with fewer derivatives improve the power. The single X_xy term has exponent -3/2.
+
+Restricted weighted versions and the rooted vertex bounds give, after a fixed exponent reduction,
+
+ ||(delta_x R_z)_(ij)||
+  <=C (1+|z|)^-3/2 exp[-m tau(i,j,x)],
+ ||(delta_x delta_y R_z)_(ij)||
+  <=C[(1+|z|)^-3/2+(1+|z|)^-2]
+                            exp[-m tau(i,j,x,y)].       (4.2)
+
+No sharp cutoff is commuted through nabla: blocks are inserted between already defined factors such as R_z nabla^T and Z_x. Every intermediate sum is an operator-block sum. A spare spatial exponent pays its polynomial convolution factor. Constants are independent of z,M,K.
+
+Use the Dunford contour for exp(-uB0). The rays have Re z=c_phi|z| and the joining arc has fixed finite length. Since the powers in (4.2) are integrable over |z|>=r0, their contour integrals are bounded uniformly for 0<u<=1. Finally exp(-uX)=exp(u)exp[-u(I+X)]. Thus
+
+ ||(delta_x exp[-uX])_(ij)||<=C exp[-m' tau(i,j,x)],
+ ||(delta_x delta_y exp[-uX])_(ij)||
+                    <=C exp[-m' tau(i,j,x,y)],          (4.3)
+
+uniformly on that time interval. The undifferentiated semigroup has uniform exponentially decaying restricted block bounds as well. Indeed the linear-weight perturbation is small relative to H; retaining the positive gradient part of X0 shows Re<X0,theta f,f> >= -C||f||^2. The twisted real-time semigroup norm is therefore <=exp(Cu). This argument uses only the flat generator, so it requires no unbounded affine background family.
+
+Equation (4.3) avoids decomposing a time simplex into factors with a nonintegrable middle t^-1 singularity. It also retains the full source tree, which an undifferentiated global Cauchy norm by itself would not do.
+
+5. Affine reconstruction and the fixed-coarse-fiber trace
+
+Decompose the affine physical field into a fixed smooth physical partition. Its direction in collar x has physical C1 norm <=C(1+|x|). Summing these directions against (4.3), and its mixed second version, yields for n=0,1,2
+
+ ||([t^n] exp[-uX(t)])_(ij)||
+   <=C(1+|i|+|j|)^p exp[-m'' d(i,j)], 0<u<=1,           (5.1)
+
+The case u=0 uses identity and zero derivatives. The bound has no unbounded global-field evaluation; it is an absolutely convergent formal polynomial-jet reconstruction.
+
+The physical coarse C and F in Section1 have exactly the same polynomial block estimates, with C of order one and fixed physical range. Retain P0 in the exact physical-time Duhamel identity:
+
+ Tr_f[P0(e^-uXW-e^-uXB)]
+  =-integral_0^u Tr_c[F C e^-vXB P0 e^-(u-v)XW C^T] dv. (5.2)
+
+Its second coefficient is a finite ordered sum. Equations (5.1) and the C/F bounds connect the coarse endpoints to block zero and give a summable polynomial times exp[-m(|Y|+|Z|+d(Y,Z))]. Each coarse trace has fixed fiber dimension. Therefore the integrand coefficient is bounded by C, independently of v,u,K,M, including v=0 or u-v=0 by the endpoint limits. The v integral gives Cu, proving (1.2).
+
+This is the same exact coarse trace mechanism as suv, now supplied with physical-time semigroup jets. The growing fine-block dimension never enters. Compact source truncations justify cyclicity first; the absolute rooted sums justify the limit.
+
+6. Consequence and boundary
+
+For each scalar/vector soft penalty,
+
+ integral_0^(K^2) |[t^2] Tr(P0(e^-sW-e^-sB))| ds/s<=C.   (6.1)
+
+Therefore the soft penalties change the fine-to-physical-unit cutoff heat coefficient by only O(1). Along with the independently proved coarse determinant corrections, this isolates a cutoff heat comparison for the actual translation-invariant base S_M''+DD^T and the ordinary scalar Delta.
+
+The remaining proof task is a uniform comparison of that actual base cutoff coefficient with the chosen standard vector/ghost reference, plus the separately required tail of the soft pair for physical times >1. This note does not assert either conclusion. The constants use actual uniform classical kernels/relative vertices; no universality theorem for a fixed bare integrand is imported.
+
+

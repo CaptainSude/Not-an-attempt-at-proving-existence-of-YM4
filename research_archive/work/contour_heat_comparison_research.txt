@@ -1,0 +1,323 @@
+Exact physical-quotient reformulation of the actual determinant
+17 October 2026. Research checkpoint. No output or shared fragment edited.
+
+STATUS. Sections 1--4 are a finite-dimensional identity on the actual real small-background germ, with the already proved local minimum and gauge identities as inputs. The identity removes all periodically pinned scalar sites before estimates. It does not yet justify passing its separate massless factors to an infinite-volume affine magnetic trace. Further sections below will record independently checkable flat estimates and the remaining interface.
+
+1. Actual spaces, bases and Hessians
+
+Fix a compatible finite current torus, old depth M and a composite ratio K=ell^k. All matrices in this section use current bond ANGLES and counting scalar/bond coordinates in a real trace-orthonormal color basis. Let E be the fine/current bond space, E_c the final coarse bond space, and choose ONE final coarse site o as a global gauge base.
+
+Let S_f be fine scalar site parameters zero at o; let S_c be coarse scalar parameters zero at o; and let S_b be fine scalar parameters zero at EVERY final coarse center. Then S_f=S_b direct-sum S_c by the site-coordinate splitting. The extension of a coarse scalar in this splitting is zero at all noncenter sites. Let r:S_f->S_c be center restriction. The left-relative gauge generators at the actual fine saddle U and target W are D_f:S_f->E and D_c:S_c->E_c. Both are injective: parallel transport of a zero parameter at the global base forces every scalar to vanish. Write D_b for the restriction of D_f to S_b.
+
+The actual constraint differential is C:E->E_c and is onto by its invertible pivot block. Its exact covariance gives
+
+    C D_f = D_c r,            C D_b=0.                 (1.1)
+
+Let L=s''-lambda.f'' be the FULL relative-coordinate Lagrangian Hessian, q=s_eff'' the actual relative coarse Hessian, and
+
+    H_res = L-C^T q C.                                  (1.2)
+
+These are precisely the objects of determinant_gauge_bridge_research.md, Sections 1--4. The actual all-nearby-fields minimum comparison gives H_res>=0, and full gauge covariance of s-s_eff composed with f gives
+
+    H_res D_f=0.                                        (1.3)
+
+For the actual minimum section derivative H,
+
+    C H=I,             H_res H=0.                       (1.4)
+
+No on-shell hypothesis is used: lambda.f'' remains in H_res. On ker C the quadratic form H_res is L. The actual retained/contour precision is positive, and its contour derivative T obeys T D_b=-I. Consequently the nullspace of H_res restricted to ker C is exactly im D_b. These facts are already proved for the actual small branch; they are not assumptions about an arbitrary form with the same flat symbol.
+
+Put G_f=D_f^T D_f and G_c=D_c^T D_c. Their determinants are positive at real fields. If S_c is zero-dimensional, det G_c=1 and all formulas use the corresponding empty blocks. Define the orthogonal bond projections
+
+    P_f=I-D_f G_f^(-1)D_f^T,
+    P_c=I-D_c G_c^(-1)D_c^T.                            (1.5)
+
+Choose orthonormal column matrices U_f,U_c onto ran P_f,ran P_c. They may depend smoothly on the fixed finite real germ; every determinant below is independent of these choices. Write
+
+    A=U_c^T C U_f,
+    R=U_f^T H_res U_f,
+    Q_perp=R+a A^T A,             a>0 fixed.            (1.6)
+
+Here A maps the fine physical bond space to the coarse physical bond space. It is onto: for y in ran P_c, use P_f H y, because (1.1) implies P_c C P_f H y=y. The same vector has H_res P_f H y=0. Thus R is nonnegative, positive on ker A, and its nullspace contains a right inverse of A. In particular Q_perp>0.
+
+2. Exact contour integral and its orbit-density ratio
+
+The leading actual amplitude, after the background-independent Gaussian powers have been removed, is
+
+    I_actual=|det C_p|^(-1) det A_T^(-1/2),
+    A_T=K0^T(H_res+T^T T)K0.                            (2.1)
+
+The equality with the earlier L expression holds because C K0=0. Its constrained ambient Gaussian is
+
+    integral_E dx delta(Cx) exp[-(x^T H_res x+|Tx|^2)/2]
+       =(2pi)^((dim E-dim E_c)/2) I_actual.             (2.2)
+
+Decompose x=U_f u+D_f lambda, with lambda=(lambda_b,lambda_c). The change of variables has absolute Jacobian sqrt(det G_f), since U_f is orthonormal and perpendicular to D_f. Also decompose the TARGET using [U_c,D_c]; its Jacobian is sqrt(det G_c). With
+
+    B=G_c^(-1) D_c^T C U_f,
+
+one has
+
+    Cx=U_c A u+D_c(Bu+lambda_c),
+    delta(Cx)=(det G_c)^(-1/2)
+                       delta(Au) delta(Bu+lambda_c).   (2.3)
+
+Integrate lambda_c=-Bu. The residual action is u^T R u by (1.3). The remaining contour expression is T[U_fu-D_f(0,Bu)]-lambda_b. Integration in lambda_b is an ordinary translated Gaussian and gives (2pi)^(dim S_b/2), with NO background determinant. This step is where T D_b=-I is used, and where the periodically pinned gauge variables disappear exactly.
+
+The remaining physical constrained Gaussian can be completed with a A^T A. Its compression obeys
+
+    A Q_perp^(-1) A^T=a^(-1) I.                         (2.4)
+
+Indeed take a right inverse H_perp of A with R H_perp=0, obtained above by P_f H U_c. Then Q_perp H_perp=a A^T, proving (2.4). The physical integral is therefore
+
+    (2pi)^((dim ran P_f-dim ran P_c)/2)
+       a^(dim ran P_c/2) det Q_perp^(-1/2).              (2.5)
+
+Since dim S_f=dim S_b+dim S_c, the Gaussian powers in (2.2) and this calculation agree exactly. Hence
+
+    I_actual = [det G_f/det G_c]^(1/2)
+                    a^(dim ran P_c/2) det Q_perp^(-1/2). (2.6)
+
+In normalized logarithms N_0 F=F(W)-F(1), the a-only power disappears:
+
+    D_(M,K)=N_0[ (1/2)logdet G_f-(1/2)logdet G_c
+                                      -(1/2)logdet Q_perp ]. (2.7)
+
+This retains the full ratio of fine/coarse orbit-coordinate densities. Dropping either G_f or G_c would be an error. The target delta is in its left-relative Lie coordinate, so there is still no extra j(log W) Haar factor.
+
+3. An ambient version and exactly what has been removed
+
+Define
+
+    Q_res=H_res+D_fD_f^T+a C^T P_c C.                    (3.1)
+
+The physical and vertical subspaces are reducing for (3.1). Indeed P_c C D_f=0, while H_res D_f=0. On the vertical subspace the orthonormal matrix D_f G_f^(-1/2) represents D_fD_f^T by G_f. On the physical subspace it represents Q_perp. Thus
+
+    det Q_res=det G_f det Q_perp,
+    D_(M,K)=N_0[logdet G_f-(1/2)logdet Q_res
+                                         -(1/2)logdet G_c]. (3.2)
+
+Every matrix is finite and invertible as specified. No base-site density factor has been silently changed: G_f and G_c use the SAME global base and the actual fine/coarse coordinate metrics.
+
+The physical constraint P_c C is unchanged by
+
+    C -> C+D_c Z                                      (3.3)
+
+for any linear Z. Thus the endpoint-gauge part of the ordinary averaging differential can be discarded ONLY after this projection (and with the residual/action correspondingly identified); it cannot be discarded in the original ambient Q_b or in its separate heat trace.
+
+For comparison, if the background happens to be fully on shell so that lambda=0, L D_f=0 and q D_c=0, one can instead use
+
+    Q_perp,on=U_f^T L U_f+a A^T A.
+
+Then its physical compression is (U_c^T q U_c+a I)^(-1), and the exact same argument gives
+
+    D=N_0[logdet G_f-(1/2)logdet Q_on
+                 -logdet G_c+(1/2)logdet Q_c,on],       (3.4)
+    Q_on=L+D_fD_f^T+a C^T P_c C,
+    Q_c,on=q+D_cD_c^T+aP_c.
+
+Formula (2.7), unlike this optional version, requires no on-shell finite family. It is therefore the safer actual finite bridge.
+
+4. Analytic scope
+
+All equations above hold on the actual finite real small-field germ. The determinants and projection matrices have their analytic bilinear continuations on a sufficiently small complex germ at that fixed regulator; one may use the basis-free ambient formula (3.2) to avoid analytically choosing orthonormal bases. Positivity is used only on the real germ, and no common complex radius is inferred for globally based scalar inverses as volume tends to infinity.
+
+The actual D has the independently established local density and polynomial-jet meaning. The separate factors G_f,G_c,Q_res in (3.2) involve massless globally based gauges. Therefore (3.2) alone does NOT license replacing the actual affine Maxwell moment by the separate infinite-volume affine heat traces of these factors. One must prove a joint infrared-regulated or local-limit identity, retaining all three factors. The next estimates show why this is a materially better comparison interface, but do not erase that remaining task.
+
+5. Flat physical averaging is small even when the ordinary map is not
+
+The following estimates are actual flat statements, uniform in M, K=ell^k and compatible volume. The primitive ell is fixed. Write A_K^st for the ANGLE straight-string average:
+
+    (A_K^st x)_mu(y)=K^(-d) sum_(z in B_K(y))
+                                  sum_(j=0)^(K-1) x_mu(z+j e_mu).
+                                                               (5.1)
+
+Its absolute row sum is K and its absolute column sum is K^(1-d). Both statements count multiplicities and remain valid on short periodic quotients. Hence the counting-l2 operator bound is
+
+    ||A_K^st||_(2->2) <= K^(1-d/2).                         (5.2)
+
+At flatness the exact cumulative endpoint-gauge identity between ordinary and corrected composition gives
+
+    C_K=A_K^st+D_c Z_K                                   (5.3)
+
+for a scalar map Z_K; the sign is absorbed into its definition. This is the iterated identity in flat_maxwell_gap_research.md (4.5), or the derivative of nonflat_reference_averages_research.md (3.3). The corrected flat composition is the straight-string semigroup. Therefore
+
+    P_c C_K=P_c A_K^st,
+    ||P_c C_K||_(2->2)<=K^(-1)       in d=4.               (5.4)
+
+The same bound holds after restricting to the fine physical subspace. It does NOT hold for C_K without P_c. No estimate on Z_K is needed for (5.4).
+
+For later use, a different estimate on the FULL ordinary C_K is also available, with fixed primitive ell. Let b_ell be the fixed one-step scalar endpoint contour mean in the ordinary/corrected gauge identity. Its row absolute norm is at most d ell. The cumulative gauge derivative at a final center is
+
+    Z_K= sum_(j=0)^(k-1) b_ell^(j) A_(ell^j)^st,          (5.5)
+
+with the indicated restriction to nested final centers and with the same harmless sign convention. This is obtained by differentiating g_(j+1)=g_j|centers a(C_j), not by replacing intermediate ordinary backgrounds by corrected ones.
+
+A row of A_r^st has l2 norm at most r^(1-d/2): its largest coefficient is r^(1-d), and its row sum is r. In d=4, (5.5) thus gives
+
+    max_row ||Z_K(row)||_2 <= d ell/(1-ell^(-1)).          (5.6)
+
+A C_K row consequently has l2 norm at most
+
+    c_row=1+2d ell/(1-ell^(-1)).                          (5.7)
+
+Actual two-final-block locality implies that a fine bond is read by at most 8d final bond rows (a conservative bound; its endpoints belong to at most two final blocks). Cauchy--Schwarz row by row gives
+
+    ||C_K||_(2->2) <= sqrt(8d) c_row=:c_C.                (5.8)
+
+The full ordinary bound is O(1), not O(K^(-1)). Every input in this proof is a flat coefficient identity or finite incidence count, and no dimension-dependent conversion from a fine sup norm has been used.
+
+6. Uniform physical gap for the flat residual quotient
+
+This is an actual uniform estimate for Q_perp in (1.6) at the flat background. Put d=4. Let x be a fine/current angle field in ran P_f and rescale to final physical units: eta=1/K and v=Kx. Then
+
+    ||v||_(2,eta)^2=K^(-2)||x||_count^2,
+    P_c C_K x=P_c Q_K^st v,                             (6.1)
+
+where Q_K^st on the right is the normalized physical-potential average of the flat covariance notes. The d=4 action energy is unchanged by this rescaling. Denote its actual old-M quadratic form by E_M(v). The curvature contraction already proved in flat_maxwell_gap_research.md Sections 2--5 gives
+
+    E_M(v)>=||d_eta v||_(2,eta)^2.                       (6.2)
+
+The actual flat coarse effective Hessian q_(MK) is nonnegative, annihilates coarse gradients and has a common operator bound ||q_(MK)||<=R_q, by the uniform symbol/locality theorem. Thus
+
+    E_res(v)=E_M(v)-<P_c Q_K^st v,q_(MK)P_c Q_K^st v>
+                                                               (6.3)
+
+is exactly the residual form, nonnegative by its minimum-value construction.
+
+Here is a direct coercivity estimate with no contour-gauge constant. In a real coarse Bloch fiber p, use fine aliases p+2pi r, physical forward gradients u_r=K(exp(i(p+2pi r)/K)-1), and P_r=|u_r|^2. The fine physical field satisfies u_r^* v_r=0 for every nonzero u_r. Put d_c=exp(ip)-1, let Omega_r be the diagonal straight-average multiplier, and write
+
+    y=P_(d_c)^perp sum_r Omega_r v_r.
+
+At p=0 the coarse projection is I, including the harmonic one-forms. The high aliases have P_r>=4 for r!=0. Alias Parseval gives sum_r |omega_(r,mu)|^2<=1 for every orientation. The central diagonal multiplier obeys
+
+    min_mu |omega_(0,mu)| >= c_omega=(2/pi)^(d+1),
+    Omega_0 u_0=a_0 d_c.                                (6.4)
+
+If y_0=P_(d_c)^perp Omega_0 v_0, then
+
+    v_0=P_(u_0)^perp Omega_0^(-1) y_0,
+    ||v_0||<=c_omega^(-1)||y_0||.                        (6.5)
+
+For p=0 this simply reads v_0=y_0. The identity follows by writing Omega_0 v_0=y_0+d_c theta and using v_0 perpendicular to u_0. Consequently
+
+    ||v||^2 <= A_0 ||y||^2+B_0 sum_r P_r||v_r||^2,
+    A_0=2c_omega^(-2),
+    B_0=(1+2c_omega^(-2))/4.                            (6.6)
+
+Indeed the high contribution to the averaged y has norm at most ||v_high|| by Parseval, and ||v_high||^2 is at most one quarter of its Maxwell energy. Summing fibers proves (6.6) in finite physical volume; it includes the zero momentum and every compatible period.
+
+Combining (6.2)--(6.6) yields
+
+    ||v||_(2,eta)^2
+       <= B_0 E_res(v)+(A_0+B_0 R_q)||P_c Q_K^st v||^2.
+                                                               (6.7)
+
+Therefore, for any fixed a>0,
+
+    Q_perp(flat) >= c_a K^(-2) I,
+    c_a=min{B_0^(-1), a/(A_0+B_0R_q)}>0.                 (6.8)
+
+The bound is uniform in old depth M, endpoint K and finite volume. This is a genuine improvement over the periodically pinned ambient gap: the physical quotient has the expected final-scale gap. It does not say that the massless globally based vertical block G_f has such a gap, nor that derivatives of the varying projections P_f,P_c are uniformly controlled. Those are different assertions.
+
+7. Returning to the actual contour gauge does not by itself fix the gap
+
+There is a concrete flat obstruction to the tempting ambient estimate
+
+    L_flat+T_K^T T_K+a C_K^T C_K >= c K^(-2) I.           (7.1)
+
+For K>=3, use one real color, one K-block centered at 0, and a unit field e supported on the internal positive bond [0,e_1]. Let phi=T_K e, extended by zero at all block centers and outside that block. At the flat field, T_K is the arithmetic mean of the prescribed coordinate-order root paths. It follows that, with h=(K-1)/2,
+
+    phi(1,x_2,...,x_d)=1/d,
+    phi(0,x_2,...,x_d)=0,
+                    1<=x_j<=h for j>=2.               (7.2)
+
+Indeed the root bond is traversed exactly when coordinate 1 is the first of the d nonzero coordinate directions. A permutation of these directions has that event with probability 1/d. This uses the actual coordinate-order contour family; it would not be a statement about an arbitrary average over all lattice shortest paths.
+
+Set x=e+D_b phi. Since T_K D_b=-I and C_KD_b=0,
+
+    T_K x=0,           C_K x=C_K e,
+    x^T L_flat x=e^T L_flat e.                          (7.3)
+
+The h^(d-1) bonds in (7.2) are distinct from the original root bond. On each, |x|=1/d, so
+
+    ||x||^2>=h^(d-1)/d^2.                              (7.4)
+
+The flat old-M Hessians have a uniform operator bound R_q, and (5.8) bounds ||C_K e|| by c_C. Thus
+
+    lambda_min(L_flat+T_K^T T_K+aC_K^TC_K)
+           <=d^2(R_q+a c_C^2) h^(-(d-1)).               (7.5)
+
+In d=4 this is O(K^(-3)). In particular no positive K-independent c can make (7.1) true for every K. This is an upper Rayleigh bound, not a matching gap asymptotic. It shows that changing from pinned divergence to the actual averaged contour gauge can move soft modes into concentrated path gauges rather than remove them. The quotient estimate (6.8) avoids precisely those coordinate-gauge modes.
+
+8. Independent direct determinant proof of the finite identity
+
+There is also a purely matrix proof of (2.7), avoiding a second measure argument. Start from the already established canonical actual completion
+
+    Q_b=H_res+D_bD_b^T+C^TC,
+    D=N_0[logdet G_b-(1/2)logdet Q_b].                   (8.1)
+
+Use the orthonormal full gauge columns V_f=D_f G_f^(-1/2), and the orthonormal coarse gauge columns V_c=D_c G_c^(-1/2). Let J:S_b->S_f be the noncenter coordinate insertion, so rJ=0, and put
+
+    B_g=G_f^(1/2)J,
+    C_gg=G_c^(1/2) r G_f^(-1/2).                        (8.2)
+
+The fine vertical space splits orthogonally into ran B_g and its complement. C_gg B_g=0. The determinant on ran B_g contributed by D_bD_b^T is det(B_g^T B_g)=det G_b. On its complementary coarse gauge space the target C_gg is square and invertible. In the remaining physical/coarse-gauge block, Schur elimination of this target-gauge block cancels the complete coarse-gauge part of C U_f, leaving precisely R+A^TA. Hence
+
+    det Q_b=det G_b det(C_gg C_gg^T) det Q_perp(a=1).
+                                                               (8.3)
+
+The scalar Schur complement in the coordinate splitting S_f=S_b direct-sum S_c gives
+
+    det(r G_f^(-1) r^T)=det G_b/det G_f.
+
+Consequently
+
+    det Q_b=(det G_b)^2 [det G_c/det G_f]
+                                         det Q_perp(a=1). (8.4)
+
+Substitution in (8.1) proves (2.7). The a-dependent determinant is multiplied by a^(dim ran P_c), as follows either from (2.4) or the same physical Schur elimination, and therefore has the same normalized logarithm. This independently confirms every orbit-density power in the contour-integral proof.
+
+9. A precise unpinned scalar reference with exact scale cancellation
+
+This section is a specified INFINITE-LATTICE REFERENCE calculation, not yet the limit of the globally based finite factors in (2.7). Let C_H be the adjoint charge-square sum for the chosen trace-normalized Cartan element, and put alpha_g=C_H/(48pi^2). The independently established unpinned scalar affine heat coefficient is
+
+    h(s)=(C_H/3)s^2 exp(-8s) I_0(2s)^2 I_1(2s)^2.
+                                                               (9.1)
+
+It is -2 times the curvature-squared coefficient of one scalar heat trace with the matching block/flux normalization. The small-s series and large-s Bessel estimates give
+
+    h(s)=O(s^4) as s->0,
+    h(s)=alpha_g+O(s^(-1)) as s->infinity.              (9.2)
+
+These are the inputs proved in pinned_ghost_prefix_fragment.tex and its unpinned heat computation. In common FINAL physical heat time u, the fine scalar at spacing 1/K has coefficient h(K^2u), while the coarse scalar has coefficient h(u). The proposed orbit-metric ratio (one half of each scalar log determinant) therefore has the reference coefficient
+
+    B_orbit,ref(K)=(1/2) integral_0^infinity
+                           [h(K^2u)-h(u)] du/u
+                    =alpha_g log K.                    (9.3)
+
+Proof: the difference is absolutely integrable by (9.2). On epsilon<u<T its integral equals
+
+    integral_T^(K^2T) h(v)dv/v
+             -integral_epsilon^(K^2epsilon) h(v)dv/v.
+
+The first tends to alpha_g log(K^2), the second to zero. Multiplication by one half proves (9.3). A common physical mass delta>0 inserts exp(-delta^2u) into (9.3), and dominated convergence recovers the same result as delta decreases to zero, for each fixed K.
+
+This gives an exactly canceled scalar reference, with no uncertain finite part at all. It is not a proof that the actual finite globally based ratio has this coefficient: massless basing and the passage from genuine periodic backgrounds to affine polynomial jets still require a joint limit theorem. Its value does show that, if that bridge and the corresponding physical vector comparison are established, the physical determinant term -one-half logdet Q_perp must supply 21 alpha_g log K, leaving total 22 alpha_g log K, in the current normalization.
+
+10. What is now proved, and the next exact estimate
+
+Actual finite progress:
+- Periodically pinned gauge variables and all pivot factors are removed exactly in (2.7)/(3.2), including the off-shell multiplier curvature.
+- The concentrated endpoint-gauge contribution of ordinary averaging disappears under P_c, and the resulting flat physical constraint has norm at most K^(-1) in d=4.
+- The actual flat physical residual completion has gap at least c_a K^(-2), uniformly in old M, endpoint K and compatible volume.
+- A direct return to the actual contour ambient completion cannot supply such a uniform gap: (7.5) is a concrete K^(-3) Rayleigh obstruction in d=4.
+- The unpinned fine/coarse scalar REFERENCE ratio has exactly alpha_g log K after a consistent physical-time infrared cancellation.
+
+Still unproved:
+- A joint infrared/local-limit identity carrying (2.7) to the actual affine Maxwell coefficient. The individual P_f,P_c and globally based scalar inverses have no volume-uniform gap. Their analytic derivatives and densities cannot be separated by the finite identity alone.
+- Uniform source/curvature estimates for the projected residual operator. Even though Q_perp(flat) has the correct physical gap, its ambient representation contains massless projections and the actual coarse-action subtraction C^T q C. A gap does not by itself bound these derivatives or imply spatial locality.
+- The large-K physical-vector heat comparison to the transverse background-Feynman reference, retaining the actual old-M action vertices and the relative-coordinate/source identities.
+
+A concrete next target is a common-mass or common spectral-cutoff version of the full three-factor expression (3.2), proving that its actual Maxwell moment tends to the finite-germ moment as the common regulator is removed and that the residual regulator error is uniform in K after the fine/coarse scalar cancellation. No such interchange is claimed here.
+

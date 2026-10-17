@@ -1,0 +1,232 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,geometry,hyperref}
+\geometry{margin=1in}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Conditional theorem}
+\newcommand{\R}{\mathbb R}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\begin{document}
+\title{A finite-accuracy kernel criterion for positive-energy nontriviality}
+\date{16 October 2026}\maketitle
+\noindent Status: the free infinite-lattice calculation and elementary
+comparison lemmas below are derived here. Their application to the deposited
+Yang--Mills witness requires the specifically stated fluctuation-curvature
+estimate and the interacting witness itself. Neither is certified here.
+
+\section{A free lattice calculation independent of the missing companion note}
+
+Use unit lattice coordinates initially. Put
+$s_\mu(q)=2\sin(q_\mu/2)$ and $\lambda(q)=\sum_\mu s_\mu(q)^2$.
+In midpoint conventions for links and plaquettes the Fourier symbol of the
+covariance of one colour of the exact two-form Gaussian is
+\[
+m_{\mu\nu,\rho\sigma}(q)=
+\frac{\delta_{\nu\sigma}s_\mu s_\rho-\delta_{\nu\rho}s_\mu s_\sigma
+-\delta_{\mu\sigma}s_\nu s_\rho+\delta_{\mu\rho}s_\nu s_\sigma}
+{\lambda(q)}.
+\]
+The indices satisfy $\mu<\nu,\rho<\sigma$. Equivalently this is the
+projection $s\wedge\iota_s/|s|^2$ on exact two-forms.
+The symbol is interpreted on staggered lattice cosets; multiplying by
+the fixed midpoint phase gives an ordinary periodic lattice multiplier.
+Let $m_0(q)$ be the same homogeneous expression with $s_\mu$ replaced by
+$q_\mu$.
+
+\begin{lemma}[Off-diagonal free covariance]
+Let $D_{PQ}(r)$ be the continuum Maxwell curvature covariance with
+potential covariance $\delta_{\mu\nu}/(4\pi^2|r|^2)$.
+For bare spacing $a$, and distinct plaquette midpoints with
+$|r|=|x_p-x_q|\geq C_0a$,
+\[
+\left|P_{{\rm ex},a}(p,q)-a^4D_{\pi(p)\pi(q)}(r)\right|
+\leq C a^6|r|^{-6}.
+\tag{1}
+\]
+Here $C,C_0$ are finite numerical constants for this lattice discretization.
+\end{lemma}
+\begin{proof}
+In a small ball about zero, Taylor expansion of sine and differentiation
+of the quotient give, for every multi-index $\alpha$,
+\[
+|\partial^\alpha(m-m_0)(q)|\leq C_\alpha|q|^{2-|\alpha|}.
+\]
+Choose a smooth cutoff $\chi$ supported in that ball and equal to one
+near zero. A dyadic partition into $|q|\asymp2^{-j}$ writes
+$\chi(m-m_0)=\sum_{j\geq0}r_j$. Integrating by parts $M>6$ times on
+each compact annulus, or using its rescaled smooth Fourier transform,
+gives
+\[
+|\widehat r_j(z)|\leq C_M2^{-6j}
+(1+2^{-j}|z|)^{-M}.
+\]
+Summing above and below $2^{-j}|z|\asymp1$ gives
+$|\sum_j\widehat r_j(z)|\leq C|z|^{-6}$ for $|z|\geq1$.
+For precision, if $n$ is the integer basepoint difference and
+$\delta_P,\delta_Q$ are the two orientation midpoint offsets, use the
+same factor $e^{iq\cdot(\delta_P-\delta_Q)}$ on both $m$ and $m_0$.
+Their difference remains $O(|q|^2)$ with the stated derivative bounds,
+and its Fourier coefficient at $n$ compares the two kernels at
+$z=n+\delta_P-\delta_Q=r/a$. Applying the phase to only one symbol
+would introduce a spurious first-order remainder.
+
+The lattice multiplier away from zero is smooth and periodic in the
+basepoint convention, so its Fourier coefficients decrease faster than
+any prescribed inverse power. The continuum distribution with
+multiplier $m_0$ is $D$ away from zero. Removing its small-frequency
+cutoff produces a term decreasing faster than any inverse power at
+large nonzero $z$: all sufficiently high derivatives of
+$(1-\chi)m_0$ are integrable, so repeated integration by parts in the
+tempered Fourier transform applies there. Contact terms are irrelevant
+at these separated midpoints.
+Consequently the unit-lattice error is $O(|z|^{-6})$.
+Set $z=r/a$ and use homogeneity $D(r/a)=a^4D(r)$.
+\end{proof}
+
+This proof establishes the infinite-lattice estimate. It does not silently
+assert a quantitative torus comparison. The finite-torus free covariance
+converges to this one at fixed spacing and fixed plaquettes by its Fourier
+Riemann sum, since the multiplier is bounded and discontinuous only at
+one momentum. For a block-conditioned covariance, existence and identity
+of the corresponding volume limit must also be justified.
+
+\section{The exact remaining free-background input}
+
+Suppose the background covariance is
+$C_{{\rm bg},a,h}=P_{{\rm ex},a}-C_{{\rm fl},a,h}$.
+Here $h$ is the physical witness-cell scale, not the bare spacing.
+The sufficient input is a \emph{curvature} estimate
+\[
+|C_{{\rm fl},a,h}(p,q)|
+\leq A a^4h^{-4}\exp(-c|x_p-x_q|/h),
+\qquad |x_p-x_q|\geq h,
+\tag{2}
+\]
+with $A,c>0$ independent of $a,h$ and full volume.
+A bound on an undifferentiated potential propagator is insufficient
+without the correctly normalized discrete curl estimates.
+
+One possible way of obtaining (2) is a scale decomposition with
+curvature terms bounded by
+$A_0a^4h_j^{-4}e^{-c_0r/h_j}$, $h_j=hL^{-j}$.
+Indeed for $r/h\geq1$,
+\[
+\sum_{j\geq0}L^{4j}e^{-c_0(r/h)L^j}
+\leq C_{L,c_0}e^{-c_0r/(2h)}.
+\]
+Factor out $e^{-c_0r/(2h)}$ and dominate the remaining series by
+$\sum_jL^{4j}e^{-c_0L^j/2}<\infty$.
+This summation is elementary; the scale decomposition and its
+curl estimates are the model/operator identification obligation.
+
+\section{Only fixed relative accuracy is necessary}
+
+Let $f_d$ be the bump used in Notebook 01, centered at $3de_0/4$
+and of radius $d/4$. Denote its reflected near pair by $-$ and its
+reflected pair with time translation $4d$ by $+$.
+Define
+\[
+K_\pm=\frac6{\pi^4}
+\iint f_\pm(x)g_\pm(y)|x-y|^{-8}\,dx\,dy.
+\]
+They are positive and $K_+/K_-\leq(2/5)^8$.
+Both are scale independent under sup-normalized dilation.
+Use the same normalization for the discrete background kernel:
+\[
+ K_{{\rm bg},\pm}=\sum_{p,q}
+ f_\pm(x_p)g_\pm(x_q)
+ |C_{{\rm bg},a,h}(p,q)|^2,
+\]
+where each positively oriented plaquette occurs once. The covariance is
+for one colour. A common energy-density or colour normalization may
+multiply both this expression and $K_\pm$ and cancels from every ratio.
+The factors $a^4$ in each covariance provide the $a^8$ Riemann-sum
+weight; no additional lattice-volume factors belong in this definition.
+
+\begin{lemma}[Finite-accuracy criterion]
+If the corresponding background quadratic kernels satisfy
+\[
+(1-\epsilon)K_\pm\leq K_{{\rm bg},\pm}
+\leq(1+\epsilon)K_\pm,\qquad 0\leq\epsilon<1,
+\tag{3}
+\]
+and the interacting witness has a common positive factor $b g_d^4$
+and prefactor ratio at most twelve for these two pairs, then
+\[
+\frac{C_d(4d)}{C_d(0)}
+\leq12\frac{1+\epsilon}{1-\epsilon}(2/5)^8.
+\tag{4}
+\]
+In particular $\epsilon=1/3$ gives $0.01572864<0.02$.
+\end{lemma}
+\begin{proof}
+Use the upper witness on the far pair, the lower witness on the near
+pair, and cancel the common running coupling. Substitute (3).
+\end{proof}
+
+Thus a one-third relative kernel comparison suffices. The whole
+asymptotic expansion, its exact error coefficient, and convergence
+for arbitrary shapes are unnecessary for this particular witness.
+
+\begin{theorem}[A sufficient two-scale condition]
+Assume (1), (2), and the stated infinite-volume background covariance.
+For the two fixed shapes there is $C_*>0$, depending on their shapes
+and $A,c$ but not on $a,h,d$, such that (3) holds with
+\[
+\epsilon\leq C_*\left\{\frac ad+
+\left(\frac dh\right)^4e^{-c\,d/h}\right\}
+\tag{5}
+\]
+whenever $a/d$ is sufficiently small and $d/h\geq1$, with a harmless
+fixed reduction in $c$ if needed.
+Consequently finite thresholds $a/d\leq\eta_*$ and $d/h\geq R_*$
+ensure $\epsilon\leq1/3$.
+\end{theorem}
+\begin{proof}
+All distances within either pair are in $[d,6d]$.
+Equation (1) gives entrywise relative error $O((a/d)^2)$ against
+$a^4d^{-4}$, and (2) gives
+$O((d/h)^4e^{-c\,d/h})$ against the same scale.
+Group the six orientations at each lattice basepoint into a $6$ by $6$
+matrix. Moving their midpoints to a common basepoint changes the
+continuum matrix by $O(a/d)$ relative to $d^{-4}$, because
+$|\nabla D(r)|\leq C|r|^{-5}$.
+For such matrices,
+\[
+|\norm{D+E}_{\rm F}^2-\norm D_{\rm F}^2|
+\leq2\norm D_{\rm F}\norm E_{\rm F}+\norm E_{\rm F}^2,
+\qquad
+\norm D(r)_{\rm F}^2=\frac6{\pi^4|r|^8}.
+\]
+The weights are bounded, compactly supported fixed Lipschitz shapes
+after scaling by $d$. Their midpoint shifts and Riemann sums cost
+$O(a/d)$ in the rescaled integral. The positive continuum denominators
+$K_\pm$ are fixed nonzero constants for these shapes.
+Dividing the absolute error by them yields (5), absorbing quadratic
+errors for sufficiently small parameters into its constant.
+The exponential dominates the fourth power as $d/h\to\infty$.
+\end{proof}
+
+The deposited witness chooses $h=L^{-s(d)}$ with
+$d/h$ growing polylogarithmically as $d\downarrow0$.
+This supplies the requisite scale separation \emph{if} (2) is verified
+for that exact block map. First take the cutoff fine at fixed $d$,
+then choose $d$ small; no claim of arbitrary joint-limit uniformity is
+needed for the existence of one such probe.
+
+\section{Spectral consequence and boundary of the result}
+
+If a limiting Hilbert space with $H\geq0$ has been reconstructed,
+(4) with $q=0.02$ gives
+\[
+\norm{\mathbf1_{(1/(4d),\infty)}(H)v_d}^2
+\geq(1-0.02e)\norm{v_d}^2>0.
+\]
+This follows by integrating $e^{-4dE}\geq e^{-1}$ on
+$E\leq1/(4d)$. The vector $(1-e^{-4dH})v_d$ is nonzero and
+orthogonal to $\ker H$.
+
+Remaining obligations are exact block-map/covariance identification,
+the uniform curvature estimate (2), the interacting lower/upper
+witness, and a valid reconstruction. The calculation does not prove
+those inputs, uniqueness, a mass gap, or Yang--Mills identification.
+\end{document}

@@ -1,0 +1,1094 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 14: nonflat backgrounds and energy stability}
+\author{Research working document}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We pass from fixed-reference nonlinear averages to the actual
+moving-reference averaging operators in a small global connection
+chart. An explicit endpoint term corrects the change of derivative
+coordinates. An exact cumulative gauge relation controls ordinary
+reference backgrounds uniformly through the blocking depth, giving
+small perturbations of both source averaging operators in physical
+weighted norms. A separate Wilson plaquette calculation and a form
+resolvent argument then control a gauge-fixed inverse, including the
+scalar compression that defines its gauge projection. The inverse
+estimates concern the energy blocks, with at most one derivative on
+each side. They apply on a small global physical C1 ball, not yet on
+the source's full local-frame and retained-history domains.
+\end{abstract}
+\noindent\textbf{Status.}
+Research proofs checked through separate internal derivations and
+audits. No external certification or novelty claim is made. The
+explicit source-coordinate matches below refer to the deposited
+transcriptions at the pinned commit, not to newly recovered original
+CMP98 or CMP99b papers. The action and transpose normalizations are
+stated explicitly at the point where the Wilson operator is used.
+% Notebook 14 body fragment, no preamble. Unique label prefix: nc-.
+% Requires amsmath, amssymb, amsthm and a one-argument \norm macro.
+
+\section{The exact change of reference in the averaging differential}
+\label{nc-section}
+
+The derivative of the corrected average with fixed reference one
+is not the same coordinate operator as the source average $Q(V)$
+based at a nonflat reference $V$. We now compute their relation,
+including the endpoint term. The block ratio $L$ is fixed, all
+logarithms use their common identity branch, and all Hilbert norms
+use physical volume. This calculation is internally audited at the
+level of the pinned deposited transcriptions; no fresh verification
+of the original CMP98 typesetting is claimed.
+
+\subsection{Two references and an exact group identity}
+\label{nc-group}
+
+Write $M$ for the ordinary group average. Raw I:46965--46970
+defines
+\[
+ \Phi^{\mathfrak g}(V,B;y,x)=\frac1i\log[
+   (e^{iB}V)\langle y,x\rangle V\langle y,x\rangle^{-1}],
+ \qquad
+ \Phi^{\flat}(V,B;c)=\frac1i\log[M(e^{iB}V)(c)M(V)(c)^{-1}].
+\]
+For $U$ near $V$ set
+\begin{equation}
+ g_y^V(U)=\exp\left(i\sum_{x\in B(y)}L^{-d}
+       \frac1i\log[U\langle y,x\rangle V\langle y,x\rangle^{-1}]
+                   \right).
+ \label{nc-endpoint-mean}
+\end{equation}
+The bridge I:47076--47087, expressly incorporating CMP98 (120),
+identifies the corrected group increment as
+\begin{equation}
+ C_V(U)(c)=g_{c_-}^V(U)^{-1}M(U)(c)g_{c_+}^V(U)M(V)(c)^{-1}.
+ \label{nc-moving-corrected}
+\end{equation}
+It equals one at $U=V$. With the logarithmic/linear split
+I:24344--24349, the same bridge gives
+\begin{equation}
+ C_V(e^{iB}V)=e^{i\mathcal Q(V,B)},\qquad
+ \mathcal Q(V,B)=LQ(V)B+O(B^2).
+ \label{nc-source-linearization}
+\end{equation}
+This is the deposited identification of the middle coordinate;
+the earlier transcription does not itself reproduce CMP98 (120).
+We use the explicit bridge, rather than guessing that omitted input
+formula.
+
+Set $a_y(U)=g_y^1(U)$. The corrected map with fixed identity
+reference is
+\begin{equation}
+ C_1(U)(c)=a_{c_-}(U)^{-1}M(U)(c)a_{c_+}(U).
+ \label{nc-fixed-corrected}
+\end{equation}
+For fixed $V$ define
+$k_y(U;V)=g_y^V(U)^{-1}a_y(U)a_y(V)^{-1}$. Direct substitution
+and cancellation, preserving the factor order, give
+\begin{equation}
+ \begin{split}
+ C_1(U)(c)C_1(V)(c)^{-1}
+ =\operatorname{Ad}_{a_{c_-}(V)^{-1}}\bigl[
+ k_{c_-}(U;V)^{-1}C_V(U)(c)
+       \operatorname{Ad}_{M(V)(c)}k_{c_+}(U;V)\bigr].
+ \end{split}
+ \label{nc-group-identity}
+\end{equation}
+In particular no multiplicative cocycle for the endpoint mean has
+been assumed.
+
+For $U(s)=e^{isB}V$ let
+\[
+ \eta_y^1(V;B)=\frac1i\left.\frac d{ds}\right|_0
+       a_y(U(s))a_y(V)^{-1},\qquad
+ \eta_y^V(B)=\frac1i\left.\frac d{ds}\right|_0g_y^V(U(s)),
+ \qquad Z_VB(y)=\eta_y^1(V;B)-\eta_y^V(B).
+\]
+Define the \emph{unscaled} endpoint difference by
+\begin{equation}
+ d_Wz(c)=z(c_-)-\operatorname{Ad}_{W(c)}z(c_+).
+ \label{nc-endpoint-difference}
+\end{equation}
+This explicit definition fixes the sign independently of other
+covariant-derivative conventions. All middle factors in
+\eqref{nc-group-identity} equal one at $s=0$, so differentiating
+gives
+\begin{equation}
+ \frac1i\left.\frac d{ds}\right|_0
+ C_1(e^{isB}V)(c)C_1(V)(c)^{-1}
+ =\operatorname{Ad}_{a_{c_-}(V)^{-1}}
+       [LQ(V)B(c)-d_{M(V)}(Z_VB)(c)].
+ \label{nc-angular-derivative}
+\end{equation}
+
+As a separate check, I:46977 defines
+$LQ^{\flat}(V)B=\Phi_1^{\flat}(V;B)$. Differentiating the
+general bridge directly at $B=0$ gives
+\begin{equation}
+ LQ(V)B=LQ^{\flat}(V)B-d_{M(V)}\overline r(V;B),
+ \qquad
+ \overline r(V;B)(y)=\sum_xL^{-d}\Phi_1^{\mathfrak g}(V;B;y,x).
+ \label{nc-rooted-versus-corrected}
+\end{equation}
+Thus the later rooted operator $Q^{\flat}$ and the corrected source
+operator $Q$ are distinct. Substitution into
+\eqref{nc-angular-derivative} reproduces the direct derivative of
+\eqref{nc-fixed-corrected}, confirming its endpoint sign.
+
+\subsection{An explicit formula for the endpoint correction}
+\label{nc-jacobians}
+
+For a small complex Lie-algebra element $X$ put
+\begin{equation}
+ \mathcal J_XK=\int_0^1\operatorname{Ad}_{e^{itX}}K\,dt,
+ \qquad
+ \frac1i\left.\frac d{ds}\right|_0e^{i(X+sK)}e^{-iX}
+           =\mathcal J_XK.
+ \label{nc-exponential-jacobian}
+\end{equation}
+The integral power series and a Neumann series show that
+$\mathcal J_X$ and its inverse are analytic near zero, and
+$\norm{\mathcal J_X-I}+\norm{\mathcal J_X^{-1}-I}\le C\norm{X}$.
+This does not require unitarity.
+
+Write
+\[
+ V\langle y,x\rangle=e^{iY_x},\qquad
+ \overline Y_y=\sum_xL^{-d}Y_x,\qquad
+ r_x(V;B)=\Phi_1^{\mathfrak g}(V;B;y,x).
+\]
+The last quantity includes the actual contour orientations,
+transports and repetitions. Applying
+\eqref{nc-exponential-jacobian} to each contour logarithm and then
+to the exponential of their mean proves
+\begin{equation}
+ Z_VB(y)=\mathcal J_{\overline Y_y}
+       \sum_xL^{-d}\mathcal J_{Y_x}^{-1}r_x(V;B)
+          -\sum_xL^{-d}r_x(V;B).
+ \label{nc-Z-formula}
+\end{equation}
+In particular $Z_1=0$. The leading background term is
+\[
+ Z_VB=\frac i2\left(
+   [\overline Y,\overline r]-\sum_xL^{-d}[Y_x,r_x]\right)
+   +O\bigl((\max_x|Y_x|)^2\max_x|r_x|\bigr).
+\]
+There is no general identity forcing this difference of means of
+commutators to vanish. The endpoint correction in
+\eqref{nc-angular-derivative} must therefore be retained.
+
+\subsection{The physical derivative conversion and its bound}
+\label{nc-physical}
+
+At fine spacing $h$ write $V=e^{ihA}$ and define the fixed-reference
+physical map by
+$C_1(e^{ihA})(c)=e^{iLh\mathcal F_h(A)(c)}$. For an ordinary
+potential variation $K$, the fine angular left increment is
+$h\mathcal J_{hA}K$ and the coarse left increment is
+$Lh\mathcal J_{Lh\mathcal F_h(A)}D\mathcal F_h(A)K$.
+Substituting these into \eqref{nc-angular-derivative} gives
+\begin{equation}
+ \begin{split}
+ \mathcal J_{Lh\mathcal F_h(A)}D\mathcal F_h(A)K
+ =\operatorname{Ad}_{a_-(V)^{-1}}\bigl[
+ Q_h(V)\mathcal J_{hA}K
+  -L^{-1}d_{M(V)}Z_V(\mathcal J_{hA}K)\bigr].
+ \end{split}
+ \label{nc-physical-unrearranged}
+\end{equation}
+Consequently the exact operator conversion is
+\begin{equation}
+ \boxed{\displaystyle
+ Q_h(V)=\operatorname{Ad}_{a_-(V)}
+   \mathcal J_{Lh\mathcal F_h(A)}D\mathcal F_h(A)
+        \mathcal J_{hA}^{-1}+L^{-1}d_{M(V)}Z_V.}
+ \label{nc-physical-conversion}
+\end{equation}
+Here $Q_h(V)$ is the normalized source coefficient placed between
+the physical spaces at $h$ and $Lh$. Neither $d_{M(V)}$ nor $Z_V$
+contains an inverse mesh factor. The argument of $Z_V$ before
+division is $h\mathcal J_{hA}K$; its linearity cancels $h$ against
+the coarse $Lh$ and leaves exactly $1/L$.
+
+\begin{proposition}[Actual one-step source comparison]
+\label{nc-one-step-proposition}
+For fixed $L$, if $h\norm{A}_\infty$ lies in a sufficiently small
+common complex neighborhood, then
+\begin{equation}
+ \norm{Q_h(e^{ihA})-Q_h(1)}_{p,h\to p,Lh}
+     \le C_{L,p}h\norm{A}_\infty,
+ \qquad p=2,\infty.
+ \label{nc-one-step-bound}
+\end{equation}
+The constants are independent of $h$, refinement and compatible
+periodic volume. The same estimate holds for absolute coefficient
+row sums and physical-adjoint row sums, after changing the fixed
+constant.
+\end{proposition}
+
+\begin{proof}
+Each one-step contour has bounded length at fixed $L$. Products of
+possibly nonunitary complex transports therefore give
+$\max_x|Y_x|+|\overline Y|\le C_Lh\norm{A}_\infty$ and
+$\norm{r_x(V;\cdot)}_{\infty\to\mathrm{color}}\le C_L$.
+Equation \eqref{nc-Z-formula} implies
+$\norm{Z_V}_{\infty\to\infty}\le C_Lh\norm{A}_\infty$.
+
+For the physical Hilbert bound expand $Z_V$ into its finitely many
+one-step bond coefficients. Each is analytic, vanishes at $V=1$,
+and is bounded by $C_Lh\norm{A}_\infty$. Rows and columns have
+fixed finite incidence; the physical adjoint supplies the fixed
+volume ratio $L^d$. The Schur bound thus gives the same order
+from fine physical $L^2$ to coarse-site physical $L^2$, with no
+macroscopic path-trace estimate. The endpoint map $d_{M(V)}$ has
+two entries per row, fixed column incidence and bounded complex
+adjoints, so it is uniformly bounded in both norms.
+
+The other coordinate factors in \eqref{nc-physical-conversion}
+differ from the identity by at most $C_Lh\norm{A}_\infty$.
+Combine this with the proved one-step estimate
+$\norm{D\mathcal F_h(A)-Q_h(1)}_{p\to p}
+\le D_ph\norm{A}_\infty$ and the flat contractions to obtain
+\eqref{nc-one-step-bound}. Equivalently, the entire corrected
+source coefficient in \eqref{nc-source-linearization} is a finite
+local analytic function of the link logarithms $hA$, equal to
+$Q_h(1)$ at zero. Its coefficientwise Taylor bound and the same
+finite incidence prove the row and physical-adjoint row assertions
+directly. Formula \eqref{nc-physical-conversion} records the
+coordinate factors hidden by that shorter proof. Periodic
+multiplicity counting preserves all constants.
+\end{proof}
+
+For a multilevel source comparison this estimate must be evaluated
+at the actual ordinary reference backgrounds $M^t(U)$, whose
+amplitudes are controlled in the following argument. It does not
+license replacing them by the corrected fixed-reference iterates.
+It also proves no nonflat inverse or minimizing-field theorem by
+itself.
+
+% Notebook 14 body fragment; no standalone preamble.
+% Requires amsmath/amssymb/amsthm and a one-argument \norm macro.
+% Unique label prefix: nb-. Independently audited research proof.
+
+\section{Ordinary reference backgrounds and their averaging operators}
+\label{nb-section}
+
+The corrected iteration at reference $1$ and the ordinary group
+average have different flat linearizations. We relate the complete
+configurations by an explicit gauge, then estimate the actual
+moving-reference source operators at the ordinary backgrounds.
+This argument does not equate those operators with the ordinary
+derivative of the fixed-reference corrected iteration.
+
+Fix odd $L\ge3$, $M=L^j$, $\eta=M^{-1}$ and
+\begin{equation}\label{nb-scales}
+ h_t=L^t\eta\quad(0\le t\le j),\qquad
+ \sum_{s<t}h_s=\frac{h_t-\eta}{L-1}.
+\end{equation}
+We use compatible periodic lattices or the full lattice, globally
+defined complex Lie-algebra bond fields, and physical volume in
+every Hilbert space. All constants below are independent of $j$,
+$M$ and compatible periodic volume. They may depend on fixed
+$L$, dimension, color norm and the averaging prescription.
+Matrix estimates use a submultiplicative norm; fixed norm
+equivalences can be absorbed in the constants.
+
+\subsection{The exact endpoint identity}
+\label{nb-source}
+
+Let $\mathsf M$ denote the ordinary group-valued average. For a
+configuration $V$ near the identity put
+\begin{equation}\label{nb-endpoint-map}
+ \alpha(V;y)=L^{-d}\sum_{x\in B(y)}\frac1i
+                      \log V(\Gamma_{y,x}),\qquad
+ a(V;y)=e^{i\alpha(V;y)}.
+\end{equation}
+The corrected group map at reference $1$ is
+\begin{equation}\label{nb-corrected-map}
+ \mathsf C(V)(c)
+   =a(V;c_-)^{-1}\mathsf M(V)(c)a(V;c_+).
+\end{equation}
+This is the specialization of deposited Raw I:24313--24325,
+equivalently its explicit coordinate bridge I:47082--47086.
+For a general reference the endpoint factor also carries an
+adjoint by the average of that reference. It disappears here
+because the reference is $1$.
+
+Use the gauge convention
+$V^g(c)=g(c_-)V(c)g(c_+)^{-1}$. Ordinary gauge covariance is
+\begin{equation}\label{nb-gauge-covariance}
+ \mathsf M(V^g)=\mathsf M(V)^{g|_{\rm coarse}}.
+\end{equation}
+The deposit records restriction to base points at
+I:43018--43026, and expressly invokes complexified gauge
+covariance from CMP98 (11) at I:82901--82904. In the common
+identity neighborhood it also follows from similarity covariance
+of the analytic products, logarithms and means. All gauges used
+below stay inside that neighborhood.
+
+These are source matches to the pinned deposited transcription.
+The full original CMP98 paper has not been independently
+reverified in this calculation. In particular, the bridge's
+explicit incorporation of its omitted coordinate (120) is kept
+as the source convention, rather than replaced by a guessed
+coordinate formula.
+
+\subsection{Uniform ordinary connection amplitudes}
+
+Let $U=e^{i\eta A}$ and $a=\norm{A}_\infty$. Write
+\begin{equation}\label{nb-two-trajectories}
+ C_0=U,\quad C_{t+1}=\mathsf C(C_t),\qquad
+ V_t=\mathsf M^t(U).
+\end{equation}
+The fixed-reference theorem of Notebook 13 gives a radius
+$\rho>0$, physical corrected fields $A_t$ and a constant
+$D_\infty$, such that for $a<\rho$
+\begin{equation}\label{nb-corrected-input}
+ C_t=e^{ih_tA_t},\qquad \norm{A_t}_\infty\le2a,
+ \qquad A_{t+1}=\mathcal F_{h_t}(A_t),
+\end{equation}
+and
+\begin{equation}\label{nb-one-step-derivative}
+ \norm{D\mathcal F_h(B)}_{\infty\to\infty}
+             \le1+D_\infty h\norm{B}_\infty.
+\end{equation}
+The derivative bound is used on a common smaller ball, which
+contains the corrected trajectories and their straight-line
+interpolations with translates.
+
+\begin{theorem}\label{nb-trajectory-theorem}
+There are $a_*>0$ and $C_V<\infty$, independent of refinement
+and volume, such that if $\norm{A}_\infty<a_*$, every ordinary
+reference $V_t$ has a holomorphic physical logarithm
+\begin{equation}\label{nb-ordinary-amplitude}
+ B_t=(ih_t)^{-1}\log V_t,\qquad
+             \norm{B_t}_\infty\le C_V\norm{A}_\infty.
+\end{equation}
+Moreover there is an explicit vertex gauge $g_t$ with
+$V_t=C_t^{g_t}$ and $g_t^{\pm1}-1=O(h_t\norm{A}_\infty)$.
+All these maps read a bounded final-scale neighborhood.
+\end{theorem}
+
+\begin{proof}
+Let $m_\Gamma$ be the largest number of oriented bonds in a
+one-step contour. It is fixed when $L$ is fixed; the conservative
+bound $m_\Gamma\le dL$ suffices. Decrease $a_*$ so that
+$2m_\Gamma a_*\le\log(3/2)$. By
+\eqref{nb-corrected-input},
+\[
+ \norm{C_t(\Gamma)-1}
+      \le e^{2m_\Gamma h_ta}-1\le\tfrac12.
+\]
+The logarithm series and the bound
+$e^s-1\le3s/2$ for $0\le s\le\log(3/2)$ give, with slack,
+\begin{equation}\label{nb-alpha-bound}
+ \norm{\alpha(C_t;y)}\le K_\Gamma h_ta,
+                   \qquad K_\Gamma=8m_\Gamma.
+\end{equation}
+Set
+\begin{equation}\label{nb-gauge-recursion}
+ g_0=1,\qquad
+ g_{t+1}(y)=g_t(y)a(C_t;y),\qquad y\in\Lambda_{t+1}.
+\end{equation}
+The lattices are nested, so the restriction of $g_t$ is defined.
+If $V_t=C_t^{g_t}$, then \eqref{nb-gauge-covariance} and
+\eqref{nb-corrected-map} imply
+\[
+ V_{t+1}(c)=g_t(c_-)a(C_t;c_-)C_{t+1}(c)
+                       a(C_t;c_+)^{-1}g_t(c_+)^{-1}.
+\]
+Thus $V_t=C_t^{g_t}$ by induction, with exactly the product
+order in \eqref{nb-gauge-recursion}.
+
+The ordered exponential products and
+\eqref{nb-scales}--\eqref{nb-alpha-bound} give
+\begin{align}
+ \norm{g_t^{\pm1}}
+       &\le\exp\left(\frac{K_\Gamma a(h_t-\eta)}{L-1}\right),
+       \label{nb-gauge-size}\\
+ \norm{g_t^{\pm1}-1}
+       &\le\exp\left(\frac{K_\Gamma a(h_t-\eta)}{L-1}\right)-1.
+       \label{nb-gauge-difference}
+\end{align}
+The second bound follows by telescoping; no unitarity or
+commutativity is required. Put
+\begin{equation}\label{nb-explicit-constants}
+ K_V=2+\frac{2K_\Gamma}{L-1},\qquad C_V=3K_V.
+\end{equation}
+The same product estimate for
+$V_t(c)=g_t(c_-)e^{ih_tA_t(c)}g_t(c_+)^{-1}$ yields
+\begin{equation}\label{nb-bond-near-identity}
+ \norm{V_t(c)-1}\le e^{K_Vah_t}-1.
+\end{equation}
+Take also $K_Va_*\le\log(3/2)$. The analytic logarithm then
+satisfies
+\[
+ \norm{\log V_t(c)}
+    \le2(e^{K_Vah_t}-1)\le3K_Vah_t,
+\]
+which proves \eqref{nb-ordinary-amplitude}.
+
+Further reduce $a_*$, if necessary, to place the right side of
+\eqref{nb-bond-near-identity} in the fixed one-step analytic
+neighborhood of $\mathsf M$. This also justifies the construction
+inductively before each ordinary average is applied. Holomorphy
+follows from the fixed-reference theorem and the explicit
+products and logarithms. Each one-step dependency has physical
+radius at most a fixed multiple of $h_t$, so the accumulated
+radius is bounded by a multiple of the geometric sum
+\eqref{nb-scales}. Alternatively, use the deposited two-final-block
+support of the corrected bond iterate.
+\end{proof}
+
+\subsection{Physical first differences and curvature}
+
+Supremum smallness alone does not give bounded physical
+curvature. In a commuting direction take $A_2$ alternating
+between $a$ and $-a$ at neighboring sites in direction $1$,
+with all other components zero. The plaquette angle is of
+order $\eta a$, hence the curvature divided by $\eta^2$ is
+of order $a/\eta$. This obstruction is already present at $t=0$.
+
+\begin{theorem}\label{nb-C1-theorem}
+In addition to Theorem~\ref{nb-trajectory-theorem}, assume
+\begin{equation}\label{nb-input-gradient}
+ b=\max_\nu\norm{\nabla_{\eta,\nu}A}_\infty<\infty.
+\end{equation}
+Then, with fixed constants,
+\begin{align}
+ \max_\nu\norm{\nabla_{h_t,\nu}A_t}_\infty
+       &\le e^{2D_\infty a/(L-1)}b,
+                                      \label{nb-corrected-C1}\\
+ \max_\nu\norm{\nabla_{h_t,\nu}B_t}_\infty
+       &\le C e^{Ca}b,                  \label{nb-ordinary-C1}\\
+ h_t^{-2}\norm{V_t(\partial p)-1}
+       &\le C e^{Ca}(b+a^2).            \label{nb-curvature}
+\end{align}
+These estimates hold for real or complex fields on compatible
+periodic lattices, with the same constants.
+\end{theorem}
+
+\begin{proof}
+The fixed-block map $\mathcal F_h$ commutes with translations
+by $Lh$ in each coordinate direction. For such a translation
+$T$, integrate its derivative along the segment from $B$ to
+$TB$. This segment remains in the same supremum ball. Equation
+\eqref{nb-one-step-derivative} gives
+\[
+ \norm{\mathcal F_h(TB)-\mathcal F_h(B)}_\infty
+  \le(1+D_\infty h\norm{B}_\infty)\norm{TB-B}_\infty.
+\]
+Telescoping $L$ fine steps shows
+$\norm{TB-B}_\infty/(Lh)\le
+\norm{\nabla_{h,\nu}B}_\infty$. Iterating, using
+\eqref{nb-corrected-input} and \eqref{nb-scales}, proves
+\eqref{nb-corrected-C1}. This requires only coarse translation
+covariance, not invariance under an arbitrary fine translation.
+
+On the same fixed coordinate ball, differentiation of the
+finite contour formula gives
+\begin{equation}\label{nb-contour-derivative}
+ \norm{D_A\alpha(e^{ihA})}_{\infty\to\infty}
+ +\norm{D_Aa(e^{ihA})}_{\infty\to\infty}\le C_\Gamma h.
+\end{equation}
+Indeed, each differentiated bond exponential contributes $h$;
+the other factors have bounded product norm. The logarithm
+derivative is bounded on $\norm{V-1}\le1/2$, as is the final
+exponential derivative. No fine derivative is taken here.
+
+For $s<t$, translation by $h_t$ preserves the scale-$s$ block
+construction. By \eqref{nb-contour-derivative}, telescoping
+$h_t/h_s$ input steps and using \eqref{nb-corrected-C1},
+\begin{equation}\label{nb-endpoint-spatial-difference}
+ \norm{a(C_s;y+h_te_\nu)-a(C_s;y)}
+        \le C h_sh_t e^{2D_\infty a/(L-1)}b.
+\end{equation}
+The inverse factors obey the same estimate. Telescope the
+ordered products defining $g_t$ at the two vertices, bound the
+undifferentiated products by \eqref{nb-gauge-size}, and sum
+$h_s$. This gives
+\begin{equation}\label{nb-gauge-spatial-difference}
+ \norm{g_t(y+h_te_\nu)^{\pm1}-g_t(y)^{\pm1}}
+                         \le C e^{Ca}h_t^2b.
+\end{equation}
+The corresponding difference of $C_t(c)=e^{ih_tA_t(c)}$
+is bounded by the same expression. The identity $V_t=C_t^{g_t}$
+therefore bounds the difference of $V_t$ across $h_te_\nu$
+by $Ce^{Ca}h_t^2b$. The logarithm is uniformly Lipschitz in
+the half-unit ball, by integrating its derivative on the convex
+segment. Dividing the logarithm difference by $h_t^2$ proves
+\eqref{nb-ordinary-C1}. The case $t=0$ is the input estimate.
+
+For curvature, first work with $C_t$. Pairing the two parallel
+sides of a plaquette, the difference formula for exponentials
+bounds the opposite-side differences by
+$Ch_t^2\max_\nu\norm{\nabla_{h_t,\nu}A_t}_\infty$.
+The remaining constant-side product is a group commutator,
+bounded by $Ch_t^2a^2$. Thus
+\[
+ \norm{C_t(\partial p)-1}
+ \le Ch_t^2\left(e^{2D_\infty a/(L-1)}b+a^2\right).
+\]
+The ordinary plaquette is conjugated by $g_t$ at its initial
+vertex. Equation \eqref{nb-gauge-size} proves
+\eqref{nb-curvature}. For real fields the gauges are unitary,
+so a unitarily invariant norm avoids this conjugation loss.
+Periodization preserves the translation identities and all
+telescoping estimates, including on short compatible tori.
+\end{proof}
+
+\subsection{Actual bond averages in physical norms}
+
+Let $Q_h(V)$ be the normalized linear coefficient of the
+corrected relative increment at reference $V$, held fixed.
+It is the one-step source operator of CMP98 (124), transcribed
+at Raw I:24355--24369. The explicit bridge I:47082--47086
+expresses it through finite local analytic operations. At $V=1$
+it is the straight-string operator $Q_h^{\rm st}$.
+
+For an operator from spacing $h$ to spacing $H$, define the
+absolute physical Schur norm by
+\begin{equation}\label{nb-av-norm}
+ \norm{P}_{\rm av}
+ =\max\left\{
+       \sup_c\sum_b\norm{P_{cb}},\quad
+       \sup_b(H/h)^d\sum_c\norm{P_{cb}}\right\}.
+\end{equation}
+This controls the bounded-field norm, the bounded-field norm
+of the physical adjoint and the physical $L^2$ norm. It is
+submultiplicative across scales: the volume ratios multiply.
+For the flat normalized straight-string map both row sums
+equal one. In fact each input bond occurs $L$ times among
+the $L^d$ translated strings of length $L$, so its ordinary
+column sum is $L^{-d}$ and its physical adjoint column sum
+is one.
+
+Finite-dimensional local analyticity and fixed-$L$ row and
+column incidence give constants $r_Q,C_Q>0$ with
+\begin{equation}\label{nb-local-Q-difference}
+ \norm{Q_h(e^{iX})-Q_h^{\rm st}}_{\rm av}
+             \le C_Q\norm{X}_\infty,
+                 \qquad\norm{X}_\infty<r_Q.
+\end{equation}
+To verify this directly, differentiate each local coefficient
+on a smaller closed complex polydisc and sum its finitely many
+incidences. The physical column factor is $L^d$, independent
+of $h$. The separate exact change-of-reference calculation
+identifies the logarithm Jacobians and endpoint correction
+that enter these coefficients; this shorter norm argument
+uses their already explicit local analytic definition.
+
+The actual source product uses the ordinary backgrounds:
+\begin{equation}\label{nb-actual-product}
+ Q_j(U)=Q_{h_{j-1}}(V_{j-1})\cdots Q_\eta(V_0).
+\end{equation}
+This is the composition recorded at Raw I:25147--25155 and
+I:47046--47061. By Theorem~\ref{nb-trajectory-theorem},
+$\norm{\log V_t}_\infty\le C_Vah_t$. Reduce $a_*$ so that
+$C_Va_*<r_Q$. Submultiplicativity and an exact telescoping
+of the difference of products prove
+\begin{align}
+ \norm{Q_j(U)}_{\rm av}
+       &\le\exp\left(\frac{C_QC_Va}{L-1}\right),
+                                      \label{nb-product-bound}\\
+ \norm{Q_j(U)-Q_M^{\rm st}}_{\rm av}
+       &\le\exp\left(\frac{C_QC_Va}{L-1}\right)-1.
+                                      \label{nb-product-difference}
+\end{align}
+For a partial product ending at $h_t$, replace $(L-1)^{-1}$
+in the exponent by $(h_t-\eta)/(L-1)$. These are actual source
+operator estimates, obtained without renaming
+$D\mathcal F^{(j)}(A)$ as $Q_j(U)$.
+
+\subsection{Scalar averages and finite physical range}
+
+The scalar average called $Q'_j$ in the deposit, and $Q_0$
+in the homogeneous flat analysis, is
+\begin{equation}\label{nb-scalar-average}
+ (Q'_j(U)\lambda)(y)=L^{-jd}\sum_{x\in B^j(y)}
+       \operatorname{Ad}_{U(\Gamma^{(j)}_{y,x})}\lambda(x).
+\end{equation}
+Raw I:23913--23920 states this formula. Its contour follows
+successive block centers. The description at I:17798--17810
+uses level-$s$ ordinary averaged configurations on the legs,
+with at most $dL$ bonds per leg. The ordinary amplitude bound
+and \eqref{nb-scales} therefore imply
+\begin{equation}\label{nb-scalar-transport}
+ \norm{U(\Gamma^{(j)}_{y,x})^{\pm1}}\le e^{Cah_j},
+ \qquad
+ \norm{\operatorname{Ad}_{U(\Gamma^{(j)}_{y,x})}-I}
+                                      \le e^{Cah_j}-1.
+\end{equation}
+At a fixed level the blocks partition the fine vertices.
+Each input scalar vertex occurs in one row with weight
+$L^{-jd}$, canceled by the physical adjoint volume factor.
+Consequently
+\begin{equation}\label{nb-scalar-difference}
+ \norm{Q'_j(U)}_{\rm av}\le e^{Cah_j},\qquad
+ \norm{Q'_j(U)-Q'_j(1)}_{\rm av}\le e^{Cah_j}-1.
+\end{equation}
+This scalar operator is distinct from the bond average and
+from the symbol $Q_0$ used for the main term of CMP98 (125).
+
+Partition the spaces into compatible physical cells of side
+one, with their physical Hilbert measures. The finite
+multilevel reading radius is bounded independently of
+refinement. For bond averages the deposit states the sharper
+two-final-block support at I:23927--23930 and I:24332--24336.
+If $R$ bounds the physical reading radius and $N_R$ the
+number of possible neighboring cells, every cell block has
+operator norm at most the global Hilbert norm. Hence
+\begin{equation}\label{nb-cell-Schur}
+ \norm{P}_{\kappa,\mathrm{cell}}
+ :=\max\left\{
+ \sup_x\sum_y e^{\kappa d(x,y)}\norm{P_{xy}}_{2\to2},
+ \sup_y\sum_x e^{\kappa d(x,y)}\norm{P_{xy}}_{2\to2}\right\}
+ \le N_Re^{\kappa R}\norm{P}_{2\to2}
+\end{equation}
+for such a finite-range $P$. Applying this to the differences
+in \eqref{nb-product-difference} and
+\eqref{nb-scalar-difference} gives uniform $O(a)$ bounds in
+the physical-cell weighted Schur norm. Periodic distance and
+fixed cover multiplicities give the same result on small
+compatible tori.
+
+\subsection{Local holomorphy and scope}
+
+All constructions above are holomorphic on the same complex
+ball $\norm{A}_\infty<a_*$. At finite regulators this follows
+from products of finite-dimensional holomorphic maps. Their
+uniform bounds and bounded physical reading ranges also give
+the corresponding bounded-field local maps on the full
+lattice. In particular $A\mapsto Q_j(e^{i\eta A})$ and
+$A\mapsto Q'_j(e^{i\eta A})$ are holomorphic in the weighted
+operator norm just defined, with a uniform bound on every
+smaller ball. For example, if that bound is $C_0$ and an
+argument lies at distance at least $r$ from the boundary of
+the chosen ball, the multivariable Cauchy formula gives
+\begin{equation}\label{nb-Cauchy}
+ \norm{D^nQ_j(A)[K_1,\ldots,K_n]}_{\kappa,\mathrm{cell}}
+ \le C_0 n!\left(\frac er\right)^n
+                         \prod_{m=1}^n\norm{K_m}_\infty,
+\end{equation}
+and the same statement for $Q'_j$. One obtains it using
+polydisc radii $r/(n\norm{K_m}_\infty)$ and
+$n^n\le e^n n!$. Directions of zero norm are handled by
+multilinearity. This is a bounded-background derivative
+statement; no Hilbert norm is substituted for a background
+direction without another estimate.
+
+The result supplies uniform ordinary reference trajectories,
+their physical $C^1$ and curvature bounds when the initial
+first differences are bounded, and actual source averaging
+operators close to their flat counterparts. It concerns a
+globally trivialized homogeneous class. The next section uses these estimates to control an explicitly
+normalized Wilson Hessian and its moving projected gauge inverse.
+The minimizing field is constructed separately in Notebook 15
+on a small global physical $C^{1,\alpha}$ ball; Notebook 16
+controls its nonlinear local responses and classical coarse action.
+Mixed retained-history domains, strict background-support expansions
+and an interacting Yang--Mills ultraviolet limit remain separate.
+The original-primary-paper
+verification limitation stated in Section~\ref{nb-source}
+remains in force.
+
+% Notebook 14 body fragment; no preamble. Unique prefix nw-.
+% Requires amsmath, amssymb, amsthm and \norm; follows nc-/nb- fragments.
+% Main proof independently audited; source action convention scope explicit.
+
+\section{A nonflat Wilson Hessian and its full energy inverse}
+\label{nw-section}
+
+The averaging bounds above close the remaining averaging hypotheses
+of an energy-form perturbation argument. We first calculate the
+Wilson Hessian, including its normalization. Its bare action,
+physical pairing and left-exponential chart match the deposited
+conventions in dimension four. The resulting theorem uses the
+deposited homogeneous averaging maps; the graded-curl and effective
+Hessian identifications remain separate, as stated below.
+
+\subsection{Action, charts, and an exact local decomposition}
+\label{nw-wilson}
+
+Write $\eta=M^{-1}\le1$ and $\tau=N_c^{-1}\operatorname{Tr}$.
+Fine fields have physical pairing
+$\langle B,C\rangle_\eta=\eta^d\sum_e\tau(B_eC_e)$.
+The sum is over positive bonds; plaquettes below are counted once,
+with $\mu<\nu$. On Hermitian fields this is the real Hilbert pairing;
+its complex extension is bilinear. Superscript $T$ always denotes
+that transpose, with no conjugation of a complex background.
+Define
+\begin{equation}\label{nw-action}
+ \mathcal S_\eta(U)=\eta^{d-4}\sum_p
+   \left(1-\frac12\tau(P_p+P_p^{-1})\right),\qquad
+ U_e(s,t)=e^{i\eta(sB_e+tC_e)}U_e,
+\end{equation}
+and define $\Delta_U$ by the mixed derivative of this action.
+There is no coupling prefactor in \eqref{nw-action}. At $U=1$,
+$\Delta_1=d^Td$, where $d$ is the ordinary physical plaquette curl.
+
+Let $U_e=e^{i\eta a_e}$, with
+\begin{equation}\label{nw-sizes}
+ \epsilon_0=\norm{a}_\infty,\qquad
+ \epsilon_1=\norm{\nabla a}_\infty,\qquad
+ F=\epsilon_1+\epsilon_0^2.
+\end{equation}
+The field can be complex; $\epsilon_0$ is bounded by a fixed small
+constant. Comparing opposite plaquette sides by the integral formula
+for matrix exponentials, and bounding the residual group commutator,
+gives
+\begin{equation}\label{nw-plaquette}
+ \norm{P_p-I}+\norm{P_p^{-1}-I}\le C\eta^2F.
+\end{equation}
+Indeed opposite potentials differ by at most $\eta\epsilon_1$,
+so their exponentials differ by $C\eta^2\epsilon_1$.
+For the remaining two constant potentials the commutator costs
+$C\eta^2\epsilon_0^2$. All path transports involved here have a
+fixed number of links and norm at most $e^{C\eta\epsilon_0}$.
+
+For the loop $e_1,\ldots,e_4$ around $p$, set
+$V_i=U_{e_1}\cdots U_{e_{i-1}}$.
+A negative traversal of the positive bond $f$ has exact chart
+increment $B_{-f}=-\operatorname{Ad}_{U_f^{-1}}B_f$.
+Put $X_i^B=\operatorname{Ad}_{V_i}B_{e_i}$ and
+\begin{equation}\label{nw-curl}
+ \mathcal C_U B=\eta^{-1}\sum_iX_i^B.
+\end{equation}
+The exact plaquette variation is
+$P_p(s,t)=\prod_i e^{i\eta(sX_i^B+tX_i^C)}P_p$.
+Every transport difference from identity is $O(\eta\epsilon_0)$,
+and therefore
+\begin{equation}\label{nw-curl-difference}
+ \mathcal C_U=d+E_U,\qquad
+ \norm{E_U}_{\infty\to\infty}
+       +\norm{E_U^T}_{\infty\to\infty}\le C\epsilon_0.
+\end{equation}
+The transpose norm uses physical measure. Fixed plaquette incidence
+also gives the same estimate in a weighted physical-cell Schur norm.
+
+Writing $S_B=\sum_iX_i^B$, direct mixed differentiation gives
+\begin{equation}\label{nw-mixed}
+ \partial_s\partial_tP_p\big|_0=-\eta^2
+ \left\{\frac{S_BS_C+S_CS_B}{2}
+ +\frac12\sum_{i<j}
+ ([X_i^B,X_j^C]+[X_i^C,X_j^B])\right\}P_p.
+\end{equation}
+For the oriented density $-\tau(P_p)$ the principal contribution is
+$\eta^d\tau(((\mathcal C_UB)(\mathcal C_UC)
++(\mathcal C_UC)(\mathcal C_UB))P_p)/2$.
+The remaining contribution is exactly
+\begin{equation}\label{nw-commutator-remainder}
+ \frac{\eta^d}{2\eta^2}\sum_{i<j}
+ \tau\left(([X_i^B,X_j^C]+[X_i^C,X_j^B])(P_p-I)\right),
+\end{equation}
+because a commutator has trace zero. The reverse loop has curl
+$-\operatorname{Ad}_{P_p^{-1}}\mathcal C_U$; cyclicity removes this
+adjoint transport from its principal quadratic term. Thus
+\begin{equation}\label{nw-hessian}
+ \Delta_U=\mathcal C_U^TM_U\mathcal C_U+V_U,\qquad
+ \tau(XM_{U,p}Y)=\frac14\tau((XY+YX)(P_p+P_p^{-1})),
+\end{equation}
+where $V_U$ is half \eqref{nw-commutator-remainder} plus half its
+reverse-loop version. Projection onto the fixed traceless Lie space
+is implicit in the definition of $M_U$. These coefficients are
+bilinearly symmetric and holomorphic. Equation \eqref{nw-plaquette}
+implies
+\begin{equation}\label{nw-coefficients}
+ \norm{M_U-I}\le C\eta^2F,
+ \qquad \norm{V_U}_{\infty\to\infty}
+       +\norm{V_U^T}_{\infty\to\infty}\le CF.
+\end{equation}
+Each curl has row and transpose-row norm $O(\eta^{-1})$.
+Consequently the ordinary bounded local operator
+$W_U=\Delta_U-\mathcal C_U^T\mathcal C_U$ has row and
+transpose-row norm $CF$: the two inverse mesh factors are paid for
+by $\eta^2$ in \eqref{nw-coefficients}. In particular
+\begin{equation}\label{nw-small-form}
+ \Delta_U-d^Td=d^TE_U+E_U^Td+E_U^TE_U+W_U
+       =S_v^TV_{\rm kin}S_v,
+ \quad S_v=(I,\nabla),
+\end{equation}
+with $\norm{V_{\rm kin}}_\kappa\le
+C(\epsilon_0+\epsilon_1+\epsilon_0^2)$.
+Here $\nabla$ contains all physical fine differences of bond
+components; the curl is a fixed component combination of them.
+The scalar gauge derivative is separately
+\begin{equation}\label{nw-scalar-gradient}
+ D_U\lambda(e)=\eta^{-1}
+  (\operatorname{Ad}_{U_e}\lambda(e_+)-\lambda(e_-))
+  =D\lambda+E_s\lambda,
+ \qquad \norm{E_s}_\kappa\le C\epsilon_0.
+\end{equation}
+All coefficients in these two estimates have fixed fine range.
+
+\subsection{The scalar compression and a form-resolvent lemma}
+\label{nw-scalar}
+
+For physical-cell block operators use the Banach algebra norm
+\begin{equation}\label{nw-schur}
+ \norm{T}_\kappa=\max\left\{
+ \sup_x\sum_y e^{\kappa d(x,y)}\norm{T_{xy}},
+ \sup_y\sum_x e^{\kappa d(x,y)}\norm{T_{xy}}\right\}.
+\end{equation}
+The norm is submultiplicative and invariant under transpose.
+Fine-cell spaces have measure $\eta^d$, so it introduces no power
+of the number of fine sites. The earlier flat inverse theorem gives
+\begin{equation}\label{nw-flat-blocks}
+ \norm{S_vG_0S_v^T}_\kappa\le K_v,
+ \quad G_0=(d^Td+DR_0D^T+Q^Ta_{\rm pen}Q)^{-1},
+\end{equation}
+for $a_{\rm pen}$ in a fixed compact positive interval.
+Both flat averages $Q=Q_M^{\rm st}$ and $Q_0$, and their transposes,
+have uniform weighted norms by physical row/column contraction and
+fixed final-scale range.
+
+For clarity the additional scalar input is derived explicitly.
+Let $G'_0=(\mathcal L+Q_0^Ta'Q_0)^{-1}$, $\mathcal L=D^TD$,
+where $a'$ lies in a fixed compact positive interval, and let
+$S_s=(I,D)$. In coarse Bloch aliases write $P_r$ for the fine
+Laplacian multiplier, $a_r$ for the scalar average, and
+\begin{align}
+ A&=a_0a_0^-,&
+ R_{s,k}&=\sum_{r\ne0}\frac{a_ra_r^-}{P_r^k},\nonumber\\
+ D_{s,2}&=A+P_0^2R_{s,2},&
+ N&=P_0+a'A+a'P_0R_{s,1}.                   \label{nw-scalar-denoms}
+\end{align}
+The scalar Woodbury formula has central entry
+$(R_{s,1}+(a')^{-1})/[A+P_0(R_{s,1}+(a')^{-1})]$,
+mixed entry $-a_0^-a_s/[P_s(A+P_0(R_{s,1}+(a')^{-1}))]$,
+and a high diagonal $P_r^{-1}$ plus a rank-one correction.
+These canceled expressions, high-alias gaps and alias Parseval
+give $\norm{S_sG'_0S_s^T}_\kappa\le K_s$.
+They also give the exact compression formula
+\begin{equation}\label{nw-compression}
+ C_0=Q_0(G'_0)^2Q_0^T=\frac{D_{s,2}}{N^2},
+ \qquad C_0^{-1}=\frac{N^2}{D_{s,2}}.
+\end{equation}
+On an enlarged real Bloch cube, $A\ge c>0$ and the high remainders
+are nonnegative and uniformly bounded. Thus $N,D_{s,2}$ are
+bounded above and away from zero. Their uniformly bounded
+holomorphic preliminary tube can be shrunk by a fixed amount to
+retain these lower bounds. Periodic physical-cell reconstruction
+and contour shifting prove
+$\norm{C_0}_\kappa+\norm{C_0^{-1}}_\kappa\le K_c$.
+The zero fiber gives $C_0=(a')^{-2}$; for $M=1$ it gives
+$(P_0+a')^{-2}$. No inverse of the unpenalized zero mode is used.
+
+We will repeatedly use the following elementary form identity.
+If $G=\mathcal A^{-1}$, $K=SGS^T$ has weighted norm at most $K_*$,
+and $I$ is a component of $S$, then for $K_*\norm{V}_\kappa<1$,
+\begin{equation}\label{nw-form-resolvent}
+ (\mathcal A+S^TVS)^{-1}
+ =G-GS^TV(I+KV)^{-1}SG,
+\end{equation}
+and the augmented block has norm at most
+$K_* /(1-K_*\norm{V}_\kappa)$ and differs from $K$ by at most
+$K_*^2\norm{V}_\kappa/(1-K_*\norm{V}_\kappa)$.
+The Neumann series in \eqref{nw-schur} proves these assertions and
+holomorphy. Multiplication verifies the inverse at each fixed
+spacing on the finite or infinite lattice. If the real baseline
+$\mathcal A$ is positive definite, the same smallness gives
+relative-form coercivity for real symmetric perturbations.
+
+\subsection{Conditional closure of the projected gauge inverse}
+\label{nw-conditional}
+
+\begin{theorem}\label{nw-energy-theorem}
+Suppose, in one common weighted algebra, that
+\begin{gather}
+ D_U=D+E_s,\quad Q_s(U)=Q_0+F_s,\quad Q_v(U)=Q+F_v,
+ \quad \Delta_U=d^Td+S_v^TV_{\rm kin}S_v,\nonumber\\
+ \norm{E_s}_\kappa+\norm{F_s}_\kappa+
+ \norm{F_v}_\kappa+\norm{V_{\rm kin}}_\kappa\le\varepsilon.
+                                                        \label{nw-hypotheses}
+\end{gather}
+Define
+\begin{align}
+ G'_U&=(D_U^TD_U+Q_s(U)^Ta'Q_s(U))^{-1},\nonumber\\
+ C_U&=Q_s(U)(G'_U)^2Q_s(U)^T,\nonumber\\
+ R_U&=I-G'_UQ_s(U)^TC_U^{-1}Q_s(U)G'_U,\nonumber\\
+ \mathcal A_U&=\Delta_U+D_UR_UD_U^T
+                     +Q_v(U)^Ta_{\rm pen}Q_v(U).       \label{nw-full-operator}
+\end{align}
+For a sufficiently small uniform $\varepsilon_*>0$, if
+$\varepsilon\le\varepsilon_*$ all these inverses exist and
+\begin{equation}\label{nw-energy-bound}
+ \norm{S_sG'_US_s^T}_\kappa+
+ \norm{C_U^{-1}}_\kappa+\norm{R_U}_\kappa+
+ \norm{S_v\mathcal A_U^{-1}S_v^T}_\kappa\le C.
+\end{equation}
+Each displayed block differs from its flat counterpart by at
+most $C\varepsilon$. Constants are uniform in refinement and
+compatible periodic volume; the full-lattice statement also holds.
+Holomorphic coefficient families give holomorphic inverse families.
+On real data $R_U$ is the orthogonal projection off
+$\operatorname{ran}(G'_UQ_s(U)^T)$.
+\end{theorem}
+
+\begin{proof}
+The scalar precision difference is
+\[
+ D^TE_s+E_s^TD+E_s^TE_s+
+ Q_0^Ta'F_s+F_s^Ta'Q_0+F_s^Ta'F_s.
+\]
+It equals $S_s^TV_sS_s$ with $\norm{V_s}_\kappa\le C_s\varepsilon$.
+The form identity controls the scalar energy block and its
+$O(\varepsilon)$ difference when $K_sC_s\varepsilon\le1/2$.
+Product expansion gives $\norm{C_U-C_0}_\kappa\le C'_s\varepsilon$.
+Equation \eqref{nw-compression} and
+\[
+ C_U^{-1}=(I+C_0^{-1}(C_U-C_0))^{-1}C_0^{-1}
+\]
+then control its inverse if $K_cC'_s\varepsilon\le1/2$.
+The formula for $R_U$ gives its bound and its
+$O(\varepsilon)$ difference. Its projection assertion is the Gram
+projection formula; for complex coefficients it is a bilinear
+holomorphic continuation rather than a positivity claim.
+
+The gauge difference is exactly
+\begin{equation}\label{nw-gauge-difference}
+ D_UR_UD_U^T-DR_0D^T
+ =D(R_U-R_0)D^T+E_sR_UD^T+DR_UE_s^T+E_sR_UE_s^T.
+\end{equation}
+The divergence $D^T$ on bonds is a fixed shifted component
+combination of $\nabla$. Keeping these derivatives in $S_v$,
+\eqref{nw-gauge-difference} is $S_v^TV_gS_v$ with norm
+$C_g\varepsilon$. The average-penalty difference
+$Q^Ta_{\rm pen}F_v+F_v^Ta_{\rm pen}Q+F_v^Ta_{\rm pen}F_v$
+is a bounded $I,I$ coefficient of size $C_a\varepsilon$.
+Thus $\mathcal A_U=\mathcal A_0+S_v^TV_{\rm tot}S_v$,
+with $\norm{V_{\rm tot}}_\kappa\le C_v\varepsilon$.
+A second application of \eqref{nw-form-resolvent}, with
+$K_vC_v\varepsilon\le1/2$, proves the result.
+\end{proof}
+
+The theorem controls $G_U$, $\nabla G_U$, $G_U\nabla^T$ and
+$\nabla G_U\nabla^T$, with exponential coarse-cell locality.
+It does not propagate one-sided second derivatives by this
+argument: differentiating $G_0S_v^T$ twice would require an
+unavailable total third-order baseline block.
+
+\subsection{Penalty independence and the homogeneous Wilson conclusion}
+\label{nw-conclusion}
+
+The scalar penalty is unnecessary for identifying the projection.
+Fix $\mathcal L_U=D_U^TD_U$ and $Q_s$, and let
+$G_b=(\mathcal L_U+Q_s^TbQ_s)^{-1}$,
+$E_b=G_bQ_s^T$. Whenever the inverse and Gram inverse exist,
+\begin{equation}\label{nw-range}
+ \operatorname{ran}E_b
+   =\{v:\mathcal L_Uv\in\operatorname{ran}Q_s^T\}.
+\end{equation}
+One inclusion follows by applying $\mathcal L_U$ to $G_bQ_s^T$.
+For the other, $\mathcal L_Uv=Q_s^Tw$ implies
+$v=G_bQ_s^T(w+bQ_sv)$.
+The range is therefore independent of the symmetric coarse penalty
+$b$. Its Gram inverse makes it nondegenerate, and
+$E_b(E_b^TE_b)^{-1}E_b^T$ is the unique bilinear projection
+onto this range along its orthogonal complement. Thus $R_U$ is
+penalty independent. The identity holds directly for complex data
+whenever the stated inverses exist, and on real data it is the
+ordinary orthogonal projection identity.
+
+We may consequently construct $R_U$ using $a'=1$.
+It agrees with a differently penalized source formula wherever
+that formula is defined, without estimating an unprinted scalar
+penalty sequence. An estimate for that other scalar inverse
+$G'_U$ itself still requires its own normalization bounds.
+
+\begin{corollary}\label{nw-wilson-corollary}
+Fix odd $L\ge3$, $M=L^j$, and the homogeneous full or periodic
+lattice. Let $Q_v(U)$ be the deposited product of corrected
+one-step derivatives at the ordinary reference trajectory, as
+in \eqref{nb-actual-product}, and let $Q_s(U)$ be the deposited
+scalar transported average \eqref{nb-scalar-average}.
+Define $\Delta_U$ by \eqref{nw-action}, $D_U$ by
+\eqref{nw-scalar-gradient}, and $R_U$ by
+\eqref{nw-full-operator} with auxiliary scalar penalty one.
+For $a_{\rm pen}$ in a fixed compact positive interval, there are
+$\rho,\kappa,C>0$, independent of $j$ and compatible volume, such that
+\begin{equation}\label{nw-final}
+ \norm{a}_\infty+\norm{\nabla a}_\infty<\rho
+ \quad\Longrightarrow\quad
+ \norm{(I,\nabla)
+ (\Delta_U+D_UR_UD_U^T+Q_v(U)^Ta_{\rm pen}Q_v(U))^{-1}
+ (I,\nabla)^T}_\kappa\le C.
+\end{equation}
+The inverse is holomorphic on this complex global $C^1$ ball,
+and its augmented block differs from the flat block by at most
+$C(\norm{a}_\infty+\norm{\nabla a}_\infty)$.
+\end{corollary}
+
+\begin{proof}
+Equations \eqref{nb-product-difference},
+\eqref{nb-scalar-difference}, and \eqref{nb-cell-Schur}
+give $\norm{Q_v(U)-Q}_\kappa+\norm{Q_s(U)-Q_0}_\kappa
+\le C\epsilon_0$.
+Their mechanism is the ordinary-reference estimate
+$\norm{\log V_t}\le Ch_t\epsilon_0$, a physical one-step
+coefficient difference $O(h_t\epsilon_0)$, and the geometric
+sum $\sum_{t<j}h_t\le1/(L-1)$; no derivative of a different
+nonlinear composition is substituted.
+Equations \eqref{nw-small-form} and \eqref{nw-scalar-gradient}
+supply the remaining hypotheses of Theorem~\ref{nw-energy-theorem}.
+\end{proof}
+
+The bare source normalization is matched at the deposited-transcription level.
+Raw I lines 453--467 normalize $\operatorname{tr}1=1$, count
+unoriented plaquettes once and define
+$A(U)=\sum_p(1-\operatorname{Re}\operatorname{tr}P_p)$;
+lines 472--481 place the coupling separately. Thus this bare action
+is exactly \eqref{nw-action} in dimension four.
+Lines 12756--12760 give the physical trace pairings with fine measure
+$\eta^d$ and their bilinear transposes. Lines 15471--15478 and
+15643--15648 define $\Delta$ as the quadratic coefficient in the
+simultaneous left chart $\mathsf A(e^{i\eta A}U_0)$, exactly the chart
+in \eqref{nw-action}. Lines 43103--43107 again specify the bare
+Wilson action for constrained minimization. These passages resolve
+the action-prefactor, physical-sum and chart conventions used here.
+Lines 13583--13593 define the full source operator
+$\Delta+D_URD_U^T+Q^TaQ$, with $a=1$ at unit scale.
+At a nonzero global potential $A_0$, the ordinary-coordinate Hessian
+of $A\mapsto\mathcal S_\eta(e^{i\eta A})$ also contains the background
+current paired with the second derivative of the change to this left
+chart. Matching the action does not remove that term or identify the
+two Hessian matrices. The separate source claim about
+$\Delta-D_U^TD_U$ still requires matching its precise graded
+one-form covariant curl, and no mixed retained-history effective
+Hessian is identified with this bare homogeneous Hessian.
+These checks concern the pinned deposit, not a fresh verification
+of the original journal proofs.
+
+Corollary~\ref{nw-wilson-corollary} is a theorem for its explicitly
+defined Wilson operator and deposited homogeneous averages.
+It does not establish nonflat pointwise weak norms, nonflat current
+domains, mixed retained histories, arbitrary nontrivial reference
+connections, or an interacting continuum construction.
+
+\begin{thebibliography}{9}
+\bibitem{repo}
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}
+{Pinned Yang--Mills-LLM-experiment account}, commit
+\texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+The exact locations and remaining source-identification checks are stated
+alongside the corresponding arguments above.
+\bibitem{previous}
+Companion research proofs: Notebook 09, the full flat fine inverse
+and scalar gauge identities; Notebook 12, pointwise and Schauder
+regularity on the flat current domain; Notebook 13, the complete
+fixed-reference nonlinear averaging ball and constraint chart.
+\end{thebibliography}
+\end{document}

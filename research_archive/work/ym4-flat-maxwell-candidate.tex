@@ -1,0 +1,545 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\Herm}{\operatorname{Herm}}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 06: direct flat Maxwell bounds and a compact lift}
+\author{Research working document}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note proves bounds for the flat quadratic effective action that
+are uniform in the number of averaging levels. Curvature averaging
+is a contraction in the correctly scaled volume norms. A finite-block
+Poincar\'e argument therefore supplies an axial gap. An explicit compact
+right inverse to straight-string averaging supplies the complementary
+energy upper bound. A gauge adjustment shows that the rooted and
+straight constraints have the same energy infimum. Together with the
+actual averaged-path gauge bridge of Notebook 05, these results give
+both bounds for the flat reduced Gaussian precision, subject to the
+stated identification with the constrained-minimizer Hessian. Complex
+background responses and covariance locality remain separate problems.
+\end{abstract}
+
+\noindent\textbf{Status.}
+The proofs have passed separate internal checks of the averaging,
+finite-block gap, compact lift, periodic counting, and variational
+transfer. No external certification or novelty claim is made.
+The statements below are about an explicitly
+defined flat quadratic model. Section~\ref{sec:match} gives the precise
+additional identification needed for the deposited Yang--Mills
+Gaussian; no nonlinear renormalization theorem or continuum limit is
+inferred from these bounds.
+
+\section{Normalized averaging commutes with curvature}
+
+Let fine and coarse spacings be $h$ and $H=Mh$, with $M$ odd.
+Use centered $M$-blocks $B_M(y)$, one positive bond orientation,
+and one plaquette orientation $\mu<\nu$. Potentials are physical
+coordinates: the group link would be $\exp(ihA_\mu(x))$.
+Define
+\[
+ (d_hA)_{\mu\nu}(x)=h^{-1}
+ [A_\nu(x+he_\mu)-A_\nu(x)
+  -A_\mu(x+he_\nu)+A_\mu(x)],
+\]
+\[
+ (Q_M^{\rm st}A)_\mu(y)=M^{-d-1}
+ \sum_{x\in B_M(y)}\sum_{r=0}^{M-1}A_\mu(x+rhe_\mu),
+\]
+\[
+ (Q_M^{(2)}F)_{\mu\nu}(y)=M^{-d-2}
+ \sum_{x\in B_M(y)}\sum_{r,s=0}^{M-1}
+ F_{\mu\nu}(x+rhe_\mu+she_\nu).
+\]
+The volume norm is
+$\norm F_h^2=h^d\sum_x\sum_{\mu<\nu}|F_{\mu\nu}(x)|^2$,
+and analogously for one-forms.
+
+\begin{proposition}\label{prop:cochain}
+On the infinite lattice or a periodic lattice tiled by complete blocks,
+\begin{equation}\label{eq:cochain}
+ d_HQ_M^{\rm st}=Q_M^{(2)}d_h,\qquad
+ \norm{Q_M^{(2)}F}_H\le\norm F_h.
+\end{equation}
+The one-form average is also a contraction in the volume norms.
+\end{proposition}
+
+\begin{proof}
+Expand a coarse plaquette curl and translate the block base points.
+The four strings are the boundary of an $M$ by $M$ fine plaquette
+square. Discrete Stokes contributes $h\sum d_hA$, and the coarse
+curl contributes $H^{-1}=(Mh)^{-1}$. Together with $M^{-d-1}$,
+this gives exactly $M^{-d-2}$.
+
+Each row of $Q_M^{(2)}$ is a positive average of $M^{d+2}$ terms.
+For a fixed fine plaquette and each pair $(r,s)$, the base point lies
+in exactly one block. Its total column weight is therefore
+$M^2M^{-d-2}=M^{-d}$. Jensen's inequality, followed by
+$H^dM^{-d}=h^d$, proves the contraction. Periodic preimages are
+counted with multiplicity, so small tori cause no exception.
+Use $M$ string indices in place of $M^2$ surface indices for the
+one-form contraction.
+\end{proof}
+
+The physical derivative $h^{-1}$ is essential in this computation.
+Unscaled plaquette sums would change the power of $M$.
+Straight-string averages satisfy the exact semigroup identity
+\[
+ Q_N^{\rm st}Q_M^{\rm st}=Q_{NM}^{\rm st}.
+\]
+Indeed a centered $NM$-block decomposes uniquely into centered
+$M$-blocks with intermediate base coordinates, and a string index
+decomposes uniquely as $r_M+Mr_N$. The two bijections are independent.
+The same proof gives the two-form semigroup identity.
+
+\subsection{The rooted contour average}
+
+Let $T_hA(y,x)$ be the physical rooted path integral, including the
+factor $h$, and let $a$ average it over the block. The linearization
+of the rooted group average is
+\begin{equation}\label{eq:rooted}
+ Q_M^\flat=Q_M^{\rm st}-D_HaT_h.
+\end{equation}
+The initial and final rooted contours give the second term; the
+reference coarse string cancels with the final reference transporter.
+This is the spacing-restored identity of Notebook 05. Since
+$d_HD_H=0$, the curvature identity \eqref{eq:cochain} also holds
+with $Q_M^\flat$. Iterating gives
+\begin{equation}\label{eq:iterated-contraction}
+ \norm{d_1Q_kA}_1\le\norm{d_\eta A}_\eta,
+ \qquad \eta=L^{-k},
+\end{equation}
+for the composed rooted derivative. No equality of its one-form
+operator with $Q_{L^k}^{\rm st}$ is used.
+
+The corrected operator in Raw I, lines 24355--24375, has a different
+flat derivative: all four correction brackets vanish at the identity,
+leaving $Q^{\rm st}$ exactly. Its straight semigroup is valid. The
+rooted operator of CMP109 differs by the gradient in
+\eqref{eq:rooted}; the two should not be identified merely by notation.
+
+\section{A compact right inverse with bounded energy}
+
+Set coarse spacing to one and fine spacing to $\eta=1/M$. We now
+construct a right inverse $R_M$ to $Q_M^{\rm st}$ with constants
+independent of $M$. This section uses infinite or periodic complete
+block lattices. Restriction to an arbitrary boundary is discussed
+below.
+
+For $M=2h_0+1\ge3$, put
+\[
+ m_1=\frac{M^2-1}{4M^2},\qquad
+ m_2=\frac{M^2-1}{12M^2},\qquad
+ v=m_2-m_1^2
+   =\frac{(M^2-1)(M^2+3)}{48M^4}.
+\]
+Define a longitudinal sequence, zero outside $0\le s<M$, by
+\begin{equation}\label{eq:psi}
+ u_s=(s-h_0)/M,\qquad
+ \psi_M(s)=\alpha+\beta|u_s|,
+ \qquad \alpha=m_2/v,\quad\beta=-m_1/v.
+\end{equation}
+For the normalized mean $E_M=M^{-1}\sum_{s=0}^{M-1}$,
+\begin{equation}\label{eq:psi-moments}
+ E_M\psi_M=1,\qquad E_M(|u|\psi_M)=0,
+ \qquad E_M\psi_M^2=\alpha\le4.
+\end{equation}
+These follow by substituting $E_M|u|=m_1$, $E_Mu^2=m_2$.
+In particular the signed sequence is even about $h_0$.
+
+For transverse coordinates define the hat sequence
+\begin{equation}\label{eq:phi}
+ \phi_M(r)=\frac{M}{h_0+1}
+             \left(1-\frac{|r|}{h_0+1}\right)
+ \quad (|r|\le h_0),
+ \qquad\phi_M(r)=0\quad\hbox{otherwise}.
+\end{equation}
+Direct summation gives
+\begin{equation}\label{eq:phi-bounds}
+ M^{-1}\sum_r\phi_M(r)=1,\quad
+ 0\le\phi_M\le2,\quad M^{-1}\sum_r\phi_M(r)^2\le2,
+\end{equation}
+\begin{equation}\label{eq:phi-gradient}
+ M^{-1}\sum_r|M[\phi_M(r+1)-\phi_M(r)]|^2
+ =\frac{16M^3}{(M+1)^3}\le16.
+\end{equation}
+There are $M+1$ nonzero differences, all with absolute value
+$M/(h_0+1)^2$ before multiplying by $M$.
+
+For a coarse bond based at $j\in\mathbb Z^d$ in direction $\mu$,
+define the fine bond basis, writing $z=Mx\in\mathbb Z^d$, by
+\[
+ \Psi_{\mu,j}(z)=\psi_M(z_\mu-Mj_\mu)
+                \prod_{\nu\ne\mu}\phi_M(z_\nu-Mj_\nu),
+\]
+and set
+\begin{equation}\label{eq:lift}
+ (R_MB)_\mu(z/M)=\sum_jB_\mu(j)\Psi_{\mu,j}(z).
+\end{equation}
+The sums are local. Each basis reads only its own coarse bond and
+is supported in the union of the two endpoint blocks. Periodize the
+basis for a torus. For $M=1$, use the identity lift.
+
+\begin{theorem}[Compact bounded-energy lift]\label{thm:lift}
+For $M$ odd and $d\ge2$,
+\begin{equation}\label{eq:lift-bounds}
+ Q_M^{\rm st}R_M=I,\qquad
+ \norm{R_MB}_\eta^2\le2^{d+1}\norm B_1^2,
+\end{equation}
+\begin{equation}\label{eq:lift-energy}
+ \norm{d_\eta R_MB}_\eta^2
+ \le C_d\norm B_1^2,
+ \qquad C_d=2^{d+6}(d-1).
+\end{equation}
+The bounds hold in infinite volume and on periodic lattices, including
+small tori with periodic multiplicities.
+\end{theorem}
+
+\begin{proof}
+The averaging separates into coordinates. Transversely, the supports
+of $\phi_M(r-Mj)$ are disjoint blocks and their block averages are
+Kronecker deltas by \eqref{eq:phi-bounds}.
+Longitudinally, the straight-string kernel in a row based at $Mj$
+is the triangle
+\[
+ M^{-1}\left(1-\frac{|s-Mj-h_0|}{M}\right)_+,
+\]
+on its integer support. On the support of the basis with index $j$,
+the target row thus averages $(1-|u|)\psi_M$, which is one by
+\eqref{eq:psi-moments}. The adjacent rows average the positive and
+negative halves of $|u|\psi_M$. Both are zero by evenness and the
+second moment condition. Every other row has disjoint support.
+This proves $QR=I$; periodization preserves the identity.
+
+For each orientation the tensor supports tile the fine sites without
+overlap. The squared norm of a basis is bounded by
+$4\,2^{d-1}=2^{d+1}$, using the volume-weighted tensor product
+of \eqref{eq:psi-moments} and \eqref{eq:phi-bounds}.
+This proves the first norm bound.
+
+Only transverse derivatives $D_{\eta,\nu}A_\mu$, $\nu\ne\mu$,
+enter the curl. Thus no derivative of the signed longitudinal
+sequence is needed. For one basis, its transverse derivative has
+squared norm at most $4\,16\,2^{d-2}=2^{d+4}$.
+At a given fine bond, at most two differentiated translates overlap.
+Cauchy--Schwarz therefore gives
+\[
+ \norm{D_{\eta,\nu}(R_MB)_\mu}_\eta^2
+ \le2^{d+5}\norm{B_\mu}_1^2.
+\]
+Finally sum
+$|D_\mu A_\nu-D_\nu A_\mu|^2\le
+2|D_\mu A_\nu|^2+2|D_\nu A_\mu|^2$
+over $\mu<\nu$. Each component occurs $d-1$ times, proving
+\eqref{eq:lift-energy}. The same overlap counting on the periodic
+cover proves the bound for small tori. The identity lift at $M=1$
+obeys the displayed conservative constants directly.
+\end{proof}
+
+For example, at $M=3$, $\psi=(0,3,0)$ and
+$\phi=(3/4,3/2,3/4)$. At larger $M$, the longitudinal basis has
+negative portions; that cancellation is what makes it an exact
+right inverse. Positivity of the lift is neither asserted nor needed.
+
+For supported coarse fields on the full lattice the lift remains
+supported in the corresponding double blocks. For a coarse bond
+incident to a bounded region, one of these blocks may be outside
+the region. Thus the construction gives a fixed-width collar, not
+automatically the prescribed Dirichlet boundary condition. A
+boundary-adapted lift would need its own proof.
+
+\subsection{An independent periodic Fourier upper bound}
+
+There is a separate check of scale uniformity. For a coarse Fourier
+mode $k\in[-\pi,\pi]^d$, embed the same physical frequency in the
+fine torus. Let
+\[
+ r_M(k)=\frac{\sin(k/2)}{M\sin(k/(2M))},\qquad r_M(0)=1.
+\]
+For centered blocks the averaging multiplier is
+\[
+ q_\mu(k)=e^{i(M-1)k_\mu/(2M)}r_M(k_\mu)
+                              \prod_{\nu=1}^d r_M(k_\nu).
+\]
+Since $|r_M(k)|\ge2/\pi$ on this zone, divide the component
+coefficient by $q_\mu(k)$ to obtain a right inverse. Fine-volume
+Parseval equals coarse Parseval for the embedded frequencies. The
+exterior derivative multiplier has squared norm at most
+$\sum_\nu|M(e^{ik_\nu/M}-1)|^2\le d\pi^2$. Hence
+\[
+ \inf_{Q_M^{\rm st}A=B}\norm{d_\eta A}_\eta^2
+ \le d\pi^2(\pi/2)^{2d+2}\norm B_1^2.
+\]
+For real $B$, taking the real part of a complex lift preserves the
+constraint and cannot increase energy, covering Nyquist conventions.
+Unlike \eqref{eq:lift}, this Fourier lift is not compactly supported.
+
+\section{The flat variational form and rooted constraints}
+
+Define, first as a standalone quadratic model,
+\begin{equation}\label{eq:qmin}
+ q_M(B)=\inf_{Q_M^{\rm st}A=B}\norm{d_\eta A}_\eta^2,
+ \qquad\eta=M^{-1}.
+\end{equation}
+The constraint is nonempty by Theorem~\ref{thm:lift}. On a finite
+torus this is a nonnegative quadratic form: it is least squares
+on a nonempty affine space. Equations \eqref{eq:cochain} and
+\eqref{eq:lift-energy} give directly
+\begin{equation}\label{eq:energy-sandwich}
+ \norm{d_1B}_1^2\le q_M(B)\le C_d\norm B_1^2.
+\end{equation}
+It is invariant under adding a coarse gradient. Indeed
+$Q_M^{\rm st}D_\eta\lambda=D_1\overline\lambda$, where
+$\overline\lambda$ is the scalar block average; this average is
+onto, and gradients have zero curl energy.
+
+The composed rooted constraint has the same infimum. In one step,
+\[
+ Q_M^\flat D_\eta\lambda=D_1(\lambda\hbox{ at centers}),
+ \qquad
+ Q_M^{\rm st}D_\eta\lambda=D_1\overline\lambda.
+\]
+Equation \eqref{eq:rooted} and induction therefore give
+\[
+ Q_k^{\rm rooted}A=Q_{L^k}^{\rm st}A+D_1\Xi_k(A)
+\]
+for a linear scalar map $\Xi_k$. If the straight constraint equals
+$B$, extend the coarse-center values $-\Xi_k(A)$ to a fine site
+field and add its gradient. Nested center restriction corrects the
+rooted constraint to $B$, without changing curl energy. Conversely,
+the scalar block average has a right inverse (blockwise constants),
+so a gradient also corrects a rooted-feasible field to a
+straight-feasible one. Both infima are equal. This uses no bound
+on $\Xi_k$ and proves no bound on the gauge-adjusted potential or
+its cutoff coordinates.
+
+\section{A finite-block axial Poincar\'e inequality}
+
+Fix the one-step blocking factor $L\ge3$, independent of $M=L^k$.
+On the unit lattice let $\Omega$ consist of the $3^d$ adjacent
+$L$-blocks indexed by $\{-1,0,1\}^d$. Include every bond and
+plaquette internal to this rectangular grid. Let $T_{0,\Omega}$
+contain the root-to-site integrals for a chosen coordinate-ordered
+tree in every block, and let $Q_{{\rm st},\Omega}$ contain the
+straight-string rows between all adjacent block centers inside
+$\Omega$. Each such string stays in its two endpoint blocks.
+Form the completely specified finite matrix
+\[
+ M_L=d_\Omega^*d_\Omega
+       +T_{0,\Omega}^*T_{0,\Omega}
+       +Q_{{\rm st},\Omega}^*Q_{{\rm st},\Omega},
+ \qquad \sigma(d,L)=\lambda_{\min}(M_L).
+\]
+
+\begin{lemma}\label{lem:poincare}
+One has $\sigma(d,L)>0$. Every global field with
+$T_0B=0$ and $Q_1B=Q_L^{\rm st}B=0$ satisfies
+\begin{equation}\label{eq:axial-gap}
+ \norm{d_1B}_1^2\ge\gamma_{\rm loc}\norm B_1^2,
+ \qquad \gamma_{\rm loc}=\sigma(d,L)/3^d>0.
+\end{equation}
+The constant is independent of volume, averaging depth, and color
+dimension.
+\end{lemma}
+
+\begin{proof}
+If the matrix quadratic form vanishes, all local plaquette curls
+vanish. Path independence on a rectangular grid gives $B=D\varphi$;
+interchanging adjacent coordinate steps is justified by each zero
+plaquette curl. The tree equations force $\varphi$ to be constant
+within every block. A straight-string row equals the difference of
+the two block constants divided by $L$. The block graph is connected,
+so all constants agree, and $B=0$. Thus $M_L$ has trivial kernel,
+which proves strict positivity of its smallest eigenvalue.
+
+Restrict a globally constrained field to each cube $\Omega_y$
+translated by an aligned block center $y\in L\mathbb Z^d$.
+Its local tree and averaging rows vanish, giving
+\[
+ \sum_{b\subset\Omega_y}|B_b|^2
+ \le\sigma(d,L)^{-1}\sum_{p\subset\Omega_y}|(d_1B)_p|^2.
+\]
+Every global bond occurs in at least one cube, and each plaquette
+in at most $3^d$ cubes. Summing proves \eqref{eq:axial-gap}.
+On a torus pull the field back to the ordinary cubes in the covering
+lattice. Even when a cube wraps, the same proof and counting with
+multiplicity apply. In infinite volume, use square-summable fields
+and monotone convergence.
+\end{proof}
+
+No numerical computation of $\sigma$ is needed for strict positivity.
+The value may be small as a function of fixed $d,L$; its independence
+of the ultraviolet scale is the relevant conclusion. Together with
+\eqref{eq:energy-sandwich}, the lemma proves the full-field axial
+bound $q_M(B)\ge\gamma_{\rm loc}\norm B^2$ directly.
+
+\section{Both bounds for the flat exponential-gauge precision}
+
+Use the averaged path map $T$, rooted constraint $Q^\flat$, and
+pivot insertion $K_\flat$ from Notebook 05. Set
+\[
+ d_0=2\sqrt d,\quad
+ t_0=\sqrt{d(L-1)(L^d-1)},\quad
+ r=1+2d(L-1)/L,
+\]
+\[
+ K_*^2=1+L^{2d}(2d+2)r^2,
+ \qquad
+ \gamma_*=
+ \left((1+d_0t_0)^2/\gamma_{\rm loc}+d_0^2\right)^{-1}.
+\]
+The constraint-compatible gauge bridge gives, on $\ker Q^\flat$,
+\[
+ q_M(B)+\norm{TB}^2\ge\gamma_*\norm B^2.
+\]
+In fact the lower estimate needs only $q_M(B)\ge\norm{d_1B}^2$:
+the maps $B\mapsto B_T\mapsto B_0$ of Notebook 05 change fields
+by gradients, so their curls agree. Apply Lemma~\ref{lem:poincare}
+to $B_0$, then $\norm{B_T}\le(1+d_0t_0)\norm{B_0}$, and finally
+weighted Cauchy--Schwarz to $B=B_T+D(TB)$. Thus this particular
+lower bound does not need a separate gauge-invariance hypothesis
+on the effective quadratic form.
+The direct upper bound \eqref{eq:energy-sandwich} applies on all
+bond fields, so also
+\[
+ q_M(B)+\norm{TB}^2\le(C_d+t_0^2)\norm B^2.
+\]
+With $B=K_\flat z$, $\norm{K_\flat}\le K_*$ and $z$ a
+coordinate restriction of $B$, the reduced real precision satisfies
+\begin{equation}\label{eq:precision-sandwich}
+ \gamma_*I\le A_{M,0}\le B_*I,
+ \qquad B_*=(C_d+t_0^2)K_*^2.
+\end{equation}
+All constants depend only on fixed block geometry and dimension
+in the displayed normalization. In particular,
+\[
+ B_*^{-1}I\le C_{M,0}=A_{M,0}^{-1}\le\gamma_*^{-1}I.
+\]
+If only the Wilson quadratic action is multiplied by $c>0$ while
+the gauge penalty stays $\norm{TB}^2$, the appropriate constants are
+\[
+ \gamma_*(c)=
+ \left((1+d_0t_0)^2/(c\gamma_{\rm loc})+d_0^2\right)^{-1},
+ \qquad B_*(c)=(cC_d+t_0^2)K_*^2.
+\]
+Rescaling both terms together instead rescales the whole precision.
+
+For later use, if the actual complex symmetric precision is
+$A=A_{M,0}+V$ with $\norm V\le\gamma_*/2$, then
+\[
+ \Herm A\ge(\gamma_*/2)I,\qquad
+ \norm A\le B_*+\gamma_*/2,
+\]
+\[
+ \Herm A^{-1}\ge
+ \frac{\gamma_*/2}{(B_*+\gamma_*/2)^2}I,
+ \qquad\norm{A^{-1}}\le2/\gamma_*.
+\]
+This last implication is elementary; the actual uniform perturbation
+estimate is not proved here. Nor do the spectral bounds alone give
+exponential covariance decay or localized background dependence.
+
+\section{Identification with the Yang--Mills flat Hessian}\label{sec:match}
+
+For the Wilson action in physical normalization,
+\[
+ S_\eta(U)=\eta^{d-4}\sum_p[1-\Re\operatorname{tr}U(\partial p)],
+\]
+and $U_b(t)=\exp(i\eta tA_b)$, stationarity at the identity and
+the first plaquette phase $i\eta^2t(d_\eta A)_p$ give
+\[
+ D^2S_\eta(1)[A,A]=\eta^d\sum_p|(d_\eta A)_p|^2.
+\]
+The trace fixes the Lie-algebra norm. A different fixed normalization
+of the action multiplies its quadratic energy bounds by a positive
+factor; the preceding paragraph explains the gauge-penalty adjustment.
+Colors decouple at quadratic order.
+
+Let $U_k(V)$ be the local full-block constrained minimizer with
+$U_k(1)=1$ in its chosen gauge, and assume the branch is $C^2$
+on a neighborhood of that datum. Write
+\[
+ U_k(e^{itB})=\exp(i\eta[tL_kB+O(t^2)]).
+\]
+The constraint gives $Q_kL_kB=B$. Since the fine action has zero
+gradient, its effective Hessian is
+\[
+ q_{{\rm eff},k}(B)=\norm{d_\eta L_kB}_\eta^2
+                  \ge\norm{d_1B}_1^2.
+\]
+The lower bound uses the derivative, constraint, and action expansion;
+the $C^2$ hypothesis makes it a statement about the classical effective
+Hessian. Mere differentiability would instead give the expansion
+$tL_kB+o(t)$ and the corresponding quadratic Peano coefficient.
+To identify the Hessian with the variational form
+$q_M$ and obtain the upper bound, also use minimization against
+every tangent-feasible curve. At each fixed finite regulator, the
+linear average is onto by the lift and gradient adjustment above.
+For the actual analytic constraint, the finite-dimensional implicit
+function theorem therefore produces a feasible curve for every
+tangent-feasible field, provided the constraint map is defined on
+an open neighborhood of the identity. Comparing its action with
+the local minimizer and dividing by $t^2/2$ gives
+\[
+ q_{{\rm eff},k}(B)=
+       \inf_{Q_kA=B}\norm{d_\eta A}_\eta^2=q_{L^k}(B).
+\]
+The reverse inequality uses the feasible derivative $L_kB$ itself.
+If the chosen chart imposes an additional gauge, one must supply
+its constraint-preserving gauge equivalence before using every
+such competitor. The equality is not obtained from stationarity
+alone. No uniform nonlinear implicit-function radius is claimed
+by this finite-regulator argument.
+
+CMP109, (0.21)--(0.22) and (2.6)--(2.11), identifies the effective
+action and the quadratic Gaussian in these terms. The deposited
+Raw II small-field step around lines 73870--74020 records the same
+minimizer variables and elimination. The first derivative of the
+group average must be checked from its contour definition, as done
+above; gauge covariance alone would not determine it. The corrected
+and rooted conventions have equal flat energy infima only through
+the explicit gradient adjustment proved here.
+
+Thus \eqref{eq:precision-sandwich} is available for the specified
+flat physical Gaussian once this minimizer and coordinate match
+is made. This argument does not reprove the nonlinear minimizer
+theorem, apply automatically to domains with holes or mixed large-field
+histories, or identify a freely prescribed current with a physical
+action derivative. It does not transport the sharp cutoff under
+an untracked coordinate change.
+
+For the quadratic cutoff coefficient evaluated at $(U,J)=(1,0)$,
+this flat reference is the relevant starting point. What remains
+is a uniform weighted bound on its actual complex perturbations
+and source responses, together with the required spatial decay and
+volume-limit identification. The direct flat gap and energy upper
+bound remove an imported spectral estimate from this starting step;
+they do not complete that analytic neighborhood or a four-dimensional
+Yang--Mills theory.
+
+\begin{thebibliography}{9}
+\bibitem{repo} \href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}
+{Pinned Yang--Mills-LLM-experiment account}, commit
+\texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+\bibitem{balaban109} T. Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field theories I},
+Commun. Math. Phys. 109 (1987), 249--301.
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-3ygai0vxt1.pdf}
+{Copy of the original article}.
+\end{thebibliography}
+\end{document}

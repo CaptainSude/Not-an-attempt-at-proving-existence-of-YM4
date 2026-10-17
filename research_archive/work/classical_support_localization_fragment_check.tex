@@ -1,0 +1,477 @@
+\documentclass[11pt]{article}
+\usepackage[margin=.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\DeclareMathOperator{\diag}{diag}\DeclareMathOperator{\ran}{ran}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\begin{document}
+\section{Strict support localization of the homogeneous classical action}
+\label{cl-section}
+
+Fix odd $L$, dimension four, $M=L^j$, $\eta=M^{-1}$ and
+$0<\alpha<1$. Work first on compatible finite periodic regulators.
+Constants below are independent of $M$ and volume. They may depend on
+$L$, color, $\alpha$, the requested positive spatial exponent and an
+arbitrarily prescribed finite support-cardinality reserve. The product
+background radius may shrink with these fixed choices. Fine transposes
+retain the physical measure $\eta^4$.
+
+The concrete cell-vertex estimates preceding this section supply the
+exact simultaneous equations
+\begin{align}
+ A&=HB-HR(A)-\mathcal C S^T f_\eta(SA)
+                         +\mathcal C V(A,m),\notag\\
+ m&=qB-qR(A)+(SH)^T f_\eta(SA)-H^T V(A,m),
+ &V(A,m)&=DR(A)^Tm.                                      \label{cl-fixed-point}
+\end{align}
+Here $\mathcal F(A)=QA+R(A)$ is the full corrected fixed-reference
+constraint, $H$ is the matched flat minimizing extension,
+$\mathcal C$ the flat constrained inverse, $q=q_M$, and $S$ the local
+first-difference jet. All three nonlinear primitives start at total
+degree two. Rearranging the second equation gives the multiplier inverse
+of the constrained stationary equation; the first then gives its exact
+constraint chart. Thus \eqref{cl-fixed-point} is equivalent to the
+previously proved small classical branch. It uses the physical adjoint
+of the corrected constraint, not the nonuniform adjoint of the full
+ordinary rooted average. The scalar action equality supplied by the
+ordinary-constraint gauge transfer will be used after solving these
+equations.
+
+\subsection{Geometry and the support-family norm}
+\label{cl-geometry-section}
+
+Let $d$ be current-cell graph distance. For a nonempty finite set $X$,
+let $\tau(X)$ be the minimum number of edges in a connected graph
+containing $X$, allowing unmarked intermediate vertices. This graph
+Steiner length differs from the metric minimum spanning-tree length
+$\ell$ used in the Gaussian expansion, but
+\begin{equation}
+ \tau(X)\le\ell(X)\le2\tau(X),\qquad |X|\le\tau(X)+1.       \label{cl-metric-comparison}
+\end{equation}
+The second upper bound follows by traversing a connected minimizing
+tree and shortcutting its tour in the graph metric. The crucial rooted
+inequalities are
+\begin{align}
+ \tau(\{i\}\cup X)&\le d(i,j)+\tau(\{j\}\cup X),\notag\\
+ \tau\left(\{i\}\cup\bigcup_{r=1}^nX_r\right)
+ &\le\tau(\{i,j_1,\ldots,j_n\})
+                         +\sum_{r=1}^n\tau(\{j_r\}\cup X_r).
+                                                               \label{cl-root-gluing}
+\end{align}
+The auxiliary roots $j_r$ need not be final support labels. This is why
+the support algebra uses $\tau$: the analogous inequality for metric
+spanning trees with deleted auxiliary vertices need not hold. All these
+statements remain valid on periodic graphs.
+
+Use the smooth fixed-physical-scale partition of unity and the complete
+cell spaces from the concrete vertex construction. Their field types
+are $\mathcal N_\alpha$, $C^\alpha$, bounded fine fields, and
+fixed-dimensional current fields. Localization $P_i$ and reconstruction
+$\mathcal R$ are uniformly bounded, and $\mathcal R P=I$.
+In particular, input pieces to $\mathcal C S^T$ remain complete
+$C^\alpha$ fields; no sharp cut is differentiated. For each relevant
+linear propagator $T$, the proved weighted complete-field estimate gives
+\begin{equation}
+ \|T_{ij}\|\le C_Te^{-\kappa_0d(i,j)},\qquad
+ L_T(\kappa):=\sup_i\sum_j e^{\kappa d(i,j)}\|T_{ij}\|<\infty
+ \quad(0<\kappa<\kappa_0).                                  \label{cl-linear-blocks}
+\end{equation}
+The diagonal block of $\mathcal C S^T$ is controlled by the proved
+equal-exponent Schauder estimate, rather than an absolute singular-kernel
+integral. These block estimates are uniform in refinement and volume.
+
+On the original current-background product ball of radius $b$, a support
+family is a collection $u_{i;X}(B|_X)$ of bounded holomorphic functions
+with values in the cell space at $i$. The support $X$ is nonempty and
+records original background cells. For $a\ge0$ put
+\begin{equation}
+ \|u\|_{\kappa,a;b}
+ :=\sup_i\sum_X e^{\kappa\tau(\{i\}\cup X)+a|X|}
+       \sup_{\|B|_X\|_\infty<b}\|u_{i;X}(B|_X)\|.             \label{cl-family-norm}
+\end{equation}
+For several field types, take their maximum in each coefficient norm
+\emph{before} the support sum: the joint family norm is
+$\sup_i\sum_X e^{\kappa\tau(\{i\}\cup X)+a|X|}
+\max_t\|u^t_{i;X}\|$, with the displayed background supremum understood.
+It is not the maximum of the separate type-family norms. Taylor
+operator norms below use this same joint cell space with its maximum
+norm. A bound for a joint linear source may be taken as the sum of its
+component block bounds. These are fixed finite sums.
+This is a Banach space. Terms with the same support are added in that
+slot; evaluation $\sum_Xu_{i;X}(B|_X)$ converges absolutely. All
+coefficients remain functions of the original variables. No nonlocal
+background-dependent minimizer is hidden in their definition.
+
+\begin{lemma}[Support substitution]\label{cl-substitution}
+A linear propagator obeying \eqref{cl-linear-blocks} has norm at most
+$L_T(\kappa)$ in \eqref{cl-family-norm}. Suppose a nonlinear cell map has
+Taylor coefficients, including $1/n!$, whose mixed-insertion norms obey
+\begin{align}
+ v_n&:=\sup_i\sum_{j_1,\ldots,j_n}
+ e^{\kappa\tau(\{i,j_1,\ldots,j_n\})}
+       \|N_{n;i;j_1,\ldots,j_n}\|,\notag\\
+ \Phi(t)&:=\sum_{n\ge2}v_nt^n<\infty\quad(0\le t<t_0).
+                                                               \label{cl-vertex-majorant}
+\end{align}
+Assign a substituted term the union of its input supports. Then
+\begin{align}
+ \|N(u)\|_{\kappa,a;b}&\le\Phi(\|u\|_{\kappa,a;b}),\notag\\
+ \|N(u)-N(v)\|_{\kappa,a;b}&\le\Phi'(r)\|u-v\|_{\kappa,a;b}
+ \quad(\|u\|,\|v\|\le r<t_0).                              \label{cl-substitution-bound}
+\end{align}
+The majorant is independent of the prescribed cardinality reserve $a$.
+\end{lemma}
+
+\begin{proof}
+For the linear assertion attach a path from the input root $j$ to the
+output root $i$ and use the first inequality in
+\eqref{cl-root-gluing}. For a nonlinear term use the second inequality
+and
+$|\bigcup_rX_r|\le\sum_r|X_r|$.
+The absolute sum over all supports and ordered input-cell slots then
+factorizes into the product of their family norms, leaving $v_n$.
+Summing over $n$ proves the first bound. Telescoping an $n$-linear
+expression gives the factor $n r^{n-1}$ and proves the second.
+Repeated supports, repeated labels and overlapping supports are all
+included in these sums. A Taylor coefficient at the fixed flat
+background introduces no additional variable support, so it adds no
+cardinality cost.
+\end{proof}
+
+The concrete finite-range analytic vertices have
+\begin{equation}
+ v_n\le M_1
+       \left(\frac{eC_PD_Re^{\kappa R}}{r_0}\right)^n.        \label{cl-local-cauchy}
+\end{equation}
+Here $R$ is a uniform current-cell dependency radius, $D_R$ the fixed
+number of admissible input cells in one slot, $C_P$ the reconstruction
+norm, and $r_0$ a uniform analytic radius. Indeed multivariable Cauchy
+with radius $r_0/(nC_P)$ bounds the derivative by
+$M_1(nC_P/r_0)^n$; division by $n!$ and $n^n/n!\le e^n$ bounds its
+Taylor coefficient. There are at most $D_R^n$ nonzero ordered cell
+tuples, with a star of length at most $nR$ through the output.
+This counts current cells, not $M^4$ independent fine coordinates.
+For $V(A,m)$ it uses the previously proved holomorphy in the physical
+absolute-row norm of $DR(A)^T$; ordinary bounded-field holomorphy of
+$R$ alone would not imply that input.
+
+\subsection{A convergent support-valued stationary solution}
+\label{cl-contraction-section}
+
+\begin{theorem}[Uniform strict-support fixed point]
+\label{cl-fixed-point-theorem}
+For every fixed finite $a\ge0$ and sufficiently small positive
+$\kappa$, there is $b_*>0$, independent of $M$ and volume, such that
+the solution of \eqref{cl-fixed-point} has support families satisfying
+\begin{align}
+ \|(A,m)\|_{\kappa,a;b}&\le C_a b,\notag\\
+ \|(A-HB,m-qB)\|_{\kappa,a;b}&\le C_a b^2
+ \qquad(0<b\le b_*).                                      \label{cl-solution-bound}
+\end{align}
+Every coefficient of the second line has Taylor degree at least two.
+\end{theorem}
+
+\begin{proof}
+Apply the preceding lemma to the three nonlinear primitives in
+\eqref{cl-fixed-point} and then their linear propagators. Their combined
+positive coefficient majorant can be bounded coefficientwise by
+\begin{equation}
+ \Phi(t)\le\frac{v(ct)^2}{1-ct},\qquad
+ \Phi'(t)\le8vc^2t\quad(ct\le1/2),                          \label{cl-majorant-constants}
+\end{equation}
+after increasing fixed $v,c$. The singleton source
+$B_{i;\{i\}}=B_i$ has norm $e^ab$. If $L_0$ bounds the linear map
+$B\mapsto(HB,qB)$, choose
+\begin{equation}
+ r_*\le\min\{(2c)^{-1},(16vc^2)^{-1}\},\qquad
+ b_*\le\frac{r_*}{2L_0e^a}.                                \label{cl-radius}
+\end{equation}
+Also shrink $r_*$ so that evaluation and reconstruction stay in the
+previously established classical branch's uniqueness ball; their norms
+are uniformly bounded. The support map is a contraction with constant
+at most $1/2$ on the ball of radius $2L_0e^ab$. This proves the first
+estimate. Applying the quadratic majorant to its solution proves the
+second. Degree induction in Picard iteration proves the vanishing
+orders coefficientwise.
+
+Evaluation is continuous and respects every absolutely convergent
+substitution. The evaluated solution therefore solves the exact
+equations \eqref{cl-fixed-point}. The compatible cell image is preserved
+by their right-hand side, and uniqueness in the common small domain
+identifies the result with the proved classical minimizer and
+multiplier. Picard iteration also defines an absolutely convergent
+rooted-tree expansion: local Taylor coefficients are vertices, flat
+cell propagators are edges, and the leaves carry the original $B_i$.
+All depths, orders and repeated supports are already summed by the
+Banach contraction. No additional factor counting the number of RG
+levels occurs.
+\end{proof}
+
+\subsection{Scalar action and symmetric support Hessians}
+\label{cl-action-section}
+
+The established envelope identity is
+\begin{equation}
+ DS_M(B)=m(B),\qquad S_M(0)=0,\qquad D^2S_M(0)=q_M.          \label{cl-envelope-input}
+\end{equation}
+The exact gauge transfer identifies this scalar with the ordinary
+homogeneous constrained action. Write $n=m-qB$. On a finite regulator,
+\begin{equation}
+ S_M(B)-\tfrac12\langle B,qB\rangle
+    =\int_0^1\sum_i\langle B_i,n_i(tB)\rangle\,dt.           \label{cl-envelope}
+\end{equation}
+The current pairing has unit cell volume and fixed fiber dimension.
+Define strictly supported scalar coefficients by
+\begin{equation}
+ W_Y(B|_Y)=
+ \sum_{\{i\}\cup X=Y}\int_0^1
+       \langle B_i,n_{i;X}(tB|_X)\rangle\,dt.                \label{cl-action-coefficients}
+\end{equation}
+They are holomorphic and begin at order three.
+
+\begin{proposition}[Strict scalar action localization]
+\label{cl-action-theorem}
+For $0<\mu<\kappa$ and every prescribed finite $a\ge0$, on a fixed
+small product ball,
+\begin{align}
+ S_M(B)&=\tfrac12\langle B,q_MB\rangle+\sum_{Y\ne\varnothing}W_Y(B|_Y),
+                                                               \label{cl-action-expansion}\\
+ \sup_b\sum_{Y\ni b}e^{\mu\tau(Y)+a|Y|}\|W_Y\|_r
+       &\le C_{\mu,a}r^3.                                    \label{cl-action-norm}
+\end{align}
+Here $\|W_Y\|_r$ is the supremum on the complex product ball of radius
+$r$. Each Hessian $B_Y=D^2W_Y$, extended by zero outside cell rows and
+columns in $Y$, is individually complex symmetric and depends only on
+$B|_Y$. With a fixed cardinality spare $\epsilon>0$,
+\begin{equation}
+ \sup_i\sum_{Y\ni i}\sum_{j\in Y}
+ e^{\mu\tau(Y)+(a-\epsilon)|Y|}
+            \|(B_Y)_{ij}\|_r\le C r.                       \label{cl-hessian-support}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+For $b\in Y=\{i\}\cup X$, one has $d(i,b)\le\tau(Y)$ and
+$|Y|\le|X|+1$. Thus
+\begin{equation}
+ e^{\mu\tau(Y)+a|Y|}
+ \le e^a e^{\kappa\tau(Y)+a|X|}
+                   e^{-(\kappa-\mu)d(i,b)}.                \label{cl-reroot}
+\end{equation}
+Summing first over $X$ and then $i$, and using
+$\sup_b\sum_i e^{-\delta d(i,b)}\le\sum_{x\in\mathbb Z^4}e^{-\delta|x|}$,
+proves \eqref{cl-action-norm} from \eqref{cl-solution-bound} and
+\eqref{cl-action-coefficients}. This is an anchored sum over all supports
+containing an arbitrary cell, not only the original output root.
+
+Use the action estimate on radius $2r$ and take derivatives on radius
+$r$. Cauchy and polarization give each cell block the dimension-free
+bound
+\begin{equation}
+ \|(D_iD_jW_Y)\|_r\le\frac{2e^2}{r^2}\|W_Y\|_{2r}.         \label{cl-hessian-cauchy}
+\end{equation}
+The row sum contributes at most $|Y|$, absorbed by
+$\sup_{n\ge1}ne^{-\epsilon n}<\infty$ in the reserve. This proves
+\eqref{cl-hessian-support} and justifies termwise differentiation.
+Scalar holomorphy gives symmetry of each coefficient. Rows, columns and
+background support are all in the same $Y$ by construction.
+\end{proof}
+
+Taking $\mu\ge2(\kappa_{\rm G}+2m_{\rm G})$ converts
+\eqref{cl-hessian-support} into the strict precision-support norm with
+metric-tree weight $e^{(\kappa_{\rm G}+2m_{\rm G})\ell(Y)}$ used by the
+Gaussian density algebra. The Gaussian exponents can be chosen positive
+and sufficiently small compared with the available flat decay. The
+smallness of the precision norm is then obtained by shrinking the
+background radius, not by an unsupported claim about a large original
+source domain.
+
+\subsection{The actual current pivot chart and retained precision}
+\label{cl-chart-section}
+
+Use the fixed-$L$ ordinary pivot and coordinate maps already identified
+for the physical current step. With $a=\log V/i$, set
+\begin{equation}
+ F_{\rm cur}(a,z)=\frac1i\log\!\left(e^{i\Phi_V(z)}e^{ia}\right),
+ \qquad F_{\rm cur}(a,0)=a.                                  \label{cl-current-chart}
+\end{equation}
+They are holomorphic on a fixed joint product neighborhood, have a fixed
+current-cell dependency radius $R_c$, and satisfy
+\begin{equation}
+ \|F_{\rm cur}(a,z)\|_\infty
+             \le C_L(\|a\|_\infty+\|z\|_\infty).            \label{cl-current-chart-bound}
+\end{equation}
+Let $G_{\rm cur}(a,z)$ be the actual local exponential gauge action on
+$e^{i\Phi_V(z)}V$, not a replacement relative quadratic penalty. Its
+full analytic expression is finite range at fixed $L$. At the physical
+rooted-contour background its quadratic form is the matched gauge term;
+away from that locus its actual local curvature terms remain included.
+Put
+\begin{equation}
+ T_M(a,z)=S_M(F_{\rm cur}(a,z))+G_{\rm cur}(a,z).             \label{cl-pulled-action}
+\end{equation}
+
+The scalar family for $S_M$ includes its quadratic baseline: split
+$\frac12\langle B,qB\rangle$ into pair-supported scalar coefficients.
+Exponential locality of $q$ gives their anchored support norm of order
+$r^2$ with any fixed cardinality reserve and a sufficiently small
+positive spatial exponent. Adding \eqref{cl-action-coefficients}
+therefore gives a scalar support family for the entire $S_M$.
+
+For a support $Y$ let $\Gamma Y$ be the union of the radius-$R_c$
+dependency neighborhoods of its cells. Fixed constants $N_c,c_c$ obey
+\begin{equation}
+ |\Gamma Y|\le N_c|Y|,\qquad
+ \tau(\Gamma Y)\le\tau(Y)+c_c|Y|.                           \label{cl-support-enlargement}
+\end{equation}
+Attach a fixed finite neighborhood tree at each point of a minimizing
+connected graph for $Y$ to prove the second inequality. Periodic
+identifications only reduce this count. Hence
+\begin{equation}
+ e^{\sigma\tau(\Gamma Y)+a_{\rm out}|\Gamma Y|}
+ \le e^{\sigma\tau(Y)+(\sigma c_c+a_{\rm out}N_c)|Y|}.       \label{cl-composition-weight}
+\end{equation}
+Choose the input cardinality reserve to pay this fixed cost, and shrink
+the joint radius so that \eqref{cl-current-chart-bound} remains in the
+source-action ball. Substitute the chart in each scalar coefficient and
+assign support $X=\Gamma Y$. A root in $\Gamma Y$ can be moved to a
+point of $Y$ in at most a fixed number of ways. Adding the local gauge
+coefficients gives the exact expansion
+\begin{equation}
+ T_M(a,z)=\sum_X T_X(a|_X,z|_X),                             \label{cl-pulled-support-expansion}
+\end{equation}
+with a uniform anchored scalar norm on the fixed joint product domain
+and any prescribed fixed output cardinality reserve. Both the original
+background and retained-coordinate labels remain explicit in $X$.
+
+\begin{corollary}[Strict support of the physical retained precision]
+\label{cl-precision-theorem}
+Define
+\begin{equation}
+ A_X(a|_X)=D_z^2T_X(a|_X,0)-D_z^2T_X(0,0).                   \label{cl-precision-coefficients}
+\end{equation}
+These are individually complex-symmetric retained matrices with rows,
+columns and background dependence in $X$. For some $\sigma>0$ and all
+sufficiently small $b$,
+\begin{align}
+ A_M(V)&=A_M(1)+\sum_X A_X((\log V/i)|_X),                  \label{cl-precision-expansion}\\
+ \sup_i\sum_{X\ni i}\sum_{j\in X}
+ e^{\sigma\tau(X)}\|(A_X)_{ij}\|_b&\le C_L b.             \label{cl-precision-norm}
+\end{align}
+The baseline is exactly the matched flat retained precision
+$A_M(1)=K_L^T(q_M+T_L^TT_L)K_L$.
+\end{corollary}
+
+\begin{proof}
+Apply Cauchy with fixed margins to the joint domain of
+\eqref{cl-pulled-support-expansion}, twice in $z$ and once in $a$.
+Integrating the last derivative along $ta$ gives $O(b)$ in each
+coefficient. Its row sum costs $|X|$, paid by an available cardinality
+reserve as in \eqref{cl-hessian-support}. The baseline sum is the flat
+Hessian of the exact pulled action and hence the identified retained
+precision. The matrices are Hessians of scalar coefficients, which
+proves their individual symmetry and supports.
+\end{proof}
+
+This argument retains both nonlinear constraint curvature and
+exponential-coordinate curvature. It does not identify a freely chosen
+independent source current with the physical Hessian. The full product
+background extension is an analytic Hessian family; only the physical
+background is asserted to be stationary. Choosing
+$2(\kappa_{\rm G}+2m_{\rm G})<\sigma$ and then shrinking $b$ makes the
+strict norm as small as the stated Gaussian support algebra requires.
+The baseline covariance is background independent and has the uniform
+spectrum and decay proved in the flat theory.
+
+\subsection{Localized cubic interaction and Gaussian-cell regrouping}
+\label{cl-interaction-section}
+
+For $\|z\|_\infty\le R$ and $gR$ inside a fixed analytic margin define
+\begin{align}
+ U_X(a;z)=-g^{-2}\bigl[&T_X(a,gz)-T_X(a,0)
+          -gD_zT_X(a,0)[z]\notag\\
+          &-\tfrac12g^2D_z^2T_X(a,0)[z,z]\bigr].             \label{cl-cubic-coefficients}
+\end{align}
+The sign corresponds to $\exp(-g^{-2}T_M)$.
+Taylor's integral remainder, or one-variable Cauchy along $z/R$, yields
+\begin{equation}
+ \sup_i\sum_{X\ni i}e^{\sigma\tau(X)+a_{\rm out}|X|}
+ \sup_{\|a\|<b,\,\|z\|\le R}|U_X(a;z)|\le CgR^3.          \label{cl-cubic-norm}
+\end{equation}
+No factor $|X|^3$ is needed: the full direction $z|_X$ has product norm
+at most $R$. At a physical stationary background the sum of the linear
+terms in \eqref{cl-cubic-coefficients} vanishes. This cancellation is
+not asserted for every point of the analytic product-background domain.
+
+For the fixed retained product cutoff set
+$\chi_X=\prod_{i\in X}\chi_i$ and
+$w_X=\chi_X(e^{U_X}-1)$. Then
+$v_X:=\sup|w_X|\le e^{\|U_X\|}\|U_X\|$.
+Take $a_{\rm out}>4+\log\widehat K$ with a positive spare, where
+$\widehat K$ is the chosen fixed Gaussian density factor, and choose
+$2\kappa_{\rm G}\le\sigma$. Equations
+\eqref{cl-metric-comparison} and \eqref{cl-cubic-norm} give
+\begin{equation}
+ \sup_i\sum_{X\ni i}v_X\widehat K^{|X|}
+                   e^{4|X|+\kappa_{\rm G}\ell(X)}
+        \le C e^{CgR^3}gR^3.                                \label{cl-polymer-input}
+\end{equation}
+Thus this is the required localized interaction norm, not only an
+extensive unweighted cubic remainder. A logarithmically growing $R$ as
+$g\downarrow0$ is compatible with both the analytic restriction on $gR$
+and smallness of $gR^3$. The separate Gaussian bad-block tail and the
+explicit density-algebra smallness conditions must still be imposed.
+No all-bond nonlinear sharp cutoff is identified with the retained
+product window by this argument.
+
+The support algebra above uses unit current cells. The Gaussian theorem
+may use one cell per fixed $L$-block, with
+$D=d(L^d-1)\dim\mathfrak g$ retained real coordinates in the usual pivot
+convention. Let $\pi$ map a unit current cell to its $L$-block and regroup
+each support $Y$ to $\pi(Y)$. Then
+\begin{equation}
+ \tau_{\rm block}(\pi(Y))\le\tau_{\rm unit}(Y),\qquad
+ |\pi(Y)|\le|Y|.                                           \label{cl-block-regrouping}
+\end{equation}
+Every unit edge either stays in one block or crosses to an adjacent
+block. A block-anchored support sum is bounded by the sum of the unit
+anchored sums over its at most $L^d$ cells. For matrices, bound a block
+matrix norm by the sum of its constituent unit-cell blocks, then sum the
+at most $L^d$ row cells. Thus scalar and absolute-row support norms
+change by only fixed $L$-dependent factors. Maximum-cell and Euclidean
+block norms likewise differ by fixed factors; reduce a background or
+cutoff radius accordingly. No dimension depending on $M$ is introduced.
+The Gaussian density constants in \eqref{cl-polymer-input} can therefore
+use the fixed retained dimension $D$ after this explicit regrouping.
+
+\subsection{Scope of the classical input}
+\label{cl-scope}
+
+The construction expands about a fixed flat baseline in the original
+current variables. The arbitrary finite cardinality reserve is paid by
+a smaller uniform product radius; spatial decay alone would not pay
+the Gaussian factor $\widehat K^{|X|}e^{4|X|}$. Fine dimension is removed
+by complete cell norms, the physical measure, and the actual
+physical-adjoint row bound. The scalar ordinary action is identified by
+the proved gauge transfer, while its current pivot chart has fixed
+ratio $L$.
+
+The conclusions supply strict-support precision and classical
+interaction inputs for the homogeneous classical step at every depth
+$M$, on the indicated small branch. They do not establish closure of
+inherited quantum polymer terms, arbitrary independent-current or
+mixed-history domains, a running-coupling theorem, or an interacting
+continuum limit. Finite compatible periodic regulators are primary;
+the graph estimates are uniform, but source chart incidence still uses
+the admissible current tori assumed in its proof. No thermodynamic
+consistency or separate gauge invariance of an arbitrarily regrouped
+individual coefficient is asserted.
+
+\end{document}

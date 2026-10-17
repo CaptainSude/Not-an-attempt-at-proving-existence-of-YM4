@@ -1,0 +1,23 @@
+ACTUAL-BASE WARD/HEAT COMPARISON: INDEPENDENT AUDIT
+17 October 2026. theorem_audit. Full substantive read of
+work/actual_base_ward_heat_comparison_research.txt, Sections1--8.
+
+RESULT: the proof passes under exactly its listed actual classical inputs. No substantive correction is required. No output or master edited; no compilation.
+
+1. The ordinary-to-relative conversion is exact. Xi_a(B)=log(exp(iB)exp(ia))/i has T(0)=0, but T1(a) need not vanish. The degree-two Hessian difference correctly retains R2[a,T1(a)[B,C]]. The coefficient 1/2 in front of R4 and the two R3/J1 terms agree with ordinary Taylor expansion. Local products merge Fourier momenta without lowering simultaneous vanishing order. Thus the nonlinear Ward residual orders4,3,2 transfer to the actual relative flat/first/second vertices. The identical DD^T term cancels only in the differences; its baseline orders1,0 are correctly retained.
+
+2. The heat two-point formula is correctly normalized. Differentiating DF[a]=-s Tr(e^-sB B_a) yields the tadpole -s and the single s^2 integral over v in [0,1]. No additional factor2 occurs for mixed derivatives. The Fourier order is consistent: V_a(k,p) sends k to k+p; V_b(k+p,-p) returns it, and the two exponential symbols act in the appropriate momentum fibers. This is a full trace and does not illicitly cycle a local diagonal density.
+
+3. All heat estimates avoid eigenvector differentiation. The matrix Duhamel formula, ellipticity and |B'|<=C rho, |B''|<=C prove (5.1). The difference formula with q_M-q_W=O(rho^4) proves (5.2), including derivatives distributed over both exponentials and the difference symbol. The stated t rho^(4-r)(1+t rho^2)^r upper bound covers every r<=2 term and vanishes at t=0. It introduces no endpoint singularity as v approaches0 or1.
+
+4. The power count after two external derivatives is correct. In a vertex replacement, difference degree3 plus baseline degree1, reduced by a total of two derivatives, leaves rho^2. In a heat replacement, the fourth-order flat difference and the two leading first-order vertices leave t rho^4 after differentiation. The four-dimensional Gaussian integrals scale as s^-3 and s^-4, respectively. With the outer s^2, and t<=s, both give O(s^-1). The tadpole contribution is O(s^-1) or better. Uniform exponential bounds away from zero close the Brillouin-zone complement. No positive matrix interpolation is needed because both endpoint symbols are uniformly elliptic and the exact two-family Duhamel identity is used.
+
+5. The density reanchoring factor1/4 is correct. A normalized Maxwell functional has affine density coefficient1/2 and transverse total Hessian p_nu^2, whose second derivative is2. Hence h=(1/4)partial_pnu^2 H matches the established beta conventions. Individual diagonal color traces are gauge invariant; the semisimple linear color jet vanishes. Translation of the commuting affine root differs by a constant pure gauge. The K^4 block-root count therefore exactly cancels the K^-4 squared source amplitude. The result is the actual infinite polynomial-jet coefficient, not a finite varying-flux construction.
+
+6. Uniformity has the right dependency. The required degree2--4 exponential moments are the already proved current-unit classical kernels with fixed input fiber and fixed exponent, not a generic quantum activity bound with a newly chosen J. If those actual bounds, the full nonlinear Ward completion, or the q_M ellipticity input were absent, the stated theorem would indeed remain conditional. The research makes this explicit. The uniform O(1/s) comparison and its finite proper-time integral do not themselves evaluate the reference coefficient or prove the RG trajectory/existence.
+
+Minor editorial point only: the file date says18 October while this workspace's stated current date is17 October. This does not affect the proof.
+
+Final fragment fidelity audit, 17 October 2026.
+Read work/actual_base_ward_heat_comparison_fragment.tex in full. PASS. It preserves the actual uniform current-unit classical hypotheses, degree 4/3/2 residual Ward orders, the full second relative-chart coefficient including R_2[a,T_1(a)[B,C]], the exact total heat Duhamel normalization, and every low-momentum power in the O(s^{-1}) bound. The retained lattice density root and endpoint-K physical normalization are explicit. Infinite structural-system scope and the separate finite-history/global-measure interfaces are unchanged. No correction.
+Static: 22 unique labels, 12 internal references all resolved, braces 150/150, no control characters or tabs. No compilation performed.

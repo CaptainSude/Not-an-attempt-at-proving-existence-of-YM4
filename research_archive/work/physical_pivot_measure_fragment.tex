@@ -1,0 +1,284 @@
+% No preamble. Local measure factors for Notebook19. Prefix pm-.
+\section{Local Haar, straightening, and exponential-gauge interactions}
+\label{pm-section}
+
+Use the exact current-step chart of Section~\ref{pc-chart-section}.
+The next block side $L$ is fixed, the current spacing is one,
+and constants are uniform in the preceding homogeneous depth $M$
+and compatible periodic volume. Backgrounds $V=e^{ia}$ range
+over a sufficiently small product ball in the independent
+current link coordinates $a(b)$. A slightly larger fixed ball
+is used for Cauchy estimates. This section localizes the measure
+factors; the classical and previously integrated action
+remainders are separate.
+
+Write $A_{c,p}=D_{p(c)}F_V(0;c)=L^{1-d}\pi_c(V)$ and define
+the square ambient straightening map
+\begin{equation}\label{pm-ambient-map}
+ \psi_V(B)=B-h_V\widetilde D_V(B),\qquad
+ F_V(\psi_V(B))=A_VB,\qquad
+ \Phi_V(z)=\psi_V(K_Vz).
+\end{equation}
+Its retained components equal those of $B$. The nonlinear
+equation for its pivot $p(c)$ reads that pivot and no other
+pivot. All maps and derivatives used below are local analytic
+functions on fixed neighborhoods.
+
+More explicitly, choose supports $Y_r$ of current cells for
+every primitive term below. Include both its background and
+retained fluctuation dependencies. There are fixed constants
+$s_L,r_L,n_L$ such that
+\begin{equation}\label{pm-support-bounds}
+ |Y_r|\le s_L,\qquad \operatorname{diam}Y_r\le r_L,
+ \qquad \ell(Y_r)\le s_Lr_L,\qquad
+ \sup_x\#\{r:x\in Y_r\}\le n_L.
+\end{equation}
+Here $\ell$ is shortest-tree length; periodic multiplicities
+are retained. Finite enlargement of the two-block chart
+neighborhoods and the block-internal contour neighborhoods
+gives these constants. The local implicit equations do not
+propagate support between different coarse equations.
+
+For nonnegative $a_0,\kappa$ define the primitive local norm
+\begin{equation}\label{pm-local-norm}
+ \|l\|_{a_0,\kappa,R}
+ =\sup_x\sum_{r:x\in Y_r}
+ e^{a_0|Y_r|+\kappa\ell(Y_r)}
+ \sup_{V\in\mathcal D_b,\,\|z|_{Y_r}\|_\infty\le R}|l_r(V,z)|.
+\end{equation}
+The fluctuation supremum may be taken over complex coordinates,
+so it also bounds the fixed real cutoff. In particular,
+\begin{equation}\label{pm-incidence-bound}
+ \|l\|_{a_0,\kappa,R}
+ \le n_Le^{a_0s_L+\kappa s_Lr_L}\sup_r\|l_r\|_\infty.
+\end{equation}
+Adding primitive terms with the same support preserves this
+bound by the triangle inequality.
+
+\subsection{The exact ambient Jacobian and the delta normalization}
+\label{pm-jacobian-section}
+
+\begin{lemma}[Straightening determinant]\label{pm-jacobian-lemma}
+On a fixed small complex chart,
+\begin{equation}\label{pm-jacobian-identity}
+ \det D\psi_V(B)=\prod_c
+ \frac{\det A_{c,p}}
+      {\det D_{p(c)}F_V(\psi_V(B);c)}.
+\end{equation}
+Each ratio is analytic, equals one at $B=0$, and has fixed
+local dependence.
+\end{lemma}
+\begin{proof}
+Order the variables as retained coordinates followed by
+pivots. The retained rows of $D\psi$ are $[I,0]$.
+The pivot-to-pivot block is block diagonal, because each local
+implicit equation reads only its own input pivot. Differentiating
+$F_V(\psi_V(B))=A_VB$ in that pivot gives
+\[
+ D_{p(c)}F_V(\psi_V(B);c)
+ D_{B(p(c))}\psi_V(B)(p(c))=A_{c,p}.
+\]
+Taking the determinant of this block triangular matrix proves
+\eqref{pm-jacobian-identity}. At zero, $DF_V=A_V$ and
+$D\psi=I$. All local blocks stay invertible on a smaller
+fixed domain.
+\end{proof}
+
+Let $\operatorname{Tr}_{\mathfrak g}$ denote the ordinary
+matrix trace in color-coordinate space. The logarithm of the
+normalized $c$ factor is
+\begin{equation}\label{pm-jacobian-log}
+ j_c^{\rm str}(V;B)=
+ -\operatorname{Tr}_{\mathfrak g}\log\left[
+ I+A_{c,p}^{-1}
+ \{D_{p(c)}F_V(\psi_V(B);c)-A_{c,p}\}\right],
+\end{equation}
+with branch zero at $B=0$. This is a determinant identity:
+the diagonal Jacobian block itself is $(DF_p)^{-1}A_p$,
+and no commutativity of color matrices is asserted.
+Local analyticity and the logarithm series imply, for a fixed
+$\rho_L>0$ and $|g|R<\rho_L$,
+\begin{equation}\label{pm-jacobian-bound}
+ \|j^{\rm str}(V;K_Vgz)\|_{a_0,\kappa,R}
+ \le C_{L,a_0,\kappa}|g|R.
+\end{equation}
+Indeed, the matrix perturbation inside the logarithm is at
+most $C_L|g|R$, which may be made at most $1/2$.
+
+The determinant in Lemma~\ref{pm-jacobian-lemma} belongs to
+the square ambient change of variables, not to the rectangular
+derivative $D\Phi_V$. To identify its measure role, for real
+backgrounds and test functions supported within the chart,
+\begin{equation}\label{pm-delta-reduction}
+ \begin{split}
+ \int dX\,\delta(F_V(X))f(X)
+ &=\mathcal D(V)\int dz\,
+ \exp\left\{\sum_cj_c^{\rm str}(V;K_Vz)\right\}
+ f(\Phi_V(z)),\\
+ \mathcal D(V)&=\prod_c(\det A_{c,p})^{-1}.
+ \end{split}
+\end{equation}
+First set $X=\psi_V(B)$ and then integrate the linear
+constraint $A_VB=0$ over pivots. The pivot determinants have
+the positive orientation of $L^{1-d}I$ on this real
+neighborhood. A group delta at identity contributes only its
+fixed exponential-coordinate normalization at $F=0$.
+After retained variables are scaled by positive real $g$,
+the additional factor $g^{\dim z}$ is field independent.
+Complex-background formulas are holomorphic continuations
+of the local densities; no complex distributional delta is used.
+
+The factor $\mathcal D(V)$ is independent of fluctuations
+but can depend on the prescribed next-scale field through $V$.
+It is kept outside the fluctuation interaction, not discarded.
+Its normalized logarithm is local:
+\begin{equation}\label{pm-background-determinant}
+ \log\frac{\mathcal D(V)}{\mathcal D(1)}
+ =-\sum_c\operatorname{Tr}_{\mathfrak g}
+       \log(A_{c,p}A_{1,c,p}^{-1}).
+\end{equation}
+Each term is $O(\|a\|_\infty)$ and has no small coupling
+factor $g$.
+
+\subsection{The relative Haar density}
+\label{pm-haar-section}
+
+Let $j(X)$ be the pullback density of Haar measure under
+$X\mapsto e^{iX}$, divided by its value at zero. Near zero
+it is nonvanishing and real analytic, with $j(0)=1$.
+Haar invariance under inversion gives $j(-X)=j(X)$ on
+the real form and hence by analytic continuation. Its local
+logarithm therefore satisfies
+\begin{equation}\label{pm-haar-even}
+ \log j(0)=D\log j(0)=0,\qquad |\log j(X)|\le C|X|^2.
+\end{equation}
+This uses the positive real density and then its analytic
+branch; it does not complexify an absolute determinant.
+Translation by $V$ preserves Haar measure, so the relative
+parametrization $e^{iX}V$ has the same density.
+
+The exact Haar logarithms after scaling are
+\begin{equation}\label{pm-haar-log}
+ j_b^{\rm H}(V;gz)=\log j(\Phi_V(gz)(b)).
+\end{equation}
+On retained bonds the argument is exactly $gz(b)$; on pivots
+it is the local chart function. From
+\eqref{pm-haar-even}, the uniform local chart bound, and
+\eqref{pm-incidence-bound},
+\begin{equation}\label{pm-haar-bound}
+ \|j^{\rm H}(V;gz)\|_{a_0,\kappa,R}
+ \le C_{L,a_0,\kappa}|g|^2R^2.
+\end{equation}
+Any unnormalized value $j(0)$ is field independent and remains
+in the overall normalization. A generally nonzero quadratic
+Haar term remains in the interaction with coefficient $g^2$.
+
+\subsection{The exact retained-coordinate gauge remainder}
+\label{pm-gauge-section}
+
+For a root-to-site pair $r=(y,x)$ define
+\begin{equation}\label{pm-gauge-primitive}
+ f_r(V;z)=1-\tfrac12\tau\left[
+ P_{e^{i\Phi_V(z)}V}(y,x)
+ +P_{e^{i\Phi_V(z)}V}(y,x)^{-1}\right].
+\end{equation}
+The source contours are internal to blocks and contain no
+pivots. By \eqref{pc-gauge-pivot-independence}, this is
+exactly the same expression with $\Phi_V(z)$ replaced by
+$E_fz$, where $E_f$ inserts zero at pivots. Consequently
+it is a local function of unchanged retained coordinates.
+
+On the full small product background domain define
+\begin{equation}\label{pm-gauge-remainder}
+ \begin{split}
+ v_r^{\rm G}(V;g,z)=-g^{-2}\bigl[
+ &f_r(V;gz)-f_r(V;0)-gD_zf_r(V;0)z\\
+ &-\tfrac12g^2D_z^2f_r(V;0)[z,z]\bigr].
+ \end{split}
+\end{equation}
+The singularity at $g=0$ is removable, with value zero.
+The finite-dimensional Taylor remainder gives
+\begin{equation}\label{pm-gauge-bound}
+ \|v^{\rm G}(V;g,z)\|_{a_0,\kappa,R}
+ \le C_{L,a_0,\kappa}|g|R^3,
+ \qquad |g|R<\rho_L.
+\end{equation}
+At a physical background $P_V=1$, both $f_r(V;0)$ and
+$D_zf_r(V;0)$ vanish. Thus this is precisely the logarithmic
+gauge interaction after its quadratic contribution has been
+included in the precision. Elsewhere it is the exact
+third-and-higher remainder after constant and linear terms
+are also separated. The full-domain definition supplies
+background holomorphy without treating $P_V=1$ as a product
+domain.
+
+\subsection{Local coefficient and multiplier bounds}
+\label{pm-coefficients-section}
+
+\begin{theorem}[Local measure interaction]\label{pm-measure-theorem}
+For the fixed geometry and product background domain above,
+the logarithmic interactions
+$j^{\rm str}(V;K_Vgz)$, $j^{\rm H}(V;gz)$ and
+$v^{\rm G}(V;g,z)$ are holomorphic and have primitive
+supports satisfying \eqref{pm-support-bounds}. For
+$|g|R<\rho_L$, their sum, regrouped by supports $Y$, obeys
+\begin{equation}\label{pm-combined-bound}
+ \sup_x\sum_{Y\ni x}e^{a_0|Y|+\kappa\ell(Y)}
+ \sup|v_Y(V;g,z)|
+ \le C_{L,a_0,\kappa}
+   (|g|R+|g|^2R^2+|g|R^3).
+\end{equation}
+The constants are independent of $M$ and periodic volume.
+If the right side is at most one, the same bound multiplied
+by $e$ holds with $|v_Y|$ replaced by $|e^{v_Y}-1|$.
+For $R\ge1$ and $|g|R\le1$, it is at most
+$C_{L,a_0,\kappa}|g|R^3$.
+\end{theorem}
+\begin{proof}
+Combine \eqref{pm-jacobian-bound},
+\eqref{pm-haar-bound} and \eqref{pm-gauge-bound} and group
+equal supports. The local coefficient assertion can also
+be seen directly from the convergent expansions
+\[
+ \begin{split}
+ j_c^{\rm str}(V;K_Vgz)&=\sum_{n\ge1}g^n s_{c,n}(V;z),\\
+ j_b^{\rm H}(V;gz)&=\sum_{n\ge2}g^n h_{b,n}(V;z),\\
+ v_r^{\rm G}(V;g,z)&=\sum_{n\ge3}g^{n-2}v_{r,n}(V;z).
+ \end{split}
+\]
+Each coefficient is homogeneous of degree $n$ in $z$,
+holomorphic in only the background coordinates of its support,
+and has local norm at most $C_0(C_1R)^n$ by Cauchy on a
+fixed fluctuation disc. Background Cauchy estimates on the
+smaller product domain preserve the same supports. These are
+anchored coefficient bounds, rather than an extensive bound
+on the full sum. Finally $|e^v-1|\le e|v|$ for $|v|\le1$.
+\end{proof}
+
+The support-cardinality factor $K^{|Y|}$ in the overlapping
+interaction theorem is absorbed by increasing $a_0$ by
+$\log\max(1,K)$. This is a fixed-$L$ statement, not a
+claim of uniform constants when $L$ or the cell dimension is
+allowed to increase. For a logarithmically growing cutoff
+$R(g)$, these measure interactions tend to zero as soon as
+$|g|R(g)^3\to0$.
+
+The fixed real cutoff is the original retained window
+$\|z(b)\|<R$. It remains unchanged because
+$\Phi_V(gz)(b)=gz(b)$ on retained bonds. Additional pivot,
+contour or reconstructed-field indicators retain their exact
+pullbacks and are not covered by this theorem. CMP116,
+p.~12 immediately before (2.3), explicitly uses the
+pivot-removed bond set; its (2.14), p.~15, keeps this retained
+cutoff fixed during Gaussian deformation. CMP109,
+pp.~266--268, (2.5) and (2.9)--(2.13), supplies the gauge
+and pivot setup. The unreadable product subscript of
+CMP109 (2.9) in the accessible OCR is not presented as a
+visually verified formula.
+
+These factors are strictly local in independent current
+backgrounds $V$. Substituting $V_*(W)$ does not give them
+strict finite support in $W$. The full classical remainder,
+the previously integrated interaction, the external factor
+\eqref{pm-delta-reduction}, and any extra cutoff indicators
+remain distinct obligations.

@@ -1,0 +1,382 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\begin{document}
+% Pointwise flat inverse; no standalone preamble.
+% Requires amsmath/amssymb/amsthm, theorem environment, and \norm.
+% Every label introduced by this fragment has the unique prefix pt-.
+\section{Pointwise regularity for arbitrary fine forcing}
+\label{pt-section}
+
+The full flat inverse also obeys pointwise estimates. These estimates
+concern arbitrary bounded fine forcing, without assuming that it is a
+coarse lift. Retain fine spacing $\eta=M^{-1}$, odd $M$, unit coarse
+cells, the physical fine measure $\eta^d$, and
+\begin{equation}\label{pt-operator}
+ \mathcal A_a=d^*d+DRD^*+Q^*aQ,\qquad G_0=\mathcal A_a^{-1},
+ \qquad \mathcal L=D^*D.
+\end{equation}
+Here $d$ is the fine curl, $D$ the scalar gradient, $Q=Q_M^{\rm st}$,
+and $R$ is the matched homogeneous flat scalar source projection.
+The penalty lies in a fixed interval $0<a_-\le a\le a_+<\infty$;
+the normalized source value $a=1$ is included. The discussion applies
+to the homogeneous infinite lattice and compatible periodic regulators.
+
+For a fixed coarse-cell patch $U$, define the discrete pointwise norm
+\begin{equation}\label{pt-holder-norm}
+ \norm{u}_{1,\alpha;U}=\norm{u}_{\infty;U}
+  +\sum_\mu\norm{D_\mu^+u}_{\infty;U}
+  +\sum_\mu\sup_{\substack{x,y\in U\\x\ne y}}
+       \frac{|D_\mu^+u(x)-D_\mu^+u(y)|}{|x-y|_1^\alpha}.
+\end{equation}
+The points are actual fine-grid points and a fixed collar supplies the
+differences. Enlarging the patch by finitely many neighboring coarse
+cells changes only constants. Backward differences obey the same bounds.
+
+\begin{theorem}\label{pt-theorem}
+For each $0<\alpha<1$ there are $C_\alpha,\rho>0$, independent of
+odd $M$ and compatible periodic volume, such that the block from
+forcing in coarse cell $m$ to a fixed collar of coarse cell $n$ satisfies
+\begin{align}
+ \norm{G_0(n,m)}_{\ell^\infty\to C^{1,\alpha}}
+       &\le C_\alpha e^{-\rho|n-m|_1},
+       \label{pt-pointwise-bound}\\
+ \norm{(\mathcal L G_0)(n,m)}_{\ell^\infty\to\ell^\infty}
+       &\le C e^{-\rho|n-m|_1}.
+       \label{pt-laplacian-bound}
+\end{align}
+The first target norm is \eqref{pt-holder-norm}; $\mathcal L$ in
+the second estimate acts componentwise on the vector output.
+On tori use periodic coarse-cell distance. Weighted row and column
+block sums are uniformly bounded at every smaller positive exponent.
+Consequently bounded fine forcing produces uniformly bounded fields,
+first differences, locally $\alpha$-H\"older first differences, and
+componentwise Laplacians.
+\end{theorem}
+
+The constants need not stay bounded as $\alpha\uparrow1$. In fact a
+uniform Lipschitz estimate for the first differences, and a uniform
+bound for each individual second difference, are false in dimension
+$d\ge2$; an example is given below. No source weak-norm identification
+is inferred merely from the theorem's terminology.
+
+\subsection{Reduction to a scalar high-mode inverse}
+
+Use the aliases $p_r=z+2\pi r$, $r\in I_M^d$, with
+$I_M=\{-(M-1)/2,\ldots,(M-1)/2\}$, and write
+\begin{equation}\label{pt-alias-data}
+ u_{r,\mu}^{\pm}=M(e^{\pm ip_{r,\mu}/M}-1),\qquad
+ P_r=\sum_\mu u_{r,\mu}^+u_{r,\mu}^-,\qquad
+ \mathcal F_M(z)_{sr}=e^{i(z+2\pi r)\cdot s/M}.
+\end{equation}
+The common holomorphic chart from the full inverse theorem contains
+the real fundamental cube in the interior of $|\operatorname{Re}z_\mu|<K<2\pi$.
+For real $z$, $\mathcal F_M$ is unitary from alias counting $\ell^2$
+to physical-cell $L^2$. On the complex chart it and its inverse have
+uniformly bounded $L^2$ norms. In particular a bounded fine-cell input
+has alias coefficients bounded in $\ell^2$, and individually, by
+$C\norm{f}_\infty$.
+
+Recall the canceled inverse $G_0=F+\beta E_a^{-1}\beta^-$.
+Separate the scalar orientation-diagonal multiplier
+\begin{equation}\label{pt-high-scalar}
+ T_r=P_r^{-1}\quad(r\ne0),\qquad T_0=0.
+\end{equation}
+The difference $F-T$ is a fixed sum of rank-one operators per vector
+orientation: its central block, two mixed blocks, and one high/high
+term. Its high vectors are $\omega_{r,\mu}^-/P_r$ and the analytic
+transpose partners. The remaining scalar coefficients are uniformly
+bounded and holomorphic. Thus the only full-rank pointwise problem is
+\eqref{pt-high-scalar}. Minus signs on multipliers throughout this
+argument denote evaluation at negative full momentum, with the
+analytic transpose; they do not conjugate a complex variable.
+
+\subsection{Weighted heat estimates with complex Bloch twist}
+
+Let $p_s(n)$ be the continuous-time nearest-neighbor heat kernel on
+$\mathbb Z$ with generator $f(n+1)+f(n-1)-2f(n)$. Its Poisson-process
+representation gives
+\begin{equation}\label{pt-heat-moment}
+ \sum_n e^{tn}p_s(n)=e^{2s(\cosh t-1)},\qquad
+ \sum_n p_s(n)=1.
+\end{equation}
+It is symmetric and decreasing for $n\ge0$. For completeness, set
+$q_n=p_s(n)-p_s(n+1)$ on $n\ge0$. Then
+\[
+ q_0'=q_1-3q_0,\qquad
+ q_n'=q_{n-1}+q_{n+1}-2q_n\quad(n\ge1),
+\]
+with nonnegative initial data. This bounded cooperative system
+preserves nonnegativity, as follows by shifting its generator to a
+matrix with nonnegative entries and expanding the exponential.
+Also Fourier inversion gives
+\begin{equation}\label{pt-heat-origin}
+ p_s(0)=\frac1{2\pi}\int_{-\pi}^{\pi}
+               e^{-4s\sin^2(t/2)}\,dt
+       \le C(1+s)^{-1/2}.
+\end{equation}
+For $0\le r\le r_0$, summation by parts therefore yields the exact
+weighted variation identity
+\begin{align}
+ \sum_n e^{r|n|}|p_s(n+1)-p_s(n)|
+  &=(1+e^r)\left[p_s(0)
+       +(1-e^{-r})\sum_{n\ge1}e^{rn}p_s(n)\right]\notag\\
+  &\le C\left[(1+s)^{-1/2}
+                   +r e^{2s(\cosh r-1)}\right].
+       \label{pt-weighted-variation}
+\end{align}
+Take $s=M^2t$ and $r=\delta/M$, where $\delta$ is a fixed small
+constant. Multiplying the difference by $M$ gives
+\begin{equation}\label{pt-first-heat}
+ \sum_n e^{\delta|n|/M}
+       |D_\eta p_{M^2t}(n)|
+       \le C(t^{-1/2}+\delta)e^{C\delta^2t}.
+\end{equation}
+For $t<\eta^2$ the trivial $M$ bound is smaller than $t^{-1/2}$.
+The weight is submultiplicative. Apply
+\eqref{pt-first-heat} twice to
+$p_s=p_{s/2}*p_{s/2}$ to obtain the second-difference bound.
+Tensor products then give, for any specified composition of $k$ fine
+forward/backward differences in $d$ dimensions,
+\begin{equation}\label{pt-heat-two-derivatives}
+ \sum_{n\in\mathbb Z^d}e^{\delta|n|_1/M}
+       |D_\eta^k p_{M^2t}(n)|
+       \le Ct^{-k/2},\qquad 0<t\le1,\quad k=0,1,2.
+\end{equation}
+The displayed $p$ is a probability kernel. If it is instead written
+as a density against physical fine volume, the density factor $M^d$
+cancels the summation factor $M^{-d}$.
+
+The reconstructed Bloch heat operator has the exact image-sum kernel
+\begin{equation}\label{pt-twisted-heat}
+ H_z(t;s,s')=\sum_{k\in\mathbb Z^d}
+             e^{-iz\cdot k}p_{M^2t}(s-s'+kM).
+\end{equation}
+This convention uses ordinary summation over the fine-cell input
+index $s'$. The formula follows by finite Fourier inversion and
+continues to complex $z$ by the exponential moment bound.
+For $s$ in a fixed output collar and $s'$ in the input cell,
+\[
+ |e^{-iz\cdot k}|
+       \le C e^{\delta|s-s'+kM|_1/M}.
+\]
+Thus \eqref{pt-heat-two-derivatives}, including the corresponding
+output differences of the image sum, proves
+\begin{equation}\label{pt-twisted-derivatives}
+ \norm{D_\eta^kH_z(t)}_{\infty\to\infty}
+       \le Ct^{-k/2},\qquad 0<t\le1,\quad k=0,1,2.
+\end{equation}
+The difference between first-gradient rows at fine points $x,y$ is
+bounded both by $Ct^{-1/2}$ and, by telescoping, by
+$C|x-y|_1t^{-1}$. Interpolating these two elementary bounds gives
+\begin{equation}\label{pt-heat-holder}
+ \norm{H_z(t)}_{\infty\to C^{1,\alpha}}
+       \le C_\alpha t^{-(1+\alpha)/2},\qquad 0<t\le1.
+\end{equation}
+Subtracting the central heat mode changes this only by a bounded
+term, since $P_0,u_0$ and its plane-wave profile are uniformly bounded
+on the chart. For $t\ge1$, the high-alias bound
+$\operatorname{Re}P_r\ge c|r|^2$ and the individual input-coefficient
+bound instead give
+\begin{align}
+ &\norm{H_z(t)-e^{-tP_0}\Pi_0(z)}_{\infty\to C^{1,\alpha}}
+       \notag\\
+ &\qquad\le C\sum_{r\ne0}(1+|r|)^{1+\alpha}e^{-ct|r|^2}
+       \le C_\alpha e^{-ct/2}.
+       \label{pt-heat-large-time}
+\end{align}
+The high-mode inverse is therefore the convergent operator integral
+\begin{equation}\label{pt-scalar-integral}
+ T(z)=\int_0^\infty
+             \bigl[H_z(t)-e^{-tP_0}\Pi_0(z)\bigr],dt.
+\end{equation}
+The small-time integral is finite because
+$\int_0^1t^{-(1+\alpha)/2}\,dt=2/(1-\alpha)$.
+This proves a uniform holomorphic
+$\ell^\infty\to C^{1,\alpha}$ bound for $T$ for every $\alpha<1$.
+
+\subsection{Pointwise bounds for the rank corrections}
+
+The centered scalar and straight-vector averaging multipliers satisfy
+\begin{equation}\label{pt-alias-weights}
+ |a_r^\pm|\le Cw(r),\qquad
+ |\omega_{r,\mu}^\pm|\le\frac{Cw(r)}{1+|r_\mu|},\qquad
+ w(r)=\prod_\nu(1+|r_\nu|)^{-1}.
+\end{equation}
+Indeed, for a nonzero component, the numerator of
+$\sin((z_\nu+2\pi r_\nu)/2)/
+ [M\sin((z_\nu+2\pi r_\nu)/(2M))]$
+is uniformly bounded and its denominator has modulus at least
+$c|r_\nu|$ on the enlarged chart. The zero component is bounded
+directly. The vector multiplier has one extra longitudinal factor.
+This includes aliases at the edge of the fine zone.
+
+On a dyadic maximum-norm shell,
+\begin{equation}\label{pt-shell-sum}
+ \sum_{2^j\le|r|_\infty<2^{j+1}}w(r)
+                      \le C_d(j+1)^{d-1}.
+\end{equation}
+Choose a coordinate at the maximal scale. Its reciprocal weight sums
+to $O(1)$ over that shell, and each other coordinate contributes
+$O(j+1)$. Summing over the possible maximal coordinates proves
+\eqref{pt-shell-sum}. Consequently
+\begin{equation}\label{pt-rank-holder-sum}
+ \sum_{r\ne0}(1+|r|)^{1+\alpha}
+             \left|\frac{\omega_{r,\mu}^-}{P_r}\right|
+   \le C\sum_{r\ne0}w(r)(1+|r|)^{\alpha-1}
+   \le C_\alpha.
+\end{equation}
+Absolute Fourier summation now bounds the reconstructed high rank
+vectors in $C^{1,\alpha}$. Their central partners have the same bound.
+The Woodbury vector has
+\begin{equation}\label{pt-beta-bound}
+ |\beta_{r,\mu}|
+  \le C\left(\frac{|a_r^-|}{(1+|r|)^3}
+                  +\frac{|\omega_{r,\mu}^-|}{(1+|r|)^2}\right),
+       \qquad r\ne0,
+\end{equation}
+so its output profile satisfies the same weighted sum. Its canceled
+central component is bounded directly.
+
+The input rows of every rank term have uniformly bounded alias
+$\ell^2$ norm. By the physical-cell Fourier normalization,
+\[
+ |\text{input row}(f)|
+       \le C\norm{f}_{L^2(\text{physical cell})}
+       \le C\norm{f}_\infty.
+\]
+The cell has physical volume one; there is no factor $M^{d/2}$.
+Combining these row estimates with
+\eqref{pt-rank-holder-sum}--\eqref{pt-beta-bound} controls all rank
+corrections. The full reconstructed $G_0$ therefore has the required
+uniform holomorphic pointwise bound on the common chart.
+
+\subsection{The componentwise Laplacian}
+
+For the scalar term, $\mathcal L T=I-\Pi_0$ is bounded on
+$\ell^\infty$. Applying $\mathcal L$ to a high rank vector
+$\omega_{r,\mu}^-/P_r$ gives $\omega_{r,\mu}^-$. Its full
+reconstruction is a column of the physical adjoint average, minus
+its bounded central mode. Explicitly, for $x=n+s/M$, $M=2h+1$,
+\begin{equation}\label{pt-adjoint-average}
+ (Q^*B)_\mu(x)=b_s B_\mu(n)+(1-b_s)B_\mu(n-e_\mu),
+ \qquad b_s=\frac{s_\mu+h+1}{M}.
+\end{equation}
+These weights are nonnegative and sum to one. The Bloch profile is
+$b_s+(1-b_s)e^{-iz_\mu}$, uniformly bounded on the complex chart
+and any fixed collar. An absolute alias sum of $\omega$ is unnecessary
+and would introduce a spurious logarithmic loss.
+
+For the Woodbury vector, its high-alias formula gives
+\begin{equation}\label{pt-beta-laplacian}
+ (\mathcal L\beta)_{r,\mu}
+  =\frac{P_0u_{r,\mu}^+a_r^-}{P_rD_{s,2}}
+           -\omega_{r,\mu}^-k_\mu d_\mu^+.
+\end{equation}
+The first term is $O(w(r)/(1+|r|))$, absolutely summable by
+\eqref{pt-shell-sum}. The second is a bounded coefficient times
+the profile \eqref{pt-adjoint-average}, with its central subtraction.
+The canceled central Laplacian component is bounded. The same input
+row estimates as before now prove a uniform holomorphic
+$\ell^\infty\to\ell^\infty$ bound for $\mathcal L G_0$.
+This argument supplies neither H\"older continuity of its Laplacian
+nor bounds on all separate second differences. In particular the
+$Q^*$ profile can have transverse block jumps.
+
+\subsection{Gluing, exponential decay, and bounded forcing}
+
+The whole reconstructed inverse and its fine derivatives are periodic
+in coarse momentum. The full real symbol is invariant under the
+alias relabeling induced by $z\mapsto z+2\pi n$; the within-cell
+integer phase cancels wrapping of the alias index. The enlarged
+holomorphic charts agree on their real overlaps and hence glue.
+Individual separated central/high terms need not be periodic; they
+were used only to bound the whole symbol on each chart.
+
+Output collars consist of finitely many neighboring-cell copies,
+with bounded holomorphic factors $e^{iz\cdot n}$. Thus the common
+strip bounds hold as operator bounds into the discrete norm
+\eqref{pt-holder-norm}. For each fixed $M$ these are finite-dimensional
+Banach spaces, so entrywise holomorphy and the proved uniform norms
+give Banach-valued contour shifting. This proves
+\eqref{pt-pointwise-bound}--\eqref{pt-laplacian-bound} without a
+growing-dimension factor.
+
+In infinite volume the resulting absolutely summable blocks define
+the inverse on bounded forcing and agree with the Hilbert inverse
+on finitely supported fine forcing. The inverse identity extends
+through absolute convergence of the exponentially summable operator
+products at each fixed $M$. The source projection is not local, but
+$R=\mathcal L Z\mathcal L$ has exponentially summable cell $L^2$
+blocks. Finite-cell norm equivalence makes their pointwise blocks
+summable for each fixed $M$. That last identity argument need not
+be uniform in $M$: the pointwise inverse bound was proved uniformly
+by the heat and rank estimates above.
+
+Finite compatible tori sample the same symbol, giving exact
+periodizations and the same bounds in periodic distance, including
+short periods and multiplicities. Summing the cell kernels bounds
+the field and gradient globally and the gradient H\"older seminorm
+on every fixed collar. Nearby points lie in one enlarged collar;
+farther points use twice the gradient supremum. This also gives the
+global discrete H\"older bound, with periodic physical distance on
+tori.
+
+\subsection{A sharp obstruction to the Lipschitz endpoint}
+
+For $d\ge2$, take the compatible torus consisting of one coarse
+cell. At its sole coarse momentum, zero, the full inverse is
+$a^{-1}$ on the central constant mode and $P_r^{-1}$ on every high
+alias. Thus on fine mean-zero forcing it is exactly the scalar
+periodic inverse Laplacian, independently in each vector component.
+
+Choose a smooth cutoff $\chi$ supported in a small ball inside the
+unit continuum torus and equal to one near its center. Set
+\begin{equation}\label{pt-endpoint-example}
+ u_\varepsilon(x)=\chi(x)x_1x_2\,
+                       \frac12\log(|x|^2+\varepsilon^2).
+\end{equation}
+For $P=x_1x_2$ and $f(r)=\frac12\log(r^2+\varepsilon^2)$,
+harmonicity and homogeneity of $P$ give
+\begin{equation}\label{pt-endpoint-laplacian}
+ \Delta(Pf)=P\left(f''+\frac{d+3}{r}f'\right)
+   =P\frac{(d+2)r^2+(d+4)\varepsilon^2}
+                  {(r^2+\varepsilon^2)^2}.
+\end{equation}
+Since $|P|\le r^2/2$, this is bounded independently of $\varepsilon$.
+The cutoff-region derivatives are also uniformly bounded because
+that region stays away from zero. However
+\begin{equation}\label{pt-endpoint-divergence}
+ \partial_1\partial_2u_\varepsilon(0)=\log\varepsilon.
+\end{equation}
+
+For fixed $\varepsilon>0$, sample the smooth periodic function on
+increasingly fine odd grids and subtract its exact discrete mean.
+Define $f_{M,\varepsilon}=\mathcal L_\eta u_{M,\varepsilon}$.
+Its mean is zero, and Taylor convergence gives
+$\norm{f_{M,\varepsilon}}_\infty\le C+1$ for sufficiently large
+$M$, depending on $\varepsilon$. The full inverse returns exactly
+$u_{M,\varepsilon}$. Its mixed second fine difference at the origin
+converges to \eqref{pt-endpoint-divergence}. Choosing small
+$\varepsilon$ and then large $M$ proves that bounded forcing can
+produce arbitrarily large mixed second differences. A uniform
+Lipschitz bound on first differences would bound these differences
+and is therefore impossible. This does not contradict
+\eqref{pt-laplacian-bound}, which controls their Laplacian sum rather
+than each second difference separately.
+
+\subsection{Source scope}
+
+The theorem supplies arbitrary-forcing pointwise estimates for the
+matched homogeneous flat inverse, including its normalized $a=1$
+case. It does not by itself identify every numerical factor or term
+in the source's weak norms, establish nonflat estimates, handle
+general retained-history domains, or control the complete interacting
+current carrier. Those applications require exact norm and coordinate
+checks. The false endpoint above must not enter such a match through
+an implicit assertion that $C^{1,\alpha}$ controls all second derivatives.
+
+\end{document}

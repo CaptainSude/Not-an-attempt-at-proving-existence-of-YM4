@@ -1,0 +1,2025 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{microtype}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{theorem}[proposition]{Conditional theorem}
+\theoremstyle{remark}
+\newtheorem*{status}{Status}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\cum}{\operatorname{cum}}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\Ima}{\operatorname{Im}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 01: proof obligations and verified reductions}
+\author{Research working document}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The goal is a complete existence argument for a nontrivial
+four-dimensional Yang--Mills quantum theory. A first intermediate
+target is a nonzero, fully Euclidean-covariant continuum observable
+sector obtained from one subsequence of four-dimensional $SU(2)$
+Wilson theories. Cutoff uniqueness is unnecessary for that target.
+This notebook gives explicit conditional reductions for compactness, factorial
+correlation bounds on joint flat tests, rotation restoration, and
+positive-energy nontriviality. Fixed-side patch grids repair the all-order
+geometry conditionally on uniform translated-grid source estimates.
+An independent free-lattice calculation reduces one nontriviality test
+to fixed relative kernel accuracy.
+It also gives counterexamples to several tempting shortcuts.
+The model-specific source estimates, the interacting rotation input, and
+the passage from one scalar sector to Yang--Mills remain open.
+Companion Notebook 02 now gives a fixed-coupling proof preserving diagonal
+reflection positivity in the original coordinate-torus infinite-volume
+limit, with the original odd-$L$ regulator. It supplies no uniform
+ultraviolet estimate.
+Companion Notebook 03 proves the local current commutator with explicit
+constants and a convergent Gaussian sharp-cutoff cluster expansion.
+Its remaining interfaces are the combined current at complex decoupling
+parameters and strict locality in the background variables.
+For the Gaussian cutoff part of the quadratic coefficient, it also
+proves a direct Hessian bound and volume-limit criterion that avoid
+strict background-support activities, conditional on actual uniform
+source-response estimates and their identification.
+Notebook 04 establishes strict background locality of the Gaussian
+cutoff logarithm under a uniformly small local precision perturbation.
+Matching that hypothesis, its domain and its symmetries to the actual
+Yang--Mills Gaussian is still required.
+Notebook 05 proves a quantitative flat axial-to-exponential gauge bridge
+with the actual averaged-path penalty, and an interacting cutoff theorem
+for disjoint fixed-dimensional cells. It also identifies the correct
+physical-field radius estimate and the full exponent's linear Jacobian
+term. Notebook 18 extends that integration theorem to overlapping
+supports under an explicit weighted local coefficient norm.
+Notebook 06 supplies direct scale-uniform flat quadratic bounds through
+curvature averaging, a finite-block axial gap, and an explicit compact
+bounded-energy right inverse. Their homogeneous identification with the
+constrained-minimizer Hessian now follows from the nonlinear construction
+of Notebook 15 and the explicit match in Notebook 17.
+Notebook 07 proves exponential locality of this flat
+action and retained covariance, and their refinement limit at rate
+$O(M^{-2})$ in an exponentially weighted kernel norm, uniformly in
+compatible periodic volume. Its explicit sinc-alias limit is a free
+Gaussian reference. Notebook 19 proves the physical homogeneous
+complex-background perturbation in the exact source coordinates;
+the interacting continuum limit remains separate.
+Notebook 08 constructs the corresponding fine minimizing extension
+in the deposited homogeneous flat source gauge. It proves uniform
+exponential locality for the potential, first fine derivatives,
+curvature, and componentwise Laplacian, with physical H\"older
+bounds below the endpoint for the first derivatives. These local
+flat response maps are inputs to a further perturbation argument;
+they do not establish that argument on a nonflat current domain.
+Notebook 09 proves locality of the full flat fine inverse, with
+two total fine derivatives in physical cell Hilbert norm, and a
+refinement-uniform complex neighborhood for the deposited auxiliary
+current. Its coarse precision has a quadratic zero-current remainder
+and all-order localized derivative bounds.
+Notebook 10 identifies a local projection onto feasible curvature
+variations and gives a full weighted expansion for a small curvature
+metric perturbation at fixed averaging constraint.
+Notebook 11 bounds the separate nonlinear constraint-current term by
+composing the corrected fixed-$L$ quadratic jets and summing their
+physical scale factors. It establishes a common weighted Hilbert
+domain for the full flat current family along $M=L^j$, including
+factorial current derivatives. Nonflat and retained-history domains
+remain separate.
+Notebook 12 strengthens the flat inverse to arbitrary-forcing
+pointwise $C^{1,\alpha}$ bounds for $\alpha<1$, and transfers the
+full flat current to the homogeneous source norms $N,N_\beta$
+on a smaller uniform complex ball. Its current requires only a
+supremum bound. It also proves the one-form right-divergence
+members and the separate constrained current member. For every
+fixed exponent in $(0,1)$, an improved heat-integral argument
+removes the H\"older loss. A scalar proof requires an explicit
+uniform positive penalty interval; the baseline Laplacian estimate
+is not asserted for nonzero current.
+Notebook 13 proves a uniform analytic ball for the complete
+fixed-reference corrected nonlinear average and an exact local
+chart of its constraint. The chart has a uniformly local right
+inverse for its ordinary differential.
+Notebook 14 computes the exact change to the moving-reference
+derivative, including its endpoint correction. A cumulative gauge
+relation controls the ordinary reference trajectory and the actual
+bond and scalar averages. A Wilson plaquette calculation then gives
+a uniformly local energy inverse on a small global physical $C^1$
+ball, including the moving gauge projection. Its bare Wilson action,
+physical pairing and left-exponential Hessian chart match the
+deposited conventions in dimension four. Original-paper verification,
+the precise graded-curl and effective-Hessian identifications,
+nonflat pointwise/current estimates and retained-history domains
+still require their separate checks.
+Notebook 15 closes a nonlinear classical minimum construction in
+the homogeneous small-global-field class. An equal-exponent
+constrained inverse, the exact Wilson force, and a two-Hilbert
+constraint-curvature estimate give a uniform analytic fixed-slice
+minimum. A genuine constraint-preserving gauge flow and a separate
+ordinary-average transfer produce a minimum modulo gauge for the
+ordinary homogeneous constraint. Its radii and physical
+$C^{1,\alpha}$ bounds are uniform in refinement and volume.
+This does not supply mixed histories, large-field integration,
+or the interacting continuum observable hierarchy.
+Notebook 16 proves exponential locality of both selected
+minimizer representatives and their multiplier, at small
+nonconstant backgrounds, with one weighted direction at every
+analytic order. The exact action-envelope identity gives a local
+nonlinear classical coarse Hessian, its small weighted perturbation
+from $q_M$, and a classical coarse gauge identity. A positive
+auxiliary coarse penalty gives a stable local inverse. Quantum
+fluctuation integration and multi-insertion tree estimates are
+not supplied by those classical response bounds.
+An exact constrained-Gaussian trace calculation in Notebook 16
+also shows that its physical curl variance grows as $\eta^{-4}$.
+The probability of a fixed smooth ball for a deterministic
+background plus $gZ$ is at most $C r\eta^2/g$.
+Notebook 17 supplies that rescaling and joint local-tail analysis.
+It proves real correlated bad-block bounds and a complex marginal
+estimate without a total-volume factor, and compares the actual
+first-step reduced Wilson Hessian with the flat energy, including
+constraint curvature. It also identifies the homogeneous flat
+current-step covariance uniformly over all earlier averaging depths.
+Notebook 18 proves the overlapping-interaction cutoff expansion and
+its quantitative comparison with the Gaussian logarithm. Under a
+small local precision decomposition it also supplies strictly local
+background activities. Notebook 19 constructs the physical stationary
+background and its exact pivot-coordinate Gaussian, including both
+action curvature terms, uniformly in preceding classical depth.
+It also bounds the local Jacobian, Haar and gauge interactions.
+Notebook 20 closes the actual bare Wilson small-field integration:
+the action and precision have explicit local decompositions, the
+retained cutoff is fixed, and the logarithm has a volume-uniform
+connected expansion. Its background-only delta and Gaussian
+determinants are included separately. This support statement is
+in independent current backgrounds, before composition with the
+next-coarse stationary field. Notebook 21 proves strict support
+localization of the homogeneous classical minimizer and action
+uniformly in earlier refinement. A rooted support contraction,
+with arbitrary fixed cardinality reserve, gives local scalar
+action coefficients and individually symmetric precision pieces.
+The physical chart substitution then closes one small-field
+integration of that classical reference action at every earlier
+classical depth. Notebook 22 constructs the actual stationary
+current background as a strictly supported analytic function
+of next-coarse data and transports the generated activities
+through it. That bounded step has explicit analytic-radius
+and support-weight losses; it does not give repeated-step
+closure. Notebook 23 proves local gauge covariance of the
+complete small-field correction, including the cutoff,
+Haar and pivot factors, and Gaussian determinant. Its total
+linear jet vanishes and its quadratic jet obeys the finite-regulator
+Ward identity. Notebook 24 bounds the inherited fluctuation
+increment by $O(gR)$ divided by the available analytic margin
+and uses the
+exact pivot support geometry to give a sufficient next-step
+interaction-norm inequality. The resulting logarithm comparison
+is proved under that inequality. Notebook 25 gives a smaller
+pre-root-gauge representative with an inverse-ratio link-angle
+bound and a strict support series, uniform through iterated
+classical blocking. It extends the one-step composition germ of
+a gauge-invariant total functional where that smaller representative
+is admissible.
+Notebook 26 supplies independent auxiliary integration cells
+that satisfy the support-weight test: a fixed positive
+connected-carrier exponent is recovered through inherited
+insertion, Gaussian integration, all normalization terms and
+stationary transport. The physical blocking and cutoff stay
+fixed. This is a bounded step on a smaller domain, with explicit
+noncontractive constants. Notebook 27 constructs the actual
+composite ordinary blocking map, its local pivot chart and
+retained Gaussian, and the precisely normalized compact-gauge
+integral. Notebook 28 composes around a local core of the
+pre-gauge representative, expanding only its small distant tail.
+Classical support substitution before integration then gives
+one small-field update on the same input and output analytic
+ball, with a fixed positive carrier exponent and a nonvanishing
+Gaussian cutoff integral. It also proves an inverse-ratio
+background contraction for coefficientwise Taylor remainders
+of field degree at least five, and a contractive quantum
+response to input differences with matching low jets.
+The update can regenerate low jets and the general activity
+bound can grow. Notebook 29 proves the actual local spatial
+symmetries and classifies the total quadratic, cubic and
+quartic marginal vertices through their nonlinear Ward
+identities. One normalized gauge-invariant classical action
+supplies their common subtraction. Complete first-gradient
+H\"older support families and an exact lattice difference
+factorization give a connected-norm spatial gain
+\(C(J)L^{-\alpha}\) under the stated infinite-kernel and
+coherent-family hypotheses. A classical semigroup modulo
+gauge permits \(L=R^q\) to be chosen after fixed \(R,J\).
+Joint compactness realizes the coherent infinite interactions
+at fixed parameters. A complete quotient by equality of
+normalized totals makes classical representation changes
+and bounded full-reference extraction precise; the resulting
+classical contraction retains its joint-map hypotheses.
+Notebook 30 closes the universal gauge identity for that fixed
+classical system and constructs a norm-preserving finite
+periodization of invariant interaction classes. Strict Gaussian
+local continuity, with explicit carrier-size and expansion-order
+tails, defines the actual homogeneous local quantum map on the
+quotient. It identifies varying finite inputs and every fixed
+finite history whose intermediate finite families meet the
+uniform budgets. Exact transport of the actual classical
+reference makes intermediate extractions telescope. A finite
+block of projected quantum steps has an \(O(b^2)\) stable amplitude
+envelope while its couplings remain uniformly weak. A fixed outer
+domain supplies the matching \(O(b^2)\) zero-input force, and
+each inverse-coupling increment has a bounded absolute size.
+Notebook 31 closes the finite representative-budget interface.
+Finite Ward repair and periodic localization retain an explicit
+wrapping error at the same field radius and carrier exponent.
+Exact finite quotient descent and equivalent small representatives
+then give uniform local induction through every permitted finite
+history while its couplings remain weak. All raw constants are
+compensated in the vacuum factor. A fixed-threshold parity
+argument isolates the pivot and Gaussian determinant as the
+leading zero-input correction. On the jointly compatible infinite
+interaction space, a quadratic-only spatial estimate at fixed
+radius proves exact classical preservation of the Maxwell
+coefficient. The leading quantum coefficient and its drift sign
+still require evaluation; the infinite identity does not discard
+finite cutoff-extraction errors.
+Notebook 32 proves qualitative uniform disappearance of that
+finite classical leakage along cofinal nested periods and joint
+continuity of the finite quantum map in its class and positive
+real coupling. It derives the actual leading determinant's
+convergent Hessian trace and a finite composition identity from
+one Haar pushforward evaluated directly and sequentially.
+Together with classical Maxwell preservation this gives additive
+infinite leading coefficients. An exact gauge/coarea identity
+retains vector, based-ghost and coarse-constraint determinants;
+a Rayleigh test rules out a uniform physical mass bound on the
+based ghost alone. Identifying the coarse constraint covariance
+with a shifted actual effective-Hessian inverse gives a uniform
+bound on that coarse determinant's Maxwell contribution for a
+fixed sufficiently large shift. A positive block margin uniform over all
+varying-depth structural limits would transfer to actual finite
+regulators by qualitative compactness, without a rate.
+A separate shooting theorem tunes
+arbitrarily long finite local histories to a fixed weak endpoint
+under an explicitly unproved positive averaged drift hypothesis
+for the actual finite coefficients.
+Notebook 33 identifies individually gauge-invariant diagonal
+determinant densities with the total Maxwell moment. Polynomial
+stationary jets on a constant Cartan-curvature probe remove the
+multiplier-curvature contribution through the required orders,
+including for the effective classical actions. A specified massive
+continuum proper-time reference has an explicit positive logarithm
+and bounded finite part in the same color and extraction convention.
+An exact heat integral for the actual lattice coefficient isolates
+sufficient estimates on three heat-time intervals. A closed-walk
+expansion bounds the actual based-ghost short-time contribution
+uniformly in endpoint and preceding depth. The vector contribution,
+the other intervals, and hence the sign for the actual family
+remain open.
+Notebook 34 computes the entire actual based-ghost coefficient.
+A returning-walk area formula, residue counting, the sharp
+point-pinned gap and a fourth-moment tail estimate give
+\(C_H\log K/(12\pi^2)+O(1)\), uniformly in preceding depth.
+Its extra logarithm on heat times \(K^2\) to \(K^4\) proves
+that separated long-time ghost control at the usual block
+scale is impossible. The notebook also bounds the full
+actual vector short-time contribution, preserving the
+composite constraint. Thus the ultraviolet heat interval
+is closed; the intermediate and longer-time coupled
+comparison remains.
+An exact finite physical-quotient identity removes
+periodic pinning while retaining the fine/coarse gauge-orbit
+density ratio. The residual physical precision has a uniform
+flat gap \(cK^{-2}\). A contour-gauge counterexample shows
+why the unprojected contour matrix cannot be assigned that
+gap. A paired scalar reference has exact infrared cancellation;
+its identification with the actual finite factors and
+uniform nonflat projected estimates remain open.
+Notebook 35 resolves the fixed-endpoint infrared passage by a
+new exact local gauge choice. A periodic flat-holonomy calculation
+first identifies a noncommuting scalar limit and its forced
+physical compensation. Moving-reference endpoint tangents then
+replace point pinning by zero covariant block means, with exact
+constant row Gram matrix. Finite Gaussian and Schur identities,
+continued jointly through flat stabilizers, express the actual
+determinant as a gauge-covariant scalar/vector pair. Both factors
+have flat gaps of order \(K^{-2}\); a block-mean harmonic lift
+and a local tent lift prove full vector coercivity and Laplacian
+domination. Uniform heat and inverse-power bounds follow.
+Their local diagonal densities identify the actual Maxwell
+coefficient at every fixed endpoint. The large-endpoint
+curvature comparison and actual positive drift remain open.
+Notebook 36 factors that actual determinant into a soft fine
+scalar/vector pair and two coarse determinants. Both coarse
+Maxwell contributions are uniformly bounded as the endpoint
+grows. The proof controls physical source kernels without a
+fine-fiber dimension loss. A local gauge argument and an
+ordered Laurent factorization give uniform relative vertices
+for the actual effective-action Hessian; the vector matching
+uses its established on-shell affine jets. The remaining fine
+pair retains the effective action and its constraint terms.
+Both ends of its heat integral are now uniformly bounded:
+the current-time interval below one and the physical infrared
+tail above \(K^2\). A local cubic-resolvent argument proves
+the latter without cyclically moving a block projector.
+The actual Maxwell logarithm is thereby reduced, up to a
+uniformly bounded term, to heat times \(1<s<K^2\).
+Notebook 37 closes this leading-determinant comparison under the
+explicit classical structural and local quantum inputs of the series.
+Source-localized sectorial resolvents remove the soft penalties on
+the whole band up to physical time one with an \(O(u)\) heat error.
+The total nonlinear Ward jets through degree four then compare the
+actual effective-action base with the Wilson base with error \(O(s^{-1})\),
+retaining the left-relative chart-current terms. A direct
+Wilson-to-continuum comparison has error \(O(s^{-1/2})\), with its
+color and determinant normalization checked both by the magnetic
+heat kernel and by the transverse two-point diagrams. Consequently
+\(\beta(\mathcal D_{M,K})=22\alpha_g\log K+O(1)\), uniformly in old
+depth and every applicable joint structural system. This supplies
+the positive margin required by finite moment transfer and local
+endpoint shooting. Arbitrarily long finite weak homogeneous local
+histories can be tuned to one fixed weak endpoint, with bare coupling
+of order the inverse square root of their length. These are research
+proofs from the stated upstream inputs, not external certification
+of the complete series or a continuum Yang--Mills existence theorem.
+Notebook 38 supplies exact positive good/remainder operators
+for a specified measurable completion of the local coarse map.
+Their iterates preserve the full Wilson mass and every history;
+local-germ agreement requires literal real-window containment
+and a possibly finite-volume-dependent orbit-overlap shrink.
+Separately, exact site-plane gluing gives uniform-volume
+bad-plaquette Peierls bounds under the normalized bare Wilson
+measure. A fixed-box conditional theorem includes its full
+compact normalization, and a boundary-only gauge joins these
+results into joint rarity of explicit local gauge/minimizer
+window defects. These box windows are not yet the constrained
+windows of the multiscale map. Their identification, normalized
+large-component replacements, complete-density induction, and
+the continuum observable and reconstruction arguments below
+remain. Notebook 39 completes a restricted normalized replacement
+on arbitrary finite families of separated fixed boxes in the bare
+Wilson measure. It preserves the exterior marginal and raw mass,
+leaves bad-boundary laws unchanged, and gives exact sparse failure
+and coupling formulas. Its local total-variation, entropy, cluster
+and bounded-source cumulant comparisons are independent of the
+number of distant boxes. This finishes a finite local measure
+operation; it does not identify it with the constrained multiscale
+step or prove continuum existence.
+\end{abstract}
+
+\noindent\textbf{Evidence boundary.}
+The repository was examined at commit
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}
+{\texttt{e392ef45013a581664bab76b90867170b30fe10e}}.
+The claims below concern the deposited material; unposted companion proofs
+have not been assessed. Elementary lemmas are proved here. Their applicability
+to the proposed Yang--Mills limit is always a separate assertion.
+No novelty or independent certification of the entire manuscript is claimed.
+
+\section{The target and the actual missing pieces}
+
+We should distinguish three milestones.
+\begin{enumerate}
+\item \textbf{Continuum scalar sector.}
+Construct a consistent family of separated Schwinger functions for a
+renormalized action-density observable, with reflection positivity, full
+Euclidean covariance, sufficient all-order distributional bounds, and
+nonzero positive-energy content.
+\item \textbf{Yang--Mills theory.}
+Extend to an adequate family of gauge-invariant curvature polynomials and
+their derivatives, including mixed correlations and the correct tensor
+transformation laws. Identify their normalization, short-distance behavior,
+and identities along the Wilson continuum trajectory. Establish the
+appropriate vacuum-sector and reconstruction properties.
+\item \textbf{The full existence and mass-gap problem.}
+In addition, prove a strictly positive gap and address every compact simple
+gauge group. This is stronger than the first two milestones.
+\end{enumerate}
+The official problem statement explicitly asks for gauge-invariant local
+fields and appropriate short-distance behavior, together with the quantum
+field axioms and a mass gap \cite{clay}. One scalar called
+$\tr F^2$ does not automatically provide that observable family.
+
+\begin{center}
+\small
+\begin{tabular}{p{0.23\linewidth}p{0.32\linewidth}p{0.36\linewidth}}
+\toprule
+Obligation & Present status & Best next proof target\\
+\midrule
+Uniform local correlations &
+Conditional source/RG inputs &
+One fixed physical stopping scale, a common vacuum normalization, and
+uniform complex-source bounds.\\[3pt]
+Subsequential existence &
+Follows conditionally from local bounds &
+Use a countable diagonal extraction; defer cutoff uniqueness.\\[3pt]
+All-order reconstruction bounds &
+Conditional factorial and joint-test reduction below &
+Verify the translated-grid source estimates and anchored polymer
+bounds that feed the reduction.\\[3pt]
+Full rotations &
+The supplied two-form theorem does not directly cover $\tr F^2$ &
+Pass the two-frame positivity proved in Notebook 02 to the renormalized
+hierarchy, and prove an angular growth exponent strictly below four.\\[3pt]
+Nontrivial dynamics &
+The proposed lower witness is conditional &
+Compare two explicit reflected correlators at the same scale.\\[3pt]
+Yang--Mills identification and vacuum &
+Not supplied by a scalar witness &
+Construct mixed gauge-invariant observables and justify phase selection
+in the actual observable framework.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+An ordinary positive probability law for the coincident composite Euclidean
+field is \emph{not} a prerequisite we should impose without reason.
+The draft itself uses test functions flat on coincidence diagonals.
+An appropriate Osterwalder--Schrader reconstruction on that domain is a
+possible route, provided its quantitative growth assumptions are proved
+\cite{os2,seiler}. Conversely, fixed-order separated correlations alone do
+not establish those assumptions.
+
+\section{A smaller source-stability interface}
+
+Write the finite-lattice generating function as
+\[
+ Z_{a,\Lambda}(w)=\int e^{-x_a A(U)+\mathcal O_a(w)}\,dU,
+ \qquad \widehat Z_{a,\Lambda}(w)=e^{-C_{a,\Lambda}}Z_{a,\Lambda}(w).
+\]
+Here $a$ is the ultraviolet spacing and $C_{a,\Lambda}$ is a real,
+source-independent vacuum normalization. It cancels from all ratios.
+It is essential: the unnormalized bare free energy has a cost proportional
+to the number of \emph{bare} sites. We require estimates proportional to
+the number of sites at one \emph{fixed physical coarse spacing} $h$.
+Put $V=|\Lambda|/h^4$.
+
+\begin{lemma}[Elementary denominator floor]
+Suppose an exact coarse integral identity gives
+\[
+\widehat Z(0)=\int \rho(V_c)\,dV_c,\qquad
+\rho(V_c)\geq\chi(V_c)e^{-x_*A_h(V_c)-E_-V},
+\quad 0<x_*\leq X_*.
+\]
+Suppose $\chi=1$ when every coarse link lies in a fixed group ball
+$B_\delta$ about the identity, of normalized Haar measure $H_\delta>0$.
+If $A_h\leq 6C_A\delta^2V$ there, then
+\[
+\widehat Z(0)\geq e^{-C_-V},\qquad
+C_-=E_-+6C_AX_*\delta^2+4\log H_\delta^{-1}.
+\]
+All constants are independent of $a$ and $\Lambda$.
+\end{lemma}
+\begin{proof}
+Restrict the integral to that product of Haar balls. There are at most
+$4V$ links and $6V$ plaquettes. The restricted measure is at least
+$H_\delta^{4V}$, and the asserted lower bound follows.
+\end{proof}
+
+The small-field characteristic function $\chi$ is a real hypothesis:
+in the RG construction it involves minimizing backgrounds, not merely
+the visible coarse plaquettes. Its uniform window must be verified.
+This elementary integration does not prove that window.
+
+\subsection{The fixed-cell reduction}
+
+Tile the coarse torus by $M$ congruent reflection cells, each of volume $v$.
+Let $w_z=\sum_{i=1}^n z_i f_i$ be supported inside one cell, with a positive
+buffer from its faces. The $f_i$ are real, with separated supports.
+Write $\nu_i=\norm{f_i}_\sharp$ and
+$D_r=\{z:\sum_i|z_i|\nu_i<r\}$.
+Here $\norm f_\sharp=\max(\norm f_\infty,\operatorname{Lip}f)$
+in the fixed coarse physical units.
+Let $w_z^{\rm ch}$ be its chessboard replication, conjugating coefficients
+on odd reflection copies.
+
+Assume the following quantitative inputs.
+\begin{enumerate}
+\item The original Wilson measure gives
+\[
+ \abs{Z(w_z)/Z(0)}
+ \leq [Z(w_z^{\rm ch})/Z(0)]^{1/M},
+ \qquad Z(w_z^{\rm ch})/Z(0)\geq0.
+\]
+\item A local analytic source counterterm $E_a$, with $E_a(0)=0$, obeys
+\[
+ \abs{e^{-E_a(w_z^{\rm ch})}\widehat Z(w_z^{\rm ch})}
+ \leq e^{C_+Mv}.
+\]
+\item Split $E_a$ into cell-interior terms and face terms, each normalized
+to vanish at zero source. The latter obey
+$|E_a^\partial(w_z)|\leq C_F$ and
+$M^{-1}|E_a^\partial(w_z^{\rm ch})|\leq C_F$.
+There is a holomorphic recentering $E_a^\#(z)$, normalized by
+$E_a^\#(0)=0$, with
+\[
+ \Rea E_a^\#(z)
+ =M^{-1}\Rea E_a^{\rm bulk}(w_z^{\rm ch})
+   +\Rea E_a^\partial(w_z),
+ \qquad
+ |\partial_1\cdots\partial_n E_a^\#(0)|
+ \leq B_n\prod_i\nu_i.
+\]
+One obtains the recentering by averaging the transported bulk terms,
+conjugating outside the terms from odd cells as well as inside their
+coefficients. This double conjugation is holomorphic.
+\end{enumerate}
+
+\begin{theorem}[Uniform fixed-order correlations]
+Under these inputs and the denominator floor, set
+\[
+h_a(z)=e^{-E_a^\#(z)}Z(w_z)/Z(0),\qquad
+Q=e^{(C_++C_-)v+2C_F},\qquad r_0=\frac{r}{2Q+1}.
+\]
+Then $h_a(0)=1$, $|h_a|\leq Q$ on $D_r$, and $|h_a-1|\leq1/2$ on $D_{r_0}$.
+In particular,
+\[
+ \abs{\cum(\mathcal O_a(f_1),\ldots,\mathcal O_a(f_n))}
+ \leq
+ \left[B_n+\log2
+ \left(\frac{n(2Q+1)}{r}\right)^n\right]\prod_i\nu_i.
+\]
+\end{theorem}
+\begin{proof}
+Combine the chessboard inequality with the source upper bound and
+denominator floor. The bulk real parts cancel exactly against $E_a^\#$;
+the two face errors cost at most $2C_F$. This proves $|h_a|\leq Q$.
+On the complex line from zero through $z$, the Cauchy coefficient bound
+gives $|h_a(z)-1|\leq Qt/(1-t)$ for
+$t=r^{-1}\sum_i|z_i|\nu_i$. Hence a local logarithm has modulus at most
+$\log2$ on $D_{r_0}$. Cauchy on radii $r_0/(n\nu_i)$, followed by the
+mixed derivative of $E_a^\#$, proves the result.
+\end{proof}
+
+The constants are independent of cutoff and full volume. A countable dense
+family of separated test tuples therefore admits a common convergent
+subsequence. Uniform multilinear bounds extend the limit to arbitrary
+separated tuples. Use cumulants of orders at least two to form moments
+of the \emph{original} lattice observable centered by its real
+expectation. Reflection positivity passes through finite matrices of
+those moments. It is not asserted for cumulants or for the
+nonlinearly recentered generating function $h_a$.
+Cutoff uniqueness is not used.
+
+One cell enclosing all insertions does \emph{not} provide bounds uniform
+when two groups move arbitrarily far apart. For a contraction time
+semigroup one needs a per-ball version: finitely many occupied cells of
+fixed side, with the same face buffer, yielding a cost proportional to
+their number rather than the diameter of their union.
+
+\subsection{A checkable locality condition}
+
+At physical scales $\ell_j=L^{-j}$, one sufficient counterterm estimate is
+\[
+\sum_{\substack{X^+\cap B_R\ne\varnothing\\ \operatorname{diam}X^+\geq t}}
+ \sup_w |e_{a,j}(X;w)|
+\leq A(R+\ell_j)^4\ell_j^{-4}(1+j)^p e^{-ct/\ell_j}.
+\tag{2.1}
+\]
+Each term must depend only on the source on $X^+$.
+The scale sum satisfies
+\[
+H_p(t):=\sum_{j\geq0}(1+j)^p L^{4j}e^{-ctL^j}
+\leq C(1+t^{-4})[1+\log^+(1/t)]^p.
+\]
+Split at $L^j\simeq1/t$ and sum the geometric tail to prove this.
+A mixed derivative involving separated supports kills every term that
+does not meet them all. Surviving terms have diameter at least their
+separation. The same observation controls face errors using the buffer.
+Short local divergent terms are allowed; they must not be confused with
+the long terms whose sum is required to converge.
+
+\begin{status}
+This isolates a smaller verification task; it does not prove the source
+upper estimate or (2.1). Unsourced ultraviolet stability cannot be
+substituted for these source-dependent estimates. The deposited account
+already uses recentering and chessboard arguments; the reduction here
+clarifies the necessary interface and removes unnecessary uniqueness
+requirements.
+\end{status}
+
+\subsection{The analytic estimate that the source restriction does not remove}
+
+The main source bound is supplied by the proposed correlation theorem in
+Raw II, lines 2791--2979, and its last-lattice argument at
+59645--59855. It is not the later ``source lemma'' at
+145173--145219, which is an additional input to the lower two-point
+witness. The bare density at lines 737--745 already includes a
+source-independent vacuum subtraction; that convention must be retained.
+
+For a source $f$ buffered from cell faces, let $F_e$ denote its reflected
+copies and let $F_o$ additionally change sign with reflection parity.
+Reflection and vanishing near the faces give
+$\norm{F_e}_\sharp,\norm{F_o}_\sharp\leq\norm f_\sharp$:
+split a line segment into its portions in individual cells and add their
+Lipschitz bounds. Thus
+\[
+ (zf)^{\rm ch}=(\Rea z)F_e+i(\Ima z)F_o
+\]
+lies in the advertised two-profile source domain when
+$\sqrt2|z|\norm f_\sharp<r$. This proves source-domain membership,
+not source stability. The independent complex decoupling variables
+used to localize the RG terms remain present even at zero source.
+
+\textbf{Dependency correction.}
+The three localized links at Raw II, lines 48058--48320, describe site
+(L) in one part of the account. It has not been established that this
+reading is a required bottleneck of the active source proof. Its main
+induction consumers use
+a \emph{global four-layer chain}. Raw I, lines 73107--73123 and
+73545--73634, identifies that chain, explicitly excludes the alternative
+localized reading, and makes global carrier containment the base of
+the holomorphy argument. Its layers have both current and block-data
+inputs. The next model obligation is to verify this actual layer's
+joint domains, four-stage membership, and inherited or arrested slots.
+The following sufficient criterion is abstract: no identification of
+the global layers with these fixed-point equations is presumed.
+
+\begin{lemma}[Four-stage sufficient domain criterion]
+For field slots $j$, equip the full analytic chart norms with radii
+\[
+ \delta_j=A_1g_j(\log g_j^{-2})^{p_0},\qquad
+ \alpha_j=C_*g_j(\log g_j^{-2})^q,\quad q>p_0,
+ \qquad \norm u_\delta=\max_j\norm{u_j}_j/\delta_j.
+\]
+The norms must include all derivatives and other seminorms defining the
+charts. Put $\epsilon=\max_j\delta_j$. Suppose four response maps
+solve, successively,
+\[
+ H_i=G_i(\sigma_i)\xi_i+
+       G_i(\sigma_i)\mathcal N_i(H_i;\sigma_i,\psi_i),
+       \qquad i=1,2,3,4,
+\]
+where each output becomes the next input. Assume jointly holomorphic
+coefficients on the required charts and decoupling polydisc, with
+\[
+ \norm{G_i}_{\delta\to\delta}\leq D,\quad D\geq1,
+ \qquad \mathcal N_i(0)=0,
+\]
+\[
+ \norm{\mathcal N_i(u)-\mathcal N_i(v)}_\delta
+ \leq A\epsilon(\norm u_\delta+\norm v_\delta)\norm{u-v}_\delta.
+\]
+Assume these bounds on the balls below, and that the background occupies
+at most half of every analytic radius. If
+\[
+ 64AD^5\epsilon\leq1,\qquad
+ 32D^4\delta_j\leq\alpha_j\quad\hbox{for every }j,
+\]
+then inputs $\norm{\xi_1}_\delta\leq1$ give jointly holomorphic outputs
+of norm at most $2D,(2D)^2,(2D)^3,(2D)^4$, respectively. All outputs fit in
+the available analytic radii, uniformly in the number of slots.
+\end{lemma}
+\begin{proof}
+For input norm $s$, use the ball of radius $R=2Ds$.
+The fixed-point map has Lipschitz constant at most
+$2DA\epsilon R=4AD^2\epsilon s$. Even at the largest input
+$s=(2D)^3$, this is at most $1/2$.
+Its linear part is bounded by $R/2$, and its nonlinear part by
+$DA\epsilon R^2\leq R/4$. It maps the ball into itself and contracts.
+Uniform Picard iteration gives holomorphy. Repeat four times and use
+$(2D)^4\delta_j\leq\alpha_j/2$ for domain containment.
+\end{proof}
+
+At the same scale, a fixed small coupling ceiling $\gamma$ supplies
+the required radius margin as soon as
+\[
+ (\log\gamma^{-2})^{q-p_0}\geq32D^4A_1/C_*.
+\]
+It also supplies small $\epsilon$; no finite bound on the number of UV
+steps is needed. The difficult estimate is the \emph{weighted} operator
+norm, for example the sufficient row bound
+\[
+ \sup_j\sum_\ell\norm{G_{j\ell}(\sigma)}
+             \frac{\delta_\ell}{\delta_j}\leq D.
+\]
+Ordinary spatial decay does not establish this when a current field is
+substituted into an arbitrarily old slot with a smaller analytic radius.
+The two-slot map $T(u_j,u_k)=(u_k,0)$ has unweighted norm one, yet
+$T(0,\delta_k)$ escapes a radius $\alpha_j\to0$.
+This is a diagnostic for the proposed estimate, not a counterexample
+to the actual localization maps.
+
+There is a more specific positive result for one response chart actually
+displayed in Raw I. Its equations, at lines 14376--14437, have the form
+\[
+ A_0=T[\Theta_JH_0B-V'^J(A_0+H_0B)],\quad A=A_0+H_0B,
+ \quad\mathcal H^J(B)=A-H^JD^J(A).
+\]
+Direct differentiation gives
+\[
+ D_B\mathcal H^J=(I-H^JD'(A))
+ (I+TV''^J(A))^{-1}(I+T\Theta_J)H_0.
+\]
+The normalization includes
+$H_0=G_0Q^*(QG_0Q^*)^{-1}\ell^{-1}$, where $\ell$ is the local
+layer-scale operator. It cannot be dropped.
+The coupling-flow inequalities in Raw I, lines 10234--10245, imply
+\[
+ \delta_k/\delta_j\leq C_w\sqrt{1+|k-j|}
+\]
+once the fixed coupling ceiling is sufficiently small. For example,
+$x_j=g_j^{-2}\geq\gamma^{-2}$ and
+$-c_5\leq x_j-x_k\leq B^\sharp(k-j)$ for $j\leq k$ give this by
+bounding the square-root and logarithmic factors separately, with
+$B^\sharp\gamma^2\leq1$ and $\log\gamma^{-2}\geq2p_0$.
+
+For this chart the multiscale metric obeys
+$d(y,y')\geq W(|j-j'|-1)_+$, as recorded at Raw I,
+lines 13471--13483. Hence, if $\mu W\geq1/2$,
+\[
+ e^{-\mu d(y,y')}\delta_{j'}/\delta_j
+ \leq\sqrt2 C_w e^{-\mu d(y,y')/2}.
+\]
+The weighted row bound therefore follows from the claimed response
+kernel estimate and block summability in that metric. In this
+geometry, scale-age weights are not an additional independent obstacle.
+The response kernel estimate itself and its full-polydisc antecedents
+still require verification. The $B$ derivative alone does not cover
+the current input of the selected global layer. An accessible copy of
+the original CMP 122-II paper is now available; its formulas (1.51)
+and (1.54)--(1.55), on printed pages 370--371, are relevant to that
+global route. The alternative localized formulas (1.61)--(1.64) must
+not be substituted for it merely because some operator letters agree.
+Source extraction of several displayed formulas is incomplete, so
+equation-by-equation identification remains subject to that evidence
+limit. See \cite{balaban122b}.
+
+The missing match is now more specific than an unnamed kernel bound.
+The global consumers at Raw I, lines 112589--112604, require five
+weighted output norms, including a graph norm containing
+$\ell^3|\Delta_{\mathcal W}\delta A'|$ (lines 111408--111435).
+The earlier response chart explicitly avoids applying covariant
+Laplacians to general independent-current responses
+(lines 15119--15141). A contraction in its weaker norm does not
+establish that stronger output estimate. On the input side, the
+field datum $\mathfrak j=\widetilde G_0(\sigma)\mathsf J$ is itself
+assumed to satisfy a graph-norm bound at lines 72532--72535; treating
+it as arbitrary weak-norm forcing would also lose a hypothesis.
+The next proof must connect these actual input and output norms,
+or justify a revised interface that controls the combined current
+partner directly and still preserves every subsequent carrier domain.
+Identities valid only when the current is the configuration's actual
+Euler--Lagrange current cannot be used for an independent complex current.
+
+There is also an upstream coupling-trajectory obligation. Raw I,
+lines 56419--56441, makes its clause-zero statement conditional on
+one-loop and unmarked-sector inputs. The concrete incomplete step at
+lines 4072--4088 transfers an unmarked remainder estimate to the chosen
+cutoff and radius; it is marked $(*)$. This is more precise than
+treating every cited one-loop coefficient as unproved. The
+effective-density representation is part of the joint induction.
+Thus the coupling-flow inequalities used in the weighted calculation
+above remain hypotheses for the construction. The original 1989 paper
+also states its stability theorem under an effective-coupling
+assumption; that historical statement does not by itself determine
+what later work has proved.
+
+\subsection{Two concrete repairs to test at the global interface}
+
+The explicit earlier chart can at least be extended to two inputs,
+without dropping the forcing. Freeze its background and decoupling
+coefficients, write $G$ for its current-dependent Green operator, and
+put $L_0=(I+G\Theta_J)H_0$. The equation
+\[
+ P=-\mathfrak j+L_0b-GV'(P)
+\]
+extends the block-only chart of Raw I, lines 14387--14429.
+Assume $V'$ is holomorphic on a neighborhood of the radius-$2r$ ball,
+$\norm G\le M_G$, $\norm{V'(P)}\le c\norm P^2$ there, and
+$8M_Gcr\le1$. If
+$d=\norm{\mathfrak j}+\norm{L_0}\norm b\le r/2$, the right side
+maps the radius-$r$ ball into the radius-$5r/8$ ball and has Lipschitz
+constant at most $1/2$. Indeed Cauchy gives
+$\norm{V''(P)}\le4cr$ there. Thus its unique small solution is
+holomorphic and $\norm P\le2d$.
+
+For any weighted norm in which the same whole-ball Hessian bound is
+$\norm{GV''(P)}_p\le1/2$, set
+$R_P=(I+GV''(P))^{-1}$ and
+$T_P=I-H^JD^{J\prime}(P)$. The layer of this earlier chart is
+$\mathcal H=P-H^JD^J(P)$, and its exact data derivatives are
+\[
+ D_{\mathfrak j}\mathcal H=-T_PR_P,\qquad
+ D_b\mathcal H=T_PR_PL_0.
+\]
+For $\mathfrak j=Gf$, the forcing derivative is
+$D_f\mathcal H=-T_PR_PG$.
+These are genuine two-input formulas, conditional on the stated
+primitive and Hessian bounds; they do not identify this chart with
+every later global layer.
+
+Still taking $\mathfrak j=Gf$, at the undecoupled value $\sigma=1$ use
+$G=(I-\bar G\Theta_J)^{-1}\bar G$ and the operator identities
+$\bar G=P_0G_0$, $\Delta_a\bar G=P_0^T$ and
+$\Delta_aH_0b=Q^*q_0\ell^{-1}b$ give the forced representation
+\[
+ \Delta_aP=P_0^T[-f+\Theta_JP-V'(P)]+Q^*q_0\ell^{-1}b.
+\]
+This controls the augmented elliptic operator without differentiating
+$f$. It does not control the covariant Laplacian of
+$P-H^JD^J(P)$ automatically. Nor does walk decoupling preserve an
+inverse identity without an additional proof.
+
+There is also an exact simplification of an actual global consumer.
+Let $L_\sigma=\Delta_W-P_1(\sigma)+\mathsf K$ and retain the
+deposited partner-current formula
+\[
+ \mathfrak s^\sharp_\sigma
+   =L_\sigma A'-\mathfrak m_H(\sigma)X+F(W,\mathbb H).
+\]
+For a scalar cutoff $\chi$ whose arguments stay in the domain of $F$,
+the cut current defined at Raw I, lines 111542--111543, satisfies
+\[
+ \begin{split}
+ \mathcal J^\sharp[\chi]={}&\chi\mathfrak s^\sharp_\sigma
+    +[L_\sigma,\chi]A'
+    -[D_W^*D_W,\chi]H(\sigma)X\\
+   &+F(W,\chi\mathbb H)-\chi F(W,\mathbb H).
+ \end{split}
+\]
+This follows simply by expanding the first two terms; the separate
+$\mathfrak m_H(\sigma)X$ terms cancel. Local second-order commutators
+require first derivatives of the field and up to two derivatives of
+$\chi$. For a nonlocal kernel $P_1$, its commutator has kernel
+$P_1(x,y)(\chi(y)-\chi(x))$, so a weighted first-moment kernel bound
+is the relevant input.
+
+Consequently this cut consumer can potentially be controlled by an
+\emph{independent bound on the combined current}, plus commutator
+bounds, instead of separate Laplacian and $\mathfrak m_HX$ estimates.
+The existing estimate of $\mathfrak s^\sharp$ uses those separate
+estimates, so reversing it would be circular. The missing step is to
+identify and bound a substituted current expression directly, and then
+check all remaining consumers and carrier domains. The algebra above
+is a concrete repair route, not that completed identification.
+
+\subsection{Separate coefficient extraction from the cutoff estimate}
+
+There is a useful logical refinement. The fourth hypothesis of Raw I's
+unmarked-increment lemma, lines 4053--4057, already assumes the small
+remainder estimate with its factor $\varepsilon_1^{\mathrm I}$.
+The modified-cutoff theorem at lines 4170--4209 is the upstream claim
+that must supply it for the actual fluctuation integral. The following
+elementary extraction lemma shows what can be proved once that analytic
+estimate and the correctly normalized response bounds are available.
+It does not prove the change-of-cutoff estimate itself.
+
+\begin{lemma}[Uniform quadratic extraction from pointed remainders]
+Let $R_{X,z}(A)$ be holomorphic for $\norm A_X<r$, with $z\in X$
+for finite nonempty $X\subset\mathbb Z^4$, $d(X)\ge0$, and
+\[
+ \sup_{\norm A_X<r}|R_{X,z}(A)|
+       \le A_0\epsilon e^{-\kappa d(X)}.
+\]
+Assume, in the same normalized field norm,
+\[
+ \norm{h_x}_X\le H e^{-m\,\mathrm{dist}(x,X)},\quad
+ \operatorname{diam}X\le M(d(X)+2),\quad
+ \sup_z\sum_{X\ni z}e^{-\kappa_0d(X)}\le K_0,
+ \qquad \kappa>\kappa_0.
+\]
+Here $r,m,M>0$, $\epsilon\ge0$, and all other bound constants are finite.
+Put
+\[
+ a=\min\{m/2,(\kappa-\kappa_0)/(4M)\},\qquad
+ C_* =4A_0H^2r^{-2}K_0e^{4aM},
+ \quad S_j(a)=\sum_{u\in\mathbb Z^4}|u|^j e^{-a|u|}.
+\]
+Then the absolutely convergent kernel
+\[
+ \Pi(x,y,z)=\sum_{X\ni z}D^2R_{X,z}(0)[h_x,h_y]
+\]
+satisfies
+\[
+ |\Pi(x,y,z)|\le C_*\epsilon
+       e^{-a(|x-z|+|y-z|)}.
+\]
+In particular, any quadratic coefficient with the displayed pointed
+form obeys
+\[
+ \left|\sum_{u,z}u_\mu u_\nu\Pi(0,u,z)\right|
+       \le4C_*S_0(a)S_2(a)\epsilon.
+ \tag{2.3}
+\]
+All constants are independent of a scale index if the hypotheses are.
+\end{lemma}
+\begin{proof}
+Apply two-variable Cauchy to $R_{X,z}(s h_x+t h_y)$ at radii
+arbitrarily below $r/(2\norm{h_x}_X)$ and
+$r/(2\norm{h_y}_X)$, then take their limits. The mixed derivative
+is bounded by
+\[
+ 4A_0\epsilon H^2r^{-2}e^{-\kappa d(X)}
+ e^{-m(\mathrm{dist}(x,X)+\mathrm{dist}(y,X))}.
+\]
+Since $z\in X$,
+$|x-z|+|y-z|\le\mathrm{dist}(x,X)+\mathrm{dist}(y,X)
++2\operatorname{diam}X$.
+The chosen $a$ leaves at least $\kappa_0d(X)$ in the decay exponent;
+the diameter allowance contributes $e^{4aM}$. Sum over $X$.
+Finally write $u=z+(u-z)$ and use
+$|u|^2\le2|z|^2+2|u-z|^2$. Summing the product of the two
+exponentials gives $4S_0(a)S_2(a)$, proving (2.3).
+\end{proof}
+
+Thus coefficient summation is not the same missing assertion as
+stability of the analytic remainder under the chosen cutoff. To apply
+this lemma, the deposited remainder must have the pointed localization
+and response/domain normalization just assumed, uniformly in the scale.
+Those identifications must be checked explicitly. An ordinary global
+supremum estimate or a real-field tail probability does not supply them.
+
+\begin{lemma}[Correlated Gaussian cutoff cost]
+Let $X_b\in\mathbb R^D$ be centered jointly Gaussian blocks. Suppose
+the covariance of the joint vector $(X_b)_{b\in S}$ has operator norm
+at most $\sigma^2$, $\sigma>0$, uniformly over the finite sets $S$ under consideration.
+Then
+\[
+ \mathbb P\{\norm{X_b}_2>R\text{ for every }b\in S\}
+ \le \left[2^{D/2}\exp\{-R^2/(4\sigma^2)\}\right]^{|S|}.
+ \tag{2.4}
+\]
+No independence of the blocks is assumed. For
+$R(g)=c(\log g^{-2})^p$, $c>0$, $p>1/2$, and fixed $C_1>0$, $q\in\mathbb R$,
+the bracket in (2.4) is at most
+$C_1g(\log g^{-2})^q$ for all sufficiently small $g$.
+That threshold can be chosen independently of a later small parameter
+$\epsilon$.
+\end{lemma}
+\begin{proof}
+On the event in (2.4), $\sum_b\norm{X_b}_2^2>|S|R^2$.
+The Gaussian exponential moment at parameter $1/(4\sigma^2)$ is
+\[
+ \det(I-\Sigma_S/(2\sigma^2))^{-1/2}\le2^{D|S|/2}.
+\]
+Markov's inequality proves (2.4), including singular covariances by
+continuity. With $s=\log g^{-2}$, the logarithm of the ratio of its
+bracket to $C_1g s^q$ is
+\[
+ \tfrac D2\log2-\log C_1-\frac{c^2}{4\sigma^2}s^{2p}
+       +\tfrac s2-q\log s\longrightarrow-\infty.
+\]
+This proves the uniform eventual comparison, without reference to
+$\epsilon$.
+\end{proof}
+
+Consequently the numerical conditions
+$C_1g(\log g^{-2})^{p_1}\le\varepsilon_1^{\mathrm I}$ and a growing
+logarithmic cutoff radius can pay the Gaussian cutoff factor in the
+same order of parameter choices. What is still needed is the
+\emph{localized analytic} remainder estimate on the fixed complex
+background domain, including its normalization. A tail probability
+for a real Gaussian cannot replace that estimate.
+
+The original CMP119 discussion also narrows the required scope:
+on printed p.\ 276, terms localized wholly inside the small-field
+region retain the earlier conditions; the altered space (3.43) is
+assigned to terms meeting its boundary \cite{balaban119}. The
+whole-lattice unmarked calculation has no such boundary-crossing terms.
+Its immediate obligation is therefore the changed real cutoff with
+the fixed complex-background radii, rather than arbitrary layered
+boundary domains.
+Also, the deposited exponents obey $p_1<p_0$ (Raw I, lines
+1355--1363). The auxiliary box $C_1(\log g^{-2})^{p_1}$ therefore
+cannot automatically be identified with a domain containing the full
+real cutoff of order $(\log g^{-2})^{p_0}$. If the actual comparison
+needs $gR(g)\le\varepsilon_1^{\mathrm I}$, this can be imposed by a
+further coupling ceiling chosen after $\varepsilon_1^{\mathrm I}$;
+its sufficiency for the analytic argument must still be verified.
+
+The preparatory-window relative boundary estimate in Raw II,
+lines 2376--2385 and 2809--2812, remains a separate antecedent.
+The contraction lemma does not prove it. Nor can real-source positivity
+replace the complex estimate: for a Gaussian of variance
+$\sigma_a^2\to\infty$, subtracting the exact holomorphic counterterm
+$\sigma_a^2z^2/2$ makes the residual identically one, but the bound
+$|Z(u+iv)|\leq Z(u)$ still loses $e^{\sigma_a^2v^2/2}$.
+
+\section{A factorial bound without a shrinking global zero-free disc}
+
+A many-cell bound $Q^n$ inserted into the preceding zero-free radius can
+produce an artificial loss of order $Q^{n^2}$. The following exact
+combinatorial argument avoids it.
+
+\begin{lemma}[Coherent subset bound]
+For each finite index set $I$, let $h_I$ be holomorphic on
+$|z_i|\nu_i<r$, with $h_I(0)=1$ and
+\[
+h_I(z_B,0_{I\setminus B})=h_B(z_B),\qquad |h_B|\leq Q^{|B|}.
+\]
+The same $Q,r$ are used for every subset. Then
+\[
+|\partial_I\log h_I(0)|
+\leq |I|!(2Q/r)^{|I|}\prod_{i\in I}\nu_i.
+\tag{3.1}
+\]
+No zero-free polydisc of fixed radius is assumed.
+\end{lemma}
+\begin{proof}
+Put $m_B=\partial_Bh_B(0)$. Cauchy gives
+$|m_B|\leq(Q/r)^{|B|}\prod_{i\in B}\nu_i$.
+The local logarithm at the origin satisfies
+\[
+\partial_I\log h_I(0)=
+\sum_{\pi\in\mathcal P(I)}
+(-1)^{|\pi|-1}(|\pi|-1)!\prod_{B\in\pi}m_B.
+\]
+If $S(n,k)$ is a Stirling number of the second kind, the sum of absolute
+coefficients is $\sum_k(k-1)!S(n,k)$.
+Counting ordered partitions by their positive block sizes gives
+$k!S(n,k)\leq n!\binom{n-1}{k-1}$.
+The coefficient sum is therefore at most $n!2^n$.
+\end{proof}
+
+The restriction identity requires a \emph{fixed} grid and a subtraction
+functional that does not change when a source coefficient is set to zero.
+For disjoint real supports,
+\[
+\norm{\Rea\sum_i z_i f_i}_\sharp+
+\norm{\Ima\sum_i z_i f_i}_\sharp
+\leq4\max_i|z_i|\nu_i.
+\]
+Thus an estimate for arbitrary finite real Lipschitz source families,
+depending only on their combined source norm, can be applied pointwise
+to the two profiles $\Rea w,\Ima w$. This gives a product source domain
+with radius independent of $n$. The functional must be independent of
+its presentation as a sum. The raw account advertises that interface;
+its proof remains an obligation.
+
+Centered moments also retain factorial growth: if
+$|\cum_k|\leq k!A^k\prod\nu_i$ for every subset and $k\geq2$,
+their exponential generating-function majorant is
+$\exp((At)^2/(1-At))$. Cauchy at $t=(2A)^{-1}$ gives, for example,
+$|S_n|\leq n!(4A)^n\prod\nu_i$.
+
+\subsection{Keeping the cell side fixed}
+
+The existing placement construction allows cell size to grow with $n$,
+which loses the needed factorial control. The following repair keeps
+one grid for every subset of a selected patch tuple; different tuples
+may use different grids because the final cumulants are multilinear.
+The underlying source estimates are still hypotheses.
+
+\begin{theorem}[All-order flat-test bound]
+Assume the fixed-scale source, denominator and locality estimates above,
+with the following uniformities. An admissible fixed cell side $\ell$
+can be used for the many-cell chessboard inequality; the RG grid and
+reflection grid may be translated together on a mesh of size $O(a)$;
+all constants are uniform in these translates and source positions.
+The source counterterms are presentation-independent holomorphic
+functionals on one fixed complex norm ball, vanish at zero, and obey
+the anchored estimate (2.1) for unit balls, including reflected weights.
+The bulk subtraction is kept fixed when source coefficients vanish.
+Enlarged polymer supports that connect a buffered source to a face,
+or connect separated sources, have the corresponding diameter lower
+bound. Assume a common subsequential hierarchy of centered off-diagonal
+moments has been extracted.
+
+Then, on Schwartz tests flat to all orders on every pair diagonal,
+this hierarchy extends uniquely and satisfies
+\[
+ |S_n(\Psi)|\leq C(n!)^{23}q_{15n}(\Psi),\qquad
+ q_m(\Psi)=\max_{|\alpha|\leq m}\sup_X
+       (1+|X|^2)^{m/2}|\partial^\alpha\Psi(X)|.
+ \tag{3.2}
+\]
+Here $C$ is independent of $n$. If the anchored estimate is uniform
+also for shrinking anchoring balls with its explicit $(R+\ell_j)^4$
+factor, the factorial exponent improves from $23$ to $19$.
+Neither exponent is asserted optimal.
+\end{theorem}
+\begin{proof}
+\emph{Patch geometry.}
+Choose a smooth spatial partition of unity on mesh
+$\varepsilon_n=\min(1,\ell)/(64n)$ with patch supports of coordinate
+width $2\varepsilon_n$. For one selected patch from each source,
+at most $6n\varepsilon_n<\ell$ of the phases of an $\ell$-grid are
+forbidden in each coordinate if a buffer $2\varepsilon_n$ is required.
+Choose allowed phases and round to the admissible grid mesh. For
+$a\leq c\varepsilon_n$, every patch retains buffer
+$b_n\geq\varepsilon_n$. Keep this grid and its subtraction data for
+all subsets of this tuple. There are at most $n$ occupied cells.
+For a source supported in a ball of radius $R$,
+\[
+ \sum_s\norm{\chi_s^{\varepsilon_n}f}_{C^1}
+ \leq C(1+R)^4 n^5\norm f_{C^1}.
+ \tag{3.3}
+\]
+This follows from $O((1+R)^4\varepsilon_n^{-4})$ patches and the
+first-derivative cost $O(\varepsilon_n^{-1})$.
+
+\emph{Face cost and source radius.}
+For a holomorphic functional $F$ on a norm ball of radius $r_*$,
+$F(0)=0$ and $|F|\leq B$ imply
+$|F(w)|\leq B\norm w/r_*$ by radial Schwarz.
+Apply this to the absolutely summable face counterterms. It is
+legitimate even for a conjugate-reflected weight: freeze that weight
+and vary a complex scalar multiplying the entire weight, as allowed
+by the norm-ball hypothesis. Unit-ball anchoring bounds the face cost
+per patch by
+\[
+ J_n\leq C H_p(b_n)\leq Cn^4(1+\log n)^p.
+\]
+Let $C_0$ absorb the fixed comparisons between the complete complex
+source norm, reflected weights, and $\max_i|z_i|\nu_i$.
+Take $r_n=r_*/[C_0(1+2J_n)]$. On this smaller product domain the remaining
+face costs are at most one per source. The fixed-cell cost is also
+constant per occupied cell. Thus $|h_B|\leq Q^{|B|}$ with $Q$
+independent of $n$, and (3.1) applies with $r=r_n$.
+
+For the mixed derivative of the subtracted local functional, locality
+kills every polymer not meeting all selected supports. Anchor at the
+first patch and use its diameter at least their minimum separation
+$\delta$ to obtain $C H_p(\delta)r_*^{-n}\prod_i\nu_i$.
+A transported bulk term contributes only if all variables belong to
+one cell; in that case use the same estimate in each reflected copy
+and average. No volume factor remains.
+Combining this with (3.1), (3.3), and multilinearity gives, for any
+$\eta>0$,
+\[
+ |\kappa_n(f_1,\ldots,f_n)|
+ \leq[C_\eta(1+R)^4]^n(n!)^{10+\eta}
+       [1+H_p(\delta)]\prod_i\norm{f_i}_{C^1}.
+ \tag{3.4}
+\]
+Here $n^{9n}n!$ supplies ten factorial powers and the logarithm fits
+in $(n!)^\eta$ with an exponential constant.
+The restriction $a\leq c/n$ is needed only eventually for each fixed
+$n$, which suffices for a countable subsequence extraction.
+
+\emph{Centered full moments.}
+Only partitions with blocks of size at least two contribute. For $s\geq1$,
+\[
+ \sum_{\pi}\prod_{B\in\pi}(|B|!)^s
+ \leq(n!)^{s-1}\sum_{\pi}\prod_{B\in\pi}|B|!
+ \leq2^{n-1}(n!)^s.
+\]
+The last bound counts ordered partitions by positive compositions.
+There are at most $n/2$ nonzero blocks and
+$1+H_p(\delta)\leq C\delta^{-6}$ for $0<\delta\leq1$.
+Hence, for supports in arbitrary translates of unit balls,
+\[
+ |S_n(f_1\otimes\cdots\otimes f_n)|
+ \leq C_\eta^n(n!)^{10+\eta}\min(1,\delta)^{-3n}
+                       \prod_i\norm{f_i}_{C^1}.
+ \tag{3.5}
+\]
+
+\emph{Joint tests.}
+This final step uses only a bound of the form (3.5) with factorial
+exponent $s$. Put $\epsilon_j=2^{-j}$ and choose a fixed smooth
+nondecreasing $\eta_0$ equal to zero on $[0,2]$ and one on $[4,\infty)$.
+Set
+\[
+ F_j(X)=\prod_{a<b}\eta_0(|x_a-x_b|/\epsilon_j),\quad
+ \chi_0=F_0,\quad\chi_j=F_j-F_{j-1}.
+\]
+These sum to one off the diagonals. On the support of $\chi_j$ or its
+derivatives, all pairs are separated by $2\epsilon_j$ and, for $j\geq1$,
+some pair is within $8\epsilon_j$.
+Localize each variable on mesh $\rho_j=\epsilon_j/64$.
+Enlarged one-variable chart supports are separated by at least
+$\epsilon_j$. Fourier expansion on each rescaled product chart gives
+tensor factors of $C^1$ norm at most
+$C\rho_j^{-1}(1+|m_i|)$.
+Applying $(1-\Delta_{y_i})^3$ for each variable bounds the sum of
+the absolute Fourier coefficients times $\prod_i(1+|m_i|)$ by
+$C^n$ times derivatives of order at most six in each variable.
+The frequency sum converges because
+$\sum_{m\in\mathbb Z^4}(1+|m|)(1+|m|^2)^{-3}<\infty$.
+
+Each pair cutoff receives at most twelve derivatives; each spatial
+bump receives at most six. The product rule therefore costs at most
+$C^n n^{12n}$, using only fixed bounded-order cutoff derivatives.
+For $j\geq1$, move one point of a close pair onto the other.
+Taylor flatness of order $9n$ applied after at most $6n$ test
+derivatives gives
+\[
+ |\partial^\alpha\Psi(X)|
+ \leq C^n\epsilon_j^{9n}q_{15n}(\Psi)
+                        \prod_i(1+|c_i|^2)^{-3},
+ \qquad |\alpha|\leq6n,
+\]
+on the relevant chart. The segment moves only one coordinate a bounded
+distance, so the product weight is bounded by
+$C^n(1+|Y|^2)^{3n}$ along it and is absorbed by $q_{15n}$.
+Chart positions sum with
+$\sum_{c\in\rho_j\mathbb Z^4}(1+|c|^2)^{-3}\leq C\rho_j^{-4}$.
+The net small-scale factor is therefore
+\[
+ \epsilon_j^{9n}\epsilon_j^{-3n}
+ \epsilon_j^{-n}\epsilon_j^{-4n}=\epsilon_j^n.
+\]
+Its dyadic sum is bounded; $j=0$ needs no Taylor gain. Since
+$n^{12n}\leq e^{12n}(n!)^{12}$, the result is
+$C_\eta^n(n!)^{22+\eta}q_{15n}(\Psi)$.
+Choose $\eta=1/2$ and absorb the exponential into another half factorial
+power to obtain (3.2).
+
+Spatial cutoffs followed by $F_J$ approximate a flat Schwartz test in
+every Schwartz seminorm: arbitrary Taylor flatness beats all fixed
+cutoff derivative losses. Thus compact tests away from diagonals are
+dense, which proves existence and uniqueness of the stated extension.
+No contact-term extension to all Schwartz tests has been chosen.
+
+Finally, if shrinking-ball anchoring is uniform, each patch has radius
+$R_n\asymp b_n\asymp n^{-1}$. Its face sum is bounded instead by
+\[
+ C\sum_{j\geq0}(1+j)^p(1+R_n/\ell_j)^4e^{-cb_n/\ell_j}
+ \leq C(1+\log n)^{p+1}.
+\]
+Split at $\ell_j\asymp b_n$: the coarse sum has logarithmically many
+terms and the fine sum decays exponentially in $L^j$.
+This removes four factorial powers throughout, giving exponent $19$.
+\end{proof}
+
+The form of (3.2) is the linear-growth regularity condition used in OS
+reconstruction; an explicit modern formulation appears in
+\cite[Section 2.5, equation (22)]{amt}. That paper's two-dimensional
+construction supplies no Yang--Mills input here.
+
+Reflection positivity also extends, provided the hierarchy came from
+one common centered sequence of reflection-positive lattice theories.
+First approximate compact joint tests in the strict ordered positive-time
+chamber by tensor sums supported in separated product boxes. Each finite
+OS matrix is an entrywise limit of positive lattice matrices. Then use
+the joint bound and density of interior compact tests in the Schwartz
+space flat at the chamber walls. Reflected products are flat on all
+collision diagonals, including the time-zero wall, so positivity
+persists by continuity. This does not supply a second reflection,
+full rotations, clustering, or nontriviality.
+
+For the deposited one-frame torus geometry, a period $N=2L^k$ and
+cell side $\ell=L^r$, $r\leq k$, give an even cell count
+$N/\ell=2L^{k-r}$. Bare-step translations preserve the link-plane
+faces and their antipodal partners. Thus odd $L$ is compatible with
+this one-frame placement; no power-of-two cell count is required.
+The remaining translation uniformity concerns the RG source estimates,
+not this elementary tiling. Notebook 02 handles the additional
+requirements of two-frame placement on the same odd-$L$ regulator.
+
+There is also a concrete obstruction to removing the face buffer casually.
+For a centered reflection-positive Gaussian pair $(X_+,X_-)$ with variances $A_a$
+and covariance $B_a\geq0$, Cauchy--Schwarz yields
+\[
+|\E e^{zX_+}|
+\leq \exp\!\left(\tfrac12 A_a\Rea z^2+\tfrac12B_a|z|^2\right).
+\]
+Subtracting the exact holomorphic counterterm $A_az^2/2$ leaves the
+bound $e^{B_a|z|^2/2}$, even though the actual normalized function is
+identically one. If $B_a$ diverges, a new estimate is needed.
+The real part of a holomorphic function vanishing at zero cannot
+uniformly cancel a positive divergent $|z|^2$ term: its circle average is
+zero. Interface locality by itself therefore does not fix complex
+chessboard discontinuities.
+
+\section{Rotation restoration: a sharp conditional threshold}
+
+The supplied rotation theorem applies to closed two-form laws with
+Gaussian domination in an unweighted $L^2$ norm. It does not directly
+apply to the composite scalar $\tr F^2$. In particular the non-Abelian
+Bianchi identity is $d_AF=0$, rather than $dF=0$.
+
+\subsection{A finite-lattice ingredient can be proved directly}
+
+For the pure Wilson measure, diagonal reflection positivity itself has a
+short proof on the correct finite-volume geometry.
+Use the period lattice generated by
+$n(e_0+e_1)$, $m(e_0-e_1)$ and transverse coordinate periods.
+Reflection across $s=t+x=0$ fixes the sheets $s=0,n$ and separates
+the two open halves. Only $(t,x)$ plaquettes cross a sheet.
+Their two length-two half-path holonomies are $A$ and $B$, and their
+Boltzmann factor is
+\[
+ e^{c\Rea\tr(AB^\dagger)},\qquad c\geq0.
+\]
+In real and imaginary matrix coordinates,
+$\Rea\tr(AB^\dagger)$ is an ordinary real inner product.
+Expanding its exponential in coordinate monomials gives a sum
+$\sum_\alpha c_\alpha a^\alpha b^\alpha$ with $c_\alpha\geq0$.
+Condition on links lying in the fixed sheets and integrate the remaining
+links with product Haar measure. Each term is a squared half-space
+integral. This proves reflection positivity for bounded half-observables,
+including for $SU(2)$ and $SU(N)$.
+Diagonal Wilson positivity is also used explicitly in \cite{kz}.
+
+This does not settle \emph{same-limit} positivity. Ordinary coordinate
+cubic tori have a different geometry. One must compare their selected
+limit with the adapted construction, or choose a construction retaining
+all required symmetries from the outset.
+Centered free-boundary cubes retain both central reflection directions,
+but would require a separate proof of translation invariance in their
+limit. Changing boundary conditions does not remove that obligation.
+
+\subsection{A compact-group mechanism for transferring insertions}
+
+The same-limit argument in companion Notebook 02 exploits the compact
+Wilson link variables. The following elementary lemma is its local
+analytic input; the full proof additionally needs the geometry, slab
+normalization, and limit argument given there.
+
+\begin{lemma}[Wilson convolution conjugation]
+On $G=SU(2)$ with normalized Haar measure and fixed $\beta>0$, let
+\[
+ k_\beta(g)=e^{(\beta/2)\tr g},\qquad
+ (C_\beta\psi)(v)=\int_Gk_\beta(vu^{-1})\psi(u)\,du.
+\]
+If $f$ is a finite Peter--Weyl polynomial of largest spin $r$, then
+$T_f=C_\beta^{-1}M_fC_\beta$, initially defined on finite representation
+sums, extends continuously from $C^\infty(G)$ to itself. For each
+Sobolev index $s$,
+\[
+ \norm{T_f\psi}_{H^s}\leq C_{\beta,f,s}
+                         \norm\psi_{H^{s+2r}}.
+\]
+The reverse conjugation obeys the same type of estimate. Tensor-product
+versions hold on any fixed finite set of links, with constants
+independent of the ambient volume.
+\end{lemma}
+\begin{proof}
+The spin-$j$ eigenvalue of $C_\beta$ is
+$c_j=2I_{2j+1}(\beta)/\beta>0$. Indeed, integrate the character
+$\sin((2j+1)\theta)/\sin\theta$ against
+$(2/\pi)e^{\beta\cos\theta}\sin^2\theta\,d\theta$ and divide by
+$2j+1$. Multiplication by $f$ connects only spins $k$ with
+$|k-j|\leq r$. For integer $n\geq0$,
+\[
+ I_n(\beta)=\frac{(\beta/2)^n}{n!}S_n,\qquad
+ 1\leq S_n=\sum_{l\geq0}\frac{(\beta^2/4)^l n!}{l!(n+l)!}
+               \leq e^{\beta^2/4}.
+\]
+Thus ratios of the eigenvalues on this finite band grow at most as
+$C(1+j)^{2r}$. Each multiplication block has norm at most
+$\norm f_\infty$, and only a bounded number of spin sectors are
+connected. Weighted square summation proves the Sobolev bound;
+Sobolev embedding gives continuity on $C^\infty$.
+\end{proof}
+
+In particular $C_\beta T_fB=fC_\beta B$. Since the kernel is symmetric,
+this is the exact insertion identity
+\[
+ \int k_\beta(vu^{-1})f(u)B(v)\,dv
+ =\int k_\beta(vu^{-1})(T_fB)(v)\,dv.
+\]
+On a fixed set of crossing links it can transfer a lower-layer
+polynomial into a smooth function of the next layer. A local bounded
+smooth perturbation $e^{tR}$ changes the resulting expression by
+$O(t)$ in supremum norm, by the finite derivative loss and compactness.
+These constants may depend on $\beta$; this is a fixed-lattice step.
+
+Companion Notebook 02 completes the three additional interfaces at fixed
+$\beta>0$: gauge-invariant layer removal using a conditional convolution
+identity on the original link law; a clean-plane operator estimate from
+exact physical transfer normalization; and two-frame placement using
+alternating coordinate site/link walls. The latter retains the actual
+side $n=2L^M$, $L$ odd, which cannot satisfy the convenient QED3
+divisibility assumption. Diagonal feature kernels give the exact
+cellwise folds. Full reflected source arrays are necessary in the first
+Jensen comparison to retain a pressure error divided by the volume.
+The assembled result is that every fixed-coupling coordinate-torus
+subsequential infinite-volume limit has diagonal RP. Its proof takes
+volume to infinity before removing the auxiliary tilt, uses convex
+separation rather than uniqueness, and has been internally checked but
+not externally certified. Passing this property to a renormalized
+continuum hierarchy still requires that hierarchy's common convergence.
+
+\subsection{A counterexample that survives the physical quotient}
+
+Let $\phi$ be a massive free Euclidean scalar in $\R^4$ and put
+$Y=P(\partial)\phi$, where $P(\partial)=\sum_{\mu=0}^3\partial_\mu^4$.
+Then
+\[
+\widehat C_Y(p)=\frac{(\sum_\mu p_\mu^4)^2}{p^2+m^2}.
+\]
+This law has translations, signed coordinate permutations, factorial
+Schwartz bounds, and reflection positivity at coordinate and $45$-degree
+mirrors. Indeed $P$ is local and commutes with those reflections, so all
+their positive-half-space observables pull back to those of $\phi$.
+
+Nevertheless $Y$, declared to be a scalar, is anisotropic even off the
+diagonal. For a $\pi/4$ rotation $R$, a contact-only covariance difference
+would force $p^2+m^2$ to divide $P(Rp)^2-P(p)^2$.
+At $p=(z,0,0,0)$ the latter equals $-3z^8/4$, nonzero at $z=im$.
+This disproves divisibility. The OS quotient is nontrivial: its
+one-particle multiplier is
+$\omega(k)^4+\sum_jk_j^4\geq m^4$.
+Thus broad regularity plus the two reflection directions is insufficient.
+
+\subsection{The angular-degree lemma}
+
+Let $M_N(T;\zeta)$ be an angular moment for an admissible $N$-tuple $T$.
+Let $J$ denote antilinear time reflection. Assume:
+\begin{enumerate}
+\item $M_N$ is entire, $\pi/2$-periodic, and
+\[
+|M_N(T;\theta+i\beta)|\leq C_{N,T}e^{\kappa N|\beta|},
+\quad 0\leq\kappa<4.
+\]
+Reality supplies both signs of every occurring frequency; $M_0=1$.
+\item The tilted-frame moments obey
+$\widetilde M_N(T;\zeta)=M_N(T;\zeta+\pi/4)$.
+\item For every real $\beta$, both kernels
+$M_{a+b}(J\chi,\eta;i\beta)$ and
+$\widetilde M_{a+b}(J\chi,\eta;i\beta)$ are positive semidefinite on
+positive-side tuples of \emph{all} lengths, including zero.
+\item If $r_N>0$ is the largest absolute occurring frequency, the
+coefficient at frequency $-r_N$ is nonzero on some tuple $(J\chi,\eta)$
+for every split $N=a+b$, including an empty side.
+\end{enumerate}
+The last two requirements are analytic inputs, not consequences of
+reflection positivity at real angle alone.
+
+\begin{theorem}[Strict angular type below four]
+Under these assumptions every $M_N$ is independent of angle.
+\end{theorem}
+\begin{proof}
+Contour shifting kills Fourier frequencies $|\ell|>\kappa N$.
+Quarter-turn periodicity allows only $\ell\in4\mathbb Z$.
+Let $r_N$ be the largest absolute occurring frequency, zero if none.
+Detection and Cauchy--Schwarz at imaginary angle give
+\[
+2r_{a+b}\leq r_{2a}+r_{2b}.
+\]
+At order $2a$, multiply the positive kernels by $e^{-r_{2a}\beta}$
+and let $\beta\to+\infty$. Their leading coefficient kernels differ by
+$e^{-ir_{2a}\pi/4}=(-1)^{r_{2a}/4}$. A nonzero kernel and its negative
+cannot both be positive. Detection therefore gives $r_{2a}\in8\mathbb Z$.
+Set $b_j=r_{2j}$. It is convex, $b_0=0$, and its increments are
+nonnegative multiples of eight. Any positive increment forces eventual
+slope at least eight, contrary to $b_j\leq2\kappa j<8j$.
+Thus $r_{2j}=0$; the split $(0,N)$ gives $r_N=0$.
+\end{proof}
+
+The threshold is sharp for this abstract argument.
+For the field $Y$ above, each insertion has angular frequencies
+$0,\pm4$, and the two-point function has a nonzero eighth harmonic:
+$(\cos^4\theta+\sin^4\theta)^2$ contains $\cos8\theta$.
+Gaussian moments give maximal frequency $r_{2j}=8j$ and type $4N$.
+The example also obeys the imaginary-angle kernel requirement:
+the differential operator $P_{i\beta}$ commutes with antilinear
+reflection, so free-field positivity applies to its transformed tests
+in either frame. The leading coefficients are analytic off coincidence
+and nonzero there; widely separated pairs retain their highest
+harmonics by massive decay. Permutation and translation then place a
+nonzero coefficient across each prescribed time split.
+
+\subsection{A free-field benchmark for the desired exponent}
+
+For the free four-dimensional Maxwell field, consider the separated
+Schwinger kernels of its Wick-ordered scalar action density
+$O=\sum_{\mu<\nu}:F_{\mu\nu}^2:$.
+Split coordinates into a plane $(t,x)$ and two transverse coordinates $y$.
+Smear each insertion in $y$ with $f_i\in C_c^\infty(\R^2)$.
+For an ordered complex plane difference $z$ put
+$q(z)=\Rea z_t-|\Ima z_x|>0$.
+The partial transverse Fourier transform of each field-strength covariance
+has the bound
+\[
+|\widehat K_{\alpha\beta}(z,k_\perp)|
+\leq C\int_\R \omega\,e^{-q(z)\omega}\,dk_x,
+\qquad \omega=(k_x^2+|k_\perp|^2)^{1/2}.
+\]
+The polynomial numerator from two derivatives is at most a constant
+times $\omega^2$; the free spectral denominator is $2\omega$.
+Scaling and Plancherel imply
+\[
+\norm{K_{\alpha\beta}(z,\cdot)}_{L^2(\R^2)}
+\leq Cq(z)^{-3}.
+\tag{4.1}
+\]
+For example, the momentum integral is bounded by
+$Cq^{-2}(1+q|k_\perp|)e^{-q|k_\perp|/\sqrt2}$, whose
+$L^2(d^2k_\perp)$ norm is $O(q^{-3})$.
+
+Every Wick graph for these composite insertions is a union of cycles of
+length at least two. The edge operator with kernel
+$f_i(y)K_{ij}(y-y')$ has Hilbert--Schmidt norm
+$\norm{f_i}_2\norm{K_{ij}}_2$.
+The trace around each cycle is bounded by the product of these norms.
+The cone distance is superadditive:
+$q(z+w)\geq q(z)+q(w)$. Thus every nonadjacent ordered edge also has
+distance at least $\delta$ when successive gaps do.
+For $N\geq2$,
+\[
+|S_N(Z;f_1,\ldots,f_N)|
+\leq C_N\delta^{-3N}\prod_i\norm{f_i}_2.
+\tag{4.2}
+\]
+This proves the exponent-three benchmark in a free model.
+It concerns separated kernels, not a claim that the coincident
+Euclidean Wick square is an ordinary random tempered distribution.
+
+For imaginary planar rotations,
+$q(R_{-i\beta}z)\geq e^{-|\beta|}q(z)$.
+If the \emph{interacting} ordered kernels satisfy the analogue of (4.2),
+and the necessary analytic gluing, detection and two-frame Gram
+identities are established, one obtains angular type $3N$.
+Controlled logarithmic losses can be absorbed into $(3+\epsilon)N$,
+with $\epsilon<1$.
+That would meet the theorem's threshold.
+Neither engineering dimension nor the free calculation proves this
+interacting bound. Notebook 02 supplies same-limit diagonal RP at fixed
+lattice coupling; its passage to the renormalized hierarchy and the
+interacting analytic/Gram inputs remain necessary.
+
+\section{A positive-energy witness at one coupling scale}
+
+\begin{lemma}[Semigroup ratio]
+Let $H\geq0$ be self-adjoint and $v\ne0$. If
+$\langle v,e^{-tH}v\rangle\leq q\norm v^2$ with $0\leq q<1$, then for
+$0<\alpha<\log(1/q)$,
+\[
+\norm{\mathbf1_{(\alpha/t,\infty)}(H)v}^2
+\geq(1-qe^\alpha)\norm v^2.
+\]
+Moreover $(1-e^{-tH})v\ne0$, is orthogonal to every zero-energy vector,
+and has norm at least $(1-q)\norm v$.
+\end{lemma}
+\begin{proof}
+On $[0,\alpha/t]$, $e^{-tE}\geq e^{-\alpha}$. Integrate against the
+spectral measure of $v$. The norm bound for $(1-e^{-tH})v$ follows from
+Cauchy--Schwarz and its inner product with $v$.
+\end{proof}
+
+Here is a concrete test using the draft's own witness geometry. Set
+\[
+f_d(x)=\left(1-\frac{|x-(3d/4)e_0|^2}{(d/4)^2}\right)_+^2.
+\]
+It has supremum one, mass $\pi^2d^4/3072$, and Lipschitz constant
+$32/(3\sqrt3\,d)<7/d$. Thus its test-class parameter can be
+$\vartheta=10^{-3}$. Both pairs
+$(\theta f_d,f_d)$ and $(\theta f_d,\tau_{4de_0}f_d)$ use the
+\emph{same} scale $d$: their support separations are $d$ and $5d$.
+Near-pair distances are at most $2d$, far-pair distances at least $5d$.
+For the exact continuum kernel
+$K(f,h)=\iint f(x)h(y)|x-y|^{-8}\,dx\,dy$,
+\[
+\frac{K(\theta f_d,\tau_{4de_0}f_d)}
+ {K(\theta f_d,f_d)}
+\leq(2/5)^8.
+\]
+The draft's two witness prefactors have ratio twelve. Consequently, if
+its lower/upper witness and its sharp block-kernel asymptotic are proved,
+\[
+\limsup_{d\downarrow0}
+\frac{\langle v_d,e^{-4dH}v_d\rangle}{\norm{v_d}^2}
+\leq12(2/5)^8=0.00786432.
+\tag{5.1}
+\]
+The running coupling cancels because the same $d$ is used.
+One can then take $q=0.02$ for sufficiently small $d$.
+With $\alpha=1$, more than $94.5\%$ of this vector's squared norm lies
+above energy $1/(4d)$.
+
+\subsection{Finite relative accuracy is enough}
+
+In fact the sharp asymptotic in (5.1) is stronger than needed.
+Let $K_-,K_+$ be the near and far continuum kernels, now with the common
+normalization $6/\pi^4$. If their discrete background counterparts obey
+\[
+ (1-\epsilon)K_\pm\leq K_{{\rm bg},\pm}
+             \leq(1+\epsilon)K_\pm,
+\]
+the same witness gives
+\[
+ \frac{\langle v_d,e^{-4dH}v_d\rangle}{\norm{v_d}^2}
+ \leq12\frac{1+\epsilon}{1-\epsilon}(2/5)^8.
+\]
+Already $\epsilon=1/3$ gives $0.01572864<0.02$.
+Thus fixed relative accuracy on two shapes suffices for the stated
+positive-energy conclusion. The draft's coarse kernel constants alone
+do not supply this accuracy.
+
+Here is an independent free-lattice calculation and the exact
+additional estimate that would supply it. In midpoint conventions put
+$s_\mu(q)=2\sin(q_\mu/2)$ and $\lambda(q)=\sum_\mu s_\mu(q)^2$.
+The covariance multiplier of one colour of the exact two-form Gaussian is
+\[
+ m_{\mu\nu,\rho\sigma}(q)=
+ \frac{\delta_{\nu\sigma}s_\mu s_\rho-
+ \delta_{\nu\rho}s_\mu s_\sigma-
+ \delta_{\mu\sigma}s_\nu s_\rho+
+ \delta_{\mu\rho}s_\nu s_\sigma}{\lambda(q)}.
+\]
+Write $m_0$ for the homogeneous multiplier obtained by replacing $s$ by
+$q$, and $D_{PQ}(r)$ for its inverse Fourier transform away from zero.
+The potential covariance is normalized to
+$\delta_{\mu\nu}/(4\pi^2|r|^2)$.
+
+\begin{proposition}[Free off-diagonal approximation]
+For bare spacing $a$ and plaquette-midpoint separation $r$ with
+$|r|\geq C_0a$, the infinite-lattice covariance satisfies
+\[
+ |P_{{\rm ex},a}(p,q)-a^4D_{\pi(p)\pi(q)}(r)|
+ \leq Ca^6|r|^{-6}.
+\]
+\end{proposition}
+\begin{proof}
+Near zero,
+$|\partial^\alpha(m-m_0)(q)|\leq C_\alpha|q|^{2-|\alpha|}$.
+A smooth dyadic decomposition into $|q|\asymp2^{-j}$ therefore gives
+Fourier pieces bounded by
+$C_M2^{-6j}(1+2^{-j}|z|)^{-M}$ for any fixed $M>6$.
+Summing on both sides of $2^{-j}|z|=1$ gives $C|z|^{-6}$.
+The lattice multiplier away from zero is smooth and periodic in the
+basepoint convention and has rapidly decreasing Fourier coefficients.
+For the continuum multiplier, sufficiently high derivatives of its
+high-frequency part are integrable; integration by parts gives the
+same rapid decrease away from contact terms.
+
+For different orientations, apply the same midpoint phase
+$e^{iq\cdot(\delta_P-\delta_Q)}$ to both multipliers. Their difference
+still has order two at zero, and its integer Fourier coefficient at
+$n$ compares kernels at $z=n+\delta_P-\delta_Q=r/a$.
+Finally use $D(r/a)=a^4D(r)$.
+\end{proof}
+
+Suppose the actual background covariance has been identified as
+$C_{{\rm bg},a,h}=P_{{\rm ex},a}-C_{{\rm fl},a,h}$.
+The additional input needed is the uniformly normalized
+\emph{curvature} bound
+\[
+ |C_{{\rm fl},a,h}(p,q)|
+ \leq Aa^4h^{-4}e^{-c|r|/h},\qquad |r|\geq h.
+ \tag{5.2}
+\]
+Here $h$ is the physical witness-cell scale. A bound on the potential
+propagator alone does not give (5.2) without its discrete curl estimates.
+A scale decomposition with terms bounded by
+$A_0a^4h_j^{-4}e^{-c_0|r|/h_j}$, $h_j=hL^{-j}$, would suffice because
+\[
+ \sum_{j\geq0}L^{4j}e^{-c_0\rho L^j}
+ \leq C_{L,c_0}e^{-c_0\rho/2},\qquad \rho\geq1.
+\]
+The elementary summation is proved by factoring out the right-hand
+exponential and using the summable majorant
+$\sum_jL^{4j}e^{-c_0L^j/2}$.
+
+For clarity, the discrete quadratic kernel meant here is
+\[
+ K_{{\rm bg},\pm}=\sum_{p,q}f_\pm(x_p)g_\pm(x_q)
+                       |C_{{\rm bg},a,h}(p,q)|^2,
+\]
+with each positive plaquette orientation occurring once. The two
+covariance factors already supply the $a^8$ Riemann-sum weight.
+Any common colour or energy normalization must multiply both the
+continuum and discrete kernels.
+
+\begin{theorem}[Two-scale criterion]
+Under the covariance identification and (5.2), the two fixed shapes
+satisfy the relative comparison with
+\[
+ \epsilon\leq C_*\left\{a/d+(d/h)^4e^{-c\,d/h}\right\},
+ \tag{5.3}
+\]
+for sufficiently small $a/d$, with a fixed reduction in $c$ if needed.
+In particular finite thresholds $a/d\leq\eta_*$ and $d/h\geq R_*$
+give $\epsilon\leq1/3$.
+\end{theorem}
+\begin{proof}
+All distances lie in $[d,6d]$. The free approximation contributes
+$O((a/d)^2)$ against the curvature scale $a^4d^{-4}$, and (5.2)
+contributes $O((d/h)^4e^{-cd/h})$. Moving orientation midpoints to a
+common basepoint costs $O(a/d)$. For the six by six curvature matrix,
+\[
+ \norm{D(r)}_{\rm F}^2=\frac6{\pi^4|r|^8},\qquad
+ |\norm{D+E}_{\rm F}^2-\norm D_{\rm F}^2|
+ \leq2\norm D_{\rm F}\norm E_{\rm F}+\norm E_{\rm F}^2.
+\]
+Riemann sums for the fixed Lipschitz shapes cost $O(a/d)$ after dilation
+by $d$. Divide the absolute errors by the two fixed positive continuum
+kernels and absorb quadratic errors, reducing the exponential rate if
+necessary. This proves (5.3).
+\end{proof}
+
+The free finite-torus covariance tends to its infinite-volume value at
+fixed $a$ by Fourier Riemann sums. This supplies no uniform torus error
+as $a\to0$. Take volume first, or choose a sufficiently large volume
+diagonally for these two probes, and separately verify the conditioned
+covariance's volume limit. The deposited choice of $h$ has $d/h$
+growing polylogarithmically as $d\downarrow0$; it would provide the
+required separation once (5.2) is proved for that exact block map.
+
+The interacting lower/upper witness and a valid reconstruction remain
+required. The result proves no mass gap: arbitrarily small positive
+energies in other states remain possible.
+
+\section{Why this still would not identify Yang--Mills}
+
+There is an explicit generalized-free countermodel to the logarithmic
+two-point signature. In four dimensions use positive spectral density
+\[
+\rho(s)=\frac{a s^2}{\log^2(e+s/\Lambda^2)},\qquad
+C(r)=\int_0^\infty \rho(s)
+\frac{\sqrt s}{4\pi^2r}K_1(r\sqrt s)\,ds.
+\]
+It defines a local generalized free Wightman field with positive energy,
+unique vacuum and clustering. Substitution $u=r\sqrt s$ and
+$\int_0^\infty u^6K_1(u)\,du=384$ give
+\[
+C(r)\sim\frac{48a}{\pi^2}
+\frac{r^{-8}}{\log^2(1/(\Lambda r))}.
+\]
+Thus this behavior does not by itself characterize non-Abelian dynamics.
+The general spectral construction is standard \cite{dr}; this choice
+and the displayed asymptotic provide the explicit counterexample.
+
+Even a nonzero fourth connected function does not repair that criterion.
+Take a generalized free $\chi$ with
+$\rho_0(s)=a/\log(e+s/\Lambda^2)$ and its local Wightman Wick square
+$O=:\chi^2:$. At separated Euclidean points,
+\[
+C_\chi(r)\sim\frac{a}{2\pi^2}
+\frac{r^{-4}}{\log(1/(\Lambda r))},\qquad
+C_O(r)=2C_\chi(r)^2
+\sim\frac{a^2}{2\pi^4}
+\frac{r^{-8}}{\log^2(1/(\Lambda r))}.
+\]
+The connected four-point function of $O$ is sixteen times the sum of
+the three distinct four-cycles of $C_\chi$, and is nonzero.
+The forward-cone spectral measure has polynomial growth; Wick-square
+smearing is controlled by its positive-cone convolutions. A full
+operator-domain presentation would accompany any publication use.
+These are Wightman/separated-Euclidean examples, not unsubtracted
+Euclidean probability covariances at contact.
+
+There is also a separate vacuum issue. Adding an independent constant
+random mode preserves the ultraviolet signature while creating
+degenerate zero-energy states. The temporal difference in Section 5
+removes that contamination.
+
+If an actual Euclidean probability measure with a local bounded
+observable algebra is available, phase selection has a useful route:
+translation-invariant events are measurable from either time half-space
+by translated Følner averages. Reflection positivity forces reflection
+to act trivially on that invariant algebra. Applying positivity to
+$\sqrt h A$, with $h$ invariant and nonnegative, then gives positivity
+in almost every translation-ergodic component. After full Euclidean
+covariance, these components cluster; this follows from the relative
+Howe--Moore property of $(E(d),\R^d)$ for $d\geq2$ \cite{hm}.
+The separated composite functions currently under discussion do not
+automatically provide that measure/algebra. An algebraic phase-selection
+argument or a direct clustering proof is still needed in their actual
+framework.
+
+\section{The next research sequence}
+
+\begin{enumerate}
+\item \textbf{Close one sourced induction at a fixed stopping scale.}
+Use the joint fluctuation bounds of Notebook 17, the overlapping
+integration theorem of Notebook 18, and the physical Gaussian and
+measure factors of Notebook 19. Notebook 20 closes their coefficient
+and precision match for the first bare Wilson small-field integral.
+Notebook 21 extends the local decomposition and one classical-reference
+integration uniformly through the minimized classical actions.
+Notebook 22 proves stationary-background substitution with explicit
+radius and support-weight losses. Notebook 23 proves local gauge
+invariance of the complete correction and its quadratic Ward
+identity. Notebook 24 gives the conditional inherited-interaction
+bound and an explicit sufficient next-step norm test. Notebook 26
+satisfies that test with a persistent auxiliary-cell convention,
+returning one fixed positive support exponent for both inherited
+and new terms. Notebook 27 supplies an actual composite macrostep,
+including its exact local integral. Notebook 28 uses the smaller
+representative of Notebook 25 to return the same positive analytic
+radius at one step. It also contracts coefficientwise fifth-order
+background remainders and the quantum response to differences
+with matching low jets, at a sufficiently large fixed macro ratio
+and small coupling. Notebook 29 proves the actual local spatial
+symmetries, the total nonlinear Ward completion of the marginal
+term, and a connected localization of canceled low kernels with
+gain \(C(J)L^{-\alpha}\) under its coherent-family and exact
+infinite-kernel hypotheses. Its classical semigroup permits
+the finite endpoint ratio \(L=R^q\) to be chosen after fixing
+the elementary \(R,J\). Its joint compactness and complete
+interaction quotient justify the classical change of representation
+under the stated map hypotheses. Notebook 30 establishes the
+universal classical gauge identity, canonical periodic descent
+and local continuity of the actual homogeneous quantum update.
+Its varying-input theorem identifies finite histories under
+their explicit intermediate-family budgets. Exact classical
+reference transport permits a projected finite-block contraction
+and an amplitude envelope on the selected infinite quotient
+while the couplings remain weak. Notebook 31 proves the
+corresponding finite local induction: finite Ward repair controls
+wrapping terms, and exact equivalent representatives meet every
+intermediate family budget. It also proves fixed-threshold
+coupling parity and exact preservation of the infinite Maxwell
+coefficient by classical substitution. On the infinite amplitude
+envelope the drift is the pivot/determinant coefficient plus a
+uniform error tending to zero with the coupling. The leading
+coefficient must still be computed. Notebook 32 gives qualitative
+uniform finite leakage, real-coupling continuity, an explicit
+convergent determinant trace, and an exact leading determinant
+cocycle. Its gauge/coarea identity supplies the actual coupled
+vector, ghost and coarse comparison terms, and bounds the shifted
+coarse effective-Hessian contribution uniformly in depth.
+A positive block margin
+in every varying-depth structural limit would transfer to finite
+regulators without a quantitative rate.
+Under a positive averaged drift hypothesis for the actual
+finite leading coefficients, its shooting argument produces
+arbitrarily long finite weak local trajectories with a fixed
+endpoint. Establish that drift through an actual uniformly
+controlled determinant comparison; it is not supplied by absolute
+increment bounds or the cocycle.
+Notebook 33 gives an exact constant-Cartan-curvature expression
+for the actual Maxwell coefficient and removes its multiplier
+curvature through second order using the classical envelope.
+Its diagonal trace densities have individual gauge identities,
+which are essential for matching the affine coefficient to the
+total Hessian moment. The notebook computes a specified massive
+continuum reference and rewrites the actual comparison as a
+heat integral. Uniform bounds on the short-time, intermediate
+and long-time parts remain to be proved, with the intermediate
+coefficient matched to the continuum value and the soft
+based-ghost modes controlled in the combined expression.
+The based-ghost short-time part alone now has a uniform
+bound from a closed-walk expansion on the actual pinned domain.
+Notebook 34 extends this to the entire based-ghost coefficient
+and proves its additional logarithmic interval from \(K^2\)
+to \(K^4\). It also proves the full vector ultraviolet bound
+using a uniform counting-\(\ell^2\) bound on the actual
+composite constraint and a localized trace on fixed coarse
+fibers. The short-time interval is therefore settled.
+The remaining vector estimate must match its intermediate
+coefficient and cancel the ghost's additional long-time
+logarithm, or supply an equivalent bounded signed comparison.
+The same notebook gives an exact finite physical quotient,
+including both orbit-density determinants, and proves its
+uniform flat \(cK^{-2}\) gap. This supplies an alternative
+route to the combined comparison. Establish the joint
+infrared limit and the required curvature-source bounds
+before using the separate projected factors as infinite
+affine trace densities.
+Notebook 35 supplies that fixed-endpoint infrared bridge by
+changing the exact tangent gauge to covariant block means.
+It proves an actual local scalar/vector determinant identity,
+joint analytic continuation through flat stabilizers, individual
+gauge-invariant diagonal densities, and physical-scale flat
+gaps with uniform heat and inverse-power estimates for both
+new factors. Use this pair for the next large-endpoint curvature
+comparison. Its scalar projector, corrected tangent constraint,
+and full residual Hessian must be retained. The old point-pinned
+ghost logarithm cannot be assigned to the new scalar factor.
+The constant-flat anomaly found in the old physical quotient
+has canceled algebraically before the new local limits.
+Notebook 36 further removes the hard block projections by exact
+scalar and vector Schur factorizations. It proves that the two
+coarse determinant corrections have uniformly bounded actual
+Maxwell coefficients. Its physical relative-vertex theorem
+retains the true effective Hessian, using local path gauges
+and the ordered factorization of the flat kernel; the
+component-skew lattice terms are not discarded. Continue with
+the resulting fine soft pair and compare its marginal
+vertices and infrared penalties to a specified reference.
+The existing Ward extraction matches momentum jets through
+field degree four, but the required determinant remainder
+must still be bounded uniformly in preceding depth.
+The same notebook bounds the soft pair's ultraviolet and
+infrared ends, so it suffices to prove the actual intermediate
+heat coefficient \(11\alpha_g\) with an error integrable in
+logarithmic time. Flat heat bounds alone do not identify this
+coefficient.
+Match the continued local representation
+to the measure, and control the complement of the small-field chart.
+Fix $h$, an endpoint inverse-coupling interval, the vacuum normalization,
+and the exact class of reflected source profiles. Prove the denominator
+window, the residual complex-source upper bound, and the anchored
+counterterm sum (2.1). Track every constant in $a$ and $|\Lambda|$.
+The four-stage sufficient criterion in Section 2 is only an auxiliary
+tool. Audit the selected global two-input layer, its actual carrier
+domains and inheritance/arrest closure, together with the coupling
+trajectory and preparatory-window inputs. Reconcile the three-link
+localized description with that global route before treating its
+unresolved assumptions as prerequisites.
+\item \textbf{Construct separated limits and preserve positivity.}
+Use the fixed-cell theorem and diagonal extraction. Prove the
+distance-uniform per-ball strengthening separately. Do not undertake
+two-cutoff uniqueness as a prerequisite.
+\item \textbf{Make the all-order bounds usable.}
+Verify the translated-grid and presentation-independent holomorphy
+hypotheses of Section 3. Its patch argument, factorial lemma and
+joint-test extension then give the explicit linear-growth estimate
+(3.2). The remaining reconstruction assumptions, including symmetries
+and the vacuum condition, must be checked separately.
+\item \textbf{Prove the interacting planar insertion estimate.}
+Use the free exponent-three calculation as a benchmark, not as a
+substitute. Use the same-state lattice positivity of Notebook 02, prove
+its passage to the renormalized hierarchy, and establish the
+analytic/Gram inputs of Section 4. The existing rotation-current route
+is an alternative only if its far-boundary flux condition is proved;
+renaming it does not establish it.
+\item \textbf{Prove the two-shape kernel ratio.}
+Verify the constrained fluctuation-curvature bound (5.2), its volume
+limit, and the interacting witness. The free calculation and (5.3)
+then give one-third relative accuracy, already enough for
+positive-energy nontriviality through Section 5.
+\item \textbf{Extend and identify the observable theory.}
+Introduce scalar, tensor and other gauge-invariant sources, control
+their operator mixing and joint limits, and match the required
+Yang--Mills short-distance structure. Prove a suitable vacuum-sector
+statement. Keep a mass-gap theorem as a distinct infrared task.
+\end{enumerate}
+
+\noindent\textbf{What this notebook has achieved.}
+It reduces the first construction to explicit interfaces, proves several
+conditional steps and tests them against counterexamples. The largest
+unpaid debt remains the uniform \emph{sourced} non-Abelian RG analysis.
+None of the deductions removes that debt.
+
+\section*{Audit locations in the deposited account}
+\small
+These are navigation references to the pinned version, not assertions
+that every dependency at those locations has been verified.
+\begin{itemize}
+\item \texttt{theorem\_0\_complete\_account\_raw\_III.tex},
+lines 110862--110965: public proof-status ledger.
+\item Raw II, lines 60700--60765: local source terms, analyticity,
+stability and denominator floor; literal finite-family source domain.
+\item Raw II, lines 2791--2979 and 59645--59855: source correlation
+theorem and its final-scale consumer; lines 15206--15331 and
+25412--25480 onward: sourced large-field step and joint induction.
+\item Raw I, lines 73107--73123 and 73545--73634: the selected global
+four-layer route and exclusion of the alternative localized chain;
+lines 56419--56441: conditional running-coupling input.
+The three-link discussion at Raw II, lines 48058--48320, is a distinct
+description of site (L); its relation to the active global-carrier route
+requires reconciliation before it identifies a necessary source gap.
+\item Raw I, lines 155039--155083:
+uniform characteristic-window proposal.
+\item Raw II, lines 63365--63367:
+outstanding final-scale statement; lines 63964--64274:
+per-ball recentering/chessboard reduction.
+\item Raw II, lines 145173--145222:
+outstanding source lemma and continuum-kernel proof.
+\item Raw III, lines 37365--37427:
+weak fine/coarse propagator stationarity.
+\item \texttt{ym4\_manuscript\_zeroth\_draft.pdf},
+Section 4.3, pp.\ 68--75: flat-diagonal test spaces and all-order
+growth issue; Definition 5.1 and Remark 5.7, pp.\ 77--78:
+witness geometry and claimed block-kernel asymptotic.
+\item \texttt{QED3\_slop/YM\_Rotation\_Invariance\_simplified.pdf}:
+Theorem A, p.\ 2; angular and two-frame argument, pp.\ 7--12;
+insertion bounds, pp.\ 13--16; contact lemma, pp.\ 17--18.
+\end{itemize}
+\normalsize
+
+\begin{thebibliography}{9}
+\bibitem{repo} Public experiment repository, pinned commit above.
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}
+{Repository and source documents}.
+\bibitem{clay} A. Jaffe and E. Witten,
+\emph{Quantum Yang--Mills Theory}, especially pp.\ 5--6.
+\href{https://www.claymath.org/wp-content/uploads/2022/06/yangmills.pdf}
+{Official problem statement}.
+\bibitem{os2} K. Osterwalder and R. Schrader,
+\emph{Axioms for Euclidean Green's Functions II},
+Commun.\ Math.\ Phys.\ 42 (1975), 281--305.
+\href{https://doi.org/10.1007/BF01608978}{Publisher record}.
+The corrected reconstruction theorem's precise hypotheses must be
+checked in any final construction.
+\bibitem{amt} M. S. Adamo, Y. Moriwaki and Y. Tanimoto,
+\emph{Osterwalder--Schrader axioms for unitary full vertex operator
+algebras}, Section 2.5, equation (22), and Section 3.2.
+\href{https://arxiv.org/abs/2407.18222}{arXiv:2407.18222}.
+Used only for the explicit linear-growth formulation, not as a
+four-dimensional existence theorem.
+\bibitem{balaban122b} T. Ba\l aban,
+\emph{Large field renormalization. II. Localization, exponentiation,
+and bounds for the R operation}, Commun.\ Math.\ Phys.\ 122 (1989),
+355--392. \href{https://doi.org/10.1007/BF01238433}{Publisher record};
+\href{https://scispace.com/pdf/large-field-renormalization-ii-localization-exponentiation-h8b7ih93xo.pdf}
+{accessible copy of the original paper}.
+\bibitem{balaban119} T. Ba\l aban,
+\emph{Convergent renormalization expansions for lattice gauge theories},
+Commun.\ Math.\ Phys.\ 119 (1988), 243--285, especially p.\ 276,
+the distinction preceding (3.43).
+\href{https://scispace.com/pdf/convergent-renormalization-expansions-for-lattice-gauge-29jyexd38e.pdf}
+{Accessible copy of the original paper}.
+\bibitem{seiler} E. Seiler, \emph{Uses of Reflection Positivity},
+especially pp.\ 4--5 and 15--17.
+\href{https://ethz.ch/content/dam/ethz/special-interest/phys/theoretical-physics/itp-dam/documents/graf/schrader/Seiler.pdf}
+{Author's presentation}.
+\bibitem{dr} M. D\"utsch and K.-H. Rehren,
+\emph{Generalized free fields and the AdS--CFT correspondence}.
+\href{https://arxiv.org/abs/math-ph/0209035}{arXiv:math-ph/0209035}.
+\bibitem{hm} R. Cluckers, Y. de Cornulier, N. Louvet, R. Tessera
+and A. Valette, \emph{The Howe--Moore property for real and
+$p$-adic groups}, Theorem 5.2 and Proposition 2.2.
+\href{https://rcluckers.perso.math.cnrs.fr/prints/CCLTV.pdf}
+{Author-hosted paper}.
+\bibitem{kz} V. Kazakov and Z. Zheng,
+\emph{Bootstrap for Lattice Yang--Mills theory}, p.\ 3 and Fig.\ 5.
+\href{https://arxiv.org/abs/2203.11360}{arXiv:2203.11360}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,432 @@
+% No preamble. Composite macrostep integral, unique prefix cmi-.
+\section{The exact composite integral and its pre-gauge continuation}
+\label{cmi-section}
+
+Fix the primitive odd ratio $\ell$ and a macro ratio $R=\ell^s$.
+The preceding refinement is $M=\ell^k$. All statements concern
+finite compatible periodic regulators. Constants may depend on the
+fixed $R,\ell$, but are uniform in $M$ and volume. The constraint is
+the actual composite
+\[
+ \mathcal F_R=\mathcal M_\ell^s.
+\]
+It is not replaced by a direct-$R$ ordinary average. The direct-$R$
+internal contour variable $P_R$ is used independently for gauge
+fixing. Nor is the one-shot integral below identified with $s$
+separately gauge-fixed and truncated quantum integrations.
+
+\subsection{A gauge insertion with its exact normalization}
+\label{cmi-gauge-section}
+
+Use normalized Haar measure on the compact matrix group $G$, and
+the convention $V^u(b)=u(b_-)V(b)u(b_+)^{-1}$. The previously
+proved local geometry gives
+\begin{align}
+ \mathcal F_R(V^u)
+   &=\mathcal F_R(V)^{u|_{\text{final centers}}},\notag\\
+ P_R(V^u;y,x)&=u(y)P_R(V;y,x)u(x)^{-1}.                 \label{cmi-covariance}
+\end{align}
+Every contour defining $P_R$ stays inside its $R$-block.
+Put
+\begin{equation}\label{cmi-penalty}
+ v(h)=1-\operatorname{Re}\tau h,\qquad
+ \mathcal G_R(V)=\sum_y\sum_{\substack{x\in B_R(y)\\x\ne y}}
+                       v(P_R(V;y,x)).
+\end{equation}
+The analytic continuation of $v(h)$ is
+$1-\tfrac12\tau(h+h^{-1})$. This is the absolute contour
+penalty. It is not replaced by a relative penalty away from
+a gauge-zero background.
+
+A local logarithmic formula does not by itself allow integration
+over every compact gauge transformation. One may work on a
+gauge-invariant domain where the contour formula is defined on
+complete orbits, or make the following explicit measurable
+completion. For a path tuple $(U_j)$ from $y$ to $x$, retain its
+specified reference $T$. On a fixed small conjugation-invariant
+neighborhood of the identity for every $U_jT^{-1}$, put
+\[
+ P(U_1,\ldots,U_n)
+   =\Phi(U_1T^{-1},\ldots,U_nT^{-1})T,
+\]
+where $\Phi$ is the \emph{actual selected local source mean}
+on the reference-normalized tuple, with its original contour
+multiplicities, ordering and reference. Right endpoint covariance
+proves this representation on the original domain, and simultaneous
+conjugation covariance follows from the same source covariance.
+On the complementary set put $P=T$. Thus the completion is
+measurable, group valued and endpoint covariant everywhere,
+and equals the chosen analytic mean near the identity. No
+different mean or additional mean equation is substituted.
+
+Similarly, for each primitive ordinary average, use its original
+logarithmic formula when all its reference-normalized transported
+strings lie in the chosen small logarithm neighborhood, and its
+reference string otherwise. The condition is conjugation invariant.
+This gives a measurable gauge-covariant completion of
+$\mathcal M_\ell$, hence of its composition $\mathcal F_R$.
+The values outside the analytic domain are part of this proposed
+full blocking map; equality with a different large-field completion
+is not claimed. The following local formulas agree wherever
+the original analytic maps agree.
+
+Let $\mathcal H_R$ be the group of current-site gauges equal to
+one at final block centers, with normalized independent Haar
+measure at the $n_s$ other sites. For $g>0$ define
+\begin{equation}\label{cmi-gauge-constant}
+ c(g)=\int_G e^{-v(h)/g^2}\,dh>0.
+\end{equation}
+Then
+\begin{equation}\label{cmi-orbit-identity}
+ \int_{\mathcal H_R}e^{-\mathcal G_R(V^u)/g^2}\,du
+       =c(g)^{n_s}.
+\end{equation}
+Indeed, by \eqref{cmi-covariance}, the factor at $(y,x)$ is
+$e^{-v(P_R(V;y,x)u(x)^{-1})/g^2}$, whose integral is $c(g)$
+by Haar invariance, independently of $V$. The site integrals
+factor. There is no omitted gauge determinant: this is direct
+integration over compact Haar variables with the displayed
+normalization.
+
+For an integrable gauge-invariant current density $\rho$, and
+any bounded test function $f$ of the final configuration,
+\begin{equation}\label{cmi-pushforward}
+ \int dV\,\rho(V)f(\mathcal F_R(V))
+ =c(g)^{-n_s}\int dV\,\rho(V)f(\mathcal F_R(V))
+                            e^{-\mathcal G_R(V)/g^2}.
+\end{equation}
+Insert \eqref{cmi-orbit-identity}, use Fubini, then change
+$V$ by the fixed gauge $u$; link Haar, $\rho$ and $\mathcal F_R$
+are unchanged. This is an identity of finite pushforward
+measures, requiring no globally regular delta density.
+It also holds for a finite gauge-invariant current measure,
+and for a gauge-invariant orbit-domain restriction.
+
+A noninvariant small-field window is introduced \emph{after}
+this insertion. Splitting the gauged integral into $\chi_{\rm sf}$
+and $1-\chi_{\rm sf}$ is exact for any measurable
+$0\le\chi_{\rm sf}\le1$ on the fiber. If $\rho$ is positive
+both pieces are positive on real fields. Neither piece is
+asserted to satisfy \eqref{cmi-pushforward} without the gauge
+factor. The complement requires a separate large-field estimate.
+
+\subsection{Identification of the physical centered branch}
+\label{cmi-branch-section}
+
+Let $U_f(W)$ be the proved full ordinary minimizer at total
+refinement $MR$, with final spacing $R$ in current units, and set
+\begin{equation}\label{cmi-pregauge}
+ V_p(W)=\mathcal M_\ell^k(U_f(W)),\qquad
+ \mathcal F_R(V_p(W))=W.
+\end{equation}
+Let $U_c(V)$ be the preceding-depth ordinary minimizer and
+$S_M(V)=S(U_c(V))$. Choose a common current comparison radius
+$\delta_R$ and then a final datum radius $b_R$ so that
+$U_f(W)$ belongs to the current minimum class, every $U_c(V)$
+with $\|\log V/i\|_\infty<\delta_R$ belongs to the full
+final-spacing-$R$ minimum class, and the partial average and
+gauges below stay within all common chart and invariance domains.
+These are finitely many strict smallness conditions with
+$R$-dependent constants, uniform in $M$ and volume. In dimension
+four the coupling-free Wilson action has no additional scale
+factor; the potential norms acquire only fixed powers of $R$.
+
+The two actual comparisons are
+\begin{equation}\label{cmi-two-comparisons}
+ S_M(V_p)\le S(U_f)
+       \le S(U_c(V_p))=S_M(V_p).
+\end{equation}
+For the second inequality exact composition makes $U_c(V_p)$
+a full feasible competitor. For any other current $V$ in the
+comparison ball with $\mathcal F_R(V)=W$, the same argument gives
+\begin{equation}\label{cmi-current-minimum}
+ S_M(V)\ge S(U_f)=S_M(V_p).
+\end{equation}
+This is a common-domain minimum comparison, not a
+dynamic-programming assertion for arbitrary backgrounds.
+
+Define the root-fixed current gauge and background by
+\begin{equation}\label{cmi-rooted-background}
+ u(y)=1,\qquad u(x)=P_R(V_p;y,x),\qquad V_*(W)=V_p(W)^u.
+\end{equation}
+Then $\mathcal F_R(V_*)=W$ and $P_R(V_*;y,x)=1$ exactly.
+At fixed $R$ this is local analytic with
+$\|\log u/i\|_\infty\le C_R\|\log V_p/i\|_\infty$.
+The already proved coarse-action gauge invariance, with its
+smooth fine point-value extension, implies $S_M(V_*)=S_M(V_p)$
+after shrinking the common radii. Since $\mathcal G_R\ge0$
+and $\mathcal G_R(V_*)=0$ on real fields, $V_*$ is a local
+constrained minimum of $S_M+\mathcal G_R$.
+
+The preceding Gaussian module supplies its uniformly positive
+flat retained precision. The local analytic chart and
+$D^2S_M=q_M+O(\|\log V\|_\infty)$ show that the pulled-back
+Hessian on a common convex retained ball is
+$A_{M,0}+O_R(\|w\|_\infty+\|z\|_\infty)$. It remains positive
+after a fixed shrink. Therefore the centered real critical
+point is unique in that common neighborhood; gauge zero
+alone would not prove uniqueness. Constraint, gauge-zero and
+first-derivative identities continue holomorphically to complex
+$W$. No complex minimum is asserted.
+
+The supported pre-gauge theorem gives the stronger amplitude
+bound
+\begin{equation}\label{cmi-pregauge-amplitude}
+ a_p=\log V_p/i,\qquad
+ \|a_p\|_\infty\le C_a\|w\|_\infty/R.
+\end{equation}
+Its supported-family constant is fixed at primitive $\ell$
+independently of $s,k$. There is no corresponding $1/R$
+contraction claim for the rooted potential $\log V_*/i$.
+
+\subsection{The local density, Haar factors and pivot determinants}
+\label{cmi-density-section}
+
+Use Hermitian Lie coordinates orthonormal for $\tau$, of
+dimension $q=\dim\mathfrak g$. Let $n_e$ and $n_c$ count
+positive current and final macro bonds, and put
+$n_z=q(n_e-n_c)$. In exponential coordinates write normalized
+Haar as
+\begin{equation}\label{cmi-Haar}
+ d(e^{iX})=h_0j(X)\,dX,\qquad h_0>0,\quad j(0)=1.
+\end{equation}
+Consequently
+$\delta_G(e^{iF})=h_0^{-1}\delta_{\mathbb R^q}(F)$,
+with the coordinate measure understood: $j(F)$ is evaluated
+at $F=0$.
+
+Fix a real small $W$ and $V=V_*(W)$. The composite relative
+constraint and its pivot derivative are
+\begin{equation}\label{cmi-relative}
+ F_V(B)=\log[\mathcal F_R(e^{iB}V)\mathcal F_R(V)^{-1}]/i,
+ \qquad A_V=D F_V(0),\qquad
+ A_{c,p(c)}=R^{1-d}\pi_c(V).
+\end{equation}
+Let $\psi_V$ be the ambient straightening, $K_V$ the linear
+retained insertion, and $\Phi_V(z)=\psi_V(K_Vz)$.
+Each retained component of $\Phi_V$ equals $z$ exactly.
+Order ambient variables as retained coordinates followed by
+pivots. The derivative of $\psi_V$ is block triangular;
+its pivot diagonal blocks satisfy
+\[
+ D_{p(c)}F_V(\psi_V(B);c)\,
+ D_{B(p(c))}\psi_V(B)(p(c))=A_{c,p(c)}.
+\]
+Thus
+\begin{equation}\label{cmi-ambient-Jacobian}
+ \det D\psi_V(B)=
+   \prod_c\frac{\det A_{c,p(c)}}
+                  {\det D_{p(c)}F_V(\psi_V(B);c)}.
+\end{equation}
+Let $j_c^{\rm str}(V;B)$ be the analytic logarithm of the
+$c$th ratio, zero at $B=0$, and put
+\begin{equation}\label{cmi-background-delta}
+ \mathcal D_R(V)=\prod_c(\det A_{c,p(c)})^{-1}.
+\end{equation}
+The determinants have their positive flat orientation on the
+real small chart.
+
+Choose the small-field sector to be the component of this
+relative chart with retained coordinates in a specified product
+window, retaining any additional indicator explicitly. Changing
+the square ambient variables and then solving $A_VB=0$ gives
+its exact density
+\begin{align}
+ &c(g)^{-n_s}h_0^{n_e-n_c}\mathcal D_R(V)
+ \int dz\,
+    \prod_bj(\Phi_V(z)(b))\,
+    e^{\sum_cj_c^{\rm str}(V;K_Vz)}
+    \rho(e^{i\Phi_V(z)}V)
+    e^{-\mathcal G_R(e^{i\Phi_V(z)}V)/g^2}.
+                                                        \label{cmi-local-density}
+\end{align}
+The integration domain and every extra indicator are those
+of the chosen sector. This uses the square Jacobian
+\eqref{cmi-ambient-Jacobian}, not a determinant of the
+rectangular derivative $D\Phi_V$. Equivalently the unrearranged
+pivot density is the product of inverse
+$D_{p(c)}F_V(\Phi_V(z);c)$ determinants.
+
+Here the globally gauge-invariant $\rho$ in
+\eqref{cmi-pushforward} is an input density or measure.
+Only on the common small chart do we use a representation
+\[
+ \rho(U)=\exp[-S_M(U)/g^2+E(U)],
+\]
+with any field-independent factor tracked separately.
+The local classical branch $S_M$ has not been promoted
+to a global action on all configurations.
+
+Put $z=g\xi$ for real $g>0$, and let $A=A_M(V)$ be the exact
+retained Hessian of $S_M+\mathcal G_R$. Define
+\begin{align}
+ \mathcal R_3(V,z)
+   &=S_M(e^{i\Phi_V(z)}V)+\mathcal G_R(e^{i\Phi_V(z)}V)
+            -S_M(V)-\tfrac12\langle z,Az\rangle,\notag\\
+ I(V,g,\xi)
+   &=-g^{-2}\mathcal R_3(V,g\xi)
+      +\sum_cj_c^{\rm str}(V;K_Vg\xi)
+      +\sum_b\log j(\Phi_V(g\xi)(b))\notag\\
+   &\hspace{1cm}+E(e^{i\Phi_V(g\xi)}V)-E(V).
+                                                        \label{cmi-interaction}
+\end{align}
+There is no linear term because the background is the physical
+centered branch. Formula \eqref{cmi-local-density} becomes
+\begin{align}
+ &c(g)^{-n_s}h_0^{n_e-n_c}\mathcal D_R(V)\,
+   g^{n_z}(2\pi)^{n_z/2}\det(A)^{-1/2}
+   e^{-S_M(V)/g^2+E(V)}\notag\\
+ &\hspace{3cm}\times
+   \mathbb E_{A^{-1}}\!
+      \left[\chi_{\rm window}(\xi)e^{I(V,g,\xi)}\right].
+                                                        \label{cmi-Gaussian-integral}
+\end{align}
+The Gaussian convention is the retained Euclidean density
+$\det(A)^{1/2}(2\pi)^{-n_z/2}
+e^{-\langle\xi,A\xi\rangle/2}$.
+The covariance is that of this exact classical
+action-plus-gauge Hessian; Haar remains in
+\eqref{cmi-interaction}. The factors $c(g)^{-n_s}$,
+$h_0^{n_e-n_c}$ and $g^{n_z}$ are vacuum normalizations.
+$\mathcal D_R(V)$ and $\det A$ generally depend on the
+background and are not vacuum constants.
+
+\subsection{The literal retained cutoff}
+\label{cmi-window-section}
+
+For the original retained link/color balls set
+\[
+ \chi_{\rm window}(\xi)=
+ \prod_{b\ {\rm retained}}\mathbf1_{\{|\xi(b)|\le T\}}.
+\]
+Since $\Phi_V(g\xi)(b)=g\xi(b)$ at every retained bond,
+this is exactly the relative-coordinate window of the
+chosen sector. It is not a cutoff on $K_V\xi$, or a
+Euclidean ball on a whole macro fiber. Pivot, contour,
+plaquette or reconstructed-field indicators, if included,
+remain at their exact $\Phi_V(g\xi)$ pullbacks.
+The macro sector is not identified with an intersection
+of the primitive windows of $s$ separate integrations.
+
+At fixed $R$, the normalized pivot logarithms are local
+$O_R(|g|T)$ terms. Inversion invariance gives
+$\log j(X)=O(|X|^2)$, so Haar logarithms are local
+$O_R(g^2T^2)$ terms. The gauge third-and-higher remainder
+is local $O_R(|g|T^3)$. The internal contours read no pivot,
+and therefore its full exact factor satisfies
+\begin{equation}\label{cmi-gauge-retained}
+ \mathcal G_R(e^{i\Phi_V(z)}V)
+       =\mathcal G_R(e^{iE_{\rm free}z}V).
+\end{equation}
+On an independent background product ball its constant
+and linear terms must also be separated away from the
+physical gauge-zero branch. All these estimates have
+finite local supports and finite anchor multiplicities
+at fixed $R$, without a sum over the old refinement $M$.
+The classical action and inherited interaction require
+their own support estimates.
+
+\subsection{Pre-gauge continuation of the full inherited insertion}
+\label{cmi-continuation-section}
+
+With $V_*=V_p^u$, set, link by link,
+\begin{equation}\label{cmi-prefluctuation}
+ B_p(w,\xi)(b)=
+   \operatorname{Ad}_{u(w;b_-)^{-1}}
+                  \Phi_{V_*(w)}(g\xi)(b).
+\end{equation}
+Direct multiplication proves
+\begin{equation}\label{cmi-fluctuation-identity}
+ \bigl(e^{i\Phi_{V_*}(g\xi)}V_*\bigr)^{u^{-1}}
+             =e^{iB_p(w,\xi)}V_p(w).
+\end{equation}
+The coupling remains inside the nonlinear chart:
+$\Phi_V(g\xi)$ is not replaced by $g\Phi_V(\xi)$.
+The gauge depends on $w$, not on $\xi$. Its real adjoint
+is a color isometry; on the small complex gauge ball it
+has a fixed $R$-dependent bound.
+
+Let $E$ be a holomorphic total inherited functional on a
+current potential product ball of radius $b$, with its
+local gauge invariance on the original common domain.
+Individual activity coefficients need not be gauge invariant.
+On a sufficiently small common overlap, both arguments of
+\eqref{cmi-fluctuation-identity}, and a small connecting
+gauge path, are in this domain. Their $E$ values therefore
+agree, first on real fields and then by holomorphic uniqueness.
+If only $e^E$ is supplied, a compatible nonvanishing
+holomorphic logarithm branch must be supplied before making
+the corresponding statement about $E$.
+
+On a fixed target $b$-ball below all classical domains,
+\eqref{cmi-pregauge-amplitude} and the local chart give
+\begin{equation}\label{cmi-common-ball}
+ \left\|\frac1i\log[e^{iB_p(w,\xi)}V_p(w)]\right\|_\infty
+       \le C_a b/R+C_R|g|T.
+\end{equation}
+Choose $R\ge4C_a$ and $C_R|g|T\le b/4$.
+The pre-gauge argument then stays inside the old $b$-ball
+uniformly in $M$ and volume. Its inherited functional is
+defined and holomorphic on the whole target ball, even
+where the rooted argument falls outside the original
+domain of $E$. It is a continuation of the common-domain
+germ, not an assertion that $E$ was already defined at
+that rooted argument. Replacing $g\xi$ by $\lambda g\xi$
+gives a complex $\lambda$-disc of radius at least
+$cb/(C_R|g|T)$ within the strict chart margins.
+
+The \emph{entire} inherited contribution in
+\eqref{cmi-Gaussian-integral} is continued: replace its
+outside $E(V_*)$ by $E(V_p)$, and replace the inside
+increment by
+\[
+ E(e^{iB_p(w,\xi)}V_p(w))-E(V_p(w)).
+\]
+Leaving $E(V_*)$ outside would be undefined on part of
+the enlarged domain. There is no change of integration
+variable $\xi$. The Gaussian, its determinant, the pivot
+and Haar factors, the absolute gauge penalty and the
+retained cutoff remain exactly those of
+\eqref{cmi-Gaussian-integral}; no adjoint Jacobian or
+transformed window is introduced.
+
+\subsection{What holomorphy does and does not imply}
+\label{cmi-scope-section}
+
+At fixed finite regulator and fixed real retained window,
+the continued integrand is holomorphic in $w$. The proved
+complex precision neighborhood supplies a consistent
+analytic determinant square root. Every compact subdomain
+has an integrable uniform majorant, so the fixed-window
+integral is holomorphic by differentiation under the
+integral. Equality on the nonempty overlap identifies it
+as the continuation of the original small-field germ.
+
+For real data and positive physical input, the exact
+integrand is positive and the retained window has positive
+measure. The integral is then strictly positive. This
+does not imply nonvanishing on a volume-independent
+complex ball: an integral of pointwise nonzero analytic
+factors can vanish. A finite-volume logarithm germ is
+available near a positive point; a uniform complex
+logarithm needs the full cluster hypotheses and budgets.
+
+Similarly, pointwise $\lambda$-Cauchy applied to a total
+$E$ can give only an extensive estimate. An anchored
+interaction bound needs a strict joint $(w,\xi)$ family
+for the pre-gauge argument, with remote background
+supports and an explicit local fluctuation collar.
+That separate support module is not inferred from
+\eqref{cmi-common-ball}. Purely classical coefficients
+have independent fixed classical domains; the quantum
+radius may be chosen below them once, rather than
+reused as their outer analytic radius at every step.
+
+The present module proves the finite-regulator
+normalization and local density identities, identifies
+the physical centered branch, preserves the exact
+window, and supplies the pointwise pre-gauge extension.
+It does not establish a stable quantum iteration,
+uniform nonvanishing without the cluster bounds,
+large-field control, mixed-history matching, coupling
+flow or a continuum measure.

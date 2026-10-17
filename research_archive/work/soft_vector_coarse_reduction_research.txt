@@ -1,0 +1,213 @@
+SOFT VECTOR COMPLETION AND ITS UNIFORMLY BOUNDED COARSE REMAINDER
+17 October 2026. Research proof for independent internal audit.
+No output, master or earlier fragment edited.
+
+STATUS. Sections 1--3 are exact finite identities for the actual Notebook35 determinant. Section 3 proves finite flat positivity; Section 5 gives the finite flat heat bound. The uniform spatial argument in Section 4 uses the chosen infinite structural system (or its explicitly periodized kernels), not an identification of arbitrary actual finite winding kernels with those periodizations. Sections 6--8 use the independently checked actual-Hessian relative-vertex theorem in covariant_hessian_relative_vertices_research.txt to prove a uniform O(1) affine Maxwell coefficient for the vector coarse correction. This is a two-jet statement: its auxiliary off-shell family agrees with the actual family on the already established on-shell affine probe through degree two. It does not identify the remaining fine soft determinant with a bare Wilson or continuum reference.
+
+1. Actual covariant data and units
+
+Work in d=4, current counting coordinates, K=ell^k, mu=1/K, and old depth M. All scalar sites are included. Let D be the actual fine gauge generator, B the covariant moving-reference scalar average from ccs, and Cbar the corresponding corrected bond tangent. Their exact identities are
+
+ B B^T=K^-4 I,  C-Cbar=D_c Z,  Cbar D=D_c B.
+
+Set J=K^2 B^T, J^T J=I, Pi=J J^T, P=I-Pi. The actual residual Hessian is
+
+ H=L-C^T q C,
+ L=s_M''-lambda.f'',       q=s_(MK)'',
+ H>=0, H D=0.
+
+All Hessians are left-relative; their local BCH current terms remain present. The exact actual correction proved in pql is
+
+ D_actual=N_0[logdet Ghat-(1/2)logdet Q_B],
+ Ghat=P D^T D P+mu^2 Pi,
+ Q_B=H+D P D^T+a Cbar^T Cbar.                              (1.1)
+
+Choose one fixed a>=R_q+1, where R_q bounds every flat q_MK. It may be increased by a fixed factor without changing the normalized identity. N_0 subtracts the flat value. Each factor in (1.1) is gapped near zero at fixed K; no massless globally based factor is introduced below.
+
+2. Exact vector soft completion
+
+Define
+
+ V=H+D D^T+a Cbar^T Cbar=Q_B+(D J)(D J)^T,
+ S=I-J^T D^T V^-1 D J.                                    (2.1)
+
+The determinant lemma gives exactly
+
+ det Q_B=det V det S,
+ S=(I+J^T D^T Q_B^-1 D J)^-1.                             (2.2)
+
+On the real germ V and S are positive. On the complex germ use their normalized analytic determinant branches. Equation (2.2) holds through flatness without any cancellation of undefined factors. The coarse matrix S has one fixed color fiber at each final scalar site. It is covariant in that coarse site frame.
+
+The independently proved scalar soft identity uses
+
+ T_s=D^T D+mu^2 Pi,
+ M_s=mu^2 J^T T_s^-1 J,
+ det Ghat=det T_s det M_s.                                (2.3)
+
+Combining (1.1)--(2.3) yields the exact actual four-factor decomposition
+
+ D_actual=N_0[logdet T_s-(1/2)logdet V
+                         +logdet M_s-(1/2)logdet S].       (2.4)
+
+There are no omitted dimensions, powers of K, target Haar factors or extra coarse determinants. For example at K=1, P=0 and Q_B=aI; the formula reduces to the same background-independent amplitude after the coarse factors cancel.
+
+3. Uniform flat positivity of the vector coarse factor
+
+Write V0,Q0,S0 for the flat values in (2.1), reserving Q0 here for Q_B(0), not the scalar averaging map. The full bond-Laplacian domination in mean_zero_gauge_spectral_fragment.tex gives
+
+ Delta_1<=C_Delta Q0,        Q0>=c mu^2 I.
+
+Since D0 Pi0 D0^T<=D0D0^T<=Delta_1,
+
+ Q0<=V0<= (1+C_Delta)Q0.                                 (3.1)
+
+Taking the rectangular Schur factor in (2.2) gives
+
+ (1+C_Delta)^-1 I<=S0<=I.                                 (3.2)
+
+For an explicit verification, let T0=D0J0. From T0T0^T<=C_Delta Q0,
+||Q0^-1/2 T0||^2<=C_Delta. Substitute in the second formula of (2.2). Thus the coarse condition number is uniform in K,M and volume. It is not inferred merely from the rank of the update.
+
+The flat soft vector also dominates Delta_1 directly. At flatness q D_c=0, so C^TqC=Cbar^TqCbar and
+
+ V0=q_M+D0D0^T+A_K^T(aI-q_MK)A_K
+    >=Delta_1+A_K^T A_K,                                 (3.3)
+
+where A_K is the angle straight-string average. Combining (3.3) with Q0's gap gives uniform constants c,C such that
+
+ c(Delta_1+mu^2 I)<=V0<=C(Delta_1+mu^2 I).                (3.4)
+
+For the upper bound, q_M(0)=Dq_M(0)=0 and its uniform second absolute kernel moment imply q_M<=C Delta_1; ||A_K||<=mu and ||q_MK||<=R_q bound the coarse term by C mu^2 I. The upper comparison and its double-zero kernel proof refer to the chosen infinite structural system and explicitly periodized versions. The finite actual lower comparison, gap and Section 5 heat estimate do not require identifying finite winding kernels with this periodization. In the infinite system the result is old-depth-uniform and retains the actual effective action, not a bare replacement.
+
+4. Flat physical-scale weighted resolvents
+
+The following detail is needed before source estimates; a spectral gap plus a raw finite-range bound alone would not give a uniform physical spatial exponent.
+
+In this section q_M(p) denotes the symbol on the chosen infinite structural system. Its explicitly periodized versions satisfy the same estimates; no equality with unrelated actual finite winding kernels is inferred. These established symbols have uniform analytic strips and weighted kernel moments. They vanish quadratically at p=0. Hence on the real fine Brillouin zone, for small fixed |theta|,
+
+ ||q_M(p+i mu theta)-q_M(p)||
+   <=C[mu |theta| sqrt(delta(p))+mu^2 |theta|^2],          (4.1)
+
+where delta(p) is the scalar lattice Laplacian symbol. Away from zero this follows from uniform derivatives; near zero it follows from q_M(0)=Dq_M(0)=0. The same estimate holds for D0D0^T. The form perturbation, measured on both sides by (Delta_1+mu^2)^-1/2, is O(|theta|).
+
+Conjugate fine fields by exp(theta.x/K) and coarse fields by exp(theta.y). Straight-average row and column counting, together with its range K, gives
+
+ ||A_K,theta||<=C mu,
+ ||A_K,theta-A_K||<=C|theta|mu.                           (4.2)
+
+The coarse symbol q_MK has a common analytic strip, so its twisted difference is O(|theta|). The coarse correction in (3.3) therefore changes by O(|theta|mu^2). Equations (3.4),(4.1),(4.2) imply uniform invertibility of the twisted V0 for |theta|<theta0. More precisely, all energy sandwiches built from
+
+ E0=(ordinary componentwise first differences, mu I)
+
+and V0^-1 are uniformly bounded on this strip. The gradient is that of a bond field; scalar-to-bond D0 is a fixed contraction of these energy legs.
+
+Use Bloch decomposition by K-blocks. The internal fiber dimension grows with K, but the strip bounds are Hilbert operator bounds, not sums of individual matrix entries. Operator-valued Fourier integration therefore gives exponentially summable final-block coefficients with constants independent of K and fiber dimension. Explicit periodic samples of these infinite kernels obey the same bounds by periodization. This sentence does not identify them with every actual finite-regulator kernel. The already proved fixed-K local passage transfers the resulting infinite source coefficient to the actual local Maxwell coefficient.
+
+In particular R0=D0^T V0^-1 D0 has a uniform weighted final-block norm. The finite-range normalized maps J0 have norm one, so S0=I-J0^T R0J0 has a common analytic coarse-momentum strip and uniform weighted norm. Shrinking the strip, (3.2) supplies uniform weighted S0^-1 bounds. No current-site K^4 factor has been introduced.
+
+5. Heat and inverse moments
+
+Since V0>=Q0 and Q0 obeys the proved mean-zero heat bound, eigenvalue min--max gives
+
+ N^-4 Tr exp(-u K^2 V0)
+ <=C[K^4/(1+K^2u)^2+N^-4] exp(-c u).                     (5.1)
+
+The same Mellin consequences as mgs hold: inverse powers p>2 are uniformly bounded per final block, p=2 has the logarithmic ultraviolet bound, and positive final-time tails decay exponentially. These statements concern the actual flat soft vector, uniformly in old M, K and volume. They do not alone estimate curvature derivatives.
+
+6. The auxiliary off-shell family and actual affine matching
+
+For bounded physical C1 fields A, current links are exp(i mu A). Define
+
+ Vtilde(A)=S_M''(exp(i mu A))+D_A D_A^T
+       +Cbar_A^T[aI-S_MK''(M_K(exp(i mu A)))]Cbar_A,
+ Stilde(A)=I-J_A^T D_A^T Vtilde(A)^-1 D_A J_A.             (6.1)
+
+These formulas define analytic jets at zero. Every Hessian remains the actual effective classical Hessian in its left-relative coordinate. The formula is gauge covariant, but it is not asserted to equal the actual residual completion off shell.
+
+On the established commuting affine probe, the actual multiplier lambda and the actual fine/coarse action currents vanish through the two jets used for the Maxwell coefficient. In particular q D_c=0 through those jets. Since C-Cbar=D_cZ,
+
+ C^T q C=Cbar^T q Cbar,       L=S_M''                    (6.2)
+
+through that order. The actual pre-gauge stationary polynomial jets are precisely the affine fine connection, in the known normalization. Consequently V and S from (2.1) and Vtilde,Stilde from (6.1) have the same first two affine jets. This is the only substitution used to transfer the estimates below to the actual determinant.
+
+7. Actual relative vertices and coarse source bounds
+
+The corrected proof covariant_hessian_relative_vertices_research.txt was independently read in full after rotation rejected its earlier common-difference formula. That earlier pass is withdrawn. Its Section 4 now uses an ordered Laurent factorization, with zero constant and linear flat momentum jets; these hold for the actual q_M. The corrected proof was checked again, including its source-localized factors. Its inputs apply to actual S_M'': left-coordinate covariance, exponentially rooted kernels through degree four (including local BCH current terms), color diagonality of q_M, and q_M(0)=0 componentwise. It proves, for j=1,2 and physical C1 norm a_*,
+
+ [t^j]S_M''(exp(i t mu A))=d0^T Z_j+Z_j^T d0+E_j,
+ ||Z_1||<=C mu a_*,     ||E_1||<=C mu^2 a_*,
+ ||Z_2||<=C mu^2 a_*^2, ||E_2||<=C mu^2 a_*^2.             (7.1)
+
+The factors have exponentially rooted final-block source/operator bounds. Its formal path gauges remove pure-gauge vertices before absolute estimation: transformed link jets are O(mu^2 times a polynomial distance), and the repaired ordered Laurent factorization q_M=d0^T H0 d0 and its symmetric covariant completion supply the derivative legs. Arbitrary nonsmooth bounded A is not allowed.
+
+The fine D_A jets have the same elementary first-order structure: its first variation is multiplication of size C mu a_*, its second has size C mu^2 a_*^2. The induced D_A D_A^T terms therefore fit (7.1).
+
+The current-ratio corrected map has ||Cbar_A||<=C mu, with first and second physical-background derivatives also O(mu). This follows from the actual ordinary reference trajectory and the moving-reference physical average product, not from the uncorrected ordinary adjoint. Its row/source dependence is in two final blocks. The ordinary coarse output M_K(exp(i mu A)) is uniformly analytic and bounded by C||A|| at final physical scale, with two-block dependence. The actual coarse Hessian has uniform exponentially rooted source bounds. Thus the last term of (6.1), and its first two variations, have weighted physical-block norm O(mu^2), with the appropriate a_* powers. These are zero-order E_j terms in (7.1).
+
+The normalized J_A has block norm and first-two physical derivatives bounded by constants independent of K; its coefficients depend only on the background inside that block. Although a raw derivative of D_A J_A can look large at a block interface, it is not estimated separately. Keep the factorization
+
+ R(A)=D_A^T Vtilde(A)^-1 D_A,
+ Stilde(A)=I-J_A^T R(A)J_A.                               (7.2)
+
+At zero V0>=D0D0^T, and V0>=c mu^2 I. Thus
+
+ ||V0^-1/2 D0||<=1,
+ ||V0^-1/2 D'_0||<=C a_*.                               (7.3)
+
+Insert (7.1) between resolvents and use the weighted energy bounds of Section4. The first derivative is
+
+ R'=D'^T V0^-1 D0+D0^T V0^-1 D'
+                         -D0^T V0^-1 V' V0^-1 D0.       (7.4)
+
+The second derivative has the two V' insertions, one V'' insertion, D'' legs and mixed D'/V' legs, all with the order forced by differentiating (7.4). Each is bounded uniformly by the corresponding physical source norms. No derivative of J is placed under an unbounded fine differential before a resolvent is used: the J derivatives occur outside R in (7.2).
+
+For a smooth physical partition with bounded overlap and collar C1 norms, the rooted versions of (7.1) and the weighted energy resolvents give, for localized unit physical directions A_x,A_y,
+
+ ||Stilde'_x(i,j)|| <=C exp[-m tau(i,j,x)],
+ ||Stilde''_(x,y)(i,j)|| <=C exp[-m tau(i,j,x,y)].         (7.5)
+
+Here tau is the minimal final-block connecting-tree length, including every displayed operator root and source. After spending a smaller exponent these imply
+
+ sum_(i,j) exp(m'[d(i,x)+d(j,x)]) ||Stilde'_x(i,j)|| <=C,
+ sum_(i,j) ||Stilde''_(x,y)(i,j)|| <=C exp(-m' d(x,y)).
+
+The full tree estimate (7.5), rather than only its summed consequence, is retained when a diagonal log density is rooted at zero.
+
+All i,j,x,y are final-block labels; the scalar matrix fiber is the fixed color space. Distances needed to connect a source to a resolvent leg are paid by the rooted vertex estimate and a spare part of the resolvent exponential. Multiplication by J,J',J'' preserves these bounds because they are own-block normalized maps. The fine-cell Banach norm, rather than individual fine-coordinate counting, is essential to (7.5).
+
+Equations (3.2),(4.1)--(4.2) give the corresponding uniformly summable kernels of S0^-1. Therefore the coarse determinant Hessian
+
+ K_S(x,y)=Tr[S0^-1 Stilde''_(x,y)
+              -S0^-1 Stilde'_x S0^-1 Stilde'_y]           (7.6)
+
+obeys |K_S(x,y)|<=C exp(-m' d(x,y)), with uniform second displacement moments. The two traces are in the coarse fixed-color fiber; there is no hidden K^4 multiplicity.
+
+
+For the rooted diagonal density, do not cyclically identify a partial trace with the total trace. Use the resolvent logarithm. With R_t=(S0+t I)^-1, its second source derivative at block zero is the partial trace of the integral
+
+ R_t Stilde''_(x,y) R_t
+   -R_t Stilde'_x R_t Stilde'_y R_t
+   -R_t Stilde'_y R_t Stilde'_x R_t,                       (7.7)
+
+over t>=0. The uniform weighted norm of R_t is at most C/(1+t), after reducing the common exponent once. The full tree bounds (7.5) attach both sources and every intermediate operator endpoint to this root; the integral gives a bound C exp(-m'' tau(0,x,y)). Thus the rooted density, not only the total Hessian, has uniform polynomial moments. This explicit root is what licenses the alternative affine-partition argument in Section8; decay merely in |x-y| would not suffice for that argument.
+8. Uniform actual affine remainder and final reduction
+
+The auxiliary Stilde is covariant under coarse site gauges. Its fixed-block diagonal log density is therefore gauge invariant through the required jets. The physical-source bounds (7.5) allow polynomial first-degree fields by absolute moments; the same density Ward/reanchoring identity as cgd identifies its affine t^2 coefficient with its Maxwell moment. Consequently
+
+ |beta((1/2)N_0 logdet S)|<=C_S,                          (8.1)
+
+uniformly in old M and K, for the actual joint infinite structural systems and polynomial-jet convention already fixed. Here S means the actual correction: the transfer from Stilde is justified by (6.2), not by off-shell equality.
+
+An equivalent route avoids assigning a Maxwell extraction to arbitrary physical fields: apply (7.5) directly to a smooth physical partition of the affine potential, whose collar C1 norms grow at most linearly in the source block distance, then sum their quadratic products against the exponential source bound at the chosen density root. This bounds its affine density coefficient uniformly. Covariance and cgd give (8.1). The linear source functional vanishes by semisimple conjugation invariance, so nonlinear changes of the physical source representative cannot feed a second-order constant term.
+
+Together with the scalar coarse theorem, (2.4) now reduces the actual coefficient to
+
+ beta(D_actual)
+   =beta(N_0[logdet T_s-(1/2)logdet V])+O(1),              (8.2)
+
+where T_s and V are the ACTUAL soft scalar/vector completions and the error is uniform in M,K. For computing the vector beta one may use Vtilde through the two on-shell affine jets. This is substantial finite-part reduction, but the fine soft pair has not been replaced by a standard massive vector/ghost reference.
+
+Still required for that final comparison are cancellation-preserving bounds on the fine determinant difference, including the nonlocal-but-exponentially-local actual q_M and its curvature vertices. A theorem for a fixed smooth-scaled bare one-loop integrand does not by itself give constants uniform in this family. Neither (8.2) nor the flat spectra prove the sign or the universal logarithmic coefficient of the actual flow. Finite-volume normalized extraction needs its existing regulator/local-limit interface; the uniform claim here is for the actual local polynomial Maxwell coefficient, not an unproved arbitrary finite winding normalization.
+
+
+

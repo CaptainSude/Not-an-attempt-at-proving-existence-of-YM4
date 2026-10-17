@@ -1,0 +1,381 @@
+% No preamble. Prefix aqb-. Infinite analytic interactions; classical descent only.
+\section{A Banach quotient for analytic interactions}
+\label{aqb-section}
+
+Fix the cell size $J$, a bound $D$ on the number of scalar field
+coordinates per cell, a cardinality exponent $a>0$, and a radius
+$b>0$. Let $\mathcal C$ be the countable set of nonempty finite
+connected cell sets. A declared carrier may exceed the variables
+actually read by its coefficient. Let $H^\infty_b(H)$ denote the
+bounded holomorphic functions on the open scalar-coordinate
+radius-$b$ polydisc of $H$. Define
+\begin{equation}
+ \mathcal A_{a,b}=\left\{E=(E_H)_{H\in\mathcal C}:
+ \|E\|_{a,b}:=\sup_i\sum_{H\ni i}e^{a|H|}
+                       \|E_H\|_b<\infty\right\}.
+ \label{aqb-activity-space}
+\end{equation}
+Individual coefficients need not have any symmetry. Constants
+are allowed. All constants below may depend on the fixed $J,D,a$.
+
+\subsection{Closed equality kernel and summable fields}
+\label{aqb-quotient-section}
+
+For a finitely supported field $A$, $\|A\|_\infty<b$, put
+\begin{equation}
+ \Phi_E(A)=\sum_H\bigl[E_H(A|_H)-E_H(0)\bigr].
+ \label{aqb-total}
+\end{equation}
+If $K$ is its finite cell support, only carriers meeting $K$
+contribute, and
+\begin{equation}
+ \sum_H|E_H(A|_H)-E_H(0)|\le2|K|\|E\|_{a,b}.
+ \label{aqb-evaluation-bound}
+\end{equation}
+The series is normally convergent on every finite-coordinate
+polydisc.
+
+\begin{proposition}[Complete representation quotient]
+\label{aqb-quotient-proposition}
+The space $\mathcal A_{a,b}$ is Banach. The subspace
+\begin{equation}
+ \mathcal N_{a,b}=\{E:\Phi_E(A)=0
+                  \text{ for every compact }A,\ \|A\|_\infty<b\}
+ \label{aqb-null-space}
+\end{equation}
+is closed, and
+\begin{equation}
+ \mathcal Q_{a,b}=\mathcal A_{a,b}/\mathcal N_{a,b},
+ \qquad
+ \|[E]\|_{\mathcal Q}=\inf_{F\in\mathcal N_{a,b}}
+                                      \|E+F\|_{a,b}
+ \label{aqb-quotient-norm}
+\end{equation}
+is a Banach space. Its invariant subspace, defined by translation,
+hypercubic, global-adjoint and local-gauge invariance of the
+normalized total, is closed.
+\end{proposition}
+
+\begin{proof}
+A norm-Cauchy sequence is Cauchy in each $H^\infty_b(H)$:
+choose one root in $H$ in \eqref{aqb-activity-space}. Component
+limits exist. Fatou over carriers, followed by the root supremum,
+proves both the norm bound and norm convergence. The null space
+is the intersection of the kernels of the bounded evaluations
+\eqref{aqb-evaluation-bound}. The usual quotient-completeness
+argument uses a summably Cauchy subsequence and representatives
+with summable successive differences; it requires no minimizing
+representative. Each total symmetry is an equality of bounded
+evaluations, for all compact configurations and transforms in
+their common domain. Its preimage is closed and contains
+$\mathcal N_{a,b}$. Reality specifies a closed real form.
+\end{proof}
+
+The quotient removes all carrierwise constants and all other
+representations of the zero normalized total. It does not select
+a physical vacuum counterterm; a vacuum sector, if needed, stays
+separate. Equality of germs on every finite-coordinate subspace
+is equivalent to \eqref{aqb-null-space} by analytic uniqueness.
+
+Use the cell norm $\|A\|_1=\sum_i\|A|_i\|_\infty$.
+For $\|A\|_\infty,\|B\|_\infty\le\rho<b$, directional
+Cauchy on the convex segment gives
+\begin{align}
+ |E_H(A|_H)-E_H(B|_H)|
+ &\le\frac{\|E_H\|_b}{b-\rho}
+                          \|(A-B)|_H\|_\infty\notag\\
+ &\le\frac{\|E_H\|_b}{b-\rho}
+                          \sum_{i\in H}\|A_i-B_i\|_\infty.
+ \label{aqb-local-Lipschitz}
+\end{align}
+Use a strictly smaller directional circle first, then take its
+radius to the displayed margin. Summing at each cell proves
+\begin{equation}
+ |\Phi_E(A)-\Phi_E(B)|
+       \le\frac{\|E\|_{a,b}}{b-\rho}\|A-B\|_1.
+ \label{aqb-summable-Lipschitz}
+\end{equation}
+Thus \eqref{aqb-total} extends by an absolutely convergent series
+to summable fields in every strict interior ball. Finite field
+truncations converge in \eqref{aqb-summable-Lipschitz}. A null
+family remains zero on these fields. The extension therefore
+depends only on the quotient class, and the estimate holds with
+the quotient norm after taking the infimum over representatives.
+
+\subsection{A continuous total Maxwell coefficient}
+\label{aqb-beta-section}
+
+For each fixed order $n\le4$, scalar Cauchy and the exact finite
+monomial count give a summable total derivative kernel. Indeed
+the ordered derivative sum on a carrier is at most
+$(D|H|+n)^n b^{-n}\|E_H\|_b$. Connectedness bounds every
+slot displacement by $c_dJ|H|$. Spending half the carrier
+exponent on spatial distance and half on the fixed polynomial
+gives, for sufficiently small fixed $\sigma=\sigma(a,J)>0$,
+\begin{equation}
+ \sup_{i_1}\sum_{i_2,\ldots,i_n}
+ e^{\sigma\sum_{j\ge2}|x_j-x_1|}
+ |K_n(E;i_1,\ldots,i_n)|
+       \le C_n(a,D,J)b^{-n}\|E\|_{a,b}.
+ \label{aqb-kernel-bound}
+\end{equation}
+All scalar and color slots are included. Fixed moments follow
+with a further exponent loss. This is a fixed-order estimate,
+not a dimension-free absolute Taylor estimate at all orders.
+
+Each kernel component is a derivative on a finite-coordinate
+subspace and hence depends only on $[E]$. Taking a representative
+infimum gives \eqref{aqb-kernel-bound} with $\|[E]\|_{\mathcal Q}$.
+For a simple gauge group and an invariant total, define in the
+trace-normalized color component
+\begin{equation}
+ \beta([E])=\frac12\partial_{p_\nu}^2
+                       \Gamma^E_{2,\mu\mu}(0),
+ \qquad \mu\ne\nu.
+ \label{aqb-beta-definition}
+\end{equation}
+Use positive-bond midpoints $\xi(x,\mu)=x+e_\mu/2$.
+The total Ward algebra of Theorem~\ref{tkw-theorem} applies
+directly to these infinite kernels. It identifies
+\eqref{aqb-beta-definition} as the Maxwell coefficient and makes
+the distinct pair immaterial. No subsequence is needed once
+the infinite interaction is specified. For real interactions
+this coefficient is real.
+
+It is a continuous linear functional on the invariant quotient:
+\begin{equation}
+ |\beta([E])|\le C_\beta(a,D,J)b^{-2}
+                                      \|[E]\|_{\mathcal Q}.
+ \label{aqb-beta-bound}
+\end{equation}
+For example, a second derivative component is bounded by
+$2b^{-2}\|E_H\|_b$, there are at most $D|H|$ second slots,
+and their squared midpoint separation is at most
+$(c_dJ|H|)^2$. Thus, up to a fixed color-normalization factor,
+one can take
+\begin{equation}
+ C_\beta=D(c_dJ)^2\sup_{m\ge1}m^3e^{-am}.
+ \label{aqb-beta-constant}
+\end{equation}
+The factor $b^{-2}$ is essential. For a semisimple product use
+the finite vector of coefficients and one reference per simple
+ideal.
+
+\subsection{Full-reference extraction without a small-radius loss}
+\label{aqb-extraction-section}
+
+Let $[S]$ be an invariant reference with $\beta([S])=1$.
+Assume a representation on one fixed radius $\rho$ satisfies
+$\|S\|_{a,\rho}\le M_S$, uniformly in preceding refinement,
+and its total first derivative vanishes. This is the uniform
+fixed-radius classical support input; normalization of the
+Hessian alone does not imply it.
+
+Define the homogeneous phase projections coefficientwise by
+\begin{equation}
+ (P_nE_H)(A)=\frac1{2\pi}\int_0^{2\pi}
+                     e^{-int}E_H(e^{it}A)\,dt.
+ \label{aqb-phase-projection}
+\end{equation}
+They retain $H$ and have norm at most one. Replace $S_H$ by
+$S_H^{\ge2}=\sum_{n\ge2}P_nS_H$. The normalized total has
+the same class, since constants are removed and the total
+linear sector is zero. Homogeneity yields, for $b\le\rho/2$,
+\begin{equation}
+ \|S^{\ge2}\|_{a,b}
+ \le\frac{(b/\rho)^2}{1-b/\rho}M_S
+ \le C_Sb^2,
+ \qquad C_S=\frac{2M_S}{\rho^2}.
+ \label{aqb-reference-bound}
+\end{equation}
+No vanishing of individual linear coefficients or individual
+gauge invariance was assumed. A joint subsequential limit
+preserves this bound by Fatou.
+
+The full-reference projection
+\begin{equation}
+ \mathcal P_S[E]=[E]-\beta([E])[S]
+ \label{aqb-extraction}
+\end{equation}
+satisfies $\beta\mathcal P_S=0$, $\mathcal P_S^2=\mathcal P_S$,
+and
+\begin{equation}
+ \|\mathcal P_S\|\le C_{\rm ext},
+ \qquad C_{\rm ext}=1+C_\beta C_S.
+ \label{aqb-extraction-bound}
+\end{equation}
+The constant is independent of small $b$. Apply
+\eqref{aqb-beta-bound} and \eqref{aqb-reference-bound} to
+representatives approaching the quotient infimum. The whole
+invariant reference is subtracted, so its nonlinear Ward
+identities remain exact.
+
+\subsection{Classical substitution on the quotient}
+\label{aqb-descent-section}
+
+Fix $L$ and an actual infinite pre-gauge background map $a_L$.
+Assume its coherent whole-fiber support family satisfies
+\begin{equation}
+ a_L|_i=\sum_{X\ne\varnothing}a_{i,X}(w_X),\qquad
+ a_{i,X}(0)=0,\qquad
+ \sup_i\sum_X e^{\kappa\tau(\{i\}\cup X)+A|X|}
+                \|a_{i,X}\|_b\le Cb/L,
+ \label{aqb-background-family}
+\end{equation}
+and $\|a_L(w)\|_\infty\le\rho_0<b$. The maximum over the
+whole current output fiber is inside the support sum, and
+overlapping collars use one coefficient assignment. For compact
+$w$ supported in $K$, a nonzero term has $X\cap K\ne\varnothing$;
+hence
+\begin{equation}
+ \|a_L(w)|_i\|\le(Cb/L)e^{-\kappa\operatorname{dist}(i,K)}.
+ \label{aqb-background-summability}
+\end{equation}
+At fixed $L$ there are finitely many current coordinates per
+fiber, so $a_L(w)$ is summable. Consequently
+\begin{equation}
+ (\mathcal T_L\Phi_E)(w)=\Phi_E(a_L(w))
+ \label{aqb-scalar-substitution}
+\end{equation}
+depends only on $[E]$, by \eqref{aqb-summable-Lipschitz}.
+This is algebraic classical descent.
+
+For bounded descent into an activity quotient, suppose a
+connected strict representation $\mathscr L_LE$ of
+\eqref{aqb-scalar-substitution} obeys
+\begin{equation}
+ \|\mathscr L_LE\|_{a_{\rm out},b}
+                         \le B_L\|E\|_{a,b}.
+ \label{aqb-representation-input}
+\end{equation}
+Then $\mathcal T_L[E]=[\mathscr L_LE]$ is well defined and has
+norm at most $B_L$. Distinct valid output assignments have the
+same normalized total; equivalent inputs give equal output
+totals by summable-field continuity. The class map is linear
+because its scalar total is linear in $E$, even without a linear
+choice of representatives. Taking near-minimal input
+representatives proves the norm bound. Scalar amplitude alone
+does not prove \eqref{aqb-representation-input}.
+
+The compactness construction of Section~\ref{aic-section}
+provides simultaneous infinite interactions and coherent maps
+under its fixed-parameter finite-regulator hypotheses. Its
+summable-field composition limit transfers finite classical
+identities only on one jointly chosen system, with common strict
+domain margins. Unrelated subsequences cannot be composed.
+Preserving invariant totals needs more than an abstract orbit
+relation. The connecting infinite gauge must be one to which
+the input total's gauge identity applies. A sufficient condition
+is approximation by allowed compact gauges with transformed
+fields converging in $\ell^1$ inside a common strict margin;
+then \eqref{aqb-summable-Lipschitz} passes the identity. A joint
+finite invariant approximation of a particular interaction and
+the maps is another sufficient condition for that interaction.
+For an action on the entire invariant quotient, this requirement
+must hold for every input class. A joint approximation of one
+input, or unrelated finite subsequences, does not establish a
+universal invariant-quotient action.
+
+\subsection{Conditional classical contraction after extraction}
+\label{aqb-contraction-section}
+
+The following statement keeps the infinite-family and scale
+requirements explicit. Fix $J,a$ and the primitive block ratio.
+Use one joint infinite system with normalized references $S_M$
+and $S_{ML}$ satisfying \eqref{aqb-reference-bound} uniformly.
+Assume the coherent physical $C^{1,\alpha}$ families of
+Proposition~\ref{pgh-support-proposition}, with primitive
+constants independent of $L,M$, and impose the fixed support
+reserves of Theorem~\ref{lst-theorem} after choosing $J$.
+Assume also the core/tail budgets of the fifth-order background
+transport theorem of Notebook28, with unchanged $a,b$.
+Its constant $C_{\rm high}$ is independent of $L$ once these
+reserves are fixed. Increasing $L$ weakens its compression
+requirement; the same fixed $J$ and logarithmic tail cutoff
+remain admissible. Choose $b$ after the final finite $L$, so
+$b\le r_A/L_*$ with $L_*=L/(8C_A)$ and all other classical
+margins hold. Scalar substitution and preservation of the
+invariant domain satisfy the additional gauge-identity requirement
+just specified. An operator assertion on the whole invariant
+quotient assumes it for every class; a joint finite approximation
+may instead verify the following pointwise estimate on its
+specified collection of classes.
+
+\begin{theorem}[Classical quotient estimate]
+\label{aqb-classical-theorem}
+Under these hypotheses, in dimension four,
+\begin{equation}
+ \|\mathcal T_L\mathcal P_{S_M}[E]\|_{\mathcal Q}
+ \le C_{{\rm ext,in}}
+       \bigl[C_{\rm low}(J)L^{-\alpha}
+                    +6C_{\rm high}L^{-1}\bigr]
+                     \|[E]\|_{\mathcal Q}.
+ \label{aqb-classical-bound}
+\end{equation}
+If a normalized output reference is used, then
+\begin{equation}
+ \|\mathcal P_{S_{ML}}\mathcal T_L\mathcal P_{S_M}\|
+ \le C_{{\rm ext,out}}C_{{\rm ext,in}}
+       \bigl[C_{\rm low}(J)L^{-\alpha}
+                    +6C_{\rm high}L^{-1}\bigr].
+ \label{aqb-projected-contraction}
+\end{equation}
+The constants are fixed after $J$ and before $L,b$. A sufficiently
+large finite allowed $L=R^q$, followed by a sufficiently small
+common positive $b$, makes the last bound less than one.
+\end{theorem}
+
+\begin{proof}
+Put $[F]=\mathcal P_{S_M}[E]$ and choose any representative.
+The phase projections \eqref{aqb-phase-projection} retain carriers,
+have norm at most one, and give a coefficientwise fifth-order
+remainder $R_5=I-\sum_{n=0}^4P_n$ with norm at most six.
+These projections also descend to the unrestricted quotient:
+apply the phase integral to a zero normalized analytic total.
+They need not preserve gauge invariance separately.
+
+The total linear term of $F$ is zero by global adjoint invariance,
+its vacuum is removed, and $\beta(F)=0$. The total Ward algebra
+therefore gives the low-kernel cancellations in
+Theorem~\ref{lst-theorem}. The kernel bound
+\eqref{aqb-kernel-bound} supplies that theorem's $\epsilon$ with
+at most a fixed $C_{\rm ker}(J)\|F\|_{a,b}$. Its new connected
+representation has norm at most
+$C_{\rm low}(J)L^{-\alpha}\|F\|_{a,b}$.
+The coefficientwise $R_5$ part has a connected representation
+of norm at most $6C_{\rm high}L^{-1}\|F\|_{a,b}$ by the
+fifth-order transport theorem. The zero total linear term stays
+zero after substitution by \eqref{aqb-summable-Lipschitz}; it
+need not vanish on each carrier.
+
+All scalar decompositions are legitimate on summable inputs:
+the phase projections and $R_5$ lie in the anchored space,
+Section~\ref{aqb-quotient-section} gives their continuous
+extensions, and the new output families converge normally on
+compact fields. Adding the two representations and taking the
+infimum over representatives of $[F]$ gives the bracket in
+\eqref{aqb-classical-bound}. Apply
+\eqref{aqb-extraction-bound} at the input, and if desired at
+the output, to obtain both displays.
+\end{proof}
+
+The output projection is explicit: the theorem does not claim
+that classical substitution itself preserves $\beta=0$.
+The scalar semigroup of Theorem~\ref{csg-theorem}, passed on
+a joint system as in Section~\ref{aic-section}, permits the
+finite choice $L=R^q$ after $R,J$ are fixed. The bound is on a
+class admitting a newly justified localization, not on an
+arbitrarily fixed sequential carrier assignment.
+
+\subsection{Quantum descent is a separate obligation}
+\label{aqb-scope}
+
+No quantum map on $\mathcal Q_{a,b}$ has been defined here.
+Equality of infinite normalized totals on compact fields does
+not by itself identify finite-regulator exponentials, their
+sharp restricted integrals, chosen vacuum normalizations, or
+their limits. Thus this quotient does not yet permit arbitrary
+equivalent representatives to replace the actual quantum output
+inside its next finite integration. Quantum descent and its
+continuity and normalization compatibility, the full amplitude
+recursion, and the coupling trajectory remain separate.

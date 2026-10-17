@@ -1,0 +1,13 @@
+# Independent fidelity and algebra audit: conditional finite tuning
+
+17 October 2026. Read finite_trajectory_shooting_fragment.tex against finite_trajectory_shooting_research.md and the available finite induction, continuity, parity and leakage conclusions. **Pass.** No correction requested.
+
+The decrement error separates finite classical leakage, the fixed-outer-radius parity error, and inherited input dependence with the right factors. The \(b^2\) activity envelope cancels the \(b^{-2}\) finite moment norm. Raising a compatible period threshold and then lowering the positive coupling ceiling controls these errors independently of the finite history length.
+
+The required positive averaged drift is explicitly an additional unproved hypothesis for the actual finite coefficients. No infinite coefficient or exact finite classical marginal identity is substituted. Choosing \(q\) as a multiple of the existing activity block length preserves the same activity envelope by repetition; it does not invoke a larger direct endpoint theorem or shrink the field radius.
+
+The clipped evaluation uses \(\max(\gamma,\Gamma_{\rm w})^{-1/2}\) only in the evaluated map, while leaving the scalar update unchanged. Thus it is defined for every real auxiliary scalar, always evaluates a proved weak-coupling map, and keeps the activity in the finite-induction domain. On each compact shooting interval the increment bound confines all scalar values and gives a compact positive range of evaluated couplings. The finite continuity theorem therefore applies without continuity at \(g=0\) or continuous representative selection.
+
+The endpoint inequalities have the correct direction: starting at \(\Gamma_*+mB_-\) gives final scalar at most \(\Gamma_*\), and starting at \(\Gamma_*+mB_+\) gives final scalar at least \(\Gamma_*\). Continuity gives an exact terminal value. Positive future block decrements then imply every block-start scalar is at least \(\Gamma_*\); the per-step magnitude bound and terminal margin \(\Gamma_*\ge\Gamma_{\rm w}+qD_{\rm abs}\) keep every intermediate scalar above the weak threshold. Hence the selected trajectory was never clipped and obeys the actual density-update sign \(\gamma_{\rm next}=\gamma-\beta(F)\).
+
+The bare-coupling interval and its \(m^{-1/2}\) size follow by the decreasing inverse-square-root map. The fragment keeps the nested-period requirement, finite exact representative/vacuum interpretation, lack of uniqueness or consistency across horizons, and all continuum/other-sector limitations. Its conclusion is conditional on the explicitly stated finite averaged-drift hypothesis; the existing bounds and cocycle do not supply that hypothesis.

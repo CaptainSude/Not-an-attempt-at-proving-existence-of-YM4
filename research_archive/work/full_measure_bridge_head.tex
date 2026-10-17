@@ -1,0 +1,82 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 38: positive full-measure embeddings and local defect bounds}
+\author{Research proof draft}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We move beyond the homogeneous local integral to exact statements
+about finite positive Wilson measures. A specified measurable
+completion of the actual local coarse map admits positive linear
+good and remainder operators whose sum is the exact pushforward.
+Their iterates retain every history and the full normalization.
+Under literal input-domain containment and the established local
+Ward identities, the good measure has the actual local analytic
+germ on each fixed finite regulator.
+
+Independently, a site-plane slab argument bounds prescribed
+large-curvature cells under the normalized Wilson measure, uniformly
+in the total volume. A compact-group conditional Laplace theorem
+controls fluctuations in a fixed box with small boundary data.
+A boundary-only tree gauge joins these results: prescribed
+separated boxes have a joint exponentially small probability of
+failure of explicit local gauge/minimizer windows. These are
+estimates on the entire bare Wilson measure, with the denominator
+included.
+
+The local box windows have not been identified with the averaged
+constraint windows of the iterated renormalization map. The
+all-history decomposition has not been bounded in a multiscale
+complete-density norm. We record this remaining interface, a
+precise match to the published large-field induction, and a
+regularity counterexample ruling out one insufficient shortcut.
+The continuum existence theorem is not established.
+\end{abstract}
+
+\section*{Relation to the construction and independence of inputs}
+
+Notebook 37 establishes a positive logarithmic drift and arbitrarily
+long finite weak homogeneous local histories within the working
+proof chain and its explicitly stated upstream hypotheses. Those
+histories alone do not represent the complete Wilson measure.
+Here we address that next interface.
+
+There are two distinct kinds of result below. The positive
+embedding uses the previously defined ordinary composite coarse
+map, stationary chart, pivot measure and local gauge Ward identity.
+Its local-germ assertion is conditional on literal containment of
+the real integration window in the represented input density.
+By contrast, the bare Wilson probability results are proved
+directly from compact-group integration, finite lattice geometry,
+and positivity. They do not require the earlier multiscale
+determinant calculation.
+
+All field and coupling arguments in the new probability bounds
+are real. The compact gauge groups and link Haar measures are
+normalized to mass one. Unless explicitly stated otherwise, a
+fixed-box constant may depend on its side length and the group,
+but not on the surrounding torus volume. Such a constant is not
+claimed uniform in a growing physical box at vanishing lattice
+spacing. The general \(SU(N)\) bare-measure lemmas do not extend
+all earlier \(SU(2)\) construction inputs to arbitrary groups.
+
+The source repository remains pinned at
+\texttt{e392ef45013a581664bab76b90867170b30fe10e}. This document is
+a mathematical research draft with separate internal audits, not
+an assertion of external verification of the preceding notebooks.
+The exact status of each result and each missing implication is
+part of its statement.
+

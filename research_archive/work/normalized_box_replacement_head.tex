@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 39: normalized local replacement in the bare Wilson measure}
+\author{Research proof draft}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We complete a normalized replacement operation for arbitrary finite
+collections of separated fixed boxes in the positive bare Wilson
+measure. On a good boundary the exact conditional law is restricted
+to its local gauge/minimizer window and divided by its actual
+conditional probability. On a bad boundary the law is unchanged.
+The operation preserves the exterior marginal, gauge invariance,
+and total raw partition mass. A positive expansion accounts for
+every discarded interior configuration.
+
+An explicit coupling has discrepancy marks dominated by independent
+Bernoulli variables of parameter \(a=Ce^{-cT^2}\). For the exterior
+jointly with any selected set \(A\) of box interiors, the exact
+total variation distance is
+\(\mathbb E[1-\prod_{i\in A}(1-p_i)]\le a|A|\).
+We also prove local entropy, sparse-defect, cluster,
+bounded-source and connected-cumulant comparison bounds. All are
+independent of the number of other boxes.
+
+The probability inputs are the full normalized Wilson bounds of
+Notebook 38, not Gaussian surrogates. Geometry and box size remain
+fixed. The operation has not been identified with a nonlinear
+coarse-average fiber or propagated through general mixed
+renormalization histories. This completes a restricted
+finite-measure theorem and gives a definite stopping point for
+handoff; it does not complete continuum Yang--Mills existence.
+\end{abstract}
+
+\section*{Inputs and proof boundary}
+
+The two quantitative inputs are the fixed-box conditional tail
+theorem and joint boundary-plaquette probability theorem
+proved in Notebook 38. Both concern the actual compact positive
+Wilson measure and include their normalization. Their box
+geometry, boundary gauge, adjoint-invariant window, period
+conditions and constants are restated below.
+The new argument is an exact normalized operation built from
+those inputs, together with its local comparison estimates.
+It does not use the earlier homogeneous determinant calculation.
+
+The group may be \(SU(N)\) for these bare-measure statements,
+with \(\tau=\operatorname{Tr}/N\). This does not extend the
+earlier \(SU(2)\) multiscale construction to every group.
+An internal audit is included in the research archive.
+Such review and successful typesetting do not certify
+all upstream arguments independently.
+

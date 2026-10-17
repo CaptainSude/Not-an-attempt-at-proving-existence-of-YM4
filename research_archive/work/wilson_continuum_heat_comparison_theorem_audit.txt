@@ -1,0 +1,23 @@
+FIXED WILSON/CONTINUUM HEAT COMPARISON: INDEPENDENT AUDIT
+17 October 2026. theorem_audit. Full substantive read of
+work/wilson_continuum_heat_comparison_research.txt.
+
+RESULT: pass after the source-site/midpoint convention correction below, now incorporated. No further mathematical correction requested.
+
+1. Exact local scaling. The plaquette identity P+P^-1-2=(P-I)^2 P^-1 and the jointly removable F_epsilon=(P-I)/epsilon^2 give L0=1/2 tau(c-e+i[a,b])^2. Fixed-order field and momentum derivatives are controlled by ordinary finite-dimensional holomorphy. The physical pairing yields epsilon^(n-4) times the unit action vertex, so the displayed leading engineering orders2,1,0 and the next-order error are correct.
+
+Correction requested and verified: the stronger fourth-order remainder of the BARE quadratic vertex is a midpoint statement. Source-site Maxwell cross entries -d_nu^* d_mu generally have cubic phase terms. The complete flat Feynman base q_W+DD^T=delta I is exactly scalar and has the fourth-order error in either convention. The saved note now states this distinction. The proof only requires the latter in its heat comparison, so its conclusion is unaffected.
+
+2. Relative coordinate interface. Xi_epsilon,A(B)=epsilon^-1 log(exp(i epsilon B)exp(i epsilon A))/i tends to A+B. The exact relative Hessian includes S'[T], not only J^T S''J. The first relative correction has at least momentum degree2; the second has degree>=1, with Gamma2/current terms degree>=2. Therefore deltaV=O(total momentum^2) and deltaW=O(total momentum) are justified without an incorrect parity assumption. The continuum gauge generator and its transpose converge to the stated covariant derivative, giving the normalized Feynman operator -D^2 delta-2i adF and scalar -D^2.
+
+3. Heat two-point algebra. The tadpole and bubble formula has -s and s^2 integral_0^1, with no extra factor2. The Fourier matrix order is consistent with k->k+p and back. Continuum compact-source variations are justified at positive heat time by smoothing; the explicit Gaussian estimates also define the two-point kernel directly. No partial trace is cyclically reordered.
+
+4. Bounds. The joint analytic vertex estimates remain valid after both external derivatives, including the shifted second vertex. The loose rho^-1 estimate for partial_p^2 deltaW is permissible because the actual analytic derivative is bounded and rho<1. Its four-dimensional integral is finite and yields s^-1/2 after the tadpole factor. Vertex replacements in the bubble leave rho after two derivatives, so s^2 times the integral is s^-1/2. Heat replacements give s rho^4 and therefore s^-1. No inverse time-simplex factor appears. Lattice and continuum complementary regions are separately exponentially small for s>=1. This proves the asserted uniform fixed-reference rate.
+
+5. Continuum normalization independently checked. For one adjoint charge, scalar density is (4pi s)^-2 x/sinh x, x=qfs. Its quadratic coefficient is -q^2/(96pi^2). Vector spin trace is2+2cosh(2x)=4+4x^2+..., yielding10q^2/(48pi^2). Summing charges, including both signs without doubling the original real trace, gives h_g=-alpha_g/2 and h_v=10alpha_g. Thus h_v-2h_g=11alpha_g. The density-to-total-Hessian factor1/4 matches the Maxwell normalization. For tau=Tr_fund/N and tau(H^2)=1, sum_ij(h_i-h_j)^2=2N Tr H^2=2N^2 as stated.
+
+6. Scope. The result is a fixed-reference heat calculation combined with uniform actual-classical input, in the chosen infinite structural systems. It neither uses finite varying flux nor invokes an external universality theorem. Proper-time integration gives22alpha_g logK+O(1), with the actual determinant sign, but only after the separate soft-factor/UV/IR/coarse bounds are assembled. Full-measure construction remains separate.
+
+Final fragment fidelity audit, 17 October 2026.
+Read work/wilson_continuum_heat_comparison_fragment.tex in full after the final source-site/midpoint and continuum-contact qualifications. PASS. The exact plaquette engineering argument, both terms of the relative Hessian, endpoint-safe heat estimates, rho^{-1} tadpole majorant, direct continuum transverse diagram normalization, oscillator/spin coefficient and proper-time sign match the audited research. The fragment correctly restricts lattice density reanchoring to the lattice and identifies the continuum derivative by its explicit transverse diagram, without assuming absolute moments for continuum contact distributions. I independently recomputed the scalar bubble derivative -q^2/(24 pi^2), the quarter factor, and the vector spin contribution q^2/(4 pi^2). No correction.
+Static: 20 unique labels, 14 internal references all resolved, braces 202/202, no control characters or tabs. No compilation performed.

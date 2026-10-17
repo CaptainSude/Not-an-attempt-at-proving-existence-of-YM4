@@ -1,0 +1,56 @@
+INDEPENDENT AUDIT: JOINT SCALAR INFRARED COMPARISON
+17 October 2026. Rotation audit.
+
+Read work/joint_scalar_infrared_research.txt Sections 1--6 in full, together with root's work/flat_holonomy_cancellation_research.txt. Result: pass within the stated order of limits and actual-model scope. No correction requested.
+
+1. Positive mass and the deleted-site block
+
+The common physical mass convention is correct: the fine operator is K^2 G_f+delta^2 I, corresponding to counting mass delta/K; the coarse operator has counting mass delta. A fine overall factor K^2 contributes only a background-independent normalized determinant constant.
+
+Jacobi's identity gives det H^b=det H det(H^-1)_oo with the full color block deleted. Both the sign and the half-ratio factor are correct. At fixed positive delta and fixed K, the lower eigenvalue bound on the real resolvent block and a small complex product perturbation justify its analytic logarithm on a volume-independent domain. No uniform delta-to-zero domain is asserted.
+
+The exponential conjugation argument gives rooted source kernels beginning and ending at the deleted site. Fixed color dimension is used only at this block; it is not confused with the full volume. Local source derivatives and resolvent chains give the required source moments. Averaging the paired base over N^4 coarse centers suppresses the anchored second-moment norm by N^-4. This averaging is explicitly a comparison functional, not an assertion that the original based finite functional is translation invariant.
+
+Composition with the actual stationary branch is legitimate at fixed K using the previously established uniform-old-depth localized derivatives. Constants may depend on K and delta.
+
+2. Ordered Maxwell limit and uniform reference error
+
+With h=-2[t^2] of one scalar heat density and beta=2[t^2] of the logarithm density, the scalar half-ratio is exactly
+ (1/2) integral e^(-delta^2 u)[h(K^2u)-h(u)] du/u.
+The factor 1/2 is correct. The K^4 number of fine sites cancels the K^-4 curvature factor.
+
+The positive-mass thermodynamic/local-kernel passage uses genuine compact directions before evaluation of polynomial moments. It does not differentiate a forbidden continuously varying periodic magnetic flux. Exponential source moments at fixed mass justify that order.
+
+The massless reference difference is absolutely integrable. The change-of-variables identity yields alpha_g log K with the stated sign. The error uniform in K follows directly: for u<1 use bounded h and (1-e^(-delta^2u))/u<=delta^2; for u>=1 use |h(K^2u)-h(u)|<=C/u and split at delta^-2. This gives C delta^2[1+log(1/delta)] independently of K>=1. It remains a reference after the ordered thermodynamic limit.
+
+3. Exact massless anomaly
+
+For one charge, translation invariance makes the inverse diagonal V^-1 sum_p lambda_p^-1. Jacobi therefore yields the displayed finite product with bracket 1+lambda_0 sum_(p!=0)lambda_p^-1. Its continuation through t=0 is valid even though the full massless determinant vanishes there; the based minor is positive at zero.
+
+The coefficient is
+ q^2 A^2 sum_(p!=0)[cos(p_mu)/lambda_p
+                    -2 sin^2(p_mu)/lambda_p^2
+                    +1/lambda_p].
+The first two terms are exactly partial_pmu(sin p_mu/lambda_p). Their O(|p|^-2) singularity is integrable in d=4; the small-sphere flux is O(epsilon^2), and the displayed grid estimate controls the improper Riemann sums. Thus their normalized limit is zero and the last term tends to q^2 A^2 g_4. Charge summation gives C_H with no omitted extra factor.
+
+At fixed positive mass the derivative integral is a periodic smooth total derivative and vanishes. The bounded deleted-site correction contributes zero after volume normalization. This proves failure of exchanging the massless and thermodynamic limits. The claim does not rely on rank alone or on numerical checks.
+
+4. Actual branch and forced physical compensation
+
+Constant commuting current connections with angle A/K block exactly to final angle A. They have flat finer lifts at every preceding depth; the real Wilson action is nonnegative and vanishes on those lifts. The already established local-minimum uniqueness identifies the actual rooted branch with a gauge representative. A site gauge preserves the zero condition at the global scalar base and conjugates the based scalar operator orthogonally, so its determinant is unchanged.
+
+The fine volume (KN)^4 and angle factor K^-2 in the quadratic coefficient give precisely the K^2 term. Subtracting the coarse contribution gives C_H |A|^2(K^2-1)g_4.
+
+For the actual total D_N, the use of the infinite Ward identity on a linear scalar parameter is justified by the common fixed-K exponential Hessian/source moments. The finite normalized constant response is the Hessian row sum; local compactness plus uniform tails makes every subsequential limit zero. It is not claimed to vanish identically at finite N. The same argument permits varying old depths because the fixed-K classical/source inputs are uniform in old depth.
+
+The finite physical determinant identity 2D=N_0(log G_f-log G_c-log Q_perp) then forces the displayed physical compensation with the same sign and normalization.
+
+5. Scope
+
+The result rules out an independent O(1) constant-potential response for the physical determinant. It does not compute the magnetic Maxwell coefficient, does not disprove a coupled magnetic comparison, and does not identify an independently inserted mass with an exact mass deformation of the whole finite quotient identity. These distinctions are all preserved in the candidate.
+
+No mathematical correction was found. The forthcoming jsi fragment should keep the same explicit mass-order, fixed-K, base-averaging and zero-momentum qualifications.
+
+FINAL FRAGMENT FIDELITY ADDENDUM
+Read work/joint_scalar_infrared_fragment.tex in full after it was saved. Pass. It faithfully preserves all six research sections, including the fixed-color Jacobi block, volume-independent fixed-mass germ, base averaging as a comparison only, exact one-half beta normalization, uniform reference mass error, improper Riemann-sum argument, actual flat minimum branch, and fixed-K Ward compensation. The proof does not substitute a mass regulator into the complete actual determinant identity, and it does not use affine periodic flux. No correction requested.
+

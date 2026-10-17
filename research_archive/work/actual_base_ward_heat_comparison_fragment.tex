@@ -1,0 +1,264 @@
+% No preamble. Prefix abw-. Audited research, 17 October 2026.
+\section{Uniform actual-base heat comparison from nonlinear Ward jets}
+\label{abw-section}
+
+This section concerns every applicable joint infinite structural system
+with the established homogeneous classical inputs below. Constants are
+uniform in the old classical depth \(M\). We do not interpolate a finite
+momentum grid or identify finite winding kernels with periodizations.
+
+Let \(S_M\) be the actual homogeneous classical minimum action in current
+unit coordinates, with a fixed \(4\dim\mathfrak g\) input fiber.
+Use its translation, hypercubic, reality and nonlinear gauge Ward
+identities, and its uniformly exponentially rooted kernels through field
+order four. The needed finite spatial moments, local exponential-chart
+derivatives and their constants are uniform in \(M\).
+Write \(S_W=S_1\) for the normalized Wilson action. The established flat
+normalization and lower bound are
+\begin{equation}
+ q_M\ge q_W=d_{\rm curl}^{T}d_{\rm curl},\qquad q_MD=0,\qquad
+ q_{M,\mathrm{mid}}(p)=|p|^2I-pp^T+O(|p|^4).
+ \label{abw-input}
+\end{equation}
+These are the actual classical current-unit bounds. A bound for an
+arbitrary quantum activity with constants depending on a newly chosen
+auxiliary grouping would not replace them.
+
+The background-Feynman vector base, in the actual left-relative link
+chart, is
+\[
+ {\cal B}_M(a)=S_M''(\exp(ia))+D_aD_a^T.
+\]
+For \(\tau(H^2)=1\) and distinct directions \(\alpha,\nu\), define its
+affine heat coefficient by its convergent fixed-time Taylor kernels:
+\begin{equation}
+ h_M(s)=[t^2]\operatorname{tr}_{E}
+ \bigl(e^{-s{\cal B}_M(a(t))}\bigr)_{00},\qquad
+ a_\alpha(t,x)=t x_\nu H.
+ \label{abw-h}
+\end{equation}
+This is an infinite-lattice density, not a varying-flux family on a
+finite torus.
+
+\begin{theorem}[Uniform base comparison]
+\label{abw-main}
+Under these inputs there is \(C\), independent of \(M\), such that
+\begin{equation}
+ |h_M(s)-h_W(s)|\le C s^{-1}\quad(s\ge1),\qquad
+ \int_1^{K^2}|h_M(s)-h_W(s)|\,\frac{ds}{s}\le C.
+ \label{abw-bound}
+\end{equation}
+The scalar base \(D_a^TD_a\) is identical for \(M\) and \(W\).
+Thus the same comparison applies to the vector-minus-two-scalar
+combination. Explicit periodizations may also be used where their
+identification has been established.
+\end{theorem}
+
+\subsection{Actual relative vertices, including chart curvature}
+\label{abw-chart-section}
+
+Set \(R_M=S_M-S_W\). Its Maxwell coefficient vanishes by
+\eqref{abw-input}. The previously proved total nonlinear Ward extraction
+therefore gives, with uniform analytic moment bounds,
+\begin{equation}
+ R_2=O(|p|^4),\qquad R_3=O((\max_i|p_i|)^3),\qquad
+ R_4=O((\max_i|p_i|)^2).
+ \label{abw-ward-orders}
+\end{equation}
+Analytic changes between midpoint and source-site bond phases preserve
+these orders.
+
+For \(\Xi_a(B)=\log(e^{iB}e^{ia})/i\), write
+\[
+ J(a)=D_B\Xi_a(0)=I+J_1(a)+J_2(a,a)+O(a^3),\qquad
+ T(a)=D_B^2\Xi_a(0)=T_1(a)+O(a^2).
+\]
+In particular \(T(0)=0\). The exact relative Hessian is
+\begin{equation}
+ L_R(a)[B,C]=R_M''(a)[J(a)B,J(a)C]
+                  +R_M'(a)[T(a)[B,C]].
+ \label{abw-chain}
+\end{equation}
+At background degree one it is
+\[
+ R_3[a,B,C]+R_2[J_1(a)B,C]+R_2[B,J_1(a)C].
+\]
+Its degree-two coefficient is
+\begin{align}
+ &\tfrac12R_4[a,a,B,C]
+ +R_3[a,J_1(a)B,C]+R_3[a,B,J_1(a)C]\notag\\
+ &\quad+R_2[J_2(a,a)B,C]+R_2[B,J_2(a,a)C]
+ +R_2[J_1(a)B,J_1(a)C]+R_2[a,T_1(a)[B,C]].
+ \label{abw-second-chart}
+\end{align}
+Mixed derivatives are obtained by polarization. The last term is the
+current times chart-curvature term and is retained.
+
+All coefficients of \(J_1,J_2,T_1\) are local at one bond with fixed color
+norms. They only merge momenta and introduce no inverse momentum.
+Thus the flat, first-background and second-background differences of the
+actual Hessians have respective momentum orders \(4,3,2\).
+The gauge-fixing term \(D_aD_a^T\) is the same for both actions and
+cancels from these differences.
+
+\subsection{Fourier bounds and exact total heat variations}
+\label{abw-diagram-section}
+
+Put \(B_M(k)={\cal B}_M(0,k)\) and
+\(\delta(k)=4\sum_\mu\sin^2(k_\mu/2)\). Then
+\begin{equation}
+ B_W(k)=\delta(k)I,\qquad
+ c\delta(k)I\le B_M(k)\le C\delta(k)I.
+ \label{abw-ellipticity}
+\end{equation}
+The upper bound follows from the uniform quadratic zero and bounded
+second moments. On a fixed small punctured ball, with \(\rho=|k|\),
+\begin{equation}
+ \|\partial^r(B_M-B_W)\|\le C\rho^{4-r}\ (r\le2),\qquad
+ \|\partial B_M\|\le C\rho,\qquad \|\partial^2B_M\|\le C.
+ \label{abw-flat-jets}
+\end{equation}
+
+Let \(V_a^M(k,p)\) be the first vertex for a background
+\(e^{ipx}e_a\), mapping quantum momentum \(k\) to \(k+p\).
+Let \(W_{ab}^M(k;p,-p)\) be the mixed second vertex, preserving \(k\).
+For \(\Delta=M-W\), \eqref{abw-ward-orders}--\eqref{abw-second-chart}
+imply at \(p=0\), for \(r\le2\),
+\begin{align}
+ \|\partial_p^r\Delta V_a(k,p)\|
+ +\|\partial_p^r\Delta V_b(k+p,-p)\|
+       &\le C\rho^{3-r},\notag\\
+ \|\partial_p^r\Delta W_{ab}(k;p,-p)\|
+       &\le C\rho^{2-r}.
+ \label{abw-vertex-difference}
+\end{align}
+The second first-vertex term includes differentiation of both arguments.
+For either baseline it suffices to use
+\begin{equation}
+ \|\partial_p^rV\|\le C\rho^{1-r},\qquad
+ \|\partial_p^rW\|\le C\rho^{-r}.
+ \label{abw-baseline-vertices}
+\end{equation}
+Negative powers here are only loose bounds on analytic functions.
+In particular \(\partial_p^2W\) is bounded. Away from the small ball all
+required vertices and derivatives are uniformly bounded.
+
+For compact source variations the second total heat variation is
+well-defined by trace-class Duhamel insertions. There is no need to assign
+a value to the extensive vacuum trace. Differentiating
+\(D\operatorname{Tr}e^{-sB}[a]=-s\operatorname{Tr}(e^{-sB}B'[a])\)
+gives
+\begin{equation}
+ D^2\operatorname{Tr}e^{-sB}[a,b]
+ =-s\operatorname{Tr}(e^{-sB}B''[a,b])
+ +s^2\int_0^1\operatorname{Tr}
+  (e^{-s(1-v)B}B'[a]e^{-svB}B'[b])\,dv.
+ \label{abw-total-duhamel}
+\end{equation}
+The integral already includes both orders; there is no further factor
+two. Only the \emph{total} trace was cycled.
+
+The external-momentum kernel is accordingly
+\begin{align}
+ {\cal H}_{ab}^M(s,p)
+ &=-s\int_{\mathrm{BZ}}\operatorname{tr}
+       (e^{-sB_M(k)}W_{ab}^M(k;p,-p))\,\frac{dk}{(2\pi)^4}
+       \notag\\
+ &\quad+s^2\int_0^1\int_{\mathrm{BZ}}\operatorname{tr}
+ \left(e^{-s(1-v)B_M(k+p)}V_a^M(k,p)
+       e^{-svB_M(k)}V_b^M(k+p,-p)\right)
+                          \frac{dk}{(2\pi)^4}\,dv.
+ \label{abw-diagram}
+\end{align}
+At fixed \(s\) the kernels have the moments permitting two external
+derivatives under this integral.
+
+\subsection{Endpoint-safe heat estimates and the gain}
+\label{abw-estimate-section}
+
+Duhamel differentiation and \eqref{abw-ellipticity} give, for
+\(E_M(t,k)=e^{-tB_M(k)}\) and \(r=0,1,2\),
+\begin{equation}
+ \|\partial_k^rE_M(t,k)\|
+ \le C_r\rho^{-r}(1+t\rho^2)^r e^{-ct\rho^2}.
+ \label{abw-heat}
+\end{equation}
+The sharper first and second derivative factors are respectively
+\(Ct\rho\) and \(C(t+t^2\rho^2)\). No spectral frame is differentiated.
+The exact difference identity
+\[
+ E_M(t)-E_W(t)
+ =-\int_0^t E_M(t-u)(B_M-B_W)E_W(u)\,du
+\]
+and \eqref{abw-flat-jets} give
+\begin{equation}
+ \|\partial_k^r(E_M-E_W)(t,k)\|
+ \le C_r t\rho^{4-r}(1+t\rho^2)^r e^{-ct\rho^2}.
+ \label{abw-heat-difference}
+\end{equation}
+These bounds hold for every \(t\ge0\); in particular they contain no
+singularity at either endpoint \(v=0,1\) of \eqref{abw-diagram}.
+
+Differentiate \eqref{abw-diagram} twice externally and subtract.
+For the tadpole, the two differences are
+\((E_M-E_W)\partial_p^2W_W\) and
+\(E_M\partial_p^2(W_M-W_W)\).
+Before the outer factor \(s\), they are bounded by
+\(Cs\rho^4e^{-cs\rho^2}\) and \(Ce^{-cs\rho^2}\).
+Their integrals are \(O(s^{-2})+O(s^{-1})\) after that factor.
+
+Telescope the bubble product into its four factor differences.
+Replacing a vertex gives combined vertex degree \(3+1=4\).
+After distributing two derivatives between vertices and heat factors,
+the full product is bounded by
+\[
+ C\rho^2 P(s\rho^2)e^{-cs\rho^2},
+\]
+where \(P\) is a fixed polynomial. Replacing a heat factor instead
+gives, by \eqref{abw-heat-difference}, a time at most \(s\) and degree
+\(4+1+1\); the differentiated bound is
+\[
+ Cs\rho^4 P(s\rho^2)e^{-cs\rho^2}.
+\]
+Both bounds are uniform in \(v\), since the two heat times sum to \(s\).
+The four-dimensional integrals of these expressions are
+\(O(s^{-3})\) and \(O(s^{-3})\), respectively.
+The prefactor \(s^2\) therefore gives \(O(s^{-1})\).
+Away from zero, a fixed spectral gap gives a polynomial in \(s\)
+times \(e^{-cs}\). We have proved
+\begin{equation}
+ |\partial_p^2({\cal H}_{ab}^M-{\cal H}_{ab}^W)(s,0)|
+ \le C/s,\qquad s\ge1.
+ \label{abw-two-point-bound}
+\end{equation}
+
+\subsection{Density normalization and scope}
+\label{abw-density-section}
+
+The diagonal color heat density is gauge invariant, and its linear
+color jet is zero for a semisimple group. The established density
+Ward/reanchoring identity at fixed \(s\) consequently gives
+\begin{equation}
+ h_M(s)=\tfrac14\,
+ \partial_{p_\nu}^2{\cal H}_{\alpha H,\alpha H}^M(s,0).
+ \label{abw-density-factor}
+\end{equation}
+Indeed the Maxwell extraction is both twice the affine quadratic
+density and one half of this total Hessian derivative. On the diagonal
+component the source-site and midpoint phases cancel.
+
+For the actual endpoint-\(K\) source \(a_\alpha=t x_\nu H/K^2\),
+translation changes the background only by a constant pure gauge.
+Every diagonal coefficient in a final block is therefore the same.
+The \(K^4\) sites cancel the \(K^{-4}\) from the two source factors.
+Its block coefficient is exactly \eqref{abw-h}; no partial-trace
+cyclicity or finite-torus flux interpolation enters.
+Equations \eqref{abw-two-point-bound} and \eqref{abw-density-factor}
+prove Theorem~\ref{abw-main}.
+
+This result supplies the uniform old-depth comparison for the base
+operator. The soft-penalty, infrared, short-time and coarse-determinant
+comparisons remain separate inputs to an actual determinant assembly.
+The proof does not by itself construct a finite-regulator running
+trajectory, a large-field RG history, a continuum measure or a mass gap.
+

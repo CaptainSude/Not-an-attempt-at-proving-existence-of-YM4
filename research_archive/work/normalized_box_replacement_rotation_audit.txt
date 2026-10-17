@@ -1,0 +1,71 @@
+INDEPENDENT AUDIT: NORMALIZED FIXED-BOX REPLACEMENT
+17 October 2026. Research and final nbr fragment. No output edits.
+
+Reviewed in full:
+ work/normalized_box_replacement_research.txt
+ work/normalized_box_replacement_fragment.tex
+against the stated actual bare-Wilson inputs of Notebook 38.
+
+STATUS: substantive proof and fragment fidelity pass. This is an
+internal audit of the stated finite fixed-box theorem, not external
+certification or a claim of a completed large-field RG construction.
+
+1. Conditional geometry and normalization
+For a nonboundary edge of an embedded cube, every incident plaquette
+lies in that cube. Pairwise vertex-disjoint cubes therefore have no
+plaquette involving two integrated interiors. Keeping every boundary
+link in the exterior gives exactly the product conditional law used.
+The boundary plaquette count is 24 R^3: for each of six orientations,
+R^2[(R+1)^2-(R-1)^2]=4 R^3. Distinct boxes give distinct offending
+plaquettes, so the preceding prescribed-plaquette bound applies.
+
+On good boundaries P_i=Q_i(.|W_i), and on bad boundaries P_i=Q_i.
+The conditional denominator is the actual Q_i(W_i), at least 1-a.
+Every Radon--Nikodym factor has conditional expectation one; their
+product preserves the exterior marginal and the raw partition mass.
+The boundary dependence of this denominator is never absorbed into a
+vacuum constant. Gauge invariance uses the previously proved full
+tree representative, constant-root conjugacy and invariant color norm.
+No new gauge Jacobian or volume is being omitted by this operation.
+
+2. Sparse coupling and local comparisons
+The identity Q_i=(1-p_i)P_i+p_i F_i is exact also on bad boundaries,
+where p_i=0. Conditional independent uniforms realize D_i<=A_i with
+A_i iid Bernoulli(a), independently of the exterior. Marked samples
+lie on opposite sides of the window, so the marks are the actual
+discrepancy indicators, not merely auxiliary upper bounds.
+The empty failure-expansion term has an exterior-dependent weight;
+the text correctly avoids calling it a constant multiple of nu.
+
+The TV equality is valid for the joint marginal retaining the WHOLE
+exterior and the selected interiors. It follows by conditional density
+positive/negative parts, and is only an upper bound after forgetting
+the exterior. The factor two for bounded observables matches the
+stated sup-event TV convention. The oscillation bound and forward
+relative entropy formula are correct. Global TV can approach one.
+
+3. Boundary marks, clusters and sources
+The disjoint alternatives B_i or D_i give the binomial joint-inclusion
+bound (a+beta)^|S| without assuming independent boundaries. Only D is
+claimed iid dominated. The exponential moment bound follows by a
+positive product expansion; the fixed-degree graph count is sufficient
+for the stated connected cluster bound. Replacing a+beta by its minimum
+with one is harmless because probabilities are at most one.
+
+The conditional source product is used only for genuinely single-box
+sources. General bounded local sources use the coupling. The complex
+ball sum |t_l| ||O_l|| <=s0<log 2 puts both generating functions and
+their connecting segment in |z-1|<=exp(s0)-1, giving the claimed log
+bound with denominator 2-exp(s0). The normalized source ratio constant
+uses d0+exp(s0)=2 correctly. Both Cauchy multiindex estimates and the
+optimized n!(e/s0)^n bound check, with windows and coupling fixed.
+
+4. Scope retained
+The conclusion concerns fixed bare-Wilson boxes and their actual
+unconstrained conditional minima. It is not the nonlinear averaging
+fiber window, not uniform in growing box geometry, not a replacement
+theorem for later effective or complex measures, and not a bound for
+renormalized unbounded source fields. The fragment preserves all of
+these restrictions and the underlying hypotheses of Notebook 38.
+
+No mathematical or transcription correction requested.

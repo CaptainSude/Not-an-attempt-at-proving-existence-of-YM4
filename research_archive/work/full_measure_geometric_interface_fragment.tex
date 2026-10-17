@@ -1,0 +1,302 @@
+% No preamble. Prefix fmg-. Primary interface and proved finite geometry.
+\section{Local gauge coordinates and the complete-density interface}
+\label{fmg-section}
+
+The homogeneous local trajectory does not yet identify all sectors
+of the full Wilson integral. This section records a precise published
+interface, proves a finite local gauge lemma, and shows why that
+lemma alone does not supply a uniformly smooth physical background.
+
+\subsection{The strongest published complete-density input}
+\label{fmg-source}
+
+Ba{\l}aban's Theorem~1 in \emph{Commun.\ Math.\ Phys.}\ 122
+(1989), p.~355, supplies the complete effective-density class of
+\emph{Commun.\ Math.\ Phys.}\ 119 (1988), Section~2, provided the
+effective couplings of that construction remain sufficiently small.
+The density bounds are (0.1), pp.~355--356; its large-field
+exponentiation concludes at (1.98)--(1.102), pp.~390--391.
+The original articles are available at
+\href{https://scispace.com/pdf/large-field-renormalization-ii-localization-exponentiation-h8b7ih93xo.pdf}
+{CMP122-II} and
+\href{https://scispace.com/pdf/convergent-renormalization-expansions-for-lattice-gauge-29jyexd38e.pdf}
+{CMP119}.
+
+The relevant CMP119 input locations are:
+\[
+\begin{array}{c|l}
+\text{pages/equations}&\text{interface}\\ \hline
+243\text{--}244,\ (0.1)\text{--}(0.2)&
+       \text{full pushforward and the additional operation}\\
+246\text{--}248,\ (1.1)\text{--}(1.10)&
+       \text{partitions and collars}\\
+254\text{--}257,\ (2.1)\text{--}(2.18)&
+       \text{multiscale determining sets and histories}\\
+258,\ (2.19)\text{--}(2.22)&
+       \text{large-field operator factorization}\\
+258\text{--}262,\ (2.23)\text{--}(2.42)&
+       \text{action, analytic domains and boundary terms}.
+\end{array}
+\]
+In particular (2.38), p.~261, requires a local gauge with potential
+and first-derivative bounds, alongside the other multiscale
+regularity/current conditions. It is not a conclusion from one
+bare plaquette threshold. The theorem concerns the specified
+complete-density construction, not every small analytic local map.
+OCR-damaged numerical constants in these source formulas are not
+retranscribed here.
+
+To use that result for our exact \(F_R=M_\ell^s\) local step,
+one must either verify its complete induction class for this
+operator or prove a replacement large-field theorem. In particular:
+the full compact-field pushforward and partition must be specified;
+the good-sector term must equal our actual retained-window
+integral; exterior and transition data must be retained; and
+normalized complementary-region operations must be bounded.
+The source's own coupling recursion must be identified or replaced
+by an independently justified one. Uniform weakness of our tuned
+numbers alone is not equality of the two recursions.
+
+Our strict product-ball families have an invariant total.
+They do not automatically supply individually invariant local
+orbit/current extensions or uniform analytic estimates on
+multiscale determining sets. Nor does composition of averaging
+constraints identify a one-shot window with sequential primitive
+windows. These are concrete transfer obligations, without an
+assertion that the source theorem cannot be adapted.
+
+\subsection{An explicit finite cubical tree gauge}
+\label{fmg-tree}
+
+Let \(G\) be a compact matrix Lie subgroup of \(U(r)\), with
+operator norm. Let
+\(\Lambda_n=\{0,\ldots,n\}^d\), \(d\ge2\), carry its full cubical
+cell structure. Oppositely oriented bonds carry inverse matrices.
+For every vertex \(x\), let \(p(x)\) be the path from zero which
+first increases coordinate one, then coordinate two, and so on.
+These paths form a rooted spanning tree.
+
+\begin{lemma}[Finite cubical gauge bound]
+\label{fmg-tree-lemma}
+Suppose every elementary plaquette obeys
+\begin{equation}
+                  \|U(\partial p)-I\|\le\epsilon.
+ \label{fmg-plaquette-bound}
+\end{equation}
+Set
+\begin{equation}
+ v(x)=U(p(x)),\qquad
+ U^v(x,y)=v(x)U(x,y)v(y)^{-1}.
+ \label{fmg-gauge}
+\end{equation}
+Every tree edge of \(U^v\) is the identity, and each positive
+\(\mu\)-edge satisfies
+\begin{equation}
+ \|U^v(x,x+e_\mu)-I\|
+       \le\left(\sum_{\nu>\mu}x_\nu\right)\epsilon
+       \le(d-1)n\epsilon.
+ \label{fmg-edge-bound}
+\end{equation}
+Choose a fixed local exponential-chart radius
+\(0<\delta_G\le1\). If \((d-1)n\epsilon<\delta_G\), write
+\(U^v_b=\exp(i\eta A_b)\) in its unique local logarithm chart.
+For physical mesh \(\eta\) and side \(\ell=n\eta\),
+\begin{equation}
+ \|A\|_\infty
+       \le 2(d-1)n\epsilon/\eta
+       =2(d-1)\ell\epsilon/\eta^2 .
+ \label{fmg-physical-bound}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The transformed edge is the product around the loop consisting
+of \(p(x)\), the additional \(\mu\)-edge and reverse \(p(x+e_\mu)\).
+Move the additional edge backwards past the later coordinate
+segments. There are exactly \(\sum_{\nu>\mu}x_\nu\) elementary
+square exchanges. Each exchange multiplies the loop holonomy
+by a conjugate of a plaquette or its inverse, and the final
+boundary word cancels. Unitary conjugation and inversion
+preserve distance to \(I\). Moreover
+\[
+       \|W_1\cdots W_m-I\|
+                     \le\sum_{j=1}^m\|W_j-I\|
+\]
+for unitary matrices, by telescoping. This proves
+\eqref{fmg-edge-bound}; tree edges require no exchanges.
+On the chosen local chart,
+\(\|\log W\|\le2\|W-I\|\), as follows from the scalar eigenangle
+bound. Dividing by \(\eta\) proves \eqref{fmg-physical-bound}.
+\end{proof}
+
+Before the logarithm, this gauge is a finite product of link
+matrices and inverses. With a strict chart margin it is real
+analytic and has a holomorphic continuation near each admitted
+compact configuration. No refinement-uniform complex radius
+or derivative bound follows just from
+\eqref{fmg-edge-bound}. On a general simply connected cell complex
+the same argument costs the filling areas of the tree fundamental
+loops; simple connectivity alone does not bound those areas.
+
+For a fixed finite current box the lemma gives local logarithmic
+coordinates from sufficiently small plaquettes. For a fixed
+physical box under refinement, its sufficient potential threshold
+is \(\epsilon=O(\eta^2 b/\ell)\). It does not yet identify relative
+fluctuations about a prescribed constrained minimum.
+
+\subsection{A gauge-invariant obstruction to physical smoothness}
+\label{fmg-holder-obstruction}
+
+Fix \(0<\alpha<1\), a small \(f>0\), and a nonzero Cartan
+generator \(H\) with \(\|H\|=1\). On a fixed physical cube
+with decreasing mesh \(\eta\), let \(x\) denote integer lattice
+coordinates and put
+\begin{equation}
+ U_1(x)=\exp\!\bigl(i\eta^2 f x_2\chi(x_1)H\bigr),\qquad
+ U_\mu(x)=I\quad(\mu\ne1),
+ \qquad
+ \chi(k)=\begin{cases}0&k\text{ even},\\1&k\text{ odd}.
+                     \end{cases}
+ \label{fmg-oscillating-field}
+\end{equation}
+All non-\(12\) plaquettes are \(I\), and
+\begin{equation}
+               U(\partial p_{12}(x))
+                    =\exp(-i\eta^2 f\chi(x_1)H).
+ \label{fmg-oscillating-curvature}
+\end{equation}
+Thus every plaquette is within \(\eta^2f\) of \(I\).
+
+\begin{proposition}[No uniform \(C^{1,\alpha}\) gauge]
+\label{fmg-no-smooth-gauge}
+For every fixed \(B<\infty\), sufficiently fine configurations
+\eqref{fmg-oscillating-field} admit no gauge representative
+\(U^v=\exp(i\eta A)\) on the cube satisfying
+\begin{equation}
+ \|A\|_\infty+\|\nabla_\eta A\|_\infty
+                         +[\nabla_\eta A]_\alpha\le B.
+ \label{fmg-smooth-assumption}
+\end{equation}
+The same assertion holds on an interior subcube containing
+adjacent plaquettes of both parities.
+\end{proposition}
+
+\begin{proof}
+For any \(A\) satisfying \eqref{fmg-smooth-assumption}, express
+a \(\mu\nu\)-plaquette by the exact jet variables
+\[
+ a=A_\mu(x),\quad b=A_\nu(x),\quad
+ c=\nabla_{\eta,\mu}A_\nu(x),\quad
+ e=\nabla_{\eta,\nu}A_\mu(x).
+\]
+Its product is
+\[
+ P_\eta=
+ e^{i\eta a}e^{i\eta b+i\eta^2c}
+                  e^{-i\eta a-i\eta^2e}e^{-i\eta b}.
+\]
+The constant term is \(I\) and the first coefficient in \(\eta\)
+vanishes. Consequently \((P_\eta-I)/\eta^2\) extends analytically
+to \(\eta=0\), with uniformly bounded first jet derivatives
+on each fixed bounded jet ball. Adjacent \(a,b\) differ by
+at most \(B\eta\), and adjacent \(c,e\) differ by at most
+\(B\eta^\alpha\). Hence
+\begin{equation}
+ \left\|(P_\eta(x)-I)/\eta^2
+             -(P_\eta(x+e_\rho)-I)/\eta^2\right\|
+                         \le C(B)\eta^\alpha .
+ \label{fmg-curvature-holder}
+\end{equation}
+The same inequality holds for the difference of their norms.
+But \(\eta^{-2}\|U(\partial p)-I\|\) is gauge invariant
+at each plaquette. For \eqref{fmg-oscillating-curvature}
+its adjacent values are zero and at least \(f/2\) for
+sufficiently small \(\eta\). This contradicts
+\eqref{fmg-curvature-holder}.
+\end{proof}
+
+This is an obstruction to every gauge, not merely to the chosen
+tree gauge. The example is already in that tree gauge, where
+\(A_1=\eta f x_2\chi(x_1)H\); its first derivative visibly grows
+like \(f\ell/\eta\). The stronger invariant argument above
+does not assert that a bounded \(C^1\) gauge alone is impossible.
+It excludes the fixed physical \(C^{1,\alpha}\) background ball
+needed here.
+
+There is no contradiction with the complete-density method.
+A raw fine field is not a uniformly smooth classical background.
+The useful decomposition is a regular constrained background
+plus rough fluctuations and explicitly retained exceptional
+regions. A plaquette tail or a local logarithmic chart alone
+does not construct that decomposition.
+
+\subsection{Flat torus holonomies and transition functions}
+\label{fmg-holonomy}
+
+On a periodic direction of \(N\) bonds and physical circumference
+\(\ell=N\eta\), consider
+\[
+       U_1(x)=e^{i\theta H/N},\qquad U_\mu(x)=I\quad(\mu\ne1).
+\]
+Its plaquettes are all \(I\), whereas the noncontractible loop is
+\(e^{i\theta H}\), unchanged up to conjugacy by a periodic gauge.
+If some periodic gauge has \(U_b^v=e^{i\eta A_b}\) with
+\(\|A\|_\infty\le b\), telescoping the loop gives
+\begin{equation}
+                  \|e^{i\theta H}-I\|\le N\eta b=\ell b.
+ \label{fmg-holonomy-bound}
+\end{equation}
+Thus zero plaquette curvature cannot force an arbitrarily small
+global physical potential. Local tree gauges trivialize this
+flat field on contractible cubes, but their transition data
+retain the holonomy. On overlaps the exact relation is
+\begin{equation}
+ U^{(i)}(x,y)=h_{ij}(x)U^{(j)}(x,y)h_{ij}(y)^{-1},
+ \qquad h_{ij}=v_i v_j^{-1}.
+ \label{fmg-transitions}
+\end{equation}
+Those data must be retained or integrated consistently. They
+cannot be set to identity because local plaquettes are small.
+
+\subsection{A scale-comparison fact supplied by local shooting}
+\label{fmg-couplings}
+
+Our actual weak finite trajectories obey
+\(\gamma_j=g_j^{-2}\ge\Gamma_{\mathrm w}>0\) and
+\(|\gamma_{j+1}-\gamma_j|\le D_{\mathrm{abs}}\).
+Telescoping yields, for any two stages,
+\begin{equation}
+ \frac{\gamma_i}{\gamma_j}
+       \le1+\frac{D_{\mathrm{abs}}}{\Gamma_{\mathrm w}}|i-j|,
+ \qquad
+ \frac{g_i}{g_j}
+       \le\left(1+\frac{D_{\mathrm{abs}}}
+                          {\Gamma_{\mathrm w}}|i-j|\right)^{1/2}.
+ \label{fmg-coupling-comparison}
+\end{equation}
+For the second inequality apply the first with \(i,j\) interchanged.
+Both reverse ratios satisfy the same bounds. No one-step
+monotonicity is used. This is a useful polynomial interscale
+comparison; it is not asserted to match every source radius
+inequality without checking its constants and domains.
+
+\subsection{The next normalized interface}
+\label{fmg-next}
+
+A direct full-measure route needs an exact gauge-invariant
+good/bad partition and a normalized conditional representation.
+Its good component must be the actual stationary-plus-fluctuation
+integral with its actual retained window. Its complementary
+replacement must be summable in component size, scale age and
+boundary geometry, uniformly in the allowed exterior data.
+A fixed-box conditional Wilson estimate is a genuine first input;
+its constants need not survive growing components or a nonlinear
+average constraint. Conversely, a normalized estimate on a
+coarse-average fiber cannot be inferred by conditioning an
+unconditional tail without controlling that fiber's normalization.
+
+The import route makes the same obligations through the published
+complete-density class instead of a new direct proof. Neither
+route has been completed by the local trajectory or by the
+geometric lemmas in this section. No continuum-existence conclusion
+is asserted here.

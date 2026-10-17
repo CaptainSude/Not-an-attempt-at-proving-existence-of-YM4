@@ -1,0 +1,383 @@
+\section{Total Ward extraction through field degree four}
+\label{tkw-section}
+
+The following argument completes the low-degree \emph{total-kernel}
+classification. It does not impose gauge invariance on individual
+activity coefficients. Its exact statement concerns subsequential
+infinite-lattice kernels; finite-period winding terms and localization
+of the canceled functional remain separate questions.
+
+\subsection{Hypotheses and the reference action}
+\label{tkw-hypotheses}
+
+For a compact connected simple matrix group, use Hermitian Lie-algebra
+coordinates and a fixed invariant positive trace form. Consider analytic
+total corrections \(E_N\) on exhausting compatible cubic tori. Assume
+the local gauge identity, output-unit translations, full signed
+permutations and reality on real fields established for the actual
+local sector in Section~\ref{msy-section}. Assume connected activity
+representations on a fixed cell partition with
+\begin{equation}
+ \sup_I\sum_{H\ni I}e^{a_0|H|}\|E_{N,H}\|_b\le\epsilon .
+ \label{tkw-activity}
+\end{equation}
+Here \(a_0,b>0\), the cell size \(J\), and the scalar coordinate count
+\(D\) per cell are fixed uniformly in volume and preceding refinement.
+The total symmetries need not hold for the chosen coefficients.
+
+Let \(S_N\) be a real analytic, exactly gauge-invariant and spatially
+invariant reference, with \(S_N(0)=DS_N(0)=0\), and with uniform
+fixed-order kernel moment bounds through degree four. Assume its
+limiting midpoint Hessian has the normalization
+\begin{equation}
+ \Gamma_2^S(p)=|p|^2I-pp^T+O(|p|^4).
+ \label{tkw-reference}
+\end{equation}
+The normalized Wilson action is one choice. The actual homogeneous
+classical action \(S_{MR}\) is another: its Hessian is \(q_{MR}\),
+whose uniform normalization was proved by the alias formula in
+Notebook07, and the classical strict-support construction supplies
+the higher fixed-order bounds. Ellipticity alone would not establish
+\eqref{tkw-reference}.
+
+\begin{theorem}[Full marginal completion from the total Ward identity]
+\label{tkw-theorem}
+Under these assumptions, choose a joint subsequential infinite-lattice
+limit of the kernels of \(E_N,S_N\) through degree four. There is a real
+coefficient \(\beta\) such that the midpoint Fourier vertices of the
+residual \(F=E-\beta S\) satisfy
+\begin{align}
+ \Gamma_2^F(p)&=O(|p|^4),\notag\\
+ \Gamma_3^F(p_1,p_2,p_3)
+     &=O\!\left(\max_j|p_j|^3\right),\notag\\
+ \Gamma_4^F(p_1,p_2,p_3,p_4)
+     &=O\!\left(\max_j|p_j|^2\right),
+ \qquad \sum_jp_j=0.
+ \label{tkw-remainders}
+\end{align}
+Thus the total Taylor coefficients of field degree \(n=2,3,4\)
+and momentum degree at most \(4-n\) agree with \(\beta S\).
+The one-point kernel vanishes; the vacuum is unrestricted.
+\end{theorem}
+
+For a semisimple product there is one coefficient per simple ideal.
+The analogous statement subtracts gauge-invariant references with the
+individual normalized Maxwell blocks. A single-coupling rebase is
+immediate for a simple group, or if those coefficients coincide.
+Reality can be omitted if a complex coefficient \(\beta\) is permitted.
+
+\subsection{Fixed-order kernels and their joint limit}
+\label{tkw-kernel-limit}
+
+Write \(K_n=D^nE_N(0)\). Coordinate Cauchy on one coefficient gives
+\begin{equation}
+ \sum_{i_1,\ldots,i_n\in H}
+  |D^nE_{N,H}(0)[e_{i_1},\ldots,e_{i_n}]|
+ \le (D|H|+n)^n b^{-n}\|E_{N,H}\|_b .
+ \label{tkw-coordinate-Cauchy}
+\end{equation}
+Indeed the exact monomial count multiplied by \(n!\) is
+\(n!\binom{D|H|+n-1}{n}\), bounded by the displayed factor.
+Fixing the first coordinate only decreases the sum. The graph
+Steiner length of slots contained in connected \(H\) is at most
+\(|H|-1\). For \(0<\sigma<a_0\), therefore,
+\begin{equation}
+ \sup_{i_1}\sum_{i_2,\ldots,i_n}
+ e^{\sigma\tau(i_1,\ldots,i_n)}
+ |K_n(i_1,\ldots,i_n)|
+ \le b^{-n}\epsilon
+       \sup_{m\ge1}(Dm+n)^n e^{-(a_0-\sigma)m}.
+ \label{tkw-kernel-bound}
+\end{equation}
+Scalar and color indices are included in the sums. A further fixed
+exponent loss absorbs every fixed spatial moment. Conversion from
+the \(J\)-cell metric to the unit-site metric retains \(J\)-dependent
+constants.
+
+Global constant gauges imply \(K_1=0\) separately at each bond,
+because its covector annihilates every Lie commutator. Translation
+invariance permits an anchor at the origin. The bounds then give a
+diagonal subsequence of all fixed displacements, simultaneously for
+\(n\le4\) and for the reference. Fatou preserves exponential
+summability. Permutation symmetry of the slots, signed permutations,
+translation and global adjoint covariance pass to this limit.
+The differentiated Ward identities below pass as well: their
+coefficient equations contain finite nearest-neighbor shifts and
+lower kernels with coinciding slots. Equivalently one may first
+test against finitely supported fields and gauges.
+
+The limiting Fourier vertices are analytic near the simultaneous
+origin, and their fixed derivatives are justified by the spatial
+moments. No unnormalized infinite-volume total functional is being
+summed; even a nonzero vacuum density would preclude that.
+
+\subsection{The exact logarithmic gauge generator}
+\label{tkw-generator-section}
+
+For \(U_b=e^{iA_b}\), use
+\[
+ U_b(t)=e^{it\lambda_{b_-}}U_be^{-it\lambda_{b_+}},
+ \qquad (d\lambda)_b=\lambda_{b_+}-\lambda_{b_-}.
+\]
+Differentiating the exponential chart, with
+\(\operatorname{ad}_A X=[A,X]\), gives
+\begin{equation}
+ \delta_\lambda A
+ =i[\lambda_-,A]-f(i\operatorname{ad}_A)d\lambda,
+ \qquad
+ f(z)=\frac{z}{1-e^{-z}}
+       =1+\frac z2+\frac{z^2}{12}+O(z^4).
+ \label{tkw-generator}
+\end{equation}
+In particular
+\begin{align}
+ \delta_\lambda A
+   &=-d\lambda+L_\lambda(A)+Q_\lambda(A,A)
+                        +O(A^4\lambda),\notag\\
+ L_\lambda(A)_b
+   &=\frac i2[\lambda_{b_-}+\lambda_{b_+},A_b],\notag\\
+ Q_\lambda(A,B)_b
+   &=\frac1{24}\bigl(
+      [A_b,[B_b,d\lambda_b]]+
+      [B_b,[A_b,d\lambda_b]]\bigr).
+ \label{tkw-LQ}
+\end{align}
+The cubic Bernoulli coefficient is zero. Comparing powers in
+\(DE(A)[\delta_\lambda A]=0\), using \(K_1=0\), gives
+\begin{align}
+ K_2(A,d\lambda)&=0,\notag\\
+ K_3(A,A,d\lambda)&=2K_2(A,L_\lambda(A)),\notag\\
+ K_4(A,A,A,d\lambda)
+   &=3K_3(A,A,L_\lambda(A))
+       +6K_2(A,Q_\lambda(A,A)).
+ \label{tkw-Ward-diagonal}
+\end{align}
+Polarization yields
+\begin{align}
+ K_3(A,B,d\lambda)
+   &=K_2(A,L_\lambda(B))+K_2(B,L_\lambda(A)),\label{tkw-Ward-cubic}\\
+ K_4(A,B,C,d\lambda)
+   &=K_3(A,B,L_\lambda(C))
+      +K_3(A,C,L_\lambda(B))
+      +K_3(B,C,L_\lambda(A))\notag\\
+   &\quad+2K_2(A,Q_\lambda(B,C))
+      +2K_2(B,Q_\lambda(A,C))
+      +2K_2(C,Q_\lambda(A,B)).
+ \label{tkw-Ward-quartic}
+\end{align}
+These are total-kernel identities. Subtracting just a quadratic
+polynomial would generally violate them. Subtracting a multiple
+of an exactly invariant reference preserves them.
+
+The generator and differentiated identities are independently
+derived here. Their published counterparts are Ba{\l}aban,
+CMP 109 (1987), (4.9)--(4.15), pp.~283--284; the full-action
+subtraction is (4.38)--(4.45), pp.~291--292. The stronger
+coefficientwise orbit hypotheses of that article are not assumed.
+
+\subsection{Midpoint phases and parity}
+\label{tkw-midpoint-section}
+
+Use bond-midpoint Fourier fields and site Fourier gauges:
+\[
+ A_\mu(x)=\int e^{ip\cdot(x+e_\mu/2)}a_\mu(p)\,dp,
+ \qquad \lambda(x)=\int e^{ik\cdot x}\lambda(k)\,dk .
+\]
+On \(\sum_jp_j=0\), anchoring the first bond gives the vertex phase
+\begin{equation}
+ \exp\!\left\{i\sum_{j=2}^n
+   p_j\cdot(x_j+e_{\mu_j}/2-e_{\mu_1}/2)\right\}.
+ \label{tkw-vertex-phase}
+\end{equation}
+Only local analyticity near zero momentum is required; midpoint
+vertices need not be individually periodic under every \(2\pi\)
+shift. The Fourier coefficients in \eqref{tkw-LQ} are exactly
+\begin{align}
+ (d\lambda)_\mu&:\quad
+       2i\sin(k_\mu/2)\lambda(k),\notag\\
+ L_\lambda(A)_\mu&:\quad
+       i\cos(k_\mu/2)[\lambda(k),a_\mu(p)],\notag\\
+ Q_\lambda(A,B)_\mu&:\quad
+       \frac{i}{12}\sin(k_\mu/2)
+       \bigl([a_\mu(p),[b_\mu(q),\lambda(k)]]
+           +[b_\mu(q),[a_\mu(p),\lambda(k)]]\bigr).
+ \label{tkw-generator-phases}
+\end{align}
+Their output momenta are \(k,p+k,p+q+k\). Thus \(L\) has
+a bounded analytic coefficient, while \(Q\) supplies one
+power of gauge momentum.
+
+Full inversion sends \(a_\mu(p)\) to \(-a_\mu(-p)\).
+Consequently
+\begin{equation}
+ \Gamma_n(-p_1,\ldots,-p_n)
+        =(-1)^n\Gamma_n(p_1,\ldots,p_n).
+ \label{tkw-parity}
+\end{equation}
+The cubic vertex is odd; the quadratic and quartic vertices
+are even. Midpoint phases are essential for this form.
+
+\subsection{Proof of the marginal completion}
+\label{tkw-completion-proof}
+
+\begin{proof}[Proof of Theorem~\ref{tkw-theorem}]
+Theorem~\ref{msy-Maxwell-theorem} gives
+\[
+ \Gamma_2^E(p)=\beta(|p|^2I-pp^T)+O(|p|^4).
+\]
+For completeness, the continuous limiting Ward relation
+\(\Gamma_2(p)\widehat p=0\) first implies \(\Gamma_2(0)=0\)
+by taking \(p=te_\mu\). Reflections and permutations restrict
+the degree-two tensor to diagonal
+\(A p_\mu^2+B\sum_{\nu\ne\mu}p_\nu^2\) and off-diagonal
+\(C p_\mu p_\nu\). Transversality gives \(A=0,C=-B\).
+Put \(\beta=B\), which is real under the stated reality
+assumption. It can be extracted as
+\begin{equation}
+ \beta=\frac12\,
+  \partial_{p_\nu}^2(\Gamma_2^E)_{\mu\mu}(0),
+       \qquad \mu\ne\nu,
+ \label{tkw-beta}
+\end{equation}
+in a trace-orthonormal color direction. The reference
+normalization proves \(\Gamma_2^F(p)=O(|p|^4)\).
+
+Apply \eqref{tkw-Ward-cubic} to the residual and momenta
+\(tp,tq,tk\), with \(p+q+k=0\). Its right side is \(O(t^4)\):
+each residual Hessian is evaluated at small momentum, and
+the \(L\) coefficient in \eqref{tkw-generator-phases} is bounded.
+Parity gives
+\[
+ \Gamma_3^F(tp,tq,tk)=tP_1(p,q,k)+O(t^3).
+\]
+The left side contracts its last vector index with
+\(2i\sin(tk/2)=itk+O(t^3)\). Its degree-two coefficient
+therefore vanishes. Slot permutation symmetry gives, for
+each choice of colors,
+\begin{equation}
+ p_\mu(P_1)_{\mu\nu\rho}=0,\qquad
+ q_\nu(P_1)_{\mu\nu\rho}=0,\qquad
+ k_\rho(P_1)_{\mu\nu\rho}=0.
+ \label{tkw-linear-transverse}
+\end{equation}
+
+Eliminate \(k=-p-q\) and write
+\[
+ (P_1)_{\mu\nu\rho}
+  =\sum_\sigma A_{\mu\nu\rho;\sigma}p_\sigma
+                   +B_{\mu\nu\rho;\sigma}q_\sigma .
+\]
+In the first relation of \eqref{tkw-linear-transverse},
+the independent mixed monomials \(p_\mu q_\sigma\)
+force every \(B_{\mu\nu\rho;\sigma}\) to vanish.
+The second relation then forces every \(A_{\mu\nu\rho;\sigma}\)
+to vanish by the independent monomials \(q_\nu p_\sigma\).
+Thus \(P_1=0\), proving the cubic remainder. This elementary
+argument permits arbitrary complex/color coefficients and
+does not presume a separately invariant cubic functional.
+
+Finally apply \eqref{tkw-Ward-quartic}, scaling all four
+momenta by \(t\). Its \(K_3,L\) terms are \(O(t^3)\);
+its \(K_2,Q\) terms are \(O(t^5)\), because \(Q\) has
+the sine factor. By parity write
+\[
+ \Gamma_4^F(tp_1,\ldots,tp_4)=P_0+O(t^2).
+\]
+The order-\(t\) term on the left contracts \(P_0\) with
+the last momentum \(p_4\). That momentum is arbitrary:
+the other three can always sum to \(-p_4\). Hence
+every component of \(P_0\) vanishes. This proves the
+quartic remainder and completes the theorem.
+\end{proof}
+
+The argument is an identity of the integrated vertices.
+It does not choose a unique density modulo lattice divergences.
+
+\subsection{Reference independence and the full action}
+\label{tkw-full-action-section}
+
+For the standard Wilson reference, the marginal continuum
+polynomial is explicit. With Hermitian coordinates set
+\[
+ f_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu,
+ \qquad F_{\mu\nu}=f_{\mu\nu}+i[A_\mu,A_\nu].
+\]
+Its engineering-degree-four part is
+\begin{equation}
+ \frac12\sum_{\mu<\nu}\tau(F_{\mu\nu}^2)
+ =\frac12\sum_{\mu<\nu}\tau(f_{\mu\nu}^2)
+   +i\sum_{\mu<\nu}\tau(f_{\mu\nu}[A_\mu,A_\nu])
+   -\frac12\sum_{\mu<\nu}\tau([A_\mu,A_\nu]^2).
+ \label{tkw-Wilson-polynomial}
+\end{equation}
+Indeed bond angles \(tA\) evaluated at midpoints of a
+lattice of spacing \(t\) give the plaquette
+\(P=I+it^2F_{\mu\nu}+O(t^3)\). Therefore
+\(1-\frac12\tau(P+P^{-1})
+ =\frac12t^4\tau(F_{\mu\nu}^2)+O(t^5)\).
+This verifies the normalization and the relative cubic
+and quartic coefficients.
+
+No explicit Wilson expansion is needed in the theorem.
+Applying it to the difference of two exactly invariant
+normalized references shows that their marginal total
+vertices agree. In particular one may subtract the actual
+homogeneous classical reference directly:
+\begin{equation}
+ e^{-g^{-2}S_{MR}+E}
+  =e^{-(g^{-2}-\beta)S_{MR}+(E-\beta S_{MR})}.
+ \label{tkw-coupling-rebase}
+\end{equation}
+The vacuum is separate. This identity neither proves
+positivity of \(g^{-2}-\beta\) nor the required sign,
+size or accumulated drift of its actual increments.
+
+\subsection{Moment remainders and the remaining norm question}
+\label{tkw-scope-section}
+
+For the residual anchored kernels use the \emph{bond midpoints}
+\(\xi_j=x_j+e_{\mu_j}/2\), and define
+\begin{equation}
+ T_{n,m}=\sup_{i_1}\sum_{i_2,\ldots,i_n}
+  \left(\sum_{j=2}^n|\xi_j-\xi_1|_1\right)^m
+                  |K_n^F(i_1,\ldots,i_n)|.
+ \label{tkw-moments}
+\end{equation}
+They are bounded by the moments of \(E\) plus
+\(|\beta|\) times those of \(S\). The phase
+\eqref{tkw-vertex-phase} and the real one-variable
+Taylor integral remainder give componentwise
+\begin{align}
+ |\Gamma_2^F(p)|
+   &\le \frac{T_{2,4}}{4!}\|p\|_\infty^4,\notag\\
+ |\Gamma_3^F(p_1,p_2,p_3)|
+   &\le \frac{T_{3,3}}{3!}
+                  \max_{j\ge2}\|p_j\|_\infty^3,\notag\\
+ |\Gamma_4^F(p_1,p_2,p_3,p_4)|
+   &\le \frac{T_{4,2}}{2!}
+                  \max_{j\ge2}\|p_j\|_\infty^2 .
+ \label{tkw-quantitative}
+\end{align}
+Fixed vector/color row sums add only their fixed dimensions.
+The exponential kernel bound makes these moments finite.
+
+The cancellations also hold in ordinary tail-anchored
+coordinates: conversion multiplies each midpoint component
+by a nonzero analytic phase and cannot lower its vanishing
+order. Thus all residual ordinary momentum jets through
+degrees \(3,2,1\) vanish for field degrees \(2,3,4\),
+respectively. This includes the weaker anchored moments
+used in second-order quadratic, first-order cubic and
+zeroth-order quartic spatial subtractions.
+
+The constants can depend strongly on the fixed old grouping
+\(J\). Since the common-domain construction chooses \(J\)
+after \(R\), an estimate \(C(J)R^{-\alpha}\) is not
+automatically a contraction. No such claim is made.
+The remaining tasks are localization of the canceled
+total without false coefficientwise Ward assumptions,
+finite-period wrapping control or a consistent infinite
+correction, a spatial-gain norm with the correct parameter
+order, and the actual relevant/marginal recursion.
+The theorem proves the total-kernel Taylor classification;
+it does not supply these separate conclusions.

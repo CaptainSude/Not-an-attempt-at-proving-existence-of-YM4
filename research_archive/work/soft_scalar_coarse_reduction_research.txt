@@ -1,0 +1,254 @@
+SOFT SCALAR FACTORIZATION AND A UNIFORM COARSE MAXWELL REMAINDER
+17 October 2026. Research proof, root. Pending independent audit.
+
+Purpose. Replace the hard moving projection P Delta P by a soft block
+penalty. This is an exact factorization of the ACTUAL scalar determinant
+from Notebook35. The additional coarse determinant has a uniformly
+bounded affine Maxwell coefficient as K grows. It does not yet compute
+the scalar logarithmic coefficient, nor the full vector coefficient.
+
+1. Data and units
+
+Use counting inner products in dimension four, K=ell^k, mu=K^-1.
+The current links are exp(i mu A(e)); A is a bounded physical potential
+on fine bonds. Let D(A) be the all-site left gauge generator, and let
+B(A) be exactly the moving-reference hierarchical average of ccs,
+not a new nonlinear constraint. Set
+
+  J(A)=K^2 B(A)^T,  J(A)^T J(A)=I,
+  Pi(A)=J(A)J(A)^T,  P(A)=I-Pi(A),
+  Delta(A)=D(A)^T D(A),
+  T(A)=Delta(A)+mu^2 Pi(A),
+  M(A)=mu^2 J(A)^T T(A)^-1 J(A).                       (1.1)
+
+Transpose is the invariant real transpose and its complex-bilinear
+continuation. On real backgrounds J is an isometry. Its block y reads
+only the background in that same K-block. One block of J has counting
+operator norm one at real backgrounds and is K^-2 times an adjoint
+transport at each of its K^4 sites. At zero, J embeds normalized block
+constants. All estimates below are uniform in compatible finite volume.
+
+Uniform physical input, already available in ccs Section6 and the
+ordinary-trajectory theorem: there is an r>0 independent of K on which
+J is holomorphic and ||J(A)-J(0)||<=C||A||_infinity. Every block map has
+the same bound and depends only on its own block. To see the scale,
+primitive intermediate angles are O(ell^j ||A||/K). The logarithmic
+departure of every hierarchical adjoint product is bounded by the sum
+of those quantities, at most C||A||. Its normalized block column has
+K^4 entries of size K^-2; its operator bound has no fiber-dimension loss.
+Cauchy gives first and second block derivatives with the same uniform
+constants. No smoothness of A beyond its supremum is required here.
+
+2. Exact identity through flatness
+
+Let V be any orthonormal frame for ker B on real backgrounds and put
+G_B=V^T Delta V. In the orthogonal splitting [V,J], T has blocks
+
+       [ G_B             V^T Delta J       ]
+       [ J^T Delta V     J^T Delta J+mu^2I ].
+
+Since the upper block is invertible near zero, Jacobi/Schur gives
+
+  det G_B = det T det(J^T T^-1 J).
+
+The basis-free scalar Ghat=P Delta P+mu^2Pi has determinant
+(mu^2)^dim(S_c) det G_B. Hence the exact identity is
+
+                  det Ghat = det T det M.              (2.1)
+
+All three factors are positive at zero. They have unique normalized
+holomorphic logarithms on the common germ. Thus, without separating
+massless globally based determinants,
+
+  N_0 logdet Ghat = N_0 logdet T + N_0 logdet M.          (2.2)
+
+Covariance of D and B gives fine-site covariance of T and coarse-site
+covariance of M. Their diagonal color traces are individually invariant.
+This changes no ordinary constraint, contour, pivot, or Haar factor.
+
+3. Uniform flat ellipticity
+
+Write T0=T(0), Delta0=D0^T D0. Block Neumann Poincare, applied to phi
+minus its block mean using INTERNAL block edges, gives directly
+
+  ||P0 phi||^2 <= C_P K^2 ||D0 phi||^2.
+
+The internal derivative of a block constant is zero; no derivative of
+a sharp block indicator is taken. Thus
+
+  c(Delta0+mu^2I) <= T0 <= Delta0+mu^2I,                (3.1)
+  c=[1+max(C_P,1)]^-1.
+
+For a uniform lower bound on M0, let E be the normalized product-tent
+lift of mgs Section4, composed with J0. Then
+
+  J0^T E=I,  ||E||<=C0,  ||D0 E||<=C1 mu.
+
+The Schur complement
+  S=J0^T Delta0 J0-J0^T Delta0 V G_B(0)^-1 V^T Delta0 J0
+is the minimum scalar energy with prescribed J0^T phi=b. The feasible
+lift Eb gives 0<=S<=C1^2 mu^2 I. Consequently
+
+  M0=(I+mu^-2 S)^-1,
+  (1+C1^2)^-1 I <= M0 <= I.                           (3.2)
+
+At K=1 use E=I and the bounded unit-lattice gradient. Periodic repeated
+interfaces have the multiplicities already checked in the tent proof.
+
+4. Uniform complex domain; no hard-projection vertex bound
+
+Let E_D=D(A)-D0. The bond-local formula gives
+||E_D||<=C mu ||A||. Hence, using (3.1),
+
+ ||T0^-1/2 (T(A)-T0) T0^-1/2|| <= C(||A||+||A||^2).   (4.1)
+
+Indeed the two cross terms have factors D0 T0^-1/2 bounded by one
+and E_D T0^-1/2 bounded by C||A||; the square term is quadratic.
+The penalty difference is mu^2(Pi(A)-Pi0), whose relative norm is
+at most C||A||. This proof is valid in the complex-bilinear continuation
+by ordinary operator-norm estimates relative to the positive real T0.
+It is not a positivity assertion for a complex transpose product.
+
+Shrink r uniformly so the right side is below 1/2. The Neumann inverse
+gives ||T(A)^-1||<=C mu^-2. Resolvent identity and ||J(A)-J0||<=C||A||
+then give
+
+  ||M(A)-M0||<=C||A||.                                (4.2)
+
+Shrink r again using the constant in (3.2). M and T are holomorphically
+invertible on a radius independent of K. The normalized physical
+scalar T therefore has uniform raw relative first-two vertices for
+bounded physical perturbations. This does NOT assert such a bound for
+Ghat=P Delta P+mu^2Pi, which has the proved pure-gauge obstruction.
+
+5. Weighted inverse and coarse source kernels
+
+Here are details ensuring that operator-norm bounds do not hide a
+K^4 loss in the ensuing coarse determinant. For a real 1-Lipschitz
+function f of the physical position x/K, conjugate fine-site matrices
+by e^(theta f). Use its value at the initial site for bond weights and
+at the block center for coarse weights. Adjacent fine weights differ
+by at most C theta mu; a block has bounded physical diameter.
+
+Conjugated D0 differs from D0 by an operator of norm <=C theta mu.
+The conjugated transpose uses the opposite sign of theta; expanding
+both factors therefore proves the same relative estimate as (4.1),
+with C(theta+||A||) on its right. Conjugated Pi differs from Pi0 by
+O(theta+||A||), since J is block-local. Choose theta,r small fixed.
+The weighted Neumann inverse supplies, uniformly,
+
+  ||R||_theta <= C mu^-2,
+  ||D R||_theta+||R D^T||_theta <= C mu^-1,
+  ||D R D^T||_theta <= C,              R=T(A)^-1.        (5.1)
+
+The notation means the corresponding conjugation between site/bond
+spaces. These bounds follow by placing T0^-1/2 on each side of the
+Neumann inverse, using ||D_theta T0^-1/2||<=C. For RD^T use the other
+factor; no self-adjointness of the complex perturbed R is required.
+Each may also be restricted between arbitrary final blocks. Choosing
+f as physical distance from the source block gives the corresponding
+operator-norm block bound with an extra exp[-theta d(x,y)].
+
+J has block norm O(1); hence (5.1) gives
+  ||M_xy||<=C exp[-theta d(x,y)],                       (5.2)
+with a fixed color fiber and NO factor K^4. Weighted M(A)-M0 is O(r).
+The entries of M0 imply, by coarse Schur summation, that its weighted
+conjugation differs from M0 by O(theta). Thus the weighted matrices
+M(A) retain a common logarithm contour separated from zero, or a
+common contracting logarithm series. The same is true for their
+resolvents on a fixed contour. Consequently log M has exponential
+coarse matrix kernels, uniformly in K and A on a smaller ball.
+
+For completeness localize physical potential directions a_j to fine
+bonds with initial block j. Treat each such block as one supremum-norm
+Banach space; do not sum over its K^4 independent scalar coordinates.
+The local derivatives obey
+  ||delta_j D||<=C mu ||a_j||,
+  ||delta_j J||<=C||a_j||,
+and corresponding second bounds C mu ||a_j||||b_j|| and C||a_j||||b_j||.
+The D derivatives have one-edge support, and J derivatives have one-
+block support. Mixed coefficients with disjoint block supports vanish
+for these primitive maps (a harmless fixed collar can be included).
+
+Differentiate
+  M=mu^2 J^T R J,
+  delta R=-R(delta T)R,
+  delta T=(delta D)^T D+D^T(delta D)
+                +mu^2[(delta J)J^T+J(delta J)^T].
+Insert local block projections at each differentiated factor. Every
+term in delta M has balanced powers of mu by (5.1): for example
+mu^2 (J^T R D^T) (delta D) (R J) has norm at most
+mu^2 (C mu^-1)(C mu)(C mu^-2)=C.
+For two derivatives, use the same expansion once more. Intermediate
+DRD^T costs O(1), RD^T or DR costs O(mu^-1), R costs O(mu^-2), while
+each delta D supplies mu and each penalty insertion supplies mu^2.
+All terms again have total power mu^0 or better. Their restricted
+versions carry exponential factors along the chain of source blocks.
+Second derivatives of one primitive factor have joint local support.
+There are finitely many terms independent of K. Thus for n=1,2,
+
+ ||delta_(j1)...delta_(jn) M_xy||
+   <=C_n product ||a_j|| exp[-c tau(x,y,j1,...,jn)],      (5.3)
+
+where tau is minimum tree length in the final-block graph. A fixed
+enlargement of supports changes only C_n. The same estimate with a
+smaller c holds for log M: differentiate its fixed resolvent contour;
+insert (5.3) and the exponential coarse resolvents, and sum the
+coarse intermediate indices. Their fiber dimension is dim(g), fixed.
+
+In particular rho_y=N_0 tr_color(log M)_yy satisfies an absolutely
+summable rooted second derivative bound with any fixed polynomial
+weight in the source block distances, uniformly in K. This is a bound
+on block Banach derivatives, not an unsupported raw fine-coordinate
+Taylor sum. All the steps preserve compatible finite-volume periodic
+distance estimates, with repeated local supports counted normally.
+
+6. Uniform bound on the ACTUAL coarse Maxwell correction
+
+By covariance, rho_y is individually gauge invariant. The linear color
+jet vanishes for the semisimple algebra. At each fixed K its normalized
+finite sum is N_0 logdet M; along the chosen structural system the
+local kernels pass to the limit. The invariant-density Ward argument
+of cgd identifies its actual Maxwell coefficient with twice its local
+affine Taylor coefficient, after the actual stationary substitution.
+
+Notebook33 identifies the first-two actual stationary polynomial jets
+with the commuting affine representative. In the present physical
+fine variables the probe is
+  A_mu(x)=t (x_nu/K) H,   mu_direction != nu_direction,
+so the fine link angle is t x_nu H/K^2. (Here mu_direction denotes an
+axis; the scalar mu=1/K used above is unrelated.) This identification
+is up to a fine gauge, harmless for each rho_y. In a source block j,
+the norm of the coefficient of t is at most C(1+|j|). Applying (5.3)
+for log M and summing its exponentially weighted second block kernels
+therefore proves
+
+            | beta(N_0 logdet M) | <= C,               (6.1)
+
+uniformly in K, old depth and the chosen structural systems. The
+affine substitution uses Taylor kernels only; it does not evaluate
+the analytic map at a nonzero unbounded field. No uniform-in-K source
+estimate for the full stationary branch is needed for this particular
+coefficient, because the first-two affine jets were already identified.
+
+Combining (2.2), the exact finite determinant identity, fixed-K local
+passage and invariant-density Maxwell extraction gives
+
+ beta(N_0 logdet Ghat)=beta(N_0 logdet T)+O(1),          (6.2)
+ beta(D_actual)=beta(N_0 logdet T)
+                      -(1/2)beta(N_0 logdet Q_B)+O(1).  (6.3)
+
+This uses equality of total determinants and their local Hessians; it
+does not assert equality of the different diagonal densities pointwise.
+
+7. Remaining work
+
+The soft T is Delta_A plus a covariant rank-dim(g)-per-block penalty
+of size K^-2. It is uniformly elliptic and has a uniform physical
+complex domain. Its comparison with a specified massive scalar
+reference still needs a magnetic estimate, not just a Cauchy bound:
+the latter can cost K^2 in the ultraviolet. This note therefore does
+not yet assert beta(logdet T)=2 alpha_g log K+O(1).
+The actual vector H_res and constraint curvature are retained in Q_B.
+The full target remains beta(D_actual)=22 alpha_g log K+O(1), followed
+by the other construction steps required for Yang--Mills existence.

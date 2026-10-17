@@ -1,0 +1,348 @@
+\section{Actual macrostep symmetries and the quadratic tensor}
+\label{msy-section}
+
+This section concerns the actual local composite sector and its
+common-domain analytic continuation. It does not assert equality of
+different gauge sectors or spatial symmetry of an arbitrary measurable
+completion outside the analytic domain. The input total density must
+have the spatial symmetries under consideration.
+
+\subsection{Symmetries of the exact local integral}
+\label{msy-integral-section}
+
+Fix the odd primitive ratio \(\ell\), a finite power \(R=\ell^s\), and
+the centered nested blocks of the composite construction. Use compatible
+\emph{cubic} tori, with distinct lifted interfaces as in the geometric
+proof. The sufficiently large auxiliary grouping \(J\) can be chosen
+as a power of \(\ell\), preserving a cofinal family of source tori.
+On rectangular tori only permutations preserving the side lengths
+are available.
+
+The selected source mean is assumed to obey its permutation axiom
+as well as the endpoint covariance already used in the construction.
+The all-coordinate-order contour family and this axiom are the
+properties stated in Ba{\l}aban, CMP 109 (1987), pp.~252--254,
+especially (0.7). The implicit mean (0.10) is an admissible example;
+it is not the definition of every permitted mean.
+
+\begin{proposition}[Exact spatial symmetry of the local sector]
+\label{msy-spatial-proposition}
+Suppose the complete input density is invariant under the relevant
+spatial transformations on the common small domain. The composite
+constraint, independent direct-\(R\) internal contour gauge, physical
+centered branch and actual retained link/color-ball integral commute
+with
+\begin{equation}
+ x\longmapsto Sx+Rn,\qquad
+ n\in\mathbb Z^d,\quad
+ S\text{ a signed coordinate permutation}.
+ \label{msy-space-group}
+\end{equation}
+After the output lattice is rescaled by \(R\), these give all its unit
+translations and the full hypercubic point group. The same symmetries
+hold for the total generated correction on the common zero-free
+holomorphic domain, with its compatible logarithm branch.
+\end{proposition}
+
+\begin{proof}
+Every transformation in \eqref{msy-space-group} preserves each level
+of the centered hierarchy. It permutes the coordinate-order contour
+family. The mean's permutation axiom therefore makes the contour
+maps equivariant. Orientation reversal of an ordinary coarse bond
+also respects the averaging formula. If that formula is written as
+\[
+ F=\exp\!\left\{N^{-1}\sum_x\log(U_xT^{-1})\right\}T,
+\]
+the reversed strings and reference are \(U_x^{-1},T^{-1}\), and
+\begin{equation}
+ \log(U_x^{-1}T)
+     =-\operatorname{Ad}_{T^{-1}}\log(U_xT^{-1}),
+ \qquad F_{\rm reverse}=F^{-1}.
+ \label{msy-average-reversal}
+\end{equation}
+The primitive maps, their composition and the separate direct-\(R\)
+contour map consequently commute with the transformation. The
+centerline interface pivots are preserved as unoriented bonds.
+
+The relative-coordinate calculation is essential. For
+\(U_b=e^{iB_b}V_b\), a reversed bond satisfies
+\begin{equation}
+ U_b^{-1}
+   =e^{-i\operatorname{Ad}_{V_b^{-1}}B_b}V_b^{-1}.
+ \label{msy-relative-reversal}
+\end{equation}
+At fixed real \(V\), this is an orthogonal linear color map.
+Together with the bond permutation it induces an orthogonal map
+\(D_{S,V}\) on the retained coordinates. Uniqueness of the small
+pivot solution gives
+\begin{equation}
+ \Phi_{SV}(D_{S,V}z)
+       ={\cal R}_{S,V}\Phi_V(z),
+ \label{msy-chart}
+\end{equation}
+where \({\cal R}_{S,V}\) is the full relative-bond transformation.
+Thus the original window
+\(\prod_{b\ {\rm retained}}1_{\{|z_b|\le gT\}}\)
+is preserved with absolute Jacobian one. No complex change of a
+sharp indicator is used.
+
+The transformed physical branch is feasible, has all internal
+contours equal to the identity, and has the same constrained
+classical value and stationarity. Common-domain uniqueness yields
+\(V_*(SW)=SV_*(W)\). The homogeneous classical action has the
+required value symmetry by applying the same transformations
+to its defining ordinary-constraint minimization; the fine Wilson
+action and small global norm class are preserved.
+
+Haar factors are invariant under inverses and conjugation. A pivot
+derivative transforms by the relative coarse and pivot color maps.
+On a reversed bond both have determinant
+\((-1)^{\dim\mathfrak g}\); their adjoint factors have determinant
+one. The signs cancel in the ratio. Permutations merely relabel
+the factors. This accounts for both the background delta
+determinant and the normalized straightening determinant.
+
+The chart action plus absolute gauge penalty satisfies
+\(T_{SV}(D_{S,V}z)=T_V(z)\). The map \(D_{S,V}\) is independent
+of \(z\), so constant, linear and quadratic Taylor terms transform
+separately, also in the centered independent-background extension.
+The Hessian transforms by orthogonal congruence, preserving the
+normalized Gaussian and its determinant. The fixed flat determinant
+is the same scalar denominator. The retained change of variables
+therefore proves equality of the real local integrals.
+
+The complete inherited insertion agrees with its pre-gauge
+representation on the original common domain. Its assumed
+spatial invariance and holomorphic uniqueness extend the total
+identity to the common-domain continuation. No symmetry of its
+individual activity coefficients is required. Finally the proved
+zero-free cluster domain and common branch give equality of
+logarithms. Holomorphy alone would not imply this last step.
+\end{proof}
+
+Auxiliary \(J\)-grouping reorganizes the exact retained product
+window and finite integral; it does not alter their scalar total.
+Its fixed carrier grid and deterministic trees may break symmetry
+at coefficient level. The proposition concerns their sum.
+Additional genuine block-norm or asymmetric cutoff restrictions
+would require a new check. A color-coordinate cube is not a
+substitute for the invariant linkwise color balls.
+
+There is an explicit obstruction to current-lattice unit
+translations for the fixed sector. A pure gauge with a small
+nonzero phase \(t\) at one block root and zero elsewhere has
+absolute contour penalty
+\[
+ (R^d-1)q(e^{it}),\qquad
+ q(U)=1-\tfrac12\tau(U+U^{-1}).
+\]
+Moving that phase one current unit to a nonroot gives only
+\(q(e^{it})\). This does not conflict with output unit translations,
+whose current lift is \(R\).
+
+The measurable completion using an ordered reference contour and
+fallback is gauge equivariant, but its global spatial equivariance
+has not been proved. The proposition does not concern that
+completion or the uncontrolled complement. If needed, averaging
+transformed sector--complement decompositions preserves their
+exact sum when the blocking map and input are equivariant.
+Averaging conjugated asymmetric blocking kernels instead defines
+a new Markov blocking kernel; it is not equality with the original
+deterministic map. No such change is made here.
+
+\paragraph{Charge conjugation.}
+For \(SU(2)\), \(U\mapsto\overline U\) is conjugation by
+\(i\sigma_2\), hence is already a constant gauge transformation.
+It is exact on the same domains. For \(SU(N)\), the holomorphic
+automorphism is \(U\mapsto(U^{-1})^T\), with orthogonal real Lie
+map \(A\mapsto-A^T\). The implicit mean
+\(\sum_j\log(U_jP^{-1})=0\) commutes with this automorphism
+by local uniqueness. The proof then applies if the complete
+input is also invariant. For a different unspecified allowed
+mean, this outer-automorphism covariance is an extra property
+to verify; reality alone is not a proof.
+
+\subsection{Uniform Hessian decay and a kernel limit}
+\label{msy-kernel-section}
+
+Let the \emph{total} output correction have connected activities
+on output \(J\)-cells:
+\begin{equation}
+ F(w)=\sum_{H\ {\rm connected}}F_H(w_H),\qquad
+ \sup_I\sum_{H\ni I}e^{a_0|H|}\|F_H\|_b\le\epsilon.
+ \label{msy-activity-norm}
+\end{equation}
+Here the supremum is on a scalar-coordinate polydisc of radius
+\(b\); a color-ball domain may be replaced by a contained scalar
+polydisc. Write \(D_0=d(\dim\mathfrak g)J^d\) for an upper bound
+on the scalar coordinate count in a cell. All parameters are
+uniform in volume and preceding homogeneous depth; \(J\) is fixed.
+
+For bond/color coordinates \(i,j\), let \(\xi_i,\xi_j\) be their
+bond midpoints and \(K_{ij}=\partial_i\partial_jF(0)\).
+Cauchy gives
+\[
+ |\partial_i\partial_jF_H(0)|\le2b^{-2}\|F_H\|_b.
+\]
+If connected \(H\) contains both cells, their midpoint distance
+is at most \(J(|H|+d)\), using shortest distance on a torus.
+Sum the at most \(D_0|H|\) second coordinates before the
+anchored support sum. With \(\mu_0=a_0/(2J)\), this proves
+\begin{equation}
+ \sup_i\sum_j e^{\mu_0|\xi_i-\xi_j|_1}|K_{ij}|
+ \le {\cal M}:=
+ \frac{2D_0e^{a_0d/2}\epsilon}{b^2}
+                  \sup_{n\ge1}n e^{-a_0n/2}.
+ \label{msy-exponential-row}
+\end{equation}
+No symmetry of the activity decomposition was used.
+
+For the real quadratic classification assume \(F\) is real on real
+small fields, as for the physical positive density and its real
+logarithm. Complex inputs have the same algebraic classification
+with a possibly complex \(\beta\).
+For a compact semisimple group, constant gauge invariance
+gives \(DF(0)=0\). Differentiate local gauge invariance once
+in a site gauge and once in a field direction. The derivative
+of its nonlinear generator is multiplied by \(DF(0)\), so
+the exact position-space Ward identity is
+\begin{equation}
+ K D=0,
+ \label{msy-Ward-realspace}
+\end{equation}
+with \(D\) the output unit gradient.
+
+Take an exhausting sequence of compatible cubic tori and
+assume the uniform bound \eqref{msy-exponential-row}.
+A diagonal subsequence gives a kernel limit at every fixed
+displacement. Fatou preserves exponential summability.
+Translation covariance, signed permutations, Hessian symmetry
+and the finite-difference identity \eqref{msy-Ward-realspace}
+pass at fixed displacements. This supplies an infinite-lattice
+kernel, not a probability measure, uniqueness statement or
+continuum limit.
+
+This limiting step is substantive. Finite periodic Ward
+identities hold only at their allowed momenta and do not
+by themselves imply a vanishing zero-momentum mass
+coefficient. Small gauge-invariant winding terms are possible.
+No interpolation of finite discrete momenta is used below.
+
+\subsection{Midpoint Fourier classification with a remainder bound}
+\label{msy-classification-section}
+
+Constant adjoint invariance makes the color structure scalar
+on each simple ideal. Cross terms between distinct simple
+ideals vanish. Work with one such spatial kernel
+\(k_{\mu\nu}(r)\). Define
+\begin{equation}
+ \widetilde K_{\mu\nu}(p)=
+ \sum_r k_{\mu\nu}(r)
+       e^{ip\cdot(r+(e_\nu-e_\mu)/2)},\qquad
+ \widehat p_\mu=2\sin(p_\mu/2).
+ \label{msy-midpoint}
+\end{equation}
+The exponential bound makes the symbol analytic near zero.
+The limiting position-space Ward identity yields
+\begin{equation}
+ \widetilde K(p)\widehat p=0
+       \quad\text{for every real }p.
+ \label{msy-Ward-symbol}
+\end{equation}
+At \(p=te_\mu\ne0\), this kills \(e_\mu\); continuity gives
+\(\widetilde K(0)=0\). Full inversion gives
+\(\widetilde K(-p)=\widetilde K(p)\). Reality and Hessian
+symmetry make the symbol real symmetric for real \(p\).
+Midpoint coordinates give the phase-free signed-permutation
+law and eliminate odd Taylor degrees.
+
+\begin{theorem}[Quadratic Maxwell tensor]
+\label{msy-Maxwell-theorem}
+Under the preceding total symmetries, Ward identity and
+uniform kernel hypotheses, each simple color factor has
+a real coefficient \(\beta\) such that
+\begin{equation}
+ \widetilde K(p)
+ =\beta\bigl(|p|^2I-pp^T\bigr)+O(|p|^4)
+ =\beta\bigl(|\widehat p|^2I-
+                      \widehat p\widehat p^T\bigr)+O(|p|^4).
+ \label{msy-Maxwell-expansion}
+\end{equation}
+The estimate concerns the subsequential infinite kernel;
+it is not an assertion about a continuous interpolation
+of a finite-volume symbol.
+\end{theorem}
+
+\begin{proof}
+Signed reflections force the degree-two part to have only
+squares on its diagonal and \(p_\mu p_\nu\) off diagonal.
+Permutations identify their coefficients:
+\[
+ (K_2)_{\mu\mu}=A p_\mu^2+
+                  B\sum_{\nu\ne\mu}p_\nu^2,\qquad
+ (K_2)_{\mu\nu}=C p_\mu p_\nu\quad(\mu\ne\nu).
+\]
+The cubic part of \eqref{msy-Ward-symbol} is \(K_2(p)p=0\).
+Its polynomial coefficients give \(A=0\) and \(C=-B\).
+Put \(\beta=B\). Analyticity and parity give the fourth-order
+remainder, and \(\widehat p=p+O(|p|^3)\) gives its second form.
+\end{proof}
+
+For explicit constants set
+\begin{equation}
+ M_n=\max_\mu\sum_{\nu,r}
+ |r+(e_\nu-e_\mu)/2|_1^n\,|k_{\mu\nu}(r)|.
+ \label{msy-moments}
+\end{equation}
+For \(n>0\), \eqref{msy-exponential-row} gives
+\[
+ M_n\le{\cal M}\left(\frac{n}{e\mu_0}\right)^n,
+ \qquad |\beta|\le M_2/2.
+\]
+The even cosine Taylor remainder yields, for real \(p\),
+\[
+ \|\widetilde K(p)-K_2(p)\|_{\rm op}
+               \le M_4\|p\|_\infty^4/24.
+\]
+Using \(|2\sin(t/2)-t|\le|t|^3/24\) in every row,
+for \(\|p\|_\infty\le1\) we obtain
+\begin{equation}
+ \left\|\widetilde K(p)
+       -\beta\bigl(|\widehat p|^2I-
+                        \widehat p\widehat p^T\bigr)\right\|_{\rm op}
+ \le\left(\frac{M_4}{24}+\frac d6|\beta|\right)
+                              \|p\|_\infty^4 .
+ \label{msy-quantitative-remainder}
+\end{equation}
+Real symmetry turns the absolute row estimate into the
+operator estimate. Without coordinate permutations there
+need not be a single \(\beta\): unequal plaquette-orientation
+coefficients already give a local gauge-invariant action
+with translations and axis reflections but several
+quadratic coefficients.
+
+\subsection{Scope for a subsequent extraction}
+\label{msy-scope-section}
+
+The preceding argument establishes actual output-lattice
+symmetry of the local \(SU(2)\) integral and the resulting
+quadratic classification. It determines neither the sign
+of \(\beta\) nor asymptotic freedom. The uniform flat
+classical normalization is a separate, already available
+input: the explicit alias formula in Notebook07 gives
+\[
+ q_{M,\mathrm{mid}}(p)=|p|^2I-pp^T+O(|p|^4)
+\]
+uniformly in \(M\). Together with the homogeneous minimizer's
+identification of \(q_M\) as \(D^2S_M(0)\), this supplies
+the classical quadratic normalization in that scope.
+Ellipticity alone would not have supplied it.
+
+Subtracting \(\beta\) times the normalized standard Wilson
+plaquette functional is a gauge-invariant scalar subtraction
+whose residual quadratic kernel satisfies
+\eqref{msy-quantitative-remainder}. A localized nonlinear
+extraction, the higher-field Ward completion, finite-volume
+winding control and stable relevant/marginal flow remain
+additional steps. Coefficientwise high-field-jet
+contraction by itself does not supply them.

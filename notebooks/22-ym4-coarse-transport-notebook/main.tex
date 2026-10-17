@@ -1,0 +1,842 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 22: transport into the next coarse background}
+\author{Research working document}
+\date{17 October 2026}
+\setlength{\emergencystretch}{5em}
+\begin{document}
+\maketitle
+\begin{abstract}
+We construct a strictly supported expansion of the actual physical
+stationary current background as a function of the next-coarse
+field, uniformly in preceding classical refinement and periodic
+volume. An affine version of the exact ordinary pivot chart and
+the retained flat inverse yield a support-valued stationary
+equation. Coordinatewise Cauchy estimates convert the previously
+localized scalar action into an analytic gradient majorant without
+a factorial loss. The solution is identified with the established
+gauge-zero classical branch. We then transport holomorphic
+connected-carrier activities through that branch with explicit
+losses of analytic radius and support weight. The number of
+Taylor coordinates is counted exactly, and the vacuum term is
+separated. This supplies a bounded one-step transport for the
+generated quantum activities. It does not assert contraction
+or stability of the analytic domains under repeated integration.
+\end{abstract}
+
+Notebook 21 localized the classical action and controlled one
+integration of it in independent current backgrounds. A new
+coarse effective action requires the substitution of its
+stationary current background. The following two results prove
+that substitution and its activity norm estimate. Their domain
+and weight losses are retained as inputs to the remaining
+quantum induction.
+
+
+\section{Strict support of the physical stationary background}
+\label{st-section}
+
+Fix odd $L$, dimension four, color and the compatible periodic source
+geometry with distinct block interfaces. Current spacing is one, old
+fine spacing is $M^{-1}$ with $M=L^k$, and next-coarse spacing is $L$.
+Write $V=e^{ia}$ and $W=e^{iw}$. These $a,w$ are link angles. In current
+physical units the next-coarse potential is $w/L$; in next-coarse unit
+coordinates it is $w$. All formulas below use $w$, not $w/L$.
+Constants may depend on fixed $L$, but not on $M$ or volume.
+
+Group current coordinates into $L$-block cells, indexed by next-coarse
+cells. The retained nonpivot coordinate $z$ and next-coarse datum $w$
+have fixed real dimensions per block
+\begin{equation}
+ D_z=d(L^d-1)\dim\mathfrak g,\qquad D_w=d\dim\mathfrak g,
+ \qquad D=D_z+D_w=dL^d\dim\mathfrak g.                         \label{st-dimensions}
+\end{equation}
+No fluctuation coupling has yet been inserted in $z$. Fixed-dimensional
+norm equivalences are included in all radii. Scalar Cauchy estimates use
+an actual coordinate product polydisc after this conversion.
+
+We use the previously established ordinary source average and pivot
+chart, the physical gauge-zero branch obtained by the two minimum
+comparisons, and the strict scalar classical-action expansion. The flat
+retained precision has the uniform bounds
+\begin{equation}
+ A_{M,0}=K_L^T(q_M+T_L^TT_L)K_L,\qquad C_{M,0}=A_{M,0}^{-1},
+ \qquad \gamma_*I\le A_{M,0}\le B_*I,                         \label{st-flat-precision}
+\end{equation}
+and both matrices have uniformly exponentially summable block rows and
+columns. Strict scalar support is available with any prescribed finite
+cardinality reserve, at the cost of a smaller uniform product radius.
+The result proved here is one uniform classical-background transport,
+not a claim of closure of repeated quantum RG steps.
+
+\subsection{A local affine pivot chart}
+\label{st-affine-section}
+
+At the identity background let
+\begin{equation}
+ F_1(a)=\frac1i\log M_L(e^{ia})=A_1a+C_1(a),\qquad
+ C_1(0)=DC_1(0)=0.                                           \label{st-constraint}
+\end{equation}
+The actual source normalization is
+\begin{equation}
+ A_1=LQ_L^{\rm flat},\qquad A_1h_1=I,\qquad A_1K_L=0,
+ \qquad h_1(c)=L^{d-1}I\text{ at }p(c).                       \label{st-pivot-normalization}
+\end{equation}
+The pivot coefficient in $Q_L^{\rm flat}$ is $L^{-d}$, hence its
+coefficient in $A_1$ is $L^{1-d}$. Nonpivot restriction of $K_L$ is the
+identity; $h_1$ has only pivot entries.
+
+Prescribe the next-coarse datum $w$ and the retained absolute logarithmic
+coordinates $z$ by solving
+\begin{equation}
+ a=K_Lz+h_1w-h_1C_1(a).                                     \label{st-affine-equation}
+\end{equation}
+Each ordinary constraint equation reads its own pivot and no other
+pivot. Thus this is a family of independent finite-dimensional
+Lie-algebra-block implicit equations, with neighboring nonpivot values
+as parameters. Their derivative in the pivot at zero is invertible.
+There are only finitely many local types. A common small contraction
+therefore gives a holomorphic solution $a=\mathfrak a(w,z)$ satisfying
+\begin{align}
+ F_1(\mathfrak a(w,z))&=w,&
+ \mathfrak a(w,z)|_{\rm nonpivot}&=z,\notag\\
+ \|\mathfrak a(w,z)\|_\infty
+    &\le C_L(\|w\|_\infty+\|z\|_\infty),&
+ \mathfrak a(w,z)&=K_Lz+h_1w+O((\|w\|+\|z\|)^2).
+                                                               \label{st-affine-bounds}
+\end{align}
+Iteration does not spread to another pivot equation. The dependency
+neighborhood and all local analytic constants are fixed at $L$ and
+independent of $M$ and volume. This is the unique small constraint
+solution with the specified nonpivot values, equivalently the
+identity-background ambient source straightening evaluated at
+$K_Lz+h_1w$.
+
+\subsection{Scalar support and the exact flat mixed term}
+\label{st-scalar-section}
+
+Let $G$ be the actual averaged-contour exponential gauge action, in the
+coupling-free normalization, and define
+\begin{equation}
+ T_M(w,z)=S_M(\mathfrak a(w,z))+G(e^{i\mathfrak a(w,z)}).
+                                                               \label{st-action}
+\end{equation}
+The strict scalar support theorem applies to this fixed-range analytic
+substitution and the local gauge action. After fixed $L$-block
+regrouping it yields
+\begin{align}
+ T_M(w,z)&=\sum_{X\ne\varnothing}T_X(w|_X,z|_X),             \label{st-scalar-expansion}\\
+ \mathcal K&:=\sup_i\sum_{X\ni i}
+ e^{\sigma\tau(X)+A_{\mathrm c}|X|}\|T_X\|_\rho<\infty.         \label{st-scalar-norm}
+\end{align}
+Here $\tau$ is graph Steiner length on the $L$-block graph, allowing
+auxiliary vertices, $\sigma>0$, and $A_{\mathrm c}>0$ is any prescribed
+finite reserve. The coordinate-polydisc radius $\rho$ and $\mathcal K$
+are uniform in $M$ and volume. Every coefficient starts at degree at
+least two: the action does so, the chart vanishes at zero, and the gauge
+action has no constant or linear part at the identity.
+
+Put $P_M=q_M+T_L^TT_L$. The full scalar action is stationary at zero, so
+only the linear chart enters its quadratic term:
+\begin{equation}
+ T_M^{(2)}(w,z)=\tfrac12
+ \langle K_Lz+h_1w,P_M(K_Lz+h_1w)\rangle.                    \label{st-quadratic-action}
+\end{equation}
+Thus
+\begin{align}
+ D_zT_M(w,z)&=A_{M,0}z+B_Mw+N_M(w,z),\notag\\
+ B_M&=K_L^TP_Mh_1=K_L^Tq_Mh_1,&
+ N_M(0,0)&=DN_M(0,0)=0.                                    \label{st-gradient-split}
+\end{align}
+The last simplification follows from $T_Lh_1=0$, because the root
+contours are block internal and contain no pivot. The rectangular
+$B_M$ has uniform exponential block bounds. The pairings here are
+counting pairings of the stated angle coordinates; no additional
+$L^4$ transpose factor is introduced. Replacing $w$ by the next-coarse
+physical potential means substituting $w=L a_{\rm next}$ explicitly.
+
+\subsection{An analytic mixed-slot bound from scalar supports}
+\label{st-gradient-section}
+
+The supports in \eqref{st-scalar-expansion} are not uniformly bounded.
+The finite-range vertex lemma therefore cannot be applied directly to
+their gradient. In particular, crude polarization followed by
+$|X|^n$ slot counting can produce a factorial loss. Coordinatewise
+Cauchy gives the needed stronger conclusion.
+
+Write $u=(w,z)$ in a fixed scalar basis. On the coordinate polydisc
+there are $D|X|$ variables. If $M_X=\|T_X\|_\rho$, its scalar Taylor
+coefficients satisfy
+\begin{equation}
+ |c_{X,\beta}|\le M_X\rho^{-|\beta|}.                       \label{st-scalar-cauchy}
+\end{equation}
+For one retained derivative coordinate $\alpha$ at a cell $i\in X$,
+differentiating the product of geometric series gives, for $t<\rho$,
+\begin{equation}
+ \sum_{\beta\ge e_\alpha}
+ \beta_\alpha |c_{X,\beta}|t^{|\beta|-1}
+ \le\frac{M_X}{\rho}(1-t/\rho)^{-D|X|-1}.                   \label{st-gradient-cauchy}
+\end{equation}
+Sum the at most $D_z$ output components. A symmetric multilinear Taylor
+coefficient distributes each scalar monomial coefficient among its
+ordered slots with multinomial weights summing to one. Consequently
+the sum of its ordered cell-slot operator norms is bounded by the same
+absolute scalar coefficient sum, with fixed norm-conversion constants
+absorbed in this bound. Every output and input-slot root lies in $X$,
+so their rooted Steiner length is at most $\tau(X)$.
+
+For $0<\kappa\le\sigma$, the supremum of the all-order positive row
+series is therefore bounded by
+\begin{equation}
+ \mathcal G(t)=\frac{D_z}{\rho}\sup_i\sum_{X\ni i}
+ e^{\kappa\tau(X)}M_X(1-t/\rho)^{-D|X|-1}.                  \label{st-row-series}
+\end{equation}
+Choose $t_0<\rho/2$ such that
+\begin{equation}
+ D\log\frac1{1-t_0/\rho}\le\frac{A_{\mathrm c}}2.
+ \qquad\text{Then}\qquad
+ \mathcal G(t_0)\le\frac{2D_z\mathcal K}{\rho}=:M_g.         \label{st-majorant-radius}
+\end{equation}
+The supremum over output cells cannot be interchanged with the order
+sum. Instead let $v_n$ be the supremum of the order-$n$ mixed-slot row
+norm. Equation \eqref{st-row-series} gives the separate bound
+$v_n\le M_gt_0^{-n}$. Removing degrees zero and one gives the positive
+majorant for $N_M$:
+\begin{equation}
+ \Phi(t)=\sum_{n\ge2}v_nt^n
+ \le\frac{M_g(t/t_0)^2}{1-t/t_0},\qquad
+ \Phi'(t)\le\frac{8M_gt}{t_0^2}\quad(0\le t\le t_0/2).
+                                                               \label{st-nonlinear-majorant}
+\end{equation}
+This deliberate geometric factor makes the order/root-supremum
+bookkeeping valid. It leaves an analytic quadratic majorant uniform in
+refinement and volume.
+
+The original $X$ is a fixed coefficient carrier at the flat baseline,
+not an additional variable support. After substituting families for
+$w,z$, their union is the actual variable support. Internal rooted
+connections through $X$ have already been paid by
+\eqref{st-row-series}. This preserves strict dependence on the original
+next-coarse variables.
+
+\subsection{The support-valued stationary fixed point}
+\label{st-contraction-section}
+
+For a prescribed finite $a_{\mathrm c}\ge0$, use
+\begin{equation}
+ \|u\|_{\kappa,a_{\mathrm c};r}
+ =\sup_i\sum_X e^{\kappa\tau(\{i\}\cup X)+a_{\mathrm c}|X|}
+             \sup_{\|w|_X\|<r}\|u_{i;X}(w|_X)\|.            \label{st-rooted-norm}
+\end{equation}
+The source $w$ has singleton norm $e^{a_{\mathrm c}}r$. For joint insertion
+in $N_M$, use the maximum of the separate $w$- and $z$-family norms and
+color slots by scalar coordinate and field type. The positive scalar
+majorant above already sums all such colors and types, while each
+scalar-component family is bounded by its vector-family norm. This
+does not identify that maximum with
+$\sum_X\|(w_X,z_X)\|$, which could be larger.
+
+Linear exponential block bounds act in \eqref{st-rooted-norm} by their
+weighted row sums. The rooted Steiner union inequality and
+$e^{a_{\mathrm c}|\cup X_r|}\le\prod_r e^{a_{\mathrm c}|X_r|}$ allow the
+proved support-substitution lemma to use
+\eqref{st-nonlinear-majorant}. Stationarity becomes
+\begin{equation}
+ z=-C_{M,0}B_Mw-C_{M,0}N_M(w,z).                            \label{st-stationary-fixed-point}
+\end{equation}
+Let $c_0$ bound the weighted norm of $C_{M,0}$ and choose
+$\ell_0\ge\max\{1,\|C_{M,0}B_M\|_\kappa\}$ uniformly. Put
+\begin{equation}
+ r_*\le\min\left\{\frac{t_0}{2},
+                  \frac{t_0^2}{16c_0M_g}\right\},\qquad
+ r\le\frac{r_*}{2\ell_0e^{a_{\mathrm c}}}.                     \label{st-data-radius}
+\end{equation}
+Decrease these radii further so that reconstruction and evaluation stay
+within the common prior chart and uniqueness neighborhoods. On the
+family ball $\|z\|\le2\ell_0e^{a_{\mathrm c}}r$, the map
+\eqref{st-stationary-fixed-point} is a contraction with constant at most
+$1/2$ and preserves that ball. Hence it has a unique holomorphic
+supported solution with
+\begin{equation}
+ \|z_*\|_{\kappa,a_{\mathrm c};r}\le2\ell_0e^{a_{\mathrm c}}r,
+ \qquad
+ \|z_*+C_{M,0}B_Mw\|_{\kappa,a_{\mathrm c};r}\le C_{a_{\mathrm c}}r^2.
+                                                               \label{st-retained-support}
+\end{equation}
+Evaluation gives a genuine stationary solution on each finite
+regulator. Picard iteration defines an absolutely convergent rooted
+expansion with original $w$-cell leaves.
+
+The finite-range chart $\mathfrak a$ can now be substituted by the
+finite-range support lemma. Define
+\begin{equation}
+ a_*(w)=\mathfrak a(w,z_*(w)),\qquad
+ H_{{\rm cur},M}=h_1-K_LC_{M,0}B_M.                          \label{st-current-extension}
+\end{equation}
+Then
+\begin{equation}
+ \|a_*\|_{\kappa,a_{\mathrm c};r}\le C_{a_{\mathrm c}}r,
+ \qquad
+ \|a_*-H_{{\rm cur},M}w\|_{\kappa,a_{\mathrm c};r}
+                                      \le C_{a_{\mathrm c}}r^2.          \label{st-current-support}
+\end{equation}
+This $H_{{\rm cur},M}$ is the current-angle extension, distinct from the
+earlier original-fine extension. It has a uniform exponential
+rectangular block bound and $A_1H_{{\rm cur},M}=I$. Its source gauge
+condition will follow by identifying the physical branch below; no
+gauge-zero conclusion is inferred from stationarity alone. Local
+exponentiation also supplies strict families for $e^{ia_*}-I$ and its
+inverse minus the identity. For activity transport the bound
+$s(r)=C_{a_{\mathrm c}}r$ on the potential itself is sufficient.
+
+\subsection{Identification of the physical gauge-zero branch}
+\label{st-identification-section}
+
+For real small $w$, the already proved two-scale minimum comparison and
+rooted averaged-contour gauge construction give a branch
+$V_{{\rm old},*}(e^{iw})=e^{ia_{{\rm old},*}}$ with
+\begin{align}
+ M_L(V_{{\rm old},*})&=e^{iw},& P_{V_{{\rm old},*}}(y,x)&=1,\notag\\
+ \|a_{{\rm old},*}\|_\infty&\le C_L\|w\|_\infty,&
+ S_M(a)&\ge S_M(a_{{\rm old},*})                           \label{st-known-minimum}
+\end{align}
+for every real feasible $a$ in the common small comparison ball. The
+actual gauge action is nonnegative on real unitary fields and vanishes
+at $P=1$. Hence
+\begin{equation}
+ S_M(a)+G(e^{ia})\ge S_M(a_{{\rm old},*})+G(V_{{\rm old},*})
+                                                               \label{st-action-comparison}
+\end{equation}
+on that feasible neighborhood. The affine chart parametrizes every
+sufficiently small feasible field by its retained absolute coordinates.
+Thus $z_{{\rm old},*}=a_{{\rm old},*}|_{\rm nonpivot}$ is a critical
+point of $T_M(w,\cdot)$.
+
+The scalar support expansion and Cauchy with fixed margins give
+\begin{equation}
+ \|D_z^2T_M(w,z)-A_{M,0}\|_\kappa
+                \le C_L(\|w\|_\infty+\|z\|_\infty).         \label{st-convexity}
+\end{equation}
+For each coefficient, contract its third derivative with the bounded
+direction $(w,z)$; summing the second retained matrix index costs only
+$|X|$, paid by a cardinality spare. Its input/output distance is at
+most $\tau(X)$. Symmetry gives the column bound. This calculation
+differentiates the full scalar action, so both chart curvature and
+actual gauge curvature remain included. It does not use the ordinary
+rooted average's physical adjoint.
+
+Choose a common real retained supremum ball and a data ball making
+\eqref{st-convexity} at most $\gamma_*/2$. The retained Hessian is
+positive on this convex ball, so there is at most one critical point.
+Both $z_*$ from \eqref{st-stationary-fixed-point} and
+$z_{{\rm old},*}$ lie inside after a uniform shrink. Therefore
+\begin{equation}
+ e^{ia_*(w)}=V_{{\rm old},*}(e^{iw}),\qquad
+ M_L(e^{ia_*(w)})=e^{iw},\qquad P_{e^{ia_*(w)}}(y,x)=1.       \label{st-physical-identities}
+\end{equation}
+This identifies with a known gauge-zero minimum; a generic critical
+equation was not used to assert the gauge condition. Holomorphy and the
+finite-dimensional identity theorem extend these identities from the
+real ball to the common complex product domain. Real minimum
+inequalities are not extended as inequalities. Linearizing the last
+identity gives $T_LH_{{\rm cur},M}=0$.
+
+\subsection{Transport conclusion and its domain limitation}
+\label{st-scope-section}
+
+For any prescribed finite cardinality reserve and sufficiently small
+positive $\kappa$, \eqref{st-current-support} is now a strict-support
+expansion of the actual physical stationary background in its original
+next-coarse angle variables. The radius is uniform in old refinement
+and volume. Output roots are $L$-blocks of current fields and input
+labels are next-coarse cells on the same block graph. If an activity
+uses another current-cell convention, its projection to this graph and
+the finite fiber multiplicity must be included explicitly; fixed
+regrouping is not a contraction estimate. Coefficients can depend on
+the fixed baseline and regulator. Strict variable support does not by
+itself assert volume consistency of a chosen decomposition.
+
+There is a concrete obstruction to inferring an $L^{-1}$ contraction
+of the angle supremum domain. Take small coarse pure-gauge data
+$W(y,y')=g_yg_{y'}^{-1}$ and set the current-site gauge to $g_y$
+throughout each $L$-block. Its current field is the identity internally
+and equals $W$ on the corresponding block-boundary links. It has
+$P_V=1$, ordinary average $W$ and zero classical action. By the same
+minimum comparison and uniqueness it is the physical stationary
+representative. Its boundary angle is of order $\|w\|$, not
+$\|w\|/L$. The physical conversion $a_{\rm next}=w/L$ does not change
+that fact about the angle-domain map.
+
+This theorem supplies one uniform step and an explicit small-domain
+bound $s(r)=C_ar$ for substitution in supplied analytic activities.
+Preservation of a quantum activity norm, any associated radius loss,
+and a compatible common domain under repeated integrations require
+separate proofs. No running-coupling, mixed-history, large-field or
+interacting continuum conclusion follows here.
+
+% Notebook 22 quantum-activity transport module. No preamble. Prefix qt-.
+\section{Strict-support transport of analytic quantum activities}
+\label{qt-section}
+
+We now substitute the actual stationary current background into a
+supplied family of quantum activities. This is a bounded finite-step
+map. Its input has only one fixed positive support-cardinality reserve;
+we do not assume an arbitrary reserve for quantum activities. The
+number of Taylor coordinates is proportional to the original carrier
+size, and we explicitly pay that cost. Constants are uniform in the
+old refinement $M$ and compatible periodic volume, with fixed $L$.
+
+\subsection{Carrier geometry and the precise analytic inputs}
+\label{qt-input-section}
+
+Let $\Lambda$ be the input cell graph and $\Lambda'$ the next field's
+cell graph. A projection $\pi:\Lambda\to\Lambda'$ has fibers of size
+at most $F$ and sends every nonempty connected input carrier to a
+connected set. For ordinary $L$-cube blocking, $F=L^d$. Identity
+projection is allowed. Write $d'$ for graph distance on $\Lambda'$ and
+define
+\begin{equation}\label{qt-distance-sum}
+ S_\delta=\sup_{z\in\Lambda'}\sum_{j\in\Lambda'}e^{-\delta d'(z,j)}
+ \le\sum_{j\in\mathbb Z^d}e^{-\delta|j|_1}<\infty,
+ \qquad \delta>0.
+\end{equation}
+The bound is uniform on compatible tori: choose one minimal-distance
+integer representative of every periodic site. Short periodic
+directions do not enlarge the sum.
+
+Each input cell carries at most $D$ scalar complex background
+coordinates. For a nonempty connected $H\subset\Lambda$, suppose
+$E_H(a|_H)$ is bounded and holomorphic on
+\begin{equation}\label{qt-input-domain}
+ |a_i^\alpha|<b,\qquad i\in H,\quad 1\le\alpha\le D,
+\end{equation}
+and put $e_H=\norm{E_H}_b$. The only activity hypothesis is
+\begin{equation}\label{qt-input-norm}
+ \sup_{i\in\Lambda}\sum_{H\ni i}e^{a_0|H|}e_H\le\epsilon,
+ \qquad a_0>0\text{ fixed}.
+\end{equation}
+Here $D$ counts background scalar coordinates, not automatically
+retained Gaussian coordinates. A product of Euclidean fiber balls of
+radius $b_E$ contains the scalar polydisc of radius $b_E/\sqrt D$;
+make this fixed norm conversion before applying the formulas below.
+
+The actual stationary potential on the next-field product domain of
+radius $r$ has the strict support expansion
+\begin{align}
+ a_i^\alpha(w)&=\sum_{\varnothing\ne X\subset\Lambda'}
+                   u_{i,\alpha;X}(w|_X),
+ &u_{i,\alpha;X}(0)&=0,                                  \label{qt-background-series}\\
+ \sup_{i,\alpha}\sum_X
+ e^{\kappa\tau(\{\pi(i)\}\cup X)}
+       \norm{u_{i,\alpha;X}}_r&\le s(r)\le C_a r,
+ &\kappa&>0.                                             \label{qt-background-norm}
+\end{align}
+Here $\tau$ is graph Steiner length, allowing auxiliary vertices.
+The preceding stationary-background theorem supplies this estimate;
+its stronger support-cardinality weight is not needed here. A
+maximum-coordinate bound on its full current-field block fiber
+implies \eqref{qt-background-norm} for each scalar component, without
+summing over the fiber.
+
+If only the total $a_i(0)$ vanishes, subtract each summand's constant.
+Absolute convergence preserves the total and increases $s$ by at most
+a factor two. Incorporate that factor into $C_a$. For a nonzero
+reference potential, center both \eqref{qt-input-domain} and
+\eqref{qt-background-series} at that reference and use the available
+distance to the analytic boundary in place of $b$.
+
+\begin{remark}[The present physical indexing]\label{qt-indexing}
+The normalized Gaussian activities supplied by Notebooks 18 and 21
+are already indexed by $L$-blocks of the current unit lattice. The
+next-coarse $w$ labels are the same block index graph. The present
+physical substitution therefore uses
+\[
+ \pi=\mathrm{id},\qquad F=1,\qquad
+ D=D_{\mathrm{bg}}=dL^d\dim\mathfrak g.
+\]
+The last dimension includes all current background links assigned to
+the block; it differs from the retained Gaussian dimension
+$d(L^d-1)\dim\mathfrak g$. After substitution, these labels are unit
+cells of the next current lattice. A further projection for the
+following integration is a distinct operation, discussed below.
+It must not be counted as an additional gain during this substitution.
+\end{remark}
+
+\subsection{Bounded transport with an explicit loss budget}
+
+Choose $a_{\mathrm{out}},\mu\ge0$ and $\delta>0$, and set
+\begin{equation}\label{qt-budget-notation}
+ \beta=a_{\mathrm{out}}+\mu,\qquad
+ t=\frac{s(r)}b<1,\qquad
+ \alpha_D(t)=D\log\frac1{1-t}.
+\end{equation}
+For a connected output carrier $K$, let $\ell(K)$ denote metric
+minimum spanning-tree length. Define
+\begin{equation}\label{qt-output-norm}
+ \norm{E'}_{a_{\mathrm{out}},\mu;r}
+ =\sup_{z\in\Lambda'}\sum_{K\ni z}
+      e^{a_{\mathrm{out}}|K|+\mu\ell(K)}\norm{E'_K}_r.
+\end{equation}
+
+\begin{theorem}[Finite-step activity transport]\label{qt-theorem}
+Assume \eqref{qt-input-norm}--\eqref{qt-background-norm} and
+\begin{equation}\label{qt-budget}
+ \beta+\delta\le\kappa,\qquad
+ \beta+\alpha_D(t)\le a_0.
+\end{equation}
+There are strictly supported holomorphic activities $E'_K(w|_K)$
+on nonempty connected $K\subset\Lambda'$, with $E'_K(0)=0$, such that
+\begin{align}
+ \sum_H E_H(a(w)|_H)
+   &=\mathrm{Vac}_\Lambda+\sum_K E'_K(w|_K),
+ &\mathrm{Vac}_\Lambda&=\sum_H E_H(0),                 \label{qt-exact-identity}\\
+ \norm{E'}_{a_{\mathrm{out}},\mu;r}
+   &\le F S_\delta\epsilon.                            \label{qt-transport-bound}
+\end{align}
+All regroupings converge absolutely. The bound is independent of
+$M$ and finite periodic volume. It is not a contraction assertion.
+\end{theorem}
+
+A concrete choice with strictly positive output weights is
+\begin{align}
+ \beta&=\min\{a_0/4,\kappa/4\},
+ &a_{\mathrm{out}}&=\mu=\beta/2,
+ &\delta&=\kappa/4,\notag\\
+ \frac{s(r)}b&\le\min\{1/2,a_0/(8D)\}.                 \label{qt-concrete-budget}
+\end{align}
+Indeed $\alpha_D(t)\le2Dt\le a_0/4$. Thus a sufficient radius is
+\begin{equation}\label{qt-radius}
+ r\le\frac b{C_a}\min\{1/2,a_0/(8D)\},
+\end{equation}
+together with the stationary-background theorem's own radius
+restriction. All centering and norm-conversion constants are included
+in $b$ or $C_a$. Nothing requires $C_a<1$.
+
+\begin{proof}
+Expand each activity in its actual $D|H|$ scalar coordinates:
+\begin{equation}\label{qt-taylor}
+ E_H(a|_H)=\sum_{\nu\in\mathbb N^{D|H|}}c_{H,\nu}a^\nu,
+ \qquad |c_{H,\nu}|\le e_H b^{-|\nu|}.
+\end{equation}
+Coordinatewise Cauchy on smaller polydiscs, followed by a limit,
+gives the coefficient bound. There is no dimension-free absolute
+Taylor norm being assumed.
+
+For every scalar occurrence in a monomial $a^\nu$, insert
+\eqref{qt-background-series}. Its chosen support $X$ inherits the
+root $\pi(i)$ of that scalar coordinate. For each such rooted set,
+fix a deterministic minimizing connected tree $T(i,X)$ containing
+$\{\pi(i)\}\cup X$. Ties can be resolved by any fixed finite-volume
+rule. For a decorated term define
+\begin{equation}\label{qt-hull}
+ K=\pi(H)\cup\bigcup_{\text{occurrences}}\mathrm{Vert}\,T(i,X),
+ \qquad T_{\mathrm{tot}}
+       =\sum_{\text{occurrences}}\tau(\{\pi(i)\}\cup X).
+\end{equation}
+The original projected carrier is retained even if some of its
+variables are absent from the monomial. It is connected, and every
+attached tree has a root in it. Consequently
+\begin{equation}\label{qt-hull-geometry}
+ |K|\le|\pi(H)|+T_{\mathrm{tot}},\qquad
+ z\in K\ \Longrightarrow\ d'(z,\pi(H))\le T_{\mathrm{tot}}.
+\end{equation}
+A tree with $q$ edges adds at most $q$ vertices after attachment at
+its root. A vertex on an attached tree is at distance at most that
+tree's length from $\pi(H)$. Overlaps and periodic wrapping can
+only improve these inequalities.
+
+The decorated function reads only $w|_K$. Its true variable set may
+be smaller: $K$ is a declared connected carrier, not a claim of
+minimal dependence. A nonconstant monomial is a product of factors
+vanishing at zero and hence also vanishes at zero. Define $E'_K$ as
+the sum of these nonconstant terms having carrier $K$. Set aside
+the constant Taylor terms as $\mathrm{Vac}_\Lambda$.
+
+For every connected lattice vertex set $K$,
+\begin{equation}\label{qt-connected-mst}
+ \ell(K)=|K|-1,
+ \qquad e^{a_{\mathrm{out}}|K|+\mu\ell(K)}\le e^{\beta|K|}.
+\end{equation}
+Indeed the induced connected graph has a unit-edge spanning tree,
+while every metric tree has $|K|-1$ edges of distance at least one.
+Graph Steiner length is used for the attached rooted sets because
+deleting intermediate roots from a terminal metric spanning tree
+need not decrease its length. At the output all connecting vertices
+are retained, so \eqref{qt-connected-mst} applies exactly.
+
+Put $h=|\pi(H)|$ and $k=|H|$. For a fixed output anchor $z$,
+\eqref{qt-hull-geometry} gives
+\begin{align}
+ \mathbf1_{\{z\in K\}}
+ e^{a_{\mathrm{out}}|K|+\mu\ell(K)}
+ &\le e^{\beta h}e^{-\delta d'(z,\pi(H))}
+       \prod_{\text{occurrences}}
+       e^{(\beta+\delta)\tau(\{\pi(i)\}\cup X)}.       \label{qt-anchor-hull}
+\end{align}
+If $z\notin K$ this is automatic; otherwise insert
+$1\le e^{\delta(T_{\mathrm{tot}}-d'(z,\pi(H)))}$.
+The first condition in \eqref{qt-budget} lets us sum each scalar
+occurrence's support using \eqref{qt-background-norm}, at cost $s(r)$.
+The exact sum over scalar multiindices is
+\begin{equation}\label{qt-coordinate-count}
+ \sum_{\nu\in\mathbb N^{Dk}}t^{|\nu|}
+    =(1-t)^{-Dk}=e^{\alpha_D(t)k}.
+\end{equation}
+Omitting $\nu=0$ replaces the last expression by
+$e^{\alpha_D(t)k}-1$. Thus the full contribution from a fixed $H$
+is bounded by
+\begin{equation}\label{qt-fixed-carrier-bound}
+ e_H e^{\beta h+\alpha_D(t)k}
+                  e^{-\delta d'(z,\pi(H))}.
+\end{equation}
+Since $h\le k$, the second condition in \eqref{qt-budget} pays
+the two exponential costs from the given reserve $a_0 k$.
+Finally,
+\begin{equation}\label{qt-reroot}
+ e^{-\delta d'(z,\pi(H))}
+    \le\sum_{i\in H}e^{-\delta d'(z,\pi(i))}.
+\end{equation}
+Summing \eqref{qt-fixed-carrier-bound} over $H$ therefore gives
+\begin{align}
+ \sum_i e^{-\delta d'(z,\pi(i))}
+             \sum_{H\ni i}e^{a_0|H|}e_H
+ &\le F S_\delta\epsilon,                              \label{qt-final-majorant}
+\end{align}
+which proves \eqref{qt-transport-bound}.
+
+This positive majorant also justifies every substitution and
+regrouping. At finite volume, summing over output anchors bounds
+the total absolute series. Normal convergence on smaller product
+polydiscs proves holomorphy. No order sum has been interchanged
+with an output supremum: for each fixed $H$ the scalar series is
+summed exactly in \eqref{qt-coordinate-count}, before taking the
+anchored carrier sum. In particular, no crude $|H|^n$ slot count
+with a missing factorial is hidden in the argument.
+\end{proof}
+
+\subsection{Vacuum and the smaller-radius improvement}
+
+The vacuum has the explicit density assignment
+\begin{equation}\label{qt-vacuum-density}
+ v_i=\sum_{H\ni i}\frac{E_H(0)}{|H|},\qquad
+ \mathrm{Vac}_\Lambda=\sum_i v_i,
+ \qquad |v_i|\le\epsilon,
+ \qquad |\mathrm{Vac}_\Lambda|\le|\Lambda|\epsilon.
+\end{equation}
+Grouping these densities into a block costs at most $F$.
+
+\begin{corollary}[Vacuum-subtracted radius bound]\label{qt-small-radius}
+If the hypotheses of Theorem~\ref{qt-theorem} hold with
+\begin{equation}\label{qt-spare-reserve}
+ \rho=a_0-\beta-\alpha_D(t)>0,
+\end{equation}
+then also
+\begin{equation}\label{qt-small-radius-bound}
+ \norm{E'}_{a_{\mathrm{out}},\mu;r}
+ \le F S_\delta\epsilon\,\alpha_D(t) C_\rho,
+ \qquad C_\rho=\sup_{k\ge1}k e^{-\rho k}\le\frac1{e\rho}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+For nonconstant terms use
+$e^{\alpha_D(t)k}-1\le\alpha_D(t)k e^{\alpha_D(t)k}$
+in place of \eqref{qt-coordinate-count}. The spare
+$e^{-\rho k}$ pays the factor $k$. The remaining rerooting sum
+is unchanged.
+\end{proof}
+One may take the smaller of \eqref{qt-transport-bound} and
+\eqref{qt-small-radius-bound}. This is improved smallness on a
+strictly smaller field domain. It does not prove a contraction
+at a common radius under repeated RG steps.
+
+\subsection{An optional connected-carrier compression estimate}
+\label{qt-compression-section}
+
+\begin{lemma}[Connected carriers under cube projection]\label{qt-compression}
+For odd $L\ge5$, put
+\begin{equation}\label{qt-compression-constants}
+ r_L=(L-1)/2,\qquad s_L=\lfloor(r_L-1)/2\rfloor,
+ \qquad k_L=s_L+1.
+\end{equation}
+If $H$ is connected and $\pi_L$ is $L$-cube projection, then
+\begin{equation}\label{qt-compression-bound}
+ |\pi_L(H)|\le2^d\max\{1,|H|/k_L\}
+           \le2^d+(2^d/k_L)|H|.
+\end{equation}
+The estimate holds on compatible rectangular tori.
+\end{lemma}
+\begin{proof}
+Choose a maximal subset of $H$ separated by at least $r_L$ in
+the periodic supremum metric. The supremum balls of radius
+$r_L-1$ around its $J$ centers cover $H$. Each such ball has
+side length $2r_L-1<L$ and meets at most $2^d$ coarse blocks,
+so $|\pi_L(H)|\le2^d J$. If $J=1$ the result follows.
+If $J\ge2$, the graph-distance balls of radius $s_L$ about
+the centers are disjoint, since $2s_L<r_L$. For each center,
+a path in $H$ to another center contains at least $s_L+1$
+distinct vertices before leaving its ball. Hence
+$Jk_L\le|H|$. Identifications in short periodic directions
+only reduce the block counts; the same separation and path
+argument uses periodic distances.
+\end{proof}
+
+\begin{corollary}[Transport with a proved carrier gain]\label{qt-compressed-transport}
+Suppose the projection in Theorem~\ref{qt-theorem} satisfies
+$|\pi(H)|\le c_0+c_1|H|$ on connected carriers. The second
+condition in \eqref{qt-budget} may be replaced by
+\begin{equation}\label{qt-compressed-budget}
+ c_1\beta+\alpha_D(t)\le a_0,
+\end{equation}
+and the resulting bound is
+\begin{equation}\label{qt-compressed-bound}
+ \norm{E'}_{a_{\mathrm{out}},\mu;r}
+       \le e^{\beta c_0}F S_\delta\epsilon.
+\end{equation}
+The smaller-radius estimate also holds with the factor
+$e^{\beta c_0}$ and
+$\rho=a_0-c_1\beta-\alpha_D(t)>0$.
+\end{corollary}
+\begin{proof}
+Keep $h=|\pi(H)|$ in \eqref{qt-fixed-carrier-bound}, and
+use $\beta h\le\beta c_0+c_1\beta |H|$. All other parts
+of the proof are unchanged.
+\end{proof}
+Lemma~\ref{qt-compression} provides
+$c_0=2^d$, $c_1=2^d/k_L$. A sufficiently large fixed $L$
+can therefore help pay stronger cardinality weights. But the
+attached background trees must still obey
+$\beta+\delta\le\kappa$ in the graph used by the substitution.
+A larger spatial exponent cannot be assumed without a separate
+regrouping proof and its accompanying cardinality and domain costs.
+The constant $e^{\beta2^d}L^d S_\delta$ can be large.
+
+In the actual convention of Remark~\ref{qt-indexing}, current
+substitution uses identity projection. Afterwards, its connected
+carriers are unit-cell carriers of the next current field $w$.
+Regrouping them into the following integration's $L$-block Gaussian
+cells is a legitimate new projection. It must include that later
+pivot-chart enlargement and background-domain budget; it is not
+a second projection hidden in \eqref{qt-exact-identity}.
+
+\subsection{What the estimate does and does not establish}
+
+Connectedness of the input carrier is necessary for this
+cardinality-only hypothesis. Without it, an activity reading two
+sites at arbitrarily large separation can have fixed cardinality
+norm, while any connected output carrier containing both has size
+at least their distance plus one. A spatial input norm could pay
+this cost, but it is not part of \eqref{qt-input-norm}.
+
+There is no automatic contraction: a constant singleton activity
+$E_{\{i\}}=c$ at each old cell gives $L^d c$ after summation in
+a full coarse block. Even after vacuum subtraction, an identity
+background map and a linear singleton activity have no strict
+contraction at the same analytic radius. The gain in
+\eqref{qt-small-radius-bound} is explicitly a radius loss.
+
+For example, a Gaussian output reserve $a_0\le1/2$ cannot simply
+be re-used as an interaction input demanding exponent $4$.
+One must verify a compression/enlargement budget, a suitable
+stationary-background exponent, and the next domain. The
+stationary branch has a one-step radius with an $L$-dependent
+constant; no supremum-domain contraction by $L^{-1}$ has been
+proved. These facts leave a genuine induction interface.
+
+Every transported coefficient is strictly a function of its
+declared $w$ variables. Its fixed baseline may still depend on
+$M$ and the finite regulator, and a deterministic choice of
+connecting trees need not give coefficientwise volume consistency.
+The uniform bounds alone imply no thermodynamic consistency.
+
+Finally, the theorem transports supplied quantum activities
+through the matched classical stationary background. It does
+not identify the full interacting quantum stationary point with
+that classical branch, absorb inherited interactions into a new
+minimization, or control running couplings, large-field histories,
+or observable insertions. It supplies an exact finite-step bridge
+whose coefficient, support, volume, and analytic-radius costs
+are all displayed.
+
+\section{The remaining quantum recurrence}
+\label{ct22-next}
+
+The actual stationary substitution is now represented by
+strictly supported functions of the next-coarse variables.
+The connected activities supplied by Notebook 21, and its
+separate normalization terms after a common reduction of
+their support exponent, satisfy the input form of the
+transport theorem. Thus their sum can be expressed as
+local next-coarse activities on the explicitly smaller
+analytic ball. This is a completed finite-step interface.
+
+For the specific convention used in Notebook 21, the
+integration cells are already the next-coarse block cells.
+That substitution uses the identity projection. Projection
+into another set of $L$-blocks occurs only when preparing
+these activities for the following integration. It cannot
+be counted twice.
+
+A repeated quantum construction requires more. The generated
+activity norm has a fixed small support exponent, whereas the
+Gaussian integration theorem asks for a stronger weighted
+input. The connected-carrier estimate explains a possible
+geometric gain at the later projection, but its constants
+and the new fluctuation-chart enlargement must be included.
+Notebook 24 makes that inherited-interaction budget explicit;
+Notebook 26 meets it using a fixed auxiliary grouping and
+recovers a common positive carrier exponent.
+The smaller analytic radius in the transport theorem must
+also be replaced by a proved stable domain recursion.
+The explicit pure-gauge example above rules out obtaining
+that recursion merely by declaring that every link angle
+contracts by $L^{-1}$ in this rooted representative.
+Notebook 25 constructs a smaller pre-root-gauge representative
+and identifies the analytic composition germ for an invariant
+total functional, with its remaining activity and integral
+domain requirements kept explicit.
+
+Finally, the vacuum, marginal gauge-action coefficient and
+irrelevant interactions need their appropriate extractions
+and scaling estimates. A bounded norm map is insufficient:
+vacuum singleton terms already grow by block volume.
+Large-field complements, source insertions and the continuum
+reconstruction requirements of Notebook 01 remain part of
+the full existence argument.
+
+\begin{thebibliography}{9}
+\bibitem{prior22}
+\emph{Toward a four-dimensional Yang--Mills construction},
+research Notebooks 15--21 in this workspace. The physical
+stationary branch, exact current pivot chart, retained
+inverse, scalar support construction and connected
+integration activities are the principal inputs.
+\bibitem{balaban10922}
+T.~Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field
+theories I}, Commun. Math. Phys. \textbf{109} (1987), 249--301,
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-3ygai0vxt1.pdf}{original article copy}.
+\bibitem{balaban11622}
+T.~Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field
+theories. II. Cluster expansions},
+Commun. Math. Phys. \textbf{116} (1988), 1--22,
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-4penm4k7hc.pdf}{original article copy}.
+\bibitem{source22}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}{Yang--Mills-LLM-experiment},
+deposited raw accounts at commit
+\texttt{e392ef4501\allowbreak 3a581664ba\allowbreak b76b908671\allowbreak 70b30fe10e}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,318 @@
+\section{Classical support substitution before Gaussian integration}
+\label{cdc-section}
+
+This section places the classical precision and base factors directly
+in the next background $w$, before applying the Gaussian expansion.
+The composite ratio $R=\ell^s$ is fixed. Constants may depend on
+$R$ and on the later auxiliary grouping, but are uniform in the
+preceding homogeneous depth $M$ and compatible volume. The inputs
+are the established classical strict families with arbitrary fixed
+cardinality reserve and the actual supported stationary map. No
+such arbitrary reserve is assumed for inherited quantum activities.
+
+\subsection{A precision composition lemma}
+\label{cdc-precision-section}
+
+On one fixed cell graph let
+$B(a)=\sum_Y B_Y(a|_Y)$ be a symmetric matrix family. Its matrix
+rows and columns are supported in $Y$, and $B_Y(0)=0$. Each
+$a$-cell has $D$ scalar coordinates with independent analytic
+radius $b_{\rm cl}$. Write $\tau(Y)$ for graph Steiner-tree length,
+allowing auxiliary vertices. Suppose
+\begin{equation}
+ \sup_i\sum_{Y\ni i}\sum_{j\in Y}
+ e^{\sigma\tau(Y)+A|Y|}
+       \|(B_Y)_{ij}\|_{b_{\rm cl}}\leq N_B.
+ \label{cdc-precision-input}
+\end{equation}
+The norms inside this sum are block operator norms. Let the
+stationary substitution have a normally convergent strict family
+\begin{equation}
+ a_i(w)=\sum_X u_{i;X}(w_X),\qquad u_{i;X}(0)=0,\qquad
+ \sup_i\sum_Xe^{\kappa\tau(\{i\}\cup X)+a|X|}
+                         \|u_{i;X}\|_r\leq s(r).
+ \label{cdc-map-input}
+\end{equation}
+Here each output norm is the maximum over the entire cell fiber,
+\emph{inside} the support sum.
+
+\begin{lemma}[Composition in the matrix row norm]
+\label{cdc-precision-lemma}
+Choose $0<\kappa'<\min(\sigma,\kappa)$, $A'\geq0$ with
+$a\geq A'$, and $\rho>0$. Put
+\begin{equation}
+ t=\frac{s(r)}{b_{\rm cl}}<1,\qquad
+ \alpha_D(t)=D\log\frac1{1-t}.
+ \label{cdc-alpha}
+\end{equation}
+If $A'+\alpha_D(t)+\rho\leq A$, then
+$B(a(w))=\sum_Z B'_Z(w_Z)$ has symmetric strict pieces with
+rows and columns in $Z$, and
+\begin{equation}
+ \sup_i\sum_{Z\ni i}\sum_{j\in Z}
+ e^{\kappa'\tau(Z)+A'|Z|}\|(B'_Z)_{ij}\|_r
+ \leq N_B\alpha_D(t)
+                   \sup_{n\geq1}n e^{-\rho n}.
+ \label{cdc-precision-output}
+\end{equation}
+In particular the bound is $O(r)$ if $s(r)=O(r)$ and the
+displayed margins are fixed.
+\end{lemma}
+\begin{proof}
+Expand a matrix entry of $B_Y$ on its scalar-coordinate polydisc.
+Cauchy bounds its multiindex coefficient by
+$\|(B_Y)_{ij}\|_{b_{\rm cl}}b_{\rm cl}^{-|\nu|}$.
+The zero multiindex is absent. Substitute the strict family
+\eqref{cdc-map-input} in every occurrence of every scalar input.
+If an occurrence is rooted at $k\in Y$ and assigned support $X$,
+declare the resulting carrier to be
+$Z=Y\cup\bigcup X$. Steiner gluing gives
+\begin{equation}
+ \tau(Z)\leq\tau(Y)+\sum_{\rm occurrences}
+                            \tau(\{k\}\cup X),\qquad
+ |Z|\leq|Y|+\sum_{\rm occurrences}|X|.
+ \label{cdc-precision-gluing}
+\end{equation}
+The scalar multiindex sum is
+\begin{equation}
+ (1-t)^{-D|Y|}-1
+ \leq\alpha_D(t)|Y|e^{\alpha_D(t)|Y|}.
+ \label{cdc-precision-generating}
+\end{equation}
+The $\rho$ reserve pays $|Y|$ and proves
+\eqref{cdc-precision-output}. For a fixed nonzero matrix row
+$i$, the original piece already had $i\in Y$, and its nonzero
+columns remain in $Y$. Substitution does not create new matrix
+rows or columns. Thus no path-anchor rerooting factor is needed.
+Symmetry is preserved coefficientwise and after grouping equal
+$Z$. Absolute convergence justifies all groupings.
+\end{proof}
+
+If only $\sum_YB_Y(0)=0$ is initially known, subtract the
+individual constants. Their absolutely convergent sum is zero,
+and the input norm increases by at most a factor two. The lemma
+is a statement about the precision's weighted row norm. It does
+not assert a norm of whole global matrices anchored at every
+new support site.
+
+\subsection{Application to the actual composite precision}
+\label{cdc-actual-precision-section}
+
+Group current-unit classical families into source $R$-blocks.
+The number of current background coordinates in each fiber is
+finite at fixed $R$. The established classical support
+construction, followed by the exact finite-range composite pivot
+and ordinary logarithm maps, supplies individually symmetric
+strict pieces of
+\begin{equation}
+ B(a)=A_{M,R}(a)-A_{M,R,0}
+ \label{cdc-actual-precision}
+\end{equation}
+on an independent current-background product ball. Their row
+norm has an arbitrary prescribed finite cardinality reserve and
+some positive spatial exponent, uniformly in $M$ and volume.
+The chain rule includes the classical current contracted against
+both chart-curvature terms, and the full absolute gauge Hessian.
+These terms are not omitted away from the physical branch.
+
+The actual stationary field is the pre-gauge supported
+representative followed by the fixed-$R$ internal contour gauge.
+Finite-range Banach-valued analytic composition therefore gives
+\eqref{cdc-map-input} for $a_*(w)$ with any fixed finite
+cardinality reserve, a positive exponent and $s(r)=O_R(r)$.
+Its output fiber is the entire current field in an $R$-block,
+with its maximum norm inside the support sum. The lemma gives
+a symmetric strict $w$-precision with row norm $O_R(r)$.
+The outer radius $b_{\rm cl}$ here is a classical radius; it is
+not the inherited quantum radius reused at every step.
+
+Now group source roots and next-background cells into odd
+$J$-blocks. For a projected support $\varrho_J Z$, the established
+geometric bounds give
+\begin{equation}
+ \tau_{\rm mac}(\varrho_JZ)
+       \leq\frac2J\tau(Z)+d|Z|,\qquad
+ \ell_{\rm mac}(\varrho_JZ)
+       \leq\frac4J\tau(Z)+2d|Z|.
+ \label{cdc-projection}
+\end{equation}
+The second uses metric spanning-tree length $\ell$, and is
+conservative. Grouping matrix rows costs at most $J^d$:
+sum the old rows in the macrocell before taking its block norm.
+For the target strict Gaussian exponent $\gamma=8$, it is
+sufficient in $d=4$ to choose
+\begin{equation}
+ \frac{32}{J}\leq\kappa',\qquad A'\geq64.
+ \label{cdc-precision-reserve}
+\end{equation}
+This produces the required macro precision norm $O_{R,J}(r)$.
+The separately established covariance decay is regrouped at the
+same $J$; increasing $J$ if necessary supplies the fixed
+Gaussian spatial exponents.
+
+For clarity, the small-radius choice is made \emph{after} $R,J$.
+The real baseline retains its spectral bounds
+$\gamma_R I\leq A_{M,R,0}\leq B_RI$ under grouping. If
+$\nu(r)$ bounds the substituted precision perturbation in the
+macro weighted row norm, then
+\begin{equation}
+ \nu(r)\leq\gamma_R/2
+ \quad\Longrightarrow\quad
+ \|A(w)^{-1}-A_0^{-1}\|
+             \leq2\gamma_R^{-2}\nu(r).
+ \label{cdc-covariance-comparison}
+\end{equation}
+Hence the sufficient additional condition
+\begin{equation}
+ \nu(r)\leq\frac{\theta\gamma_R^2}{4B_R}
+ \label{cdc-relative-neighborhood}
+\end{equation}
+puts the covariance within relative norm $\theta/2$ of the real
+baseline, leaving the other half for the Gaussian Cauchy
+perturbation. The strict density-support construction has
+additional positive smallness thresholds in this same weighted
+precision norm. Since $\nu(r)=O_{R,J}(r)$, all can be met by
+choosing a single final $b\leq r$ after the finite geometry and
+$\theta$ have been fixed. For example
+$\theta=1/(4D_G)$ uses the actual finite macro Gaussian
+dimension $D_G$. This choice does not require replacing the
+inherited field radius by a smaller fraction after each
+stationary substitution.
+
+\subsection{Scalar exponents with spectator fluctuation variables}
+\label{cdc-scalar-section}
+
+Let $V_Y(a|_Y,\xi|_Y)$ be a classical or measure exponent family,
+holomorphic in the independent background, measurable on the
+actual retained cutoff, with
+\begin{equation}
+ \sup_i\sum_{Y\ni i}e^{\sigma\tau(Y)+A|Y|}
+             \|V_Y\|_{b_{\rm cl},{\rm cutoff}}
+ \leq\epsilon_{\rm cl}.
+ \label{cdc-scalar-input}
+\end{equation}
+Only $Y$ is read in the fluctuation variables. It need not be
+connected. Empty scalar vacuum terms, if present, are tracked
+separately. Substitute \eqref{cdc-map-input} in the background
+slots while keeping $\xi$ as spectator data.
+
+\begin{lemma}[Joint macro carriers for the base factors]
+\label{cdc-scalar-lemma}
+Fix a target cardinality exponent $\mathsf B\geq0$ and
+$\delta>0$. With $t=s(r)/b_{\rm cl}<1$, suppose
+\begin{equation}
+ \frac{2(\mathsf B+\delta)}J\leq\min(\sigma,\kappa),\qquad
+ a\geq d(\mathsf B+\delta),\qquad
+ A\geq d(\mathsf B+\delta)+\alpha_D(t).
+ \label{cdc-scalar-budget}
+\end{equation}
+There is a normally convergent decomposition into connected
+strict joint $(w,\xi)$ macro carriers $K$ such that
+\begin{equation}
+ \sum_YV_Y(a_*(w)|_Y,\xi|_Y)=\sum_KV'_K(w_K,\xi_K),
+ \qquad
+ \sup_z\sum_{K\ni z}e^{\mathsf B|K|}
+                         \|V'_K\|
+ \leq e^{\mathsf B}J^d S_\delta\epsilon_{\rm cl},
+ \label{cdc-scalar-output}
+\end{equation}
+where $S_\delta=\sup_z\sum_y e^{-\delta d(z,y)}$.
+\end{lemma}
+\begin{proof}
+Taylor expand in the $D|Y|$ scalar background coordinates only.
+Retain $Y$ as a fluctuation carrier even in the zero Taylor
+coefficient. Join $\varrho_JY$ by a deterministic Steiner graph;
+for each substituted support $X$ rooted at $k\in Y$, attach a
+deterministic Steiner graph spanning
+$\{\varrho_Jk\}\cup\varrho_JX$. Their union is a connected
+joint carrier $K$. If $T$ is the sum of their edge lengths, then
+\begin{align}
+ |K|&\leq1+T,\nonumber\\
+ T&\leq\frac2J\tau(Y)+d|Y|
+       +\sum_{\rm occurrences}
+          \left[\frac2J\tau(\{k\}\cup X)+d|X|\right].
+ \label{cdc-joint-tree}
+\end{align}
+The carrier includes every background argument and the entire
+projected fluctuation carrier, regardless of their overlap.
+For $z\in K$, $d(z,\varrho_JY)\leq T$. Thus
+\begin{equation}
+ e^{\mathsf B|K|}\mathbf1_{z\in K}
+ \leq e^{\mathsf B}e^{-\delta d(z,\varrho_JY)}
+                                      e^{(\mathsf B+\delta)T}.
+ \label{cdc-reroot}
+\end{equation}
+The spatial and cardinal weights in
+\eqref{cdc-scalar-budget} pay the last factor. The scalar
+multiindex sum, now including degree zero, is exactly
+$(1-t)^{-D|Y|}=e^{\alpha_D(t)|Y|}$, paid by the remaining
+input cardinal reserve. Finally use
+\begin{equation}
+ e^{-\delta d(z,\varrho_JY)}
+ \leq\sum_{y\in\varrho_JY}e^{-\delta d(z,y)}.
+ \label{cdc-anchor-sum}
+\end{equation}
+For each projected root $y$ there are at most $J^d$ source
+sites. The original anchored norm and the lattice sum
+$S_\delta$ yield \eqref{cdc-scalar-output}. These estimates
+are positive majorants uniform over the actual real cutoff;
+normal convergence gives background holomorphy. All deterministic
+support assignments are fixed before choosing the fields.
+\end{proof}
+
+The zero background Taylor term can depend on $\xi$ and is then
+an interaction, not a vacuum constant. The proof does not infer
+a strict family from a bound on the summed scalar functional.
+It starts with the actual coefficient bound
+\eqref{cdc-scalar-input}.
+
+\subsection{Actual classical and measure inputs and scope}
+\label{cdc-matching-section}
+
+At fixed $R$, the already established classical support theorem
+applies to the action after the actual composite chart and
+ordinary-log conversion. Its Taylor remainder after subtracting
+constant, linear and quadratic terms has arbitrarily weighted
+strict coefficients. On the physical stationary branch the
+subtracted linear term vanishes, so this extension agrees with
+the exact centered integral. The full absolute gauge action is
+treated the same way; no off-stationary residual is discarded.
+
+The local ambient pivot logarithms, Haar logarithms and gauge
+remainder also have actual independent-background coefficient
+families. Composite one-pivot incidence keeps their ranges
+finite at fixed $R$. The retained link cutoff is unchanged.
+With its link threshold denoted by $T$, these families retain
+the respective small factors
+\begin{equation}
+ O_{R,J}\bigl(|g|T^3+|g|T+g^2T^2\bigr)
+ \label{cdc-base-smallness}
+\end{equation}
+after the scalar substitution, provided the fixed chart and
+Taylor domains hold. Equal-carrier exponents are grouped before
+exponentiation. If their anchored exponent bound is $v$, it
+bounds each individual exponent and gives the multiplier norm
+bound $e^v v$ for $e^{V'_K}-1$.
+
+Background-only pivot-delta factors are treated by the same
+scalar substitution. The Gaussian determinant is expanded in
+closed chains using the already substituted strict precision;
+its field-independent normalization remains separate. The
+classical outer radii and reserves are fixed independently of
+the old quantum activity radius.
+
+Thus the precision and base multipliers already read $w$ on
+the auxiliary Gaussian graph. Once a separate inherited joint
+family meets its budget, the Gaussian expansion outputs
+$w$-activities directly on next-current $J$-cells. There is no
+second transport through $a_*(w)$ after integration. This changes
+only the order of normally convergent support substitution;
+the exact integration variables, covariance, cutoff and
+normalization are unchanged.
+
+This section is not the integrated quantum-step theorem. It
+does not estimate inherited activity amplitudes, prove a
+contractive recursion, identify a running coupling or control
+large fields. All equality statements start on their common
+local analytic domains and extend only on the established
+holomorphic continuations.

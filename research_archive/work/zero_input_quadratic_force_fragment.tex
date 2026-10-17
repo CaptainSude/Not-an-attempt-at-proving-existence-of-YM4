@@ -1,0 +1,198 @@
+% No preamble. Prefix zif-. The optional fixed-coupling parity refinement stays in research.
+\section{Quadratic forcing from a fixed outer field domain}
+\label{zif-section}
+
+Fix the composite geometry $R,J$, carrier exponent $a_0=1/16$,
+and the jointly chosen, input-independent classical system of
+the preceding local-limit theorem. The gauge Lie algebra is
+semisimple, in particular it may be $\mathfrak{su}(2)$.
+Constants may depend on the fixed geometry and color conventions,
+but are uniform in preceding homogeneous depth $M$ and compatible
+volume. The input of the quantum step in this section is zero.
+
+\subsection{One outer construction and its restrictions}
+\label{zif-outer-section}
+
+The classical precision, stationary-map, pivot and base-interaction
+coefficients have independent outer product domains. After $R,J$
+are fixed, choose one radius $\rho>0$ on which all their strict
+support and Gaussian-neighborhood budgets hold with a fixed
+margin. No inherited activity is evaluated in this construction.
+With the actual retained link/color window of threshold $T$, write
+\begin{align}
+ \mathcal G_{M,g,T}(0)
+   &=\Delta_M+\mathcal Q_{{\rm det},M}
+                         +\mathcal L_{M,g,T},\notag\\
+ \mathcal L_{M,g,T}(w)
+   &=\log\mathbb E_{C_M(w)}
+             [\chi_T(\xi)e^{V_{\rm base}(w,\xi;g)}].
+ \label{zif-zero-decomposition}
+\end{align}
+The covariance, stationary branch and charts are independent of
+$g$. Field-independent powers of $g$, flat determinants, Haar
+constants and the compact gauge-insertion normalization remain
+in the separately tracked vacuum factor.
+
+The actual outer-domain construction gives an anchored family
+with
+\begin{align}
+ \|\mathcal G_{M,g,T}(0)\|_{a_0,\rho}
+ &\le H(\rho,g,T),\notag\\
+ H(\rho,g,T)
+ &:=(C_\Delta+C_{\rm det})\rho
+       +2S_1\bigl[e^3\tau(T)+e^{v(g,T)}v(g,T)\bigr],\notag\\
+ v(g,T)&\le C_{\rm base}(gT^3+gT+g^2T^2),
+ \label{zif-outer-bound}
+\end{align}
+with harmless fixed enlargements of the constants if needed.
+Choose $T=T(g)\ge1$ and $g_0>0$ so that every strict base and
+bad-block budget holds on $\rho$ for $0<g\le g_0$ and
+\begin{equation}
+ \sup_{M,\,0<g\le g_0}H(\rho,g,T(g))\le H_*<\infty.
+ \label{zif-uniform-outer}
+\end{equation}
+A sufficiently large fixed multiple of
+$\sqrt{\log(1/g)}$, with a fixed lower threshold, is one
+permitted choice after reducing $g_0$. This is a bound on a
+coefficient family, not on an extensive total.
+
+For $0<b<\rho$, fix these outer data and restrict their
+coefficients. The zero-input integral on $b$ is exactly the
+restriction of \eqref{zif-zero-decomposition}: its chart,
+covariance, window $T(g)$, measure factors and logarithm branch
+are unchanged. A field radius enters the estimates, not the
+defining integral. The infinite statement uses the same
+outer-domain local-limit system followed by restriction.
+Unrelated subsequences at different radii are not identified.
+Two alternative valid carrier assignments for that same finite
+integral also give the same normalized class by the established
+local-limit theorem.
+
+\subsection{Remove the total constant and linear sectors}
+\label{zif-force-section}
+
+\begin{theorem}[Uniform quadratic zero-input force]
+\label{zif-theorem}
+Under \eqref{zif-uniform-outer}, for every $b\le\rho/2$ the
+zero-input correction has a representative of its
+vacuum-normalized class satisfying
+\begin{equation}
+ \|[\mathcal G_{M,g,T(g)}(0)]\|_{\mathcal Q,a_0,b}
+       \le C_F b^2,
+ \qquad C_F=\frac{2H_*}{\rho^2}.
+ \label{zif-force-bound}
+\end{equation}
+The constant is independent of $b,M$ and volume. The same
+representative estimate holds before taking a local limit if
+the hypotheses are imposed on the actual finite regulators.
+\end{theorem}
+
+\begin{proof}
+The actual zero-input total is globally adjoint invariant:
+the real retained-window change of variables, equivalently
+the local gauge theorem of the common-domain integral, gives
+this identity. Its derivative at zero in each link slot is
+an invariant linear functional on the adjoint Lie algebra.
+It vanishes on commutators, and
+$[\mathfrak g,\mathfrak g]=\mathfrak g$; hence its total
+linear jet is zero. This reasoning passes from finite
+regulators to compact-field derivatives on the chosen limit.
+Individual carrier coefficients need not have zero linear
+jets or be separately gauge invariant.
+
+Let $P_n$ be homogeneous phase projection in all background
+coordinates of one carrier. Cauchy's formula on radii below
+$\rho$, followed by their increasing limit, gives
+\begin{equation}
+ \|P_n E_H\|_b\le(b/\rho)^n\|E_H\|_\rho.
+ \label{zif-phase-bound}
+\end{equation}
+Replace the outer family by
+\begin{equation}
+ E_H^{\ge2}:=\sum_{n\ge2}P_nE_H.
+ \label{zif-representative}
+\end{equation}
+It retains every declared carrier and represents the same
+normalized total: constants are normalized away and the
+sum of the linear sectors is zero. Sum
+\eqref{zif-phase-bound} first over degree for each carrier,
+then over anchored carriers. This yields
+\begin{equation}
+ \|E^{\ge2}\|_{a_0,b}
+ \le\frac{(b/\rho)^2}{1-b/\rho}\|E\|_{a_0,\rho}
+ \le\frac{2H_*}{\rho^2}b^2.
+ \label{zif-geometric-bound}
+\end{equation}
+There is no exchange of a root supremum with an order sum.
+The argument is identical at finite volume and on the
+normally convergent infinite family.
+\end{proof}
+
+For a Lie algebra with an abelian factor, the adjoint argument
+alone does not remove a linear total; its vanishing would be
+an additional hypothesis. Vacuum removal here changes only
+the normalized class. It does not discard the corresponding
+physical scalar normalization.
+
+Let the actual full reference satisfy
+$\beta(S_{MR})=1$ and
+$\|[S_{MR}]\|_{\mathcal Q,b}\le C_Sb^2$, as obtained
+from its fixed outer classical representation. Then
+\begin{equation}
+ P_{MR}=I-S_{MR}\beta,
+ \qquad \|P_{MR}\|\le p:=1+C_\beta C_S
+ \label{zif-projection}
+\end{equation}
+has a bound independent of $b$. Therefore
+\begin{align}
+ \|P_{MR}\mathcal G_{M,g,T(g)}(0)\|_{\mathcal Q,b}
+      &\le C_0b^2,\qquad C_0=pC_F,\notag\\
+ |\beta(\mathcal G_{M,g,T(g)}(0))|
+      &\le C_\beta C_F.
+ \label{zif-extracted-beta}
+\end{align}
+The $b^{-2}$ factor in the norm of $\beta$ is present;
+the proven $b^2$ forcing cancels it. The finite representative
+estimate does not by itself define a finite extraction
+functional: a finite $\beta_N$ must separately have the
+corresponding bounded normalization on the actual reference.
+
+\subsection{Order of choices and the limits of the conclusion}
+\label{zif-scope-section}
+
+The outer radius and bound are chosen once after $R,J$.
+The final inner radius may subsequently be reduced to meet
+any fixed finite block of classical transport constraints.
+For a prescribed family ceiling $\bar\epsilon$, the inherited
+quantum difference coefficient is proportional to $gT(g)/b$.
+A sufficient budget, with the constants of the common-domain
+theorem, is
+\begin{equation}
+ \frac{16C_TC_RgT(g)}b\,\bar\epsilon
+       \le\frac{\eta_*}{128e}.
+ \label{zif-inherited-budget}
+\end{equation}
+The denominator $128e$ is the stronger two-input comparison
+budget used for the quotient Lipschitz estimate. It is met by
+reducing $g_0$ after the positive $b$ and
+$\bar\epsilon$ have been fixed. Thus a ceiling of the form
+$\bar\epsilon\le\eta_*/(\text{constant}\,a_Q)$,
+where $a_Q=16C_TC_RgT/b$, creates no radius cycle.
+The base and bad-block budgets remain separate requirements.
+
+If all intermediate extracted amplitudes have norm at most
+$C_{\rm int}b^2$, the bounded classical transport, the force
+bound and the fixed-coupling quantum Lipschitz bound give
+an unprojected one-step amplitude bounded by a constant
+times $b^2$. Its Maxwell increment is consequently bounded
+independently of $b$. This provides neither its sign nor
+control of infinitely many accumulated increments.
+
+Finally, $\Delta_M$ and $\mathcal Q_{{\rm det},M}$ have
+no small factor $g$. Their removal of constant and linear
+sectors yields $O(b^2)$, not $O(g^2)$. A bound of the latter
+kind for the full force would require a separate proved
+cancellation or subtraction. Nothing here is a contraction
+in the joint coupling--activity variables, a large-field
+estimate, or an identification of the local sector with the
+full Wilson measure.

@@ -1,0 +1,183 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\begin{document}
+% No preamble. Unique prefix or-. Uses \norm and standard theorem environments.
+% Locality of the explicit ordinary representative, pending independent audit.
+
+\section{Locality of the chosen ordinary-constraint representative}
+\label{or-section}
+
+Gauge equivalence by itself does not preserve locality of a chosen
+potential representative. For the explicit gauge used in the ordinary
+constraint transfer, however, the required locality can be proved.
+Write $A_*(B)$ for the corrected fixed-slice minimizer and retain the
+cumulative endpoint gauge $b_j$ and the fixed bump extension
+$E_{\rm pt}$ from that transfer. Set
+\begin{equation}\label{or-transfer}
+ \omega(A)=\frac1i\log b_j(e^{i\eta A})^{-1},\qquad
+ \lambda(A)=E_{\rm pt}\omega(A),\qquad
+ T(A)=\mathscr A_\eta(A,\lambda(A)),\qquad
+ A_{\rm ord}(B)=T(A_*(B)).
+\end{equation}
+All bases are small in the unweighted global norms. Weights are
+placed on variations only. Fix $0<\alpha<1$ and one sufficiently
+small positive spatial exponent $\kappa$.
+
+\subsection{The derivative of the gauge transfer is weighted bounded}
+
+The cumulative gauge is uniformly holomorphic in the global
+potential supremum norm, has $b_j-I=O(\norm{A}_\infty)$,
+and has a fixed final physical dependency radius $R_b$.
+The latter follows from the endpoint product and the summable
+physical reading radii of the corrected trajectory.
+The same properties hold for $\omega$, with $\omega(0)=0$.
+For an admissible weight $w(n)/w(m)\le e^{\kappa d(n,m)}$,
+local-row Cauchy gives
+\begin{equation}\label{or-omega-derivative}
+ \norm{D\omega(A)V}_{\infty,w}
+      \le C e^{\kappa R_b}\norm{V}_{\infty,w}.
+\end{equation}
+Indeed, for one coarse output row, restrict the direction to that
+row's dependency neighborhood. Its unweighted supremum is bounded
+by the right side divided by the output weight. No derivative is
+taken of this restricted direction: $\omega$ consumes bounded
+potential values. Cauchy is applied to the whole bounded row,
+not coefficientwise followed by a fine-dimensional count.
+The same argument proves operator-valued holomorphy in the
+weighted norm on a smaller unweighted background ball.
+
+The fixed bump interpolation satisfies
+\begin{equation}\label{or-point-weighted}
+ \norm{E_{\rm pt}c}_{C^{2,\alpha}_w}
+          \le C_\kappa\norm{c}_{\infty,w}.
+\end{equation}
+Each collar reads a fixed number of nearby coarse coefficients.
+Bounded smooth bump derivatives through order three, weight
+comparison on that neighborhood, and sampling give this estimate,
+uniformly in refinement and compatible periodic volume.
+Consequently
+\begin{equation}\label{or-lambda}
+ \norm{D\lambda(A)V}_{C^{2,\alpha}_w}
+       \le C_\kappa\norm{V}_{\infty,w},\qquad
+ \norm{\lambda(A)}_{C^{2,\alpha}}
+       \le C\norm{A}_\infty.
+\end{equation}
+The base estimate in the second inequality is unweighted.
+
+For completeness, the fine gauge action is
+\[
+ \mathscr A_\eta(A,\lambda)(e)=\frac1{i\eta}\log
+ (e^{i\lambda(e_-)}e^{i\eta A(e)}e^{-i\lambda(e_+)}).
+\]
+Writing $\ell=\lambda(e_-)$ and
+$v=(\lambda(e_+)-\lambda(e_-))/\eta$, its group argument is
+$e^{i\eta\operatorname{Ad}_{e^{i\ell}}A(e)}
+e^{i\ell}e^{-i(\ell+\eta v)}$.
+It equals identity at $\eta=0$, so its logarithm divided by
+$\eta$ has a uniform analytic jet extension there.
+The derivative is therefore a finite sum of products of analytic
+coefficients of the base jet $(A,\lambda,D\lambda)$ and the
+variation jet $(V,\mu,D\mu)$. The base coefficients have bounded
+unweighted $C^{1,\alpha}$ norms. The discrete product estimate
+with one weighted factor gives
+\begin{equation}\label{or-gauge-derivative}
+ \norm{D\mathscr A_\eta(A,\lambda)[V,\mu]}_{N_{\alpha,w}}
+ \le C_\kappa\bigl(\norm{V}_{N_{\alpha,w}}
+                         +\norm{\mu}_{C^{2,\alpha}_w}\bigr).
+\end{equation}
+A first output difference uses at most two scalar differences.
+The same jet estimate controls its H\"older member; there is no
+inverse-mesh loss or weighted-smallness assumption on the base.
+Combining \eqref{or-lambda} and \eqref{or-gauge-derivative} proves
+\begin{equation}\label{or-DT}
+ \norm{DT(A)V}_{N_{\alpha,w}}
+                  \le C_\kappa\norm{V}_{N_{\alpha,w}},
+\end{equation}
+with holomorphic dependence in this weighted operator norm.
+
+\subsection{Responses and the new leading extension}
+
+The corrected minimizer's weighted response theorem and the chain
+rule now give
+\begin{equation}\label{or-first}
+ D_BA_{\rm ord}(B)=DT(A_*(B))D_BA_*(B),\qquad
+ \norm{D_BA_{\rm ord}(B)b}_{N_{\alpha,w}}
+                 \le C_\kappa\norm{b}_{\infty,w}.
+\end{equation}
+Its leading extension is
+\begin{equation}\label{or-leading}
+ H_{\rm ord}=DT(0)H,
+\end{equation}
+not H. To check the sign explicitly, let
+$\beta(A)=\log b_j(e^{i\eta A})/i$ and
+$B_{\rm cum}=D\beta(0)$. On the common branch $\omega=-\beta$,
+and the gauge action has derivative $V-D\mu$ at zero. Hence
+\begin{equation}\label{or-leading-explicit}
+ DT(0)=I+DE_{\rm pt}B_{\rm cum},\qquad
+ H_{\rm ord}=H+DE_{\rm pt}B_{\rm cum}H.
+\end{equation}
+Thus $dH_{\rm ord}=dH$.
+The exact transfer identity
+$\mathcal F_{\rm ord}(T(A))=\mathcal F_{\rm corr}(A)$
+also gives $Q_{\rm ord}DT(0)=Q$ and
+$Q_{\rm ord}H_{\rm ord}=I$, where $Q_{\rm ord}$ is the
+derivative of the ordinary homogeneous constraint at zero.
+
+The response family in \eqref{or-first} is holomorphic on a
+common unweighted complex coarse ball with a uniform weighted
+operator norm. Operator Cauchy on a smaller ball yields
+\begin{equation}\label{or-linear-correction}
+ \norm{(D_BA_{\rm ord}(B)-H_{\rm ord})b}_{N_{\alpha,w}}
+       \le C_\kappa\norm{B}_\infty\norm{b}_{\infty,w}.
+\end{equation}
+If $\delta$ is a fixed analytic margin, then for every $n\ge1$,
+\begin{equation}\label{or-higher}
+ \norm{D_B^nA_{\rm ord}(B)[b_1,\ldots,b_n]}_{N_{\alpha,w}}
+ \le C_\kappa(n-1)!\left(\frac e\delta\right)^{n-1}
+       \norm{b_1}_{\infty,w}\prod_{i=2}^n\norm{b_i}_\infty.
+\end{equation}
+For $n>1$ apply multivariable Cauchy to the first-response
+operator with $n-1$ unweighted directions and use
+$(n-1)^{n-1}\le e^{n-1}(n-1)!$. The case $n=1$ is
+\eqref{or-first}. Symmetry permits any selected bounded direction
+to carry the weight.
+
+For a direction supported in S, choose
+$w_S(n)=e^{\kappa d(n,S)}$. Equations \eqref{or-first} and
+\eqref{or-higher} give exponential decay away from S. If all
+directions are supported in sets $S_i$, applying the bound
+separately to each weighted direction gives the factor
+$e^{-\kappa\max_i d(n,S_i)}$. No tree-length estimate is inferred.
+Integration along a straight coarse segment gives
+\begin{equation}\label{or-finite-change}
+ \norm{A_{\rm ord}(B')-A_{\rm ord}(B)}_{N_{\alpha,w}}
+       \le C_\kappa\norm{B'-B}_{\infty,w}.
+\end{equation}
+Thus finite changes supported in S have the same spatial decay.
+For complete infinite fields use bounded truncated weights and
+pass to the limit. For weights that decay to zero, literal
+Fr\'echet responses are first read on bounded directions with
+finite weighted norm; the formulas define their bounded extension
+to the full weighted space. The support weights satisfy $w_S\ge1$
+and require no such qualification.
+
+This proves locality of the particular ordinary representative
+defined in \eqref{or-transfer}; the field-dependent gauge has been
+estimated rather than treated as harmless by gauge equivalence.
+It does not assert locality of every gauge-equivalent representative,
+identify the separately moving source gauge, or cover mixed
+retained-history geometries. The action-minimum statement remains
+the finite homogeneous small-global-field theorem proved earlier.
+
+\end{document}

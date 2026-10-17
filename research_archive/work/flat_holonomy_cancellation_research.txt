@@ -1,0 +1,131 @@
+17 October 2026. Root research, initially pending independent audit.
+
+EXACT FLAT-HOLONOMY CANCELLATION IN THE PHYSICAL DETERMINANT
+
+Purpose: quantify the compensation forced by the global-base scalar
+defect. This is a zero-momentum Ward test, not a Maxwell coefficient
+calculation and not a bound on nonzero-curvature response.
+
+1. Scalar defect (independent derivation of provenance's observation).
+On a periodic n^4 lattice, let one charge q see constant link phase
+theta=t q A in direction mu. The unbased scalar spectrum is
+ lambda_p(t)=2 sum_nu [1-cos(p_nu+t q A delta_mu,nu)].
+Set V=n^4 and remove one site's row/column to form G_n(t).
+For t nonzero and away from accidental zero modes, Jacobi and Fourier
+diagonals give
+ det G_n(t)=V^-1 prod_(p!=0)lambda_p(t)
+           [1+lambda_0(t) sum_(p!=0)1/lambda_p(t)].
+Both sides continue analytically through t=0. Since
+lambda_0(t)=q²A²t²+O(t^4),
+
+ [t²]logdet G_n(t)
+ =q²A² sum_(p!=0) [
+       cos(p_mu)/lambda_p(0)
+       -2 sin²(p_mu)/lambda_p(0)^2
+       +1/lambda_p(0)].
+
+The first two terms are the partial derivative
+ partial_(p_mu)[sin(p_mu)/lambda_p(0)].
+They have O(|p|^-2) singularity, integrable in four dimensions. Their
+Brillouin-zone integral vanishes by integration by parts after removing
+a radius-epsilon ball: its boundary flux is O(epsilon²).
+Their Riemann sums converge: the grid contribution from radius epsilon
+is bounded by C n^-4 sum_(0<|m|<=Cn epsilon) (|m|/n)^-2
+<=C epsilon², with a harmless O(n^-2) edge adjustment.
+The same argument applies to 1/lambda.
+Consequently
+
+ lim_(n->infinity) V^-1[t²]logdet G_n(t)
+       =q² A² g_4,
+ g_4=integral_[-pi,pi]^4 dp/(2pi)^4 [2 sum_nu(1-cos p_nu)]^-1>0.
+
+Summing charges gives C_H A² g_4. Neutral charges contribute zero.
+For a vector A of commuting constant link angles the answer is
+C_H |A|² g_4; off-diagonal terms vanish by coordinate reflections.
+
+At each fixed scalar mass m>0, the corresponding normalized full
+logdet coefficient is the integral of a periodic momentum derivative
+and vanishes. The principal-minor correction is rank dim(g); its
+fixed-m derivatives are O(1), so its normalized contribution vanishes.
+Thus taking the thermodynamic limit before mass removal gives zero.
+The massless globally based limit gives the nonzero value above.
+
+2. Fine/coarse normalization.
+Fix K=ell^k and old depth M. Final period N; fine current period KN.
+Use actual final constant links W_mu(t)=exp(i t A_mu H), all commuting,
+and current links U_mu(t)=exp(i t A_mu H/K).
+Each ordinary blocking stage preserves constant commuting connections,
+so F_K(U)=W exactly. These configurations have zero plaquette action.
+The rooted gauge representative is obtained by actual contour gauge;
+gauge conjugation leaves Gf, Gc determinants unchanged. The local
+minimum germ identifies these flat representatives with the actual
+stationary branches. This uses the fixed finite M,K,N germ only.
+
+The fine scalar determinant is evaluated at current angle t A/K,
+with (KN)^4 sites, while the coarse determinant has angle t A and N^4
+sites. Therefore
+
+ lim_(N->infinity) N^-4 [t²](logdet Gf(t)-logdet Gc(t))
+       = C_H |A|² (K²-1) g_4.                    (2.1)
+
+This holds for fixed K, with every actual old M (the generators on
+this branch are the same covariant scalar difference operators).
+It is not the magnetic heat coefficient alpha_g logK.
+
+3. The actual total has zero thermodynamic constant-flat response.
+At fixed M,K, Notebook33 gives the actual leading correction D_N a
+translation-invariant Hessian kernel with common exponential row and
+source bounds, plus local gauge Ward identities on its infinite limits.
+For any structural limit, each localized density is gauge invariant
+and its quadratic kernel kills lattice gradients. The Ward identity
+extends to polynomial scalar gauge parameters by absolute exponential
+summability. The constant field A is the gradient of the linear scalar
+parameter x -> A.x (up to the generator sign). Hence the infinite total
+quadratic symbol vanishes at momentum zero.
+
+Equivalently, for the finite coefficients,
+ N^-4[t²]D_N(W(t))=1/2 sum_(orientation,color; displacements)
+           K_N(0,r)[A,A].
+Here the orientation and color contractions are finite. The exponential
+row bound makes the tail uniformly small. On each local-limit
+subsequence the finite central sum converges and its full limit is zero
+by the Ward identity. Compactness and uniqueness of this scalar
+subsequential value imply
+
+ lim_(N->infinity) N^-4[t²]D_N(W(t))=0.          (3.1)
+
+No derivative of a nonperiodic affine flux family on a torus is used.
+W(t) is an exactly periodic, genuinely flat holonomy family.
+No assertion that D_N is identically zero at finite N is needed.
+The locality constants may depend on K; K is fixed before N->infinity.
+The same subsequence argument is uniform in old M when using the
+Notebook33 uniform old-depth fixed-K bounds and all structural limits.
+
+4. Forced physical-precision compensation.
+The exact finite identity in Notebook34 is
+ 2 D_N=N0(logdet Gf-logdet Gc-logdet Qperp).
+Subtract (3.1) from (2.1), with identical N, K, branch and base.
+This proves
+
+ lim_(N->infinity) N^-4[t²]logdet Qperp(W(t))
+       = C_H |A|² (K²-1) g_4.                  (4.1)
+
+Thus the physical determinant has a quadratically growing constant-
+connection response even though Qperp(0)>=cK^-2 on the physical space.
+The corresponding contribution -1/2 logdet Qperp cancels the scalar
+orbit ratio exactly at zero momentum. The identity fixes its sign.
+
+Consequences:
+ * A separate uniform O(1) constant-potential response for logdet Qperp
+   in final units is false as K grows.
+ * The scalar reference alpha_g logK is not an automatically valid
+   replacement for the original massless globally based scalar ratio.
+ * This is an obstruction to an independent-factor comparison, not an
+   obstruction to the actual gauge-invariant determinant or existence.
+ * A joint infrared regulator or a genuinely local coupled gauge choice
+   must preserve this cancellation before estimating curvature.
+
+Audit needs: exact finite branch identification for the flat holonomy
+family; actual per-output-volume Hessian normalization; permission to
+extend the fixed-K Ward identity to linear scalar parameters; no
+uniform-K locality asserted.

@@ -1,0 +1,167 @@
+Independent audit of the covariant mean-zero determinant package
+18 October 2026. Auditor: provenance.
+
+Files read in full:
+  physical_quotient_localization_research.txt
+  physical_quotient_localization_fragment.tex
+  mean_zero_gauge_spectral_fragment.tex
+  covariant_mean_zero_density_fragment.tex
+Also compared the actual tangent input to the separately authored and
+independently audited covariant_corrected_scalar_research.txt and its
+ccs fragment.
+
+STATUS: substantive mathematical pass, with two small cgd wording
+clarifications sent to root. This establishes the actual jointly local
+fixed-K determinant representation and its affine/total Maxwell identity.
+It does not establish a uniform large-K curvature estimate or any
+continuum Yang--Mills existence theorem.
+
+1. Exact finite amplitude (pql)
+
+The all-site injective calculation is legitimate on the indicated real
+open set. Fine and target orbit Jacobians are sqrt(det G) and sqrt(det Gc),
+respectively. Splitting fine scalar variables into fields zero at final
+centers and center parameters has unit Euclidean Jacobian. The contour
+gauge integrates only the former; the latter are fixed by the target
+delta. Thus the power a^(nc-sc) in I_act^2 is correct.
+
+The physical residual data retain the full constraint-current curvature.
+H_res is the Hessian of s-s_eff composed with the actual constraint at a
+point with zero first derivative; hence its full gauge null identity is
+consistent even when the separate classical actions are not stationary.
+No replacement of L by a bare Wilson Hessian is used.
+
+For the mean-zero decomposition, (G^(1/2)V)^T is orthogonal to
+Bc=B G^(-1/2) in the needed sense B G^(-1/2)G^(1/2)V=0. Splitting this
+vertical space and eliminating its second block leaves precisely the
+physical Q_perp. The determinant is
+  det QB = a^sc det GB det Gc det(BG^-1 B^T) det Qperp.
+Jacobi gives
+  det(BG^-1B^T)=det(BB^T) det GB/det G.
+Their combination with the actual amplitude has scalar determinant
+power ONE:
+  I_act = a^(nc/2) det GB sqrt(det BB^T)/sqrt(det QB).
+This agrees with the displayed pql result, including normalization.
+
+The auxiliary coupled-matrix shear has determinant one and uses no
+inverse of Dc. It is a tangent identity, not an unproved nonlinear
+pushforward/Haar change.
+
+The source tangent construction gives BB^T=K^-4 I exactly. The full
+scalar completion has complementary eigenvalue K^-2 with constant
+multiplicity sc, so it changes the logarithm only by a background
+constant. A frame of ker B is not needed in the final local matrices.
+
+The irreducible locus is nonempty arbitrarily near flatness for SU(N):
+a regular diagonal cycle holonomy and a second with connected
+off-diagonal graph have zero common Lie centralizer. Actual fine
+injectivity follows from CD=Dc r and parallel transport. With the
+proved mean-zero gaps, holomorphic continuation of the positive
+branches proves the identity through flatness. This is a joint
+continuation; it does not assign separate globally based determinants
+their flat limits. The exclusion of abelian factors is explicit.
+
+2. Spectral estimates (mgs)
+
+Counting normalization checks:
+  ||A_K|| <= K^-1 in d=4;
+  ||D H_b||^2 <= C_lift K^2 ||Dc b||^2;
+  ||D phi||^2 <= 2 C_P K^2 ||P Delta phi||^2
+                 +2 C_lift K^2 ||Dc Q0 phi||^2.
+The K^4 Parseval ratio in the central-alias lift and the extra K^-2
+from one fine difference give exactly the K^2 stated above.
+The constant-mode case has zero energy; taking real parts handles
+coarse Nyquist representatives without changing constraints.
+
+In the Hodge decomposition the final two estimates produce
+  ||x||^2 <= (1+4C_lift)||xT||^2
+             +2C_P K^2||P D^T x||^2+4C_lift K^2||Ax||^2.
+The stated transverse alias estimate therefore gives exactly the
+displayed C_gap. Harmonic bonds are retained in the transverse term.
+No point-pinned gap or scalar global-base inverse is invoked.
+
+The product tent has mean one and mean square at most two. Its internal
+and interface derivative counts imply ||DE||<=C1/K, also with periodic
+multiplicities. Duality with E gives
+  ||Pi D^T x|| <= C1||x||/K+(C0+1)||P D^T x||.
+Combining this with the gap proves the stated C_Delta and full bond
+Laplacian domination.
+
+Heat bounds use eigenvalue min--max, not an invalid matrix
+monotonicity claim for exponentials. Compression of the scalar
+Laplacian gives the needed scalar heat trace inequality. The added
+basis-free scalar complement contributes exactly dim(g)e^-u per
+final block; the polynomial heat envelope with a slightly smaller
+exponential absorbs it. Its inverse moments contribute dim(g).
+Finite-volume harmonic corrections and the K=1 empty scalar case
+are explicit and correct.
+
+3. Gauge-invariant density and actual Maxwell moment (cgd)
+
+Exact covariance of B,Cbar,D and H_res implies separate covariance of
+Ghat and QB in the fine scalar/bond frames. Their diagonal color
+traces are individually invariant. After actual stationary substitution,
+a change of root gauge is harmless for each diagonal trace, while
+background-source dependence is exponential rather than finite range.
+
+For fixed K, the flat lower and upper bounds and uniform old-M source
+estimates yield a sufficiently small complex ball and a positive
+weighted exponent. Weighted conjugation of the logarithm series, or
+a resolvent contour, gives the asserted local source moments.
+The series argument must be understood in the conjugated operator
+norm with an exponent spare, as written; no raw row norm contraction
+is inferred from an unweighted norm contraction.
+
+Each invariant density has zero linear color jet for semisimple color.
+Its quadratic Ward identity kills gradients in each slot. Exponential
+source moments allow linear scalar parameters; hence its Hessian row
+and column sums vanish separately for each bond component. The identity
+  [t^2]rho0(t n_nu H)
+    = -1/4 sum_(b,c) k0(b,c)(b_nu-c_nu)^2
+then follows absolutely. Translation reanchoring identifies this with
+half the actual total Maxwell moment. Thus
+  beta(D)=2[t^2]rho0(affine probe)
+has the correct sign and factor. This avoids assigning a convenient
+non-invariant density the total Maxwell coefficient.
+
+The affine source is evaluated only on localized Taylor kernels, not
+as a nonzero unbounded argument of a bounded-field germ. The actual
+effective S_M Hessian and full residual remain present. The separately
+proved actual stationary polynomial-jet identification is the input
+needed to use the affine commuting representative.
+
+At small heat time the second Taylor coefficient is O(s); at large
+time the fixed-K gap and weighted exponential kernels control polynomial
+source insertions by an exponential times a polynomial. Thus the
+logarithm identity passes through the two local Taylor derivatives
+and the local structural limit. Its sign is
+  beta(D)= integral_0^infinity [t^2]Tr0(e^-sQB-2e^-sGhat) ds/s.
+This is an exact fixed-K coupled identity, with no residual coarse
+determinant. It does not supply K-uniform curvature bounds.
+
+4. Two wording clarifications sent to root
+
+(i) "These densities have local infinite limits" should explicitly say
+along the chosen jointly locally convergent structural system; the
+argument does not establish uniqueness of that system.
+
+(ii) Replace the optional phrase "cyclic Duhamel" by "ordered Duhamel"
+in cgd's heat paragraph. A trace restricted by one block projector is
+not freely cyclic. The diagonal operator logarithm identity and ordered
+Duhamel expansion prove the displayed result without such cyclicity.
+No displayed formula relies on an illicit cyclic rearrangement.
+
+5. Static fidelity
+
+Checked ccs (28 labels), pql (30), mgs (27), cgd (11), and the required
+pvs fragment (22) together: no duplicate labels, unresolved references,
+embedded control characters or bare carriage returns. The mgs external
+pvs references resolve. No compilation was attempted and no output
+artifact was edited.
+
+Follow-up revalidation, 18 October 2026:
+The two cgd wording corrections in Section4 have now been applied to
+work/covariant_mean_zero_density_fragment.tex under root authorization.
+The assembled output was deliberately not edited. Its mathematical
+scope was rechecked against the saved Notebook35/source package and
+continues to match this audit.

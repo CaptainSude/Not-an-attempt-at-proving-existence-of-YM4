@@ -1,0 +1,1330 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\supp}{\operatorname{supp}}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 03: current commutators and Gaussian cutoff clusters}
+\author{Research working document}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Several concrete estimates are established. First, the covariant cutoff
+commutator in the deposited current argument is bounded using only
+first differences, with its advertised dimension-dependent constant.
+Second, sharp large-field defects of a uniformly accretive complex
+Gaussian admit a convergent hard-core polymer expansion and a uniformly
+small logarithm in an anchored, exponentially weighted norm. The second
+proof differentiates the Gaussian covariance, never the sharp indicator.
+The cluster bound also gives a direct two-source Hessian estimate and
+a thermodynamic-limit criterion for the Gaussian cutoff contribution
+to the quadratic coefficient. These estimates are uniform in volume
+under their stated hypotheses.
+The unresolved interfaces are explicit: control of the actual combined
+current at complex decoupling parameters, and strict local dependence of
+cutoff activities on the Yang--Mills background. No continuum construction
+or mass-gap result follows without those and the other inputs listed in
+Notebook 01.
+\end{abstract}
+
+\noindent\textbf{Status and scope.}
+The proofs below have been checked internally, including independent
+checks of the commutator algebra and the Gaussian tree summation. They
+have not undergone external mathematical review. The standard forest
+formula and polymer convergence theorem are cited explicitly; no novelty
+is claimed for them or for these applications. References to Raw I concern
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}
+{commit \texttt{e392ef45013a581664bab76b90867170b30fe10e}}
+of the deposited account.
+
+\section{A cutoff commutator needing only first differences}
+
+Fix lattice spacing $\eta>0$. For a complex covariant transport define
+\[
+ (T_\mu B)(x)=R_{x,\mu}B(x+\eta e_\mu),\qquad
+ (T_\mu^{-1}B)(x)=R_{x-\eta e_\mu,\mu}^{-1}B(x-\eta e_\mu),
+\]
+\[
+ \nabla_\mu=(T_\mu-I)/\eta,\qquad
+ \nabla_\mu^*=(T_\mu^{-1}-I)/\eta.
+\]
+Here star is the bilinear transpose of the difference operator. After
+complexification it need not be its Hermitian adjoint. Suppose the
+transports and their inverses on the relevant stencil have norm at most
+$\tau$. For a scalar cutoff $\chi$, let $s_1$ bound all its first
+differences and $s_2$ all its mixed backward-forward second differences
+on that stencil. Write $g$ for the supremum of the first covariant
+differences of $B$, and $b$ for the supremum of $B$, there.
+
+\begin{proposition}\label{prop:commutator}
+With the exterior derivative convention
+\[
+ (D_W^*D_WB)_\nu
+ =\sum_{\mu\ne\nu}
+ (\nabla_\mu^*\nabla_\mu B_\nu-
+  \nabla_\mu^*\nabla_\nu B_\mu),
+\]
+one has
+\begin{equation}\label{eq:commutator}
+ \abs{([D_W^*D_W,\chi]B)_\nu(x)}
+ \le(d-1)\bigl[(2+4\tau)s_1g+(1+\tau^2)s_2b\bigr].
+\end{equation}
+For $1\le\tau\le5/4$, the right side is at most
+$c_d(s_1g+s_2b)$, with $c_d=(2+4\tau)(d-1)$.
+Thus $c_4=18$ for unitary transport and $c_4\le21$ in the indicated
+complex neighborhood.
+\end{proposition}
+
+\begin{proof}
+Set $a_\nu=\partial_\nu\chi$, where the scalar forward difference has
+the same spacing. The exact product rules give
+\[
+ [\nabla_\nu,\chi]=a_\nu T_\nu,
+ \qquad [\nabla_\mu^*,\chi]=-(\partial^-_\mu\chi)T_\mu^{-1},
+\]
+\[
+ \nabla_\mu^*(a_\nu T_\nu B)
+ =a_\nu\nabla_\mu^*T_\nu B
+  -(\partial^-_\mu a_\nu)T_\mu^{-1}T_\nu B.
+\]
+The useful algebraic identity is
+\begin{equation}\label{eq:no-curvature}
+ \nabla_\mu^*T_\nu B
+ =T_\mu^{-1}\nabla_\nu B
+  -T_\mu^{-1}\nabla_\mu B-\nabla_\nu B.
+\end{equation}
+Multiplication by $\eta$ verifies this directly using
+$T_\mu^{-1}T_\mu=I$. In particular, no two different covariant shifts
+are commuted. Consequently
+\begin{align*}
+ [\nabla_\mu^*\nabla_\nu,\chi]B
+ ={}&a_\nu\bigl(T_\mu^{-1}\nabla_\nu B
+       -T_\mu^{-1}\nabla_\mu B-\nabla_\nu B\bigr)\\
+ &-(\partial^-_\mu a_\nu)T_\mu^{-1}T_\nu B
+  -(\partial^-_\mu\chi)T_\mu^{-1}\nabla_\nu B,
+\end{align*}
+which is bounded by $(1+3\tau)s_1g+\tau^2s_2b$.
+For $\mu=\nu$, instead use
+$\nabla_\mu^*T_\mu=-\nabla_\mu$; the bound becomes
+$(1+\tau)s_1g+s_2b$. Summing the two bounds for each
+$\mu\ne\nu$ proves \eqref{eq:commutator}.
+All field arguments lie in the radius-$\eta$ $\ell^\infty$ stencil.
+\end{proof}
+
+For the specific operator $\Delta_{\rm cov}=\sum_\mu
+\nabla_\mu^*\nabla_\mu$, the same proof gives
+\begin{equation}\label{eq:laplace-comm}
+ \abs{[\Delta_{\rm cov},\chi]B}
+ \le d\bigl[(1+\tau)s_1g+s_2b\bigr].
+\end{equation}
+Application to any differently defined Laplacian must include its
+additional lower-order terms.
+
+\subsection{The scale factors in the deposited cutoff}
+
+For $W=e^{i\eta a}U$ with $U$ unitary, the invariant Hilbert--Schmidt
+norm on the Lie algebra gives
+\[
+ \max\{\norm{\operatorname{Ad}_W},
+          \norm{\operatorname{Ad}_W^{-1}}\}
+ \le e^{2\eta\norm a_{\rm op}}.
+\]
+Thus $\eta\sup\norm a_{\rm op}\le1/10$ implies $\tau<5/4$.
+If $|a|$ denotes the deposit's normalized Hilbert--Schmidt norm for
+$N\times N$ matrices, use $\norm a_{\rm op}\le\sqrt N|a|$ and
+the sufficient condition $\eta\sqrt N\sup|a|\le1/10$.
+The cutoff in Raw I, lines 111522--111529, is
+\[
+ \chi=t+s\widehat\chi_\square,\qquad
+ \widehat\chi_\square(x)=\prod_\mu
+ \zeta\!\left(\frac{x_\mu-y_{\square,\mu}}{M\ell_\square}\right),
+ \quad 0\le\zeta\le1,\quad |\zeta'|,|\zeta''|\le5.
+\]
+Integral formulas for finite differences imply
+$s_1\le5|s|/(M\ell_\square)$ and
+$s_2\le25|s|/(M^2\ell_\square^2)$.
+Set
+\[
+ N_y(B)=\max\left\{
+ \ell_y\sup_{\widetilde\Delta(y)}|B|,
+ \ell_y^2\sup_{\widetilde\Delta(y)}|\nabla_W B|\right\}.
+\]
+Assume the stencil is contained in $\widetilde\Delta(y)$ and the
+cover has the stated comparison
+$\widetilde\Delta(y)\cap\square\ne\varnothing\Rightarrow
+\ell_y\le L\ell_\square$. For $M\ge2L^2$, $L\ge3$,
+\[
+ \frac{5\ell_y}{M\ell_\square}
+ +\frac{25\ell_y^2}{M^2\ell_\square^2}
+ \le\frac{55}{36}<2.
+\]
+The cutoff differences vanish when the enlarged stencil misses its
+support. Hence
+\begin{equation}\label{eq:scaled-comm}
+ \ell_y^3|[D_W^*D_W,\chi]B|
+ \le2c_d|s|N_y(B)
+ \mathbf1_{\{\widetilde\Delta(y)\cap\square\ne\varnothing\}}.
+\end{equation}
+The corresponding constant from \eqref{eq:laplace-comm} is $3d$.
+These constants are independent of lattice spacing, volume, and number
+of scales. The geometric comparison is checked in Raw I, lines
+111630--111683; it is an explicit hypothesis, not a field estimate.
+Equations \eqref{eq:no-curvature}--\eqref{eq:scaled-comm} fill the local
+coefficient-count step marked incomplete at lines 111615--111628.
+
+\section{What the combined-current cancellation accomplishes}
+
+Use the actual notation
+$L_\sigma=\Delta_W-P_1(\sigma)+\mathsf K$, $Y=H(\sigma)X$, and
+\[
+ s_\sigma=L_\sigma A'-\mathfrak m_H(\sigma)X+F(W,\mathbb H).
+\]
+The definition of the cut current in Raw I, lines 111542--111543, yields
+the exact identity
+\begin{align}\label{eq:cut-current}
+ J^\sharp[\chi]={}&\chi s_\sigma
+ +[\Delta_W,\chi]A'-[P_1(\sigma),\chi]A'
+ +[\mathsf K,\chi]A'\nonumber\\
+ &-[D_W^*D_W,\chi]Y
+ +F(W,\chi\mathbb H)-\chi F(W,\mathbb H).
+\end{align}
+The potentially troublesome term $\mathfrak m_H X$ cancels. Also
+$Y=A'-\mathbb H$, so its weak first-order norm follows from the other
+two fields. Proposition~\ref{prop:commutator} handles the displayed
+second-order exterior-derivative commutator without separate Laplacian
+estimates for these fields.
+
+The projection term remains nonlocal. Its kernel is exactly
+$P_1(\sigma;x,y)(\chi(y)-\chi(x))$. If the actual decoupled projection
+has the required $\mathcal K_{-2}$ bound with constant $C$, its
+commutator has the same bound with constant $2|s|C$ by applying the
+block estimate to the two products separately. In the inherited kernel
+algebra this gives
+\[
+ |[P_1(\sigma),\chi]A'|_{(-3),\rho}
+ \le2|s|CL^{d+4}c_1|A'|_{(-1),\rho}.
+\]
+For the sharper spatial profile, retain $\chi(y)-\chi(x)$ instead of
+its supremum. The required differentiated projection bound for general
+complex $\sigma$ is an additional operator input.
+
+\subsection{The actual carrier requirements}
+
+The deposited transcription of CMP99b(3.37) is
+$N(a)=\max\{|a|_{(-1)},|\nabla_Ua|_{(-2)}\}$; it contains no
+Laplacian. The basic carrier adds a small independent current, also
+without a relation $J=J(W)$. The later increment hypothesis likewise
+asks only for a first-order potential increment and a combined current
+increment (Raw I, lines 111779--111783 and 112378--112408).
+Thus separate second-order bounds are stronger than this immediate
+consumer requires.
+
+This does not dispose of the entire domain problem. The stored domains
+also impose curvature and current bounds on derived maps at every
+retained triple. In particular, their fourth clause concerns
+$J_{p,X}(M\!\bullet\mathbb U)$, not the independent input current.
+See Raw I, lines 116925--116934 and 119480--119484. A replacement theorem
+must propagate these \emph{derived combined currents} as well.
+
+\subsection{The exact defect at complex decoupling parameters}
+
+The earlier chart provides a useful candidate representation but must
+not be identified with the later global layer by notation alone. Put
+$D_0=\Delta_a-Q^*aQ$, with $a=\ell^{-2}$ the scale multiplier. For its
+forced two-input solution, write
+\[
+ P=H_{0,\sigma}b+G_\sigma Y,
+ \qquad Y=\Theta_\sigma H_{0,\sigma}b-f-V'_\sigma(P),
+ \qquad Z=\Theta_\sigma P-f-V'_\sigma(P).
+\]
+Then $Z=(I+\Theta_\sigma G_\sigma)Y$. Define
+\begin{align*}
+ E_{H,\sigma}&=D_0H_{0,\sigma}
+   -Q^*(q_{0,\sigma}-a)\ell^{-1},\\
+ E_{G,\sigma}&=D_0G_\sigma
+   -P_{0,\sigma}^{T}(I+\Theta_\sigma G_\sigma).
+\end{align*}
+Direct substitution proves
+\begin{equation}\label{eq:operator-residual}
+ D_0P=P_{0,\sigma}^{T}Z+Q^*(q_{0,\sigma}-a)\ell^{-1}b
+       +E_{H,\sigma}b+E_{G,\sigma}Y.
+\end{equation}
+Both defects vanish at $\sigma=1$ by the undeformed inverse and block
+constraint identities. The specified walk decoration at complex
+$\sigma$ does not assert those identities.
+
+More explicitly, set $X=D^J_\sigma(P)$, $H=P-H^J_\sigma X$, and
+$B_\sigma X=Q^*\mathsf k_\sigma X+
+\Lambda_\sigma^T\mathfrak j_J(H^J_\sigma X)$. Define
+\begin{align*}
+ J_{\rm sub}&=P_{0,\sigma}^{T}Z+
+ Q^*(q_{0,\sigma}-a)\ell^{-1}b-B_\sigma X-\Delta'H+F(W,H),\\
+ J_{\rm diff}&=(D_0-\Delta')P-
+ (B_\sigma-\Delta'H^J_\sigma)X+F(W,H).
+\end{align*}
+Equation \eqref{eq:operator-residual} gives the precise discrepancy
+\begin{equation}\label{eq:current-residual}
+ J_{\rm diff}-J_{\rm sub}=E_{H,\sigma}b+E_{G,\sigma}Y.
+\end{equation}
+Matching the global operators would add the differences between
+$L_\sigma$ and $D_0-\Delta'$, and between $\mathfrak m_H(\sigma)$ and
+$B_\sigma-\Delta'H^J_\sigma$. These matches are not proved here.
+An ordinary weak walk estimate does not bound the differentiated
+defects uniformly as $\eta\downarrow0$. A local parametrix identity or
+differentiated walk estimate is the remaining concrete task.
+
+\subsection{A possible replacement for the derived-current bound}
+
+There is a separate first-derivative route for a configuration which
+is actually critical under a constraint. It must not be applied to
+an arbitrary independent-current pair.
+
+\begin{proposition}\label{prop:derived-current}
+Let $Q_s$ be the linearized constraint at a configuration $U$, with
+right inverse $E_s$ on its actual constraint space, $Q_sE_s=I$.
+Use the bilinear pairings, lattice measures, and transposes of that
+constraint. Suppose the physical current has the Wilson form
+$J(U)=D_U^TF_U$, and constrained criticality gives
+$J(U)=Q_s^T\lambda$. Then
+\begin{equation}\label{eq:derived-current}
+ J(U)=\mathcal R_s(U)F_U,\qquad
+ \mathcal R_s(U)=Q_s^T(D_UE_s)^T.
+\end{equation}
+If instead $J(U)=Q_s^T\lambda+r$, the exact additional term is
+$(I-Q_s^TE_s^T)r$.
+\end{proposition}
+
+\begin{proof}
+Multiply the criticality equation by $E_s^T$ and use
+$E_s^TQ_s^T=I$. Substitute $J=D_U^TF_U$, then multiply by $Q_s^T$.
+With a residual, the same substitution gives the stated correction.
+\end{proof}
+
+For the earlier chart, $QH_0=\ell^{-1}$, so the correctly normalized
+candidate is $E_s=H_{0,s}\ell_s$, provided this is the actual composite
+constraint. This identity uses a first derivative of $E_s$.
+For example, suppose blocks in the retained structure have side $h_y$
+and metric $d_s$, and for $f$ supported in block $z$,
+\[
+ \sup_{\Delta_s(y)}|\mathcal R_sf|
+ \le C_R h_y^{-1}e^{-\delta d_s(y,z)}\sup|f|.
+\]
+If $|F_U|_{\Delta_s(z)}\le a_z$ and
+$a_z\le C_a a_y e^{\kappa_s d_s(y,z)}$, with
+$0\le\kappa_s<\delta$, then
+\[
+ |J(U)|_{\Delta_s(y)}
+ \le C_RC_a h_y^{-1}a_y
+       \sum_z e^{-(\delta-\kappa_s)d_s(y,z)}.
+\]
+Thus a uniform summability bound gives the intended curvature divided
+by block-side estimate. For the deposited fourth clause, its two
+scales require $h_y=\ell_{p\wedge\lambda(y)}$ and a curvature
+profile proportional to
+$\omega(y)\varepsilon_{m(y)}\ell_{m(y)}^{-2}$.
+The profile must be controlled in the \emph{retained structure's}
+metric, not merely in the original hierarchy's metric.
+
+Raw I, lines 128807--128829 and 128923--128930, treats the needed
+multilevel current estimate as an input. Equation
+\eqref{eq:derived-current} supplies a possible route to that input:
+identify each composite right inverse and bound its differentiated
+transpose kernel and profile convolution uniformly. For increments
+on a fixed structure, one also needs
+\[
+ \delta J=\mathcal R_s(U_1)\delta F+
+          [\mathcal R_s(U_1)-\mathcal R_s(U_0)]F_{U_0}.
+\]
+A holomorphic kernel bound on a larger ball would control the second
+term by Cauchy's formula. Neither that domain nor the uniform
+composite-kernel statement is proved by the algebraic identity alone.
+
+\subsection{Differentiating the first piece of a walk}
+
+There is a concrete way to estimate the defects in
+\eqref{eq:operator-residual} without assuming they vanish. In the
+earlier chart put
+\[
+ \mathcal A=\Delta+DD^*,\quad P_1=DPD^*,\quad
+ D_0=\mathcal A-P_1.
+\]
+For a local inverse $G_\square$ of
+$\mathcal A-P_{1,\square}+B_\square$, with
+$B_\square=Q_\square^*a_\square Q_\square$, let
+$S_\square=h_\square G_\square h_\square$.
+Assume the local and global differential coefficients agree on the
+cutoff's required stencil. The local inverse equation gives exactly
+\begin{align}\label{eq:head}
+ D_0S_\square={}&h_\square^2
+ +[\mathcal A,h_\square]G_\square h_\square
+ -P_1S_\square\nonumber\\
+ &+h_\square P_{1,\square}G_\square h_\square
+ -h_\square B_\square G_\square h_\square.
+\end{align}
+This follows simply by moving $\mathcal A$ through $h_\square$.
+The global $Q^*aQ$ term has already canceled in $D_0$; it is absent
+from this formula.
+
+Both exterior-derivative parts of the commutator can be handled with
+first differences. In addition to Proposition~\ref{prop:commutator},
+the scalar-to-bond convention $(DD^*B)_\nu=
+\sum_\mu\nabla_\nu\nabla_\mu^*B_\mu$ gives
+\begin{align*}
+ |([DD^*,\chi]B)_\nu|
+ \le{}&[(1+\tau)+(d-1)(1+\tau+2\tau^2)]s_1g\\
+ &+[1+(d-1)\tau^2]s_2b.
+\end{align*}
+For mixed indices, use
+$\nabla_\nu T_\mu^{-1}=T_\nu\nabla_\mu^*
+ +\nabla_\nu-\nabla_\mu^*$ and
+$\nabla_\mu^*=-T_\mu^{-1}\nabla_\mu$ in the product rule.
+The diagonal term has the bound already proved. Since
+$\mathcal A=D^*D+DD^*+\Delta'$, the remaining local term to bound
+is $[\Delta',h_\square]G_\square h_\square$.
+This does not identify the separate global symbol $\Delta_W$ with
+the component Laplacian of Section 1.
+
+For clarity, the summation principle is elementary. Suppose a
+decorated inverse is an absolutely convergent sum of products
+$m_\sigma(\gamma)S_{\gamma_0}R_{\gamma_1}\cdots R_{\gamma_n}$.
+If, in the intended weighted block norms, the sums of the
+$D_0S_\square$ majorants from the five terms of \eqref{eq:head}
+and the remainder majorants are bounded by $H$ and $r$,
+and $|m_\sigma(\gamma)|\le u^{n+1}$ with $ur<1$, then
+\[
+ \norm{D_0G_\sigma}\le\frac{uH}{1-ur}.
+\]
+Apply $D_0$ to the first piece, use \eqref{eq:head}, and sum the
+geometric series. This requires a bound on those five head terms
+in the stated norms; it does not infer one from weak convergence.
+
+The relevant head is present in the deposited parametrix at Raw I,
+lines 25577--25610. After expansion, $H_0$ and $\widetilde G^J$
+start with this inverse. Their current insertion $\Theta_J$ maps the
+weak field space boundedly into the forcing/current space. The analogous
+$G_\pi^J$ insertion contains $\psi+D\varphi$, so differentiating its
+head can expose the extra derivative $D\varphi$. Consequently this
+repair does not automatically establish the previously withheld
+Laplacian bound for $H^J$. Its useful target is specifically the
+defects $E_H,E_G$, subject to uniform head bounds and the separate
+identification with the selected global layer.
+
+\subsection{The averaging head: measures and a proved flat bound}
+
+The last term of \eqref{eq:head} needs an actual averaging estimate.
+Its scale cannot be read from the printed diagonal coefficient while
+silently changing the transpose convention. Let $F=\eta^d I$ be the
+fine-lattice measure and $M_c=\operatorname{diag}(\ell_c^d)$ the
+coarse-volume measure. For the discrete matrix $Q$, set
+\[
+ Q^T_{\rm count}=F^{-1}Q^{\mathsf t},\qquad
+ Q^T_{\rm vol}=F^{-1}Q^{\mathsf t}M_c.
+\]
+The transpose is bilinear, including the Lie-algebra fiber. Exactly,
+\begin{equation}\label{eq:measure-conversion}
+ Q^T_{\rm count}\operatorname{diag}(a_n\ell_n^{d-2})Q
+ =Q^T_{\rm vol}\operatorname{diag}(a_n\ell_n^{-2})Q.
+\end{equation}
+Raw I, lines 12756--12760, specifies the volume pairing, whereas
+lines 23961--23968 print the first diagonal coefficient in spaces
+denoted $\ell^2$ without specifying their measures there. Thus
+\eqref{eq:measure-conversion} is a necessary convention dictionary,
+not a claim of an inconsistency in the primary paper. If the fine
+pairing also changes to counting measure, its factor must be converted
+as well. The dimensionless sequence $a_n$ must retain its own bound.
+
+\begin{proposition}[Flat bond averaging]\label{prop:flat-average}
+In dimensionless fine coordinates let $M=L^n$ and
+\[
+ (Q_M A)_\mu(c)=M^{-(d+1)}
+       \sum_{x\in B_M(c)}\sum_{t=0}^{M-1}A_\mu(x+t e_\mu).
+\]
+Writing $q_M(c,b)$ for its scalar matrix coefficients, one has
+\[
+ q_M(c,b)\ge0,\quad \sum_bq_M(c,b)=1,\quad
+ q_M(c,b)\le M^{-d},\quad \sum_cM^dq_M(c,b)=1.
+\]
+Consequently, at physical coarse spacing $\ell=M\eta$,
+\[
+ \norm{Q_M^T{}_{\rm vol}\,a\ell^{-2}Q_M}_{\infty\to\infty}
+ \le |a|\ell^{-2}.
+\]
+Restricting the coarse rows or taking a Dirichlet restriction preserves
+these upper bounds.
+\end{proposition}
+
+\begin{proof}
+The formula at one step is the flat main term of Raw I,
+lines 24355--24369; its correction brackets vanish at the identity.
+Iteration gives the displayed expression: successive block and line
+coordinates supply independently the base-$L$ digits of $x$ and $t$.
+The row sum counts $M^{d+1}$ pairs. For a fixed fine bond, the
+transverse coordinates select one coarse block. The longitudinal
+coefficient is $M^{-(d+1)}k_M(s)$, where $k_M(s)$ counts pairs
+$(x_\mu,t)$ in an $M$-block and $\{0,\ldots,M-1\}$ with sum $s$.
+Every residue modulo $M$ has exactly $M$ such pairs, so
+$\sum_zk_M(s-Mz)=M$. This proves the weighted column identity.
+The final estimate follows by the two positive sums; deleting rows
+or columns only decreases them.
+\end{proof}
+
+Here is a mixed-scale consequence with all needed geometry stated.
+Suppose at most $N_{\rm lev}$ coarse levels contribute to an output
+of $hB_\square$, the input and output scales on each averaging support
+are within a factor $R$ of its coarse scale $\ell_c$, and
+$\sup_n|a_n|\le a_*$. In the norms
+$|A|_{(-1)}=\sup_b\ell_b|A_b|$ and
+$|f|_{(-3)}=\sup_b\ell_b^3|f_b|$,
+\begin{equation}\label{eq:flat-mixed-average}
+ |hB_\square A|_{(-3)}
+ \le\norm h_\infty N_{\rm lev}a_*R^4|A|_{(-1)}.
+\end{equation}
+Indeed $|QA(c)|\le R\ell_c^{-1}|A|_{(-1)}$, while
+$\ell_b^3\ell_c^{-3}\le R^3$ and the volume-transpose
+coefficients sum to at most one at each level. The indicated local
+geometry in Raw I, lines 25742--25747, has only levels $j,j+1$;
+with the support containment at lines 25479--25483 one may use
+$N_{\rm lev}=2$, $R=L$ there. If the local inverse bound is $C_G$,
+this flat head term is at most
+$2a_*L^4 C_G\norm h_\infty^2$. Conversion to the global hierarchy
+still requires comparable local and global weights at outer seams.
+An exponential weight costs at most $e^{\kappa D_Q}$ when each
+averaging support has diameter $D_Q$ in the retained metric.
+
+For a complex background, a sufficient replacement is the genuinely
+normalized multilevel kernel estimate
+\begin{equation}\label{eq:complex-average-needed}
+ \sum_b\norm{q_n(c,b)}\le C_{\rm row},\qquad
+ \sup_b\sum_{c\text{ at level }n}
+    (\ell_n/\eta)^d\norm{q_n(c,b)}\le C_{\rm col},
+\end{equation}
+uniformly in $n$ and on the selected complex domain.
+Then \eqref{eq:flat-mixed-average} gains only the factor
+$C_{\rm row}C_{\rm col}$. Raw I, lines 46981--46984, explicitly
+includes $L^{-d}$ in the one-step kernel formula; its later printed
+bound $|Q_j(U;c,b)|\le4$ must therefore not be read as an unweighted
+matrix bound. The multilevel normalization, support incidence, and
+complex domain of that source estimate remain to be matched here.
+A bound obtained by multiplying a fixed constant at every scale
+would not suffice.
+
+The support count in this proposed completion is elementary. A
+coarse bond's two endpoint blocks contain $2M^d$ fine sites and at
+most $2dM^d$ relevant positive fine bonds. A fixed fine bond can be
+read by at most $2d$ coarse bonds at that level. Consequently a
+normalized bound $q_n=M^{-d}K_n$, $\norm{K_n}\le4$, would give
+$C_{\rm row},C_{\rm col}\le8d$, without multiplying that constant
+over the hierarchy. This is conditional on the normalized bound on
+the selected complex domain, not its verification.
+
+There is a second, restricted-patch route to the same primitive.
+For an operator from spacing $s$ to $t$, define
+\[
+ \norm P_{\rm av}=\max\left\{
+ \sup_c\sum_b\norm{P_{cb}},\quad
+ \sup_b\sum_c(t/s)^d\norm{P_{cb}}\right\}.
+\]
+This norm is submultiplicative across successive scales because the
+volume ratios multiply. The corrected one-step operator has
+$\norm{Q(1)}_{\rm av}=1$ by Proposition~\ref{prop:flat-average}.
+Fixed-dimensional holomorphy on each double block, with a uniform
+coefficient bound on a fixed small ball, gives by Cauchy's formula
+\[
+ \norm{Q(e^{iB})}_{\rm av}\le1+C_L\norm B_\infty.
+\]
+If the intermediate backgrounds on the entire read patch satisfy
+$\norm{\log\mathcal M^p(U)}_\infty\le C_{\rm av}bL^{p-n}$
+for $0\le p<n$, within that ball, composition proves
+\[
+ \norm{Q_n(U)}_{\rm av}
+ \le\prod_{p=0}^{n-1}(1+C_LC_{\rm av}bL^{p-n})
+ \le\exp\!\left(\frac{C_LC_{\rm av}b}{L-1}\right).
+\]
+Every individual coefficient then obeys the normalized bound
+$\norm{q_n(c,b)}\le L^{-nd}\norm{Q_n(U)}_{\rm av}$.
+The deposited use of CMP98 Proposition 6 at Raw I, lines
+17806--17810, has precisely the amplitude-times-block-length form
+needed for this geometric sequence. Its full primary domain and
+locality hypotheses have not been verified here. Applying it to
+the actual head still needs one common regular gauge on the whole
+read patch, the retained lower bound on local scales, and the
+local/global weight comparison. The flat norm one belongs to the
+corrected operator of lines 24355--24365, not to the separate rooted
+$Q^\flat=Q_{\rm st}-D_1aT$ used in Notebook 05.
+
+\subsection{The local curvature correction in the head}
+
+The stated weak local estimate in Raw I, lines 13617--13620, is
+\[
+ |\Delta'A|_{(-3)}\le C_\Delta(a_0+a_1)|A|_{(-1)}.
+\]
+It implies, without a second derivative of $A$,
+\[
+ |[\Delta',h]A|_{(-3)}
+ \le2\norm h_\infty C_\Delta(a_0+a_1)|A|_{(-1)}.
+\]
+After composition with $G_\square h$, the bound is
+$2\norm h_\infty^2 C_\Delta(a_0+a_1)C_G$.
+This gives no inverse-block-size gain; a bounded constant is enough
+for the head summation principle.
+
+An operator bound is not automatically an absolute kernel-row bound.
+Here the finite stencil supplies the missing step: testing on one
+input bounds each weighted matrix coefficient, and summing costs
+at most the number $m_d$ of stencil bonds. For the indicated one-step
+locality, the conservative choice $m_d=d5^d$ covers all orientations
+in a radius-two cube. Exponential weights add their maximal stencil
+ratio. This proves the required coefficientwise reduction, subject
+to the same local inverse and retained-weight comparisons. The local
+$P_1$ terms, complex averaging estimate, and sum over all heads are
+still separate inputs to the global current argument.
+
+\section{Sharp defects for a complex Gaussian}
+
+Let $\Lambda$ be a finite subset of a countable metric space. Each
+$i\in\Lambda$ has a real variable $x_i\in\R^D$, with fixed $D$.
+Let $C=C^T$ be a complex symmetric covariance on
+$\C^{D|\Lambda|}$, with
+\begin{equation}\label{eq:cov-assumptions}
+ \Rea C\ge cI,\qquad \norm C\le C_*,\qquad c>0,
+\end{equation}
+where real part denotes the Hermitian part. Gaussian integration is
+over the real coordinate space, with the analytic determinant branch
+continued from positive real covariances. For fixed measurable
+functions $q_i$, assume
+\begin{equation}\label{eq:defect}
+ |q_i(x_i)|\le\mathbf1_{\{|x_i|>R\}}.
+\end{equation}
+The sharp cutoff is $q_i=-\mathbf1_{\{|x_i|>R\}}$. Its threshold and
+its real integration domain are fixed as the covariance varies.
+
+\begin{lemma}\label{lem:tail}
+For every nonempty $S\subset\Lambda$,
+\[
+ \left|\E_C\prod_{i\in S}q_i\right|
+ \le\left[
+  (C_*/c)^D 2^{D/2}
+  \exp\!\left(-\frac{cR^2}{4C_*^2}\right)
+ \right]^{|S|}.
+\]
+This expectation is holomorphic in $C$ on the accretive cone.
+\end{lemma}
+
+\begin{proof}
+The marginal covariance $C_{SS}$ inherits both bounds in
+\eqref{eq:cov-assumptions}. In $N=D|S|$ coordinates,
+\[
+ \Rea C_{SS}^{-1}
+ =C_{SS}^{-*}(\Rea C_{SS})C_{SS}^{-1}
+ \ge cC_*^{-2}I,
+ \qquad |\det C_{SS}|\ge c^N.
+\]
+The absolute Gaussian density is therefore bounded by $(C_*/c)^N$
+times the real isotropic Gaussian of variance $C_*^2/c$.
+For a $D$-dimensional block of variance $v$,
+Markov's inequality applied to $e^{|x|^2/(4v)}$ gives
+$\Pr(|x|>R)\le2^{D/2}e^{-R^2/(4v)}$.
+That comparison Gaussian has independent blocks, proving the bound
+without independence of the original variables.
+Locally uniform Gaussian domination proves holomorphy under the
+integral. No derivative of $q_i$ is taken.
+\end{proof}
+
+\begin{lemma}[A useful precision formulation]\label{lem:precision}
+If $A=A^T$, $\Rea A\ge aI$, $\norm A\le B$, and $C=A^{-1}$, then
+$\Rea C\ge aB^{-2}I$ and $\norm C\le a^{-1}$. Moreover,
+\[
+ \left|\E_{A^{-1}}\prod_{i\in S}q_i\right|
+ \le\left[(B/a)^D2^{D/2}e^{-aR^2/4}\right]^{|S|}.
+\]
+\end{lemma}
+
+\begin{proof}
+Let $P=S$, $Q=\Lambda\setminus S$, and let
+$S_A=A_{PP}-A_{PQ}A_{QQ}^{-1}A_{QP}=(C_{PP})^{-1}$.
+For $v=(u,-A_{QQ}^{-1}A_{QP}u)$, one has $Av=(S_Au,0)$.
+Hence $\Rea\langle u,S_Au\rangle\ge a\norm u^2$.
+The lower bound on $\Rea C_{PP}$ also gives $\norm{S_A}\le B^2/a$.
+The absolute marginal density is bounded by $(B/a)^{D|S|}$ times
+the real Gaussian of precision $aI$. Apply the same block tail bound.
+\end{proof}
+
+\section{From marked defects to connected polymer activities}
+
+For $i\ne j$ put $a_{ij}=\norm{C_{ij}}$ and $a_{ii}=0$.
+Fix $\kappa\ge0$ and assume
+\begin{equation}\label{eq:row-sum}
+ A_\kappa=\sup_i\sum_{j\ne i}a_{ij}e^{\kappa d(i,j)}<\infty.
+\end{equation}
+Let $\ell(S)$ denote the minimum spanning-tree length on $S$, with
+$\ell(\{i\})=0$. Define safe constants
+\begin{equation}\label{eq:constants}
+ c'=c/2,\quad C'=C_*+c/2,\quad \eta_0=c/4,\quad
+ K=\frac{2e^2}{\eta_0}=\frac{8e^2}{c},\quad
+ t_R=(C'/c')^D2^{D/2}e^{-c'R^2/(4C'^2)}.
+\end{equation}
+The symbol $\eta_0$ here is a covariance perturbation radius, unrelated
+to lattice spacing in Sections 1--2.
+
+\begin{theorem}\label{thm:polymer}
+There are activities $\zeta(S)$ for all nonempty $S\subset\Lambda$
+such that
+\begin{equation}\label{eq:polymer-gas}
+ Z_\Lambda=\E_C\prod_{i\in\Lambda}(1+q_i)
+ =\sum_{\{S_1,\ldots,S_m\}\text{ pairwise disjoint}}
+   \prod_{j=1}^m\zeta(S_j),
+\end{equation}
+where the empty family contributes one. For $|S|=n\ge2$,
+\begin{equation}\label{eq:tree-bound}
+ |\zeta(S)|\le t_R^nK^{n-1}
+ \sum_{T\text{ tree on }S}
+   \prod_{i\in S}d_i(T)!\prod_{\{i,j\}\in T}a_{ij},
+\end{equation}
+and $|\zeta(\{i\})|\le t_R$. For every $\alpha>0$, set
+\[
+ r=\frac{27}{4}e^\alpha t_RKA_\kappa.
+\]
+If $r<1$, then
+\begin{equation}\label{eq:anchored-activities}
+ \sup_x\sum_{S\ni x}|\zeta(S)|
+     e^{\alpha|S|+\kappa\ell(S)}
+ \le\frac{e^\alpha t_R}{1-r}.
+\end{equation}
+All activities are holomorphic in any background on which $C$ is
+holomorphic and the hypotheses hold uniformly.
+\end{theorem}
+
+\begin{proof}
+For a marked set $S$, apply the BKAR forest formula to
+$F_S(s)=\E_{C(s)}\prod_{i\in S}q_i$, where
+$C(s)_{ij}=s_{ij}C_{ij}$ for $i\ne j$ and the diagonal is unchanged.
+The formula is needed only on the convex hull of partition masks
+\cite{bkar,abdriv}; pinching by each partition preserves
+$\Rea C\ge cI$ and contracts operator norm. Thus every interpolated
+covariance has the same accretivity and norm bounds. No assumption
+about arbitrary masks in the full parameter cube is needed.
+
+For a tree $T$, its interpolated mask has entry equal to the minimum
+edge parameter along the unique tree path. Write this mask as $s^T(u)$.
+The tree activity is
+\begin{equation}\label{eq:tree-activity}
+ \zeta(S)=\sum_{T\text{ tree on }S}
+ \int_{[0,1]^T}\partial_TF_S(s^T(u))\,du.
+\end{equation}
+For a singleton it is the one-block expectation. Forest components
+factor because their interpolated cross covariances vanish. Therefore
+$\E_C\prod_{i\in S}q_i$ is the sum over partitions of $S$ of the
+products of these activities. Expanding $\prod(1+q_i)$ proves
+\eqref{eq:polymer-gas}.
+
+We now bound the derivatives in \eqref{eq:tree-activity} without
+differentiating any indicator. Let $d_i=d_i(T)$ and, for each nonzero
+edge block, use the complex parameter radius
+\[
+ \rho_{ij}=\frac{\eta_0}{(d_i+d_j)a_{ij}}.
+\]
+A simultaneous perturbation in these edge parameters changes each
+block row sum by at most
+$\eta_0\sum_{j:\{i,j\}\in T}(d_i+d_j)^{-1}\le\eta_0$.
+The same holds for columns, so the operator norm of the perturbation
+is at most $\eta_0$. The complete polydisc remains within the safer
+bounds $\Rea C\ge c'I$, $\norm C\le C'$.
+Lemma~\ref{lem:tail} gives $|F_S|\le t_R^n$ there. Cauchy's formula
+in the $n-1$ distinct tree variables yields
+\[
+ |\partial_TF_S|
+ \le t_R^n\eta_0^{-(n-1)}
+       \prod_{\{i,j\}\in T}(d_i+d_j)a_{ij}.
+\]
+An edge with $a_{ij}=0$ has zero derivative and is simply omitted.
+Since $d_i+d_j\le2d_id_j$, and
+$d_i^{d_i}\le e^{d_i}d_i!$, the last product is bounded by
+$(2e^2)^{n-1}\prod_i d_i!\prod_{\{i,j\}\in T}a_{ij}$.
+This proves \eqref{eq:tree-bound}.
+
+For completeness, the exact degree-weighted tree sum is
+\begin{equation}\label{eq:prufer}
+ \sum_{T\text{ on }[n]}\prod_i d_i!
+ =(n-2)!\binom{3n-3}{n-2}.
+\end{equation}
+Indeed, the Pr\"ufer multiplicities $k_i=d_i-1$ sum to $n-2$.
+For fixed multiplicities, multiplication of the number of trees by
+$\prod_i d_i!$ gives $(n-2)!\prod_i(k_i+1)$.
+Sum using the coefficient of $z^{n-2}$ in $(1-z)^{-2n}$.
+
+Fix the first vertex at $x$. Replace unordered marked sets by labelled
+positions with factor $1/(n-1)!$, drop distinctness, and sum leaf
+positions successively. The weighted kernel sum at each removal is
+at most $A_\kappa$. Since $\ell(S)\le\sum_{e\in T}d(e)$,
+\[
+ \sum_{S\ni x,\ |S|=n}|\zeta(S)|e^{\kappa\ell(S)}
+ \le t_R^n(KA_\kappa)^{n-1}
+       \frac{1}{n-1}\binom{3n-3}{n-2}.
+\]
+For $m=n-1$, the binomial is at most
+$\binom{3m}{m}\le(27/4)^m$; the latter follows by bounding one
+term in $(1+1/2)^{3m}$. After inserting $e^{\alpha n}$ and summing,
+the bound is $e^\alpha t_R[1+\sum_{m\ge1}r^m/m]$, which is at most
+\eqref{eq:anchored-activities}.
+\end{proof}
+
+\section{A zero-free logarithm with an anchored bound}
+
+\begin{corollary}\label{cor:log}
+Under Theorem~\ref{thm:polymer}, suppose
+\begin{equation}\label{eq:smallness}
+ r\le\tfrac12,\qquad 2e^\alpha t_R\le\alpha.
+\end{equation}
+Then $Z_\Lambda\ne0$, with a logarithm continued from zero defect
+activity, and
+\[
+ \log Z_\Lambda=\sum_{\varnothing\ne X\subset\Lambda}e_\Lambda(X),
+ \qquad
+ \sup_x\sum_{X\ni x}e^{\kappa\ell(X)}|e_\Lambda(X)|
+ \le2e^\alpha t_R.
+\]
+The expansion is absolutely convergent and holomorphic uniformly on
+any background domain with the same constants. The subscript $\Lambda$
+is retained: consistency between different finite-volume covariances
+has not been assumed.
+\end{corollary}
+
+\begin{proof}
+Put $\rho(S)=|\zeta(S)|e^{\kappa\ell(S)}$. Polymers are incompatible
+exactly when they overlap, including self-incompatibility. Equation
+\eqref{eq:anchored-activities} gives
+\[
+ \sum_{T:T\cap S\ne\varnothing}\rho(T)e^{\alpha|T|}
+ \le\alpha|S|.
+\]
+The Koteck\'y--Preiss criterion, in its pinned-series formulation
+\cite{kp,fp}, therefore bounds the absolute cluster sum pinned at $S$
+by $e^{\alpha|S|}$.
+
+Define $e_\Lambda(X)$ by collecting terms of the usual logarithmic
+cluster series whose union is $X$; repeated polymers in that series
+are allowed. A connected overlap graph makes the union of spanning
+trees inside its polymers connected, so
+$\ell(X)\le\sum_j\ell(S_j)$. For a cluster containing $x$,
+bound its indicator by $\sum_j\mathbf1_{\{x\in S_j\}}$ and root
+at that polymer. The factorial in the cluster series then gives
+\[
+ \sum_{X\ni x}e^{\kappa\ell(X)}|e_\Lambda(X)|
+ \le\sum_{S\ni x}\rho(S)e^{\alpha|S|}
+ \le2e^\alpha t_R.
+\]
+Absolute convergence proves the identity with the finite partition
+function, nonvanishing, and the stated holomorphy.
+\end{proof}
+
+\begin{remark}[Background derivatives]
+If $C$ is Fr\'echet holomorphic and these hypotheses hold uniformly
+on an open background ball of radius $r_0$, the
+family $\{e_\Lambda(X)\}$ is holomorphic with values in its anchored
+weighted sequence space. Cauchy's formula, using radii
+$r_0/(2\norm h)$ and $r_0/(2\norm k)$, bounds the mixed second
+derivative at the center in that norm by
+$8e^\alpha t_R\norm h\norm k/r_0^2$.
+The boundary radii are approached from below. This statement concerns
+each finite $\Lambda$ with a common bound; no assertion of an
+infinite-volume background functional is implicit.
+This preserves smallness but gives no additional spatial localization
+in the supports of $h$ and $k$.
+\end{remark}
+
+\subsection{Logarithmic real cutoffs}
+
+For fixed constants and $R(g)=A(\log g^{-2})^p$, $p>1/2$, one has
+$t_{R(g)}=C_0\exp[-c_0(\log g^{-2})^{2p}]$. Consequently, for
+every fixed $N>0$ and real $q$,
+\[
+ t_{R(g)}=o\!\left(g^N(\log g^{-2})^q\right)
+ \quad(g\downarrow0).
+\]
+To check this, divide logarithms by $(\log g^{-2})^{2p}$: the terms
+of order $\log g^{-2}$ and $\log\log g^{-2}$ vanish. Thus sufficiently
+small $g$ enforces \eqref{eq:smallness}. This conclusion is uniform
+in scale only if $D,c,C_*,A_\kappa,A,p$ are themselves uniform.
+It is a numerical consequence, not a proof that the actual background
+domains have those constants.
+
+\section{A direct quadratic bound without background-support activities}
+
+For the scalar running-coupling correction, it can suffice to estimate
+the total Gaussian cutoff Hessian. This is a narrower task than
+constructing local effective actions for the complete RG induction.
+
+Assume a metric lattice with volume-independent sums
+$S_\gamma=\sup_x\sum_i e^{-\gamma d(x,i)}<\infty$ for
+$\gamma>0$. In addition to \eqref{eq:cov-assumptions}, assume
+$\norm{C_{ij}}\le K_0e^{-\mu d(i,j)}$. Put
+\[
+ \nu=\mu/2,\qquad 0<\kappa<\nu,\qquad
+ \rho=\frac{c}{8S_\nu}.
+\]
+Two symmetric covariance perturbations, each with entries bounded by
+$e^{-\nu d(i,j)}$, have combined operator norm at most $c/4$ when
+their two complex coefficients have modulus at most $\rho$.
+Thus the complete polydisc has the common safe bounds
+\[
+ \Rea C\ge c/2,
+ \quad\norm C\le C_*+c/2,
+ \quad\norm{C_{ij}}\le (K_0+2\rho)e^{-\nu d(i,j)}.
+\]
+Apply Theorem~\ref{thm:polymer} with these constants. Its internal
+Cauchy margin gives the tail factor
+\[
+ t_R^*=2^{D/2}
+ \left(\frac{C_*+3c/4}{c/4}\right)^D
+ \exp\!\left[-\frac{(c/4)R^2}{4(C_*+3c/4)^2}\right].
+\]
+Choose $R$ large enough that the two smallness conditions
+\eqref{eq:smallness} hold with these safe constants and $\alpha=1$.
+The tree weights in \eqref{eq:tree-bound} can now all be replaced by
+the fixed envelope $(K_0+2\rho)e^{-\nu d(i,j)}$. Their positive
+logarithmic cluster series defines one common majorant $M(X)$ such
+that, throughout every such polydisc,
+\begin{equation}\label{eq:common-majorant}
+ |e_\Lambda(X;C)|\le M(X),\qquad
+ \sup_z\sum_{X\ni z}e^{\kappa\ell(X)}M(X)
+ \le M_0:=2e\,t_R^*.
+\end{equation}
+This is a majorant for the sum of suprema, rather than a separate
+estimate whose supremum might depend on $X$.
+The union coefficient $e_\Lambda(X;C)$ reads only $C_{XX}$.
+
+\begin{theorem}\label{thm:direct-hessian}
+Let $C(s,t)$ be a holomorphic symmetric covariance with value $C$
+at the origin. Write $E_x=\partial_sC$, $E_y=\partial_tC$, and
+$E_{xy}=\partial_s\partial_tC$ there. Suppose, for each nonempty
+$X$ and $i,j\in X$,
+\begin{align*}
+ \norm{(E_x)_{ij}}&\le B_1e^{-\mu\operatorname{dist}(x,X)}
+                            e^{-\nu d(i,j)},\\
+ \norm{(E_y)_{ij}}&\le B_1e^{-\mu\operatorname{dist}(y,X)}
+                            e^{-\nu d(i,j)},\\
+ \norm{(E_{xy})_{ij}}&\le B_2
+ e^{-\nu[d(x,y)+\operatorname{dist}(x,X)+\operatorname{dist}(y,X)]}
+ e^{-\nu d(i,j)}.
+\end{align*}
+Then the Gaussian cutoff logarithm $F_\Lambda(C)=\log Z_\Lambda(C)$
+satisfies
+\begin{equation}\label{eq:direct-hessian}
+ |\partial_s\partial_tF_\Lambda(C(s,t))|_{s=t=0}
+ \le M_0\left[
+ \frac{B_1^2}{\rho^2}S_{\mu-\kappa}
+ +\frac{B_2}{\rho}S_\nu\right]e^{-\kappa d(x,y)}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+For directions on $X$ with entry envelopes
+$b_Ee^{-\nu d(i,j)}$ and $b_Fe^{-\nu d(i,j)}$, extend by zero
+outside $X\times X$. Cauchy's formula with radii $\rho/b_E$ and
+$\rho/b_F$, and the common majorant, gives
+\[
+ |De_\Lambda(X)[E]|\le M(X)b_E/\rho,
+ \qquad
+ |D^2e_\Lambda(X)[E,F]|\le M(X)b_Eb_F/\rho^2.
+\]
+Each variable is differentiated once, so no factor two is missing.
+With $\delta_x=\operatorname{dist}(x,X)$ and similarly for $y$,
+the chain rule bounds the summand by
+\[
+ M(X)\left[
+ \frac{B_1^2}{\rho^2}e^{-\mu(\delta_x+\delta_y)}
+ +\frac{B_2}{\rho}e^{-\nu[d(x,y)+\delta_x+\delta_y]}
+ \right].
+\]
+The elementary inequality
+$d(x,y)\le\delta_x+\ell(X)+\delta_y$ implies
+\[
+ e^{-\mu(\delta_x+\delta_y)}
+ \le e^{-\kappa d(x,y)}e^{\kappa\ell(X)}
+       e^{-(\mu-\kappa)\delta_x}.
+\]
+For $q>0$, $e^{-q\delta_x}\le\sum_{z\in X}e^{-qd(x,z)}$.
+Equation \eqref{eq:common-majorant} therefore makes the first sum
+at most $M_0S_{\mu-\kappa}e^{-\kappa d(x,y)}$ times its coefficient.
+For the second, use $\nu>\kappa$, drop the $y$-distance factor,
+and sum with $S_\nu$. This proves \eqref{eq:direct-hessian}.
+\end{proof}
+
+\subsection{Local precision variations provide the response bounds}
+
+Let $A=C^{-1}$ and $A(s,t)=A+sH_x+tH_y$, where each symmetric
+$H_x$ is supported on $B_{r_s}(x)\times B_{r_s}(x)$, has norm at
+most $H$, and the ball has at most $n_s$ sites. Inverse differentiation
+gives
+\[
+ E_x=-CH_xC,\qquad
+ E_{xy}=CH_xCH_yC+CH_yCH_xC.
+\]
+Expanding in blocks yields
+\begin{align*}
+ \norm{(E_x)_{ij}}
+ &\le b_1e^{-\mu[d(i,x)+d(j,x)]},
+ &b_1&=n_s^2HK_0^2e^{2\mu r_s},\\
+ \norm{(CH_xCH_yC)_{ij}}
+ &\le b_2e^{-\mu[d(i,x)+d(x,y)+d(y,j)]},
+ &b_2&=n_s^4H^2K_0^3e^{4\mu r_s}.
+\end{align*}
+The first distance sum is at least both $d(i,j)$ and
+$2\operatorname{dist}(x,X)$. The second is at least both $d(i,j)$
+and $d(x,y)+\delta_x+\delta_y$. Averaging these two lower bounds
+in each case verifies Theorem~\ref{thm:direct-hessian} with
+$B_1=b_1$ and $B_2=2b_2$. Source supports may overlap, and $x=y$
+is allowed.
+
+For a nonlinear precision the exact second response has the additional
+term $-C(\partial_x\partial_yA)C$. It must be estimated too.
+For example, if that precision derivative vanishes for $d(x,y)>r_2$
+and otherwise has uniformly bounded norm and support in a fixed ball
+about $x$, the same first-variation calculation supplies an extra
+constant times $t_R^*e^{\kappa r_2}e^{-\kappa d(x,y)}$.
+No locality assumption on first variations alone controls this term.
+
+If a Hessian kernel bounded by $C_Ht_R^*e^{-\kappa d(z,w)}$ is
+contracted with responses
+$|h_x(z)|\le H_he^{-m d(x,z)}$, then, for
+$\lambda=\frac12\min(\kappa,m)$, the contraction is bounded by
+\[
+ C_Ht_R^*H_h^2S_{m-\lambda}S_{\kappa-\lambda}
+ e^{-\lambda d(x,y)}.
+\]
+This follows by the triangle inequality through $x,z,w,y$ and two
+geometric sums. Differentiating a nonlinear response chart instead
+adds its own second-variation term; the displayed contraction alone
+does not include it.
+
+\subsection{Thermodynamic limit and the scalar coefficient}
+
+Suppose, additionally, that finite-volume covariances and their first
+and second source responses converge entrywise on every fixed set,
+with the preceding bounds uniform. Fixed-set Hessians then converge:
+the union coefficient has the finite inclusion--exclusion formula
+\[
+ e_\Lambda(X;C)=\sum_{Y\subset X}(-1)^{|X\setminus Y|}
+       \log Z_Y(C_{YY}),
+\]
+where the empty-set logarithm is zero. The uniform zero-free domain
+makes these finite-dimensional functions and their derivatives
+continuous under the indicated convergence.
+For sets $X$ not contained in $B_L(x)$,
+$\operatorname{dist}(x,X)+\ell(X)\ge L$.
+Spending, for example, $\kappa/2$ of the available tree and source
+decay gives an omitted Hessian sum bounded by
+$C t_R^*e^{-\kappa L/2}$, uniformly in volume. Thus the total Hessian
+converges too. The argument applies to growing tori when fixed balls
+embed with their ordinary lattice metric and all counting bounds are
+uniform. Entrywise convergence is an additional hypothesis, not a
+consequence of the uniform estimate.
+
+At finite volume, any differentiable analytic pointing identity
+\[
+ F_{{\rm cut},\Lambda}(\xi)-F_{{\rm cut},\Lambda}(0)
+ =\sum_{X,z}E_{{\rm cut},\Lambda}(X;\xi,z)
+\]
+identifies the total Hessian with the sum of its pointed Hessians.
+Therefore this direct route can bound the pure Gaussian cutoff part
+of the deposited quadratic coefficient after its normalized response
+and infinite-volume kernel have been identified. On $\mathbb Z^4$,
+\[
+ \sum_y d(x,y)^2|D_xD_yF_{\rm cut}|
+ \le C t_R^*\sum_y d(x,y)^2e^{-\lambda d(x,y)}<\infty.
+\]
+In particular the cutoff contribution to the coupling increment is
+$O(t_R^*)$ under those identifications.
+
+The exact decomposition is
+\[
+ \log\E_C[\chi_R e^V]
+ =\log\E_C[\chi_R]
+ +\log\frac{\E_C[\chi_R e^V]}{\E_C[\chi_R]}.
+\]
+This section bounds the first term. The interaction ratio and the
+separate Gaussian normalization remain to be controlled. It also
+does not replace background-local effective actions in the full RG
+induction. It shows that their complete construction is unnecessary
+for this particular quadratic estimate once the direct source
+responses and kernel identification are proved.
+
+\section{The remaining Yang--Mills interface}
+
+\subsection{Matching the actual Gaussian variables}
+
+The independent variables are identifiable in the primary construction.
+CMP109, pp.\ 266--268, (2.9)--(2.13), linearizes the averaging
+constraint, rescales by the running coupling, and removes a pivot bond
+per next-level bond. The remaining bond vector $B$ is unconstrained;
+its precision is $\mathcal C^*\Delta^{(k)}\mathcal C$, where
+$\mathcal C$ denotes the extension map, not a covariance. Each retained
+bond has $D=\dim_\R\mathfrak g$ coordinates. The paper explicitly
+changes the earlier delta gauge to exponential gauge
+\cite{balaban109}.
+
+CMP99b, p.\ 428 after (3.158), gives a scale-independent positive lower
+bound for the axial reduced precision; Theorem 3.15, p.\ 432, gives
+exponential covariance decay and walks in its stated regular-background
+setting \cite{balaban99}. These are relevant inputs, but the axial and
+exponential gauge matrices have different coordinates. Moreover,
+the primary current is tied to the background, whereas the later
+analytic carrier permits an independent current.
+
+CMP116, pp.\ 12--14, (2.1)--(2.10), includes the cutoff-only sector
+when the interaction sets are empty and the bad-bond set is nonempty.
+Its localization uses conditioning, exterior whitening, and walks.
+The complex estimates at pp.\ 15--17 are structured domination
+estimates, not an explicitly stated accretive-covariance theorem on
+every arbitrary complex walk polydisc \cite{balaban116}.
+Our forest interpolation is a separate, accretivity-preserving device.
+
+The deposit already offers conditional operator constructions here.
+Raw I, lines 5910--6077 and 7171--7298, derives accretivity and
+localized covariance bounds from named form-walk and positivity
+inputs. Lines 5500--5517 distinguish primary tied-current estimates
+from the free-current hypotheses. Thus the missing task is to verify
+the hypotheses and coordinate identification, not to pretend that
+no proposed operator construction exists.
+
+\begin{proposition}[A sufficient uniform perturbation criterion]
+For $\mu\ge0$, let $\norm{\cdot}_\mu$ be the maximum of the exponentially weighted
+block row and column sums. Suppose the real reference precision $A_0$
+is symmetric, $A_0\ge2aI$, $\norm{A_0}\le B_0$, and
+$\norm{A_0^{-1}}_\mu\le K_0$. Let the symmetric holomorphic
+perturbation $V(\xi)$ on a fixed background/current ball satisfy
+\[
+ \norm{V(\xi)}_\mu\le\delta,\qquad
+ \delta\le a,\qquad K_0\delta<1.
+\]
+Then $A=A_0+V$ has $\Rea A\ge aI$, $\norm A\le B_0+\delta$, and
+\[
+ \norm{A^{-1}}_\mu\le\frac{K_0}{1-K_0\delta}.
+\]
+In particular the covariance hypotheses of
+Theorem~\ref{thm:polymer} hold with constants independent of scale
+whenever the displayed inputs are independent of scale.
+\end{proposition}
+
+\begin{proof}
+The weighted row/column norm is a matrix algebra norm by the triangle
+inequality for distance, and dominates operator norm by the Schur
+test. Accretivity and the upper bound follow immediately. Sum
+$A^{-1}=(I+A_0^{-1}V)^{-1}A_0^{-1}$ in that algebra.
+Lemma~\ref{lem:precision} supplies covariance accretivity.
+\end{proof}
+
+This criterion reduces the analytic extension to a concrete weighted
+operator perturbation estimate on the \emph{actual} independent
+coordinates. It does not prove that estimate or replace background
+locality.
+Notebook 06 now proves both real flat precision bounds directly for
+the explicit full-block Maxwell quadratic model and gives the exact
+minimizer/coordinate interface to the physical Gaussian. Notebook 07
+adds exponential flat kernel decay and an $O(M^{-2})$ refinement limit
+in weighted kernel norm, uniformly over compatible periodic volumes.
+This verifies the homogeneous flat reference inputs of the criterion.
+The weighted bound on the actual complex perturbation is still needed;
+neither spectral bounds nor spatial decay alone provides it.
+Notebook 08 additionally proves local fine response legs for the
+normalized homogeneous flat source minimizer: the potential has
+uniform physical $C^{1,\alpha}$ bounds, its curl has $C^\alpha$
+bounds, and its componentwise Laplacian has a uniform supremum
+bound, all with exponential coarse-cell decay. The corrected
+averaging map, scalar gauge projection and normalization are
+checked explicitly. Notebook 09 now also proves locality of the full
+flat fine inverse and a common complex neighborhood for the deposited
+auxiliary current $G_\pi^J$. It supplies a quadratic zero-current
+precision remainder and all-order localized current derivatives,
+uniformly in refinement and compatible periodic volume. Notebook 11
+also controls the separate nonlinear-constraint term by its corrected
+fixed-$L$ quadratic composition, and proves a full flat $G_1^J$
+current neighborhood in the physical-cell algebra for $M=L^j$.
+Its passage to the actual retained Gaussian precision and nonflat
+background domains remain to be matched. Notebook 10 controls small curvature-metric
+perturbations at fixed $Q$, which is a further quadratic input and
+does not identify an entire nonflat Hessian.
+Notebook 12 additionally proves the full flat current bounds in
+the homogeneous pointwise $N,N_\beta$ norms for bounded fine
+forcing, with no derivative of the current. This is a further
+matched source input. Its additional heat-kernel argument handles
+the one-form right-divergence data, with equal exponents for every
+fixed H\"older exponent strictly between zero and one,
+and a separate series handles the constrained-current inverse.
+The scalar member has a separate proof under an explicit uniform
+positive-penalty hypothesis. Strict dependence on background
+supports and the retained-coordinate comparison remain distinct
+obligations. Notebook 13 further straightens the complete nonlinear
+fixed-reference constraint on a refinement-uniform analytic ball;
+Notebook 14 computes the actual moving-reference derivative
+correction, controls the ordinary reference averages, and proves
+weighted energy-inverse stability for a Wilson operator on a small
+global physical $C^1$ ball. Its bare action, physical pairing and
+left-exponential Hessian chart match the deposited conventions in
+dimension four. Original-paper verification and the precise
+graded-curl and effective-Hessian identifications remain separate.
+Notebook 15 now constructs a nonlinear action minimizer in a
+homogeneous small-global-field class, with uniform physical
+$C^{1,\alpha}$ control and analyticity. A gauge flow and an exact
+ordinary-average transfer remove the fixed-slice and corrected-map
+restrictions for its local action comparison. Nonflat source
+pointwise/current domains, mixed retained geometry, and the actual
+fluctuation integration remain separate interfaces.
+Notebook 16 further proves weighted responses for the corrected
+and explicitly chosen ordinary minimizers. Its classical action
+has derivative equal to the coarse multiplier and a nonlinear
+Hessian that is a small exponentially local perturbation of the
+flat Maxwell precision. These estimates concern a classical
+coarse Hessian, with the ordinary-coordinate convention explicit;
+they do not identify the precision after quantum integration or
+give strict background-support activities.
+
+Notebook 17 now proves joint correlated bad-block bounds, including
+a complex local-event estimate without a total-volume loss. It
+compares the first-step reduced Wilson Hessian with the flat energy
+and identifies the homogeneous flat retained Gaussian at all earlier
+averaging depths using the nonlinear minimum of Notebook 15.
+Notebook 18 closes the abstract overlapping-interaction expansion
+under an explicit weighted coefficient norm; with a small local
+precision decomposition, its activities also have strict background
+support. Notebook 19 now identifies the actual physical homogeneous
+pivot Gaussian and bounds its local measure and gauge factors.
+Notebook 20 matches all local interaction and precision hypotheses
+for the bare first-step Wilson small-field integral, including
+its normalization terms. Notebook 21 proves the support-valued
+classical action and precision bounds uniformly in earlier
+refinement, and closes one integration of that classical reference
+action. Notebook 22 constructs the strict stationary-background
+support expansion and transports those activities to the next
+coarse variables with explicit radius and support-weight losses.
+Notebook 23 proves local gauge covariance of the full correction
+and its quadratic Ward identity. Notebook 24 proves a conditional
+inherited fluctuation-interaction estimate, and Notebook 26
+meets its support-weight test using fixed auxiliary cells.
+Notebook 25 supplies a smaller classical gauge representative
+and an analytic composition-germ continuation. Stable quantum
+domains and amplitudes, including the marginal coupling flow,
+remain to be proved for the induction.
+
+\subsection{Marked-set decay is not background locality}
+
+The preceding activities involve the marked locations in $S$, but
+$C_{SS}(W)$ may depend on $W$ arbitrarily far away. Consider, for
+example,
+\[
+ C(W)=(1+\varepsilon W_{x_*})I,\qquad
+ |\varepsilon W_{x_*}|<\tfrac14.
+\]
+It satisfies uniform accretivity and norm bounds and has no
+off-diagonal covariance at all. Nevertheless, every singleton cutoff
+expectation depends on the remote background coordinate $W_{x_*}$.
+Therefore Theorem~\ref{thm:polymer} alone cannot supply a family of
+activities supported in their claimed background domains.
+
+Notebook 04 now proves a sufficient strict-locality theorem when the
+precision is a sufficiently small sum of local perturbations of a fixed,
+uniformly accretive, exponentially decaying baseline. It expands the
+entire marginal density, including its determinant and inverse, and
+pays for roots in the added support. Its product-domain, symmetry,
+finite-volume, and actual-operator interfaces remain explicit.
+
+For the actual Yang--Mills Gaussian, the needed further input is a
+local walk expansion, or an equivalent
+analytic decoupling construction, for the \emph{background dependence}
+of the actual Gaussian. It must control the weighted sums of the
+domains visited by those walks. A truncation to balls with error
+$e^{-cR}$ does not automatically pay a polymer norm that penalizes
+their four-dimensional volume. Source-localization and volume
+compatibility must be checked in the norm actually used by the RG.
+
+\subsection{What has to be matched to the deposited construction}
+
+The current proof and the Gaussian proof leave a short list of exact
+interfaces rather than an unidentified analytic remainder:
+\begin{enumerate}
+\item Prove a weighted bound on the combined global current
+$s_\sigma$, on the same complex domains used by the four-stage
+induction. If the earlier substituted representation is used,
+estimate \eqref{eq:current-residual} and prove the additional global
+operator identifications.
+\item Propagate the derived-current clauses at every retained triple.
+Weak membership of the basic carrier alone does not establish these.
+\item Identify the actual independent Gaussian coordinates and prove
+uniform accretivity and decay for their full covariance on the fixed
+complex, independent-current domain. The forest interpolants then
+inherit these bounds; accretivity of the older complex walk
+interpolation is not an extra premise of our Gaussian theorem.
+A bound only on physical tied currents is insufficient.
+\item For the full effective-action induction, localize the Gaussian
+cutoff logarithm in the background variables with an anchored bound
+on a fixed normalized complex domain. For the scalar quadratic
+coefficient alone, Section 6 gives the alternative of direct
+source-response bounds and local convergence. Control the
+interaction contribution and separate Gaussian normalization as well.
+Notebook 05 supplies the flat gauge/coercivity bridge and a complete
+interaction module for disjoint cells. Notebook 18 extends the
+integration to overlapping supports and combines it with the local
+precision construction. Its weighted coefficient hypotheses must
+still be verified for the actual Yang--Mills integrand.
+\item Apply the pointed quadratic extraction in Notebook 01 to that
+actual local family, with uniform normalized source responses. The
+extraction lemma does not establish its own analytic hypotheses.
+\end{enumerate}
+
+These tasks concern a necessary renormalization estimate. The mixed
+observable hierarchy, all-order continuum bounds, rotation restoration,
+identification as Yang--Mills, and the mass gap remain separate
+obligations. Notebook 02 supplies a fixed-coupling reflection argument;
+it supplies no uniform ultraviolet estimate for this list.
+
+\begin{thebibliography}{9}
+\bibitem{bkar} A. Abdesselam, notes on the BKAR formula, Theorem 1
+and the convex hull of partition masks.
+\href{https://mabdesselam.github.io/BKAR.pdf}{Author-hosted notes}.
+\bibitem{abdriv} A. Abdesselam and V. Rivasseau,
+\emph{Trees, forests and jungles: a botanical garden for cluster
+expansions}, Lecture Notes in Physics 446 (1995), 7--36.
+\href{https://arxiv.org/abs/hep-th/9409094}{arXiv:hep-th/9409094}.
+\bibitem{kp} R. Koteck\'y and D. Preiss,
+\emph{Cluster expansion for abstract polymer models},
+Commun. Math. Phys. 103 (1986), 491--498.
+\href{https://doi.org/10.1007/BF01211762}{Publisher record}.
+\bibitem{fp} R. Fern\'andez and A. Procacci,
+\emph{Cluster expansion for abstract polymer models. New bounds from
+an old approach}, Commun. Math. Phys. 274 (2007), 123--140,
+especially equations (2.7), (2.12), (2.14), and (2.15).
+\href{https://webspace.science.uu.nl/~ferna107/papers/ferpro07.pdf}
+{Author-hosted paper};
+\href{https://arxiv.org/abs/math-ph/0605041}{arXiv version}.
+\bibitem{balaban99} T. Ba\l aban,
+\emph{Propagators for lattice gauge theories in a background field},
+Commun. Math. Phys. 99 (1985), 389--434.
+\href{https://doi.org/10.1007/BF01240355}{Publisher record}.
+\bibitem{balaban109} T. Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field theories I},
+Commun. Math. Phys. 109 (1987), 249--301.
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-3ygai0vxt1.pdf}
+{Copy of the original article}.
+\bibitem{balaban116} T. Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field theories II.
+Cluster expansions}, Commun. Math. Phys. 116 (1988), 1--22.
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-4penm4k7hc.pdf}
+{Copy of the original article}.
+\end{thebibliography}
+\end{document}

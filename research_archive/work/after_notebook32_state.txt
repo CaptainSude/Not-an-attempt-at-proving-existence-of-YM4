@@ -1,0 +1,317 @@
+17 October 2026. Checkpoint after Notebook 32 assembly.
+
+USER OBJECTIVE
+Complete a rigorous existence argument for nontrivial 4D Yang--Mills,
+then pursue mass gap. Ambitious direct research, explicit proof/
+assumption boundaries. Full objective is NOT achieved.
+At the start of this continuation get_goal returned status "paused"
+(unbudgeted, objective unchanged). No goal-status mutation was made.
+Do not report the goal as complete or silently claim its tool status
+is active. Current work responded to the user's explicit objective.
+
+ENVIRONMENT
+Windows PowerShell, cwd:
+<original-workspace>
+No AGENTS here. Approval never; omit sandbox_permissions.
+Source repository remains pinned at e392ef45013a581664bab76b90867170b30fe10e.
+No source-repo edits, PRs or external messages.
+Earlier detailed checkpoint: work/after_notebook31_state.txt.
+
+LATEST COMPILED OUTPUT
+outputs/ym4-determinant-flow-notebook.tex
+Title: Notebook 32: determinant composition and finite coupling tuning.
+120534 bytes; 227 unique labels; 118 refs; no missing/duplicate labels,
+control characters or bare quad tokens. Built via
+work/build_determinant_flow.ps1 and compiled SUCCESS with desktop compiler.
+Master outputs/ym4-construction-notebook.tex updated through32 and
+compiled SUCCESS. open_in_codex for32 previously returned queued,
+not confirmed visible.
+
+Assembly order:
+determinant_flow_notebook_head.tex
+finite_classical_marginal_leakage_fragment.tex (fml-)
+finite_quantum_coupling_continuity_fragment.tex (fqc-)
+determinant_maxwell_trace_fragment.tex (dmt-)
+determinant_gauge_bridge_fragment.tex (dgb-)
+classical_one_loop_cocycle_fragment.tex (olc-)
+finite_block_drift_transfer_fragment.tex (fbt-)
+finite_trajectory_shooting_fragment.tex (fts-)
+determinant_flow_notebook_tail.tex
+
+NOTEBOOK32 CONTENTS AND SCOPES
+
+1. FML: qualitative uniform finite classical Maxwell leakage
+Lambda_(M,R,N)=beta_(MR,N) T_(M,R,N)-beta_(M,RN).
+omega(K)=sup_(M,N>=K, ||x||<=b²)|Lambda x| ->0.
+Fixed R,J,a0,b, nested periods with cofinal divisibility by every
+fixed R^q. Allows varying old depth M. No convergence rate, no exact
+finite preservation, no arbitrary period families with bounded
+ell-adic valuation.
+Proof extracts joint varying-depth classical structural systems;
+all have exact infinite Maxwell preservation by Notebook31 CMT.
+Transported Hessian H^T K H and finite normalized second moments
+pass by uniform exponential envelopes and denominator ->1.
+Research/root/provenance/rotation audits and fragment fidelity pass.
+
+2. FQC: actual finite quantum map jointly continuous in positive
+real coupling and interaction quotient. T(g) continuous; transform
+xi=T(g) zeta to fixed unit windows. Strict inherited inner-field
+margin gives uniform-in-all-complex-w integrand continuity.
+Finite cluster logarithm bound gives uniform nonzero denominator
+and continuous normalized log in H-infinity(b). Put its difference
+on one full-torus carrier; huge but finite quotient constant okay.
+Combine input Lipschitz estimate. No continuous representative
+selection, g=0 continuity or uniform-volume modulus needed.
+Audits/fidelity pass.
+
+3. DMT: actual pivot/Gaussian Hessian trace
+D=-sum logdet pi(a_*) -1/2 logdet(A(a_*) A0^-1).
+Independent d(a) globally Ad invariant => Dd(0)=0 for semisimple
+color; only after full scalar chain rule does D²a_* drop.
+With H=Da_*(0), C0=A0^-1:
+K_D(u,v)=
+ -sum tr[pi2(Hu,Hv)-pi1(Hu)pi1(Hv)]
+ -1/2 Tr[C0 Acal2(Hu,Hv)-C0 Acal1(Hu) C0 Acal1(Hv)].
+Acal includes exact constraint/current, absolute gauge and
+left-relative-to-ordinary log curvature. H=h-K C0 K^T P_M h,
+P_M=q_M+T_R^T T_R. Current retained counting coordinates;
+no extra old fine-volume factor.
+Uniform strict/source incidence plus exponential covariance
+gives absolutely convergent trace kernels and Maxwell moment
+beta D=-1/2 sum_r r_nu² K_(mu mu,aa)(0,r), fixed one color.
+No actual sign/value computed. Audits/fidelity pass.
+
+4. DGB: NEW exact finite gauge/coarea/effective-Hessian bridge
+Research work/determinant_gauge_bridge_research.md.
+Fragment dgb, final51labels28refs620lines.
+Root audit work/determinant_gauge_bridge_root_audit.txt;
+provenance/rotation audits same stem *_audit.md.
+
+At actual physical saddle U with F_K(U)=W and contour P_K=I:
+s(x)=S_M(e^{ix}U), f(x)=log(F_K(e^{ix}U) W^-1)/i,
+C=f'(0), s'=C^T lambda,
+L=s''-lambda.f'' (full multiplier curvature).
+Actual retained insertion K0=E-hCE, h=Ip Cp^-1.
+A_T=K0^T(L+T^TT)K0; actual amplitude |detCp|^-1 detA_T^-1/2.
+
+Based gauge generator D_b (zero at every K-center):
+C D_b=L D_b=0, T D_b=-I, G_b=D_b^T D_b>0.
+Use the SAME complement-plus-D_b fiber coordinates to integrate
+the gauge variable. The nonorthonormal Jacobian cancels only in
+the gauge ratio:
+detA_T^-1/2=detG_b detA_b^-1/2,
+A_b=K0^T(L+D_bD_b^T)K0.
+
+For any symmetric B with Q_b=L+D_bD_b^T+C^TBC>0,
+M_b=C Q_b^-1 C^T,
+detQ_b detM_b=(detCp)^2 detA_b.
+This is exact coarea in target LEFT-relative coordinates.
+Target Haar contributes its constant origin density, no j(logW).
+Thus
+D_(M,K)=N0[logdetG_b -1/2logdetQ_b -1/2logdetM_b].
+Only the combined formula is independent of completion. No
+large-K uniform domain/gap of individual factors is inferred.
+
+Actual effective action in left-relative target coordinates:
+q_eff=D_y² S_(MK)(e^{iy}W)|0, lambda=D_y S_eff|0.
+Residual R=S_M-S_eff(F_K) is critical, nonnegative near saddle,
+full-gauge invariant. H_res=L-C^T q_eff C>=0.
+Actual section derivative H obeys CH=I, H_res H=0.
+H_b=H-D_b G_b^-1 D_b^T H gives CH_b=I, D_b^TH_b=0.
+Then
+Q_b H_b=C^T(q_eff+B),
+q_eff+B=H_b^T Q_b H_b>0,
+M_b=(q_eff+B)^-1 EXACTLY.
+Consequently D=N0[logdetG_b -1/2logdetQ_b
+                              +1/2logdet(q_eff+B)].
+Canonical B=I-q_eff gives Q_b=H_res+D_bD_b^T+C^TC>0
+and M_b=I; q_eff remains inside Q_b, not eliminated from physics.
+
+NEW actual uniform coarse-factor estimate:
+Choose fixed a>2 R_mu, where R_mu is uniform weighted Schur bound
+on q_eff on a small common complex background ball.
+Actual input is classical_support_localization_fragment.tex
+cl-action-theorem/norm/hessian-support and its pair quadratic
+baseline. Compose scalar coefficients with per-bond
+Xi_w(y)=log(e^{iy}e^{iw})/i, differentiate twice in y and through
+two source w slots with spare Cauchy radii/cardinality reserve.
+Retain D S_MK times BCH-curvature term.
+This yields uniform weighted row/column and source-root bounds
+for q_eff, independent MK and volume.
+Neumann inverse (q_eff+aI)^-1 and determinant-Hessian traces give
+uniform exponential source Hessian and second moment.
+Therefore (1/2)N0 logdet(q_eff+aI) has O(1) Maxwell coefficient
+uniformly in old depth, endpoint K and compatible volume.
+Finite reference denominators >=1/2 retain the finite statement.
+No uniform gap for the FINE Q_b is inferred.
+Final formula uses dim(P_c) including colors, and K_c is the FULL
+logdet Hessian; the half-log term has K_c/2.
+
+Remaining fine combination for this fixed-a choice:
+N0[logdetG_b -1/2logdet(s''-lambda.f''
+                                  +D_bD_b^T+aC^TC)].
+This is now the actual coupled comparison target, up to bounded
+coarse Maxwell error.
+
+Ghost obstruction (proved negative test):
+At flat background choose scalar phi=1 except at K-centers,
+where phi=0. Energy=2d n_centers; norm²=(K^d-1)n_centers.
+lambda_min(G_b)<=2d/(K^d-1). In d4 inverse >=(K^4-1)/8.
+So a separate uniform ||G_b^-1||<=C K² is FALSE.
+No matching spectral asymptotic asserted. Coupled cancellation
+can still produce the desired reference comparison.
+
+Full-site Schur bookkeeping (finite exact):
+Fix one final center as global base; D_f=[D_b,D_e].
+G_f=D_f^TD_f; S_g=D_e^T(I-D_b G_b^-1 D_b^T)D_e;
+detG_f=detG_b detS_g.
+Q_f=Q_b+D_eD_e^T, S_v=I+D_e^TQ_b^-1D_e;
+detQ_f=detQ_b detS_v.
+D=N0[logdetG_f-1/2logdetQ_f-logdetS_g
+                         +1/2logdetS_v-1/2logdetM_b].
+Empty coarse-site determinants=1. G_f globally based is NOT
+the all-site massive ghost.
+Against proposed P_eta=s''+D_fD_f^T+eta²I, eta=K^-1,
+Q_f-P_eta=-lambda.f''+C^TBC-eta²I.
+Canonical B=I-q_eff and fixed-a B=aI are distinguished.
+No actual reference identification, uniform fine comparison or
+positive coefficient is proved.
+
+5. OLC: finite exact leading determinant cocycle
+D_(M,RL)=T_(MR,L)D_(M,R)+D_(MR,L).
+Actual composite ordinary maps; based groups split by site
+coordinates. Local Ward+small connecting gauge makes S_M
+consistent on a small saturated orbit tube. One smooth invariant
+cutoff=1 near all direct/sequential conditional minima.
+True Haar pushforward Fubini; compact normalized gauge insertion;
+finite Laplace on fixed regulator/ratios. Normalize at W=I after
+removing classical phase; every scalar factor cancels.
+Auxiliary inner density is H_L invariant only; do not assert
+full output-gauge invariance of the chosen cutoff.
+Sharp actual windows share only the LEADING amplitude, not
+positive-g sectors. Pass joint local infinite systems and use
+exact CMT to obtain scalar beta additivity. No exact finite
+short-beta additivity. Full research and fidelity audits pass.
+
+6. FBT: qualitative finite drift transfer (conditional sign)
+Research work/finite_leading_drift_transfer_research.md.
+Fixed q, final period N, M_j=MR^j,Q_j=R^(q-j)N.
+Actual b0_j=beta_(M_jR,Q_j+1)(D_(M_j,R;Q_j+1)).
+Along any M_n arbitrary and N_n->infty, extract joint structural
+limits of all q actual D, references, vertices/covariances.
+Uniform source-Hessian tails and denominators->1 imply all b0
+converge to their true infinite moments and B_q=sum b0 converges.
+Assume (UNPROVED) every such varying-depth structural limit has
+B_q*>=delta>0 with the SAME delta.
+Contradiction compactness then gives B_q(M,N)>=delta/2 uniformly
+M above one period threshold, WITHOUT a convergence rate.
+With q multiple amplitude q_a and per-step error<=delta/(4q),
+actual decrements obey delta/4<=sum_block d<=q D_abs.
+Real extracted inputs and Gamma_w=g_w^-2 are explicitly defined.
+No positivity in just one chosen fixed-depth limit is enough.
+Optional fringe estimate gives cn-Cfin on arbitrary intervals.
+Root/provenance research/fragment audits pass.
+
+7. FTS: conditional actual finite shooting
+Research now explicitly real extracted input (theorem agent found
+complex-input ambiguity; repaired).
+Additional UNPROVED hypothesis:
+sum_(j=k)^(k+n-1) actual finite b0_j >=cn-Cfin uniformly.
+Choose q multiple q_a with Cfin<=cq/4; error<=c/4.
+Actual qblock decrements between Bminus=cq/2 and Bplus=qDabs.
+Clip only evaluated coupling g=max(gamma,Gamma_w)^-1/2;
+scalar update gamma-d stays unclipped. FQC gives finite endpoint
+continuity. Shoot gamma0 in [Gamma*+mBminus,Gamma*+mBplus]
+to terminal Gamma*>=Gamma_w+qDabs. IVT supplies solution.
+Future block lower bounds give all selected gamma_kq>=Gamma*;
+internal loss<=qDabs => clipping never occurred.
+Thus actual local histories of mq steps exist conditionally,
+bare g0 of order m^-1/2, fixed weak endpoint.
+No uniqueness, cross-horizon consistency, all-sector measure
+or continuum claim. All audits/fidelity pass.
+
+PRIMARY SOURCE INTERFACE
+work/one_loop_reference_interface_research.md (provenance).
+Primary LW papers hep-lat/9504006 and hep-lat/9505011:
+formal background 1PI/Legendre conventions, actual lattice
+gauge/ghost/Haar formulas and massless nonzero-external-momentum
+background two-point amplitude checked in original PDFs.
+Not the same object as the repo's eta-mass vector/ghost
+Maxwell-at-zero-momentum reference. Need mass-vs-momentum,
+gauge/zero modes, normalized trace/action, and actual-background
+matching. No coefficient imported as actual proof.
+Pinned Raw I ~3901--4014 asserts bounded finite-part comparison;
+its displayed outline is not treated as supplying our missing bound.
+
+NEW SCOPED RESEARCH OUTSIDE NOTEBOOK32
+work/constant_cartan_curvature_research.md
+work/constant_cartan_curvature_root_audit.md
+Root independently read in full; local identities and bare
+fixed-endpoint polynomial-jet application pass.
+
+Commuting affine a_mu(x)=c_mu+B_muν xν, B_mumu=0:
+F_munu=B_numu-B_munu; constant plaquettes e^{iF}.
+Full Wilson Euler derivative cancels opposite plaquettes,
+including non-Cartan variations.
+Actual centered ordinary average preserves affine family:
+P_ell(y,y+r)=exp(i r.a(y)) p_ell(B,r); all p inCartan;
+the common p cancels between translated contours in U_x.
+Centered sum r=0 yields M_ell(U)=exp(i ell a_mu(y)).
+Iterate ACTUAL ordinary maps => composite K output
+exp(i K a_mu(y)); coarse flux K² F.
+Fine field for prescribed coarse F uses F/K².
+Direct-K based rooting preserves constraint and stationarity.
+Rooted formal coefficients have polynomial growth; multiplier0.
+
+Polynomial-jet lemma:
+stationary equation A z+B w+N(w,z)=0, N quadratic.
+Exponential two-sided inverse kernels and mixed Taylor kernels
+extend to polynomial-growth inputs by weighted absolute sums.
+A has no polynomial-growth nullvector. At each order z_n is
+uniquely A^-1 of lower-order forcing. Thus explicit rooted
+affine candidate matches actual bare Wilson stationary jets
+at fixed K. No uniform-in-K bounds or nonzero affine evaluation
+of the bounded analytic map.
+For effective S_M, extend the one-shot bare-depth MK comparison
+and composition identity to these polynomial jets; still an
+explicit interface to verify before using varying-old-depth case.
+
+Maxwell coefficient must be extracted from TOTAL kernel:
+E2(A)=-1/4 sum_(x,r)K_mumu(r)[A_mu(x+r)-A_mu(x)]²,
+using symmetric total kernel and zero row sum.
+Formal A_mu=t x_nu gives density
+-t²/4 sum r_nu² K_mumu(r), not a divergent total.
+Arbitrary anchored densities can differ by divergences which
+do not vanish on unbounded affine fields. Matching a computed
+constant-curvature determinant trace density to this exact
+total moment remains necessary. Torus constant flux quantization
+prevents treating this as a literal small periodic family.
+No actual drift sign/comparison result follows yet.
+
+NEXT SUBSTANTIVE WORK
+Use exact finite bridge and bounded coarse factor to attack the
+remaining coupled fine vector/ghost Maxwell comparison at
+eta=1/K. The Cartan polynomial-jet route may remove multiplier
+curvature for the bare composite coefficient, but its determinant
+moment identification must be proved. Match a fully specified
+massive reference and its logarithm, with a uniform bounded
+finite part as K grows and across required structural limits.
+Then FBT+FTS supply actual finite weak local trajectories.
+Full existence still needs mixed/large-field histories and exact
+global measure matching, uniform sources, continuum nontriviality,
+Euclidean covariance, positivity and reconstruction.
+
+COMMUNICATION
+Last commentary: expanded32/master compile; local argument has
+determinant composition, bounded coarse correction and conditional
+endpoint tuning. Next decisive estimate is positive drift of
+actual fine determinant combination; remaining field sectors and
+continuum observables still needed for existence.
+Final response not yet sent at checkpoint creation.
+
+Final audit update: rotation independently passed the final DGB
+coarse-factor proposition and all three notation/interface fixes,
+recorded in determinant_gauge_bridge_rotation_audit.md section7.
+Theorem confirmed final fragment ready. All three agents completed
+their assignments. The final output was checked against the exact
+current fragment concatenation after their completion.

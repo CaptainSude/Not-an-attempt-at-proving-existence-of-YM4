@@ -1,0 +1,382 @@
+% Notebook 22 quantum-activity transport module. No preamble. Prefix qt-.
+\section{Strict-support transport of analytic quantum activities}
+\label{qt-section}
+
+We now substitute the actual stationary current background into a
+supplied family of quantum activities. This is a bounded finite-step
+map. Its input has only one fixed positive support-cardinality reserve;
+we do not assume an arbitrary reserve for quantum activities. The
+number of Taylor coordinates is proportional to the original carrier
+size, and we explicitly pay that cost. Constants are uniform in the
+old refinement $M$ and compatible periodic volume, with fixed $L$.
+
+\subsection{Carrier geometry and the precise analytic inputs}
+\label{qt-input-section}
+
+Let $\Lambda$ be the input cell graph and $\Lambda'$ the next field's
+cell graph. A projection $\pi:\Lambda\to\Lambda'$ has fibers of size
+at most $F$ and sends every nonempty connected input carrier to a
+connected set. For ordinary $L$-cube blocking, $F=L^d$. Identity
+projection is allowed. Write $d'$ for graph distance on $\Lambda'$ and
+define
+\begin{equation}\label{qt-distance-sum}
+ S_\delta=\sup_{z\in\Lambda'}\sum_{j\in\Lambda'}e^{-\delta d'(z,j)}
+ \le\sum_{j\in\mathbb Z^d}e^{-\delta|j|_1}<\infty,
+ \qquad \delta>0.
+\end{equation}
+The bound is uniform on compatible tori: choose one minimal-distance
+integer representative of every periodic site. Short periodic
+directions do not enlarge the sum.
+
+Each input cell carries at most $D$ scalar complex background
+coordinates. For a nonempty connected $H\subset\Lambda$, suppose
+$E_H(a|_H)$ is bounded and holomorphic on
+\begin{equation}\label{qt-input-domain}
+ |a_i^\alpha|<b,\qquad i\in H,\quad 1\le\alpha\le D,
+\end{equation}
+and put $e_H=\norm{E_H}_b$. The only activity hypothesis is
+\begin{equation}\label{qt-input-norm}
+ \sup_{i\in\Lambda}\sum_{H\ni i}e^{a_0|H|}e_H\le\epsilon,
+ \qquad a_0>0\text{ fixed}.
+\end{equation}
+Here $D$ counts background scalar coordinates, not automatically
+retained Gaussian coordinates. A product of Euclidean fiber balls of
+radius $b_E$ contains the scalar polydisc of radius $b_E/\sqrt D$;
+make this fixed norm conversion before applying the formulas below.
+
+The actual stationary potential on the next-field product domain of
+radius $r$ has the strict support expansion
+\begin{align}
+ a_i^\alpha(w)&=\sum_{\varnothing\ne X\subset\Lambda'}
+                   u_{i,\alpha;X}(w|_X),
+ &u_{i,\alpha;X}(0)&=0,                                  \label{qt-background-series}\\
+ \sup_{i,\alpha}\sum_X
+ e^{\kappa\tau(\{\pi(i)\}\cup X)}
+       \norm{u_{i,\alpha;X}}_r&\le s(r)\le C_a r,
+ &\kappa&>0.                                             \label{qt-background-norm}
+\end{align}
+Here $\tau$ is graph Steiner length, allowing auxiliary vertices.
+The preceding stationary-background theorem supplies this estimate;
+its stronger support-cardinality weight is not needed here. A
+maximum-coordinate bound on its full current-field block fiber
+implies \eqref{qt-background-norm} for each scalar component, without
+summing over the fiber.
+
+If only the total $a_i(0)$ vanishes, subtract each summand's constant.
+Absolute convergence preserves the total and increases $s$ by at most
+a factor two. Incorporate that factor into $C_a$. For a nonzero
+reference potential, center both \eqref{qt-input-domain} and
+\eqref{qt-background-series} at that reference and use the available
+distance to the analytic boundary in place of $b$.
+
+\begin{remark}[The present physical indexing]\label{qt-indexing}
+The normalized Gaussian activities supplied by Notebooks 18 and 21
+are already indexed by $L$-blocks of the current unit lattice. The
+next-coarse $w$ labels are the same block index graph. The present
+physical substitution therefore uses
+\[
+ \pi=\mathrm{id},\qquad F=1,\qquad
+ D=D_{\mathrm{bg}}=dL^d\dim\mathfrak g.
+\]
+The last dimension includes all current background links assigned to
+the block; it differs from the retained Gaussian dimension
+$d(L^d-1)\dim\mathfrak g$. After substitution, these labels are unit
+cells of the next current lattice. A further projection for the
+following integration is a distinct operation, discussed below.
+It must not be counted as an additional gain during this substitution.
+\end{remark}
+
+\subsection{Bounded transport with an explicit loss budget}
+
+Choose $a_{\mathrm{out}},\mu\ge0$ and $\delta>0$, and set
+\begin{equation}\label{qt-budget-notation}
+ \beta=a_{\mathrm{out}}+\mu,\qquad
+ t=\frac{s(r)}b<1,\qquad
+ \alpha_D(t)=D\log\frac1{1-t}.
+\end{equation}
+For a connected output carrier $K$, let $\ell(K)$ denote metric
+minimum spanning-tree length. Define
+\begin{equation}\label{qt-output-norm}
+ \norm{E'}_{a_{\mathrm{out}},\mu;r}
+ =\sup_{z\in\Lambda'}\sum_{K\ni z}
+      e^{a_{\mathrm{out}}|K|+\mu\ell(K)}\norm{E'_K}_r.
+\end{equation}
+
+\begin{theorem}[Finite-step activity transport]\label{qt-theorem}
+Assume \eqref{qt-input-norm}--\eqref{qt-background-norm} and
+\begin{equation}\label{qt-budget}
+ \beta+\delta\le\kappa,\qquad
+ \beta+\alpha_D(t)\le a_0.
+\end{equation}
+There are strictly supported holomorphic activities $E'_K(w|_K)$
+on nonempty connected $K\subset\Lambda'$, with $E'_K(0)=0$, such that
+\begin{align}
+ \sum_H E_H(a(w)|_H)
+   &=\mathrm{Vac}_\Lambda+\sum_K E'_K(w|_K),
+ &\mathrm{Vac}_\Lambda&=\sum_H E_H(0),                 \label{qt-exact-identity}\\
+ \norm{E'}_{a_{\mathrm{out}},\mu;r}
+   &\le F S_\delta\epsilon.                            \label{qt-transport-bound}
+\end{align}
+All regroupings converge absolutely. The bound is independent of
+$M$ and finite periodic volume. It is not a contraction assertion.
+\end{theorem}
+
+A concrete choice with strictly positive output weights is
+\begin{align}
+ \beta&=\min\{a_0/4,\kappa/4\},
+ &a_{\mathrm{out}}&=\mu=\beta/2,
+ &\delta&=\kappa/4,\notag\\
+ \frac{s(r)}b&\le\min\{1/2,a_0/(8D)\}.                 \label{qt-concrete-budget}
+\end{align}
+Indeed $\alpha_D(t)\le2Dt\le a_0/4$. Thus a sufficient radius is
+\begin{equation}\label{qt-radius}
+ r\le\frac b{C_a}\min\{1/2,a_0/(8D)\},
+\end{equation}
+together with the stationary-background theorem's own radius
+restriction. All centering and norm-conversion constants are included
+in $b$ or $C_a$. Nothing requires $C_a<1$.
+
+\begin{proof}
+Expand each activity in its actual $D|H|$ scalar coordinates:
+\begin{equation}\label{qt-taylor}
+ E_H(a|_H)=\sum_{\nu\in\mathbb N^{D|H|}}c_{H,\nu}a^\nu,
+ \qquad |c_{H,\nu}|\le e_H b^{-|\nu|}.
+\end{equation}
+Coordinatewise Cauchy on smaller polydiscs, followed by a limit,
+gives the coefficient bound. There is no dimension-free absolute
+Taylor norm being assumed.
+
+For every scalar occurrence in a monomial $a^\nu$, insert
+\eqref{qt-background-series}. Its chosen support $X$ inherits the
+root $\pi(i)$ of that scalar coordinate. For each such rooted set,
+fix a deterministic minimizing connected tree $T(i,X)$ containing
+$\{\pi(i)\}\cup X$. Ties can be resolved by any fixed finite-volume
+rule. For a decorated term define
+\begin{equation}\label{qt-hull}
+ K=\pi(H)\cup\bigcup_{\text{occurrences}}\mathrm{Vert}\,T(i,X),
+ \qquad T_{\mathrm{tot}}
+       =\sum_{\text{occurrences}}\tau(\{\pi(i)\}\cup X).
+\end{equation}
+The original projected carrier is retained even if some of its
+variables are absent from the monomial. It is connected, and every
+attached tree has a root in it. Consequently
+\begin{equation}\label{qt-hull-geometry}
+ |K|\le|\pi(H)|+T_{\mathrm{tot}},\qquad
+ z\in K\ \Longrightarrow\ d'(z,\pi(H))\le T_{\mathrm{tot}}.
+\end{equation}
+A tree with $q$ edges adds at most $q$ vertices after attachment at
+its root. A vertex on an attached tree is at distance at most that
+tree's length from $\pi(H)$. Overlaps and periodic wrapping can
+only improve these inequalities.
+
+The decorated function reads only $w|_K$. Its true variable set may
+be smaller: $K$ is a declared connected carrier, not a claim of
+minimal dependence. A nonconstant monomial is a product of factors
+vanishing at zero and hence also vanishes at zero. Define $E'_K$ as
+the sum of these nonconstant terms having carrier $K$. Set aside
+the constant Taylor terms as $\mathrm{Vac}_\Lambda$.
+
+For every connected lattice vertex set $K$,
+\begin{equation}\label{qt-connected-mst}
+ \ell(K)=|K|-1,
+ \qquad e^{a_{\mathrm{out}}|K|+\mu\ell(K)}\le e^{\beta|K|}.
+\end{equation}
+Indeed the induced connected graph has a unit-edge spanning tree,
+while every metric tree has $|K|-1$ edges of distance at least one.
+Graph Steiner length is used for the attached rooted sets because
+deleting intermediate roots from a terminal metric spanning tree
+need not decrease its length. At the output all connecting vertices
+are retained, so \eqref{qt-connected-mst} applies exactly.
+
+Put $h=|\pi(H)|$ and $k=|H|$. For a fixed output anchor $z$,
+\eqref{qt-hull-geometry} gives
+\begin{align}
+ \mathbf1_{\{z\in K\}}
+ e^{a_{\mathrm{out}}|K|+\mu\ell(K)}
+ &\le e^{\beta h}e^{-\delta d'(z,\pi(H))}
+       \prod_{\text{occurrences}}
+       e^{(\beta+\delta)\tau(\{\pi(i)\}\cup X)}.       \label{qt-anchor-hull}
+\end{align}
+If $z\notin K$ this is automatic; otherwise insert
+$1\le e^{\delta(T_{\mathrm{tot}}-d'(z,\pi(H)))}$.
+The first condition in \eqref{qt-budget} lets us sum each scalar
+occurrence's support using \eqref{qt-background-norm}, at cost $s(r)$.
+The exact sum over scalar multiindices is
+\begin{equation}\label{qt-coordinate-count}
+ \sum_{\nu\in\mathbb N^{Dk}}t^{|\nu|}
+    =(1-t)^{-Dk}=e^{\alpha_D(t)k}.
+\end{equation}
+Omitting $\nu=0$ replaces the last expression by
+$e^{\alpha_D(t)k}-1$. Thus the full contribution from a fixed $H$
+is bounded by
+\begin{equation}\label{qt-fixed-carrier-bound}
+ e_H e^{\beta h+\alpha_D(t)k}
+                  e^{-\delta d'(z,\pi(H))}.
+\end{equation}
+Since $h\le k$, the second condition in \eqref{qt-budget} pays
+the two exponential costs from the given reserve $a_0 k$.
+Finally,
+\begin{equation}\label{qt-reroot}
+ e^{-\delta d'(z,\pi(H))}
+    \le\sum_{i\in H}e^{-\delta d'(z,\pi(i))}.
+\end{equation}
+Summing \eqref{qt-fixed-carrier-bound} over $H$ therefore gives
+\begin{align}
+ \sum_i e^{-\delta d'(z,\pi(i))}
+             \sum_{H\ni i}e^{a_0|H|}e_H
+ &\le F S_\delta\epsilon,                              \label{qt-final-majorant}
+\end{align}
+which proves \eqref{qt-transport-bound}.
+
+This positive majorant also justifies every substitution and
+regrouping. At finite volume, summing over output anchors bounds
+the total absolute series. Normal convergence on smaller product
+polydiscs proves holomorphy. No order sum has been interchanged
+with an output supremum: for each fixed $H$ the scalar series is
+summed exactly in \eqref{qt-coordinate-count}, before taking the
+anchored carrier sum. In particular, no crude $|H|^n$ slot count
+with a missing factorial is hidden in the argument.
+\end{proof}
+
+\subsection{Vacuum and the smaller-radius improvement}
+
+The vacuum has the explicit density assignment
+\begin{equation}\label{qt-vacuum-density}
+ v_i=\sum_{H\ni i}\frac{E_H(0)}{|H|},\qquad
+ \mathrm{Vac}_\Lambda=\sum_i v_i,
+ \qquad |v_i|\le\epsilon,
+ \qquad |\mathrm{Vac}_\Lambda|\le|\Lambda|\epsilon.
+\end{equation}
+Grouping these densities into a block costs at most $F$.
+
+\begin{corollary}[Vacuum-subtracted radius bound]\label{qt-small-radius}
+If the hypotheses of Theorem~\ref{qt-theorem} hold with
+\begin{equation}\label{qt-spare-reserve}
+ \rho=a_0-\beta-\alpha_D(t)>0,
+\end{equation}
+then also
+\begin{equation}\label{qt-small-radius-bound}
+ \norm{E'}_{a_{\mathrm{out}},\mu;r}
+ \le F S_\delta\epsilon\,\alpha_D(t) C_\rho,
+ \qquad C_\rho=\sup_{k\ge1}k e^{-\rho k}\le\frac1{e\rho}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+For nonconstant terms use
+$e^{\alpha_D(t)k}-1\le\alpha_D(t)k e^{\alpha_D(t)k}$
+in place of \eqref{qt-coordinate-count}. The spare
+$e^{-\rho k}$ pays the factor $k$. The remaining rerooting sum
+is unchanged.
+\end{proof}
+One may take the smaller of \eqref{qt-transport-bound} and
+\eqref{qt-small-radius-bound}. This is improved smallness on a
+strictly smaller field domain. It does not prove a contraction
+at a common radius under repeated RG steps.
+
+\subsection{An optional connected-carrier compression estimate}
+\label{qt-compression-section}
+
+\begin{lemma}[Connected carriers under cube projection]\label{qt-compression}
+For odd $L\ge5$, put
+\begin{equation}\label{qt-compression-constants}
+ r_L=(L-1)/2,\qquad s_L=\lfloor(r_L-1)/2\rfloor,
+ \qquad k_L=s_L+1.
+\end{equation}
+If $H$ is connected and $\pi_L$ is $L$-cube projection, then
+\begin{equation}\label{qt-compression-bound}
+ |\pi_L(H)|\le2^d\max\{1,|H|/k_L\}
+           \le2^d+(2^d/k_L)|H|.
+\end{equation}
+The estimate holds on compatible rectangular tori.
+\end{lemma}
+\begin{proof}
+Choose a maximal subset of $H$ separated by at least $r_L$ in
+the periodic supremum metric. The supremum balls of radius
+$r_L-1$ around its $J$ centers cover $H$. Each such ball has
+side length $2r_L-1<L$ and meets at most $2^d$ coarse blocks,
+so $|\pi_L(H)|\le2^d J$. If $J=1$ the result follows.
+If $J\ge2$, the graph-distance balls of radius $s_L$ about
+the centers are disjoint, since $2s_L<r_L$. For each center,
+a path in $H$ to another center contains at least $s_L+1$
+distinct vertices before leaving its ball. Hence
+$Jk_L\le|H|$. Identifications in short periodic directions
+only reduce the block counts; the same separation and path
+argument uses periodic distances.
+\end{proof}
+
+\begin{corollary}[Transport with a proved carrier gain]\label{qt-compressed-transport}
+Suppose the projection in Theorem~\ref{qt-theorem} satisfies
+$|\pi(H)|\le c_0+c_1|H|$ on connected carriers. The second
+condition in \eqref{qt-budget} may be replaced by
+\begin{equation}\label{qt-compressed-budget}
+ c_1\beta+\alpha_D(t)\le a_0,
+\end{equation}
+and the resulting bound is
+\begin{equation}\label{qt-compressed-bound}
+ \norm{E'}_{a_{\mathrm{out}},\mu;r}
+       \le e^{\beta c_0}F S_\delta\epsilon.
+\end{equation}
+The smaller-radius estimate also holds with the factor
+$e^{\beta c_0}$ and
+$\rho=a_0-c_1\beta-\alpha_D(t)>0$.
+\end{corollary}
+\begin{proof}
+Keep $h=|\pi(H)|$ in \eqref{qt-fixed-carrier-bound}, and
+use $\beta h\le\beta c_0+c_1\beta |H|$. All other parts
+of the proof are unchanged.
+\end{proof}
+Lemma~\ref{qt-compression} provides
+$c_0=2^d$, $c_1=2^d/k_L$. A sufficiently large fixed $L$
+can therefore help pay stronger cardinality weights. But the
+attached background trees must still obey
+$\beta+\delta\le\kappa$ in the graph used by the substitution.
+A larger spatial exponent cannot be assumed without a separate
+regrouping proof and its accompanying cardinality and domain costs.
+The constant $e^{\beta2^d}L^d S_\delta$ can be large.
+
+In the actual convention of Remark~\ref{qt-indexing}, current
+substitution uses identity projection. Afterwards, its connected
+carriers are unit-cell carriers of the next current field $w$.
+Regrouping them into the following integration's $L$-block Gaussian
+cells is a legitimate new projection. It must include that later
+pivot-chart enlargement and background-domain budget; it is not
+a second projection hidden in \eqref{qt-exact-identity}.
+
+\subsection{What the estimate does and does not establish}
+
+Connectedness of the input carrier is necessary for this
+cardinality-only hypothesis. Without it, an activity reading two
+sites at arbitrarily large separation can have fixed cardinality
+norm, while any connected output carrier containing both has size
+at least their distance plus one. A spatial input norm could pay
+this cost, but it is not part of \eqref{qt-input-norm}.
+
+There is no automatic contraction: a constant singleton activity
+$E_{\{i\}}=c$ at each old cell gives $L^d c$ after summation in
+a full coarse block. Even after vacuum subtraction, an identity
+background map and a linear singleton activity have no strict
+contraction at the same analytic radius. The gain in
+\eqref{qt-small-radius-bound} is explicitly a radius loss.
+
+For example, a Gaussian output reserve $a_0\le1/2$ cannot simply
+be re-used as an interaction input demanding exponent $4$.
+One must verify a compression/enlargement budget, a suitable
+stationary-background exponent, and the next domain. The
+stationary branch has a one-step radius with an $L$-dependent
+constant; no supremum-domain contraction by $L^{-1}$ has been
+proved. These facts leave a genuine induction interface.
+
+Every transported coefficient is strictly a function of its
+declared $w$ variables. Its fixed baseline may still depend on
+$M$ and the finite regulator, and a deterministic choice of
+connecting trees need not give coefficientwise volume consistency.
+The uniform bounds alone imply no thermodynamic consistency.
+
+Finally, the theorem transports supplied quantum activities
+through the matched classical stationary background. It does
+not identify the full interacting quantum stationary point with
+that classical branch, absorb inherited interactions into a new
+minimization, or control running couplings, large-field histories,
+or observable insertions. It supplies an exact finite-step bridge
+whose coefficient, support, volume, and analytic-radius costs
+are all displayed.

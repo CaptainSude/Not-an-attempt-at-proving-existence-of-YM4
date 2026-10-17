@@ -1,0 +1,135 @@
+Research checkpoint: 17 October 2026
+
+Active unbudgeted goal remains a complete rigorous nontrivial four-dimensional Yang--Mills existence argument, followed by mass gap. Goal ACTIVE and INCOMPLETE. This continuation made progress. Do not mark blocked/complete at a notebook milestone.
+
+Notebook31 assembled and compiled successfully:
+ outputs/ym4-finite-induction-notebook.tex
+ Title: Finite local induction and coupling extraction.
+ 72,606 bytes; 125 unique labels,63 refs; no missing/duplicates/controls/bare quad tokens.
+ Built-in compile returned success. Open-in-Codex returned queued, not confirmed visible.
+ Master outputs/ym4-construction-notebook.tex updated through31 and compiledsuccess;86,088bytes.
+ Prior checkpoint work/after_notebook30_state.txt remains authoritative for upstream30.
+
+Assembly work/build_finite_induction.ps1:
+ finite_induction_notebook_head.tex
+ finite_classical_contraction_fragment.tex            fcc-
+ finite_quantum_induction_fragment.tex                fqi-
+ quantum_zero_input_parity_fragment.tex               cgp-
+ classical_marginal_transport_fragment.tex            cmt-
+ finite_induction_notebook_tail.tex
+
+1. FCC actual finite classical contraction
+Research finite_classical_contraction_research.md; root/provenance/rotation audits pass; fragment fidelity pass.
+Finite activity quotient by exact normalized totals on full b polydisc. Actual reference S_(M,Q), not an independently periodized infinite reference. Finite beta is short-lift Hessian moment divided by its actual reference value, denominator1+O(e^-cQ). beta normCbeta b^-2, projection normp independentb.
+Input periodP=LN, outputN. Extracted low kernels shortlift plus tail; finite Ward defects degreegraded C(J)epsilon b^-n e^-cP. Repair moments with finite Laurent basis, symmetrized/reanchored. Corrected kernels have exact low moments. Direct periodic integration by parts and complete C1alpha coherentfamilies giveC_low(J)L^-alpha; carrierterminalsetsprojectedbeforeconnectinggraphs; SAMEa0.
+Tail/repair products(b/L)^n times(JL)^4 anchors giveCerr(J)epsilon(L²+L+1)e^-c(J)LN. Highsector6Chigh/L. Exactfinite gaugepath included. Thus
+ ||P_(ML,N) T_(M,L,N) P_(M,LN)|| <=p²[C_low(J)L^-alpha+6Chigh/L+Cerr(J)(L²+L+1)e^-c(J)LN].
+ChooseL=R^q afterJ thenN0 thenb (highjetbL/(8CA)<=r_A). ActualfiniteTS=Snext andprojectiontelescope exact.
+
+2. FQI exact finite local quantum induction
+Research finite_quantum_induction_research.md; root,theorem,rotation audits PASS. FragmentfidelityPASS. TeXescape defects repaired byauthor (\rm hadembeddedCR, barequad); finalbuildstatic andcompileclean.
+Finiteequalclasses implyEraw-E'raw=constantonwholeb, allpre-gauge/interpolationfieldsinsideb, inheriteddifferenceidentical, actualintegralsdifferonlye^constant. ThusF,T,G descenddirectlyfinite; no∞Per oraveragingneeded.
+Compatible nearminimalY,D,X=Y+D providecompletefamilies<epsilonbar forclasses<=epsilonbar/4. Strict128e inheritedbudget. QuantumLipCquant gT/b nohighjetrestriction. FiniteouterforceCFb² (sameouterrho,windows,charts,branch).
+FiniteP/T classicalqblocktheta<=1/4 withN>=N0. B>=max(1,pBT),K=B+1,Lq=sum_l<qK^l,Kamp=max(1,2C0Lq),Cint=K^qKamp+C0Lq,C0=pCF. Chooseb Cintb²<epsilonbar/4 thenweakg nu=pCquantgT/b<=min(1,1/(4qK^(q-1))).
+Allintermediates<=Cintb²; qblockradiusKampb²invariant,Lip<=1/2 forSAMEprescribedcouplings. AnyfinitehistoryQ0=R^nQn,Qn>=N0; constantsindependentnumberblocks.
+EVERYstagechooseexactfiniteequivalentrepwithinCintb²ofnorminfimum =>norm<=2Cintb²<epsilonbar/2. Existentialnotalgorithmic; noapproximationerror (toleranceonlynorm). WindingtermsincludedinfiniteTOTAL. Realsymmetrizecoeffwithoutnormincrease.
+Fraw=betaout Snext+Erawnext+c, c=Fraw0-Erawnext0. gamma_next=gamma-betaout; Znext=Zj Nj exp(c). InputE'=E+c compensateZ'=Ze^-c. Noextensivevacuumlimit.
+Actualrunninghistoryamplitudeboundvalidwhileweak; freezerealizedcouplingsforauxiliaryzerostartcomparison. Doesnotcomparecoupling-dependenttrajectories.
+ScopehomogeneousLOCALgerm/holomorphiccontinuation. Globalorbitdensityrepresentationextraexplicitinput; nofullWilsonmixed/largefieldhistoryclaim.
+
+3. CGP fixed-threshold parity / leadingforce
+Research quantum_zero_input_force_research.md §5, rotationaudit andprovenancefidelityPASS.
+FixedT complexg, allactualcenteredfactorsdependgxi withremovableg^-2 action/gauge remainder. Vbase(-g,xi)=Vbase(g,-xi); centeredGaussianandrealwindowevenxi; fixednonvanishinglogbrancheven.
+Disk|g|<cT^-3 strictuniformbudgets (including|g|T³ etc), anchoredouterlog<=H_L uniformT>=T0,M,N.
+Symmetrizecoefficientsg ->(L_H(g)+L_H(-g))/2 unchangedtotal,normnonincrease. Cauchy=>||L_g,T-L_0,T||rho<=C g²T6. L_0,T cutofflog<=Ctau(T).
+D_M=Delta_M+Qdet_M, G_g0=D_M+O_Q,rho(tau+g²T6). EvaluateT(g)onlyafterfixedTproof.
+D invariant byouterquotientlimit; semisimplelinearjet0. Restrictinnerb=>error<=2Cpar b²/rho²(tau+g²T6).
+FullforceNOTO(g²); D persists. No sign orMlimit.
+
+4. CMT exact infinite Maxwell preservation (new stronger result)
+Research classical_marginal_transport_research.md; rootaudit androtationfullresearch+fragmentauditPASS.
+True∞beta, fixedjointclassicalsystem extendedtoallcountableendpointpowers byfurtherdiagonalextraction; oldlimitsunchanged.
+CompletepregaugeC1alpha supportfamiliesuniformouterr_A independentL,M; fixedreserve andJbeforeL.
+For y=P_Mx, totalK1=0, K2 momentjets<=3zero. QUADRATIC-ONLY spatialproof givesconnectedfamily Q_y(a_L(w)) norm<=C(J)L^-alpha||y|| onFIXEDb<=r_A.
+No fielddilationlambda~L, hence NO bLhighjetrestriction. Q_y(a_L)neednotfullygaugeinvariantbutchosenHessianmomentboundedonallclasses.
+HessianofT_L y exactlyHessianofQ_y(a_L) sincea_L0=0,K1=0. beta(T_L P x)<=Cb^-2L^-alpha||x||. TS=Snext =>beta(T_Lx)->beta(x).
+Applyasymptotictoz=T_Rx and toxendpointRL. Exactscalarsemigroupidentifiesleadingquantities; L->inftyforces beta_(MR)T_(M,R)=beta_M EXACTLY.
+Realcomparison'germ' may shrinkwithL, butcommonanalyticholomorphydomaindoesnot; identitycontinuationoncompactsubspaces. Fixed-R T bounded; wholelarge-Lfullnormneednotuniform.
+ThereforeT P=PnextT, actual∞classicalleakagezero. GeneraladaptedcoordinateaccisUNNECESSARYhere; itsauditedresearch/fragmentretainedfallback, NOTincluded31.
+Onextracted||x||<=Cintb², cgp+quantumLip gives
+ |beta_nextF_g(x)-beta_nextD_M| <=(2Cbeta Cpar/rho²)(tau+g²T6)+Cbeta CquantCint gT/b.
+OriginalMaxwellcoordinate, nofuturecoordinatechange. No sign.
+DO NOT inferexactfinitecutoffbetaidentity. Finitefqiworkswithoutit.
+
+5. NEXT research active, not in compiled31
+A. theorem_audit saved finite_classical_marginal_leakage_research.md (~12.7KB).
+Qualitativeomega(K)=sup_M,N>=K,||x||<=b² |beta_out,N T-beta_in,RN| ->0 alongnestedperiodfamilywithcofinalendpointdivisibility. Noexponentialrate.
+Rootread mechanismPASS butrequestedcleanindexingendpointsL=R^q/stagej; T*_(j,q)S*j=S*_(j+q), semigroupT*_(j+q,r)T*_(j,q)=T*_(j,q+r). Awaitauthoramendment/independentaudit.
+Proof: translationaveragefiniteE_n, localcompactnesssameb andexpkernels ->invariantx∞. JOINTvarying-M_n refs+pregaugemapsforallshiftj,endpointsq, uniformdomains/completefamilies. Eachstructurallimitsystemhascmt evenifM_n→∞ andnotanyfiniteM*. H_n=Da_n0 uniformexp row+col currentcoords, fixedR^4fiber/noM_n^4. TransportHessH_n^T K_nH_n (K1=0), finiteintermediatestruncateandexpdomination ->localandsecondmomentconvergence. Finitebetadenominators→1uniformM. Contradictiontocmtprovesuniformω.
+StandardN=2ell^kworksifJcompatible. Arbitrarygrowingperiodswithboundedell-adicvaluation NOTcoveredwithoutperiodextensioncomparison.
+Per-step smalltolerance followsuniformlyaboveN0; doesnotneedcumulativeerrorsummabilityforaverageddrift.
+B. provenance developing real-coupling quotient-normcontinuity (filepending).
+Directfinitevolumeproof: xi=T(g)zeta fixedproductunitballs; gpositivecompactinterval, T(g)continuous. StrictE-evaluationmarginandCauchy giveuniformintegrandcontinuityin g forALLcomplexw∈b; allotherfactorsbounded/continuous. Z_g continuousinH∞(b). Strictclusterlogboundgivesfinite-volumeuniformlowerboundfor|Z|, sologbranches/normalizedlogs continuousH∞. PutdifferenceonONEfulltorusconnectedcarrier: quotientnorm<=e^(a0 Vcells)sup_bdiff, finiteconstant. CombineuniforminputLipforjoint(g,x)continuity. No continuousnearminimalrepselectionneeded; novolume-uniformmodulus claimed.
+C. rotation_audit deriving actual D_M Hessian trace formula (filepending).
+Checked signs: Delta=-sum_c logdetpi_c/pi_c0, pi0=I =>D²Delta=-sum tr(pi_uv-pi_u pi_v).
+Qdet=-1/2Trlog(A A0^-1) =>D²Qdet=-1/2Tr(C0 A_uv-C0 A_u C0 A_v).
+FullA derivativesmustretainconstraint/currentcurvatureandabsolutegaugecurvature.
+Independent-backgroundscalarD(a)globallyAdinvariant=>DD(0)=0semisimple. Completechainrule foractuala_*(w)thereforekills D²a_*(0) term; onlyflatliftDa_*(0) needed. Awaitfullproof/localtraceconvergenceaudit; no signcomputed.
+
+6. Coefficient route suggested, UNPROVED
+RawrepoI lines3901–4014 assertsone-loopGaussiancomposition+MaxwellpreservationanduniformO(1)comparisonagainstmassivebackgroundFeynmanWilson+ghostdeterminant. Ourcmtindependentlyprovesthepreservationpiecefortheactualscheme. Do notimportassertedcomparisonbounds.
+PossibleD-cocycle D_(M,RL)=T_(MR,L)D_(M,R)+D_(MR,L) modulo vacuum. Differentquantumwindowsdon'tcomposeexactlybutleadingg→0Gaussianamplitudesmay. Needactualmeasureproof.
+Rootsuggestedfinite-dimensionalstationaryphaseinagauge-invarianttubeofminimizingorbit: H_RL gaugesfixedatfinalcentersactfreely; analyticP_RL localslice; extendlocallyinvariantS_Malongorbit, smoothinvariantcutoff1nearmin; exactpushforwardFubini directvssequential. Quotientsaddleuniqueness/positiveHessian givesleadingLaplaceamplitudes; normalizedgaugeinsertionsonlyvacuumfactors. NoUVuniformremainderneededforfixedregulatorleadingidentity. OrbitextensionconsistencyandactualchartidentificationremainSUBSTANTIVE andunproved.
+Ifcocycleproved,cmt makesbetaDadditive; comparecompositeD_(1,R^k)tofineWilsonbackgrounddet+ghost withuniformfinitepartbound toobtainaveragedpositivedrift. Neithercomparison norpositivityproved.
+
+Agents at checkpoint: provenance continuity, theorem_audit finiteleakage (thenD-cocycle), rotation_audit determinantHessian. All sameworkspace; noexternalmessages/PRs. Usefollowup_task towakecompletedagents;send_messageonlyrunningdelivery.
+
+Last user-facing update: Notebook31 saved/compiles; deriving actualdeterminantcoefficient and realcouplingcontinuity; fullgoalremainsunfinished. Keepambitiousdirecttoneandhonestscope.
+
+LATER UPDATE THIS CONTINUATION:
+Finiteleakageresearchindexingrepairedasrequested; root/provenance/rotation fullaudits nowPASS. Auditfiles finite_classical_marginal_leakage_{root,provenance,rotation}_audit.md. NoTeXyet.
+CouplingcontinuityproofSAVED finite_quantum_coupling_continuity_research.md; root+theorem fullauditsPASS. Provenanceconvertingto fqc- fragmentforfuture32.
+ActualtraceproofSAVED determinant_maxwell_trace_research.md; root+provenance fullauditsPASS. Rotationconvertingto dmt- fragmentforfuture32.
+Traceformula details:
+ independenta scalar d(a)=-sum logdetpi_c(a)-1/2logdet(Acal(a)A0^-1).
+ a_*(w)physicalrootedbranch,H=Da_*0. Dd0=0semisimpleglobalAd (separatelypivot/gaussian),so B=D²a_* dropsONLYafterfullscalartracechainrule.
+ K_D(u,v)=-sumtr[pi2(Hu,Hv)-pi1(Hu)pi1(Hv)]-1/2Tr[C0 Acal2(Hu,Hv)-C0 Acal1(Hu)C0 Acal1(Hv)].
+ ActualflatH=h-K C0 K^T P_M h, P_M=q_M+T_R^TT_R, T_Rh=0, C0=(K^TP_MK)^-1. Allretainedtracescountingcoordinates.
+ f(a,z)=log(e^(iPhi_a(z))e^(ia))/i; E_a=D_zf=J_a^-1K_a; T_a=D_z²f includesbothconstraintcurvatureandleftrelative→ordinarylogcurvature. Acal=W''[E,E]+W'[T], W=S_M+absoluteG_R. NoteexplicitA1,A2retainallcurrent/chartterms.
+ ClassicalW3,W4computedfromcorrectedfixedpointY=L a+V(Y): Y2=V2[L,L],Y3=V3[L,L,L]+3polarizedV2[Y2,L]. DS_M=m=>S3=<Y2_m,third>,S4=<Y3_m,fourth>. Physicalfineadjointsandeta^4stayinsidefixedpoint, notretainedtraces.
+ Strictprecisionmatrixsupports+sourcederivativeCauchy giveabsolutetraceentrieswithsource-rootdecay; covarianceSchurboundscloseTr(CA2),Tr(CA1CA1). Kernelexpdecay uniformM,N. betaD=-1/2sum_r r_nu²K_(mu mu,a a)(0,r) onefixedcolor,nocolorsum. Thuspivotcoefficient+1/2,gaussian+1/4 traces. External/internaltracecutofftails exponential; no sign/evaluation.
+
+TheoremagentnowdevelopingactualfiniteD-cocycle. Localorbitextensionbridgeidentified:
+ IfU,VsmallandV=U^g,g=1atfinalRLcenters, pathlengthO(RL) fromcenter givesg-I<=CRL(||U-I||+||V-I||),soforfixedRLsmallcomparisonradiusg nearI. Edgeequation/logpathkeepsfieldsinsideupstreamactiondomain. WardidentitygivesS_M(U)=S_M(V). Thussmallchartactioncanconsistentlysaturatealongbasedgaugeorbits.
+ BasedgroupH_RL haskernelH_R underrestrictiontomediumcenters andquotientH_L; actuallydirectproductbydisjointsites. Haarfactorizationhasnobackgroundgroupvolume.
+ Proposedproof: invarianttubecutoff1nearuniqueminorbit, exactpushforwardcomposition+two-stagefiniteLaplace; normalizingatw0removesallscalarprefactors; firstleadingamplitudeexpD_M,R evaluatedatsecondsaddle givesT D. Needwrite/auditfullproofbeforeclaiming. Noequalwindowclaim; actualDmatchedbyidenticalpivot/A andT(g)→∞.
+ Latestcommentary: leadingdriftnowexplicitconvergenttraceformula; colorsymmetryremovessecondstationaryresponse; checkingcompositionacrossscales.
+
+FINAL UPDATE BEFORE NEXT CONTINUATION:
+fqc fragment SAVED work/finite_quantum_coupling_continuity_fragment.tex,25uniquelabels; theorem+rotationfidelityPASS.
+dmt fragment SAVED work/determinant_maxwell_trace_fragment.tex,51uniquelabels; provenancefidelityPASS; theoremadditionalresearchauditPASS.
+fml fragment SAVED work/finite_classical_marginal_leakage_fragment.tex,27uniquelabels; theoremfidelityPASS. Allstaticclean, notcompiled/assembled. ThesearefutureNotebook32inputs.
+
+FiniteD-cocycle nowSAVED work/classical_one_loop_cocycle_research.md (~18KB), root+rotation+provenance fullauditsPASS. Auditfiles classical_one_loop_cocycle_{root,rotation,provenance}_audit.md. Authorpreparing work/classical_one_loop_cocycle_fragment.tex prefixolc-, notyetsavedatthischeckpoint.
+Exactfinitegermidentity:
+ D_(M,RL)=T_(MR,L)D_(M,R)+D_(MR,L).
+BasedorbitextensionusesnearIconnectinggaugelogpath atfixedratios; auxiliarysmoothinvarianttube cutoff=1 nearstationaryorbits; truepushforwardFubini; exactnormalizedcompactgaugeinsertion andactualretainedpositiveHessian; finiteLaplaceuniformonlyoncompacttargetgerm. DirectandsequentialleadingamplitudesnormalizedatW=Iafterremovingclassicalphasecancelallscalars. Innerleadingamplitudeevaluatedatouterclassicalsaddle. ActualshrinkingwindowhassameDbyparity/tailbound, NOTequalpositivegsectors.
+IMPORTANTscopefix: auxiliarychi onlyH_RL invariant⇒innerpushforward onlyH_L invariant, enoughforouterrooted/pre-gaugecomparison. Fulllocaloutputgaugeidentitycomesfrompriorcgp separately. Bothroot/rotationcaughtandfixincorporated.
+Finiteidentityanalyticallycontinuescommonproductdomain; passesjoint∞compactfields viaanchor tails. cmt yieldsTRUE∞scalarbeta additivity:
+ beta_(MRL)D_(M,RL)=beta_(MR)D_(M,R)+beta_(MRL)D_(MR,L).
+Noexactfinitebetaadditivity;finiteleakageretained. No coefficientsign/logreferencecomparisonproved.
+
+Rootnewconditionalreduction SAVED work/finite_trajectory_shooting_research.md (~8KB), provenancefullauditpendingatcheckpoint, theoremcanreview.
+Finiteactualdecrementd_j=beta_outF_g(x) onextractedCintb²envelope differsfromfiniteactualb0_j=beta_outD_(M_j,R,Nout) by
+ Cintomega(Nmin)+Cparbeta(tau+g²T6)+Cinbeta gT/b.
+ChooseoneNthresholdthengweaktoerror<=epsilon. Bound|d_j|<=Dabs alreadyfqi.
+SOLEadditionalhypothesis averagedpositiveACTUALFINITEleadingcoefficients sum_{j=k}^{k+n-1}b0_j>=c n-Cfin uniformlyM/periods. NOTASSERTEDPROVED.
+Chooseqmultipleexistingq_amp withCfin<=cq/4 andepsilon<=c/4. EveryrealizedweakqblockhasdecrementBminus=cq/2<=sumd<=Bplus=qDabs; activityenvelopebyrepeatingq_ampblocks (nonewlargeendpointfieldradiusneeded).
+ClipONLYevaluationgamma to max(gamma,Gammaweak); scalarupdateunclippedgamma-d. fqc givescontinuousfiniteendpoint; allclippedcouplingsweakandfqi activitiesadmissible. Forhorizonmq, terminalGamma*>=Gammaweak+qDabs, shootinitialgamma∈[Gamma*+mBminus,Gamma*+mBplus]. Endpointcrossingbyblockbounds,IVT. Selectedpathblockends≥Gamma*,internalgamma≥Gamma*−qDabs≥Gammaweak⇒noclipoccurred. Actuallocalextractiontrajectorywithg0~m^-1/2 tofixedendpoint, CONDITIONALonfiniteaveragedleadingdrift. No uniqueness/consistency/fullWilson/continuumclaim.
+
+Newprimaryliteraturemap work/one_loop_comparison_primary_sources.md:
+ VerifiedofficialarXivPDFs hep-lat/9504006 (Luscher-Weisz backgroundfieldrenormalization, sections5–8) and hep-lat/9505011 (explicitlatticebackgroundrules§4, one-loopamplitude§5, integralsAppendixB).
+ Readabstract/intro/locations, NOTfullcomparisonproof; no numericcoefficientimportedfromdamagedPDFtext. URLs andDOIsinnote.
+ Thosearebackgroundfieldvertexfunctionals, notourconstraineddeterminant. NeeduniformboundedMaxwellcoefficientdifference ascompositeendpointR^k grows, plusreference logarithm. RepoI3901–4014 assertedthiscomparison; notsilentlyaccepted.
+
+Mostrecentcommentary: compositioncheckpasses; exactleadingdeterminantcocycle pluscmtmakesaccumulated∞coefficientadditive; nextdecisiveestimateuniformdifferencefromreferenceone-looplogarithm. Notebook31remainslatestcompiledoutput.

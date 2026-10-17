@@ -1,0 +1,353 @@
+[
+  {
+    "number": 1,
+    "original": "outputs/ym4-construction-notebook.tex",
+    "source": "notebooks/01-ym4-construction-notebook/main.tex",
+    "pdf": "notebooks/01-ym4-construction-notebook/main.pdf",
+    "original_source_sha256": "34f5c450f1391c6e3e359ea8a59a1049df96c50c58dcd5efd8a07fb35b8d4dc1",
+    "source_sha256": "5f5c50f30a3bc462f3e5bcd1ff7dc736eae6b04d31306489d66d3714fbb33835",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 2,
+    "original": "outputs/ym4-reflection-notebook.tex",
+    "source": "notebooks/02-ym4-reflection-notebook/main.tex",
+    "pdf": "notebooks/02-ym4-reflection-notebook/main.pdf",
+    "original_source_sha256": "5865806709879cd57c3896fd3fbef9a5c9927c4a950abf23769f0c031684b10e",
+    "source_sha256": "033dc12e3b07c5ac8df4bf5e1d98044e2cec39ae2b0ed369c69caa63556713b5",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 3,
+    "original": "outputs/ym4-current-cutoff-notebook.tex",
+    "source": "notebooks/03-ym4-current-cutoff-notebook/main.tex",
+    "pdf": "notebooks/03-ym4-current-cutoff-notebook/main.pdf",
+    "original_source_sha256": "23a39e6b6e375d25f961ae2e6d667a9ef61d5aada7c9bb91ec51c4d739b2b92b",
+    "source_sha256": "b6e0dcbd6ba0bf880d34b0a3b5948b5549e71b08563f4ad4a9a5138155b2e382",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 4,
+    "original": "outputs/ym4-gaussian-locality-notebook.tex",
+    "source": "notebooks/04-ym4-gaussian-locality-notebook/main.tex",
+    "pdf": "notebooks/04-ym4-gaussian-locality-notebook/main.pdf",
+    "original_source_sha256": "5dbd8761de395d1bce5e5e18046f7fe7ac1ae68246db1bbf4531d0407eaf7b69",
+    "source_sha256": "d33a137e9a20b07a02d5fceff5bfcb7f23fa1672b932c84f769963563738e0ff",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 5,
+    "original": "outputs/ym4-gauge-interaction-notebook.tex",
+    "source": "notebooks/05-ym4-gauge-interaction-notebook/main.tex",
+    "pdf": "notebooks/05-ym4-gauge-interaction-notebook/main.pdf",
+    "original_source_sha256": "084f1583fc9e563744a481ea7d952dc4cd9c9a4fdcb0d8e8955f3df1c0478a60",
+    "source_sha256": "bbce8de9eeec71345a493704a1026af2d1efed70bce3a5814615010d2dfbeaf1",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 6,
+    "original": "outputs/ym4-flat-maxwell-notebook.tex",
+    "source": "notebooks/06-ym4-flat-maxwell-notebook/main.tex",
+    "pdf": "notebooks/06-ym4-flat-maxwell-notebook/main.pdf",
+    "original_source_sha256": "8482b92bb494ec7fc8fa44cd11d3e44bbf4f524426bbb5139c447b4f44143d06",
+    "source_sha256": "998c086b5a9bdadf28b429d659fb5803230791a8c251f351908784c467ca760e",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 7,
+    "original": "outputs/ym4-flat-locality-notebook.tex",
+    "source": "notebooks/07-ym4-flat-locality-notebook/main.tex",
+    "pdf": "notebooks/07-ym4-flat-locality-notebook/main.pdf",
+    "original_source_sha256": "06358a861d80adea6a19da779e6221eddf522868a4751fca70535b1af909e47c",
+    "source_sha256": "fb8dfa23c3151a8f66633505c01e8d63cff5de9adf20a09edb4b162795b10af7",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 8,
+    "original": "outputs/ym4-flat-minimizer-notebook.tex",
+    "source": "notebooks/08-ym4-flat-minimizer-notebook/main.tex",
+    "pdf": "notebooks/08-ym4-flat-minimizer-notebook/main.pdf",
+    "original_source_sha256": "4a8f20e37527ea3f4c2cd3f1fb134c3b7aa459e1c7ef1ef2a571da4009a121b1",
+    "source_sha256": "8c67b392ef50f892b31e0938bb28e0946657480c8ef032cd3d5a85a76a809bc2",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 9,
+    "original": "outputs/ym4-flat-current-notebook.tex",
+    "source": "notebooks/09-ym4-flat-current-notebook/main.tex",
+    "pdf": "notebooks/09-ym4-flat-current-notebook/main.pdf",
+    "original_source_sha256": "88a402769336e4143c506e3fffecdb6dd15a7453ac23d82bd9f57894cead6671",
+    "source_sha256": "b6d54d6e29e6d2a9acd078c9f303324cf8a08a2a015c1fe42602659d2336c43b",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 10,
+    "original": "outputs/ym4-flat-curvature-notebook.tex",
+    "source": "notebooks/10-ym4-flat-curvature-notebook/main.tex",
+    "pdf": "notebooks/10-ym4-flat-curvature-notebook/main.pdf",
+    "original_source_sha256": "9ef24ba0eb9862d151bc2290308103c5a121e0e6f8483f177cda72659d79fb14",
+    "source_sha256": "1e0a06fb8c7a3da6332db0e69b9ebe0a92b6b9d2bc41e2cbc9209d11f744b8ba",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 11,
+    "original": "outputs/ym4-full-flat-current-notebook.tex",
+    "source": "notebooks/11-ym4-full-flat-current-notebook/main.tex",
+    "pdf": "notebooks/11-ym4-full-flat-current-notebook/main.pdf",
+    "original_source_sha256": "82147498f5a3410b6d6ba8ce7e307513417e436424ea879f2a45dd5e8879b39a",
+    "source_sha256": "308458df8b2c43e1f85dbdef1c481cb3efabe6080485a39c000f49dfde75c798",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 12,
+    "original": "outputs/ym4-flat-regularity-notebook.tex",
+    "source": "notebooks/12-ym4-flat-regularity-notebook/main.tex",
+    "pdf": "notebooks/12-ym4-flat-regularity-notebook/main.pdf",
+    "original_source_sha256": "f078e9a420c75e5f305ceb8ed2523ad23321c0c0f75778eb984873224815ab03",
+    "source_sha256": "414feed23fa7b5c4271ebb12636af44448d03885c12ed3b6041dd3d006fabf7d",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 13,
+    "original": "outputs/ym4-nonlinear-constraint-notebook.tex",
+    "source": "notebooks/13-ym4-nonlinear-constraint-notebook/main.tex",
+    "pdf": "notebooks/13-ym4-nonlinear-constraint-notebook/main.pdf",
+    "original_source_sha256": "65151b642b6409cd99c7038e9741b03fc2b74d998c8ee306a2a6a82eef48e2a4",
+    "source_sha256": "eeef87b1f23d8ac747bdd0a7e28f830261fe6d364073da90e931f0fb1ff2d5f8",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 14,
+    "original": "outputs/ym4-nonflat-background-notebook.tex",
+    "source": "notebooks/14-ym4-nonflat-background-notebook/main.tex",
+    "pdf": "notebooks/14-ym4-nonflat-background-notebook/main.pdf",
+    "original_source_sha256": "89bd03d989bfb76a383c94e4d67e1e3fdbffb222bdf9a52bc5af5784cc50ba6a",
+    "source_sha256": "b970ebb329950d0e796ccf01bdaf2eeeb4ca14e9d554828f6dbcdec8fc31b820",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 15,
+    "original": "outputs/ym4-nonlinear-minimizer-notebook.tex",
+    "source": "notebooks/15-ym4-nonlinear-minimizer-notebook/main.tex",
+    "pdf": "notebooks/15-ym4-nonlinear-minimizer-notebook/main.pdf",
+    "original_source_sha256": "43057b3562fba12f30116889b484f60b87067343974267ae0c7ebf90c78525cf",
+    "source_sha256": "1bfdb31ba120e23014a6e0814a64cd201d7ca406524a70dff71c5968d70c1d3d",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 16,
+    "original": "outputs/ym4-nonlinear-response-notebook.tex",
+    "source": "notebooks/16-ym4-nonlinear-response-notebook/main.tex",
+    "pdf": "notebooks/16-ym4-nonlinear-response-notebook/main.pdf",
+    "original_source_sha256": "6f95a36886d478ee7b8707cddf9eb6ffc2a930254c4a74f0028af2ad79c8c2ee",
+    "source_sha256": "c70f4c310a264bf2018afba92e1343b316a7f6a1dbc2d72586c0397e9d40421e",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 17,
+    "original": "outputs/ym4-gaussian-step-notebook.tex",
+    "source": "notebooks/17-ym4-gaussian-step-notebook/main.tex",
+    "pdf": "notebooks/17-ym4-gaussian-step-notebook/main.pdf",
+    "original_source_sha256": "6862613eb901d55e2539d1a3f9d767a8c8b0bf4fd18562e853219cfe11612591",
+    "source_sha256": "a920743cbfd15b077d0052960ddaa5d941d4fd317f9fe17e712b9d459fc4c153",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 18,
+    "original": "outputs/ym4-overlapping-integration-notebook.tex",
+    "source": "notebooks/18-ym4-overlapping-integration-notebook/main.tex",
+    "pdf": "notebooks/18-ym4-overlapping-integration-notebook/main.pdf",
+    "original_source_sha256": "c05ebeb7f1dd01b3dc8e393f387945f526df5828effeedb511b06d1583d7d1db",
+    "source_sha256": "91f0073c229abc3967be965e4b735634ed95ee4f392a2b6f576caffd949d869c",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 19,
+    "original": "outputs/ym4-physical-step-notebook.tex",
+    "source": "notebooks/19-ym4-physical-step-notebook/main.tex",
+    "pdf": "notebooks/19-ym4-physical-step-notebook/main.pdf",
+    "original_source_sha256": "1ab4cb048ec16e374e0535e698601d6f92aba799c25b1d46f32be5455cd8ebe3",
+    "source_sha256": "6fa92d70c8058a2a469f0f048bfe1d46499b1ac5a6aaa77c20c3ae4551bf18a0",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 20,
+    "original": "outputs/ym4-bare-step-notebook.tex",
+    "source": "notebooks/20-ym4-bare-step-notebook/main.tex",
+    "pdf": "notebooks/20-ym4-bare-step-notebook/main.pdf",
+    "original_source_sha256": "aea4f6cad4da9474ea5c151ca2a6776314061dcb4428a4f7a5580dfee9d8fdec",
+    "source_sha256": "dce869da00e37184696297bca294aef604a82854966034f2bfdce8b5ea67053e",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 21,
+    "original": "outputs/ym4-classical-localization-notebook.tex",
+    "source": "notebooks/21-ym4-classical-localization-notebook/main.tex",
+    "pdf": "notebooks/21-ym4-classical-localization-notebook/main.pdf",
+    "original_source_sha256": "f41f2ed33842bae21f72d5282db4125f966dab8230c747ddeaa3b428ffc5fcb7",
+    "source_sha256": "2ec5a119eacdb3379442ffc6376c827309f980d7af52a0eea7ffdfad2620ec8e",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 22,
+    "original": "outputs/ym4-coarse-transport-notebook.tex",
+    "source": "notebooks/22-ym4-coarse-transport-notebook/main.tex",
+    "pdf": "notebooks/22-ym4-coarse-transport-notebook/main.pdf",
+    "original_source_sha256": "336dd6a2b455c1e9781756bf34f53c5d13c1ebf3af6ff1fdbe26d0cc53a4a950",
+    "source_sha256": "80d96acc9868d1c683c7d252e5a556776added4af274eb790e04fb53052dbeaf",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 23,
+    "original": "outputs/ym4-gauge-covariance-notebook.tex",
+    "source": "notebooks/23-ym4-gauge-covariance-notebook/main.tex",
+    "pdf": "notebooks/23-ym4-gauge-covariance-notebook/main.pdf",
+    "original_source_sha256": "2287f2bd534a0235842625b0ad424710a237ddb58c9cd5a68e4c8ad6e1e28eb3",
+    "source_sha256": "e55371961b18dd1d5311e6961968c03a22c48e24fcf0e2d980ef3f09026137cc",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 24,
+    "original": "outputs/ym4-inherited-reentry-notebook.tex",
+    "source": "notebooks/24-ym4-inherited-reentry-notebook/main.tex",
+    "pdf": "notebooks/24-ym4-inherited-reentry-notebook/main.pdf",
+    "original_source_sha256": "8433e0bef92bc86a21044c4dcfa6a5a7df2efce0229fb468bdd1a0d2c476daa0",
+    "source_sha256": "2d807c76d8ed8ced72bd4c698da5899110fcd71e361036fac0ef787af337987f",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 25,
+    "original": "outputs/ym4-pre-gauge-notebook.tex",
+    "source": "notebooks/25-ym4-pre-gauge-notebook/main.tex",
+    "pdf": "notebooks/25-ym4-pre-gauge-notebook/main.pdf",
+    "original_source_sha256": "2fcc2311acdbf6a63a835dbccb887aa5380525253774d68646812c260e8b5123",
+    "source_sha256": "5425145df39d7947a0b28ac66c204d2277091164aa930b14a2c50173c682bba8",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 26,
+    "original": "outputs/ym4-auxiliary-grouping-notebook.tex",
+    "source": "notebooks/26-ym4-auxiliary-grouping-notebook/main.tex",
+    "pdf": "notebooks/26-ym4-auxiliary-grouping-notebook/main.pdf",
+    "original_source_sha256": "862367fe7a4573b5812e5005d2e2438d7ce9733e7bbd06cf07eea2e9ee4bf47d",
+    "source_sha256": "37f5481a5ff8299ed102527f81875dc039a5ace4b7fb178beddd1f1c9c77bf3b",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 27,
+    "original": "outputs/ym4-composite-macrostep-notebook.tex",
+    "source": "notebooks/27-ym4-composite-macrostep-notebook/main.tex",
+    "pdf": "notebooks/27-ym4-composite-macrostep-notebook/main.pdf",
+    "original_source_sha256": "22f72c9027277c0502cff31507e790f7c4c749a452e354abbd3f4c2e120bcad7",
+    "source_sha256": "d0591f2af2b19878d0b3e73c97360cdd0361c499c16214d79ff950310fff37a8",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 28,
+    "original": "outputs/ym4-common-domain-notebook.tex",
+    "source": "notebooks/28-ym4-common-domain-notebook/main.tex",
+    "pdf": "notebooks/28-ym4-common-domain-notebook/main.pdf",
+    "original_source_sha256": "11c311faab0842b5c049d87a13209c9f7ad22035244e386254a6abd57e2bf00b",
+    "source_sha256": "1a230a2de1d592438de63132116c793dd73a2a11e578aff9c0390b2b7a6539d6",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 29,
+    "original": "outputs/ym4-gauge-extraction-notebook.tex",
+    "source": "notebooks/29-ym4-gauge-extraction-notebook/main.tex",
+    "pdf": "notebooks/29-ym4-gauge-extraction-notebook/main.pdf",
+    "original_source_sha256": "23a8a31ef6aa9041265acd522302067c0990ef70debbcece2a7392bee8d34d11",
+    "source_sha256": "831e031848687ac3ddf4d922619278db05046f1b490189ec054657423d79bf89",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 30,
+    "original": "outputs/ym4-quantum-descent-notebook.tex",
+    "source": "notebooks/30-ym4-quantum-descent-notebook/main.tex",
+    "pdf": "notebooks/30-ym4-quantum-descent-notebook/main.pdf",
+    "original_source_sha256": "25553b8a8868ac4c27675915914b00f3551821b6bd110722dcbcf1e05b396691",
+    "source_sha256": "9c12b436e2b5ee706e26ab708f7b7196785dbe2fc19e41bd473505c56d487c3b",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 31,
+    "original": "outputs/ym4-finite-induction-notebook.tex",
+    "source": "notebooks/31-ym4-finite-induction-notebook/main.tex",
+    "pdf": "notebooks/31-ym4-finite-induction-notebook/main.pdf",
+    "original_source_sha256": "ca2ad3772cf7b9ae367cd789a6aa275e4ee075edb13572982bac551f7443dd38",
+    "source_sha256": "db26c77b63ef5df9dd46e643ce8f6d6b3e3197b621f7fd8484e7317a9f7909f1",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 32,
+    "original": "outputs/ym4-determinant-flow-notebook.tex",
+    "source": "notebooks/32-ym4-determinant-flow-notebook/main.tex",
+    "pdf": "notebooks/32-ym4-determinant-flow-notebook/main.pdf",
+    "original_source_sha256": "1873099ec74cf4b0c0e1723e269a3dcf827a9a0268da6b9bfb6aa34997d5fad9",
+    "source_sha256": "7b8d4c80c94be1ba12f70d01468fe4d2dd2f371904b8ef20b8aaa99b089fcbb9",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 33,
+    "original": "outputs/ym4-cartan-trace-notebook.tex",
+    "source": "notebooks/33-ym4-cartan-trace-notebook/main.tex",
+    "pdf": "notebooks/33-ym4-cartan-trace-notebook/main.pdf",
+    "original_source_sha256": "995865cec9b1cc604eb3fac8cb29675f36f1e5876748e71259df647d6dd14779",
+    "source_sha256": "945e1afdc69b334205e95243897d369dc77d8c9630ab3c6ae0965d0bcea0e484",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 34,
+    "original": "outputs/ym4-pinned-ghost-notebook.tex",
+    "source": "notebooks/34-ym4-pinned-ghost-notebook/main.tex",
+    "pdf": "notebooks/34-ym4-pinned-ghost-notebook/main.pdf",
+    "original_source_sha256": "112951a461bfe5c19b964c1e88dba6eb016dab02fe18d049635bc2b0aad9fd93",
+    "source_sha256": "f8b8357e22a93a59f370732bdf80ef714f79f04187a850cf2cc71211cbc6d203",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 35,
+    "original": "outputs/ym4-infrared-cancellation-notebook.tex",
+    "source": "notebooks/35-ym4-infrared-cancellation-notebook/main.tex",
+    "pdf": "notebooks/35-ym4-infrared-cancellation-notebook/main.pdf",
+    "original_source_sha256": "44d6c62e6eebe1bbfa1aa31ae6ddf543ca84d4528d09d24063c2be5641841d1b",
+    "source_sha256": "dd85d6f9e31cfbfd509b245406df3851c26dc1519be804c95fd949b863e35d1b",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 36,
+    "original": "outputs/ym4-soft-determinant-notebook.tex",
+    "source": "notebooks/36-ym4-soft-determinant-notebook/main.tex",
+    "pdf": "notebooks/36-ym4-soft-determinant-notebook/main.pdf",
+    "original_source_sha256": "d28b2d17628f2dcda322f4057b5fc14c753336bce260ac63b242beebcfeb1d5c",
+    "source_sha256": "ee21b956bc14b722bb8848a79c9698d245925d97ba478cae5a1bccc3daf6155d",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 37,
+    "original": "outputs/ym4-positive-drift/main.tex",
+    "source": "notebooks/37-ym4-positive-drift/main.tex",
+    "pdf": "notebooks/37-ym4-positive-drift/main.pdf",
+    "original_source_sha256": "07c54bcbf5ae05cd24d0f7f56b912262a020dad067891f7166a65c063d2fbead",
+    "source_sha256": "21534a217d276ddb1f1444aac5bf75f076a6889f0d14370e744433f20c333e08",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 38,
+    "original": "outputs/ym4-full-measure-bridge/main.tex",
+    "source": "notebooks/38-ym4-full-measure-bridge/main.tex",
+    "pdf": "notebooks/38-ym4-full-measure-bridge/main.pdf",
+    "original_source_sha256": "01987519d445ac8b2b5836d7c2a04cee9ae8e9bf40886eddf3511dca21791702",
+    "source_sha256": "74218e3866f9c1f3ccb01735b3155c1bfc33a55dc5a1cb40ede2f8c1c8421e75",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  },
+  {
+    "number": 39,
+    "original": "outputs/ym4-normalized-box-replacement/main.tex",
+    "source": "notebooks/39-ym4-normalized-box-replacement/main.tex",
+    "pdf": "notebooks/39-ym4-normalized-box-replacement/main.pdf",
+    "original_source_sha256": "51ffc84a00f70a234ca59d84343ae49ffa2b3abf404c22e62a113101a3e1308e",
+    "source_sha256": "eacfa12aa394b8d8b4608ac11cec0317f16d9eda1d9a23aa72c54518034b5fe3",
+    "layout_changes": "Emergency paragraph stretch; breakable commit hash; displays split in25/28. No mathematical content change."
+  }
+]

@@ -1,0 +1,43 @@
+Independent root audit, 17 October 2026
+
+Read actual_base_ward_heat_comparison_research.txt in full.
+Its O(1/s) comparison passes this internal audit under the explicitly
+listed uniform classical inputs. It is not a statement about arbitrary
+quantum activities or arbitrary finite winding kernels.
+
+1. The ordinary-to-left-relative Hessian chain rule retains the
+   gradient of R times the second fluctuation derivative of the chart.
+   Its first nonzero contribution is R2[a,T1(a)[B,C]] at background
+   degree two. The other degree-two terms and factorials agree with
+   expanding R''(a)[J(a)B,J(a)C].
+2. Local BCH products merge momenta but never divide by them.
+   Therefore the exact nonlinear Ward remainder orders (4,3,2)
+   survive for the flat, first, and second background vertices.
+   Uniform Taylor-derivative estimates require the stated uniform
+   exponential classical kernel moments, not just formal zeros.
+3. The trace identity is for the complete second variation with compact
+   sources. Its bubble coefficient is s^2 with one integral over [0,1].
+   There is no extra factor two and no cyclic movement of a partial
+   trace projector.
+4. Matrix exponential differentiation and the difference Duhamel formula
+   give all stated estimates without spectral-eigenvector derivatives.
+   Their polynomial powers hold even when a simplex heat time is zero.
+5. After two external derivatives, a replaced vertex gives
+   |k|^2 P(s|k|^2)e^(-cs|k|^2); a replaced heat factor gives
+   s|k|^4 P(s|k|^2)e^(-cs|k|^2). The outside s^2 and four-dimensional
+   integration give O(1/s) in both cases. Tadpole terms give O(1/s)
+   or better. Outside a fixed momentum ball ellipticity gives
+   exponential-in-s decay.
+6. The affine-density conversion h=(1/4) d_pnu^2 H matches the
+   normalization beta=2[t^2] and beta=(1/2)d_pnu^2(total Hessian).
+   For example 1/2 times a lattice Maxwell square verifies the factor.
+   Individual gauge invariance of the heat diagonal is essential.
+7. The endpoint-K source has fine flux t/K^2. Its coefficient K^-4
+   cancels the K^4 sites in one final block. Root translation is a
+   formal Cartan gauge shift; no continuous periodic-flux family
+   or nonzero unbounded-background analytic evaluation is asserted.
+
+The remaining local comparison is the fixed Wilson base to the exactly
+normalized continuum reference. This audit does not supply that step,
+finite-regulator positive drift, a full Wilson measure trajectory,
+continuum existence, or a mass gap.

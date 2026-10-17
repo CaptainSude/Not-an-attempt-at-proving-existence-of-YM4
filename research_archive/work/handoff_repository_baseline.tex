@@ -1,0 +1,1032 @@
+% Body fragment. Requires amsmath, amssymb and hyperref. Prefix hrb-.
+% Repository frozen at e392ef45013a581664bab76b90867170b30fe10e.
+\providecommand{\hrbpath}[1]{\texttt{\detokenize{#1}}}
+
+\section{Repository baseline, mathematical provenance, and additions}
+\label{hrb-section}
+
+\noindent\textbf{Evidence date: 17 October 2026.}
+This report distinguishes what the deposited repository claims;
+what its displayed arguments take as inputs; what published
+literature supplies in its own setting; and what this research
+series adds. It is a reading and dependency report, not
+certification of either the repository or our notebooks.
+Neither manuscript length, a theorem environment, successful
+compilation, nor repeated internal review establishes a proof.
+
+The repository claims an apparent existence argument on
+\(\mathbb R^4\). Describing the baseline as only finite-volume
+work, only a programme, or no claimed existence argument would
+be inaccurate. Identifying that claim with an externally verified
+Yang--Mills construction with a mass gap would also be inaccurate.
+The shorter manuscript expressly states a narrower observable
+theorem, records conditional deductions and excludes stronger
+conclusions. Our additions address selected interfaces and
+develop a separately specified local construction. They do not
+retrospectively verify every argument in the deposit.
+
+\subsection{Frozen evidence and reproducibility}
+\label{hrb-version}
+
+The source is
+\url{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment},
+frozen at \hrbpath{e392ef45013a581664bab76b90867170b30fe10e}.
+The commit is dated 16 October 2026, 02:33:55 \(-0400\),
+has message \emph{Update README.md}, and records the Git author
+as alpoge. This identifies a version, not authorship of every
+generated or human-written argument. The raw master has an
+empty author field. We do not infer a formal author list from
+the hosting account or Git metadata. The checkout was clean
+when checked for this report and was not edited. Later remote
+changes are outside the evidence boundary.
+
+Raw line numbers are counted from one in that commit.
+PDF locators are printed pages of
+\hrbpath{ym4_manuscript_zeroth_draft.pdf}, dated 6 October 2026.
+In the local extraction its page markers agree with printed
+pages. Raw labels are preferable to generated theorem numbers:
+the raw master does not presently assemble unchanged.
+Its lines 38--40 input
+\hrbpath{theorem_0_complete_account_not_done_for_ethan_v2_part1},
+\hrbpath{theorem_0_complete_account_not_done_for_ethan_v2_part2},
+and \hrbpath{theorem_0_complete_account_not_done_for_ethan_v2_part3},
+whereas the actual files are
+\hrbpath{theorem_0_complete_account_raw_I.tex},
+\hrbpath{theorem_0_complete_account_raw_II.tex}, and
+\hrbpath{theorem_0_complete_account_raw_III.tex}.
+This is a reproducibility naming issue, not a mathematical
+counterexample. The handoff preserves it rather than silently
+repairing third-party source.
+
+The three raw parts have respectively 166,711, 145,624 and
+111,583 lines: 423,918 in total. These counts measure material
+to audit, not proved mathematics. The companion
+\hrbpath{handoff_repository_source_map.json} records commit,
+SHA-256 hashes, byte counts, exact locators and selected links.
+The handoff uses a manifest and retrieval instructions rather
+than redistributing third-party source PDFs or articles.
+
+Below, I, II and III mean the three raw files; Draft means
+the zeroth PDF; Our Notebook always means a document of
+this research series, not a repository document.
+
+\subsection{What the README and zeroth manuscript claim}
+\label{hrb-claims}
+
+\paragraph{README, lines 1--6.}
+The opening describes ongoing model-assisted QED3, YM3 and
+YM4 work, with exposition and formalization in progress.
+The note at lines 5--6, signed LA, explicitly reports an
+apparent YM4 existence argument in \(\mathbb R^4\), emphasizes
+its length and lack of readability, and explains the simpler
+presentations as a way of exposing ideas, including a
+reflection-positivity route to rotations. This is a qualified
+public claim, not a theorem statement or a mass-gap claim.
+
+The pinned tree also contains
+\hrbpath{QED3_slop/YM_Rotation_Invariance_simplified.pdf},
+\hrbpath{QED3_slop/qed3_manuscript.pdf}, and
+\hrbpath{QED3_slop/qed3.pdf}. Their presence and the
+README already place the reflection-based rotation
+idea in the baseline. This report does not independently
+certify those lower-dimensional manuscripts or treat
+our pure-Wilson interface work as the origin of that idea.
+
+\paragraph{Draft, abstract and Sections 1.1--1.4, pp.1--23.}
+The object is the Wilson lattice measure for \(SU(2)\), on
+compatible periodic tori, and correlations of one local
+gauge-invariant observable: smeared action density.
+Supports of the test functions are pairwise disjoint.
+The density has canonical dimension four; its leading
+separated two-point kernel has singularity \(|x-y|^{-8}\).
+There is no unmentioned prescription extending it across
+coincidence.
+
+In the draft's convention,
+\[
+ A(U)=\sum_p(1-\operatorname{Re}\operatorname{tr}U(\partial p)),
+ \qquad d\mu(U)\propto e^{-g_0^{-2}A(U)}\,dU,
+ \qquad \operatorname{tr}1=1 .
+\]
+The observable is the corresponding test-weighted plaquette
+sum. Complex sources change action weights; connected
+correlations are derivatives of the logarithm of the
+sourced partition function, and centred moments are
+assembled from cumulants. This convention matters when
+comparing beta coefficients and two-point amplitudes.
+See Draft pp.7--9 and I, Chapter 1, beginning at line 401.
+
+\paragraph{Theorem 0: scope of the clauses.}
+This is a navigation map, not a substitute for the
+parameter hypotheses in the displayed theorem.
+\begin{description}
+\item[(0), running coupling.]
+The draft asserts an actual recursively generated trajectory
+stopped at a first-passage scale, with two-sided cumulative
+inverse-coupling bounds and, for \(SU(2)\), a cumulative
+one-loop law. It does not require a positive decrement at
+every step. I:2533--2554 explicitly distinguishes cumulative
+drift from a single-step sign.
+\item[(i), ultraviolet stability.]
+The application of Ba{\l}aban's complete-density theorem
+uses the weak-coupling containment furnished by (0).
+Stability concerns effective densities and their prescribed
+representation, not by itself a continuum observable limit.
+\item[(iii), sourced correlations.]
+Connected action-density bounds are asserted uniformly in
+cutoff; a separate per-ball estimate supplies the needed
+volume independence. This source theorem and its running
+shift are substantive inputs, not consequences of a vacuum
+partition-function estimate alone.
+\item[(ii), limits and reconstruction.]
+The claim includes torus and \(\mathbb R^4\) limits with
+the stated fixed-order regularity, translations, hypercubic
+symmetry, permutation symmetry and reflection positivity.
+It reconstructs a Hilbert space, vacuum and nonnegative
+time-translation generator in the stated sense.
+The \(\mathbb R^4\) limit is subsequential. Fixed-torus
+convergence without subsequences and identification of
+first-passage limits use (v), inheriting its dependencies.
+\item[(iv), a two-point witness.]
+At small separated distances the connected two-point
+function is comparable to the specified positive free
+curvature kernel times the fourth power of a running
+coupling, with controlled relative error. A one-torus
+witness is transferred to other volumes. Its consequences
+include a nonzero centred reflected vector and logarithmic
+short-distance behavior.
+\item[(v), a torus family.]
+Under comparison inputs, a unique analytic one-parameter
+family is asserted at fixed torus size. Two-cutoff and
+first-passage/tuned identifications are stronger than
+subsequential compactness. They are not infinite-volume
+uniqueness or clustering.
+\item[(vi), rotations.]
+Full \(O(4)\) invariance is conditional on a displayed
+far-sphere angular-momentum-flux hypothesis, which the
+draft does not establish. Short-distance approximate
+rotation statements and the README's later reflection
+argument are not interchangeable assertions.
+\end{description}
+
+Exact reading locations are Draft Theorem 0, pp.12--23;
+Sections 2, 3, 4, 5--6, 7 and 8 for (0)--(i), (iii),
+(ii), (iv), (v) and (vi), respectively. The raw main
+statement is I:2512, \hrbpath{3.1:thm-main}; its dependency
+assembly is III:110784--110860, \hrbpath{ch:11}.
+
+\paragraph{The meaning of non-triviality is deliberately limited.}
+Draft p.5 and I:2475--2510,
+\hrbpath{3.1:def-non-trivial}, distinguish the positive,
+logarithmically running two-point law from stronger
+interaction assertions. The raw definition expressly
+permits a generalized-free realization of an admissible
+two-point function and observes that a composite of a free
+field need not be Gaussian. Our counterexamples and
+spectral-witness discussion must not be presented as
+discovering a limitation that the baseline denied.
+They clarify what a stronger Yang--Mills identification
+would require.
+
+\paragraph{Explicit exclusions.}
+Draft pp.5--6 and 150--151 do not claim a mass gap,
+clustering, uniqueness of the infinite-volume limit or
+vacuum, coincidence extensions, Wightman fields with the
+required growth in the number of arguments, Wilson-loop
+or block-observable laws, unconditional full rotations,
+or the complete result for \(SU(N)\), \(N\geq3\).
+Its small-torus spectral discussion and finite-size
+criterion in the outlook are not a mass gap on
+\(\mathbb R^4\). The title's construction and
+non-triviality language has these express limitations.
+
+\subsection{Proof ledger and unresolved version crosswalk}
+\label{hrb-ledger}
+
+The hypotheses (H1)--(H7) in Draft Section 1.3 organize
+geometry, thresholds and quantifier order. They are not
+all the dynamical inputs. Section 9, pp.141--151, is the
+additional ledger: published citations, statements used
+as Ba{\l}aban asserts them, companion proofs, deferred
+proofs and unfinished supporting statements are separated.
+
+\paragraph{What the shorter draft says is written.}
+Draft pp.6 and 143 says that no own input below \(SU(2)\)
+clauses (0)--(iv) is deferred, except portions of (ii)
+using (v). It claims companion proofs for the source
+theorem, witness decomposition, Gaussian extraction and
+one-cell large-field estimates, among others.
+Section 9.1 nevertheless records fifteen imported
+statements/readings without a printed proof covering
+their asserted use. A written companion proof and
+independent verification of every imported generality
+are different propositions.
+
+\paragraph{What particular raw sites say.}
+III:110862--110870 explicitly says no clause is proved
+outright. III:111167--111179 organizes outstanding proofs
+into five categories. This concerns implications from
+named inputs; it does not mean no part contains a proof.
+Two important exact sites are:
+\begin{enumerate}
+\item I:3901--3945, \hrbpath{4.2:lem-one-loop}, states
+the finite Gaussian one-loop law by citation to
+CMP109/CMP116 and begins an outline:
+\(\left|\sum_{l=1}^k\beta_l^0-kc_0\right|\leq c_2\).
+I:3895--3898 gives \(c_0=11N^2(12\pi^2)^{-1}\log L\)
+in the deposited normalized-trace convention.
+\item I:4031--4088, \hrbpath{4.2:lem-unmarked}, marks
+the CMP116 remainder transfer to the CMP119 cutoff
+and fluctuation radius as an incomplete step.
+I:4136--4198, \hrbpath{4.3:thm-small-field-step},
+displays the stronger family-form/cutoff reading.
+I:56419--56440, \hrbpath{4.19:prop-clause-zero},
+lists the relevant assumptions; lines 56428--56430
+call both one-loop and unmarked statements incomplete,
+although the current one-loop lemma instead uses
+the citation/outline description above.
+\end{enumerate}
+
+The shorter draft's completion claim and these raw
+markers are not reconciled by a versioned proof
+crosswalk in the pinned files. We do not infer which
+supersedes which, or that a proof cannot exist outside
+the deposit. A reviewer should request the authoritative
+companion revision and exact replacements for remaining
+markers. Conversely, counting every outstanding string
+as an independent necessary gap would be wrong: some
+belong to optional routes, stronger conclusions or
+statements explicitly not used by the active route.
+
+\paragraph{The fifteen imported readings.}
+Draft pp.142--143 labels them Pr1--Pr15. In order,
+their subjects are:
+\begin{enumerate}
+\item large-field normalization/Wilson-term bounds,
+CMP122-II (1.11), (1.23)--(1.48);
+\item analyticity of old terms beside a new region, p.375;
+\item the resummed boundary estimate, p.376;
+\item locality and hull bookkeeping, pp.379, 390;
+\item an estimate whose details are omitted, p.360;
+\item interrupted integrations, CMP122-I p.191;
+\item prepared-data admissibility, CMP122-I pp.177--179;
+\item regularity on consecutive small-field differences,
+CMP119 p.275;
+\item transfer to a multiscale cover, CMP119 pp.276--277;
+\item complex-domain inclusion, CMP109 (1.17);
+\item a second regularity inequality, CMP109 p.279;
+\item companion estimates asserted by analogy in the
+propagator/averaging papers and CMP109 (3.26);
+\item lowest-tower estimates, (3.35), (3.37) of
+the draft's reference [5];
+\item a background-field estimate derived from an
+uncomputed display, reference [6], (189)--(190);
+\item regularity of the unintegrated large-field core,
+used for uniqueness.
+\end{enumerate}
+This is the draft's evaluation of its imports, not
+our verdict that the originals are false or that
+proofs cannot exist elsewhere. Domains and uniformities
+must be compared in each application.
+
+\paragraph{The uniqueness ledger.}
+Draft pp.148--149 identifies three written statements
+under independent verification, U1, U3 and U5;
+two not yet written, U4 and U6; and a condition to
+be added to a definition. These concern inherited-domain
+extension, two-cutoff comparison of retained factors,
+interior backgrounds, corrections near healed regions
+and interrupted Gaussian factors. The draft says its
+original U1 form was too strong and uses a corrected
+form. Group-specific \(N\geq3\) work is separately
+unperformed. These qualifications belong with any
+citation of torus uniqueness.
+
+\subsection{Navigation through the original mathematics}
+\label{hrb-raw-map}
+
+The raw account is not merely a classical calculation.
+Its proposed chain contains full densities, large-field
+histories, source estimates, continuum limits and a
+witness. These locators lead to actual interfaces:
+\begin{description}
+\item[Conventions and quantifiers.]
+I:11, 401 and 1050 begin Chapters 0, 1 and 2.
+The action, physical pairing and left-exponential
+expansion are at I:12756--12760, 15471--15478 and
+15643--15648. The last expands at \(\exp(i\eta A)U_0\);
+away from zero it is not the ordinary-potential
+Hessian without a coordinate-current correction.
+\item[Classical response and free currents.]
+I:13681, \hrbpath{4.5:lem-free-current-operators};
+I:14496, \hrbpath{4.5:thm-chart-existence};
+I:19578, \hrbpath{4.5:thm-operator-bounds}.
+The domains include graded spaces and independent
+currents. Our homogeneous physical stationary
+bounds do not verify all those domains.
+\item[Averages and pivots.]
+I:24240, \hrbpath{4.6:lem-averaging-locality};
+I:24320--24325 gives corrected composition,
+I:24349--24369 its flat differential.
+I:46960 and following gives pivot/constraint
+linear algebra. II:9032--9075 locates incident-bond
+Dirichlet geometry, II:9779--9791 its constraint.
+\item[Complete representation.]
+I:61097, \hrbpath{4.20:thm-representation};
+I:73545, \hrbpath{4.21:rem-global-chain},
+specifies four global carriers.
+I:92401--92620, \hrbpath{4.22:lem-current-localisation},
+retains the complex-decoupling current correction.
+\item[Sources, per-ball bounds and limits.]
+II:2791, \hrbpath{5.1:thm-correlation-theorem};
+II:60348, Chapter 6;
+II:61205, \hrbpath{6.2:lem-chessboard-estimate};
+II:64630, Chapter 7;
+II:66412, \hrbpath{7.4:thm-infinite-volume}.
+Its \(\mathbb R^4\) statement is part of the baseline;
+it takes sourced estimates as inputs.
+\item[Witness, uniqueness, rotations.]
+II:68374 begins Chapter 8; III:5 begins Chapter 9.
+III:25268, \hrbpath{9.2:thm-carry}, is an incomplete
+uniqueness-path statement. III:75922 begins Chapter 10;
+III:76512, \hrbpath{10.1:thm-rotational-identity}.
+The far-flux assumption reappears at
+III:110825--110835.
+\end{description}
+These are navigation points, not exhaustive local
+proof checks. Shared words such as minimizer, covariance
+and locality do not identify our results with the
+source's full-history representation.
+
+\subsection{Published results and transfer obligations}
+\label{hrb-published}
+
+Page numbers below are journal pages. Every cited theorem
+retains its transformation, analytic class, current
+variables, boundary conditions and coupling hypotheses.
+
+\paragraph{Small fields and extraction.}
+Ba{\l}aban, CMP109 (1987), 249--301,
+\url{https://doi.org/10.1007/BF01215223},
+Theorem 3, p.264, is the conditional small-field induction
+for (1.1)--(1.22). Its separate Theorem 2, p.259,
+announces the tuned \(SU(2)\) trajectory. Ward analysis
+and full Wilson subtraction are in Sections 4--5:
+(4.9)--(4.15), (4.21)--(4.45), (5.17)--(5.44).
+Equation (1.19) requires gauge invariance of localized
+coefficients. A total gauge identity in a different
+activity representation is not literally that hypothesis.
+
+CMP116 (1988), 1--22,
+\url{https://doi.org/10.1007/BF01239022},
+completes the small-field induction. Sections 1--2
+localize and integrate the renormalized exponent;
+(2.41) and pp.21--22 recover the inductive bound
+and add the Gaussian normalization. This is a
+substantive closure theorem under small effective
+couplings, not just a formal loop expansion.
+Our total-kernel extraction and quotient are
+alternative arguments with separately stated inputs.
+
+\paragraph{Complete densities.}
+CMP119 (1988), 243--285,
+\url{https://doi.org/10.1007/BF01217741},
+defines full pushforward and the additional large-field
+operation in (0.1)--(0.2); Section 2 specifies its
+class; Theorem 1 is on p.262. The introductory
+unnumbered statement is on p.245. Interfaces include
+(2.18), histories; (2.19)--(2.22), large-field
+operations; and (2.34)--(2.42), regularity/boundaries.
+In particular (2.38), p.261, requires local gauge
+potentials and first derivatives, not merely small
+plaquettes. General averages satisfying its axioms
+are allowed, so a composite map is not excluded by name.
+
+CMP122-II (1989), 355--392,
+\url{https://doi.org/10.1007/BF01238433},
+Theorem 1, p.355, completes that class under a small
+common ceiling for all effective couplings.
+The concluding bounds are pp.390--391, (1.98)--(1.102).
+Its introduction says the separate perturbative
+trajectory proof was still unpublished in 1989 and
+distinguishes later observable analysis.
+Our search did not locate a later primary proof
+of that precise theorem; this is a bounded search,
+not proof of nonexistence. The original CMP122-I
+formulas were not newly audited in full when its
+primary PDF endpoint was inaccessible.
+
+\paragraph{Universality and distinct constructions.}
+A familiar coefficient cannot be inserted for an
+unmatched determinant, cutoff or gauge normalization.
+One-loop lattice comparison theorems, for example
+Adams--Lee,
+\url{https://arxiv.org/abs/0709.0781},
+have hypotheses on their integrals. They do not
+directly identify our constrained determinant.
+Magnen--Rivasseau--S\'enoor's construction with
+an infrared cutoff, CMP155 (1993), 325--383,
+\url{https://doi.org/10.1007/BF02097397},
+is a distinct regularized construction. Neither
+citation is treated as a theorem about our exact
+macrostep without identification.
+
+\subsection{Our additions: objects, results and boundaries}
+\label{hrb-additions}
+
+Here addition means a derivation or interface produced
+in this workspace, not a priority or novelty claim.
+Gaussian integration, reflection positivity, forest
+interpolation, cluster expansions, analytic implicit
+functions, Ward identities and elliptic estimates
+remain standard tools. The notebook manifest separates
+our uses from the cited model-specific results.
+The documents are research proof drafts with internal
+audits, not accepted replacements for the literature.
+
+\paragraph{01--05: continuum tools and explicit Gaussian interfaces.}
+Notebook 01 gives a conditional compactness and
+observable-reconstruction route, factorial-cumulant
+issues and a stronger positive-energy test.
+For example,
+\(\langle v,e^{-tH}v\rangle\leq q\|v\|^2\), \(q<1\),
+forces spectral weight at positive energy but
+neither a gap nor an interacting gauge theory.
+Notebook 02 develops same-limit diagonal reflection
+positivity for pure Wilson theory using actual
+slab gluing and comparison at fixed lattice coupling.
+Its continuum application still needs common
+observable limits and the relevant estimates.
+
+Notebooks 03--05 isolate current identities,
+Gaussian large-field tails, strict background
+locality under local precision perturbations and
+simple interaction cases. The forest expansion
+differentiates Gaussian densities/covariance
+parameters rather than sharp indicators without
+justification. Mark localization and strict
+background dependence are different results.
+A product domain is stronger than an arbitrary
+weak source-field ball. These modules do not
+import every CMP119/CMP122 orbit domain.
+
+\paragraph{06--17: a homogeneous classical and Gaussian base.}
+The flat Maxwell work proves lower bounds,
+compact right-inverse lifts and upper bounds for
+the effective quadratic form \(q_M\), uniformly
+in prior homogeneous refinement \(M\).
+Alias formulas and pole cancellations give
+exponential locality and a free refinement
+limit with \(O(M^{-2})\) convergence in the
+stated weighted norms. These are free-reference
+limits, not interacting ultraviolet limits.
+
+Subsequent modules identify the source-compatible
+flat extension and gauge, construct fine inverses
+and current responses, establish pointwise and
+equal-exponent regularity, and control nonlinear
+fixed-reference and moving-reference averages.
+Ordinary-potential and left-exponential Hessians
+are related with their current term retained.
+A small global physical \(C^{1,\alpha}\)
+background admits a local constrained Wilson
+minimum, gauge-slice coverage and ordinary-constraint
+transfer. Its classical action obeys \(DV=m\);
+weighted response localizes its Hessian.
+These statements do not cover arbitrary exterior
+data, holes, mixed histories or independent
+free-current domains.
+
+Gaussian roughness is a negative interface
+that must be retained. In four dimensions,
+typical fine quantum fluctuations are outside
+a fixed small physical \(C^{1,\alpha}\) ball;
+the curl trace gives root-mean-square size
+of order \(\eta^{-2}\). At a fixed current
+step, correctly rescaled blocks instead
+have uniform covariance bounds. Notebook 17
+uses this normalization for joint tails.
+Classical smooth-background estimates cannot
+simply be applied to a full fine Gaussian sample.
+
+\paragraph{18--22: local integration and strict classical support.}
+Notebook 18 supplies an overlapping-interaction
+Gaussian theorem with explicit support norms
+and complex covariance control. Notebook 19
+constructs the actual stationary-background
+pivot chart and reduced precision, retaining
+constraint curvature and coordinate-current
+curvature. The independent retained-link
+window is literal. Haar, ambient straightening
+Jacobian, exponential-gauge factor and
+background determinant are separately tracked.
+Notebook 20 applies these to the bare local step.
+
+Notebook 21 obtains strict support expansions
+for the classical action through a simultaneous
+field/multiplier fixed point, using smooth
+physical cells, mixed insertion bounds and
+the physical \(\eta^4\) pairing. It avoids
+summing \(M^4\) coordinate coefficients and
+does not assume a uniformly bounded ordinary
+averaging adjoint where such a bound fails.
+Notebook 22 transports inherited activities
+through a stationary map with the explicit
+multivariate Cauchy cost. Bounded substitution
+does not automatically contract a norm or
+preserve a radius through infinitely many steps.
+
+\paragraph{23--28: covariance, re-entry and a common local domain.}
+Notebook 23 treats actual gauge covariance
+and ordinary representatives. Notebooks
+24--26 treat inherited increments, pre-gauge
+smooth representatives and auxiliary grouping.
+The physical blocking factor and auxiliary
+polymer grouping are distinct. The same
+block labels are not counted twice as newly
+compressed. Cardinality weights, fiber
+dimensions, radius loss and thresholds
+are budgeted explicitly.
+
+Notebook 27 constructs the one-shot constraint
+\(F_R=\mathcal M_\ell^s\), \(R=\ell^s\),
+with a selected direct-\(R\) contour gauge,
+actual pivots, measure factors and retained
+window. Constraint composition does not
+identify that window with successive
+primitive windows. Notebook 28 proves a
+common-domain local integration theorem
+with joint background/fluctuation supports.
+An inherited interaction is split into its
+background value and fluctuation increment;
+the former has no artificial coupling factor.
+Equivariant measurable completion is useful
+for an already defined global invariant
+density. It does not turn a local analytic
+germ into the Wilson density outside its domain.
+
+\paragraph{29--31: extraction and finite local induction.}
+Low-degree Ward cancellations are performed
+on total kernels before localization.
+Subtracting the full classical reference
+preserves the nonlinear identity; subtracting
+only its quadratic jet does not.
+The total quadratic, cubic and quartic
+remainders have the low-momentum orders
+needed by the spatial Taylor argument.
+Finite-torus versions keep wrapping defects
+and the actual finite coefficient, rather
+than imposing an infinite Fourier identity.
+
+The activity quotient identifies normalized
+totals, tracks vacuum constants, admits
+controlled periodization/local limits and
+supports quantum descent. The classical
+semigroup identifies totals modulo the
+allowed gauges, not canonical carrier arrays
+or sequential quantum cutoffs.
+Finite induction selects equivalent small
+representatives with strict margins and
+compensates scalar changes in the vacuum
+factor. Its initial amplitude theorem was
+conditional on a weak coupling sequence.
+Completeness of an analytic interaction
+space is not construction of a physical
+probability law.
+
+\paragraph{32--37: the actual determinant and positive local drift.}
+These notebooks retain coarea normalization,
+fine/target orbit densities, multiplier
+curvature and actual stationary response.
+Point-pinned ghosts, globally based quotients
+and block mean-zero gauges are distinguished.
+The moving-reference scalar construction yields
+\[
+ C-\bar C=D_cZ,\qquad \bar C D=D_cB,
+ \qquad BB^T=K^{-4}I .
+\]
+This gives an exact gapped covariant
+determinant pair at fixed \(K\), rather
+than discarding a singular global-base
+factor. Soft scalar/vector reductions
+isolate coarse factors and bounded heat
+ends. Local trace projections and ordered
+Duhamel/resolvent products are retained:
+a local trace does not have unrestricted
+global cyclicity.
+
+Notebook 37 claims, within the upstream
+working chain, the actual coefficient estimate
+\[
+ \beta(\mathcal D_{M,K})
+   =22\alpha_g\log K+O(1),\qquad
+ \alpha_g=\frac{C_H}{48\pi^2},
+\]
+uniformly in prior homogeneous depth and
+every applicable jointly obtainable
+infinite structural system. Its Maxwell
+coefficient is twice the normalized
+affine \(t^2\) coefficient; \(C_H\) is
+the adjoint charge-square sum in the
+specified color convention. Numerical
+comparison with another convention
+requires conversion of action, trace
+and extraction functional.
+
+The comparison is direct: actual base
+to Wilson has integrable \(O(s^{-1})\)
+error, and fixed Wilson to continuum
+has integrable \(O(s^{-1/2})\) error.
+Joint compactness transfers a positive
+block margin to actual finite coefficients.
+Real finite-coupling continuity and
+clipped shooting then produce arbitrarily
+long finite weak homogeneous local
+histories with a fixed weak endpoint
+and bare coupling of order \(m^{-1/2}\).
+This is a substantial local endpoint,
+not a full-Wilson trajectory theorem,
+a Schwinger-function limit or a mass gap.
+
+\paragraph{38: exact statements about the full bare measure.}
+Notebook 38 adds two different kinds
+of result. A specified measurable coarse
+map admits an exact positive good/remainder
+decomposition retaining all histories
+and normalization. Identification of
+its good term with the analytic germ
+requires literal containment of the real
+integration window in the input domain.
+
+Independently, direct compact-group
+and positivity arguments control the
+normalized bare Wilson measure.
+Site-plane reflection positivity and
+Schatten gluing give joint bad-plaquette
+bounds. A fixed-box conditional Laplace
+theorem uses an exact tree quotient,
+a compact global energy gap and
+cancellation of Gaussian volume factors
+to obtain a normalized \(Ce^{-cT^2}\)
+tail. A boundary-only gauge combines
+these into joint bounds for separated
+boxes with explicit local minimizer
+windows. Constants are fixed-box
+constants, not uniform in growing
+components.
+
+\paragraph{39: normalized local replacement in the bare Wilson measure.}
+The final extension is
+\hrbpath{outputs/ym4-normalized-box-replacement/main.tex}.
+For an arbitrary finite family of
+vertex-disjoint fixed-size boxes,
+the replacement preserves the original
+exterior marginal and raw partition
+normalization. At a good boundary it
+conditions the actual conditional law
+on its minimizer window, dividing by
+the exact success probability
+\(1-p_i\geq1-a_g\); bad-boundary
+conditionals are unchanged.
+
+An exact positive failure expansion
+and coupling control the joint local
+law, including the exterior. For a
+selected set of boxes \(A\), the
+discrepancy is bounded by
+\[
+ \mathbb E\!\left[1-\prod_{i\in A}(1-p_i)\right]
+ \leq |A|a_g ,
+\]
+independently of the total number of
+replaced boxes. Discrepancy and bad-boundary
+marks have the stated joint bound
+\((a_g+\beta_g)^{|S|}\), and bounded
+local sources/cumulants can be transferred.
+These are actual bare-measure assertions.
+They do not concern a nonlinear
+RG constraint fiber, growing components
+or an already renormalized density.
+The final theorem's precise conditions
+and internal audits remain part of
+the handoff, rather than being erased
+by this summary.
+
+\subsection{Corrections and superseded routes}
+\label{hrb-corrections}
+
+Historical notes remain for traceability.
+Their next-task and candidate language
+is chronological. Later repairs and
+counterexamples take precedence.
+The following changes are particularly
+important for a reviewer.
+
+\begin{enumerate}
+\item \textbf{No weakened baseline.}
+The repository did claim \(\mathbb R^4\)
+existence. Its definition already
+excluded a two-point inference of
+non-Gaussian interaction. Our additions
+must not be presented against a
+fabricated weaker starting claim.
+
+\item \textbf{The mandatory three-map
+source obstruction was withdrawn.}
+An early reading of Raw II Section 5.6
+treated three localized response maps
+as the next unavoidable obstruction.
+Raw I:73545,
+\hrbpath{4.21:rem-global-chain},
+uses four global carriers instead.
+The correction is in
+\hrbpath{work/source_stability_research.md},
+opening and Section 9.
+The conditional local estimates remain;
+their asserted necessity does not.
+The two descriptions still need an
+authoritative use-by-use reconciliation.
+
+\item \textbf{Sharp windows were kept
+distinct.}
+The retained-link cutoff and additional
+pivot indicators cannot be conflated.
+Primary CMP116 p.12 excludes selected
+pivots from its retained bond set.
+The nonlinear argument is \(\Phi_V(g\xi)\),
+not generally \(g\Phi_V(\xi)\).
+A bad link implies Euclidean cell norm
+greater than the same threshold.
+The separate good-window inclusion
+with a square-root dimension factor
+cannot improve the bad-event tail.
+
+\item \textbf{Tails are not localized
+logarithms.}
+Joint Gaussian bad-block bounds alone
+do not give connected log activities.
+Forest/cluster and strict-support
+arguments are additional work.
+Grouping arbitrary large overlapping
+supports into Gaussian blocks can
+lose degree summability; no routine
+extension claim substitutes for the
+actual overlapping-interaction proof.
+
+\item \textbf{Norm and radius losses
+were real.}
+A fixed cardinality reserve does not
+pay all Taylor coefficients for free.
+Transport uses the exact product
+Cauchy cost, common smaller domains
+and a geometry budget. Auxiliary
+grouping/pre-gauge transport address
+these losses rather than rename them.
+When auxiliary vertices disappear,
+connected-hull estimates use Steiner
+length. Conversion to a terminal
+metric tree spends a factor of at
+most two in the exponent.
+
+\item \textbf{Positive norm, positive
+energy and a gap differ.}
+A nonzero reflected vector can have
+a zero-energy component. A time
+correlation ratio forces positive
+energy but no gap. A constrained
+Gaussian gap \(cK^{-2}\) is not a
+Yang--Mills Hamiltonian mass gap.
+Independent random constants and
+generalized-free examples remain
+valid continuum-interface cautions.
+
+\item \textbf{Pressure and free
+boundaries did not identify the
+same symmetric state.}
+Surface free energy does not determine
+local states, and translation averaging
+need not preserve positivity at a
+fixed mirror. The reflection proof
+therefore uses actual gluing and
+comparison with a common-limit
+obligation, not unrelated states
+chosen for individual tests.
+
+\item \textbf{Gauges and Hessians
+needed exact corrections.}
+The source scalar projection is not
+automatically projection onto
+\(\ker Q_0\); a constrained biharmonic
+construction was required.
+Ordinary and left-exponential
+Hessians differ by current curvature.
+Constraint elimination adds multiplier
+curvature. Dropping either changes
+the determinant.
+
+\item \textbf{Pinned and unpinned
+infrared factors cannot be exchanged.}
+Point pinning can give a scalar gap
+of order \(K^{-4}\), not \(K^{-2}\),
+and its long-time logarithm differs.
+A globally based scalar factor has
+a constant-holonomy anomaly with
+forced vector compensation.
+The later mean-zero pair is a
+different exact decomposition, not
+proof that the earlier factors
+separately had the desired coefficient.
+
+\item \textbf{A false difference-square
+formula was replaced.}
+Zero row sums alone do not give
+the naive component-valued common
+difference-square identity.
+Component-skew/odd terms obstruct it.
+The corrected proof uses ordered
+Laurent factorization with zero
+constant and first moments.
+The amended covariant Hessian and
+soft-vector/tail modules are operative.
+
+\item \textbf{Separate uniform
+relative vertices were not automatic.}
+Pure-gauge and hierarchy-interface
+examples give growing relative
+vertices while full heat traces
+remain invariant. Current arguments
+use covariant densities, localized
+forms and combined identities rather
+than the rejected componentwise bound.
+
+\item \textbf{Affine probes need a
+total-kernel interpretation.}
+A polynomial Cartan probe is not
+a bounded periodic background.
+Its use needs localized Taylor
+kernels and polynomial moments.
+A convenient local density on an
+affine field need not equal the
+total Maxwell moment. Reanchoring,
+covariance and the limiting order
+are indispensable.
+
+\item \textbf{Infinite kernels are
+not arbitrary finite kernels.}
+Large-\(K\) magnetic/Bloch arguments
+use a jointly chosen infinite
+structural system or explicit
+periodizations. Finite winding
+errors and actual coefficient
+transfer are separate.
+Finite determinant algebra alone
+does not justify thermodynamic
+derivative interchange.
+
+\item \textbf{Full-measure shortcuts
+fail.}
+Small plaquettes on a simply
+connected box give a tree-gauge
+link bound proportional to a
+filling area. Alternating small
+curvature rules out an automatic
+mesh-uniform physical
+\(C^{1,\alpha}\) chart.
+Flat torus holonomies obstruct
+an arbitrarily small global
+potential. Raw link marginals
+are Haar by gauge invariance,
+so raw near-identity link
+probability is the wrong event.
+\end{enumerate}
+
+\subsection{Remaining existence interfaces and audit priorities}
+\label{hrb-remaining}
+
+The local positive drift changes the
+next research task; it does not
+erase the remaining implications.
+
+\paragraph{Full densities and
+normalized large-field replacement.}
+One needs a full match to the
+CMP119/CMP122 class or a direct
+replacement theorem for the chosen
+composite map. It must handle
+relevant bad components, exterior
+data, holes, retained terms,
+interrupted operations and ages,
+with numerator/denominator
+cancellation and summable bounds.
+The weak couplings of our local
+recursion are not automatically
+the coefficients of that full
+recursion. The averaging axioms
+may permit the map, but all used
+variational/domain hypotheses
+still require verification.
+
+The new normalized fixed-box
+replacement is a useful concrete
+piece of this problem. It does
+not identify fixed-boundary
+conditionals with conditionals
+on nonlinear block averages,
+or establish iteration on
+post-RG densities. An exact
+all-history identity is not
+a uniform norm bound on
+those histories.
+
+\paragraph{Observables and a common
+continuum limit.}
+An external observable source
+changes full densities,
+counterterms and large-field
+operations. Its cutoff/volume
+uniform control is not implied
+by holomorphy in a small
+background connection.
+Analytic activity compactness
+is not tightness of a quantum
+observable law. A common
+hierarchy must retain consistency,
+positivity, symmetries and the
+growth required by the intended
+reconstruction. Coincidence
+extensions and the observable
+algebra must be specified.
+
+\paragraph{Identification and
+infrared properties.}
+A scalar action-density subsector
+with a running two-point witness
+is not alone identification of
+an interacting Yang--Mills
+theory. Clustering, vacuum
+uniqueness and a mass gap are
+separate infrared questions.
+The source draft expressly
+leaves them open; our local
+ultraviolet work does not close
+them. General color formulas
+and bare \(SU(N)\) probability
+lemmas do not extend every
+upstream \(SU(2)\) input to
+all compact simple groups.
+
+\paragraph{Efficient audit order.}
+First freeze the target theory
+and authoritative companion
+revision. Verify normalizations,
+finite measure identities and
+domains before long estimates.
+For our series, inspect the
+classical base, strict support
+norms, common-domain quantum
+theorem, finite extraction/
+induction, determinant reduction/
+comparison, then finite drift
+transfer. Audit the full-measure
+interface independently; the
+length of the local chain
+does not prove it. Historical
+audit files guide checks but
+are not independent certificates.
+
+\subsection{Companion files and citation conventions}
+\label{hrb-companions}
+
+This report has a plain-text
+counterpart,
+\hrbpath{work/handoff_repository_baseline.txt},
+and a machine-readable source map,
+\hrbpath{work/handoff_repository_source_map.json}.
+The current detailed obligation
+ledger is
+\hrbpath{work/final_push_existence_dependency_audit.txt}.
+Primary source maps include
+\hrbpath{work/renormalized_induction_primary_sources.md},
+\hrbpath{work/full_measure_large_field_interface_research.txt},
+and
+\hrbpath{work/mean_zero_one_loop_source_interface.txt}.
+The source-route correction is
+in \hrbpath{work/source_stability_research.md}.
+The notebook manifest identifies
+authoritative assembled files
+and the final extension's audits.
+
+The repository and published
+articles should be cited for
+their own results and definitions.
+Our claims should be cited as
+research drafts with hypotheses.
+This distinction remains necessary
+even where a calculation seems
+elementary or several internal
+readers agree. The handoff supplies
+a reproducible theorem-level map,
+new explicit derivations and
+remaining interfaces. It does
+not declare the existence
+problem solved.

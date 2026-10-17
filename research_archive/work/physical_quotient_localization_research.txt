@@ -1,0 +1,201 @@
+Projection-free localization of the actual quotient determinant
+17 October 2026. Research checkpoint; no output or shared fragment edited.
+
+STATUS. The exact finite determinant identities below use the actual classical constrained minimum, its full Lagrangian Hessian, and the already proved contour/pivot normalization. They do not replace the actual nonlinear pushforward by a corrected one. The main new identity replaces point-pinned scalar gauges by a block-mean-zero gauge. Its flat vector and scalar completions have a uniform physical gap. For each FIXED composite ratio K, the new identity has a volume-uniform local analytic continuation through the flat field, without taking separate limits of massless globally based determinants. Growing-K curvature estimates and the uniform finite comparison part remain open.
+
+1. Actual spaces and the residual Hessian
+
+Fix a compatible finite current torus in d=4, a primitive odd ratio ell, K=ell^k, and the old classical depth M. E and E_c are current and final-coarse bond ANGLE spaces with counting inner products and a real trace-orthonormal color basis. S and S_c are ALL fine and coarse site scalar spaces. Initially restrict to a real open set on which the covariant gauge generators D:S->E and D_c:S_c->E_c are injective. Let r:S->S_c be restriction to final centers, and D_b=D|ker r. The actual constraint differential C is onto and
+
+    C D=D_c r.                                                   (1.1)
+
+Let s be the actual current classical action and s_eff the actual coarse minimum action. In relative exponential coordinates set
+
+    L=s''-lambda.f'',  q=s_eff'',  H_res=L-C^T q C.                 (1.2)
+
+The multiplier-curvature term is retained. The actual local minimum comparison and differentiable minimizing section give
+
+    H_res>=0, H_res D=0, C H=I, H_res H=0.                         (1.3)
+
+On ker C, H_res=L and its nullspace is im D_b. The actual contour map T satisfies T D_b=-I. Consequently the actual unnormalized leading amplitude is
+
+    I_act=|det C_p|^-1 det[K_0^T(H_res+T^T T)K_0]^-1/2.            (1.4)
+
+All target delta coordinates here are left-relative Lie coordinates. There is no additional j(log W) Haar factor. These are the established inputs of determinant_gauge_bridge_research.md and contour_heat_comparison_research.txt; no on-shell condition lambda=0 is used.
+
+Let G=D^T D and G_c=D_c^T D_c. Choose orthonormal bond frames U,U_c perpendicular to the gauge ranges. Put R=U^T H_res U, A=U_c^T C U, and Q_perp(a)=R+a A^T A, a>0. The already proved constrained Gaussian computation applies equally to these all-site injective spaces: the scalar splitting S=ker r plus center parameters has Euclidean Jacobian one, and T D_b=-I integrates the first factor exactly. Therefore, writing n_c=dim E_c and s_c=dim S_c,
+
+    I_act^2=(det G/det G_c) a^(n_c-s_c)/det Q_perp(a).              (1.5)
+
+This is a finite identity on the injective open set. It is not a license to take separate scalar determinant limits near flatness.
+
+2. A first projection-free block identity, and why it is insufficient alone
+
+Define
+
+    Q_a=H_res+D D^T+a C^T C,
+    B_a=[ Q_a, sqrt(a) C^T D_c; sqrt(a) D_c^T C, G_c ].             (2.1)
+
+The quadratic form is x^T H_res x+|D^T x|^2+|sqrt(a)Cx+D_c psi|^2. Its Schur complement in G_c is H_res+D D^T+a C^T P_c C, P_c=I-D_c G_c^-1 D_c^T, which has determinant det G det Q_perp(a). Hence
+
+    I_act^2=a^(n_c-s_c) (det G)^2/det B_a.                         (2.2)
+
+The normalized logarithm of (2.2) is taken only as the jointly removable actual amplitude. The individual massless logarithms are not evaluated at flatness; Section 4 supplies the joint continuation through a gapped formula. Every physical projection has disappeared, but B_a still contains long-wavelength coarse gauge directions. Testing x=0 gives the G_c quadratic form, so this block matrix has no volume-uniform gap. The next reduction must remove these directions before separate logarithms are estimated.
+
+For any map Cbar with C=Cbar+D_c Z, the shear psi'=psi+sqrt(a)Zx has determinant one. Thus det B_a(C)=det B_a(Cbar), even before an inverse of G_c is introduced. This is an algebraic tangent-space statement and does not assert equality of two nonlinear Haar pushforwards.
+
+3. General corrected tangent data and the exact mean-zero identity
+
+Suppose B:S->S_c is onto and Cbar:E->E_c obeys
+
+    C-Cbar=D_c Z,       Cbar D=D_c B.                              (3.1)
+
+Let V have orthonormal columns spanning ker B, and put
+
+    P=V V^T=I-B^T(BB^T)^-1 B,
+    G_B=V^T D^T D V,
+    Q_B=H_res+D P D^T+a Cbar^T Cbar.                               (3.2)
+
+All scalar spaces in (3.1)--(3.2) are unbased. The exact amplitude identity is
+
+    I_act=a^(n_c/2) det G_B det(BB^T)^(1/2) det Q_B^-1/2.           (3.3)
+
+In particular
+
+    D_actual=N_0[logdet G_B-(1/2)logdet Q_B
+                                      +(1/2)logdet(BB^T)].        (3.4)
+
+Proof. Use the orthonormal fine vertical coordinates D G^-1/2. In them the inserted vertical map D V has matrix G^1/2 V, and the target vertical row of Cbar is G_c^1/2 B G^-1/2. Their product is zero. Split vertical coordinates into the range of G^1/2 V and its orthogonal complement. The first vertical block has determinant det G_B; the second has determinant a^s_c det G_c det(B G^-1 B^T). Its coupling to the horizontal constraint row is removed by an ordinary Schur complement, leaving Q_perp(a), because P_c Cbar=P_c C. Therefore
+
+    det Q_B=a^s_c det G_B det G_c det(B G^-1 B^T)
+                                                   det Q_perp(a). (3.5)
+
+The finite-dimensional Jacobi identity is
+
+    det(B G^-1 B^T)=det(BB^T) det(V^T G V)/det G.                   (3.6)
+
+Indeed complete V by W=B^T(BB^T)^-1/2 to an orthogonal matrix, and take the lower inverse block by Schur complementation. Equations (1.5), (3.5), (3.6) give (3.3). In particular the determinant power is det G_B, not its square root. An arbitrary orthonormal frame change in ker B changes no determinant.
+
+A basis-free scalar version is preferable for locality. For any fixed mu>0 set
+
+    Ghat=P D^T D P+mu^2(I-P).                                    (3.7)
+
+The two P subspaces reduce this matrix and
+
+    det Ghat=(mu^2)^s_c det G_B.                                  (3.8)
+
+Thus G_B may be replaced by Ghat in the normalized logarithm (3.4). We use mu=K^-1 below.
+
+4. Actual corrected data, locality, and continuation through the flat field
+
+There are two constructions; the first already suffices for the general identity.
+
+4.1 Fixed-reference corrected map. The exact cumulative endpoint relation is
+
+    F_ord(U)=F_corr(U)^{b(U)},
+    V^b(c)=b(c_-)V(c)b(c_+)^-1.                                  (4.1)
+
+Freeze b at U. If R_b acts on left bond increments by Ad b(c_-), take Cbar=R_b DF_corr and let Z be the left logarithmic derivative of b, with the sign convention chosen consistently with the gauge generators. Differentiating (4.1) gives C-Cbar=D_c Z. Corrected gauge covariance is
+
+    F_corr(U^g)=F_corr(U)^{k(U,g)},
+    k(U,g)=b(U^g)^-1 (r g) b(U).                                 (4.2)
+
+After transport by Ad b, its scalar differential is B=r-ZD. Hence Cbar D=D_c B exactly. Source inputs: nonlinear_gauge_slice_research.tex, ng-induced-group-gauge, ng-one-step-gauge and ng-composite-gauge; nonflat_reference_averages_research.md, cumulative endpoint relation and ordinary trajectory.
+
+At U=1, Cbar=A_K^st (the angle straight-string average), B=Q_0,K (the scalar average), and BB^T=K^-d I. Each row of B uses scalar parameters only inside its own final K-block. All background coefficients have fixed-K finite range. Thus BB^T is coarse-site block diagonal; for fixed K its invertibility and analytic inverse persist in a volume-uniform small product ball. This construction needs no gauge normalization at a single global base.
+
+4.2 Actual covariant moving-reference version (now proved). Use EXACTLY the selected internal group-valued contour P_ell(U;y,x) in the actual ordinary map, not an unverified identification with the older axial scalar Q'. Its endpoint covariance and local analyticity are source axioms already checked from CMP109 (0.3),(0.5)--(0.12). Full independent derivation: covariant_corrected_scalar_research.txt, Sections 1--6.
+
+Fix the gauge sign D_U lambda(e)=lambda(e_-)-Ad_U(e)lambda(e_+). Let r_U(v;y,x) be the left contour differential and define
+
+    Z_U v(y)=ell^-d sum_x r_U(v;y,x),
+    B_U lambda(y)=ell^-d sum_x Ad_P(U;y,x) lambda(x).
+
+Then endpoint covariance gives Z_U D_U=r_ell-B_U. Define the relative corrected bond tangent by C_mov,U=C_ord,U-D_M(U) Z_U. This follows also by differentiating the actual relative corrected group output a_U(v)_-^-1 M(e^(iv)U) a_U(v)_+, with a_U(v)=exp(i mean_x log[P(e^(iv)U)P(U)^-1]/i). The logarithms are relative to identity at v=0, so no logarithm Jacobian remains. Consequently
+
+    C_ord,j=C_mov,j+D_(j+1) Z_j,
+    C_mov,j D_j=D_(j+1) B_j.                                    (4.3)
+
+Evaluate at ORDINARY intermediate fields U_j=M_ell^j(U). Induction gives Cbar=C_mov,k-1 ... C_mov,0, B=B_k-1 ... B_0 and C-Cbar=D_c Z_tot, with
+
+    Z_tot,new=B_j Z_tot,old+Z_j C_ord,old.                         (4.4)
+
+Each fine scalar has one nested parent; the backgrounds and scalar parameters in a B row are confined to its own final K-block. Thus
+
+    B(y,x)=K^-d Ad P_hier(y,x), x in B_K(y),
+    BB^T=K^-d I.                                                 (4.5)
+
+Real adjoint transports are orthogonal; the invariant bilinear form gives the identical formula on the complex germ. The two determinant operators now require no frame choice:
+
+    P=I-K^d B^T B,
+    Ghat=P D^T D P+K^-2(I-P),
+    Q_B=H_res+D P D^T+a Cbar^T Cbar.
+
+Each is covariant in the actual fine scalar/bond frame. The scalar Gram factor is constant, and (3.4) becomes exactly
+
+    D_actual=N_0[logdet Ghat-(1/2)logdet Q_B].                     (4.6)
+
+The tangent identities alone suffice. This does not assert that the modified corrected map has the original Haar pushforward. At flatness Cbar=A_K^st and B=Q0,K by the arithmetic contour differential and centered-block semigroup. The fixed-reference construction in 4.1 is a separate optional generality example; it is not used for the covariance or constant Gram matrix claims.
+4.3 Nonempty injective open set. For SU(N), choose two coarse cycle holonomies exp(i epsilon X), exp(i epsilon Y), with X distinct diagonal and Y Hermitian whose nonzero offdiagonal graph is connected. Their common Lie centralizer in su(N) is zero for small nonzero epsilon. Distribute each holonomy among constant coarse links in its direction. A parallel scalar must commute with both holonomies and hence vanish. Injectivity of D_c is open at every finite regulator. The corresponding actual fine saddle has injective D: D phi=0 implies D_c r phi=0 by (1.1), so r phi=0 and parallel transport from a coarse center gives phi=0 everywhere. These irreducible configurations occur arbitrarily near flatness. For a compact semisimple group one can choose a regular Cartan element and root generators meeting every simple root; for an abelian factor this particular injectivity argument does not apply and must be treated separately.
+
+On this nonempty open set (3.3) equals the ACTUAL amplitude. At flatness Ghat, Q_B and BB^T are invertible, as proved next. Their local analytic determinant branches therefore extend across flatness. Equality on the injective real open set implies equality on the connected complex germ, by holomorphic uniqueness; positivity fixes the real branches. This is a JOINT continuation of the actual amplitude identity. It neither removes a mass from separate ghost determinants nor claims their individually based limits agree.
+
+5. Uniform flat gaps: block mean gauge rather than point pinning
+
+This section concerns d=4, all compatible volumes, all old depths M, and K=ell^k. Constants depend on the fixed group, primitive ratio and a common bound on the coarse Hessian, but not on M,K or volume. At flatness P=P_ker Q0,K is block-local. The scalar block Poincare inequality gives
+
+    G_B>=c K^-2 I,       Ghat>=min(c,1)K^-2 I.                    (5.1)
+
+This follows by summing internal-edge Poincare inequalities on disjoint K-blocks; wrap multiplicities do not change the inequality.
+
+For the vector statement use final physical units eta=1/K. Denote the physical derivative by D_eta, the physical straight average by Q, and the scalar block average by Q0. The old-depth flat action dominates Maxwell, L_M>=d_eta^*d_eta. The relative coarse Hessian q has a common bounded operator norm R_q. At flatness q D_c=0 and C-Cbar is a coarse gradient, so C^T q C=Cbar^T q Cbar. Choose fixed a>=R_q+1. Then the physical form Q_B dominates
+
+    ||d_eta v||^2+||P D_eta^*v||^2+||Qv||^2.                     (5.2)
+
+Here the counting operator is K^-2 times its physical counterpart; all source physical/counting transposes are converted consistently.
+
+For completeness, decompose v=t+D_eta phi orthogonally, with D_eta^*t=0. Harmonic constant bond fields belong to t. The earlier alias estimate for the transverse physical averaging gives
+
+    ||t||^2 <= A_0 ||P_c Qv||^2+B_0||d_eta v||^2.                 (5.3)
+
+Set b=Q0 phi. The scalar energy-minimizing right inverse H_s obeys Q0 H_s b=b and P Delta_eta H_s b=0. Its energy is bounded by
+
+    ||D_eta H_s b||^2 <= C ||d_c b||^2.                          (5.4)
+
+Indeed the scalar Bloch effective precision is (sum_r |a_r(p)|^2/P_r(p))^-1, at most P_0/|a_0|^2 by retaining the central alias. On the central zone |a_0|>=(2/pi)^d and P_0<=C|d_c(p)|^2. The zero mode is lifted by a constant and has zero energy. This proves (5.4), including periodic sampling.
+
+Write phi=H_s b+psi, Q0 psi=0. Energy orthogonality and block Poincare imply
+
+    ||D_eta phi||^2
+      <= C||d_c b||^2+C||P Delta_eta phi||^2.                    (5.5)
+
+For the second term, the restriction of Delta_eta to ker Q0 has gap c>0, so its quadratic form is at most c^-1 times the squared norm of its action. Finally QD_eta phi=d_c b and Q is a physical L2 contraction. Therefore
+
+    ||d_c b||<=||Qv||+||Qt||<=||Qv||+||t||.                      (5.6)
+
+Equations (5.3)--(5.6) prove a uniform physical vector coercivity bound. Returning to current angles and counting coordinates,
+
+    Q_B(0)>=c_a K^-2 I.                                         (5.7)
+
+The mean-zero gauge P is NOT the earlier source projection onto Delta ker Q0. The proof above establishes its gap separately. Rotation is preparing mean_zero_gauge_spectral_fragment.tex with an independent complete proof, Laplacian domination and heat consequences.
+
+6. Fixed-K analytic locality and actual joint local limits
+
+Fix K. The matrices D,Cbar,B have finite current range (depending on K), and the actual H_res has exponentially local scalar-action/source kernels uniformly in old M and volume, by the prior classical support theorem and fixed-K composition. No ordinary full-depth adjoint is imported: the current ratio K is fixed. The inverse of BB^T is block-local for construction 4.1; more generally an exponential weighted Neumann argument suffices. Hence P and Ghat,Q_B are exponentially local on a uniform fixed-K small product ball.
+
+The flat gaps (5.1),(5.7) and the local analytic coefficient bounds permit shrinking this ball, depending on K but not M or volume, so Ghat and Q_B have uniformly positive real part and bounded weighted inverses. Their analytic logarithms and source derivatives have exponentially summable kernels by resolvent/closed-chain expansion. For example choose a scalar c larger than the common real spectral upper bound and first write log A=log c+log(I-(I-A/c)); the real flat gap makes the latter converge in operator norm. Weighted conjugation and a sufficiently small fixed spatial exponent give the corresponding source/local estimates. A resolvent contour gives the same conclusion without claiming the raw weighted norm of I-A/c is less than one.
+
+Consequently (3.4), with Ghat replacing G_B, is an equality between locally analytic GAPPED objects on a common fixed-K germ. Along a chosen jointly locally convergent classical structural system, compact-source derivatives pass jointly to the infinite-volume limit using these exponential bounds. The resulting total determinant kernels agree with the actual normalized leading correction because the finite identities agree before taking the limit. This resolves the specific separate-massless-factor infrared obstruction at fixed K. It does not select a unique classical structural limit if that uniqueness has not been proved.
+
+By the proved moving-reference construction 4.2, P transforms by sitewise scalar conjugation, Cbar by fine/coarse frame conjugation, and H_res by fine bond conjugation (it is the Hessian of a residual with zero first derivative). Then Ghat and Q_B are covariant, and (4.5) makes the last determinant constant. One obtains the particularly useful pair
+
+    D_actual=N_0[logdet Ghat-(1/2)logdet Q_B].                     (6.1)
+
+Individual diagonal log densities are then gauge invariant in the chosen covariant frames. Affine-polynomial Maxwell extraction still uses the existing local kernel/jet conventions; no separate globally based scalar trace is substituted. This conclusion applies to the actual stationary background germ and its gauge orbit. Before stationary substitution the elementary moving maps have finite range in U. After U=U_*(W), their W-source dependence is generally exponential rather than finite range; the already proved classical support bounds provide that uniform fixed-K source locality.
+
+7. Exact remaining scope
+
+The new reduction proves a common fixed-K analytic germ, actual normalization, and flat gaps cK^-2. It does not establish a K-independent complex radius, K-uniform curvature vertex bounds, or a bounded Maxwell finite part relative to the massive background-Feynman determinant. Those require estimates on the NEW coupled/block-mean gauge operators, with all residual/constraint terms retained. In particular the source multiplier curvature is still inside H_res; setting it to zero is justified only for an independently proved on-shell probe. The point-pinned ghost anomaly cannot be used as a separate term after (3.4): its cancellation has already occurred algebraically.
+
+
+

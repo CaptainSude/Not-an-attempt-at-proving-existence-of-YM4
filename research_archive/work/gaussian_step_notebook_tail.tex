@@ -1,0 +1,61 @@
+\section{The next integration and iteration}
+\label{gs17-next}
+
+For a logarithmic cutoff $R(g)=(\log(1/g))^p$ with $p>1/2$,
+the Gaussian bad-block factor is smaller than any fixed power of
+$g$, while $gR(g)^3$ tends to zero. These two estimates are
+compatible: the same cutoff can suppress bad blocks and make
+analytic cubic action remainders small. Jacobian terms that begin
+linearly require their own local bounds; they are not cubic merely
+because the action remainder is cubic.
+
+The quantum step requires independent fixed-dimensional integration
+coordinates, their normalized covariance, and localized estimates
+for the complete interaction. The flat pivot covariance above
+supplies such coordinates on the homogeneous regulator. The
+singular value/gradient vector is useful for tests, but is not an
+independent cell coordinate system for a Gaussian density expansion.
+For complex continuation the tests used here remain fixed on the
+real integration variables.
+
+Notebook 18 gives a convergent cutoff expansion with overlapping
+interaction supports under an explicit weighted coefficient bound.
+Notebook 19 identifies the nonflat physical Gaussian and bounds
+the local straightening, Haar and gauge factors. Notebook 20
+verifies the complete coefficient and precision hypotheses for
+the bare Wilson small-field step, with all normalization terms.
+Notebook 21 supplies strict localization of the minimized
+classical action uniformly in earlier depth and closes one
+integration of that reference action. Later quantum steps
+require transport to the next coarse background and control
+of the accumulated interactions. Bad regions require
+regional constructions and their normalization estimates. Iterating
+those bounds must also control the running couplings and preserve
+the observable hierarchy needed by the continuum construction.
+
+The output sought from the iteration remains a common nontrivial
+gauge-invariant continuum hierarchy with the Euclidean covariance,
+positivity, regularity and Yang--Mills identification specified in
+Notebook 01. The gap argument is a further target after that
+existence construction is closed.
+
+\begin{thebibliography}{9}
+\bibitem{prior17}
+\emph{Toward a four-dimensional Yang--Mills construction},
+research Notebooks 5--16 in this workspace, 16 October 2026.
+The flat reduced covariance, constrained Maxwell inverse,
+nonlinear minimum and classical response theorems are used here.
+\bibitem{source17}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}{Yang--Mills-LLM-experiment},
+deposited raw accounts at commit
+\texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+The Yang--Mills files are unchanged at checked commit
+\texttt{785a68fdeef78a1da854c4807fe1f17b597d05e7}.
+\bibitem{balaban17}
+T.~Ba\l aban, \emph{Renormalization group approach to lattice gauge
+field theories I}, Commun. Math. Phys. \textbf{109} (1987), 249--301,
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-3ygai0vxt1.pdf}{original article copy}.
+The source-coordinate match is discussed explicitly above.
+\end{thebibliography}
+\end{document}

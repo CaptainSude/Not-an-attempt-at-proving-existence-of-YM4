@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage{mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 16: local nonlinear responses and the classical coarse action}
+\author{Research working document}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Starting from the finite-regulator small-field minimizer of
+Notebook 15, we prove exponential locality of its response to
+coarse data at small nonconstant backgrounds. The bounds are
+uniform in refinement and periodic volume, retain the same
+physical H\"older exponent, and allow one weighted direction
+at every analytic derivative order. The extra input is a local
+physical-transpose derivative estimate for the nonlinear
+constraint. An exact envelope identity then identifies the
+derivative of the minimized classical action with the coarse
+multiplier. This supplies a local nonlinear coarse Hessian,
+its small perturbation from the flat Maxwell precision, and a
+classical gauge identity. A separate exact Gaussian trace
+calculation shows that a fixed physical smooth ball has vanishing
+probability when the coupling decreases more slowly than the
+square of the mesh spacing. This identifies a concrete need for
+rescaled fluctuation domains. Notebook 17 supplies the resulting
+fixed-step Gaussian domain and joint tails; Notebook 18 supplies
+an overlapping-interaction integration theorem under explicit local
+coefficient hypotheses. The complete model-specific integration
+and iteration remain open.
+\end{abstract}
+
+\noindent\textbf{Status.}
+Internally audited research proofs, with no external certification
+or novelty claim. The prerequisite finite-regulator construction
+and its ordinary-constraint transfer are given in Notebook 15.
+The source provenance remains the deposited transcriptions at
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}{commit
+\texttt{e392ef45013a581664bab76b90867170b30fe10e}}.
+No new original-paper verification is asserted here.
+
+\section{The precise target}
+\label{nr16-target}
+
+Work with $SU(N_c)$ on compatible finite periodic lattices,
+fine spacing $\eta=L^{-j}$ for fixed odd $L\ge3$, coarse
+spacing one, and fixed $0<\alpha<1$. The background coarse
+potential $B$ is arbitrary in a sufficiently small global
+supremum ball; it need not be constant or decay at infinity.
+The selected fine potential $A_*(B)$ uses the corrected
+constraint and fixed flat gauge of Notebook 15. All derivatives
+of this chosen representative below refer to that selection.
+
+The ordinary-feasible representative from Notebook 15 is gauge
+equivalent and has a separately controlled response through its
+explicit gauge formula. Its leading extension generally differs
+from $H$, while its minimized action value is exactly the same.
+Keeping these coordinates distinct gives local response theorems
+for both specified representatives and the ordinary-gauge
+interpretation of the classical action.
+
+The main analytic estimate puts an exponential weight on one
+coarse direction while keeping the other directions and the
+background unweighted. It yields decay away from a localized
+insertion and uniform higher derivatives. A fixed-exponent
+connected-tree bound involving all insertion sites at once is
+a stronger statement and is not inferred from this estimate.
+

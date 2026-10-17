@@ -1,0 +1,14 @@
+Independent cross-audit of the covariant scalar, spectral and density modules
+17 October 2026. Auditor: theorem_audit. No output files edited.
+
+1. covariant_corrected_scalar_research.txt, Sections 1--7: PASS.
+The relative contour logarithm is centered at identity, so its differential has no missing logarithm Jacobian. Endpoint covariance gives ZD=r-B with the stated left gauge sign. The ordinary-reference recursion is ordered correctly. Nested centered blocks confine every B scalar/background row to its own final block, with one scalar ancestry per site, proving B(y,x)=K^-4 Ad P_hier and BB^T=K^-4 I. Gauge covariance uses simultaneous transformation of reference and increment, not an unsupported reference cocycle. The construction deliberately uses the actual selected CMP109 contour mean, avoiding identification with a differently named older axial scalar operator. The conditional determinant consequence agrees with the independently derived tangent identity in physical_quotient_localization_research.txt.
+
+2. mean_zero_gauge_spectral_fragment.tex: PASS.
+The scalar harmonic lift has the correct counting normalization K^4 times a fine gradient K^-2, yielding the stated K^2 energy factor. The central scalar multiplier is uniformly nonzero. Block Poincare plus the transverse alias inequality gives the full vector cK^-2 gap; no point-pinned gap is used. The product tent has mean one, squared mean at most two per coordinate and the stated endpoint/gradient bounds. Both internal and interface edge counts are conservative and remain valid for periodic multiplicities N=1,2. Its duality inequality supplies full bond-Laplacian domination. Compression min--max and the added gap prove scalar/vector heat bounds; the scalar completion adds exactly the final-site color multiplicity times exp(-u). No relative curvature vertex estimate is inferred from a flat bound.
+
+3. covariant_mean_zero_density_fragment.tex: PASS.
+Both ambient operators are covariant, so diagonal block color traces are invariant. Their fixed-K spectral gap and exponential source kernels justify local logarithms and polynomial moments. The density Ward identity gives row/column sum cancellation, and the affine moment has the correct factor beta=2[t^2]rho0. The heat integrand is vector minus twice scalar, matching logGhat minus one-half logQB. The scalar added complement has background-independent determinant; in this particular block-local construction its diagonal block trace is itself constant because K^4 tr(B_y B_y^T) equals the color dimension. The distinction between a fixed-K local identity and a growing-K curvature comparison is preserved.
+
+These are internal mathematical checks, not external certification. Every actual determinant claim remains on the previously constructed homogeneous stationary germ and its local gauge orbit; fixed-K local source limits are taken in the chosen joint classical structural system.
+

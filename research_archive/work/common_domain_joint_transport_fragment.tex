@@ -1,0 +1,479 @@
+% No preamble. Common-domain joint transport, unique prefix cdj-.
+\section{Inherited interactions on a common background ball}
+\label{cdj-section}
+
+This section proves an anchored estimate for the actual inherited
+insertion of the composite macrostep. It expands only a supported
+tail around a bounded local core. The output field domain can be
+the same product ball as the input domain. This does not assert
+contraction of activity amplitudes or a complete quantum induction.
+All scalar identities are on finite compatible periodic regulators;
+all displayed anchored bounds are uniform in volume and in the
+preceding classical refinement $M$.
+
+\subsection{An abstract joint-support composition estimate}
+\label{cdj-abstract-section}
+
+Let $\Lambda_Q$ be the old carrier graph and $\Lambda_G$ the
+common Gaussian and output-background graph. A projection
+$\pi:\Lambda_Q\to\Lambda_G$ has fibers of size at most $F$,
+takes connected carriers to connected sets, and has the stated
+compression bound when used below. Let
+\begin{equation}\label{cdj-input}
+ \sup_i\sum_{H\ni i}e^{a_0|H|}\|E_H\|_b\le\epsilon,
+\end{equation}
+where $H$ is connected and $E_H$ is holomorphic in at most
+$D|H|$ scalar current-field coordinates on the radius-$b$
+product polydisc. Write $e_H=\|E_H\|_b$.
+
+The output $w$ lies in a fixed complex product ball, possibly
+of the same radius $b$. The retained fluctuation $\xi$ lies in
+its actual product of real link/color balls. For
+$|\lambda|<L_*$ suppose the field substituted in $E_H$ has
+a decomposition
+\begin{equation}\label{cdj-core-tail}
+ f_\lambda|_H=c_{H,\lambda}+v_{H,\lambda}.
+\end{equation}
+The core is holomorphic in $(w,\lambda)$, measurable in $\xi$,
+and reads both kinds of variables only in a connected carrier
+$K_0(H)$ containing $\pi H$, where
+\begin{equation}\label{cdj-core-hypotheses}
+ |K_0(H)|\le c_0+c_1|H|,\qquad
+ K_0(H)\subset N_{h_0}(\pi H),\qquad
+ \|c_{H,\lambda}\|_\infty\le b-m,\quad 0<m<b.
+\end{equation}
+For each old scalar coordinate $(i,\alpha)$ let
+\begin{equation}\label{cdj-tail-family}
+ v_{H,\lambda;i,\alpha}
+   =\sum_Xv_{H,\lambda;i,\alpha;X}
+                     (w_X,\xi|_{K_0(H)}),\qquad
+ \sup_{H,i,\alpha}\sum_X
+ e^{\kappa\tau(\{\pi i\}\cup X)}
+       \|v_{H,\lambda;i,\alpha;X}\|\le s.
+\end{equation}
+The coefficients are strict in their $w$ support $X$.
+Their $\xi$ support stays inside the same $K_0(H)$,
+even when $X$ is remote. The empty $X$ is allowed, and
+no vanishing at $w=0$ is required. A stronger complete-fiber
+norm, with the coordinate maximum inside the support sum,
+is a sufficient input. All support assignments are fixed
+independently of $\lambda$. Supremum norms include the
+retained window and smaller closed $\lambda$ discs.
+Here $\tau$ is graph Steiner length.
+
+\begin{theorem}[Joint core/tail transport]\label{cdj-transport}
+Put $t=s/m$ and suppose, for $B\ge0$ and $\delta>0$,
+\begin{equation}\label{cdj-budget}
+ t<1,\qquad B+\delta\le\kappa,\qquad
+ c_1B+D\log\frac1{1-t}\le a_0.
+\end{equation}
+There are connected strict joint carriers $K$ with coefficients
+$U_{K,\lambda}(w_K,\xi_K)$ such that
+\begin{align}
+ \sum_HE_H(f_\lambda|_H)&=\sum_KU_{K,\lambda},\notag\\
+ \|U_\lambda\|_B
+ :=\sup_z\sum_{K\ni z}e^{B|K|}\|U_{K,\lambda}\|
+ &\le C_T\epsilon,\qquad
+ C_T=e^{Bc_0+\delta h_0}F S_\delta,                     \label{cdj-transport-bound}\\
+ S_\delta&=\sup_z\sum_y e^{-\delta d(z,y)}<\infty.\notag
+\end{align}
+The identities and holomorphy follow by normally convergent
+series on smaller closed parameter domains.
+\end{theorem}
+
+\begin{proof}
+Expand only in the tail, at the varying local core:
+\[
+ E_H(c_{H,\lambda}+v_{H,\lambda})
+  =\sum_{\nu\in\mathbb N^{D|H|}}
+     c_{H,\nu,\lambda}(w,\xi)v_{H,\lambda}^{\,\nu},
+ \qquad
+ \|c_{H,\nu,\lambda}\|\le e_Hm^{-|\nu|}.
+\]
+This is scalar-coordinate product Cauchy about a center with
+the margin in \eqref{cdj-core-hypotheses}. The coefficient reads
+only $K_0(H)$. No Taylor expansion of the core is made.
+If needed take Cauchy radii below $m$ and pass to the limit.
+
+Substitute \eqref{cdj-tail-family} in each scalar occurrence,
+and join its support $X$ to its root $\pi i$ by a deterministic
+minimizing Steiner graph. Let $T$ be the sum of their lengths
+and $K$ their union with $K_0(H)$. Every $\xi$ dependency
+already lies in that core carrier. Hence $K$ is a strict
+connected joint carrier and
+\[
+ |K|\le c_0+c_1|H|+T,\qquad
+ z\in K\ \Longrightarrow\ d(z,\pi H)\le h_0+T.
+\]
+The anchored weight is bounded by
+\[
+ \mathbf1_{\{z\in K\}}e^{B|K|}
+ \le e^{Bc_0+\delta h_0}e^{-\delta d(z,\pi H)}
+      e^{Bc_1|H|}
+      \prod_{\rm occurrences}e^{(B+\delta)\tau}.
+\]
+The absolute sum of support choices and scalar multiindices
+at fixed $H$ therefore costs exactly
+\[
+ e_H e^{Bc_1|H|}\sum_\nu t^{|\nu|}
+   =e_He^{[Bc_1+D\log(1/(1-t))]|H|}.
+\]
+Repeated support choices already contain their multiplicities;
+no additional factorial is inserted. Finally
+$e^{-\delta d(z,\pi H)}
+\le\sum_{i\in H}e^{-\delta d(z,\pi i)}$.
+Use \eqref{cdj-input}, the fiber bound and
+\eqref{cdj-budget}. This gives \eqref{cdj-transport-bound},
+including anchors in the core halo or on added trees.
+The same positive majorant proves normal convergence.
+\end{proof}
+
+\subsection{The fluctuation increment retains its small factor}
+\label{cdj-increment-section}
+
+Suppose $L_*\ge2$ and $f_0$ is independent of $\xi$. Use the
+same canonical support assignment throughout the $\lambda$ disc
+and set $Q_K=U_{K,1}-U_{K,0}$. Then
+\begin{equation}\label{cdj-Cauchy-increment}
+ \sum_KQ_K=\sum_H[E_H(f_1|_H)-E_H(f_0|_H)],
+ \qquad
+ \|Q\|_B\le \frac{C_T\epsilon}{L_*-1}.
+\end{equation}
+For $1<\rho<L_*$ take the Cauchy integral in the anchored
+activity Banach space. The $n$th coefficient norm is at most
+$C_T\epsilon\rho^{-n}$. Equivalently, keep the Cauchy integral
+before the positive anchored sum and bound the whole anchored
+norm of its integrand. One must not replace this argument
+by a sum of separate carrier suprema over $\lambda$.
+Let $\rho\uparrow L_*$ and sum $n\ge1$ at $\lambda=1$.
+
+The total at $\lambda=0$ is the inherited background
+functional, not a vacuum merely because it is independent
+of fluctuations. In the actual construction below its
+coefficients can themselves be chosen $\xi$ independent.
+If
+$q=C_T\epsilon/(L_*-1)$, each $\|Q_K\|\le q$ and
+\begin{equation}\label{cdj-multiplier}
+ \sup_z\sum_{K\ni z}e^{B|K|}
+                     \|e^{Q_K}-1\|\le e^q q.
+\end{equation}
+The Gaussian multiplier is the bounded extension
+$\chi_K(\xi)(e^{Q_K}-1)$, set to zero outside the original
+retained window on $K$. On the global window this is
+exact. Additional indicators are retained separately.
+For the strict Gaussian theorem it is enough to choose
+\begin{equation}\label{cdj-Gaussian-weight}
+ B\ge4+\log\mathcal K_\theta+\kappa_G,
+\end{equation}
+since a connected $K$ has metric spanning-tree length
+$|K|-1$. Under the full precision, baseline, tail and inherited
+budgets, complex interpolation of the inherited exponent gives
+a connected-log difference bounded by a fixed constant times $q$.
+The integrated theorem below supplies this argument with the
+base exponent retained. This application also requires the
+precision and all other multipliers to have their strict $w$
+supports on this graph.
+
+\subsection{The actual local composite fluctuation map}
+\label{cdj-local-map-section}
+
+Fix the primitive $\ell$. On the final unit graph, an output
+fiber consists of all current link potentials with initial
+sites in one $R$-block, with their maximum norm. Its dimension
+is of order $dR^d\dim\mathfrak g$; it is not given an
+$\ell^1$ coordinate norm. For every prescribed finite reserve
+$A$, the supported pre-gauge theorem gives
+\begin{equation}\label{cdj-ap-family}
+ a_{p,i}(w)=\sum_Xa_{i;X}(w_X),\qquad
+ \sup_i\sum_Xe^{\kappa_0\tau(\{i\}\cup X)+A|X|}
+                       \|a_{i;X}\|_b\le C_A b/R.
+\end{equation}
+The complete-fiber maximum is inside the support sum.
+$\kappa_0,C_A$ and its domain are fixed at the primitive
+ratio before choosing $R=\ell^s$, uniformly in $s,k$.
+Every coefficient vanishes at $w=0$.
+
+For an independent small current potential $a$, define
+\[
+ V(a)=e^{ia},\qquad
+ u(a;y)=1,\quad u(a;x)=P_R(V(a);y,x),\qquad
+ V^\star(a)=V(a)^{u(a)}.
+\]
+Using the actual composite chart, put
+\begin{align}
+ \Omega_R(a,\zeta)(b)
+  &=\frac1i\log\!\left[
+    e^{\,i\operatorname{Ad}_{u(a;b_-)^{-1}}
+                 \Phi_{V^\star(a)}(\zeta)(b)}
+       e^{ia(b)}\right],\notag\\
+ \Delta_R(a,\zeta)&=\Omega_R(a,\zeta)-a,\qquad
+ \Delta_R(a,0)=0.                                      \label{cdj-actual-map}
+\end{align}
+This is defined for independent $a$ on a fixed
+$R$-dependent product ball. Stationarity is only used when
+$a=a_p(w)$ to identify the physical branch. The map itself
+is an ordinary local analytic map.
+
+A nonpivot output reads its own retained variable and
+the local endpoint gauge. A pivot output reads retained
+variables and backgrounds in its two endpoint $R$-blocks;
+all gauges on those links are internal to the same blocks.
+Thus the whole output fiber at $i$ reads $a,\zeta$ in a
+fixed neighborhood $\mathcal N(i)$. The conservative choice
+$\mathcal N(i)=B_2(i)$ contains every needed block.
+Let $N_0=\sup_i|\mathcal N(i)|$ and $r_0=2$, counting
+periodic multiplicities if necessary.
+
+Finite-dimensional holomorphy, on a slightly larger local
+domain, and the zero in \eqref{cdj-actual-map} imply
+\begin{equation}\label{cdj-local-bound}
+ \|\Delta_R(a,\zeta)_i\|
+    \le C_R^{\rm loc}\|\zeta|_{\mathcal N(i)}\|_\infty
+ \quad\text{for}\quad
+ \|a|_{\mathcal N(i)}\|_\infty,\,
+ \|\zeta|_{\mathcal N(i)}\|_\infty<\rho_R.
+\end{equation}
+Integrate the bounded $\zeta$ derivative along $t\zeta$
+to obtain the linear factor. The complete output maximum
+is retained. Constants may depend on $R$, but the map
+contains no variables at the preceding mesh $1/M$.
+
+\subsection{A supported family without summing fine coordinates}
+\label{cdj-Banach-Taylor-section}
+
+Expand only the local Banach background input:
+\[
+ \Delta_R(a,\zeta)_i
+   =\sum_{n\ge0}V_{i,n}(\zeta)[a,\ldots,a],
+ \qquad V_{i,n}=D_a^n\Delta_R(0,\zeta)_i/n!.
+\]
+Radial Cauchy bounds the diagonal homogeneous polynomial;
+complex polarization costs $n^n/n!\le e^n$. After a
+harmless radius shrink,
+\begin{equation}\label{cdj-vertex-bound}
+ \|V_{i,n}(\zeta)\|_{\rm multilinear}
+       \le C_R^{\rm loc}\|\zeta\|(e/\rho_R)^n.
+\end{equation}
+This estimates whole Banach fibers and does not sum their
+$R^d$ scalar directions. Each coefficient is holomorphic
+in $\zeta$ and zero at $\zeta=0$.
+
+Decompose each input slot over its at most $N_0$ neighboring
+fibers and insert \eqref{cdj-ap-family}. Assign the union
+of the child supports as the new $w$ support. Intermediate
+roots are Steiner vertices, so
+\begin{align}
+ \tau(\{i\}\cup\textstyle\bigcup_lX_l)
+ &\le\sum_l[\tau(\{j_l\}\cup X_l)+d(i,j_l)],\notag\\
+ |\textstyle\bigcup_lX_l|&\le\sum_l|X_l|.                \label{cdj-union}
+\end{align}
+The degree-$n$ absolute rooted norm is therefore bounded by
+\begin{equation}\label{cdj-degree-majorant}
+ C_R^{\rm loc}\|\zeta\|
+ \left[
+  \frac{eN_0e^{\kappa_0r_0}C_A b}{R\rho_R}
+ \right]^n.
+\end{equation}
+Choose $b$ so that the bracket is at most $1/2$.
+The geometric sum proves a strict family
+\begin{align}
+ \Delta_R(a_p(w),\zeta)_i
+   &=\sum_Xd_{i;X}(w_X,\zeta|_{\mathcal N(i)}),\notag\\
+ \sup_i\sum_Xe^{\kappa_0\tau(\{i\}\cup X)+A|X|}
+                        \|d_{i;X}\|
+   &\le C_R\|\zeta\|.                                  \label{cdj-joint-family}
+\end{align}
+This keeps the coordinate maximum inside the support sum
+and bounds each degree before summing; no supremum/order
+interchange is used. The empty support coefficient
+$V_{i,0}(\zeta)$ is retained. It is a local fluctuation
+function independent of $w$, not a vacuum constant.
+Every $d_{i;X}$ vanishes at $\zeta=0$.
+
+For the actual retained threshold $T$ set
+\begin{equation}\label{cdj-lambda-field}
+ f_\lambda(w,\xi)=\Omega_R(a_p(w),\lambda g\xi).
+\end{equation}
+Its background and fluctuation families obey
+\begin{equation}\label{cdj-full-family}
+ \|a_p\|_{\kappa_0,A;b}\le C_A b/R,\qquad
+ \|f_\lambda-a_p\|_{\kappa_0,A;b,T}
+                      \le C_R|\lambda|\,|g|T.
+\end{equation}
+Every output-root coefficient reads $\xi$ only in
+$\mathcal N(i)$, regardless of how far its $w$ support
+extends. Choose
+\begin{equation}\label{cdj-lambda-radius}
+ R\ge8C_A,\qquad
+ L_*=\frac{b}{8C_R|g|T}\ge2,\qquad L_*|g|T<\rho_R.
+\end{equation}
+The last condition is another fixed upper bound on $b$.
+On this disc the absolute family norm of $f_\lambda$ is
+at most $b/4$. Thus any truncation by its support labels
+has component amplitude at most $b/4$. At $\lambda=0$
+the family is exactly that of $a_p$, independent of $\xi$.
+
+\subsection{The core halo and the tail after auxiliary grouping}
+\label{cdj-grouping-section}
+
+Set $\kappa_t=\kappa_0/2$. Put the labels
+$X\subset B_{\ell_{\rm tail}}(i)$ in the core, including
+the empty support, and all other labels in the tail.
+Every tail label has
+$\tau(\{i\}\cup X)>\ell_{\rm tail}$, hence
+\begin{equation}\label{cdj-unit-tail}
+ \sup_i\sum_{\rm tail\ X}
+ e^{\kappa_t\tau(\{i\}\cup X)+A|X|}
+                  \|f_{\lambda;i;X}\|
+ \le(b/4)e^{-(\kappa_0/2)\ell_{\rm tail}}.
+\end{equation}
+Both families still read $\xi$ only in $\mathcal N(i)$.
+The core's actual component amplitude is at most $b/4$.
+
+Group the source/final-unit cells into centered odd $J$-blocks,
+conveniently $J=\ell^j$. These Gaussian macrocells have
+side $JR$ in current units and become $J$-blocks of the next
+current lattice. Old quantum carriers are $J$-blocks of
+the current lattice. Their projection $\pi_R$ to Gaussian
+macrocells has ratio $R$ and fiber $R^d$.
+Both tilings refine the common centered $JR$ tiling.
+
+For any desired fixed macro tail exponent $\kappa$,
+\[
+ \tau_{\rm macro}(\{\rho_J i\}\cup\rho_JX)
+ \le2J^{-1}\tau_{\rm unit}(\{i\}\cup X)+d|X|.
+\]
+Thus $2\kappa/J\le\kappa_0/2$ and $A\ge d\kappa$
+pay the projection. Taking the complete macro output
+maximum inside the support sum costs at most $J^d$
+old output roots, giving
+\begin{equation}\label{cdj-macro-tail}
+ s_{\rm tail}\le J^d(b/4)e^{-(\kappa_0/2)\ell_{\rm tail}}.
+\end{equation}
+Each old $J$-current input fiber is a restriction of
+the containing whole $JR$ macro output fiber, so it
+inherits this bound at its projected macro root.
+There is no further sum over its scalar coordinates here.
+
+If $\ell_{\rm tail}+r_0\le J$, a conservative joint core
+carrier for a connected old $H$ is
+\begin{equation}\label{cdj-actual-core}
+ K_0(H)=N_{\infty,2}(\pi_RH).
+\end{equation}
+It is connected and contains every core $w$ dependency
+and every $\xi$ dependency of every tail term for outputs
+in $H$. In particular
+\[
+ |K_0(H)|\le5^d|\pi_RH|,\qquad
+ K_0(H)\subset N_{2d}(\pi_RH).
+\]
+Declaring the whole halo only enlarges the support.
+The distant background labels do not bring distant
+fluctuation dependencies.
+
+Connected-carrier compression at odd $R\ge5$ gives
+\[
+ |\pi_RH|\le2^d+(2^d/k_R)|H|,
+ \qquad k_R=1+\lfloor(R-3)/4\rfloor.
+\]
+The abstract theorem therefore uses
+\begin{equation}\label{cdj-actual-constants}
+ c_0=5^d2^d,\quad c_1=\frac{5^d2^d}{k_R},
+ \quad h_0=2d,\quad F=R^d,\quad m=b/2.
+\end{equation}
+Its scalar-coordinate count is the actual old quantum-cell
+value
+\begin{equation}\label{cdj-D}
+ D(J)=dJ^d\dim\mathfrak g,
+\end{equation}
+not the retained Gaussian dimension.
+
+\subsection{A noncircular choice of parameters on the same ball}
+\label{cdj-parameters-section}
+
+Fix $B$ using a dimension-independent upper bound in
+\eqref{cdj-Gaussian-weight}, before choosing $R,J$.
+For example $\kappa_G=2$, $m_G=3$ and the eventual choice
+$\theta=1/(4D_G)$ give $\log\mathcal K_\theta\le5/8$
+for every $D_G$, so $B=53/8$ can be fixed now.
+The later Gaussian dimension changes $\theta$, not $B$.
+Fix $\delta>0$, choose $\kappa\ge B+\delta$, and choose
+the finite reserve $A\ge d\kappa$ in
+\eqref{cdj-ap-family}. Its constants are then fixed
+at primitive $\ell$.
+
+Choose $R=\ell^s$ large enough that
+\begin{equation}\label{cdj-R-choice}
+ R\ge8C_A,\qquad
+ \frac{5^d2^d}{k_R}B\le a_0/2.
+\end{equation}
+Choose $J=\ell^j$ large enough for the above spatial
+projection and the separate classical/Gaussian regrouping
+conditions. With
+$\ell_{\rm tail}=c\log J+O(1)$, where $c>4d/\kappa_0$,
+one has $\ell_{\rm tail}+r_0\le J$ eventually, while
+\begin{equation}\label{cdj-dimension-tail}
+ D(J)\frac{s_{\rm tail}}m
+ \le\frac{d\dim\mathfrak g}{2}J^{2d}
+          e^{-(\kappa_0/2)\ell_{\rm tail}}\longrightarrow0.
+\end{equation}
+Increase $J$ and the fixed offset so that
+$s_{\rm tail}/m\le1/2$ and
+$D(J)\log[1/(1-s_{\rm tail}/m)]\le a_0/2$.
+These choices are independent of $b$: it cancels from
+the tail-to-margin ratio.
+
+Now choose $b$ once below all classical and chart radii,
+including \eqref{cdj-degree-majorant} and
+\eqref{cdj-lambda-radius}. Finally choose $|g|T$ for
+$L_*\ge2$ and the desired interaction budgets.
+The same radius $b$ is the incoming inherited domain
+and the outgoing background domain. It has not been
+replaced by a smaller recursive $b/C$ at this step.
+
+The actual map now supplies all the hypotheses of
+Theorem~\ref{cdj-transport}. Equations
+\eqref{cdj-Cauchy-increment} and
+\eqref{cdj-lambda-radius} yield the strict joint bound
+\begin{equation}\label{cdj-actual-increment}
+ \|U_1-U_0\|_B
+ \le\frac{C_T\epsilon}{L_*-1}
+ \le16 C_T C_R\frac{|g|T}{b}\epsilon,\qquad
+ C_T=e^{B5^d2^d+2d\delta}R^dS_\delta.
+\end{equation}
+The exact inherited multiplier norm is at most $e^q q$
+with $q$ the first bound in
+\eqref{cdj-actual-increment}. The total $U_0$ is
+$E(a_p(w))$, with the same stronger carrier bound
+$C_T\epsilon$, and can be chosen termwise independent
+of $\xi$. It has no $g$ factor and is retained as a
+background activity, not discarded as a vacuum.
+
+\subsection{Scope of the common-domain estimate}
+\label{cdj-scope}
+
+The finite-regulator identity and gauge comparison are
+those of the composite integral module: on the common
+overlap total gauge invariance identifies
+$f_\lambda$ with the actual rooted insertion, while
+the pre-gauge expression defines its continuation on
+the common $b$-ball. No coefficientwise gauge invariance,
+fine-coordinate $\ell^1$ count, or rooted $1/R$ angle
+contraction is assumed.
+
+The precision and purely classical base multipliers
+must also be supplied with strict background/joint
+supports on this graph before applying the Gaussian
+theorem directly in $w$. They have independent classical
+domains and arbitrary finite classical support reserves;
+their interface is a separate module. Uniform complex
+nonvanishing follows only after all cluster hypotheses
+and budgets have been met.
+
+The constants here may be extremely large.
+The background term has a finite prefactor, not a
+contraction, and only the fluctuation difference gains
+$|g|T/b$. Vacuum and marginal extraction, coupling flow,
+large-field complements, mixed histories and observable
+bounds remain additional requirements for an existence
+proof.

@@ -1,0 +1,2358 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 29: total Ward extraction and classical spatial gain}
+\author{Research working document}
+\date{17 October 2026}
+\setlength{\emergencystretch}{5em}
+\begin{document}
+\maketitle
+\begin{abstract}
+We continue the existence construction by treating the low field degrees
+left open by the high-degree estimate of Notebook 28. The actual local
+macrostep preserves output translations and the hypercubic group, under
+the selected averaging map's stated permutation axiom. Its total
+correction obeys the nonlinear gauge identities. Uniform kernel
+locality permits a joint subsequential limit of vacuum-normalized
+analytic interactions and coherent classical background families. There, the
+quadratic, cubic and quartic marginal vertices are all fixed by one
+coefficient multiplying a normalized gauge-invariant reference action.
+The actual homogeneous classical action has the required normalization,
+so this extraction has an exact algebraic coupling rebase.
+
+We also propagate complete first-gradient H\"older regularity through
+the ordinary averaging prefix, including strict support families.
+Using total moment cancellations before assigning carriers, an exact
+lattice factorization puts one difference on each quadratic factor.
+Together with cubic and quartic spatial subtraction, this gives a
+connected-activity bound of order \(C(J)L^{-\alpha}\) for the canceled
+low-degree background, under the specified coherent-family and
+infinite-kernel hypotheses. The coefficient \(C(J)\) is retained:
+it cannot be defeated by a ratio chosen before \(J\).
+Two ordinary minimum comparisons prove a classical background
+semigroup modulo gauge. This allows a finite endpoint ratio
+\(L=R^q\) to be chosen after fixing the elementary ratio \(R\)
+and grouping \(J\).
+An activity space modulo equality of normalized totals is Banach.
+The full-reference extraction is bounded independently of the
+small analytic radius, and classical background substitution
+descends to this quotient. Combining the low- and high-degree
+estimates gives a classical contraction under the stated joint
+map and support hypotheses.
+
+These results give a gauge-compatible marginal classification,
+a quantitative classical localization of its remainder, and a
+complete space in which the representation can change. They do
+not yet establish that the actual quantum update descends to
+this space with the required finite-regulator compatibility,
+the required coupling trajectory,
+or the remaining large-field and continuum construction.
+\end{abstract}
+
+The objective remains a complete existence proof for a nontrivial
+four-dimensional Yang--Mills theory. The preceding notebooks establish
+the homogeneous classical branch and a local quantum macrostep.
+This notebook distinguishes exact finite-regulator local identities
+from jointly extracted infinite analytic interactions and from the
+operator estimates that require those coherent limiting families.
+The compactness argument connects these levels at fixed parameters;
+it does not provide a universal quantum update on all such limits.
+Gauge invariance is required of the total functional,
+not of each chosen activity coefficient.
+
+
+\section{Actual macrostep symmetries and the quadratic tensor}
+\label{msy-section}
+
+This section concerns the actual local composite sector and its
+common-domain analytic continuation. It does not assert equality of
+different gauge sectors or spatial symmetry of an arbitrary measurable
+completion outside the analytic domain. The input total density must
+have the spatial symmetries under consideration.
+
+\subsection{Symmetries of the exact local integral}
+\label{msy-integral-section}
+
+Fix the odd primitive ratio \(\ell\), a finite power \(R=\ell^s\), and
+the centered nested blocks of the composite construction. Use compatible
+\emph{cubic} tori, with distinct lifted interfaces as in the geometric
+proof. The sufficiently large auxiliary grouping \(J\) can be chosen
+as a power of \(\ell\), preserving a cofinal family of source tori.
+On rectangular tori only permutations preserving the side lengths
+are available.
+
+The selected source mean is assumed to obey its permutation axiom
+as well as the endpoint covariance already used in the construction.
+The all-coordinate-order contour family and this axiom are the
+properties stated in Ba{\l}aban, CMP 109 (1987), pp.~252--254,
+especially (0.7). The implicit mean (0.10) is an admissible example;
+it is not the definition of every permitted mean.
+
+\begin{proposition}[Exact spatial symmetry of the local sector]
+\label{msy-spatial-proposition}
+Suppose the complete input density is invariant under the relevant
+spatial transformations on the common small domain. The composite
+constraint, independent direct-\(R\) internal contour gauge, physical
+centered branch and actual retained link/color-ball integral commute
+with
+\begin{equation}
+ x\longmapsto Sx+Rn,\qquad
+ n\in\mathbb Z^d,\quad
+ S\text{ a signed coordinate permutation}.
+ \label{msy-space-group}
+\end{equation}
+After the output lattice is rescaled by \(R\), these give all its unit
+translations and the full hypercubic point group. The same symmetries
+hold for the total generated correction on the common zero-free
+holomorphic domain, with its compatible logarithm branch.
+\end{proposition}
+
+\begin{proof}
+Every transformation in \eqref{msy-space-group} preserves each level
+of the centered hierarchy. It permutes the coordinate-order contour
+family. The mean's permutation axiom therefore makes the contour
+maps equivariant. Orientation reversal of an ordinary coarse bond
+also respects the averaging formula. If that formula is written as
+\[
+ F=\exp\!\left\{N^{-1}\sum_x\log(U_xT^{-1})\right\}T,
+\]
+the reversed strings and reference are \(U_x^{-1},T^{-1}\), and
+\begin{equation}
+ \log(U_x^{-1}T)
+     =-\operatorname{Ad}_{T^{-1}}\log(U_xT^{-1}),
+ \qquad F_{\rm reverse}=F^{-1}.
+ \label{msy-average-reversal}
+\end{equation}
+The primitive maps, their composition and the separate direct-\(R\)
+contour map consequently commute with the transformation. The
+centerline interface pivots are preserved as unoriented bonds.
+
+The relative-coordinate calculation is essential. For
+\(U_b=e^{iB_b}V_b\), a reversed bond satisfies
+\begin{equation}
+ U_b^{-1}
+   =e^{-i\operatorname{Ad}_{V_b^{-1}}B_b}V_b^{-1}.
+ \label{msy-relative-reversal}
+\end{equation}
+At fixed real \(V\), this is an orthogonal linear color map.
+Together with the bond permutation it induces an orthogonal map
+\(D_{S,V}\) on the retained coordinates. Uniqueness of the small
+pivot solution gives
+\begin{equation}
+ \Phi_{SV}(D_{S,V}z)
+       ={\cal R}_{S,V}\Phi_V(z),
+ \label{msy-chart}
+\end{equation}
+where \({\cal R}_{S,V}\) is the full relative-bond transformation.
+Thus the original window
+\(\prod_{b\ {\rm retained}}1_{\{|z_b|\le gT\}}\)
+is preserved with absolute Jacobian one. No complex change of a
+sharp indicator is used.
+
+The transformed physical branch is feasible, has all internal
+contours equal to the identity, and has the same constrained
+classical value and stationarity. Common-domain uniqueness yields
+\(V_*(SW)=SV_*(W)\). The homogeneous classical action has the
+required value symmetry by applying the same transformations
+to its defining ordinary-constraint minimization; the fine Wilson
+action and small global norm class are preserved.
+
+Haar factors are invariant under inverses and conjugation. A pivot
+derivative transforms by the relative coarse and pivot color maps.
+On a reversed bond both have determinant
+\((-1)^{\dim\mathfrak g}\); their adjoint factors have determinant
+one. The signs cancel in the ratio. Permutations merely relabel
+the factors. This accounts for both the background delta
+determinant and the normalized straightening determinant.
+
+The chart action plus absolute gauge penalty satisfies
+\(T_{SV}(D_{S,V}z)=T_V(z)\). The map \(D_{S,V}\) is independent
+of \(z\), so constant, linear and quadratic Taylor terms transform
+separately, also in the centered independent-background extension.
+The Hessian transforms by orthogonal congruence, preserving the
+normalized Gaussian and its determinant. The fixed flat determinant
+is the same scalar denominator. The retained change of variables
+therefore proves equality of the real local integrals.
+
+The complete inherited insertion agrees with its pre-gauge
+representation on the original common domain. Its assumed
+spatial invariance and holomorphic uniqueness extend the total
+identity to the common-domain continuation. No symmetry of its
+individual activity coefficients is required. Finally the proved
+zero-free cluster domain and common branch give equality of
+logarithms. Holomorphy alone would not imply this last step.
+\end{proof}
+
+Auxiliary \(J\)-grouping reorganizes the exact retained product
+window and finite integral; it does not alter their scalar total.
+Its fixed carrier grid and deterministic trees may break symmetry
+at coefficient level. The proposition concerns their sum.
+Additional genuine block-norm or asymmetric cutoff restrictions
+would require a new check. A color-coordinate cube is not a
+substitute for the invariant linkwise color balls.
+
+There is an explicit obstruction to current-lattice unit
+translations for the fixed sector. A pure gauge with a small
+nonzero phase \(t\) at one block root and zero elsewhere has
+absolute contour penalty
+\[
+ (R^d-1)q(e^{it}),\qquad
+ q(U)=1-\tfrac12\tau(U+U^{-1}).
+\]
+Moving that phase one current unit to a nonroot gives only
+\(q(e^{it})\). This does not conflict with output unit translations,
+whose current lift is \(R\).
+
+The measurable completion using an ordered reference contour and
+fallback is gauge equivariant, but its global spatial equivariance
+has not been proved. The proposition does not concern that
+completion or the uncontrolled complement. If needed, averaging
+transformed sector--complement decompositions preserves their
+exact sum when the blocking map and input are equivariant.
+Averaging conjugated asymmetric blocking kernels instead defines
+a new Markov blocking kernel; it is not equality with the original
+deterministic map. No such change is made here.
+
+\paragraph{Charge conjugation.}
+For \(SU(2)\), \(U\mapsto\overline U\) is conjugation by
+\(i\sigma_2\), hence is already a constant gauge transformation.
+It is exact on the same domains. For \(SU(N)\), the holomorphic
+automorphism is \(U\mapsto(U^{-1})^T\), with orthogonal real Lie
+map \(A\mapsto-A^T\). The implicit mean
+\(\sum_j\log(U_jP^{-1})=0\) commutes with this automorphism
+by local uniqueness. The proof then applies if the complete
+input is also invariant. For a different unspecified allowed
+mean, this outer-automorphism covariance is an extra property
+to verify; reality alone is not a proof.
+
+\subsection{Uniform Hessian decay and a kernel limit}
+\label{msy-kernel-section}
+
+Let the \emph{total} output correction have connected activities
+on output \(J\)-cells:
+\begin{equation}
+ F(w)=\sum_{H\ {\rm connected}}F_H(w_H),\qquad
+ \sup_I\sum_{H\ni I}e^{a_0|H|}\|F_H\|_b\le\epsilon.
+ \label{msy-activity-norm}
+\end{equation}
+Here the supremum is on a scalar-coordinate polydisc of radius
+\(b\); a color-ball domain may be replaced by a contained scalar
+polydisc. Write \(D_0=d(\dim\mathfrak g)J^d\) for an upper bound
+on the scalar coordinate count in a cell. All parameters are
+uniform in volume and preceding homogeneous depth; \(J\) is fixed.
+
+For bond/color coordinates \(i,j\), let \(\xi_i,\xi_j\) be their
+bond midpoints and \(K_{ij}=\partial_i\partial_jF(0)\).
+Cauchy gives
+\[
+ |\partial_i\partial_jF_H(0)|\le2b^{-2}\|F_H\|_b.
+\]
+If connected \(H\) contains both cells, their midpoint distance
+is at most \(J(|H|+d)\), using shortest distance on a torus.
+Sum the at most \(D_0|H|\) second coordinates before the
+anchored support sum. With \(\mu_0=a_0/(2J)\), this proves
+\begin{equation}
+ \sup_i\sum_j e^{\mu_0|\xi_i-\xi_j|_1}|K_{ij}|
+ \le {\cal M}:=
+ \frac{2D_0e^{a_0d/2}\epsilon}{b^2}
+                  \sup_{n\ge1}n e^{-a_0n/2}.
+ \label{msy-exponential-row}
+\end{equation}
+No symmetry of the activity decomposition was used.
+
+For the real quadratic classification assume \(F\) is real on real
+small fields, as for the physical positive density and its real
+logarithm. Complex inputs have the same algebraic classification
+with a possibly complex \(\beta\).
+For a compact semisimple group, constant gauge invariance
+gives \(DF(0)=0\). Differentiate local gauge invariance once
+in a site gauge and once in a field direction. The derivative
+of its nonlinear generator is multiplied by \(DF(0)\), so
+the exact position-space Ward identity is
+\begin{equation}
+ K D=0,
+ \label{msy-Ward-realspace}
+\end{equation}
+with \(D\) the output unit gradient.
+
+Take an exhausting sequence of compatible cubic tori and
+assume the uniform bound \eqref{msy-exponential-row}.
+A diagonal subsequence gives a kernel limit at every fixed
+displacement. Fatou preserves exponential summability.
+Translation covariance, signed permutations, Hessian symmetry
+and the finite-difference identity \eqref{msy-Ward-realspace}
+pass at fixed displacements. This supplies an infinite-lattice
+kernel, not a probability measure, uniqueness statement or
+continuum limit.
+
+This limiting step is substantive. Finite periodic Ward
+identities hold only at their allowed momenta and do not
+by themselves imply a vanishing zero-momentum mass
+coefficient. Small gauge-invariant winding terms are possible.
+No interpolation of finite discrete momenta is used below.
+
+\subsection{Midpoint Fourier classification with a remainder bound}
+\label{msy-classification-section}
+
+Constant adjoint invariance makes the color structure scalar
+on each simple ideal. Cross terms between distinct simple
+ideals vanish. Work with one such spatial kernel
+\(k_{\mu\nu}(r)\). Define
+\begin{equation}
+ \widetilde K_{\mu\nu}(p)=
+ \sum_r k_{\mu\nu}(r)
+       e^{ip\cdot(r+(e_\nu-e_\mu)/2)},\qquad
+ \widehat p_\mu=2\sin(p_\mu/2).
+ \label{msy-midpoint}
+\end{equation}
+The exponential bound makes the symbol analytic near zero.
+The limiting position-space Ward identity yields
+\begin{equation}
+ \widetilde K(p)\widehat p=0
+       \quad\text{for every real }p.
+ \label{msy-Ward-symbol}
+\end{equation}
+At \(p=te_\mu\ne0\), this kills \(e_\mu\); continuity gives
+\(\widetilde K(0)=0\). Full inversion gives
+\(\widetilde K(-p)=\widetilde K(p)\). Reality and Hessian
+symmetry make the symbol real symmetric for real \(p\).
+Midpoint coordinates give the phase-free signed-permutation
+law and eliminate odd Taylor degrees.
+
+\begin{theorem}[Quadratic Maxwell tensor]
+\label{msy-Maxwell-theorem}
+Under the preceding total symmetries, Ward identity and
+uniform kernel hypotheses, each simple color factor has
+a real coefficient \(\beta\) such that
+\begin{equation}
+ \widetilde K(p)
+ =\beta\bigl(|p|^2I-pp^T\bigr)+O(|p|^4)
+ =\beta\bigl(|\widehat p|^2I-
+                      \widehat p\widehat p^T\bigr)+O(|p|^4).
+ \label{msy-Maxwell-expansion}
+\end{equation}
+The estimate concerns the subsequential infinite kernel;
+it is not an assertion about a continuous interpolation
+of a finite-volume symbol.
+\end{theorem}
+
+\begin{proof}
+Signed reflections force the degree-two part to have only
+squares on its diagonal and \(p_\mu p_\nu\) off diagonal.
+Permutations identify their coefficients:
+\[
+ (K_2)_{\mu\mu}=A p_\mu^2+
+                  B\sum_{\nu\ne\mu}p_\nu^2,\qquad
+ (K_2)_{\mu\nu}=C p_\mu p_\nu\quad(\mu\ne\nu).
+\]
+The cubic part of \eqref{msy-Ward-symbol} is \(K_2(p)p=0\).
+Its polynomial coefficients give \(A=0\) and \(C=-B\).
+Put \(\beta=B\). Analyticity and parity give the fourth-order
+remainder, and \(\widehat p=p+O(|p|^3)\) gives its second form.
+\end{proof}
+
+For explicit constants set
+\begin{equation}
+ M_n=\max_\mu\sum_{\nu,r}
+ |r+(e_\nu-e_\mu)/2|_1^n\,|k_{\mu\nu}(r)|.
+ \label{msy-moments}
+\end{equation}
+For \(n>0\), \eqref{msy-exponential-row} gives
+\[
+ M_n\le{\cal M}\left(\frac{n}{e\mu_0}\right)^n,
+ \qquad |\beta|\le M_2/2.
+\]
+The even cosine Taylor remainder yields, for real \(p\),
+\[
+ \|\widetilde K(p)-K_2(p)\|_{\rm op}
+               \le M_4\|p\|_\infty^4/24.
+\]
+Using \(|2\sin(t/2)-t|\le|t|^3/24\) in every row,
+for \(\|p\|_\infty\le1\) we obtain
+\begin{equation}
+ \left\|\widetilde K(p)
+       -\beta\bigl(|\widehat p|^2I-
+                        \widehat p\widehat p^T\bigr)\right\|_{\rm op}
+ \le\left(\frac{M_4}{24}+\frac d6|\beta|\right)
+                              \|p\|_\infty^4 .
+ \label{msy-quantitative-remainder}
+\end{equation}
+Real symmetry turns the absolute row estimate into the
+operator estimate. Without coordinate permutations there
+need not be a single \(\beta\): unequal plaquette-orientation
+coefficients already give a local gauge-invariant action
+with translations and axis reflections but several
+quadratic coefficients.
+
+\subsection{Scope for a subsequent extraction}
+\label{msy-scope-section}
+
+The preceding argument establishes actual output-lattice
+symmetry of the local \(SU(2)\) integral and the resulting
+quadratic classification. It determines neither the sign
+of \(\beta\) nor asymptotic freedom. The uniform flat
+classical normalization is a separate, already available
+input: the explicit alias formula in Notebook07 gives
+\[
+ q_{M,\mathrm{mid}}(p)=|p|^2I-pp^T+O(|p|^4)
+\]
+uniformly in \(M\). Together with the homogeneous minimizer's
+identification of \(q_M\) as \(D^2S_M(0)\), this supplies
+the classical quadratic normalization in that scope.
+Ellipticity alone would not have supplied it.
+
+Subtracting \(\beta\) times the normalized standard Wilson
+plaquette functional is a gauge-invariant scalar subtraction
+whose residual quadratic kernel satisfies
+\eqref{msy-quantitative-remainder}. A localized nonlinear
+extraction, the higher-field Ward completion, finite-volume
+winding control and stable relevant/marginal flow remain
+additional steps. Coefficientwise high-field-jet
+contraction by itself does not supply them.
+
+% No preamble. Prefix pgh-. Finite compatible regulators throughout.
+\section{H\"older regularity through an ordinary prefix}
+\label{pgh-section}
+
+Fix the primitive odd ratio $\ell$ and $0<\alpha<1$. Write
+$N=MR=\ell^{k+s}$, $\eta=N^{-1}$ and $h=\ell^k\eta=R^{-1}$.
+Physical next-coarse spacing is one. Define the physical prefix map
+\begin{equation}
+ P_h(A)=\frac1{ih}\log M_\ell^k(e^{i\eta A}).
+ \label{pgh-prefix}
+\end{equation}
+The established ordinary-trajectory theorem gives a common complex
+supremum ball on which $P_h$ is holomorphic, vanishes at zero and
+$\|P_h(A)\|_\infty\le K\|A\|_\infty$, uniformly in $M,R$ and
+compatible periodic volume. Its dependency radius is at most
+$c_\ell h$ in physical coordinates. Nested centered partitions give
+\begin{equation}
+ P_h(T_zA)=T_zP_h(A),\qquad z\in h\mathbb Z^d.
+ \label{pgh-covariance}
+\end{equation}
+Only these aligned translations are asserted. Use the complete norm
+\[
+ \|A\|_{\mathcal N_{\alpha,\eta}}
+ =\|A\|_\infty+\|\nabla_\eta A\|_\infty
+                         +[\nabla_\eta A]_\alpha,
+\]
+with physical distances and equivalent fixed-collar versions on
+periodic lifts. Constants below depend on the primitive ratio,
+$\alpha$ and the group, not on $M,R$ or auxiliary grouping $J$.
+
+\begin{lemma}[Uniform complete-field prefix bound]
+\label{pgh-prefix-lemma}
+On a smaller fixed ball,
+\begin{equation}
+ \|P_h(A)\|_{\mathcal N_{\alpha,h}}
+ \le C\bigl(\|A\|_{\mathcal N_{\alpha,\eta}}
+                   +\|A\|_{\mathcal N_{\alpha,\eta}}^2\bigr).
+ \label{pgh-prefix-bound}
+\end{equation}
+The map is holomorphic into the complete output space with uniform
+Banach Cauchy derivative bounds.
+\end{lemma}
+\begin{proof}
+Uniform supremum holomorphy bounds $DP_h,D^2P_h$ on a smaller
+supremum ball by constants $K_1,K_2$. For $T_h=T_{he_\mu}$,
+$\nabla_hA=(T_hA-A)/h$ is an average of fine gradients; its
+supremum and H\"older seminorm are bounded by those of
+$\nabla_\eta A$. Equation~\eqref{pgh-covariance} gives
+\begin{equation}
+ \nabla_hP_h(A)=\int_0^1
+ DP_h\bigl(A+t(T_hA-A)\bigr)\nabla_hA\,dt.
+ \label{pgh-gradient-identity}
+\end{equation}
+If $\|A\|_{\mathcal N_{\alpha,\eta}}\le b$, this bounds the output
+gradient by $K_1b$. Translate by $z\in h\mathbb Z^d$ and subtract.
+The change in direction costs $CK_1b|z|^\alpha$. The derivative
+operator changes by at most
+$K_2\|T_z((1-t)A+tT_hA)-((1-t)A+tT_hA)\|_\infty$.
+After multiplication by $\|\nabla_hA\|_\infty$, this costs
+$CK_2b^2|z|$, hence $CK_2b^2|z|^\alpha$ when $|z|\le1$.
+For larger shifts the gradient supremum suffices. This proves
+\eqref{pgh-prefix-bound}, including periodic lifts and short tori
+with incidences counted with multiplicity. All interpolation
+segments lie in the common complex ball. At each finite regulator
+the map is holomorphic between finite-dimensional normed spaces;
+the displayed uniform bound on the complete-field ball and
+Banach Cauchy give uniform complete-output derivative bounds.
+No ordinary-average physical adjoint is used.
+\end{proof}
+
+\subsection{Supported pre-gauge fields and their differences}
+\label{pgh-support-section}
+
+Let the established ordinary representative be
+$A_{\mathrm o,N}(w)=T_N(A_{\mathrm c,N}(w))$, with
+$\|A_{\mathrm o,N}(w)\|_{\mathcal N_{\alpha,\eta}}
+\le C_{\mathrm o}\|w\|_\infty$. Define
+\begin{equation}
+ a_p(w)=hP_h(A_{\mathrm o,N}(w)),\qquad
+ e^{ia_p}=M_\ell^k(e^{i\eta A_{\mathrm o,N}(w)}).
+ \label{pgh-pregauge}
+\end{equation}
+This is the selected representative before the rooted current
+gauge. It is not a regularity assertion for every gauge-equivalent
+representative. Lemma~\ref{pgh-prefix-lemma} implies
+\begin{equation}
+ \|a_p(w)\|_{\mathcal N_{\alpha,h}}
+                  \le Ch\|w\|_\infty.
+ \label{pgh-angle-norm}
+\end{equation}
+In current-unit coordinates, let $\Delta_\mu$ be the unscaled
+difference between adjacent $h$-lattice sites. Thus, on $\|w\|<b$,
+\begin{equation}
+ \|a_p\|_\infty\le Cbh,\qquad
+ \|\Delta_\mu a_p\|_\infty\le Cbh^2,\qquad
+ \|\Delta_\nu\Delta_\mu a_p\|_\infty
+                         \le Cbh^{2+\alpha}.
+ \label{pgh-scale-bounds}
+\end{equation}
+More generally, for an integer current-lattice shift $z$,
+\begin{equation}
+ |\Delta_\mu a_p(x+z)-\Delta_\mu a_p(x)|
+                  \le Cbh^{2+\alpha}|z|^\alpha.
+ \label{pgh-shift-bound}
+\end{equation}
+For physical shifts longer than one, the gradient supremum
+proves the same bound. Periodic distances use compatible lifts.
+The second-difference estimate uses first-gradient H\"older
+regularity; it does not assert a uniform classical $C^2$ bound.
+
+Let support labels refer to final physical unit cells and let
+$\tau$ be graph Steiner length. Fix an admissible spatial exponent
+$\kappa>0$ from the classical support theorem and any prescribed
+finite cardinality reserve $a\ge0$. For an output root $i$, use
+one complete $h$-field fiber $E_{h,i}$ with the local
+$\mathcal N_{\alpha,h}$ norm on a fixed enlarged collar of $i$,
+including all required difference endpoints and H\"older quotients.
+
+\begin{proposition}[Complete-output strict supports]
+\label{pgh-support-proposition}
+There are $r_a,C_a>0$, independent of $M,R$ and volume, and strict
+holomorphic families
+\begin{equation}
+ a_p|_i=\sum_{X\ne\varnothing}a_{p;i,X}(w_X),\qquad
+ a_{p;i,X}(0)=0,
+ \label{pgh-family}
+\end{equation}
+such that, for $0<r\le r_a$,
+\begin{equation}
+ \sup_i\sum_X e^{\kappa\tau(\{i\}\cup X)+a|X|}
+       \|a_{p;i,X}\|_{E_{h,i};r}\le C_a h r.
+ \label{pgh-family-bound}
+\end{equation}
+The linear supported part has bound $C_ahr$ and the nonlinear
+remainder has bound $C_ahr^2$, after a fixed radius reduction.
+\end{proposition}
+\begin{proof}
+Use the classical support theorem's smooth partition and input
+Banach spaces of complete supported fine fields. Reconstruction
+has a uniform norm $C_{\mathrm{rec}}$; no sharply restricted
+H\"older field is extended. The map $P_h\circ T_N$ is uniformly
+holomorphic into $E_{h,i}$ by Lemma~\ref{pgh-prefix-lemma} and
+the ordinary-transfer theorem. Its row reads at most a fixed
+number $N_0$ of input physical cells in a fixed radius $r_0$.
+This follows from the $O(h)$ prefix range and the fixed physical
+range of $T_N$.
+
+On a common complete-field radius $\rho_1$, Cauchy and
+polarization, followed by summing only the input cell slots,
+give the mixed degree-$n$ majorant
+\begin{equation}
+ v_n\le K
+ \left(\frac{eC_{\mathrm{rec}}N_0e^{\kappa r_0}}{\rho_1}\right)^n
+       =Kc^n,\qquad n\ge1.
+ \label{pgh-vertex-bound}
+\end{equation}
+The output collar can contain $O(R^d)$ bonds, but its complete
+norm is one Banach output norm, taken before the support sum.
+No output coordinate count occurs in \eqref{pgh-vertex-bound}.
+
+Substitute the corrected minimizer's complete-field support
+family, whose norm with the prescribed reserve is at most
+$C'_ar$. Rooted Steiner trees glue at the input slot roots,
+and $e^{a|\cup_qX_q|}\le\prod_qe^{a|X_q|}$. Hence the resulting
+series is bounded by $\sum_{n\ge1}K(cC'_ar)^n$, at most
+$2KcC'_ar$ when $cC'_ar\le1/2$. Multiplication by $h$ proves
+\eqref{pgh-family-bound}. Use one global Taylor/partition assignment
+and group by the union of input variable supports before restricting
+complete output coefficients to collars. Their restrictions on
+overlapping collars agree; arbitrary separate decompositions at
+different output roots are not used. Absolute convergence in the complete
+local output norm identifies the evaluated series with
+\eqref{pgh-pregauge}. Separating its linear terms gives the
+quadratic remainder estimate. Applying the bounded difference
+maps on the enlarged collars yields the weighted family versions
+of \eqref{pgh-scale-bounds}--\eqref{pgh-shift-bound}.
+\end{proof}
+These are finite-regulator coefficients and can retain dependence
+on the fixed regulator and baseline. Volume consistency is not
+asserted. A larger prescribed reserve may shrink $r_a$.
+
+\subsection{An oriented discrete Taylor identity}
+\label{pgh-taylor-section}
+
+For a current-unit scalar component set
+$D_\nu f(v)=f(v+e_\nu)-f(v)$. Choose a fixed shortest coordinate
+path $\Gamma$ from $x$ to $y$. A traversed edge has positive
+direction $\nu(e)$, lower positive-coordinate endpoint $v(e)$,
+and traversal sign $s(e)$. Telescoping gives
+\begin{align}
+ f(y)-f(x)&=\sum_\nu(y_\nu-x_\nu)D_\nu f(x)
+                         +\operatorname{Rem}_{xy}(f),\notag\\
+ \operatorname{Rem}_{xy}(f)
+ &=\sum_{e\in\Gamma}s(e)
+       [D_{\nu(e)}f(v(e))-D_{\nu(e)}f(x)].
+ \label{pgh-taylor}
+\end{align}
+A negative traversal uses the positive difference at its lower
+endpoint, not at its traversal initial point. If $n=|x-y|_1$,
+\eqref{pgh-scale-bounds} and \eqref{pgh-shift-bound} imply
+\begin{equation}
+ |a_p(y)-a_p(x)|\le Cbh^2n,\qquad
+ |\operatorname{Rem}_{xy}(a_p)|
+                      \le Cbh^{2+\alpha}n^{1+\alpha}.
+ \label{pgh-taylor-bound}
+\end{equation}
+One also has the elementary bound
+$|\operatorname{Rem}_{xy}(f)|\le n^2\sup|D^2f|$.
+For a winding periodic path use its lifted displacement;
+no global affine function on a torus is assumed. Coherent complete
+coefficients justify telescoping across collars. If a subsequent
+estimate keeps a fixed starting-root spatial weight along a long
+path, the exponential comparison of root weights along that path
+must also be budgeted; it is not omitted by the local norm bound.
+
+These independently derived conventions supply the scale
+pattern used in CMP109, pp.~285--288,
+(4.17)--(4.18) and (4.30). They do not assert the subsequent
+nonlinear Ward cancellation or its local carrier assignment.
+
+\paragraph{Constant order and scope.}
+The constants above are fixed at the primitive ratio before
+$R$ and $J$. Quantum coordinate-kernel estimates obtained from
+activities on $J$-cells can instead contain factors depending
+on their dimension and on conversion of cell distance to
+current distance. Finiteness of those constants does not make
+them independent of $J$. When $J$ is chosen after $R$, an
+expression $C(J)R^{-\alpha}$ is therefore not yet a
+noncircular contraction estimate. This regularity theorem
+does not classify the low-degree kernels, supply a bounded
+gauge-compatible extraction, determine a beta-function sign,
+or close the quantum induction.
+
+\section{Compactness of analytic interactions and coherent backgrounds}
+\label{aic-section}
+
+This is compactness of analytic local interactions and classical
+maps at fixed parameters. It is not compactness of probability
+measures or a continuum construction. It supplies a joint
+infinite-volume interface for the total-kernel Ward and spatial
+transport arguments.
+
+\subsection{A limiting interaction at the original radius}
+\label{aic-interaction-section}
+
+Fix a cell size \(J\), radius \(b>0\), exponent \(a>0\), and
+finitely many scalar coordinates per cell. Let compatible cubic
+tori exhaust the lattice. Suppose their connected analytic
+coefficients satisfy
+\begin{equation}
+ \sup_I\sum_{H\ni I}e^{a|H|}\|E_{N,H}\|_b\le\epsilon .
+ \label{aic-input}
+\end{equation}
+No consistency between volumes, or symmetry of individual
+coefficients, is assumed. For compactly supported fields define
+the vacuum-normalized total
+\begin{equation}
+ \Phi_N(A)=\sum_H\bigl[E_{N,H}(A|_H)-E_{N,H}(0)\bigr].
+ \label{aic-total}
+\end{equation}
+If \(K\) contains the cells meeting the field support, then
+\(|\Phi_N(A)|\le2|K|\epsilon\) for \(\|A\|_\infty<b\).
+
+\begin{proposition}[Interaction compactness without radius loss]
+\label{aic-interaction-proposition}
+There is a subsequence and a connected analytic family \(E_H\)
+on the original open radius-\(b\) polydiscs with
+\begin{equation}
+ \sup_I\sum_{H\ni I}e^{a|H|}\|E_H\|_b\le\epsilon .
+ \label{aic-limit-norm}
+\end{equation}
+Its vacuum-normalized total \(\Phi\) is absolutely convergent on
+compact fields. On every fixed finite field support and every
+radius \(r<b\), \(\Phi_N\) converges locally uniformly to \(\Phi\).
+In particular all fixed derivatives of the totals converge.
+\end{proposition}
+
+\begin{proof}
+Each fixed finite connected \(H\) has an unambiguous central
+embedding on sufficiently large tori. Its coefficients are bounded
+holomorphic functions on one finite-dimensional polydisc. Montel,
+or diagonal extraction of bounded Taylor coefficients followed by
+Cauchy estimates, gives a locally uniform subsequential limit.
+There are countably many carriers, translates and scalar Taylor
+indices, so one diagonal subsequence works for all of them.
+
+For a finite selection of carriers, Fatou at radius \(r<b\)
+passes their weighted bound. Increase \(r\) to \(b\), then
+exhaust the carriers, to obtain \eqref{aic-limit-norm}.
+The norm is the supremum on the open \(b\) polydisc. This
+retains its original radius without asserting uniform convergence
+at the boundary.
+
+For carriers meeting \(K\), the omitted large-carrier terms obey
+\begin{equation}
+ \sum_{\substack{H\cap K\ne\varnothing\\|H|>Q}}
+ |E_{N,H}(A|_H)-E_{N,H}(0)|
+       \le2|K|\epsilon e^{-aQ}.
+ \label{aic-carrier-tail}
+\end{equation}
+Only finitely many connected carriers of size at most \(Q\)
+meet \(K\). Once the torus side is much larger than \(JQ\)
+and the radius of \(K\), each has a unique central lift;
+winding carriers are covered by the tail. Convergence on the
+finite collection followed by \eqref{aic-carrier-tail} proves
+convergence of the totals. Finite-dimensional Cauchy then
+proves convergence of their fixed derivatives.
+\end{proof}
+
+The infinite kernels can therefore be derivatives of one analytic
+interaction, rather than unrelated subsequential tensors.
+Translations, signed permutations and reality of the totals pass
+by applying the convergence to a compact field and its fixed
+transform. For gauge invariance choose a compactly supported
+small site gauge \(v\) such that \(A,A^v\) lie in a smaller
+polydisc. The transformed field has support in the original
+support plus a finite edge neighborhood. Passing the identity
+\(\Phi_N(A^v)=\Phi_N(A)\) gives the limiting identity and
+its differentiated Ward equations. Constant conjugation preserves
+compact field support and passes as well. These are identities
+of totals; no symmetry of \(E_H\) is asserted.
+
+\subsection{Joint compactness of coherent complete-field families}
+\label{aic-background-section}
+
+Fix a preceding homogeneous depth \(M\) and endpoint ratio \(L\).
+The current output spacing in final units is \(h=L^{-1}\).
+Suppose the finite-regulator classical maps have the coherent
+families of the supported pre-gauge construction:
+\begin{align}
+ a_N|_i&=\sum_{X\ne\varnothing}a_{N;i,X}(w_X),
+       \qquad a_{N;i,X}(0)=0,\notag\\
+ \sup_i\sum_X e^{\kappa\tau(\{i\}\cup X)+A|X|}
+       \|a_{N;i,X}\|_{C^{1,\alpha};b}
+       &\le Cb/L .
+ \label{aic-background-norm}
+\end{align}
+The complete physical collar norm, including its maxima and
+first-gradient H\"older quotients, is inside the support sum.
+Coefficients with the same \(X\) restrict one global assignment
+and agree on overlapping collars.
+
+At fixed \(L\), each bounded collar has finitely many current
+coordinates. Apply Montel and a countable diagonal extraction
+to all fixed \(i,X\), output coordinates and Taylor indices.
+Overlap identities pass to the limits. Each complete collar
+norm is a finite collection of components and difference
+quotients with fixed physical denominators. It is lower
+semicontinuous under the convergence. Fatou thus preserves
+\eqref{aic-background-norm} with the same constants.
+
+The sum of terms with either
+\(\tau(\{i\}\cup X)>Q\) or \(|X|>Q\) is bounded by
+\[
+ C(b/L)\bigl(e^{-\kappa Q}+e^{-AQ}\bigr).
+\]
+The remaining supports form a finite set, since they lie in
+a fixed ball about \(i\). Hence the full complete fields
+converge locally uniformly at each finite set of roots.
+The limiting support series is normally convergent and
+defines an analytic map \(a\). Uniform Cauchy remainders
+also give its Banach-valued analyticity.
+
+For compact final support \(K\), any nonzero coefficient has
+\(X\cap K\ne\varnothing\). Its rooted tree therefore joins
+\(i\) to \(K\), yielding
+\begin{equation}
+ \|a(w)\|_{\text{complete collar }i}
+        \le C(b/L)e^{-\kappa\operatorname{dist}(i,K)}.
+ \label{aic-background-tail}
+\end{equation}
+A bound summed over cells of \(K\) differs only by that finite
+factor. The same estimate holds uniformly on centered finite
+tori with periodic distance. It gives summable output tails
+at fixed \(L\), including its fixed number of current coordinates
+per unit cell.
+
+This construction may be made jointly with the interaction
+extraction and with any countable collection of fixed \(M,L\).
+A cofinal sequence of tori can be chosen divisible by the first
+finitely many required powers at each diagonal stage. The
+result supplies coherent infinite families; it does not choose
+a unique background independently of the subsequence.
+
+\subsection{Summable fields and actual scalar composition}
+\label{aic-composition-section}
+
+The limiting interaction extends to summable coordinate fields
+with \(\|A\|_\infty\le\rho<b\). Coordinate Cauchy and the
+segment \(tA\) give
+\[
+ |E_H(A|_H)-E_H(0)|
+ \le\frac{C\|E_H\|_b}{b-\rho}
+                         \sum_{j\in H}|A_j|.
+\]
+Summing first over carriers containing each coordinate yields
+\begin{equation}
+ |\Phi(A)|\le\frac{C\epsilon}{b-\rho}\|A\|_{\ell^1},
+ \qquad
+ |\Phi(A)-\Phi(B)|
+       \le\frac{C\epsilon}{b-\rho}\|A-B\|_{\ell^1}
+ \label{aic-interaction-Lipschitz}
+\end{equation}
+when both fields lie in that interior ball. Coordinate counts
+are already in the \(\ell^1\) sum; there is no volume factor.
+The same estimates hold on the finite regulators.
+
+Choose \(L\) so the classical amplitude bound places \(a_N(w)\)
+in a fixed interior radius \(\rho<b\) on the final data domain.
+For compact \(w\), \eqref{aic-background-tail} gives uniform
+\(\ell^1\) tails of \(a_N(w)\). On centered representatives,
+the periodic distance from an output root to \(K\) is at least
+its centered distance from the origin minus the fixed radius
+of \(K\), so this tail bound is uniform in volume.
+Truncate the output to a large fixed region. On the region,
+both the interaction coefficients and the classical fields
+converge locally uniformly. Outside it use
+\eqref{aic-interaction-Lipschitz}. It follows that
+\begin{equation}
+ \Phi_N(a_N(w))\longrightarrow\Phi(a(w))
+ \label{aic-substitution-limit}
+\end{equation}
+locally uniformly on compact final supports and smaller data
+radii. This is convergence of actual scalar compositions,
+not only of formal Taylor series.
+
+For decaying noncompact intermediate inputs, apply coordinate
+Cauchy directly to \eqref{aic-background-norm}. Only supports
+containing the input coordinate \(j\) contribute, and their
+rooted tree spans \(i,j\). On an interior ball,
+\begin{equation}
+ \|\partial_{w_j}a_i\|
+     \le\frac{C}{b-\rho}
+                   e^{-\kappa\operatorname{dist}(i,j)}.
+ \label{aic-map-derivative}
+\end{equation}
+The fixed input and output fiber dimensions, including \(L^4\),
+are absorbed in \(C\). Summing over output roots proves an
+\(\ell^1\)-to-\(\ell^1\) derivative bound, uniform in volume
+at fixed \(L\). Segment integration gives the corresponding
+Lipschitz estimate. Since \(a(0)=0\), summable inputs have
+summable outputs.
+
+The same truncation proof therefore applies to finite
+compositions, provided every intermediate field remains in
+a strict common interior of its analytic domain. Finite-volume
+scalar identities, including a classical semigroup identity,
+can pass to a jointly extracted finite list of maps and
+interactions on compatible nested volumes. Separate arbitrary
+subsequences need not compose.
+
+\subsection{Scope}
+\label{aic-scope}
+
+The result jointly attains a subsequential analytic interaction
+and coherent classical families at fixed parameters. It supplies
+the total-kernel and complete-field hypotheses used by the
+spatial remainder theorem. It proves neither uniqueness,
+convergence of Gibbs measures, a continuum theory, nor consistency
+of a quantum update for all input families. Descent of the actual
+quantum map to a chosen interaction space, continuity there with
+its normalizations and cutoffs retained, and infinite iteration
+remain separate requirements.
+
+\section{Total Ward extraction through field degree four}
+\label{tkw-section}
+
+The following argument completes the low-degree \emph{total-kernel}
+classification. It does not impose gauge invariance on individual
+activity coefficients. Its exact statement concerns subsequential
+infinite-lattice kernels; finite-period winding terms and localization
+of the canceled functional remain separate questions.
+
+\subsection{Hypotheses and the reference action}
+\label{tkw-hypotheses}
+
+For a compact connected simple matrix group, use Hermitian Lie-algebra
+coordinates and a fixed invariant positive trace form. Consider analytic
+total corrections \(E_N\) on exhausting compatible cubic tori. Assume
+the local gauge identity, output-unit translations, full signed
+permutations and reality on real fields established for the actual
+local sector in Section~\ref{msy-section}. Assume connected activity
+representations on a fixed cell partition with
+\begin{equation}
+ \sup_I\sum_{H\ni I}e^{a_0|H|}\|E_{N,H}\|_b\le\epsilon .
+ \label{tkw-activity}
+\end{equation}
+Here \(a_0,b>0\), the cell size \(J\), and the scalar coordinate count
+\(D\) per cell are fixed uniformly in volume and preceding refinement.
+The total symmetries need not hold for the chosen coefficients.
+
+Let \(S_N\) be a real analytic, exactly gauge-invariant and spatially
+invariant reference, with \(S_N(0)=DS_N(0)=0\), and with uniform
+fixed-order kernel moment bounds through degree four. Assume its
+limiting midpoint Hessian has the normalization
+\begin{equation}
+ \Gamma_2^S(p)=|p|^2I-pp^T+O(|p|^4).
+ \label{tkw-reference}
+\end{equation}
+The normalized Wilson action is one choice. The actual homogeneous
+classical action \(S_{MR}\) is another: its Hessian is \(q_{MR}\),
+whose uniform normalization was proved by the alias formula in
+Notebook07, and the classical strict-support construction supplies
+the higher fixed-order bounds. Ellipticity alone would not establish
+\eqref{tkw-reference}.
+
+\begin{theorem}[Full marginal completion from the total Ward identity]
+\label{tkw-theorem}
+Under these assumptions, choose a joint subsequential infinite-lattice
+limit of the kernels of \(E_N,S_N\) through degree four. There is a real
+coefficient \(\beta\) such that the midpoint Fourier vertices of the
+residual \(F=E-\beta S\) satisfy
+\begin{align}
+ \Gamma_2^F(p)&=O(|p|^4),\notag\\
+ \Gamma_3^F(p_1,p_2,p_3)
+     &=O\!\left(\max_j|p_j|^3\right),\notag\\
+ \Gamma_4^F(p_1,p_2,p_3,p_4)
+     &=O\!\left(\max_j|p_j|^2\right),
+ \qquad \sum_jp_j=0.
+ \label{tkw-remainders}
+\end{align}
+Thus the total Taylor coefficients of field degree \(n=2,3,4\)
+and momentum degree at most \(4-n\) agree with \(\beta S\).
+The one-point kernel vanishes; the vacuum is unrestricted.
+\end{theorem}
+
+For a semisimple product there is one coefficient per simple ideal.
+The analogous statement subtracts gauge-invariant references with the
+individual normalized Maxwell blocks. A single-coupling rebase is
+immediate for a simple group, or if those coefficients coincide.
+Reality can be omitted if a complex coefficient \(\beta\) is permitted.
+
+\subsection{Fixed-order kernels and their joint limit}
+\label{tkw-kernel-limit}
+
+Write \(K_n=D^nE_N(0)\). Coordinate Cauchy on one coefficient gives
+\begin{equation}
+ \sum_{i_1,\ldots,i_n\in H}
+  |D^nE_{N,H}(0)[e_{i_1},\ldots,e_{i_n}]|
+ \le (D|H|+n)^n b^{-n}\|E_{N,H}\|_b .
+ \label{tkw-coordinate-Cauchy}
+\end{equation}
+Indeed the exact monomial count multiplied by \(n!\) is
+\(n!\binom{D|H|+n-1}{n}\), bounded by the displayed factor.
+Fixing the first coordinate only decreases the sum. The graph
+Steiner length of slots contained in connected \(H\) is at most
+\(|H|-1\). For \(0<\sigma<a_0\), therefore,
+\begin{equation}
+ \sup_{i_1}\sum_{i_2,\ldots,i_n}
+ e^{\sigma\tau(i_1,\ldots,i_n)}
+ |K_n(i_1,\ldots,i_n)|
+ \le b^{-n}\epsilon
+       \sup_{m\ge1}(Dm+n)^n e^{-(a_0-\sigma)m}.
+ \label{tkw-kernel-bound}
+\end{equation}
+Scalar and color indices are included in the sums. A further fixed
+exponent loss absorbs every fixed spatial moment. Conversion from
+the \(J\)-cell metric to the unit-site metric retains \(J\)-dependent
+constants.
+
+Global constant gauges imply \(K_1=0\) separately at each bond,
+because its covector annihilates every Lie commutator. Translation
+invariance permits an anchor at the origin. The bounds then give a
+diagonal subsequence of all fixed displacements, simultaneously for
+\(n\le4\) and for the reference. Fatou preserves exponential
+summability. Permutation symmetry of the slots, signed permutations,
+translation and global adjoint covariance pass to this limit.
+The differentiated Ward identities below pass as well: their
+coefficient equations contain finite nearest-neighbor shifts and
+lower kernels with coinciding slots. Equivalently one may first
+test against finitely supported fields and gauges.
+
+The limiting Fourier vertices are analytic near the simultaneous
+origin, and their fixed derivatives are justified by the spatial
+moments. No unnormalized infinite-volume total functional is being
+summed; even a nonzero vacuum density would preclude that.
+
+\subsection{The exact logarithmic gauge generator}
+\label{tkw-generator-section}
+
+For \(U_b=e^{iA_b}\), use
+\[
+ U_b(t)=e^{it\lambda_{b_-}}U_be^{-it\lambda_{b_+}},
+ \qquad (d\lambda)_b=\lambda_{b_+}-\lambda_{b_-}.
+\]
+Differentiating the exponential chart, with
+\(\operatorname{ad}_A X=[A,X]\), gives
+\begin{equation}
+ \delta_\lambda A
+ =i[\lambda_-,A]-f(i\operatorname{ad}_A)d\lambda,
+ \qquad
+ f(z)=\frac{z}{1-e^{-z}}
+       =1+\frac z2+\frac{z^2}{12}+O(z^4).
+ \label{tkw-generator}
+\end{equation}
+In particular
+\begin{align}
+ \delta_\lambda A
+   &=-d\lambda+L_\lambda(A)+Q_\lambda(A,A)
+                        +O(A^4\lambda),\notag\\
+ L_\lambda(A)_b
+   &=\frac i2[\lambda_{b_-}+\lambda_{b_+},A_b],\notag\\
+ Q_\lambda(A,B)_b
+   &=\frac1{24}\bigl(
+      [A_b,[B_b,d\lambda_b]]+
+      [B_b,[A_b,d\lambda_b]]\bigr).
+ \label{tkw-LQ}
+\end{align}
+The cubic Bernoulli coefficient is zero. Comparing powers in
+\(DE(A)[\delta_\lambda A]=0\), using \(K_1=0\), gives
+\begin{align}
+ K_2(A,d\lambda)&=0,\notag\\
+ K_3(A,A,d\lambda)&=2K_2(A,L_\lambda(A)),\notag\\
+ K_4(A,A,A,d\lambda)
+   &=3K_3(A,A,L_\lambda(A))
+       +6K_2(A,Q_\lambda(A,A)).
+ \label{tkw-Ward-diagonal}
+\end{align}
+Polarization yields
+\begin{align}
+ K_3(A,B,d\lambda)
+   &=K_2(A,L_\lambda(B))+K_2(B,L_\lambda(A)),\label{tkw-Ward-cubic}\\
+ K_4(A,B,C,d\lambda)
+   &=K_3(A,B,L_\lambda(C))
+      +K_3(A,C,L_\lambda(B))
+      +K_3(B,C,L_\lambda(A))\notag\\
+   &\quad+2K_2(A,Q_\lambda(B,C))
+      +2K_2(B,Q_\lambda(A,C))
+      +2K_2(C,Q_\lambda(A,B)).
+ \label{tkw-Ward-quartic}
+\end{align}
+These are total-kernel identities. Subtracting just a quadratic
+polynomial would generally violate them. Subtracting a multiple
+of an exactly invariant reference preserves them.
+
+The generator and differentiated identities are independently
+derived here. Their published counterparts are Ba{\l}aban,
+CMP 109 (1987), (4.9)--(4.15), pp.~283--284; the full-action
+subtraction is (4.38)--(4.45), pp.~291--292. The stronger
+coefficientwise orbit hypotheses of that article are not assumed.
+
+\subsection{Midpoint phases and parity}
+\label{tkw-midpoint-section}
+
+Use bond-midpoint Fourier fields and site Fourier gauges:
+\[
+ A_\mu(x)=\int e^{ip\cdot(x+e_\mu/2)}a_\mu(p)\,dp,
+ \qquad \lambda(x)=\int e^{ik\cdot x}\lambda(k)\,dk .
+\]
+On \(\sum_jp_j=0\), anchoring the first bond gives the vertex phase
+\begin{equation}
+ \exp\!\left\{i\sum_{j=2}^n
+   p_j\cdot(x_j+e_{\mu_j}/2-e_{\mu_1}/2)\right\}.
+ \label{tkw-vertex-phase}
+\end{equation}
+Only local analyticity near zero momentum is required; midpoint
+vertices need not be individually periodic under every \(2\pi\)
+shift. The Fourier coefficients in \eqref{tkw-LQ} are exactly
+\begin{align}
+ (d\lambda)_\mu&:\quad
+       2i\sin(k_\mu/2)\lambda(k),\notag\\
+ L_\lambda(A)_\mu&:\quad
+       i\cos(k_\mu/2)[\lambda(k),a_\mu(p)],\notag\\
+ Q_\lambda(A,B)_\mu&:\quad
+       \frac{i}{12}\sin(k_\mu/2)
+       \bigl([a_\mu(p),[b_\mu(q),\lambda(k)]]
+           +[b_\mu(q),[a_\mu(p),\lambda(k)]]\bigr).
+ \label{tkw-generator-phases}
+\end{align}
+Their output momenta are \(k,p+k,p+q+k\). Thus \(L\) has
+a bounded analytic coefficient, while \(Q\) supplies one
+power of gauge momentum.
+
+Full inversion sends \(a_\mu(p)\) to \(-a_\mu(-p)\).
+Consequently
+\begin{equation}
+ \Gamma_n(-p_1,\ldots,-p_n)
+        =(-1)^n\Gamma_n(p_1,\ldots,p_n).
+ \label{tkw-parity}
+\end{equation}
+The cubic vertex is odd; the quadratic and quartic vertices
+are even. Midpoint phases are essential for this form.
+
+\subsection{Proof of the marginal completion}
+\label{tkw-completion-proof}
+
+\begin{proof}[Proof of Theorem~\ref{tkw-theorem}]
+Theorem~\ref{msy-Maxwell-theorem} gives
+\[
+ \Gamma_2^E(p)=\beta(|p|^2I-pp^T)+O(|p|^4).
+\]
+For completeness, the continuous limiting Ward relation
+\(\Gamma_2(p)\widehat p=0\) first implies \(\Gamma_2(0)=0\)
+by taking \(p=te_\mu\). Reflections and permutations restrict
+the degree-two tensor to diagonal
+\(A p_\mu^2+B\sum_{\nu\ne\mu}p_\nu^2\) and off-diagonal
+\(C p_\mu p_\nu\). Transversality gives \(A=0,C=-B\).
+Put \(\beta=B\), which is real under the stated reality
+assumption. It can be extracted as
+\begin{equation}
+ \beta=\frac12\,
+  \partial_{p_\nu}^2(\Gamma_2^E)_{\mu\mu}(0),
+       \qquad \mu\ne\nu,
+ \label{tkw-beta}
+\end{equation}
+in a trace-orthonormal color direction. The reference
+normalization proves \(\Gamma_2^F(p)=O(|p|^4)\).
+
+Apply \eqref{tkw-Ward-cubic} to the residual and momenta
+\(tp,tq,tk\), with \(p+q+k=0\). Its right side is \(O(t^4)\):
+each residual Hessian is evaluated at small momentum, and
+the \(L\) coefficient in \eqref{tkw-generator-phases} is bounded.
+Parity gives
+\[
+ \Gamma_3^F(tp,tq,tk)=tP_1(p,q,k)+O(t^3).
+\]
+The left side contracts its last vector index with
+\(2i\sin(tk/2)=itk+O(t^3)\). Its degree-two coefficient
+therefore vanishes. Slot permutation symmetry gives, for
+each choice of colors,
+\begin{equation}
+ p_\mu(P_1)_{\mu\nu\rho}=0,\qquad
+ q_\nu(P_1)_{\mu\nu\rho}=0,\qquad
+ k_\rho(P_1)_{\mu\nu\rho}=0.
+ \label{tkw-linear-transverse}
+\end{equation}
+
+Eliminate \(k=-p-q\) and write
+\[
+ (P_1)_{\mu\nu\rho}
+  =\sum_\sigma A_{\mu\nu\rho;\sigma}p_\sigma
+                   +B_{\mu\nu\rho;\sigma}q_\sigma .
+\]
+In the first relation of \eqref{tkw-linear-transverse},
+the independent mixed monomials \(p_\mu q_\sigma\)
+force every \(B_{\mu\nu\rho;\sigma}\) to vanish.
+The second relation then forces every \(A_{\mu\nu\rho;\sigma}\)
+to vanish by the independent monomials \(q_\nu p_\sigma\).
+Thus \(P_1=0\), proving the cubic remainder. This elementary
+argument permits arbitrary complex/color coefficients and
+does not presume a separately invariant cubic functional.
+
+Finally apply \eqref{tkw-Ward-quartic}, scaling all four
+momenta by \(t\). Its \(K_3,L\) terms are \(O(t^3)\);
+its \(K_2,Q\) terms are \(O(t^5)\), because \(Q\) has
+the sine factor. By parity write
+\[
+ \Gamma_4^F(tp_1,\ldots,tp_4)=P_0+O(t^2).
+\]
+The order-\(t\) term on the left contracts \(P_0\) with
+the last momentum \(p_4\). That momentum is arbitrary:
+the other three can always sum to \(-p_4\). Hence
+every component of \(P_0\) vanishes. This proves the
+quartic remainder and completes the theorem.
+\end{proof}
+
+The argument is an identity of the integrated vertices.
+It does not choose a unique density modulo lattice divergences.
+
+\subsection{Reference independence and the full action}
+\label{tkw-full-action-section}
+
+For the standard Wilson reference, the marginal continuum
+polynomial is explicit. With Hermitian coordinates set
+\[
+ f_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu,
+ \qquad F_{\mu\nu}=f_{\mu\nu}+i[A_\mu,A_\nu].
+\]
+Its engineering-degree-four part is
+\begin{equation}
+ \frac12\sum_{\mu<\nu}\tau(F_{\mu\nu}^2)
+ =\frac12\sum_{\mu<\nu}\tau(f_{\mu\nu}^2)
+   +i\sum_{\mu<\nu}\tau(f_{\mu\nu}[A_\mu,A_\nu])
+   -\frac12\sum_{\mu<\nu}\tau([A_\mu,A_\nu]^2).
+ \label{tkw-Wilson-polynomial}
+\end{equation}
+Indeed bond angles \(tA\) evaluated at midpoints of a
+lattice of spacing \(t\) give the plaquette
+\(P=I+it^2F_{\mu\nu}+O(t^3)\). Therefore
+\(1-\frac12\tau(P+P^{-1})
+ =\frac12t^4\tau(F_{\mu\nu}^2)+O(t^5)\).
+This verifies the normalization and the relative cubic
+and quartic coefficients.
+
+No explicit Wilson expansion is needed in the theorem.
+Applying it to the difference of two exactly invariant
+normalized references shows that their marginal total
+vertices agree. In particular one may subtract the actual
+homogeneous classical reference directly:
+\begin{equation}
+ e^{-g^{-2}S_{MR}+E}
+  =e^{-(g^{-2}-\beta)S_{MR}+(E-\beta S_{MR})}.
+ \label{tkw-coupling-rebase}
+\end{equation}
+The vacuum is separate. This identity neither proves
+positivity of \(g^{-2}-\beta\) nor the required sign,
+size or accumulated drift of its actual increments.
+
+\subsection{Moment remainders and the remaining norm question}
+\label{tkw-scope-section}
+
+For the residual anchored kernels use the \emph{bond midpoints}
+\(\xi_j=x_j+e_{\mu_j}/2\), and define
+\begin{equation}
+ T_{n,m}=\sup_{i_1}\sum_{i_2,\ldots,i_n}
+  \left(\sum_{j=2}^n|\xi_j-\xi_1|_1\right)^m
+                  |K_n^F(i_1,\ldots,i_n)|.
+ \label{tkw-moments}
+\end{equation}
+They are bounded by the moments of \(E\) plus
+\(|\beta|\) times those of \(S\). The phase
+\eqref{tkw-vertex-phase} and the real one-variable
+Taylor integral remainder give componentwise
+\begin{align}
+ |\Gamma_2^F(p)|
+   &\le \frac{T_{2,4}}{4!}\|p\|_\infty^4,\notag\\
+ |\Gamma_3^F(p_1,p_2,p_3)|
+   &\le \frac{T_{3,3}}{3!}
+                  \max_{j\ge2}\|p_j\|_\infty^3,\notag\\
+ |\Gamma_4^F(p_1,p_2,p_3,p_4)|
+   &\le \frac{T_{4,2}}{2!}
+                  \max_{j\ge2}\|p_j\|_\infty^2 .
+ \label{tkw-quantitative}
+\end{align}
+Fixed vector/color row sums add only their fixed dimensions.
+The exponential kernel bound makes these moments finite.
+
+The cancellations also hold in ordinary tail-anchored
+coordinates: conversion multiplies each midpoint component
+by a nonzero analytic phase and cannot lower its vanishing
+order. Thus all residual ordinary momentum jets through
+degrees \(3,2,1\) vanish for field degrees \(2,3,4\),
+respectively. This includes the weaker anchored moments
+used in second-order quadratic, first-order cubic and
+zeroth-order quartic spatial subtractions.
+
+The constants can depend strongly on the fixed old grouping
+\(J\). Since the common-domain construction chooses \(J\)
+after \(R\), an estimate \(C(J)R^{-\alpha}\) is not
+automatically a contraction. No such claim is made.
+The remaining tasks are localization of the canceled
+total without false coefficientwise Ward assumptions,
+finite-period wrapping control or a consistent infinite
+correction, a spatial-gain norm with the correct parameter
+order, and the actual relevant/marginal recursion.
+The theorem proves the total-kernel Taylor classification;
+it does not supply these separate conclusions.
+
+% No preamble. Prefix csg-. Scalar classical background identities only.
+\section{Classical background composition modulo gauge}
+\label{csg-section}
+
+Fix the primitive odd ratio $\ell$ and write
+$M=\ell^k$, $R_1=\ell^{s_1}$ and $R_2=\ell^{s_2}$.
+Let $U_n(D)$ be the selected ordinary homogeneous Wilson
+minimizer at refinement $n$. The ordinary-minimum theorem
+of Notebook15 gives a refinement-uniform small global
+$C^{1,\alpha}$ comparison ball, a bound
+$\|A_{\mathrm o,n}(D)\|_{C^{1,\alpha}}
+\le C\|\log D/i\|_\infty$, and gauge equivalence whenever
+equality holds in that comparison class.
+
+Define the pre-root-gauge map and its scalar substitution by
+\begin{equation}
+ P_{M,R}(D)=M_\ell^k(U_{MR}(D)),\qquad
+ (\mathcal T_{M,R}E)(D)=E(P_{M,R}(D)).
+ \label{csg-maps}
+\end{equation}
+Here $R=\ell^s$ and $M_\ell^sP_{M,R}(D)=D$.
+All expressions include the natural identification of the
+nested lattices. The input $D$ lives on the next-coarse
+lattice and $P_{M,R}(D)$ on its $R$-times finer current
+lattice. The prefix estimate gives a common classical
+radius $b_{\mathrm{cl}}$ and constant $C_0$, independent of
+$M,R$ and compatible volume, such that
+\begin{equation}
+ \left\|\frac1i\log P_{M,R}(e^{iw})\right\|_\infty
+                \le\frac{C_0}{R}\|w\|_\infty.
+ \label{csg-amplitude}
+\end{equation}
+The operator $\mathcal T$ is a classical background
+substitution, not a fluctuation integral.
+
+\subsection{Two minimum comparisons on the same fine graph}
+\label{csg-comparison-section}
+
+For a final datum $Z$ put
+\begin{equation}
+ U_2=U_{MR_1R_2}(Z),\qquad
+ D_1=M_\ell^{k+s_1}(U_2)=P_{MR_1,R_2}(Z),\qquad
+ U_1=U_{MR_1}(D_1).
+ \label{csg-fields}
+\end{equation}
+Both fine fields live on the same original oriented graph.
+In final-$Z$ units its spacing is
+$\eta_2=(MR_1R_2)^{-1}$ and the $D_1$ spacing is $R_2^{-1}$.
+The definition of $U_{MR_1}(D_1)$ instead uses $D_1$-unit
+coordinates and spacing $\eta_1=(MR_1)^{-1}=R_2\eta_2$.
+This is a coordinate relabeling of the same links. In four
+dimensions the coupling-free Wilson action is the same
+plaquette sum in both conventions.
+
+Exact ordinary composition gives
+\begin{align}
+ M_\ell^{k+s_1}(U_1)&=D_1=M_\ell^{k+s_1}(U_2),\notag\\
+ M_\ell^{k+s_1+s_2}(U_1)&=Z=M_\ell^{k+s_1+s_2}(U_2).
+ \label{csg-feasibility}
+\end{align}
+For fixed finite $R_1,R_2$ both fields lie in the needed
+comparison balls after shrinking the real $Z$ radius,
+uniformly in $M$ and volume. Explicitly, a fine physical
+potential $A_1$ in $D_1$ units becomes
+\begin{equation}
+ A_1^Z(x)=R_2A_1(R_2x),\qquad
+ \|A_1^Z\|_{C^{1,\alpha}}
+          \le C R_2^{2+\alpha}\|A_1\|_{C^{1,\alpha}}.
+ \label{csg-rescaling}
+\end{equation}
+The reverse conversion decreases the norm up to a fixed
+convention constant, and decreases its supremum by $R_2^{-1}$.
+By \eqref{csg-amplitude}, $\|\log D_1/i\|\le C_0\|\log Z/i\|/R_2$.
+Thus $U_1$ in final units is bounded by
+$CR_2^{1+\alpha}\|\log Z/i\|$, while $U_2$ in $D_1$ units
+is bounded by $C\|\log Z/i\|/R_2$. These are finitely many
+radius restrictions for fixed ratios.
+
+The minimum at $D_1$, with competitor $U_2$, and the minimum
+at $Z$, with competitor $U_1$, yield respectively
+\begin{equation}
+ S(U_1)\le S(U_2),\qquad S(U_2)\le S(U_1).
+ \label{csg-comparisons}
+\end{equation}
+Equality and the ordinary-minimum equality clause give a
+fine gauge $g$ with $U_1=U_2^g$. This gauge is supplied by
+the small ordinary-to-corrected transfer, the
+constraint-preserving flow into the flat slice, and the
+inverse transfer from the same strict slice minimizer.
+These controlled gauge transformations can be joined to
+the identity inside a smaller common neighborhood.
+Equal action alone, without that equality clause, would
+not justify this conclusion.
+
+Ordinary gauge covariance gives
+\begin{equation}
+ M_\ell^k(U_1)=\bigl(M_\ell^k(U_2)\bigr)^{g|_{\mathrm{current}}}.
+ \label{csg-gauge-covariance}
+\end{equation}
+Consequently
+\begin{equation}
+ P_{M,R_1}(P_{MR_1,R_2}(Z))
+       \quad\hbox{is gauge equivalent to}\quad
+ P_{M,R_1R_2}(Z).
+ \label{csg-orbit-composition}
+\end{equation}
+The two selected representatives need not coincide. The
+connecting gauge need not be unique; its restriction to
+$D_1$ sites stabilizes $D_1$.
+
+\subsection{The scalar germ identity and its continuation}
+\label{csg-identity-section}
+
+\begin{theorem}[Classical background semigroup modulo gauge]
+\label{csg-theorem}
+Let $E$ be a scalar total functional holomorphic on a
+current-angle product ball and locally gauge invariant
+there. On finite compatible regulators,
+\begin{equation}
+ \mathcal T_{MR_1,R_2}(\mathcal T_{M,R_1}E)
+                   =\mathcal T_{M,R_1R_2}E
+ \label{csg-semigroup}
+\end{equation}
+as holomorphic germs at zero. The identity extends to every
+connected common product domain of the specified branches.
+The output $\mathcal T_{M,R}E$ is locally gauge invariant.
+In particular, for any fixed finite $q$,
+\begin{equation}
+ \mathcal T_{MR^{q-1},R}\cdots
+ \mathcal T_{MR,R}\mathcal T_{M,R}E
+                         =\mathcal T_{M,R^q}E.
+ \label{csg-iteration}
+\end{equation}
+If $R>C_0$ and $b$ lies in the common classical and original
+$E$ domains, both sides of \eqref{csg-iteration} are
+analytic on the same radius-$b$ ball and agree there.
+\end{theorem}
+\begin{proof}
+On a sufficiently small real $Z$ ball, the gauge path in
+\eqref{csg-gauge-covariance} remains inside the original
+domain of $E$. Total gauge invariance proves
+\eqref{csg-semigroup}. Both compositions are holomorphic;
+uniqueness from the real slice proves the germ identity
+and its continuation. No gauge identity for separate
+activity coefficients is used.
+
+To see local invariance of the output, extend a small
+coarse gauge smoothly to prescribed fine point values.
+The transformed minimum at $D$ is a small feasible
+competitor at $D^v$. Compare with the minimum at $D^v$,
+and perform the inverse-gauge comparison at $D$.
+Equality follows; the ordinary-minimum equality clause
+identifies the two configurations modulo fine gauge.
+Their partial averages are gauge equivalent, so evaluating
+$E$ gives local invariance. Analyticity continues this
+identity from the real overlap.
+
+The identity can now be iterated, proving
+\eqref{csg-iteration}. If each ratio is larger than $C_0$,
+\eqref{csg-amplitude} maps the radius-$b$ ball into itself
+at every substitution; the direct map has the same
+property. Thus both sides are analytic on the connected
+common $b$ ball. Their germ equality continues there,
+even if the real variational comparison required a
+smaller radius depending on the finite ratios or on $q$.
+This uses no complex minimum assertion.
+\end{proof}
+
+\subsection{Use and limitations of a finite iterate}
+\label{csg-scope-section}
+
+The direct representative in \eqref{csg-iteration} obeys
+the H\"older prefix estimates
+\begin{equation}
+ \|a_{M,R^q}\|_\infty\le CbR^{-q},\qquad
+ \|\Delta a_{M,R^q}\|_\infty\le CbR^{-2q},\qquad
+ \|\Delta^2a_{M,R^q}\|_\infty
+                         \le CbR^{-(2+\alpha)q},
+ \label{csg-iterated-scales}
+\end{equation}
+with primitive constants independent of $q$. Its complete
+supported families follow by applying the same prefix
+theorem at endpoint ratio $R^q$.
+
+This permits keeping the elementary $R$ and grouping $J$
+fixed before selecting a finite $q$. A separately proved
+bound $C(J)R^{-q\alpha}$ could then have a noncircular
+parameter order. Such an activity-norm estimate is not
+proved by the scalar identity alone.
+
+The canonical families from successive core/tail
+transports need not equal the direct family. Their scalar
+sums agree; a new justified localization may represent
+that common scalar function. No automatic bound for the
+old sequential family, or bounded relocalization on a
+chosen quotient norm, follows.
+
+Nor does \eqref{csg-iteration} identify sequential quantum
+integrals with one integral at ratio $R^q$. Sequential
+steps retain their separate gauge factors, normalizations,
+windows and newly generated interactions. Those terms do
+not disappear from an iterated quantum recursion. This
+is a finite classical background semigroup modulo gauge,
+uniform in preceding refinement and compatible volume;
+infinite iteration and regulator consistency remain open.
+
+\section{Connected localization of spatially canceled low kernels}
+\label{lst-section}
+
+This section proves a connected-activity norm estimate for the
+canceled \emph{total} kernels. Its inputs are coherent complete-field
+support families and exact infinite-lattice moment cancellations.
+It also applies to explicitly periodized versions of those inputs,
+with their lifted sums. It does not silently impose lifted moment
+identities on an arbitrary finite torus kernel.
+
+\subsection{Inputs and parameter order}
+\label{lst-input-section}
+
+Work in dimension four. A current coordinate consists of a site,
+positive bond direction and color, with fixed internal dimension \(v\).
+For \(n=2,3,4\), let \(K_n\) be a translation-invariant symmetric
+\(n\)-linear kernel. Anchor its first site at \(x\), write the other
+sites as \(x+r_2,\ldots,x+r_n\), and put
+\(m=\sum_{j=2}^n|r_j|_1\). Internal indices are included in all sums.
+Assume
+\begin{equation}
+ \sup_{\text{first internal index}}
+ \sum_{\text{other indices},r_2,\ldots,r_n}
+       e^{\sigma m}|K_n(0,r_2,\ldots,r_n)|
+       \le \epsilon b^{-n}.
+ \label{lst-kernel-bound}
+\end{equation}
+The constants \(\sigma,\epsilon\) can incorporate the fixed old
+grouping \(J\). Fixed-order Cauchy and a connected activity bound
+supply this estimate with a smaller spatial exponent.
+
+Use tail-site coordinates. Assume componentwise
+\begin{align}
+ \sum_r r^\gamma K_2(r)&=0
+                          &&(|\gamma|\le3),\notag\\
+ \sum_{r,s}K_3(r,s)&=0,\qquad
+ \sum_{r,s}r_\rho K_3(r,s)=
+ \sum_{r,s}s_\rho K_3(r,s)=0
+                          &&(\rho=1,\ldots,4),\notag\\
+ \sum_{r,s,t}K_4(r,s,t)&=0.
+ \label{lst-moments}
+\end{align}
+These are consequences of the stronger vanishing orders in
+Theorem~\ref{tkw-theorem}; analytic conversion from midpoint
+to tail coordinates preserves those orders.
+
+Fix an integer endpoint ratio \(L\), put \(h=L^{-1}\), and let
+\(a(w)\) be an analytic current-angle background on the radius-\(b\)
+final-field ball. Current sites have physical spacing \(h\).
+Assume coherent complete-field strict families: on every fixed
+enlarged final-unit collar rooted at \(i\),
+\begin{equation}
+ a|_i=\sum_{X\ne\varnothing}a_{i,X}(w_X),\qquad
+ a_{i,X}(0)=0,\qquad
+ \sup_i\sum_X e^{\kappa\tau(\{i\}\cup X)+A|X|}
+           \|a_{i,X}\|_{C^{1,\alpha};b}
+       \le C_* b h .
+ \label{lst-background}
+\end{equation}
+The derivatives in this norm are physical. Coefficients on
+overlapping collars restrict one global assignment. All maxima,
+first derivatives and first-gradient H\"older quotients are
+inside the support sum. A fixed collar contains any coordinate
+paths whose current length is at most \(L\); enlarging it changes
+only fixed constants and possibly decreases \(\kappa\).
+These are the complete-family inputs of the supported pre-gauge
+background construction, not bounds merely on the summed field.
+
+Let \(P_n(a)=K_n(a,\ldots,a)/n!\), fix \(a_0>0\), and set
+\(c=a_0+1\). Choose \(J\) once with
+\begin{equation}
+ \frac{2c}{J}\le\kappa,\qquad A\ge4c .
+ \label{lst-budgets}
+\end{equation}
+
+\begin{theorem}[Low-kernel spatial transport]
+\label{lst-theorem}
+There are \(C,L_0\), depending on
+\(\sigma,J,C_*,a_0,\alpha\) and the fixed internal dimension,
+but not on \(L,b\), volume or preceding refinement, such that
+for \(L\ge L_0\) there are connected activities on final \(J\)-cells
+with
+\begin{equation}
+ \sum_H B_H(w_H)=\sum_{n=2}^4P_n(a(w)),\qquad
+ \sup_I\sum_{H\ni I}e^{a_0|H|}\|B_H\|_b
+                      \le C\epsilon L^{-\alpha}.
+ \label{lst-conclusion}
+\end{equation}
+The construction is linear in the total kernels.
+Individual \(B_H\) need not be gauge invariant.
+The scalar identity is vacuum-normalized and absolutely
+convergent for compactly supported final fields.
+\end{theorem}
+
+The constant is fixed after \(J\) and before \(L\).
+One can therefore set \(L=R^q\) with fixed \(R,J\) and
+choose a finite \(q\) afterward. This statement does not
+identify \(q\) successive quantum integrations with one
+direct fluctuation integral.
+
+\subsection{A valid quadratic difference factorization}
+\label{lst-quadratic-section}
+
+The matrix kernel need not be symmetric at each displacement,
+even though Hessian reciprocity gives
+\(K_2(r)^T=K_2(-r)\). We use a Laurent factorization that
+does not require pointwise symmetry. Set
+\[
+ F(z)=\sum_r K_2(r)z^r,\qquad
+ d_\rho^+(z)=z_\rho-1,\qquad
+ d_\rho^-(z)=z_\rho^{-1}-1 .
+\]
+The exponential bound makes \(F\) holomorphic on a product
+annulus. Equation~\eqref{lst-moments} says its jets through
+degree three at \(z=(1,\ldots,1)\) vanish.
+
+For a Laurent function define the ordered divided difference
+\begin{equation}
+ {\cal B}_jF(z)=
+ \frac{F(1,\ldots,1,z_j,\ldots,z_4)
+        -F(1,\ldots,1,1,z_{j+1},\ldots,z_4)}
+      {z_j-1}.
+ \label{lst-divided-difference}
+\end{equation}
+Its singularity at \(z_j=1\) is removable, and
+\[
+ F(z)-F(1)=\sum_j(z_j-1){\cal B}_jF(z).
+\]
+For a monomial \(z^r\), the quotient in coordinate \(j\)
+has \(|r_j|\) monomials, each at absolute exponent length
+at most \(|r|_1\), including negative exponents. Therefore,
+for \(0<\sigma'<\sigma\), the combined absolute row Wiener
+norm obeys
+\begin{equation}
+ \sup_u\sum_{j,v,r}e^{\sigma'|r|_1}
+       |({\cal B}_jF)_{uv}(r)|
+ \le\frac1{e(\sigma-\sigma')}\,
+             \sup_u\sum_{v,r}e^{\sigma|r|_1}|F_{uv}(r)|.
+ \label{lst-Wiener-quotient}
+\end{equation}
+Here the \(j\) sum is inside the row supremum. The bound
+uses \(\sum_j|r_j|=|r|_1\) and
+\(\sup_{t\ge0}t e^{-(\sigma-\sigma')t}
+ =[e(\sigma-\sigma')]^{-1}\).
+The local Taylor series also shows that
+\({\cal B}_j\) lowers a vanishing order by at most one.
+
+Apply the identity twice, using exponents
+\(\sigma,3\sigma/4,\sigma/2\). Put
+\[
+ H_{\rho\tau}={\cal B}_\tau{\cal B}_\rho F,\qquad
+ \widetilde H_{\rho\tau}(z)=-z_\rho H_{\rho\tau}(z).
+\]
+Since \(d_\rho^-(-z_\rho)=d_\rho^+\), this gives
+\begin{equation}
+ F(z)=\sum_{\rho,\tau}
+       d_\rho^-(z)\widetilde H_{\rho\tau}(z)d_\tau^+(z),
+ \qquad \widetilde H_{\rho\tau}(1)=0.
+ \label{lst-factorization}
+\end{equation}
+In fact the jets of \(\widetilde H_{\rho\tau}\) through
+degree one vanish. Its combined kernel bound is
+\begin{equation}
+ \sup_u\sum_{\rho,\tau,v,r}
+     e^{(\sigma/2)|r|_1}
+           |(\widetilde H_{\rho\tau})_{uv}(r)|
+ \le \frac{16e^{\sigma/2}}{e^2\sigma^2}
+                           \epsilon b^{-2}.
+ \label{lst-H-bound}
+\end{equation}
+The factor \(e^{\sigma/2}\) pays the unit shift. No symmetry
+of the individual \(\widetilde H_{\rho\tau}\) is asserted.
+
+Let \(D_\rho a(x)=a(x+e_\rho)-a(x)\), the unscaled current
+difference. Integration by parts transfers one difference
+to each field. The zero sum in \eqref{lst-factorization}
+then gives the exact identity
+\begin{equation}
+ P_2(a)=\frac12\sum_{x,r,\rho,\tau}
+ [D_\rho a(x)]^T\widetilde H_{\rho\tau}(r)
+            [D_\tau a(x+r)-D_\tau a(x)].
+ \label{lst-quadratic-identity}
+\end{equation}
+The sign follows because \(d_\rho^-\) is the bilinear
+adjoint of \(d_\rho^+\). Compactly supported fields give
+the identity directly; the absolute majorants below
+extend it to the substituted fields. No positivity or
+second field derivative is used.
+
+\subsection{Cubic and quartic cancellation}
+\label{lst-higher-algebra}
+
+Put
+\begin{equation}
+ \ell_r(x)=\sum_\rho r_\rho D_\rho a(x),\qquad
+ R_r(x)=a(x+r)-a(x)-\ell_r(x).
+ \label{lst-Taylor}
+\end{equation}
+In the anchored cubic expression
+\[
+ P_3(a)=\frac16\sum_{x,r,s}
+                K_3(r,s)[a(x),a(x+r),a(x+s)],
+\]
+replace each shifted factor by \(a(x)+\ell+R\).
+The zeroth moment cancels the all-anchor term. The
+first moments cancel \(a,\ell,a\) and \(a,a,\ell\).
+Six terms remain: the two with one \(R\) and no \(\ell\),
+the \(\ell,\ell\) term, the two mixed \(\ell,R\) terms,
+and the \(R,R\) term, always with unshifted first factor.
+
+For the quartic expression subtract the all-anchor product
+using its zeroth moment, then telescope the three shifted
+factors. Each of three terms has one difference
+\(a(x+r_j)-a(x)\) and three endpoint or anchor factors.
+All cancellations are made in the total kernels before
+triangle inequalities or final carrier assignment.
+
+\subsection{Near-displacement coefficient bounds}
+\label{lst-near-section}
+
+Split these exact residual sums into \(m\le L\) and \(m>L\).
+Neither restricted kernel is claimed to retain zero moments.
+For the quadratic identity use \(m=|r|_1\).
+In the near case all evaluations and coordinate paths lie
+in a fixed final-unit collar. Coherence in
+\eqref{lst-background} gives rooted coefficient-family bounds
+\begin{align}
+ |a|&\le Cbh,\qquad
+ |\ell_r|\le Cbh^2|r|_1,\notag\\
+ |a(x+r)-a(x)|&\le Cbh^2|r|_1,\qquad
+ |R_r|\le Cbh^{2+\alpha}|r|_1^{1+\alpha}.
+ \label{lst-near-fields}
+\end{align}
+For a negative coordinate traversal, the positive difference
+is evaluated at the lower endpoint with the traversal sign.
+Subtracting its value at the anchor and using the physical
+gradient H\"older bound proves the last estimate.
+Each inequality is for the weighted sum of coefficient
+norms, with its suprema and H\"older quotients inside that
+sum. It is not deduced from a bound on the scalar sum.
+
+All near factors can be rooted at the anchor cell.
+Multiplication glues rooted trees and support unions, so
+their weights are submultiplicative. In the quadratic
+identity,
+\[
+ |D_\rho a(x)|\le Cbh^2,\qquad
+ |D_\tau a(x+r)-D_\tau a(x)|
+                      \le Cbh^{2+\alpha}|r|_1^\alpha.
+\]
+Its product is therefore
+\begin{equation}
+ Cb^2h^{4+\alpha}|r|_1^\alpha.
+ \label{lst-near-quadratic}
+\end{equation}
+Sum it with \eqref{lst-H-bound}. The six cubic products
+are bounded by
+\begin{equation}
+ Cb^3h^{4+\alpha}(1+m)^6.
+ \label{lst-near-cubic}
+\end{equation}
+The leading \(a,a,R\) term has that power of \(h\);
+\(a,\ell,\ell\) has \(h^5\), and the others have still
+higher powers. The quartic telescoping is bounded by
+\begin{equation}
+ Cb^4h^5(1+m).
+ \label{lst-near-quartic}
+\end{equation}
+The weighted kernel sums cancel \(b^n\) and pay all
+fixed displacement moments. Per original current anchor,
+the three bounds are respectively
+\(C\epsilon h^{4+\alpha}\),
+\(C\epsilon h^{4+\alpha}\), and \(C\epsilon h^5\).
+
+\subsection{Connected carriers and the anchor count}
+\label{lst-carriers-section}
+
+For each product coefficient keep its final-unit anchor
+\(i_0\) and the endpoint roots actually used. In a near
+term the complete collar permits the common root \(i_0\).
+In a far term use the endpoint roots and any neighboring
+roots needed for \(Da\). Their number is at most a fixed
+\(n_0\), independent of \(L\) and the displacement.
+
+Project the finite root set and, for each field-factor
+occurrence, the terminal set consisting of its root
+and variable support \(X\) to final \(J\)-cells.
+For each projected terminal set choose a deterministic
+short macro connecting graph supplied by the projection
+lemma. Take the connected union of these macro graphs
+as \(H\), including the anchor. The fine Steiner
+lengths below bound those chosen macro graphs; the
+carrier need not contain the full projection of an
+arbitrary fine connecting tree. The projection bound gives
+\begin{align}
+ |H|&\le1+T,\notag\\
+ T&\le\frac2J\left[
+       \tau(\text{roots})+
+       \sum_{\mathrm{occ}}\tau(\{\text{root}\}\cup X)\right]
+         +4\left[n_0+\sum_{\mathrm{occ}}|X|\right].
+ \label{lst-tree-bound}
+\end{align}
+Let \(j(x)\) be the final \(J\)-cell containing \(x/L\).
+For \(z\in H\), its graph distance to \(j(x)\) is at
+most \(T\). Hence
+\begin{equation}
+ e^{a_0|H|}1_{\{z\in H\}}
+ \le e^{a_0}e^{-\operatorname{dist}(z,j(x))}e^{cT}.
+ \label{lst-reroot}
+\end{equation}
+The budgets \eqref{lst-budgets} pay every attached
+tree and support-cardinality factor. The fixed
+\(e^{4cn_0}\) is absorbed into \(C\); near root-joining
+trees have bounded length.
+
+There are exactly \((JL)^4\) current anchor sites
+per final \(J\)-cell, with the same centered-boundary
+convention throughout. Therefore
+\begin{equation}
+ \sum_{x\in\mathbb Z^4}
+ e^{-\operatorname{dist}(z,j(x))}
+ \le (JL)^4 S_1,\qquad
+ S_1=\sum_{y\in\mathbb Z^4}e^{-|y|_1}.
+ \label{lst-anchor-count}
+\end{equation}
+The first internal-index count is the fixed \(v\).
+There is no additional count of all output coordinates.
+The near contributions are consequently
+\(CJ^4\epsilon L^{-\alpha}\) for degrees two and
+three, and \(CJ^4\epsilon L^{-1}\) for degree four.
+
+\subsection{Far displacements and convergence}
+\label{lst-far-section}
+
+For \(m>L\), use the same exact residual formulas but
+root each endpoint separately. The cubic and quartic
+factors obey
+\[
+ |a|\le Cbh,\qquad
+ |\ell_r|\le Cbh^2m,\qquad
+ |R_r|\le Cbh(1+hm).
+\]
+Their products are bounded by
+\(Cb^3h^3(1+m)^2\) and \(Cb^4h^4\).
+For the quadratic expression both first differences
+are bounded by \(Cbh^2\) at their own roots, so its
+product is bounded by \(Cb^2h^4\).
+
+The finite endpoint-root tree has
+\[
+ \tau(\text{roots})\le C_d(m/L+1).
+\]
+After \eqref{lst-reroot} this costs at most
+\(C\exp(C'm/(JL))\). Use the common kernel exponent
+\(\sigma_*=\sigma/2\), supplied by \eqref{lst-H-bound}
+and also available for \(K_3,K_4\). Choose \(L_0\)
+so that \(C'/(JL)\le\sigma_*/4\). One half of
+\(\sigma_*\) pays the extra tree weight and the fixed
+polynomial, leaving an exponentially small tail.
+After \eqref{lst-anchor-count} the total far bound is
+\begin{equation}
+ CJ^4\epsilon(L+2)e^{-\sigma_*L/4}
+                 \le C'\epsilon L^{-\alpha},
+       \qquad L\ge L_0 .
+ \label{lst-far-bound}
+\end{equation}
+All constants here are fixed before \(L\).
+
+The absolute majorants justify regrouping by connected
+\(H\) and give holomorphic coefficients on the same
+open \(b\)-ball, with their bounded supremum norm.
+For compactly supported \(w\), each nonzero field-factor
+coefficient has variable support meeting that compact
+set, since it vanishes at zero. Its final carrier
+contains that support. The anchored bound therefore
+implies convergence of the total sum, bounded by a
+constant times the number of final \(J\)-cells meeting
+the support. For that compact support \(K\), every
+nonzero field coefficient also has
+\(\tau(\{i\}\cup X)\ge\operatorname{dist}(i,K)\).
+Equation~\eqref{lst-background} therefore gives
+exponential spatial decay of \(a(w)\) and its first
+differences. The original quadratic kernel sum is
+absolutely convergent as well, so truncation and
+exhaustion justify its integration by parts without
+a boundary term. The near and far
+bounds prove Theorem~\ref{lst-theorem}.
+
+\subsection{Scope of the relocalization}
+\label{lst-scope}
+
+The result is a bounded connected localization of
+the canceled low-degree \emph{total} functional.
+It is stronger than extensive scalar power counting
+and needs no invariant individual carriers. For a
+residual analytic activity \(E-\beta S\), its
+coefficientwise degree-\(\ge5\) part can be transported
+by the previous high-jet estimate, while the total
+degrees two through four use the present construction.
+The two localizations may change the representation.
+
+This section does not prove canonical finite-torus
+wrapping control, an infinite-volume quantum measure,
+equality of sequential and direct cutoff integrals,
+boundedness of a complete quantum map on a quotient
+of representations, or a coupling trajectory.
+The classical scalar semigroup permits the choice
+\(L=R^q\) for a gauge-invariant total, but removes
+none of those separate interfaces.
+
+% No preamble. Prefix aqb-. Infinite analytic interactions; classical descent only.
+\section{A Banach quotient for analytic interactions}
+\label{aqb-section}
+
+Fix the cell size $J$, a bound $D$ on the number of scalar field
+coordinates per cell, a cardinality exponent $a>0$, and a radius
+$b>0$. Let $\mathcal C$ be the countable set of nonempty finite
+connected cell sets. A declared carrier may exceed the variables
+actually read by its coefficient. Let $H^\infty_b(H)$ denote the
+bounded holomorphic functions on the open scalar-coordinate
+radius-$b$ polydisc of $H$. Define
+\begin{equation}
+ \mathcal A_{a,b}=\left\{E=(E_H)_{H\in\mathcal C}:
+ \|E\|_{a,b}:=\sup_i\sum_{H\ni i}e^{a|H|}
+                       \|E_H\|_b<\infty\right\}.
+ \label{aqb-activity-space}
+\end{equation}
+Individual coefficients need not have any symmetry. Constants
+are allowed. All constants below may depend on the fixed $J,D,a$.
+
+\subsection{Closed equality kernel and summable fields}
+\label{aqb-quotient-section}
+
+For a finitely supported field $A$, $\|A\|_\infty<b$, put
+\begin{equation}
+ \Phi_E(A)=\sum_H\bigl[E_H(A|_H)-E_H(0)\bigr].
+ \label{aqb-total}
+\end{equation}
+If $K$ is its finite cell support, only carriers meeting $K$
+contribute, and
+\begin{equation}
+ \sum_H|E_H(A|_H)-E_H(0)|\le2|K|\|E\|_{a,b}.
+ \label{aqb-evaluation-bound}
+\end{equation}
+The series is normally convergent on every finite-coordinate
+polydisc.
+
+\begin{proposition}[Complete representation quotient]
+\label{aqb-quotient-proposition}
+The space $\mathcal A_{a,b}$ is Banach. The subspace
+\begin{equation}
+ \mathcal N_{a,b}=\{E:\Phi_E(A)=0
+                  \text{ for every compact }A,\ \|A\|_\infty<b\}
+ \label{aqb-null-space}
+\end{equation}
+is closed, and
+\begin{equation}
+ \mathcal Q_{a,b}=\mathcal A_{a,b}/\mathcal N_{a,b},
+ \qquad
+ \|[E]\|_{\mathcal Q}=\inf_{F\in\mathcal N_{a,b}}
+                                      \|E+F\|_{a,b}
+ \label{aqb-quotient-norm}
+\end{equation}
+is a Banach space. Its invariant subspace, defined by translation,
+hypercubic, global-adjoint and local-gauge invariance of the
+normalized total, is closed.
+\end{proposition}
+
+\begin{proof}
+A norm-Cauchy sequence is Cauchy in each $H^\infty_b(H)$:
+choose one root in $H$ in \eqref{aqb-activity-space}. Component
+limits exist. Fatou over carriers, followed by the root supremum,
+proves both the norm bound and norm convergence. The null space
+is the intersection of the kernels of the bounded evaluations
+\eqref{aqb-evaluation-bound}. The usual quotient-completeness
+argument uses a summably Cauchy subsequence and representatives
+with summable successive differences; it requires no minimizing
+representative. Each total symmetry is an equality of bounded
+evaluations, for all compact configurations and transforms in
+their common domain. Its preimage is closed and contains
+$\mathcal N_{a,b}$. Reality specifies a closed real form.
+\end{proof}
+
+The quotient removes all carrierwise constants and all other
+representations of the zero normalized total. It does not select
+a physical vacuum counterterm; a vacuum sector, if needed, stays
+separate. Equality of germs on every finite-coordinate subspace
+is equivalent to \eqref{aqb-null-space} by analytic uniqueness.
+
+Use the cell norm $\|A\|_1=\sum_i\|A|_i\|_\infty$.
+For $\|A\|_\infty,\|B\|_\infty\le\rho<b$, directional
+Cauchy on the convex segment gives
+\begin{align}
+ |E_H(A|_H)-E_H(B|_H)|
+ &\le\frac{\|E_H\|_b}{b-\rho}
+                          \|(A-B)|_H\|_\infty\notag\\
+ &\le\frac{\|E_H\|_b}{b-\rho}
+                          \sum_{i\in H}\|A_i-B_i\|_\infty.
+ \label{aqb-local-Lipschitz}
+\end{align}
+Use a strictly smaller directional circle first, then take its
+radius to the displayed margin. Summing at each cell proves
+\begin{equation}
+ |\Phi_E(A)-\Phi_E(B)|
+       \le\frac{\|E\|_{a,b}}{b-\rho}\|A-B\|_1.
+ \label{aqb-summable-Lipschitz}
+\end{equation}
+Thus \eqref{aqb-total} extends by an absolutely convergent series
+to summable fields in every strict interior ball. Finite field
+truncations converge in \eqref{aqb-summable-Lipschitz}. A null
+family remains zero on these fields. The extension therefore
+depends only on the quotient class, and the estimate holds with
+the quotient norm after taking the infimum over representatives.
+
+\subsection{A continuous total Maxwell coefficient}
+\label{aqb-beta-section}
+
+For each fixed order $n\le4$, scalar Cauchy and the exact finite
+monomial count give a summable total derivative kernel. Indeed
+the ordered derivative sum on a carrier is at most
+$(D|H|+n)^n b^{-n}\|E_H\|_b$. Connectedness bounds every
+slot displacement by $c_dJ|H|$. Spending half the carrier
+exponent on spatial distance and half on the fixed polynomial
+gives, for sufficiently small fixed $\sigma=\sigma(a,J)>0$,
+\begin{equation}
+ \sup_{i_1}\sum_{i_2,\ldots,i_n}
+ e^{\sigma\sum_{j\ge2}|x_j-x_1|}
+ |K_n(E;i_1,\ldots,i_n)|
+       \le C_n(a,D,J)b^{-n}\|E\|_{a,b}.
+ \label{aqb-kernel-bound}
+\end{equation}
+All scalar and color slots are included. Fixed moments follow
+with a further exponent loss. This is a fixed-order estimate,
+not a dimension-free absolute Taylor estimate at all orders.
+
+Each kernel component is a derivative on a finite-coordinate
+subspace and hence depends only on $[E]$. Taking a representative
+infimum gives \eqref{aqb-kernel-bound} with $\|[E]\|_{\mathcal Q}$.
+For a simple gauge group and an invariant total, define in the
+trace-normalized color component
+\begin{equation}
+ \beta([E])=\frac12\partial_{p_\nu}^2
+                       \Gamma^E_{2,\mu\mu}(0),
+ \qquad \mu\ne\nu.
+ \label{aqb-beta-definition}
+\end{equation}
+Use positive-bond midpoints $\xi(x,\mu)=x+e_\mu/2$.
+The total Ward algebra of Theorem~\ref{tkw-theorem} applies
+directly to these infinite kernels. It identifies
+\eqref{aqb-beta-definition} as the Maxwell coefficient and makes
+the distinct pair immaterial. No subsequence is needed once
+the infinite interaction is specified. For real interactions
+this coefficient is real.
+
+It is a continuous linear functional on the invariant quotient:
+\begin{equation}
+ |\beta([E])|\le C_\beta(a,D,J)b^{-2}
+                                      \|[E]\|_{\mathcal Q}.
+ \label{aqb-beta-bound}
+\end{equation}
+For example, a second derivative component is bounded by
+$2b^{-2}\|E_H\|_b$, there are at most $D|H|$ second slots,
+and their squared midpoint separation is at most
+$(c_dJ|H|)^2$. Thus, up to a fixed color-normalization factor,
+one can take
+\begin{equation}
+ C_\beta=D(c_dJ)^2\sup_{m\ge1}m^3e^{-am}.
+ \label{aqb-beta-constant}
+\end{equation}
+The factor $b^{-2}$ is essential. For a semisimple product use
+the finite vector of coefficients and one reference per simple
+ideal.
+
+\subsection{Full-reference extraction without a small-radius loss}
+\label{aqb-extraction-section}
+
+Let $[S]$ be an invariant reference with $\beta([S])=1$.
+Assume a representation on one fixed radius $\rho$ satisfies
+$\|S\|_{a,\rho}\le M_S$, uniformly in preceding refinement,
+and its total first derivative vanishes. This is the uniform
+fixed-radius classical support input; normalization of the
+Hessian alone does not imply it.
+
+Define the homogeneous phase projections coefficientwise by
+\begin{equation}
+ (P_nE_H)(A)=\frac1{2\pi}\int_0^{2\pi}
+                     e^{-int}E_H(e^{it}A)\,dt.
+ \label{aqb-phase-projection}
+\end{equation}
+They retain $H$ and have norm at most one. Replace $S_H$ by
+$S_H^{\ge2}=\sum_{n\ge2}P_nS_H$. The normalized total has
+the same class, since constants are removed and the total
+linear sector is zero. Homogeneity yields, for $b\le\rho/2$,
+\begin{equation}
+ \|S^{\ge2}\|_{a,b}
+ \le\frac{(b/\rho)^2}{1-b/\rho}M_S
+ \le C_Sb^2,
+ \qquad C_S=\frac{2M_S}{\rho^2}.
+ \label{aqb-reference-bound}
+\end{equation}
+No vanishing of individual linear coefficients or individual
+gauge invariance was assumed. A joint subsequential limit
+preserves this bound by Fatou.
+
+The full-reference projection
+\begin{equation}
+ \mathcal P_S[E]=[E]-\beta([E])[S]
+ \label{aqb-extraction}
+\end{equation}
+satisfies $\beta\mathcal P_S=0$, $\mathcal P_S^2=\mathcal P_S$,
+and
+\begin{equation}
+ \|\mathcal P_S\|\le C_{\rm ext},
+ \qquad C_{\rm ext}=1+C_\beta C_S.
+ \label{aqb-extraction-bound}
+\end{equation}
+The constant is independent of small $b$. Apply
+\eqref{aqb-beta-bound} and \eqref{aqb-reference-bound} to
+representatives approaching the quotient infimum. The whole
+invariant reference is subtracted, so its nonlinear Ward
+identities remain exact.
+
+\subsection{Classical substitution on the quotient}
+\label{aqb-descent-section}
+
+Fix $L$ and an actual infinite pre-gauge background map $a_L$.
+Assume its coherent whole-fiber support family satisfies
+\begin{equation}
+ a_L|_i=\sum_{X\ne\varnothing}a_{i,X}(w_X),\qquad
+ a_{i,X}(0)=0,\qquad
+ \sup_i\sum_X e^{\kappa\tau(\{i\}\cup X)+A|X|}
+                \|a_{i,X}\|_b\le Cb/L,
+ \label{aqb-background-family}
+\end{equation}
+and $\|a_L(w)\|_\infty\le\rho_0<b$. The maximum over the
+whole current output fiber is inside the support sum, and
+overlapping collars use one coefficient assignment. For compact
+$w$ supported in $K$, a nonzero term has $X\cap K\ne\varnothing$;
+hence
+\begin{equation}
+ \|a_L(w)|_i\|\le(Cb/L)e^{-\kappa\operatorname{dist}(i,K)}.
+ \label{aqb-background-summability}
+\end{equation}
+At fixed $L$ there are finitely many current coordinates per
+fiber, so $a_L(w)$ is summable. Consequently
+\begin{equation}
+ (\mathcal T_L\Phi_E)(w)=\Phi_E(a_L(w))
+ \label{aqb-scalar-substitution}
+\end{equation}
+depends only on $[E]$, by \eqref{aqb-summable-Lipschitz}.
+This is algebraic classical descent.
+
+For bounded descent into an activity quotient, suppose a
+connected strict representation $\mathscr L_LE$ of
+\eqref{aqb-scalar-substitution} obeys
+\begin{equation}
+ \|\mathscr L_LE\|_{a_{\rm out},b}
+                         \le B_L\|E\|_{a,b}.
+ \label{aqb-representation-input}
+\end{equation}
+Then $\mathcal T_L[E]=[\mathscr L_LE]$ is well defined and has
+norm at most $B_L$. Distinct valid output assignments have the
+same normalized total; equivalent inputs give equal output
+totals by summable-field continuity. The class map is linear
+because its scalar total is linear in $E$, even without a linear
+choice of representatives. Taking near-minimal input
+representatives proves the norm bound. Scalar amplitude alone
+does not prove \eqref{aqb-representation-input}.
+
+The compactness construction of Section~\ref{aic-section}
+provides simultaneous infinite interactions and coherent maps
+under its fixed-parameter finite-regulator hypotheses. Its
+summable-field composition limit transfers finite classical
+identities only on one jointly chosen system, with common strict
+domain margins. Unrelated subsequences cannot be composed.
+Preserving invariant totals needs more than an abstract orbit
+relation. The connecting infinite gauge must be one to which
+the input total's gauge identity applies. A sufficient condition
+is approximation by allowed compact gauges with transformed
+fields converging in $\ell^1$ inside a common strict margin;
+then \eqref{aqb-summable-Lipschitz} passes the identity. A joint
+finite invariant approximation of a particular interaction and
+the maps is another sufficient condition for that interaction.
+For an action on the entire invariant quotient, this requirement
+must hold for every input class. A joint approximation of one
+input, or unrelated finite subsequences, does not establish a
+universal invariant-quotient action.
+
+\subsection{Conditional classical contraction after extraction}
+\label{aqb-contraction-section}
+
+The following statement keeps the infinite-family and scale
+requirements explicit. Fix $J,a$ and the primitive block ratio.
+Use one joint infinite system with normalized references $S_M$
+and $S_{ML}$ satisfying \eqref{aqb-reference-bound} uniformly.
+Assume the coherent physical $C^{1,\alpha}$ families of
+Proposition~\ref{pgh-support-proposition}, with primitive
+constants independent of $L,M$, and impose the fixed support
+reserves of Theorem~\ref{lst-theorem} after choosing $J$.
+Assume also the core/tail budgets of the fifth-order background
+transport theorem of Notebook28, with unchanged $a,b$.
+Its constant $C_{\rm high}$ is independent of $L$ once these
+reserves are fixed. Increasing $L$ weakens its compression
+requirement; the same fixed $J$ and logarithmic tail cutoff
+remain admissible. Choose $b$ after the final finite $L$, so
+$b\le r_A/L_*$ with $L_*=L/(8C_A)$ and all other classical
+margins hold. Scalar substitution and preservation of the
+invariant domain satisfy the additional gauge-identity requirement
+just specified. An operator assertion on the whole invariant
+quotient assumes it for every class; a joint finite approximation
+may instead verify the following pointwise estimate on its
+specified collection of classes.
+
+\begin{theorem}[Classical quotient estimate]
+\label{aqb-classical-theorem}
+Under these hypotheses, in dimension four,
+\begin{equation}
+ \|\mathcal T_L\mathcal P_{S_M}[E]\|_{\mathcal Q}
+ \le C_{{\rm ext,in}}
+       \bigl[C_{\rm low}(J)L^{-\alpha}
+                    +6C_{\rm high}L^{-1}\bigr]
+                     \|[E]\|_{\mathcal Q}.
+ \label{aqb-classical-bound}
+\end{equation}
+If a normalized output reference is used, then
+\begin{equation}
+ \|\mathcal P_{S_{ML}}\mathcal T_L\mathcal P_{S_M}\|
+ \le C_{{\rm ext,out}}C_{{\rm ext,in}}
+       \bigl[C_{\rm low}(J)L^{-\alpha}
+                    +6C_{\rm high}L^{-1}\bigr].
+ \label{aqb-projected-contraction}
+\end{equation}
+The constants are fixed after $J$ and before $L,b$. A sufficiently
+large finite allowed $L=R^q$, followed by a sufficiently small
+common positive $b$, makes the last bound less than one.
+\end{theorem}
+
+\begin{proof}
+Put $[F]=\mathcal P_{S_M}[E]$ and choose any representative.
+The phase projections \eqref{aqb-phase-projection} retain carriers,
+have norm at most one, and give a coefficientwise fifth-order
+remainder $R_5=I-\sum_{n=0}^4P_n$ with norm at most six.
+These projections also descend to the unrestricted quotient:
+apply the phase integral to a zero normalized analytic total.
+They need not preserve gauge invariance separately.
+
+The total linear term of $F$ is zero by global adjoint invariance,
+its vacuum is removed, and $\beta(F)=0$. The total Ward algebra
+therefore gives the low-kernel cancellations in
+Theorem~\ref{lst-theorem}. The kernel bound
+\eqref{aqb-kernel-bound} supplies that theorem's $\epsilon$ with
+at most a fixed $C_{\rm ker}(J)\|F\|_{a,b}$. Its new connected
+representation has norm at most
+$C_{\rm low}(J)L^{-\alpha}\|F\|_{a,b}$.
+The coefficientwise $R_5$ part has a connected representation
+of norm at most $6C_{\rm high}L^{-1}\|F\|_{a,b}$ by the
+fifth-order transport theorem. The zero total linear term stays
+zero after substitution by \eqref{aqb-summable-Lipschitz}; it
+need not vanish on each carrier.
+
+All scalar decompositions are legitimate on summable inputs:
+the phase projections and $R_5$ lie in the anchored space,
+Section~\ref{aqb-quotient-section} gives their continuous
+extensions, and the new output families converge normally on
+compact fields. Adding the two representations and taking the
+infimum over representatives of $[F]$ gives the bracket in
+\eqref{aqb-classical-bound}. Apply
+\eqref{aqb-extraction-bound} at the input, and if desired at
+the output, to obtain both displays.
+\end{proof}
+
+The output projection is explicit: the theorem does not claim
+that classical substitution itself preserves $\beta=0$.
+The scalar semigroup of Theorem~\ref{csg-theorem}, passed on
+a joint system as in Section~\ref{aic-section}, permits the
+finite choice $L=R^q$ after $R,J$ are fixed. The bound is on a
+class admitting a newly justified localization, not on an
+arbitrarily fixed sequential carrier assignment.
+
+\subsection{Quantum descent is a separate obligation}
+\label{aqb-scope}
+
+No quantum map on $\mathcal Q_{a,b}$ has been defined here.
+Equality of infinite normalized totals on compact fields does
+not by itself identify finite-regulator exponentials, their
+sharp restricted integrals, chosen vacuum normalizations, or
+their limits. Thus this quotient does not yet permit arbitrary
+equivalent representatives to replace the actual quantum output
+inside its next finite integration. Quantum descent and its
+continuity and normalization compatibility, the full amplitude
+recursion, and the coupling trajectory remain separate.
+
+\section{The interface with a renormalized quantum induction}
+\label{gex-next-section}
+
+The low-degree classification is now tied to the actual local
+symmetries and a normalized classical reference. The exact
+coupling rebase is
+\[
+ g_{\mathrm{next}}^{-2}=g^{-2}-\beta,\qquad
+ E_{\mathrm{ren}}=E-E(0)-\beta S_{MR}.
+\]
+This is an identity of the density after extraction. A sign
+or trajectory estimate for the generated \(\beta\) is still
+needed; the identity does not supply one.
+
+There is a concrete route to the spatial part of a contraction.
+Fix the elementary macrostep \(R\) and its sufficient auxiliary
+grouping \(J\). The spatial remainder estimate has constants
+depending on these fixed data. Select a finite \(q\) afterward,
+so that its endpoint ratio \(L=R^q\) makes
+\(C(J)L^{-\alpha}\) small. The classical semigroup identifies
+the scalar inherited background with the direct endpoint
+background. Its new connected localization can then be
+estimated directly. The high-degree piece has the separate
+inverse-\(L\) estimate of Notebook 28, with its analytic radius
+chosen after this finite \(L\).
+
+The analytic compactness and quotient constructions make
+this classical change of representation precise. They supply
+joint limiting interactions and maps, a complete quotient,
+and a bounded full-reference projection. The final classical
+estimate is a contraction once the finite endpoint ratio
+is sufficiently large and its common radius is chosen.
+
+To turn this into a quantum induction, four interfaces must
+be established. First, the limiting interaction space must
+be matched to the regulators used by the actual quantum update,
+including winding terms and its vacuum normalization.
+Second, prove that the quantum update descends continuously
+to the quotient; classical descent alone does not identify
+the sharp finite-regulator integrals for equivalent inputs.
+Third, the \(q\) successive
+quantum steps must retain all intermediate generated terms,
+cutoffs and normalizations; the classical semigroup does not
+replace them by a single fluctuation integral. Fourth, the
+resulting recurrence must control both the renormalized
+activity and the actual coupling trajectory uniformly in
+the number of blocks of steps.
+
+The present results supply the nonlinear marginal identity,
+the classical spatial gain and its representation space
+under stated hypotheses. The larger existence proof
+still needs the mixed and large-field histories, sourced
+observable estimates, continuum nontriviality, Euclidean
+symmetry and reconstruction already recorded in Notebook 01.
+The mass gap remains a subsequent spectral assertion.
+
+\begin{thebibliography}{9}
+\bibitem{priorgex}
+\emph{Toward a four-dimensional Yang--Mills construction},
+research Notebooks 07, 15--16 and 25--28 in this workspace.
+The flat classical normalization, ordinary minimum theorem,
+strict classical support families and common-domain quantum
+macrostep are the principal prior inputs.
+\bibitem{balaban109gex}
+T.~Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field
+theories. I. Generation of effective actions in a small field
+approximation and a coupling constant renormalization in four
+dimensions},
+Commun. Math. Phys. \textbf{109} (1987), 249--301.
+\href{https://doi.org/10.1007/BF01215223}{Publisher record};
+\href{https://scispace.com/pdf/renormalization-group-approach-to-lattice-gauge-field-3ygai0vxt1.pdf}{Original article copy}.
+The averaging symmetries and total Ward/subtraction calculations
+are checked against this primary source. Its stronger
+coefficientwise orbit hypotheses are not assumed here.
+\bibitem{balaban116gex}
+T.~Ba\l aban,
+\emph{Renormalization group approach to lattice gauge field
+theories. II. Cluster expansions},
+Commun. Math. Phys. \textbf{116} (1988), 1--22.
+\href{https://doi.org/10.1007/BF01239022}{Publisher record}.
+\bibitem{sourcegex}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}
+{Yang--Mills-LLM-experiment},
+deposited raw accounts at commit
+\texttt{e392ef4501\allowbreak 3a581664ba\allowbreak b76b908671\allowbreak 70b30fe10e}.
+\end{thebibliography}
+\end{document}

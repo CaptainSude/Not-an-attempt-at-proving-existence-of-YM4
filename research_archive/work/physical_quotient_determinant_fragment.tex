@@ -1,0 +1,401 @@
+\section{An exact finite physical quotient for the determinant}
+\label{pqd-section}
+
+The identities in this section concern the actual finite homogeneous
+small-field germ. They remove the periodically pinned gauge variables
+before estimation. They do not identify the separate massless factors
+below with infinite-volume affine magnetic traces.
+
+\subsection{The actual spaces and the residual Hessian}
+\label{pqd-spaces}
+
+Fix an old depth $M$, a composite endpoint $K=\ell^k$, and a compatible
+finite current torus. All matrices initially use real, trace-orthonormal
+color coordinates, current bond angles, and counting measure. Let $E$
+and $E_c$ be the fine/current and final coarse bond spaces. Fix one final
+coarse site $o$ as a common global gauge base. Let $S_f,S_c$ denote the
+fine and coarse scalar site spaces whose value at $o$ is zero. The
+noncenter scalar space $S_b$ vanishes at every final coarse center.
+There is a coordinate splitting
+\begin{equation}
+ S_f=S_b\oplus S_c,\qquad r:S_f\longrightarrow S_c,
+ \label{pqd-scalar-split}
+\end{equation}
+where $r$ is restriction to coarse centers; the coordinate extension of
+$S_c$ is zero at noncenters.
+
+At the actual fine saddle $U$ and target $W$, write $D_f,D_c$ for the
+left-relative gauge generators with these bases, and $D_b$ for the
+restriction of $D_f$ to $S_b$. Each generator with a global base is
+injective, by propagating a zero scalar value along lattice paths.
+The actual constraint differential $C:E\to E_c$ is onto, by its
+invertible pivot block, and exact gauge covariance gives
+\begin{equation}
+ CD_f=D_c r,\qquad CD_b=0.\label{pqd-covariance}
+\end{equation}
+Use the full relative-coordinate Lagrangian and coarse Hessians
+\begin{equation}
+ L=s''-\lambda\cdot f'',\qquad q=s_{\rm eff}'',\qquad
+ \mathcal H=L-C^TqC.\label{pqd-residual}
+\end{equation}
+The actual minimum-value comparison and its envelope identities give
+\begin{equation}
+ \mathcal H\ge0,\qquad \mathcal H D_f=0,\qquad
+ CH=I,\qquad \mathcal H H=0,\label{pqd-residual-identities}
+\end{equation}
+where $H$ is the derivative of the actual minimum section.
+The constraint-current term $\lambda\cdot f''$ is retained throughout.
+No on-shell hypothesis is required.
+
+Let $T$ be the actual contour-logarithm differential. Its normalization
+is $TD_b=-I$. Positivity of the actual retained precision implies that
+$\mathcal H$ on $\ker C$ has nullspace exactly $\operatorname{ran}D_b$
+and is positive on its quotient. Indeed $\mathcal H=L$ on $\ker C$,
+and the contour component can be removed uniquely along $D_b$.
+
+Define
+\begin{equation}
+ G_f=D_f^TD_f,\quad G_c=D_c^TD_c,\quad
+ P_f=I-D_fG_f^{-1}D_f^T,\quad
+ P_c=I-D_cG_c^{-1}D_c^T.\label{pqd-projections}
+\end{equation}
+Choose orthonormal column matrices $U_f,U_c$ spanning the ranges of
+$P_f,P_c$, and put, for a fixed $a>0$,
+\begin{equation}
+ A=U_c^TCU_f,\qquad \mathcal H_\perp=U_f^T\mathcal H U_f,
+ \qquad Q_\perp=\mathcal H_\perp+aA^TA.
+ \label{pqd-physical-precision}
+\end{equation}
+These determinants do not depend on the orthonormal bases.
+The map $A$ is onto: $P_fHU_c$ is a right inverse after passing to
+physical coordinates, since $P_cCD_f=0$. Its range is annihilated by
+$\mathcal H$. It follows that $Q_\perp>0$ and
+\begin{equation}
+ A Q_\perp^{-1}A^T=a^{-1}I.\label{pqd-compression}
+\end{equation}
+For example, if $H_\perp=U_f^TP_fHU_c$, then
+$AH_\perp=I$, $\mathcal H_\perp H_\perp=0$, and
+$Q_\perp H_\perp=aA^T$, proving the last identity.
+
+\subsection{The exact determinant and orbit-density factors}
+\label{pqd-identity-section}
+
+Write $\mathcal N_0F=F(W)-F(1)$, with the determinant branches continued
+from the positive flat convention. The actual leading correction obeys
+\begin{equation}
+ \boxed{\displaystyle
+ D_{M,K}=\mathcal N_0\left\{
+ \frac12\log\det G_f-\frac12\log\det G_c
+                         -\frac12\log\det Q_\perp\right\}.}
+ \label{pqd-main}
+\end{equation}
+Both scalar determinants are essential. Empty determinants, when there
+is no nonbase coarse scalar coordinate, are one.
+
+Here is a direct verification including the measure factors. Let
+$K_0$ be the actual retained insertion and $C_p$ its pivot block. The
+leading amplitude is
+\begin{equation}
+ I_{\rm act}=|\det C_p|^{-1}\det A_T^{-1/2},\qquad
+ A_T=K_0^T(\mathcal H+T^TT)K_0.\label{pqd-amplitude}
+\end{equation}
+Its ambient constrained Gaussian is
+\begin{equation}
+ \int_E dx\,\delta(Cx)
+  e^{-\frac12x^T\mathcal H x-\frac12|Tx|^2}
+ =(2\pi)^{(\dim E-\dim E_c)/2}I_{\rm act}.
+ \label{pqd-gaussian}
+\end{equation}
+Set $x=U_fu+D_f(\lambda_b,\lambda_c)$. The fine change of variables
+has Jacobian $\sqrt{\det G_f}$. The target basis $[U_c,D_c]$ has
+Jacobian $\sqrt{\det G_c}$. With
+$B=G_c^{-1}D_c^TCU_f$, one has exactly
+\begin{equation}
+ Cx=U_cAu+D_c(Bu+\lambda_c),\qquad
+ \delta(Cx)=(\det G_c)^{-1/2}
+                      \delta(Au)\delta(Bu+\lambda_c).
+ \label{pqd-target-delta}
+\end{equation}
+After integrating $\lambda_c=-Bu$, the residual action is
+$u^T\mathcal H_\perp u$. Since $TD_b=-I$, integration in
+$\lambda_b$ is a translated standard Gaussian and contributes only
+$(2\pi)^{\dim S_b/2}$. In particular it produces no background-dependent
+pinned-site determinant.
+
+The remaining physical constrained Gaussian, completed by $aA^TA$,
+has determinant factor
+$a^{\dim\operatorname{ran}P_c/2}\det Q_\perp^{-1/2}$ by
+\eqref{pqd-compression}. Since
+$\dim S_f=\dim S_b+\dim S_c$, its Gaussian powers agree exactly with
+\eqref{pqd-gaussian}. Thus
+\begin{equation}
+ I_{\rm act}=
+ \left(\frac{\det G_f}{\det G_c}\right)^{1/2}
+ a^{\dim\operatorname{ran}P_c/2}\det Q_\perp^{-1/2}.
+ \label{pqd-amplitude-result}
+\end{equation}
+The $a$-only power disappears on applying $\mathcal N_0$, proving
+\eqref{pqd-main}. The target delta uses a left-relative Lie coordinate.
+Its Haar density at the origin is constant; there is no additional
+$j(\log W)$ factor.
+
+A useful basis-free ambient form is
+\begin{equation}
+ Q_{\rm res}=\mathcal H+D_fD_f^T+aC^TP_cC,
+ \qquad \det Q_{\rm res}=\det G_f\det Q_\perp,
+ \label{pqd-ambient}
+\end{equation}
+because the full physical and vertical spaces reduce this operator.
+On the orthonormal vertical columns $D_fG_f^{-1/2}$ its matrix is
+$G_f$. Therefore
+\begin{equation}
+ D_{M,K}=\mathcal N_0\left\{
+ \log\det G_f-\frac12\log\det Q_{\rm res}
+                                      -\frac12\log\det G_c\right\}.
+ \label{pqd-ambient-identity}
+\end{equation}
+The physical constraint $P_cC$ is unchanged by $C\mapsto C+D_cZ$.
+This observation applies after projection; it does not permit dropping
+the endpoint-gauge part of $C$ in the original based ambient precision.
+
+\subsection{A direct canonical Schur check}
+\label{pqd-schur-section}
+
+For a second proof, start with the already established canonical
+completion
+\begin{equation}
+ Q_b=\mathcal H+D_bD_b^T+C^TC,\qquad
+ D=\mathcal N_0\left(\log\det G_b-\frac12\log\det Q_b\right).
+ \label{pqd-canonical}
+\end{equation}
+Let $J:S_b\to S_f$ be the coordinate insertion, and in orthonormal
+full-gauge coordinates set
+\begin{equation}
+ B_g=G_f^{1/2}J,\qquad C_{gg}=G_c^{1/2}rG_f^{-1/2}.
+ \label{pqd-gauge-blocks}
+\end{equation}
+One has $C_{gg}B_g=0$. Splitting the vertical space into
+$\operatorname{ran}B_g$ and its orthogonal complement, the first block
+contributes $\det G_b$. In the other vertical block $C_{gg}$ is square
+and invertible. Its Schur elimination cancels the whole coarse-gauge
+component of $CU_f$, leaving $\mathcal H_\perp+A^TA$. Hence
+\begin{equation}
+ \det Q_b=\det G_b\det(C_{gg}C_{gg}^T)\det Q_\perp\big|_{a=1}.
+ \label{pqd-schur1}
+\end{equation}
+The scalar Schur identity for \eqref{pqd-scalar-split} gives
+$\det(rG_f^{-1}r^T)=\det G_b/\det G_f$. Consequently
+\begin{equation}
+ \det Q_b=(\det G_b)^2\frac{\det G_c}{\det G_f}
+                                      \det Q_\perp\big|_{a=1},
+ \label{pqd-schur2}
+\end{equation}
+which independently checks every determinant power in
+\eqref{pqd-main}. Changing $a$ multiplies the physical determinant by
+$a^{\dim\operatorname{ran}P_c}$ and changes no normalized expression.
+
+\subsection{The finite identity and the infrared passage are distinct}
+\label{pqd-scope}
+
+All preceding identities hold on the actual finite real germ and extend
+bilinearly and holomorphically on a sufficiently small complex germ at
+that fixed regulator. The ambient form avoids choosing analytic
+orthonormal bases. No volume-independent complex neighborhood is
+inferred for the globally based scalar inverses.
+
+The actual correction already has a local-density and affine
+polynomial-jet interpretation. The separate factors in
+\eqref{pqd-ambient-identity} contain massless globally based gauges.
+The identity alone does not equate their separate infinite-volume
+magnetic traces to the actual Maxwell moment. A joint infrared-regulated
+or local-limit identity must retain all three factors. In particular,
+one may not replace $G_f,G_c$ separately by massive translation-invariant
+ghosts without estimating the change.
+
+\subsection{A uniform flat physical gap}
+\label{pqd-flat-section}
+
+This subsection gives estimates for the actual flat operators, uniformly
+in $M$, $K=\ell^k$, and compatible volume in $d=4$. The primitive ratio
+$\ell$ is fixed. The straight-string angle average is
+\begin{equation}
+ (A_K^{\rm st}x)_\mu(y)=K^{-d}
+ \sum_{z\in B_K(y)}\sum_{j=0}^{K-1}x_\mu(z+je_\mu).
+ \label{pqd-angle-average}
+\end{equation}
+Its absolute row and column sums are $K$ and $K^{1-d}$, respectively,
+including periodic multiplicities. Therefore
+$\|A_K^{\rm st}\|_{2\to2}\le K^{1-d/2}$.
+The actual cumulative ordinary/corrected endpoint-gauge identity gives
+$C_K=A_K^{\rm st}+D_c Z_K$ at flatness. Thus
+\begin{equation}
+ P_cC_K=P_cA_K^{\rm st},\qquad
+ \|P_cC_K\|_{2\to2}\le K^{-1}\quad(d=4).
+ \label{pqd-projected-bound}
+\end{equation}
+No bound on $Z_K$ is needed here. The same estimate must not be assigned
+to $C_K$ before projection.
+
+For the physical gap, take a flat physical field $x\in\operatorname{ran}P_f$
+and put $\eta=K^{-1}$, $v=Kx$ in final physical units. Then
+\begin{equation}
+ \|v\|_{2,\eta}^2=K^{-2}\|x\|_2^2,\qquad
+ P_cC_Kx=P_cQ_K^{\rm st}v.\label{pqd-flat-scaling}
+\end{equation}
+The four-dimensional action is unchanged by this rescaling. The
+previously proved curvature contraction gives, for the actual old-$M$
+flat quadratic energy,
+\begin{equation}
+ \mathcal E_M(v)\ge\|d_\eta v\|_{2,\eta}^2.
+ \label{pqd-maxwell-lower}
+\end{equation}
+The actual coarse Hessian $q_{MK}$ is nonnegative, kills coarse
+gradients, and satisfies $\|q_{MK}\|\le R_q$ with a common constant.
+The physical residual energy is therefore
+\begin{equation}
+ \mathcal E_{\rm res}(v)=\mathcal E_M(v)
+  -\langle P_cQ_K^{\rm st}v,q_{MK}P_cQ_K^{\rm st}v\rangle\ge0.
+ \label{pqd-flat-residual}
+\end{equation}
+
+Here is the needed uniform physical Poincare estimate. In each real
+coarse Bloch fiber $p$, use fine aliases $p+2\pi r$, gradients
+$u_r=K(e^{i(p+2\pi r)/K}-1)$ componentwise, and $P_r=|u_r|^2$.
+At flatness globally based and full periodic gradients have the same
+range, so $v_r\perp u_r$ is the correct physical condition. Write
+$d_c=e^{ip}-1$, and let $\Omega_r$ be the diagonal normalized
+straight-average multiplier. The established elementary alias identities
+are
+\begin{equation}
+ P_r\ge4\ (r\ne0),\quad
+ \sum_r|\omega_{r,\mu}|^2\le1,\quad
+ \min_\mu|\omega_{0,\mu}|\ge c_\omega=(2/\pi)^{d+1},
+ \quad \Omega_0u_0=a_0d_c.
+ \label{pqd-alias-inputs}
+\end{equation}
+Set $y=P_{d_c}^{\perp}\sum_r\Omega_rv_r$ and
+$y_0=P_{d_c}^{\perp}\Omega_0v_0$. On the zero coarse mode the projection
+is $I$, including its harmonic one-forms. For a nonzero mode,
+\begin{equation}
+ v_0=P_{u_0}^{\perp}\Omega_0^{-1}y_0,
+ \qquad |v_0|\le c_\omega^{-1}|y_0|.
+ \label{pqd-central-inverse}
+\end{equation}
+Indeed $\Omega_0v_0-y_0$ is a multiple of $d_c$, whose inverse image
+under $\Omega_0$ is a multiple of $u_0$; orthogonal projection removes
+it. The zero-mode identity is simply $v_0=y_0$.
+Parseval bounds the high-alias contribution to $y$ by $\|v_{\rm high}\|$,
+and its energy is at least $4\|v_{\rm high}\|^2$. Consequently
+\begin{equation}
+ \|v\|^2\le A_0|y|^2+B_0\sum_rP_r|v_r|^2,
+ \qquad A_0=2c_\omega^{-2},\quad
+ B_0=\frac{1+2c_\omega^{-2}}4.
+ \label{pqd-physical-poincare}
+\end{equation}
+Summing fibers, using \eqref{pqd-maxwell-lower}, and then
+\eqref{pqd-flat-residual}, gives
+\begin{equation}
+ \|v\|_{2,\eta}^2\le B_0\mathcal E_{\rm res}(v)
+ +(A_0+B_0R_q)\|P_cQ_K^{\rm st}v\|_2^2.
+ \label{pqd-residual-poincare}
+\end{equation}
+Thus the actual physical precision in \eqref{pqd-physical-precision}
+satisfies
+\begin{equation}
+ \boxed{\displaystyle Q_\perp(1)\ge c_a K^{-2}I,\qquad
+ c_a=\min\left\{B_0^{-1},\frac{a}{A_0+B_0R_q}\right\}>0.}
+ \label{pqd-flat-gap}
+\end{equation}
+This is uniform in refinement, endpoint, and finite volume. It supplies
+the expected physical gap after the gauge quotient. It does not give
+such a gap for the vertical block $G_f$, or bounds on derivatives of
+the nonflat projections $P_f,P_c$.
+
+\subsection{A limitation of the unprojected contour completion}
+\label{pqd-contour-section}
+
+For clarity, simply returning to the actual contour gauge does not give
+the gap \eqref{pqd-flat-gap} for its ambient matrix. First, the full flat
+ordinary average has a uniform $O(1)$ counting-$\ell^2$ bound, though
+not the $O(K^{-1})$ bound of \eqref{pqd-projected-bound}. Differentiate
+the exact cumulative gauge recursion. If $b_\ell$ is the one-step
+scalar endpoint contour mean, then, with nested center restrictions,
+\begin{equation}
+ Z_K=\sum_{j=0}^{k-1}b_\ell^{(j)}A_{\ell^j}^{\rm st}.
+ \label{pqd-gauge-recursion}
+\end{equation}
+A row of $b_\ell$ has absolute norm at most $d\ell$. A row of
+$A_r^{\rm st}$ has squared norm at most
+$r\,r^{1-d}=r^{2-d}$, by its row sum and largest coefficient. Hence in
+$d=4$ each $Z_K$ row has norm at most $d\ell/(1-\ell^{-1})$ and each
+$C_K$ row has norm at most
+$c_{\rm row}=1+2d\ell/(1-\ell^{-1})$. Actual two-final-block locality
+makes each fine bond occur in at most $8d$ final rows. Rowwise
+Cauchy--Schwarz therefore proves
+\begin{equation}
+ \|C_K\|_{2\to2}\le c_C:=\sqrt{8d}\,c_{\rm row}.
+ \label{pqd-full-average-bound}
+\end{equation}
+
+For $K\ge3$, take one real color and a unit field $e$ on the internal bond $[0,e_1]$
+leaving one block center. Put $h=(K-1)/2$ and $\phi=T_Ke$, with zero
+values at all block centers and outside this block. In the actual
+coordinate-order contour average, for $1\le x_j\le h$ and $j\ge2$,
+\begin{equation}
+ \phi(1,x_2,\ldots,x_d)=1/d,\qquad
+ \phi(0,x_2,\ldots,x_d)=0.\label{pqd-contour-jump}
+\end{equation}
+The root bond is traversed precisely when direction $1$ is first among
+the $d$ nonzero coordinate directions. Set $x=e+D_b\phi$. Exact gauge
+identities give $T_Kx=0$, $C_Kx=C_Ke$, and
+$x^TL_{\mathrm{flat}}x=e^TL_{\mathrm{flat}}e$. The $h^{d-1}$ bonds in
+\eqref{pqd-contour-jump} differ from the original bond and have
+$|x|=1/d$, so $\|x\|^2\ge h^{d-1}/d^2$. The common flat operator
+bound and \eqref{pqd-full-average-bound} imply
+\begin{equation}
+ \lambda_{\min}(L_{\mathrm{flat}}+T_K^TT_K+aC_K^TC_K)
+ \le d^2(R_q+ac_C^2)h^{-(d-1)}.
+ \label{pqd-contour-obstruction}
+\end{equation}
+In four dimensions this is $O(K^{-3})$, refuting a uniform lower bound
+$cK^{-2}$ for that ambient contour completion. It is an upper Rayleigh
+bound, not a matching asymptotic. The physical quotient removes exactly
+the coordinate-gauge modes used by this test.
+
+\subsection{An infrared-cancelled scalar reference}
+\label{pqd-scalar-reference-section}
+
+The following is a specified infinite-lattice reference calculation.
+It is not yet a limit theorem for the globally based finite determinants
+in \eqref{pqd-main}. Put $\alpha_g=C_H/(48\pi^2)$. The unpinned scalar
+magnetic heat coefficient established above is
+\begin{equation}
+ h(s)=\frac{C_H}{3}s^2e^{-8s}I_0(2s)^2I_1(2s)^2,
+ \quad h(s)=O(s^4)\ (s\downarrow0),\quad
+ h(s)=\alpha_g+O(s^{-1})\ (s\to\infty).
+ \label{pqd-scalar-heat}
+\end{equation}
+In common final physical heat time $u$, the fine and coarse coefficients
+are $h(K^2u)$ and $h(u)$. Their orbit-metric reference ratio is exactly
+\begin{equation}
+ \frac12\int_0^\infty\{h(K^2u)-h(u)\}\frac{du}{u}
+                       =\alpha_g\log K.
+ \label{pqd-scalar-scale}
+\end{equation}
+The integral is absolutely convergent. On $\epsilon<u<T$ its unhalved
+value equals
+$\int_T^{K^2T}h(v)\,dv/v-\int_\epsilon^{K^2\epsilon}h(v)\,dv/v$;
+the endpoint limits prove \eqref{pqd-scalar-scale}. A common physical
+mass $\delta$ multiplies the integrand by $e^{-\delta^2u}$, and dominated
+convergence gives the same limit as $\delta\downarrow0$, for each
+fixed $K$.
+
+This exact scalar cancellation is useful comparison data. Applying it
+to the actual correction still requires a joint infrared passage for
+\eqref{pqd-main}, followed by uniform curvature-source estimates for the
+projected residual operator. The flat physical gap alone supplies
+neither assertion. Conditional on those further bridges, the physical
+term $-\frac12\log\det Q_\perp$ would have to contribute
+$21\alpha_g\log K$ to obtain the target total
+$22\alpha_g\log K$; that contribution is not proved here.
+

@@ -1,0 +1,225 @@
+\section{A soft scalar factorization with a bounded coarse correction}
+\label{ssc-section}
+
+Set \(\mu=K^{-1}\). All fine scalar and bond pairings use counting
+measure. In this section the current links are
+\(U(e)=\exp(i\mu A(e))\), so \(A\) is a physical potential in final
+units. Use the actual covariant moving-reference block average \(B\)
+of Notebook 35, and write
+\begin{equation}
+ J=K^2B^T,\quad J^TJ=I,\quad \Pi=JJ^T,\quad P=I-\Pi,
+ \quad \Delta=D^TD.
+ \label{ssc-data}
+\end{equation}
+The normalized block column \(J_y\) has \(K^4\) entries of size
+\(K^{-2}\), each an adjoint transport. Distinct columns have disjoint
+site supports. Its background dependence stays inside its own block.
+Define
+\begin{equation}
+ T=\Delta+\mu^2\Pi,\qquad
+ M=\mu^2J^TT^{-1}J,\qquad
+ \widehat G=P\Delta P+\mu^2\Pi .
+ \label{ssc-soft}
+\end{equation}
+The letter \(M\) in this section denotes this coarse scalar matrix;
+preceding homogeneous depth will be written \(M_{\rm old}\).
+
+\begin{theorem}[Exact scalar factorization]
+\label{ssc-factorization}
+On the actual local germ, continued through flatness,
+\begin{equation}
+ \det\widehat G=\det T\,\det M,\qquad
+ \mathcal N_0\log\det\widehat G
+   =\mathcal N_0\log\det T+\mathcal N_0\log\det M .
+ \label{ssc-determinant}
+\end{equation}
+Both factors are gauge covariant and have positive flat spectra.
+Their physical complex domain can be chosen independently of \(K\).
+Moreover,
+\begin{equation}
+ \left|\beta(\mathcal N_0\log\det M)\right|\le C
+ \label{ssc-coarse-bound}
+\end{equation}
+uniformly in \(K\), preceding depth, and the chosen joint structural
+systems. The coefficient is the actual affine Maxwell coefficient.
+\end{theorem}
+
+\subsection{Exact algebra and uniform flat estimates}
+
+Choose an orthonormal frame \(V\) for \(\ker B\) on real backgrounds.
+In the frame \([V,J]\), the upper block of \(T\) is
+\(G_B=V^T\Delta V\). Schur complementation gives
+\[
+ \det G_B=\det T\,\det(J^TT^{-1}J).
+\]
+Since \(\det\widehat G=(\mu^2)^{\dim S_c}\det G_B\), this proves
+\eqref{ssc-determinant}. Positivity at flatness fixes the logarithm
+branches; holomorphic uniqueness continues the identity. This is
+finite determinant algebra, with no separately singular globally
+based scalar factor.
+
+Write a subscript \(0\) for flatness. Internal-block Neumann Poincare
+gives
+\[
+ \norm{P_0\phi}^2\le C_P K^2\norm{D_0\phi}^2.
+\]
+Only internal block edges are used, on which a block constant has
+zero derivative. Consequently
+\begin{equation}
+ c(\Delta_0+\mu^2I)\le T_0\le\Delta_0+\mu^2I,\qquad
+ c=\bigl(1+\max(C_P,1)\bigr)^{-1}.
+ \label{ssc-ellipticity}
+\end{equation}
+There is no derivative of a sharp block indicator in this argument.
+
+The product-tent lift from Notebook 35, composed with \(J_0\), gives
+a map \(E:S_c\to S\) satisfying
+\[
+ J_0^TE=I,\qquad \norm E\le C_0,\qquad
+ \norm{D_0E}\le C_1\mu .
+\]
+Let \(S\) be the minimum energy with prescribed \(J_0^T\phi=b\).
+The feasible field \(Eb\) proves \(0\le S\le C_1^2\mu^2I\).
+The lower inverse block then gives
+\begin{equation}
+ M_0=(I+\mu^{-2}S)^{-1},\qquad
+ (1+C_1^2)^{-1}I\le M_0\le I .
+ \label{ssc-coarse-gap}
+\end{equation}
+At \(K=1\), the same statement uses the identity lift and the bounded
+unit-lattice gradient.
+
+\subsection{Uniform physical domain and weighted inverses}
+
+The established ordinary-reference trajectory bounds give
+intermediate angles \(O(\ell^j\norm A_\infty/K)\). Their sum over
+\(j<k\) is bounded by \(C\norm A_\infty\). The hierarchical
+adjoint transports defining \(J\) therefore satisfy, on a fixed
+complex physical ball,
+\begin{equation}
+ \norm{J(A)-J_0}\le C\norm A_\infty .
+ \label{ssc-J-bound}
+\end{equation}
+This is an operator-valued block bound: normalizing the \(K^4\)
+entries by \(K^{-2}\) removes the counting dimension. Block Banach
+Cauchy gives the same uniform first-two derivative bounds.
+Only the physical supremum norm is needed for this scalar statement.
+
+The local gauge generator obeys
+\(\norm{D(A)-D_0}\le C\mu\norm A_\infty\). Expanding its product
+and using \eqref{ssc-ellipticity} gives
+\begin{equation}
+ \norm{T_0^{-1/2}(T(A)-T_0)T_0^{-1/2}}
+       \le C(\norm A_\infty+\norm A_\infty^2).
+ \label{ssc-relative}
+\end{equation}
+The penalty difference is \(\mu^2(\Pi(A)-\Pi_0)\), with the same
+bound. This is a complex operator-norm estimate relative to positive
+real \(T_0\), not an assertion that a complex transpose product is
+positive. A Neumann inverse and \eqref{ssc-J-bound} imply
+\[
+ \norm{T(A)^{-1}}\le C\mu^{-2},\qquad
+ \norm{M(A)-M_0}\le C\norm A_\infty .
+\]
+Together with \eqref{ssc-coarse-gap}, these give a common radius
+independent of \(K\).
+
+Conjugate by \(e^{\theta f(x/K)}\), where \(f\) is real and
+one-Lipschitz. Use initial-site weights on bonds and center weights
+on coarse sites. The covariant difference changes by \(O(\theta\mu)\);
+a \(J\) column has bounded physical diameter. The conjugated
+transpose carries the opposite weight. The same relative Neumann
+argument, with \(C(\theta+\norm A_\infty)\), proves for \(R=T^{-1}\)
+\begin{equation}
+ \norm R_\theta\le C\mu^{-2},\qquad
+ \norm{DR}_\theta+\norm{RD^T}_\theta\le C\mu^{-1},
+ \qquad \norm{DRD^T}_\theta\le C .
+ \label{ssc-weighted-energy}
+\end{equation}
+For example, place \(T_0^{-1/2}\) on the two sides of the Neumann
+inverse and use \(\norm{D_\theta T_0^{-1/2}}\le C\).
+The bounds hold between restricted final blocks, with an extra
+\(e^{-c\,d(x,y)}\). Thus
+\begin{equation}
+ \norm{M_{xy}}\le Ce^{-c\,d(x,y)}.
+ \label{ssc-coarse-decay}
+\end{equation}
+The coarse fiber has fixed color dimension. Schur summation in
+\eqref{ssc-coarse-decay} shows that a small coarse exponential
+conjugation changes \(M_0\) by \(O(\theta)\). Weighted \(M(A)-M_0\)
+is \(O(\norm A_\infty)\). A common logarithm contour and its
+resolvents therefore give uniform exponential kernels for \(\log M\).
+
+\subsection{Rooted derivatives and the actual affine coefficient}
+
+Treat physical directions in one final block as one supremum-norm
+Banach space. A local direction \(a_j\) satisfies
+\[
+ \norm{\delta_jD}\le C\mu\norm{a_j},\qquad
+ \norm{\delta_jJ}\le C\norm{a_j}.
+\]
+The second primitive derivatives have the same respective powers
+or better and joint local support. Differentiate
+\[
+ \delta R=-R(\delta T)R,\qquad
+ \delta T=(\delta D)^TD+D^T\delta D+
+       \mu^2\bigl((\delta J)J^T+J(\delta J)^T\bigr).
+\]
+Every term in the first-two derivatives of
+\(M=\mu^2J^TRJ\) has balanced powers of \(\mu\), by
+\eqref{ssc-weighted-energy}. For example,
+\[
+ \mu^2(J^TRD^T)(\delta D)(RJ)
+ \quad\hbox{costs}\quad
+ \mu^2\mu^{-1}\mu\mu^{-2}=1.
+\]
+At two insertions, the intervening pieces are \(R,DR,RD^T\),
+or \(DRD^T\), with exactly the powers in
+\eqref{ssc-weighted-energy}. Differentiating \(J\) gives local
+endpoint terms; a penalty insertion supplies \(\mu^2\).
+The number of terms is independent of \(K\).
+
+Insert block projections at the differentiated factors. The
+restricted estimates connect every source and matrix endpoint.
+For \(n=1,2\), after reducing the exponent,
+\begin{equation}
+ \norm{\delta_{j_1}\cdots\delta_{j_n}M_{xy}}
+ \le C_n\prod_{\ell=1}^n\norm{a_{j_\ell}}\,
+     e^{-c\,\tau(x,y,j_1,\ldots,j_n)} .
+ \label{ssc-rooted}
+\end{equation}
+Here \(\tau\) is minimum tree length on the final-block graph.
+The differentiated contour formula for \(\log M\) preserves this
+estimate: its intermediate sums are over fixed-dimensional coarse
+fibers, and an exponential reserve pays them. This proves rooted
+second-derivative bounds with every fixed polynomial source moment.
+It does not sum individual fine-coordinate derivative norms.
+
+By covariance, \(\rho_y=\mathcal N_0\operatorname{tr}
+(\log M)_{yy}\) is individually gauge invariant, and its linear
+color jet vanishes. At each fixed \(K\), the actual stationary
+polynomial-jet theorem identifies its affine source with
+\[
+ A_\alpha(x)=t(x_\nu/K)H,\qquad \alpha\ne\nu ,
+\]
+up to a fine gauge. Its fine link angle is \(t x_\nu H/K^2\).
+In source block \(j\) the coefficient of \(t\) has norm at most
+\(C(1+|j|)\). Inserting these directions in the second version of
+\eqref{ssc-rooted} for \(\log M\) gives a uniformly finite sum.
+The invariant-density Ward identity of Notebook 35 identifies
+\(\beta=2[t^2]\rho_0\), proving \eqref{ssc-coarse-bound}.
+This uses the fixed-\(K\) actual identification and then estimates
+the explicit representative; it assumes no uniform stationary
+response as \(K\) grows.
+
+It follows that
+\begin{equation}
+ \beta(\mathcal N_0\log\det\widehat G)
+       =\beta(\mathcal N_0\log\det T)+O(1).
+ \label{ssc-scalar-reduction}
+\end{equation}
+Equality of total finite determinants and localized Hessians is
+used here. Their chosen diagonal densities need not agree pointwise.
+The remaining magnetic comparison for \(T\) is separate: a
+dimension-blind Cauchy bound on its fine trace can still grow with
+\(K\), and does not compute its logarithmic coefficient.

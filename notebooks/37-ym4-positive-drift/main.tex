@@ -1,0 +1,1547 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 37: the actual logarithm and finite local ultraviolet tuning}
+\author{Research proof draft}
+\date{17 October 2026}
+\setlength{\emergencystretch}{5em}
+\begin{document}
+\maketitle
+\begin{abstract}
+We complete the leading-determinant comparison left open in Notebook 36,
+under the explicitly stated classical structural and local quantum
+inputs of this working series. The actual coefficient satisfies
+\(\beta(\mathcal D_{M,K})=22\alpha_g\log K+O(1)\), uniformly in
+preceding depth and in all applicable joint infinite structural systems.
+Here \(\alpha_g=C_H/(48\pi^2)\) uses the original color normalization.
+
+The proof has three new steps. First, source-localized sectorial
+resolvents remove the soft infrared penalties through physical time
+one with an integrable \(O(u)\) error. Second, nonlinear Ward identities
+through field degree four compare the actual effective-action heat
+coefficient with the Wilson coefficient with error \(O(s^{-1})\).
+The left-relative chart-current terms are retained. Third, a direct
+Wilson-to-continuum comparison gives an integrable \(O(s^{-1/2})\)
+error and fixes the coefficient without importing a universality
+assertion for an unmatched regulator.
+
+The positive margin now supplies the previously missing hypothesis
+of the finite local shooting theorem. It yields arbitrarily long
+finite weak local histories with a fixed weak endpoint and bare
+coupling of order the inverse square root of their length.
+This is a theorem about the homogeneous local recursion.
+Full Wilson measure matching across all field regions, sourced
+continuum limits, and a nontrivial reconstructed Yang--Mills theory
+remain unproved.
+\end{abstract}
+
+\section*{Scope and the proof dependency}
+
+This is a research proof draft for mathematical review. Its new
+arguments are given below; the previously constructed classical actions,
+exact determinant identities, localized vertices and finite local
+recursion are inputs from the earlier notebooks. Internal mathematical
+audits and successful typesetting do not certify those upstream proofs.
+The main result is not a completed four-dimensional existence theorem.
+The deposited construction principally concerns \(SU(2)\).
+General color-factor formulas below do not by themselves establish
+all upstream construction inputs for every compact simple group.
+
+Current coordinates use counting pairings. The primitive ratio
+\(\ell>1\) is fixed, \(K=\ell^k\), and final physical spacing is
+\(K^{-1}\). The preceding classical depth is \(M\).
+The notation \([t^2]\) is a Taylor coefficient, whereas the Maxwell
+functional is \(\beta=2[t^2]\) on the normalized affine probe.
+For a Cartan element with \(\tau(H^2)=1\), put
+\[
+ C_H=\sum_{q\in\operatorname{spec}(\operatorname{ad}_H)}q^2,
+ \qquad \alpha_g=C_H/(48\pi^2).
+\]
+Both signs of a charge are included in this adjoint trace; its
+complexification introduces no extra multiplicity.
+
+The infinite spatial estimates refer to joint structural systems
+containing all required old-depth shifts and endpoint ratios. Their
+constants are independent of the chosen system. Exact finite-period
+determinant algebra and finite flat spectral bounds are distinguished
+from continuous-momentum identities of these infinite kernels.
+The finite local conclusion is recovered by the separate compactness
+and moment-transfer theorem; no finite winding identity is inferred
+from an infinite Fourier expansion.
+
+The proof chain is
+\[
+ \begin{gathered}
+ \text{Notebook 36: exact soft reduction and bounded heat ends}\\
+ \Downarrow\\
+ \text{soft penalty removal}
+ \ \longrightarrow\ \text{actual base versus Wilson}\\
+ \longrightarrow\ \text{Wilson versus continuum}
+ \ \longrightarrow\ \text{positive actual logarithm}\\
+ \longrightarrow\ \text{finite local transfer and shooting}.
+ \end{gathered}
+\]
+The final section records the interfaces from this local theorem
+to the original existence objective.
+
+
+
+\section{Removing the soft penalties up to physical time one}
+\label{spb-section}
+
+Work in dimension four, in current counting coordinates, on the chosen
+infinite structural system. Flat spatial bounds also pass to explicit periodizations by summing the exponentially decaying lifted kernels. This is not a linear-weight similarity on a finite torus. The affine coefficient itself is taken on the infinite structural system, not as a literal periodic magnetic flux; arbitrary actual finite winding kernels are not identified with those periodizations.
+Set $\mu=K^{-1}$. The affine background below means only the first
+two formal polynomial jets of
+\[
+ U_\alpha(t;x)=\exp(i t x_\nu H/K^2),\qquad \alpha\ne\nu.
+\]
+No nonzero unbounded field is inserted in a common analytic ball.
+
+\subsection{Actual families and the required inputs}
+\label{spb-inputs}
+
+Use the actual effective classical Hessians and moving-reference maps:
+\begin{align}
+ B_s(A)&=D_A^TD_A,&
+ B_v(A)&=S_M''(e^{i\mu A})+D_AD_A^T,\notag\\
+ T_s(A)&=B_s(A)+\mu^2J_AJ_A^T,&
+ \widetilde V(A)&=B_v(A)+\bar C_A^TF_A\bar C_A,\notag\\
+ F_A&=aI-S_{MK}''(M_K(e^{i\mu A})).
+ \label{spb-families}
+\end{align}
+All Hessians are left-relative, including their coordinate-current
+terms. The auxiliary vector $\widetilde V$ has the already established
+first two affine jets of the actual soft vector; equality off shell
+is not asserted.
+
+For either pair $(W,B)=(T_s,B_s)$ or
+$(W,B)=(\widetilde V,B_v)$, put $X_E=K^2E$ and write
+\begin{equation}
+ X_W=X_B+C_A^TF_AC_A,
+ \qquad
+ (C_A,F_A)=
+ \begin{cases}
+ (J_A^T,I),&\text{scalar},\\
+ (K\bar C_A,\ aI-S_{MK}''(M_K(e^{i\mu A}))),&\text{vector}.
+ \end{cases}
+ \label{spb-coarse-factor}
+\end{equation}
+The output fiber of $C_A$ has a fixed color/site or color/bond
+dimension per final block. Choose the fixed $a\ge R_q+1$, so that
+$F_0\ge I$ in the vector case.
+
+The proof uses the following established inputs, with constants
+uniform in $M,K$:
+
+\begin{enumerate}
+\item The actual flat $q_M$ has an exponential current-coordinate
+kernel, analytic double zero, Maxwell lower bound and uniform second
+moments. Hence, with the componentwise physical gradient
+$\nabla=K d_0$ and $H_0=I+\nabla^T\nabla$,
+\begin{equation}
+ cH_0\le I+X_{B,0}\le CH_0.
+ \label{spb-base-energy}
+\end{equation}
+\item The repaired covariant-Hessian theorem gives first-two physical
+$C^1$ vertices, with complete smooth source collars and full rooted
+operator bounds. The scaled gauge-generator products have the same
+property.
+\item The physical maps $K\bar C_A$, $J_A$ and their first-two
+background derivatives have uniform whole-block operator bounds and
+fixed physical range. The actual coarse Hessian has uniform rooted
+source kernels. Consequently $C_A^TF_AC_A$ has uniformly bounded
+zero-order physical vertices and full rooted source bounds.
+\end{enumerate}
+These inputs concern actual effective actions and corrected tangents.
+No bare Wilson replacement, full uniform nonlinear physical domain,
+or arbitrary high-frequency bounded-source estimate is used.
+
+\begin{theorem}
+\label{spb-main}
+Under these inputs, if $P_0$ is the appropriate fine scalar or bond
+projector onto final block zero, then
+\begin{equation}
+ \left|[t^2]\operatorname{Tr}
+ P_0\bigl(e^{-uX_W(t)}-e^{-uX_B(t)}\bigr)\right|
+       \le Cu,\qquad 0<u\le1,
+ \label{spb-physical-bound}
+\end{equation}
+uniformly in old depth $M$ and endpoint $K$. Equivalently,
+\begin{equation}
+ \left|[t^2]\operatorname{Tr}
+ P_0\bigl(e^{-sW(t)}-e^{-sB(t)}\bigr)\right|
+       \le C\frac{s}{K^2},\qquad 0<s\le K^2.
+ \label{spb-fine-bound}
+\end{equation}
+In particular the absolute $ds/s$ integral of the difference on this
+entire band is bounded uniformly.
+\end{theorem}
+
+\subsection{Shifted flat resolvents with physical spatial weights}
+\label{spb-resolvents}
+
+At zero the penalty in \eqref{spb-coarse-factor} is nonnegative and
+bounded uniformly. Thus \eqref{spb-base-energy} holds for $W$ too.
+Fix $E=B$ or $W$ and set
+\[
+ \mathcal B_0=I+X_{E,0},\qquad R_z=(\mathcal B_0-z)^{-1}.
+\]
+Use a sectorial contour with rays $\arg z=\pm\pi/4$, $|z|\ge1/4$,
+joined by the circular arc of radius $1/4$ to the left of the positive
+spectrum. The spectral theorem and energy comparison give
+\begin{align}
+ \|R_z\|&\le C(1+|z|)^{-1},\notag\\
+ \|\nabla R_z\|+\|R_z\nabla^T\|
+      &\le C(1+|z|)^{-1/2},\notag\\
+ \|\nabla R_z\nabla^T\|&\le C.
+ \label{spb-energy-resolvent}
+\end{align}
+For example,
+$\|(\mathcal B_0+|z|)^{1/2}R_z
+(\mathcal B_0+|z|)^{1/2}\|\le C$ on this contour.
+
+Only linear physical weights are needed for the nonlocal flat kernel.
+Conjugate by $e^{\theta\cdot x/K}$, with sufficiently small real
+$\theta$. The analytic double zero gives the fine-symbol estimate
+\[
+ \|q_M(p+i\mu\theta)-q_M(p)\|
+ \le C\{\mu|\theta|\sqrt{\delta(p)}+\mu^2|\theta|^2\}.
+\]
+After multiplication by $K^2$, this is a small form perturbation
+relative to $H_0$. The local gradient term has the same estimate.
+The coarse correction also does: its physical legs have bounded norm
+and fixed range, and its middle flat kernel has a uniform coarse
+analytic strip. The estimate remains true relative to $H_0+|z|$.
+A weighted resolvent Neumann series therefore proves
+\eqref{spb-energy-resolvent} uniformly after conjugation.
+Commuting a weight through $\nabla$ adds only $O(|\theta|)$ and
+is covered by the scalar resolvent estimate.
+
+For each pair of blocks choose the signs of $\theta$ along their
+separation. The restricted versions of all three bounds then acquire
+$e^{-m d(i,j)}$, for a common $m>0$. Internal block diameters change
+only the constant. These are whole-block Hilbert operator estimates,
+with no fine-entry trace or growing-fiber count. At fixed $K$ the
+operators are bounded lattice operators; finite-support approximation
+justifies the weighted kernels. All constants are uniform in $K$.
+
+\subsection{At most one unbounded derivative per vertex}
+\label{spb-vertices}
+
+Let $X_j=[t^j]X_E(tA)$, $j=1,2$, for a complete physical $C^1$
+direction of norm at most $a_*$. The repaired Hessian decomposition,
+multiplied by $K^2$, gives
+\begin{equation}
+ X_j=\nabla^T\overline Z_j+\overline Z_j^T\nabla
+                  +\overline E_j,
+ \qquad
+ \|\overline Z_j\|+\|\overline E_j\|\le C_j a_*^j.
+ \label{spb-first-order}
+\end{equation}
+Indeed $\overline Z_j=KZ_j$ and $\overline E_j=K^2E_j$;
+the improved $\overline Z_2=O(K^{-1})$ is not needed.
+The scaled gauge-generator terms have this form, and the physical
+coarse penalty contributes bounded zero-order terms. Mixed second
+coefficients follow by polarization.
+
+For directions in smooth physical collars $x,y$, each factor retains
+an exponential connecting-tree bound including its operator endpoints
+and every source. The significant fact is that every summand in
+\eqref{spb-first-order} has at most one unbounded physical derivative.
+An arbitrary second-order form bound would not give the following
+integrable resolvent powers.
+
+Only two jets are needed. If a full uniform nonlinear domain has not
+been provided, use the polynomial family
+$X(t)=X_0+tX_1+t^2X_2$, or its mixed quadratic version.
+Equation \eqref{spb-first-order} gives a small common parameter disk
+on which $I+X(t)$ is sectorial with the chosen contour. At each fixed
+$K$ this is ordinary holomorphic functional calculus for bounded
+operators. Its first-two semigroup jets equal the actual ones because
+only $X_0,X_1,X_2$ enter their resolvent derivatives. Thus this device
+adds no nonlinear-domain hypothesis.
+
+\subsection{Rooted semigroup derivatives}
+\label{spb-semigroup}
+
+Differentiated resolvents satisfy
+\begin{align}
+ \delta_xR_z&=-R_zX_xR_z,\notag\\
+ \delta_x\delta_yR_z
+  &=R_zX_xR_zX_yR_z+R_zX_yR_zX_xR_z-R_zX_{xy}R_z.
+ \label{spb-resolvent-derivatives}
+\end{align}
+One first-order insertion in \eqref{spb-first-order} costs
+$(1+|z|)^{-3/2}$ by \eqref{spb-energy-resolvent}; its zero-order
+part costs $(1+|z|)^{-2}$. Two first-order insertions cost at worst
+$(1+|z|)^{-2}$. If both derivatives face the middle resolvent, that
+piece costs $O(1)$ and both exterior resolvents cost
+$(1+|z|)^{-1}$. In the other arrangements there are two half-power
+energy legs and one full resolvent. The single $X_{xy}$ insertion
+again has exponent $-3/2$.
+
+Insert block projections between the already defined factors
+$R_z\nabla^T$, $\nabla R_z$ and the bounded vertex factors.
+No sharp block cutoff is commuted through a derivative. The weighted
+resolvent and vertex bounds then give, after an exponent reserve,
+\begin{align}
+ \|\delta_x(R_z)_{ij}\|
+  &\le C(1+|z|)^{-3/2}e^{-m\tau(i,j,x)},\notag\\
+ \|\delta_x\delta_y(R_z)_{ij}\|
+  &\le C\{(1+|z|)^{-3/2}+(1+|z|)^{-2}\}
+                         e^{-m\tau(i,j,x,y)}.
+ \label{spb-rooted-resolvent}
+\end{align}
+Every intermediate sum is over block operator norms; a smaller
+exponent pays the finite convolution multiplicities.
+
+Integrate these formulas on the Dunford contour for
+$e^{-u\mathcal B_0}$. The rays have positive real part, the joining
+arc has fixed length, and both powers in
+\eqref{spb-rooted-resolvent} are integrable at infinity, uniformly
+for $0<u\le1$. Since $e^{-uX}=e^u e^{-u(I+X)}$, one obtains
+\begin{align}
+ \|\delta_x(e^{-uX})_{ij}\|
+     &\le Ce^{-m'\tau(i,j,x)},\notag\\
+ \|\delta_x\delta_y(e^{-uX})_{ij}\|
+     &\le Ce^{-m'\tau(i,j,x,y)}.
+ \label{spb-rooted-semigroup}
+\end{align}
+For instance the ray integrals of $(1+\lambda)^{-3/2}$ and
+$(1+\lambda)^{-2}$ are bounded by fixed constants even when the
+factor $e^{-u\lambda/\sqrt2}$ is discarded.
+
+The undifferentiated semigroup has a uniform exponential restricted
+block bound too. The small linear-weight form perturbation retains
+the positive gradient energy, leaving numerical range bounded below
+by $-C$. Its real-time norm is at most $e^{Cu}$, and the weight gives
+the block decay. This uses only the flat generator.
+
+This resolvent argument avoids the nonintegrable middle-time factor
+that an overly crude split of a second Duhamel insertion would produce.
+It also retains the source roots which a global Cauchy bound alone
+would lose.
+
+\subsection{Affine reconstruction and the coarse trace}
+\label{spb-trace}
+
+Use a fixed smooth physical partition for the affine potential.
+Its direction in collar $x$ has physical $C^1$ norm at most
+$C(1+|x|)$. Summing its first and mixed second directions against
+\eqref{spb-rooted-semigroup} gives, for $n=0,1,2$,
+\begin{equation}
+ \|([t^n]e^{-uX(t)})_{ij}\|
+ \le C(1+|i|+|j|)^p e^{-m''d(i,j)},\qquad 0<u\le1.
+ \label{spb-affine-semigroup}
+\end{equation}
+At $u=0$ use the identity and zero differentiated coefficients.
+The sums are absolutely convergent polynomial-jet sums, not evaluations
+at a nonzero unbounded field.
+
+The physical $C_A,F_A$ in \eqref{spb-coarse-factor} have the same
+polynomial block bounds; $C_A$ has fixed physical range and order-one
+norm. In the vector case ordinary averaging sends the affine connection
+to the coarse affine connection, so the actual coarse Hessian supplies
+the required polynomial/exponential $F$ kernels.
+
+Retain $P_0$ in the exact physical-time Duhamel trace identity:
+\begin{equation}
+ \operatorname{Tr}_fP_0(e^{-uX_W}-e^{-uX_B})
+  =-\int_0^u\operatorname{Tr}_c
+       [FCe^{-vX_B}P_0e^{-(u-v)X_W}C^T]\,dv.
+ \label{spb-coarse-duhamel}
+\end{equation}
+The trace on the right sums all coarse diagonal blocks.
+Its degree-two coefficient has finitely many ordered terms.
+Equation \eqref{spb-affine-semigroup} and the $C,F$ estimates connect
+both coarse endpoints to the retained root block. Their absolute
+sum is bounded by a fixed multiple of
+\[
+ \sum_{Y,Z}(1+|Y|+|Z|)^p
+            e^{-m'''(|Y|+|Z|+d(Y,Z))}<\infty.
+\]
+Each diagonal trace is in a fixed-dimensional coarse output fiber.
+A product through the fine block-zero Hilbert space costs that coarse
+rank, not its growing fine dimension. Thus the integrand coefficient
+is bounded uniformly in $u,v,M,K$, including the endpoints $v=0,u$.
+The integral has length $u$, proving \eqref{spb-physical-bound}.
+
+For compact source truncations the cyclic trace step is ordinary
+finite-rank cyclicity with $P_0$ retained. The displayed absolute
+rooted sum gives the infinite limit and permits coefficient extraction.
+This completes the proof of Theorem~\ref{spb-main}.
+
+\subsection{Consequence and remaining comparison}
+\label{spb-scope}
+
+Equation \eqref{spb-fine-bound} implies
+\begin{equation}
+ \int_0^{K^2}\left|[t^2]\operatorname{Tr}
+ P_0(e^{-sW(t)}-e^{-sB(t)})\right|\frac{ds}{s}\le C.
+ \label{spb-integrated}
+\end{equation}
+Together with the coarse determinant reductions, this removes the
+soft penalties from the fine-to-physical-unit cutoff heat coefficient
+up to a uniform finite part. The vector conclusion is actual through
+the established affine matching; the scalar family is actual directly.
+
+The remaining middle-band comparison concerns the translation-invariant
+actual base $S_M''+DD^T$ and the ordinary scalar Laplacian.
+This section does not replace that effective Hessian by a fixed bare
+reference, compute its logarithmic coefficient, or prove the separate
+physical-time tail beyond one. A theorem for a fixed bare integrand
+is not imported as a uniform statement in the present family.
+
+
+
+\section{The complete mean-zero scalar coefficient}
+\label{sgc-section}
+
+The exact factorization of Notebook 36 reads
+\[
+ \det\widehat G=\det T_s\det M_s,\qquad
+ T_s=D_A^TD_A+K^{-2}J_AJ_A^T.
+\]
+Here \(M_s=K^{-2}J_A^TT_s^{-1}J_A\) has one fixed color
+fiber per final block. Its actual Maxwell coefficient is uniformly
+bounded. The normalization is
+\(\beta(F)=2[t^2]F\) on the specified one-color affine probe;
+normalization at the flat field contributes zero.
+
+\begin{theorem}[Mean-zero scalar logarithm]
+\label{sgc-main}
+Under the actual structural and affine-identification hypotheses of
+Notebooks 35--36 and Theorem~\ref{spb-main},
+\begin{equation}
+ \left|\beta(\mathcal N_0\log\det\widehat G)
+                 -2\alpha_g\log K\right|\le C,
+ \qquad \alpha_g=\frac{C_H}{48\pi^2}.
+ \label{sgc-coefficient}
+\end{equation}
+The bound is uniform in preceding depth and in every applicable
+joint infinite structural system.
+\end{theorem}
+
+\begin{proof}
+The scalar part of the infrared-tail theorem in Notebook 36 bounds
+the integral over \(s>K^2\). Theorem~\ref{spb-main} removes the scalar
+soft penalty on \(0<s\le K^2\) with a bounded integrated error.
+The coarse factor \(M_s\) contributes a further bounded error.
+The exact unpinned scalar heat calculation of Notebook 34 therefore
+gives
+\begin{equation}
+ \beta(\mathcal N_0\log\det\widehat G)
+       =\int_0^{K^2}h_g(s)\,\frac{ds}{s}+O(1),
+ \qquad
+ h_g(s)=\frac{C_H}{3}s^2e^{-8s}I_0(2s)^2I_1(2s)^2.
+ \label{sgc-cutoff}
+\end{equation}
+The definition of \(h_g\) includes the factor \(-2\) multiplying
+the scalar heat coefficient. The minus sign comes from the heat
+representation of the logarithm, and the factor two from \(\beta\).
+No additional real/complex color multiplicity is introduced.
+
+The previously established elementary Bessel bounds imply
+\[
+ h_g(s)=O(s^4)\quad(0<s\le1),\qquad
+ h_g(s)=\alpha_g+O(s^{-1})\quad(s\ge1).
+ \]
+Thus \(\int_0^1|h_g(s)|\,ds/s\) and
+\(\int_1^\infty|h_g(s)-\alpha_g|\,ds/s\) are finite.
+Splitting \eqref{sgc-cutoff} at one proves
+\(\alpha_g\log(K^2)+O(1)\), including \(K=1\).
+\end{proof}
+
+This is the scalar determinant in the exact covariant mean-zero
+decomposition. The earlier globally point-pinned scalar determinant
+has a different logarithmic coefficient; its compensating vector
+factor is different as well. Only each complete, exactly normalized
+determinant combination is invariant under those changes of gauge
+decomposition. This theorem alone does not compute the vector
+coefficient or prove positive total drift.
+
+
+% No preamble. Prefix abw-. Audited research, 17 October 2026.
+\section{Uniform actual-base heat comparison from nonlinear Ward jets}
+\label{abw-section}
+
+This section concerns every applicable joint infinite structural system
+with the established homogeneous classical inputs below. Constants are
+uniform in the old classical depth \(M\). We do not interpolate a finite
+momentum grid or identify finite winding kernels with periodizations.
+
+Let \(S_M\) be the actual homogeneous classical minimum action in current
+unit coordinates, with a fixed \(4\dim\mathfrak g\) input fiber.
+Use its translation, hypercubic, reality and nonlinear gauge Ward
+identities, and its uniformly exponentially rooted kernels through field
+order four. The needed finite spatial moments, local exponential-chart
+derivatives and their constants are uniform in \(M\).
+Write \(S_W=S_1\) for the normalized Wilson action. The established flat
+normalization and lower bound are
+\begin{equation}
+ q_M\ge q_W=d_{\rm curl}^{T}d_{\rm curl},\qquad q_MD=0,\qquad
+ q_{M,\mathrm{mid}}(p)=|p|^2I-pp^T+O(|p|^4).
+ \label{abw-input}
+\end{equation}
+These are the actual classical current-unit bounds. A bound for an
+arbitrary quantum activity with constants depending on a newly chosen
+auxiliary grouping would not replace them.
+
+The background-Feynman vector base, in the actual left-relative link
+chart, is
+\[
+ {\cal B}_M(a)=S_M''(\exp(ia))+D_aD_a^T.
+\]
+For \(\tau(H^2)=1\) and distinct directions \(\alpha,\nu\), define its
+affine heat coefficient by its convergent fixed-time Taylor kernels:
+\begin{equation}
+ h_M(s)=[t^2]\operatorname{tr}_{E}
+ \bigl(e^{-s{\cal B}_M(a(t))}\bigr)_{00},\qquad
+ a_\alpha(t,x)=t x_\nu H.
+ \label{abw-h}
+\end{equation}
+This is an infinite-lattice density, not a varying-flux family on a
+finite torus.
+
+\begin{theorem}[Uniform base comparison]
+\label{abw-main}
+Under these inputs there is \(C\), independent of \(M\), such that
+\begin{equation}
+ |h_M(s)-h_W(s)|\le C s^{-1}\quad(s\ge1),\qquad
+ \int_1^{K^2}|h_M(s)-h_W(s)|\,\frac{ds}{s}\le C.
+ \label{abw-bound}
+\end{equation}
+The scalar base \(D_a^TD_a\) is identical for \(M\) and \(W\).
+Thus the same comparison applies to the vector-minus-two-scalar
+combination. Explicit periodizations may also be used where their
+identification has been established.
+\end{theorem}
+
+\subsection{Actual relative vertices, including chart curvature}
+\label{abw-chart-section}
+
+Set \(R_M=S_M-S_W\). Its Maxwell coefficient vanishes by
+\eqref{abw-input}. The previously proved total nonlinear Ward extraction
+therefore gives, with uniform analytic moment bounds,
+\begin{equation}
+ R_2=O(|p|^4),\qquad R_3=O((\max_i|p_i|)^3),\qquad
+ R_4=O((\max_i|p_i|)^2).
+ \label{abw-ward-orders}
+\end{equation}
+Analytic changes between midpoint and source-site bond phases preserve
+these orders.
+
+For \(\Xi_a(B)=\log(e^{iB}e^{ia})/i\), write
+\[
+ J(a)=D_B\Xi_a(0)=I+J_1(a)+J_2(a,a)+O(a^3),\qquad
+ T(a)=D_B^2\Xi_a(0)=T_1(a)+O(a^2).
+\]
+In particular \(T(0)=0\). The exact relative Hessian is
+\begin{equation}
+ L_R(a)[B,C]=R_M''(a)[J(a)B,J(a)C]
+                  +R_M'(a)[T(a)[B,C]].
+ \label{abw-chain}
+\end{equation}
+At background degree one it is
+\[
+ R_3[a,B,C]+R_2[J_1(a)B,C]+R_2[B,J_1(a)C].
+\]
+Its degree-two coefficient is
+\begin{align}
+ &\tfrac12R_4[a,a,B,C]
+ +R_3[a,J_1(a)B,C]+R_3[a,B,J_1(a)C]\notag\\
+ &\quad+R_2[J_2(a,a)B,C]+R_2[B,J_2(a,a)C]
+ +R_2[J_1(a)B,J_1(a)C]+R_2[a,T_1(a)[B,C]].
+ \label{abw-second-chart}
+\end{align}
+Mixed derivatives are obtained by polarization. The last term is the
+current times chart-curvature term and is retained.
+
+All coefficients of \(J_1,J_2,T_1\) are local at one bond with fixed color
+norms. They only merge momenta and introduce no inverse momentum.
+Thus the flat, first-background and second-background differences of the
+actual Hessians have respective momentum orders \(4,3,2\).
+The gauge-fixing term \(D_aD_a^T\) is the same for both actions and
+cancels from these differences.
+
+\subsection{Fourier bounds and exact total heat variations}
+\label{abw-diagram-section}
+
+Put \(B_M(k)={\cal B}_M(0,k)\) and
+\(\delta(k)=4\sum_\mu\sin^2(k_\mu/2)\). Then
+\begin{equation}
+ B_W(k)=\delta(k)I,\qquad
+ c\delta(k)I\le B_M(k)\le C\delta(k)I.
+ \label{abw-ellipticity}
+\end{equation}
+The upper bound follows from the uniform quadratic zero and bounded
+second moments. On a fixed small punctured ball, with \(\rho=|k|\),
+\begin{equation}
+ \|\partial^r(B_M-B_W)\|\le C\rho^{4-r}\ (r\le2),\qquad
+ \|\partial B_M\|\le C\rho,\qquad \|\partial^2B_M\|\le C.
+ \label{abw-flat-jets}
+\end{equation}
+
+Let \(V_a^M(k,p)\) be the first vertex for a background
+\(e^{ipx}e_a\), mapping quantum momentum \(k\) to \(k+p\).
+Let \(W_{ab}^M(k;p,-p)\) be the mixed second vertex, preserving \(k\).
+For \(\Delta=M-W\), \eqref{abw-ward-orders}--\eqref{abw-second-chart}
+imply at \(p=0\), for \(r\le2\),
+\begin{align}
+ \|\partial_p^r\Delta V_a(k,p)\|
+ +\|\partial_p^r\Delta V_b(k+p,-p)\|
+       &\le C\rho^{3-r},\notag\\
+ \|\partial_p^r\Delta W_{ab}(k;p,-p)\|
+       &\le C\rho^{2-r}.
+ \label{abw-vertex-difference}
+\end{align}
+The second first-vertex term includes differentiation of both arguments.
+For either baseline it suffices to use
+\begin{equation}
+ \|\partial_p^rV\|\le C\rho^{1-r},\qquad
+ \|\partial_p^rW\|\le C\rho^{-r}.
+ \label{abw-baseline-vertices}
+\end{equation}
+Negative powers here are only loose bounds on analytic functions.
+In particular \(\partial_p^2W\) is bounded. Away from the small ball all
+required vertices and derivatives are uniformly bounded.
+
+For compact source variations the second total heat variation is
+well-defined by trace-class Duhamel insertions. There is no need to assign
+a value to the extensive vacuum trace. Differentiating
+\(D\operatorname{Tr}e^{-sB}[a]=-s\operatorname{Tr}(e^{-sB}B'[a])\)
+gives
+\begin{equation}
+ D^2\operatorname{Tr}e^{-sB}[a,b]
+ =-s\operatorname{Tr}(e^{-sB}B''[a,b])
+ +s^2\int_0^1\operatorname{Tr}
+  (e^{-s(1-v)B}B'[a]e^{-svB}B'[b])\,dv.
+ \label{abw-total-duhamel}
+\end{equation}
+The integral already includes both orders; there is no further factor
+two. Only the \emph{total} trace was cycled.
+
+The external-momentum kernel is accordingly
+\begin{align}
+ {\cal H}_{ab}^M(s,p)
+ &=-s\int_{\mathrm{BZ}}\operatorname{tr}
+       (e^{-sB_M(k)}W_{ab}^M(k;p,-p))\,\frac{dk}{(2\pi)^4}
+       \notag\\
+ &\quad+s^2\int_0^1\int_{\mathrm{BZ}}\operatorname{tr}
+ \left(e^{-s(1-v)B_M(k+p)}V_a^M(k,p)
+       e^{-svB_M(k)}V_b^M(k+p,-p)\right)
+                          \frac{dk}{(2\pi)^4}\,dv.
+ \label{abw-diagram}
+\end{align}
+At fixed \(s\) the kernels have the moments permitting two external
+derivatives under this integral.
+
+\subsection{Endpoint-safe heat estimates and the gain}
+\label{abw-estimate-section}
+
+Duhamel differentiation and \eqref{abw-ellipticity} give, for
+\(E_M(t,k)=e^{-tB_M(k)}\) and \(r=0,1,2\),
+\begin{equation}
+ \|\partial_k^rE_M(t,k)\|
+ \le C_r\rho^{-r}(1+t\rho^2)^r e^{-ct\rho^2}.
+ \label{abw-heat}
+\end{equation}
+The sharper first and second derivative factors are respectively
+\(Ct\rho\) and \(C(t+t^2\rho^2)\). No spectral frame is differentiated.
+The exact difference identity
+\[
+ E_M(t)-E_W(t)
+ =-\int_0^t E_M(t-u)(B_M-B_W)E_W(u)\,du
+\]
+and \eqref{abw-flat-jets} give
+\begin{equation}
+ \|\partial_k^r(E_M-E_W)(t,k)\|
+ \le C_r t\rho^{4-r}(1+t\rho^2)^r e^{-ct\rho^2}.
+ \label{abw-heat-difference}
+\end{equation}
+These bounds hold for every \(t\ge0\); in particular they contain no
+singularity at either endpoint \(v=0,1\) of \eqref{abw-diagram}.
+
+Differentiate \eqref{abw-diagram} twice externally and subtract.
+For the tadpole, the two differences are
+\((E_M-E_W)\partial_p^2W_W\) and
+\(E_M\partial_p^2(W_M-W_W)\).
+Before the outer factor \(s\), they are bounded by
+\(Cs\rho^4e^{-cs\rho^2}\) and \(Ce^{-cs\rho^2}\).
+Their integrals are \(O(s^{-2})+O(s^{-1})\) after that factor.
+
+Telescope the bubble product into its four factor differences.
+Replacing a vertex gives combined vertex degree \(3+1=4\).
+After distributing two derivatives between vertices and heat factors,
+the full product is bounded by
+\[
+ C\rho^2 P(s\rho^2)e^{-cs\rho^2},
+\]
+where \(P\) is a fixed polynomial. Replacing a heat factor instead
+gives, by \eqref{abw-heat-difference}, a time at most \(s\) and degree
+\(4+1+1\); the differentiated bound is
+\[
+ Cs\rho^4 P(s\rho^2)e^{-cs\rho^2}.
+\]
+Both bounds are uniform in \(v\), since the two heat times sum to \(s\).
+The four-dimensional integrals of these expressions are
+\(O(s^{-3})\) and \(O(s^{-3})\), respectively.
+The prefactor \(s^2\) therefore gives \(O(s^{-1})\).
+Away from zero, a fixed spectral gap gives a polynomial in \(s\)
+times \(e^{-cs}\). We have proved
+\begin{equation}
+ |\partial_p^2({\cal H}_{ab}^M-{\cal H}_{ab}^W)(s,0)|
+ \le C/s,\qquad s\ge1.
+ \label{abw-two-point-bound}
+\end{equation}
+
+\subsection{Density normalization and scope}
+\label{abw-density-section}
+
+The diagonal color heat density is gauge invariant, and its linear
+color jet is zero for a semisimple group. The established density
+Ward/reanchoring identity at fixed \(s\) consequently gives
+\begin{equation}
+ h_M(s)=\tfrac14\,
+ \partial_{p_\nu}^2{\cal H}_{\alpha H,\alpha H}^M(s,0).
+ \label{abw-density-factor}
+\end{equation}
+Indeed the Maxwell extraction is both twice the affine quadratic
+density and one half of this total Hessian derivative. On the diagonal
+component the source-site and midpoint phases cancel.
+
+For the actual endpoint-\(K\) source \(a_\alpha=t x_\nu H/K^2\),
+translation changes the background only by a constant pure gauge.
+Every diagonal coefficient in a final block is therefore the same.
+The \(K^4\) sites cancel the \(K^{-4}\) from the two source factors.
+Its block coefficient is exactly \eqref{abw-h}; no partial-trace
+cyclicity or finite-torus flux interpolation enters.
+Equations \eqref{abw-two-point-bound} and \eqref{abw-density-factor}
+prove Theorem~\ref{abw-main}.
+
+This result supplies the uniform old-depth comparison for the base
+operator. The soft-penalty, infrared, short-time and coarse-determinant
+comparisons remain separate inputs to an actual determinant assembly.
+The proof does not by itself construct a finite-regulator running
+trajectory, a large-field RG history, a continuum measure or a mass gap.
+
+
+
+% No preamble. Prefix wcr-. Fixed reference, 17 October 2026.
+\section{Direct Wilson-to-continuum heat comparison}
+\label{wcr-section}
+
+We now evaluate the fixed reference by its actual vertices and diagonal
+heat kernels. No general one-loop universality theorem is imported.
+Let \(h_{W,v}(s)\) and \(h_{W,g}(s)\) be the affine Cartan coefficients
+of the Wilson background-Feynman vector base and the full scalar
+covariant Laplacian on \(\mathbb Z^4\). Normalize
+\[
+ \tau(H^2)=1,\qquad C_H=\operatorname{Tr}_{\rm ad}
+       (\operatorname{ad}_H^2),\qquad \alpha_g=\frac{C_H}{48\pi^2}.
+\]
+
+\begin{theorem}[Fixed-reference heat coefficient]
+\label{wcr-main}
+For \(s\ge1\),
+\begin{equation}
+ |h_{W,v}(s)-10\alpha_g|
+ +|h_{W,g}(s)+\alpha_g/2|\le Cs^{-1/2}.
+ \label{wcr-fixed-bound}
+\end{equation}
+Together with the actual-base comparison, this gives on every
+applicable joint infinite structural system
+\begin{equation}
+ h_{M,v}(s)-2h_g(s)=11\alpha_g+O(s^{-1/2}),\qquad
+ \int_1^{K^2}\bigl(h_{M,v}(s)-2h_g(s)\bigr)\frac{ds}{s}
+       =22\alpha_g\log K+O(1),
+ \label{wcr-middle}
+\end{equation}
+uniformly in the old classical depth \(M\).
+\end{theorem}
+
+\subsection{The exact Wilson density fixes the leading vertices}
+\label{wcr-density-section}
+
+The normalized unit-lattice action is
+\[
+ S_W(U)=\sum_{x,\mu<\nu}
+ \left[1-\tfrac12\tau(P_{x,\mu,\nu}+P_{x,\mu,\nu}^{-1})\right].
+\]
+Each unoriented plaquette is counted once. Its left-relative Hessian and
+scalar covariant gradient define
+\[
+ {\cal B}_W(a)=S_W''(e^{ia})+D_aD_a^T,\qquad
+ L_W(a)=D_a^TD_a,\qquad
+ (D_a\phi)_\mu(x)=\operatorname{Ad}_{e^{ia_\mu(x)}}\phi(x+e_\mu)-\phi(x).
+\]
+Transposes use the fixed bilinear counting pairing.
+
+Introduce a physical mesh \(\epsilon\), with link angle \(\epsilon A\).
+For the physical jet
+\[
+ z=(a,b,c,e)
+ =\bigl(A_\mu,A_\nu,\nabla_{\epsilon,\mu}A_\nu,
+                         \nabla_{\epsilon,\nu}A_\mu\bigr)
+\]
+at one plaquette, its holonomy is exactly
+\begin{equation}
+ P_\epsilon(z)=e^{i\epsilon a}e^{i\epsilon b+i\epsilon^2c}
+              e^{-i\epsilon a-i\epsilon^2e}e^{-i\epsilon b}.
+ \label{wcr-exact-plaquette}
+\end{equation}
+Since \(P_0=I\) and \(\partial_\epsilon P_0=0\),
+\[
+ F_\epsilon=\frac{P_\epsilon-I}{\epsilon^2},\qquad
+ {\cal L}_\epsilon=-\tfrac12\tau(F_\epsilon^2P_\epsilon^{-1})
+\]
+extend jointly holomorphically to \(\epsilon=0\).
+The identity \(P+P^{-1}-2I=(P-I)^2P^{-1}\) gives the exact action
+\begin{equation}
+ S_\epsilon(A)=\epsilon^4\sum_{x,\mu<\nu}
+                 {\cal L}_\epsilon(J_\epsilon A).
+ \label{wcr-exact-density}
+\end{equation}
+Direct differentiation of \eqref{wcr-exact-plaquette} gives
+\begin{equation}
+ F_0=i(c-e)-[a,b],\qquad
+ {\cal L}_0=\tfrac12\tau\bigl(c-e+i[a,b]\bigr)^2.
+ \label{wcr-density-limit}
+\end{equation}
+On each fixed bounded complex jet polydisc,
+\({\cal L}_\epsilon-{\cal L}_0\), together with every fixed field
+derivative, is \(O(\epsilon)\). Joint holomorphy and Cauchy's formula
+supply this estimate before any momentum limit is taken.
+
+On plane waves with bounded complex physical momenta,
+\((e^{i\epsilon p_\mu}-1)/\epsilon=ip_\mu+O(\epsilon)\)
+jointly analytically. Equations \eqref{wcr-exact-density} and
+\eqref{wcr-density-limit} therefore identify the continuum action as
+\begin{equation}
+ S_c(A)=\tfrac12\int\sum_{\mu<\nu}\tau(F_{\mu\nu}(A)^2)\,dx,\qquad
+ F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu+i[A_\mu,A_\nu].
+ \label{wcr-continuum-action}
+\end{equation}
+In particular, for the ordinary action vertices,
+\begin{equation}
+ \Gamma_n^W(\epsilon p_1,\ldots,\epsilon p_n)
+ =\epsilon^{4-n}\Gamma_n^c(p_1,\ldots,p_n)
+                  +O(\epsilon^{5-n}),\qquad n=2,3,4.
+ \label{wcr-engineering}
+\end{equation}
+This follows by differentiating the exact density in plane-wave
+amplitudes; it holds jointly with the fixed momentum derivatives used
+below. In midpoint coordinates the bare quadratic correction is fourth
+order. Source-site phases may give third-order bare cross entries.
+The full flat Feynman symbol is exactly \(\delta(k)I\) and has the
+fourth-order correction needed below, in either convention.
+
+The physical left-relative chart is
+\[
+ \Xi_{\epsilon,A}(B)
+   =\frac{\log(e^{i\epsilon B}e^{i\epsilon A})}{i\epsilon}
+   =A+B+O(\epsilon).
+\]
+Its first \(B\)-derivative is \(I+O(\epsilon)\), its second is
+\(O(\epsilon)\). The exact relative Hessian includes both terms
+\[
+ S''(A)[J_AB,J_AC]+S'(A)[T_A(B,C)].
+\]
+Thus it has the same continuum limit; the current term is retained.
+At first background order its local corrections multiply
+\(\Gamma_2\), hence have momentum order at least two.
+At second background order the corrections have order at least one
+from \(\Gamma_3\), or two from \(\Gamma_2\) and the current term.
+They are within the remainders in \eqref{wcr-engineering}.
+
+Likewise,
+\[
+ \epsilon^{-1}D_{\epsilon A}
+ =\epsilon^{-1}
+   \bigl(\operatorname{Ad}_{e^{i\epsilon A_\mu}}
+                          \mathrm{shift}_{\epsilon e_\mu}-I\bigr)
+ \longrightarrow D_{c,A,\mu}=\partial_\mu+i\operatorname{ad}_{A_\mu}
+\]
+jointly on these jets. Integration by parts in
+\eqref{wcr-continuum-action} shows that the limiting vector and scalar
+operators are
+\begin{equation}
+ ({\cal B}_c(A))_{\mu\nu}
+ =-D_{c,A}^2\delta_{\mu\nu}-2i\operatorname{ad}_{F_{\mu\nu}},
+ \qquad L_c(A)=-D_{c,A}^2.
+ \label{wcr-continuum-operators}
+\end{equation}
+The opposite consistent adjoint sign convention gives identical heat
+traces. The coefficient of the flat Laplacian is one.
+
+\subsection{An integrable comparison of the two-point diagrams}
+\label{wcr-comparison-section}
+
+Use the same source-site Fourier convention for lattice and continuum.
+For either scalar or vector their flat symbols are
+\[
+ B_W(k)=\delta(k)I,\qquad B_c(k)=|k|^2I,\qquad
+ \delta(k)=4\sum_\mu\sin^2(k_\mu/2).
+\]
+On a fixed small ball with \(\rho=|k|\), their difference and its
+derivatives through order two are \(O(\rho^{4-r})\).
+Define \(V_a(k,p)\) and \(W_{ab}(k;p,-p)\) as the first and second
+background vertices, as in the actual-base comparison.
+The joint analytic expansion above gives
+\begin{align}
+ \|\partial_p^r(V_W-V_c)(k,p)|_{p=0}\|
+ +\|\partial_p^r(V_W-V_c)(k+p,-p)|_{p=0}\|
+     &\le C\rho^{2-r},\notag\\
+ \|\partial_p^r(W_W-W_c)(k;p,-p)|_{p=0}\|
+     &\le C\rho^{1-r},\qquad r\le2.
+ \label{wcr-vertex-errors}
+\end{align}
+Here \(V_c\) is homogeneous of degree one and \(W_c\) is constant.
+The \(r=2\) bound \(C/\rho\) on the second line is deliberately loose:
+the corresponding lattice derivative is analytic and bounded.
+For either baseline we can use
+\(\|\partial_p^rV\|\le C\rho^{1-r}\) and
+\(\|\partial_p^rW\|\le C\rho^{-r}\).
+
+The exact total heat Hessian kernel is
+\begin{align}
+ {\cal H}_{ab}(s,p)
+ &=-s\int\operatorname{tr}
+       (e^{-sB(k)}W_{ab}(k;p,-p))\,\frac{dk}{(2\pi)^4}
+       \notag\\
+ &\quad+s^2\int_0^1\int\operatorname{tr}
+ \left(e^{-s(1-v)B(k+p)}V_a(k,p)
+       e^{-svB(k)}V_b(k+p,-p)\right)
+                         \frac{dk}{(2\pi)^4}\,dv.
+ \label{wcr-diagram}
+\end{align}
+The lattice integral is over the Brillouin zone, the continuum integral
+over \(\mathbb R^4\). This identity is obtained from compact-source
+Duhamel variations, or defines their absolutely convergent two-point
+kernel. In the continuum Gaussian smoothing controls the first-order
+differential insertions at each \(s>0\). Only total-trace cyclicity is
+used.
+
+For \(r\le2\), direct differentiation or Duhamel gives
+\begin{align}
+ \|\partial_k^rE(t,k)\|
+   &\le C\rho^{-r}(1+t\rho^2)^r e^{-ct\rho^2},\notag\\
+ \|\partial_k^r(E_W-E_c)(t,k)\|
+   &\le Ct\rho^{4-r}(1+t\rho^2)^r e^{-ct\rho^2}.
+ \label{wcr-heat-errors}
+\end{align}
+These estimates hold at \(t=0\) as well; there is no inverse heat time.
+
+After two external derivatives, the tadpole vertex difference is bounded
+by \(C\rho^{-1}e^{-cs\rho^2}\). Its integral with the prefactor \(s\)
+is \(O(s^{-1/2})\) in four dimensions.
+The heat-difference part is bounded by \(Cs\rho^4e^{-cs\rho^2}\)
+before that prefactor, giving \(O(s^{-2})\).
+
+Telescope the bubble product into four differences.
+Replacing a vertex gives combined degree \(2+1=3\). Distributing
+two external derivatives among all factors therefore gives
+\[
+ C\rho P(s\rho^2)e^{-cs\rho^2}.
+\]
+Its integral times \(s^2\) is \(O(s^{-1/2})\).
+Replacing a heat factor instead gives
+\[
+ Cs\rho^4P(s\rho^2)e^{-cs\rho^2},
+\]
+whose integral times \(s^2\) is \(O(s^{-1})\).
+The estimates are uniform in \(v\in[0,1]\): the two heat times sum to
+\(s\), and \eqref{wcr-heat-errors} has no endpoint singularity.
+Away from the low-momentum ball, both the lattice and continuum
+integrals are a polynomial in \(s\) times \(e^{-cs}\).
+The continuum tail uses its polynomial vertices and Gaussian decay.
+Thus
+\begin{equation}
+ |\partial_p^2({\cal H}_{W}-{\cal H}_{c})(s,0)|
+       \le Cs^{-1/2},\qquad s\ge1.
+ \label{wcr-kernel-bound}
+\end{equation}
+Equivalently one can rescale \(k=\xi/\sqrt{s}\);
+the displayed bounds provide the needed common integrable majorant.
+
+The lattice gauge-invariant diagonal heat density and its zero linear
+color jet give
+\begin{equation}
+ h(s)=\tfrac14\partial_{p_\nu}^2
+              {\cal H}_{\alpha H,\alpha H}(s,0),\qquad\alpha\ne\nu.
+ \label{wcr-density-factor}
+\end{equation}
+Continuum source kernels may contain contact distributions, so we do
+not assume absolute continuum spatial moments or invoke a continuum
+reanchoring theorem. The direct transverse diagram calculation below
+identifies one quarter of the continuum derivative with its explicit
+magnetic density. This and \eqref{wcr-kernel-bound} compare the affine
+coefficients with error \(Cs^{-1/2}\).
+
+\subsection{Exact continuum coefficient and sign}
+\label{wcr-value-section}
+
+Let \(q\) range over all eigenvalues of \(\operatorname{ad}_H\) on the
+complexified adjoint space, with both charge signs and their
+multiplicities. For one constant curvature \(F_{12}=fH\), the scalar
+diagonal heat kernel in this charge sector is
+\begin{equation}
+ k_q(s;f)=(4\pi s)^{-2}\frac{qfs}{\sinh(qfs)}.
+ \label{wcr-scalar-value}
+\end{equation}
+Indeed Fourier transformation in \(x_2\) gives oscillators with
+eigenvalues \(|qf|(2n+1)\); integration over their centers contributes
+\(|qf|/(2\pi)\). Summing the levels and multiplying by the two free
+directions proves \eqref{wcr-scalar-value} as a pointwise density.
+
+The spin matrix in \eqref{wcr-continuum-operators} has eigenvalues
+\(0,0,2qf,-2qf\), so the vector density is
+\[
+ k_q(s;f)\{2+2\cosh(2qfs)\}.
+\]
+Expanding at \(f=0\) for each fixed \(s>0\) gives
+\begin{equation}
+ [f^2]k_q=-\frac{q^2}{96\pi^2},\qquad
+ [f^2](\hbox{vector density})=\frac{10q^2}{48\pi^2}.
+ \label{wcr-one-charge}
+\end{equation}
+This uses \(x/\sinh x=1-x^2/6+O(x^4)\) and
+\(2+2\cosh(2x)=4+4x^2+O(x^4)\).
+Complexification has the same trace as the original real color space,
+so summing charges introduces no extra factor two.
+Equations \eqref{wcr-kernel-bound}--\eqref{wcr-one-charge}
+prove \eqref{wcr-fixed-bound}.
+
+For the required direct identification of the continuum derivative,
+take an external
+\(a_\mu\) with momentum \(p=p_\nu e_\nu\), \(\mu\ne\nu\).
+The scalar continuum first vertex is \(2qk_\mu\), while its second
+vertex \(2q^2\) has no external derivative. The bubble is
+\[
+ 2q^2s(4\pi s)^{-2}\int_0^1e^{-sv(1-v)p^2}\,dv.
+\]
+Its second \(p\)-derivative is \(-q^2/(24\pi^2)\), giving the scalar
+value in \eqref{wcr-one-charge} after the factor \(1/4\).
+The vector orbital term is four copies of this scalar term.
+The two spin insertions have trace product \(8q^2p^2\), adding
+\(q^2/(4\pi^2)\) to the affine coefficient and yielding the vector
+value above. Mixed spin/orbital terms have zero Lorentz trace.
+No spatial-moment assertion about contact distributions is needed.
+
+For the determinant combination
+\(\log\det G-\tfrac12\log\det V\), the proper-time quadratic density
+is \(\tfrac12h_v-h_g\). Extraction with \(\beta=2[t^2]\) therefore
+gives \(h_v-2h_g\), with this sign and no further multiplier.
+Together with the actual-base bound, its middle band is
+\(11\alpha_g\log(K^2)+O(1)\), proving \eqref{wcr-middle}.
+For \(\tau=\operatorname{Tr}_{\rm fund}/N\) on \(SU(N)\),
+\(C_H=2N^2\).
+
+This is a positive-time density comparison. It does not assert the
+existence of separate massless infinite-volume determinants at nonzero
+magnetic field. Actual soft factors, their joint determinant identities
+and bounded outer-band corrections must still be assembled in their
+proved domains; no finite-regulator trajectory or continuum existence
+is inferred from this reference computation alone.
+
+
+
+\section{The actual logarithm and a positive structural margin}
+\label{apb-section}
+
+Return to the exactly normalized determinant correction
+\(\mathcal D_{M,K}\) of Notebooks 32--36. All stationary substitutions,
+coarse constraint factors, and gauge-density factors are those in
+that construction. The following conclusion combines estimates for
+that object; it is not a replacement of its determinant by a reference.
+
+\begin{theorem}[Uniform actual leading coefficient]
+\label{apb-main}
+Under the classical structural, determinant-identification and
+localized-vertex inputs stated in this notebook and Notebook 36,
+there is a constant \(C_{\rm cmp}\), independent of \(M,K\) and of
+the applicable joint infinite structural system, such that
+\begin{equation}
+ \left|\beta(\mathcal D_{M,K})
+                    -22\alpha_g\log K\right|\le C_{\rm cmp},
+ \qquad \alpha_g=\frac{C_H}{48\pi^2}.
+ \label{apb-coefficient}
+\end{equation}
+The same constant works for every jointly obtainable structural limit
+supplying these uniform inputs, including limits with varying old depth.
+This is not an exact continuous-momentum identity at finite period.
+\end{theorem}
+
+\begin{proof}
+Write, with the endpoint-\(K\) affine normalization,
+\[
+ h^{\rm soft}_{M,K}(s)
+  =[t^2]\{\operatorname{Tr}_{0,E}e^{-sV(t)}
+                   -2\operatorname{Tr}_{0,S}e^{-sT_s(t)}\}.
+\]
+The exact soft factorization, its two bounded coarse corrections,
+and the two heat-end estimates of Notebook 36 give
+\begin{equation}
+ \beta(\mathcal D_{M,K})
+       =\int_1^{K^2}h^{\rm soft}_{M,K}(s)\,\frac{ds}{s}+R_{M,K},
+ \qquad |R_{M,K}|\le C_0.
+ \label{apb-band}
+\end{equation}
+Theorem~\ref{spb-main} removes the soft penalties on this interval:
+\[
+ |h^{\rm soft}_{M,K}(s)-h^{\rm base}_M(s)|
+       \le C_1s/K^2,\qquad 1\le s\le K^2.
+\]
+The scalar base is independent of \(M\).
+Theorem~\ref{abw-main} compares the actual vector base with the
+Wilson base with error at most \(C_2/s\). Theorem~\ref{wcr-main}
+gives its normalized continuum limit with error at most
+\(C_3s^{-1/2}\). Consequently
+\begin{equation}
+ |h^{\rm soft}_{M,K}(s)-11\alpha_g|
+       \le C\{s^{-1/2}+s/K^2\},
+       \qquad 1\le s\le K^2.
+ \label{apb-plateau}
+\end{equation}
+Both errors are integrable uniformly against logarithmic time:
+\[
+ \int_1^{K^2}s^{-1/2}\frac{ds}{s}\le2,\qquad
+ \int_1^{K^2}\frac{s}{K^2}\frac{ds}{s}\le1.
+\]
+The constant part integrates to
+\(11\alpha_g\log(K^2)=22\alpha_g\log K\).
+Together with \eqref{apb-band}, this proves
+\eqref{apb-coefficient}. At \(K=1\) the intermediate integral is
+empty and the same bounded-end argument applies.
+
+Every bound used above depends only on the common classical and
+localized-vertex constants. No uniqueness or favorable selection of
+a structural limit is used. This proves the stated uniform scope.
+\end{proof}
+
+Combining Theorem~\ref{sgc-main} with the exact mean-zero identity
+\(\mathcal D=\mathcal N_0(\log\det\widehat G
+-\tfrac12\log\det Q_B)\) also gives
+\[
+ \beta(\mathcal N_0\log\det\widehat G)
+       =2\alpha_g\log K+O(1),\qquad
+ \beta(-\tfrac12\mathcal N_0\log\det Q_B)
+       =20\alpha_g\log K+O(1).
+\]
+These separated values concern this particular exact decomposition.
+The complete coefficient \eqref{apb-coefficient} retains the original
+normalization.
+
+For a compact simple group and a nonzero normalized Cartan element,
+\(C_H>0\). Fixing the elementary quantum ratio \(R>1\), sufficiently
+large fixed multiples \(q\) of the activity-return length therefore
+give a positive margin for the long ratio \(K=R^q\), uniformly in
+all the structural limits required by finite transfer. The next
+section states exactly what this supplies for the local quantum
+recursion. Neither the present coefficient nor that recursion
+identifies the full Wilson measure or constructs continuum fields.
+
+
+% No preamble. Prefix lpd-. Conditional downstream theorem, 17 October 2026.
+% The actual uniform coefficient comparison is a named hypothesis here.
+\section{From a uniform positive coefficient to finite local trajectories}
+\label{lpd-section}
+
+This section isolates the exact downstream consequence of a uniform
+actual determinant comparison. The finite compactness, moment passage,
+activity induction and endpoint shooting inputs are those of
+Notebooks 31--32. The coefficient comparison below is an explicit
+hypothesis of this section; it must be supplied by the actual scalar
+and vector comparison, with the stated uniformity. No perturbative
+reference coefficient is substituted for an unidentified actual one.
+
+\subsection{Fixed data and the uniform coefficient hypothesis}
+\label{lpd-data}
+
+Fix the elementary quantum ratio \(R>1\), grouping \(J\), field
+radius \(b>0\), carrier exponent \(a_0\), and the real extracted
+finite activity system. Let \(q_a\) be its amplitude block length,
+\(r_b=K_{\mathrm{amp}}b^2\) its endpoint ball radius, and
+\(C_{\mathrm{int}}b^2\) its intermediate bound. These data are fixed
+before the longer block length used below. The activity induction
+holds for arbitrary prescribed couplings in one fixed weak range,
+provided the retained periods exceed its threshold.
+
+All finite extraction functionals \(\beta_j\) are the actual
+short-lift functionals normalized by the actual classical reference.
+For the actual finite local map \(F_{j,g}\), write
+\begin{equation}
+ d_j(g,x)=\beta_{j+1}(F_{j,g}(x)),\qquad
+ x_{j+1}=P_{j+1}F_{j,g_j}(x_j),\qquad
+ \gamma_{j+1}=\gamma_j-d_j(g_j,x_j).
+ \label{lpd-updates}
+\end{equation}
+Real initial classes and the real branches are understood throughout.
+The initial class may be zero, or any fixed real extracted class in
+the endpoint ball. The actual coupling relation is
+\(g_j=\gamma_j^{-1/2}\) whenever \(\gamma_j>0\).
+
+Let \(D_{M,K}^{*}\) denote the actual leading determinant correction
+at preceding homogeneous depth \(M\) and endpoint ratio \(K\) in a
+joint infinite structural system. A star labels that structural
+system, not a preferred limit of one fixed old depth. Its Maxwell
+functional is the true infinite one, with the same classical
+normalization used in the finite moment passage. The system includes
+the shifted depths and endpoint ratios needed by the determinant
+cocycle. In particular all comparisons below refer to the same
+joint system.
+
+\paragraph{Uniform actual coefficient comparison \(\mathrm{UC}\).}
+Assume that there are \(\alpha_g>0\), \(C_{\mathrm{cmp}}\ge0\)
+and \(K_0\ge1\), independent of preceding depth and of the applicable
+joint structural limit, such that
+\begin{equation}
+ \left|\beta^{*}(D_{M,K}^{*})
+                  -22\alpha_g\log K\right|
+       \le C_{\mathrm{cmp}}
+ \quad\hbox{for every }K=R^n\ge K_0.
+ \label{lpd-UC}
+\end{equation}
+For the one-color convention used in the scalar comparison,
+\(\alpha_g=C_H/(48\pi^2)\), with \(C_H>0\) for a nonzero probe
+in the simple color factor. Only the uniform lower half of
+\eqref{lpd-UC} is required for this section. Positivity in one
+chosen fixed-depth limit is insufficient.
+
+In the present assembly, Theorem~\ref{apb-main} supplies
+\(\mathrm{UC}\), with \(K_0=1\), under its stated classical structural
+and determinant inputs. The following argument retains the hypothesis
+as a named interface so that its downstream use can be checked
+independently.
+
+\subsection{A positive leading block in every structural limit}
+\label{lpd-leading-block}
+
+Choose a positive multiple \(q\) of \(q_a\) such that
+\begin{equation}
+ R^q\ge K_0,\qquad
+ C_{\mathrm{cmp}}\le 11\alpha_g q\log R,
+ \qquad
+ \delta=11\alpha_g q\log R>0.
+ \label{lpd-q-choice}
+\end{equation}
+The exact leading cocycle and true infinite classical marginal
+preservation give, in every relevant joint system,
+\begin{equation}
+ B_q^{*}:=\sum_{j=0}^{q-1}\beta_{j+1}^{*}(D_j^{*})
+       =\beta_q^{*}(D_{0,R^q}^{*})
+       \ge 22\alpha_g q\log R-C_{\mathrm{cmp}}
+       \ge\delta.
+ \label{lpd-infinite-block}
+\end{equation}
+The index zero on the right means the beginning of this block;
+its preceding homogeneous depth is arbitrary. The cocycle identity
+is used only in the joint infinite system. No exact additivity
+of finite short-lift ratios is assumed.
+
+Let \(\mathcal P\) be the compatible cofinal family of periods.
+Every fixed power of \(R\), and every required fixed grouping,
+divides all sufficiently late periods. For a \(q\)-step block
+with final period \(N\), write
+\begin{equation}
+ M_j=MR^j,\qquad Q_j=R^{q-j}N,\qquad
+ b_{0,j}^{M,N}
+  =\beta_{M_jR,Q_{j+1}}(D_{M_j,R;Q_{j+1}}),\qquad
+ B_q(M,N)=\sum_{j=0}^{q-1}b_{0,j}^{M,N}.
+ \label{lpd-finite-block}
+\end{equation}
+The available joint compactness and normalized moment passage imply
+that, along a subsequence of every sequence \(M_n\) and
+\(N_n\in\mathcal P\) with \(N_n\to\infty\),
+\begin{equation}
+ B_q(M_n,N_n)\longrightarrow B_q^{*}.
+ \label{lpd-finite-passage}
+\end{equation}
+This passage includes the long-ratio determinant in
+\eqref{lpd-infinite-block}; it does not select unrelated favorable
+limits. Exponential source-Hessian bounds control the second-moment
+tails, and the actual finite reference denominators tend uniformly
+to one.
+
+\begin{lemma}[Uniform positive finite leading block]
+\label{lpd-finite-drift}
+Under \(\mathrm{UC}\), there is \(N_{\mathrm{drift}}\), independent
+of the preceding depth \(M\), such that
+\begin{equation}
+ B_q(M,N)\ge\delta/2
+ \quad\hbox{whenever }N\in\mathcal P,\quad
+                         N\ge N_{\mathrm{drift}}.
+ \label{lpd-finite-leading-positive}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Otherwise choose violating pairs \((M_n,N_n)\) with
+\(N_n\to\infty\). Joint compactness and
+\eqref{lpd-finite-passage} produce a structural limit with
+\(B_q^{*}\le\delta/2\), contradicting
+\eqref{lpd-infinite-block}. The starting stage of a block is absorbed
+into \(M\). This is a qualitative compactness argument and supplies
+no numerical period threshold or convergence rate.
+\end{proof}
+
+\subsection{From leading drift to the actual finite decrement}
+\label{lpd-actual-drift}
+
+The finite leakage, zero-input parity and inherited-input comparison
+give, on the established activity envelope,
+\begin{align}
+ |d_j(g,x_j)-b_{0,j}|
+ \le{}&C_{\mathrm{int}}\omega(N_{\min})
+    +C_{\mathrm{par},\beta}
+          \{\tau(T(g))+g^2T(g)^6\}\notag\\
+ &+C_{\mathrm{in},\beta}\,gT(g)/b .
+ \label{lpd-error}
+\end{align}
+Here \(\omega(N)\to0\) along the compatible family, and the last
+two terms tend to zero as \(g\downarrow0\), at the fixed geometric
+data and field radius. The cutoff \(T(g)\) is the actual continuous
+real threshold. The input factor \(b^2\) has already canceled the
+\(b^{-2}\) Maxwell-extraction bound in the last term.
+
+Choose \(N_0\) above \(N_{\mathrm{drift}}\), the reference and
+finite-induction thresholds, and sufficiently large that
+\begin{equation}
+ C_{\mathrm{int}}\omega(N_0)\le\frac{\delta}{8q}.
+ \label{lpd-period-threshold}
+\end{equation}
+Lower the weak-coupling ceiling \(g_{\mathrm w}>0\), if necessary,
+so that for every \(0<g\le g_{\mathrm w}\),
+\begin{equation}
+ C_{\mathrm{par},\beta}
+       \{\tau(T(g))+g^2T(g)^6\}
+      +C_{\mathrm{in},\beta}gT(g)/b
+       \le\frac{\delta}{8q}.
+ \label{lpd-coupling-threshold}
+\end{equation}
+These choices are independent of the permitted history length.
+The existing magnitude bound gives a fixed \(D_{\mathrm{abs}}>0\)
+with \(|d_j(g,x_j)|\le D_{\mathrm{abs}}\) on this envelope.
+Consequently every \(q\)-step block at arbitrary prescribed weak
+couplings, started in the endpoint ball and with final period at
+least \(N_0\), obeys
+\begin{equation}
+ B_-\le\sum_{j=k}^{k+q-1}d_j(g_j,x_j)\le B_+,\qquad
+ B_-=\delta/4>0,\qquad B_+=qD_{\mathrm{abs}}.
+ \label{lpd-block-bounds}
+\end{equation}
+Each \(q_a\)-step subblock returns to the same endpoint ball.
+Thus taking \(q\) larger repeats the existing activity induction;
+it does not introduce a new large-endpoint field-dilation estimate.
+Neither individual leading coefficients nor individual actual
+decrements need be positive.
+
+\subsection{Finite local endpoint shooting}
+\label{lpd-shooting}
+
+\begin{theorem}[Conditional positive-drift local trajectories]
+\label{lpd-main}
+Assume \(\mathrm{UC}\) with the stated structural uniformity and
+the established finite local inputs above. Put
+\(\Gamma_{\mathrm w}=g_{\mathrm w}^{-2}\), and choose a terminal
+inverse coupling
+\begin{equation}
+                 \Gamma_*\ge
+                    \Gamma_{\mathrm w}+qD_{\mathrm{abs}}.
+ \label{lpd-terminal}
+\end{equation}
+For every integer \(m\ge1\) and every compatible finite homogeneous
+history of \(mq\) steps with final period \(N_{\mathrm{end}}\ge N_0\),
+there is an initial inverse coupling
+\begin{equation}
+ \Gamma_*+mB_-\le\gamma_{\mathrm{bare}}
+                      \le\Gamma_*+mB_+
+ \label{lpd-initial-interval}
+\end{equation}
+whose actual local extraction trajectory reaches \(\Gamma_*\)
+and stays in the weak range throughout. Its initial period is
+\(R^{mq}N_{\mathrm{end}}\); all intermediate periods obey the
+same compatibility requirements. Its activity classes obey the
+same endpoint and intermediate \(O(b^2)\) bounds.
+\end{theorem}
+
+\begin{proof}
+For the proof alone, evaluate the local map at
+\begin{equation}
+ g_{\mathrm{eval}}(\gamma)
+             =\max\{\gamma,\Gamma_{\mathrm w}\}^{-1/2},
+ \label{lpd-clipped-coupling}
+\end{equation}
+while retaining the unclipped scalar update
+\(\gamma_{\mathrm{next}}
+ =\gamma-d_j(g_{\mathrm{eval}}(\gamma),x)\).
+The evaluated couplings are always weak, so finite induction and
+\eqref{lpd-block-bounds} apply to every auxiliary history, regardless
+of the scalar value. The prescribed-coupling estimates apply to
+its realized sequence; no adaptation changes their constants.
+
+For this fixed finite regulator the joint coupling/class continuity
+of the normalized local map makes the terminal scalar continuous
+in its initial value. On the compact interval
+\eqref{lpd-initial-interval}, the absolute increment bound keeps
+all intermediate scalars bounded. Their evaluated couplings
+therefore lie in a compact positive interval. No continuity at
+\(g=0\), volume-uniform continuity modulus, or continuous choice
+of equivalent activity representatives is needed.
+
+At the left endpoint of \eqref{lpd-initial-interval}, the terminal
+scalar is at most \(\Gamma_*\), by the lower block bound. At its
+right endpoint it is at least \(\Gamma_*\), by the upper block
+bound. The intermediate value theorem selects a clipped history
+ending exactly at \(\Gamma_*\). Summing its future block decrements
+backwards gives
+\begin{equation}
+ \Gamma_*+(m-k)B_-\le\gamma_{kq}
+                   \le\Gamma_*+(m-k)B_+,
+ \qquad 0\le k\le m.
+ \label{lpd-block-endpoints}
+\end{equation}
+Inside each block,
+\begin{equation}
+ \gamma_{kq+r}\ge\gamma_{kq}-rD_{\mathrm{abs}}
+       \ge\Gamma_*-qD_{\mathrm{abs}}
+       \ge\Gamma_{\mathrm w},
+ \qquad 0\le r\le q.
+ \label{lpd-clipping-absent}
+\end{equation}
+Clipping is therefore absent from the selected history.
+Its actual updates are exactly \eqref{lpd-updates} with
+\(g_j=\gamma_j^{-1/2}\). The finite quotient relocalizations
+replace representatives only by equal normalized totals; their
+scalar differences are carried by the exact vacuum factors.
+Thus the conclusion concerns the genuine local density update,
+not an approximate scalar recurrence.
+\end{proof}
+
+The bare coupling in this theorem satisfies
+\begin{equation}
+ (\Gamma_*+mqD_{\mathrm{abs}})^{-1/2}
+       \le g_{\mathrm{bare}}
+       \le(\Gamma_*+m\delta/4)^{-1/2}.
+ \label{lpd-bare-asymptotic}
+\end{equation}
+It is of order \(m^{-1/2}\), equivalently of order
+\((mq)^{-1/2}\) with \(q\) fixed, and reaches the same positive
+weak endpoint \(g_*=\Gamma_*^{-1/2}\). The theorem asserts neither
+uniqueness of the tuned initial value nor consistency of the
+choices at different horizons.
+
+\subsection{Parameter order and scope}
+\label{lpd-scope}
+
+First fix \(R,J,b\) and the available \(q_a\)-block activity system.
+The uniform coefficient comparison determines a sufficiently large
+fixed multiple \(q\) by \eqref{lpd-q-choice}. Then choose the
+period threshold \(N_0\), the weak ceiling \(g_{\mathrm w}\), and
+the fixed terminal margin \(\Gamma_*\). The horizon \(m\) is
+arbitrary after these choices. No quantitative finite-volume rate
+and no exact finite classical marginal identity enter this order.
+
+The only new coefficient input of this section is
+\eqref{lpd-UC}. If an actual comparison theorem supplies it in
+every required joint structural system, this section discharges
+the positive-drift hypothesis of finite local shooting. The
+comparison is supplied here by Theorem~\ref{apb-main}. The
+conclusion remains about homogeneous local analytic histories
+and their justified continuation. It does not identify those
+histories with the full Wilson measure, control mixed or large-field
+sectors, construct continuum observable measures, prove a
+nontrivial continuum Yang--Mills theory, or establish a mass gap.
+
+
+\section{What must still become a four-dimensional quantum theory}
+\label{pdh-existence-boundary}
+
+The new coefficient removes a local ultraviolet obstruction. It does
+not turn the analytic local recursion into the full Wilson measure.
+The next construction must identify that recursion, with its retained
+windows, gauge insertion, coupling extraction and vacuum convention,
+inside an exact decomposition of the original finite Wilson integral.
+Every mixed and large-field history must be included and estimated
+with compatible boundary conditions. An arbitrary continuation of a
+small-field germ outside its domain would define a different model.
+
+The next priority is therefore a full-density matching theorem for
+one fixed scheme. A useful statement would start from the actual
+positive finite Wilson measure and express its pushforward as the
+proved local sector plus explicitly controlled complementary sectors,
+at the tuned couplings just constructed. It must hold uniformly as
+the ultraviolet horizon grows. This statement is a target, not a
+consequence of the one-loop calculation.
+
+External observable sources then require their own uniform estimates.
+Holomorphy in a connection background does not establish holomorphy
+in a source coupled to a renormalized observable. Source counterterms,
+normalization denominators, reflection-cell domains, and estimates
+of all needed orders must be supplied for the same full measure.
+Those estimates must produce a common continuum hierarchy with
+compatible products, rather than separate limits of unrelated
+observables.
+
+Reflection positivity must pass from that same positive Wilson
+sequence. Full Euclidean covariance, the required distributional
+growth, a suitable vacuum sector, and reconstruction must be verified.
+Finally, a nonzero scalar correlation alone does not identify
+Yang--Mills: the limit needs an adequate mixed family of gauge-invariant
+curvature observables and their short-distance normalization and
+transformation laws. An interacting lower bound and the relevant
+identification remain separate tasks. The mass-gap problem requires
+an additional physical infrared argument.
+
+The companion file
+\texttt{work/final\_push\_existence\_dependency\_audit.txt}
+records the detailed dependency map and source boundaries.
+It explicitly distinguishes established working modules, conditional
+reductions, and the open model-specific inputs. Earlier notebooks
+remain chronological records; their older next-step paragraphs
+must be read together with the results of the present notebook.
+
+\begin{thebibliography}{9}
+\bibitem{prior37}
+\emph{Toward a four-dimensional Yang--Mills construction},
+research Notebooks 15--36 in this workspace. In particular,
+Notebook 32 supplies finite moment transfer and local shooting;
+Notebook 33 fixes the continuum normalization and affine density
+identification; Notebook 34 computes the exact unpinned scalar heat
+coefficient; Notebooks 35--36 supply the actual mean-zero and soft
+determinant identities and localized estimates.
+\bibitem{vassilevich37}
+D.~V.~Vassilevich, \emph{Heat kernel expansion: user's manual},
+Physics Reports \textbf{388} (2003), 279--360,
+\href{https://arxiv.org/abs/hep-th/0306138}{arXiv:hep-th/0306138}.
+The reference coefficient is calculated explicitly here;
+the source is not a proof of the actual lattice comparison.
+\bibitem{adamslee37}
+D.~H.~Adams and W.~Lee,
+\emph{Structure of logarithmically divergent one-loop lattice
+Feynman integrals}, Phys.\ Rev.\ D \textbf{77} (2008), 045010,
+\href{https://arxiv.org/abs/0709.0781}{arXiv:0709.0781}.
+Its fixed-integrand universality theorem is useful background;
+uniformity in our varying effective actions is proved directly above.
+\bibitem{jw37}
+A.~Jaffe and E.~Witten, \emph{Quantum Yang--Mills Theory},
+\href{https://www.claymath.org/wp-content/uploads/2022/06/yangmills.pdf}
+{Clay Mathematics Institute problem description}.
+\bibitem{source37}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}
+{Yang--Mills-LLM-experiment}, deposited accounts pinned at commit
+\texttt{e392ef4501\allowbreak 3a581664ba\allowbreak b76b908671\allowbreak 70b30fe10e}.
+\end{thebibliography}
+\end{document}

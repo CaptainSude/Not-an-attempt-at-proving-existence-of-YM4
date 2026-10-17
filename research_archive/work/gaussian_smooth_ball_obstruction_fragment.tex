@@ -1,0 +1,99 @@
+% No preamble. Finite-regulator quantum-domain interface; qg- labels.
+\section{Size of the flat constrained Gaussian fluctuations}
+\label{qg-section}
+
+There is a quantitative reason why the preceding smooth-background
+ball cannot itself be used as a uniform domain for integrating all
+fine Gaussian fluctuations. We prove it already at the flat
+reference, in four dimensions. Let $n_f=M^4n_c$ be the numbers
+of fine and coarse sites of a compatible periodic regulator,
+where $M=L^j\ge L\ge3$ and $\eta=M^{-1}$. Work in one fixed
+real trace-orthonormal color component; the flat operator acts
+identically on every color. Set
+\[
+ X=\ker Q\cap\ker(RD^T),\qquad K=d^Td.
+\]
+The positive restricted Maxwell form defines a centered real
+Gaussian $Z\in X$ with density proportional to
+$\exp[-\langle Z,KZ\rangle_\eta/2]$ relative to the
+physical Euclidean measure on $X$. Its covariance operator
+under the physical pairing is the constrained inverse
+$\mathcal C$ used above.
+
+\begin{lemma}\label{qg-dimension}
+For each real color component,
+\[
+ \dim X=3(n_f-n_c),\qquad
+ \operatorname{Tr}(d\mathcal C d^T)=\dim X.
+\]
+\end{lemma}
+\begin{proof}
+The map $Q$ on bonds is onto because $QH=I$, hence
+$\dim\ker Q=4(n_f-n_c)$. The scalar projection $R$ has
+rank $n_f-n_c$: its complementary projection has the full
+coarse scalar rank $n_c$. The map $RD^T$ from $\ker Q$
+onto $\operatorname{ran}R$ is surjective. Indeed the scalar
+operator $T=G'R$ satisfies $Q_0T=0$ and $R\mathcal L T=R$,
+where $\mathcal L=D^TD$. For $f\in\operatorname{ran}R$,
+the bond field $DTf$ has $QDTf=D_cQ_0Tf=0$ and
+$RD^TDTf=f$. Rank subtraction gives the dimension.
+
+Let $J_X$ embed $X$ isometrically into the physical bond
+Hilbert space, and let $K_X=J_X^TKJ_X$. Then
+$\mathcal C=J_XK_X^{-1}J_X^T$. Cyclicity of the finite
+operator trace gives
+$\operatorname{Tr}(d\mathcal C d^T)
+=\operatorname{Tr}(K_XK_X^{-1})=\dim X$.
+\end{proof}
+
+The physical covariance identity is
+$\mathbb E\langle f,Z\rangle_\eta\langle g,Z\rangle_\eta
+=\langle f,\mathcal Cg\rangle_\eta$.
+Thus the covariance of the actual coordinate values is
+$\eta^{-4}\mathcal C$, and that of the physical curls is
+$\eta^{-4}d\mathcal C d^T$. There are $6n_f$ positive
+plaquette components per color. Lemma~\ref{qg-dimension}
+therefore gives the exact average
+\begin{equation}\label{qg-curl-variance}
+ \boxed{\quad
+ \frac1{6n_f}\sum_p\mathbb E|(dZ)_p|^2
+     =\frac{M^4-1}{2}.
+ \quad}
+\end{equation}
+In particular at least one real curl coordinate has variance
+at least $(M^4-1)/2$, irrespective of the periodic volume.
+This conclusion uses the physical covariance normalization;
+omitting $\eta^{-4}$ would give a different and incorrect scale.
+
+Fix a deterministic background $A_0$, a radius $r>0$ and
+a coupling factor $g>0$. The event
+$N_\alpha(A_0+gZ)\le r$ bounds every physical first difference,
+and hence bounds the selected curl coordinate by $C r$,
+where the color-norm constant is fixed. It restricts a
+one-dimensional centered Gaussian of standard deviation
+at least $c\eta^{-2}$ to an interval of length at most
+$C r/g$; the interval center may depend on $A_0$.
+The maximum of the Gaussian density therefore proves
+\begin{equation}\label{qg-small-ball}
+ \boxed{\quad
+ \mathbb P\{N_\alpha(A_0+gZ)\le r\}
+       \le \min\left(1,\frac{C r\eta^2}{g}\right).
+ \quad}
+\end{equation}
+The bound is uniform in the deterministic background,
+refinement and compatible periodic volume. Thus for any
+sequence $g=g_\eta$ with $g_\eta/\eta^2\to\infty$, a fixed
+physical smooth ball has probability tending to zero under
+this constrained flat Gaussian reference.
+
+This is an obstruction to integrating all fluctuations inside
+the minimizer's fixed $N_\alpha$ ball, not an obstruction to
+a Yang--Mills theory. Equation~\eqref{qg-curl-variance} shows
+that the dimensionless microscopic curl $\eta^2dZ$ has
+bounded averaged variance. A quantum renormalization step
+must instead control suitable rescaled fluctuation fields
+and their tails while retaining smooth estimates for the
+background. Averaged or component variance bounds alone
+do not control a supremum over a growing number of variables,
+nor do they bound interacting polymer activities. No
+non-Gaussian probability estimate is inferred here.

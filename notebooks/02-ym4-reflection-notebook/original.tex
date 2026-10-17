@@ -1,0 +1,798 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem*{scope}{Scope}
+\newcommand{\tr}{\operatorname{Tr}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\supp}{\operatorname{supp}}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 02: preserving diagonal reflection positivity}
+\author{Research working document}
+\date{16 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give a fixed-coupling argument transferring diagonal reflection
+positivity to the infinite-volume limits of the original coordinate
+Wilson tori of side $2L^M$, with $L$ odd. The construction uses exact
+Wilson slab gluing, alternating coordinate site/link cuts, local
+gauge-invariant layer removal, and convex separation. It requires
+neither uniqueness of the infinite-volume state nor estimates uniform
+as the coupling tends to infinity. This settles one regulator-level
+interface in the proposed continuum construction, subject to scrutiny
+of the proof below. It does not establish continuum rotations,
+renormalized source bounds, nontriviality, or a mass gap.
+\end{abstract}
+
+\noindent\textbf{Evidence and status.}
+This is an explicit research proof, internally checked in separate
+passes for the local gauge argument, geometry, slab normalization, and
+final limit argument; it has not received external mathematical review.
+The comparison architecture is adapted from the QED3 material in the
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}
+{pinned repository}, rather than claimed as a new general method.
+The Wilson and odd-$L$ details are supplied below. Notebook 01 retains
+the other construction obligations.
+
+\section{Precise statement and order of limits}
+
+On independent positively oriented links of $\Z^4$ put $U_e\in SU(2)$,
+with $U_{\bar e}=U_e^{-1}$. Haar measures have mass one. At fixed
+$0<\beta<\infty$, write
+\[
+ k_\beta(g)=\exp\{(\beta/2)\tr g\},\qquad
+ Z_\Gamma[F]=\int F(U)\prod_{p}k_\beta(U_p)\prod_e dU_e.
+ \tag{1.1}
+\]
+Every unoriented elementary plaquette occurs once. Let
+$C_n=\Z^4/n\Z^4$, $n=2L^M$, for a fixed odd integer $L\ge3$.
+The normalized Wilson measure is denoted $\mu_{C_n}$.
+Small tori with degenerate plaquette identifications can be discarded.
+
+A lattice reflection acts on oriented links and hence on configurations.
+For its ordinary pullback $rF=F\circ r$, put
+$\Theta F=\overline{rF}$. Reflection positivity (RP) means
+\[
+ \nu((\Theta F)F)\ge0
+ \tag{1.2}
+\]
+for every continuous local $F$ supported in the closed positive half.
+Equivalent finite sums follow by replacing $F$ with their sum.
+
+\begin{theorem}\label{thm:main}
+Every locally weak subsequential limit $\nu$ of $\mu_{C_n}$ is
+reflection invariant and reflection positive across
+$x_1-x_2=0$. By its lattice translations and signed coordinate
+permutations, the same holds at every lattice-preserving diagonal
+mirror $x_i\pm x_j=c$, $i\ne j$, $c\in\Z$.
+The original coordinate RP properties are retained as well.
+\end{theorem}
+
+The proof constructs, for each separating observable $O$, auxiliary
+tilted measures. Its limits are strictly ordered:
+\[
+ \text{fix }\beta,O,\text{ and all cell sizes};\quad
+ n\longrightarrow\infty;\quad t\downarrow0;
+ \quad\text{then approximate local observables.}
+ \tag{1.3}
+\]
+No interchange with $\beta\to\infty$ is made. Applying the theorem
+at each lattice spacing is compatible with a volume-first continuum
+construction. Arbitrary simultaneous volume/cutoff limits would need
+additional estimates.
+
+\section{Exact Wilson slabs and reflected cell inequalities}
+
+\subsection{Diagonal boundary variables}
+Take height $s=x_1-x_2$ and an integer mirror $s=c$.
+Links in directions 1 and 2 end on this mirror or avoid it; their
+interiors never cross it. Links in directions 3 and 4 can lie in it.
+A $(1,2)$ plaquette based at height $b$ has heights
+$b,b+1,b-1,b$ and crosses the mirror exactly when $b=c$.
+It splits into two length-two paths between the same boundary vertices.
+Plaquettes in directions $(1,\mu)$ or $(2,\mu)$, $\mu=3,4$,
+have height range one and lie on one side. A $(3,4)$ plaquette
+can lie wholly in the mirror. For $s=x_1+x_2$ the crossing
+$(1,2)$ plaquette is centered at $c=b+1$; the same classification holds.
+
+For completeness the following feature construction works for $SU(N)$.
+Let $u(A)$ be the real vector of real and imaginary matrix entries, so
+$u(A)\cdot u(B)=\operatorname{Re}\tr(AB^\dagger)$ and
+$|u(A)|^2=N$. Set $c_\beta=\beta/N$ and
+\[
+ \Phi_\alpha(A)=
+ \left(\frac{c_\beta^{|\alpha|}}{\alpha!}\right)^{1/2}
+ u(A)^\alpha,\qquad \alpha\in\mathbb N^{2N^2}.
+\]
+Then
+\[
+ \langle\Phi(B),\Phi(A)\rangle
+ =e^{c_\beta\operatorname{Re}\tr(AB^\dagger)},
+ \qquad\norm{\Phi(A)}^2=e^\beta.
+ \tag{2.1}
+\]
+The coefficients are real and the series converges absolutely by
+Cauchy--Schwarz. If $A_+,A_-$ are the two half-path holonomies with
+common initial and final vertices, their feature contraction is exactly
+the crossing plaquette weight.
+
+Work on a cylinder with finite tangential period lattice
+$\Gamma_\parallel\subset\{s=0\}$. At $s=c$ take boundary Hilbert space
+\[
+ \mathcal H_c=L^2(SU(2)^{E_c},db)
+       \widehat\otimes\bigotimes_{p\in P_c^\times}\mathcal F_p,
+ \tag{2.2}
+\]
+where $E_c$ are links in the sheet, $P_c^\times$ the crossing
+plaquettes, and $\mathcal F$ the complexified feature space above.
+Give each neighboring slab a square root of the product $W_c(b)$
+of weights of plaquettes contained in the sheet.
+
+For a bounded function $F$ strictly inside a slab $[c_0,c_1]$,
+define $S[F]:\mathcal H_{c_0}\to\mathcal H_{c_1}$ by integrating
+its interior links, multiplying every one-sided plaquette weight,
+the two boundary halfweights, and the feature coefficient for each
+inside half-path at either boundary. More explicitly, its kernel is
+\[
+ \sqrt{W_{c_1}(b_1)W_{c_0}(b_0)}
+ \int F\prod_{p\text{ assigned to slab}}k_\beta(U_p)
+       \prod_{p\text{ at boundaries}}\Phi_{\alpha_p}(A_{p,\mathrm{in}})
+       \prod_{e\text{ in slab}}dU_e.
+ \tag{2.3}
+\]
+Widths are at least four, as they are in every application here.
+The constant feature norm and bounded finite-volume Wilson weights,
+followed by Minkowski's inequality, prove that (2.3) is a
+Hilbert--Schmidt kernel, also for complex $F$.
+
+\begin{lemma}[Gluing and adjoints]\label{lem:glue}
+Adjacent slab kernels compose to the kernel of their union with the
+product of their integrands. Reflection of a slab takes its operator
+adjoint, with the natural boundary translation identification.
+No extra normalization factors occur.
+\end{lemma}
+\begin{proof}
+At a common sheet, kernel composition integrates each boundary link
+once. Feature contraction restores each crossing plaquette by (2.1);
+the two halfweights multiply to $W_c$. Every other link or plaquette
+already belongs to exactly one slab. All Haar measures have mass one.
+Reflection exchanges the two half-paths and kernel arguments;
+the real feature coefficients give the complex adjoint.
+If the width is $b$, reflection in its upper mirror maps its lower
+boundary to the translate by $q=bv$, where $v=e_1-e_2$ or $e_1+e_2$.
+Thus, with the translation unitary $U_q$,
+$S[\Theta F]=U_qS[F]^*$. This uses an integer translation even
+when $b$ is odd; the two original boundary spaces need not be
+identified by a normal translation of length $b/2$.
+\end{proof}
+
+If $\Gamma=\Gamma_\parallel\oplus\Z\gamma$,
+$s(\gamma)=p$, the same graph gluing gives
+\[
+ Z_\Gamma[F_1\cdots F_J]
+ =\tr(U_\gamma^{-1}S[F_J]\cdots S[F_1]).
+ \tag{2.4}
+\]
+The closing translation may have a tangential component. It is a
+unitary relabeling, not a new action at the seam.
+
+\subsection{Even folds and four successive directions}
+Suppose $p=Jb$ with $J$ even. The straightened period is
+$\gamma_0=(p/2)v\in\Z^4$. Denote by $\operatorname{Fold}_sF$
+the product of successive antilinear reflected copies of one slab
+function, on the straightened torus $\Gamma_0$.
+Each reflected pair contributes a translate of $S[F]^*S[F]$.
+Their translation unitaries telescope to $U_{\gamma_0}$ and cancel
+the closing unitary in (2.4). Hence
+\[
+ Z_{\Gamma_0}[\operatorname{Fold}_sF]=\norm{S[F]}_J^J\ge0,
+ \qquad
+ |Z_\Gamma[\textstyle\prod_jF_j]|
+ \le\prod_j Z_{\Gamma_0}[\operatorname{Fold}_sF_j]^{1/J}.
+ \tag{2.5}
+\]
+The second inequality is Schatten H\"older. Different boundary
+Hilbert spaces are allowed; the operators can be viewed as cyclic
+blocks in their orthogonal direct sum.
+
+Coordinate versions, including unlike site/link boundaries, are
+proved in Section~\ref{sec:coordinate}. For four orthogonal families
+with even successive counts $J_1,\ldots,J_4$, apply (2.5) one direction
+at a time. Reflections in one direction preserve the other heights.
+After each completed gluing one has an ordinary Wilson action, so
+there is no simultaneous assignment of corner halfweights. The
+terminal factor is the full reflected array of one original cell.
+Writing $N_{\rm cell}=\prod_iJ_i$, this proves
+\[
+ \left|Z_\Gamma[\textstyle\prod_cF_c]\right|
+ \le\prod_c
+ Z_{\Gamma_{\rm final}}[\operatorname{Fold}_{\rm cells}F_c]^{1/N_{\rm cell}}.
+ \tag{2.6}
+\]
+Its terminal factors are nonnegative by the last use of (2.5).
+All cell integrands used below have support strictly inside their cells.
+
+The same boundary factorization with two reflected halves proves RP
+on a straight diagonal torus, including bounded positive source
+weights that split into reflected half products. Reflection invariance
+follows directly from its graph symmetry.
+
+\section{Coordinate physical operators and the insertion bound}
+\label{sec:coordinate}
+
+On a finite spatial three-torus with edge set $E$, let
+$\mathcal H=L^2(SU(2)^E)$ and let $P$ be Haar averaging over the
+spatial endpoint gauge group. Write $\mathcal H_{\rm phys}=P\mathcal H$.
+Let $C=\bigotimes_{e\in E}C_\beta$ be electric convolution with
+$k_\beta(vu^{-1})$, and let $V$ multiply by all spatial plaquette
+weights. They commute with $P$. The positive convolution eigenvalues
+are $2I_{2j+1}(\beta)/\beta$; their rapid decay makes $C$ trace class.
+
+On the physical space define
+\[
+ B=V^{1/2}C^{1/2},\quad A_l=B^*B=C^{1/2}VC^{1/2},
+ \quad A_s=BB^*=V^{1/2}CV^{1/2}.
+\]
+Temporal-link Haar integration gives $CP$ at every transition:
+its plaquette is $\tr(U_ea_yU_e'{}^{-1}a_x^{-1})$.
+Consequently the ordinary coordinate partition function is exactly
+\[
+ Z_\Gamma(N)=\tr_{\mathcal H}(CPV)^N
+           =\tr_{\rm phys}A_l^N=\tr_{\rm phys}A_s^N.
+ \tag{3.1}
+\]
+There is no gauge-volume factor. A link cut has a factor $C^{1/2}$
+on either side; a site cut splits $V$ into $V^{1/2}$. Halfsteps
+are $B$ and $B^*$. Thus a slab can have unlike boundary types.
+
+\begin{lemma}[Bounded sources in coordinate slabs]\label{lem:schatten}
+Let a slab have length $\ell\in\tfrac12\mathbb N$ and bounded real
+gauge-invariant source $R$, $\norm R_\infty\le M$, whose support crosses neither cut.
+For every even integer $p\ge2$, its boundary operator satisfies
+\[
+ \norm{S_{R,t}}_p\le e^{|t|M}Z_\Gamma(p\ell)^{1/p}.
+ \tag{3.2}
+\]
+If $J$ is even, $\sum_j\ell_j=N$, and bounded operators $X_j$
+are placed at the intervening cuts, the unnormalized insertion obeys
+\[
+ \left|\tr(X_JS_{R_J,t}\cdots X_1S_{R_1,t})\right|
+ \le e^{|t|\sum_jM_j}\prod_j\norm{X_j}
+       \prod_j Z_\Gamma(J\ell_j)^{1/J}.
+ \tag{3.3}
+\]
+\end{lemma}
+\begin{proof}
+Glue $p$ alternating copies of the slab and its adjoint.
+At link joins the factors give $C^{1/2}PC^{1/2}=CP$;
+at site joins they give $V^{1/2}PV^{1/2}=VP$, with that
+projector absorbed by adjacent physical temporal cores.
+The trace of $(S^*S)^{p/2}$ is the ordinary Wilson integral
+on length $p\ell$ with $p$ bounded source copies. Pointwise
+bounding their product gives (3.2). Finite representation truncations
+or the bounded glued integral justify the kernel limit.
+No pointwise positivity of the kernel of $C^{1/2}$ is asserted.
+Schatten H\"older gives (3.3).
+\end{proof}
+
+For general bounded complex gauge-invariant slab integrands the
+operator is defined linearly: split real and imaginary parts, and
+write a bounded real function as a difference of two strictly positive
+bounded functions, each an exponential of a bounded real function.
+The kernels glue linearly and reflection is the adjoint. This proves
+the coordinate version of (2.5) for half-integer widths and even counts.
+A tangential closing shift acts unitarily on both $\mathcal H$ and
+$\mathcal H_{\rm phys}$ and gives the same twisted-trace formula.
+
+For a selected finite set of spatial links $S$ at a link cut, replace
+the electric kernel $K_S$ by that of $C_S^{1/2}XC_S^{1/2}$ and divide
+by $K_S>0$. Include temporal parallel transports at its endpoints.
+The resulting local insertion is denoted $G_X$; $G_I=1$.
+Throughout the rest of this note, $X$ is restricted to finite
+Peter--Weyl kernel operators and their unitization that commute with
+endpoint gauge transformations. Their insertion kernels and $G_X$
+are continuous, $X\otimes I$ commutes with $P$, and $G_X$ is
+gauge invariant. This class contains the self-adjoint combinations and
+$I+isA$ used below. Disjoint spatial supports at a common cut give an
+operator norm at most the product of the individual norms.
+Lattice reflections and relabelings replace $X$ by adjoints or
+unitary/antiunitary conjugates, preserving its norm.
+
+\section{Local gauge-invariant reduction to two slices}
+
+\begin{lemma}[Finite derivative loss]\label{lem:convolution}
+For a finite Peter--Weyl polynomial $f$ on $SU(2)$ of maximum spin
+$r$, $T_f=C_\beta^{-1}M_fC_\beta$ maps $C^\infty$ continuously to
+itself and
+\[
+ \norm{T_f\psi}_{H^s}\le C_{\beta,f,s}\norm\psi_{H^{s+2r}}.
+ \tag{4.1}
+\]
+The tensor version holds on any fixed finite edge set.
+\end{lemma}
+\begin{proof}
+The spin-$j$ convolution eigenvalue is
+$c_j=2I_{2j+1}(\beta)/\beta>0$. Multiplication by $f$ connects
+only $|k-j|\le r$. In
+\[
+ I_m(\beta)=\frac{(\beta/2)^m}{m!}S_m,\qquad
+ 1\le S_m=\sum_{l\ge0}
+ \frac{(\beta^2/4)^l m!}{l!(m+l)!}\le e^{\beta^2/4},
+\]
+ratios on that finite band grow at most as $C(1+j)^{2r}$.
+Each multiplication block has norm at most $\norm f_\infty$;
+weighted square summation proves (4.1). Sobolev embedding and the
+finite tensor product give the stated smooth mapping property.
+\end{proof}
+
+We record the gauge step explicitly because replacing the law by a
+gauge-fixed one would obscure the support issue. Suppose a local
+gauge-invariant polynomial $P$ has lowest coordinate height $j$.
+For its bottom spatial edges $e=(x,y)$ put
+\[
+ b_e=U_{(j,x),(j,y)},\quad a_x=U_{(j,x),(j+1,x)},\quad
+ u_e=a_x^{-1}b_ea_y,\quad v_e=U_{(j+1,x),(j+1,y)}.
+\]
+Include auxiliary $a_x$ at all necessary endpoints. Gauge transformation
+$g_{j,x}=a_x^{-1}$ sets those temporal links to one and leaves every
+upper link unchanged. It proves the identity of observables
+\[
+ P(U)=\widetilde P(u,U_{\ge j+1})
+      =\sum_i f_i(u)P_i(v,\eta).
+ \tag{4.2}
+\]
+There is no change of the probability measure.
+
+Condition on all links except the finite collection $v$.
+Its downward plaquettes have trace $\tr(u_ev_e^{-1})$.
+Every other plaquette containing $v$ is spatial at $j+1$ or goes
+up to $j+2$. Include each such complete plaquette once in $W(v;\eta)$.
+The density factors as
+\[
+ H(\mathrm{exterior})K_S(v,u)W(v;\eta).
+\]
+$W$, its inverse, and all required derivatives are bounded uniformly
+in ambient volume at fixed $\beta$ and fixed support.
+Since $C_ST_f=M_fC_S$ and $K_S(v,u)=K_S(u,v)$, define
+\[
+ Q(v,\eta)=W(v;\eta)^{-1}
+          \sum_i T_{f_i}[W(\cdot;\eta)P_i(\cdot,\eta)](v).
+ \tag{4.3}
+\]
+Conditional integration proves $\mu(P)=\mu(Q)$ exactly.
+$Q$ is smooth and reads only links at heights at least $j+1$,
+reaching up at most to $\max(j+2,\text{old top})$.
+It is gauge invariant: $u_e$ and $v_e$ transform by the same
+upper endpoint gauges, $C_S$ commutes with their action, and
+$T_{hf}(hB)=h(T_fB)$. Thus (4.3) descends directly to the original
+upper links without reintroducing the removed links.
+
+Now tilt by $e^{tV_n}$, where $V_n$ is a fixed-spacing array of
+reflected copies of a smooth bounded local source. Only a uniformly
+bounded number of copies depend on the integrated $v$; call their sum
+$R_n$. It may also read lower exterior links. With those frozen,
+the exact tilted replacement is
+\[
+ Q_{n,t}=W^{-1}e^{-tR_n}
+           \sum_iT_{f_i}[e^{tR_n}WP_i].
+ \tag{4.4}
+\]
+Finite derivative loss and compactness give
+$\norm{Q_{n,t}-Q}_\infty\le C_Pt$ for $0\le t\le1$,
+uniformly in $n$. The analogous top-layer removal uses
+$u_e=a_xb_ea_y^{-1}$ and goes down one slice.
+
+\begin{proposition}[Paired two-layer reduction]\label{prop:layers}
+For every continuous gauge-invariant local $P$, every integer $a$,
+and $\epsilon>0$, there is a finite local gauge-invariant polynomial
+$Y_\epsilon$ supported in $[a,a+1]$, and $C_\epsilon<\infty$, with
+\[
+ \begin{split}
+ |\mu_{n,t}(P)-\mu_{n,t}(Y_\epsilon)|&\le\epsilon+C_\epsilon t,\\
+ |\mu_{n,t}(rP)-\mu_{n,t}(rY_\epsilon)|&\le\epsilon+C_\epsilon t,
+ \end{split}
+ \tag{4.5}
+\]
+where $r$ is reflection in $a+1/2$. No invariance of the tilted
+measure or source array under $r$ is required. The estimates hold
+for all sufficiently large $n$, once the finite neighborhoods produced
+by reduction and their reflections embed without identifications.
+\end{proposition}
+\begin{proof}
+First uniformly approximate a continuous input by a finite Peter--Weyl
+polynomial and average over its finite endpoint gauge group, charging
+this initial approximation to the total $\epsilon$ allowance.
+Remove bottom layers up to $a$, then top layers down to $a+1$.
+The first operations never exceed the retained top bound since
+$j+2\le a+1$; the second never drop below $a$ since $j-2\ge a$.
+Each operation enlarges spatial support by finitely many plaquettes.
+After each step approximate its smooth output uniformly by a finite
+Peter--Weyl polynomial and Haar-average over the finite endpoint gauge
+group. The average preserves both support and finite representation
+content. Choose the finite list of approximation errors with total
+below $\epsilon$. Expectation errors telescope, so subsequent operator
+norms do not amplify earlier errors. The finite sum of tilted errors
+is $C_\epsilon t$. Reflect the same unperturbed construction for
+$rP$; its tilted error proof needs only the same local derivative
+bounds, not reflection symmetry of the tilt. This proves (4.5).
+\end{proof}
+
+\section{The two frames on the original odd-$L$ family}
+\label{sec:geometry}
+
+Put $a=n/2=L^M$, $e_-=e_1-e_2$, $e_+=e_1+e_2$, and introduce
+\[
+ \Gamma_D=\langle ae_-,2ae_+,ne_3,ne_4\rangle,\qquad
+ \Gamma_T=\langle ae_1,4ae_2,ne_3,ne_4\rangle.
+ \tag{5.1}
+\]
+Both covolumes are $n^4$. These are auxiliary tori; $C_n$ is unchanged.
+
+Let $O$ be a real gauge-invariant local Peter--Weyl polynomial.
+Choose a source radius $R_O$ large enough to contain its full link
+support and let $h=L^u>16R_O+16$. Fine diagonal cells have widths $h$
+in $(x_1-x_2,x_1+x_2,x_3,x_4)$, with integral diagonal offsets
+and half-integral transverse offsets. The source is strictly inside
+one cell; $V_n$ is the sum of its reflected copies.
+
+For an insertion box $B=y+[-r,r]^4$, choose fixed powers
+$q=L^v$, $b=qh$, $H=L^z$, with $b\mid H$, and put $w=b/2$, so
+\[
+ w\ge2r+6h,\qquad H/w\ge16.
+ \tag{5.2}
+\]
+For large $M$, $h\mid b\mid H\mid a$.
+Both $b,H$ are odd; $w$ is strictly half-integral. Coordinate
+walls spaced by $w$ therefore alternate between site and link cuts.
+
+\subsection{Periods and counts}
+On $C_n$ the first diagonal height has period $n$ and tangential
+cross-section generated by $ne_+,ne_3,ne_4$. Straightening replaces
+the closing vector $ne_1$ by $ae_-$. The subsequent height periods
+are $2n,n,n$. Thus the first fold ends on $D_n$ with even counts
+\[
+ (n/h,2n/h,n/h,n/h),\qquad N=2n^4/h^4.
+ \tag{5.3}
+\]
+The same fold on $D_n$ with width $H$ has
+$N'=2n^4/H^4$ cells. The diagonal height transformation has
+determinant two, explaining the cell volume $h^4/2$.
+Both original and adapted periods belong to the wall group's
+translation subgroup generated by $he_-,he_+,2he_3,2he_4$;
+all reflected arrays are therefore periodic.
+
+For the first coordinate height on $D_n$, the period is $a$, with
+cross-section $\langle4ae_2,ne_3,ne_4\rangle$ and closing vector
+$ae_1-ae_2$. Its tangential shift is the unitary relabeling $-ae_2$.
+Straightening gives $T_n$. With $A=a/b$, the coordinate counts are
+\[
+ (2A,8A,4A,4A),\qquad N''=256A^4=n^4/w^4,
+ \tag{5.4}
+\]
+all even. In units of $w$ the original period generators are
+$(2A,-2A),(4A,4A),4Ae_3,4Ae_4$. First reduce the first index by
+the first generator, then the second by $(0,8A)$, then the transverse
+ones. This proves that the brick (5.4) represents both $D_n$ and
+$T_n$, including the intermediate cellwise folding geometry.
+
+\subsection{Clean planes and distinct insertion cells}
+The reflected source centers have at most four residues modulo $h$
+in either first coordinate, and at most two in the transverse ones.
+Indeed, writing $A_\pm=x_1\pm x_2-c_\pm$, their first coordinates
+are
+\[
+ x_1'=x_1-A_-\epsilon_--A_+\epsilon_++h(z_-+z_+),\quad
+ x_2'=x_2+A_-\epsilon_--A_+\epsilon_++h(z_+-z_-).
+ \tag{5.5}
+\]
+For two adjacent half-integer planes $c,c+1$, one source-center
+residue forbids at most $2R_O+2$ of the $h$ half-integer classes
+modulo $h$. Hence two adjacent clean link planes exist in each
+coordinate direction. Here clean means that neither plane meets
+any source box.
+
+Choose coarse offsets from the fine wall families so that
+\[
+ \begin{aligned}
+ y_1-y_2-c'_-&\in[2w,2w+h),&
+ y_1+y_2-c'_+&\in[4w,4w+h),\\
+ y_\mu-c'_\mu&\in[w,w+h),&&\mu=3,4.
+ \end{aligned}
+\]
+For the resulting coarse wall group, put $m=H/w\ge16$, an even
+integer. Every image center has form
+\[
+ gy=y+w\kappa(g)+s(\epsilon),\qquad |s(\epsilon)|_\infty<2h,
+\]
+where
+\[
+ \begin{split}
+ \kappa(g)={}&(-2\epsilon_--4\epsilon_+,
+               2\epsilon_--4\epsilon_+,-2\epsilon_3,-2\epsilon_4)\\
+ &+m(z_-+z_+,z_+-z_-,2z_3,2z_4).
+ \end{split}
+ \tag{5.6}
+\]
+The sixteen parity vectors are distinct; coordinate differences
+are at most six. Since $m\ge16$, equality of indices forces equality
+of the parity vectors and then of every $z$. Thus $g\mapsto\kappa(g)$
+is injective.
+
+Coordinate walls of width $w$ have residues $o,o+h/2$ modulo $h$.
+Choose $o$ modulo $h/2$ on the half-integer mesh. A source residue
+excludes at most $4R_O+2$ classes; all four exclude at most
+$16R_O+8<h$. An allowed representative can be selected in
+\[
+ (y_\mu+r+2h-w,\ y_\mu-r-2h),
+\]
+whose length is at least $2h$. Equations (5.2) and (5.6) then give
+\[
+ gB\subset o+w\kappa(g)+(0,w)^4.
+ \tag{5.7}
+\]
+Every source box is also strictly inside one coordinate cell.
+The periods in $\Gamma_D$ belong to the coarse diagonal translation
+group because $H\mid a$. If two indices in (5.6) differ by a
+period, translate one group element by that period and use
+injectivity. They represent the same coarse orbit. Consequently
+exactly $N'$ distinct coordinate cells contain amplified insertions.
+
+After the coordinate fold of one occupied cell, all insertion cuts
+have the same coordinate direction. If its relative cut position is
+$d\in\tfrac12\Z$, $0<d<w$, successive gaps are $2d$ and
+$2(w-d)$, integers in $\{1,\ldots,2w-1\}$.
+The residual shift in (5.6) allows no stronger universal margin;
+strict inclusion and this finite set of gaps suffice.
+The number $J$ of cuts is one of the even counts (5.4).
+Each source lies wholly between consecutive operator cuts, because
+the original clean cut and all its coarse images avoid sources.
+At one cut the insertion boxes occupy disjoint spatial cells.
+
+\section{Pressure, source comparison, and amplification}
+
+\subsection{The only thermodynamic input}
+Bounded finite-range Wilson interactions have a common pressure
+$p_\beta$ on the coordinate and skew tori above:
+\[
+ \log Z_\Gamma[1]=p_\beta|\Gamma|+o(|\Gamma|).
+ \tag{6.1}
+\]
+An elementary verification is to tile a fundamental domain by fixed
+large coordinate boxes, deleting plaquettes at their boundaries.
+Each deleted plaquette changes $\log Z$ by at most $\beta$.
+Normalized Haar integrals factor on the disconnected boxes; leftover
+links have integral one. First let the torus grow, so its boundary
+fraction vanishes, then let the box size grow. The internal seam
+fraction is $O(1/\text{box size})$. Comparing boxes also proves the
+existence and uniqueness of their limiting pressure. The argument
+works for bounded-aspect skew parallelepipeds and uniformly over
+finitely many rectangular shapes. No quantitative convergence rate
+or tilted pressure is needed.
+
+\subsection{Full source arrays are essential}
+Use the reflected source arrays $V_C,V_D$ in all $N$ fine cells.
+Every fine-wall reflection is an integer affine signed permutation
+preserving the coordinate Wilson law. Thus
+$\mu_C(V_C)=N\mu_C(O)$, even though diagonal RP on $C_n$ has
+not been assumed. Every cell factor $e^{tO^{[c]}}$ has the same
+complete fold $e^{tV_D}$; (2.6) gives
+\[
+ Z_C[e^{tV_C}]\le Z_D[e^{tV_D}].
+ \tag{6.2}
+\]
+Jensen and convexity of
+$F_D(t)=\log(Z_D[e^{tV_D}]/Z_D[1])$ imply
+\[
+ \mu_C(O)\le\mu_{D,t}(O)
+ +\frac{\log Z_D[1]-\log Z_C[1]}{tN},\qquad t>0.
+ \tag{6.3}
+\]
+Here $F_D'(t)=N\mu_{D,t}(O)$ because the tilted law is invariant
+under its wall group. Equation (6.1) makes the error tend to zero
+at fixed $t$. A single-source unnormalized partition function raised
+to $N$ would give an incorrect normalization; (6.2) uses full arrays
+on both tori.
+
+\subsection{Amplifying a clean-plane insertion}
+Fix $G_X$ at one clean coordinate link plane and use the geometry
+above. Coarse diagonal walls preserve $V_D$, so the normalized
+coarse chessboard consequence of (2.6) is
+\[
+ |\mu_{D,t}(G_X)|^{N'}
+ \le\frac{Z_D[e^{tV_D}\prod_gG_X^{[g]}]}{Z_D[e^{tV_D}]}.
+ \tag{6.4}
+\]
+For clarity, apply (2.6) to one occupied coarse cell and the empty
+ones: their complete folds contain respectively the $N'$ copies
+and no insertion, while each contains the same source array.
+This gives (6.4) with exactly the displayed denominator.
+
+Apply the coordinate cell inequality to the numerator. If cell $c$
+contains $m_c$ sources, its complete fold has $N''m_c$ source copies;
+$\sum_cm_c=N$. If occupied, it also has $N''$ copies of its
+operator, all of norm $\norm X$. The unnormalized bound (3.3)
+therefore costs $e^{tN''m_c\norm O_\infty}\norm X^{N''}$
+for occupied cells, and just the exponential for empty cells.
+In that formula the source-free factors satisfy
+\[
+ \frac1J\sum_j\log Z_\Gamma(J\ell_j)
+   =p_\beta|\Gamma|\sum_j\ell_j+o(n^4)
+   =p_\beta n^4+o(n^4).
+ \tag{6.5}
+\]
+Uniformity follows from the fixed finite set of gap lengths and
+time directions. All spatial lengths and $J\ell_j$ grow in bounded
+aspect ratios. After the $1/N''$ cell roots, the numerator bound is
+\[
+ \norm X^{N'}e^{tN\norm O_\infty}
+       e^{p_\beta n^4+o(n^4)}.
+\]
+The one original denominator is at least
+$e^{-tN\norm O_\infty}e^{p_\beta n^4+o(n^4)}$.
+Taking the $N'$-th root proves
+\[
+ \limsup_{n\to\infty}|\mu_{D_n,t}(G_X)|
+ \le e^{2t(H/h)^4\norm O_\infty}\norm X.
+ \tag{6.6}
+\]
+All auxiliary sizes were fixed before this limit. In particular
+$H$ may depend on the support of $X$, but not its norm. This
+also proves (6.6) for the local unitization $I+isA$.
+
+\section{Removing the tilt in one common state}
+
+Fix a subsequence $\mu_{C_n}\to\nu$ and $t_j\downarrow0$.
+For each $j$, extract a local weak limit $\lambda_j$ of
+$\mu_{D_n,t_j}$ along a subsequence of those same volumes.
+Then extract $\lambda_j\to\lambda$. Compactness follows from
+the countable product of compact link groups. Equation (6.3)
+gives $\nu(O)\le\lambda(O)$. All these laws are gauge invariant;
+diagonal RP and invariance at the chosen fine wall survive both limits.
+
+For every fixed finite kernel $X$, (6.6) holds along every volume
+subsequence and yields
+\[
+ |\lambda(G_X)|\le\norm X.
+ \tag{7.1}
+\]
+Thus one common $\lambda$ satisfies all these inequalities; no
+operator-dependent choice of state is involved. Put
+$\mathcal L(X)=\lambda(G_X)$, so $\mathcal L(I)=1$.
+For self-adjoint $A$, apply (7.1) to $I+isA$:
+\[
+ |1+is\mathcal L(A)|^2\le1+s^2\norm A^2.
+\]
+Let $s\to0$ through both signs. Then
+$\operatorname{Im}\mathcal L(A)=0$, and linearity gives
+$\mathcal L(X^*)=\overline{\mathcal L(X)}$.
+Reflection swaps the crossing kernel arguments, hence
+$rG_X=\overline{G_{X^*}}$. Since $\lambda$ is a probability law,
+\[
+ \lambda(rG_X)=\lambda(G_X).
+ \tag{7.2}
+\]
+
+Every smooth gauge-invariant two-layer observable $Y$ is uniformly
+approximable by these insertions. After temporal parallel transport,
+enlarge the selected spatial set so that $Y=Y(u,v)$, put
+$K_Y(v,u)=K_S(v,u)Y(u,v)$, and let $P_m$ be product Peter--Weyl
+cutoff. Its smooth kernels $P_mK_YP_m$ converge uniformly to $K_Y$.
+The bounded finite-rank operator
+\[
+ X_m=C_S^{-1/2}P_mK_YP_mC_S^{-1/2}
+\]
+commutes with endpoint gauge transformations and has
+$G_{X_m}=(P_mK_YP_m)/K_S\to Y$ uniformly. Positivity of every
+retained convolution eigenvalue and of $K_S$ justifies both divisions.
+No uniform bound on $\norm{X_m}$ is required: the tilt has already
+been removed for each fixed operator. Uniform approximation extends
+(7.2) to continuous $Y$.
+
+Proposition~\ref{prop:layers}, followed by $t\downarrow0$ and
+$\epsilon\downarrow0$, extends invariance to every local
+gauge-invariant $P$ at the same clean plane. Gauge averaging a
+cylinder test extends it to all local functions. Applying this
+at two adjacent clean planes in each direction proves that
+$\lambda$ is invariant under $2\Z^4$ translations. This step
+establishes coordinate reflection \emph{invariance}; its diagonal
+RP came from the adapted tilted measures.
+
+\section{Convex separation proves the theorem}
+
+Keep the desired mirror $x_1-x_2=0$ fixed. Let $\mathcal R$ be the
+set of gauge-invariant probability laws invariant and RP at that
+mirror, and invariant under $2\Z^4$. It is compact and convex:
+on the compact configuration space, each invariance condition is a
+closed linear equality and each continuous local RP test is a closed
+affine inequality.
+
+Given any real gauge-invariant local Peter--Weyl polynomial $P$,
+translate it by an even vector into the positive side of the fixed
+mirror, choose $h$ sufficiently large, and choose the other offsets
+so its full support lies strictly inside that diagonal cell.
+Even lattice translations form a full-rank sublattice, so this has
+no parity obstruction. The source construction provides a law
+$\lambda\in\mathcal R$ dominating the translated expectation.
+Use the original law's full translation invariance and $\lambda$'s
+even translation invariance to return to $P$. Therefore
+\[
+ \nu(P)\le\sup_{\lambda\in\mathcal R}\lambda(P)
+ \quad\text{for every such }P.
+ \tag{8.1}
+\]
+
+If $\nu\notin\mathcal R$, separation of the compact convex set
+would give a strictly separating continuous real function. Cylinder
+approximation, finite Peter--Weyl approximation, and then averaging
+over the finite endpoint gauge group preserve strict separation and
+produce a gauge-invariant finite polynomial.
+All expectations under the gauge-invariant laws are unchanged by
+that averaging. This contradicts (8.1). Hence $\nu\in\mathcal R$.
+The coordinate tori already give $\nu$ full lattice translations,
+signed permutations and coordinate RP. These transfer the proved
+diagonal statement to the other mirrors and finish
+Theorem~\ref{thm:main}.
+
+This is averaging of a \emph{test function} in a separation argument,
+not an assumption that translating or averaging RP states preserves
+RP at a fixed plane. No uniqueness of a Gibbs state is used.
+
+\section{What this buys for the continuum problem}
+
+The result supplies a way to retain both coordinate and diagonal RP
+in the same volume-first lattice theory. It repairs three concrete
+interfaces: local gauge descent, a normalized clean-plane operator
+bound, and the incompatible parity in the convenient QED3 placement.
+The first comparison also requires full reflected source arrays;
+omitting them loses the volume divisor in the pressure error.
+
+For renormalized continuum observables, passing these inequalities
+requires their common convergence on the relevant reflected test
+algebra. That convergence and its all-order bounds remain dependent
+on the model-specific RG estimates. Constants in the local reduction
+may grow with $\beta$; this proof gives no uniform ultraviolet estimate.
+
+The remaining main obligations are:
+\begin{enumerate}
+\item Verify the selected global four-layer complex-source chain and
+the upstream running-coupling/cutoff input in the deposited account.
+\item Prove the interacting angular analyticity and growth estimates
+that would turn the two reflection directions into full rotations.
+Notebook 01 explains why the reflection directions alone do not do so.
+\item Establish an interacting nonzero positive-energy witness, then
+construct and identify an adequate family of mixed gauge-invariant
+observables. A single scalar sector is insufficient to identify
+Yang--Mills theory.
+\item Justify vacuum-sector reconstruction and separately prove any
+claimed mass gap.
+\end{enumerate}
+No item in this list is discharged by the fixed-coupling theorem.
+
+\begin{thebibliography}{9}
+\bibitem{repo}
+\emph{Yang--Mills LLM experiment}, public repository at
+commit \texttt{e392ef45013a581664bab76b90867170b30fe10e}.
+\url{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/tree/e392ef45013a581664bab76b90867170b30fe10e}.
+\bibitem{qed}
+\emph{QED3 account}, same repository,
+\texttt{QED3\_slop/qed3.pdf}, Sections 3.2--3.3, printed pp.~20--25,
+especially (3.17)--(3.27); Section 4.4, printed pp.~38--40,
+especially (4.17)--(4.22). Source of the slab/comparison architecture;
+its fermionic theorem is not imported as a Wilson proof.
+\url{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment/blob/e392ef45013a581664bab76b90867170b30fe10e/QED3_slop/qed3.pdf}.
+\bibitem{clay}
+A. Jaffe and E. Witten, \emph{Quantum Yang--Mills Theory}.
+\url{https://www.claymath.org/wp-content/uploads/2022/06/yangmills.pdf}.
+\end{thebibliography}
+\end{document}

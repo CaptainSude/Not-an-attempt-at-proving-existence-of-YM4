@@ -1,0 +1,1604 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 36: soft determinants and bounded coarse corrections}
+\author{Research working document}
+\date{17 October 2026}
+\setlength{\emergencystretch}{5em}
+\begin{document}
+\maketitle
+\begin{abstract}
+We factor the actual covariant mean-zero determinant of Notebook 35
+into a soft scalar/vector pair and two determinants with one color
+fiber per final block. Both coarse determinants have uniformly bounded
+actual Maxwell coefficients as the block size grows. Their flat gaps
+alone would not prove this: we establish rooted physical source bounds,
+with all powers of the fine spacing and all fiber dimensions retained.
+
+A new gauge-covariant Hessian estimate controls the actual effective
+classical action through its first two background derivatives, uniformly
+in preceding depth. Local formal path gauges isolate curvature; an
+ordered Laurent factorization retains the shifted lattice components.
+This yields the relative vertices needed for the vector correction.
+The auxiliary off-shell family is identified with the actual one only
+through the proved on-shell affine jets.
+
+The fine soft pair has uniformly bounded short-time and long-time
+affine heat contributions. The latter follows from a local cubic
+resolvent formula and Schatten bounds that retain the block projector.
+Consequently only the intermediate heat interval can supply the
+required logarithm.
+
+The resulting reduction retains the full effective action and original
+constraint normalization. It does not yet compute the remaining fine
+determinant's logarithmic coefficient or establish continuum
+Yang--Mills existence.
+\end{abstract}
+
+\section*{Conventions and proof boundary}
+
+The primitive odd ratio \(\ell\) is fixed and \(K=\ell^k\).
+Current coordinates use counting pairings; their spacing in final
+physical units is \(K^{-1}\). Normalization \(\mathcal N_0\) subtracts
+the flat value, and \([t^2]\) means a Taylor coefficient.
+All actual identities refer to the homogeneous stationary germ
+constructed in the preceding notebooks. Exact finite determinant
+identities and finite flat spectral estimates are distinguished from
+uniform spatial and curvature estimates on a chosen joint infinite
+classical structural system. No uniqueness of that system is assumed.
+
+For a trace-normalized Cartan element \(H\), put
+\[
+ C_H=\sum_{q\in\operatorname{spec}(\operatorname{ad}_H)}q^2,
+ \qquad \alpha_g=\frac{C_H}{48\pi^2}.
+\]
+The target remains the actual coefficient
+\(22\alpha_g\log K+O(1)\), uniformly in preceding depth.
+The finite-part estimates below advance that comparison; they do not
+substitute a narrower objective for the existence problem.
+
+
+
+\section{A soft scalar factorization with a bounded coarse correction}
+\label{ssc-section}
+
+Set \(\mu=K^{-1}\). All fine scalar and bond pairings use counting
+measure. In this section the current links are
+\(U(e)=\exp(i\mu A(e))\), so \(A\) is a physical potential in final
+units. Use the actual covariant moving-reference block average \(B\)
+of Notebook 35, and write
+\begin{equation}
+ J=K^2B^T,\quad J^TJ=I,\quad \Pi=JJ^T,\quad P=I-\Pi,
+ \quad \Delta=D^TD.
+ \label{ssc-data}
+\end{equation}
+The normalized block column \(J_y\) has \(K^4\) entries of size
+\(K^{-2}\), each an adjoint transport. Distinct columns have disjoint
+site supports. Its background dependence stays inside its own block.
+Define
+\begin{equation}
+ T=\Delta+\mu^2\Pi,\qquad
+ M=\mu^2J^TT^{-1}J,\qquad
+ \widehat G=P\Delta P+\mu^2\Pi .
+ \label{ssc-soft}
+\end{equation}
+The letter \(M\) in this section denotes this coarse scalar matrix;
+preceding homogeneous depth will be written \(M_{\rm old}\).
+
+\begin{theorem}[Exact scalar factorization]
+\label{ssc-factorization}
+On the actual local germ, continued through flatness,
+\begin{equation}
+ \det\widehat G=\det T\,\det M,\qquad
+ \mathcal N_0\log\det\widehat G
+   =\mathcal N_0\log\det T+\mathcal N_0\log\det M .
+ \label{ssc-determinant}
+\end{equation}
+Both factors are gauge covariant and have positive flat spectra.
+Their physical complex domain can be chosen independently of \(K\).
+Moreover,
+\begin{equation}
+ \left|\beta(\mathcal N_0\log\det M)\right|\le C
+ \label{ssc-coarse-bound}
+\end{equation}
+uniformly in \(K\), preceding depth, and the chosen joint structural
+systems. The coefficient is the actual affine Maxwell coefficient.
+\end{theorem}
+
+\subsection{Exact algebra and uniform flat estimates}
+
+Choose an orthonormal frame \(V\) for \(\ker B\) on real backgrounds.
+In the frame \([V,J]\), the upper block of \(T\) is
+\(G_B=V^T\Delta V\). Schur complementation gives
+\[
+ \det G_B=\det T\,\det(J^TT^{-1}J).
+\]
+Since \(\det\widehat G=(\mu^2)^{\dim S_c}\det G_B\), this proves
+\eqref{ssc-determinant}. Positivity at flatness fixes the logarithm
+branches; holomorphic uniqueness continues the identity. This is
+finite determinant algebra, with no separately singular globally
+based scalar factor.
+
+Write a subscript \(0\) for flatness. Internal-block Neumann Poincare
+gives
+\[
+ \norm{P_0\phi}^2\le C_P K^2\norm{D_0\phi}^2.
+\]
+Only internal block edges are used, on which a block constant has
+zero derivative. Consequently
+\begin{equation}
+ c(\Delta_0+\mu^2I)\le T_0\le\Delta_0+\mu^2I,\qquad
+ c=\bigl(1+\max(C_P,1)\bigr)^{-1}.
+ \label{ssc-ellipticity}
+\end{equation}
+There is no derivative of a sharp block indicator in this argument.
+
+The product-tent lift from Notebook 35, composed with \(J_0\), gives
+a map \(E:S_c\to S\) satisfying
+\[
+ J_0^TE=I,\qquad \norm E\le C_0,\qquad
+ \norm{D_0E}\le C_1\mu .
+\]
+Let \(S\) be the minimum energy with prescribed \(J_0^T\phi=b\).
+The feasible field \(Eb\) proves \(0\le S\le C_1^2\mu^2I\).
+The lower inverse block then gives
+\begin{equation}
+ M_0=(I+\mu^{-2}S)^{-1},\qquad
+ (1+C_1^2)^{-1}I\le M_0\le I .
+ \label{ssc-coarse-gap}
+\end{equation}
+At \(K=1\), the same statement uses the identity lift and the bounded
+unit-lattice gradient.
+
+\subsection{Uniform physical domain and weighted inverses}
+
+The established ordinary-reference trajectory bounds give
+intermediate angles \(O(\ell^j\norm A_\infty/K)\). Their sum over
+\(j<k\) is bounded by \(C\norm A_\infty\). The hierarchical
+adjoint transports defining \(J\) therefore satisfy, on a fixed
+complex physical ball,
+\begin{equation}
+ \norm{J(A)-J_0}\le C\norm A_\infty .
+ \label{ssc-J-bound}
+\end{equation}
+This is an operator-valued block bound: normalizing the \(K^4\)
+entries by \(K^{-2}\) removes the counting dimension. Block Banach
+Cauchy gives the same uniform first-two derivative bounds.
+Only the physical supremum norm is needed for this scalar statement.
+
+The local gauge generator obeys
+\(\norm{D(A)-D_0}\le C\mu\norm A_\infty\). Expanding its product
+and using \eqref{ssc-ellipticity} gives
+\begin{equation}
+ \norm{T_0^{-1/2}(T(A)-T_0)T_0^{-1/2}}
+       \le C(\norm A_\infty+\norm A_\infty^2).
+ \label{ssc-relative}
+\end{equation}
+The penalty difference is \(\mu^2(\Pi(A)-\Pi_0)\), with the same
+bound. This is a complex operator-norm estimate relative to positive
+real \(T_0\), not an assertion that a complex transpose product is
+positive. A Neumann inverse and \eqref{ssc-J-bound} imply
+\[
+ \norm{T(A)^{-1}}\le C\mu^{-2},\qquad
+ \norm{M(A)-M_0}\le C\norm A_\infty .
+\]
+Together with \eqref{ssc-coarse-gap}, these give a common radius
+independent of \(K\).
+
+Conjugate by \(e^{\theta f(x/K)}\), where \(f\) is real and
+one-Lipschitz. Use initial-site weights on bonds and center weights
+on coarse sites. The covariant difference changes by \(O(\theta\mu)\);
+a \(J\) column has bounded physical diameter. The conjugated
+transpose carries the opposite weight. The same relative Neumann
+argument, with \(C(\theta+\norm A_\infty)\), proves for \(R=T^{-1}\)
+\begin{equation}
+ \norm R_\theta\le C\mu^{-2},\qquad
+ \norm{DR}_\theta+\norm{RD^T}_\theta\le C\mu^{-1},
+ \qquad \norm{DRD^T}_\theta\le C .
+ \label{ssc-weighted-energy}
+\end{equation}
+For example, place \(T_0^{-1/2}\) on the two sides of the Neumann
+inverse and use \(\norm{D_\theta T_0^{-1/2}}\le C\).
+The bounds hold between restricted final blocks, with an extra
+\(e^{-c\,d(x,y)}\). Thus
+\begin{equation}
+ \norm{M_{xy}}\le Ce^{-c\,d(x,y)}.
+ \label{ssc-coarse-decay}
+\end{equation}
+The coarse fiber has fixed color dimension. Schur summation in
+\eqref{ssc-coarse-decay} shows that a small coarse exponential
+conjugation changes \(M_0\) by \(O(\theta)\). Weighted \(M(A)-M_0\)
+is \(O(\norm A_\infty)\). A common logarithm contour and its
+resolvents therefore give uniform exponential kernels for \(\log M\).
+
+\subsection{Rooted derivatives and the actual affine coefficient}
+
+Treat physical directions in one final block as one supremum-norm
+Banach space. A local direction \(a_j\) satisfies
+\[
+ \norm{\delta_jD}\le C\mu\norm{a_j},\qquad
+ \norm{\delta_jJ}\le C\norm{a_j}.
+\]
+The second primitive derivatives have the same respective powers
+or better and joint local support. Differentiate
+\[
+ \delta R=-R(\delta T)R,\qquad
+ \delta T=(\delta D)^TD+D^T\delta D+
+       \mu^2\bigl((\delta J)J^T+J(\delta J)^T\bigr).
+\]
+Every term in the first-two derivatives of
+\(M=\mu^2J^TRJ\) has balanced powers of \(\mu\), by
+\eqref{ssc-weighted-energy}. For example,
+\[
+ \mu^2(J^TRD^T)(\delta D)(RJ)
+ \quad\hbox{costs}\quad
+ \mu^2\mu^{-1}\mu\mu^{-2}=1.
+\]
+At two insertions, the intervening pieces are \(R,DR,RD^T\),
+or \(DRD^T\), with exactly the powers in
+\eqref{ssc-weighted-energy}. Differentiating \(J\) gives local
+endpoint terms; a penalty insertion supplies \(\mu^2\).
+The number of terms is independent of \(K\).
+
+Insert block projections at the differentiated factors. The
+restricted estimates connect every source and matrix endpoint.
+For \(n=1,2\), after reducing the exponent,
+\begin{equation}
+ \norm{\delta_{j_1}\cdots\delta_{j_n}M_{xy}}
+ \le C_n\prod_{\ell=1}^n\norm{a_{j_\ell}}\,
+     e^{-c\,\tau(x,y,j_1,\ldots,j_n)} .
+ \label{ssc-rooted}
+\end{equation}
+Here \(\tau\) is minimum tree length on the final-block graph.
+The differentiated contour formula for \(\log M\) preserves this
+estimate: its intermediate sums are over fixed-dimensional coarse
+fibers, and an exponential reserve pays them. This proves rooted
+second-derivative bounds with every fixed polynomial source moment.
+It does not sum individual fine-coordinate derivative norms.
+
+By covariance, \(\rho_y=\mathcal N_0\operatorname{tr}
+(\log M)_{yy}\) is individually gauge invariant, and its linear
+color jet vanishes. At each fixed \(K\), the actual stationary
+polynomial-jet theorem identifies its affine source with
+\[
+ A_\alpha(x)=t(x_\nu/K)H,\qquad \alpha\ne\nu ,
+\]
+up to a fine gauge. Its fine link angle is \(t x_\nu H/K^2\).
+In source block \(j\) the coefficient of \(t\) has norm at most
+\(C(1+|j|)\). Inserting these directions in the second version of
+\eqref{ssc-rooted} for \(\log M\) gives a uniformly finite sum.
+The invariant-density Ward identity of Notebook 35 identifies
+\(\beta=2[t^2]\rho_0\), proving \eqref{ssc-coarse-bound}.
+This uses the fixed-\(K\) actual identification and then estimates
+the explicit representative; it assumes no uniform stationary
+response as \(K\) grows.
+
+It follows that
+\begin{equation}
+ \beta(\mathcal N_0\log\det\widehat G)
+       =\beta(\mathcal N_0\log\det T)+O(1).
+ \label{ssc-scalar-reduction}
+\end{equation}
+Equality of total finite determinants and localized Hessians is
+used here. Their chosen diagonal densities need not agree pointwise.
+The remaining magnetic comparison for \(T\) is separate: a
+dimension-blind Cauchy bound on its fine trace can still grow with
+\(K\), and does not compute its logarithmic coefficient.
+
+
+\section{Covariance and physical relative Hessian vertices}
+\label{chr-section}
+
+This section controls the first two background coefficients of an
+actual action Hessian.  It does not estimate the moving hard
+mean-zero projection, nor compute a logarithmic determinant
+coefficient.  The argument uses exact gauge covariance before
+taking absolute values.
+
+\subsection{Hypotheses and conclusion}
+\label{chr-hypotheses}
+
+Work on the current unit lattice with counting inner products and a
+fixed finite bond/color fiber.  Let \(L(a)\) be a transpose-symmetric
+family of left-relative bond Hessians.  Assume that it is exactly
+covariant under sitewise adjoint frames and that its current-coordinate
+Taylor kernels through background degree two at zero have uniform
+exponentially rooted absolute row bounds.  The transposed bounds are
+included.  For an action Hessian, these are the action kernels through
+degree four together with the local relative-coordinate changes.
+
+Write \(q=L(0)\).  Assume that \(q\) is translation invariant, scalar
+on each color factor, and exponentially summable, uniformly in the
+old classical depth.  In source-site coordinates impose the
+componentwise moment conditions
+\begin{equation}
+ \sum_r q_{\alpha\beta}(r)=0,\qquad
+ \sum_r r_\rho q_{\alpha\beta}(r)=0
+ \quad\text{for every }\alpha,\beta,\rho .
+ \label{chr-moments}
+\end{equation}
+Thus its Fourier symbol vanishes to order two.  No symmetry of
+\(q_{\alpha\beta}(r)\) in \(\alpha,\beta\) at a fixed \(r\) is assumed.
+Only the full transpose relation
+\(q_{\alpha\beta}(r)=q_{\beta\alpha}(-r)^T\) is used.
+
+The actual application here is on a chosen infinite structural system,
+where these continuous-momentum moments have been established.
+Explicit periodizations of that system are also covered with the
+specified lifted paths.  An arbitrary actual finite-regulator winding
+kernel is not silently identified with such a periodization.
+
+Set \(\mu=K^{-1}\leq1\).  For a complete physical field \(A\), define
+\begin{equation}
+ \|A\|_{\mathrm{phys},1}
+ =\|A\|_\infty+
+   \mu^{-1}\max_{\substack{e,e'\text{ nearest}\\
+                          \text{same component}}}
+                     |A(e')-A(e)| .
+ \label{chr-physical-norm}
+\end{equation}
+Let \(L_j=[t^j]L(t\mu A)\), \(j=1,2\), and suppose
+\(\|A\|_{\mathrm{phys},1}\leq a_*\).
+Here \(D_0\) denotes the ordinary componentwise gradient of a
+\emph{bond field}, not the scalar gauge generator.  Put
+\(R_0=D_0^TD_0+\mu^2I\).
+
+\begin{theorem}
+\label{chr-main}
+Under these hypotheses there are operators \(Z_j,E_j\) such that
+\begin{equation}
+ L_j=D_0^TZ_j+Z_j^TD_0+E_j,\qquad j=1,2,
+ \label{chr-decomposition}
+\end{equation}
+with
+\begin{align}
+ \|Z_1\|&\leq C\mu a_*,
+ &\|E_1\|&\leq C\mu^2a_*,
+ \notag\\
+ \|Z_2\|&\leq C\mu^2a_*^2,
+ &\|E_2\|&\leq C\mu^2a_*^2 .
+ \label{chr-bounds}
+\end{align}
+Consequently
+\begin{equation}
+ \|R_0^{-1/2}L_jR_0^{-1/2}\|
+       \leq C_j a_*^j,\qquad j=1,2.
+ \label{chr-relative}
+\end{equation}
+The constants are independent of \(K\) and of the old depth.
+Mixed second coefficients follow by polarization.  For directions
+supported in fixed smooth physical collars, the factors admit
+exponentially rooted final-block operator bounds with the same
+powers of \(\mu\).
+\end{theorem}
+
+For the actual homogeneous classical action \(S_M\), the hypotheses
+come from the established uniform support and Cauchy bounds, gauge
+covariance, and the flat normalization
+\[
+ q_{M,\mathrm{mid}}(p)=|p|^2I-pp^T+O(|p|^4).
+\]
+The analytic midpoint-to-source-site phases preserve the zero and
+first jets, so they imply \eqref{chr-moments}.  This last input is
+stronger than row-sum cancellation alone.
+
+\subsection{Formal local path gauges}
+\label{chr-local-gauge}
+
+For each displacement \(r\), choose a translation-covariant
+coordinate path of length \(|r|_1\), with the negative-displacement
+path defined by reversal.  Denote its adjoint transport by
+\(W_{xy}(a)\).  It obeys \(W_{yx}=W_{xy}^T\) and is complex
+orthogonal coefficientwise.
+
+Fix the source site \(x\) of a matrix row.  The transports from \(x\)
+to every \(z\) define a formal site gauge \(g_x(z)\), with
+\(g_x(x)=I\).  A transformed edge is a loop consisting of the two
+selected paths and that edge.  Its length is at most
+\(C(1+|z-x|)\); a plaquette filling uses at most
+\(C(1+|z-x|)^2\) plaquettes.  Write its link-angle jet as
+\[
+ b(t,z)=t b_1(z)+t^2b_2(z)+O(t^3).
+\]
+Discrete Stokes at first order and the physical first-difference
+bound give
+\begin{equation}
+ |b_1(z)|\leq C\mu^2a_*(1+|z-x|)^2.
+ \label{chr-b1}
+\end{equation}
+The second coefficient of the product and its logarithm is a sum
+of quadratic pairs of first link coefficients.  There are at most
+the square of the loop length such pairs.  Hence
+\begin{equation}
+ |b_2(z)|\leq C\mu^2a_*^2(1+|z-x|)^2.
+ \label{chr-b2}
+\end{equation}
+
+These are formal coefficient identities.  The potentially
+unbounded gauge \(g_x\) is not placed in a global analytic ball.
+One first truncates its polynomial jets far from \(x\), applies
+the finite covariance identity, and then passes coefficientwise.
+The exponentially rooted bounds absorb the polynomial tails.
+In particular this step does not assert a finite-period identity
+for an unbounded affine field.
+
+Gauge covariance and \(g_x(x)=I\) give, with a consistent choice
+of transport orientation,
+\begin{equation}
+ L(t\mu A)_{x\alpha,y\beta}
+        =L(b(t))_{x\alpha,y\beta}W_{xy}(t\mu A).
+ \label{chr-gauge-identity}
+\end{equation}
+The inverse convention gives the same argument with both
+orientations reversed.  Define the dressed flat kernel
+\[
+ L^P(t)_{x\alpha,y\beta}
+     =q_{\alpha\beta}(y-x)W_{xy}(t\mu A).
+\]
+Using \eqref{chr-b1}--\eqref{chr-b2} and the rooted Taylor kernels,
+\begin{align}
+ \|[t](L-L^P)\|_{\mathrm{Schur}}
+     &\leq C\mu^2a_*,
+ \notag\\
+ \|[t^2](L-L^P)\|_{\mathrm{Schur}}
+     &\leq C\mu^2a_*^2 .
+ \label{chr-peierls-error}
+\end{align}
+At second order the terms are \(L'[b_2]\),
+\(\frac12L''[b_1,b_1]\), and the product of \(L'[b_1]\)
+with the first transport coefficient.  The latter two have,
+respectively, the stronger powers \(\mu^4\) and \(\mu^3\).
+All sums are fine current-coordinate Schur sums; no final-block
+fiber dimension is inserted.
+
+\subsection{Ordered factorization and covariant completion}
+\label{chr-factorization}
+
+A common difference-square formula would be invalid here: the
+product of two equal-displacement differences is symmetric in
+the bond components and would discard the odd-displacement,
+skew-component part of \(q(r)\).  Even the forward-gradient Maxwell
+kernel has such shifted entries.  Instead use an ordered Laurent
+factorization.
+
+For a Laurent series \(F\), define
+\[
+ {\cal B}_jF(z)=
+ \frac{F(1,\ldots,1,z_j,\ldots,z_d)
+       -F(1,\ldots,1,1,z_{j+1},\ldots,z_d)}{z_j-1}.
+\]
+The quotient is removable.  Applying the telescoping identity
+twice, and using \eqref{chr-moments}, gives
+\begin{equation}
+ q(z)=\sum_{\rho,\tau}(z_\rho^{-1}-1)
+       H_{\rho\tau}(z)(z_\tau-1),\qquad
+ H_{\rho\tau}(z)=-z_\rho{\cal B}_\tau{\cal B}_\rho q(z).
+ \label{chr-laurent}
+\end{equation}
+Each monomial division costs at most \(|r|_1\) terms with no
+increase in exponent length.  Spending an exponential reserve
+twice therefore yields a uniform exponentially summable \(H\).
+For example an input exponent \(\sigma\) gives an output
+exponent \(\sigma/2\) and a bound
+\[
+ \|H\|_{\sigma/2}
+ \leq \frac{16e^{\sigma/2}}{e^2\sigma^2}\|q\|_\sigma
+\]
+in the combined absolute row norm; the analogous column bound
+follows in the same way.  Replace \(H\) by \((H+H^T)/2\), where
+the transpose includes displacement reversal and both gradient
+and bond indices.  The factorization is unchanged.  We have
+\begin{equation}
+                  q=D_0^TH_0D_0,\qquad H_0=H_0^T.
+ \label{chr-flat-factor}
+\end{equation}
+The color-scalar property is preserved.
+
+Dress each \(H_0\) entry by its endpoint transport:
+\[
+ H^P(a)_{x\rho\alpha,y\tau\beta}
+       =(H_0)_{\rho\alpha,\tau\beta}(y-x)W_{xy}(a).
+\]
+Let \(D_a\) be the nearest-neighbor covariant component gradient
+and define
+\begin{equation}
+                  Q_{\mathrm{cov}}(a)
+                   =D_a^TH^P(a)D_a .
+ \label{chr-completion}
+\end{equation}
+This family is exactly covariant and transpose symmetric, with
+\(Q_{\mathrm{cov}}(0)=q\).  Its first two Taylor kernels have
+uniform exponentially rooted bounds: path derivatives only add
+polynomial length factors.  On a sufficiently small complex
+current-angle ball, the path-product factor
+\(\exp(C\|a\|_\infty|r|)\) is paid by the exponential reserve.
+
+Apply the local-gauge argument to \(Q_{\mathrm{cov}}\) as well
+as to \(L\).  They have the same flat \(q\), hence the same dressed
+flat comparison \(L^P\).  Subtraction of their two estimates
+\eqref{chr-peierls-error} gives symmetric errors
+\begin{equation}
+ {\cal E}_j=[t^j](L(t\mu A)-Q_{\mathrm{cov}}(t\mu A)),
+ \qquad
+ \|{\cal E}_j\|_{\mathrm{Schur}}
+           \leq C\mu^2a_*^j,\quad j=1,2.
+ \label{chr-completion-error}
+\end{equation}
+This argument does not presume that the paths generated by
+\eqref{chr-completion} coincide with the initially selected
+endpoint paths.
+
+\subsection{Coefficient expansion and localization}
+\label{chr-expansion}
+
+Write, through second order,
+\[
+ D_{t\mu A}=D_0+tF_1+t^2F_2,\qquad
+ H^P(t\mu A)=H_0+tH_1+t^2H_2.
+\]
+Nearest-neighbor differentiation and exponential path moments give
+\begin{align}
+ \|F_1\|+\|H_1\|&\leq C\mu a_*,
+ \notag\\
+ \|F_2\|+\|H_2\|&\leq C\mu^2a_*^2 .
+ \label{chr-factor-bounds}
+\end{align}
+All \(H_j\) are symmetric.  Set
+\begin{align}
+ Z_1&=\tfrac12H_1D_0+H_0F_1,
+ \notag\\
+ Z_2&=\tfrac12H_2D_0+H_1F_1+H_0F_2,
+ \notag\\
+ E_1&={\cal E}_1,\qquad
+ E_2=F_1^TH_0F_1+{\cal E}_2 .
+ \label{chr-exact-z}
+\end{align}
+Direct expansion of \eqref{chr-completion} proves
+\eqref{chr-decomposition}.  The counting norm of \(D_0\) is bounded
+by a dimensional constant, so \eqref{chr-factor-bounds} and
+\eqref{chr-completion-error} prove \eqref{chr-bounds}.
+Finally,
+\[
+ \|D_0R_0^{-1/2}\|\leq1,\qquad
+ \|R_0^{-1/2}\|\leq\mu^{-1},
+\]
+which proves \eqref{chr-relative}.
+
+For localization, use complete directions supported in a fixed
+smooth physical partition with bounded overlap and bounded physical
+first derivatives.  The terms \(F_1,F_2\) have nearest-neighbor
+support.  Each marked source in \(H_1,H_2\) lies on a selected
+endpoint path.  A distant source forces a long path, and the
+exponential \(H_0\) kernel pays its length.  In the remainders,
+a source on a local-gauge path is connected to the fixed matrix
+row through the original background-source endpoint.  The
+original rooted Taylor bound pays that distance.  Discrete
+Stokes uses source differences in the same smooth collar,
+enlarged by one fine edge.  Polynomial path multiplicities are
+absorbed by a smaller exponential exponent.
+
+Thus the factors in \eqref{chr-exact-z} and the \(E_j\) have
+rooted final-block bounds of the form
+\(\exp[-c\tau(\text{row},\text{column},\text{source labels})]\)
+with the powers in \eqref{chr-bounds}.  Fine-coordinate Schur
+summation proves the block-operator estimate; summing \(K^4\)
+independent entry bounds is unnecessary.  No sharp source cutoff
+is differentiated.
+
+Physical weights \(\exp(\theta f(x/K))\), with \(f\) Lipschitz,
+change a path factor by at most
+\(\exp(C\theta\mu|r|)\), again paid by the exponential reserve.
+Commuting \(D_0\) past the weight produces \(O(\theta\mu)\).
+When multiplied by \(Z_1\) or \(Z_2\), this has the zero-order
+size required for \(E_1\) or \(E_2\).  This supplies the weighted
+localized form of the theorem.
+
+\subsection{Scope of the actual application}
+\label{chr-scope}
+
+For \(L=S_M''\), the hypotheses are the uniform action support and
+Cauchy bounds through degree four, actual gauge covariance, and
+the already normalized flat kernel.  The result concerns bounded
+physical \(C^1\) fields and their localized jets.  It does not give
+the same gain for rapidly oscillating bounded potentials, whose
+fine curvature may be \(O(K^{-1})\), and it gives no estimate for
+the hard-projection scalar operator.
+
+In the intended soft-vector application, the exact on-shell
+identification and its source-coordinate conventions must first
+justify the relevant affine jets of
+\[
+ S_M''(e^{iA/K})+D_AD_A^T+
+ \overline C_A^T
+ \bigl[aI-S_{MK}''(M_K(e^{iA/K}))\bigr]\overline C_A .
+\]
+The corrected constraint's full \(O(K^{-1})\) bound and its
+physical source derivatives are separate inputs.  The present
+theorem supplies the action-Hessian relative vertices.  It does
+not by itself identify a soft-vector determinant, control every
+stationary response, or determine a one-loop sign.
+
+
+
+\section{A soft vector completion with a bounded coarse remainder}
+\label{svc-section}
+
+The exact identities below use the actual mean-zero determinant.
+The large-$K$ estimate concerns its first two affine background jets.
+Its auxiliary off-shell family retains the effective action $S_M$;
+it is not replaced by a bare Wilson Hessian.
+
+\subsection{Exact finite factorization}
+\label{svc-factor-section}
+
+Use current counting coordinates, $K=\ell^k$, $\mu=K^{-1}$, and
+\begin{equation}
+ J=K^2B^T,\qquad J^TJ=I,\qquad \Pi=JJ^T,\qquad P=I-\Pi.
+ \label{svc-projectors}
+\end{equation}
+The actual covariant pair and residual Hessian are
+\begin{equation}
+ \widehat G=PD^TDP+\mu^2\Pi,\qquad
+ Q_B=\mathcal H+DPD^T+a\bar C^T\bar C,
+ \qquad \mathcal H=L-C^TqC.
+ \label{svc-actual}
+\end{equation}
+Here $L=S_M''-\lambda\cdot f''$, $q=S_{MK}''$, all Hessians are
+left-relative, and $a\ge R_q+1$ is fixed. The actual correction is
+$\mathcal D=\mathcal N_0(\log\det\widehat G-\tfrac12\log\det Q_B)$.
+Define its soft vector completion and coarse Schur factor by
+\begin{equation}
+ V=\mathcal H+DD^T+a\bar C^T\bar C
+        =Q_B+(DJ)(DJ)^T,
+ \qquad S=I-J^TD^TV^{-1}DJ.
+ \label{svc-soft-vector}
+\end{equation}
+The determinant lemma and Woodbury identity give
+\begin{equation}
+ \det Q_B=\det V\det S,\qquad
+ S=(I+J^TD^TQ_B^{-1}DJ)^{-1}.
+ \label{svc-schur}
+\end{equation}
+These are identities between positive matrices on the real small germ,
+with normalized holomorphic continuations through flatness.
+
+For the soft scalar matrices
+\begin{equation}
+ T_s=D^TD+\mu^2\Pi,\qquad M_s=\mu^2J^TT_s^{-1}J,
+ \label{svc-soft-scalar}
+\end{equation}
+the scalar Schur identity is $\det\widehat G=\det T_s\det M_s$.
+Thus the exact actual decomposition is
+\begin{equation}
+ \boxed{\displaystyle
+ \mathcal D=\mathcal N_0\left[
+ \log\det T_s-\tfrac12\log\det V
+                 +\log\det M_s-\tfrac12\log\det S\right].}
+ \label{svc-four-factor}
+\end{equation}
+No massless based scalar factor or omitted Haar normalization occurs.
+The matrix $S$ has one fixed color fiber per final scalar site and is
+covariant in that coarse frame.
+
+\subsection{Uniform flat spectra and energy resolvents}
+\label{svc-flat-section}
+
+A subscript $0$ denotes flat background. The proved mean-zero estimates
+are $\Delta_1\le C_\Delta Q_{B,0}$ and
+$Q_{B,0}\ge c\mu^2I$. Since
+$D_0\Pi_0D_0^T\le D_0D_0^T\le\Delta_1$,
+\begin{equation}
+ Q_{B,0}\le V_0\le(1+C_\Delta)Q_{B,0},\qquad
+ (1+C_\Delta)^{-1}I\le S_0\le I.
+ \label{svc-flat-comparison}
+\end{equation}
+Indeed $\|Q_{B,0}^{-1/2}D_0J_0\|^2\le C_\Delta$ and
+\eqref{svc-schur} give the second assertion. The number of coarse
+rows has not been used as an estimate for this condition number.
+
+At zero, $qD_c=0$, so the ordinary and corrected constraint terms
+agree inside $C^TqC$. With $A_K=\bar C(0)$,
+\begin{equation}
+ V_0=q_M+D_0D_0^T+A_K^T(aI-q_{MK})A_K
+       \ge\Delta_1+A_K^TA_K.
+ \label{svc-flat-vector}
+\end{equation}
+The uniform analytic symbol of $q_M$ vanishes to order two at zero.
+Its uniform second moments therefore give $q_M\le C\Delta_1$.
+Also $\|A_K\|\le\mu$ and $\|q_{MK}\|\le R_q$.
+Combining these facts with the gap gives
+\begin{equation}
+ c(\Delta_1+\mu^2I)\le V_0\le C(\Delta_1+\mu^2I),
+ \label{svc-energy-comparison}
+\end{equation}
+on the chosen infinite structural system and its explicit periodizations. The finite actual lower bound, gap and heat estimate below remain valid without identifying arbitrary finite winding kernels with those periodizations.
+
+For the spatial argument, $q_M$ is the kernel of the chosen infinite structural system. The same conclusions hold for its explicitly periodized kernels; they are not asserted for unrelated finite winding kernels merely by sampling. For later source estimates the spatial exponent must also be uniform
+in final units. If $\delta(p)$ is the scalar lattice symbol, the common
+analytic strip and double zero of $q_M$ imply
+\begin{equation}
+ \|q_M(p+i\mu\theta)-q_M(p)\|
+ \le C\{\mu|\theta|\sqrt{\delta(p)}+\mu^2|\theta|^2\}.
+ \label{svc-fine-twist}
+\end{equation}
+Near zero this is Taylor's formula; away from zero it follows from
+bounded derivatives. The ordinary longitudinal term has the same bound.
+Conjugating fine fields by $e^{\theta\cdot x/K}$ and coarse fields by
+$e^{\theta\cdot y}$, straight-average row and column counting gives
+\begin{equation}
+ \|A_{K,\theta}\|\le C\mu,\qquad
+ \|A_{K,\theta}-A_K\|\le C|\theta|\mu.
+ \label{svc-average-twist}
+\end{equation}
+The coarse symbol $q_{MK}$ has a uniform strip. Its coarse correction
+therefore changes by $O(|\theta|\mu^2)$.
+Measured between two $(\Delta_1+\mu^2I)^{-1/2}$ factors, the total
+change is $O(|\theta|)$. Equations \eqref{svc-energy-comparison}--
+\eqref{svc-average-twist} give a common physical strip on which all
+energy sandwiches of $V_0^{-1}$ are bounded uniformly. The energy legs
+are the ordinary componentwise first differences and $\mu I$.
+
+Bloch decomposition by $K$-blocks turns these into bounded
+operator-valued analytic functions. Fourier integration gives uniform
+exponentially summable final-block kernels. The internal fiber may
+have dimension $K^4$, but the bounds are Hilbert operator norms; no
+entrywise sum over that fiber is taken. Explicit periodizations obey the same bounds. The established fixed-$K$ local-limit interface identifies the resulting infinite source coefficient with the actual local Maxwell coefficient; it does not identify arbitrary finite kernels with these periodizations. In particular $D_0^TV_0^{-1}D_0$, $S_0$ and, after shrinking
+the exponent using \eqref{svc-flat-comparison}, $S_0^{-1}$ have uniform
+weighted block bounds.
+
+Min--max also gives the flat heat estimate
+\begin{equation}
+ N^{-4}\operatorname{Tr}e^{-uK^2V_0}
+ \le C\left\{\frac{K^4}{(1+K^2u)^2}+N^{-4}\right\}e^{-cu}.
+ \label{svc-flat-heat}
+\end{equation}
+It follows from $V_0\ge Q_{B,0}$ and the mean-zero heat theorem.
+The same Mellin integration gives bounded inverse moments for powers
+$p>2$, the logarithmic bound at $p=2$, and exponential final-time tails.
+These flat estimates alone say nothing about a magnetic derivative.
+
+\subsection{The auxiliary family and the exact affine matching}
+\label{svc-auxiliary-section}
+
+For bounded physical $C^1$ potentials $A$ put $U_A=e^{i\mu A}$ and
+\begin{align}
+ \widetilde V(A)
+  &=S_M''(U_A)+D_AD_A^T
+       +\bar C_A^T\{aI-S_{MK}''(M_K(U_A))\}\bar C_A,
+       \label{svc-auxiliary-vector}\\
+ \widetilde S(A)
+  &=I-J_A^TD_A^T\widetilde V(A)^{-1}D_AJ_A.
+       \label{svc-auxiliary-coarse}
+\end{align}
+Every Hessian in these formulas is the actual relative-coordinate
+classical Hessian. The family is covariant, but it is not declared equal
+to \eqref{svc-soft-vector} off shell.
+
+On the established commuting affine probe, the actual fine and coarse
+currents and the multiplier vanish through the two jets used in the
+Maxwell extraction. Thus $qD_c=0$ and
+\begin{equation}
+ C^TqC=\bar C^Tq\bar C,\qquad L=S_M''
+ \quad\hbox{through the first two affine jets}.
+ \label{svc-on-shell-match}
+\end{equation}
+The actual smooth stationary polynomial jets are the corresponding
+fine affine connection. Hence $V,S$ and
+$\widetilde V,\widetilde S$ have identical first two affine jets.
+This is the precise interface used below.
+
+\subsection{Relative vertices with localized sources}
+\label{svc-vertices-section}
+
+Use complete physical source fields with
+\[
+ a_* =\|A\|_\infty+
+       \mu^{-1}\max_{\text{nearest, same component}}|A(e')-A(e)|.
+\]
+The corrected relative-Hessian theorem supplies, for $j=1,2$,
+\begin{align}
+ [t^j]S_M''(e^{it\mu A})
+     &=d_0^TZ_j+Z_j^Td_0+E_j,\notag\\
+ \|Z_1\|&\le C\mu a_*,&\quad \|E_1\|&\le C\mu^2a_*,\notag\\
+ \|Z_2\|&\le C\mu^2a_*^2,&\quad \|E_2\|&\le C\mu^2a_*^2.
+ \label{svc-relative-vertices}
+\end{align}
+Here $d_0$ is the componentwise gradient of a bond field. These are
+source-rooted block estimates, including physical weights.
+Their proof uses the ordered Laurent factorization
+$q_M=d_0^TH_0d_0$ and a symmetric covariant completion. A common
+componentwise-difference formula would be false for the shifted
+component-skew kernel and is not used.
+
+The first two $D_A$ jets are multiplication operators of sizes
+$O(\mu a_*)$ and $O(\mu^2a_*^2)$. Their contribution to
+$D_AD_A^T$ has the same form as \eqref{svc-relative-vertices}.
+The actual moving-reference products obey
+$\|\bar C_A\|=O(\mu)$ with first two physical-background derivatives
+of the same scale. Their rows and sources lie in two final blocks.
+The ordinary output $M_K(e^{i\mu A})$ is uniformly analytic and
+$O(\|A\|)$ in final units, with the same fixed physical range.
+The previously proved relative coarse Hessian kernels are uniform
+in $MK$. Therefore the last term of
+\eqref{svc-auxiliary-vector}, including its first two derivatives,
+is a zero-order $O(\mu^2)$ vertex with exponentially rooted sources.
+These conclusions use corrected moving tangents, not an estimate
+for the full uncorrected ordinary adjoint.
+
+The normalized block map $J_A$ and its first two physical derivatives
+have uniform own-block operator bounds. Keep the factorization
+\begin{equation}
+ R(A)=D_A^T\widetilde V(A)^{-1}D_A,
+ \qquad \widetilde S(A)=I-J_A^TR(A)J_A.
+ \label{svc-avoid-interface}
+\end{equation}
+The derivatives of $J$ stay outside $R$. In particular, no raw derivative
+of $DJ$ at a sharp block interface is estimated before using a resolvent.
+Since $V_0\ge D_0D_0^T$ and $V_0\ge c\mu^2I$,
+\begin{equation}
+ \|V_0^{-1/2}D_0\|\le1,\qquad
+ \|V_0^{-1/2}D'_0\|\le Ca_*.
+ \label{svc-gauge-legs}
+\end{equation}
+For example,
+\begin{equation}
+ R'=D'^TV_0^{-1}D_0+D_0^TV_0^{-1}D'
+           -D_0^TV_0^{-1}V'V_0^{-1}D_0.
+ \label{svc-first-response}
+\end{equation}
+Differentiating once more yields the ordered two-$V'$ terms, one
+$V''$ term, and the $D''$ and mixed $D',V'$ terms. Insert
+\eqref{svc-relative-vertices} between the uniform weighted energy
+resolvents. Each term is bounded with its physical source norms,
+by \eqref{svc-gauge-legs}; this proves both first and second response
+bounds without a fine-coordinate dimension factor.
+
+For unit directions supported in smooth physical collars $x,y$, a
+spare exponent attaches the sources to their resolvent legs and gives
+\begin{align}
+ \|\widetilde S'_x(i,j)\|&\le Ce^{-m\tau(i,j,x)},\notag\\
+ \|\widetilde S''_{x,y}(i,j)\|
+      &\le Ce^{-m\tau(i,j,x,y)}.
+ \label{svc-rooted-sources}
+\end{align}
+Here $\tau$ is connecting-tree length including every displayed operator
+endpoint and source. With a smaller exponent, these imply
+$\sum_{i,j}e^{m'[d(i,x)+d(j,x)]}\|\widetilde S'_x(i,j)\|\le C$
+and $\sum_{i,j}\|\widetilde S''_{x,y}(i,j)\|\le Ce^{-m'd(x,y)}$.
+The full rooted estimate, rather than only these summed consequences,
+is retained in the diagonal-density argument below.
+The indices are final-block labels, with fixed color fibers.
+The same source bounds hold after multiplying by $J,J',J''$, because
+these are normalized own-block operators. Completeness of the fine
+field collars is essential; sharp background cutoffs are not differentiated.
+
+\subsection{The coarse logarithm and its actual Maxwell bound}
+\label{svc-maxwell-section}
+
+Equations \eqref{svc-flat-comparison} and
+\eqref{svc-rooted-sources} give for the total Hessian
+\begin{equation}
+ K_S(x,y)=\operatorname{Tr}\left[
+ S_0^{-1}\widetilde S''_{x,y}
+ -S_0^{-1}\widetilde S'_xS_0^{-1}\widetilde S'_y\right],
+ \qquad |K_S(x,y)|\le Ce^{-m' d(x,y)}.
+ \label{svc-log-hessian}
+\end{equation}
+Both traces are coarse traces with fixed color dimension.
+
+For the local diagonal density one must not cyclically rearrange a
+partial trace. Put $R_t=(S_0+tI)^{-1}$. Its second source derivative
+at root zero is the partial trace of the integral over $t\ge0$ of
+\begin{equation}
+ R_t\widetilde S''_{x,y}R_t
+ -R_t\widetilde S'_xR_t\widetilde S'_yR_t
+ -R_t\widetilde S'_yR_t\widetilde S'_xR_t.
+ \label{svc-density-resolvent}
+\end{equation}
+The weighted bound is $\|R_t\|_m\le C/(1+t)$.
+Thus its rooted density kernel is bounded by
+$Ce^{-m''\tau(0,x,y)}$. This gives uniform polynomial source moments,
+not merely decay in the source separation.
+
+Covariance makes each diagonal color trace invariant. Apply the
+rooted bounds to a smooth physical partition of an affine potential;
+the collar norms grow only linearly with their distance from zero and
+are summable against the rooted exponential. The density Ward and
+reanchoring identity then yields
+\begin{equation}
+ \left|\beta\left(\tfrac12\mathcal N_0\log\det S\right)\right|
+       \le C_S,
+ \label{svc-bounded-remainder}
+\end{equation}
+uniformly in $M,K$, in the actual joint infinite structural systems
+and polynomial-jet convention. The transfer from $\widetilde S$ to the
+actual $S$ uses exactly \eqref{svc-on-shell-match}. The linear color jet
+vanishes by semisimple conjugation invariance.
+
+Combining \eqref{svc-four-factor} with the scalar coarse theorem gives
+\begin{equation}
+ \beta(\mathcal D)
+  =\beta\!\left(\mathcal N_0
+       [\log\det T_s-\tfrac12\log\det V]\right)+O(1),
+ \label{svc-final-reduction}
+\end{equation}
+with a remainder uniform in old depth and endpoint. For the vector
+coefficient, the auxiliary expression
+\eqref{svc-auxiliary-vector} is valid through its two affine jets.
+The fine soft pair has not yet been compared to a standard massive
+vector/ghost reference. A fixed-integrand universality theorem alone
+does not supply bounds uniform in this family. This module proves
+neither that remaining logarithmic comparison nor its sign, and it
+does not assert a full $K$-independent nonlinear background domain.
+Finite-volume winding and normalized-extraction issues retain their
+separate regulator hypotheses.
+
+
+
+\section{The fine short-time band of the soft pair}
+\label{suv-section}
+
+This argument is on the chosen infinite structural system, in current
+counting coordinates, with $\mu=K^{-1}$. All unbounded backgrounds are
+formal polynomial jets of the commuting affine probe
+\[
+ U_\alpha(t;x)=\exp(i t x_\nu H/K^2),\qquad \alpha\ne\nu.
+\]
+It asserts no continuously varying magnetic flux on a finite torus.
+The actual action $S_M$ is retained.
+
+Put
+\begin{align}
+ B_s(t)&=D(t)^TD(t),&
+ B_v(t)&=S_M''(U(t))+D(t)D(t)^T,\notag\\
+ T_s(t)&=B_s(t)+\mu^2J(t)J(t)^T,&
+ \widetilde V(t)&=B_v(t)+\bar C(t)^TF(t)\bar C(t),\notag\\
+ F(t)&=aI-S_{MK}''(M_K(U(t))).
+ \label{suv-operators}
+\end{align}
+The scalar and vector final-block-zero projectors are denoted
+$P_{0,s}$ and $P_{0,v}$.
+
+\begin{theorem}
+\label{suv-main}
+There is a constant independent of old depth $M$ and endpoint $K$ such
+that
+\begin{align}
+ \int_0^1\left|[t^2]\operatorname{Tr}
+       (P_{0,s}e^{-sT_s(t)})\right|\frac{ds}{s}&\le C,\notag\\
+ \int_0^1\left|[t^2]\operatorname{Tr}
+       (P_{0,v}e^{-s\widetilde V(t)})\right|\frac{ds}{s}&\le C.
+ \label{suv-bounds}
+\end{align}
+The vector expression equals the actual soft vector through its two
+affine jets. The effect of each soft coarse penalty alone is bounded
+by $C\mu^2s$ before integration.
+\end{theorem}
+
+\subsection{Rooted estimates for the base operators}
+\label{suv-base-section}
+
+At flatness $B_s$ and $B_v$ have uniform exponential fine-current
+Schur bounds. The vector statement uses the actual $q_M$; its first
+two background derivatives use the uniform action kernels through
+degree four and exact left-relative covariance. The gauge terms
+are nearest-neighbor. The semigroup power series therefore has
+Schur bound $Ce^{Cs}$ for $0\le s\le1$.
+
+At a diagonal fine root $x$, a Cartan gauge subtracts the constant
+potential at that root. The resulting source is
+$t(z_\nu-x_\nu)H/K^2$. Diagonal color trace is unchanged.
+Each first magnetic insertion now supplies $K^{-2}$ times a polynomial
+in distances to the root, and each second insertion supplies $K^{-4}$.
+The rooted exponential kernels pay the polynomial factors. The ordered
+one-insertion and two-insertion heat formulas give, for $E=B_s,B_v$,
+\begin{equation}
+ \left|[t^2]\operatorname{tr}_{\mathfrak g}
+      (e^{-sE(t)})_{xx}\right|
+       \le CK^{-4}(s+s^2)e^{Cs},\qquad 0<s\le1.
+ \label{suv-fine-root}
+\end{equation}
+There are $K^4$ scalar roots or $dK^4$ initial bond roots in one block.
+Thus
+\begin{equation}
+ \left|[t^2]\operatorname{Tr}(P_{0,E}e^{-sE(t)})\right|
+       \le C(s+s^2)e^{Cs}.
+ \label{suv-base-bound}
+\end{equation}
+This proof uses no spectral gap. Polynomial gauges are justified by
+compact truncation and exponential absolute moments, not by evaluating
+an unbounded field inside a global analytic ball.
+
+\subsection{Fixed coarse fibers for the penalty insertion}
+\label{suv-penalty-section}
+
+Write either perturbation as $C(t)^TF(t)C(t)$, with
+\begin{equation}
+ (C,F)=
+ \begin{cases}
+   (\mu J^T,I),&\text{scalar},\\
+   (\bar C,aI-S_{MK}''(M_K(U))),&\text{vector}.
+ \end{cases}
+ \label{suv-factor-table}
+\end{equation}
+The output fiber of $C$ has fixed color/site or color/bond dimension
+per final block. The actual moving-reference physical estimates,
+centered on each dependency collar, give for $j=0,1,2$
+\begin{equation}
+ \|C_j(Y,X)\|\le C\mu(1+|X|+|Y|)^p
+                         \mathbf1_{d(X,Y)\le r_0}.
+ \label{suv-C-jets}
+\end{equation}
+Here $C_j=[t^j]C(t)$, and $r_0,p$ are fixed. For $J$ the support
+is its own block. Centering the affine field uses bounded physical
+$C^1$ directions; restoring the gauge frames costs only a fixed
+polynomial in the block labels.
+
+The ordinary map sends the affine probe to the coarse affine
+connection. The actual coarse Hessian source bounds consequently give
+\begin{equation}
+ \|F_j(Y,Z)\|\le C(1+|Y|+|Z|)^p e^{-\kappa d(Y,Z)}.
+ \label{suv-F-jets}
+\end{equation}
+These are whole-block Hilbert operator bounds, with no sum over
+$K^4$ independent fine coordinates.
+
+The base jets also have polynomially weighted exponential final-block
+operator kernels. Neighboring blocks are controlled by the fine Schur
+bound; separated blocks gain the fine exponential at distance of order
+$K$ times the block distance. The flat semigroup series and its first
+two insertion formulas therefore give the same kind of bound,
+uniformly for $0\le s\le1$, for both $B$ and
+$W=B+C^TFC$. This step takes no fine trace.
+
+The exact Duhamel formula is
+\begin{equation}
+ e^{-sW(t)}-e^{-sB(t)}
+   =-\int_0^s e^{-(s-u)W(t)}C(t)^TF(t)C(t)e^{-uB(t)}\,du.
+ \label{suv-duhamel}
+\end{equation}
+Keep the fine root projector in the trace:
+\begin{equation}
+ \operatorname{Tr}_f[P_0 E_W C^TFC E_B]
+       =\operatorname{Tr}_c[FC E_B P_0 E_W C^T].
+ \label{suv-cyclic}
+\end{equation}
+The right side sums all coarse diagonal blocks; it is not a single
+coarse block-zero density.
+
+Expand its degree-two coefficient in the finitely many ordered ways.
+There are always two $C$ factors, supplying $\mu^2$.
+Equations \eqref{suv-C-jets}--\eqref{suv-F-jets} and the semigroup
+bounds connect both coarse endpoints to block zero. Their absolute
+sum is bounded by
+\[
+ C\mu^2\sum_{Y,Z}(1+|Y|+|Z|)^p
+       e^{-\kappa'(|Y|+|Z|+d(Y,Z))}\le C'\mu^2.
+\]
+The trace is taken in a fixed-dimensional coarse fiber. A product
+through the large fine block Hilbert space costs this coarse output
+rank, not the fine dimension. Integrating \eqref{suv-duhamel} gives
+\begin{equation}
+ \left|[t^2]\operatorname{Tr}
+       P_0(e^{-sW(t)}-e^{-sB(t)})\right|
+          \le C\mu^2s,\qquad 0<s\le1.
+ \label{suv-correction-bound}
+\end{equation}
+For compact source truncations, \eqref{suv-cyclic} is ordinary
+finite-rank trace cyclicity. The displayed rooted sum supplies its
+infinite limit and permits coefficient extraction. This also justifies
+the complex-bilinear continuation at the real flat expansion point.
+
+Combining \eqref{suv-base-bound} and \eqref{suv-correction-bound},
+dividing by $s$, and integrating proves \eqref{suv-bounds}.
+The exact affine matching of the soft vector transfers this estimate
+to the actual vector coefficient.
+
+\subsection{Scope}
+\label{suv-scope}
+
+The band $0<s<1$ is $0<u<K^{-2}$ in final physical heat time.
+Its contribution to the actual signed soft-pair coefficient is bounded
+uniformly. This proof does not compute the logarithmic coefficient on
+$1<s<K^2$, compare the actual effective action to a standard massive
+vector/ghost reference, or establish a large-time cancellation.
+Finite winding and regulator identification retain their separate
+hypotheses.
+
+
+\section{A uniform affine infrared tail from local cubic resolvents}
+\label{sft-section}
+
+This section bounds the large-physical-time contribution of the actual
+soft scalar/vector pair. The proof retains the root block in every
+trace and introduces no factor counting its \(K^4\) fine variables.
+It uses the localized relative vertices proved above, not only a
+global relative-form estimate. It does not determine the
+intermediate-time logarithmic coefficient.
+
+\subsection{Precise operator and source inputs}
+\label{sft-input-section}
+
+Write \(\mu=K^{-1}\). Fine scalar or positive-bond spaces use counting
+inner products, with fixed color/component multiplicities. Assign a
+bond to the block containing its initial site. Let \(P_x\) be the
+orthogonal projection onto the final block \(x\), and put
+\begin{equation}
+ \mathcal L=I+K^2\Delta,
+ \label{sft-reference}
+\end{equation}
+where \(\Delta\) is the ordinary componentwise flat lattice Laplacian.
+Let \(X_0\) denote the flat physical operator, namely \(K^2\) times
+the corresponding counting matrix.
+
+For the vector spatial estimates, work on the chosen joint infinite
+structural system or on explicit periodizations of its kernels.
+Actual finite-regulator gaps and flat heat estimates are separate
+facts. A finite momentum grid does not imply exact infinite moment
+cancellation, and arbitrary finite winding kernels are not identified
+with these periodizations. The following abstract proof is also
+finite-volume uniform whenever its three inputs hold on the finite
+system in question.
+
+The first input is uniform positive ellipticity:
+\begin{equation}
+ X_0=X_0^*,\qquad X_0\ge c_0\mathcal L.
+ \label{sft-ellipticity}
+\end{equation}
+The second is a relative physical-weight estimate. For every bounded
+physical \(1\)-Lipschitz function \(f\), set \(W=e^{\theta f}\),
+using the fine-site position divided by \(K\). On bonds use their
+initial sites. For sufficiently small fixed \(\theta>0\), assume
+\begin{equation}
+ \left\|\mathcal L^{-1/2}
+       (WX_0W^{-1}-X_0)\mathcal L^{-1/2}\right\|
+       \le C\theta .
+ \label{sft-weighted-input}
+\end{equation}
+Bounded truncations of distance functions suffice.
+
+For the third input, let \(a_j\) be a complete physical \(C^1\) field
+supported in a fixed smooth collar of block \(j\), and write
+\begin{equation}
+ a_j^*=\|a_j\|_{\mathrm{phys},1}
+ =\|a_j\|_\infty+
+ K\max_{\substack{\mathrm{nearest}\\\mathrm{same\ component}}}
+       |a_j(e')-a_j(e)|.
+ \label{sft-source-norm}
+\end{equation}
+Denote the first and mixed second variations of \(X\) at zero by
+\(V_j\) and \(V_{jk}\). For every weight allowed above, require
+\begin{align}
+ \|\mathcal L^{-1/2}WV_jW^{-1}\mathcal L^{-1/2}\|
+     &\le Ca_j^*,\notag\\
+ \|\mathcal L^{-1/2}WV_{jk}W^{-1}\mathcal L^{-1/2}\|
+     &\le Ca_j^*a_k^*.
+ \label{sft-conjugated-vertices}
+\end{align}
+In addition, let \(f_j\) be physical distance to the fixed physical
+cube or collar of block \(j\), and \(W_j=e^{\theta f_j}\), initially
+with bounded truncations. The marked-source bounds are
+\begin{align}
+ \|\mathcal L^{-1/2}W_jV_jW_j\mathcal L^{-1/2}\|
+     &\le Ca_j^*,\notag\\
+ \|\mathcal L^{-1/2}W_jV_{jk}W_j\mathcal L^{-1/2}\|
+     &\le Ca_j^*a_k^*,
+ \label{sft-marked-vertices}
+\end{align}
+with the second bound also centered at \(k\).
+The function \(f_j\) is Lipschitz on fine physical positions:
+it is not a piecewise constant block-index distance. Its infimum
+and supremum on any one block differ by a dimensional constant.
+
+The two-sided weights in \eqref{sft-marked-vertices} attach a source
+to both operator ends. An unlocalized bound on
+\(X_0^{-1/2}V_jX_0^{-1/2}\) would not supply this input.
+All source jets may be holomorphic and bilinear. Only the flat
+operators \(X_0,\mathcal L\) are required to be positive.
+
+\subsection{Why the actual soft pair supplies these inputs}
+\label{sft-application-inputs}
+
+For \(T_s=D_A^TD_A+\mu^2\Pi_A\), the soft scalar theorem gives
+\eqref{sft-ellipticity}. Its weighted \(D,J\) expansion gives
+\eqref{sft-weighted-input}. Its first two source derivatives give
+\eqref{sft-conjugated-vertices}--\eqref{sft-marked-vertices}.
+Here \(J\) is normalized and own-block local, so its derivatives
+have no fine-fiber dimension loss. Scalar sources even need only
+their supremum norm.
+
+For the soft vector, the mean-zero Laplacian domination and gap,
+preserved by the positive \(DJ\) update, imply
+\eqref{sft-ellipticity} for \(X_0=K^2V_0\).
+The relative-Hessian theorem gives, after physical rescaling,
+first-two source jets of the form
+\begin{equation}
+ D_{\mathrm{phys}}^TZ+Z^TD_{\mathrm{phys}}+E,
+ \label{sft-energy-vertex}
+\end{equation}
+with uniformly bounded, exponentially source-rooted factors \(Z,E\).
+The second-order \(Z\) may have an additional beneficial factor
+\(\mu\). Since
+\(\|D_{\mathrm{phys}}\mathcal L^{-1/2}\|\le1\),
+these factors give the relative vertex bounds. For example,
+\[
+ W_jD_{\mathrm{phys}}^TZW_j
+ =D_{\mathrm{phys}}^T(W_jZW_j)
+   +[W_j,D_{\mathrm{phys}}^T]W_j^{-1}(W_jZW_j).
+\]
+The commutator in the second term is \(O(\theta)\); source-rooted
+decay bounds \(W_jZW_j\) at a smaller exponent. This proves the
+two-sided normalization without commuting a fractional power of
+\(\mathcal L\) through a weight.
+
+The covariant \(D_AD_A^T\) term has the same elementary structure.
+Each corrected angle average \(\bar C_A\), and each of its first
+two physical-background derivatives, has counting size \(O(\mu)\).
+Their pair therefore gives \(O(\mu^2)\), canceled by \(K^2\).
+The coarse Hessian has fixed color fiber and uniform source bounds.
+These terms supply zero-order vertices in
+\eqref{sft-energy-vertex}. The soft-vector module separately
+identifies this auxiliary family with the actual stationary affine
+jets through order two, retaining the current and residual terms.
+
+For completeness, the action contribution to
+\eqref{sft-weighted-input} uses precisely the repaired ordered
+Laurent factorization
+\begin{equation}
+ q_M=d_0^TH_0d_0.
+ \label{sft-ordered-factorization}
+\end{equation}
+Both the constant and linear flat momentum jets vanish, and \(H_0\)
+is symmetric with uniformly exponentially summable current kernels.
+Separate component row sums alone would not justify this step;
+no common componentwise difference-square identity is used.
+Conjugation changes each outer gradient by a bounded multiplication
+operator \(O(\theta\mu)\), and changes \(H_0\) by \(O(\theta\mu)\)
+using its exponential first moment. Keep the latter change between
+the two gradients. After multiplication by \(K^2\) and the two
+\(\mathcal L^{-1/2}\) factors, the outer errors are
+\(O(\theta+\theta^2)\) and the middle error is \(O(\theta\mu)\).
+The longitudinal term obeys the same estimate. The bounded physical
+block correction has fixed physical range, with a coarse Hessian
+having uniform exponential moments, so its error is \(O(\theta)\).
+This proves \eqref{sft-weighted-input} without a false uniform bound
+on the absolute row norm of \(X_0\), which can grow as \(K^2\).
+
+The uniform claims concern the explicit auxiliary source estimates.
+Their identification with the actual affine coefficient is used at
+each fixed \(K\); no uniform stationary-response bound is needed.
+
+\subsection{A block Schatten bound without a rank loss}
+\label{sft-schatten-section}
+
+The elementary massive lattice heat estimate gives
+\begin{equation}
+ \operatorname{Tr}(P_x\mathcal L^{-3}P_x)\le C
+ \label{sft-third-moment}
+\end{equation}
+uniformly in \(K\) and compatible volume. Indeed, integrate the
+flat heat trace against \(t^2e^{-t}/2\). On a torus of current side
+\(KN\), the heat trace per final block is at most
+\[
+ C\left\{\frac{K^4}{(1+K^2t)^2}+N^{-4}\right\}.
+\]
+Its indicated integral is bounded, including the finite zero mode.
+The infinite lattice obeys the same bound without that mode.
+
+Compression is not interchanged with taking powers. If \(u_i\) is
+an orthonormal eigenbasis of \(P_x\mathcal L^{-1}P_x\) in the block,
+scalar Jensen applied to the spectral measure of \(\mathcal L^{-1}\)
+gives
+\(\langle u_i,\mathcal L^{-1}u_i\rangle^3
+ \le\langle u_i,\mathcal L^{-3}u_i\rangle\).
+Therefore
+\begin{equation}
+ \|P_x\mathcal L^{-1/2}\|_{\mathfrak S_6}^6
+ =\operatorname{Tr}[(P_x\mathcal L^{-1}P_x)^3]
+ \le\operatorname{Tr}(P_x\mathcal L^{-3}P_x)\le C.
+ \label{sft-s6}
+\end{equation}
+The analogous right-ended norm has the same bound. Schatten
+Hölder with exponents \(6,\infty,6\) consequently yields
+\begin{equation}
+ \|P_x\mathcal L^{-1/2}A\mathcal L^{-1/2}P_y\|_{\mathfrak S_3}
+ \le C\|A\|.
+ \label{sft-s3}
+\end{equation}
+There is no factor proportional to the block rank \(K^4\).
+
+\subsection{A common contour and rooted resolvent derivatives}
+\label{sft-resolvent-section}
+
+Choose \(0<\lambda_0<c_0/4\) and \(0<\varphi<\pi/2\).
+Let \(\Gamma\) be the positively oriented Dunford contour on the
+rays \(\lambda_0+r e^{\pm i\varphi}\), enclosing the positive
+spectrum to their right. At finite regulator, first close it beyond
+the largest eigenvalue. For \(R_z=(z-X_0)^{-1}\),
+\begin{equation}
+ \|\mathcal L^{1/2}R_z\mathcal L^{1/2}\|\le C_\Gamma,
+ \qquad z\in\Gamma .
+ \label{sft-contour-bound}
+\end{equation}
+Indeed, \(X_0\ge c_0\mathcal L\), while the spectral norm of
+\(X_0^{1/2}R_zX_0^{1/2}\) is bounded on those rays.
+By \eqref{sft-weighted-input} and a relative resolvent Neumann
+expansion, choosing \(\theta\) sufficiently small gives
+\begin{equation}
+ WR_zW^{-1}=\mathcal L^{-1/2}A_{z,W}\mathcal L^{-1/2},
+ \qquad \|A_{z,W}\|\le C ,
+ \label{sft-twisted-resolvent}
+\end{equation}
+uniformly on the whole contour.
+
+The first and mixed second derivatives are
+\begin{align}
+ \delta_jR_z&=R_zV_jR_z,\notag\\
+ \delta_j\delta_kR_z
+  &=R_zV_{jk}R_z+R_zV_jR_zV_kR_z+R_zV_kR_zV_jR_z.
+ \label{sft-resolvent-derivatives}
+\end{align}
+Relative normalization cancels adjacent powers of \(\mathcal L\):
+each product is \(\mathcal L^{-1/2}A\mathcal L^{-1/2}\)
+with uniformly bounded \(A\).
+
+Source localization can be checked without any fractional-weight
+commutator. For a marked source \(j\),
+\begin{equation}
+ W_j(R_zV_jR_z)W_j
+ =(W_jR_zW_j^{-1})(W_jV_jW_j)(W_j^{-1}R_zW_j).
+ \label{sft-marked-first}
+\end{equation}
+For the ordered term with another source \(k\), put
+\(R_+=W_jR_zW_j^{-1}\), \(R_-=W_j^{-1}R_zW_j\); then
+\begin{equation}
+ W_j(R_zV_jR_zV_kR_z)W_j
+ =R_+(W_jV_jW_j)R_-(W_j^{-1}V_kW_j)R_-.
+ \label{sft-marked-second}
+\end{equation}
+The marked vertex uses \eqref{sft-marked-vertices} and the other
+vertex uses \eqref{sft-conjugated-vertices}. The primitive
+\(V_{jk}\) has the marked bound at either source. Thus
+\eqref{sft-s3} applies to every term.
+
+Write \(\tau\) for the shortest connected graph length in the
+final-block graph, allowing auxiliary vertices. The resulting
+block bounds, for \(n=0,1,2\), are
+\begin{equation}
+ \|P_x\delta_{j_1}\cdots\delta_{j_n}R_zP_y\|_{\mathfrak S_3}
+ \le C_n\prod_{\ell=1}^n a_{j_\ell}^*
+       e^{-c\tau(x,y,j_1,\ldots,j_n)}.
+ \label{sft-rooted-resolvent}
+\end{equation}
+For \(n=0\), use a one-sided distance weight from \(y\).
+For \(n=1\), the marked weight gives
+\(e^{-\theta[d(x,j)+d(y,j)]}\). For \(n=2\), take the
+geometric mean of the separate \(j\)- and \(k\)-centered estimates.
+Their four edges connect all marked vertices and dominate a
+connecting graph length. The infimum/supremum comparison of
+physical distances within each block changes only the constant.
+Fixed collars have the same effect. Periodic physical distances
+and bounded truncations give the identical conclusion whenever the
+inputs hold; the uniform bounds permit removal of the truncations.
+
+\subsection{Three resolvents preserve the local trace}
+\label{sft-heat-section}
+
+Functional calculus gives, for \(u>0\),
+\begin{equation}
+ e^{-uX}=\frac{2}{u^2}\frac1{2\pi i}
+       \int_\Gamma e^{-uz}(z-X)^{-3}\,dz .
+ \label{sft-cubic-calculus}
+\end{equation}
+The scalar residue of the third-order pole is
+\(u^2e^{-u\lambda}/2\), fixing both coefficient and sign.
+
+Differentiate \(R_z^3\) through order two. Each term is a product of
+three differentiated resolvents, with derivative orders
+\(n_1+n_2+n_3\le2\). Inserting the block resolution of the identity
+between them gives
+\begin{align}
+ &\left|\operatorname{Tr}
+  (P_0R_z^{(n_1)}P_iR_z^{(n_2)}P_jR_z^{(n_3)}P_0)\right|
+ \notag\\
+ &\qquad\le
+  \|P_0R_z^{(n_1)}P_i\|_{\mathfrak S_3}
+  \|P_iR_z^{(n_2)}P_j\|_{\mathfrak S_3}
+  \|P_jR_z^{(n_3)}P_0\|_{\mathfrak S_3}.
+ \label{sft-local-holder}
+\end{align}
+Here superscripts denote the indicated source derivatives, not
+ordinary powers. The root block stays in place. Nothing is moved
+cyclically through \(P_0\).
+
+Equation \eqref{sft-rooted-resolvent} and exponential convolution,
+with a smaller exponent, imply
+\begin{equation}
+ \left|\delta_{j_1}\cdots\delta_{j_n}
+       \operatorname{Tr}(P_0R_z^3P_0)\right|
+ \le C_n\prod_{\ell=1}^n a_{j_\ell}^*
+        e^{-c'\tau(0,j_1,\ldots,j_n)},\qquad n\le2.
+ \label{sft-cubic-root}
+\end{equation}
+The two intermediate block sums are absolutely convergent in trace
+norm, uniformly in \(K,z\) and the applicable volume. This constructs
+the infinite local trace without an infinite extensive trace.
+
+On the contour,
+\(\operatorname{Re}z=\lambda_0+r\cos\varphi\), whence
+\[
+ \int_\Gamma |e^{-uz}|\,|dz|
+       \le C u^{-1}e^{-\lambda_0u}.
+\]
+Combining this with
+\eqref{sft-cubic-calculus}--\eqref{sft-cubic-root} proves
+\begin{equation}
+ \left|\delta_{j_1}\cdots\delta_{j_n}
+       \operatorname{Tr}(P_0e^{-uX}P_0)\right|
+ \le C_nu^{-3}e^{-\lambda_0u}
+       \prod_{\ell=1}^n a_{j_\ell}^*
+       e^{-c'\tau(0,j_1,\ldots,j_n)},\quad u\ge1,\ n\le2.
+ \label{sft-rooted-heat}
+\end{equation}
+The displayed absolute majorants justify the differentiations,
+contour integral, block sums and local limits. At fixed \(K\), begin
+with bounded compact sources in the actual local germ, then extend
+their coefficients using these bounds. No small-time asymptotic is
+claimed by the harmless factor \(u^{-3}\).
+
+\subsection{The actual affine infrared contribution}
+\label{sft-affine-section}
+
+Choose a smooth physical partition of unity on fixed block collars,
+with uniformly bounded first derivatives and finite overlap.
+Decompose the affine physical field
+\begin{equation}
+ A_\alpha(x)=\frac{x_\beta}{K}H,\qquad \alpha\ne\beta,
+ \label{sft-affine}
+\end{equation}
+into complete supported fields \(a_j\).
+Their norms satisfy \(a_j^*\le C(1+|j|)\). The second source bound
+\eqref{sft-rooted-heat} is summable with these polynomial weights.
+Consequently
+\begin{equation}
+ \left|[t^2]\operatorname{Tr}_0 e^{-uX(tA)}\right|
+       \le Ce^{-cu},\qquad u\ge1,
+ \label{sft-affine-heat}
+\end{equation}
+uniformly in \(K\) and old depth on the stated structural systems.
+This is evaluation of exponentially localized Taylor kernels,
+not insertion of a nonzero unbounded field into a fixed analytic ball.
+
+The actual first two stationary affine jets agree with the explicit
+representatives just estimated, up to a fine gauge. Their diagonal
+color traces are individually gauge invariant. Thus the fixed-\(K\)
+polynomial-jet identification transfers
+\eqref{sft-affine-heat} to the actual coefficient before taking the
+uniform bound. It does not require a uniform-\(K\) norm for the
+full stationary response.
+
+For \(X_s=K^2T_s\) and \(X_v=K^2V\), we obtain
+\begin{theorem}[Uniform actual infrared tail]
+\label{sft-main}
+Under the established soft-factor and localized relative-vertex
+inputs, the actual affine coefficient satisfies
+\begin{equation}
+ \int_1^\infty
+  \left|[t^2]\left\{
+   \operatorname{Tr}_{0,E}e^{-uX_v(t)}
+     -2\operatorname{Tr}_{0,S}e^{-uX_s(t)}
+                 \right\}\right|\frac{du}{u}\le C .
+ \label{sft-tail}
+\end{equation}
+The constant is uniform in \(K\), old depth and the chosen joint
+infinite structural systems. Each factor separately obeys the same
+type of bound.
+\end{theorem}
+
+The fine link angle corresponding to \eqref{sft-affine} is
+\(t x_\beta H/K^2\). The change of variables \(s=K^2u\)
+identifies \eqref{sft-tail} with the current-time tail \(s\ge K^2\)
+of the actual soft-pair Maxwell heat formula.
+Constant determinant normalizations have zero affine coefficient.
+
+No finite torus affine-flux family is asserted. Finite source bounds
+apply to explicit periodizations or to finite models for which the
+three inputs were separately verified. The actual polynomial
+coefficient is obtained in the chosen infinite structural system by
+the fixed-\(K\) identification; unrelated actual finite winding
+kernels are not silently substituted.
+
+Together with the exact soft factorization and the bounded coarse
+Maxwell remainders, \eqref{sft-tail} removes the large-physical-time
+part from the logarithmic calculation. The remaining comparison is
+the short-current-time contribution and the intermediate range
+\(1\ll s\ll K^2\). Neither the value nor the sign of the logarithmic
+coefficient follows from this tail estimate.
+
+
+\section{The next comparison}
+
+The exact soft factorization and bounded coarse corrections reduce
+the required logarithm to the fine soft scalar/vector pair. Its
+short-current-time interval \(0<s<1\) and its physical infrared
+tail \(s>K^2\) both have uniformly bounded affine contributions.
+Writing
+\[
+ h^{\rm soft}_{M,K}(s)=[t^2]\left\{
+   \operatorname{Tr}_{0,E}e^{-sV(t)}
+       -2\operatorname{Tr}_{0,S}e^{-sT_s(t)}\right\},
+\]
+we therefore have the actual reduction
+\begin{equation}
+ \boxed{\displaystyle
+ \beta(\mathcal D_{M,K})
+       =\int_1^{K^2}h^{\rm soft}_{M,K}(s)\,\frac{ds}{s}+O(1),}
+ \label{soft-final-band-reduction}
+\end{equation}
+uniformly in preceding depth and endpoint on the stated structural
+systems. For \(K=1\) the intermediate interval is empty. The
+growing hard-projection vertices have been removed from this
+calculation by exact algebra. The actual effective-action Hessian
+remains present, with its now controlled relative physical vertices.
+
+Two distinct ingredients remain in identifying the logarithm.
+First, the soft infrared penalties must be compared to a specified
+massive reference without discarding their gauge cancellations.
+Second, the actual effective-action vertices must be compared to
+the reference vertices with constants uniform in preceding depth.
+The previously proved nonlinear Ward extraction matches their
+marginal momentum jets through field degree four; a summable
+remainder estimate for the determinant is still required.
+A sufficient concrete target, with \(\delta>0\), is
+\[
+ \left|h^{\rm soft}_{M,K}(s)-11\alpha_g\right|
+       \le C\left(s^{-\delta}+(s/K^2)^\delta\right),
+       \qquad 1\le s\le K^2.
+\]
+Its logarithmic-time integral gives the required
+\(22\alpha_g\log K+O(1)\). This displayed comparison is a target,
+not an estimate proved in this notebook.
+
+For a fixed logarithmically divergent one-loop lattice integral,
+Adams--Lee prove a universal logarithmic term with a finite remainder.
+Their theorem provides a useful reference-integral endpoint once
+its hypotheses and normalization are matched. It does not by itself
+apply uniformly to our growing block fibers and varying effective
+actions. The model-specific comparison must establish that interface.
+
+A positive actual block drift would activate the finite transfer
+and tuning results in Notebook 32. The full existence argument also
+requires the recorded measure matching, mixed and large-field
+histories, sourced continuum limits, nontriviality, Euclidean
+covariance, positivity and reconstruction. These remain part of the
+original goal. The spectral gaps here are Gaussian fluctuation
+estimates, not a Yang--Mills mass-gap theorem.
+
+\begin{thebibliography}{9}
+\bibitem{priorsoft}
+\emph{Toward a four-dimensional Yang--Mills construction},
+Notebooks 32--35 and the earlier classical support and Ward
+extraction modules in this workspace.
+\bibitem{adamslee}
+D.~H.~Adams and W.~Lee,
+\emph{Structure of logarithmically divergent one-loop lattice
+Feynman integrals}, Phys.\ Rev.\ D \textbf{77} (2008), 045010,
+\href{https://arxiv.org/abs/0709.0781}{arXiv:0709.0781}.
+\bibitem{sourcesoft}
+E.~Sussman and collaborators,
+\href{https://github.com/ethanwsussman/Yang--Mills-LLM-experiment}
+{Yang--Mills-LLM-experiment}, deposited accounts pinned at
+commit \texttt{e392ef4501\allowbreak 3a581664ba\allowbreak b76b908671\allowbreak 70b30fe10e}.
+\end{thebibliography}
+\end{document}

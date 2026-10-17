@@ -1,0 +1,489 @@
+Exact positive finite-measure embedding of the retained sector
+17 October 2026. Research proof; no output or master edits.
+
+1. Purpose, fixed choices and scope
+
+This note supplies an exact finite positive-g bridge beyond the existing
+homogeneous local integral. It does not estimate the complementary
+histories. In particular, it does not identify the complete Wilson
+measure with the homogeneous analytic density of Notebook37.
+
+Fix a finite compatible periodic lattice, a compact connected matrix
+group G, normalized product link Haar m_E, and the primitive ordinary
+mean specified in composite_macrostep_geometry_research.md. Fix ell and
+R=ell^s. The global map F is the composition of the measurable primitive
+completions in Section2 below, not a fictitious globally analytic map.
+This choice is an exact coarse observable of the original finite Wilson
+measure. It is not identified with an unspecified different large-field
+completion in the deposited account.
+
+The local chart, physical centered branch V_*(W), one-pivot incidence,
+and contour variables are precisely those in
+composite_macrostep_integral_research.md. They agree with the actual
+ordinary composite map in its local domain. Preceding classical depth M
+enters the chosen centered branch and local action, but not the elementary
+measure identities below. No limit or asymptotic stationary-phase formula
+is used in those identities.
+
+New conclusions:
+(a) a pointwise normalized compact-gauge Markov kernel gives an exact
+positive retained/complement split even for an arbitrary finite input
+measure;
+(b) an explicit normalized output-orbit average turns the locally computed
+retained density into a globally gauge-invariant positive submeasure of
+the true pushforward;
+(c) this yields positive linear good/remainder operators on invariant
+finite measures, hence an exact decomposition of the full finite Wilson
+pushforward into all binary histories;
+(d) on each fixed finite torus, after an explicit possibly volume-dependent
+shrink, the good submeasure has exactly the previously computed local
+analytic germ, including all vacuum factors.
+The last conclusion requires literal input-chart containment at positive
+g. Holomorphic continuation alone is not a substitute for that condition.
+
+2. A real measurable global map, not a global analytic action
+
+For a path tuple (U_1,...,U_n) from y to x let T=U_1. Choose a sufficiently
+small conjugation-invariant identity neighborhood O on which the actual
+selected local mean Phi of the normalized tuple is defined. On the good
+set U_j T^{-1} in O for every j, put
+
+ P(U_1,...,U_n)=Phi(U_1 T^{-1},...,U_n T^{-1}) T.
+
+On its complement put P=T. Use the same ordering, multiplicities and
+reference as the selected local definition; no alternative group mean
+is substituted. The good set is Borel and endpoint-invariant. The local
+mean's conjugation covariance gives, globally,
+
+ P(g U_1 h^{-1},...,g U_n h^{-1})=g P(U_1,...,U_n) h^{-1}.
+
+Right covariance shows agreement with the original mean wherever its
+original small-field formula is used. This constructs the internal
+contour P on all real group configurations. It need not be continuous
+across the selected good-set boundary and is not asserted holomorphic
+there.
+
+For each primitive ordinary coarse bond use these completed internal
+contours and the original reference center string T_c. If all transported
+relative strings U_x T_c^{-1} lie in the prescribed small logarithm
+neighborhood, use the original formula
+
+ exp[ell^{-d} sum_x log(U_x T_c^{-1})] T_c;
+
+otherwise use T_c. This is again Borel, globally gauge covariant, and
+agrees with the analytic ordinary map near the identity. Composing the
+primitive completions defines F=M_ell^s. Complete the independently
+chosen direct-R internal P_R in the same manner. Their relations are
+
+ F(U^v)=F(U)^{r(v)},
+ P_R(U^v;y,x)=v(y)P_R(U;y,x)v(x)^{-1},                 (2.1)
+
+where r restricts a current-site gauge to final block centers. No
+identity between F and the direct-R ordinary average is used.
+
+The original Wilson measure is still the original product-Haar measure
+with its globally defined Wilson plaquette density. Only its coarse
+observable has now been fixed everywhere. Thus identities below concern
+that specified pushforward and do not replace the fine measure.
+
+3. Exact compact-gauge randomization and positive sectors
+
+Let H_R be the current-site gauge group equal to I at every final block
+center, with product normalized Haar. Put n_s=number of other current
+sites, q(h)=1-Re tau(h),
+
+ G_R(U)=sum_(y,x!=y) q(P_R(U;y,x)),
+ c(g)=integral_G exp[-q(h)/g^2] dh,                   (3.1)
+
+for any positive real g. This is the exact compact integral, not a
+Gaussian normalization or its small-g approximation. Equation(2.1),
+independence of the site Haar variables and Haar invariance give
+
+ integral_(H_R) exp[-G_R(U^u)/g^2] du=c(g)^{n_s}      (3.2)
+
+for EVERY U, including fields outside all analytic charts. For based u,
+each contour equals P_R(U;y,x)u(x)^{-1}; this proves (3.2) directly.
+
+Define the orbit Markov kernel
+
+ K_g(U,dV)=c(g)^{-n_s} integral_(H_R)
+                exp[-G_R(U^u)/g^2] delta_(U^u)(dV)du. (3.3)
+
+It has total mass one and is supported on F(V)=F(U). Let chi(V,W) be any
+Borel function in [0,1], including the exact indicator of a selected
+retained chart/window, with every extra pivot/contour/field condition
+left inside chi. Then
+
+ p_chi(U)=integral K_g(U,dV) chi(V,F(U)) in [0,1],
+ F_*mu=F_*(p_chi mu)+F_*((1-p_chi)mu)                 (3.4)
+
+for every finite positive input measure mu. This is a pointwise
+acceptance/rejection identity, not an asymptotic sector approximation.
+F_* denotes measure pushforward and does not require a global density.
+
+If mu is H_R invariant, change variables U to U^u under the Haar gauge
+action to obtain
+
+ K_g^*mu(dV)=c(g)^{-n_s} exp[-G_R(V)/g^2] mu(dV).      (3.5)
+
+Consequently the accepted measure in (3.4) is exactly the familiar
+gauged retained-sector integral. For noninvariant mu the correct input
+in this formula is its H_R average, not the original density. Silently
+reusing (3.5) on a noninvariant history is an error.
+
+The sum in (3.4) always retains the complete pushforward and its total
+mass. Ordinary Gaussian tail bounds alone give no bound on 1-p_chi for
+the interacting Wilson input.
+
+4. Exact local retained density with all factors
+
+Let mu be a finite measure invariant under the FULL current-site gauge
+group. Write its Haar Lebesgue decomposition
+
+ mu=rho m_E+mu_sing.
+
+Both parts are invariant, by uniqueness of that decomposition and Haar
+invariance. Only rho m_E is used in the local coarea operator below;
+the remaining positive singular part is kept in the remainder. This
+permits the operator to act on arbitrary intermediate positive invariant
+measures, even if an arbitrary global completion has produced singular
+pushforwards.
+
+Take a small real coarse domain D and the actual physical V=V_*(W),
+W in D. Let Phi_V(z) be the exact relative constraint chart with retained
+coordinates z unchanged. Choose a fixed real retained window B_z on
+which the chart is injective, and, if needed, an additional measurable
+factor chi_extra in [0,1]. The sector is only this specified local sheet;
+other sheets are in its complement. There are no silently omitted
+conditions from a different source window.
+
+Let q_col=dim g, n_e and n_c be the numbers of positive current and coarse
+bonds, and n_z=q_col(n_e-n_c). In orthonormal real Lie coordinates,
+
+ d(exp(iX))=h_0 j(X)dX, j(0)=1.
+
+The target group delta gives h_0^{-1} per coarse bond at its identity.
+Let A_(c,p) be the actual pivot block of the linear constraint, and
+
+ D_R(V)=product_c det(A_(c,p))^{-1}.
+
+All these real small-chart determinants have the fixed positive
+orientation. Let j_c^str(V;K_Vz) be the logarithm of
+ det A_(c,p)/det D_pF_V(Phi_V(z);c), zero at z=0.
+The local density, relative to coarse product Haar, is exactly
+
+ ell_mu(W)=c(g)^{-n_s}h_0^{n_e-n_c}D_R(V)
+  integral_(B_z) dz rho(exp(iPhi_V(z))V)
+   exp[-G_R(exp(iPhi_V(z))V)/g^2]
+   product_b j(Phi_V(z)(b))
+   exp[sum_c j_c^str(V;K_Vz)] chi_extra.              (4.1)
+
+For a merely measurable rho this holds almost everywhere, by the local
+joint change of variables and Tonelli. This is a nonnegative measurable
+function, possibly modified on a null set. One can use monotone bounded
+approximations if needed. Formula(4.1) is the usual actual square ambient
+straightening followed by pivot elimination; det D Phi is NOT substituted
+for the constraint Jacobian. The unrearranged factor is the product of
+inverse nonlinear pivot derivatives. Equation(3.5) and the local coarea
+identity give the measure inequality
+
+ nu:=F_*mu >= 1_D ell_mu m_C.                        (4.2)
+
+No smoothness or absolute continuity of nu outside D is asserted.
+
+When the literal input chart has
+ rho(U)=Z_in exp[-S_M(U)/g^2+E_raw(U)],
+put z=g xi, retain its exact product window, and let A_M(V) be the actual
+constrained action-plus-gauge Hessian. With the exact remainder and
+measure exponent I of composite_macrostep_integral_research.md, (4.1)
+becomes
+
+ ell_mu(W)=Z_in c(g)^{-n_s}h_0^{n_e-n_c}D_R(V)
+  g^{n_z}(2pi)^{n_z/2}det A_M(V)^{-1/2}
+  exp[-S_M(V)/g^2+E_raw(V)]
+  E_(A_M(V)^{-1})[chi_window chi_extra exp I].        (4.3)
+
+In particular I includes -g^{-2}R_3, every straightening logarithm,
+every Haar logarithm, and E_raw at the exact reconstructed field minus
+E_raw(V). The argument is Phi_V(g xi), not g Phi_V(xi). Additional
+indicators are evaluated at that exact field. Neither a background-
+dependent determinant nor a field-dependent orbit factor is absorbed
+into a vacuum constant.
+
+Equation(4.3) is a literal positive-real integral if the input density
+representation holds at EVERY reconstructed field in its retained
+window. A holomorphic continuation having the same germ elsewhere
+does not supply that hypothesis.
+
+5. Globally invariant positive extension of the local sector
+
+The raw output 1_D ell_mu need not be invariant because D is a potential
+ball. Simply averaging it loses its local normalization. The following
+NORMALIZED orbit construction repairs this exactly, at the measure
+level.
+
+Let G_C be the full coarse-site gauge group, with normalized Haar dv.
+Choose once a nonnegative continuous theta supported in D, positive on
+a smaller neighborhood of I. Put
+
+ m_theta(W)=integral_(G_C) theta(W^v)dv.
+
+It is invariant, nonnegative, and positive precisely on the orbit
+saturation of {theta>0}. Define, with value zero when m_theta=0,
+
+ (A_g mu)(dW)=a_mu(W)m_C(dW),
+ a_mu(W)= [integral theta(W^v)ell_mu(W^v)dv]/m_theta(W).
+                                                               (5.1)
+
+Only the REAL locally computed ell_mu is evaluated, and only where theta
+is supported. This constructs a real measurable global function; it
+is not a global analytic extension of the action or of E. It is linear
+in mu and invariant under every coarse-site gauge transformation.
+
+THEOREM 5.1. On the cone of full-gauge-invariant finite positive input
+measures,
+
+ 0 <= A_g mu <= F_*mu,
+ R_g mu:=F_*mu-A_g mu >=0.                            (5.2)
+
+Both operators are linear and preserve gauge invariance. Moreover
+ A_g+R_g=F_* exactly, including raw mass.
+
+Proof. The full pushforward nu is invariant by(2.1). Its Haar-ac part
+has an invariant nonnegative density f, chosen by compact gauge
+averaging if necessary. From(4.2), f>=ell_mu almost everywhere on D.
+For almost every W and almost every v, f(W)=f(W^v) and
+ theta(W^v)ell_mu(W^v)<=theta(W^v)f(W).
+Integrating gives a_mu(W)<=f(W) on m_theta>0. The singular part of nu is
+positive and remains in R_g. Tonelli, or first truncating the positive
+factor m_theta^{-1}, justifies this even near the boundary where
+m_theta tends to zero. Linearity follows from the linear Haar-ac
+projection, the linear fiber integral(4.1), and the fixed theta. The
+remainder is the difference of two linear operators and is positive
+by the inequality just proved. QED.
+
+It would be incorrect to derive (5.2) by simply averaging the measure
+inequality and then dividing it by m_theta. The proof specifically uses
+the invariant Haar-ac density f, which bounds each orbit value before
+the normalized averaging. No positive lower bound for m_theta, uniform
+or otherwise, is needed for (5.2).
+
+The remainder in (5.2) is an explicit operator difference. It need not
+equal the literal rejection in(3.4), since(5.1) redistributes the local
+sector along output gauge orbits. Both decompositions are exact and
+positive; they should not be identified termwise.
+
+6. When the invariant extension has exactly the local analytic germ
+
+A purely measure-theoretic extension need not preserve a specified germ.
+Here is a sufficient finite-regulator lemma which proves that property
+for the actual local density, while exposing its nonuniform radius.
+
+LEMMA 6.1 (finite orbit-overlap control). Fix a connected finite coarse
+lattice and an analytic local density ell on a product potential ball
+of radius r. Suppose its total infinitesimal gauge Ward identity holds
+there and it is invariant under constant color conjugations. There is
+epsilon>0, possibly depending on the finite graph, such that whenever
+W and W^v both lie in the epsilon ball,
+
+ ell(W^v)=ell(W).                                    (6.1)
+
+Proof. Work first in a unitarily invariant matrix norm; pay the fixed
+color-coordinate equivalence constants in r. Choose a spanning tree
+with maximal root-path length D_tree and root o. Write v_x=h_x c with
+c=v_o, h_o=I. Constant conjugation sends W to W^c without enlarging its
+invariant norm. Along a tree edge xy,
+
+ h_y=(W^v_xy)^{-1} h_x W^c_xy.
+
+Unitary norms and a telescoping product give
+ ||h_x-I||<=C D_tree epsilon.
+Choose epsilon so this is within one fixed small logarithm chart.
+Then h_x=exp(i lambda_x), with ||lambda_x||<=C D_tree epsilon.
+The path h_x(t)=exp(i t lambda_x) connects I to h, and
+
+ ||log[(W^c)^{h(t)}]/i||<=C(1+D_tree)epsilon.
+
+Taking epsilon<=c r/(1+D_tree), with the fixed logarithm/color constants,
+keeps the whole real path in the Ward domain. Integrating the Ward
+identity and then using constant conjugation proves(6.1). No global
+logarithm of the original v was assumed. QED.
+
+For the actual CHOSEN real retained integral, this hypothesis is proved
+for a product of invariant link/color BALLS, with chi_extra=1 (or with
+extra indicators separately verified to transform covariantly). It is
+not asserted for an arbitrary scalar-coordinate rectangle or arbitrary
+extra indicators. The exact saved statements are
+common_domain_macrostep_research.md:319--329, especially327, and
+small_field_gauge_covariance_research.md:45,74,77--80,119--121.
+Here is the real-window argument, before any analytic continuation.
+For a small coarse gauge k, its block-constant current lift gives
+V_*(W^k)=V_*(W)^(k-up), by physical-branch uniqueness on the common domain.
+Writing R_k B(b)=Ad_(k-up(b_-))B(b) and D_k for its retained restriction,
+the exact constraint equation and uniqueness give
+Phi_(V_*(W^k))(D_k z)=R_k Phi_(V_*(W))(z).
+Thus z maps by source-endpoint adjoints, each orthogonal with determinant
+one, and the whole product of invariant color balls is preserved exactly.
+The original rho is gauge invariant, the absolute contour penalty
+transforms by conjugation, and Haar/pivot factors are the same exact
+change-of-variable factors. Changing z to D_k z proves equality of the
+LITERAL retained integrals. There is no moving-boundary derivative.
+Differentiating gives its Ward identity near identity; its separately
+proved analytic density then extends that identity across the connected
+local analytic ball. Constant conjugation follows by the same argument.
+The density version suffices, so no new logarithm branch is needed.
+If the ball-window/extra-indicator hypotheses fail, Lemma6.1 remains a
+conditional lemma and the measure extension theorem still holds, but
+its germ matching is not claimed.
+
+Choose theta supported in the epsilon ball and positive on its half
+ball. For W in that half ball, m_theta(W)>0 and every contributing W^v
+lies in the epsilon ball. Equation(6.1) makes every numerator value
+ell_mu(W^v) equal ell_mu(W). Therefore
+
+ a_mu(W)=ell_mu(W) near I.                            (6.2)
+
+Although theta is only a real cutoff, (6.2) proves that the good measure
+has the EXACT analytic local germ. No statement of global analyticity
+for a_mu is made.
+
+The proof's epsilon can shrink with the coarse graph diameter. Existing
+common-b Ward continuation does not by itself remove that dependence:
+it grants invariance along paths inside b, not arbitrary orbit endpoints.
+A uniform orbit-overlap theorem would be an additional result.
+
+7. Exact full histories and bounded gauge-invariant observables
+
+At each finite stage j fix its actual completed F_j, contour gauge,
+positive g_j, local chart/window and theta_j. Let A_j,R_j be(5.1)-(5.2).
+For the original unnormalized finite Wilson measure
+
+ mu_0(dU)=exp[-gamma_0 S_W(U)]m_E(dU), gamma_0>0,
+
+and every word h=(h_0,...,h_(n-1)) in {good,remainder}^n, define
+
+ mu_h=T_(n-1)^(h_(n-1)) ... T_0^(h_0) mu_0,
+ T_j^good=A_j, T_j^remainder=R_j.
+
+Every mu_h is a positive invariant finite measure. Induction using
+A_j+R_j=F_(j*) proves the EXACT identity
+
+ (F_(n-1) o ... o F_0)_*mu_0 = sum_(h in {g,r}^n) mu_h. (7.1)
+
+There is no omitted history, error term or asymptotic normalization.
+In particular
+
+ Z_W=mu_0(1)=sum_h mu_h(1),
+ integral f(F_(n-1)...F_0(U))mu_0(dU)=sum_h mu_h(f)    (7.2)
+
+for every bounded measurable terminal coarse observable f.
+The literal Markov split(3.4) supplies an alternative exact decomposition
+without invariantization; if used, its noninvariant input projection
+must be retained at later steps. The two history assignments differ.
+
+For bounded gauge-invariant original observables O_1,...,O_m, apply the
+same linear identities to the finite invariant signed measures
+O_1...O_m mu_0. Their positive and negative parts remain invariant.
+Equivalently, for bounded observables use
+exp(sum t_l O_l)mu_0 on real compact source intervals and differentiate
+the exact identities. This gives exact finite numerators as well as the
+denominator, with parameters/windows held fixed during differentiation.
+It gives no uniform source estimates as refinement or volume grows.
+
+No homogeneity or analyticity is imposed on remainder histories. They
+may contain singular parts and correlated mixed sectors. Consequently
+(7.1) is genuine full-measure bookkeeping, but not a controlled mixed-
+field RG theorem. It supplies an explicit positive remainder operator
+rather than declaring the remainder zero.
+
+8. Exact local homogeneous identification and vacuum convention
+
+Suppose an all-good input has the actual density
+
+ Z_j exp[-gamma_j S_(M_j)+E_(j,raw)], gamma_j=g_j^(-2),
+
+on a real neighborhood D_in, and its holomorphic local representative
+and Ward identities satisfy the established local hypotheses. Require
+literal positive-g containment:
+
+ exp(i Phi_(V_*(W))(g_j xi)) V_*(W) in D_in            (8.1)
+
+for every real xi in the actual retained window and every W in the
+chosen output neighborhood. Include any original additional indicator
+exactly; to identify the already proved homogeneous product-window map,
+those additional indicators must be absent or proved identically one.
+Under (8.1), formula(4.3) is exactly that local homogeneous integral.
+Applying Lemma6.1 and(6.2) preserves its analytic germ in the global good
+submeasure. This proves a positive finite-g embedding, not merely a
+formal or g->0 identification.
+
+For each fixed finite number of stages, (8.1) and the finite overlap
+shrinks can be met by choosing sufficiently small windows in group
+angle and sufficiently weak couplings. A logarithmic retained threshold
+T(g) is compatible because g T(g)->0. This assertion is only finite
+parameter feasibility; it does not say the selected Notebook37 tuned
+histories already obey a volume-uniform version of(8.1).
+
+Let A_0 be the flat retained precision. The exact field-independent
+factor extracted in one stage is
+
+ N_j=c(g_j)^{-n_s}h_0^{n_e-n_c}g_j^{n_z}(2pi)^{n_z/2}
+                     D_R(1)det(A_0)^{-1/2}.          (8.2)
+
+The local output is
+ Z_j N_j exp[-gamma_j S_(M_(j+1))+F_(j,raw)].
+Here F_raw includes E at the pre-gauge background, the actual pivot log
+ratio, the determinant log ratio, and the logarithm of the exact
+retained Gaussian expectation; its value at zero is not discarded.
+For a finite reference normalized by S_(M_(j+1))(0)=0, write exactly
+
+ F_(j,raw)=beta_j S_(M_(j+1))+E_(j+1,raw)+c_j,
+ c_j=F_(j,raw)(0)-E_(j+1,raw)(0).
+
+Then
+
+ gamma_(j+1)=gamma_j-beta_j,
+ Z_(j+1)=Z_j N_j exp(c_j).                            (8.3)
+
+A replacement E'_raw=E_raw+c at fixed local density requires
+Z'=Z exp(-c). The orbit extension(5.1) is linear, so every scalar in
+(8.2)-(8.3) is retained exactly also in the global good submeasure.
+These are local factorization identities; no global definition of the
+classical exponential or of the analytic inherited E is required.
+
+9. Quantitative boundary: what this does and does not close
+
+For the all-good terminal measure nu_good and full terminal measure nu,
+let epsilon_bad=1-nu_good(1)/nu(1). Positivity gives for bounded f
+
+ |nu(f)/nu(1)-nu_good(f)/nu_good(1)|
+             <=2 ||f||_infinity epsilon_bad,          (9.1)
+
+whenever nu_good has positive mass. This follows by writing the full
+normalized law as the mixture of normalized good and complementary
+laws. To use(9.1), one must prove a useful bound on epsilon_bad, or
+control mixed histories directly. No such bound follows from the
+identities in this note. A global all-good event can in fact be a poor
+large-volume comparison; local observable control may require a
+spatial mixed-history expansion rather than its total mass.
+
+The precise remaining quantitative tasks include:
+(i) uniform literal-chart and orbit-domain matching for the fixed
+positive-g histories, or a collared/gauge-invariant sector construction
+that avoids the volume-dependent overlap shrink in Lemma6.1;
+(ii) coercive interacting estimates, normalization comparisons and
+summable spatial weights for R_j, including histories with bad input
+fields and their conditional means/constraint geometry;
+(iii) a local factorization of mixed histories that controls boundaries
+without incorrectly replacing compressed inverse precisions by blocks
+of the full covariance;
+(iv) observable/source bounds with the same exact denominator and
+history decomposition.
+Neither Gaussian bad-block tails around a selected homogeneous saddle
+nor local analytic amplitude closure proves these statements.
+
+The operators(5.1)-(5.2) give an exact positive finite embedding and a
+specified remainder, with all factors and the original fine Wilson
+measure intact. They do not yet furnish the uniform estimates needed
+to call H2 fully closed, and they do not establish a continuum measure,
+OS hierarchy or physical mass gap.

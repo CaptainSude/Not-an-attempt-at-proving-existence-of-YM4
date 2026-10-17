@@ -1,0 +1,240 @@
+% Notebook 14 body fragment, no preamble. Unique label prefix: nc-.
+% Requires amsmath, amssymb, amsthm and a one-argument \norm macro.
+
+\section{The exact change of reference in the averaging differential}
+\label{nc-section}
+
+The derivative of the corrected average with fixed reference one
+is not the same coordinate operator as the source average $Q(V)$
+based at a nonflat reference $V$. We now compute their relation,
+including the endpoint term. The block ratio $L$ is fixed, all
+logarithms use their common identity branch, and all Hilbert norms
+use physical volume. This calculation is internally audited at the
+level of the pinned deposited transcriptions; no fresh verification
+of the original CMP98 typesetting is claimed.
+
+\subsection{Two references and an exact group identity}
+\label{nc-group}
+
+Write $M$ for the ordinary group average. Raw I:46965--46970
+defines
+\[
+ \Phi^{\mathfrak g}(V,B;y,x)=\frac1i\log[
+   (e^{iB}V)\langle y,x\rangle V\langle y,x\rangle^{-1}],
+ \qquad
+ \Phi^{\flat}(V,B;c)=\frac1i\log[M(e^{iB}V)(c)M(V)(c)^{-1}].
+\]
+For $U$ near $V$ set
+\begin{equation}
+ g_y^V(U)=\exp\left(i\sum_{x\in B(y)}L^{-d}
+       \frac1i\log[U\langle y,x\rangle V\langle y,x\rangle^{-1}]
+                   \right).
+ \label{nc-endpoint-mean}
+\end{equation}
+The bridge I:47076--47087, expressly incorporating CMP98 (120),
+identifies the corrected group increment as
+\begin{equation}
+ C_V(U)(c)=g_{c_-}^V(U)^{-1}M(U)(c)g_{c_+}^V(U)M(V)(c)^{-1}.
+ \label{nc-moving-corrected}
+\end{equation}
+It equals one at $U=V$. With the logarithmic/linear split
+I:24344--24349, the same bridge gives
+\begin{equation}
+ C_V(e^{iB}V)=e^{i\mathcal Q(V,B)},\qquad
+ \mathcal Q(V,B)=LQ(V)B+O(B^2).
+ \label{nc-source-linearization}
+\end{equation}
+This is the deposited identification of the middle coordinate;
+the earlier transcription does not itself reproduce CMP98 (120).
+We use the explicit bridge, rather than guessing that omitted input
+formula.
+
+Set $a_y(U)=g_y^1(U)$. The corrected map with fixed identity
+reference is
+\begin{equation}
+ C_1(U)(c)=a_{c_-}(U)^{-1}M(U)(c)a_{c_+}(U).
+ \label{nc-fixed-corrected}
+\end{equation}
+For fixed $V$ define
+$k_y(U;V)=g_y^V(U)^{-1}a_y(U)a_y(V)^{-1}$. Direct substitution
+and cancellation, preserving the factor order, give
+\begin{equation}
+ \begin{split}
+ C_1(U)(c)C_1(V)(c)^{-1}
+ =\operatorname{Ad}_{a_{c_-}(V)^{-1}}\bigl[
+ k_{c_-}(U;V)^{-1}C_V(U)(c)
+       \operatorname{Ad}_{M(V)(c)}k_{c_+}(U;V)\bigr].
+ \end{split}
+ \label{nc-group-identity}
+\end{equation}
+In particular no multiplicative cocycle for the endpoint mean has
+been assumed.
+
+For $U(s)=e^{isB}V$ let
+\[
+ \eta_y^1(V;B)=\frac1i\left.\frac d{ds}\right|_0
+       a_y(U(s))a_y(V)^{-1},\qquad
+ \eta_y^V(B)=\frac1i\left.\frac d{ds}\right|_0g_y^V(U(s)),
+ \qquad Z_VB(y)=\eta_y^1(V;B)-\eta_y^V(B).
+\]
+Define the \emph{unscaled} endpoint difference by
+\begin{equation}
+ d_Wz(c)=z(c_-)-\operatorname{Ad}_{W(c)}z(c_+).
+ \label{nc-endpoint-difference}
+\end{equation}
+This explicit definition fixes the sign independently of other
+covariant-derivative conventions. All middle factors in
+\eqref{nc-group-identity} equal one at $s=0$, so differentiating
+gives
+\begin{equation}
+ \frac1i\left.\frac d{ds}\right|_0
+ C_1(e^{isB}V)(c)C_1(V)(c)^{-1}
+ =\operatorname{Ad}_{a_{c_-}(V)^{-1}}
+       [LQ(V)B(c)-d_{M(V)}(Z_VB)(c)].
+ \label{nc-angular-derivative}
+\end{equation}
+
+As a separate check, I:46977 defines
+$LQ^{\flat}(V)B=\Phi_1^{\flat}(V;B)$. Differentiating the
+general bridge directly at $B=0$ gives
+\begin{equation}
+ LQ(V)B=LQ^{\flat}(V)B-d_{M(V)}\overline r(V;B),
+ \qquad
+ \overline r(V;B)(y)=\sum_xL^{-d}\Phi_1^{\mathfrak g}(V;B;y,x).
+ \label{nc-rooted-versus-corrected}
+\end{equation}
+Thus the later rooted operator $Q^{\flat}$ and the corrected source
+operator $Q$ are distinct. Substitution into
+\eqref{nc-angular-derivative} reproduces the direct derivative of
+\eqref{nc-fixed-corrected}, confirming its endpoint sign.
+
+\subsection{An explicit formula for the endpoint correction}
+\label{nc-jacobians}
+
+For a small complex Lie-algebra element $X$ put
+\begin{equation}
+ \mathcal J_XK=\int_0^1\operatorname{Ad}_{e^{itX}}K\,dt,
+ \qquad
+ \frac1i\left.\frac d{ds}\right|_0e^{i(X+sK)}e^{-iX}
+           =\mathcal J_XK.
+ \label{nc-exponential-jacobian}
+\end{equation}
+The integral power series and a Neumann series show that
+$\mathcal J_X$ and its inverse are analytic near zero, and
+$\norm{\mathcal J_X-I}+\norm{\mathcal J_X^{-1}-I}\le C\norm{X}$.
+This does not require unitarity.
+
+Write
+\[
+ V\langle y,x\rangle=e^{iY_x},\qquad
+ \overline Y_y=\sum_xL^{-d}Y_x,\qquad
+ r_x(V;B)=\Phi_1^{\mathfrak g}(V;B;y,x).
+\]
+The last quantity includes the actual contour orientations,
+transports and repetitions. Applying
+\eqref{nc-exponential-jacobian} to each contour logarithm and then
+to the exponential of their mean proves
+\begin{equation}
+ Z_VB(y)=\mathcal J_{\overline Y_y}
+       \sum_xL^{-d}\mathcal J_{Y_x}^{-1}r_x(V;B)
+          -\sum_xL^{-d}r_x(V;B).
+ \label{nc-Z-formula}
+\end{equation}
+In particular $Z_1=0$. The leading background term is
+\[
+ Z_VB=\frac i2\left(
+   [\overline Y,\overline r]-\sum_xL^{-d}[Y_x,r_x]\right)
+   +O\bigl((\max_x|Y_x|)^2\max_x|r_x|\bigr).
+\]
+There is no general identity forcing this difference of means of
+commutators to vanish. The endpoint correction in
+\eqref{nc-angular-derivative} must therefore be retained.
+
+\subsection{The physical derivative conversion and its bound}
+\label{nc-physical}
+
+At fine spacing $h$ write $V=e^{ihA}$ and define the fixed-reference
+physical map by
+$C_1(e^{ihA})(c)=e^{iLh\mathcal F_h(A)(c)}$. For an ordinary
+potential variation $K$, the fine angular left increment is
+$h\mathcal J_{hA}K$ and the coarse left increment is
+$Lh\mathcal J_{Lh\mathcal F_h(A)}D\mathcal F_h(A)K$.
+Substituting these into \eqref{nc-angular-derivative} gives
+\begin{equation}
+ \begin{split}
+ \mathcal J_{Lh\mathcal F_h(A)}D\mathcal F_h(A)K
+ =\operatorname{Ad}_{a_-(V)^{-1}}\bigl[
+ Q_h(V)\mathcal J_{hA}K
+  -L^{-1}d_{M(V)}Z_V(\mathcal J_{hA}K)\bigr].
+ \end{split}
+ \label{nc-physical-unrearranged}
+\end{equation}
+Consequently the exact operator conversion is
+\begin{equation}
+ \boxed{\displaystyle
+ Q_h(V)=\operatorname{Ad}_{a_-(V)}
+   \mathcal J_{Lh\mathcal F_h(A)}D\mathcal F_h(A)
+        \mathcal J_{hA}^{-1}+L^{-1}d_{M(V)}Z_V.}
+ \label{nc-physical-conversion}
+\end{equation}
+Here $Q_h(V)$ is the normalized source coefficient placed between
+the physical spaces at $h$ and $Lh$. Neither $d_{M(V)}$ nor $Z_V$
+contains an inverse mesh factor. The argument of $Z_V$ before
+division is $h\mathcal J_{hA}K$; its linearity cancels $h$ against
+the coarse $Lh$ and leaves exactly $1/L$.
+
+\begin{proposition}[Actual one-step source comparison]
+\label{nc-one-step-proposition}
+For fixed $L$, if $h\norm{A}_\infty$ lies in a sufficiently small
+common complex neighborhood, then
+\begin{equation}
+ \norm{Q_h(e^{ihA})-Q_h(1)}_{p,h\to p,Lh}
+     \le C_{L,p}h\norm{A}_\infty,
+ \qquad p=2,\infty.
+ \label{nc-one-step-bound}
+\end{equation}
+The constants are independent of $h$, refinement and compatible
+periodic volume. The same estimate holds for absolute coefficient
+row sums and physical-adjoint row sums, after changing the fixed
+constant.
+\end{proposition}
+
+\begin{proof}
+Each one-step contour has bounded length at fixed $L$. Products of
+possibly nonunitary complex transports therefore give
+$\max_x|Y_x|+|\overline Y|\le C_Lh\norm{A}_\infty$ and
+$\norm{r_x(V;\cdot)}_{\infty\to\mathrm{color}}\le C_L$.
+Equation \eqref{nc-Z-formula} implies
+$\norm{Z_V}_{\infty\to\infty}\le C_Lh\norm{A}_\infty$.
+
+For the physical Hilbert bound expand $Z_V$ into its finitely many
+one-step bond coefficients. Each is analytic, vanishes at $V=1$,
+and is bounded by $C_Lh\norm{A}_\infty$. Rows and columns have
+fixed finite incidence; the physical adjoint supplies the fixed
+volume ratio $L^d$. The Schur bound thus gives the same order
+from fine physical $L^2$ to coarse-site physical $L^2$, with no
+macroscopic path-trace estimate. The endpoint map $d_{M(V)}$ has
+two entries per row, fixed column incidence and bounded complex
+adjoints, so it is uniformly bounded in both norms.
+
+The other coordinate factors in \eqref{nc-physical-conversion}
+differ from the identity by at most $C_Lh\norm{A}_\infty$.
+Combine this with the proved one-step estimate
+$\norm{D\mathcal F_h(A)-Q_h(1)}_{p\to p}
+\le D_ph\norm{A}_\infty$ and the flat contractions to obtain
+\eqref{nc-one-step-bound}. Equivalently, the entire corrected
+source coefficient in \eqref{nc-source-linearization} is a finite
+local analytic function of the link logarithms $hA$, equal to
+$Q_h(1)$ at zero. Its coefficientwise Taylor bound and the same
+finite incidence prove the row and physical-adjoint row assertions
+directly. Formula \eqref{nc-physical-conversion} records the
+coordinate factors hidden by that shorter proof. Periodic
+multiplicity counting preserves all constants.
+\end{proof}
+
+For a multilevel source comparison this estimate must be evaluated
+at the actual ordinary reference backgrounds $M^t(U)$, whose
+amplitudes are controlled in the following argument. It does not
+license replacing them by the corrected fixed-reference iterates.
+It also proves no nonflat inverse or minimizing-field theorem by
+itself.

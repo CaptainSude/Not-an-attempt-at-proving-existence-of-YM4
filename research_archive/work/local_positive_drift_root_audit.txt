@@ -1,0 +1,30 @@
+Independent root audit, 17 October 2026
+
+Read local_positive_drift_fragment.tex in full against the FBT/FTS
+statements and proofs in Notebook32.
+
+Pass under UC and the explicitly identified prior finite local inputs.
+The final notebook instantiates UC with apb-main once its reference
+comparison is passed; no independent source theorem supplies UC.
+
+The chosen q is a fixed multiple of q_a after R,J,b are fixed.
+The uniform coefficient lower bound at R^q gives the same positive
+delta in every varying-depth joint structural limit. The cocycle
+is used there, not as an exact finite-volume identity.
+
+Compactness of a sequence of hypothetical violating finite blocks
+gives a contradictory structural limit. This proves a period threshold
+uniform in preceding depth without a numerical convergence rate.
+The finite leading delta/2 margin loses at most delta/4 from q
+actual decrement errors, each bounded by delta/(4q).
+
+All clipped recursion evaluations stay in the allowed weak-coupling
+range, so prescribed-sequence activity bounds apply even though the
+scalar is updated adaptively. Finite-regulator continuity suffices
+for the intermediate value theorem. Future positive block decrements
+and the fixed terminal margin ensure no clipping in the selected
+history. Bare coupling bounds follow by taking inverse square roots.
+
+No uniqueness or cross-horizon consistency is asserted. The result is
+finite homogeneous local ultraviolet tuning, not a global Wilson
+measure identity, sourced correlation compactness, or continuum QFT.

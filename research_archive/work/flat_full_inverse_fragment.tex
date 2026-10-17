@@ -1,0 +1,422 @@
+% Full flat fine inverse: fragment for Notebook 09, no standalone preamble.
+% Requires amsmath/amssymb/amsthm and the existing \norm, \diag macros.
+\section{The full flat source inverse}
+\label{inv-section}
+
+We now control the fine inverse itself, rather than only the minimized
+coarse action or its retained-coordinate covariance. Fine spacing is
+$\eta=M^{-1}$, where $M$ is odd, and the coarse physical spacing is one.
+All fine pairings use volume weight $\eta^d$, while coarse pairings use
+unit counting measure. Let $D$ be the fine scalar gradient,
+$\mathcal L=D^*D$ its positive scalar Laplacian, and $K$ the fine
+Maxwell precision. Thus $KD=0$ and $K+DD^*=\mathcal L I$.
+Let $Q=Q_M^{\rm st}$ be the normalized one-form straight-string average
+and $Q_0$ the centered scalar average, so that $QD=d_cQ_0$.
+
+The scalar source gauge is
+\begin{equation}\label{inv-source-projection}
+ G'=(\mathcal L+Q_0^*a'Q_0)^{-1},\qquad
+ \mathcal P=G'Q_0^*(Q_0G'^2Q_0^*)^{-1}Q_0G',\qquad R=I-\mathcal P.
+\end{equation}
+The scalar projection $\mathcal P$ must not be confused with a Fourier
+denominator $P_r$ below. The positive scalar penalty $a'$ in this
+definition is distinct from the one-form penalty $a$ in
+\begin{equation}\label{inv-fine-precision}
+ \mathcal A_a=K+DRD^*+Q^*aQ,\qquad G_0=\mathcal A_a^{-1}.
+\end{equation}
+We first allow a fixed positive $a$, uniformly in a fixed interval
+$0<a_-\le a\le a_+<\infty$. The source convention of Raw I,
+lines 13583--13593, is $a=\ell^{-2}$; in the present homogeneous
+unit-scale normalization it is exactly $a=1$.
+
+\begin{theorem}\label{inv-theorem}
+The inverse in \eqref{inv-fine-precision} exists on the homogeneous
+infinite lattice and every compatible periodic regulator. Its
+physical-cell kernel satisfies, for fixed positive $C,\rho$,
+\begin{equation}\label{inv-kernel-bound}
+ \norm{(\mathcal D_\alpha G_0\mathcal D_\beta)(n,m)}
+ _{\mathrm{cell},2\to\mathrm{cell},2}
+ \le Ce^{-\rho|n-m|_1},\qquad \alpha+\beta\le2.
+\end{equation}
+Here $n,m$ are unit coarse cells, each $\mathcal D$ is a specified
+composition of fine forward or backward differences of its indicated
+order, and fixed curl or divergence combinations are included.
+Constants are independent of odd $M$, volume, and $a\in[a_-,a_+]$.
+The cell Hilbert norm is the fine physical-volume norm, including the
+fixed orientation and color fibers. At every smaller positive exponent,
+\eqref{inv-kernel-bound} gives a uniform exponentially weighted
+cell-Schur bound. The periodic kernels are exact periodizations and
+obey the same bounds in periodic distance.
+
+If $q_M$ denotes the physical Maxwell minimum, then the penalized
+coarse inverse and normalized extension satisfy
+\begin{equation}\label{inv-coarse-result}
+ q_0:=(QG_0Q^*)^{-1}=q_M+aI,
+ \qquad G_0Q^*q_0=H_{\rm src},
+\end{equation}
+where $H_{\rm src}$ is the exact Maxwell minimizing extension in the
+matched scalar source gauge $RD^*H_{\rm src}=0$.
+\end{theorem}
+
+The theorem is specific to the homogeneous flat source definitions.
+It is not a theorem for arbitrary nonflat backgrounds, Dirichlet
+domains, or mixed retained histories. Fine derivative bounds in
+\eqref{inv-kernel-bound} are cell $L^2$ operator bounds, not
+pointwise regularity assertions.
+
+\subsection{Exact aliases and the penalized Feynman inverse}
+
+Let $I_M=\{-(M-1)/2,\ldots,(M-1)/2\}$,
+$p_r=z+2\pi r$, and $r\in I_M^d$. Use
+\[
+ u_{r,\mu}^{\pm}=M(e^{\pm ip_{r,\mu}/M}-1),\quad
+ P_r=\sum_\mu u_{r,\mu}^+u_{r,\mu}^-,\quad
+ d_\mu^\pm=e^{\pm iz_\mu}-1,\quad b_\mu=d_\mu^+d_\mu^-.
+\]
+Write $a_r=a_M(p_r)$ for the centered scalar averaging multiplier
+and $\omega_{r,\mu}$ for the one-form multiplier, including its
+additional longitudinal string factor. Superscript minus means
+evaluation at the negative full fine momentum; it agrees with
+complex conjugation on real momenta only. String telescoping gives
+\begin{equation}\label{inv-cochain}
+ \omega_{r,\mu}u_{r,\mu}^+=a_r d_\mu^+,
+ \qquad \omega_{r,\mu}^-u_{r,\mu}^-=a_r^-d_\mu^-.
+\end{equation}
+Alias space has counting Hilbert norm. With physical-volume Parseval
+normalization, no additional power of $M$ occurs in an alias covariance
+sum.
+
+Work initially in a real nonzero coarse fiber. The scalar source
+projection is the orthogonal projection onto
+$\operatorname{ran}(\mathcal L^{-1}Q_0^*)$. Therefore
+\begin{equation}\label{inv-projection-alias}
+ \mathcal P=\mathcal L^{-1}Q_0^*W_2^{-1}Q_0\mathcal L^{-1},
+ \qquad W_2=\sum_r\frac{a_ra_r^-}{P_r^2}.
+\end{equation}
+This agrees with \eqref{inv-source-projection}: multiplying by the
+positive scalar penalty changes the coarse parametrization of
+$\operatorname{ran}(G'Q_0^*)$, but not that range. Its constant scalar
+mode will be treated through the original penalized definition.
+
+Define
+\[
+ G_F=\diag_r(P_r^{-1}I),\qquad
+ W=QG_FQ^*=\diag_\mu(c_\mu),\qquad
+ c_\mu=g_\mu/P_0+R_\mu,
+\]
+\[
+ g_\mu=\omega_{0,\mu}\omega_{0,\mu}^-,\qquad
+ R_\mu=\sum_{r\ne0}\frac{\omega_{r,\mu}\omega_{r,\mu}^-}{P_r}.
+\]
+The Feynman operator with the one-form penalty is
+$\mathcal B=\mathcal L I+Q^*aQ$. Its inverse obeys
+\begin{equation}\label{inv-F-woodbury}
+ F:=\mathcal B^{-1}
+ =G_F-G_FQ^*(a^{-1}I+W)^{-1}QG_F.
+\end{equation}
+Put
+\begin{equation}\label{inv-Da}
+ \widehat R_\mu=R_\mu+a^{-1},\qquad
+ \mathcal D_\mu=g_\mu+P_0\widehat R_\mu,\qquad
+ k_\mu=\mathcal D_\mu^{-1}.
+\end{equation}
+Then $(a^{-1}I+W)^{-1}=P_0\diag(k_\mu)$ and
+\begin{equation}\label{inv-F-alias}
+ F_{r\mu,s\nu}=\delta_{\mu\nu}
+ \left[\frac{\delta_{rs}}{P_r}
+ -\frac{P_0\omega_{r,\mu}^-\omega_{s,\mu}}
+              {P_rP_s\mathcal D_\mu}\right].
+\end{equation}
+The central blocks cancel exactly to
+\begin{align}
+ F_{0\mu,0\nu}
+ &=\delta_{\mu\nu}\widehat R_\mu/\mathcal D_\mu,
+ \label{inv-F-central}\\
+ F_{0\mu,s\nu}
+ &=-\delta_{\mu\nu}
+   \frac{\omega_{0,\mu}^-\omega_{s,\mu}}{P_s\mathcal D_\mu}
+       &&(s\ne0),\nonumber\\
+ F_{r\mu,0\nu}
+ &=-\delta_{\mu\nu}
+   \frac{\omega_{r,\mu}^-\omega_{0,\mu}}{P_r\mathcal D_\mu}
+       &&(r\ne0).\nonumber
+\end{align}
+Use \eqref{inv-F-alias} only with both aliases high, and
+\eqref{inv-F-central} otherwise. These expressions contain no
+central massless denominator.
+
+\subsection{The scalar projection and the second Woodbury identity}
+
+The Hodge identity and $R=I-\mathcal P$ give
+\begin{equation}\label{inv-rank-subtraction}
+ \mathcal A_a=\mathcal B-vW_2^{-1}v^-,\qquad
+ v_{r,\mu}=u_{r,\mu}^+a_r^-/P_r,
+ \quad v_{r,\mu}^-=a_ru_{r,\mu}^-/P_r.
+\end{equation}
+Here $v^-$ is a row, the analytic transpose at negative arguments.
+On real fibers it is the Hilbert adjoint of $v$.
+
+The real fine precision is positive definite. Indeed, a vector in its
+kernel has zero curl, zero coarse average, and zero source-gauge term.
+The zero-curl field is $D\lambda+c$, with $c$ a constant harmonic
+one-form. Taking the coarse mean of $Q(D\lambda+c)=0$ gives $c=0$;
+subtracting a scalar constant makes $Q_0\lambda=0$. Then
+$\mathcal L\lambda\in\operatorname{ran}R$, while the source-gauge
+condition says $R\mathcal L\lambda=0$. Thus $D\lambda=0$.
+This proves finite-regulator positivity with the harmonic sector
+retained. The subtractive Woodbury identity therefore gives
+\begin{equation}\label{inv-G-woodbury}
+ G_0=F+Fv\,(W_2-v^-Fv)^{-1}v^-F.
+\end{equation}
+
+Equation \eqref{inv-cochain} implies the three exact contractions
+\begin{equation}\label{inv-three-contractions}
+ v^-G_Fv=W_2,\qquad QG_Fv=W_2d^+,
+ \qquad v^-G_FQ^*=W_2d^-.
+\end{equation}
+For example, the $\mu$ component of the middle term is
+$\sum_r\omega_{r,\mu}u_{r,\mu}^+a_r^-/P_r^2=W_2d_\mu^+$.
+Let $\mathfrak a=a_0a_0^-$. The central cochain identity is
+$\sum_\mu b_\mu/g_\mu=P_0/\mathfrak a$. Define
+\begin{equation}\label{inv-Ea}
+ \mathcal E_a=\mathfrak a^{-1}
+ -\sum_\mu\frac{b_\mu\widehat R_\mu}{g_\mu\mathcal D_\mu}.
+\end{equation}
+Subtracting $1/\mathcal D_\mu-1/g_\mu$ proves
+\begin{equation}\label{inv-Ea-identity}
+ \sum_\mu b_\mu k_\mu=P_0\mathcal E_a.
+\end{equation}
+It follows that
+\begin{align}
+ W_2-v^-Fv
+ &=W_2^2d^-(a^{-1}I+W)^{-1}d^+
+  =W_2^2P_0^2\mathcal E_a.
+ \label{inv-woodbury-denominator}
+\end{align}
+
+Introduce the scalar second-order remainder and its canceled denominator
+\begin{equation}\label{inv-Ds2}
+ R_{s,2}=\sum_{r\ne0}\frac{a_ra_r^-}{P_r^2},\qquad
+ D_{s,2}=\mathfrak a+P_0^2R_{s,2},\qquad
+ W_2=D_{s,2}/P_0^2.
+\end{equation}
+Thus \eqref{inv-woodbury-denominator} is
+$D_{s,2}^2\mathcal E_a/P_0^2$. In particular it contains $W_2^2$,
+not $W_2$.
+
+\subsection{The final canceled inverse}
+
+Set $\beta=(P_0/D_{s,2})Fv$. For a high alias,
+\begin{equation}\label{inv-beta-high}
+ \beta_{r,\mu}
+ =\frac{P_0u_{r,\mu}^+a_r^-}{P_r^2D_{s,2}}
+ -\frac{\omega_{r,\mu}^-k_\mu d_\mu^+}{P_r},
+ \qquad r\ne0.
+\end{equation}
+For the central entry use
+\[
+ \omega_{0,\mu}^-k_\mu d_\mu^+
+ =(u_{0,\mu}^+/a_0)g_\mu k_\mu,
+\]
+\[
+ \mathfrak a/D_{s,2}=1-P_0^2R_{s,2}/D_{s,2},\qquad
+ g_\mu k_\mu=1-P_0\widehat R_\mu k_\mu.
+\]
+The resulting exact central formula is
+\begin{equation}\label{inv-beta-central}
+ \beta_{0,\mu}=
+ \frac{u_{0,\mu}^+}{a_0}
+ \left(\widehat R_\mu k_\mu
+                  -\frac{P_0R_{s,2}}{D_{s,2}}\right).
+\end{equation}
+The row $\beta^-=(P_0/D_{s,2})v^-F$ is its analytic transpose:
+in the high formula it has entries
+$P_0a_ru_{r,\mu}^-/(P_r^2D_{s,2})
+-d_\mu^-k_\mu\omega_{r,\mu}/P_r$; centrally use
+$u_{0,\mu}^-/a_0^-$ times the same bracket.
+Equations \eqref{inv-G-woodbury} and
+\eqref{inv-woodbury-denominator} now become
+\begin{equation}\label{inv-final-formula}
+ \boxed{\displaystyle G_0=F+\beta\mathcal E_a^{-1}\beta^-.}
+\end{equation}
+Every central pole has canceled. The update has a positive sign, and
+the second term in the bracket of \eqref{inv-beta-central} has a
+negative sign. The formula removes the entire complex cone $P_0=0$.
+
+\subsection{A strip and constants uniform in refinement}
+
+Choose $\pi<K_0<2\pi$ and set
+\[
+ c_* =\frac{\sin(K_0/2)}{K_0/2},\qquad
+ H_* =\frac{4(2\pi-K_0)^2}{\pi^2}.
+\]
+On the enlarged real cube $|x_\mu|\le K_0$, the alias estimates of
+Notebook 07 give
+\[
+ \mathfrak a\ge c_*^{2d},\quad
+ g_\mu\ge g_*:=c_*^{2d+2},\quad
+ 0\le R_\mu\le H_*^{-1},\quad
+ 0\le R_{s,2}\le H_*^{-2},\quad P_0\le dK_0^2,
+\]
+with $g_\mu,\mathfrak a\le1$. Consequently
+\[
+ g_*\le\mathcal D_\mu\le
+ D_*:=1+dK_0^2(H_*^{-1}+a_-^{-1}),\qquad
+ c_*^{2d}\le D_{s,2}\le1+d^2K_0^4H_*^{-2}.
+\]
+For $x\ne0$, \eqref{inv-Ea-identity} gives
+\begin{equation}\label{inv-Ea-lower}
+ \mathcal E_a(x)=
+ \frac{\sum_\mu b_\mu(x)/\mathcal D_\mu(x)}{P_0(x)}
+ \ge c_*^2/D_*.
+\end{equation}
+Here $\sum b_\mu\ge c_*^2|x|^2$ and $P_0\le|x|^2$.
+At zero the defining expression gives $\mathcal E_a(0)=1$.
+
+On an initial fixed complex neighborhood, high denominators obey
+$|P_r(z)|\ge c|r|^2$ for $r\ne0$, including the edge aliases.
+Finite alias Parseval bounds the sums of absolute paired scalar and
+one-form averaging factors independently of $M$. Hence $R_\mu$,
+$R_{s,2}$, and the central multipliers are uniformly holomorphic and
+bounded. The added $a^{-1}$ is bounded by the hypothesis on $a$.
+
+Use nested real cubes with positive margins. Uniform Cauchy estimates
+first allow an imaginary shrinking that keeps $\mathfrak a,g_\mu,
+\mathcal D_\mu,D_{s,2}$ separated from zero. The expression
+\eqref{inv-Ea} is then holomorphic and uniformly bounded. A second
+shrinking, using \eqref{inv-Ea-lower}, keeps $\mathcal E_a$ separated
+from zero. This gives one positive strip width independent of $M,a$,
+with the real fundamental cube in the interior of each enlarged chart.
+The inverse of $a_0$ is also bounded because $a_0a_0^-=\mathfrak a$
+is separated from zero and both factors are bounded. Real positivity
+has thus been combined with uniform analytic estimates; it is not
+being used alone to claim complex invertibility.
+
+\subsection{Zero mode and the independent $M=1$ check}
+
+At coarse momentum zero, $a_0=\omega_{0,\mu}=1$, all high
+$a_r,\omega_{r,\mu}$ vanish, and
+\[
+ R_\mu=R_{s,2}=0,\qquad
+ \mathfrak a=g_\mu=\mathcal D_\mu=D_{s,2}=\mathcal E_a=1,
+ \qquad\beta=0.
+\]
+The canceled formula gives
+\begin{equation}\label{inv-zero-mode}
+ (G_0)_{0\mu,0\nu}=a^{-1}\delta_{\mu\nu},\qquad
+ (G_0)_{r\mu,s\nu}=\delta_{rs}\delta_{\mu\nu}/P_r
+       \quad(r,s\ne0),
+\end{equation}
+with zero mixed blocks. The original source projection is zero on the
+constant scalar mode and identity on high scalar aliases. Hence the
+central precision is $aI$, and the high precision is $P_rI$, exactly
+as in \eqref{inv-zero-mode}. No scalar constant Laplacian was inverted.
+
+For $M=1$, $Q=I$, $R=0$, and
+\[
+ \mathcal D=1+P_0/a,\quad k=\mathcal E_a=a/(P_0+a),\quad
+ F=(P_0+a)^{-1}I,\quad\beta=d^+/(P_0+a).
+\]
+Thus
+\begin{equation}\label{inv-M1}
+ G_0=(P_0+a)^{-1}I+\frac{d^+d^-}{a(P_0+a)},
+\end{equation}
+the direct inverse of $(P_0+a)I-d^+d^-$. This checks the sign,
+penalty normalization, and rank-one coefficient. The value $a^{-1}I$
+at zero also shows why a uniform lower bound for $a$ is essential.
+
+\subsection{Alias bounds with two fine derivatives}
+
+On the common strip,
+\[
+ |P_r|\ge c|r|^2\ (r\ne0),\quad
+ |u_{r,\mu}^{\pm}|\le C(1+|r|),\quad
+ \sum_r|a_r^\pm|^2+
+       \sum_{r,\mu}|\omega_{r,\mu}^\pm|^2\le C_d.
+\]
+The high-high block of $F$ is a bounded diagonal operator plus one
+rank-one term for each orientation. Its high rank vectors are
+$\omega_{r,\mu}^{\pm}/P_r$, and its mixed row and column use the
+same vectors. Their alias $L^2$ norms are bounded. The central block
+is bounded separately. Moreover \eqref{inv-beta-high} gives
+\begin{equation}\label{inv-beta-estimate}
+ |\beta_{r,\mu}|\le
+ C\left(\frac{|a_r^-|}{|r|^3}
+             +\frac{|\omega_{r,\mu}^-|}{|r|^2}\right),\qquad r\ne0.
+\end{equation}
+The central beta is bounded by \eqref{inv-beta-central}.
+Therefore $F$ and $G_0$ have uniformly bounded alias Hilbert operator
+norms. The norm estimate for an analytic rank-one matrix $v w^T$
+uses $\norm{v}_2\norm{w}_2$, without conjugating its analytic parameters.
+
+With $\alpha$ differences on the output and $\beta$ on the input,
+$\alpha+\beta\le2$, the high diagonal of $F$ grows at most as
+$|r|^{\alpha+\beta-2}$, which is bounded. Each rank vector has at
+most two extra powers of $|r|$ multiplying
+$\omega_{r,\mu}^{\pm}/P_r$, so its $L^2$ norm is still bounded by
+Parseval. The mixed blocks have the same property. For the update in
+\eqref{inv-final-formula}, two derivatives on a beta column are bounded,
+in the worst case, by $C(|a_r^-|/|r|+|\omega_{r,\mu}^-|)$.
+This is square summable uniformly, as is the corresponding row.
+Every derivative sandwich of total order at most two is consequently
+holomorphic and uniformly bounded in alias operator norm. The number
+of derivative-orientation components is fixed in $d$.
+
+\subsection{Reconstruction, periodic gluing, and the actual inverse}
+
+For within-cell sites $s\in I_M^d$ use
+$\mathcal F_M(z)_{sr}=e^{i(z+2\pi r)\cdot s/M}$.
+For real $z$ it is unitary from alias counting $L^2$ into the cell
+norm $M^{-d}\sum_s|v_s|^2$. For complex $z=x+iy$, it differs from
+that unitary by $\diag_s(e^{-y\cdot s/M})$. Its norm and the norm of
+its holomorphic inverse are thus uniformly bounded. Tensoring with
+the orientation identity, the reconstructed symbol is
+\[
+ (G_0)_{\rm cell}(z)=\mathcal F_M(z)G_0(z)\mathcal F_M(z)^{-1}.
+\]
+All derivative sandwiches inherit its uniform strip bounds.
+
+The full real inverse, rather than each separated central term, is
+periodic up to alias permutation. Reconstruction cancels the
+permutation; wrapping an alias gives $e^{i2\pi s_\nu}=1$. The
+reconstructed symbol is therefore periodic. The enlarged-chart
+holomorphic formulas agree on real overlaps and glue by the identity
+theorem. Fourier contour shifting proves \eqref{inv-kernel-bound}.
+Summing at a smaller exponent proves the weighted Schur bounds.
+These are operator-valued contour estimates, so no factor growing
+with the within-cell dimension is introduced.
+
+For each fixed $M$, fiberwise multiplication, with the zero sector
+as in \eqref{inv-zero-mode}, verifies that this bounded kernel is
+the inverse of \eqref{inv-fine-precision} on the infinite homogeneous
+Hilbert space. The real inverse bound yields a uniform positive fine
+spectral gap. Sampling the same symbol on a compatible periodic
+momentum grid gives exactly the finite source inverse. Absolute
+summability identifies its kernel with the periodization; periodic
+distance bounds its weighted sums by the infinite sums. This includes
+short periods with their proper oriented-cell multiplicities.
+
+Finally, at fixed coarse datum $B$, the Maxwell energy is at least
+$\langle B,q_MB\rangle$, the source gauge term is nonnegative, and
+the penalty is the constant $a\norm{B}^2$. The source-gauge minimizer
+$H_{\rm src}B$ attains both minima. Therefore
+\[
+ \inf_{QA=B}\langle A,\mathcal A_aA\rangle
+   =\langle B,(q_M+aI)B\rangle.
+\]
+The constrained Gaussian inverse formula proves
+$q_0=q_M+aI$ and, by strict positivity and uniqueness,
+$G_0Q^*q_0=H_{\rm src}$. In the source convention
+$QH_0=\ell^{-1}$, the normalized extension is $H_0\ell$.
+This proves \eqref{inv-coarse-result} and completes the theorem.
+
+\begin{remark}\label{inv-scope}
+The homogeneous source passage fixes $a=\ell^{-2}$ and hence $a=1$
+here. Raw I, lines 23879--23881, separately introduces an $a_n$
+sequence and refers to CMP99b (3.23)--(3.24) for an unprinted recursion.
+The theorem does not guess that sequence: an application using it
+must verify the fixed positive interval after its measure and scale
+conversion. The scalar penalty $a'$ in the projection remains a
+different object. General nonflat and retained-history identifications
+are not consequences of the homogeneous Fourier proof.
+\end{remark}

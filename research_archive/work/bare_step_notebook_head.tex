@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,mathrsfs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\title{Toward a four-dimensional Yang--Mills construction\\
+\large Notebook 20: the first Wilson small-field integration}
+\author{Research working document}
+\date{17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The physical source-coordinate construction of Notebook 19 and
+the overlap expansion of Notebook 18 yield an actual first-step
+small-field integration of the non-Abelian Wilson action.
+For the bare step, every action term is local before and after
+the exact pivot substitution. This verifies the support-valued
+precision and interaction hypotheses directly. The retained
+sharp cutoff is fixed; its nonlinear Jacobian, Haar density,
+gauge remainder and normalization terms are kept explicitly.
+The normalized fluctuation logarithm has connected activities
+whose anchored norm is bounded by
+$C[gR^3+\exp(-cR^2)]$, for a logarithmic cutoff $R$.
+Constants are uniform in periodic volume at fixed blocking
+ratio. Strict support here is in the independent current
+background. Its transport to the next coarse field, the
+subsequent quantum iterations, and the complementary
+large-field regions remain the next construction steps.
+\end{abstract}
+
+This notebook applies the internally checked finite-regulator
+results in Notebooks 15--19. It is a proof of a specified
+small-field contribution. Completing the full existence
+argument requires that contribution to be incorporated into
+an iteration that controls the whole regulator measure and
+the continuum observable hierarchy.
+
